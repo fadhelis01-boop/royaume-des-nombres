@@ -2415,3 +2415,14 @@ select {
   font-size: 1.3rem;
   margin: 4px 0;
 }
+/* Animations des visuels (désactivées si « réduire les animations ») */
+.pop-in { display: inline-block; animation: popIn 0.35s ease backwards; }
+@keyframes popIn { from { transform: scale(0); opacity: 0; } }
+.anim-draw { stroke-dasharray: 100; animation: drawLine 0.8s ease-out backwards; }
+@keyframes drawLine { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+.anim-fade, .anim-fill { animation: fadeIn 0.4s ease backwards; }
+@keyframes fadeIn { from { opacity: 0; } }
+.anim-grow { transform-box: fill-box; transform-origin: left center; animation: growX 0.5s ease-out backwards; }
+@keyframes growX { from { transform: scaleX(0); } }
+.anim-grow-up { transform-box: fill-box; transform-origin: center bottom; animation: growY 0.5s ease-out backwards; }
+@keyframes growY { from { transform: scaleY(0); } }

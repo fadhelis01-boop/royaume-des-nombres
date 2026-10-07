@@ -80,6 +80,8 @@ function latexToSpeech(tex: string): string {
 
 export function toSpeech(md: string): string {
   let s = md
+    // écriture inclusive éventuelle (contenus importés) : « fort·e » → « fort »
+    .replace(/([A-Za-zÀ-ÿ])·[a-zà-ÿ]+(·[a-z]+)?/g, "$1")
     // formules
     .replace(/\$\$([\s\S]+?)\$\$/g, (_, t) => ` ${latexToSpeech(t)} `)
     .replace(/\$([^$]+?)\$/g, (_, t) => ` ${latexToSpeech(t)} `)

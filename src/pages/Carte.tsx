@@ -157,6 +157,6 @@ function WorldCard({ w, side }: { w: World; side: "left" | "right" }) {
 function greeting(name: string, streak: number) {
   const h = new Date().getHours();
   const hello = h < 12 ? "Bonjour" : h < 18 ? "Coucou" : "Bonsoir";
-  if (streak >= 2) return `${hello} ${name} ! Tu es venu·e ${streak} jours de suite, ton cerveau est en pleine forme ! 🔥 On continue ?`;
+  if (streak >= 2) return `${hello} ${name} ! Cela fait ${streak} jours de suite que tu viens : ton cerveau est en pleine forme ! 🔥 On continue ?`;
   return `${hello} ${name} ! Où veux-tu aller aujourd'hui dans le Royaume des Nombres ?`;
 }

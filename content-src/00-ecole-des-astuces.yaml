@@ -34,17 +34,17 @@ lecons:
       - astuce:
           texte: "Quand tu bloques, essaie une autre stratégie : faire un dessin, prendre des petits nombres, relire l'énoncé, demander un indice. Changer de méthode, ce n'est pas abandonner !"
           qui: mia
-      - retiens: "Une erreur n'est pas un échec : c'est une information. Je regarde POURQUOI je me suis trompé·e, et je réessaie."
+      - retiens: "Une erreur n'est pas un échec : c'est une information. Je regarde POURQUOI ça n'a pas marché, et je réessaie."
       - a_quoi_ca_sert: "Cet état d'esprit marche pour tout : les maths, le sport, la musique, les langues… et pour toute la vie."
       - question:
           type: qcm
-          enonce: "Tu t'es trompé·e à un exercice. Quelle est la MEILLEURE réaction ?"
-          choix: ["Comprendre mon erreur et réessayer", "Me dire que je suis nul·le", "Passer à autre chose pour toujours", "Copier la réponse sans la comprendre"]
+          enonce: "Tu as fait une erreur à un exercice. Quelle est la MEILLEURE réaction ?"
+          choix: ["Comprendre mon erreur et réessayer", "Me dire que je suis nul en maths", "Passer à autre chose pour toujours", "Copier la réponse sans la comprendre"]
           correction: "Comprendre son erreur, c'est exactement comme ça qu'on progresse !"
     exercices:
       - type: qcm
         enonce: "Quelle phrase aide le plus à progresser ?"
-        choix: ["Je ne sais pas faire… ENCORE.", "Je suis nul·le en maths.", "C'est trop dur pour moi.", "Les maths, ce n'est pas pour moi."]
+        choix: ["Je ne sais pas faire… ENCORE.", "Je suis nul en maths.", "C'est trop dur pour moi.", "Les maths, ce n'est pas pour moi."]
         correction: "« Encore » rappelle que tu es en train d'apprendre !"
       - type: vf
         enonce: "Vrai ou faux : on naît « bon » ou « mauvais » en maths, et on ne peut rien y changer."
@@ -601,7 +601,7 @@ lecons:
         correction: "Faux : le sommeil est indispensable pour mémoriser. Mieux vaut réviser un peu chaque jour."
       - type: qcm
         enonce: "Je bloque sur une question. Que faire ?"
-        choix: ["Passer à la suite et revenir plus tard", "Rester bloqué·e jusqu'à la fin", "Rendre copie blanche", "Effacer tout ce que j'ai fait"]
+        choix: ["Passer à la suite et revenir plus tard", "Rester bloqué jusqu'à la fin", "Rendre copie blanche", "Effacer tout ce que j'ai fait"]
         correction: "On avance et on revient : souvent, la solution vient en faisant autre chose."
 
   - id: rediger

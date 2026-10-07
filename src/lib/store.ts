@@ -49,6 +49,9 @@ export function newChild(name: string, avatar: Child["avatar"], age: number): Ch
     validatedWorlds: [],
     counters: {},
     inventions: [],
+    crystals: [],
+    story: {},
+    vraieVie: [],
   };
 }
 

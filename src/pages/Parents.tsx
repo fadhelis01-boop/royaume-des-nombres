@@ -693,7 +693,7 @@ function Guide() {
           <strong>Des exercices infinis</strong> : chaque question est générée avec des nombres différents ; impossible d'apprendre les réponses par cœur, il faut comprendre.
         </li>
         <li>
-          <strong>L'état d'esprit de croissance</strong> : on félicite l'effort et la persévérance (badges « Persévérant·e », « Jamais abandonner »), jamais de pénalité ni de classement. L'erreur est présentée comme une étape normale.
+          <strong>L'état d'esprit de croissance</strong> : on félicite l'effort et la persévérance (badges « Persévérance », « Jamais abandonner »), jamais de pénalité ni de classement. L'erreur est présentée comme une étape normale.
         </li>
         <li>
           <strong>Les deux sens</strong> : traduire un problème en calcul (Atelier des problèmes) ET inventer un problème à partir d'un calcul (« Invente un problème »).

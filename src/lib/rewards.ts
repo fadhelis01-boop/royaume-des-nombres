@@ -28,13 +28,13 @@ export function levelOf(xp: number): { level: number; cur: number; next: number;
 export const TITLES = [
   { from: 1, title: "Graine de calcul", emoji: "🌱" },
   { from: 3, title: "Pousse curieuse", emoji: "🌿" },
-  { from: 5, title: "Apprenti·e des nombres", emoji: "🔢" },
-  { from: 8, title: "Explorateur·rice", emoji: "🧭" },
+  { from: 5, title: "Esprit des nombres", emoji: "🔢" },
+  { from: 8, title: "Boussole du Royaume", emoji: "🧭" },
   { from: 12, title: "Détective des problèmes", emoji: "🔎" },
   { from: 16, title: "Architecte des formes", emoji: "📐" },
-  { from: 20, title: "Magicien·ne des fractions", emoji: "🪄" },
-  { from: 25, title: "Chevalier·ère de l'algèbre", emoji: "🛡️" },
-  { from: 30, title: "Gardien·ne des théorèmes", emoji: "🏰" },
+  { from: 20, title: "Mage des fractions", emoji: "🪄" },
+  { from: 25, title: "Bouclier de l'algèbre", emoji: "🛡️" },
+  { from: 30, title: "Phare des théorèmes", emoji: "🏰" },
   { from: 40, title: "Sage du Royaume", emoji: "🦉" },
   { from: 50, title: "Légende des Nombres", emoji: "👑" },
 ];
@@ -54,30 +54,37 @@ const worldDone = (c: Child, w: World) => w.lecons.every((l) => c.progress[`${w.
 export const BADGES: Badge[] = [
   { id: "premier-pas", emoji: "👣", titre: "Premier pas", desc: "Terminer sa première leçon.", test: (c) => lessonsDone(c) >= 1 },
   { id: "cinq-lecons", emoji: "🎒", titre: "Bon élan", desc: "Terminer 5 leçons.", test: (c) => lessonsDone(c) >= 5 },
-  { id: "vingt-lecons", emoji: "📚", titre: "Grand lecteur", desc: "Terminer 20 leçons.", test: (c) => lessonsDone(c) >= 20 },
+  { id: "vingt-lecons", emoji: "📚", titre: "Rat de bibliothèque", desc: "Terminer 20 leçons.", test: (c) => lessonsDone(c) >= 20 },
   { id: "cinquante-lecons", emoji: "🏔️", titre: "Grimpeur de savoir", desc: "Terminer 50 leçons.", test: (c) => lessonsDone(c) >= 50 },
   { id: "cent-lecons", emoji: "🚀", titre: "Fusée des maths", desc: "Terminer 100 leçons.", test: (c) => lessonsDone(c) >= 100 },
   { id: "trois-etoiles", emoji: "🌟", titre: "Trois étoiles", desc: "Obtenir 3 étoiles à un défi.", test: (c) => Object.values(c.progress).some((p) => p.stars === 3) },
   { id: "monde-complet", emoji: "🗺️", titre: "Monde conquis", desc: "Terminer toutes les leçons d'un monde.", test: (c, ws) => ws.some((w) => worldDone(c, w)) },
-  { id: "trois-mondes", emoji: "🏝️", titre: "Grand voyageur", desc: "Terminer 3 mondes.", test: (c, ws) => ws.filter((w) => worldDone(c, w)).length >= 3 },
+  { id: "trois-mondes", emoji: "🏝️", titre: "Globe-trotteur", desc: "Terminer 3 mondes.", test: (c, ws) => ws.filter((w) => worldDone(c, w)).length >= 3 },
   { id: "serie-3", emoji: "🔥", titre: "3 jours de suite", desc: "Venir apprendre 3 jours d'affilée.", test: (c) => c.bestStreak >= 3 },
   { id: "serie-7", emoji: "☄️", titre: "Une semaine !", desc: "7 jours d'affilée.", test: (c) => c.bestStreak >= 7 },
   { id: "serie-30", emoji: "🌋", titre: "Un mois entier", desc: "30 jours d'affilée.", test: (c) => c.bestStreak >= 30 },
   { id: "sans-faute", emoji: "💯", titre: "Sans faute", desc: "Réussir un défi à 100 %.", test: (c) => cnt(c, "perfect") >= 1 },
-  { id: "perseverant", emoji: "💪", titre: "Persévérant·e", desc: "Réussir 20 fois une question après s'être trompé·e.", test: (c) => cnt(c, "comeback") >= 20 },
+  { id: "perseverant", emoji: "💪", titre: "Persévérance", desc: "Réussir 20 fois une question après une erreur.", test: (c) => cnt(c, "comeback") >= 20 },
   { id: "tetu", emoji: "🐢", titre: "Jamais abandonner", desc: "Recommencer un défi pour l'améliorer.", test: (c) => Object.values(c.progress).some((p) => p.attempts >= 2) },
   { id: "cent-questions", emoji: "🎯", titre: "100 réponses justes", desc: "100 bonnes réponses.", test: (c) => cnt(c, "ok") >= 100 },
   { id: "mille-questions", emoji: "🏆", titre: "1 000 réponses justes", desc: "MILLE ! 😳 (dixit Zéro)", test: (c) => cnt(c, "ok") >= 1000 },
-  { id: "curieux", emoji: "❓", titre: "Curieux·se", desc: "Poser 5 questions dans « Demande à Mia ».", test: (c) => cnt(c, "ask") >= 5 },
-  { id: "tables", emoji: "✖️", titre: "Maître des tables", desc: "Connaître toutes les tables de 2 à 9.", test: (c) => tablesMastered(c) >= 64 },
+  { id: "curieux", emoji: "❓", titre: "Curiosité", desc: "Poser 5 questions dans « Demande à Mia ».", test: (c) => cnt(c, "ask") >= 5 },
+  { id: "tables", emoji: "✖️", titre: "As des tables", desc: "Connaître toutes les tables de 2 à 9.", test: (c) => tablesMastered(c) >= 64 },
   { id: "eclair", emoji: "⚡", titre: "Éclair", desc: "20 points au Calcul éclair.", test: (c) => (c.games["eclair"] ?? 0) >= 20 },
   { id: "compte-bon", emoji: "🧮", titre: "Le compte est bon", desc: "Résoudre 5 « Compte est bon ».", test: (c) => cnt(c, "compte") >= 5 },
   { id: "vise-juste", emoji: "🎯", titre: "Œil de lynx", desc: "80 points à « Vise juste ».", test: (c) => (c.games["vise"] ?? 0) >= 80 },
-  { id: "enigmes", emoji: "🧩", titre: "Déchiffreur·se", desc: "Résoudre 5 énigmes.", test: (c) => c.enigmes.length >= 5 },
+  { id: "enigmes", emoji: "🧩", titre: "Déchiffrage", desc: "Résoudre 5 énigmes.", test: (c) => c.enigmes.length >= 5 },
   { id: "revisions", emoji: "🔁", titre: "Mémoire d'éléphant", desc: "Faire 10 séances de révision.", test: (c) => cnt(c, "revision") >= 10 },
-  { id: "astucieux", emoji: "💡", titre: "Astucieux·se", desc: "Terminer 5 leçons de l'École des Astuces.", test: (c) => Object.entries(c.progress).filter(([k, p]) => k.startsWith("ecole-des-astuces/") && p.done).length >= 5 },
-  { id: "ami-de-zero", emoji: "🐹", titre: "Ami·e de Zéro", desc: "Répondre « 0 » comme Zéro… alors que ce n'était pas la réponse !", test: (c) => cnt(c, "zero") >= 1 },
-  { id: "inventeur", emoji: "✍️", titre: "Inventeur·rice", desc: "Inventer 3 problèmes.", test: (c) => cnt(c, "invente") >= 3 },
+  { id: "astucieux", emoji: "💡", titre: "Astuce d'or", desc: "Terminer 5 leçons de l'École des Astuces.", test: (c) => Object.entries(c.progress).filter(([k, p]) => k.startsWith("ecole-des-astuces/") && p.done).length >= 5 },
+  { id: "cristal-1", emoji: "💎", titre: "Premier cristal", desc: "Rallumer le cristal d'un monde (Défi du Gardien).", test: (c) => (c.crystals?.length ?? 0) >= 1 },
+  { id: "cristal-5", emoji: "🔮", titre: "Cinq cristaux", desc: "Rallumer 5 cristaux du Royaume.", test: (c) => (c.crystals?.length ?? 0) >= 5 },
+  { id: "arc-1", emoji: "☁️", titre: "Ami du Grignoteur", desc: "Terminer l'Arc 1 de l'aventure (les Graines).", test: (c) => !!c.story?.["fin-arc-1"] },
+  { id: "mains", emoji: "🖐️", titre: "Petites mains", desc: "Réussir 10 activités de manipulation.", test: (c) => cnt(c, "manip") >= 10 },
+  { id: "vraie-vie", emoji: "🏡", titre: "Maths dans la vraie vie", desc: "Réaliser 3 défis dans la vraie vie avec un adulte.", test: (c) => cnt(c, "vraievie") >= 3 },
+  { id: "explique", emoji: "🗣️", titre: "Petit professeur", desc: "Expliquer 5 fois sa méthode à Néo.", test: (c) => cnt(c, "explique") >= 5 },
+  { id: "additions", emoji: "➕", titre: "As des additions", desc: "Connaître toutes les additions jusqu'à 10 + 10.", test: (c) => additionsMastered(c) >= 100 },
+  { id: "echauffement", emoji: "🏃", titre: "Échauffé", desc: "Faire 7 échauffements du jour.", test: (c) => cnt(c, "echauffement") >= 7 },
+  { id: "inventeur", emoji: "✍️", titre: "Inventivité", desc: "Inventer 3 problèmes.", test: (c) => cnt(c, "invente") >= 3 },
 ];
 
 export function tablesMastered(c: Child): number {
@@ -90,19 +97,32 @@ export function tablesMastered(c: Child): number {
   return n;
 }
 
+export function additionsMastered(c: Child): number {
+  let n = 0;
+  for (let a = 1; a <= 10; a++)
+    for (let b = 1; b <= 10; b++) {
+      const t = c.tables[`${a}+${b}`];
+      if (t && t.ok >= 2 && t.ok > t.ko * 2) n++;
+    }
+  return n;
+}
+
+/** Seuil de maîtrise : une leçon est validée à partir de 80 % (2 étoiles). */
+export const MASTERY = 0.8;
+
 export function starsFor(score: number): number {
   return score >= 0.95 ? 3 : score >= 0.8 ? 2 : score >= 0.6 ? 1 : 0;
 }
 
 // Messages d'encouragement : variés, personnels, centrés sur l'effort.
 export const PRAISE = {
-  mia: ["Bravo ! Tu as trouvé !", "Génial ! 😸", "Super, je te l'avais dit que tu y arriverais !", "Trop fort·e !", "Tu brilles comme une étoile !"],
-  neo: ["Défi réussi !", "Excellent, c'est vérifié !", "Bien joué, champion·ne !", "Parfait, on continue ?", "Ça marche vraiment !"],
+  mia: ["Bravo ! Tu as trouvé !", "Génial ! 😸", "Super, je te l'avais dit que tu y arriverais !", "Trop bien joué !", "Tu brilles comme une étoile !"],
+  neo: ["Défi réussi !", "Excellent, c'est vérifié !", "Bien joué, défi relevé !", "Parfait, on continue ?", "Ça marche vraiment !"],
   zero: ["Wouah ! Même moi je n'aurais pas trouvé ! 😳", "C'est juste ! …Je le savais. C'est évident.", "INCROYABLE ! 🤯"],
 };
 export const ENCOURAGE = {
   mia: ["Pas grave ! Et si on essayait autrement ?", "Presque ! Regarde bien l'indice.", "Une erreur, c'est ton cerveau qui grandit !"],
-  neo: ["Attends, vérifions ensemble !", "On recommence calmement : relis l'énoncé.", "Les champions se trompent aussi. Réessaie !"],
+  neo: ["Attends, vérifions ensemble !", "On recommence calmement : relis l'énoncé.", "Même les plus grands savants se trompent. Réessaie !"],
   zero: ["Moi aussi je me trompe tout le temps ! On réessaie ?", "Hmm… ce n'est pas ça. Mais ce n'était pas zéro non plus ! 😄"],
 };
 export const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];

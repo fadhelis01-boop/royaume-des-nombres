@@ -1,11 +1,11 @@
 // Types du contenu (produit par scripts/build-content.mjs à partir de content-src/*.yaml)
 // et de la progression des enfants.
 
-export type Who = "mia" | "neo" | "zero" | "narrateur";
+export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant";
 export interface Line {
   who: Who;
   text: string;
-  humeur?: "reflexion" | "joie" | "surprise";
+  humeur?: "reflexion" | "joie" | "surprise" | "triste" | "fier";
 }
 
 export type Cycle = "graines" | "explorateurs" | "maitres" | "astuces";
@@ -161,6 +161,9 @@ export interface Child {
   daily?: { day: string; done: boolean };
   counters: Record<string, number>; // ok, ko, comeback, perfect, ask, compte, revision, zero, invente…
   inventions: { at: number; calcul: string; histoire: string }[];
+  crystals: string[]; // mondes dont le cristal est rallumé (Défi du Gardien réussi)
+  story: Record<string, number>; // scènes de l'aventure déjà vues (id → date)
+  vraieVie: string[]; // défis « vraie vie » réalisés
 }
 
 export interface Settings {

@@ -16,7 +16,10 @@ const PERSONA: Record<Who, { pitch: number; rate: number }> = {
   mia: { pitch: 1.35, rate: 1.04 },
   neo: { pitch: 1.0, rate: 1.08 },
   zero: { pitch: 0.7, rate: 0.92 },
-  narrateur: { pitch: 1.05, rate: 0.98 },
+  narrateur: { pitch: 1.05, rate: 0.96 },
+  nuage: { pitch: 0.85, rate: 0.9 },
+  ixe: { pitch: 1.2, rate: 1.12 },
+  enfant: { pitch: 1.4, rate: 1.0 },
 };
 
 interface TtsState {
@@ -55,6 +58,20 @@ export function frenchVoices(): SpeechSynthesisVoice[] {
   const v = speechSynthesis.getVoices().filter((x) => x.lang.toLowerCase().replace("_", "-").startsWith("fr"));
   if (v.length) voicesCache = v;
   return voicesCache;
+}
+// iPhone/iPad : la synthèse vocale ne démarre qu'après un geste de l'utilisateur.
+// On « réveille » le moteur au tout premier toucher, sans rien dire.
+if (st.supported && typeof window !== "undefined") {
+  const unlock = () => {
+    try {
+      const u = new SpeechSynthesisUtterance(" ");
+      u.volume = 0;
+      speechSynthesis.speak(u);
+    } catch {
+      /* ignoré */
+    }
+  };
+  window.addEventListener("pointerdown", unlock, { once: true, capture: true });
 }
 if (st.supported) {
   speechSynthesis.onvoiceschanged = () => {
@@ -186,6 +203,9 @@ export function previewVoice(who: Who, name: string) {
     neo: "Un problème ? Défi accepté !",
     zero: "Moi je sais ! … Zéro.",
     narrateur: "Bienvenue dans le Royaume des Nombres.",
+    nuage: "Miam… un sept. Euh… pardon.",
+    ixe: "Je peux être n'importe quel nombre !",
+    enfant: "C'est moi !",
   };
   speak([{ who, text: lines[who] }], { key: "preview" }); // la voix est choisie au lancement de la réplique
   cfg.voices[who] = prev;

@@ -1,4 +1,4 @@
-import { useMemo, type ReactNode } from "react";
+import { useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { evaluate, fmtNum, fracStr, parse, toNumber, type Node } from "../lib/expr";
 import type { VisSpec } from "../lib/types";
 import { Md } from "./Md";
@@ -14,6 +14,25 @@ const n = (v: unknown, d = 0): number => {
 };
 const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : v === undefined || v === null ? [] : [v as T]);
 const s = (v: unknown) => (v === undefined || v === null ? "" : String(v));
+
+/** Taille de texte lisible : au moins `min` pixels réels à l'écran, quelle que soit la largeur. */
+function useSvgFont(W: number) {
+  const ref = useRef<SVGSVGElement>(null);
+  const [px, setPx] = useState(0);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const measure = () => setPx(el.getBoundingClientRect().width);
+    measure();
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const k = px > 0 ? W / px : 1; // unités SVG par pixel réel
+  const f = (base: number, min = 16) => Math.max(base, min * k);
+  return { ref, f, px };
+}
 
 const PALETTE = ["var(--c-violet)", "var(--c-orange)", "var(--c-turquoise)", "var(--c-jaune)", "var(--c-rose)", "var(--c-vert)", "var(--c-bleu)"];
 
@@ -107,7 +126,7 @@ function Objets({ v }: { v: Any }) {
               idx++;
               const isCrossed = idx > total - crossed;
               return (
-                <span key={i} className={isCrossed ? "barre" : ""}>
+                <span key={i} className={`pop-in ${isCrossed ? "barre" : ""}`} style={{ animationDelay: `${Math.min(idx, 40) * 0.04}s` }}>
                   {emoji}
                 </span>
               );
@@ -237,10 +256,11 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
     max = n(v.max, 10),
     pas = n(v.pas, 1) || 1;
   const W = 640,
-    H = 120,
+    H = 130,
     L = 30,
     R = W - 30,
     Y = 60;
+  const { ref, f, px } = useSvgFont(W);
   const X = (x: number) => L + ((x - min) / (max - min || 1)) * (R - L);
   const ticks: number[] = [];
   const count = Math.round((max - min) / pas);
@@ -248,12 +268,16 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
   const et = v.etiquettes;
   const fracDen = n(v.fractions);
   const label = (x: number) => (fracDen ? fracStr(Math.round(x * fracDen), fracDen, !!v.simplifier, false) : fmtNum(x));
+  // densité des étiquettes adaptée à la largeur réelle de l'écran (pas de chevauchement)
+  const maxChars = Math.max(...ticks.map((x) => label(x).length), 1);
+  const spacingPx = px > 0 ? (((R - L) / W) * px) / Math.max(1, ticks.length - 1) : 40;
+  const every = Math.max(1, Math.ceil((10 + maxChars * 10) / spacingPx));
   const showLabel = (x: number, i: number) => {
     if (Array.isArray(et)) return et.some((e) => Math.abs(n(e) - x) < 1e-9);
     if (et === "bouts") return i === 0 || i === ticks.length - 1;
     if (et === "aucune") return false;
-    if (et === "tout") return true;
-    return ticks.length <= 21 || i % Math.ceil(ticks.length / 10) === 0 || i === ticks.length - 1;
+    if (et === "tout") return i % every === 0 || i === ticks.length - 1;
+    return i % Math.max(every, ticks.length > 21 ? Math.ceil(ticks.length / 10) : 1) === 0 || i === ticks.length - 1;
   };
   const marques = arr<unknown>(v.marques).map((x) => n(x));
   const point = v.point as Any | undefined;
@@ -269,7 +293,7 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
     onPick(x);
   };
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className={`svg-droite${onPick ? " pickable" : ""}`} onClick={click} role="img" aria-label={`droite graduée de ${min} à ${max}`}>
+    <svg viewBox={`0 0 ${W} ${H}`} ref={ref} className={`svg-droite${onPick ? " pickable" : ""}`} onClick={click} role="img" aria-label={`droite graduée de ${min} à ${max}`}>
       {onPick && <rect x={0} y={0} width={W} height={H} fill="transparent" />}
       <line x1={L - 14} y1={Y} x2={R + 18} y2={Y} stroke="var(--ink)" strokeWidth={3} strokeLinecap="round" />
       <path d={`M${R + 18} ${Y} l-10 -7 v14 z`} fill="var(--ink)" />
@@ -279,7 +303,7 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
           <g key={i}>
             <line x1={X(x)} y1={Y - (big ? 12 : 7)} x2={X(x)} y2={Y + (big ? 12 : 7)} stroke="var(--ink)" strokeWidth={big ? 2.5 : 1.5} />
             {showLabel(x, i) && (
-              <text x={X(x)} y={Y + 34} textAnchor="middle" fontSize={ticks.length > 30 ? 13 : 17} fill="var(--ink)">
+              <text x={X(x)} y={Y + 42} textAnchor="middle" fontSize={f(17)} fill="var(--ink)">
                 {label(x)}
               </text>
             )}
@@ -292,9 +316,9 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
         const h = Math.min(40, Math.abs(b - a) / 2 + 10);
         return (
           <g key={i}>
-            <path d={`M${a} ${Y - 6} Q ${(a + b) / 2} ${Y - 6 - h * 1.4} ${b} ${Y - 6}`} fill="none" stroke={PALETTE[i % PALETTE.length]} strokeWidth={3} />
-            <path d={`M${b} ${Y - 6} l${b > a ? -9 : 9} -5 l0 9 z`} fill={PALETTE[i % PALETTE.length]} />
-            <text x={(a + b) / 2} y={Y - 12 - h * 0.75} textAnchor="middle" fontSize={16} fontWeight={700} fill={PALETTE[i % PALETTE.length]}>
+            <path className="anim-draw" style={{ animationDelay: `${0.3 + i * 0.9}s` }} pathLength={100} d={`M${a} ${Y - 6} Q ${(a + b) / 2} ${Y - 6 - h * 1.4} ${b} ${Y - 6}`} fill="none" stroke={PALETTE[i % PALETTE.length]} strokeWidth={3} />
+            <path className="anim-fade" style={{ animationDelay: `${0.9 + i * 0.9}s` }} d={`M${b} ${Y - 6} l${b > a ? -9 : 9} -5 l0 9 z`} fill={PALETTE[i % PALETTE.length]} />
+            <text className="anim-fade" style={{ animationDelay: `${0.9 + i * 0.9}s` }} x={(a + b) / 2} y={Y - 12 - h * 0.75} textAnchor="middle" fontSize={f(16)} fontWeight={700} fill={PALETTE[i % PALETTE.length]}>
               {s(sj.label)}
             </text>
           </g>
@@ -303,7 +327,7 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
       {marques.map((x, i) => (
         <g key={i}>
           <circle cx={X(x)} cy={Y} r={8} fill="var(--c-orange)" stroke="#fff" strokeWidth={2} />
-          <text x={X(x)} y={Y - 18} textAnchor="middle" fontSize={16} fontWeight={700} fill="var(--c-orange-d)">
+          <text x={X(x)} y={Y - 18} textAnchor="middle" fontSize={f(16)} fontWeight={700} fill="var(--c-orange-d)">
             {label(x)}
           </text>
         </g>
@@ -311,7 +335,7 @@ export function Droite({ v, onPick, picked, reveal }: { v: Any; onPick?: (x: num
       {point && (
         <g>
           <circle cx={X(n(point.v))} cy={Y} r={9} fill="var(--c-violet)" stroke="#fff" strokeWidth={2} />
-          <text x={X(n(point.v))} y={Y - 18} textAnchor="middle" fontSize={17} fontWeight={700} fill="var(--c-violet)">
+          <text x={X(n(point.v))} y={Y - 18} textAnchor="middle" fontSize={f(17)} fontWeight={700} fill="var(--c-violet)">
             {s(point.label)}
           </text>
         </g>
@@ -335,11 +359,12 @@ function Barres({ v }: { v: Any }) {
   const W = 640,
     barH = 44,
     gap = 30;
+  const { ref, f } = useSvgFont(W);
   const top = v.total ? 46 : 12;
   const scale = (W - labelW - 70) / maxT;
   const H = top + lignes.length * (barH + gap) + (v.ecart ? 10 : 0);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="svg-barres" role="img" aria-label="modèle en barres">
+    <svg viewBox={`0 0 ${W} ${H}`} ref={ref} className="svg-barres" role="img" aria-label="modèle en barres">
       {!!v.total && (
         <g>
           <path
@@ -348,7 +373,7 @@ function Barres({ v }: { v: Any }) {
             stroke="var(--c-violet)"
             strokeWidth={2.5}
           />
-          <text x={labelW + (totals[0] * scale) / 2} y={14} textAnchor="middle" fontSize={18} fontWeight={700} fill="var(--c-violet)">
+          <text x={labelW + (totals[0] * scale) / 2} y={14} textAnchor="middle" fontSize={f(18)} fontWeight={700} fill="var(--c-violet)">
             {s(v.total)}
           </text>
         </g>
@@ -359,7 +384,7 @@ function Barres({ v }: { v: Any }) {
         return (
           <g key={li}>
             {s(l.nom) && (
-              <text x={labelW - 10} y={y + barH / 2 + 6} textAnchor="end" fontSize={17} fontWeight={600} fill="var(--ink)">
+              <text x={labelW - 10} y={y + barH / 2 + 6} textAnchor="end" fontSize={f(17, 13)} fontWeight={600} fill="var(--ink)">
                 {s(l.nom)}
               </text>
             )}
@@ -369,6 +394,8 @@ function Barres({ v }: { v: Any }) {
               const el = (
                 <g key={pi}>
                   <rect
+                    className="anim-grow"
+                    style={{ animationDelay: `${0.15 + (li * 3 + pi) * 0.25}s` }}
                     x={x}
                     y={y}
                     width={w}
@@ -380,7 +407,7 @@ function Barres({ v }: { v: Any }) {
                     strokeWidth={2}
                     strokeDasharray={p.vide ? "6 5" : undefined}
                   />
-                  <text x={cx} y={y + barH / 2 + 7} textAnchor="middle" fontSize={19} fontWeight={700} fill="var(--ink)">
+                  <text x={cx} y={y + barH / 2 + 7} textAnchor="middle" fontSize={f(19, 14)} fontWeight={700} fill="var(--ink)">
                     {s(p.label)}
                   </text>
                 </g>
@@ -402,7 +429,7 @@ function Barres({ v }: { v: Any }) {
             <g>
               <line x1={Math.min(a, b)} y1={a < b ? y1 : y2} x2={Math.max(a, b)} y2={a < b ? y1 : y2} stroke="var(--c-orange)" strokeWidth={2.5} strokeDasharray="6 4" />
               <path d={`M${xm} ${y1} q8 0 8 10 V${(y1 + y2) / 2 - 6} q0 6 8 6 q-8 0 -8 6 V${y2 - 10} q0 10 -8 10`} fill="none" stroke="var(--c-orange)" strokeWidth={2.5} />
-              <text x={xm + 22} y={(y1 + y2) / 2 + 6} fontSize={18} fontWeight={700} fill="var(--c-orange-d)">
+              <text x={xm + 22} y={(y1 + y2) / 2 + 6} fontSize={f(18)} fontWeight={700} fill="var(--c-orange-d)">
                 {s(v.ecart)}
               </text>
             </g>
@@ -433,7 +460,7 @@ function Fraction({ v }: { v: Any }) {
           D === 1
             ? `M${cx - r} ${cy} a${r} ${r} 0 1 0 ${2 * r} 0 a${r} ${r} 0 1 0 ${-2 * r} 0`
             : `M${cx} ${cy} L${cx + r * Math.cos(a0)} ${cy + r * Math.sin(a0)} A${r} ${r} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${cx + r * Math.cos(a1)} ${cy + r * Math.sin(a1)} Z`;
-        items.push(<path key={`${w}-${k}`} d={p} fill={k < filled ? "var(--c-orange)" : "var(--paper)"} stroke="var(--ink)" strokeWidth={2} />);
+        items.push(<path key={`${w}-${k}`} className={k < filled ? "anim-fill" : ""} style={{ animationDelay: `${(w * D + k) * 0.12}s` }} d={p} fill={k < filled ? "var(--c-orange)" : "var(--paper)"} stroke="var(--ink)" strokeWidth={2} />);
       }
     } else {
       const bw = forme === "barre" ? 300 : 200,
@@ -441,7 +468,7 @@ function Fraction({ v }: { v: Any }) {
       const y0 = 8 + w * (bh + 14);
       for (let k = 0; k < D; k++)
         items.push(
-          <rect key={`${w}-${k}`} x={8 + (k * bw) / D} y={y0} width={bw / D} height={bh} fill={k < filled ? "var(--c-turquoise)" : "var(--paper)"} stroke="var(--ink)" strokeWidth={2} />,
+          <rect key={`${w}-${k}`} className={k < filled ? "anim-fill" : ""} style={{ animationDelay: `${(w * D + k) * 0.12}s` }} x={8 + (k * bw) / D} y={y0} width={bw / D} height={bh} fill={k < filled ? "var(--c-turquoise)" : "var(--paper)"} stroke="var(--ink)" strokeWidth={2} />,
         );
     }
   }
@@ -536,9 +563,10 @@ function Figure({ v }: { v: Any }) {
   const P = (p: Pt): Pt => [pad + (p[0] - minX) * k, pad + (maxY - p[1]) * k];
   const cx = (minX + maxX) / 2,
     cy = (minY + maxY) / 2;
+  const { ref, f } = useSvgFont(W);
   const showNames = v.noms !== false && forme !== "rectangle" && forme !== "carre" ? true : v.noms === true;
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="svg-figure" style={{ maxWidth: Math.min(520, W * 1.5) }} role="img" aria-label="figure géométrique">
+    <svg viewBox={`0 0 ${W} ${H}`} ref={ref} className="svg-figure" style={{ maxWidth: Math.min(520, W * 1.5) }} role="img" aria-label="figure géométrique">
       {polys.map((poly, i) => (
         <polygon key={i} points={poly.map((q) => P(pts[q]).join(",")).join(" ")} fill={i === 0 ? "var(--c-turquoise-l)" : "var(--c-jaune-l)"} fillOpacity={0.6} stroke="var(--ink)" strokeWidth={2.5} strokeLinejoin="round" />
       ))}
@@ -567,7 +595,7 @@ function Figure({ v }: { v: Any }) {
           <g key={i}>
             <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--ink)" strokeWidth={2.5} strokeDasharray={sg.pointille ? "7 5" : undefined} />
             {sg.label && (
-              <text x={mx + nx * 20} y={my + ny * 20 + 6} textAnchor="middle" fontSize={17} fontWeight={700} fill="var(--c-violet)">
+              <text x={mx + nx * 20} y={my + ny * 20 + 6} textAnchor="middle" fontSize={f(17)} fontWeight={700} fill="var(--c-violet)">
                 {sg.label}
               </text>
             )}
@@ -595,7 +623,7 @@ function Figure({ v }: { v: Any }) {
           return (
             <g key={name}>
               <circle cx={x} cy={y} r={3.5} fill="var(--ink)" />
-              <text x={x + ((x - ccx) / d) * 18} y={y + ((y - ccy) / d) * 18 + 6} textAnchor="middle" fontSize={18} fontWeight={700} fill="var(--ink)">
+              <text x={x + ((x - ccx) / d) * 18} y={y + ((y - ccy) / d) * 18 + 6} textAnchor="middle" fontSize={f(18)} fontWeight={700} fill="var(--ink)">
                 {name}
               </text>
             </g>
@@ -675,6 +703,7 @@ function Graphe({ v }: { v: Any }) {
   const W = 520,
     H = Math.round((W * Math.min(1.2, Math.max(0.5, (ymax - ymin) / (xmax - xmin)))) / 1),
     pad = 28;
+  const { ref, f } = useSvgFont(W);
   const X = (x: number) => pad + ((x - xmin) / (xmax - xmin)) * (W - 2 * pad);
   const Y = (y: number) => H - pad - ((y - ymin) / (ymax - ymin)) * (H - 2 * pad);
   const fns = useMemo(() => arr<Any>(v.fonctions).map((f) => ({ ...f, node: compile(s(f.f)) }) as Any & { node: Node | null }), [v.fonctions]);
@@ -689,14 +718,14 @@ function Graphe({ v }: { v: Any }) {
   for (let x = Math.ceil(xmin / stepX) * stepX; x <= xmax + 1e-9; x += stepX)
     if (Math.abs(x) > 1e-9)
       labels.push(
-        <text key={"lx" + x} x={X(x)} y={Math.min(H - 6, Math.max(14, Y(0) + 17))} textAnchor="middle" fontSize={12} fill="var(--muted)">
+        <text key={"lx" + x} x={X(x)} y={Math.min(H - 6, Math.max(14, Y(0) + 17))} textAnchor="middle" fontSize={f(12, 13)} fill="var(--muted)">
           {fmtNum(Math.round(x * 1000) / 1000)}
         </text>,
       );
   for (let y = Math.ceil(ymin / stepY) * stepY; y <= ymax + 1e-9; y += stepY)
     if (Math.abs(y) > 1e-9)
       labels.push(
-        <text key={"ly" + y} x={Math.max(14, Math.min(W - 8, X(0) - 6))} y={Y(y) + 4} textAnchor="end" fontSize={12} fill="var(--muted)">
+        <text key={"ly" + y} x={Math.max(14, Math.min(W - 8, X(0) - 6))} y={Y(y) + 4} textAnchor="end" fontSize={f(12, 13)} fill="var(--muted)">
           {fmtNum(Math.round(y * 1000) / 1000)}
         </text>,
       );
@@ -736,7 +765,7 @@ function Graphe({ v }: { v: Any }) {
     aireD += `L${X(a)} ${Y(0)}Z`;
   }
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="svg-graphe" role="img" aria-label="graphique dans un repère">
+    <svg viewBox={`0 0 ${W} ${H}`} ref={ref} className="svg-graphe" role="img" aria-label="graphique dans un repère">
       <defs>
         <clipPath id="zone">
           <rect x={pad} y={pad - 4} width={W - 2 * pad} height={H - 2 * pad + 8} />
@@ -747,7 +776,7 @@ function Graphe({ v }: { v: Any }) {
       {xmin <= 0 && xmax >= 0 && <line x1={X(0)} y1={Y(ymin)} x2={X(0)} y2={Y(ymax)} stroke="var(--ink)" strokeWidth={2} />}
       {labels}
       {xmin <= 0 && xmax >= 0 && ymin <= 0 && ymax >= 0 && (
-        <text x={X(0) - 6} y={Y(0) + 16} textAnchor="end" fontSize={12} fill="var(--muted)">
+        <text x={X(0) - 6} y={Y(0) + 16} textAnchor="end" fontSize={f(12, 13)} fill="var(--muted)">
           0
         </text>
       )}
@@ -771,7 +800,7 @@ function Graphe({ v }: { v: Any }) {
         <g key={"p" + i}>
           <circle cx={X(n(p.x))} cy={Y(n(p.y))} r={6} fill={s(p.couleur) || "var(--c-orange)"} stroke="#fff" strokeWidth={2} />
           {p.label !== undefined && (
-            <text x={X(n(p.x)) + 9} y={Y(n(p.y)) - 9} fontSize={15} fontWeight={700} fill="var(--ink)">
+            <text x={X(n(p.x)) + 9} y={Y(n(p.y)) - 9} fontSize={f(15, 14)} fontWeight={700} fill="var(--ink)">
               {s(p.label)}
             </text>
           )}
@@ -795,21 +824,22 @@ function Diagramme({ v }: { v: Any }) {
     H = 260,
     pad = 40,
     bw = Math.min(70, (W - 2 * pad) / bars.length - 14);
+  const { ref, f } = useSvgFont(W);
   const step = niceStep(max) * 2;
   const ticks: number[] = [];
   for (let t = 0; t <= max + 1e-9; t += step) ticks.push(t);
   const Y = (y: number) => H - pad - (y / max) * (H - 2 * pad);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="svg-diagramme" role="img" aria-label="diagramme en barres">
+    <svg viewBox={`0 0 ${W} ${H}`} ref={ref} className="svg-diagramme" role="img" aria-label="diagramme en barres">
       {!!v.titre && (
-        <text x={W / 2} y={18} textAnchor="middle" fontSize={16} fontWeight={700} fill="var(--ink)">
+        <text x={W / 2} y={18} textAnchor="middle" fontSize={f(16, 14)} fontWeight={700} fill="var(--ink)">
           {s(v.titre)}
         </text>
       )}
       {ticks.map((t) => (
         <g key={t}>
           <line x1={pad} y1={Y(t)} x2={W - 10} y2={Y(t)} stroke="var(--grid)" />
-          <text x={pad - 6} y={Y(t) + 4} textAnchor="end" fontSize={12} fill="var(--muted)">
+          <text x={pad - 6} y={Y(t) + 4} textAnchor="end" fontSize={f(12, 13)} fill="var(--muted)">
             {fmtNum(t)}
           </text>
         </g>
@@ -818,11 +848,11 @@ function Diagramme({ v }: { v: Any }) {
         const x = pad + 10 + i * ((W - 2 * pad) / bars.length);
         return (
           <g key={i}>
-            <rect x={x} y={Y(n(b.v))} width={bw} height={Y(0) - Y(n(b.v))} rx={5} fill={PALETTE[i % PALETTE.length]} />
-            <text x={x + bw / 2} y={Y(n(b.v)) - 6} textAnchor="middle" fontSize={14} fontWeight={700} fill="var(--ink)">
+            <rect className="anim-grow-up" style={{ animationDelay: `${i * 0.15}s` }} x={x} y={Y(n(b.v))} width={bw} height={Y(0) - Y(n(b.v))} rx={5} fill={PALETTE[i % PALETTE.length]} />
+            <text x={x + bw / 2} y={Y(n(b.v)) - 6} textAnchor="middle" fontSize={f(14)} fontWeight={700} fill="var(--ink)">
               {v.valeurs === false ? "" : fmtNum(n(b.v))}
             </text>
-            <text x={x + bw / 2} y={H - pad + 18} textAnchor="middle" fontSize={13} fill="var(--ink)">
+            <text x={x + bw / 2} y={H - pad + 18} textAnchor="middle" fontSize={f(13, 13)} fill="var(--ink)">
               {s(b.label)}
             </text>
           </g>
@@ -916,6 +946,7 @@ function Arbre({ v }: { v: Any }) {
     D = depth(root);
   const W = 140 + D * 170,
     H = Math.max(120, L * 46 + 20);
+  const { ref, f } = useSvgFont(W);
   const nodes: ReactNode[] = [];
   let leafIdx = 0;
   const place = (bs: Branche[], x0: number, y0: number, level: number): void => {
@@ -928,11 +959,11 @@ function Arbre({ v }: { v: Any }) {
         <g key={`${level}-${leafIdx}-${b.label}`}>
           <line x1={x0} y1={y0} x2={x - 18} y2={y} stroke="var(--ink)" strokeWidth={2} />
           {b.p !== undefined && (
-            <text x={(x0 + x) / 2 - 6} y={(y0 + y) / 2 - 6} textAnchor="middle" fontSize={14} fontWeight={700} fill="var(--c-violet)">
+            <text x={(x0 + x) / 2 - 6} y={(y0 + y) / 2 - 6} textAnchor="middle" fontSize={f(14)} fontWeight={700} fill="var(--c-violet)">
               {s(b.p)}
             </text>
           )}
-          <text x={x} y={y + 5} fontSize={16} fontWeight={700} fill="var(--ink)">
+          <text x={x} y={y + 5} fontSize={f(16)} fontWeight={700} fill="var(--ink)">
             {s(b.label)}
           </text>
         </g>,
@@ -943,7 +974,7 @@ function Arbre({ v }: { v: Any }) {
   };
   place(root, 30, H / 2, 0);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="svg-arbre" role="img" aria-label="arbre de probabilités">
+    <svg viewBox={`0 0 ${W} ${H}`} ref={ref} className="svg-arbre" role="img" aria-label="arbre de probabilités">
       <circle cx={26} cy={H / 2} r={5} fill="var(--ink)" />
       {nodes}
     </svg>

@@ -2,7 +2,7 @@ import { say, speak, stopSpeaking, useTts, type Seg } from "../lib/tts";
 import type { Line, Who } from "../lib/types";
 import { Md } from "./Md";
 
-export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre" };
+export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi" };
 
 export function mascotSrc(who: Who, humeur?: string) {
   if (who === "mia") return humeur === "reflexion" ? "img/mascottes/mia-reflexion.webp" : "img/mascottes/mia.webp";
@@ -66,7 +66,7 @@ export function Bubble({ who, text, humeur, k, side = "left", size = 76 }: { who
 export function Dialogue({ lines, k, autoplay = false }: { lines: Line[]; k: string; autoplay?: boolean }) {
   const t = useTts();
   const playing = t.playing && t.key === k;
-  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left" };
+  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left" };
   void autoplay;
   return (
     <div className="dialogue">

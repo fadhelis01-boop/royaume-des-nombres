@@ -352,7 +352,7 @@ lecons:
         correction: "On cherche l'écart : {{b}} − {{a}} = {{b-a}}."
       - type: qcm
         vars: { a: "15..40", b: "3..12", prenom: ["Inès", "Tom", "Jade", "Sami"] }
-        enonce: "{{prenom}} avait {{a}} €. Il·elle achète un livre à {{b}} €. Quel calcul donne ce qui lui reste ?"
+        enonce: "{{prenom}} avait {{a}} € dans sa tirelire et achète un livre à {{b}} €. Quel calcul donne ce qui lui reste ?"
         choix: ["{{a}} − {{b}}", "{{a}} + {{b}}", "{{b}} − {{a}}", "{{a}} × {{b}}"]
         correction: "On dépense : on enlève. {{a}} − {{b}} = {{a-b}} €."
       - type: nombre

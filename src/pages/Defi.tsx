@@ -62,7 +62,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
     const pct = Math.round(end.score * 100);
     const msg =
       end.stars === 3
-        ? "TROIS ÉTOILES ! Tu maîtrises cette leçon comme un·e champion·ne !"
+        ? "TROIS ÉTOILES ! Tu maîtrises cette leçon comme un grand savant !"
         : end.stars === 2
           ? "Deux étoiles, c'est super ! Tu peux viser la troisième quand tu veux."
           : end.stars === 1

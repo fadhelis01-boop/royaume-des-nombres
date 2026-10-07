@@ -94,7 +94,7 @@ export function CalculEclair() {
           ← Jeux
         </button>
         <h1>⚡ Calcul éclair</h1>
-        <Bubble who="neo" text="60 secondes. Le plus de calculs justes possible. Prêt·e ? Défi accepté !" />
+        <Bubble who="neo" text="60 secondes. Le plus de calculs justes possible. On y va ? Défi accepté !" />
         <div className="fam-grid">
           {Object.entries(jeux).map(([id, j]) => (
             <button key={id} className="fam-card" onClick={() => start(id)}>
