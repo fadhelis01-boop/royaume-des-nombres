@@ -1,0 +1,624 @@
+id: grotte-de-l-algebre
+titre: La Grotte de l'Algèbre
+sous_titre: Lettres, expressions, équations et systèmes
+emoji: 🔮
+couleur: "#4527a0"
+cycle: explorateurs
+age: 11-15 ans
+niveau: 5ᵉ – 2nde
+ordre: 13
+prerequis: [royaume-des-relatifs, atelier-des-problemes]
+version: 1.0.0
+intro:
+  - mia: "La Grotte de l'Algèbre… ici, les nombres se cachent derrière des lettres !"
+  - neo: "Le mot « algèbre » vient de l'arabe « al-jabr », le titre d'un livre du savant al-Khwârizmî, vers l'an 820. Il signifie « réparer, remettre en place »."
+  - zero: "Et on va remettre en place quoi ? Mes graines ?"
+  - neo: "Les équations, Zéro. Les équations."
+
+lecons:
+  - id: lettre-nombre
+    titre: Une lettre pour un nombre
+    objectif: J'utilise une lettre pour représenter un nombre inconnu et je traduis une phrase en expression.
+    mots: [inconnue, expression littérale]
+    etapes:
+      - dialogue:
+          - mia: "Je pense à un nombre. Je ne te dis pas lequel… je l'appelle x."
+          - neo: "Son double, c'est 2 × x, qu'on écrit 2x. Son double plus 3, c'est 2x + 3."
+          - zero: "Et si x vaut zéro ? Alors 2x + 3 = 3. J'adore quand je simplifie tout."
+      - texte: |
+          En algèbre, une **lettre** représente un **nombre** (connu ou pas encore).
+
+          | En français | En algèbre |
+          |---|---|
+          | le double de x | $2x$ |
+          | le triple de x augmenté de 5 | $3x + 5$ |
+          | la moitié de x | $\frac{x}{2}$ |
+          | le carré de x | $x^2$ |
+          | x diminué de 4, le tout multiplié par 3 | $3(x - 4)$ |
+
+          **Convention** : on n'écrit pas le signe × entre un nombre et une lettre : $3 \times x = 3x$, et $1x = x$.
+      - attention:
+          texte: "$x^2$ (x fois x) n'est PAS $2x$ (x + x) ! Si x = 5 : $x^2 = 25$ mais $2x = 10$."
+          qui: neo
+      - a_quoi_ca_sert: "Écrire une règle qui marche pour tous les cas : le prix de n places de cinéma ($9n$), l'aire d'un carré de côté c ($c^2$)… Les formules de physique, les tableurs, la programmation utilisent des lettres partout."
+      - question:
+          type: expression
+          enonce: "Écris en algèbre : « le triple de $x$, augmenté de 7 »."
+          reponse: "3x+7"
+          variables: [x]
+          correction: "$3x + 7$"
+    exercices:
+      - type: expression
+        vars: { k: "2..9", b: "1..12" }
+        enonce: "Écris en algèbre : « {{si(k==2,'le double',si(k==3,'le triple','le produit de ' + texte(k) + ' et'))}} de $x$, diminué de {{b}} »."
+        reponse: "{{k}}x-{{b}}"
+        variables: [x]
+        correction: "${{k}}x - {{b}}$"
+      - type: expression
+        vars: { a: "2..9", k: "2..6" }
+        enonce: "Écris en algèbre : « $x$ augmenté de {{a}}, le tout multiplié par {{k}} »."
+        reponse: "{{k}}(x+{{a}})"
+        variables: [x]
+        correction: "${{k}}(x + {{a}})$ — les parenthèses montrent que « le tout » est multiplié."
+      - type: expression
+        vars: { p: "5..15" }
+        enonce: "Une place de cinéma coûte {{p}} €. Écris le prix de $n$ places."
+        reponse: "{{p}}n"
+        variables: [n]
+        correction: "${{p}} \\times n = {{p}}n$"
+      - type: expression
+        enonce: "Écris le périmètre d'un carré de côté $c$."
+        reponse: "4c"
+        variables: [c]
+        correction: "$c + c + c + c = 4c$"
+      - type: qcm
+        enonce: "Que signifie $x^2$ ?"
+        choix: ["$x \\times x$", "$2 \\times x$", "$x + 2$", "$x + x$"]
+        correction: "Le carré de x : x multiplié par lui-même."
+
+  - id: calculer-expression
+    titre: Calculer une expression (remplacer la lettre)
+    objectif: Je calcule la valeur d'une expression pour une valeur donnée de la lettre.
+    mots: [substituer]
+    etapes:
+      - dialogue:
+          - neo: "Combien vaut $3x + 2$ quand $x = 5$ ?"
+          - mia: "Je remplace x par 5 : $3 \\times 5 + 2 = 17$ !"
+      - texte: |
+          Pour calculer une expression, on **remplace** chaque lettre par sa valeur **en remettant le signe ×**, puis on calcule en respectant les priorités.
+
+          Pour $x = -2$ : $x^2 + 3x = (-2)^2 + 3 \times (-2) = 4 - 6 = -2$.
+      - attention:
+          texte: "Avec un nombre négatif, mets-le TOUJOURS entre parenthèses : $(-2)^2 = 4$ mais $-2^2 = -4$ !"
+          qui: neo
+      - a_quoi_ca_sert: "Utiliser une formule : calculer l'aire d'un disque avec $\\pi r^2$, convertir des °C en °F avec $1{,}8C + 32$, calculer un prix avec une formule de tableur…"
+      - question:
+          type: nombre
+          vars: { a: "2..9", b: "-9..9", x: "-5..6" }
+          enonce: "Calcule ${{a}}x + {{nb(b)}}$ pour $x = {{nb(x)}}$."
+          reponse: "a*x+b"
+          correction: "${{a}} \\times ({{nb(x)}}) + ({{nb(b)}}) = {{nb(a*x+b)}}$"
+    exercices:
+      - type: nombre
+        vars: { a: "2..9", b: "-9..9", x: "-5..6" }
+        enonce: "Calcule ${{a}}x + ({{nb(b)}})$ pour $x = {{nb(x)}}$."
+        reponse: "a*x+b"
+        correction: "${{nb(a*x+b)}}$"
+      - type: nombre
+        vars: { x: "-6..6" }
+        enonce: "Calcule $x^2 - 3x + 1$ pour $x = {{nb(x)}}$."
+        reponse: "x^2 - 3*x + 1"
+        correction: "$({{nb(x)}})^2 - 3 \\times ({{nb(x)}}) + 1 = {{nb(x^2)}} - ({{nb(3*x)}}) + 1 = {{nb(x^2-3*x+1)}}$"
+      - type: nombre
+        vars: { C: [0, 10, 20, 25, 30, 37, 100] }
+        enonce: "La température en °F se calcule avec $F = 1{,}8C + 32$. Combien de °F pour {{C}} °C ?"
+        reponse: "1.8*C+32"
+        unite: °F
+        correction: "$1{,}8 \\times {{C}} + 32 = {{nb(1.8*C+32)}}$ °F"
+      - type: nombre
+        vars: { a: "2..6", b: "2..6" }
+        enonce: "Calcule $3a - 2b$ pour $a = {{a}}$ et $b = {{b}}$."
+        reponse: "3*a-2*b"
+        correction: "$3 \\times {{a}} - 2 \\times {{b}} = {{3*a-2*b}}$"
+      - type: vf
+        vars: { x: "2..5" }
+        enonce: "Pour $x = {{x}}$, a-t-on $x^2 = 2x$ ?"
+        reponse: "x == 2"
+        correction: "$x^2 = {{x*x}}$ et $2x = {{2*x}}$. {{si(x==2,'Égalité vraie pour x = 2 (par hasard !).','Ils sont différents.')}}"
+
+  - id: reduire
+    titre: Réduire une expression
+    objectif: Je regroupe les termes semblables pour réduire une expression.
+    mots: [réduire, terme]
+    etapes:
+      - dialogue:
+          - mia: "3 pommes + 5 pommes = 8 pommes. Et 3x + 5x = 8x !"
+          - zero: "Et 3 pommes + 5 poires = 8 pommoires ?"
+          - neo: "Non : on ne peut pas mélanger. De même, 3x + 5 reste 3x + 5."
+      - texte: |
+          **Réduire**, c'est regrouper les **termes semblables** (même partie littérale) :
+          - $4x + 7x = 11x$
+          - $5x - 2 + 3x + 9 = 8x + 7$
+          - $2x^2 + 3x + x^2 - x = 3x^2 + 2x$
+
+          On ne peut **pas** additionner des $x$ et des $x^2$, ni des $x$ et des nombres seuls.
+      - a_quoi_ca_sert: "Simplifier une formule avant de l'utiliser, c'est gagner du temps et éviter les erreurs : les ingénieurs et les programmeurs simplifient sans cesse leurs expressions."
+      - question:
+          type: expression
+          vars: { a: "2..9", b: "2..9", c: "1..9", d: "1..9" }
+          enonce: "Réduis : ${{a}}x + {{c}} + {{b}}x + {{d}}$"
+          reponse: "{{a+b}}x+{{c+d}}"
+          variables: [x]
+          forme: reduite
+          correction: "$({{a}} + {{b}})x + ({{c}} + {{d}}) = {{a+b}}x + {{c+d}}$"
+    exercices:
+      - type: expression
+        vars: { a: "2..12", b: "2..12" }
+        enonce: "Réduis : ${{a}}x + {{b}}x$"
+        reponse: "{{a+b}}x"
+        variables: [x]
+        forme: reduite
+        correction: "${{a+b}}x$"
+      - type: expression
+        vars: { a: "5..12", b: "2..9", c: "1..9", d: "1..9" }
+        si: "b < a"
+        enonce: "Réduis : ${{a}}x - {{c}} - {{b}}x + {{d}}$"
+        reponse: "{{a-b}}x+{{d-c}}"
+        variables: [x]
+        forme: reduite
+        correction: "$({{a}} - {{b}})x + ({{d}} - {{c}}) = {{a-b}}x + ({{nb(d-c)}})$"
+      - type: expression
+        vars: { a: "2..6", b: "2..6", c: "2..6", d: "1..5" }
+        enonce: "Réduis : ${{a}}x^2 + {{c}}x + {{b}}x^2 - {{d}}x$"
+        reponse: "{{a+b}}x^2+{{c-d}}x"
+        variables: [x]
+        forme: reduite
+        correction: "${{a+b}}x^2 + ({{nb(c-d)}})x$"
+      - type: vf
+        enonce: "Vrai ou faux : $3x + 2 = 5x$."
+        reponse: false
+        correction: "Faux ! On ne peut pas additionner des x et des nombres seuls. (Par exemple pour x = 1 : 3 + 2 = 5, mais pour x = 2 : 8 ≠ 10.)"
+
+  - id: developper
+    titre: Développer (la distributivité)
+    objectif: Je développe k(a + b) puis (a + b)(c + d).
+    mots: [développer, distributivité]
+    etapes:
+      - dialogue:
+          - neo: "Développer, c'est supprimer les parenthèses en distribuant la multiplication à chacun."
+          - mia: "Comme distribuer des bonbons : 3 × (x + 4), c'est 3 pour x ET 3 pour 4 : 3x + 12 !"
+      - visuel:
+          type: barres
+          lignes:
+            - nom: "3 × (x + 4)"
+              parts: [{ v: 3, label: "3 × x" }, { v: 2, label: "3 × 4" }]
+        legende: "Aire d'un rectangle de largeur 3 et de longueur x + 4 : 3x + 12."
+      - texte: |
+          **Distributivité simple** : $k(a + b) = ka + kb$ et $k(a - b) = ka - kb$.
+          $$5(2x - 3) = 10x - 15$$
+
+          **Double distributivité** : chaque terme de la 1ʳᵉ parenthèse multiplie chaque terme de la 2ᵉ.
+          $$(x + 2)(x + 5) = x^2 + 5x + 2x + 10 = x^2 + 7x + 10$$
+      - attention:
+          texte: "Avec un signe moins devant : $-(x - 3) = -x + 3$. Le − change TOUS les signes de la parenthèse !"
+          qui: neo
+      - a_quoi_ca_sert: "Calculer de tête (7 × 102 = 714 + 0… = 700 + 14), calculer des aires, transformer des formules en physique et en économie."
+      - question:
+          type: expression
+          vars: { k: "2..9", a: "1..9" }
+          enonce: "Développe : ${{k}}(x + {{a}})$"
+          reponse: "{{k}}x+{{k*a}}"
+          variables: [x]
+          forme: developpee
+          correction: "${{k}} \\times x + {{k}} \\times {{a}} = {{k}}x + {{k*a}}$"
+    exercices:
+      - type: expression
+        vars: { k: "2..9", a: "2..9", b: "1..9" }
+        enonce: "Développe : ${{k}}({{a}}x - {{b}})$"
+        reponse: "{{k*a}}x-{{k*b}}"
+        variables: [x]
+        forme: developpee
+        correction: "${{k*a}}x - {{k*b}}$"
+      - type: expression
+        vars: { k: "2..9", a: "1..9" }
+        enonce: "Développe : $-{{k}}(x - {{a}})$"
+        reponse: "-{{k}}x+{{k*a}}"
+        variables: [x]
+        forme: developpee
+        correction: "$-{{k}}x + {{k*a}}$ (le − change les signes)"
+      - type: expression
+        vars: { a: "1..9", b: "1..9" }
+        enonce: "Développe et réduis : $(x + {{a}})(x + {{b}})$"
+        reponse: "x^2+{{a+b}}x+{{a*b}}"
+        variables: [x]
+        forme: reduite
+        correction: "$x^2 + {{b}}x + {{a}}x + {{a*b}} = x^2 + {{a+b}}x + {{a*b}}$"
+      - type: expression
+        vars: { a: "1..9", b: "1..9" }
+        si: "a != b"
+        enonce: "Développe et réduis : $(x - {{a}})(x + {{b}})$"
+        reponse: "x^2+{{b-a}}x-{{a*b}}"
+        variables: [x]
+        forme: reduite
+        correction: "$x^2 + {{b}}x - {{a}}x - {{a*b}} = x^2 + ({{nb(b-a)}})x - {{a*b}}$"
+      - type: expression
+        vars: { a: "2..5", b: "1..6", c: "2..5", d: "1..6" }
+        enonce: "Développe et réduis : $({{a}}x + {{b}})({{c}}x - {{d}})$"
+        reponse: "{{a*c}}x^2+{{b*c-a*d}}x-{{b*d}}"
+        variables: [x]
+        forme: reduite
+        correction: "${{a*c}}x^2 - {{a*d}}x + {{b*c}}x - {{b*d}} = {{a*c}}x^2 + ({{nb(b*c-a*d)}})x - {{b*d}}$"
+
+  - id: factoriser
+    titre: Factoriser
+    objectif: Je factorise une expression en trouvant un facteur commun.
+    mots: [factoriser, facteur commun]
+    etapes:
+      - dialogue:
+          - mia: "Factoriser, c'est l'inverse de développer : on remet les parenthèses !"
+          - neo: "On cherche ce qui est commun à tous les termes, et on le « sort »."
+      - texte: |
+          $$ka + kb = k(a + b)$$
+
+          - $6x + 15 = 3 \times 2x + 3 \times 5 = 3(2x + 5)$
+          - $x^2 + 7x = x \times x + 7 \times x = x(x + 7)$
+          - $(x+1)(2x+3) + (x+1)(x-4) = (x+1)\left[(2x+3) + (x-4)\right] = (x+1)(3x-1)$
+      - astuce:
+          texte: "Vérifie TOUJOURS une factorisation en redéveloppant : tu dois retrouver l'expression de départ."
+          qui: neo
+      - a_quoi_ca_sert: "Factoriser sert à résoudre des équations (un produit est nul si un facteur est nul), à simplifier des fractions, à étudier le signe d'une expression."
+      - question:
+          type: expression
+          vars: { k: "2..9", a: "2..9", b: "1..9" }
+          si: "pgcd(a,b) == 1"
+          enonce: "Factorise : ${{k*a}}x + {{k*b}}$"
+          reponse: "{{k}}({{a}}x+{{b}})"
+          variables: [x]
+          forme: factorisee
+          correction: "${{k}}({{a}}x + {{b}})$"
+    exercices:
+      - type: expression
+        vars: { k: "2..9", a: "2..9", b: "1..9" }
+        si: "pgcd(a,b) == 1"
+        enonce: "Factorise : ${{k*a}}x - {{k*b}}$"
+        reponse: "{{k}}({{a}}x-{{b}})"
+        variables: [x]
+        forme: factorisee
+        correction: "${{k}}({{a}}x - {{b}})$"
+      - type: expression
+        vars: { a: "2..12" }
+        enonce: "Factorise : $x^2 + {{a}}x$"
+        reponse: "x(x+{{a}})"
+        variables: [x]
+        forme: factorisee
+        correction: "$x(x + {{a}})$"
+      - type: expression
+        vars: { a: "1..6", b: "2..5", c: "1..6", d: "1..6" }
+        enonce: "Factorise : $(x + {{a}})({{b}}x + {{c}}) + (x + {{a}})(x - {{d}})$"
+        reponse: "(x+{{a}})({{b+1}}x+{{c-d}})"
+        variables: [x]
+        forme: factorisee
+        correction: "$(x + {{a}})\\left[({{b}}x + {{c}}) + (x - {{d}})\\right] = (x + {{a}})({{b+1}}x + ({{nb(c-d)}}))$"
+
+  - id: equations-balance
+    titre: Les équations - la balance
+    objectif: Je résous une équation simple en faisant la même opération des deux côtés.
+    mots: [équation, solution]
+    etapes:
+      - dialogue:
+          - neo: "Sur la balance : une boîte mystère x et 3 billes d'un côté, 7 billes de l'autre. Elle est en équilibre."
+          - mia: "J'enlève 3 billes de CHAQUE côté : la balance reste en équilibre, et il reste x = 4 !"
+      - visuel:
+          type: balance
+          gauche: ["x", "1", "1", "1"]
+          droite: ["1", "1", "1", "1", "1", "1", "1"]
+        legende: "x + 3 = 7. On enlève 3 de chaque côté : x = 4."
+      - texte: |
+          Une **équation** est une égalité avec une inconnue. La **résoudre**, c'est trouver la (ou les) valeur(s) qui la rendent vraie.
+
+          **Règle d'or de la balance** : on peut faire **la même opération des deux côtés** (ajouter, soustraire, multiplier, diviser par un nombre non nul).
+          - $x + 3 = 7 \Rightarrow x = 7 - 3 = 4$
+          - $5x = 35 \Rightarrow x = 35 \div 5 = 7$
+      - astuce:
+          texte: "Vérifie en remplaçant : pour x = 4, x + 3 = 7 ✔. C'est la garantie absolue !"
+          qui: neo
+      - a_quoi_ca_sert: "Retrouver une valeur inconnue : le prix d'un article avant une remise, le nombre de minutes pour remplir une piscine… Les équations sont l'outil n°1 des sciences."
+      - question:
+          type: nombre
+          vars: { x: "-9..15", a: "2..20" }
+          enonce: "Résous : $x + {{a}} = {{nb(x+a)}}$"
+          reponse: "x"
+          correction: "$x = {{nb(x+a)}} - {{a}} = {{nb(x)}}$"
+    exercices:
+      - type: nombre
+        vars: { x: "-12..20", a: "2..20" }
+        enonce: "Résous : $x - {{a}} = {{nb(x-a)}}$"
+        reponse: "x"
+        correction: "$x = {{nb(x-a)}} + {{a}} = {{nb(x)}}$"
+      - type: nombre
+        vars: { x: "-9..12", a: "2..9" }
+        si: "x != 0"
+        enonce: "Résous : ${{a}}x = {{nb(a*x)}}$"
+        reponse: "x"
+        correction: "$x = {{nb(a*x)}} \\div {{a}} = {{nb(x)}}$"
+      - type: nombre
+        vars: { x: "2..12", a: "2..9" }
+        enonce: "Résous : $\\frac{x}{ {{a}} } = {{x}}$"
+        reponse: "a*x"
+        correction: "On multiplie par {{a}} des deux côtés : $x = {{a*x}}$"
+      - type: nombre
+        vars: { a: "2..9", b: "3..9" }
+        si: "a * b > 0"
+        enonce: "Résous (la solution peut être une fraction) : ${{b}}x = {{a}}$"
+        reponse: "a/b"
+        forme: fraction
+        correction: "$x = \\frac{ {{a}} }{ {{b}} } = {{frac(a,b)}}$"
+
+  - id: equations-etapes
+    titre: Résoudre une équation en plusieurs étapes
+    objectif: Je résous ax + b = c et ax + b = cx + d.
+    mots: [équation]
+    etapes:
+      - dialogue:
+          - mia: "3x + 5 = 20. D'abord j'enlève 5 des deux côtés : 3x = 15. Puis je divise par 3 : x = 5 !"
+          - neo: "Et si il y a des x des deux côtés ? On les regroupe d'abord du même côté."
+      - texte: |
+          **Méthode** : on « isole » x.
+          1. On regroupe les termes en $x$ d'un côté, les nombres de l'autre.
+          2. On divise par le nombre devant $x$.
+
+          $$7x - 4 = 3x + 8$$
+          $$7x - 3x = 8 + 4$$
+          $$4x = 12 \quad\Rightarrow\quad x = 3$$
+          Vérification : $7 \times 3 - 4 = 17$ et $3 \times 3 + 8 = 17$ ✔
+      - a_quoi_ca_sert: "Comparer deux forfaits (« à partir de combien de mois le forfait B devient moins cher ? »), calculer un point d'équilibre, programmer la physique d'un jeu vidéo…"
+      - question:
+          type: nombre
+          vars: { a: "2..9", x: "-6..9", b: "-15..15" }
+          enonce: "Résous : ${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$"
+          reponse: "x"
+          correction: "${{a}}x = {{nb(a*x+b)}} - ({{nb(b)}}) = {{nb(a*x)}}$, donc $x = {{nb(x)}}$."
+    exercices:
+      - type: nombre
+        vars: { a: "2..9", x: "-8..10", b: "-20..20" }
+        enonce: "Résous : ${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$"
+        reponse: "x"
+        correction: "$x = {{nb(x)}}$"
+      - type: nombre
+        vars: { a: "4..9", c: "1..3", x: "-6..8", b: "-15..15" }
+        enonce: "Résous : ${{a}}x + ({{nb(b)}}) = {{c}}x + ({{nb((a-c)*x+b)}})$"
+        reponse: "x"
+        correction: "On regroupe : ${{a}}x - {{c}}x = {{nb((a-c)*x+b)}} - ({{nb(b)}})$, soit ${{a-c}}x = {{nb((a-c)*x)}}$, donc $x = {{nb(x)}}$."
+      - type: nombre
+        vars: { a: "2..6", b: "1..9", c: "1..9", d: "2..5" }
+        si: "(c + d*b - a) != 0 && d != a"
+        enonce: "Résous : ${{a}}(x + 1) = {{d}}(x - {{b}}) + {{c}}$ (donne une fraction si besoin)."
+        reponse: "(c - d*b - a)/(a - d)"
+        forme: fraction
+        correction: "${{a}}x + {{a}} = {{d}}x - {{d*b}} + {{c}}$ donc $({{a-d}})x = {{nb(c-d*b-a)}}$ et $x = {{frac(c-d*b-a, a-d)}}$."
+      - type: nombre
+        vars: { a: "2..9", x: "-8..10" }
+        enonce: "Résous : ${{nb(a*x)}} = {{a}}x$ (l'inconnue peut être à droite !)"
+        reponse: "x"
+        correction: "$x = {{nb(a*x)}} \\div {{a}} = {{nb(x)}}$"
+
+  - id: mettre-en-equation
+    titre: Mettre un problème en équation
+    objectif: Je traduis un problème par une équation, je la résous et je réponds à la question.
+    mots: [mise en équation]
+    etapes:
+      - dialogue:
+          - neo: "Mia a 3 ans de plus que moi. À nous deux, nous avons 27 ans. Quel est mon âge ?"
+          - mia: "J'appelle x ton âge. Le mien : x + 3. Ensemble : x + (x + 3) = 27."
+          - neo: "Donc 2x + 3 = 27, 2x = 24, x = 12. J'ai 12 ans… en âge de renard."
+      - texte: |
+          **Les 5 étapes de la mise en équation :**
+          1. **Choisir l'inconnue** : « soit $x$ l'âge de Néo ».
+          2. **Traduire** l'énoncé en équation.
+          3. **Résoudre** l'équation.
+          4. **Vérifier** que la solution convient (dans l'énoncé, pas seulement dans l'équation).
+          5. **Conclure** par une phrase.
+      - astuce:
+          texte: "La méthode des barres et l'algèbre racontent la même chose ! Une barre « ? » devient un x. Si tu bloques sur l'équation, dessine les barres."
+          qui: mia
+      - a_quoi_ca_sert: "Les ingénieurs, les économistes, les physiciens passent leur vie à traduire des situations réelles en équations : c'est ça, « modéliser »."
+      - question:
+          type: expression
+          vars: { e: "2..9" }
+          enonce: "Mia a {{e}} ans de plus que Néo. Si $x$ est l'âge de Néo, écris la somme de leurs âges."
+          reponse: "x+(x+{{e}})"
+          variables: [x]
+          correction: "$x + (x + {{e}}) = 2x + {{e}}$"
+    exercices:
+      - type: nombre
+        vars: { x: "8..20", e: "2..9" }
+        enonce: "Mia a {{e}} ans de plus que Néo. Ensemble, ils ont {{2*x+e}} ans. Quel est l'âge de Néo ?"
+        reponse: "x"
+        unite: ans
+        correction: "$x + (x + {{e}}) = {{2*x+e}}$, donc $2x = {{2*x}}$ et $x = {{x}}$."
+      - type: nombre
+        vars: { x: "3..15", p: "2..8" }
+        enonce: "Un rectangle a une longueur égale à sa largeur + {{p}} cm. Son périmètre vaut {{4*x+2*p}} cm. Quelle est sa largeur ?"
+        reponse: "x"
+        unite: cm
+        correction: "$2(x + x + {{p}}) = {{4*x+2*p}}$, soit $4x + {{2*p}} = {{4*x+2*p}}$, $x = {{x}}$ cm."
+      - type: nombre
+        vars: { x: "10..40", d: [2, 3, 4] }
+        enonce: "Je pense à un nombre. Je le multiplie par {{d}} puis je retire 7. J'obtiens {{d*x-7}}. Quel est ce nombre ?"
+        reponse: "x"
+        correction: "${{d}}x - 7 = {{d*x-7}}$ donc ${{d}}x = {{d*x}}$ et $x = {{x}}$."
+      - type: nombre
+        vars: { b: [4, 5, 6, 8], n: "6..15" }
+        enonce: "À la piscine, une entrée coûte {{b}} €. L'abonnement mensuel coûte {{b*n}} € (entrées illimitées). Pour combien d'entrées par mois les deux formules coûtent-elles le même prix ?"
+        reponse: "n"
+        unite: séances
+        correction: "Égalité des prix : ${{b}}x = {{b*n}}$, donc $x = {{n}}$ séances. Au-delà, le forfait A est moins cher."
+      - type: expression
+        vars: { p: "3..9", f: "2..6" }
+        enonce: "Une pizza coûte {{p}} € et la livraison {{f}} €. Écris le prix de $n$ pizzas livrées en une fois."
+        reponse: "{{p}}n+{{f}}"
+        variables: [n]
+        correction: "${{p}}n + {{f}}$"
+
+  - id: inequations
+    titre: Les inéquations
+    objectif: Je résous une inéquation simple et je représente ses solutions.
+    mots: [inéquation]
+    etapes:
+      - dialogue:
+          - zero: "Une inéquation, c'est une équation qui n'est pas égale ? Elle est vexée ?"
+          - neo: "Presque ! Au lieu de « = », il y a <, >, ≤ ou ≥. Et les solutions forment tout un intervalle !"
+      - texte: |
+          $$2x + 3 < 11 \Rightarrow 2x < 8 \Rightarrow x < 4$$
+          Toutes les valeurs **strictement inférieures à 4** sont solutions.
+
+          **Même règle que les équations, avec UNE exception** : quand on **multiplie ou divise par un nombre négatif**, on **change le sens** de l'inégalité.
+          $$-3x \le 12 \Rightarrow x \ge -4$$
+      - visuel:
+          type: droite
+          min: -2
+          max: 8
+          pas: 1
+          etiquettes: tout
+          marques: [4]
+        legende: "Les solutions de x < 4 : tous les nombres à gauche de 4 (4 exclu)."
+      - attention:
+          texte: "Pourquoi le sens change ? 2 < 5, mais −2 > −5 ! Multiplier par −1 « retourne » la droite graduée."
+          qui: neo
+      - a_quoi_ca_sert: "Les budgets (« combien d'articles puis-je acheter avec 50 € au maximum ? »), les limites de vitesse, les conditions de sécurité (une charge maximale)…"
+      - question:
+          type: nombre
+          vars: { a: "2..6", b: "1..9", s: "2..9" }
+          enonce: "${{a}}x + {{b}} < {{a*s+b}}$. Quel est le plus grand ENTIER solution ?"
+          reponse: "s-1"
+          correction: "${{a}}x < {{a*s}}$ donc $x < {{s}}$ : le plus grand entier est {{s-1}}."
+    exercices:
+      - type: nombre
+        vars: { a: "2..6", b: "1..9", s: "2..9" }
+        enonce: "${{a}}x + {{b}} \\le {{a*s+b}}$. Quel est le plus grand entier solution ?"
+        reponse: "s"
+        correction: "$x \\le {{s}}$ : le plus grand entier est {{s}} (inclus)."
+      - type: qcm
+        vars: { a: "2..6", s: "-5..5" }
+        enonce: "Résous : $-{{a}}x > {{nb(-a*s)}}$"
+        choix: ["$x < {{nb(s)}}$", "$x > {{nb(s)}}$", "$x < {{nb(-s)}}$", "$x > {{nb(-s)}}$"]
+        si: "s != 0"
+        correction: "On divise par −{{a}} (négatif) : le sens change. $x < {{nb(s)}}$."
+      - type: nombre
+        vars: { p: [3, 4, 6, 7], b: [30, 50, 60] }
+        si: "b % p != 0"
+        enonce: "Avec {{b}} € au maximum, combien de cahiers à {{p}} € puis-je acheter au plus ?"
+        reponse: "ent(b/p)"
+        correction: "${{p}}n \\le {{b}}$ donc $n \\le {{nb(b/p,2)}}$ : au plus {{ent(b/p)}} cahiers."
+
+  - id: identites-remarquables
+    titre: Les identités remarquables
+    objectif: Je connais et j'utilise les trois identités remarquables.
+    mots: [identité remarquable]
+    etapes:
+      - dialogue:
+          - mia: "Il existe trois formules si utiles qu'on les appelle « remarquables » !"
+          - neo: "Avec elles, je calcule 99² de tête : (100 − 1)² = 10 000 − 200 + 1 = 9 801 !"
+      - texte: |
+          $$(a + b)^2 = a^2 + 2ab + b^2$$
+          $$(a - b)^2 = a^2 - 2ab + b^2$$
+          $$(a + b)(a - b) = a^2 - b^2$$
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [5, 0], C: [5, 5], D: [0, 5], E: [3, 0], F: [3, 5], G: [0, 3], H: [5, 3] }
+          polygones: [[A, B, C, D]]
+          segments: [[E, F, "", true], [G, H, "", true], [A, E, "a"], [E, B, "b"]]
+          noms: false
+        legende: "Un carré de côté a + b : il contient a², b² et deux rectangles ab. Donc (a + b)² = a² + 2ab + b²."
+      - attention:
+          texte: "$(a + b)^2 \\neq a^2 + b^2$ ! N'oublie jamais le double produit $2ab$ : $(3 + 4)^2 = 49$ alors que $3^2 + 4^2 = 25$."
+          qui: neo
+      - a_quoi_ca_sert: "Calcul mental (51² = 2 601, 49 × 51 = 2 499), factorisation, résolution d'équations du second degré, et en physique (énergie, distances)…"
+      - question:
+          type: expression
+          vars: { a: "1..9" }
+          enonce: "Développe : $(x + {{a}})^2$"
+          reponse: "x^2+{{2*a}}x+{{a*a}}"
+          variables: [x]
+          forme: developpee
+          correction: "$x^2 + 2 \\times {{a}} \\times x + {{a}}^2 = x^2 + {{2*a}}x + {{a*a}}$"
+    exercices:
+      - type: expression
+        vars: { a: "1..9" }
+        enonce: "Développe : $(x - {{a}})^2$"
+        reponse: "x^2-{{2*a}}x+{{a*a}}"
+        variables: [x]
+        forme: developpee
+        correction: "$x^2 - {{2*a}}x + {{a*a}}$"
+      - type: expression
+        vars: { a: "1..12" }
+        enonce: "Factorise : $x^2 - {{a*a}}$"
+        reponse: "(x-{{a}})(x+{{a}})"
+        variables: [x]
+        forme: factorisee
+        correction: "$x^2 - {{a}}^2 = (x - {{a}})(x + {{a}})$"
+      - type: expression
+        vars: { a: "1..9" }
+        enonce: "Factorise : $x^2 + {{2*a}}x + {{a*a}}$"
+        reponse: "(x+{{a}})^2"
+        variables: [x]
+        forme: factorisee
+        correction: "$(x + {{a}})^2$"
+      - type: nombre
+        vars: { n: [21, 31, 41, 51, 61, 71, 101] }
+        enonce: "Calcule de tête : ${{n}}^2$ (indice : $({{n-1}} + 1)^2$)"
+        reponse: "n*n"
+        correction: "${{n-1}}^2 + 2 \\times {{n-1}} + 1 = {{nb((n-1)^2)}} + {{2*(n-1)}} + 1 = {{nb(n*n)}}$"
+      - type: nombre
+        vars: { a: [20, 30, 40, 50, 100], b: "1..5" }
+        enonce: "Calcule de tête : ${{a-b}} \\times {{a+b}}$"
+        reponse: "a*a-b*b"
+        correction: "$({{a}} - {{b}})({{a}} + {{b}}) = {{a*a}} - {{b*b}} = {{nb(a*a-b*b)}}$"
+
+  - id: systemes
+    titre: Les systèmes de deux équations
+    objectif: Je résous un système de deux équations à deux inconnues par substitution ou combinaison.
+    mots: [système]
+    etapes:
+      - dialogue:
+          - neo: "2 croissants et 1 jus coûtent 5 €. 1 croissant et 1 jus coûtent 3,50 €. Prix d'un croissant ?"
+          - mia: "Je soustrais les deux commandes : la différence, c'est exactement 1 croissant : 5 − 3,50 = 1,50 € !"
+      - texte: |
+          Un **système** : deux équations, deux inconnues $x$ et $y$.
+          $$\begin{cases} 2x + y = 5 \\ x + y = 3{,}5 \end{cases}$$
+
+          **Combinaison** : on soustrait les équations pour éliminer $y$ : $x = 1{,}5$, puis $y = 3{,}5 - 1{,}5 = 2$.
+
+          **Substitution** : on exprime $y = 3{,}5 - x$ et on remplace dans la première : $2x + 3{,}5 - x = 5$, donc $x = 1{,}5$.
+      - a_quoi_ca_sert: "Trouver deux prix à partir de deux tickets de caisse, mélanger deux produits pour obtenir une concentration voulue, calculer le point de rencontre de deux trains…"
+      - question:
+          type: champs
+          vars: { x: "1..9", y: "1..9" }
+          enonce: "Résous : $x + y = {{x+y}}$ et $x - y = {{nb(x-y)}}$"
+          champs:
+            - { avant: "x =", reponse: "x" }
+            - { avant: "y =", reponse: "y" }
+          correction: "En additionnant : $2x = {{2*x}}$, $x = {{x}}$ ; puis $y = {{x+y}} - {{x}} = {{y}}$."
+    exercices:
+      - type: champs
+        vars: { x: "-5..9", y: "-5..9", a: "2..4" }
+        enonce: "Résous : ${{a}}x + y = {{nb(a*x+y)}}$ et $x + y = {{nb(x+y)}}$"
+        champs:
+          - { avant: "x =", reponse: "x" }
+          - { avant: "y =", reponse: "y" }
+        correction: "En soustrayant : $({{a}} - 1)x = {{nb((a-1)*x)}}$, $x = {{nb(x)}}$, puis $y = {{nb(y)}}$."
+      - type: champs
+        vars: { c: [2, 3, 4], j: [2, 3] }
+        enonce: "3 cafés et 2 jus coûtent {{nb(3*c+2*j)}} € ; 1 café et 2 jus coûtent {{nb(c+2*j)}} €. Prix de chaque boisson ?"
+        champs:
+          - { avant: "café :", reponse: "c", apres: "€" }
+          - { avant: "jus :", reponse: "j", apres: "€" }
+        correction: "Différence : 2 cafés = {{2*c}} €, donc un café = {{c}} € ; jus : ({{c+2*j}} − {{c}}) ÷ 2 = {{j}} €."
+      - type: champs
+        vars: { p: "5..20", e: "5..20" }
+        enonce: "Dans une ferme il y a des poules et des lapins : {{p+e}} têtes et {{2*p+4*e}} pattes. Combien de chaque ?"
+        champs:
+          - { avant: "poules :", reponse: "p" }
+          - { avant: "lapins :", reponse: "e" }
+        indice: "Si tous étaient des poules, il y aurait {{2*(p+e)}} pattes. Chaque lapin ajoute 2 pattes."
+        correction: "$p + l = {{p+e}}$ et $2p + 4l = {{2*p+4*e}}$ : $l = ({{2*p+4*e}} - {{2*(p+e)}}) \\div 2 = {{e}}$ lapins, et {{p}} poules."

@@ -1,0 +1,317 @@
+id: jardin-de-fibonacci
+titre: Le Jardin de Fibonacci
+sous_titre: Motifs, suites, logique et codes
+emoji: 🌀
+couleur: "#ef6c00"
+cycle: graines
+age: 7-11 ans
+niveau: CE1 – 6ᵉ
+ordre: 10
+prerequis: [prairie-des-additions]
+version: 1.0.0
+intro:
+  - neo: "Mon jardin ! Ici, les plantes poussent selon des règles secrètes : 1, 1, 2, 3, 5, 8…"
+  - mia: "Regarde ta queue, Néo : elle dessine une spirale ! Les maths sont partout dans la nature."
+  - zero: "Moi je pousse selon la suite 0, 0, 0, 0… C'est une suite très stable."
+
+lecons:
+  - id: motifs
+    titre: Les motifs qui se répètent
+    objectif: Je trouve la règle d'un motif et je le continue.
+    mots: [motif, suite]
+    etapes:
+      - dialogue:
+          - mia: "🔴🔵🔴🔵🔴… quelle est la suite ?"
+          - zero: "🟢 ! Pour changer un peu."
+          - neo: "Non ! Il faut trouver la RÈGLE : rouge, bleu, rouge, bleu… donc 🔵 !"
+      - visuel:
+          type: motif
+          elements: ["🔴", "🔵", "🔵", "🔴", "🔵", "🔵", "🔴", "?"]
+        legende: "Le motif « rouge, bleu, bleu » se répète."
+      - texte: |
+          Un **motif** est un groupe qui **se répète**. Pour le continuer :
+          1. je cherche le plus petit groupe qui se répète (le « motif de base ») ;
+          2. je le recopie encore et encore.
+
+          **Astuce de détective** : pour trouver le 20ᵉ élément sans tout dessiner, j'utilise la division ! Si le motif a 3 éléments, 20 = 3 × 6 + 2 → c'est le 2ᵉ élément du motif.
+      - a_quoi_ca_sert: "Les frises, les colliers de perles, la musique (les refrains), le carrelage, les codes des ordinateurs… Repérer des régularités est la base de toute la science !"
+      - question:
+          type: qcm
+          vars: { m: [["🍎", "🍌"], ["⭐", "🌙"], ["🐱", "🦊"]] }
+          enonce: "Quelle est la suite ?"
+          visuel: { type: motif, elements: ["{{m_0}}", "{{m_1}}", "{{m_0}}", "{{m_1}}", "{{m_0}}", "?"] }
+          choix: ["{{m_1}}", "{{m_0}}", "🐹"]
+          correction: "Le motif « {{m_0}} {{m_1}} » se répète."
+    exercices:
+      - type: qcm
+        vars: { m: [["🔺", "🟦", "🟦"], ["🍓", "🍓", "🍋"], ["🌞", "🌧️", "❄️"]] }
+        enonce: "Quel élément vient ensuite ?"
+        visuel: { type: motif, elements: ["{{m_0}}", "{{m_1}}", "{{m_2}}", "{{m_0}}", "{{m_1}}", "{{m_2}}", "{{m_0}}", "?"] }
+        choix: ["{{m_1}}", "{{si(m_1==m_0, m_2, m_0)}}", "🐹"]
+        correction: "Le motif de base est « {{m_0}} {{m_1}} {{m_2}} » : après {{m_0}}, vient {{m_1}}."
+      - type: qcm
+        vars: { n: "10..40" }
+        enonce: "Le motif « 🔴🔵🟢 » se répète. Quelle est la couleur du {{n}}ᵉ rond ?"
+        choix: ["{{si(n%3==1,'🔴',si(n%3==2,'🔵','🟢'))}}", "{{si(n%3==1,'🔵',si(n%3==2,'🟢','🔴'))}}", "{{si(n%3==1,'🟢',si(n%3==2,'🔴','🔵'))}}"]
+        ordre_fixe: false
+        indice: "{{n}} = 3 × {{ent(n/3)}} + {{n%3}}. Regarde le reste !"
+        correction: "{{n}} = 3 × {{ent(n/3)}} + {{n%3}} : c'est le {{si(n%3==0,3,n%3)}}ᵉ rond du motif."
+      - type: nombre
+        vars: { k: "2..5", r: "3..8" }
+        enonce: "Un collier répète le motif « {{k}} perles rouges, 1 perle bleue ». Combien de perles bleues dans {{r*(k+1)}} perles ?"
+        reponse: "r"
+        correction: "Chaque motif a {{k+1}} perles dont 1 bleue : {{r*(k+1)}} ÷ {{k+1}} = {{r}} perles bleues."
+
+  - id: suites-qui-grandissent
+    titre: Les suites qui grandissent
+    objectif: Je trouve la règle d'une suite de nombres (+, −, ×) et je la continue.
+    mots: [suite, terme]
+    etapes:
+      - dialogue:
+          - neo: "3, 7, 11, 15… Le jardin pousse de combien chaque jour ?"
+          - mia: "De 4 à chaque fois ! Donc ensuite : 19, 23, 27…"
+          - zero: "Et 2, 4, 8, 16 ? Ça ne marche pas avec +2… ni avec +4…"
+          - neo: "Là, on DOUBLE à chaque fois : ×2 ! 32, 64…"
+      - texte: |
+          Pour trouver la règle d'une suite, je regarde **comment on passe d'un nombre au suivant** :
+          - même nombre ajouté à chaque fois : **+ 4** (3, 7, 11, 15…)
+          - même nombre enlevé : **− 5** (50, 45, 40…)
+          - même nombre multiplié : **× 2** (2, 4, 8, 16…)
+
+          Chaque nombre de la suite s'appelle un **terme**.
+      - visuel:
+          type: tableau
+          lignes:
+            - ["terme", "3", "7", "11", "15", "?"]
+            - ["écart", "", "+4", "+4", "+4", "+4"]
+      - a_quoi_ca_sert: "Les économies qui augmentent chaque semaine, les bactéries qui doublent, les places dans un amphithéâtre (chaque rang a 2 sièges de plus)…"
+      - question:
+          type: nombre
+          vars: { a: "2..20", r: "2..9" }
+          enonce: "Continue la suite : {{a}} ; {{a+r}} ; {{a+2*r}} ; {{a+3*r}} ; ?"
+          reponse: "a+4*r"
+          correction: "On ajoute {{r}} à chaque fois : {{a+3*r}} + {{r}} = {{a+4*r}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..30", r: "2..12" }
+        enonce: "{{a}} ; {{a+r}} ; {{a+2*r}} ; {{a+3*r}} ; ?"
+        reponse: "a+4*r"
+        correction: "Règle : + {{r}}. Suivant : {{a+4*r}}."
+      - type: nombre
+        vars: { a: "60..120", r: "3..11" }
+        enonce: "{{a}} ; {{a-r}} ; {{a-2*r}} ; {{a-3*r}} ; ?"
+        reponse: "a-4*r"
+        correction: "Règle : − {{r}}. Suivant : {{a-4*r}}."
+      - type: nombre
+        vars: { a: [1, 2, 3, 5], q: [2, 3] }
+        enonce: "{{a}} ; {{a*q}} ; {{a*q*q}} ; {{a*q^3}} ; ?"
+        reponse: "a*q^4"
+        correction: "Règle : × {{q}}. Suivant : {{a*q^4}}."
+      - type: nombre
+        vars: { a: "2..9", r: "2..6" }
+        enonce: "Une suite commence par {{a}} et on ajoute {{r}} à chaque fois. Quel est le 10ᵉ terme ?"
+        reponse: "a+9*r"
+        indice: "Du 1ᵉʳ au 10ᵉ terme, on ajoute {{r}} combien de fois ? (Pas 10 !)"
+        correction: "On ajoute {{r}} neuf fois : {{a}} + 9 × {{r}} = {{a+9*r}}."
+      - type: texte
+        vars: { a: "2..9", r: "2..9" }
+        enonce: "Quelle est la règle de la suite {{a}}, {{a+r}}, {{a+2*r}}, {{a+3*r}} ? (écris par exemple « +5 »)"
+        reponse: ["+{{r}}", "plus {{r}}", "{{r}}", "ajouter {{r}}"]
+        correction: "On ajoute {{r}} à chaque fois : la règle est « +{{r}} »."
+
+  - id: fibonacci
+    titre: La suite de Fibonacci dans la nature
+    objectif: Je connais la suite de Fibonacci et je sais calculer ses termes.
+    mots: [Fibonacci]
+    etapes:
+      - dialogue:
+          - neo: "C'est MA suite ! 1, 1, 2, 3, 5, 8, 13… Chaque nombre est la somme des deux précédents."
+          - mia: "1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8… Et ensuite 5 + 8 = 13 !"
+          - zero: "Et tu l'as tatouée sur ton bracelet, frimeur."
+      - visuel:
+          type: image
+          src: img/mascottes/neo.webp
+          alt: "Néo et sa queue en spirale de Fibonacci"
+        legende: "La queue de Néo dessine une spirale construite avec les nombres de Fibonacci : 1, 1, 2, 3, 5, 8, 13."
+      - texte: |
+          **La suite de Fibonacci** : on commence par 1 et 1, puis **chaque terme est la somme des deux précédents**.
+
+          $$1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ 34,\ 55,\ 89,\ 144\ldots$$
+      - histoire:
+          titre: Un peu d'histoire
+          texte: "Leonardo de Pise, dit **Fibonacci**, est un mathématicien italien. En 1202, dans son *Liber abaci* (le « livre du calcul »), il pose un problème de lapins qui se reproduisent : le nombre de couples suit cette suite ! Ce livre a aussi fait connaître en Europe les chiffres indo-arabes (0, 1, 2… 9) que nous utilisons aujourd'hui."
+      - a_quoi_ca_sert: "On retrouve souvent les nombres de Fibonacci dans la nature : le nombre de pétales de beaucoup de fleurs (3, 5, 8, 13…), les spirales des pommes de pin et des tournesols. Les informaticiens l'utilisent aussi dans certains algorithmes."
+      - question:
+          type: nombre
+          vars: { n: "6..12" }
+          enonce: "Dans la suite 1, 1, 2, 3, 5, 8…, quel nombre vient après {{fib(n-1)}} et {{fib(n)}} ?"
+          reponse: "fib(n+1)"
+          correction: "{{fib(n-1)}} + {{fib(n)}} = {{fib(n+1)}}."
+    exercices:
+      - type: nombre
+        vars: { n: "5..14" }
+        enonce: "Suite de Fibonacci : … {{fib(n-1)}} ; {{fib(n)}} ; ?"
+        reponse: "fib(n+1)"
+        correction: "{{fib(n-1)}} + {{fib(n)}} = {{fib(n+1)}}."
+      - type: nombre
+        vars: { a: "2..9", b: "2..9" }
+        enonce: "Une suite « à la Fibonacci » commence par {{a}} et {{b}}. Quel est le 5ᵉ terme ?"
+        reponse: "a + 2*b + (a+b)"
+        indice: "Termes : {{a}}, {{b}}, {{a+b}}, …"
+        correction: "{{a}}, {{b}}, {{a+b}}, {{a+2*b}}, {{2*a+3*b}}."
+      - type: vf
+        vars: { n: "4..12" }
+        enonce: "Vrai ou faux : {{fib(n)+1}} fait partie de la suite de Fibonacci."
+        reponse: "fib(n)+1 == fib(n+1)"
+        correction: "La suite : … {{fib(n-1)}}, {{fib(n)}}, {{fib(n+1)}}, {{fib(n+2)}}… {{si(fib(n)+1==fib(n+1),'Oui, il y est.','Non, il n’y est pas.')}}"
+
+  - id: logique
+    titre: Raisonner comme un détective (logique)
+    objectif: Je résous des petits problèmes de logique en éliminant les possibilités.
+    mots: [logique, déduire]
+    etapes:
+      - dialogue:
+          - mia: "Trois amis : Mia, Néo, Zéro. L'un aime les maths, l'un la musique, l'un le sport. Mia n'aime pas le sport. Néo aime la musique."
+          - neo: "Donc… Néo, musique. Mia ne fait pas de sport, et la musique est prise : Mia, les maths !"
+          - zero: "Et il ne reste que le sport pour moi ! …Je déteste le sport."
+      - texte: |
+          **Méthode du tableau** : je fais un tableau avec les personnes et les possibilités, puis :
+          - je mets **✗** quand c'est impossible ;
+          - je mets **✓** quand c'est sûr — et alors ✗ partout ailleurs sur la ligne et la colonne.
+      - visuel:
+          type: tableau
+          lignes:
+            - ["", "maths", "musique", "sport"]
+            - ["Mia", "✓", "✗", "✗"]
+            - ["Néo", "✗", "✓", "✗"]
+            - ["Zéro", "✗", "✗", "✓"]
+      - texte: |
+          **Si… alors…** : « S'il pleut, alors Mia prend son parapluie. » Si Mia n'a pas de parapluie, on peut en déduire… qu'il ne pleut pas !
+      - a_quoi_ca_sert: "Les détectives, les médecins (diagnostic), les programmeurs (conditions « si… alors »), les jeux comme le Sudoku… Le raisonnement logique est le cœur des mathématiques."
+      - question:
+          type: qcm
+          enonce: "Trois boîtes : une rouge, une bleue, une verte. Le trésor n'est pas dans la rouge. Il n'est pas dans la bleue. Où est-il ?"
+          choix: ["dans la verte", "dans la rouge", "dans la bleue", "on ne peut pas savoir"]
+          correction: "On élimine la rouge et la bleue : il ne reste que la verte."
+    exercices:
+      - type: qcm
+        enonce: "Tous les chats du Royaume aiment les maths. Mia est une chatte du Royaume. Donc…"
+        choix: ["Mia aime les maths", "Mia n'aime pas les maths", "on ne peut pas savoir", "tous les renards aiment les maths"]
+        correction: "Si TOUS les chats du Royaume aiment les maths, Mia (qui en est une) les aime aussi."
+      - type: qcm
+        enonce: "Néo est plus grand que Zéro. Mia est plus grande que Néo. Qui est le plus petit ?"
+        choix: ["Zéro", "Néo", "Mia", "on ne peut pas savoir"]
+        correction: "Mia > Néo > Zéro : Zéro est le plus petit."
+      - type: qcm
+        enonce: "Tous les oiseaux ont des plumes. Ce poisson n'a pas de plumes. Que peut-on dire ?"
+        choix: ["Ce poisson n'est pas un oiseau", "Ce poisson est un oiseau", "Les poissons ont des plumes", "On ne peut rien dire"]
+        correction: "Tout oiseau a des plumes ; ce poisson n'en a pas, donc ce n'est pas un oiseau."
+      - type: nombre
+        vars: { a: "3..9" }
+        enonce: "Je pense à un nombre. Je le double, puis j'ajoute 3. J'obtiens {{2*a+3}}. Quel est mon nombre ?"
+        reponse: "a"
+        indice: "Remonte à l'envers : enlève 3, puis prends la moitié."
+        correction: "{{2*a+3}} − 3 = {{2*a}} ; la moitié : {{a}}."
+
+  - id: coder-reperer
+    titre: Se repérer et coder un chemin
+    objectif: Je repère une case sur un quadrillage et je code un déplacement.
+    mots: [coordonnées, quadrillage]
+    etapes:
+      - dialogue:
+          - neo: "Pour retrouver le trésor de Zéro, il faut lire la carte : colonne C, ligne 4 !"
+          - mia: "Et pour y aller, on code le chemin : →→→↑↑. Comme pour programmer un robot !"
+      - texte: |
+          Sur un **quadrillage**, une case se repère par **une lettre (la colonne) et un nombre (la ligne)** : B3, comme à la bataille navale.
+
+          Pour **coder un déplacement**, on écrit les flèches : → (droite), ← (gauche), ↑ (haut), ↓ (bas). « 3→ 2↑ » veut dire 3 cases à droite puis 2 cases vers le haut.
+      - visuel:
+          type: graphe
+          xmin: 0
+          xmax: 6
+          ymin: 0
+          ymax: 5
+          pas_x: 1
+          pas_y: 1
+          points:
+            - { x: 1, y: 1, label: "départ" }
+            - { x: 4, y: 3, label: "trésor" }
+          segments:
+            - { x1: 1, y1: 1, x2: 4, y2: 1 }
+            - { x1: 4, y1: 1, x2: 4, y2: 3 }
+        legende: "Du départ au trésor : 3 cases → puis 2 cases ↑."
+      - a_quoi_ca_sert: "Lire un plan de ville ou une carte, jouer aux échecs (e4 !), programmer un robot ou un jeu vidéo, le GPS…"
+      - question:
+          type: champs
+          vars: { a: "1..4", b: "1..3", c: "1..4", d: "1..3" }
+          enonce: "Un robot part de la case (1 ; 1). Il fait {{c}} pas → puis {{d}} pas ↑. Où arrive-t-il ? (colonne ; ligne)"
+          champs:
+            - { avant: "colonne", reponse: "1+c" }
+            - { avant: "ligne", reponse: "1+d" }
+          correction: "Colonne 1 + {{c}} = {{1+c}}, ligne 1 + {{d}} = {{1+d}}."
+    exercices:
+      - type: champs
+        vars: { x: "0..3", y: "0..3", c: "1..5", d: "1..4" }
+        enonce: "Départ en ({{x}} ; {{y}}). Le robot fait {{c}} pas → et {{d}} pas ↑. Arrivée ?"
+        champs:
+          - { avant: "(", reponse: "x+c", apres: ";" }
+          - { reponse: "y+d", apres: ")" }
+        correction: "({{x+c}} ; {{y+d}})."
+      - type: champs
+        vars: { x: "5..8", y: "4..7", c: "1..4", d: "1..3" }
+        enonce: "Départ en ({{x}} ; {{y}}). Le robot fait {{c}} pas ← et {{d}} pas ↓. Arrivée ?"
+        champs:
+          - { avant: "(", reponse: "x-c", apres: ";" }
+          - { reponse: "y-d", apres: ")" }
+        correction: "({{x-c}} ; {{y-d}})."
+      - type: nombre
+        vars: { a: "1..5", b: "1..5" }
+        enonce: "Combien de pas au minimum pour aller de (0 ; 0) à ({{a}} ; {{b}}) en se déplaçant seulement → et ↑ ?"
+        reponse: "a+b"
+        correction: "{{a}} pas → et {{b}} pas ↑ : {{a+b}} pas."
+
+  - id: nombres-figures
+    titre: Les nombres carrés et triangulaires
+    objectif: Je découvre les nombres carrés et triangulaires en dessinant des points.
+    mots: [carré, nombre triangulaire]
+    etapes:
+      - dialogue:
+          - mia: "Avec des points, je dessine des carrés : 1, 4, 9, 16… Ce sont les nombres CARRÉS !"
+          - neo: "Et avec des triangles : 1, 3, 6, 10, 15… les nombres TRIANGULAIRES !"
+      - visuel:
+          type: grille
+          lignes: 4
+          colonnes: 4
+        legende: "4 × 4 = 16 : 16 est un nombre carré."
+      - texte: |
+          - **Nombres carrés** : $1 \times 1 = 1$, $2 \times 2 = 4$, $3 \times 3 = 9$, $4 \times 4 = 16$, 25, 36, 49…
+          - **Nombres triangulaires** : 1, 1 + 2 = 3, 1 + 2 + 3 = 6, 1 + 2 + 3 + 4 = 10, 15, 21…
+
+          **Surprise** : deux triangulaires qui se suivent font un carré ! 6 + 10 = 16, 10 + 15 = 25.
+      - a_quoi_ca_sert: "Ranger des objets en carré (une tablette de chocolat, des chaises), empiler des boules (bowling : 10 quilles en triangle !), et plus tard : les puissances et l'algèbre."
+      - question:
+          type: nombre
+          vars: { n: "3..10" }
+          enonce: "Quel est le nombre carré de côté {{n}} ?"
+          reponse: "n*n"
+          correction: "{{n}} × {{n}} = {{n*n}}."
+    exercices:
+      - type: nombre
+        vars: { n: "2..12" }
+        enonce: "Combien de points dans un carré de {{n}} sur {{n}} ?"
+        reponse: "n*n"
+        correction: "{{n}} × {{n}} = {{n*n}}."
+      - type: nombre
+        vars: { n: "3..10" }
+        enonce: "Calcule le {{n}}ᵉ nombre triangulaire : 1 + 2 + … + {{n}}."
+        reponse: "n*(n+1)/2"
+        correction: "1 + 2 + … + {{n}} = {{n*(n+1)/2}}."
+      - type: vf
+        vars: { k: "2..12", s: [0, 1, 2] }
+        enonce: "Vrai ou faux : {{k*k + s}} est un nombre carré."
+        reponse: "s == 0"
+        correction: "{{si(s==0, texte(k*k) + ' = ' + texte(k) + ' × ' + texte(k) + '.', texte(k*k) + ' est un carré, mais ' + texte(k*k+s) + ' n’en est pas un.')}}"
+      - type: qcm
+        enonce: "Combien de quilles au bowling, rangées en triangle de 4 rangées ?"
+        choix: ["10", "8", "12", "16"]
+        correction: "1 + 2 + 3 + 4 = 10 quilles : 10 est un nombre triangulaire."

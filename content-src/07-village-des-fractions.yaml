@@ -1,0 +1,522 @@
+id: village-des-fractions
+titre: Le Village des Fractions
+sous_titre: Partager les gâteaux, les pizzas… et comprendre les fractions
+emoji: 🍰
+couleur: "#e91e63"
+cycle: graines
+age: 8-11 ans
+niveau: CE2 – 5ᵉ
+ordre: 7
+prerequis: [riviere-du-partage]
+version: 1.0.0
+intro:
+  - mia: "Bienvenue au Village des Fractions ! Ici, les habitants découpent des gâteaux, des pizzas et des tartes."
+  - neo: "Une fraction, c'est un morceau d'un tout. Et on va apprendre à les comparer, les additionner, les multiplier !"
+  - zero: "Est-ce qu'on peut couper un gâteau en zéro parts ? …Non ? Dommage. J'aurais tout mangé."
+
+lecons:
+  - id: parts-egales
+    titre: Moitié, tiers, quart
+    objectif: Je sais partager un tout en parts égales et nommer une moitié, un tiers, un quart.
+    mots: [fraction, moitié, tiers, quart]
+    etapes:
+      - dialogue:
+          - zero: "J'ai coupé la pizza en 2 ! Je prends la moitié… la GROSSE moitié."
+          - mia: "Il n'y a pas de grosse moitié, Zéro ! Une moitié, c'est forcément 2 parts ÉGALES."
+      - visuel:
+          type: fraction
+          n: 1
+          d: 4
+          forme: disque
+        legende: "La pizza est coupée en 4 parts égales. Une part, c'est UN QUART : 1/4."
+      - texte: |
+          Quand on partage un tout en **parts égales** :
+          - en **2** parts : chaque part est **une moitié** ($\frac{1}{2}$)
+          - en **3** parts : **un tiers** ($\frac{1}{3}$)
+          - en **4** parts : **un quart** ($\frac{1}{4}$)
+          - en 5, 6, 10… : un cinquième, un sixième, un dixième…
+      - attention:
+          texte: "Plus on coupe en beaucoup de parts, plus chaque part est PETITE ! Un huitième de pizza est plus petit qu'un quart."
+          qui: neo
+      - a_quoi_ca_sert: "Partager un gâteau, lire une recette (un demi-litre de lait, un quart de beurre), comprendre « la moitié de la classe »…"
+      - question:
+          type: qcm
+          vars: { d: [2, 3, 4] }
+          enonce: "Comment s'appelle chaque part ?"
+          visuel: { type: fraction, n: 1, d: "=d", forme: disque }
+          choix: ["{{si(d==2,'une moitié',si(d==3,'un tiers','un quart'))}}", "{{si(d==2,'un tiers','une moitié')}}", "{{si(d==4,'un tiers','un quart')}}"]
+          correction: "Le disque est partagé en {{d}} parts égales."
+    exercices:
+      - type: qcm
+        vars: { d: [2, 3, 4, 5, 6, 8, 10] }
+        enonce: "Le gâteau est coupé en {{d}} parts égales. Chaque part, c'est…"
+        visuel: { type: fraction, n: 1, d: "=d", forme: disque }
+        choix: ["$\\frac{1}{ {{d}} }$", "$\\frac{ {{d}} }{1}$", "$\\frac{1}{ {{d+1}} }$", "$\\frac{1}{ {{d-1}} }$"]
+        correction: "{{d}} parts égales : chaque part est $\\frac{1}{ {{d}} }$."
+      - type: nombre
+        vars: { n: "2..20" }
+        enonce: "Quelle est la moitié de {{2*n}} ?"
+        reponse: "n"
+        correction: "{{2*n}} ÷ 2 = {{n}}."
+      - type: nombre
+        vars: { n: "2..10" }
+        enonce: "Quel est le quart de {{4*n}} ?"
+        reponse: "n"
+        indice: "Le quart, c'est la moitié de la moitié."
+        correction: "{{4*n}} ÷ 4 = {{n}} (moitié : {{2*n}}, encore la moitié : {{n}})."
+      - type: comparer
+        vars: { a: [2, 3, 4, 5, 6, 8], b: [2, 3, 4, 5, 6, 8] }
+        si: "a != b"
+        enonce: "Quelle part est la plus grosse ?"
+        gauche: "1/a"
+        droite: "1/b"
+        gauche_affiche: "$\\frac{1}{ {{a}} }$"
+        droite_affiche: "$\\frac{1}{ {{b}} }$"
+        correction: "Plus on partage en beaucoup de parts, plus elles sont petites."
+      - type: vf
+        enonce: "Vrai ou faux : un tiers de pizza est plus gros qu'un quart de la même pizza."
+        reponse: true
+        correction: "Partager en 3 donne de plus grosses parts que partager en 4."
+
+  - id: ecrire-fraction
+    titre: Lire et écrire une fraction
+    objectif: Je sais ce que représentent le numérateur et le dénominateur.
+    mots: [numérateur, dénominateur]
+    etapes:
+      - dialogue:
+          - neo: "J'ai mangé 3 parts d'une tarte coupée en 8. J'ai mangé 3/8 de la tarte."
+          - mia: "Le nombre du bas dit en combien on a coupé, celui du haut combien on en prend !"
+      - visuel:
+          type: fraction
+          n: 3
+          d: 8
+          forme: disque
+        legende: "$\\frac{3}{8}$ : la tarte est coupée en 8, on en prend 3."
+      - texte: |
+          $$\frac{3}{8} \quad \begin{array}{l} \leftarrow \text{numérateur : combien de parts on prend} \\ \leftarrow \text{dénominateur : en combien de parts on a coupé} \end{array}$$
+
+          On lit « trois huitièmes ».
+          Quand le numérateur est égal au dénominateur, on a **tout** : $\frac{8}{8} = 1$.
+      - astuce:
+          texte: "DÉnominateur = en bas, comme « Dessous ». NUmérateur = le NUméro des parts qu'on prend."
+          qui: mia
+      - a_quoi_ca_sert: "Les recettes (3/4 de verre de lait), les notes (15/20), la musique (une noire vaut 1/4 de ronde), le sport (3/4 du match joué)…"
+      - question:
+          type: nombre
+          vars: { d: [3, 4, 5, 6, 8], n: "1..7" }
+          si: "n < d"
+          enonce: "Quelle fraction est colorée ? Écris-la (par exemple 2/5)."
+          visuel: { type: fraction, n: "=n", d: "=d", forme: barre }
+          reponse: "n/d"
+          forme: fraction
+          correction: "{{n}} parts colorées sur {{d}} : {{n}}/{{d}}."
+    exercices:
+      - type: nombre
+        vars: { d: [3, 4, 5, 6, 8, 10], n: "1..9" }
+        si: "n < d"
+        enonce: "Quelle fraction du disque est colorée ?"
+        visuel: { type: fraction, n: "=n", d: "=d", forme: disque }
+        reponse: "n/d"
+        forme: fraction
+        correction: "{{n}}/{{d}}."
+      - type: qcm
+        vars: { d: [4, 5, 6, 8, 10], n: "1..9" }
+        si: "n < d && n*2 != d"
+        enonce: "Dans $\\frac{ {{n}} }{ {{d}} }$, quel est le dénominateur ?"
+        choix: ["{{d}}", "{{n}}", "{{n+d}}", "{{d-n}}"]
+        correction: "Le dénominateur est en bas : {{d}}."
+      - type: nombre
+        vars: { d: [4, 5, 6, 8, 10], n: "1..9" }
+        si: "n < d"
+        enonce: "On a coupé une tarte en {{d}} et mangé {{n}} parts. Quelle fraction RESTE-t-il ?"
+        reponse: "(d-n)/d"
+        forme: fraction
+        correction: "Il reste {{d-n}} parts sur {{d}} : {{d-n}}/{{d}}."
+      - type: vf
+        vars: { d: "2..10" }
+        enonce: "Vrai ou faux : $\\frac{ {{d}} }{ {{d}} } = 1$."
+        reponse: true
+        correction: "On prend toutes les parts : c'est le tout, donc 1."
+
+  - id: fractions-droite
+    titre: Les fractions sur la droite des nombres
+    objectif: Je place des fractions sur une droite graduée, y compris plus grandes que 1.
+    mots: [droite graduée]
+    etapes:
+      - dialogue:
+          - neo: "Une fraction, c'est aussi un NOMBRE ! Elle a sa place sur la droite, entre les entiers."
+          - mia: "Pour placer 3/4, je découpe le segment de 0 à 1 en 4, et je compte 3 morceaux."
+      - visuel:
+          type: droite
+          min: 0
+          max: 2
+          pas: 0.25
+          fractions: 4
+          etiquettes: tout
+          point: { v: 0.75, label: "3/4" }
+      - texte: |
+          Pour placer $\frac{a}{b}$ : je partage **chaque unité** en $b$ parts égales, puis je compte $a$ parts **depuis 0**.
+
+          Une fraction peut être **plus grande que 1** : $\frac{5}{4}$ = 4 quarts (1 unité) + 1 quart. On peut écrire $\frac{5}{4} = 1 + \frac{1}{4}$.
+      - a_quoi_ca_sert: "Un trajet de 3/4 d'heure, une jauge de réservoir à 3/4, une règle graduée en demi-centimètres…"
+      - question:
+          type: droite
+          vars: { d: [2, 4], n: "1..7" }
+          si: "n < 2*d && n % d != 0"
+          enonce: "Place $\\frac{ {{n}} }{ {{d}} }$ sur la droite."
+          min: 0
+          max: 2
+          pas: "1/d"
+          cible: "n/d"
+          cible_affiche: "$\\frac{ {{n}} }{ {{d}} }$"
+          tolerance: 0.06
+    exercices:
+      - type: droite
+        vars: { d: [2, 3, 4, 5], n: "1..9" }
+        si: "n < 2*d && n % d != 0"
+        enonce: "Place $\\frac{ {{n}} }{ {{d}} }$ sur la droite."
+        min: 0
+        max: 2
+        pas: "1/d"
+        cible: "n/d"
+        cible_affiche: "$\\frac{ {{n}} }{ {{d}} }$"
+        tolerance: 0.06
+      - type: champs
+        vars: { d: [2, 3, 4, 5], k: "1..2", r: "1..4" }
+        si: "r < d"
+        enonce: "Décompose : $\\frac{ {{k*d+r}} }{ {{d}} } = ? + \\frac{?}{ {{d}} }$"
+        champs:
+          - { reponse: "k", apres: "+" }
+          - { reponse: "r", apres: "/ {{d}}" }
+        correction: "{{k*d+r}} = {{k}} × {{d}} + {{r}}, donc $\\frac{ {{k*d+r}} }{ {{d}} } = {{k}} + \\frac{ {{r}} }{ {{d}} }$."
+      - type: vf
+        vars: { d: [2, 3, 4, 5, 6], n: "1..12" }
+        si: "n != d"
+        enonce: "Vrai ou faux : $\\frac{ {{n}} }{ {{d}} }$ est plus grand que 1."
+        reponse: "n > d"
+        correction: "Une fraction est plus grande que 1 quand le numérateur est plus grand que le dénominateur."
+      - type: nombre
+        vars: { d: [2, 4, 5, 10] }
+        enonce: "Combien de « 1/{{d}} » faut-il pour faire 1 ?"
+        reponse: "d"
+        correction: "{{d}} fois 1/{{d}} = {{d}}/{{d}} = 1."
+
+  - id: fractions-egales
+    titre: Fractions égales et simplification
+    objectif: Je reconnais des fractions égales et je sais simplifier une fraction.
+    mots: [simplifier, fraction irréductible]
+    etapes:
+      - dialogue:
+          - zero: "Je préfère 2/4 de gâteau à 1/2. Il y a plus de morceaux !"
+          - mia: "Mais c'est la MÊME quantité, Zéro ! Regarde : les morceaux sont juste plus petits."
+      - visuel:
+          type: fraction
+          n: 2
+          d: 4
+          forme: barre
+        legende: "2/4…"
+      - visuel:
+          type: fraction
+          n: 1
+          d: 2
+          forme: barre
+        legende: "…c'est la même longueur que 1/2."
+      - texte: |
+          On obtient une **fraction égale** en **multipliant** (ou divisant) le numérateur **et** le dénominateur **par le même nombre** :
+
+          $$\frac{1}{2} = \frac{2}{4} = \frac{3}{6} = \frac{50}{100}$$
+
+          **Simplifier**, c'est diviser en haut et en bas par le même nombre pour avoir une fraction plus simple :
+          $\frac{12}{18} = \frac{12 \div 6}{18 \div 6} = \frac{2}{3}$. Quand on ne peut plus simplifier, la fraction est **irréductible**.
+      - astuce:
+          texte: "Les critères de divisibilité t'aident à simplifier : si les deux nombres sont pairs, divise par 2 ; s'ils finissent par 0 ou 5, essaie 5 !"
+          qui: neo
+      - a_quoi_ca_sert: "Reconnaître que 50 % = 1/2 = 0,5 ; comparer des recettes ; et plus tard, résoudre des équations et calculer des probabilités."
+      - question:
+          type: nombre
+          vars: { a: "1..4", b: "2..6", k: "2..5" }
+          si: "a < b && pgcd(a,b) == 1"
+          enonce: "Simplifie $\\frac{ {{a*k}} }{ {{b*k}} }$ au maximum."
+          reponse: "a/b"
+          forme: irreductible
+          correction: "On divise en haut et en bas par {{k}} : {{a}}/{{b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..6", b: "2..9", k: "2..6" }
+        si: "a < b && pgcd(a,b) == 1"
+        enonce: "Simplifie $\\frac{ {{a*k}} }{ {{b*k}} }$."
+        reponse: "a/b"
+        forme: irreductible
+        correction: "Divise par {{k}} : $\\frac{ {{a}} }{ {{b}} }$."
+      - type: nombre
+        vars: { a: "1..4", b: "2..5", k: "2..6" }
+        si: "a < b"
+        enonce: "$\\frac{ {{a}} }{ {{b}} } = \\frac{?}{ {{b*k}} }$"
+        reponse: "a*k"
+        correction: "On a multiplié le dénominateur par {{k}}, on fait pareil en haut : {{a*k}}."
+      - type: vf
+        vars: { a: "1..4", b: "2..6", k: "2..4", t: [0, 1] }
+        si: "a < b"
+        enonce: "Vrai ou faux : $\\frac{ {{a}} }{ {{b}} } = \\frac{ {{a*k + t}} }{ {{b*k}} }$."
+        reponse: "t == 0"
+        correction: "{{si(t==0,'Oui : on a multiplié en haut et en bas par ' + texte(k) + '.','Non : en bas on a multiplié par ' + texte(k) + ', mais pas en haut.')}}"
+      - type: qcm
+        enonce: "Quelle fraction est égale à $\\frac{1}{2}$ ?"
+        choix: ["$\\frac{50}{100}$", "$\\frac{2}{1}$", "$\\frac{1}{4}$", "$\\frac{5}{100}$"]
+        correction: "On multiplie en haut et en bas par 50 : 50/100."
+
+  - id: comparer-fractions
+    titre: Comparer des fractions
+    objectif: Je compare des fractions de même dénominateur, de même numérateur, ou en les mettant au même dénominateur.
+    mots: [comparer]
+    etapes:
+      - dialogue:
+          - neo: "Qui a mangé le plus : Mia 2/3 de sa tarte, ou moi 3/4 de la mienne ?"
+          - mia: "Les parts ne sont pas pareilles… Et si on recoupait les deux tartes en 12 ?"
+      - texte: |
+          - **Même dénominateur** : on compare les numérateurs. $\frac{3}{7} < \frac{5}{7}$.
+          - **Même numérateur** : la plus grande est celle qui a le **plus petit** dénominateur (les parts sont plus grosses). $\frac{2}{3} > \frac{2}{5}$.
+          - **Sinon** : on met au **même dénominateur**. $\frac{2}{3} = \frac{8}{12}$ et $\frac{3}{4} = \frac{9}{12}$, donc $\frac{2}{3} < \frac{3}{4}$. Néo a mangé plus !
+      - visuel:
+          type: droite
+          min: 0
+          max: 1
+          pas: 0.0833333333333
+          fractions: 12
+          etiquettes: [0, 1]
+          marques: [0.6666666666667, 0.75]
+        legende: "8/12 et 9/12 sur la droite."
+      - astuce:
+          texte: "Compare aussi avec 1/2 : 3/8 est plus petit que 1/2 (car 4/8 = 1/2) et 4/7 est plus grand que 1/2 (car 3,5/7 = 1/2). Donc 3/8 < 4/7 !"
+          qui: mia
+      - a_quoi_ca_sert: "Comparer des promotions, des recettes, des résultats sportifs (3 réussites sur 4 ou 7 sur 10 ?)…"
+      - question:
+          type: comparer
+          vars: { a: "1..6", b: "1..6", d: [5, 7, 8, 9] }
+          si: "a < d && b < d"
+          enonce: "Compare."
+          gauche: "a/d"
+          droite: "b/d"
+          gauche_affiche: "$\\frac{ {{a}} }{ {{d}} }$"
+          droite_affiche: "$\\frac{ {{b}} }{ {{d}} }$"
+          correction: "Même dénominateur : on compare {{a}} et {{b}}."
+    exercices:
+      - type: comparer
+        vars: { a: "1..8", b: "1..8", d: [5, 7, 9, 10] }
+        si: "a < d && b < d"
+        enonce: "Compare."
+        gauche: "a/d"
+        droite: "b/d"
+        gauche_affiche: "$\\frac{ {{a}} }{ {{d}} }$"
+        droite_affiche: "$\\frac{ {{b}} }{ {{d}} }$"
+        correction: "Même dénominateur : on compare les numérateurs {{a}} et {{b}}."
+      - type: comparer
+        vars: { n: "1..4", a: [3, 4, 5, 6, 7, 8], b: [3, 4, 5, 6, 7, 8] }
+        si: "a != b && n < a && n < b"
+        enonce: "Compare."
+        gauche: "n/a"
+        droite: "n/b"
+        gauche_affiche: "$\\frac{ {{n}} }{ {{a}} }$"
+        droite_affiche: "$\\frac{ {{n}} }{ {{b}} }$"
+        correction: "Même numérateur : la plus grande a le plus petit dénominateur (parts plus grosses)."
+      - type: comparer
+        vars: { a: "1..5", b: [3, 4, 5, 6], c: "1..5", d: [3, 4, 5, 6, 8] }
+        si: "a < b && c < d && b != d"
+        enonce: "Compare (mets au même dénominateur)."
+        gauche: "a/b"
+        droite: "c/d"
+        gauche_affiche: "$\\frac{ {{a}} }{ {{b}} }$"
+        droite_affiche: "$\\frac{ {{c}} }{ {{d}} }$"
+        correction: "Au dénominateur {{ppcm(b,d)}} : {{a*ppcm(b,d)/b}}/{{ppcm(b,d)}} et {{c*ppcm(b,d)/d}}/{{ppcm(b,d)}}."
+      - type: ordre
+        vars: { d: [8, 10, 12], a: "1..11", b: "1..11", c: "1..11" }
+        si: "a < d && b < d && c < d && a != b && b != c && a != c"
+        enonce: "Range du plus petit au plus grand."
+        items: ["$\\frac{ {{kieme(1,a,b,c)}} }{ {{d}} }$", "$\\frac{ {{kieme(2,a,b,c)}} }{ {{d}} }$", "$\\frac{ {{kieme(3,a,b,c)}} }{ {{d}} }$"]
+        correction: "Même dénominateur : on range les numérateurs."
+
+  - id: additionner-fractions
+    titre: Additionner et soustraire des fractions
+    objectif: J'additionne et je soustrais des fractions (même dénominateur, puis dénominateurs différents).
+    mots: [dénominateur commun]
+    etapes:
+      - dialogue:
+          - neo: "1/5 de pizza + 2/5 de pizza, combien ?"
+          - zero: "3/10 ! On additionne tout !"
+          - mia: "Non Zéro ! Des cinquièmes + des cinquièmes = des cinquièmes. 1 cinquième + 2 cinquièmes = 3 cinquièmes : 3/5."
+      - visuel:
+          type: fraction
+          n: 3
+          d: 5
+          forme: barre
+        legende: "1/5 + 2/5 = 3/5"
+      - texte: |
+          - **Même dénominateur** : on additionne les numérateurs, on **garde** le dénominateur.
+            $\frac{1}{5} + \frac{2}{5} = \frac{3}{5}$
+          - **Dénominateurs différents** : on met d'abord au **même dénominateur**.
+            $\frac{1}{2} + \frac{1}{3} = \frac{3}{6} + \frac{2}{6} = \frac{5}{6}$
+      - attention:
+          texte: "On n'additionne JAMAIS les dénominateurs ! Le dénominateur dit la TAILLE des parts : des cinquièmes restent des cinquièmes."
+          qui: neo
+      - a_quoi_ca_sert: "Additionner des durées (1/4 h + 1/2 h = 3/4 h), mélanger des ingrédients, calculer la part totale d'un héritage ou d'un budget…"
+      - question:
+          type: nombre
+          vars: { a: "1..4", b: "1..4", d: [5, 7, 8, 9] }
+          si: "a + b < d"
+          enonce: "$\\frac{ {{a}} }{ {{d}} } + \\frac{ {{b}} }{ {{d}} } = ?$"
+          reponse: "(a+b)/d"
+          forme: fraction
+          correction: "On garde les {{d}}ᵉ : {{a}} + {{b}} = {{a+b}}, donc {{a+b}}/{{d}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..6", b: "1..6", d: [7, 9, 10, 11] }
+        si: "a + b < d"
+        enonce: "$\\frac{ {{a}} }{ {{d}} } + \\frac{ {{b}} }{ {{d}} } = ?$"
+        reponse: "(a+b)/d"
+        forme: fraction
+        correction: "$\\frac{ {{a+b}} }{ {{d}} }$"
+      - type: nombre
+        vars: { a: "2..8", b: "1..6", d: [9, 10, 11] }
+        si: "b < a && a < d"
+        enonce: "$\\frac{ {{a}} }{ {{d}} } - \\frac{ {{b}} }{ {{d}} } = ?$"
+        reponse: "(a-b)/d"
+        forme: fraction
+        correction: "$\\frac{ {{a-b}} }{ {{d}} }$"
+      - type: nombre
+        vars: { b: [2, 3, 4, 5], d: [2, 3, 4, 6] }
+        si: "b != d"
+        enonce: "$\\frac{1}{ {{b}} } + \\frac{1}{ {{d}} } = ?$ (donne une fraction)"
+        reponse: "1/b + 1/d"
+        forme: fraction
+        indice: "Mets au même dénominateur : {{ppcm(b,d)}}."
+        correction: "$\\frac{ {{ppcm(b,d)/b}} }{ {{ppcm(b,d)}} } + \\frac{ {{ppcm(b,d)/d}} }{ {{ppcm(b,d)}} } = {{frac(ppcm(b,d)/b + ppcm(b,d)/d, ppcm(b,d))}}$"
+      - type: nombre
+        vars: { a: "1..3", b: [4, 5, 6, 8] }
+        si: "a < b"
+        enonce: "Il reste combien de gâteau quand on en a mangé $\\frac{ {{a}} }{ {{b}} }$ ? (une fraction)"
+        reponse: "1 - a/b"
+        forme: fraction
+        correction: "$1 = \\frac{ {{b}} }{ {{b}} }$, donc $\\frac{ {{b}} }{ {{b}} } - \\frac{ {{a}} }{ {{b}} } = \\frac{ {{b-a}} }{ {{b}} }$."
+      - type: qcm
+        vars: { a: "1..3", b: "1..3", d: [5, 7, 9] }
+        enonce: "$\\frac{ {{a}} }{ {{d}} } + \\frac{ {{b}} }{ {{d}} } = ?$"
+        choix: ["$\\frac{ {{a+b}} }{ {{d}} }$", "$\\frac{ {{a+b}} }{ {{2*d}} }$", "$\\frac{ {{a*b}} }{ {{d}} }$", "$\\frac{ {{a+b}} }{ {{d*d}} }$"]
+        si: "a*b != a+b"
+        correction: "On garde le dénominateur {{d}} : {{a+b}}/{{d}}. Additionner les dénominateurs est l'erreur à éviter !"
+
+  - id: fraction-d-une-quantite
+    titre: Prendre une fraction d'une quantité
+    objectif: Je calcule 3/4 de 20, 2/5 de 35…
+    mots: [fraction]
+    etapes:
+      - dialogue:
+          - neo: "Il y a 20 élèves. Les 3/4 vont à la piscine. Combien d'élèves ?"
+          - mia: "Je divise en 4 groupes : 20 ÷ 4 = 5. Puis j'en prends 3 : 3 × 5 = 15 !"
+      - visuel:
+          type: barres
+          lignes:
+            - nom: "20 élèves"
+              parts: [{ v: 5, label: "5" }, { v: 5, label: "5" }, { v: 5, label: "5" }, { v: 5, label: "5", vide: true }]
+          total: "20"
+        legende: "3/4 de 20 : on coupe 20 en 4 (5 chacun), on prend 3 parts : 15."
+      - texte: |
+          Pour calculer $\frac{a}{b}$ d'une quantité :
+          1. je **divise** la quantité par $b$ (une part) ;
+          2. je **multiplie** par $a$ (le nombre de parts).
+
+          $\frac{3}{4}$ de 20 = (20 ÷ 4) × 3 = 5 × 3 = **15**.
+      - a_quoi_ca_sert: "Les soldes (« 1/3 de réduction »), les recettes, les votes (« les 2/3 de la classe »), les statistiques…"
+      - question:
+          type: nombre
+          vars: { a: "1..4", b: [3, 4, 5, 6], q: "2..10" }
+          si: "a < b"
+          enonce: "Combien font $\\frac{ {{a}} }{ {{b}} }$ de {{b*q}} ?"
+          reponse: "a*q"
+          correction: "{{b*q}} ÷ {{b}} = {{q}}, puis × {{a}} = {{a*q}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..5", b: [3, 4, 5, 6, 8, 10], q: "2..12" }
+        si: "a < b"
+        enonce: "$\\frac{ {{a}} }{ {{b}} }$ de {{b*q}} = ?"
+        reponse: "a*q"
+        correction: "({{b*q}} ÷ {{b}}) × {{a}} = {{q}} × {{a}} = {{a*q}}."
+      - type: nombre
+        vars: { b: [3, 4, 5], q: "4..20" }
+        enonce: "Un jeu coûte {{b*q}} €. Il est soldé à « 1/{{b}} de réduction ». De combien d'euros est la réduction ?"
+        reponse: "q"
+        unite: €
+        correction: "{{b*q}} ÷ {{b}} = {{q}} €."
+      - type: nombre
+        vars: { a: [2, 3], b: [3, 4, 5], q: "4..9" }
+        si: "a < b"
+        enonce: "Dans une classe de {{b*q}} élèves, les $\\frac{ {{a}} }{ {{b}} }$ ont un animal. Combien d'élèves n'en ont PAS ?"
+        reponse: "b*q - a*q"
+        correction: "{{a}}/{{b}} de {{b*q}} = {{a*q}} ; {{b*q}} − {{a*q}} = {{(b-a)*q}}."
+      - type: nombre
+        vars: { a: [1, 2, 3], b: [4, 5], q: "3..12" }
+        si: "a < b"
+        enonce: "Les $\\frac{ {{a}} }{ {{b}} }$ d'un nombre valent {{a*q}}. Quel est ce nombre ?"
+        reponse: "b*q"
+        indice: "Trouve d'abord ce que vaut 1/{{b}}."
+        correction: "1/{{b}} vaut {{a*q}} ÷ {{a}} = {{q}}, donc le tout vaut {{q}} × {{b}} = {{b*q}}."
+
+  - id: multiplier-fractions
+    titre: Multiplier et diviser des fractions
+    objectif: Je multiplie deux fractions et je divise par une fraction.
+    mots: [inverse]
+    etapes:
+      - dialogue:
+          - neo: "La moitié d'un tiers de tarte, c'est combien de tarte ?"
+          - mia: "Je coupe le tiers en deux… ça fait un sixième ! 1/2 × 1/3 = 1/6."
+      - visuel:
+          type: fraction
+          n: 1
+          d: 6
+          forme: rectangle
+        legende: "La moitié d'un tiers = un sixième."
+      - texte: |
+          **Multiplier** : on multiplie les numérateurs entre eux et les dénominateurs entre eux.
+          $$\frac{2}{3} \times \frac{4}{5} = \frac{2 \times 4}{3 \times 5} = \frac{8}{15}$$
+
+          **Diviser par une fraction**, c'est **multiplier par son inverse** (on la retourne) :
+          $$\frac{3}{4} \div \frac{1}{2} = \frac{3}{4} \times \frac{2}{1} = \frac{6}{4} = \frac{3}{2}$$
+      - astuce:
+          texte: "Pourquoi diviser par 1/2 double ? Parce que « combien de demi-pizzas dans 3 pizzas ? » → 6 ! Diviser par une moitié, c'est compter les moitiés."
+          qui: mia
+      - a_quoi_ca_sert: "Les échelles, les recettes adaptées, les probabilités (1/2 × 1/2 = 1/4 de chances d'avoir deux fois pile), la physique…"
+      - question:
+          type: nombre
+          vars: { a: "1..4", b: "2..5", c: "1..4", d: "2..5" }
+          si: "a < b && c < d"
+          enonce: "$\\frac{ {{a}} }{ {{b}} } \\times \\frac{ {{c}} }{ {{d}} } = ?$"
+          reponse: "(a*c)/(b*d)"
+          forme: fraction
+          correction: "$\\frac{ {{a}} \\times {{c}} }{ {{b}} \\times {{d}} } = {{fracb(a*c,b*d)}} = {{frac(a*c,b*d)}}$"
+    exercices:
+      - type: nombre
+        vars: { a: "1..5", b: "2..7", c: "1..5", d: "2..7" }
+        si: "a < b && c < d"
+        enonce: "$\\frac{ {{a}} }{ {{b}} } \\times \\frac{ {{c}} }{ {{d}} } = ?$"
+        reponse: "(a*c)/(b*d)"
+        forme: fraction
+        correction: "$= {{frac(a*c,b*d)}}$"
+      - type: nombre
+        vars: { a: "1..5", b: "2..7", c: "1..5", d: "2..7" }
+        si: "a < b && c < d"
+        enonce: "$\\frac{ {{a}} }{ {{b}} } \\div \\frac{ {{c}} }{ {{d}} } = ?$"
+        reponse: "(a*d)/(b*c)"
+        forme: fraction
+        indice: "Multiplie par l'inverse : $\\frac{ {{d}} }{ {{c}} }$."
+        correction: "$\\frac{ {{a}} }{ {{b}} } \\times \\frac{ {{d}} }{ {{c}} } = {{frac(a*d,b*c)}}$"
+      - type: nombre
+        vars: { n: "2..9", d: [2, 3, 4] }
+        enonce: "Combien de « 1/{{d}} » dans {{n}} ? Calcule $ {{n}} \\div \\frac{1}{ {{d}} }$."
+        reponse: "n*d"
+        correction: "Dans 1, il y a {{d}} fois 1/{{d}} ; dans {{n}}, il y en a {{n}} × {{d}} = {{n*d}}."
+      - type: nombre
+        vars: { a: [1, 2, 3], b: [4, 5, 6] }
+        si: "a < b"
+        enonce: "Quel est l'inverse de $\\frac{ {{a}} }{ {{b}} }$ ?"
+        reponse: "b/a"
+        forme: fraction
+        correction: "On retourne la fraction : $\\frac{ {{b}} }{ {{a}} }$."

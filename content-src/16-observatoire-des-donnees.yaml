@@ -1,0 +1,319 @@
+id: observatoire-des-donnees
+titre: L'Observatoire des Données
+sous_titre: Tableaux, graphiques, moyennes et premières probabilités
+emoji: 📊
+couleur: "#2e7d32"
+cycle: explorateurs
+age: 9-15 ans
+niveau: CM1 – 2nde
+ordre: 16
+prerequis: [port-des-decimaux]
+version: 1.0.0
+intro:
+  - mia: "Du haut de l'Observatoire, on regarde le monde… en chiffres !"
+  - neo: "Les données sont partout : météo, sport, sondages, jeux vidéo. Apprenons à les lire sans se faire piéger."
+  - zero: "Et le hasard ? Si je lance une pièce, j'ai combien de chances de faire Zéro ?"
+
+lecons:
+  - id: lire-graphiques
+    titre: Lire un tableau et un graphique
+    objectif: Je lis et j'interprète des données dans un tableau ou un diagramme en barres.
+    mots: [diagramme, données]
+    etapes:
+      - dialogue:
+          - neo: "Combien de glaces vendues chaque jour cette semaine ? Un graphique le montre d'un seul coup d'œil."
+          - mia: "Il faut toujours regarder le TITRE et les UNITÉS sur les axes !"
+      - visuel:
+          type: diagramme
+          titre: Glaces vendues
+          barres:
+            - { label: "lun", v: 12 }
+            - { label: "mar", v: 18 }
+            - { label: "mer", v: 30 }
+            - { label: "jeu", v: 15 }
+            - { label: "ven", v: 24 }
+      - texte: |
+          Pour lire un graphique :
+          1. **Titre** : de quoi parle-t-il ?
+          2. **Axes** : que représente chaque axe, et dans quelle unité ?
+          3. **Lecture** : je repère la barre ou le point, je lis la valeur.
+          4. **Interprétation** : quel est le maximum ? Le minimum ? Que remarque-t-on ?
+      - attention:
+          texte: "Méfie-toi des graphiques dont l'axe ne commence pas à 0 : une petite différence peut paraître énorme ! Les publicités adorent ce truc."
+          qui: neo
+      - a_quoi_ca_sert: "Lire la météo, les résultats d'un sondage, les statistiques de ton joueur préféré, l'évolution de tes notes, les articles de journaux…"
+      - question:
+          type: nombre
+          vars: { a: "5..30", b: "5..30", c: "5..30" }
+          enonce: "Combien de livres ont été lus en tout par ces trois classes ?"
+          visuel: { type: diagramme, titre: "Livres lus", barres: [{ label: "CE2", v: "=a" }, { label: "CM1", v: "=b" }, { label: "CM2", v: "=c" }] }
+          reponse: "a+b+c"
+          correction: "{{a}} + {{b}} + {{c}} = {{a+b+c}} livres."
+    exercices:
+      - type: nombre
+        vars: { a: "5..40", b: "5..40", c: "5..40", d: "5..40" }
+        si: "a != b && b != c && c != d && a != d && a != c && b != d"
+        enonce: "Quelle est la valeur la plus haute de ce diagramme ?"
+        visuel: { type: diagramme, titre: "Visiteurs du musée (centaines)", barres: [{ label: "jan", v: "=a" }, { label: "fév", v: "=b" }, { label: "mar", v: "=c" }, { label: "avr", v: "=d" }] }
+        reponse: "max(a,b,c,d)"
+        correction: "Le maximum est {{max(a,b,c,d)}}."
+      - type: nombre
+        vars: { a: "10..40", b: "10..40" }
+        si: "a != b"
+        enonce: "Quelle est la différence entre les deux barres ?"
+        visuel: { type: diagramme, titre: "Points marqués", barres: [{ label: "Rouges", v: "=a" }, { label: "Bleus", v: "=b" }] }
+        reponse: "abs(a-b)"
+        correction: "|{{a}} − {{b}}| = {{abs(a-b)}} points."
+      - type: qcm
+        enonce: "Que faut-il regarder EN PREMIER sur un graphique ?"
+        choix: ["son titre et ses axes", "sa couleur", "la plus grande barre", "le nombre de barres"]
+        correction: "Le titre et les axes disent ce qu'on mesure et dans quelle unité."
+
+  - id: moyenne
+    titre: La moyenne
+    objectif: Je calcule une moyenne et je comprends ce qu'elle signifie.
+    mots: [moyenne]
+    etapes:
+      - dialogue:
+          - zero: "J'ai eu 4, 18 et 17 en maths. Ma moyenne, c'est… 4 ? Parce que c'est le premier ?"
+          - mia: "Non ! On additionne tout et on divise par le nombre de notes : (4 + 18 + 17) ÷ 3 = 13."
+      - texte: |
+          $$\text{moyenne} = \frac{\text{somme des valeurs}}{\text{nombre de valeurs}}$$
+
+          La moyenne, c'est la valeur qu'aurait **chacun** si on **partageait équitablement** le total.
+
+          **Moyenne pondérée** (avec coefficients) : chaque valeur compte plusieurs fois. Notes 12 (coeff. 2) et 15 (coeff. 1) : $\frac{12 \times 2 + 15 \times 1}{3} = 13$.
+      - a_quoi_ca_sert: "Les moyennes de notes, la température moyenne d'un mois, le nombre moyen de buts par match, la consommation moyenne d'une voiture…"
+      - question:
+          type: nombre
+          vars: { a: "6..20", b: "6..20", c: "6..20" }
+          si: "(a + b + c) % 3 == 0"
+          enonce: "Notes : {{a}}, {{b}} et {{c}}. Moyenne ?"
+          reponse: "(a+b+c)/3"
+          correction: "({{a}} + {{b}} + {{c}}) ÷ 3 = {{a+b+c}} ÷ 3 = {{(a+b+c)/3}}."
+    exercices:
+      - type: nombre
+        vars: { a: "5..20", b: "5..20", c: "5..20", d: "5..20" }
+        si: "(a + b + c + d) % 4 == 0"
+        enonce: "Moyenne de {{a}}, {{b}}, {{c}} et {{d}} ?"
+        reponse: "(a+b+c+d)/4"
+        correction: "{{a+b+c+d}} ÷ 4 = {{(a+b+c+d)/4}}."
+      - type: nombre
+        vars: { m: "10..15", a: "8..16", b: "8..16" }
+        si: "3*m - a - b >= 0 && 3*m - a - b <= 20"
+        enonce: "Mia a eu {{a}} et {{b}}. Quelle note doit-elle avoir au 3ᵉ contrôle pour avoir {{m}} de moyenne ?"
+        reponse: "3*m - a - b"
+        indice: "Pour une moyenne de {{m}} sur 3 notes, le total doit faire 3 × {{m}}."
+        correction: "Total nécessaire : {{3*m}} ; {{3*m}} − {{a}} − {{b}} = {{3*m-a-b}}."
+      - type: nombre
+        vars: { a: "8..18", ca: [1, 2, 3], b: "8..18", cb: [1, 2] }
+        si: "(a*ca + b*cb) % (ca + cb) == 0"
+        enonce: "Note {{a}} (coefficient {{ca}}) et note {{b}} (coefficient {{cb}}). Moyenne pondérée ?"
+        reponse: "(a*ca+b*cb)/(ca+cb)"
+        correction: "({{a}} × {{ca}} + {{b}} × {{cb}}) ÷ {{ca+cb}} = {{(a*ca+b*cb)/(ca+cb)}}."
+      - type: nombre
+        vars: { t: [12, 14, 15, 16, 18], j: [5, 7] }
+        enonce: "Pendant {{j}} jours, la température moyenne a été de {{t}} °C. Quelle est la somme des températures relevées ?"
+        reponse: "t*j"
+        unite: °C
+        correction: "Somme = moyenne × nombre : {{t}} × {{j}} = {{t*j}}."
+
+  - id: mediane-etendue
+    titre: Médiane et étendue
+    objectif: Je calcule la médiane et l'étendue d'une série et je les compare à la moyenne.
+    mots: [médiane, étendue]
+    etapes:
+      - dialogue:
+          - neo: "Dans une entreprise, 9 personnes gagnent 2 000 € et le patron 50 000 €. Salaire moyen : 6 800 € !"
+          - mia: "Mais ça ne représente personne ! La MÉDIANE, elle, vaut 2 000 € : bien plus parlant."
+      - texte: |
+          - **Médiane** : la valeur du **milieu** quand la série est **rangée dans l'ordre**. La moitié des valeurs est en dessous, la moitié au-dessus.
+            - 7 valeurs rangées → la 4ᵉ.
+            - 8 valeurs rangées → la moyenne de la 4ᵉ et de la 5ᵉ.
+          - **Étendue** : plus grande valeur − plus petite valeur (elle mesure la dispersion).
+
+          La médiane n'est pas influencée par les valeurs extrêmes, contrairement à la moyenne.
+      - a_quoi_ca_sert: "Les salaires et revenus (l'INSEE publie souvent des médianes), les prix de l'immobilier, les temps de trajet, les résultats d'une classe…"
+      - question:
+          type: nombre
+          vars: { a: "1..20", b: "1..20", c: "1..20", d: "1..20", e: "1..20" }
+          enonce: "Médiane de la série : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ?"
+          reponse: "kieme(3,a,b,c,d,e)"
+          indice: "Range d'abord les valeurs dans l'ordre : la médiane est la 3ᵉ."
+          correction: "Rangée : {{tri(a,b,c,d,e)}}. La 3ᵉ valeur : {{kieme(3,a,b,c,d,e)}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..30", b: "1..30", c: "1..30", d: "1..30", e: "1..30", f: "1..30", g: "1..30" }
+        enonce: "Médiane de : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ; {{f}} ; {{g}} ?"
+        reponse: "kieme(4,a,b,c,d,e,f,g)"
+        correction: "Rangée : {{tri(a,b,c,d,e,f,g)}} ; la 4ᵉ : {{kieme(4,a,b,c,d,e,f,g)}}."
+      - type: nombre
+        vars: { a: "1..30", b: "1..30", c: "1..30", d: "1..30" }
+        enonce: "Médiane de : {{a}} ; {{b}} ; {{c}} ; {{d}} ?"
+        reponse: "(kieme(2,a,b,c,d) + kieme(3,a,b,c,d))/2"
+        correction: "Rangée : {{tri(a,b,c,d)}} ; moyenne des 2ᵉ et 3ᵉ : {{nb((kieme(2,a,b,c,d)+kieme(3,a,b,c,d))/2)}}."
+      - type: nombre
+        vars: { a: "1..50", b: "1..50", c: "1..50", d: "1..50", e: "1..50" }
+        enonce: "Étendue de : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ?"
+        reponse: "max(a,b,c,d,e) - min(a,b,c,d,e)"
+        correction: "{{max(a,b,c,d,e)}} − {{min(a,b,c,d,e)}} = {{max(a,b,c,d,e)-min(a,b,c,d,e)}}."
+      - type: qcm
+        enonce: "Salaires : 1 800 ; 1 900 ; 2 000 ; 2 100 ; 15 000 €. Quel indicateur représente le mieux le salaire « typique » ?"
+        choix: ["la médiane (2 000 €)", "la moyenne (4 560 €)", "l'étendue (13 200 €)", "le maximum (15 000 €)"]
+        correction: "La médiane n'est pas déformée par la valeur extrême de 15 000 €."
+
+  - id: hasard-probabilite
+    titre: Le hasard et les probabilités
+    objectif: Je calcule une probabilité simple dans une situation d'équiprobabilité.
+    mots: [probabilité, issue, événement]
+    etapes:
+      - dialogue:
+          - zero: "Je lance un dé. Quelle chance de faire 6 ?"
+          - mia: "Il y a 6 faces, toutes pareilles. Une seule fait 6 : 1 chance sur 6 !"
+          - neo: "On écrit P(6) = 1/6. C'est une PROBABILITÉ."
+      - texte: |
+          Quand toutes les issues ont la **même chance** (pièce équilibrée, dé non truqué) :
+          $$P(\text{événement}) = \frac{\text{nombre d'issues favorables}}{\text{nombre d'issues possibles}}$$
+
+          - Une probabilité est toujours **entre 0** (impossible) **et 1** (certain).
+          - P(faire un nombre pair avec un dé) = 3/6 = 1/2.
+          - P(ne pas faire 6) = 1 − 1/6 = 5/6 (l'**événement contraire**).
+      - histoire:
+          titre: Un peu d'histoire
+          texte: "En 1654, Blaise Pascal et Pierre de Fermat échangent des lettres sur un problème de jeu de dés posé par le chevalier de Méré. Cette correspondance est considérée comme la naissance du calcul des probabilités."
+      - a_quoi_ca_sert: "La météo (« 70 % de risque de pluie »), les jeux, les assurances, la médecine (efficacité d'un traitement), l'intelligence artificielle…"
+      - question:
+          type: nombre
+          vars: { r: "1..6", b: "1..6" }
+          enonce: "Un sac contient {{r}} boules rouges et {{b}} bleues. Probabilité de tirer une rouge ? (fraction)"
+          reponse: "r/(r+b)"
+          forme: fraction
+          correction: "{{r}} favorables sur {{r+b}} : $\\frac{ {{r}} }{ {{r+b}} } = {{frac(r,r+b)}}$"
+    exercices:
+      - type: nombre
+        vars: { r: "1..8", b: "1..8", v: "1..8" }
+        enonce: "{{r}} boules rouges, {{b}} bleues, {{v}} vertes. P(bleue) ?"
+        reponse: "b/(r+b+v)"
+        forme: fraction
+        correction: "$\\frac{ {{b}} }{ {{r+b+v}} } = {{frac(b,r+b+v)}}$"
+      - type: nombre
+        enonce: "On lance un dé à 6 faces. Probabilité d'obtenir un nombre pair ?"
+        reponse: "1/2"
+        forme: fraction
+        correction: "2, 4, 6 : 3 issues sur 6 = 1/2."
+      - type: nombre
+        vars: { k: [3, 4, 5] }
+        enonce: "On lance un dé à 6 faces. Probabilité d'obtenir un nombre strictement plus grand que {{k}} ?"
+        reponse: "(6-k)/6"
+        forme: fraction
+        correction: "{{6-k}} issues sur 6 : {{frac(6-k,6)}}."
+      - type: nombre
+        vars: { n: "2..9", d: [10, 12, 20] }
+        si: "n < d"
+        enonce: "La probabilité qu'il pleuve demain est $\\frac{ {{n}} }{ {{d}} }$. Probabilité qu'il ne pleuve PAS ?"
+        reponse: "1 - n/d"
+        forme: fraction
+        correction: "$1 - \\frac{ {{n}} }{ {{d}} } = {{frac(d-n,d)}}$"
+      - type: qcm
+        enonce: "Une probabilité de 0 signifie que l'événement est…"
+        choix: ["impossible", "certain", "très probable", "aussi probable qu'improbable"]
+        correction: "Probabilité 0 = impossible ; 1 = certain."
+
+  - id: deux-epreuves
+    titre: Deux épreuves - les arbres
+    objectif: J'utilise un arbre pour une expérience à deux épreuves.
+    mots: [arbre, épreuve]
+    etapes:
+      - dialogue:
+          - neo: "Je lance deux pièces. Quelle probabilité d'avoir deux fois pile ?"
+          - zero: "1/2 + 1/2 = 1 ! C'est sûr !"
+          - mia: "Non Zéro ! Dessinons un arbre : PP, PF, FP, FF. Une seule issue sur 4 : 1/4."
+      - visuel:
+          type: arbre
+          branches:
+            - label: P
+              p: "1/2"
+              enfants: [{ label: "P", p: "1/2" }, { label: "F", p: "1/2" }]
+            - label: F
+              p: "1/2"
+              enfants: [{ label: "P", p: "1/2" }, { label: "F", p: "1/2" }]
+        legende: "Arbre de deux lancers de pièce : 4 chemins équiprobables."
+      - texte: |
+          Dans un **arbre** :
+          - on **multiplie** les probabilités le long d'un **chemin** : $P(PP) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$ ;
+          - on **additionne** les probabilités des chemins qui mènent au même événement : P(une seule fois pile) = P(PF) + P(FP) = 1/4 + 1/4 = 1/2.
+      - a_quoi_ca_sert: "Les jeux de société (deux dés), les codes et mots de passe (nombre de combinaisons), la génétique (couleur des yeux), les contrôles qualité…"
+      - question:
+          type: nombre
+          enonce: "On lance deux fois une pièce. Probabilité d'avoir 2 fois face ?"
+          reponse: "1/4"
+          forme: fraction
+          correction: "$\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$"
+    exercices:
+      - type: nombre
+        enonce: "On lance deux dés. Probabilité d'avoir un double 6 ?"
+        reponse: "1/36"
+        forme: fraction
+        correction: "$\\frac{1}{6} \\times \\frac{1}{6} = \\frac{1}{36}$"
+      - type: nombre
+        enonce: "On lance 3 fois une pièce. Probabilité d'avoir 3 fois pile ?"
+        reponse: "1/8"
+        forme: fraction
+        correction: "$\\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$"
+      - type: nombre
+        vars: { s: [7, 2, 12, 6, 8] }
+        enonce: "On lance deux dés et on additionne. Probabilité d'obtenir {{s}} ?"
+        reponse: "(6 - abs(s-7))/36"
+        forme: fraction
+        indice: "Il y a 36 couples possibles. Compte ceux dont la somme fait {{s}}."
+        correction: "{{6 - abs(s-7)}} couples sur 36 : {{frac(6-abs(s-7),36)}}."
+      - type: nombre
+        vars: { r: "1..4", b: "1..4" }
+        enonce: "Sac : {{r}} rouges et {{b}} bleues. On tire une boule, on la REMET, on en tire une autre. P(deux rouges) ?"
+        reponse: "(r/(r+b))^2"
+        forme: fraction
+        correction: "$\\left(\\frac{ {{r}} }{ {{r+b}} }\\right)^2 = {{frac(r*r,(r+b)*(r+b))}}$"
+
+  - id: quartiles-frequences
+    titre: Fréquences, quartiles et diagrammes en boîte
+    objectif: Je calcule des fréquences et des quartiles pour décrire une série.
+    mots: [fréquence, quartile]
+    etapes:
+      - dialogue:
+          - mia: "Sur 200 élèves, 50 viennent à vélo. La fréquence, c'est 50/200 = 0,25, soit 25 %."
+          - neo: "Et les quartiles découpent la série rangée en 4 parts égales, comme la médiane la coupe en 2."
+      - texte: |
+          - **Fréquence** d'une valeur = effectif de la valeur ÷ effectif total (entre 0 et 1, souvent en %).
+          - **Premier quartile Q₁** : la plus petite valeur telle qu'au moins **25 %** des valeurs lui soient inférieures ou égales.
+          - **Troisième quartile Q₃** : idem avec **75 %**.
+          - **Écart interquartile** : Q₃ − Q₁ (la moitié « centrale » des données).
+
+          Pour une série rangée de $n$ valeurs : Q₁ est la valeur de rang $\lceil n/4 \rceil$ et Q₃ celle de rang $\lceil 3n/4 \rceil$.
+      - a_quoi_ca_sert: "Les courbes de croissance des enfants chez le médecin, les statistiques de salaires, les résultats d'examens, la qualité de fabrication…"
+      - question:
+          type: nombre
+          vars: { e: "10..90", t: [100, 200, 400, 500] }
+          si: "e < t"
+          enonce: "Sur {{t}} personnes interrogées, {{e}} préfèrent le chocolat. Fréquence en % ?"
+          reponse: "e/t*100"
+          unite: "%"
+          correction: "{{e}} ÷ {{t}} = {{nb(e/t)}}, soit {{nb(e/t*100)}} %."
+    exercices:
+      - type: nombre
+        vars: { e: "5..45", t: [50, 100, 200] }
+        si: "e < t"
+        enonce: "Fréquence (en %) d'une valeur d'effectif {{e}} sur un total de {{t}} ?"
+        reponse: "e/t*100"
+        unite: "%"
+        correction: "{{nb(e/t*100)}} %."
+      - type: nombre
+        vars: { a: "1..40", b: "1..40", c: "1..40", d: "1..40", e: "1..40", f: "1..40", g: "1..40", h: "1..40" }
+        enonce: "Série de 8 valeurs : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ; {{f}} ; {{g}} ; {{h}}. Premier quartile Q₁ ?"
+        reponse: "kieme(2,a,b,c,d,e,f,g,h)"
+        indice: "Range la série ; Q₁ est la valeur de rang 8/4 = 2."
+        correction: "Rangée : {{tri(a,b,c,d,e,f,g,h)}}. Q₁ = 2ᵉ valeur = {{kieme(2,a,b,c,d,e,f,g,h)}}."
+      - type: nombre
+        vars: { a: "1..40", b: "1..40", c: "1..40", d: "1..40", e: "1..40", f: "1..40", g: "1..40", h: "1..40" }
+        enonce: "Série de 8 valeurs : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ; {{f}} ; {{g}} ; {{h}}. Troisième quartile Q₃ ?"
+        reponse: "kieme(6,a,b,c,d,e,f,g,h)"
+        correction: "Rang 3 × 8 / 4 = 6 : Q₃ = {{kieme(6,a,b,c,d,e,f,g,h)}}."

@@ -1,0 +1,445 @@
+id: foret-des-nombres
+titre: La Forêt des Nombres
+sous_titre: Compter, lire, écrire et ranger les nombres
+emoji: 🌳
+couleur: "#3f9b4f"
+decor: img/decors/foret-des-nombres.webp
+cycle: graines
+age: 7-9 ans
+niveau: CP – CM1
+ordre: 1
+prerequis: []
+version: 1.0.0
+intro:
+  - neo: "Bienvenue dans la Forêt des Nombres ! Ici, chaque arbre porte un nombre."
+  - mia: "Et si on apprenait à les lire, à les écrire et à les ranger ? Ça va être magique !"
+  - zero: "Moi, je suis Zéro. Je ne vaux rien… mais quand je change de place, tout change !"
+  - neo: "On verra ça, Zéro. Défi accepté !"
+
+lecons:
+  # ------------------------------------------------------------------
+  - id: compter-par-dix
+    titre: Compter vite en faisant des paquets de 10
+    objectif: Je sais compter une grande collection en faisant des paquets de 10.
+    mots: [dizaine, unité]
+    etapes:
+      - dialogue:
+          - zero: "J'ai ramassé plein de noisettes ! Une, deux, trois… euh… j'ai perdu le compte."
+          - mia: "Et si on essayait autrement ? On fait des petits tas de 10 !"
+          - neo: "Bonne idée. Compter des paquets, c'est plus rapide et on se trompe moins."
+      - texte: |
+          Quand il y a **beaucoup** d'objets, on les range par **paquets de 10**.
+
+          Un paquet de 10, ça s'appelle une **dizaine**.
+          Les objets qui restent tout seuls s'appellent des **unités**.
+      - visuel:
+          type: blocs
+          nombre: 34
+        legende: "3 paquets de 10 et 4 tout seuls : 34 noisettes."
+      - retiens: "**10 unités = 1 dizaine.** Pour compter vite : je compte les dizaines (10, 20, 30…), puis j'ajoute les unités."
+      - a_quoi_ca_sert: "Les caissiers comptent les pièces par piles de 10, les maîtresses comptent les élèves par rangées, les fermiers rangent les œufs par boîtes. Faire des paquets, c'est le secret pour compter beaucoup sans se tromper !"
+      - exemple:
+          titre: Compter 52 billes
+          enonce: Il y a 5 sacs de 10 billes et 2 billes à côté. Combien de billes ?
+          etapes:
+            - "Je compte les sacs de 10 : 10, 20, 30, 40, 50."
+            - "J'ajoute les 2 billes seules : 51, 52."
+          reponse: Il y a 52 billes.
+      - question:
+          type: nombre
+          vars: { d: "2..9", u: "1..9" }
+          enonce: "Combien y a-t-il de cubes ?"
+          visuel: { type: blocs, nombre: "=d*10+u" }
+          reponse: "d*10+u"
+          indice: "Compte d'abord les barres de 10 : 10, 20, 30… puis ajoute les petits cubes."
+          correction: "{{d}} dizaines et {{u}} unités : {{d*10+u}}."
+    exercices:
+      - type: nombre
+        vars: { d: "1..9", u: "0..9" }
+        enonce: "Combien y a-t-il de cubes ?"
+        visuel: { type: blocs, nombre: "=d*10+u" }
+        reponse: "d*10+u"
+        indice: "Les barres valent 10. Compte de 10 en 10, puis ajoute les petits cubes."
+        correction: "{{d}} barres de 10 = {{d*10}}, plus {{u}} : {{d*10+u}}."
+      - type: nombre
+        vars: { d: "2..9", u: "1..9" }
+        enonce: "{{d}} paquets de 10 et {{u}} unités, cela fait combien ?"
+        reponse: "d*10+u"
+        correction: "{{d}} dizaines = {{d*10}}. {{d*10}} + {{u}} = {{d*10+u}}."
+      - type: champs
+        vars: { n: "11..99" }
+        si: "n % 10 != 0"
+        enonce: "Dans {{n}}, combien de dizaines et combien d'unités ?"
+        champs:
+          - { reponse: "ent(n/10)", apres: "dizaines" }
+          - { reponse: "n % 10", apres: "unités" }
+        correction: "{{n}} = {{ent(n/10)}} dizaines et {{n%10}} unités."
+      - type: nombre
+        vars: { d: "3..9" }
+        enonce: "Combien d'unités y a-t-il dans {{d}} dizaines ?"
+        reponse: "d*10"
+        correction: "1 dizaine = 10 unités, donc {{d}} dizaines = {{d*10}} unités."
+      - type: qcm
+        vars: { d: "2..8", u: "1..9" }
+        enonce: "Quel nombre a {{d}} dizaines et {{u}} unités ?"
+        choix: ["{{d*10+u}}", "{{u*10+d}}", "{{d+u}}", "{{d*10+u+10}}"]
+        si: "u != d"
+        correction: "{{d}} dizaines, c'est {{d*10}}. Plus {{u}} unités : {{d*10+u}}."
+
+  # ------------------------------------------------------------------
+  - id: centaines
+    titre: Les centaines et la place des chiffres
+    objectif: Je sais lire et écrire les nombres jusqu'à 1 000 et je comprends la valeur de chaque chiffre.
+    mots: [centaine, chiffre, nombre]
+    etapes:
+      - dialogue:
+          - zero: "Regardez ! Je suis tout seul : 0. Je me mets derrière 1 : 10 ! Encore un ami Zéro : 100 !"
+          - zero-surprise: "CENT ! 😳 Pourquoi tout le monde est impressionné ?"
+          - mia: "Parce que la PLACE d'un chiffre change sa valeur, Zéro !"
+          - zero: "…C'est évident."
+      - texte: |
+          **10 dizaines = 1 centaine**, c'est-à-dire 100.
+
+          Dans un nombre, chaque chiffre a une **place** :
+          - le chiffre de droite compte les **unités** ;
+          - celui d'avant compte les **dizaines** ;
+          - celui encore avant compte les **centaines**.
+      - visuel:
+          type: abaque
+          nombre: 347
+        legende: "347 = 3 centaines, 4 dizaines et 7 unités."
+      - visuel:
+          type: blocs
+          nombre: 347
+      - attention:
+          texte: "Un **chiffre**, c'est un signe (0, 1, 2… 9). Un **nombre**, c'est une quantité qu'on écrit avec des chiffres. 347 est un nombre écrit avec 3 chiffres — comme un mot écrit avec des lettres !"
+          qui: neo
+      - astuce:
+          texte: "Zéro sert à **garder la place vide**. Dans 405, il n'y a aucune dizaine, mais sans le 0 on lirait 45 !"
+          qui: zero
+      - a_quoi_ca_sert: "Le prix d'un vélo (249 €), le nombre de pages d'un livre, le nombre de places dans un stade… Bien lire chaque chiffre évite de grosses erreurs : 905 € ou 95 €, ce n'est pas pareil !"
+      - question:
+          type: nombre
+          vars: { n: "101..999" }
+          enonce: "Quel est le chiffre des dizaines dans {{n}} ?"
+          reponse: "chiffre(n,1)"
+          correction: "{{n}} : {{chiffre(n,2)}} centaines, {{chiffre(n,1)}} dizaines, {{chiffre(n,0)}} unités."
+    exercices:
+      - type: champs
+        vars: { n: "101..999" }
+        enonce: "Décompose {{n}}."
+        visuel: { type: abaque, nombre: "=n", vide: true }
+        champs:
+          - { reponse: "chiffre(n,2)", apres: "centaines" }
+          - { reponse: "chiffre(n,1)", apres: "dizaines" }
+          - { reponse: "chiffre(n,0)", apres: "unités" }
+        correction: "{{n}} = {{chiffre(n,2)*100}} + {{chiffre(n,1)*10}} + {{chiffre(n,0)}}."
+      - type: nombre
+        vars: { c: "1..9", d: "0..9", u: "0..9" }
+        enonce: "Écris le nombre : {{c}} centaines, {{d}} dizaines et {{u}} unités."
+        reponse: "c*100+d*10+u"
+        correction: "{{c}} centaines = {{c*100}}, {{d}} dizaines = {{d*10}}, et {{u}} unités : {{c*100+d*10+u}}."
+      - type: nombre
+        vars: { c: "1..9", u: "1..9" }
+        enonce: "Écris le nombre : {{c}} centaines et {{u}} unités (et aucune dizaine)."
+        reponse: "c*100+u"
+        indice: "Quand il n'y a pas de dizaine, Zéro garde la place !"
+        correction: "On écrit 0 aux dizaines : {{c*100+u}}."
+      - type: qcm
+        vars: { n: "101..999", r: [1, 2] }
+        si: "chiffre(n,r) != 0"
+        enonce: "Dans {{n}}, combien vaut le chiffre {{chiffre(n,r)}} qui est à la place des {{si(r==0,'unités',si(r==1,'dizaines','centaines'))}} ?"
+        choix: ["{{chiffre(n,r)*10^r}}", "{{chiffre(n,r)}}", "{{chiffre(n,r)*10^(r+1)}}", "{{chiffre(n,r)*10^(r+2)}}"]
+        correction: "À la place des {{si(r==0,'unités',si(r==1,'dizaines','centaines'))}}, le chiffre {{chiffre(n,r)}} vaut {{chiffre(n,r)*10^r}}."
+      - type: nombre
+        vars: { c: "2..9" }
+        enonce: "Combien de dizaines dans {{c}} centaines ?"
+        reponse: "c*10"
+        correction: "1 centaine = 10 dizaines, donc {{c}} centaines = {{c*10}} dizaines."
+      - type: nombre
+        vars: { n: "100..999" }
+        enonce: "Écris en chiffres : **{{lettres(n)}}**."
+        reponse: "n"
+        correction: "{{lettres(n)}} = {{n}}."
+      - type: qcm
+        vars: { n: "100..999" }
+        si: "chiffre(n,1) == 0 || chiffre(n,0) == 0"
+        enonce: "Comment s'écrit **{{lettres(n)}}** en chiffres ?"
+        choix: ["{{n}}", "{{chiffre(n,2)}}{{chiffre(n,1)*10+chiffre(n,0)}}", "{{n*10}}", "{{chiffre(n,2)*1000+chiffre(n,1)*10+chiffre(n,0)}}"]
+        correction: "On place chaque chiffre à sa place, et Zéro garde les places vides : {{n}}."
+
+  # ------------------------------------------------------------------
+  - id: comparer-ranger
+    titre: Comparer et ranger les nombres
+    objectif: Je sais comparer deux nombres avec <, > ou = et ranger des nombres.
+    mots: [comparer, inférieur, supérieur]
+    etapes:
+      - dialogue:
+          - neo: "Qui a le plus de glands : l'écureuil avec 48 ou celui avec 84 ?"
+          - zero: "Moi je sais ! Ils ont les mêmes chiffres, donc c'est pareil !"
+          - mia: "Pas du tout, Zéro ! Regarde les dizaines : 4 dizaines contre 8 dizaines."
+          - neo: "Ah… 84, c'est beaucoup plus. Vérifions toujours la place des chiffres !"
+      - texte: |
+          Pour comparer deux nombres :
+          1. Celui qui a **le plus de chiffres** est le plus grand (100 > 99).
+          2. S'ils ont autant de chiffres, je compare **de gauche à droite** : d'abord les centaines, puis les dizaines, puis les unités.
+      - visuel:
+          type: droite
+          min: 40
+          max: 90
+          pas: 5
+          marques: [48, 84]
+          etiquettes: tout
+      - astuce:
+          texte: "Le signe **<** est une bouche de crocodile affamé : elle s'ouvre toujours vers le plus grand nombre ! 3 < 8 se lit « 3 est plus petit que 8 »."
+          qui: mia
+      - retiens: "**<** veut dire « est plus petit que », **>** veut dire « est plus grand que », **=** veut dire « est égal à »."
+      - a_quoi_ca_sert: "Comparer les prix pour choisir le moins cher, savoir qui a gagné une partie, trouver la plus grande montagne… On compare des nombres tous les jours !"
+      - question:
+          type: comparer
+          vars: { a: "10..999", b: "10..999" }
+          enonce: "Choisis le bon signe."
+          gauche: "a"
+          droite: "b"
+          correction: "On compare de gauche à droite, chiffre par chiffre."
+    exercices:
+      - type: comparer
+        vars: { a: "10..99", b: "10..99" }
+        enonce: "Choisis le bon signe."
+        gauche: "a"
+        droite: "b"
+        correction: "On compare d'abord les dizaines, puis les unités."
+      - type: comparer
+        vars: { a: "100..999", x: [1, 10, 100] }
+        si: "a+x <= 999"
+        enonce: "Choisis le bon signe."
+        gauche: "a"
+        droite: "a + x*choix(1,-1)"
+        correction: "Regarde le premier chiffre qui est différent."
+      - type: comparer
+        vars: { d: "1..9", u: "1..9" }
+        si: "d != u"
+        enonce: "Attention aux chiffres échangés ! Choisis le bon signe."
+        gauche: "d*10+u"
+        droite: "u*10+d"
+        correction: "On regarde les dizaines : {{d}} dizaines et {{u}} dizaines."
+      - type: ordre
+        vars: { a: "10..999", b: "10..999", c: "10..999", d: "10..999" }
+        enonce: "Range ces nombres du plus petit au plus grand."
+        si: "a!=b && a!=c && a!=d && b!=c && b!=d && c!=d"
+        items: ["{{kieme(1,a,b,c,d)}}", "{{kieme(2,a,b,c,d)}}", "{{kieme(3,a,b,c,d)}}", "{{kieme(4,a,b,c,d)}}"]
+        correction: "On compare d'abord le nombre de chiffres, puis les chiffres de gauche à droite."
+      - type: qcm
+        vars: { a: "100..989" }
+        enonce: "Quel nombre est juste après {{a}} ?"
+        choix: ["{{a+1}}", "{{a-1}}", "{{a+10}}", "{{a+100}}"]
+        correction: "Juste après, c'est 1 de plus : {{a}} + 1 = {{a+1}}."
+      - type: vf
+        vars: { a: "100..999", b: "10..99" }
+        enonce: "Vrai ou faux : {{b}} > {{a}} ?"
+        reponse: false
+        correction: "{{a}} a 3 chiffres et {{b}} en a seulement 2 : {{a}} est plus grand."
+
+  # ------------------------------------------------------------------
+  - id: droite-numerique
+    titre: La droite des nombres
+    objectif: Je sais placer un nombre sur une droite graduée et trouver ses voisins.
+    mots: [droite graduée, encadrer]
+    etapes:
+      - dialogue:
+          - mia: "Imagine que les nombres sont des maisons, toutes alignées le long d'une rue."
+          - neo: "Plus on va vers la droite, plus les nombres sont grands. C'est la droite graduée !"
+      - visuel:
+          type: droite
+          min: 0
+          max: 20
+          pas: 1
+          etiquettes: [0, 5, 10, 15, 20]
+          point: { v: 13, label: "13" }
+      - texte: |
+          Sur une **droite graduée**, les nombres sont rangés dans l'ordre, avec toujours le même écart entre deux traits.
+
+          Pour placer un nombre, je repère les nombres écrits autour, puis je **compte les traits**.
+      - texte: |
+          **Encadrer** un nombre, c'est dire entre quels nombres il se trouve.
+          Par exemple : 30 < 37 < 40. On a encadré 37 **entre deux dizaines**.
+      - a_quoi_ca_sert: "Les règles, les thermomètres, les jauges d'essence, les frises du temps en histoire… ce sont toutes des droites graduées !"
+      - question:
+          type: droite
+          vars: { n: "1..19" }
+          enonce: "Touche la droite là où se trouve {{n}}."
+          min: 0
+          max: 20
+          pas: 1
+          cible: "n"
+          tolerance: 0.5
+    exercices:
+      - type: droite
+        vars: { n: "1..19" }
+        enonce: "Place {{n}} sur la droite."
+        min: 0
+        max: 20
+        pas: 1
+        cible: "n"
+        tolerance: 0.5
+      - type: droite
+        vars: { n: "5..95" }
+        si: "n % 5 == 0"
+        enonce: "Place {{n}} sur la droite (les traits vont de 5 en 5)."
+        min: 0
+        max: 100
+        pas: 5
+        cible: "n"
+        tolerance: 2.5
+      - type: champs
+        vars: { n: "11..99" }
+        si: "n % 10 != 0"
+        enonce: "Encadre {{n}} entre deux dizaines."
+        champs:
+          - { reponse: "ent(n/10)*10", apres: "<" }
+          - { avant: "{{n}} <", reponse: "ent(n/10)*10+10" }
+        correction: "{{ent(n/10)*10}} < {{n}} < {{ent(n/10)*10+10}}."
+      - type: nombre
+        vars: { a: "0..80", p: [2, 5, 10] }
+        si: "a % p == 0"
+        enonce: "Sur une droite, les traits vont de {{p}} en {{p}}. Après {{a}}, {{a+p}}, {{a+2*p}}, quel nombre vient ensuite ?"
+        reponse: "a+3*p"
+        correction: "On ajoute {{p}} à chaque fois : {{a+2*p}} + {{p}} = {{a+3*p}}."
+      - type: champs
+        vars: { n: "101..998" }
+        enonce: "Quels sont les voisins de {{n}} ?"
+        champs:
+          - { reponse: "n-1", apres: "<" }
+          - { avant: "{{n}} <", reponse: "n+1" }
+        correction: "Le nombre d'avant est {{n-1}}, celui d'après est {{n+1}}."
+
+  # ------------------------------------------------------------------
+  - id: pair-impair
+    titre: Pair, impair et compter de 2 en 2, de 5 en 5
+    objectif: Je reconnais les nombres pairs et impairs et je sais compter par bonds.
+    mots: [pair, impair]
+    etapes:
+      - dialogue:
+          - neo: "Pour danser, il faut se mettre par deux. Si tout le monde a un partenaire, le nombre est PAIR !"
+          - zero: "Et s'il reste quelqu'un tout seul ?"
+          - mia: "Alors le nombre est IMPAIR. Pauvre petit danseur…"
+      - visuel:
+          type: objets
+          groupes: [2, 2, 2, 1]
+          emoji: "🐿️"
+        legende: "7 écureuils : il en reste un tout seul, 7 est impair."
+      - texte: |
+          Un nombre est **pair** quand on peut le partager en **deux groupes égaux** (ou faire des paires sans reste).
+
+          **Le truc :** il suffit de regarder **le chiffre des unités** !
+          - il finit par **0, 2, 4, 6 ou 8** → pair ;
+          - il finit par **1, 3, 5, 7 ou 9** → impair.
+      - astuce:
+          texte: "Compter de 2 en 2 : 2, 4, 6, 8, 10… Compter de 5 en 5 : 5, 10, 15, 20… (ça finit toujours par 5 ou 0 !). Compter de 10 en 10 : seul le chiffre des dizaines change."
+          qui: neo
+      - a_quoi_ca_sert: "Dans une rue, les maisons paires sont d'un côté et les impaires de l'autre ! Et compter par bonds, c'est ce qu'on fait pour compter l'argent (pièces de 2 €, billets de 5 €…)."
+      - question:
+          type: qcm
+          vars: { n: "10..999" }
+          enonce: "{{n}} est-il pair ou impair ?"
+          choix: ["{{si(n%2==0,'pair','impair')}}", "{{si(n%2==0,'impair','pair')}}"]
+          ordre_fixe: true
+          correction: "{{n}} finit par {{n%10}}, il est donc {{si(n%2==0,'pair','impair')}}."
+    exercices:
+      - type: qcm
+        vars: { n: "10..9999" }
+        enonce: "{{n}} est-il pair ou impair ?"
+        choix: ["{{si(n%2==0,'pair','impair')}}", "{{si(n%2==0,'impair','pair')}}"]
+        ordre_fixe: true
+        correction: "On regarde le chiffre des unités : {{n%10}}. Donc {{n}} est {{si(n%2==0,'pair','impair')}}."
+      - type: nombre
+        vars: { p: [2, 5, 10], k: "1..12" }
+        enonce: "Compte de {{p}} en {{p}} : {{p*k}}, {{p*k+p}}, {{p*k+2*p}}, … Quel est le nombre suivant ?"
+        reponse: "p*k+3*p"
+        correction: "On ajoute {{p}} : {{p*k+2*p}} + {{p}} = {{p*k+3*p}}."
+      - type: nombre
+        vars: { n: "5..40" }
+        enonce: "Quel est le plus petit nombre pair plus grand que {{n}} ?"
+        reponse: "si(n%2==0, n+2, n+1)"
+        correction: "Les nombres pairs vont de 2 en 2. Après {{n}}, le premier pair est {{si(n%2==0, n+2, n+1)}}."
+      - type: vf
+        vars: { a: "1..50", b: "1..50" }
+        si: "a%2 == 1 && b%2 == 1"
+        enonce: "{{a}} et {{b}} sont impairs. Vrai ou faux : {{a}} + {{b}} est pair ?"
+        reponse: true
+        correction: "{{a}} + {{b}} = {{a+b}}, qui est pair. Impair + impair donne toujours un nombre pair : les deux « danseurs seuls » forment une paire !"
+      - type: nombre
+        vars: { n: "6..30" }
+        si: "n % 2 == 0"
+        enonce: "{{n}} enfants se mettent par deux. Combien de paires ?"
+        visuel: { type: objets, groupes: "=n", emoji: "🧒" }
+        reponse: "n/2"
+        correction: "{{n}} partagé en paires : {{n/2}} paires."
+
+  # ------------------------------------------------------------------
+  - id: grands-nombres
+    titre: Les grands nombres jusqu'au milliard
+    objectif: Je sais lire et écrire les grands nombres en les découpant en classes de 3 chiffres.
+    mots: [millier, million, milliard, classe]
+    etapes:
+      - dialogue:
+          - neo: "La Terre compte environ 8 milliards d'habitants. Comment on écrit ça ?"
+          - zero: "Avec BEAUCOUP de moi ! 8 000 000 000. Neuf Zéros ! UN MILLIARD… HUIT MILLIARDS !!! 🤯"
+          - mia: "Pour ne pas se perdre, on fait des paquets de 3 chiffres, en partant de la droite."
+      - texte: |
+          On sépare les chiffres en **classes** de 3, en partant de la droite, et on laisse un **petit espace** entre les classes :
+
+          | milliards | millions | milliers | unités |
+          |---|---|---|---|
+          | 8 | 000 | 000 | 000 |
+
+          - 1 000 = **mille**
+          - 1 000 000 = **un million** (mille milliers)
+          - 1 000 000 000 = **un milliard** (mille millions)
+      - visuel:
+          type: abaque
+          nombre: 2507340
+          classes: true
+        legende: "2 507 340 se lit : deux millions cinq-cent-sept-mille-trois-cent-quarante."
+      - astuce:
+          texte: "Pour lire un grand nombre, je lis chaque classe comme un petit nombre, puis je dis son nom : « 2 millions, 507 mille, 340 »."
+          qui: mia
+      - a_quoi_ca_sert: "Le nombre d'habitants d'un pays, la distance de la Terre au Soleil (150 millions de km), le budget d'une ville… Les journaux et les scientifiques utilisent les grands nombres tous les jours."
+      - question:
+          type: nombre
+          vars: { a: "1..9", b: "100..999" }
+          enonce: "Écris en chiffres : {{a}} millions {{b}} mille."
+          reponse: "a*1000000 + b*1000"
+          correction: "{{a}} millions = {{a*1000000}} ; {{b}} mille = {{b*1000}} ; total : {{a*1000000+b*1000}}."
+    exercices:
+      - type: nombre
+        vars: { a: "2..99", b: "100..999" }
+        enonce: "Écris en chiffres : {{a}} mille {{b}}."
+        reponse: "a*1000+b"
+        correction: "{{a}} mille = {{a*1000}}, plus {{b}} : {{a*1000+b}}."
+      - type: nombre
+        vars: { a: "1..9", b: "1..999", c: "1..999" }
+        enonce: "Écris en chiffres : {{a}} millions {{b}} mille {{c}}."
+        reponse: "a*1000000+b*1000+c"
+        indice: "Chaque classe a 3 chiffres : n'oublie pas les zéros pour compléter !"
+        correction: "{{nb(a*1000000+b*1000+c)}} : on complète chaque classe avec des zéros."
+      - type: nombre
+        vars: { n: "1000000..99999999" }
+        enonce: "Quel est le chiffre des millions dans {{n}} ?"
+        reponse: "chiffre(n,6)"
+        correction: "La classe des millions est la 3ᵉ en partant de la droite ; son chiffre des unités de millions est {{chiffre(n,6)}}."
+      - type: qcm
+        enonce: "Combien de zéros pour écrire un million ?"
+        choix: ["6", "3", "9", "7"]
+        correction: "1 000 000 : six zéros (deux classes de 3)."
+      - type: nombre
+        vars: { a: "2..9" }
+        enonce: "Combien de milliers dans {{a}} millions ?"
+        reponse: "a*1000"
+        correction: "1 million = 1 000 milliers, donc {{a}} millions = {{a*1000}} milliers."
+      - type: comparer
+        vars: { a: "100000..999999", b: "1000000..1200000" }
+        enonce: "Choisis le bon signe."
+        gauche: "a"
+        droite: "b"
+        correction: "{{nb(b)}} a 7 chiffres, {{nb(a)}} n'en a que 6."

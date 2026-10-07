@@ -1,0 +1,64 @@
+# ============================================================
+#  MODÈLE DE MONDE — Le Royaume des Nombres
+#  Copiez ce fichier, modifiez-le, puis importez-le :
+#  Espace parents 🔒 → 📦 Contenus → « Importer un fichier ».
+#  Le format complet : docs/FORMAT-CONTENU.md
+# ============================================================
+id: monde-des-exemples
+titre: Le Monde des Exemples
+sous_titre: Un monde d'exemple à recopier
+emoji: 🪐
+couleur: "#7c4dff"
+cycle: graines
+age: 8-10 ans
+niveau: CE2 – CM1
+ordre: 99
+prerequis: []
+version: 1.0.0
+intro:
+  - mia: "Bienvenue dans un tout nouveau monde !"
+  - neo: "Ici, on s'entraîne à doubler les nombres. Défi accepté ?"
+  - zero: "Le double de moi, c'est… moi. J'adore."
+
+lecons:
+  - id: doubler
+    titre: Doubler un nombre
+    objectif: Je sais calculer le double d'un nombre.
+    mots: [double]
+    etapes:
+      - dialogue:
+          - mia: "Doubler, c'est ajouter un nombre à lui-même !"
+          - neo: "Le double de 7, c'est 7 + 7 = 14."
+      - visuel:
+          type: objets
+          groupes: [7, 7]
+          emoji: "🍓"
+          signe: "+"
+        legende: "Le double de 7 : 14"
+      - texte: |
+          Le **double** d'un nombre, c'est ce nombre **multiplié par 2**.
+          $$\text{double de } n = n + n = 2 \times n$$
+      - a_quoi_ca_sert: "Doubler une recette, calculer le prix de deux places de cinéma…"
+      - question:
+          type: nombre
+          vars: { n: "2..20" }
+          enonce: "Quel est le double de {{n}} ?"
+          reponse: "2*n"
+          correction: "{{n}} + {{n}} = {{2*n}}"
+    exercices:
+      - type: nombre
+        vars: { n: "2..50" }
+        enonce: "Double de {{n}} ?"
+        reponse: "2*n"
+        indice: "Double les dizaines, puis les unités."
+        correction: "{{2*n}}"
+      - type: qcm
+        vars: { n: "3..9" }
+        enonce: "Quel est le double de {{n}} ?"
+        choix: ["{{2*n}}", "{{n+2}}", "{{n*n}}", "{{2*n+1}}"]
+        correction: "{{n}} × 2 = {{2*n}}"
+      - type: vf
+        vars: { n: "2..9", t: [0, 1] }
+        enonce: "Vrai ou faux : le double de {{n}} est {{2*n + t}}."
+        reponse: "t == 0"
+        correction: "Le double de {{n}} est {{2*n}}."

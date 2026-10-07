@@ -1,0 +1,392 @@
+id: tour-des-proportions
+titre: La Tour des Proportions
+sous_titre: Proportionnalité, pourcentages, échelles et vitesses
+emoji: 🗼
+couleur: "#8e24aa"
+cycle: explorateurs
+age: 10-13 ans
+niveau: CM2 – 4ᵉ
+ordre: 11
+prerequis: [port-des-decimaux, atelier-des-problemes]
+version: 1.0.0
+intro:
+  - mia: "La Tour des Proportions ! À chaque étage, tout grandit ou rapetisse… mais toujours dans les mêmes proportions."
+  - neo: "Recettes, cartes, soldes, vitesses : la proportionnalité est LA notion la plus utile de la vie quotidienne."
+  - zero: "Si je mange deux fois plus de graines, je deviens deux fois plus rond ? …Ce n'est pas proportionnel, je crois."
+
+lecons:
+  - id: situations-proportionnelles
+    titre: Reconnaître une situation de proportionnalité
+    objectif: Je reconnais un tableau de proportionnalité et je trouve son coefficient.
+    mots: [proportionnalité, coefficient]
+    etapes:
+      - dialogue:
+          - neo: "1 baguette coûte 1,20 €. 2 baguettes 2,40 €. 3 baguettes 3,60 €. C'est proportionnel !"
+          - zero: "Et mon âge et ma taille ? À 1 an, 8 cm. À 2 ans, 10 cm. À 10 ans… 80 cm ?"
+          - mia: "Non ! On ne grandit pas proportionnellement à l'âge. Heureusement pour toi."
+      - texte: |
+          Deux grandeurs sont **proportionnelles** si on passe de l'une à l'autre en **multipliant toujours par le même nombre**, appelé **coefficient de proportionnalité**.
+      - visuel:
+          type: tableau
+          lignes:
+            - ["Nombre de baguettes", "1", "2", "3", "5", "10"]
+            - ["Prix (€)", "1,20", "2,40", "3,60", "6", "12"]
+        legende: "On multiplie toujours par 1,2 : c'est un tableau de proportionnalité."
+      - texte: |
+          **Test rapide** : on calcule les quotients « bas ÷ haut ». S'ils sont **tous égaux**, c'est proportionnel.
+          Et sur un graphique, une situation proportionnelle donne des **points alignés avec l'origine**.
+      - visuel:
+          type: graphe
+          xmin: 0
+          xmax: 6
+          ymin: 0
+          ymax: 8
+          fonctions: [{ f: "1.2*x", nom: "prix = 1,2 × nombre" }]
+          points: [{ x: 1, y: 1.2 }, { x: 2, y: 2.4 }, { x: 3, y: 3.6 }, { x: 5, y: 6 }]
+      - a_quoi_ca_sert: "Les prix au kilo, les recettes, la consommation d'essence, les conversions de monnaie (euros ↔ dollars)…"
+      - question:
+          type: vf
+          vars: { k: "2..9", t: [0, 1] }
+          enonce: "Ce tableau est-il proportionnel ? 1 → {{k}} ; 2 → {{2*k}} ; 5 → {{5*k + t}}"
+          reponse: "t == 0"
+          correction: "{{si(t==0,'Oui : on multiplie toujours par ' + texte(k) + '.', 'Non : 5 × ' + texte(k) + ' = ' + texte(5*k) + ', pas ' + texte(5*k+1) + '.')}}"
+    exercices:
+      - type: nombre
+        vars: { k: "2..12", a: "2..9" }
+        enonce: "Tableau de proportionnalité : 1 → {{k}} ; {{a}} → ?"
+        reponse: "a*k"
+        correction: "Coefficient {{k}} : {{a}} × {{k}} = {{a*k}}."
+      - type: nombre
+        vars: { k: "2..9", a: "2..9", b: "2..9" }
+        si: "a != b"
+        enonce: "Proportionnalité : {{a}} → {{a*k}}. Quel est le coefficient ?"
+        reponse: "k"
+        correction: "{{a*k}} ÷ {{a}} = {{k}}."
+      - type: vf
+        enonce: "Vrai ou faux : l'âge d'une personne et sa taille sont proportionnels."
+        reponse: false
+        correction: "Non : on grandit vite enfant, puis plus du tout adulte. Une personne de 40 ans ne mesure pas 4 fois sa taille de 10 ans !"
+      - type: vf
+        vars: { p: "2..9" }
+        enonce: "Le prix de pommes à {{p}} € le kilo est-il proportionnel à la masse achetée ?"
+        reponse: true
+        correction: "Oui : prix = {{p}} × masse. Le coefficient est {{p}}."
+      - type: qcm
+        enonce: "Sur un graphique, une situation de proportionnalité est représentée par…"
+        choix: ["des points alignés avec l'origine", "une courbe en U", "des points dispersés", "une droite qui ne passe pas par l'origine"]
+        correction: "Points alignés ET droite passant par l'origine (le point (0 ; 0))."
+
+  - id: quatrieme-proportionnelle
+    titre: Règle de trois et passage à l'unité
+    objectif: Je calcule une quatrième proportionnelle par plusieurs méthodes.
+    mots: [règle de trois, produit en croix]
+    etapes:
+      - dialogue:
+          - neo: "3 kg de pommes coûtent 7,50 €. Combien coûtent 5 kg ?"
+          - mia: "Je cherche d'abord le prix d'UN kilo : 7,50 ÷ 3 = 2,50 €. Puis 5 × 2,50 = 12,50 € !"
+          - neo: "Le passage à l'unité ! Ou alors le produit en croix…"
+      - texte: |
+          **Méthode 1 — Passage à l'unité** : 3 kg → 7,50 € ; 1 kg → 7,50 ÷ 3 = 2,50 € ; 5 kg → 5 × 2,50 = 12,50 €.
+
+          **Méthode 2 — Produit en croix** :
+          | Masse (kg) | 3 | 5 |
+          |---|---|---|
+          | Prix (€) | 7,50 | **?** |
+
+          $$? = \frac{5 \times 7{,}50}{3} = 12{,}50$$
+
+          **Méthode 3 — Les rapports** : 6 kg, c'est 2 fois 3 kg → 2 fois le prix.
+      - astuce:
+          texte: "Choisis la méthode la plus simple selon les nombres ! Avec 4 kg et 12 kg, pense « fois 3 ». Avec 3 kg et 5 kg, le produit en croix est le plus sûr."
+          qui: mia
+      - a_quoi_ca_sert: "Adapter une recette pour 6 au lieu de 4, comparer des prix, calculer une dose de médicament selon le poids…"
+      - question:
+          type: nombre
+          vars: { a: [2, 3, 4, 5], u: "2..9", b: "6..12" }
+          si: "a != b"
+          enonce: "{{a}} cahiers coûtent {{a*u}} €. Combien coûtent {{b}} cahiers ?"
+          reponse: "b*u"
+          unite: €
+          correction: "Un cahier : {{a*u}} ÷ {{a}} = {{u}} €. Donc {{b}} × {{u}} = {{b*u}} €."
+    exercices:
+      - type: nombre
+        vars: { a: [2, 3, 4, 5, 6], u: "2..15", b: "3..20" }
+        si: "a != b"
+        enonce: "{{a}} kg de cerises coûtent {{a*u}} €. Prix de {{b}} kg ?"
+        reponse: "b*u"
+        unite: €
+        correction: "{{b}} × ({{a*u}} ÷ {{a}}) = {{b}} × {{u}} = {{b*u}} €."
+      - type: nombre
+        vars: { p: [4, 6], f: [200, 250, 300], n: [2, 8, 10, 12] }
+        si: "n != p"
+        enonce: "Une recette pour {{p}} personnes demande {{f}} g de farine. Combien pour {{n}} personnes ?"
+        reponse: "f*n/p"
+        unite: g
+        correction: "{{f}} × {{n}} ÷ {{p}} = {{nb(f*n/p)}} g."
+      - type: nombre
+        vars: { a: "3..9", b: "4..15", c: "2..12" }
+        si: "(b*c) % a == 0"
+        enonce: "Produit en croix : $\\frac{ {{a}} }{ {{b}} } = \\frac{ {{c}} }{x}$. Que vaut $x$ ?"
+        reponse: "b*c/a"
+        correction: "$x = \\frac{ {{b}} \\times {{c}} }{ {{a}} } = {{nb(b*c/a)}}$"
+      - type: nombre
+        vars: { l: [5, 6, 7, 8], d: [100, 200, 300] }
+        enonce: "Une voiture consomme {{l}} L d'essence pour 100 km. Combien pour {{d+250}} km ?"
+        reponse: "l*(d+250)/100"
+        unite: L
+        correction: "{{l}} × {{d+250}} ÷ 100 = {{nb(l*(d+250)/100)}} L."
+
+  - id: pourcentages
+    titre: Les pourcentages
+    objectif: Je calcule un pourcentage d'une quantité et je l'exprime comme une fraction.
+    mots: [pourcentage]
+    etapes:
+      - dialogue:
+          - zero: "-30 % sur ma peluche préférée ! Elle coûtait 20 €, elle coûte donc… -10 € ?"
+          - neo: "Non ! 30 % de 20 €, c'est 30/100 de 20 € = 6 €. Elle coûte 20 − 6 = 14 €."
+      - texte: |
+          **« Pour cent »** veut dire « sur 100 » : $t\,\% = \frac{t}{100}$.
+
+          - 50 % = $\frac{50}{100} = \frac{1}{2}$ (la moitié)
+          - 25 % = $\frac{1}{4}$ · 10 % = $\frac{1}{10}$ · 75 % = $\frac{3}{4}$ · 100 % = le tout
+
+          **Calculer t % d'une quantité** : $\frac{t}{100} \times \text{quantité}$. Exemple : 30 % de 20 = 0,30 × 20 = 6.
+      - astuce:
+          texte: "De tête : 10 % = diviser par 10. Donc 30 % = 3 × 10 %, 5 % = la moitié de 10 %, 15 % = 10 % + 5 %. Pour 20 € : 10 % = 2 €, 30 % = 6 €."
+          qui: mia
+      - a_quoi_ca_sert: "Les soldes, la TVA, les notes, les sondages, la batterie de ton téléphone, le pourcentage de sucre dans un aliment…"
+      - question:
+          type: nombre
+          vars: { t: [10, 20, 25, 50, 75], q: [20, 40, 60, 80, 120, 200] }
+          enonce: "Combien font {{t}} % de {{q}} ?"
+          reponse: "t*q/100"
+          correction: "{{t}}/100 × {{q}} = {{nb(t*q/100)}}."
+    exercices:
+      - type: nombre
+        vars: { t: [5, 10, 15, 20, 25, 30, 40, 50, 75], q: [20, 40, 60, 80, 120, 200, 360, 500] }
+        enonce: "{{t}} % de {{q}} = ?"
+        reponse: "t*q/100"
+        correction: "{{nb(t*q/100)}}."
+      - type: nombre
+        vars: { t: [10, 20, 25, 30, 40, 50], p: [20, 40, 50, 60, 80, 120] }
+        enonce: "Un article à {{p}} € est soldé à −{{t}} %. Nouveau prix ?"
+        reponse: "p*(1-t/100)"
+        unite: €
+        correction: "Remise : {{nb(t*p/100)}} € ; nouveau prix : {{p}} − {{nb(t*p/100)}} = {{nb(p*(1-t/100))}} €."
+      - type: nombre
+        vars: { n: [20, 25, 40, 50], k: "1..19" }
+        si: "k < n"
+        enonce: "Dans une classe de {{n}} élèves, {{k}} portent des lunettes. Quel pourcentage ?"
+        reponse: "k*100/n"
+        unite: "%"
+        correction: "{{k}}/{{n}} = {{nb(k*100/n)}}/100 = {{nb(k*100/n)}} %."
+      - type: qcm
+        enonce: "25 %, c'est la même chose que…"
+        choix: ["un quart", "un tiers", "la moitié", "un vingt-cinquième"]
+        correction: "25/100 = 1/4 : un quart."
+      - type: nombre
+        vars: { b: "10..95", s: [100, 200] }
+        enonce: "La batterie de ma tablette est à {{b}} %. Combien de % ont été utilisés depuis qu'elle était pleine ?"
+        reponse: "100-b"
+        unite: "%"
+        correction: "100 − {{b}} = {{100-b}} %."
+
+  - id: echelles
+    titre: Les échelles des cartes et des plans
+    objectif: J'utilise une échelle pour passer d'une distance sur le plan à une distance réelle.
+    mots: [échelle]
+    etapes:
+      - dialogue:
+          - mia: "Sur la carte du Royaume, il y a écrit 1/100 000. Ça veut dire quoi ?"
+          - neo: "1 cm sur la carte = 100 000 cm en vrai, soit 1 km !"
+      - texte: |
+          L'**échelle** $\frac{1}{n}$ veut dire : **1 cm sur le plan représente n cm en réalité**.
+
+          C'est une situation de proportionnalité : distance réelle = n × distance sur le plan.
+
+          Exemple : échelle 1/50 000 ; 4 cm sur la carte → 4 × 50 000 = 200 000 cm = **2 km**.
+      - astuce:
+          texte: "Convertis tout dans la même unité AVANT de calculer, puis reconvertis à la fin (100 000 cm = 1 000 m = 1 km)."
+          qui: neo
+      - a_quoi_ca_sert: "Lire une carte de randonnée, les plans d'une maison, les maquettes (voitures miniatures au 1/43), Google Maps…"
+      - question:
+          type: nombre
+          vars: { d: "2..9" }
+          enonce: "Sur une carte à l'échelle 1/100 000, deux villes sont à {{d}} cm. Distance réelle en km ?"
+          reponse: "d"
+          unite: km
+          correction: "{{d}} × 100 000 cm = {{nb(d*100000)}} cm = {{d}} km."
+    exercices:
+      - type: nombre
+        vars: { d: "2..12", e: [25000, 50000, 100000, 200000] }
+        enonce: "Échelle 1/{{nb(e)}}. {{d}} cm sur la carte = combien de km ?"
+        reponse: "d*e/100000"
+        unite: km
+        correction: "{{d}} × {{nb(e)}} = {{nb(d*e)}} cm = {{nb(d*e/100000)}} km."
+      - type: nombre
+        vars: { r: "2..10" }
+        enonce: "Sur un plan au 1/100, une pièce mesure {{r}} cm. Longueur réelle en m ?"
+        reponse: "r"
+        unite: m
+        correction: "{{r}} × 100 = {{r*100}} cm = {{r}} m."
+      - type: nombre
+        vars: { k: "2..15" }
+        enonce: "Échelle 1/50 000. Deux villages sont distants de {{k}} km. Quelle distance sur la carte (en cm) ?"
+        reponse: "k*2"
+        unite: cm
+        correction: "{{k}} km = {{nb(k*100000)}} cm ; ÷ 50 000 = {{2*k}} cm."
+      - type: nombre
+        vars: { l: [43, 18, 24] }
+        enonce: "Une voiture miniature est au 1/{{l}}. Elle mesure 10 cm. Longueur réelle en cm ?"
+        reponse: "10*l"
+        unite: cm
+        correction: "10 × {{l}} = {{10*l}} cm, soit {{nb(10*l/100)}} m."
+
+  - id: vitesses
+    titre: Vitesse, distance et durée
+    objectif: J'utilise la relation d = v × t pour calculer une distance, une vitesse ou une durée.
+    mots: [vitesse, km/h]
+    etapes:
+      - dialogue:
+          - neo: "Je cours à 12 km/h. En 2 heures, je fais… 24 km !"
+          - zero: "Et moi je roule à 0 km/h. Je ne suis jamais en retard puisque je ne pars jamais."
+      - texte: |
+          Une **vitesse moyenne** de 60 km/h veut dire : **60 km parcourus en 1 heure**.
+
+          $$\text{distance} = \text{vitesse} \times \text{durée} \qquad v = \frac{d}{t} \qquad t = \frac{d}{v}$$
+      - attention:
+          texte: "Les durées en heures ne sont pas décimales : 1 h 30 min = 1,5 h (et pas 1,30 h) ; 20 min = 1/3 h. Convertis bien avant de calculer !"
+          qui: neo
+      - a_quoi_ca_sert: "Prévoir l'heure d'arrivée d'un voyage, comprendre les limitations de vitesse, les records sportifs, la vitesse de la lumière (300 000 km/s !)…"
+      - question:
+          type: nombre
+          vars: { v: [40, 50, 60, 80, 90, 100, 120], t: "2..5" }
+          enonce: "Une voiture roule à {{v}} km/h pendant {{t}} h. Distance parcourue ?"
+          reponse: "v*t"
+          unite: km
+          correction: "{{v}} × {{t}} = {{v*t}} km."
+    exercices:
+      - type: nombre
+        vars: { v: [40, 50, 60, 80, 90, 100, 120], t: "2..6" }
+        enonce: "{{t}} h à {{v}} km/h : quelle distance ?"
+        reponse: "v*t"
+        unite: km
+        correction: "{{v*t}} km."
+      - type: nombre
+        vars: { v: [40, 50, 60, 80, 90, 100], t: "2..6" }
+        enonce: "Un train parcourt {{v*t}} km en {{t}} h. Vitesse moyenne ?"
+        reponse: "v"
+        unite: km/h
+        correction: "{{v*t}} ÷ {{t}} = {{v}} km/h."
+      - type: nombre
+        vars: { v: [60, 80, 90, 120], d: [30, 45, 60, 90, 120] }
+        enonce: "À {{v}} km/h, combien de MINUTES pour parcourir {{d}} km ?"
+        reponse: "d/v*60"
+        unite: min
+        correction: "t = {{d}} ÷ {{v}} = {{nb(d/v,3)}} h = {{nb(d/v*60)}} min."
+      - type: nombre
+        vars: { v: [4, 5, 6, 12] }
+        enonce: "Un marcheur va à {{v}} km/h. Quelle distance en 1 h 30 min ?"
+        reponse: "v*1.5"
+        unite: km
+        correction: "1 h 30 = 1,5 h ; {{v}} × 1,5 = {{nb(v*1.5)}} km."
+
+  - id: ratios-partages
+    titre: Ratios et partages proportionnels
+    objectif: Je partage une quantité selon un ratio (2 pour 3…).
+    mots: [ratio]
+    etapes:
+      - dialogue:
+          - mia: "Pour faire du violet, je mélange 2 pots de rouge pour 3 pots de bleu."
+          - neo: "C'est un ratio de 2 : 3. Avec 20 pots en tout, combien de chaque ?"
+      - texte: |
+          Un **ratio** 2 : 3 veut dire « 2 parts de ceci pour 3 parts de cela ». C'est la méthode des **barres-unités** !
+
+          20 pots avec le ratio 2 : 3 → 2 + 3 = **5 parts** ; 1 part = 20 ÷ 5 = 4 pots → rouge : 2 × 4 = **8**, bleu : 3 × 4 = **12**.
+      - visuel:
+          type: barres
+          lignes:
+            - nom: rouge
+              parts: [{ v: 1, label: "4" }, { v: 1, label: "4" }]
+            - nom: bleu
+              parts: [{ v: 1, label: "4" }, { v: 1, label: "4" }, { v: 1, label: "4" }]
+      - a_quoi_ca_sert: "Les mélanges (peinture, sirop, béton), partager un gain selon la mise de chacun, les recettes, la photo (format 16 : 9)…"
+      - question:
+          type: champs
+          vars: { a: [1, 2, 3], b: [2, 3, 4, 5], u: "2..9" }
+          si: "a < b"
+          enonce: "Partage {{(a+b)*u}} bonbons selon le ratio {{a}} : {{b}}."
+          champs:
+            - { avant: "première part :", reponse: "a*u" }
+            - { avant: "deuxième part :", reponse: "b*u" }
+          correction: "{{a+b}} parts ; 1 part = {{u}} ; {{a*u}} et {{b*u}}."
+    exercices:
+      - type: champs
+        vars: { a: [1, 2, 3, 4], b: [2, 3, 5, 7], u: "2..12" }
+        si: "a < b"
+        enonce: "Partage {{(a+b)*u}} selon le ratio {{a}} : {{b}}."
+        champs:
+          - { reponse: "a*u", apres: "et" }
+          - { reponse: "b*u" }
+        correction: "1 part = {{(a+b)*u}} ÷ {{a+b}} = {{u}} : {{a*u}} et {{b*u}}."
+      - type: nombre
+        vars: { a: [1, 2], b: [3, 4, 5], s: "2..8" }
+        enonce: "Sirop : {{a}} volume de sirop pour {{b}} volumes d'eau. Avec {{a*s}} cL de sirop, combien d'eau ?"
+        reponse: "b*s"
+        unite: cL
+        correction: "{{a*s}} cL = {{s}} fois {{a}} ; eau : {{s}} × {{b}} = {{b*s}} cL."
+      - type: nombre
+        vars: { m1: "10..40", m2: "10..40", g: [100, 200, 300] }
+        si: "(g*m1) % (m1+m2) == 0"
+        enonce: "Deux amis ont misé {{m1}} € et {{m2}} €. Ils gagnent {{g}} €, partagés proportionnellement aux mises. Combien reçoit le premier ?"
+        reponse: "g*m1/(m1+m2)"
+        unite: €
+        correction: "{{g}} × {{m1}} ÷ {{m1+m2}} = {{nb(g*m1/(m1+m2))}} €."
+
+  - id: evolutions
+    titre: Augmentations, réductions et coefficients multiplicateurs
+    objectif: J'utilise un coefficient multiplicateur pour appliquer une ou plusieurs évolutions.
+    mots: [coefficient multiplicateur, évolution]
+    etapes:
+      - dialogue:
+          - zero: "+20 % puis −20 %, on revient au prix de départ ! C'est évident."
+          - neo: "Vérifions avec 100 € : +20 % → 120 €. Puis −20 % de 120 → 96 € ! On ne revient pas à 100 !"
+          - zero: "…C'était un piège ? Je déteste les pièges."
+      - texte: |
+          - **Augmenter de t %**, c'est multiplier par $1 + \frac{t}{100}$ : +20 % → × 1,2.
+          - **Diminuer de t %**, c'est multiplier par $1 - \frac{t}{100}$ : −20 % → × 0,8.
+          - **Évolutions successives** : on **multiplie les coefficients** : × 1,2 puis × 0,8 = × 0,96, soit **−4 %**.
+      - attention:
+          texte: "Les pourcentages successifs ne s'additionnent PAS ! +10 % puis +10 % = × 1,1 × 1,1 = × 1,21, soit +21 %."
+          qui: neo
+      - a_quoi_ca_sert: "La TVA (× 1,2), les soldes, les intérêts d'un livret d'épargne, l'inflation, la croissance d'une population…"
+      - question:
+          type: nombre
+          vars: { t: [10, 20, 25, 50], p: [40, 80, 120, 200] }
+          enonce: "Un prix de {{p}} € augmente de {{t}} %. Nouveau prix ?"
+          reponse: "p*(1+t/100)"
+          unite: €
+          correction: "{{p}} × {{nb(1+t/100)}} = {{nb(p*(1+t/100))}} €."
+    exercices:
+      - type: nombre
+        vars: { t: [5, 10, 20, 25, 30, 40, 50] }
+        enonce: "Par quel nombre multiplier pour augmenter de {{t}} % ?"
+        reponse: "1+t/100"
+        correction: "1 + {{t}}/100 = {{nb(1+t/100)}}."
+      - type: nombre
+        vars: { t: [5, 10, 15, 20, 25, 30, 40] }
+        enonce: "Par quel nombre multiplier pour diminuer de {{t}} % ?"
+        reponse: "1-t/100"
+        correction: "1 − {{t}}/100 = {{nb(1-t/100)}}."
+      - type: nombre
+        vars: { t: [10, 20, 30, 50] }
+        enonce: "Un prix augmente de {{t}} % puis baisse de {{t}} %. De combien de % a-t-il baissé au total ?"
+        reponse: "t*t/100"
+        unite: "%"
+        correction: "× {{nb(1+t/100)}} × {{nb(1-t/100)}} = × {{nb((1+t/100)*(1-t/100))}}, soit −{{nb(t*t/100)}} %."
+      - type: nombre
+        vars: { ht: [50, 80, 100, 150, 200, 250] }
+        enonce: "Un objet coûte {{ht}} € hors taxes. Avec une TVA de 20 %, quel est son prix TTC ?"
+        reponse: "ht*1.2"
+        unite: €
+        correction: "{{ht}} × 1,2 = {{nb(ht*1.2)}} €."

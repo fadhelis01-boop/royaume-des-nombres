@@ -1,0 +1,280 @@
+id: jardin-des-suites
+titre: Le Jardin des Suites
+sous_titre: Suites arithmétiques et géométriques, sommes, limites et récurrence
+emoji: 🪜
+couleur: "#558b2f"
+cycle: maitres
+age: 15-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 20
+prerequis: [jardin-de-fibonacci, labyrinthe-des-fonctions]
+version: 1.0.0
+intro:
+  - neo: "Te souviens-tu du Jardin de Fibonacci ? Ici, on étudie les suites comme de vrais mathématiciens !"
+  - mia: "Formules, sommes géantes, limites vers l'infini… et une méthode de preuve en domino : la récurrence."
+  - zero: "Une suite qui tend vers moi ? Ça s'appelle une suite qui tend vers 0. Mon genre de suite préféré."
+
+lecons:
+  - id: suites-numeriques
+    titre: Suites numériques - formule explicite et récurrence
+    objectif: Je calcule des termes d'une suite définie explicitement ou par récurrence.
+    mots: [suite, terme, récurrence]
+    etapes:
+      - dialogue:
+          - mia: "Une suite, c'est une liste infinie de nombres numérotés : u₀, u₁, u₂…"
+          - neo: "Deux façons de la définir : par une formule (uₙ = 3n + 1) ou par une relation avec le terme précédent (uₙ₊₁ = 2uₙ)."
+      - texte: |
+          - **Formule explicite** : $u_n = f(n)$, par exemple $u_n = n^2 + 1$ : on calcule directement $u_{10} = 101$.
+          - **Relation de récurrence** : $u_0 = 3$ et $u_{n+1} = 2u_n - 1$ : il faut calculer les termes un par un : $u_1 = 5$, $u_2 = 9$, $u_3 = 17$…
+      - attention:
+          texte: "$u_{n+1}$ (le terme suivant) n'est pas $u_n + 1$ ! Si $u_n = n^2$, alors $u_{n+1} = (n+1)^2$ alors que $u_n + 1 = n^2 + 1$."
+          qui: neo
+      - a_quoi_ca_sert: "Modéliser une population année après année, un capital placé, le nombre de visiteurs d'un site, les algorithmes informatiques (boucles)…"
+      - question:
+          type: nombre
+          vars: { a: "1..5", b: "-3..3", n: "2..10" }
+          enonce: "$u_n = {{a}}n^2 + ({{nb(b)}})$. Calcule $u_{ {{n}} }$."
+          reponse: "a*n*n + b"
+          correction: "$u_{ {{n}} } = {{a}} \\times {{n*n}} + ({{nb(b)}}) = {{nb(a*n*n+b)}}$"
+    exercices:
+      - type: nombre
+        vars: { a: "2..9", b: "-9..9", n: "3..20" }
+        enonce: "$u_n = {{a}}n + ({{nb(b)}})$. Que vaut $u_{ {{n}} }$ ?"
+        reponse: "a*n+b"
+        correction: "{{nb(a*n+b)}}"
+      - type: nombre
+        vars: { u0: "1..5", k: [2, 3], c: "-2..2" }
+        enonce: "$u_0 = {{u0}}$ et $u_{n+1} = {{k}}u_n + ({{nb(c)}})$. Calcule $u_3$."
+        reponse: "k*(k*(k*u0+c)+c)+c"
+        correction: "$u_1 = {{nb(k*u0+c)}}$, $u_2 = {{nb(k*(k*u0+c)+c)}}$, $u_3 = {{nb(k*(k*(k*u0+c)+c)+c)}}$"
+      - type: nombre
+        vars: { n: "2..9" }
+        enonce: "$u_n = n^2$. Calcule $u_{n+1} - u_n$ pour $n = {{n}}$."
+        reponse: "2*n+1"
+        correction: "$({{n+1}})^2 - {{n}}^2 = {{(n+1)^2}} - {{n*n}} = {{2*n+1}}$"
+
+  - id: suites-arithmetiques
+    titre: Les suites arithmétiques
+    objectif: Je reconnais une suite arithmétique et j'utilise uₙ = u₀ + nr.
+    mots: [suite arithmétique, raison]
+    etapes:
+      - dialogue:
+          - neo: "Je mets 5 € de côté chaque semaine, en partant de 20 €. Mes économies : 20, 25, 30, 35…"
+          - mia: "On ajoute toujours la même chose : c'est une suite ARITHMÉTIQUE de raison 5 !"
+      - texte: |
+          Une suite est **arithmétique** de **raison** $r$ si $u_{n+1} = u_n + r$ pour tout $n$.
+          $$u_n = u_0 + n\,r \qquad \text{et plus généralement} \qquad u_n = u_p + (n - p)\,r$$
+          Sa représentation graphique : des **points alignés** (croissance linéaire).
+      - a_quoi_ca_sert: "Les économies régulières, un salaire qui augmente d'un montant fixe chaque année, l'amortissement linéaire d'un bien, les places d'un amphithéâtre…"
+      - question:
+          type: nombre
+          vars: { u0: "-10..20", r: "-5..9", n: "5..30" }
+          si: "r != 0"
+          enonce: "Suite arithmétique : $u_0 = {{nb(u0)}}$, raison $r = {{nb(r)}}$. Calcule $u_{ {{n}} }$."
+          reponse: "u0 + n*r"
+          correction: "$u_{ {{n}} } = {{nb(u0)}} + {{n}} \\times ({{nb(r)}}) = {{nb(u0+n*r)}}$"
+    exercices:
+      - type: nombre
+        vars: { u0: "-10..30", r: "-6..12", n: "10..50" }
+        si: "r != 0"
+        enonce: "$u_0 = {{nb(u0)}}$, $r = {{nb(r)}}$. $u_{ {{n}} }$ = ?"
+        reponse: "u0+n*r"
+        correction: "{{nb(u0+n*r)}}"
+      - type: nombre
+        vars: { a: "-10..20", r: "-6..9", p: "2..6", q: "8..15" }
+        si: "r != 0"
+        enonce: "Suite arithmétique avec $u_{ {{p}} } = {{nb(a+p*r)}}$ et $u_{ {{q}} } = {{nb(a+q*r)}}$. Quelle est la raison ?"
+        reponse: "r"
+        correction: "$r = \\frac{ {{nb(a+q*r)}} - ({{nb(a+p*r)}}) }{ {{q}} - {{p}} } = {{nb(r)}}$"
+      - type: nombre
+        vars: { s: "100..300", r: [20, 25, 30, 50], n: "3..10" }
+        enonce: "Un salaire de {{s*10}} € augmente de {{r}} € chaque année. Quel sera-t-il dans {{n}} ans ?"
+        reponse: "s*10 + n*r"
+        unite: €
+        correction: "{{nb(s*10)}} + {{n}} × {{r}} = {{nb(s*10+n*r)}} €."
+
+  - id: suites-geometriques
+    titre: Les suites géométriques
+    objectif: Je reconnais une suite géométrique et j'utilise uₙ = u₀ × qⁿ.
+    mots: [suite géométrique, raison, intérêts composés]
+    etapes:
+      - dialogue:
+          - mia: "Un placement à 5 % par an : chaque année, mon argent est multiplié par 1,05."
+          - neo: "On multiplie toujours par le même nombre : suite GÉOMÉTRIQUE de raison 1,05."
+      - texte: |
+          Une suite est **géométrique** de **raison** $q$ si $u_{n+1} = q \times u_n$.
+          $$u_n = u_0 \times q^n \qquad u_n = u_p \times q^{n-p}$$
+          - $q > 1$ (et $u_0 > 0$) : croissance **exponentielle** (de plus en plus vite) ;
+          - $0 < q < 1$ : décroissance vers 0.
+      - visuel:
+          type: graphe
+          xmin: 0
+          xmax: 10
+          ymin: 0
+          ymax: 40
+          pas_y: 5
+          fonctions: [{ f: "2+3*x", nom: "arithmétique : 2 + 3n" }, { f: "2*1.35^x", nom: "géométrique : 2 × 1,35ⁿ" }]
+        legende: "Au début, l'arithmétique est devant… mais la géométrique finit toujours par la dépasser !"
+      - histoire:
+          titre: La légende de l'échiquier
+          texte: "Selon une légende indienne, l'inventeur des échecs demanda au roi 1 grain de riz sur la 1ʳᵉ case, 2 sur la 2ᵉ, 4 sur la 3ᵉ… en doublant à chaque case. Le roi accepta en riant. Mais la 64ᵉ case seule demande $2^{63} \\approx 9{,}2 \\times 10^{18}$ grains : bien plus que tout le riz produit sur Terre !"
+      - a_quoi_ca_sert: "Les intérêts composés d'un livret d'épargne, l'inflation, la croissance d'une population ou d'une épidémie, la radioactivité, la dépréciation d'une voiture…"
+      - question:
+          type: nombre
+          vars: { u0: [1, 2, 3, 5], q: [2, 3], n: "3..8" }
+          enonce: "$u_0 = {{u0}}$, raison $q = {{q}}$. Calcule $u_{ {{n}} }$."
+          reponse: "u0 * q^n"
+          correction: "${{u0}} \\times {{q}}^{ {{n}} } = {{nb(u0*q^n)}}$"
+    exercices:
+      - type: nombre
+        vars: { u0: [1, 2, 3, 4, 5], q: [2, 3, -2], n: "3..9" }
+        enonce: "$u_0 = {{u0}}$, $q = {{nb(q)}}$. $u_{ {{n}} }$ = ?"
+        reponse: "u0*q^n"
+        correction: "{{nb(u0*q^n)}}"
+      - type: nombre
+        vars: { c: [1000, 2000, 5000], t: [2, 3, 5], n: [2, 3] }
+        enonce: "On place {{nb(c)}} € à {{t}} % par an (intérêts composés). Capital après {{n}} ans (au centime) ?"
+        reponse: "round(c*(1+t/100)^n, 2)"
+        tolerance: 0.011
+        unite: €
+        correction: "${{nb(c)}} \\times {{nb(1+t/100)}}^{ {{n}} } \\approx {{dec(round(c*(1+t/100)^n,2),2)}}$ €"
+      - type: nombre
+        vars: { a: [2, 3, 5], q: [2, 3], p: "1..3", k: "1..3" }
+        enonce: "Suite géométrique : $u_{ {{p}} } = {{a*q^p}}$ et $u_{ {{p+k}} } = {{a*q^(p+k)}}$. Raison (positive) ?"
+        reponse: "q"
+        correction: "$q^{ {{k}} } = \\frac{ {{a*q^(p+k)}} }{ {{a*q^p}} } = {{q^k}}$, donc $q = {{q}}$."
+      - type: nombre
+        enonce: "Grains de riz de la légende : combien de grains sur la 11ᵉ case (1 sur la 1ʳᵉ, 2 sur la 2ᵉ…) ?"
+        reponse: "2^10"
+        correction: "$2^{10} = 1\\,024$"
+
+  - id: sommes
+    titre: Les sommes - le génie de Gauss
+    objectif: Je calcule 1 + 2 + … + n et la somme des termes d'une suite géométrique.
+    mots: [somme]
+    etapes:
+      - dialogue:
+          - neo: "Vers 1786, le maître de Carl Friedrich Gauss, alors âgé de 9 ans, demande de calculer 1 + 2 + 3 + … + 100."
+          - mia: "Gauss trouve en quelques secondes : 1 + 100 = 101, 2 + 99 = 101… 50 paires de 101 : 5 050 !"
+          - zero: "Moi j'aurais commencé par 0 + 0. Pour m'échauffer."
+      - texte: |
+          **Somme des entiers** : $$1 + 2 + \cdots + n = \frac{n(n+1)}{2}$$
+
+          **Suite arithmétique** : somme = (nombre de termes) × $\dfrac{\text{premier} + \text{dernier}}{2}$.
+
+          **Suite géométrique** ($q \neq 1$) : $$1 + q + q^2 + \cdots + q^n = \frac{1 - q^{n+1}}{1 - q}$$
+      - histoire:
+          titre: L'anecdote de Gauss
+          texte: "L'histoire du petit Gauss est rapportée par ses biographes (notamment Wolfgang Sartorius von Waltershausen, en 1856). Les détails exacts sont incertains, mais l'astuce est bien réelle — et Gauss est devenu l'un des plus grands mathématiciens de l'histoire."
+      - a_quoi_ca_sert: "Calculer un total d'économies régulières, le nombre de poignées de main dans un groupe, la complexité d'un algorithme, un remboursement d'emprunt…"
+      - question:
+          type: nombre
+          vars: { n: [10, 20, 50, 100, 200, 1000] }
+          enonce: "$1 + 2 + \\cdots + {{nb(n)}} = ?$"
+          reponse: "n*(n+1)/2"
+          correction: "$\\frac{ {{n}} \\times {{n+1}} }{2} = {{nb(n*(n+1)/2)}}$"
+    exercices:
+      - type: nombre
+        vars: { n: "10..60" }
+        enonce: "$1 + 2 + \\cdots + {{n}} = ?$"
+        reponse: "n*(n+1)/2"
+        correction: "{{nb(n*(n+1)/2)}}"
+      - type: nombre
+        vars: { n: "4..20" }
+        enonce: "{{n}} personnes se serrent toutes la main une fois. Combien de poignées de main ?"
+        reponse: "n*(n-1)/2"
+        indice: "La 1ʳᵉ serre {{n-1}} mains, la 2ᵉ {{n-2}} nouvelles…"
+        correction: "$1 + 2 + \\cdots + {{n-1}} = \\frac{ {{n-1}} \\times {{n}} }{2} = {{n*(n-1)/2}}$"
+      - type: nombre
+        vars: { n: "4..10" }
+        enonce: "$1 + 2 + 4 + \\cdots + 2^{ {{n}} } = ?$"
+        reponse: "2^(n+1) - 1"
+        correction: "$\\frac{1 - 2^{ {{n+1}} }}{1 - 2} = 2^{ {{n+1}} } - 1 = {{2^(n+1)-1}}$"
+      - type: nombre
+        vars: { a: "1..20", r: "2..6", n: "5..20" }
+        enonce: "Somme des {{n}} premiers termes de la suite arithmétique de premier terme {{a}} et de raison {{r}} ?"
+        reponse: "n*(2*a + (n-1)*r)/2"
+        correction: "Dernier terme : {{a+(n-1)*r}} ; somme = ${{n}} \\times \\frac{ {{a}} + {{a+(n-1)*r}} }{2} = {{nb(n*(2*a+(n-1)*r)/2)}}$"
+
+  - id: limites-suites
+    titre: Les limites de suites
+    objectif: Je détermine le comportement d'une suite quand n devient très grand.
+    mots: [limite, convergence, infini]
+    etapes:
+      - dialogue:
+          - mia: "1/n : 1 ; 0,5 ; 0,33 ; 0,25… ça se rapproche de 0 sans jamais l'atteindre !"
+          - zero: "Elle vient vers moi ! Elle m'aime !"
+          - neo: "On dit que la suite CONVERGE vers 0 : $\\lim\\limits_{n \\to +\\infty} \\frac{1}{n} = 0$."
+      - texte: |
+          - Une suite **converge** vers $\ell$ si ses termes deviennent aussi proches de $\ell$ qu'on veut à partir d'un certain rang.
+          - Elle **diverge vers $+\infty$** si ses termes dépassent n'importe quel nombre (ex. $n^2$).
+
+          **Suites géométriques** $q^n$ :
+          - $q > 1$ : $q^n \to +\infty$
+          - $-1 < q < 1$ : $q^n \to 0$
+          - $q = 1$ : constante égale à 1.
+      - a_quoi_ca_sert: "Savoir si une population se stabilise, si un médicament s'élimine, si un algorithme converge vers la bonne réponse, le calcul de π par des séries…"
+      - question:
+          type: qcm
+          vars: { q: [0.5, 0.9, 1.1, 2, 0.2, 3] }
+          enonce: "Limite de ${{nb(q)}}^n$ quand $n \\to +\\infty$ ?"
+          choix: ["{{si(q<1,'0','+∞')}}", "{{si(q<1,'+∞','0')}}", "1"]
+          ordre_fixe: false
+          correction: "{{si(q<1,'0 < q < 1 : la suite tend vers 0.','q > 1 : la suite tend vers +∞.')}}"
+    exercices:
+      - type: qcm
+        vars: { f: [["\\frac{1}{n}", "0"], ["n^2", "+∞"], ["\\frac{3n+1}{n}", "3"], ["0{,}5^n", "0"], ["2 - \\frac{1}{n^2}", "2"], ["\\sqrt{n}", "+∞"]] }
+        enonce: "Limite de $u_n = {{f_0}}$ quand $n \\to +\\infty$ ?"
+        choix: ["{{f_1}}", "{{si(f_1=='0','1','0')}}", "{{si(f_1=='+∞','3','+∞')}}", "−∞"]
+        correction: "La limite est {{f_1}}."
+      - type: nombre
+        vars: { a: "2..9", b: "1..9" }
+        enonce: "Limite de $u_n = \\frac{ {{a}}n + {{b}} }{n}$ quand $n \\to +\\infty$ ?"
+        reponse: "a"
+        correction: "$u_n = {{a}} + \\frac{ {{b}} }{n} \\to {{a}}$"
+      - type: nombre
+        vars: { a: "1..9" }
+        enonce: "$u_{n+1} = 0{,}5\\,u_n + {{a}}$ converge vers $\\ell$ qui vérifie $\\ell = 0{,}5\\,\\ell + {{a}}$. Que vaut $\\ell$ ?"
+        reponse: "2*a"
+        correction: "$0{,}5\\,\\ell = {{a}}$ donc $\\ell = {{2*a}}$."
+
+  - id: recurrence
+    titre: Le raisonnement par récurrence
+    objectif: Je comprends le principe de la démonstration par récurrence (les dominos).
+    mots: [récurrence, hérédité, initialisation]
+    etapes:
+      - dialogue:
+          - neo: "Une file infinie de dominos. Si le premier tombe, et si chaque domino qui tombe fait tomber le suivant…"
+          - mia: "… alors TOUS les dominos tombent ! C'est la récurrence."
+      - texte: |
+          Pour démontrer qu'une propriété $P(n)$ est vraie pour tout $n \ge n_0$ :
+          1. **Initialisation** : on vérifie $P(n_0)$ (le premier domino tombe).
+          2. **Hérédité** : on suppose $P(n)$ vraie pour un $n$ quelconque, et on démontre $P(n+1)$ (chaque domino fait tomber le suivant).
+          3. **Conclusion** : $P(n)$ est vraie pour tout $n \ge n_0$.
+
+          **Exemple** : montrons $1 + 3 + 5 + \cdots + (2n-1) = n^2$.
+          - $n = 1$ : $1 = 1^2$ ✔.
+          - Si $1 + 3 + \cdots + (2n-1) = n^2$, alors en ajoutant $2n + 1$ : $n^2 + 2n + 1 = (n+1)^2$ ✔.
+      - visuel:
+          type: motif
+          elements: ["▮", "▮", "▮", "▮", "▮", "…"]
+      - a_quoi_ca_sert: "C'est l'outil de preuve des informaticiens (prouver qu'un programme ou une boucle est correct) et des mathématiciens pour tout ce qui concerne les entiers."
+      - question:
+          type: ordre
+          enonce: "Remets dans l'ordre les étapes d'une récurrence."
+          items: ["Initialisation : vérifier P(n₀)", "Hérédité : supposer P(n), démontrer P(n+1)", "Conclusion : P(n) vraie pour tout n ≥ n₀"]
+          correction: "Initialisation, hérédité, conclusion."
+    exercices:
+      - type: nombre
+        vars: { n: "3..12" }
+        enonce: "Vérifie la formule $1 + 3 + 5 + \\cdots + (2n - 1) = n^2$ pour $n = {{n}}$ : que vaut la somme ?"
+        reponse: "n*n"
+        correction: "${{n}}^2 = {{n*n}}$"
+      - type: qcm
+        enonce: "Dans une récurrence, l'hérédité consiste à…"
+        choix: ["montrer que si P(n) est vraie, alors P(n+1) l'est aussi", "vérifier P(0)", "vérifier P(n) pour 10 valeurs", "supposer que P(n) est vraie pour tout n"]
+        correction: "On montre que chaque domino fait tomber le suivant."
+      - type: vf
+        enonce: "Vrai ou faux : vérifier une propriété pour n = 1, 2, 3… jusqu'à 1 000 suffit à la démontrer pour tout n."
+        reponse: false
+        correction: "Faux ! Des exemples ne sont pas une preuve. Il faut l'hérédité (ou un autre raisonnement général)."

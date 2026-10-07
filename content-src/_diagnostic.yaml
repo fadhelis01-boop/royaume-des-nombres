@@ -1,0 +1,142 @@
+# Test de positionnement : 2 questions par monde, dans l'ordre de la carte.
+# Deux bonnes réponses → le monde est « validé » (ouvert). Le test s'arrête après deux mondes ratés de suite.
+
+- monde: foret-des-nombres
+  question: { type: nombre, vars: { c: "1..9", d: "0..9", u: "0..9" }, enonce: "Écris le nombre : {{c}} centaines, {{d}} dizaines et {{u}} unités.", reponse: "c*100+d*10+u" }
+- monde: foret-des-nombres
+  question: { type: comparer, vars: { a: "100..999", b: "100..999" }, enonce: "Choisis le bon signe.", gauche: "a", droite: "b" }
+
+- monde: prairie-des-additions
+  question: { type: nombre, vars: { a: "15..79", b: "15..79" }, si: "a%10 + b%10 >= 10", enonce: "$ {{a}} + {{b}}$", reponse: "a+b" }
+- monde: prairie-des-additions
+  question: { type: nombre, vars: { a: "31..99", b: "12..29" }, si: "a%10 < b%10", enonce: "$ {{a}} - {{b}}$", reponse: "a-b" }
+
+- monde: montagne-des-multiplications
+  question: { type: nombre, vars: { a: "6..9", b: "6..9" }, enonce: "$ {{a}} \\times {{b}}$", reponse: "a*b" }
+- monde: montagne-des-multiplications
+  question: { type: nombre, vars: { a: "12..49", b: "3..9" }, enonce: "$ {{a}} \\times {{b}}$", reponse: "a*b" }
+
+- monde: riviere-du-partage
+  question: { type: nombre, vars: { a: "3..9", b: "4..9" }, enonce: "$ {{a*b}} \\div {{a}}$", reponse: "b" }
+- monde: riviere-du-partage
+  question: { type: nombre, vars: { p: [4, 5, 6], n: "15..40" }, si: "n % p != 0", enonce: "{{n}} enfants, des voitures de {{p}} places. Combien de voitures au minimum ?", reponse: "ceil(n/p)" }
+
+- monde: marche-des-mesures
+  question: { type: nombre, vars: { m: "2..9" }, enonce: "Combien de centimètres dans {{m}} mètres ?", reponse: "100*m" }
+- monde: marche-des-mesures
+  question: { type: nombre, vars: { h: "2..4" }, enonce: "Combien de minutes dans {{h}} heures ?", reponse: "60*h" }
+
+- monde: cite-des-formes
+  question: { type: nombre, vars: { L: "4..12", l: "2..8" }, si: "l < L", enonce: "Périmètre d'un rectangle de {{L}} cm sur {{l}} cm ?", reponse: "2*(L+l)" }
+- monde: cite-des-formes
+  question: { type: nombre, vars: { L: "3..12", l: "2..9" }, enonce: "Aire d'un rectangle de {{L}} cm sur {{l}} cm (en cm²) ?", reponse: "L*l" }
+
+- monde: village-des-fractions
+  question: { type: nombre, vars: { a: "1..4", b: [3, 4, 5, 6], q: "2..9" }, si: "a < b", enonce: "Combien font $\\frac{ {{a}} }{ {{b}} }$ de {{b*q}} ?", reponse: "a*q" }
+- monde: village-des-fractions
+  question: { type: comparer, vars: { a: "1..5", b: [3, 4, 5, 6], c: "1..5", d: [3, 4, 5, 6] }, si: "a < b && c < d && b != d", enonce: "Compare.", gauche: "a/b", droite: "c/d", gauche_affiche: "$\\frac{ {{a}} }{ {{b}} }$", droite_affiche: "$\\frac{ {{c}} }{ {{d}} }$" }
+
+- monde: port-des-decimaux
+  question: { type: comparer, vars: { a: "1..9", b: "1..9", c: "10..99" }, enonce: "Compare.", gauche: "a + b/10", droite: "a + c/100" }
+- monde: port-des-decimaux
+  question: { type: nombre, vars: { a: "11..49", b: "11..29" }, enonce: "${{nb(a/10)}} \\times {{nb(b/10)}}$", reponse: "a*b/100" }
+
+- monde: atelier-des-problemes
+  question: { type: champs, vars: { u: "5..15", k: "2..4" }, enonce: "Néo a {{k}} fois plus de billes que Mia. Ensemble ils en ont {{u*(k+1)}}.", champs: [{ avant: "Mia :", reponse: "u" }, { avant: "Néo :", reponse: "k*u" }] }
+- monde: atelier-des-problemes
+  question: { type: nombre, vars: { e: "20..30", p: "4..9", c: "100..250" }, enonce: "{{e}} élèves vont au cinéma. La place coûte {{p}} € et le bus {{c}} €. Coût total en € ?", reponse: "e*p+c" }
+
+- monde: jardin-de-fibonacci
+  question: { type: nombre, vars: { n: "6..12" }, enonce: "Suite de Fibonacci : … {{fib(n-1)}} ; {{fib(n)}} ; ?", reponse: "fib(n+1)" }
+- monde: jardin-de-fibonacci
+  question: { type: nombre, vars: { a: "2..9", r: "2..6" }, enonce: "Une suite commence par {{a}} et on ajoute {{r}} à chaque fois. 10ᵉ terme ?", reponse: "a+9*r" }
+
+- monde: tour-des-proportions
+  question: { type: nombre, vars: { a: [2, 3, 4, 5], u: "2..9", b: "6..12" }, enonce: "{{a}} cahiers coûtent {{a*u}} €. Prix de {{b}} cahiers ?", reponse: "b*u" }
+- monde: tour-des-proportions
+  question: { type: nombre, vars: { t: [10, 20, 30, 40], p: [40, 80, 120, 200] }, enonce: "Un article à {{p}} € est soldé à −{{t}} %. Nouveau prix ?", reponse: "p*(1-t/100)" }
+
+- monde: royaume-des-relatifs
+  question: { type: nombre, vars: { a: "-15..15", b: "-15..-1" }, enonce: "$({{nb(a)}}) - ({{nb(b)}})$", reponse: "a-b" }
+- monde: royaume-des-relatifs
+  question: { type: nombre, vars: { a: "2..6", b: "2..5", c: "1..4", d: "2..9" }, si: "b > c", enonce: "${{d}} + {{a}} \\times ({{b}} - {{c}})^2$", reponse: "d + a*(b-c)^2" }
+
+- monde: grotte-de-l-algebre
+  question: { type: nombre, vars: { a: "2..9", x: "-8..10", b: "-20..20" }, enonce: "Résous : ${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$", reponse: "x" }
+- monde: grotte-de-l-algebre
+  question: { type: expression, vars: { a: "1..9", b: "1..9" }, enonce: "Développe et réduis : $(x + {{a}})(x + {{b}})$", reponse: "x^2+{{a+b}}x+{{a*b}}", variables: [x], forme: reduite }
+
+- monde: chateau-de-la-geometrie
+  question: { type: nombre, vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17]] }, enonce: "Triangle rectangle : côtés de l'angle droit {{t_0}} et {{t_1}}. Hypoténuse ?", reponse: "t_2" }
+- monde: chateau-de-la-geometrie
+  question: { type: nombre, vars: { a: "30..80", b: "30..80" }, si: "a + b < 160", enonce: "Deux angles d'un triangle : {{a}}° et {{b}}°. Le troisième (en °) ?", reponse: "180-a-b" }
+
+- monde: tour-des-puissances
+  question: { type: nombre, vars: { a: [2, 3, 10], m: "2..9", n: "2..9" }, enonce: "${{a}}^{ {{m}} } \\times {{a}}^{ {{n}} } = {{a}}^{?}$", reponse: "m+n" }
+- monde: tour-des-puissances
+  question: { type: nombre, vars: { n: "2..20" }, enonce: "$\\sqrt{ {{n*n}} }$", reponse: "n" }
+
+- monde: observatoire-des-donnees
+  question: { type: nombre, vars: { a: "6..20", b: "6..20", c: "6..20" }, si: "(a + b + c) % 3 == 0", enonce: "Moyenne de {{a}}, {{b}} et {{c}} ?", reponse: "(a+b+c)/3" }
+- monde: observatoire-des-donnees
+  question: { type: nombre, vars: { r: "1..6", b: "1..6" }, enonce: "{{r}} boules rouges et {{b}} bleues. Probabilité de tirer une rouge ? (fraction)", reponse: "r/(r+b)", forme: fraction }
+
+- monde: labyrinthe-des-fonctions
+  question: { type: nombre, vars: { a: "2..9", b: "-9..9", x: "-5..8" }, enonce: "$f(x) = {{a}}x + ({{nb(b)}})$. Calcule $f({{nb(x)}})$.", reponse: "a*x+b" }
+- monde: labyrinthe-des-fonctions
+  question: { type: nombre, vars: { x1: "-3..2", x2: "3..6", a: "-4..5", b: "-6..6" }, si: "a != 0", enonce: "$f$ affine, $f({{nb(x1)}}) = {{nb(a*x1+b)}}$ et $f({{x2}}) = {{nb(a*x2+b)}}$. Coefficient directeur ?", reponse: "a" }
+
+- monde: volcan-du-second-degre
+  question: { type: liste, vars: { r: "-6..6", s: "-6..6" }, si: "r != s", enonce: "Résous $x^2 + ({{nb(-(r+s))}})x + ({{nb(r*s)}}) = 0$ (sépare par « ; »).", reponse: ["r", "s"] }
+- monde: volcan-du-second-degre
+  question: { type: nombre, vars: { a: [1, 2, -1], b: "-9..9", c: "-9..9" }, enonce: "Discriminant de ${{nb(a)}}x^2 + ({{nb(b)}})x + ({{nb(c)}})$ ?", reponse: "b*b - 4*a*c" }
+
+- monde: palais-de-l-arithmetique
+  question: { type: nombre, vars: { g: "2..12", a: "2..9", b: "2..9" }, si: "pgcd(a,b) == 1 && a != b", enonce: "PGCD({{g*a}} ; {{g*b}}) ?", reponse: "g" }
+- monde: palais-de-l-arithmetique
+  question: { type: nombre, vars: { n: "8..63" }, enonce: "${{binaire(n)}}_2$ en base 10 ?", reponse: "n" }
+
+- monde: jardin-des-suites
+  question: { type: nombre, vars: { u0: [1, 2, 3], q: [2, 3], n: "3..7" }, enonce: "Suite géométrique : $u_0 = {{u0}}$, $q = {{q}}$. $u_{ {{n}} }$ ?", reponse: "u0*q^n" }
+- monde: jardin-des-suites
+  question: { type: nombre, vars: { n: "10..60" }, enonce: "$1 + 2 + \\cdots + {{n}}$ ?", reponse: "n*(n+1)/2" }
+
+- monde: vallee-des-derivees
+  question: { type: expression, vars: { a: "1..6", b: "-9..9", c: "-9..9" }, enonce: "Dérive $f(x) = {{a}}x^3 + ({{nb(b)}})x + ({{nb(c)}})$.", reponse: "{{3*a}}x^2+({{b}})", variables: [x] }
+- monde: vallee-des-derivees
+  question: { type: expression, vars: { a: "1..5" }, enonce: "Tangente à $y = x^2$ au point d'abscisse {{a}} : $y = \\;?$", reponse: "{{2*a}}x-{{a*a}}", variables: [x] }
+
+- monde: monts-exponentiels
+  question: { type: nombre, vars: { n: "2..9" }, enonce: "$\\ln(e^{ {{n}} })$ ?", reponse: "n" }
+- monde: monts-exponentiels
+  question: { type: expression, vars: { k: "2..9" }, enonce: "Dérive $f(x) = e^{ {{k}}x }$.", reponse: "{{k}}exp({{k}}x)", variables: [x] }
+
+- monde: mer-des-integrales
+  question: { type: nombre, vars: { a: "0..2", b: "3..5" }, enonce: "$\\displaystyle\\int_{ {{a}} }^{ {{b}} } 3x^2\\,dx$ ?", reponse: "b^3 - a^3" }
+- monde: mer-des-integrales
+  question: { type: expression, vars: { a: "1..5", b: "1..9" }, enonce: "Primitive (sans constante) de ${{2*a}}x + {{b}}$ ?", reponse: "{{a}}x^2+{{b}}x", variables: [x] }
+
+- monde: fete-foraine-des-probabilites
+  question: { type: nombre, vars: { n: "5..12", k: [2, 3] }, enonce: "$\\binom{ {{n}} }{ {{k}} }$ ?", reponse: "comb(n,k)" }
+- monde: fete-foraine-des-probabilites
+  question: { type: nombre, vars: { pa: [0.2, 0.4, 0.5], b1: [0.5, 0.9], b2: [0.1, 0.3] }, enonce: "$P(A) = {{nb(pa)}}$, $P_A(B) = {{nb(b1)}}$, $P_{\\bar A}(B) = {{nb(b2)}}$. $P(B)$ ?", reponse: "pa*b1 + (1-pa)*b2" }
+
+- monde: archipel-des-vecteurs
+  question: { type: nombre, vars: { a: "-6..6", b: "-6..6", c: "-6..6", d: "-6..6" }, enonce: "$\\vec u({{nb(a)}} ; {{nb(b)}}) \\cdot \\vec v({{nb(c)}} ; {{nb(d)}})$ ?", reponse: "a*c+b*d" }
+- monde: archipel-des-vecteurs
+  question: { type: nombre, vars: { a: "-5..5", b: "-5..5", r: "1..9" }, enonce: "Rayon du cercle $(x - ({{nb(a)}}))^2 + (y - ({{nb(b)}}))^2 = {{r*r}}$ ?", reponse: "r" }
+
+- monde: ile-des-complexes
+  question: { type: champs, vars: { a: "-5..5", b: "-5..5", c: "-5..5", d: "-5..5" }, enonce: "$({{nb(a)}} + ({{nb(b)}})i)({{nb(c)}} + ({{nb(d)}})i)$", champs: [{ avant: "Re :", reponse: "a*c - b*d" }, { avant: "Im :", reponse: "a*d + b*c" }] }
+- monde: ile-des-complexes
+  question: { type: nombre, vars: { t: [[3, 4, 5], [5, 12, 13]] }, enonce: "Module de ${{t_0}} + {{t_1}}i$ ?", reponse: "t_2" }
+
+- monde: pont-des-matrices
+  question: { type: nombre, vars: { a: "-6..6", b: "-6..6", c: "-6..6", d: "-6..6" }, enonce: "$\\det\\begin{pmatrix} {{nb(a)}} & {{nb(b)}} \\\\ {{nb(c)}} & {{nb(d)}} \\end{pmatrix}$ ?", reponse: "a*d-b*c" }
+- monde: pont-des-matrices
+  question: { type: champs, vars: { a: "-4..4", b: "-4..4", c: "-4..4", d: "-4..4", x: "-4..4", y: "-4..4" }, enonce: "$\\begin{pmatrix} {{nb(a)}} & {{nb(b)}} \\\\ {{nb(c)}} & {{nb(d)}} \\end{pmatrix}\\begin{pmatrix} {{nb(x)}} \\\\ {{nb(y)}} \\end{pmatrix}$", champs: [{ avant: "haut", reponse: "a*x+b*y" }, { avant: "bas", reponse: "c*x+d*y" }] }
+
+- monde: temple-de-la-logique
+  question: { type: qcm, enonce: "Négation de « ∀x ∈ ℝ, f(x) > 0 » ?", choix: ["∃x ∈ ℝ, f(x) ≤ 0", "∀x ∈ ℝ, f(x) ≤ 0", "∃x ∈ ℝ, f(x) > 0", "∀x ∈ ℝ, f(x) < 0"] }
+- monde: temple-de-la-logique
+  question: { type: qcm, enonce: "Contraposée de « S'il pleut, alors le sol est mouillé » ?", choix: ["Si le sol n'est pas mouillé, alors il ne pleut pas", "Si le sol est mouillé, alors il pleut", "S'il ne pleut pas, le sol n'est pas mouillé", "Il pleut et le sol est mouillé"] }

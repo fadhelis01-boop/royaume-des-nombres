@@ -1,0 +1,459 @@
+id: marche-des-mesures
+titre: Le Marché des Mesures
+sous_titre: Longueurs, masses, contenances, monnaie et temps
+emoji: ⚖️
+couleur: "#f9a825"
+cycle: graines
+age: 7-10 ans
+niveau: CE1 – CM2
+ordre: 5
+prerequis: [prairie-des-additions]
+version: 1.0.0
+intro:
+  - neo: "Bienvenue au Marché des Mesures ! Ici, tout se pèse, se mesure, se compte et se paie."
+  - mia: "Combien ça mesure ? Combien ça pèse ? Combien ça coûte ? Combien de temps ça dure ? On va tout savoir !"
+  - zero: "Moi je pèse… 30 grammes. Et je mesure 10 centimètres. Debout."
+
+lecons:
+  - id: longueurs
+    titre: Mesurer des longueurs
+    objectif: Je connais le mm, le cm, le m et le km, et je choisis la bonne unité.
+    mots: [mètre, centimètre, kilomètre]
+    etapes:
+      - dialogue:
+          - zero: "J'ai mesuré la table avec mes pattes : elle fait 30 pattes de Zéro !"
+          - mia: "Mais mes pattes à moi sont plus grandes… je trouve 20 pattes de Mia !"
+          - neo: "C'est pour ça que le monde entier utilise la même unité : le MÈTRE."
+      - texte: |
+          | Unité | Abréviation | Pour mesurer… |
+          |---|---|---|
+          | millimètre | mm | une fourmi, l'épaisseur d'une pièce |
+          | centimètre | cm | un crayon, une main |
+          | mètre | m | une pièce, un arbre, une piscine |
+          | kilomètre | km | la distance entre deux villes |
+
+          **1 cm = 10 mm · 1 m = 100 cm · 1 km = 1 000 m**
+      - visuel:
+          type: droite
+          min: 0
+          max: 10
+          pas: 1
+          etiquettes: tout
+          marques: [7]
+        legende: "Une règle graduée en centimètres : le crayon mesure 7 cm. On commence TOUJOURS à mesurer au 0."
+      - attention:
+          texte: "Quand tu mesures avec une règle, place le début de l'objet sur le **0**, pas sur le bord de la règle ni sur le 1 !"
+          qui: neo
+      - histoire:
+          titre: Un peu d'histoire
+          texte: "Le mètre a été créé en France à la Révolution (1791-1799) pour que tout le monde utilise les mêmes mesures. Il a d'abord été défini à partir de la taille de la Terre, et aujourd'hui à partir de la vitesse de la lumière."
+      - a_quoi_ca_sert: "Savoir si un meuble rentre dans ta chambre, si tu as grandi, quelle distance tu vas parcourir à vélo…"
+      - question:
+          type: qcm
+          vars: { o: [["un crayon", "cm"], ["une fourmi", "mm"], ["une piscine", "m"], ["un trajet Paris-Lyon", "km"]] }
+          enonce: "Quelle unité choisir pour mesurer {{o_0}} ?"
+          choix: ["{{o_1}}", "{{si(o_1=='cm','km','cm')}}", "{{si(o_1=='m','mm','m')}}", "{{si(o_1=='mm','km','mm')}}"]
+          si: "o_1 != ''"
+          correction: "Pour {{o_0}}, on utilise les {{o_1}}."
+    exercices:
+      - type: nombre
+        vars: { m: "2..9" }
+        enonce: "Combien de centimètres dans {{m}} mètres ?"
+        reponse: "100*m"
+        unite: cm
+        correction: "1 m = 100 cm, donc {{m}} m = {{100*m}} cm."
+      - type: nombre
+        vars: { c: "2..15" }
+        enonce: "Combien de millimètres dans {{c}} cm ?"
+        reponse: "10*c"
+        unite: mm
+        correction: "1 cm = 10 mm, donc {{c}} cm = {{10*c}} mm."
+      - type: nombre
+        vars: { k: "2..9" }
+        enonce: "Combien de mètres dans {{k}} km ?"
+        reponse: "1000*k"
+        unite: m
+        correction: "1 km = 1 000 m, donc {{k}} km = {{nb(1000*k)}} m."
+      - type: comparer
+        vars: { m: "1..5", c: "50..600" }
+        enonce: "Compare ces longueurs."
+        gauche: "m*100"
+        droite: "c"
+        gauche_affiche: "{{m}} m"
+        droite_affiche: "{{c}} cm"
+        correction: "{{m}} m = {{m*100}} cm. On compare {{m*100}} cm et {{c}} cm."
+      - type: nombre
+        vars: { l: "3..12" }
+        enonce: "Le ruban va du 0 jusqu'à la graduation {{l}}. Combien mesure-t-il ?"
+        visuel: { type: droite, min: 0, max: 15, pas: 1, etiquettes: [0, 5, 10, 15], marques: ["=l"] }
+        reponse: "l"
+        unite: cm
+        correction: "Il commence au 0 et finit à {{l}} : {{l}} cm."
+      - type: nombre
+        vars: { a: "3..12" }
+        enonce: "Le ruban commence à la graduation 2 et finit à la graduation {{a+2}}. Combien mesure-t-il ?"
+        reponse: "a"
+        unite: cm
+        indice: "Attention, il ne commence pas au 0 !"
+        correction: "{{a+2}} − 2 = {{a}} cm."
+
+  - id: masses
+    titre: Peser des masses
+    objectif: Je connais le gramme, le kilogramme et la tonne.
+    mots: [gramme, kilogramme, masse]
+    etapes:
+      - dialogue:
+          - neo: "Qu'est-ce qui est le plus lourd : 1 kg de plumes ou 1 kg de pommes ?"
+          - zero: "Les pommes ! C'est évident !"
+          - mia: "Non, Zéro… ils pèsent pareil : 1 kg ! Les plumes prennent juste beaucoup plus de place."
+      - texte: |
+          | Unité | Abréviation | Exemple |
+          |---|---|---|
+          | gramme | g | un trombone (1 g), une pomme (150 g) |
+          | kilogramme | kg | un sac de farine (1 kg), un enfant (25 kg) |
+          | tonne | t | une voiture (1 t), un éléphant (5 t) |
+
+          **1 kg = 1 000 g · 1 t = 1 000 kg**
+      - visuel:
+          type: balance
+          gauche: ["1 kg"]
+          droite: ["500 g", "500 g"]
+        legende: "1 kg = 500 g + 500 g = 1 000 g : la balance est en équilibre."
+      - a_quoi_ca_sert: "Suivre une recette (250 g de farine), acheter des fruits au kilo, savoir si une valise n'est pas trop lourde pour l'avion…"
+      - question:
+          type: nombre
+          vars: { k: "2..9" }
+          enonce: "Combien de grammes dans {{k}} kg ?"
+          reponse: "1000*k"
+          unite: g
+          correction: "{{k}} × 1 000 = {{nb(1000*k)}} g."
+    exercices:
+      - type: nombre
+        vars: { k: "2..9" }
+        enonce: "{{k}} kg = ? g"
+        reponse: "1000*k"
+        unite: g
+        correction: "{{nb(1000*k)}} g."
+      - type: nombre
+        vars: { a: [100, 200, 250, 500] }
+        enonce: "Combien de paquets de {{a}} g faut-il pour faire 1 kg ?"
+        reponse: "1000/a"
+        correction: "1 000 ÷ {{a}} = {{1000/a}} paquets."
+      - type: comparer
+        vars: { k: "1..4", g: "alea(5,45)*100" }
+        enonce: "Compare ces masses."
+        gauche: "k*1000"
+        droite: "g"
+        gauche_affiche: "{{k}} kg"
+        droite_affiche: "{{nb(g)}} g"
+        correction: "{{k}} kg = {{nb(k*1000)}} g."
+      - type: qcm
+        vars: { o: [["une pomme", "150 g"], ["un chat", "4 kg"], ["une voiture", "1 t"], ["une plume", "1 g"]] }
+        enonce: "Combien pèse environ {{o_0}} ?"
+        choix: ["{{o_1}}", "{{si(o_1=='4 kg','4 g','4 kg')}}", "{{si(o_1=='1 t','1 kg','1 t')}}", "{{si(o_1=='150 g','150 kg','150 g')}}"]
+        correction: "{{o_0}} pèse environ {{o_1}}."
+      - type: nombre
+        vars: { a: "120..480", b: "120..480" }
+        enonce: "Dans le panier : des pommes ({{a}} g) et des poires ({{b}} g). Masse totale ?"
+        reponse: "a+b"
+        unite: g
+        correction: "{{a}} + {{b}} = {{a+b}} g."
+
+  - id: contenances
+    titre: Les contenances (litres)
+    objectif: Je connais le litre, le centilitre et le millilitre.
+    mots: [litre, contenance]
+    etapes:
+      - dialogue:
+          - mia: "Combien d'eau dans la bouteille ? Combien dans la baignoire ?"
+          - neo: "Pour les liquides, on mesure la CONTENANCE, en litres."
+      - texte: |
+          - **litre (L)** : une grande bouteille d'eau (1,5 L), un seau (10 L), une baignoire (150 L)
+          - **centilitre (cL)** : une canette (33 cL), un verre (20 cL)
+          - **millilitre (mL)** : une cuillère à café (5 mL), un médicament
+
+          **1 L = 100 cL = 1 000 mL**
+      - astuce:
+          texte: "« centi » veut dire centième (comme dans centimètre) et « milli » veut dire millième (comme dans millimètre). Les mêmes mots servent pour toutes les mesures !"
+          qui: mia
+      - a_quoi_ca_sert: "Doser un sirop, remplir un aquarium, savoir combien de verres on peut servir avec une bouteille…"
+      - question:
+          type: nombre
+          vars: { l: "2..9" }
+          enonce: "Combien de centilitres dans {{l}} L ?"
+          reponse: "100*l"
+          unite: cL
+          correction: "1 L = 100 cL, donc {{l}} L = {{100*l}} cL."
+    exercices:
+      - type: nombre
+        vars: { l: "2..9" }
+        enonce: "{{l}} L = ? mL"
+        reponse: "1000*l"
+        unite: mL
+        correction: "{{nb(1000*l)}} mL."
+      - type: nombre
+        vars: { v: [20, 25, 50] }
+        enonce: "Combien de verres de {{v}} cL peut-on remplir avec une bouteille de 1 L ?"
+        reponse: "100/v"
+        correction: "1 L = 100 cL ; 100 ÷ {{v}} = {{100/v}} verres."
+      - type: qcm
+        enonce: "Quelle est la contenance d'une canette de soda ?"
+        choix: ["33 cL", "33 L", "33 mL", "3 300 L"]
+        correction: "Une canette contient 33 cL (un tiers de litre environ)."
+      - type: nombre
+        vars: { b: "2..6", c: [25, 33, 50] }
+        enonce: "On verse {{b}} bouteilles de {{c}} cL dans une carafe. Combien de cL dans la carafe ?"
+        reponse: "b*c"
+        unite: cL
+        correction: "{{b}} × {{c}} = {{b*c}} cL."
+
+  - id: monnaie
+    titre: Payer et rendre la monnaie
+    objectif: Je sais compter de l'argent en euros et en centimes et rendre la monnaie.
+    mots: [euro, centime]
+    etapes:
+      - dialogue:
+          - neo: "Une glace coûte 3 €. Je donne un billet de 5 €. Combien le marchand me rend-il ?"
+          - mia: "Il compte en avançant : 3… 4, 5 ! Il me rend 2 €."
+      - texte: |
+          **1 € = 100 centimes (c)**.
+
+          - Pièces : 1 c, 2 c, 5 c, 10 c, 20 c, 50 c, 1 €, 2 €
+          - Billets : 5 €, 10 €, 20 €, 50 €, 100 €, 200 €
+
+          On écrit 2,50 € pour « 2 euros et 50 centimes ».
+      - visuel:
+          type: monnaie
+          valeurs: [20, 5, 2, 1, 0.5, 0.2]
+        legende: "20 + 5 + 2 + 1 + 0,50 + 0,20 = 28,70 €"
+      - astuce:
+          texte: "Pour rendre la monnaie, fais comme les marchands : AVANCE depuis le prix jusqu'à la somme donnée. Prix 6,30 € payé avec 10 € : 6,30 → 6,50 (20 c) → 7 (50 c) → 10 (3 €). On rend 3,70 €."
+          qui: neo
+      - a_quoi_ca_sert: "Faire tes courses, vérifier qu'on te rend la bonne monnaie, économiser pour un jouet (combien de semaines d'argent de poche ?)…"
+      - question:
+          type: nombre
+          vars: { b: [5, 10, 20], p: "1..19" }
+          si: "p < b"
+          enonce: "Un livre coûte {{p}} €. Je paie avec un billet de {{b}} €. Combien me rend-on ?"
+          reponse: "b-p"
+          unite: €
+          correction: "De {{p}} à {{b}} : {{b-p}} €."
+    exercices:
+      - type: nombre
+        vars: { a: [1, 2, 5, 10], b: [1, 2, 5, 10, 20], c: [0.5, 0.2, 1, 2] }
+        enonce: "Combien d'argent en tout ?"
+        visuel: { type: monnaie, valeurs: ["=b", "=a", "=c"] }
+        reponse: "a+b+c"
+        unite: €
+        correction: "{{nb(b)}} + {{nb(a)}} + {{nb(c)}} = {{nb(a+b+c)}} €."
+      - type: nombre
+        vars: { e: "2..9", c: [10, 20, 50] }
+        enonce: "Combien de centimes dans {{e}} € et {{c}} c ?"
+        reponse: "100*e+c"
+        unite: c
+        correction: "{{e}} € = {{100*e}} c ; + {{c}} c = {{100*e+c}} c."
+      - type: nombre
+        vars: { p: "11..49", b: [50, 20] }
+        si: "p < b"
+        enonce: "Je paie un jeu à {{p}} € avec un billet de {{b}} €. Monnaie rendue ?"
+        reponse: "b-p"
+        unite: €
+        correction: "{{b}} − {{p}} = {{b-p}} €."
+      - type: nombre
+        vars: { s: "2..8", x: [10, 12, 15, 20, 25] }
+        enonce: "Je reçois {{s}} € d'argent de poche par semaine. Combien de semaines pour m'offrir un jeu à {{s*x}} € ?"
+        reponse: "x"
+        correction: "{{s*x}} ÷ {{s}} = {{x}} semaines."
+      - type: nombre
+        vars: { a: "1..4", c: [20, 30, 50, 70, 80] }
+        enonce: "Une baguette coûte 1,{{c}} €. Combien coûtent 2 baguettes ?"
+        reponse: "2*(1+c/100)"
+        unite: €
+        correction: "1,{{c}} + 1,{{c}} = {{dec(2*(1+c/100),2)}} €."
+
+  - id: lire-l-heure
+    titre: Lire l'heure
+    objectif: Je lis l'heure sur une horloge à aiguilles et je l'écris.
+    mots: [heure, minute]
+    etapes:
+      - dialogue:
+          - zero: "L'horloge a deux aiguilles qui tournent… je ne sais jamais laquelle regarder !"
+          - mia: "La PETITE aiguille, c'est l'heure (elle est paresseuse). La GRANDE, ce sont les minutes (elle court partout)."
+      - visuel:
+          type: horloge
+          h: 3
+          m: 15
+          numerique: true
+        legende: "La petite aiguille est juste après le 3, la grande sur le 3 : 3 h 15 (« trois heures et quart »)."
+      - texte: |
+          - La **petite aiguille** (orange) montre les **heures**.
+          - La **grande aiguille** (violette) montre les **minutes** : chaque chiffre vaut **5 minutes** (le 1 = 5 min, le 2 = 10 min… le 6 = 30 min).
+          - Une journée a **24 heures** : 15 h, c'est 3 h de l'après-midi.
+
+          **Et quart** = 15 min · **et demie** = 30 min · **moins le quart** = 45 min.
+      - astuce:
+          texte: "Pour les heures de l'après-midi, ajoute 12 : 3 h de l'après-midi = 15 h. 8 h du soir = 20 h."
+          qui: neo
+      - a_quoi_ca_sert: "Ne pas rater le bus, savoir quand commence ton dessin animé, être à l'heure à l'école, prendre un médicament au bon moment…"
+      - question:
+          type: qcm
+          vars: { h: "1..11", m: [0, 15, 30, 45] }
+          enonce: "Quelle heure indique cette horloge (le matin) ?"
+          visuel: { type: horloge, h: "=h", m: "=m" }
+          choix: ["{{heure(h,m)}}", "{{heure(m/5,h*5)}}", "{{heure(h+1,m)}}", "{{heure(h,(m+30)%60)}}"]
+          correction: "Petite aiguille : {{h}} h ; grande aiguille sur le {{si(m==0,12,m/5)}} : {{m}} min. Il est {{heure(h,m)}}."
+    exercices:
+      - type: qcm
+        vars: { h: "1..11", m: [0, 5, 10, 15, 20, 30, 40, 45, 50] }
+        enonce: "Quelle heure est-il (le matin) ?"
+        visuel: { type: horloge, h: "=h", m: "=m" }
+        choix: ["{{heure(h,m)}}", "{{heure(m/5,h*5)}}", "{{heure(h+1,m)}}", "{{heure(h,(m+30)%60)}}"]
+        si: "m/5 != h"
+        correction: "Il est {{heure(h,m)}}."
+      - type: nombre
+        vars: { h: "1..11" }
+        enonce: "{{h}} heures de l'après-midi, cela s'écrit combien d'heures ?"
+        reponse: "h+12"
+        unite: h
+        correction: "{{h}} + 12 = {{h+12}} h."
+      - type: nombre
+        vars: { c: "1..11" }
+        enonce: "La grande aiguille est sur le {{c}}. Combien de minutes cela fait-il ?"
+        reponse: "5*c"
+        unite: min
+        correction: "{{c}} × 5 = {{5*c}} minutes."
+      - type: qcm
+        enonce: "« Deux heures et quart », c'est :"
+        choix: ["2 h 15", "2 h 25", "2 h 04", "1 h 45"]
+        correction: "« Et quart » = 15 minutes : 2 h 15."
+      - type: qcm
+        enonce: "« Cinq heures moins le quart », c'est :"
+        choix: ["4 h 45", "5 h 15", "5 h 45", "4 h 15"]
+        correction: "« Moins le quart » : 15 minutes avant 5 h, soit 4 h 45."
+
+  - id: durees
+    titre: Calculer des durées
+    objectif: Je calcule une durée, une heure de début ou une heure de fin.
+    mots: [durée]
+    etapes:
+      - dialogue:
+          - neo: "Le film commence à 14 h 30 et finit à 16 h 10. Combien de temps dure-t-il ?"
+          - mia: "On fait des sauts sur la ligne du temps, comme sur la droite des nombres !"
+      - texte: |
+          **Méthode des sauts :**
+          - de 14 h 30 à 15 h → **30 min**
+          - de 15 h à 16 h → **1 h**
+          - de 16 h à 16 h 10 → **10 min**
+
+          Total : **1 h 40 min**.
+
+          Rappels : **1 h = 60 min · 1 min = 60 s · 1 jour = 24 h · 1 semaine = 7 jours**.
+      - attention:
+          texte: "Les heures ne marchent PAS comme les nombres décimaux ! 1 h 30, ce n'est pas 1,30 h : c'est 1 h et demie = 90 minutes. Dans une heure, il y a 60 minutes, pas 100."
+          qui: neo
+      - a_quoi_ca_sert: "Savoir combien de temps dure un trajet, à quelle heure tu arriveras, combien de temps il te reste pour jouer…"
+      - question:
+          type: nombre
+          vars: { h: "8..17", m: [10, 20, 30, 40, 50], d: [20, 30, 40] }
+          si: "m + d > 60"
+          enonce: "Un cours commence à {{heure(h,m)}} et dure {{d}} min. À quelle heure finit-il ? Donne les minutes après {{h+1}} h."
+          reponse: "m+d-60"
+          unite: min
+          correction: "{{heure(h,m)}} + {{60-m}} min = {{h+1}} h ; il reste {{m+d-60}} min : {{heure(h+1,m+d-60)}}."
+    exercices:
+      - type: nombre
+        vars: { h: "8..18", m1: [0, 15, 30, 45], d: "alea(4,34)*5" }
+        enonce: "Une activité commence à {{heure(h,m1)}} et dure {{duree(d)}}. Combien de minutes en tout ?"
+        reponse: "d"
+        unite: min
+        correction: "{{duree(d)}} = {{d}} minutes."
+      - type: champs
+        vars: { h: "9..16", m: [0, 10, 20, 30, 40], d: "alea(7,30)*5" }
+        enonce: "Départ à {{heure(h,m)}}, trajet de {{duree(d)}}. Heure d'arrivée ?"
+        champs:
+          - { reponse: "ent((h*60+m+d)/60)", apres: "h" }
+          - { reponse: "(h*60+m+d)%60", apres: "min" }
+        correction: "{{heure(h,m)}} + {{duree(d)}} = {{heure(ent((h*60+m+d)/60),(h*60+m+d)%60)}}."
+      - type: nombre
+        vars: { h1: "8..12", m1: [0, 15, 30, 45], h2: "13..18", m2: [0, 15, 30, 45] }
+        enonce: "Le film commence à {{heure(h1,m1)}} et finit à {{heure(h2,m2)}}. Combien de minutes dure-t-il ?"
+        reponse: "(h2*60+m2)-(h1*60+m1)"
+        unite: min
+        correction: "Durée : {{duree((h2*60+m2)-(h1*60+m1))}}, soit {{(h2*60+m2)-(h1*60+m1)}} minutes."
+      - type: nombre
+        vars: { h: "2..5" }
+        enonce: "Combien de minutes dans {{h}} heures ?"
+        reponse: "60*h"
+        unite: min
+        correction: "{{h}} × 60 = {{60*h}} minutes."
+      - type: nombre
+        vars: { j: "2..5" }
+        enonce: "Combien d'heures dans {{j}} jours ?"
+        reponse: "24*j"
+        unite: h
+        correction: "{{j}} × 24 = {{24*j}} heures."
+
+  - id: conversions
+    titre: Le grand tableau des conversions
+    objectif: Je convertis des mesures grâce au tableau des unités.
+    mots: [conversion]
+    etapes:
+      - dialogue:
+          - mia: "Kilo, hecto, déca… unité… déci, centi, milli. C'est une famille de 7 !"
+          - neo: "Et chaque fois qu'on passe à la case voisine, c'est ×10 ou ÷10."
+      - visuel:
+          type: tableau
+          lignes:
+            - ["km", "hm", "dam", "**m**", "dm", "cm", "mm"]
+            - ["kg", "hg", "dag", "**g**", "dg", "cg", "mg"]
+            - ["kL", "hL", "daL", "**L**", "dL", "cL", "mL"]
+        legende: "Chaque case vaut 10 fois la case de droite."
+      - texte: |
+          **Méthode du tableau** : convertir 3,25 m en cm.
+          1. J'écris 3,25 en mettant le **chiffre des unités** (3) dans la colonne **m**.
+          2. Je place les autres chiffres : 2 en dm, 5 en cm.
+          3. Je lis le nombre jusqu'à la colonne cm : **325 cm**.
+      - retiens: "kilo = 1 000 · hecto = 100 · déca = 10 · déci = un dixième · centi = un centième · milli = un millième"
+      - astuce:
+          texte: "Petit moyen mnémotechnique : « Kilo Hecto Déca, Unité, Déci Centi Milli » → « Kiki Hérisson Danse Une Danse Comme Mia » !"
+          qui: zero
+      - a_quoi_ca_sert: "Lire une étiquette (75 cL = 0,75 L), comparer des prix au kilo, suivre une carte de randonnée en km…"
+      - question:
+          type: nombre
+          vars: { m: "2..9", c: "10..99" }
+          enonce: "{{m}},{{c}} m = ? cm"
+          reponse: "100*m+c"
+          unite: cm
+          correction: "On place {{m}} dans la colonne m : {{m}},{{c}} m = {{100*m+c}} cm."
+    exercices:
+      - type: nombre
+        vars: { d: "2..9", u: [["km", "m", 1000], ["m", "cm", 100], ["m", "mm", 1000], ["cm", "mm", 10], ["kg", "g", 1000], ["L", "cL", 100], ["L", "mL", 1000]] }
+        enonce: "{{d}} {{u_0}} = ? {{u_1}}"
+        reponse: "d*u_2"
+        correction: "1 {{u_0}} = {{nb(u_2)}} {{u_1}}, donc {{d}} {{u_0}} = {{nb(d*u_2)}} {{u_1}}."
+      - type: nombre
+        vars: { n: "alea(12,98)*100" }
+        enonce: "{{nb(n)}} m = ? km"
+        reponse: "n/1000"
+        unite: km
+        correction: "{{nb(n)}} ÷ 1 000 = {{nb(n/1000)}} km."
+      - type: nombre
+        vars: { n: "alea(15,95)*10" }
+        enonce: "{{n}} cm = ? m"
+        reponse: "n/100"
+        unite: m
+        correction: "{{n}} ÷ 100 = {{nb(n/100)}} m."
+      - type: comparer
+        vars: { a: "1..3", b: "alea(16,70)*50" }
+        enonce: "Compare."
+        gauche: "a*1000"
+        droite: "b"
+        gauche_affiche: "{{a}} L"
+        droite_affiche: "{{nb(b)}} mL"
+        correction: "{{a}} L = {{nb(a*1000)}} mL."
+      - type: nombre
+        vars: { c: [25, 50, 75, 33] }
+        enonce: "{{c}} cL = ? L"
+        reponse: "c/100"
+        unite: L
+        correction: "{{c}} ÷ 100 = {{nb(c/100)}} L."

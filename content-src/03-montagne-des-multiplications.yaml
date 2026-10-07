@@ -1,0 +1,425 @@
+id: montagne-des-multiplications
+titre: La Montagne des Multiplications
+sous_titre: Groupes égaux, tables et multiplications posées
+emoji: ✖️
+couleur: "#6d4c41"
+cycle: graines
+age: 7-10 ans
+niveau: CE1 – CM1
+ordre: 3
+prerequis: [prairie-des-additions]
+version: 1.0.0
+intro:
+  - neo: "Voici la Montagne des Multiplications ! Les sentiers se divisent en groupes tous pareils."
+  - mia: "Multiplier, c'est une addition qui va très, très vite."
+  - zero: "Et moi, quand on me multiplie, je reste… zéro. Toujours. Je suis INCROYABLEMENT solide."
+
+lecons:
+  - id: groupes-egaux
+    titre: Multiplier, c'est additionner des groupes égaux
+    objectif: Je comprends que 4 × 3 veut dire « 4 groupes de 3 ».
+    mots: [multiplication, produit, facteur]
+    etapes:
+      - dialogue:
+          - neo: "Il y a 4 nids. Dans chaque nid, 3 œufs. Combien d'œufs ?"
+          - zero: "3 + 3 + 3 + 3… je m'endors."
+          - mia: "Et si on écrivait plus court ? 4 fois 3 : 4 × 3 = 12 !"
+      - visuel:
+          type: objets
+          groupes: [3, 3, 3, 3]
+          emoji: "🥚"
+        legende: "4 groupes de 3 : 3 + 3 + 3 + 3 = 4 × 3 = 12"
+      - texte: |
+          Quand on additionne **plusieurs fois le même nombre**, on peut **multiplier** :
+
+          $3 + 3 + 3 + 3 = 4 \times 3 = 12$
+
+          On lit « 4 fois 3 ». Le résultat s'appelle le **produit**. Les nombres 4 et 3 s'appellent les **facteurs**.
+      - visuel:
+          type: grille
+          lignes: 4
+          colonnes: 3
+        legende: "Un tableau de points : 4 rangées de 3. Tourne la tête : 3 rangées de 4 ! Donc 4 × 3 = 3 × 4."
+      - retiens: "**a × b = b × a** : on peut multiplier dans n'importe quel ordre. Et $n \\times 1 = n$, $n \\times 0 = 0$."
+      - a_quoi_ca_sert: "Le prix de 5 baguettes à 1 €, le nombre de roues de 6 voitures, le nombre de carreaux d'une tablette de chocolat… dès que des groupes sont tous pareils, on multiplie."
+      - question:
+          type: nombre
+          vars: { g: "2..5", n: "2..5" }
+          enonce: "Combien de pommes ? Écris-le comme une multiplication dans ta tête."
+          visuel: { type: objets, nb_groupes: "=g", par_groupe: "=n", emoji: "🍎" }
+          reponse: "g*n"
+          correction: "{{g}} groupes de {{n}} : {{g}} × {{n}} = {{g*n}}."
+    exercices:
+      - type: nombre
+        vars: { l: "2..6", c: "2..6" }
+        enonce: "Combien de points ? ({{l}} rangées de {{c}})"
+        visuel: { type: grille, lignes: "=l", colonnes: "=c" }
+        reponse: "l*c"
+        correction: "{{l}} × {{c}} = {{l*c}}."
+      - type: qcm
+        vars: { a: "2..9", b: "2..5" }
+        si: "a != b"
+        enonce: "Quelle multiplication est égale à ${{a}} + {{a}}{{si(b>=3,' + ' + texte(a),'')}}{{si(b>=4,' + ' + texte(a),'')}}{{si(b>=5,' + ' + texte(a),'')}}$ ?"
+        choix: ["{{b}} × {{a}}", "{{a}} × {{a}}", "{{a}} + {{b}}", "{{b+1}} × {{a}}"]
+        correction: "{{b}} fois le nombre {{a}} : {{b}} × {{a}} = {{a*b}}."
+      - type: nombre
+        vars: { a: "2..9" }
+        enonce: "$ {{a}} \\times 0 = ?$"
+        reponse: "0"
+        correction: "{{a}} groupes de RIEN, ça fait rien du tout : 0. (Zéro est très fier.)"
+      - type: nombre
+        vars: { v: "3..8", r: [4, 2, 3] }
+        enonce: "Il y a {{v}} {{si(r==4,'voitures',si(r==2,'vélos','tricycles'))}}. Chacun a {{r}} roues. Combien de roues en tout ?"
+        reponse: "v*r"
+        correction: "{{v}} × {{r}} = {{v*r}} roues."
+      - type: vf
+        vars: { a: "2..9", b: "2..9" }
+        enonce: "Vrai ou faux : $ {{a}} \\times {{b}} = {{b}} \\times {{a}}$"
+        reponse: true
+        correction: "Oui : on peut tourner le tableau de points, le nombre de points ne change pas ({{a*b}})."
+
+  - id: tables-2-5-10
+    titre: Les tables de 2, de 5 et de 10
+    objectif: Je connais par cœur les tables de 2, 5 et 10.
+    mots: [table]
+    etapes:
+      - dialogue:
+          - zero: "La table de 10, c'est MA table ! Je viens me coller derrière : 3 × 10 = 30, 7 × 10 = 70 !"
+          - mia: "La table de 5, ce sont les doigts des mains : 2 mains = 10 doigts, 3 mains = 15…"
+          - neo: "Et la table de 2, ce sont les doubles !"
+      - visuel:
+          type: tableau
+          lignes:
+            - ["×", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+            - ["**2**", "2", "4", "6", "8", "10", "12", "14", "16", "18", "20"]
+            - ["**5**", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"]
+            - ["**10**", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+      - astuce:
+          texte: "La table de 5 finit toujours par 0 ou 5, et c'est la moitié de la table de 10 : 8 × 5 = 80 ÷ 2 = 40."
+          qui: mia
+      - retiens: "×2 = le double · ×10 = on ajoute un 0 · ×5 = la moitié de ×10."
+      - a_quoi_ca_sert: "Compter les pièces de 2 € et les billets de 5 € ou 10 €, lire l'heure (les minutes vont de 5 en 5 sur l'horloge), compter les paires de chaussettes…"
+      - question:
+          type: nombre
+          vars: { t: [2, 5, 10], n: "2..10" }
+          enonce: "$ {{n}} \\times {{t}} = ?$"
+          reponse: "n*t"
+          correction: "{{n}} × {{t}} = {{n*t}}."
+    exercices:
+      - type: nombre
+        vars: { t: [2, 5, 10], n: "1..10" }
+        enonce: "$ {{n}} \\times {{t}} = ?$"
+        reponse: "n*t"
+        correction: "{{n}} × {{t}} = {{n*t}}."
+      - type: nombre
+        vars: { t: [2, 5, 10], n: "2..10" }
+        enonce: "$ {{t}} \\times ? = {{n*t}}$"
+        reponse: "n"
+        correction: "{{t}} × {{n}} = {{n*t}}."
+      - type: nombre
+        vars: { n: "2..10" }
+        enonce: "Combien de doigts sur {{n}} mains ?"
+        reponse: "5*n"
+        correction: "{{n}} × 5 = {{5*n}}."
+      - type: nombre
+        vars: { n: "2..9" }
+        enonce: "Combien de minutes quand la grande aiguille va du 12 au {{n}} ?"
+        visuel: { type: horloge, h: 3, m: "=5*n" }
+        reponse: "5*n"
+        correction: "Chaque chiffre de l'horloge vaut 5 minutes : {{n}} × 5 = {{5*n}} minutes."
+      - type: qcm
+        vars: { n: "3..9" }
+        enonce: "Quel nombre est dans la table de 5 ?"
+        choix: ["{{5*n}}", "{{5*n+2}}", "{{5*n-1}}", "{{5*n+3}}"]
+        correction: "Les nombres de la table de 5 finissent par 0 ou par 5 : {{5*n}} = {{n}} × 5."
+
+  - id: tables-3-4
+    titre: Les tables de 3 et de 4
+    objectif: Je connais les tables de 3 et de 4 et j'ai des astuces pour les retrouver.
+    mots: [table]
+    etapes:
+      - dialogue:
+          - neo: "La table de 4… c'est le double du double !"
+          - mia: "6 × 4 : le double de 6, c'est 12 ; le double de 12, c'est 24 !"
+          - zero: "Et la table de 3 ?"
+          - neo: "Le double… plus une fois de plus : 6 × 3 = 12 + 6 = 18."
+      - visuel:
+          type: tableau
+          lignes:
+            - ["×", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+            - ["**3**", "3", "6", "9", "12", "15", "18", "21", "24", "27", "30"]
+            - ["**4**", "4", "8", "12", "16", "20", "24", "28", "32", "36", "40"]
+      - astuce:
+          texte: "Les nombres de la table de 3 ont un secret : si on additionne leurs chiffres, on retombe sur 3, 6 ou 9. Exemple : 27 → 2 + 7 = 9 ✔."
+          qui: mia
+      - a_quoi_ca_sert: "Les tricycles, les trèfles, les côtés des triangles (×3) ; les pattes des chats, les roues des voitures, les saisons (×4)…"
+      - question:
+          type: nombre
+          vars: { t: [3, 4], n: "2..10" }
+          enonce: "$ {{n}} \\times {{t}} = ?$"
+          reponse: "n*t"
+          indice: "{{si(t==4,'Double, puis encore double.','Le double, plus une fois.')}}"
+          correction: "{{n}} × {{t}} = {{n*t}}."
+    exercices:
+      - type: nombre
+        vars: { t: [3, 4], n: "1..10" }
+        enonce: "$ {{n}} \\times {{t}} = ?$"
+        reponse: "n*t"
+        correction: "{{n}} × {{t}} = {{n*t}}."
+      - type: nombre
+        vars: { n: "3..9" }
+        enonce: "Combien de pattes pour {{n}} chats ?"
+        reponse: "4*n"
+        correction: "{{n}} × 4 = {{4*n}} pattes."
+      - type: nombre
+        vars: { t: [3, 4], n: "2..10" }
+        enonce: "$ ? \\times {{t}} = {{n*t}}$"
+        reponse: "n"
+        correction: "{{n}} × {{t}} = {{n*t}}."
+      - type: vf
+        vars: { n: "11..40" }
+        enonce: "Vrai ou faux : {{n}} est dans la table de 3 (ou est un multiple de 3)."
+        reponse: "n % 3 == 0"
+        correction: "{{n}} : la somme de ses chiffres fait {{sommechiffres(n)}}{{si(n%3==0,', qui est dans la table de 3. Donc oui.',', qui n’est pas dans la table de 3. Donc non.')}}"
+      - type: nombre
+        vars: { n: "4..9" }
+        enonce: "Un trèfle porte 3 feuilles. Combien de feuilles pour {{n}} trèfles ?"
+        reponse: "3*n"
+        correction: "{{n}} × 3 = {{3*n}}."
+
+  - id: tables-6-9
+    titre: Les tables de 6, 7, 8 et 9
+    objectif: Je connais les dernières tables grâce aux astuces et à la commutativité.
+    mots: [table]
+    etapes:
+      - dialogue:
+          - zero: "Les grandes tables me font peur… il y en a tellement !"
+          - mia: "Moins que tu crois ! 6 × 3, tu le connais déjà : c'est 3 × 6 = 18. Il ne reste que quelques faits nouveaux."
+          - neo: "Exactement 10 faits vraiment nouveaux : 6×6, 6×7, 6×8, 6×9, 7×7, 7×8, 7×9, 8×8, 8×9, 9×9. Défi accepté !"
+      - texte: |
+          Grâce à la commutativité ($a \times b = b \times a$), il ne reste que **10 faits** à apprendre :
+
+          | | ×6 | ×7 | ×8 | ×9 |
+          |---|---|---|---|---|
+          | **6** | 36 | 42 | 48 | 54 |
+          | **7** | | 49 | 56 | 63 |
+          | **8** | | | 64 | 72 |
+          | **9** | | | | 81 |
+      - astuce:
+          texte: "**×9** = ×10 moins une fois : 7 × 9 = 70 − 7 = 63. Les chiffres du résultat font toujours 9 (6 + 3) ! Et **5, 6, 7, 8** : 56 = 7 × 8."
+          qui: mia
+      - astuce:
+          texte: "Avec les doigts pour ×9 : pose tes 10 doigts, baisse le 7ᵉ. À gauche : 6 doigts (6 dizaines), à droite : 3 doigts (3 unités). 7 × 9 = 63 !"
+          qui: neo
+      - a_quoi_ca_sert: "7 jours par semaine (3 semaines = 21 jours), 6 œufs par boîte, 8 bras de pieuvre… et surtout : les tables servent à TOUT le reste des maths (divisions, fractions, aires…)."
+      - question:
+          type: nombre
+          vars: { a: "6..9", b: "6..9" }
+          enonce: "$ {{a}} \\times {{b}} = ?$"
+          reponse: "a*b"
+          correction: "{{a}} × {{b}} = {{a*b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "6..9", b: "2..9" }
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        correction: "{{a}} × {{b}} = {{a*b}}."
+      - type: nombre
+        vars: { n: "2..9" }
+        enonce: "Avec l'astuce du ×10 : $ {{n}} \\times 9 = ?$"
+        reponse: "9*n"
+        correction: "{{n}} × 10 = {{10*n}}, moins {{n}} : {{9*n}}."
+      - type: nombre
+        vars: { s: "2..8" }
+        enonce: "Combien de jours dans {{s}} semaines ?"
+        reponse: "7*s"
+        correction: "{{s}} × 7 = {{7*s}} jours."
+      - type: nombre
+        vars: { a: "6..9", b: "6..9" }
+        enonce: "$ ? \\times {{b}} = {{a*b}}$"
+        reponse: "a"
+        correction: "{{a}} × {{b}} = {{a*b}}."
+      - type: qcm
+        vars: { a: "6..9", b: "6..9" }
+        enonce: "Combien font $ {{a}} \\times {{b}}$ ?"
+        choix: ["{{a*b}}", "{{a*b+a}}", "{{a*b-b}}", "{{a+b}}"]
+        si: "a*b-b != a+b && a*b+a != a+b"
+        correction: "{{a}} × {{b}} = {{a*b}}."
+
+  - id: fois-10-100
+    titre: Multiplier par 10, 100, 1 000
+    objectif: Je sais multiplier rapidement par 10, 100 et 1 000.
+    mots: [dizaine, centaine]
+    etapes:
+      - dialogue:
+          - zero: "Mon moment de gloire ! 34 × 10 : je me colle à droite… 340 !"
+          - neo: "Et × 100 ? Deux Zéros arrivent : 3 400."
+          - zero-surprise: "TROIS MILLE QUATRE CENTS ?! 😳 Juste parce qu'on a bougé ?"
+          - mia: "Oui ! Chaque chiffre glisse d'une place vers la gauche et devient 10 fois plus grand."
+      - visuel:
+          type: tableau
+          lignes:
+            - ["", "milliers", "centaines", "dizaines", "unités"]
+            - ["34", "", "", "3", "4"]
+            - ["34 × 10", "", "3", "4", "**0**"]
+            - ["34 × 100", "3", "4", "**0**", "**0**"]
+        legende: "Les chiffres glissent vers la gauche, Zéro bouche les trous."
+      - texte: |
+          Multiplier par **10**, c'est rendre chaque chiffre **10 fois plus grand** : il **glisse d'un rang vers la gauche**.
+          Pour un nombre entier, cela revient à **écrire un 0 à droite** : 34 × 10 = 340.
+          × 100 : deux rangs → 3 400. × 1 000 : trois rangs → 34 000.
+      - attention:
+          texte: "« Ajouter un zéro » ne marche QUE pour les nombres entiers. Avec 2,5 × 10, on n'écrit pas 2,50 (c'est pareil que 2,5 !) : c'est 25. Retiens plutôt : les chiffres glissent."
+          qui: neo
+      - a_quoi_ca_sert: "10 paquets de 24 gâteaux, le prix de 100 stylos, convertir des mètres en centimètres (×100)…"
+      - question:
+          type: nombre
+          vars: { n: "2..99", k: [10, 100, 1000] }
+          enonce: "$ {{n}} \\times {{nb(k)}} = ?$"
+          reponse: "n*k"
+          correction: "{{n}} × {{nb(k)}} = {{nb(n*k)}}."
+    exercices:
+      - type: nombre
+        vars: { n: "2..999", k: [10, 100, 1000] }
+        enonce: "$ {{n}} \\times {{nb(k)}} = ?$"
+        reponse: "n*k"
+        correction: "Les chiffres glissent de {{si(k==10,1,si(k==100,2,3))}} rang(s) : {{nb(n*k)}}."
+      - type: nombre
+        vars: { n: "2..99", k: [10, 100] }
+        enonce: "$ {{n}} \\times ? = {{nb(n*k)}}$"
+        reponse: "k"
+        correction: "{{n}} × {{k}} = {{nb(n*k)}}."
+      - type: nombre
+        vars: { a: "2..9", b: "2..9", k: [10, 100] }
+        enonce: "Calcule de tête : $ {{a}} \\times {{b*k}}$"
+        reponse: "a*b*k"
+        indice: "{{a}} × {{b}}, puis × {{k}}."
+        correction: "{{a}} × {{b}} = {{a*b}}, × {{k}} = {{nb(a*b*k)}}."
+      - type: nombre
+        vars: { n: "12..48" }
+        enonce: "Un paquet contient {{n}} biscuits. Combien de biscuits dans 100 paquets ?"
+        reponse: "100*n"
+        correction: "{{n}} × 100 = {{nb(100*n)}}."
+
+  - id: multiplication-posee
+    titre: La multiplication posée
+    objectif: Je sais poser une multiplication par un nombre à un puis à deux chiffres.
+    mots: [produit]
+    etapes:
+      - dialogue:
+          - neo: "23 × 4. Je pose, comme l'addition ?"
+          - mia: "Oui, et on multiplie chaque chiffre du haut par 4, en commençant par les unités."
+      - texte: |
+          **23 × 4 :**
+          - 4 × 3 unités = 12 : j'écris **2**, je retiens **1** dizaine.
+          - 4 × 2 dizaines = 8, plus la retenue 1 = **9**.
+          - Résultat : **92**.
+      - visuel:
+          type: tableau
+          entete: false
+          lignes:
+            - ["", "¹", ""]
+            - ["", "2", "3"]
+            - ["×", "", "4"]
+            - ["=", "**9**", "**2**"]
+      - texte: |
+          **Par un nombre à deux chiffres (47 × 23)** : on décompose 23 en 20 + 3.
+          - 47 × 3 = 141
+          - 47 × 20 = 940 (47 × 2 = 94, puis × 10 : Zéro se place à droite)
+          - On additionne : 141 + 940 = **1 081**.
+      - astuce:
+          texte: "Estime d'abord : 47 × 23 ≈ 50 × 20 = 1 000. Ton résultat doit être proche de 1 000 !"
+          qui: neo
+      - a_quoi_ca_sert: "Le prix de 23 places de cinéma à 9 €, la surface d'un jardin, le nombre de sièges d'un théâtre (rangées × sièges par rangée)…"
+      - question:
+          type: nombre
+          vars: { a: "12..49", b: "3..9" }
+          enonce: "Pose et calcule : $ {{a}} \\times {{b}}$"
+          reponse: "a*b"
+          correction: "{{b}} × {{a%10}} = {{b*(a%10)}} ; {{b}} × {{ent(a/10)}} dizaines = {{b*ent(a/10)}} dizaines ; total {{a*b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "12..99", b: "2..9" }
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        correction: "{{a}} × {{b}} = {{a*b}}."
+      - type: nombre
+        vars: { a: "101..499", b: "2..9" }
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        correction: "{{a}} × {{b}} = {{nb(a*b)}}."
+      - type: nombre
+        vars: { a: "12..59", b: "12..39" }
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        indice: "Décompose {{b}} = {{ent(b/10)*10}} + {{b%10}}."
+        correction: "{{a}} × {{b%10}} = {{a*(b%10)}} ; {{a}} × {{ent(b/10)*10}} = {{a*ent(b/10)*10}} ; total {{nb(a*b)}}."
+      - type: nombre
+        vars: { r: "12..30", s: "15..28" }
+        enonce: "Un théâtre a {{r}} rangées de {{s}} sièges. Combien de sièges ?"
+        reponse: "r*s"
+        correction: "{{r}} × {{s}} = {{r*s}} sièges."
+      - type: qcm
+        vars: { a: "31..69", b: "21..39" }
+        enonce: "Sans calculer exactement, quel résultat est le plus vraisemblable pour $ {{a}} \\times {{b}}$ ?"
+        choix: ["{{nb(a*b)}}", "{{nb(a*b*10)}}", "{{nb(a+b)}}", "{{nb(round(a*b/10))}}"]
+        correction: "Environ {{round(a/10)*10}} × {{round(b/10)*10}} = {{nb(round(a/10)*10*round(b/10)*10)}} ; le bon résultat est {{nb(a*b)}}."
+
+  - id: proprietes-multiplication
+    titre: Les super-pouvoirs de la multiplication
+    objectif: J'utilise la commutativité, l'associativité et la distributivité pour calculer de tête.
+    mots: [distributivité, commutativité]
+    etapes:
+      - dialogue:
+          - neo: "Défi : 4 × 7 × 25, de tête !"
+          - mia: "Je change l'ordre : 4 × 25 = 100… puis 100 × 7 = 700 !"
+          - zero: "Elle a des super-pouvoirs ?!"
+      - texte: |
+          **Trois super-pouvoirs :**
+          1. **Changer l'ordre** : $a \times b = b \times a$.
+          2. **Regrouper comme on veut** : $(2 \times 7) \times 5 = 7 \times (2 \times 5) = 70$.
+          3. **Découper (distributivité)** : $6 \times 14 = 6 \times 10 + 6 \times 4 = 60 + 24 = 84$.
+      - visuel:
+          type: barres
+          lignes:
+            - nom: "6 × 14"
+              parts: [{ v: 10, label: "6 × 10 = 60" }, { v: 4, label: "6 × 4 = 24" }]
+        legende: "6 × 14 = 60 + 24 = 84 : on découpe 14 en 10 + 4."
+      - astuce:
+          texte: "Les paires magiques : 2 × 5 = 10, 4 × 25 = 100, 8 × 125 = 1 000. Cherche-les en premier !"
+          qui: mia
+      - a_quoi_ca_sert: "C'est comme ça que les vendeurs calculent 12 articles à 15 € (10 × 15 + 2 × 15 = 180) sans calculatrice. Et c'est la porte d'entrée de l'algèbre !"
+      - question:
+          type: nombre
+          vars: { a: "3..9", b: "11..19" }
+          enonce: "Découpe pour calculer : $ {{a}} \\times {{b}}$"
+          reponse: "a*b"
+          correction: "{{a}} × 10 + {{a}} × {{b-10}} = {{10*a}} + {{a*(b-10)}} = {{a*b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "3..9", b: "11..19" }
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        indice: "{{b}} = 10 + {{b-10}}."
+        correction: "{{10*a}} + {{a*(b-10)}} = {{a*b}}."
+      - type: nombre
+        vars: { c: "3..9" }
+        enonce: "Regroupe malin : $ 4 \\times {{c}} \\times 25$"
+        reponse: "100*c"
+        correction: "4 × 25 = 100, puis × {{c}} = {{100*c}}."
+      - type: nombre
+        vars: { c: "3..9" }
+        enonce: "Regroupe malin : $ 2 \\times {{c}} \\times 5$"
+        reponse: "10*c"
+        correction: "2 × 5 = 10, puis × {{c}} = {{10*c}}."
+      - type: nombre
+        vars: { a: "3..9", b: [19, 29, 39, 49, 99] }
+        enonce: "Calcule astucieusement : $ {{a}} \\times {{b}}$"
+        reponse: "a*b"
+        indice: "{{b}} = {{b+1}} − 1."
+        correction: "{{a}} × {{b+1}} − {{a}} = {{a*(b+1)}} − {{a}} = {{a*b}}."
+      - type: vf
+        vars: { a: "2..9", b: "2..9", c: "2..9" }
+        enonce: "Vrai ou faux : $ {{a}} \\times ({{b}} + {{c}}) = {{a}} \\times {{b}} + {{a}} \\times {{c}}$"
+        reponse: true
+        correction: "C'est la distributivité : {{a}} × {{b+c}} = {{a*(b+c)}} et {{a*b}} + {{a*c}} = {{a*b+a*c}}."

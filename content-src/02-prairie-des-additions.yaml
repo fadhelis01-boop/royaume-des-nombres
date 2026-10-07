@@ -1,0 +1,558 @@
+id: prairie-des-additions
+titre: La Prairie des Additions
+sous_titre: Additionner, soustraire et calculer de tête
+emoji: ➕
+couleur: "#7cb342"
+decor: img/decors/prairie-des-additions.webp
+cycle: graines
+age: 7-9 ans
+niveau: CP – CE2
+ordre: 2
+prerequis: [foret-des-nombres]
+version: 1.0.0
+intro:
+  - mia: "Bienvenue dans la Prairie des Additions ! Ici, les lapins et les hérissons réunissent leurs récoltes."
+  - neo: "Additionner, soustraire, calculer de tête… On va devenir des champions du calcul !"
+  - zero: "Moi j'adore l'addition. Quand on m'ajoute à un nombre… il ne change pas. Je suis très discret."
+
+lecons:
+  - id: additionner-reunir
+    titre: Additionner, c'est réunir
+    objectif: Je sais ce que veut dire additionner et j'écris le calcul avec le signe +.
+    mots: [addition, somme]
+    etapes:
+      - dialogue:
+          - neo: "Le lapin a 3 carottes. Le hérisson apporte 2 pommes. Combien de fruits et légumes dans la caisse ?"
+          - mia: "On les met ensemble et on compte tout : 1, 2, 3… 4, 5 !"
+          - neo: "Réunir deux quantités, c'est faire une ADDITION."
+      - visuel:
+          type: objets
+          groupes: [3, 2]
+          emoji: "🥕"
+          signe: "+"
+        legende: "3 + 2 = 5"
+      - texte: |
+          **Additionner**, c'est **réunir** plusieurs quantités pour savoir combien il y en a **en tout**.
+
+          On écrit : **3 + 2 = 5**. On lit : « 3 plus 2 égale 5 ».
+          Le résultat d'une addition s'appelle la **somme**.
+      - attention:
+          texte: "Regarde le grand panneau de la Prairie : il annonce 3 carottes + 2 pommes = 5 articles… mais le dessin montre **5 pommes** ! Les nombres sont justes (5 articles en tout), mais le dessin s'est trompé : en réunissant des carottes et des pommes, on n'obtient pas que des pommes. Il faut toujours vérifier CE QU'ON compte !"
+          qui: neo
+      - visuel:
+          type: image
+          src: img/decors/prairie-des-additions.webp
+          alt: "Le panneau de la Prairie des Additions"
+        legende: "Le panneau : sauras-tu expliquer l'erreur du dessin ?"
+      - astuce:
+          texte: "On peut additionner dans l'ordre qu'on veut : 2 + 3 = 3 + 2. Alors commence toujours par le plus grand nombre et compte en avançant : « 3… 4, 5 »."
+          qui: mia
+      - a_quoi_ca_sert: "Savoir combien on a d'argent avec deux tirelires, combien d'invités viendront à ton anniversaire, combien de points tu as marqués en deux manches… On additionne tout le temps !"
+      - question:
+          type: nombre
+          vars: { a: "2..6", b: "1..4" }
+          enonce: "Combien de fleurs en tout ?"
+          visuel: { type: objets, groupes: ["=a", "=b"], emoji: "🌼", signe: "+" }
+          reponse: "a+b"
+          correction: "{{a}} + {{b}} = {{a+b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..9", b: "1..9" }
+        si: "a+b <= 10"
+        enonce: "Combien en tout ?"
+        visuel: { type: objets, groupes: ["=a", "=b"], emoji: "🍎", signe: "+" }
+        reponse: "a+b"
+        indice: "Compte toutes les pommes, en commençant par le plus gros tas."
+        correction: "{{a}} + {{b}} = {{a+b}}."
+      - type: nombre
+        vars: { a: "2..9", b: "2..9" }
+        enonce: "$ {{a}} + {{b}} = ?$"
+        reponse: "a+b"
+        correction: "{{a}} + {{b}} = {{a+b}}."
+      - type: qcm
+        vars: { a: "3..9", b: "2..9", animal: ["lapins", "hérissons", "écureuils", "oiseaux"] }
+        enonce: "Il y a {{a}} {{animal}} dans le pré. {{b}} autres arrivent. Quel calcul permet de savoir combien il y a de {{animal}} maintenant ?"
+        choix: ["{{a}} + {{b}}", "{{a}} − {{b}}", "{{a}} + {{a}}", "{{b}} − {{a}}"]
+        si: "a != b"
+        correction: "Des {{animal}} ARRIVENT : on réunit, c'est une addition : {{a}} + {{b}} = {{a+b}}."
+      - type: vf
+        vars: { a: "2..9", b: "2..9" }
+        enonce: "Vrai ou faux : $ {{a}} + {{b}} = {{b}} + {{a}}$ ?"
+        reponse: true
+        correction: "On peut additionner dans n'importe quel ordre : les deux font {{a+b}}."
+      - type: nombre
+        vars: { a: "1..9" }
+        enonce: "$ {{a}} + 0 = ?$"
+        reponse: "a"
+        correction: "Ajouter zéro, c'est n'ajouter rien du tout ! {{a}} + 0 = {{a}}. (Zéro est très discret.)"
+
+  - id: amis-de-10
+    titre: Les amis de 10
+    objectif: Je connais par cœur les paires de nombres qui font 10 (et 100).
+    mots: [complément]
+    etapes:
+      - dialogue:
+          - mia: "J'ai 10 doigts. Si je lève 7 doigts, combien en reste-t-il de baissés ?"
+          - zero: "Euh… zéro ?"
+          - neo: "Trois ! 7 et 3 sont des « amis de 10 » : ensemble, ils font 10."
+      - texte: |
+          Les **amis de 10** sont les paires qui font 10 :
+
+          | | | | | | |
+          |---|---|---|---|---|---|
+          | 0 + 10 | 1 + 9 | 2 + 8 | 3 + 7 | 4 + 6 | 5 + 5 |
+      - visuel:
+          type: grille
+          lignes: 2
+          colonnes: 5
+        legende: "Une boîte à 10 cases : 7 cases pleines, il manque 3 pour la remplir."
+      - retiens: "**1+9, 2+8, 3+7, 4+6, 5+5.** Les connaître par cœur te fera calculer deux fois plus vite !"
+      - astuce:
+          texte: "Les amis de 100 marchent pareil avec les dizaines : 30 + 70 = 100, 60 + 40 = 100. Et pour 45, son ami est 55 : on complète les unités (5 + 5 = 10) puis les dizaines (40 + 50 = 90 ; 90 + 10 = 100)."
+          qui: neo
+      - a_quoi_ca_sert: "Rendre la monnaie (« il manque combien pour arriver à 10 € ? »), compléter une équipe, savoir combien de pages il reste… Les amis de 10 sont les meilleurs amis du calcul mental."
+      - question:
+          type: nombre
+          vars: { a: "1..9" }
+          enonce: "$ {{a}} + ? = 10$"
+          reponse: "10-a"
+          correction: "{{a}} et {{10-a}} sont des amis de 10."
+    exercices:
+      - type: nombre
+        vars: { a: "0..10" }
+        enonce: "Quel est l'ami de 10 du nombre {{a}} ?"
+        reponse: "10-a"
+        correction: "{{a}} + {{10-a}} = 10."
+      - type: nombre
+        vars: { a: "1..9" }
+        enonce: "$ {{a*10}} + ? = 100$"
+        reponse: "100-10*a"
+        correction: "{{a}} dizaines + {{10-a}} dizaines = 10 dizaines = 100."
+      - type: nombre
+        vars: { a: "11..89" }
+        si: "a % 10 != 0"
+        enonce: "Combien faut-il ajouter à {{a}} pour arriver à 100 ?"
+        reponse: "100-a"
+        indice: "Complète d'abord jusqu'à la dizaine suivante, puis jusqu'à 100."
+        correction: "{{a}} + {{10 - a%10}} = {{a + 10 - a%10}}, puis + {{100 - (a + 10 - a%10)}} = 100. Total : {{100-a}}."
+      - type: qcm
+        vars: { a: "1..9" }
+        enonce: "Quelle paire fait 10 ?"
+        choix: ["{{a}} + {{10-a}}", "{{a}} + {{11-a}}", "{{a}} + {{9-a}}", "{{a+1}} + {{10-a}}"]
+        correction: "{{a}} + {{10-a}} = 10."
+      - type: nombre
+        vars: { a: "2..8" }
+        enonce: "Le marchand a {{a}} €. Il lui faut 10 € pour acheter un panier. Combien lui manque-t-il ?"
+        reponse: "10-a"
+        correction: "{{a}} + {{10-a}} = 10. Il lui manque {{10-a}} €."
+
+  - id: doubles
+    titre: Les doubles et les presque-doubles
+    objectif: Je connais les doubles et je m'en sers pour calculer vite.
+    mots: [double, moitié]
+    etapes:
+      - dialogue:
+          - zero: "Je suis tout seul dans le miroir… et pourtant on est deux !"
+          - mia: "C'est ça, un double ! Le même nombre, deux fois."
+          - neo: "Et les doubles servent de raccourcis pour plein de calculs."
+      - visuel:
+          type: objets
+          groupes: [6, 6]
+          emoji: "🐞"
+          signe: "+"
+        legende: "Le double de 6 : 6 + 6 = 12."
+      - texte: |
+          Le **double** d'un nombre, c'est ce nombre **ajouté à lui-même** : le double de 7, c'est 7 + 7 = 14.
+
+          La **moitié**, c'est l'inverse : la moitié de 14, c'est 7.
+
+          **Presque-doubles :** 7 + 8, c'est le double de 7 plus 1 → 14 + 1 = 15.
+      - retiens: "1+1=2 · 2+2=4 · 3+3=6 · 4+4=8 · 5+5=10 · 6+6=12 · 7+7=14 · 8+8=16 · 9+9=18 · 10+10=20"
+      - a_quoi_ca_sert: "Doubler une recette pour 8 personnes au lieu de 4, partager équitablement entre deux frères et sœurs, calculer le prix de deux places de cinéma…"
+      - exemple:
+          titre: 6 + 7 de tête
+          enonce: Calcule 6 + 7 sans compter sur tes doigts.
+          etapes:
+            - "6 + 7, c'est presque 6 + 6."
+            - "Le double de 6, c'est 12."
+            - "7, c'est 6 + 1, donc on ajoute 1 : 12 + 1 = 13."
+          reponse: 6 + 7 = 13
+      - question:
+          type: nombre
+          vars: { a: "3..9" }
+          enonce: "$ {{a}} + {{a+1}} = ?$"
+          reponse: "2*a+1"
+          indice: "C'est le double de {{a}}, plus 1."
+          correction: "Double de {{a}} = {{2*a}}, plus 1 = {{2*a+1}}."
+    exercices:
+      - type: nombre
+        vars: { a: "2..10" }
+        enonce: "Quel est le double de {{a}} ?"
+        reponse: "2*a"
+        correction: "{{a}} + {{a}} = {{2*a}}."
+      - type: nombre
+        vars: { a: "2..10" }
+        enonce: "Quelle est la moitié de {{2*a}} ?"
+        reponse: "a"
+        correction: "{{a}} + {{a}} = {{2*a}}, donc la moitié de {{2*a}} est {{a}}."
+      - type: nombre
+        vars: { a: "3..9", s: [1, -1] }
+        enonce: "$ {{a}} + {{a+s}} = ?$"
+        reponse: "2*a+s"
+        indice: "Pense au double de {{a}}."
+        correction: "Double de {{a}} = {{2*a}} ; {{si(s==1,'plus 1','moins 1')}} : {{2*a+s}}."
+      - type: nombre
+        vars: { a: "11..49" }
+        enonce: "Quel est le double de {{a}} ?"
+        reponse: "2*a"
+        indice: "Double les dizaines, puis les unités, puis ajoute."
+        correction: "Double de {{ent(a/10)*10}} = {{2*ent(a/10)*10}} ; double de {{a%10}} = {{2*(a%10)}} ; total {{2*a}}."
+      - type: nombre
+        vars: { a: "2..9" }
+        enonce: "Deux jumeaux ont chacun {{a}} billes. Combien de billes en tout ?"
+        reponse: "2*a"
+        correction: "Le double de {{a}} : {{2*a}} billes."
+
+  - id: passer-la-dizaine
+    titre: Passer la dizaine en sautant sur la droite
+    objectif: Je sais calculer 8 + 5 en passant par 10.
+    mots: [dizaine]
+    etapes:
+      - dialogue:
+          - neo: "8 + 5… je n'ai pas assez de doigts !"
+          - mia: "Et si on essayait autrement ? On fait un petit saut jusqu'à 10, puis un autre saut !"
+      - visuel:
+          type: droite
+          min: 5
+          max: 15
+          pas: 1
+          etiquettes: tout
+          sauts:
+            - { de: 8, a: 10, label: "+2" }
+            - { de: 10, a: 13, label: "+3" }
+        legende: "8 + 5 = 8 + 2 + 3 = 13"
+      - texte: |
+          Pour passer la dizaine :
+          1. je **complète jusqu'à 10** (8 → 10, il faut 2) ;
+          2. j'ajoute **le reste** (5 − 2 = 3) : 10 + 3 = 13.
+
+          Ça marche aussi avec les grands nombres : 47 + 6 = 47 + 3 + 3 = 50 + 3 = 53.
+      - astuce:
+          texte: "Ce sont les amis de 10 qui font tout le travail ! Si tu les connais par cœur, passer la dizaine devient facile."
+          qui: mia
+      - a_quoi_ca_sert: "C'est exactement comme ça que les adultes calculent de tête l'heure d'arrivée (« 8 h 45 + 20 minutes : 15 min pour arriver à 9 h, puis encore 5 ») ou le total des courses."
+      - question:
+          type: nombre
+          vars: { a: "6..9", b: "3..9" }
+          si: "a + b > 10"
+          enonce: "$ {{a}} + {{b}} = ?$"
+          visuel: { type: droite, min: 0, max: 20, pas: 1, etiquettes: [0, 5, 10, 15, 20], sauts: [{ de: "=a", a: 10, label: "+{{10-a}}" }, { de: 10, a: "=a+b", label: "+{{a+b-10}}" }] }
+          reponse: "a+b"
+          correction: "{{a}} + {{10-a}} = 10, puis 10 + {{a+b-10}} = {{a+b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "5..9", b: "3..9" }
+        si: "a + b > 10"
+        enonce: "$ {{a}} + {{b}} = ?$"
+        reponse: "a+b"
+        indice: "Complète d'abord jusqu'à 10."
+        correction: "{{a}} + {{10-a}} = 10, il reste {{b-(10-a)}} : 10 + {{a+b-10}} = {{a+b}}."
+      - type: nombre
+        vars: { d: "2..8", u: "5..9", b: "3..9" }
+        si: "u + b > 10"
+        enonce: "$ {{d*10+u}} + {{b}} = ?$"
+        reponse: "d*10+u+b"
+        indice: "Va d'abord jusqu'à {{d*10+10}}."
+        correction: "{{d*10+u}} + {{10-u}} = {{d*10+10}}, puis + {{u+b-10}} = {{d*10+u+b}}."
+      - type: champs
+        vars: { a: "6..9", b: "4..9" }
+        si: "a + b > 10"
+        enonce: "Complète le chemin : {{a}} + {{b}}"
+        champs:
+          - { avant: "{{a}} + ", reponse: "10-a", apres: "= 10" }
+          - { avant: "10 +", reponse: "a+b-10", apres: "" }
+          - { avant: "=", reponse: "a+b", apres: "" }
+        correction: "{{a}} + {{10-a}} = 10 ; 10 + {{a+b-10}} = {{a+b}}."
+      - type: droite
+        vars: { a: "6..9", b: "3..9" }
+        si: "a + b > 10"
+        enonce: "Place le résultat de {{a}} + {{b}} sur la droite."
+        min: 0
+        max: 20
+        pas: 1
+        cible: "a+b"
+        tolerance: 0.5
+        correction: "{{a}} + {{b}} = {{a+b}}."
+
+  - id: soustraire
+    titre: Soustraire, c'est enlever… ou chercher l'écart
+    objectif: Je reconnais une soustraction et je sais la calculer.
+    mots: [soustraction, différence, écart]
+    etapes:
+      - dialogue:
+          - zero: "J'avais 9 graines… j'en ai mangé 4. Il m'en reste… ZÉRO ?"
+          - mia: "Non ! On enlève 4 à 9. C'est une SOUSTRACTION : 9 − 4 = 5."
+          - neo: "Et la soustraction sert aussi à comparer : j'ai 9 graines, toi 4. J'en ai 5 de plus !"
+      - visuel:
+          type: objets
+          groupes: [9]
+          barres: 4
+          emoji: "🌰"
+        legende: "9 − 4 = 5 : on barre les 4 graines mangées."
+      - texte: |
+          On **soustrait** (signe **−**) quand :
+          - on **enlève**, on perd, on dépense, on mange… : 9 − 4 = 5 ;
+          - on cherche **combien de plus** ou **combien de moins** (l'**écart**) ;
+          - on cherche **combien il manque** (8 + ? = 12 → 12 − 8 = 4).
+
+          Le résultat s'appelle la **différence**.
+      - attention:
+          texte: "Dans une soustraction, l'ordre compte ! 9 − 4 = 5, mais 4 − 9 ne donne pas 5. On met toujours le plus grand nombre en premier (pour l'instant)."
+          qui: neo
+      - visuel:
+          type: barres
+          lignes:
+            - nom: "Néo"
+              parts: [{ v: 9, label: "9" }]
+            - nom: "Zéro"
+              parts: [{ v: 4, label: "4" }]
+          ecart: "écart = 5"
+        legende: "L'écart entre 9 et 4 : 9 − 4 = 5."
+      - astuce:
+          texte: "Pour 13 − 8, tu peux AVANCER au lieu de reculer : de 8 à 10, il y a 2 ; de 10 à 13, il y a 3. Total : 5. C'est la méthode du marchand qui rend la monnaie !"
+          qui: mia
+      - a_quoi_ca_sert: "Savoir combien il te reste d'argent après un achat, combien de jours avant ton anniversaire, de combien ton équipe a gagné…"
+      - question:
+          type: nombre
+          vars: { a: "6..15", b: "2..9" }
+          si: "b < a"
+          enonce: "$ {{a}} - {{b}} = ?$"
+          reponse: "a-b"
+          correction: "{{a}} − {{b}} = {{a-b}} ; vérification : {{a-b}} + {{b}} = {{a}}."
+    exercices:
+      - type: nombre
+        vars: { a: "5..12", b: "1..5" }
+        si: "b < a"
+        enonce: "Combien en reste-t-il ?"
+        visuel: { type: objets, groupes: ["=a"], barres: "=b", emoji: "🍓" }
+        reponse: "a-b"
+        correction: "{{a}} − {{b}} = {{a-b}}."
+      - type: nombre
+        vars: { a: "11..19", b: "3..9" }
+        si: "a - b < 10"
+        enonce: "$ {{a}} - {{b}} = ?$"
+        reponse: "a-b"
+        indice: "Avance de {{b}} jusqu'à 10, puis jusqu'à {{a}}."
+        correction: "De {{b}} à 10 : {{10-b}} ; de 10 à {{a}} : {{a-10}}. Total : {{a-b}}."
+      - type: nombre
+        vars: { a: "4..9", b: "10..18" }
+        enonce: "Néo a {{b}} billes, Mia en a {{a}}. Combien Néo a-t-il de billes de plus que Mia ?"
+        visuel: { type: barres, lignes: [{ nom: "Néo", parts: [{ v: "=b", label: "{{b}}" }] }, { nom: "Mia", parts: [{ v: "=a", label: "{{a}}" }] }], ecart: "?" }
+        reponse: "b-a"
+        correction: "On cherche l'écart : {{b}} − {{a}} = {{b-a}}."
+      - type: qcm
+        vars: { a: "15..40", b: "3..12", prenom: ["Inès", "Tom", "Jade", "Sami"] }
+        enonce: "{{prenom}} avait {{a}} €. Il·elle achète un livre à {{b}} €. Quel calcul donne ce qui lui reste ?"
+        choix: ["{{a}} − {{b}}", "{{a}} + {{b}}", "{{b}} − {{a}}", "{{a}} × {{b}}"]
+        correction: "On dépense : on enlève. {{a}} − {{b}} = {{a-b}} €."
+      - type: nombre
+        vars: { a: "6..15", b: "16..30" }
+        enonce: "$ {{a}} + ? = {{b}}$"
+        reponse: "b-a"
+        indice: "Combien il manque ? C'est une soustraction : {{b}} − {{a}}."
+        correction: "{{b}} − {{a}} = {{b-a}}, et on vérifie : {{a}} + {{b-a}} = {{b}}."
+
+  - id: addition-posee
+    titre: L'addition posée et la retenue
+    objectif: Je sais poser et calculer une addition avec retenue.
+    mots: [retenue]
+    etapes:
+      - dialogue:
+          - neo: "47 + 38, c'est trop gros pour la tête… on va le POSER en colonnes !"
+          - zero: "En colonnes ? Comme au château ?"
+          - mia: "Presque ! Les unités sous les unités, les dizaines sous les dizaines."
+      - texte: |
+          **Poser une addition :**
+          1. J'aligne les chiffres : **unités sous les unités**, dizaines sous les dizaines.
+          2. Je commence **par la droite** (les unités).
+          3. Si ça dépasse 9, j'écris les unités et je mets la **retenue** (les dizaines) en haut de la colonne suivante.
+      - visuel:
+          type: tableau
+          entete: false
+          lignes:
+            - ["", "¹", ""]
+            - ["", "4", "7"]
+            - ["+", "3", "8"]
+            - ["=", "**8**", "**5**"]
+        legende: "7 + 8 = 15 : j'écris 5 et je retiens 1. Puis 1 + 4 + 3 = 8."
+      - attention:
+          texte: "N'oublie JAMAIS la retenue : 47 + 38 n'est pas 75 ! La petite retenue, c'est une dizaine entière qui a changé de colonne."
+          qui: neo
+      - astuce:
+          texte: "Avant de poser, estime : 47 + 38, c'est à peu près 50 + 40 = 90. Si tu trouves 75 ou 815, tu sauras qu'il y a une erreur !"
+          qui: mia
+      - a_quoi_ca_sert: "Les caissiers, les comptables et même les ordinateurs additionnent exactement comme ça : colonne par colonne, avec des retenues. Ton cerveau fonctionne comme un processeur !"
+      - question:
+          type: nombre
+          vars: { a: "15..69", b: "15..29" }
+          si: "a%10 + b%10 >= 10"
+          enonce: "Pose et calcule : $ {{a}} + {{b}}$"
+          reponse: "a+b"
+          correction: "Unités : {{a%10}} + {{b%10}} = {{a%10+b%10}}, j'écris {{(a+b)%10}} et je retiens 1. Dizaines : 1 + {{ent(a/10)}} + {{ent(b/10)}} = {{ent((a+b)/10)}}. Résultat : {{a+b}}."
+    exercices:
+      - type: nombre
+        vars: { a: "15..79", b: "15..79" }
+        si: "a%10 + b%10 >= 10"
+        enonce: "$ {{a}} + {{b}} = ?$"
+        reponse: "a+b"
+        indice: "Commence par les unités et n'oublie pas la retenue."
+        correction: "{{a}} + {{b}} = {{a+b}}."
+      - type: nombre
+        vars: { a: "120..699", b: "120..299" }
+        enonce: "$ {{a}} + {{b}} = ?$"
+        reponse: "a+b"
+        correction: "Colonne par colonne avec les retenues : {{a+b}}."
+      - type: qcm
+        vars: { a: "25..69", b: "25..29" }
+        si: "a%10 + b%10 >= 10"
+        enonce: "Léo a calculé $ {{a}} + {{b}}$. Quel résultat est juste ?"
+        choix: ["{{a+b}}", "{{a+b-10}}", "{{(ent(a/10)+ent(b/10))*100 + (a%10+b%10)}}", "{{a+b+10}}"]
+        correction: "Avec la retenue : {{a+b}}. Le résultat {{a+b-10}} est l'erreur classique de la retenue oubliée."
+      - type: nombre
+        vars: { a: "1000..4999", b: "1000..4999" }
+        enonce: "$ {{a}} + {{b}} = ?$"
+        reponse: "a+b"
+        correction: "{{nb(a)}} + {{nb(b)}} = {{nb(a+b)}}."
+      - type: nombre
+        vars: { a: "120..380", b: "120..380", c: "50..99" }
+        enonce: "Au marché, on vend {{a}} œufs le matin, {{b}} l'après-midi et {{c}} le soir. Combien d'œufs en tout ?"
+        reponse: "a+b+c"
+        correction: "{{a}} + {{b}} + {{c}} = {{a+b+c}}."
+
+  - id: soustraction-posee
+    titre: La soustraction posée
+    objectif: Je sais poser une soustraction, même quand il faut « casser » une dizaine.
+    mots: [retenue]
+    etapes:
+      - dialogue:
+          - neo: "52 − 27… 2 − 7, impossible ! Je ne peux pas enlever 7 à 2."
+          - mia: "Alors on casse une dizaine ! On l'échange contre 10 unités."
+          - zero: "Casser une dizaine ? Elle va bien ?"
+          - mia: "Très bien, Zéro : elle devient juste 10 petites unités."
+      - texte: |
+          **Poser une soustraction** (le plus grand nombre en haut) :
+          1. Je commence par les **unités**.
+          2. Si le chiffre du haut est trop petit, j'**échange 1 dizaine contre 10 unités** : 52, c'est aussi 4 dizaines et 12 unités.
+          3. Je calcule : 12 − 7 = 5, puis 4 − 2 = 2. Résultat : **25**.
+      - visuel:
+          type: tableau
+          entete: false
+          lignes:
+            - ["", "~~5~~ 4", "¹2"]
+            - ["−", "2", "7"]
+            - ["=", "**2**", "**5**"]
+        legende: "On a « cassé » une dizaine : 52 = 40 + 12."
+      - astuce:
+          texte: "Vérifie TOUJOURS une soustraction par une addition : 25 + 27 = 52 ✔. C'est le réflexe du champion !"
+          qui: neo
+      - a_quoi_ca_sert: "Calculer la monnaie rendue, le nombre de kilomètres qui restent, l'âge de quelqu'un (2026 − 2018 = 8 ans)…"
+      - question:
+          type: nombre
+          vars: { a: "31..98", b: "12..29" }
+          si: "a%10 < b%10 && b < a"
+          enonce: "$ {{a}} - {{b}} = ?$"
+          reponse: "a-b"
+          correction: "On casse une dizaine : {{a%10+10}} − {{b%10}} = {{(a%10+10)-b%10}} ; puis {{ent(a/10)-1}} − {{ent(b/10)}} = {{ent(a/10)-1-ent(b/10)}}. Résultat {{a-b}} (vérif : {{a-b}} + {{b}} = {{a}})."
+    exercices:
+      - type: nombre
+        vars: { a: "31..99", b: "11..29" }
+        si: "b < a"
+        enonce: "$ {{a}} - {{b}} = ?$"
+        reponse: "a-b"
+        correction: "{{a}} − {{b}} = {{a-b}}. Vérification : {{a-b}} + {{b}} = {{a}}."
+      - type: nombre
+        vars: { a: "300..999", b: "100..299" }
+        enonce: "$ {{a}} - {{b}} = ?$"
+        reponse: "a-b"
+        correction: "{{a}} − {{b}} = {{a-b}}."
+      - type: nombre
+        vars: { a: "15..45", p: "51..99" }
+        enonce: "Tu paies avec un billet de 100 € un objet qui coûte {{p}} €. Combien le vendeur te rend-il ?"
+        reponse: "100-p"
+        correction: "100 − {{p}} = {{100-p}} € (en avançant : {{p}} → {{p+10-p%10}} → 100)."
+      - type: nombre
+        vars: { n: "2008..2020" }
+        enonce: "Mia est née en {{n}}. Quel âge aura-t-elle en 2030 ?"
+        reponse: "2030-n"
+        correction: "2030 − {{n}} = {{2030-n}} ans."
+      - type: vf
+        vars: { a: "40..90", b: "12..39" }
+        enonce: "Pour vérifier $ {{a}} - {{b}} = {{a-b}}$, je peux calculer $ {{a-b}} + {{b}}$. Vrai ou faux ?"
+        reponse: true
+        correction: "Oui ! La soustraction et l'addition sont des opérations « inverses » : {{a-b}} + {{b}} = {{a}}."
+
+  - id: calcul-mental-astuces
+    titre: Calculer de tête comme un magicien
+    objectif: Je sais décomposer et compenser pour calculer de tête.
+    mots: [décomposer, compenser]
+    etapes:
+      - dialogue:
+          - neo: "Défi : 38 + 9, de tête, en 3 secondes !"
+          - mia: "Facile ! 38 + 10 = 48… puis je retire 1 car j'ai ajouté un de trop : 47 !"
+          - zero: "C'est de la triche ?"
+          - neo: "Non, c'est de la MALICE mathématique !"
+      - texte: |
+          **Trois tours de magie du calcul mental :**
+
+          1. **Compenser** : + 9, c'est + 10 − 1. Donc 38 + 9 = 48 − 1 = 47. Et + 19 = + 20 − 1.
+          2. **Décomposer** : 45 + 32 = (40 + 30) + (5 + 2) = 70 + 7 = 77.
+          3. **Arranger** : 7 + 8 + 3 = 7 + 3 + 8 = 10 + 8 = 18 (on cherche les amis de 10 !).
+      - visuel:
+          type: droite
+          min: 35
+          max: 50
+          pas: 1
+          etiquettes: [35, 40, 45, 50]
+          sauts:
+            - { de: 38, a: 48, label: "+10" }
+            - { de: 48, a: 47, label: "−1" }
+        legende: "38 + 9 = 38 + 10 − 1 = 47"
+      - astuce:
+          texte: "Pour − 9 : on enlève 10 et on rajoute 1. 52 − 9 = 42 + 1 = 43."
+          qui: mia
+      - a_quoi_ca_sert: "Les prix finissent souvent par 9 (2,99 €, 19 €) : avec la compensation, tu calcules un total en un clin d'œil, plus vite que la calculatrice !"
+      - question:
+          type: nombre
+          vars: { a: "21..89", k: [9, 19, 29] }
+          enonce: "Calcule de tête : $ {{a}} + {{k}}$"
+          reponse: "a+k"
+          indice: "+ {{k}}, c'est + {{k+1}} − 1."
+          correction: "{{a}} + {{k+1}} = {{a+k+1}}, puis − 1 = {{a+k}}."
+    exercices:
+      - type: nombre
+        vars: { a: "21..89", k: [9, 19, 29, 39] }
+        enonce: "$ {{a}} + {{k}} = ?$"
+        reponse: "a+k"
+        indice: "Ajoute {{k+1}} puis enlève 1."
+        correction: "{{a}} + {{k+1}} − 1 = {{a+k}}."
+      - type: nombre
+        vars: { a: "30..99", k: [9, 19] }
+        enonce: "$ {{a}} - {{k}} = ?$"
+        reponse: "a-k"
+        indice: "Enlève {{k+1}} puis rajoute 1."
+        correction: "{{a}} − {{k+1}} + 1 = {{a-k}}."
+      - type: nombre
+        vars: { a: "11..49", b: "11..49" }
+        enonce: "Décompose pour calculer : $ {{a}} + {{b}}$"
+        reponse: "a+b"
+        correction: "({{ent(a/10)*10}} + {{ent(b/10)*10}}) + ({{a%10}} + {{b%10}}) = {{(ent(a/10)+ent(b/10))*10}} + {{a%10+b%10}} = {{a+b}}."
+      - type: nombre
+        vars: { a: "1..9", c: "2..9" }
+        enonce: "Trouve les amis de 10 : $ {{a}} + {{c}} + {{10-a}} = ?$"
+        reponse: "10+c"
+        correction: "{{a}} + {{10-a}} = 10, puis 10 + {{c}} = {{10+c}}."
+      - type: nombre
+        vars: { a: "101..899", k: [99, 199] }
+        enonce: "Calcule de tête : $ {{a}} + {{k}}$"
+        reponse: "a+k"
+        correction: "{{a}} + {{k+1}} − 1 = {{a+k}}."

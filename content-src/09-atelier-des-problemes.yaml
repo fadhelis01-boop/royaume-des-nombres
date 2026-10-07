@@ -1,0 +1,462 @@
+id: atelier-des-problemes
+titre: L'Atelier des Problèmes
+sous_titre: Traduire une histoire en calcul (et l'inverse) avec la méthode des barres
+emoji: 🔎
+couleur: "#5e35b1"
+cycle: graines
+age: 8-11 ans
+niveau: CE2 – 6ᵉ
+ordre: 9
+prerequis: [montagne-des-multiplications]
+version: 1.0.0
+intro:
+  - neo: "Bienvenue dans l'Atelier des Problèmes, le quartier général des détectives des maths !"
+  - mia: "Ici, on apprend à transformer une histoire en calcul… grâce à un dessin magique : les BARRES."
+  - zero: "Moi, je suis l'assistant du détective. Je tiens la loupe. Et je mange les indices."
+
+lecons:
+  - id: quatre-etapes
+    titre: Les 4 étapes du détective
+    objectif: Je résous un problème en 4 étapes - comprendre, chercher, calculer, vérifier.
+    mots: [problème, méthode]
+    etapes:
+      - dialogue:
+          - zero: "Un problème ! Vite, je fais une addition avec tous les nombres que je vois !"
+          - neo: "STOP, Zéro ! Un détective ne fonce pas. Il enquête d'abord."
+          - mia: "Il y a 4 étapes. Je te les montre !"
+      - texte: |
+          ### 🕵️ Les 4 étapes du détective
+
+          1. **COMPRENDRE** 🧐 — Je lis l'histoire (deux fois !). Que se passe-t-il ? **Que cherche-t-on ?** Quelles informations sont utiles ?
+          2. **CHERCHER** ✏️ — Je fais un **dessin** ou un **schéma en barres**. Quelle opération ? Faut-il plusieurs étapes ?
+          3. **CALCULER** 🧮 — J'écris les calculs proprement.
+          4. **VÉRIFIER** ✅ — Ma réponse est-elle **vraisemblable** ? Est-ce que je réponds à la question, avec une **phrase** et la bonne **unité** ?
+      - histoire:
+          titre: D'où vient cette méthode ?
+          texte: "Ces étapes viennent du mathématicien hongrois **George Pólya**, qui les a décrites en 1945 dans son livre *How to Solve It* (« Comment poser et résoudre un problème »). Elles sont encore utilisées partout dans le monde, de l'école primaire jusqu'aux chercheurs !"
+      - exemple:
+          titre: Les billes de Léo
+          enonce: "Léo a 24 billes. Il en gagne 13 à la récréation, puis il en donne 8 à sa sœur. Combien de billes a-t-il maintenant ?"
+          etapes:
+            - "**Comprendre** : on cherche le nombre de billes à la FIN. Il gagne (+), puis il donne (−)."
+            - "**Chercher** : deux étapes : d'abord ce qu'il gagne, puis ce qu'il donne."
+            - "**Calculer** : 24 + 13 = 37, puis 37 − 8 = 29."
+            - "**Vérifier** : il gagne plus qu'il ne donne, donc il doit avoir un peu plus de 24 : 29 ✔."
+          reponse: "Léo a maintenant 29 billes."
+      - a_quoi_ca_sert: "Ces 4 étapes marchent pour TOUS les problèmes de la vie : organiser une fête, réparer un vélo, prévoir un budget… et même pour les problèmes qui ne sont pas des maths !"
+      - question:
+          type: ordre
+          enonce: "Remets les étapes du détective dans l'ordre."
+          items: ["Comprendre", "Chercher (faire un schéma)", "Calculer", "Vérifier"]
+          correction: "Comprendre → Chercher → Calculer → Vérifier."
+    exercices:
+      - type: ordre
+        enonce: "Remets les étapes dans l'ordre."
+        items: ["Je lis et je trouve ce qu'on cherche", "Je fais un schéma", "J'écris les calculs", "Je vérifie et je fais une phrase réponse"]
+        correction: "Comprendre, chercher, calculer, vérifier."
+      - type: nombre
+        vars: { a: "15..40", g: "5..20", d: "3..12" }
+        enonce: "Léa a {{a}} cartes. Elle en gagne {{g}}, puis en perd {{d}}. Combien en a-t-elle à la fin ?"
+        reponse: "a+g-d"
+        correction: "{{a}} + {{g}} = {{a+g}} ; {{a+g}} − {{d}} = {{a+g-d}} cartes."
+      - type: qcm
+        vars: { a: "20..60", b: "5..15" }
+        enonce: "« Un bus transporte {{a}} passagers. À l'arrêt, {{b}} personnes descendent. » Que cherche-t-on probablement ?"
+        choix: ["Le nombre de passagers restés dans le bus", "La couleur du bus", "L'heure d'arrivée", "Le nombre de roues"]
+        correction: "Des personnes descendent : on cherche combien il en reste ({{a}} − {{b}} = {{a-b}})."
+      - type: vf
+        vars: { a: "10..30", b: "5..9" }
+        enonce: "Zéro calcule le prix de {{b}} cahiers à {{a}} € et trouve {{a+b}} €. Sa réponse est-elle vraisemblable ?"
+        reponse: false
+        correction: "{{b}} cahiers à {{a}} € coûtent {{b}} × {{a}} = {{a*b}} €. Zéro a additionné au lieu de multiplier : l'étape « vérifier » l'aurait vu (c'est bien trop peu pour {{b}} cahiers) !"
+
+  - id: barres-parties-tout
+    titre: La méthode des barres - les parties et le tout
+    objectif: Je dessine un modèle en barres pour un problème d'addition ou de soustraction.
+    mots: [modèle en barres]
+    etapes:
+      - dialogue:
+          - mia: "Mon super-pouvoir préféré : dessiner une barre ! Une barre, c'est une quantité."
+          - neo: "Avec des barres, on VOIT si on doit additionner ou soustraire. C'est la méthode des pays champions de maths, comme Singapour !"
+      - texte: |
+          Beaucoup de problèmes parlent d'un **TOUT** fait de **PARTIES**.
+
+          - Je connais les parties, je cherche le tout → **j'additionne**.
+          - Je connais le tout et une partie, je cherche l'autre partie → **je soustrais**.
+      - visuel:
+          type: barres
+          lignes:
+            - parts: [{ v: 35, label: "35 filles" }, { v: 28, label: "28 garçons" }]
+          total: "? élèves"
+        legende: "Le tout = 35 + 28 = 63 élèves."
+      - visuel:
+          type: barres
+          lignes:
+            - parts: [{ v: 45, label: "45 € dépensés" }, { v: 35, label: "?", vide: true }]
+          total: "80 €"
+        legende: "Une partie manque : 80 − 45 = 35 €."
+      - astuce:
+          texte: "Dessine D'ABORD la barre du tout, puis découpe-la. Mets un « ? » là où se cache l'inconnue. Le dessin te dit l'opération !"
+          qui: mia
+      - a_quoi_ca_sert: "Le budget d'une sortie (ce qu'on a dépensé + ce qu'il reste = le total), une course en plusieurs étapes, un album à remplir…"
+      - question:
+          type: nombre
+          vars: { t: "50..120", p: "15..45" }
+          enonce: "Une classe a {{t}} € pour une sortie. Le car coûte {{p}} €. Combien reste-t-il pour les entrées ?"
+          visuel: { type: barres, lignes: [{ parts: [{ v: "=p", label: "car {{p}} €" }, { v: "=t-p", label: "?", vide: true }] }], total: "{{t}} €" }
+          reponse: "t-p"
+          unite: €
+          correction: "Le tout moins la partie connue : {{t}} − {{p}} = {{t-p}} €."
+    exercices:
+      - type: nombre
+        vars: { a: "120..450", b: "120..450" }
+        enonce: "Un fermier récolte {{a}} kg de pommes et {{b}} kg de poires. Combien de kg de fruits en tout ?"
+        visuel: { type: barres, lignes: [{ parts: [{ v: "=a", label: "{{a}} kg" }, { v: "=b", label: "{{b}} kg" }] }], total: "?" }
+        reponse: "a+b"
+        unite: kg
+        correction: "Les deux parties forment le tout : {{a}} + {{b}} = {{a+b}} kg."
+      - type: nombre
+        vars: { t: "200..900", a: "50..190" }
+        enonce: "Un livre a {{t}} pages. Mia en a lu {{a}}. Combien lui en reste-t-il ?"
+        visuel: { type: barres, lignes: [{ parts: [{ v: "=a", label: "lu : {{a}}" }, { v: "=t-a", label: "?", vide: true }] }], total: "{{t}} pages" }
+        reponse: "t-a"
+        correction: "{{t}} − {{a}} = {{t-a}} pages."
+      - type: qcm
+        vars: { t: "40..90", a: "10..30" }
+        enonce: "« Il y a {{t}} élèves dans la cour. {{a}} jouent au ballon, les autres à la corde. » Quel schéma correspond ?"
+        choix: ["Une barre de {{t}} coupée en {{a}} et « ? »", "Deux barres de {{t}} et {{a}} posées bout à bout, avec « ? » au-dessus du total", "Une barre de {{a}} répétée {{t}} fois", "Une barre de {{t}} répétée {{a}} fois"]
+        correction: "Le tout est connu ({{t}}) : on cherche une partie. {{t}} − {{a}} = {{t-a}}."
+      - type: nombre
+        vars: { a: "12..40", b: "12..40", c: "12..40" }
+        enonce: "Un randonneur marche {{a}} km lundi, {{b}} km mardi et {{c}} km mercredi. Distance totale ?"
+        reponse: "a+b+c"
+        unite: km
+        correction: "Trois parties : {{a}} + {{b}} + {{c}} = {{a+b+c}} km."
+
+  - id: barres-comparaison
+    titre: La méthode des barres - comparer
+    objectif: Je résous les problèmes « de plus », « de moins » avec deux barres.
+    mots: [écart]
+    etapes:
+      - dialogue:
+          - neo: "J'ai 15 glands de plus que Zéro. Zéro en a 27. Combien j'en ai ?"
+          - zero: "« De plus » … donc on soustrait ? Non… on additionne ? Au secours !"
+          - mia: "Dessinons deux barres, une pour chacun : tout devient clair !"
+      - visuel:
+          type: barres
+          lignes:
+            - nom: Zéro
+              parts: [{ v: 27, label: "27" }]
+            - nom: Néo
+              parts: [{ v: 27, label: "27" }, { v: 15, label: "15 de plus" }]
+        legende: "La barre de Néo = celle de Zéro + 15 : 27 + 15 = 42."
+      - texte: |
+          Pour comparer deux quantités, je dessine **deux barres** l'une sous l'autre :
+          - la **plus longue** pour la plus grande quantité ;
+          - l'**écart** (la différence) est le morceau en plus.
+
+          Ensuite je regarde ce que je cherche : la grande barre ? la petite ? l'écart ?
+      - attention:
+          texte: "« De plus » ne veut pas toujours dire « + » ! « Néo a 15 glands de plus que Zéro. Néo en a 42. Combien en a Zéro ? » → 42 − 15 = 27. Le dessin ne se trompe jamais, les mots-clés si !"
+          qui: neo
+      - a_quoi_ca_sert: "Comparer des prix, des tailles, des scores, des températures entre deux jours…"
+      - question:
+          type: nombre
+          vars: { a: "20..60", e: "5..25" }
+          enonce: "Mia a {{e}} € de moins que Néo. Néo a {{a+e}} €. Combien a Mia ?"
+          visuel: { type: barres, lignes: [{ nom: "Néo", parts: [{ v: "=a", label: "?" }, { v: "=e", label: "{{e}}" }] }, { nom: "Mia", parts: [{ v: "=a", label: "?" }] }], total: "{{a+e}} €" }
+          reponse: "a"
+          unite: €
+          correction: "{{a+e}} − {{e}} = {{a}} €."
+    exercices:
+      - type: nombre
+        vars: { a: "20..80", e: "5..30" }
+        enonce: "Tom mesure {{a+100}} cm. Sa sœur mesure {{e}} cm de plus. Combien mesure-t-elle ?"
+        reponse: "a+100+e"
+        unite: cm
+        correction: "{{a+100}} + {{e}} = {{a+100+e}} cm."
+      - type: nombre
+        vars: { a: "3..7", e: "5..25" }
+        enonce: "Le chien pèse {{e}} kg de plus que le chat. Le chien pèse {{a+e}} kg. Combien pèse le chat ?"
+        reponse: "a"
+        unite: kg
+        correction: "La barre du chien = celle du chat + {{e}}. Donc le chat : {{a+e}} − {{e}} = {{a}} kg."
+      - type: nombre
+        vars: { a: "30..90", b: "12..29" }
+        enonce: "L'équipe bleue a marqué {{a}} points, la rouge {{b}}. Combien de points d'écart ?"
+        visuel: { type: barres, lignes: [{ nom: "Bleus", parts: [{ v: "=a", label: "{{a}}" }] }, { nom: "Rouges", parts: [{ v: "=b", label: "{{b}}" }] }], ecart: "?" }
+        reponse: "a-b"
+        correction: "{{a}} − {{b}} = {{a-b}} points."
+      - type: qcm
+        vars: { a: "20..50", e: "4..15" }
+        enonce: "« Inès a {{e}} images de plus que Sami. Inès en a {{a}}. » Combien Sami en a-t-il ?"
+        choix: ["{{a-e}}", "{{a+e}}", "{{e}}", "{{a}}"]
+        correction: "Sami a la barre la plus courte : {{a}} − {{e}} = {{a-e}}. (Ici, « de plus » demande une soustraction !)"
+
+  - id: barres-multiplication
+    titre: Barres et unités - fois plus, partager
+    objectif: Je résous les problèmes « fois plus » et les partages avec des barres-unités.
+    mots: [fois plus, unité]
+    etapes:
+      - dialogue:
+          - mia: "Néo a 3 fois plus de billes que moi. À nous deux, on en a 48. Combien chacun ?"
+          - neo: "Une petite barre pour Mia… et 3 petites barres pour moi. 4 petites barres en tout !"
+      - visuel:
+          type: barres
+          lignes:
+            - nom: Mia
+              parts: [{ v: 1, label: "?" }]
+            - nom: Néo
+              parts: [{ v: 1, label: "?" }, { v: 1, label: "?" }, { v: 1, label: "?" }]
+        legende: "4 barres-unités = 48, donc 1 barre-unité = 48 ÷ 4 = 12. Mia : 12, Néo : 36."
+      - texte: |
+          **La barre-unité** : quand une quantité est « 3 fois plus » qu'une autre, on dessine des **barres de même taille**.
+          1. Je compte les barres-unités en tout.
+          2. Je trouve **la valeur d'une barre** (division).
+          3. Je calcule ce qu'on me demande (multiplication).
+      - astuce:
+          texte: "Cette méthode marche aussi pour les fractions : « 2/5 des élèves » = 2 barres sur 5 barres-unités !"
+          qui: mia
+      - a_quoi_ca_sert: "Partager selon l'âge, les recettes (3 fois plus de farine que de sucre), les mélanges de peinture…"
+      - question:
+          type: champs
+          vars: { u: "5..15", k: "2..4" }
+          enonce: "Néo a {{k}} fois plus de billes que Mia. Ensemble ils en ont {{u*(k+1)}}."
+          champs:
+            - { avant: "Mia a", reponse: "u", apres: "billes" }
+            - { avant: "Néo a", reponse: "k*u", apres: "billes" }
+          correction: "{{k+1}} barres-unités = {{u*(k+1)}} → 1 barre = {{u}}. Mia : {{u}}, Néo : {{k*u}}."
+    exercices:
+      - type: nombre
+        vars: { u: "4..20", k: "2..5" }
+        enonce: "Un vélo coûte {{u*10}} €. Une moto coûte {{k}} fois plus. Prix de la moto ?"
+        reponse: "k*u*10"
+        unite: €
+        correction: "{{k}} × {{u*10}} = {{k*u*10}} €."
+      - type: champs
+        vars: { u: "6..20", k: "2..4" }
+        enonce: "Un sac de pommes pèse {{k}} fois plus qu'un sac de cerises. Ensemble : {{u*(k+1)}} kg."
+        champs:
+          - { avant: "cerises :", reponse: "u", apres: "kg" }
+          - { avant: "pommes :", reponse: "k*u", apres: "kg" }
+        correction: "{{k+1}} unités = {{u*(k+1)}} kg ; 1 unité = {{u}} kg."
+      - type: nombre
+        vars: { u: "5..15", k: "2..5" }
+        enonce: "Le sac de Néo pèse {{k}} fois plus que celui de Mia. Il pèse {{k*u}} kg. Combien pèse celui de Mia ?"
+        reponse: "u"
+        unite: kg
+        correction: "{{k*u}} ÷ {{k}} = {{u}} kg."
+      - type: champs
+        vars: { u: "5..12", e: "6..20" }
+        enonce: "Ensemble, Lou et Max ont {{2*u+e}} €. Max a {{e}} € de plus que Lou."
+        champs:
+          - { avant: "Lou a", reponse: "u", apres: "€" }
+          - { avant: "Max a", reponse: "u+e", apres: "€" }
+        indice: "Enlève d'abord les {{e}} € en trop : il reste deux barres égales."
+        correction: "{{2*u+e}} − {{e}} = {{2*u}} ; {{2*u}} ÷ 2 = {{u}} € pour Lou, {{u+e}} € pour Max."
+
+  - id: problemes-etapes
+    titre: Les problèmes à plusieurs étapes
+    objectif: Je résous un problème qui demande plusieurs calculs successifs.
+    mots: [étape]
+    etapes:
+      - dialogue:
+          - neo: "Certains problèmes cachent une question intermédiaire. Il faut la trouver !"
+          - mia: "Comme un trésor caché sous un autre trésor."
+      - exemple:
+          titre: La sortie au zoo
+          enonce: "28 élèves vont au zoo. L'entrée coûte 6 € par élève et le car coûte 150 €. Combien coûte la sortie en tout ?"
+          etapes:
+            - "Question cachée : combien coûtent les entrées ? 28 × 6 = 168 €."
+            - "Puis on ajoute le car : 168 + 150 = 318 €."
+            - "Vérification : ≈ 30 × 6 + 150 = 330 €, proche de 318 ✔."
+          reponse: "La sortie coûte 318 €."
+      - texte: |
+          **Méthode** : avant de calculer, je me demande : « **Qu'est-ce que je dois savoir d'abord ?** » J'écris chaque étape avec une petite phrase.
+      - a_quoi_ca_sert: "Presque tous les vrais problèmes sont à étapes : préparer un repas pour la famille, calculer le budget des vacances…"
+      - question:
+          type: nombre
+          vars: { n: "3..8", p: "4..12", b: [20, 50] }
+          si: "n*p < b"
+          enonce: "J'achète {{n}} cahiers à {{p}} € et je paie avec un billet de {{b}} €. Combien me rend-on ?"
+          reponse: "b - n*p"
+          unite: €
+          correction: "Étape 1 : {{n}} × {{p}} = {{n*p}} €. Étape 2 : {{b}} − {{n*p}} = {{b-n*p}} €."
+    exercices:
+      - type: nombre
+        vars: { e: "20..30", p: "4..9", c: "100..250" }
+        enonce: "{{e}} élèves vont au cinéma. La place coûte {{p}} € et le bus {{c}} €. Coût total ?"
+        reponse: "e*p+c"
+        unite: €
+        correction: "{{e}} × {{p}} = {{e*p}} ; {{e*p}} + {{c}} = {{e*p+c}} €."
+      - type: nombre
+        vars: { b: "3..6", c: "6..12", m: "8..30" }
+        enonce: "Un pâtissier fait {{b}} plaques de {{c}} gâteaux. Il en vend {{m}}. Combien lui en reste-t-il ?"
+        si: "m < b*c"
+        reponse: "b*c-m"
+        correction: "{{b}} × {{c}} = {{b*c}} gâteaux ; {{b*c}} − {{m}} = {{b*c-m}}."
+      - type: nombre
+        vars: { s: "5..15", w: "4..10" }
+        enonce: "Sami économise {{s}} € par semaine pendant {{w}} semaines, puis il dépense la moitié. Combien lui reste-t-il ?"
+        si: "(s*w) % 2 == 0"
+        reponse: "s*w/2"
+        unite: €
+        correction: "{{s}} × {{w}} = {{s*w}} € ; la moitié : {{s*w/2}} €."
+      - type: nombre
+        vars: { p: [2, 3, 4], n: "3..6", k: "2..5" }
+        enonce: "Un paquet de biscuits coûte {{p}} €. Un paquet de bonbons coûte {{k}} € de plus. Combien coûtent {{n}} paquets de bonbons ?"
+        reponse: "n*(p+k)"
+        unite: €
+        correction: "Un paquet de bonbons : {{p}} + {{k}} = {{p+k}} € ; {{n}} × {{p+k}} = {{n*(p+k)}} €."
+
+  - id: probleme-vers-calcul
+    titre: Du problème au calcul - écrire l'expression
+    objectif: J'écris en une seule ligne le calcul qui résout un problème.
+    mots: [expression, parenthèses]
+    etapes:
+      - dialogue:
+          - mia: "Les mathématiciens aiment écrire tout un problème en UNE ligne de calcul."
+          - neo: "C'est comme traduire une histoire en langage mathématique !"
+      - texte: |
+          « 4 paquets de 6 yaourts, plus 3 yaourts tout seuls » se traduit par :
+          $$4 \times 6 + 3$$
+
+          « Je partage 5 € + 7 € entre 4 enfants » se traduit par :
+          $$(5 + 7) \div 4$$
+
+          Les **parenthèses** disent « calcule ceci d'abord ». Sans parenthèses, on fait les **× et ÷ avant les + et −**.
+      - attention:
+          texte: "$4 \\times 6 + 3 = 27$ mais $4 \\times (6 + 3) = 36$ ! Les parenthèses changent tout."
+          qui: neo
+      - a_quoi_ca_sert: "C'est comme ça qu'on écrit les formules dans un tableur (Excel), qu'on programme un ordinateur ou une calculatrice : tout doit tenir en une ligne bien écrite."
+      - question:
+          type: expression
+          vars: { n: "3..8", p: "4..9", r: "1..5" }
+          enonce: "Écris le calcul (sans le résultat) : « {{n}} boîtes de {{p}} crayons, et {{r}} crayons en plus. Combien de crayons ? »"
+          reponse: "{{n}}*{{p}}+{{r}}"
+          calcul: true
+          correction: "${{n}} \\times {{p}} + {{r}} = {{n*p+r}}$"
+    exercices:
+      - type: expression
+        vars: { n: "3..8", p: "4..9", r: "1..5" }
+        enonce: "Écris le calcul : « {{n}} sachets de {{p}} bonbons, et {{r}} bonbons en plus. »"
+        reponse: "{{n}}*{{p}}+{{r}}"
+        calcul: true
+        correction: "${{n}} \\times {{p}} + {{r}} = {{n*p+r}}$"
+      - type: expression
+        vars: { a: "3..9", b: "3..9", k: "2..4" }
+        enonce: "Écris le calcul : « On partage {{a*k}} billes rouges et {{b*k}} billes bleues entre {{k}} enfants. Combien chacun ? »"
+        reponse: "({{a*k}}+{{b*k}})/{{k}}"
+        calcul: true
+        correction: "$({{a*k}} + {{b*k}}) \\div {{k}} = {{a+b}}$"
+      - type: expression
+        vars: { b: [20, 50], n: "2..5", p: "3..8" }
+        si: "n*p < b"
+        enonce: "Écris le calcul : « Je paie {{n}} livres à {{p}} € avec un billet de {{b}} €. Combien me rend-on ? »"
+        reponse: "{{b}}-{{n}}*{{p}}"
+        calcul: true
+        correction: "${{b}} - {{n}} \\times {{p}} = {{b-n*p}}$ €"
+      - type: qcm
+        vars: { a: "3..9", b: "2..6", c: "2..5" }
+        enonce: "« {{c}} amis achètent chacun {{a}} cartes et {{b}} stickers. Combien d'objets en tout ? » Quel calcul convient ?"
+        choix: ["{{c}} × ({{a}} + {{b}})", "{{c}} × {{a}} + {{b}}", "{{c}} + {{a}} + {{b}}", "({{c}} + {{a}}) × {{b}}"]
+        correction: "Chaque ami a {{a}} + {{b}} objets, et il y a {{c}} amis : {{c}} × ({{a}} + {{b}}) = {{c*(a+b)}}."
+      - type: nombre
+        vars: { a: "2..9", b: "2..9", c: "2..9" }
+        enonce: "Calcule (attention aux priorités) : ${{a}} + {{b}} \\times {{c}}$"
+        reponse: "a+b*c"
+        correction: "On fait d'abord la multiplication : {{b}} × {{c}} = {{b*c}}, puis {{a}} + {{b*c}} = {{a+b*c}}."
+
+  - id: calcul-vers-probleme
+    titre: Du calcul au problème - inventer l'histoire
+    objectif: Je trouve (et j'invente) une histoire qui correspond à un calcul.
+    mots: [problème]
+    etapes:
+      - dialogue:
+          - neo: "Et maintenant, l'inverse ! Je te donne 4 × 5 et tu inventes l'histoire."
+          - mia: "4 chats, 5 croquettes chacun… combien de croquettes ? Ou 4 tables de 5 enfants ?"
+          - zero: "4 Zéros qui mangent 5 graines chacun ! Ça fait… beaucoup de graines."
+      - texte: |
+          Chaque opération raconte une histoire :
+          - **a + b** : on réunit, on ajoute, quelque chose arrive.
+          - **a − b** : on enlève, on dépense, on compare (combien de plus/moins).
+          - **a × b** : a groupes de b objets pareils, ou « a fois plus ».
+          - **a ÷ b** : on partage en b parts égales, ou on fait des paquets de b.
+
+          Une bonne histoire de problème a : **des personnages, une situation, des nombres… et une QUESTION**.
+      - a_quoi_ca_sert: "Inventer des problèmes prouve qu'on a vraiment compris les opérations. C'est aussi ce que font les professeurs, les créateurs de jeux… et Mia quand elle s'ennuie !"
+      - question:
+          type: qcm
+          vars: { a: "3..7", b: "4..9" }
+          enonce: "Quelle histoire correspond au calcul ${{a}} \\times {{b}}$ ?"
+          choix: ["{{a}} enfants ont chacun {{b}} billes. Combien de billes en tout ?", "{{a}} enfants et {{b}} adultes vont au parc. Combien de personnes ?", "J'ai {{b}} billes, j'en perds {{a}}. Combien en reste-t-il ?", "{{b}} billes partagées entre {{a}} enfants. Combien chacun ?"]
+          correction: "{{a}} groupes égaux de {{b}} : c'est une multiplication."
+    exercices:
+      - type: qcm
+        vars: { a: "20..50", b: "5..15" }
+        enonce: "Quelle histoire correspond à ${{a}} - {{b}}$ ?"
+        choix: ["J'ai {{a}} €, j'achète un jouet à {{b}} €. Combien me reste-t-il ?", "J'ai {{a}} € et on m'offre {{b}} €. Combien ai-je ?", "{{a}} enfants ont chacun {{b}} €. Combien d'argent en tout ?", "{{a}} € pour {{b}} enfants. Combien chacun ?"]
+        correction: "On enlève, on dépense : c'est une soustraction."
+      - type: qcm
+        vars: { b: "3..6", q: "4..9" }
+        enonce: "Quelle histoire correspond à ${{b*q}} \\div {{b}}$ ?"
+        choix: ["{{b*q}} bonbons partagés entre {{b}} amis. Combien chacun ?", "{{b*q}} bonbons et {{b}} sucettes. Combien de friandises ?", "{{b}} sachets de {{b*q}} bonbons. Combien de bonbons ?", "J'avais {{b*q}} bonbons, j'en mange {{b}}. Combien en reste-t-il ?"]
+        correction: "Partager en parts égales : c'est une division."
+      - type: qcm
+        vars: { a: "10..30", b: "10..30" }
+        enonce: "Quelle histoire correspond à ${{a}} + {{b}}$ ?"
+        choix: ["Il y a {{a}} moutons et {{b}} chèvres dans le pré. Combien d'animaux ?", "{{a}} moutons, {{b}} s'en vont. Combien en reste-t-il ?", "{{a}} enclos de {{b}} moutons. Combien de moutons ?", "{{a}} moutons répartis dans {{b}} enclos."]
+        correction: "On réunit deux groupes : c'est une addition."
+      - type: qcm
+        vars: { a: "3..8", b: "2..5", c: "2..9" }
+        enonce: "Quelle histoire correspond à ${{a}} \\times {{b}} + {{c}}$ ?"
+        choix: ["{{a}} boîtes de {{b}} œufs, et {{c}} œufs à part. Combien d'œufs ?", "{{a}} boîtes de {{b}} œufs, on en casse {{c}}. Combien d'œufs ?", "{{a}} + {{b}} + {{c}} œufs dans un panier.", "{{c}} boîtes de {{a}} + {{b}} œufs."]
+        correction: "{{a}} groupes de {{b}} (multiplication), puis on ajoute {{c}}."
+
+  - id: pieges-enonces
+    titre: Les pièges des énoncés
+    objectif: Je repère les informations inutiles, les mots trompeurs et les questions sans réponse.
+    mots: [donnée]
+    etapes:
+      - dialogue:
+          - zero: "Le capitaine a 26 moutons et 10 chèvres. Quel âge a le capitaine ? …36 ans !"
+          - mia: "Zéro ! On ne peut PAS le savoir. Les moutons ne disent rien sur l'âge du capitaine !"
+          - neo: "C'est le célèbre piège de « l'âge du capitaine ». Un vrai détective vérifie que sa réponse a du sens."
+      - texte: |
+          **Trois pièges classiques :**
+          1. **Les données inutiles** : tous les nombres ne servent pas forcément !
+          2. **Les mots trompeurs** : « de plus » ne veut pas toujours dire « + » ; « en tout » ne veut pas toujours dire « + » (« 5 paquets de 4, combien en tout ? » → ×).
+          3. **Les questions impossibles** : parfois, on n'a pas assez d'informations. Dire « on ne peut pas savoir », c'est une vraie réponse de mathématicien !
+      - histoire:
+          titre: L'âge du capitaine
+          texte: "En 1980, des chercheurs de l'IREM de Grenoble ont posé à des élèves la question « Sur un bateau, il y a 26 moutons et 10 chèvres. Quel est l'âge du capitaine ? ». Beaucoup d'élèves ont répondu 36 en additionnant les nombres ! Depuis, ce problème rappelle qu'il faut toujours COMPRENDRE avant de calculer."
+      - a_quoi_ca_sert: "Dans la vie, les informations arrivent mélangées (publicités, articles, factures). Savoir trier l'utile de l'inutile, c'est de l'esprit critique !"
+      - question:
+          type: qcm
+          vars: { m: "10..30", c: "5..15" }
+          enonce: "« Sur un bateau, il y a {{m}} moutons et {{c}} chèvres. Quel est l'âge du capitaine ? »"
+          choix: ["On ne peut pas savoir", "{{m+c}} ans", "{{m-c}} ans", "{{m*c}} ans"]
+          correction: "Les animaux ne disent rien sur l'âge du capitaine : il manque une information !"
+    exercices:
+      - type: nombre
+        vars: { a: "4..9", p: "3..7", age: "8..12", t: "2..5" }
+        enonce: "Lina a {{age}} ans. Elle achète {{a}} cahiers à {{p}} € pour ses {{t}} matières. Combien dépense-t-elle ?"
+        reponse: "a*p"
+        unite: €
+        indice: "Tous les nombres ne servent pas ! Lesquels parlent du prix ?"
+        correction: "Seuls le nombre de cahiers et le prix comptent : {{a}} × {{p}} = {{a*p}} €. L'âge et les matières sont des données inutiles."
+      - type: qcm
+        vars: { a: "20..40", b: "3..9" }
+        enonce: "« Un car transporte {{a}} élèves et {{b}} adultes. Il roule à 80 km/h. » Quelle question n'a PAS de réponse avec ces informations ?"
+        choix: ["À quelle heure arrive le car ?", "Combien de personnes dans le car ?", "Combien d'élèves de plus que d'adultes ?", "Combien de personnes s'il monte 2 adultes de plus ?"]
+        correction: "On ne connaît ni l'heure de départ ni la distance : impossible de trouver l'heure d'arrivée."
+      - type: nombre
+        vars: { n: "3..8", p: "4..9" }
+        enonce: "« {{n}} paquets de {{p}} gâteaux. Combien de gâteaux en tout ? »"
+        reponse: "n*p"
+        correction: "« En tout » ici veut dire {{n}} × {{p}} = {{n*p}}, pas une addition !"
+      - type: vf
+        vars: { a: "15..30", e: "3..9" }
+        enonce: "« Hugo a {{e}} billes de plus que Zoé. Hugo en a {{a}}. » Pour trouver les billes de Zoé, on calcule {{a}} + {{e}}. Vrai ou faux ?"
+        reponse: false
+        correction: "Zoé en a MOINS que Hugo : {{a}} − {{e}} = {{a-e}}. Le mot « plus » était un piège !"

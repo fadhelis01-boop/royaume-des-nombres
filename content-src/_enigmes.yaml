@@ -1,0 +1,231 @@
+# Énigmes de Mia (et énigme du jour). niveau : 1 = Graines, 2 = Explorateurs, 3 = Maîtres.
+# reponse : un nombre ou un mot (la comparaison ignore majuscules et accents).
+
+- id: chaussettes
+  niveau: 1
+  titre: Les chaussettes dans le noir
+  texte: "Dans un tiroir, il y a des chaussettes rouges et des chaussettes bleues, toutes mélangées. Il fait tout noir. Combien de chaussettes Zéro doit-il prendre, au minimum, pour être SÛR d'avoir une paire de la même couleur ?"
+  reponse: 3
+  indice: "Imagine que tu n'as pas de chance : les deux premières sont de couleurs différentes…"
+  solution: "Avec 2 chaussettes, on peut avoir une rouge et une bleue. Mais la 3ᵉ sera forcément rouge ou bleue : elle fera une paire ! Réponse : **3**."
+
+- id: pattes
+  niveau: 1
+  titre: Les pattes de la ferme
+  texte: "Dans la cour, il y a 3 poules et 2 chats. Combien de pattes en tout ?"
+  reponse: 14
+  indice: "Une poule a 2 pattes, un chat en a 4."
+  solution: "3 × 2 = 6 pattes de poules, 2 × 4 = 8 pattes de chats. 6 + 8 = **14**."
+
+- id: escaliers
+  niveau: 1
+  titre: L'escalier de Néo
+  texte: "Néo monte un escalier de 10 marches. Il monte de 2 marches à chaque saut. Combien de sauts fait-il ?"
+  reponse: 5
+  solution: "10 ÷ 2 = **5** sauts."
+
+- id: freres
+  niveau: 1
+  titre: La famille de Mia
+  texte: "Mia a 3 frères. Chacun de ses frères a 1 sœur. Combien d'enfants y a-t-il dans la famille ?"
+  reponse: 4
+  indice: "La sœur des frères… c'est qui ?"
+  solution: "La sœur de chaque frère, c'est Mia elle-même ! Il y a 3 frères + Mia = **4** enfants."
+
+- id: gateau
+  niveau: 1
+  titre: Le gâteau coupé
+  texte: "Avec 2 coups de couteau bien droits, en combien de parts au maximum peut-on couper un gâteau rond (vu de dessus) ?"
+  reponse: 4
+  indice: "Fais les deux coupes en croix."
+  solution: "Deux coupes qui se croisent au centre donnent **4** parts."
+
+- id: nombre-mystere-1
+  niveau: 1
+  titre: Le nombre mystère
+  texte: "Je suis un nombre à deux chiffres. Mon chiffre des dizaines est 4. Mon chiffre des unités est le double de celui des dizaines. Qui suis-je ?"
+  reponse: 48
+  solution: "Dizaines : 4. Unités : 2 × 4 = 8. Le nombre est **48**."
+
+- id: oeufs
+  niveau: 1
+  titre: Les œufs du pâtissier
+  texte: "Un pâtissier a 2 boîtes de 6 œufs. Il casse 3 œufs pour un gâteau. Combien d'œufs lui reste-t-il ?"
+  reponse: 9
+  solution: "2 × 6 = 12 œufs ; 12 − 3 = **9**."
+
+- id: horloge-coups
+  niveau: 1
+  titre: Les coups de l'horloge
+  texte: "Une horloge sonne autant de coups que l'heure qu'il est (1 coup à 1 h, 2 coups à 2 h…). Combien de coups sonne-t-elle en tout de 1 h à 4 h (incluses) ?"
+  reponse: 10
+  solution: "1 + 2 + 3 + 4 = **10** coups."
+
+- id: zero-graines
+  niveau: 1
+  titre: Les graines de Zéro
+  texte: "Zéro a mangé 2 graines le lundi, puis chaque jour 2 graines de plus que la veille. Combien de graines mange-t-il le vendredi ?"
+  reponse: 10
+  solution: "Lundi 2, mardi 4, mercredi 6, jeudi 8, vendredi **10**."
+
+- id: plus-lourd
+  niveau: 1
+  titre: Le plus lourd
+  texte: "Qu'est-ce qui est le plus lourd : un kilo de plumes ou un kilo de cailloux ? (réponds « plumes », « cailloux » ou « pareil »)"
+  reponse: pareil
+  solution: "Les deux pèsent **1 kilo** : c'est **pareil** ! Les plumes prennent juste beaucoup plus de place."
+
+- id: age-capitaine
+  niveau: 2
+  titre: Les âges de Mia et Néo
+  texte: "Aujourd'hui, Néo a 3 fois l'âge de Zéro. Dans 4 ans, Néo aura le double de l'âge de Zéro. Quel âge a Zéro aujourd'hui ?"
+  reponse: 4
+  indice: "Appelle z l'âge de Zéro : 3z + 4 = 2(z + 4)."
+  solution: "3z + 4 = 2z + 8, donc z = **4**. (Néo a 12 ans ; dans 4 ans : 16 et 8.)"
+
+- id: poignees
+  niveau: 2
+  titre: Les poignées de main
+  texte: "À une fête, 6 personnes se serrent toutes la main, une fois chacune avec chacune. Combien de poignées de main ?"
+  reponse: 15
+  indice: "La 1ʳᵉ serre 5 mains, la 2ᵉ en serre 4 nouvelles…"
+  solution: "5 + 4 + 3 + 2 + 1 = **15** (ou 6 × 5 ÷ 2)."
+
+- id: bouteille-bouchon
+  niveau: 2
+  titre: La bouteille et le bouchon
+  texte: "Une bouteille et son bouchon coûtent 1,10 € ensemble. La bouteille coûte 1 € de plus que le bouchon. Combien coûte le bouchon, en centimes ?"
+  reponse: 5
+  indice: "Ce n'est PAS 10 centimes ! Vérifie : si le bouchon coûtait 10 c, la bouteille coûterait 1,10 €, total 1,20 €."
+  solution: "Bouchon b, bouteille b + 1. b + b + 1 = 1,10, donc 2b = 0,10 et b = 0,05 € = **5 centimes**."
+
+- id: nenuphars
+  niveau: 2
+  titre: Les nénuphars
+  texte: "Sur un étang, la surface couverte par les nénuphars double chaque jour. Il faut 30 jours pour couvrir tout l'étang. Au bout de combien de jours la moitié de l'étang était-elle couverte ?"
+  reponse: 29
+  indice: "Pense à l'envers : la veille du jour où tout est couvert…"
+  solution: "Si ça double chaque jour, la veille (jour **29**), l'étang était à moitié couvert."
+
+- id: carres-echiquier
+  niveau: 2
+  titre: Les carrés cachés
+  texte: "Combien de carrés de toutes tailles y a-t-il dans une grille de 3 × 3 carreaux ?"
+  reponse: 14
+  solution: "9 petits + 4 carrés 2 × 2 + 1 grand = **14**."
+
+- id: train
+  niveau: 2
+  titre: Le train dans le tunnel
+  texte: "Un train de 200 m de long roule à 20 m/s. Il traverse un tunnel de 400 m. Combien de secondes s'écoulent entre l'entrée de l'avant du train et la sortie de l'arrière ?"
+  reponse: 30
+  indice: "L'avant du train doit parcourir le tunnel ET la longueur du train."
+  solution: "Distance : 400 + 200 = 600 m ; 600 ÷ 20 = **30 s**."
+
+- id: chiffre-7
+  niveau: 2
+  titre: Combien de 7 ?
+  texte: "Si on écrit tous les nombres de 1 à 100, combien de fois écrit-on le chiffre 7 ?"
+  reponse: 20
+  indice: "Compte les 7 aux unités, puis aux dizaines (attention à 77 !)."
+  solution: "Aux unités : 7, 17, …, 97 → 10 fois. Aux dizaines : 70 à 79 → 10 fois. Total **20** (77 compte deux fois)."
+
+- id: moyenne-vitesse
+  niveau: 2
+  titre: L'aller-retour
+  texte: "Néo va à l'école à vélo à 10 km/h et revient (même chemin) à 30 km/h. Quelle est sa vitesse moyenne sur l'aller-retour, en km/h ?"
+  reponse: 15
+  indice: "Ce n'est pas 20 ! Prends une distance simple, par exemple 30 km."
+  solution: "Pour 30 km : aller 3 h, retour 1 h. 60 km en 4 h → **15 km/h**."
+
+- id: pieces-balance
+  niveau: 2
+  titre: La fausse pièce
+  texte: "Parmi 9 pièces identiques, une est plus légère (fausse). Avec une balance à deux plateaux, combien de pesées faut-il au minimum pour être sûr de la trouver ?"
+  reponse: 2
+  indice: "Fais 3 tas de 3 pièces."
+  solution: "1ʳᵉ pesée : 3 contre 3 → on sait dans quel tas de 3 est la fausse. 2ᵉ pesée : 1 contre 1 dans ce tas. **2 pesées**."
+
+- id: dernier-chiffre
+  niveau: 2
+  titre: Le dernier chiffre
+  texte: "Quel est le chiffre des unités de 2 à la puissance 100 ?"
+  reponse: 6
+  indice: "Regarde les unités de 2, 4, 8, 16, 32, 64… elles se répètent."
+  solution: "Cycle 2, 4, 8, 6 de longueur 4 ; 100 est un multiple de 4 : le chiffre est **6**."
+
+- id: monty-hall
+  niveau: 3
+  titre: Les trois portes
+  texte: "Un trésor est caché derrière l'une de 3 portes. Tu en choisis une. Le présentateur, qui sait où est le trésor, ouvre une AUTRE porte vide et te propose de changer. Si tu changes, quelle est ta probabilité de gagner ? (écris une fraction)"
+  reponse: "2/3"
+  indice: "Ta première porte avait 1 chance sur 3… et elle la garde."
+  solution: "Ton premier choix a 1/3 de chances. Les 2/3 restants se « concentrent » sur la porte restante après l'ouverture : en changeant, tu gagnes avec probabilité **2/3**. (C'est le célèbre problème de Monty Hall.)"
+
+- id: anniversaires
+  niveau: 3
+  titre: Le paradoxe des anniversaires
+  texte: "À partir de combien de personnes dans une salle la probabilité que deux d'entre elles aient le même anniversaire dépasse-t-elle 50 % ? (on ignore les années bissextiles)"
+  reponse: 23
+  indice: "Calcule la probabilité que tous les anniversaires soient DIFFÉRENTS."
+  solution: "La probabilité que n personnes aient des anniversaires tous différents est 365/365 × 364/365 × … Elle passe sous 50 % pour n = **23** (≈ 49,3 %)."
+
+- id: somme-impairs
+  niveau: 3
+  titre: La grande somme
+  texte: "Que vaut 1 + 3 + 5 + … + 99 (tous les nombres impairs de 1 à 99) ?"
+  reponse: 2500
+  solution: "C'est la somme des 50 premiers impairs = 50² = **2 500**."
+
+- id: zeros-factorielle
+  niveau: 3
+  titre: Les zéros de 100 !
+  texte: "Par combien de zéros se termine l'écriture de 100! = 1 × 2 × 3 × … × 100 ?"
+  reponse: 24
+  indice: "Chaque zéro vient d'un 10 = 2 × 5. Compte les facteurs 5."
+  solution: "Multiples de 5 : 20 ; multiples de 25 (un 5 de plus) : 4. Total **24** zéros."
+
+- id: grains-echiquier
+  niveau: 3
+  titre: Les grains de l'échiquier
+  texte: "1 grain sur la 1ʳᵉ case, 2 sur la 2ᵉ, 4 sur la 3ᵉ… On double à chaque case. Combien de grains en tout sur les 10 premières cases ?"
+  reponse: 1023
+  solution: "1 + 2 + 4 + … + 2⁹ = 2¹⁰ − 1 = **1 023**."
+
+- id: rectangle-max
+  niveau: 3
+  titre: Le plus grand enclos
+  texte: "Avec 60 m de clôture, on fait un enclos rectangulaire contre un long mur (le mur forme un côté, sans clôture). Quelle est l'aire maximale en m² ?"
+  reponse: 450
+  indice: "Si les deux côtés perpendiculaires au mur mesurent x, l'autre mesure 60 − 2x."
+  solution: "A(x) = x(60 − 2x), maximale en x = 15 : 15 × 30 = **450 m²**."
+
+- id: derangements
+  niveau: 3
+  titre: Les lettres mélangées
+  texte: "On a 3 lettres et leurs 3 enveloppes. On met les lettres au hasard. De combien de façons peut-on faire pour qu'AUCUNE lettre ne soit dans la bonne enveloppe ?"
+  reponse: 2
+  indice: "Liste les 6 façons de ranger 3 lettres."
+  solution: "Sur les 6 permutations, seules BCA et CAB ne laissent aucune lettre à sa place : **2**."
+
+- id: escargot-mur
+  niveau: 3
+  titre: Le nombre caché
+  texte: "Je suis un nombre entier. Divisé par 2, 3, 4, 5 ou 6, il reste toujours 1. Divisé par 7, il ne reste rien. Quel est le plus petit nombre possible ?"
+  reponse: 301
+  indice: "n − 1 est un multiple de PPCM(2, 3, 4, 5, 6) = 60."
+  solution: "n = 60k + 1 et multiple de 7 : 61, 121, 181, 241 ne marchent pas ; 301 = 7 × 43 ✔. Réponse : **301**."
+
+- id: infini-premiers
+  niveau: 3
+  titre: Le plus grand nombre premier ?
+  texte: "Existe-t-il un plus grand nombre premier ? (réponds « oui » ou « non »)"
+  reponse: non
+  solution: "**Non** : Euclide a démontré qu'il y en a une infinité. Si p₁, …, pₙ étaient tous les premiers, le nombre p₁ × … × pₙ + 1 n'est divisible par aucun d'eux : contradiction."
+
+- id: euler-ponts
+  niveau: 3
+  titre: Les ponts de Königsberg
+  texte: "Dans un graphe, on veut passer une fois et une seule par chaque arête et revenir au départ. C'est possible seulement si chaque sommet a un nombre pair d'arêtes. Les 4 quartiers de Königsberg avaient 5, 3, 3 et 3 ponts. Combien de quartiers avaient un nombre IMPAIR de ponts ?"
+  reponse: 4
+  solution: "5, 3, 3, 3 sont tous impairs : **4** quartiers. Euler a ainsi prouvé en 1736 que la promenade était impossible — c'est la naissance de la théorie des graphes !"

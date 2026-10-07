@@ -1,0 +1,285 @@
+id: labyrinthe-des-fonctions
+titre: Le Labyrinthe des Fonctions
+sous_titre: Machines à nombres, graphiques, fonctions linéaires et affines
+emoji: 🎢
+couleur: "#ad1457"
+cycle: explorateurs
+age: 13-16 ans
+niveau: 3ᵉ – 2nde
+ordre: 17
+prerequis: [grotte-de-l-algebre, tour-des-proportions]
+version: 1.0.0
+intro:
+  - neo: "Bienvenue dans le Labyrinthe des Fonctions ! Chaque fonction est une machine : on y met un nombre, il en sort un autre."
+  - mia: "Et on peut dessiner ces machines : ce sont des courbes ! Des droites, des paraboles…"
+  - zero: "Je veux bien entrer dans la machine. Mais je veux ressortir entier."
+
+lecons:
+  - id: notion-fonction
+    titre: Une fonction, c'est une machine à nombres
+    objectif: Je comprends ce qu'est une fonction et j'utilise la notation f(x).
+    mots: [fonction, image, antécédent]
+    etapes:
+      - dialogue:
+          - mia: "Ma machine « double puis ajoute 1 » : je mets 3, il sort 7. Je mets 10, il sort 21."
+          - neo: "On l'appelle f et on écrit f(3) = 7. Plus généralement : f(x) = 2x + 1."
+      - texte: |
+          Une **fonction** $f$ associe à chaque nombre $x$ **un seul** nombre, noté $f(x)$.
+
+          $$f : x \longmapsto 2x + 1$$
+
+          - $f(3) = 7$ : **7 est l'image de 3** par $f$.
+          - **3 est un antécédent de 7** : c'est un nombre dont l'image est 7.
+      - visuel:
+          type: tableau
+          lignes:
+            - ["$x$", "−2", "0", "1", "3", "10"]
+            - ["$f(x) = 2x + 1$", "−3", "1", "3", "7", "21"]
+        legende: "Un tableau de valeurs de la fonction f."
+      - a_quoi_ca_sert: "Le prix selon la quantité, la distance de freinage selon la vitesse, la température selon l'heure, la note d'un jeu selon les points… Toute relation « si je change ceci, cela change » est une fonction."
+      - question:
+          type: nombre
+          vars: { a: "2..5", b: "-5..9", x: "-4..6" }
+          enonce: "$f(x) = {{a}}x + ({{nb(b)}})$. Calcule $f({{nb(x)}})$."
+          reponse: "a*x+b"
+          correction: "$f({{nb(x)}}) = {{a}} \\times ({{nb(x)}}) + ({{nb(b)}}) = {{nb(a*x+b)}}$"
+    exercices:
+      - type: nombre
+        vars: { a: "2..9", b: "-9..9", x: "-5..8" }
+        enonce: "$f(x) = {{a}}x + ({{nb(b)}})$. Que vaut $f({{nb(x)}})$ ?"
+        reponse: "a*x+b"
+        correction: "{{nb(a*x+b)}}"
+      - type: nombre
+        vars: { x: "-6..6", c: "-5..5" }
+        enonce: "$g(x) = x^2 + ({{nb(c)}})$. Calcule $g({{nb(x)}})$."
+        reponse: "x^2+c"
+        correction: "$({{nb(x)}})^2 + ({{nb(c)}}) = {{nb(x^2+c)}}$"
+      - type: nombre
+        vars: { a: "2..6", b: "-6..6", x: "-5..8" }
+        enonce: "$f(x) = {{a}}x + ({{nb(b)}})$. Quel est l'antécédent de {{nb(a*x+b)}} ?"
+        reponse: "x"
+        indice: "Résous ${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$."
+        correction: "${{a}}x = {{nb(a*x)}}$, donc $x = {{nb(x)}}$."
+      - type: qcm
+        enonce: "Si $f(4) = 9$, alors…"
+        choix: ["9 est l'image de 4", "4 est l'image de 9", "9 est un antécédent de 4", "f vaut 9 partout"]
+        correction: "f(4) = 9 se lit : « l'image de 4 par f est 9 »."
+
+  - id: graphiques-fonctions
+    titre: Représenter une fonction - lire un graphique
+    objectif: Je lis une image et un antécédent sur la courbe d'une fonction.
+    mots: [courbe, représentation graphique]
+    etapes:
+      - dialogue:
+          - neo: "On place les points (x ; f(x)) dans un repère : ils forment la COURBE de la fonction."
+          - mia: "Pour lire f(2), je pars de 2 sur l'axe horizontal, je monte jusqu'à la courbe, puis je lis la hauteur !"
+      - visuel:
+          type: graphe
+          xmin: -3
+          xmax: 3
+          ymin: -2
+          ymax: 9
+          fonctions: [{ f: "x^2", nom: "f(x) = x²" }]
+          points: [{ x: 2, y: 4, label: "(2 ; 4)" }, { x: -2, y: 4, label: "(−2 ; 4)" }]
+          segments: [{ x1: 2, y1: 0, x2: 2, y2: 4, pointille: true }, { x1: 0, y1: 4, x2: 2, y2: 4, pointille: true }]
+        legende: "f(2) = 4 ; et 4 a deux antécédents : 2 et −2."
+      - texte: |
+          - **Lire une image** $f(a)$ : on part de $a$ sur l'axe des abscisses, on va **verticalement** jusqu'à la courbe, puis **horizontalement** jusqu'à l'axe des ordonnées.
+          - **Lire les antécédents** de $b$ : on part de $b$ sur l'axe des ordonnées, on va horizontalement jusqu'à la courbe (il peut y avoir 0, 1 ou plusieurs points), puis on descend sur l'axe des abscisses.
+      - a_quoi_ca_sert: "Lire une courbe de température, l'évolution d'un prix ou d'une population, la vitesse d'une voiture… Les graphiques sont partout dans les médias et les sciences."
+      - question:
+          type: nombre
+          vars: { a: "1..3", b: "-2..2", x: "-2..3" }
+          enonce: "Lis sur le graphique la valeur de $f({{nb(x)}})$."
+          visuel: { type: graphe, xmin: -4, xmax: 4, ymin: -8, ymax: 12, pas_x: 1, pas_y: 2, fonctions: [{ f: "{{a}}*x+({{b}})", nom: "f" }], points: [{ x: "=x", y: "=a*x+b" }] }
+          reponse: "a*x+b"
+          correction: "Le point de la droite d'abscisse {{nb(x)}} a pour ordonnée {{nb(a*x+b)}}."
+    exercices:
+      - type: nombre
+        vars: { a: "1..3", b: "-3..3", x: "-3..3" }
+        enonce: "D'après le graphique, que vaut $f({{nb(x)}})$ ?"
+        visuel: { type: graphe, xmin: -4, xmax: 4, ymin: -12, ymax: 12, pas_x: 1, pas_y: 2, fonctions: [{ f: "{{a}}*x+({{b}})", nom: "f" }], points: [{ x: "=x", y: "=a*x+b" }] }
+        reponse: "a*x+b"
+        correction: "f({{nb(x)}}) = {{nb(a*x+b)}}."
+      - type: liste
+        vars: { k: [1, 4, 9] }
+        enonce: "On a tracé $f(x) = x^2$. Quels sont les antécédents de {{k}} ? (sépare par « ; »)"
+        visuel: { type: graphe, xmin: -4, xmax: 4, ymin: -1, ymax: 10, pas_x: 1, pas_y: 1, fonctions: [{ f: "x^2", nom: "f(x) = x²" }] }
+        reponse: ["sqrt(k)", "-sqrt(k)"]
+        correction: "$x^2 = {{k}}$ pour $x = {{sqrt(k)}}$ et $x = -{{sqrt(k)}}$."
+      - type: vf
+        vars: { a: "1..3", b: "-3..3", x: "-3..3", t: [0, 1] }
+        enonce: "Le point $({{nb(x)}} ; {{nb(a*x+b+t)}})$ est-il sur la droite d'équation $y = {{a}}x + ({{nb(b)}})$ ?"
+        reponse: "t == 0"
+        correction: "${{a}} \\times ({{nb(x)}}) + ({{nb(b)}}) = {{nb(a*x+b)}}$ {{si(t==0,'= l’ordonnée : oui.','≠ ' + texte(a*x+b+1) + ' : non.')}}"
+
+  - id: fonctions-lineaires
+    titre: Les fonctions linéaires (la proportionnalité)
+    objectif: Je reconnais une fonction linéaire f(x) = ax et sa droite qui passe par l'origine.
+    mots: [fonction linéaire, coefficient directeur]
+    etapes:
+      - dialogue:
+          - mia: "Le prix des pommes : 3 € le kilo. f(x) = 3x. C'est la proportionnalité en version fonction !"
+          - neo: "Sa courbe est une droite qui passe par l'origine (0 ; 0)."
+      - visuel:
+          type: graphe
+          xmin: -3
+          xmax: 4
+          ymin: -6
+          ymax: 9
+          fonctions: [{ f: "3*x", nom: "f(x) = 3x" }, { f: "-x", nom: "g(x) = −x" }]
+      - texte: |
+          Une **fonction linéaire** s'écrit $f(x) = ax$. Le nombre $a$ est le **coefficient** (de proportionnalité).
+
+          - Sa représentation est une **droite passant par l'origine**.
+          - $a > 0$ : la droite monte ; $a < 0$ : elle descend.
+          - Trouver $a$ : $a = \frac{f(x)}{x}$ pour n'importe quel $x \neq 0$.
+          - Une **évolution de t %** est une fonction linéaire : $x \mapsto \left(1 + \frac{t}{100}\right)x$.
+      - a_quoi_ca_sert: "Les prix unitaires, les conversions (euros ↔ dollars, km ↔ miles), les pourcentages, les vitesses constantes…"
+      - question:
+          type: nombre
+          vars: { a: "-5..6", x: "2..6" }
+          si: "a != 0"
+          enonce: "$f$ est linéaire et $f({{x}}) = {{nb(a*x)}}$. Quel est son coefficient $a$ ?"
+          reponse: "a"
+          correction: "$a = \\frac{ {{nb(a*x)}} }{ {{x}} } = {{nb(a)}}$"
+    exercices:
+      - type: nombre
+        vars: { a: "-6..8", x: "2..9" }
+        si: "a != 0"
+        enonce: "$f$ linéaire, $f({{x}}) = {{nb(a*x)}}$. Coefficient ?"
+        reponse: "a"
+        correction: "{{nb(a)}}"
+      - type: nombre
+        vars: { a: "2..9", x: "-5..9" }
+        enonce: "$f(x) = {{a}}x$. Calcule $f({{nb(x)}})$."
+        reponse: "a*x"
+        correction: "{{nb(a*x)}}"
+      - type: nombre
+        vars: { t: [10, 20, 25, 50] }
+        enonce: "Une hausse de {{t}} % correspond à la fonction linéaire $x \\mapsto a x$. Que vaut $a$ ?"
+        reponse: "1+t/100"
+        correction: "$a = 1 + \\frac{ {{t}} }{100} = {{nb(1+t/100)}}$"
+      - type: vf
+        enonce: "Vrai ou faux : la fonction $f(x) = 2x + 1$ est linéaire."
+        reponse: false
+        correction: "Non : à cause du « + 1 », sa droite ne passe pas par l'origine (f(0) = 1). C'est une fonction affine."
+
+  - id: fonctions-affines
+    titre: Les fonctions affines
+    objectif: Je reconnais une fonction affine f(x) = ax + b, je lis son coefficient directeur et son ordonnée à l'origine.
+    mots: [fonction affine, coefficient directeur, ordonnée à l'origine]
+    etapes:
+      - dialogue:
+          - neo: "Un taxi : 4 € de prise en charge, puis 2 € par km. f(x) = 2x + 4 !"
+          - mia: "Le 4, c'est là où la droite coupe l'axe vertical. Le 2, c'est sa pente : +2 en hauteur quand on avance de 1."
+      - visuel:
+          type: graphe
+          xmin: -2
+          xmax: 6
+          ymin: -2
+          ymax: 16
+          pas_y: 2
+          fonctions: [{ f: "2*x+4", nom: "f(x) = 2x + 4" }]
+          points: [{ x: 0, y: 4, label: "b = 4" }, { x: 1, y: 6 }]
+          segments: [{ x1: 0, y1: 4, x2: 1, y2: 4, pointille: true }, { x1: 1, y1: 4, x2: 1, y2: 6, pointille: true }]
+        legende: "Quand x augmente de 1, f(x) augmente de a = 2."
+      - texte: |
+          Une **fonction affine** s'écrit $f(x) = ax + b$. Sa représentation est une **droite**.
+          - $b$ = **ordonnée à l'origine** : $f(0) = b$ (là où la droite coupe l'axe vertical).
+          - $a$ = **coefficient directeur** (la pente) : quand $x$ augmente de 1, $f(x)$ augmente de $a$.
+
+          **Calculer $a$ avec deux points** : $a = \dfrac{f(x_2) - f(x_1)}{x_2 - x_1}$
+      - a_quoi_ca_sert: "Les tarifs avec abonnement (forfait + prix par unité), la conversion °C → °F (F = 1,8C + 32), la charge d'une batterie, la recette d'un vendeur…"
+      - question:
+          type: champs
+          vars: { a: "-4..4", b: "-5..5" }
+          si: "a != 0"
+          enonce: "Lis sur la droite son coefficient directeur $a$ et son ordonnée à l'origine $b$."
+          visuel: { type: graphe, xmin: -4, xmax: 4, ymin: -12, ymax: 12, pas_x: 1, pas_y: 2, fonctions: [{ f: "{{a}}*x+({{b}})" }], points: [{ x: 0, y: "=b" }, { x: 1, y: "=a+b" }] }
+          champs:
+            - { avant: "a =", reponse: "a" }
+            - { avant: "b =", reponse: "b" }
+          correction: "$f(x) = {{nb(a)}}x + ({{nb(b)}})$ : la droite coupe l'axe vertical en {{nb(b)}} et monte de {{nb(a)}} quand x avance de 1."
+    exercices:
+      - type: nombre
+        vars: { x1: "-3..2", x2: "3..6", a: "-4..5", b: "-6..6" }
+        si: "a != 0"
+        enonce: "Une fonction affine vérifie $f({{nb(x1)}}) = {{nb(a*x1+b)}}$ et $f({{x2}}) = {{nb(a*x2+b)}}$. Coefficient directeur ?"
+        reponse: "a"
+        correction: "$a = \\frac{ {{nb(a*x2+b)}} - ({{nb(a*x1+b)}}) }{ {{x2}} - ({{nb(x1)}}) } = \\frac{ {{nb(a*(x2-x1))}} }{ {{x2-x1}} } = {{nb(a)}}$"
+      - type: nombre
+        vars: { a: "-4..5", b: "-6..6", x: "1..4" }
+        si: "a != 0"
+        enonce: "$f(x) = {{nb(a)}}x + b$ et $f({{x}}) = {{nb(a*x+b)}}$. Que vaut $b$ ?"
+        reponse: "b"
+        correction: "$b = {{nb(a*x+b)}} - {{nb(a)}} \\times {{x}} = {{nb(b)}}$"
+      - type: nombre
+        vars: { p: [3, 4, 5], k: [1, 2], d: "5..20" }
+        enonce: "Un taxi coûte {{p}} € de prise en charge plus {{k}} € par km. Prix d'une course de {{d}} km ?"
+        reponse: "p+k*d"
+        unite: €
+        correction: "$f({{d}}) = {{k}} \\times {{d}} + {{p}} = {{p+k*d}}$ €"
+      - type: expression
+        vars: { a: "-5..6", b: "-8..8" }
+        si: "a != 0 && b != 0"
+        enonce: "Écris $f(x)$ pour la fonction affine de coefficient directeur {{nb(a)}} et d'ordonnée à l'origine {{nb(b)}}."
+        reponse: "{{a}}x+({{b}})"
+        variables: [x]
+        correction: "$f(x) = {{nb(a)}}x + ({{nb(b)}})$"
+      - type: qcm
+        vars: { a: "-5..-1" }
+        enonce: "La droite de $f(x) = {{nb(a)}}x + 3$…"
+        choix: ["descend", "monte", "est horizontale", "passe par l'origine"]
+        correction: "Le coefficient directeur {{nb(a)}} est négatif : la droite descend."
+
+  - id: modeliser-graphique
+    titre: Résoudre graphiquement et modéliser
+    objectif: Je résous une équation ou compare deux tarifs à l'aide de graphiques.
+    mots: [intersection, modéliser]
+    etapes:
+      - dialogue:
+          - mia: "Tarif A : 5 € par séance. Tarif B : abonnement 30 € + 2 € par séance. Lequel choisir ?"
+          - neo: "Je trace les deux droites. Là où elles se croisent, les tarifs sont égaux !"
+      - visuel:
+          type: graphe
+          xmin: 0
+          xmax: 16
+          ymin: 0
+          ymax: 80
+          pas_x: 2
+          pas_y: 10
+          fonctions: [{ f: "5*x", nom: "A : 5x" }, { f: "2*x+30", nom: "B : 2x + 30" }]
+          points: [{ x: 10, y: 50, label: "(10 ; 50)" }]
+        legende: "Les droites se coupent pour 10 séances : avant, A est moins cher ; après, B est moins cher."
+      - texte: |
+          - Résoudre $f(x) = g(x)$ graphiquement : chercher les **abscisses des points d'intersection** des deux courbes.
+          - Résoudre $f(x) > g(x)$ : chercher les $x$ où la courbe de $f$ est **au-dessus** de celle de $g$.
+          - Vérifier par le calcul : $5x = 2x + 30 \Rightarrow 3x = 30 \Rightarrow x = 10$.
+      - a_quoi_ca_sert: "Choisir un forfait téléphonique ou un abonnement, trouver le seuil de rentabilité d'une entreprise, comparer deux offres d'emploi…"
+      - question:
+          type: nombre
+          vars: { p: [4, 5, 6, 8], a: [20, 30, 40], q: [1, 2, 3] }
+          si: "p > q && a % (p - q) == 0"
+          enonce: "Tarif A : {{p}} € par séance. Tarif B : {{a}} € d'abonnement + {{q}} € par séance. Pour combien de séances les tarifs sont-ils égaux ?"
+          reponse: "a/(p-q)"
+          correction: "${{p}}x = {{q}}x + {{a}} \\Rightarrow {{p-q}}x = {{a}} \\Rightarrow x = {{a/(p-q)}}$ séances."
+    exercices:
+      - type: nombre
+        vars: { p: [4, 5, 6, 8, 10], a: [12, 20, 24, 30, 40, 60], q: [1, 2, 3] }
+        si: "p > q && a % (p - q) == 0"
+        enonce: "A : {{p}} € la séance. B : {{a}} € + {{q}} € la séance. Nombre de séances pour lequel les prix sont égaux ?"
+        reponse: "a/(p-q)"
+        correction: "$x = \\frac{ {{a}} }{ {{p-q}} } = {{a/(p-q)}}$"
+      - type: nombre
+        vars: { a: "1..4", b: "-6..6", c: "-3..-1", d: "-6..6" }
+        si: "(d - b) % (a - c) == 0"
+        enonce: "Abscisse du point d'intersection des droites $y = {{a}}x + ({{nb(b)}})$ et $y = {{nb(c)}}x + ({{nb(d)}})$ ?"
+        reponse: "(d-b)/(a-c)"
+        correction: "${{a}}x + ({{nb(b)}}) = {{nb(c)}}x + ({{nb(d)}}) \\Rightarrow {{a-c}}x = {{nb(d-b)}} \\Rightarrow x = {{nb((d-b)/(a-c))}}$"
+      - type: qcm
+        vars: { n: "12..20" }
+        enonce: "Avec A = 5x et B = 2x + 30, quel tarif est le moins cher pour {{n}} séances ?"
+        choix: ["B", "A", "les deux coûtent pareil"]
+        ordre_fixe: true
+        correction: "A : {{5*n}} € ; B : {{2*n+30}} €. Au-delà de 10 séances, B est moins cher."

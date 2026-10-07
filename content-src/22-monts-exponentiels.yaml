@@ -1,0 +1,216 @@
+id: monts-exponentiels
+titre: Les Monts Exponentiels
+sous_titre: La fonction exponentielle, le logarithme et la croissance
+emoji: 📈
+couleur: "#00838f"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 22
+prerequis: [vallee-des-derivees, jardin-des-suites]
+version: 1.0.0
+intro:
+  - mia: "Les Monts Exponentiels montent… de plus en plus vite ! Leur pente est égale à leur hauteur."
+  - neo: "C'est la fonction exponentielle : la seule fonction qui est sa propre dérivée."
+  - zero: "Et le logarithme, c'est l'ascenseur pour redescendre ?"
+  - mia: "Exactement, Zéro : il fait l'inverse !"
+
+lecons:
+  - id: fonction-exponentielle
+    titre: La fonction exponentielle
+    objectif: Je connais la définition, les propriétés algébriques et la courbe de exp.
+    mots: [exponentielle, nombre e]
+    etapes:
+      - dialogue:
+          - neo: "Imagine une fonction dont la vitesse de croissance est toujours égale à sa valeur. Plus elle est grande, plus elle grandit vite !"
+          - mia: "C'est l'exponentielle : exp' = exp et exp(0) = 1. Et exp(1) = e ≈ 2,718…"
+      - texte: |
+          La **fonction exponentielle** est l'unique fonction dérivable telle que $f' = f$ et $f(0) = 1$. On note $\exp(x) = e^x$ avec $e \approx 2{,}718$.
+
+          **Propriétés** (comme les puissances !) :
+          $$e^{a+b} = e^a \times e^b \qquad e^{-a} = \frac{1}{e^a} \qquad (e^a)^n = e^{na} \qquad e^x > 0 \text{ pour tout } x$$
+      - visuel:
+          type: graphe
+          xmin: -3
+          xmax: 2.5
+          ymin: -1
+          ymax: 10
+          fonctions: [{ f: "exp(x)", nom: "eˣ" }]
+          points: [{ x: 0, y: 1, label: "(0 ; 1)" }, { x: 1, y: 2.718, label: "(1 ; e)" }]
+      - histoire:
+          titre: Le nombre e
+          texte: "Jacques Bernoulli a rencontré ce nombre en 1683 en étudiant les intérêts composés : placer 1 € à 100 % par an, avec des intérêts calculés de plus en plus souvent, donne au maximum $e \\approx 2{,}718$ €. Leonhard Euler lui a donné son nom « e » au XVIIIᵉ siècle."
+      - a_quoi_ca_sert: "La croissance d'une population de bactéries, les intérêts composés en continu, la désintégration radioactive (datation au carbone 14), le refroidissement d'un café, la propagation d'une épidémie…"
+      - question:
+          type: expression
+          vars: { a: "2..9", b: "2..9" }
+          enonce: "Simplifie $e^{ {{a}}x } \\times e^{ {{b}}x }$."
+          reponse: "exp({{a+b}}x)"
+          variables: [x]
+          correction: "$e^{ {{a}}x + {{b}}x } = e^{ {{a+b}}x }$"
+    exercices:
+      - type: expression
+        vars: { a: "2..9", b: "1..6" }
+        si: "a > b"
+        enonce: "Simplifie $\\frac{e^{ {{a}}x }}{e^{ {{b}}x }}$."
+        reponse: "exp({{a-b}}x)"
+        variables: [x]
+        correction: "$e^{ {{a-b}}x }$"
+      - type: nombre
+        enonce: "Que vaut $e^0$ ?"
+        reponse: "1"
+        correction: "$e^0 = 1$, comme toute puissance d'exposant 0."
+      - type: vf
+        enonce: "Vrai ou faux : $e^x$ peut être négatif pour certaines valeurs de $x$."
+        reponse: false
+        correction: "Faux : $e^x > 0$ pour tout réel $x$. Sa courbe est toujours au-dessus de l'axe."
+      - type: nombre
+        vars: { x: [1, 2, 3] }
+        enonce: "Valeur de $e^{ {{x}} }$ arrondie au centième ?"
+        reponse: "round(exp(x), 2)"
+        tolerance: 0.011
+        correction: "$e^{ {{x}} } \\approx {{nb(round(exp(x),2))}}$"
+      - type: expression
+        vars: { k: "2..9" }
+        enonce: "Dérive $f(x) = e^{-{{k}}x}$."
+        reponse: "-{{k}}exp(-{{k}}x)"
+        variables: [x]
+        correction: "$f'(x) = -{{k}}e^{-{{k}}x}$"
+
+  - id: logarithme
+    titre: Le logarithme népérien
+    objectif: Je connais ln, fonction réciproque de exp, et ses propriétés.
+    mots: [logarithme, ln]
+    etapes:
+      - dialogue:
+          - mia: "$e^x = 20$ : quel est x ? On a besoin d'une fonction qui « défait » l'exponentielle."
+          - neo: "C'est le logarithme népérien : x = ln(20) ≈ 3. ln, c'est « l'exposant qu'il faut mettre à e »."
+      - texte: |
+          Pour $a > 0$ : $\ln(a)$ est le nombre tel que $e^{\ln a} = a$. Et $\ln(e^x) = x$.
+          $$\ln 1 = 0 \qquad \ln e = 1 \qquad \ln(ab) = \ln a + \ln b \qquad \ln\frac{a}{b} = \ln a - \ln b \qquad \ln(a^n) = n \ln a$$
+          **Résoudre** $e^x = k$ (avec $k > 0$) : $x = \ln k$.
+      - visuel:
+          type: graphe
+          xmin: -1
+          xmax: 8
+          ymin: -3
+          ymax: 3
+          fonctions: [{ f: "ln(x)", nom: "ln x", de: 0.02 }]
+          points: [{ x: 1, y: 0, label: "(1 ; 0)" }, { x: 2.718, y: 1, label: "(e ; 1)" }]
+      - histoire:
+          titre: John Napier
+          texte: "L'Écossais John Napier (Neper) publie en 1614 les premières tables de logarithmes : elles transforment les multiplications en additions ! Pendant plus de 300 ans, astronomes, navigateurs et ingénieurs ont calculé avec des tables de logarithmes et des règles à calcul."
+      - a_quoi_ca_sert: "L'échelle de Richter des séismes, les décibels du son, le pH en chimie, le temps de doublement d'un placement, les algorithmes (recherche dichotomique en log n)…"
+      - question:
+          type: nombre
+          vars: { k: [2, 5, 10, 20, 100] }
+          enonce: "Résous $e^x = {{k}}$ (valeur arrondie au centième)."
+          reponse: "round(ln(k), 2)"
+          tolerance: 0.011
+          correction: "$x = \\ln {{k}} \\approx {{nb(round(ln(k),2))}}$"
+    exercices:
+      - type: nombre
+        vars: { n: "2..9" }
+        enonce: "Simplifie $\\ln(e^{ {{n}} })$."
+        reponse: "n"
+        correction: "$\\ln(e^{ {{n}} }) = {{n}}$"
+      - type: nombre
+        vars: { a: [2, 3, 5], n: "2..6" }
+        enonce: "$\\ln({{a}}^{ {{n}} }) = k \\ln {{a}}$. Que vaut $k$ ?"
+        reponse: "n"
+        correction: "$\\ln(a^n) = n \\ln a$ : $k = {{n}}$."
+      - type: nombre
+        vars: { k: [3, 7, 15, 50], a: [2, 3] }
+        enonce: "Résous $e^{ {{a}}x } = {{k}}$ (au centième)."
+        reponse: "round(ln(k)/a, 2)"
+        tolerance: 0.011
+        correction: "${{a}}x = \\ln {{k}}$ donc $x = \\frac{\\ln {{k}} }{ {{a}} } \\approx {{nb(round(ln(k)/a,2))}}$"
+      - type: nombre
+        enonce: "Que vaut $\\ln 1$ ?"
+        reponse: "0"
+        correction: "$e^0 = 1$ donc $\\ln 1 = 0$. (Zéro est ravi.)"
+      - type: qcm
+        enonce: "$\\ln(a) + \\ln(b)$ est égal à…"
+        choix: ["$\\ln(ab)$", "$\\ln(a + b)$", "$\\ln(a) \\times \\ln(b)$", "$\\ln(a^b)$"]
+        correction: "Le logarithme transforme les produits en sommes : $\\ln(ab) = \\ln a + \\ln b$."
+
+  - id: croissance-decroissance
+    titre: Croissance et décroissance exponentielles
+    objectif: Je modélise une évolution exponentielle et je calcule un temps de doublement ou une demi-vie.
+    mots: [demi-vie, temps de doublement]
+    etapes:
+      - dialogue:
+          - neo: "Le carbone 14 perd la moitié de sa radioactivité tous les 5 730 ans environ : c'est sa demi-vie."
+          - mia: "Grâce à ça, on peut dater un os ou un morceau de bois ancien !"
+      - texte: |
+          Un modèle exponentiel : $N(t) = N_0 \, e^{kt}$.
+          - $k > 0$ : **croissance** ; le **temps de doublement** vérifie $e^{kT} = 2$, soit $T = \dfrac{\ln 2}{k}$.
+          - $k < 0$ : **décroissance** ; la **demi-vie** vérifie $e^{kT} = \frac{1}{2}$, soit $T = \dfrac{\ln 2}{-k}$.
+
+          **Règle de 70** (approximation pratique) : à $t$ % par an, un capital double en environ $\dfrac{70}{t}$ ans.
+      - a_quoi_ca_sert: "La datation au carbone 14, l'élimination d'un médicament dans le sang, la croissance d'une épargne, la loi de Moore en informatique, l'évolution d'une épidémie au début…"
+      - question:
+          type: nombre
+          vars: { t: [2, 5, 7, 10] }
+          enonce: "Avec la règle de 70, en combien d'années environ un placement à {{t}} % double-t-il ?"
+          reponse: "70/t"
+          unite: ans
+          correction: "70 ÷ {{t}} = {{nb(70/t)}} ans environ."
+    exercices:
+      - type: nombre
+        vars: { n: "1..4" }
+        enonce: "Après {{n}} demi-vies, quelle fraction de la substance radioactive reste-t-il ?"
+        reponse: "1/2^n"
+        forme: fraction
+        correction: "$\\left(\\frac{1}{2}\\right)^{ {{n}} } = {{frac(1,2^n)}}$"
+      - type: nombre
+        vars: { k: [0.05, 0.1, 0.2, 0.35] }
+        enonce: "Une population suit $N(t) = N_0 e^{ {{nb(k,2)}} t }$ (t en années). Temps de doublement (au dixième) ?"
+        reponse: "round(ln(2)/k, 1)"
+        tolerance: 0.051
+        unite: ans
+        correction: "$T = \\frac{\\ln 2}{ {{nb(k)}} } \\approx {{nb(round(ln(2)/k,1))}}$ ans"
+      - type: nombre
+        vars: { n0: [100, 200, 800, 1000], n: "1..3" }
+        enonce: "Un médicament a une demi-vie de 6 h. On en injecte {{n0}} mg. Combien en reste-t-il après {{6*n}} h ?"
+        reponse: "n0/2^n"
+        unite: mg
+        correction: "{{n}} demi-vies : {{n0}} ÷ {{2^n}} = {{nb(n0/2^n)}} mg."
+
+  - id: echelles-logarithmiques
+    titre: Les échelles logarithmiques
+    objectif: Je comprends les échelles logarithmiques (décibels, Richter, pH).
+    mots: [logarithme décimal, échelle logarithmique]
+    etapes:
+      - dialogue:
+          - zero: "Un séisme de magnitude 6, c'est juste un tout petit peu plus fort qu'un séisme de magnitude 5 ?"
+          - neo: "Non ! Chaque point de plus correspond à une amplitude 10 fois plus grande. C'est une échelle LOGARITHMIQUE."
+      - texte: |
+          Le **logarithme décimal** $\log(x) = \dfrac{\ln x}{\ln 10}$ vérifie $\log(10^n) = n$.
+
+          Sur une **échelle logarithmique**, ajouter 1, c'est **multiplier par 10** :
+          - **Séismes** (magnitude) : +1 → amplitude des ondes × 10 (et énergie × 32 environ) ;
+          - **Son** (décibels) : +10 dB → intensité × 10 ;
+          - **Acidité** (pH = −log de la concentration en ions H⁺) : pH 3 est 10 fois plus acide que pH 4.
+      - a_quoi_ca_sert: "Comparer des grandeurs qui varient énormément : bruits, séismes, étoiles (magnitude), acidité, fréquences musicales (les octaves !)…"
+      - question:
+          type: nombre
+          vars: { n: "2..9" }
+          enonce: "$\\log(10^{ {{n}} }) = ?$"
+          reponse: "n"
+          correction: "{{n}}"
+    exercices:
+      - type: nombre
+        vars: { a: "4..6", d: "1..3" }
+        enonce: "Un séisme de magnitude {{a+d}} a une amplitude combien de fois plus grande qu'un séisme de magnitude {{a}} ?"
+        reponse: "10^d"
+        correction: "$10^{ {{d}} } = {{nb(10^d)}}$ fois."
+      - type: nombre
+        vars: { d: [10, 20, 30] }
+        enonce: "Un son de 80 dB est combien de fois plus intense qu'un son de {{80-d}} dB ?"
+        reponse: "10^(d/10)"
+        correction: "+{{d}} dB → $10^{ {{d/10}} } = {{nb(10^(d/10))}}$ fois plus intense."
+      - type: nombre
+        enonce: "$\\log(1\\,000\\,000) = ?$"
+        reponse: "6"
+        correction: "$10^6 = 1\\,000\\,000$, donc 6."

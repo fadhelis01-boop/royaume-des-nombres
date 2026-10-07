@@ -1,0 +1,410 @@
+id: cite-des-formes
+titre: La Cité des Formes
+sous_titre: Figures, angles, symétrie, périmètre, aire et solides
+emoji: 📐
+couleur: "#00897b"
+cycle: graines
+age: 7-10 ans
+niveau: CE1 – CM2
+ordre: 6
+prerequis: [foret-des-nombres]
+version: 1.0.0
+intro:
+  - mia: "La Cité des Formes ! Maisons triangulaires, ponts circulaires, fenêtres carrées… c'est MON quartier préféré."
+  - neo: "Ici, on apprend à reconnaître, tracer et mesurer toutes les formes."
+  - zero: "Moi je suis rond. Enfin… presque. Je suis un ovale très sympathique."
+
+lecons:
+  - id: reconnaitre-formes
+    titre: Reconnaître les figures
+    objectif: Je reconnais le carré, le rectangle, le triangle et le cercle, et je compte leurs côtés et sommets.
+    mots: [côté, sommet, polygone]
+    etapes:
+      - dialogue:
+          - mia: "Regarde les maisons : le toit est un triangle, la porte un rectangle, la fenêtre un carré, la lucarne un cercle !"
+          - neo: "Et pour les reconnaître à coup sûr, on compte les CÔTÉS et les SOMMETS (les coins)."
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [4, 0], C: [4, 3], D: [0, 3] }
+          polygones: [[A, B, C, D]]
+          angles_droits: [[D, A, B], [A, B, C], [B, C, D], [C, D, A]]
+        legende: "Un rectangle : 4 côtés, 4 sommets (A, B, C, D), 4 angles droits."
+      - texte: |
+          | Figure | Côtés | Ce qui la rend spéciale |
+          |---|---|---|
+          | **triangle** | 3 | 3 côtés, 3 sommets |
+          | **carré** | 4 | 4 côtés **égaux** et 4 angles **droits** |
+          | **rectangle** | 4 | 4 angles **droits**, côtés opposés égaux |
+          | **losange** | 4 | 4 côtés **égaux** |
+          | **pentagone / hexagone** | 5 / 6 | |
+          | **cercle** | aucun | tous ses points sont à la même distance du centre |
+
+          Une figure fermée faite de segments s'appelle un **polygone**.
+      - attention:
+          texte: "Un carré est un rectangle spécial (il a 4 angles droits) ET un losange spécial (il a 4 côtés égaux). Penché, un carré reste un carré !"
+          qui: neo
+      - a_quoi_ca_sert: "Les panneaux routiers (triangle = danger, cercle = interdiction, carré = indication), l'architecture, les logos, les jeux de construction…"
+      - question:
+          type: qcm
+          vars: { f: [["triangle", 3], ["carré", 4], ["pentagone", 5], ["hexagone", 6], ["octogone", 8]] }
+          enonce: "Combien de côtés a un {{f_0}} ?"
+          choix: ["{{f_1}}", "{{f_1+1}}", "{{f_1-1}}", "{{f_1*2}}"]
+          correction: "Un {{f_0}} a {{f_1}} côtés."
+    exercices:
+      - type: nombre
+        vars: { f: [["triangle", 3], ["carré", 4], ["rectangle", 4], ["pentagone", 5], ["hexagone", 6], ["octogone", 8]] }
+        enonce: "Combien de sommets a un {{f_0}} ?"
+        reponse: "f_1"
+        correction: "Un polygone a autant de sommets que de côtés : {{f_1}}."
+      - type: qcm
+        enonce: "Quelle figure a 4 côtés égaux et 4 angles droits ?"
+        choix: ["le carré", "le rectangle (pas carré)", "le losange (pas carré)", "le triangle"]
+        correction: "4 côtés égaux ET 4 angles droits : c'est un carré."
+      - type: vf
+        enonce: "Vrai ou faux : un carré est aussi un rectangle."
+        reponse: true
+        correction: "Oui : il a 4 angles droits, comme tout rectangle. C'est un rectangle « spécial » dont les côtés sont tous égaux."
+      - type: qcm
+        enonce: "Le panneau STOP a 8 côtés. C'est un…"
+        choix: ["octogone", "hexagone", "pentagone", "décagone"]
+        correction: "« Octo » veut dire 8 (comme une pieuvre, l'octopus, qui a 8 bras) : c'est un octogone."
+      - type: nombre
+        vars: { n: "2..6" }
+        enonce: "Combien de côtés en tout pour {{n}} triangles et {{n}} carrés ?"
+        reponse: "3*n+4*n"
+        correction: "{{n}} × 3 + {{n}} × 4 = {{3*n}} + {{4*n}} = {{7*n}}."
+
+  - id: angles-droits
+    titre: Les angles et l'angle droit
+    objectif: Je reconnais un angle droit, aigu ou obtus.
+    mots: [angle, angle droit, équerre]
+    etapes:
+      - dialogue:
+          - neo: "Le coin d'une feuille, le coin d'une porte… ce sont des ANGLES DROITS."
+          - mia: "Pour les vérifier, on utilise une équerre. Ou… le coin d'une feuille pliée !"
+      - visuel:
+          type: figure
+          points: { O: [0, 0], A: [4, 0], B: [0, 4], C: [3, 3.2], D: [-3, 2] }
+          segments: [[O, A], [O, B], [O, C, "", true], [O, D, "", true]]
+          angles_droits: [[A, O, B]]
+        legende: "L'angle AOB est droit (le petit carré orange). L'angle AOC est plus petit : aigu. L'angle AOD est plus grand : obtus."
+      - texte: |
+          - **Angle droit** : comme le coin d'une feuille (90°). On le marque d'un petit carré.
+          - **Angle aigu** : plus petit qu'un angle droit (« pointu »).
+          - **Angle obtus** : plus grand qu'un angle droit (« ouvert »).
+      - astuce:
+          texte: "Fabrique ton équerre : plie une feuille en deux, puis encore en deux en faisant coïncider les bords du pli. Le coin obtenu est un angle droit parfait !"
+          qui: mia
+      - a_quoi_ca_sert: "Les maçons vérifient que les murs sont bien droits, les menuisiers que les étagères ne penchent pas. Sans angle droit, les maisons s'écrouleraient !"
+      - question:
+          type: qcm
+          enonce: "Les aiguilles d'une horloge à 3 h forment un angle…"
+          visuel: { type: horloge, h: 3, m: 0 }
+          choix: ["droit", "aigu", "obtus", "plat"]
+          ordre_fixe: true
+          correction: "À 3 h, les aiguilles font un quart de tour : un angle droit."
+    exercices:
+      - type: qcm
+        vars: { h: [1, 2, 4, 5, 3, 9] }
+        enonce: "À {{h}} h pile, les aiguilles forment un angle…"
+        visuel: { type: horloge, h: "=h", m: 0 }
+        choix: ["{{si(h==3 || h==9,'droit',si(h<3,'aigu','obtus'))}}", "{{si(h==3 || h==9,'aigu','droit')}}", "{{si(h==3 || h==9 || h<3,'obtus','aigu')}}"]
+        ordre_fixe: false
+        correction: "Un quart de tour (3 h ou 9 h) fait un angle droit ; moins, c'est aigu ; plus, c'est obtus."
+      - type: vf
+        enonce: "Vrai ou faux : un rectangle a 4 angles droits."
+        reponse: true
+        correction: "Oui, c'est même sa définition !"
+      - type: qcm
+        enonce: "Quel outil sert à vérifier un angle droit ?"
+        choix: ["l'équerre", "le compas", "la balance", "le thermomètre"]
+        correction: "L'équerre."
+      - type: nombre
+        enonce: "Combien d'angles droits dans un carré ?"
+        reponse: "4"
+        correction: "4 angles droits."
+
+  - id: symetrie
+    titre: La symétrie axiale
+    objectif: Je reconnais une figure symétrique et je trouve son axe.
+    mots: [symétrie, axe]
+    etapes:
+      - dialogue:
+          - zero: "Quand je me regarde dans le miroir, il y a un deuxième Zéro ! Il fait TOUT comme moi, mais à l'envers."
+          - mia: "C'est la symétrie ! Un papillon est symétrique : si on le plie au milieu, les deux ailes se superposent."
+      - texte: |
+          Une figure a un **axe de symétrie** si, en la **pliant** le long de cette droite, les deux moitiés se superposent **exactement**.
+
+          - Un carré a **4** axes de symétrie.
+          - Un rectangle (non carré) en a **2**.
+          - Un cercle en a une **infinité** !
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [4, 0], C: [4, 4], D: [0, 4], E: [2, -1], F: [2, 5] }
+          polygones: [[A, B, C, D]]
+          segments: [[E, F, "", true]]
+          noms: false
+        legende: "Le carré et un de ses axes de symétrie (en pointillés)."
+      - astuce:
+          texte: "Les lettres aussi ! A, M, T, V, W ont un axe vertical ; B, C, D, E en ont un horizontal ; H, I, O, X en ont deux."
+          qui: mia
+      - a_quoi_ca_sert: "Les artistes, les architectes (façades de châteaux), la nature (feuilles, visages, flocons de neige)… La symétrie rend les choses belles et équilibrées."
+      - question:
+          type: nombre
+          vars: { f: [["un carré", 4], ["un rectangle (non carré)", 2], ["un triangle équilatéral", 3], ["la lettre A", 1], ["la lettre H", 2]] }
+          enonce: "Combien d'axes de symétrie a {{f_0}} ?"
+          reponse: "f_1"
+          correction: "{{f_0}} a {{f_1}} axe(s) de symétrie."
+    exercices:
+      - type: nombre
+        vars: { f: [["un carré", 4], ["un rectangle (non carré)", 2], ["un triangle équilatéral", 3], ["un hexagone régulier", 6], ["la lettre M", 1], ["la lettre X", 2], ["la lettre F", 0]] }
+        enonce: "Combien d'axes de symétrie a {{f_0}} ?"
+        reponse: "f_1"
+        correction: "{{f_0}} : {{f_1}} axe(s)."
+      - type: qcm
+        enonce: "Quelle lettre a un axe de symétrie vertical ?"
+        choix: ["A", "F", "R", "S"]
+        correction: "Le A se plie en deux verticalement."
+      - type: vf
+        enonce: "Vrai ou faux : un cercle a une infinité d'axes de symétrie."
+        reponse: true
+        correction: "Toute droite qui passe par le centre est un axe de symétrie du cercle."
+      - type: qcm
+        enonce: "Quel mot reste identique dans un miroir posé verticalement à côté ?"
+        choix: ["TOT", "ZÉRO", "NÉO", "MIA"]
+        correction: "T, O et T sont symétriques par un axe vertical, et le mot TOT se lit pareil à l'envers : il est identique dans le miroir."
+
+  - id: perimetre
+    titre: Le périmètre
+    objectif: Je calcule le périmètre d'un polygone, d'un carré et d'un rectangle.
+    mots: [périmètre]
+    etapes:
+      - dialogue:
+          - neo: "Le fermier veut une clôture tout autour de son champ. Combien de mètres de grillage ?"
+          - mia: "On fait le tour et on additionne tous les côtés : c'est le PÉRIMÈTRE !"
+      - visuel:
+          type: figure
+          forme: rectangle
+          longueur: 6
+          largeur: 4
+          unite: m
+        legende: "Périmètre = 6 + 4 + 6 + 4 = 20 m"
+      - texte: |
+          Le **périmètre** est la **longueur du tour** d'une figure.
+
+          - Polygone : j'additionne tous les côtés.
+          - **Carré** de côté $c$ : $P = 4 \times c$
+          - **Rectangle** de longueur $L$ et largeur $\ell$ : $P = 2 \times (L + \ell)$
+      - a_quoi_ca_sert: "Clôturer un jardin, poser une frise autour de ta chambre, mettre un galon autour d'une nappe, savoir combien de tours de stade pour faire 1 km…"
+      - question:
+          type: nombre
+          vars: { L: "3..12", l: "2..8" }
+          si: "l < L"
+          enonce: "Quel est le périmètre de ce rectangle ?"
+          visuel: { type: figure, forme: rectangle, longueur: "=L", largeur: "=l", unite: cm }
+          reponse: "2*(L+l)"
+          unite: cm
+          correction: "{{L}} + {{l}} + {{L}} + {{l}} = {{2*(L+l)}} cm."
+    exercices:
+      - type: nombre
+        vars: { c: "2..15" }
+        enonce: "Périmètre d'un carré de côté {{c}} cm ?"
+        visuel: { type: figure, forme: carre, cote: "=c", unite: cm }
+        reponse: "4*c"
+        unite: cm
+        correction: "4 × {{c}} = {{4*c}} cm."
+      - type: nombre
+        vars: { L: "5..25", l: "2..15" }
+        si: "l < L"
+        enonce: "Un jardin rectangulaire mesure {{L}} m sur {{l}} m. Combien de mètres de clôture pour en faire le tour ?"
+        reponse: "2*(L+l)"
+        unite: m
+        correction: "2 × ({{L}} + {{l}}) = {{2*(L+l)}} m."
+      - type: nombre
+        vars: { a: "3..9", b: "3..9", c: "3..9" }
+        si: "a + b > c && a + c > b && b + c > a"
+        enonce: "Un triangle a des côtés de {{a}} cm, {{b}} cm et {{c}} cm. Son périmètre ?"
+        reponse: "a+b+c"
+        unite: cm
+        correction: "{{a}} + {{b}} + {{c}} = {{a+b+c}} cm."
+      - type: nombre
+        vars: { c: "2..12" }
+        enonce: "Le périmètre d'un carré est {{4*c}} cm. Combien mesure son côté ?"
+        reponse: "c"
+        unite: cm
+        correction: "{{4*c}} ÷ 4 = {{c}} cm."
+      - type: nombre
+        vars: { L: "6..20", l: "2..5" }
+        enonce: "Un rectangle a un périmètre de {{2*(L+l)}} cm et une longueur de {{L}} cm. Quelle est sa largeur ?"
+        reponse: "l"
+        unite: cm
+        indice: "La moitié du périmètre, c'est longueur + largeur."
+        correction: "{{2*(L+l)}} ÷ 2 = {{L+l}} ; {{L+l}} − {{L}} = {{l}} cm."
+
+  - id: aire
+    titre: L'aire (la surface)
+    objectif: Je mesure une aire en comptant des carreaux et je calcule l'aire d'un rectangle.
+    mots: [aire, surface]
+    etapes:
+      - dialogue:
+          - mia: "Le périmètre, c'est le tour. Mais pour savoir combien de moquette il faut, on mesure ce qu'il y a DEDANS."
+          - neo: "C'est l'AIRE ! On compte combien de carreaux on peut poser à l'intérieur."
+      - visuel:
+          type: grille
+          lignes: 3
+          colonnes: 5
+          emoji: "🟪"
+        legende: "3 rangées de 5 carreaux : l'aire est de 15 carreaux."
+      - texte: |
+          L'**aire** mesure la **surface** à l'intérieur d'une figure.
+
+          Pour un **rectangle** : $\text{Aire} = \text{longueur} \times \text{largeur}$.
+          Pour un **carré** : $\text{Aire} = c \times c$.
+
+          L'unité : le **centimètre carré** (cm²) = un carré de 1 cm de côté. Pour une chambre : le **mètre carré** (m²).
+      - attention:
+          texte: "Périmètre et aire, ce n'est PAS la même chose ! Un rectangle de 6 × 1 et un carré de 3 × 3 ont… des aires de 6 et 9, mais des périmètres de 14 et 12 !"
+          qui: neo
+      - a_quoi_ca_sert: "Acheter de la peinture ou du carrelage, comparer la taille de deux appartements (en m²), semer un potager…"
+      - question:
+          type: nombre
+          vars: { l: "2..6", c: "2..8" }
+          enonce: "Quelle est l'aire en carreaux ?"
+          visuel: { type: grille, lignes: "=l", colonnes: "=c", emoji: "🟧" }
+          reponse: "l*c"
+          correction: "{{l}} × {{c}} = {{l*c}} carreaux."
+    exercices:
+      - type: nombre
+        vars: { L: "3..12", l: "2..9" }
+        enonce: "Aire d'un rectangle de {{L}} cm sur {{l}} cm ?"
+        visuel: { type: figure, forme: rectangle, longueur: "=L", largeur: "=l", unite: cm }
+        reponse: "L*l"
+        unite: cm²
+        correction: "{{L}} × {{l}} = {{L*l}} cm²."
+      - type: nombre
+        vars: { c: "2..12" }
+        enonce: "Aire d'un carré de côté {{c}} m ?"
+        reponse: "c*c"
+        unite: m²
+        correction: "{{c}} × {{c}} = {{c*c}} m²."
+      - type: nombre
+        vars: { L: "3..10", l: "2..6" }
+        enonce: "Une chambre de {{L}} m sur {{l}} m. Combien de m² de moquette ?"
+        reponse: "L*l"
+        unite: m²
+        correction: "{{L}} × {{l}} = {{L*l}} m²."
+      - type: qcm
+        vars: { L: "4..9", l: "2..3" }
+        enonce: "Pour un rectangle de {{L}} cm sur {{l}} cm, que vaut l'AIRE ?"
+        choix: ["{{L*l}} cm²", "{{2*(L+l)}} cm²", "{{L+l}} cm²", "{{L*l*2}} cm²"]
+        correction: "Aire = {{L}} × {{l}} = {{L*l}} cm² (le {{2*(L+l)}}, c'est le périmètre, en cm)."
+      - type: nombre
+        vars: { L: "4..12", l: "2..8" }
+        enonce: "Un rectangle a une aire de {{L*l}} cm² et une longueur de {{L}} cm. Sa largeur ?"
+        reponse: "l"
+        unite: cm
+        correction: "{{L*l}} ÷ {{L}} = {{l}} cm."
+
+  - id: solides
+    titre: Les solides
+    objectif: Je reconnais le cube, le pavé, la sphère, le cylindre, le cône et la pyramide.
+    mots: [solide, face, arête, sommet]
+    etapes:
+      - dialogue:
+          - neo: "Un dé, une boîte à chaussures, un ballon, une boîte de conserve… ce sont des SOLIDES : des formes en 3 dimensions !"
+          - zero: "Moi aussi je suis un solide ! Un… zéroïde."
+      - visuel:
+          type: solide
+          forme: cube
+        legende: "Le cube : 6 faces carrées, 12 arêtes, 8 sommets."
+      - texte: |
+          | Solide | Faces | Arêtes | Sommets | Exemple |
+          |---|---|---|---|---|
+          | **cube** | 6 (carrés) | 12 | 8 | un dé |
+          | **pavé droit** | 6 (rectangles) | 12 | 8 | une boîte à chaussures |
+          | **pyramide** (base carrée) | 5 | 8 | 5 | les pyramides d'Égypte |
+          | **cylindre** | 2 disques + 1 face courbe | | | une boîte de conserve |
+          | **cône** | 1 disque + 1 face courbe | | 1 | un cornet de glace |
+          | **sphère** | 1 face courbe | | | un ballon |
+      - visuel:
+          type: solide
+          forme: cylindre
+        legende: "Le cylindre roule… mais seulement dans une direction !"
+      - a_quoi_ca_sert: "Fabriquer des emballages, empiler des boîtes, construire avec des Lego, modéliser en 3D dans les jeux vidéo…"
+      - question:
+          type: nombre
+          enonce: "Combien de faces a un dé (un cube) ?"
+          reponse: "6"
+          correction: "Un cube a 6 faces carrées (et un dé porte les nombres de 1 à 6)."
+    exercices:
+      - type: nombre
+        vars: { q: [["faces", "un cube", 6], ["arêtes", "un cube", 12], ["sommets", "un cube", 8], ["faces", "une pyramide à base carrée", 5], ["sommets", "une pyramide à base carrée", 5], ["arêtes", "une pyramide à base carrée", 8]] }
+        enonce: "Combien de {{q_0}} a {{q_1}} ?"
+        reponse: "q_2"
+        correction: "{{q_1}} a {{q_2}} {{q_0}}."
+      - type: qcm
+        enonce: "Quel solide roule dans toutes les directions ?"
+        choix: ["la sphère", "le cylindre", "le cube", "la pyramide"]
+        correction: "Seule la sphère roule dans tous les sens (le cylindre ne roule que dans une direction)."
+      - type: qcm
+        enonce: "Une boîte de conserve a la forme d'un…"
+        visuel: { type: solide, forme: cylindre }
+        choix: ["cylindre", "cône", "pavé", "cube"]
+        correction: "Deux disques et une face courbe : un cylindre."
+      - type: qcm
+        enonce: "Un cornet de glace a la forme d'un…"
+        visuel: { type: solide, forme: cone }
+        choix: ["cône", "cylindre", "pyramide", "sphère"]
+        correction: "Une pointe et une base ronde : un cône."
+
+  - id: cercle
+    titre: Le cercle, son centre et son rayon
+    objectif: Je connais le centre, le rayon et le diamètre d'un cercle.
+    mots: [cercle, rayon, diamètre, compas]
+    etapes:
+      - dialogue:
+          - mia: "Le π de mon sweat, c'est le nombre secret du cercle ! Mais d'abord, apprenons ses parties."
+          - neo: "Avec un compas, on trace un cercle parfait : la pointe reste au centre, le crayon tourne autour."
+      - visuel:
+          type: figure
+          forme: cercle
+          r: 3
+          unite: cm
+        legende: "Le centre O, et un rayon de 3 cm (le segment de O jusqu'au cercle)."
+      - texte: |
+          - Le **centre** O : le point au milieu.
+          - Le **rayon** : la distance du centre au cercle (c'est l'écartement du compas).
+          - Le **diamètre** : un segment qui traverse le cercle en passant par le centre. **Diamètre = 2 × rayon**.
+
+          Tous les points du cercle sont **à la même distance** du centre.
+      - a_quoi_ca_sert: "Les roues (elles tournent régulièrement parce que l'axe est au centre), les pizzas, les terrains de jeux, les arrosages automatiques qui arrosent en cercle…"
+      - question:
+          type: nombre
+          vars: { r: "2..15" }
+          enonce: "Un cercle a un rayon de {{r}} cm. Quel est son diamètre ?"
+          reponse: "2*r"
+          unite: cm
+          correction: "Diamètre = 2 × {{r}} = {{2*r}} cm."
+    exercices:
+      - type: nombre
+        vars: { r: "2..20" }
+        enonce: "Rayon de {{r}} cm. Diamètre ?"
+        reponse: "2*r"
+        unite: cm
+        correction: "2 × {{r}} = {{2*r}} cm."
+      - type: nombre
+        vars: { r: "2..20" }
+        enonce: "Diamètre de {{2*r}} cm. Rayon ?"
+        reponse: "r"
+        unite: cm
+        correction: "{{2*r}} ÷ 2 = {{r}} cm."
+      - type: vf
+        enonce: "Vrai ou faux : tous les points d'un cercle sont à la même distance du centre."
+        reponse: true
+        correction: "C'est la définition du cercle !"
+      - type: nombre
+        vars: { r: "3..8" }
+        enonce: "Pour tracer un cercle de diamètre {{2*r}} cm, de combien de centimètres faut-il écarter le compas ?"
+        reponse: "r"
+        unite: cm
+        correction: "On écarte le compas du rayon : {{r}} cm."

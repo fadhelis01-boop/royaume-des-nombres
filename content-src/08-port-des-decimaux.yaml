@@ -1,0 +1,405 @@
+id: port-des-decimaux
+titre: Le Port des Décimaux
+sous_titre: La virgule, les dixièmes, les centièmes et les calculs
+emoji: ⚓
+couleur: "#0277bd"
+cycle: graines
+age: 9-11 ans
+niveau: CM1 – 6ᵉ
+ordre: 8
+prerequis: [village-des-fractions]
+version: 1.0.0
+intro:
+  - neo: "Bienvenue au Port des Décimaux ! Les bateaux y sont pesés au gramme près."
+  - mia: "Les nombres décimaux, ce sont des nombres avec une virgule : 2,5 ; 3,14 ; 0,75…"
+  - zero: "La virgule, c'est un petit quai : à gauche les entiers, à droite les morceaux. Et je peux me mettre partout !"
+
+lecons:
+  - id: dixiemes-centiemes
+    titre: Dixièmes et centièmes
+    objectif: Je passe d'une fraction décimale (1/10, 1/100) à l'écriture avec une virgule.
+    mots: [dixième, centième, nombre décimal]
+    etapes:
+      - dialogue:
+          - mia: "Je coupe une unité en 10 : chaque morceau est un DIXIÈME. On l'écrit 1/10… ou 0,1 !"
+          - neo: "Et en 100 : un CENTIÈME, 1/100 = 0,01."
+      - visuel:
+          type: fraction
+          n: 3
+          d: 10
+          forme: barre
+        legende: "3 dixièmes : 3/10 = 0,3"
+      - texte: |
+          $$\frac{1}{10} = 0{,}1 \qquad \frac{1}{100} = 0{,}01 \qquad \frac{1}{1\,000} = 0{,}001$$
+
+          $\frac{347}{100} = 3{,}47$ : 3 unités, 4 dixièmes et 7 centièmes.
+      - visuel:
+          type: abaque
+          nombre: 3.47
+        legende: "Dans un nombre décimal, la virgule sépare la partie entière de la partie décimale."
+      - astuce:
+          texte: "Les décimaux, ce sont les euros et les centimes ! 3,47 €, c'est 3 € et 47 centimes (un centime = un centième d'euro)."
+          qui: neo
+      - a_quoi_ca_sert: "Les prix (2,99 €), les mesures (1,75 m), les temps de course (9,58 s, le record du 100 m), la température (37,5 °C)…"
+      - question:
+          type: nombre
+          vars: { n: "1..9" }
+          enonce: "Écris $\\frac{ {{n}} }{10}$ avec une virgule."
+          reponse: "n/10"
+          correction: "{{n}} dixièmes = {{nb(n/10)}}."
+    exercices:
+      - type: nombre
+        vars: { n: "1..99" }
+        enonce: "Écris $\\frac{ {{n}} }{100}$ avec une virgule."
+        reponse: "n/100"
+        correction: "{{n}} centièmes = {{nb(n/100)}}."
+      - type: nombre
+        vars: { n: "101..999" }
+        enonce: "Écris $\\frac{ {{n}} }{100}$ avec une virgule."
+        reponse: "n/100"
+        correction: "$\\frac{ {{n}} }{100} = {{nb(n/100)}}$"
+      - type: champs
+        vars: { u: "1..9", d: "0..9", c: "1..9" }
+        enonce: "Dans {{nb(u + d/10 + c/100)}}, quel est…"
+        champs:
+          - { avant: "le chiffre des unités :", reponse: "u" }
+          - { avant: "des dixièmes :", reponse: "d" }
+          - { avant: "des centièmes :", reponse: "c" }
+        correction: "{{nb(u + d/10 + c/100)}} = {{u}} unités, {{d}} dixièmes, {{c}} centièmes."
+      - type: nombre
+        vars: { a: "2..9", b: "10..95" }
+        enonce: "Écris en euros : {{a}} € et {{b}} centimes."
+        reponse: "a + b/100"
+        unite: €
+        correction: "{{dec(a + b/100, 2)}} €."
+      - type: nombre
+        vars: { n: "1..9" }
+        enonce: "Combien de centièmes dans {{n}} dixièmes ?"
+        reponse: "10*n"
+        correction: "1 dixième = 10 centièmes, donc {{n}} dixièmes = {{10*n}} centièmes."
+
+  - id: placer-decimaux
+    titre: Placer et encadrer les décimaux
+    objectif: Je place un décimal sur une droite graduée et je l'encadre entre deux entiers.
+    mots: [encadrer]
+    etapes:
+      - dialogue:
+          - neo: "Entre 2 et 3, il n'y a aucun entier… mais une infinité de décimaux !"
+          - zero: "Une infinité ?! Même pas MOI je ne peux pas compter ça."
+      - visuel:
+          type: droite
+          min: 2
+          max: 3
+          pas: 0.1
+          etiquettes: [2, 2.5, 3]
+          point: { v: 2.7, label: "2,7" }
+      - texte: |
+          Entre 2 et 3, on partage en **10 dixièmes** : 2,1 ; 2,2 ; … ; 2,9.
+          Et entre 2,7 et 2,8 on peut encore partager en centièmes : 2,71 ; 2,72…
+
+          **Encadrer** 2,7 entre deux entiers : $2 < 2{,}7 < 3$.
+          **L'arrondir** à l'unité : 2,7 est plus près de 3, donc on arrondit à **3**.
+      - a_quoi_ca_sert: "Lire un thermomètre, une balance de cuisine, le compteur de vitesse, une jauge…"
+      - question:
+          type: droite
+          vars: { n: "1..19" }
+          si: "n != 10"
+          enonce: "Place {{nb(n/10)}} sur la droite."
+          min: 0
+          max: 2
+          pas: 0.1
+          cible: "n/10"
+          tolerance: 0.05
+    exercices:
+      - type: droite
+        vars: { n: "1..19" }
+        si: "n % 5 != 0"
+        enonce: "Place {{nb(n/10)}}."
+        min: 0
+        max: 2
+        pas: 0.1
+        cible: "n/10"
+        tolerance: 0.05
+      - type: champs
+        vars: { x: "101..999" }
+        si: "x % 10 != 0"
+        enonce: "Encadre {{nb(x/100)}} entre deux entiers."
+        champs:
+          - { reponse: "ent(x/100)", apres: "<" }
+          - { avant: "{{nb(x/100)}} <", reponse: "ent(x/100)+1" }
+        correction: "{{ent(x/100)}} < {{nb(x/100)}} < {{ent(x/100)+1}}."
+      - type: nombre
+        vars: { x: "11..99" }
+        si: "x % 10 != 5 && x % 10 != 0"
+        enonce: "Arrondis {{nb(x/10)}} à l'unité."
+        reponse: "round(x/10)"
+        correction: "{{nb(x/10)}} est plus près de {{round(x/10)}}."
+      - type: champs
+        vars: { x: "101..999" }
+        si: "x % 10 != 0"
+        enonce: "Encadre {{nb(x/100)}} au dixième près."
+        champs:
+          - { reponse: "ent(x/10)/10", apres: "<" }
+          - { avant: "{{nb(x/100)}} <", reponse: "ent(x/10)/10 + 0.1" }
+        correction: "{{nb(ent(x/10)/10)}} < {{nb(x/100)}} < {{nb(ent(x/10)/10+0.1)}}."
+
+  - id: comparer-decimaux
+    titre: Comparer les décimaux (attention au piège !)
+    objectif: Je compare correctement deux nombres décimaux.
+    mots: [comparer]
+    etapes:
+      - dialogue:
+          - zero: "2,15 est plus grand que 2,5. Parce que 15 c'est plus grand que 5 !"
+          - neo: "Attends, vérifions ! 2,5 c'est 2,50 : 50 centièmes. Et 2,15, c'est 15 centièmes."
+          - mia: "Donc 2,5 > 2,15 ! Le piège classique, Zéro."
+          - zero: "…Je le savais. C'était un test."
+      - texte: |
+          Pour comparer deux décimaux :
+          1. je compare d'abord les **parties entières** ;
+          2. si elles sont égales, je compare **chiffre par chiffre** après la virgule : dixièmes, puis centièmes…
+
+          **L'astuce** : on peut ajouter des zéros à droite de la partie décimale sans changer le nombre : 2,5 = 2,50 = 2,500. Puis on compare 2,50 et 2,15.
+      - attention:
+          texte: "Un nombre décimal plus « long » n'est pas forcément plus grand ! 0,8 > 0,799. Compare chiffre par chiffre."
+          qui: neo
+      - a_quoi_ca_sert: "Trouver le moins cher (2,90 € ou 2,09 €), le plus rapide à la course (12,4 s ou 12,38 s), le plus grand…"
+      - question:
+          type: comparer
+          vars: { a: "1..9", b: "1..9", c: "10..99" }
+          enonce: "Compare."
+          gauche: "a + b/10"
+          droite: "a + c/100"
+          correction: "Ajoute un zéro : {{nb(a)}},{{b}}0 et {{nb(a + c/100)}}. On compare les centièmes : {{b*10}} et {{c}}."
+    exercices:
+      - type: comparer
+        vars: { a: "0..9", b: "1..9", c: "10..99" }
+        enonce: "Compare."
+        gauche: "a + b/10"
+        droite: "a + c/100"
+        correction: "{{nb(a + b/10)}} = {{dec(a+b/10,2)}} ; on compare avec {{nb(a + c/100)}}."
+      - type: comparer
+        vars: { x: "100..999", y: "100..999" }
+        enonce: "Compare."
+        gauche: "x/100"
+        droite: "y/100"
+        correction: "Partie entière, puis dixièmes, puis centièmes."
+      - type: ordre
+        vars: { a: "1..3", p: "1..9", q: "10..99", r: "100..999" }
+        si: "p/10 != q/100 && q/100 != r/1000 && p/10 != r/1000"
+        enonce: "Range du plus petit au plus grand."
+        items: ["{{nb(a + kieme(1, p/10, q/100, r/1000))}}", "{{nb(a + kieme(2, p/10, q/100, r/1000))}}", "{{nb(a + kieme(3, p/10, q/100, r/1000))}}"]
+        correction: "Même partie entière : on compare chiffre par chiffre après la virgule."
+      - type: vf
+        enonce: "Vrai ou faux : 3,7 = 3,70"
+        reponse: true
+        correction: "7 dixièmes = 70 centièmes. Un zéro à la fin de la partie décimale ne change rien."
+      - type: qcm
+        enonce: "Quel est le plus grand nombre ?"
+        choix: ["0,8", "0,75", "0,799", "0,08"]
+        correction: "On compare les dixièmes : 8 > 7 > 0. Donc 0,8 est le plus grand."
+
+  - id: additionner-decimaux
+    titre: Additionner et soustraire des décimaux
+    objectif: J'additionne et soustrais des décimaux en alignant les virgules.
+    mots: [virgule]
+    etapes:
+      - dialogue:
+          - neo: "Un cahier à 2,35 € et un stylo à 1,9 €. Total ?"
+          - zero: "2,35 + 1,9 = 2,54 !"
+          - mia: "Oh non ! Il faut aligner les VIRGULES, Zéro : les dixièmes sous les dixièmes."
+      - visuel:
+          type: tableau
+          entete: false
+          lignes:
+            - ["", "¹", "", "", ""]
+            - ["", "2", ",", "3", "5"]
+            - ["+", "1", ",", "9", "0"]
+            - ["=", "**4**", "**,**", "**2**", "**5**"]
+        legende: "On aligne les virgules (et on peut compléter 1,9 en 1,90)."
+      - texte: |
+          **Règle d'or** : on **aligne les virgules** (unités sous unités, dixièmes sous dixièmes…), on complète avec des zéros si besoin, puis on calcule comme d'habitude. La virgule du résultat se place sous les autres.
+      - astuce:
+          texte: "Estime pour vérifier : 2,35 + 1,9 ≈ 2 + 2 = 4. Le résultat 4,25 est cohérent, 2,54 non !"
+          qui: neo
+      - a_quoi_ca_sert: "Calculer le total de tes achats, la monnaie à rendre, additionner des temps de course ou des distances…"
+      - question:
+          type: nombre
+          vars: { a: "101..899", b: "11..99" }
+          enonce: "$ {{nb(a/100)}} + {{nb(b/10)}} = ?$"
+          reponse: "a/100 + b/10"
+          correction: "En alignant les virgules : {{nb(a/100)}} + {{nb(b/10)}} = {{nb(a/100+b/10)}}."
+    exercices:
+      - type: nombre
+        vars: { a: "101..899", b: "11..99" }
+        enonce: "${{nb(a/100)}} + {{nb(b/10)}} = ?$"
+        reponse: "a/100 + b/10"
+        correction: "{{nb(a/100+b/10)}}."
+      - type: nombre
+        vars: { a: "200..999", b: "11..199" }
+        si: "b < a"
+        enonce: "${{nb(a/100)}} - {{nb(b/100)}} = ?$"
+        reponse: "(a-b)/100"
+        correction: "{{nb((a-b)/100)}}."
+      - type: nombre
+        vars: { p: "105..1995" }
+        si: "p % 5 == 0 && p < 2000"
+        enonce: "J'achète un livre à {{dec(p/100,2)}} €. Je paie avec 20 €. Monnaie rendue ?"
+        reponse: "20 - p/100"
+        unite: €
+        correction: "20 − {{dec(p/100,2)}} = {{dec(20-p/100,2)}} €."
+      - type: nombre
+        vars: { a: "11..99", b: "11..99", c: "11..99" }
+        enonce: "Trois sauts en longueur : {{nb(a/10)}} m, {{nb(b/10)}} m et {{nb(c/10)}} m. Distance totale ?"
+        reponse: "(a+b+c)/10"
+        unite: m
+        correction: "{{nb((a+b+c)/10)}} m."
+      - type: qcm
+        vars: { a: "2..9", b: "11..95", c: "1..9" }
+        si: "b % 10 != 0"
+        enonce: "${{nb(a + b/100)}} + {{nb(c/10)}} = ?$"
+        choix: ["{{nb(a + b/100 + c/10)}}", "{{nb(a + (b+c)/100)}}", "{{nb(a + b/100 + c)}}", "{{nb(a + b/100 + c/1000)}}"]
+        correction: "On aligne les virgules : les {{c}} dixièmes s'ajoutent aux dixièmes. Résultat : {{nb(a + b/100 + c/10)}}."
+
+  - id: multiplier-decimaux
+    titre: Multiplier un décimal
+    objectif: Je multiplie un décimal par 10, 100, 1 000, par un entier, puis par un décimal.
+    mots: [virgule]
+    etapes:
+      - dialogue:
+          - zero: "2,5 × 10 = 2,50 ! J'ai ajouté un zéro, comme d'habitude !"
+          - neo: "Vérifions : 2,5 × 10 = 25. Les chiffres GLISSENT d'un rang vers la gauche. Ton 2,50 vaut toujours 2,5 !"
+          - zero: "…Je me suis fait avoir par mon propre super-pouvoir."
+      - texte: |
+          - **× 10, × 100, × 1 000** : chaque chiffre glisse de 1, 2, 3 rangs vers la gauche (la virgule semble se déplacer vers la droite) : 3,47 × 100 = 347.
+          - **Par un entier** : 1,25 × 3 = 3,75 (on multiplie comme si la virgule n'existait pas, puis on la replace : 125 × 3 = 375 → 3,75).
+          - **Par un décimal** : 2,4 × 1,5 → 24 × 15 = 360, et il y a **2 chiffres** après la virgule en tout (1 + 1) → **3,60 = 3,6**.
+      - astuce:
+          texte: "Estime toujours : 2,4 × 1,5 ≈ 2 × 1,5 = 3. Le résultat 3,6 est vraisemblable ; 36 ou 0,36 ne le sont pas."
+          qui: mia
+      - a_quoi_ca_sert: "Le prix de 3 kg de pommes à 2,40 € le kilo, convertir des mètres en centimètres, calculer une surface en m²…"
+      - question:
+          type: nombre
+          vars: { a: "11..999", k: [10, 100, 1000] }
+          si: "a % 10 != 0"
+          enonce: "${{nb(a/100)}} \\times {{nb(k)}} = ?$"
+          reponse: "a/100*k"
+          correction: "Les chiffres glissent : {{nb(a/100*k)}}."
+    exercices:
+      - type: nombre
+        vars: { a: "11..999", k: [10, 100, 1000] }
+        si: "a % 10 != 0"
+        enonce: "${{nb(a/100)}} \\times {{nb(k)}} = ?$"
+        reponse: "a/100*k"
+        correction: "{{nb(a/100*k)}}."
+      - type: nombre
+        vars: { a: "11..99", n: "2..9" }
+        enonce: "${{nb(a/10)}} \\times {{n}} = ?$"
+        reponse: "a/10*n"
+        correction: "{{a}} × {{n}} = {{a*n}}, avec 1 chiffre après la virgule : {{nb(a*n/10)}}."
+      - type: nombre
+        vars: { a: "11..49", b: "11..29" }
+        enonce: "${{nb(a/10)}} \\times {{nb(b/10)}} = ?$"
+        reponse: "a*b/100"
+        indice: "Calcule {{a}} × {{b}}, puis place la virgule (2 chiffres après la virgule en tout)."
+        correction: "{{a}} × {{b}} = {{a*b}} → {{nb(a*b/100)}}."
+      - type: nombre
+        vars: { k: "2..5", p: "120..390" }
+        si: "p % 10 == 0"
+        enonce: "Les pommes coûtent {{dec(p/100,2)}} € le kilo. Prix de {{k}} kg ?"
+        reponse: "k*p/100"
+        unite: €
+        correction: "{{k}} × {{dec(p/100,2)}} = {{dec(k*p/100,2)}} €."
+
+  - id: diviser-decimaux
+    titre: Diviser avec des décimaux
+    objectif: Je divise un décimal par 10, 100, 1 000 et par un entier, et je poursuis une division après la virgule.
+    mots: [quotient décimal]
+    etapes:
+      - dialogue:
+          - mia: "7 pizzas pour 2 personnes : 3 chacun… et il reste 1 pizza. On la coupe en deux : 3,5 pizzas chacun !"
+          - neo: "Avec les décimaux, la division peut continuer après la virgule !"
+      - texte: |
+          - **÷ 10, ÷ 100, ÷ 1 000** : les chiffres glissent vers la **droite** : 45 ÷ 100 = 0,45.
+          - **Continuer après la virgule** : 7 ÷ 2 : 7 = 2 × 3 + 1. Le reste 1 = 10 dixièmes ; 10 ÷ 2 = 5 dixièmes. Donc **7 ÷ 2 = 3,5**.
+          - Parfois ça ne s'arrête jamais : 10 ÷ 3 = 3,333… On donne alors une **valeur approchée** : 3,33.
+      - a_quoi_ca_sert: "Partager une addition au restaurant (47 € pour 4 = 11,75 € chacun), calculer un prix au kilo, une moyenne de notes…"
+      - question:
+          type: nombre
+          vars: { n: [2, 4, 5], q: "11..49" }
+          si: "q % n != 0"
+          enonce: "${{q}} \\div {{n}} = ?$"
+          reponse: "q/n"
+          correction: "{{q}} ÷ {{n}} = {{nb(q/n)}}."
+    exercices:
+      - type: nombre
+        vars: { a: "11..999", k: [10, 100, 1000] }
+        enonce: "${{nb(a)}} \\div {{nb(k)}} = ?$"
+        reponse: "a/k"
+        correction: "Les chiffres glissent vers la droite : {{nb(a/k)}}."
+      - type: nombre
+        vars: { n: [2, 4, 5, 8], q: "11..99" }
+        si: "q % n != 0"
+        enonce: "${{q}} \\div {{n}} = ?$"
+        reponse: "q/n"
+        correction: "{{nb(q/n)}}."
+      - type: nombre
+        vars: { p: [4, 5, 8], t: "21..99" }
+        si: "t % p != 0"
+        enonce: "{{p}} amis partagent une addition de {{t}} € à parts égales. Combien paie chacun ?"
+        reponse: "t/p"
+        unite: €
+        correction: "{{t}} ÷ {{p}} = {{dec(t/p,2)}} €."
+      - type: nombre
+        vars: { a: [10, 20, 50, 100], b: [3, 7, 6] }
+        enonce: "Donne une valeur approchée au centième de ${{a}} \\div {{b}}$."
+        reponse: "round(a/b, 2)"
+        tolerance: 0.011
+        correction: "{{a}} ÷ {{b}} = {{nb(a/b, 4)}}… ≈ {{nb(round(a/b,2))}}."
+
+  - id: arrondir-estimer
+    titre: Arrondir et estimer
+    objectif: J'arrondis un nombre et j'estime un résultat pour vérifier un calcul.
+    mots: [arrondi, estimation, ordre de grandeur]
+    etapes:
+      - dialogue:
+          - neo: "Avant de calculer 49,8 × 3,1, je fais une estimation : environ 50 × 3 = 150."
+          - mia: "Comme ça, si la calculatrice affiche 1 543,8, je sais que je me suis trompée de touche !"
+      - texte: |
+          **Arrondir** : on regarde le chiffre juste après le rang voulu.
+          - s'il vaut **0, 1, 2, 3 ou 4**, on garde le chiffre ;
+          - s'il vaut **5, 6, 7, 8 ou 9**, on ajoute 1.
+
+          Exemples : 3,46 arrondi au dixième → **3,5** · 127 arrondi à la dizaine → **130** · 2 649 arrondi à la centaine → **2 600**.
+
+          **L'ordre de grandeur** d'un calcul, c'est un résultat approché obtenu avec des nombres arrondis.
+      - a_quoi_ca_sert: "Savoir si on a assez d'argent avant d'arriver à la caisse, vérifier une facture, détecter une erreur de calculatrice… Les ingénieurs estiment TOUJOURS avant de calculer."
+      - question:
+          type: nombre
+          vars: { x: "1001..9999" }
+          si: "x % 10 != 5"
+          enonce: "Arrondis {{nb(x/1000, 3)}} au dixième."
+          reponse: "round(x/1000, 1)"
+          correction: "{{nb(x/1000,3)}} ≈ {{nb(round(x/1000,1))}}."
+    exercices:
+      - type: nombre
+        vars: { x: "1001..9999" }
+        si: "ent(x/10) % 10 != 5"
+        enonce: "Arrondis {{nb(x/1000, 3)}} au dixième."
+        reponse: "round(x/1000, 1)"
+        correction: "On regarde le chiffre des centièmes : {{nb(round(x/1000,1))}}."
+      - type: nombre
+        vars: { n: "101..9999" }
+        si: "n % 10 != 5"
+        enonce: "Arrondis {{nb(n)}} à la dizaine."
+        reponse: "round(n/10)*10"
+        correction: "{{nb(round(n/10)*10)}}."
+      - type: qcm
+        vars: { a: "21..89", b: "21..89" }
+        enonce: "Quel est l'ordre de grandeur de ${{a}} \\times {{b}}$ ?"
+        choix: ["{{nb(round(a/10)*round(b/10)*100)}}", "{{nb(round(a/10)*round(b/10)*10)}}", "{{nb(round(a/10)*round(b/10)*1000)}}", "{{nb(round(a/10)+round(b/10))}}"]
+        correction: "≈ {{round(a/10)*10}} × {{round(b/10)*10}} = {{nb(round(a/10)*round(b/10)*100)}}. (Valeur exacte : {{nb(a*b)}}.)"
+      - type: vf
+        vars: { a: "31..69", b: "3..9", e: [10, 100] }
+        enonce: "Ludo calcule ${{a}} \\times {{b}}$ et trouve {{nb(a*b*e)}}. Son résultat est-il vraisemblable ?"
+        reponse: false
+        correction: "Ordre de grandeur : {{round(a/10)*10}} × {{b}} ≈ {{round(a/10)*10*b}}. {{nb(a*b*e)}} est bien trop grand : la bonne réponse est {{a*b}}."

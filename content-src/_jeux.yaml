@@ -1,0 +1,185 @@
+# Familles de questions du jeu « Calcul éclair » (réponses numériques uniquement).
+# Pour ajouter une famille : un identifiant, un titre, un niveau et des exercices de type « nombre ».
+
+additions-10:
+  titre: "Additions jusqu'à 10"
+  niveau: "🌱 CP – CE1"
+  exercices:
+    - type: nombre
+      vars: { a: "0..10", b: "0..10" }
+      si: "a + b <= 10"
+      enonce: "$ {{a}} + {{b}}$"
+      reponse: "a+b"
+
+additions-20:
+  titre: "Additions jusqu'à 20"
+  niveau: "🌱 CE1"
+  exercices:
+    - type: nombre
+      vars: { a: "2..12", b: "2..9" }
+      si: "a + b <= 20"
+      enonce: "$ {{a}} + {{b}}$"
+      reponse: "a+b"
+
+soustractions-20:
+  titre: "Soustractions jusqu'à 20"
+  niveau: "🌱 CE1"
+  exercices:
+    - type: nombre
+      vars: { a: "5..20", b: "1..9" }
+      si: "b < a"
+      enonce: "$ {{a}} - {{b}}$"
+      reponse: "a-b"
+
+complements:
+  titre: "Compléments à 10 et à 100"
+  niveau: "🌱 CE1 – CE2"
+  exercices:
+    - type: nombre
+      vars: { a: "1..9" }
+      enonce: "$ {{a}} + ? = 10$"
+      reponse: "10-a"
+    - type: nombre
+      vars: { a: "1..9" }
+      enonce: "$ {{10*a}} + ? = 100$"
+      reponse: "100-10*a"
+    - type: nombre
+      vars: { a: "11..89" }
+      enonce: "$ {{a}} + ? = 100$"
+      reponse: "100-a"
+
+doubles-moities:
+  titre: "Doubles et moitiés"
+  niveau: "🌱 CE1 – CE2"
+  exercices:
+    - type: nombre
+      vars: { a: "2..50" }
+      enonce: "Double de {{a}}"
+      reponse: "2*a"
+    - type: nombre
+      vars: { a: "2..50" }
+      enonce: "Moitié de {{2*a}}"
+      reponse: "a"
+
+tables:
+  titre: "Toutes les tables (2 à 10)"
+  niveau: "🌿 CE2 – CM1"
+  exercices:
+    - type: nombre
+      vars: { a: "2..10", b: "2..10" }
+      enonce: "$ {{a}} \\times {{b}}$"
+      reponse: "a*b"
+
+tables-difficiles:
+  titre: "Les tables coriaces (6, 7, 8, 9)"
+  niveau: "🌿 CE2 – CM2"
+  exercices:
+    - type: nombre
+      vars: { a: "6..9", b: "3..9" }
+      enonce: "$ {{a}} \\times {{b}}$"
+      reponse: "a*b"
+
+divisions:
+  titre: "Divisions exactes"
+  niveau: "🌿 CM1 – CM2"
+  exercices:
+    - type: nombre
+      vars: { a: "2..10", b: "2..10" }
+      enonce: "$ {{a*b}} \\div {{a}}$"
+      reponse: "b"
+
+fois-10-100:
+  titre: "× et ÷ par 10, 100, 1 000"
+  niveau: "🌿 CM1 – 6ᵉ"
+  exercices:
+    - type: nombre
+      vars: { n: "2..99", k: [10, 100, 1000] }
+      enonce: "$ {{n}} \\times {{nb(k)}}$"
+      reponse: "n*k"
+    - type: nombre
+      vars: { n: "11..999", k: [10, 100] }
+      enonce: "$ {{n}} \\div {{k}}$"
+      reponse: "n/k"
+
+decimaux:
+  titre: "Additions de décimaux"
+  niveau: "🧭 CM2 – 6ᵉ"
+  exercices:
+    - type: nombre
+      vars: { a: "1..99", b: "1..99" }
+      enonce: "${{nb(a/10)}} + {{nb(b/10)}}$"
+      reponse: "(a+b)/10"
+    - type: nombre
+      vars: { a: "2..9" }
+      enonce: "${{nb(a)}} - 0{,}5$"
+      reponse: "a-0.5"
+
+relatifs:
+  titre: "Nombres relatifs"
+  niveau: "🧭 5ᵉ – 4ᵉ"
+  exercices:
+    - type: nombre
+      vars: { a: "-12..12", b: "-12..12" }
+      enonce: "$({{nb(a)}}) + ({{nb(b)}})$"
+      reponse: "a+b"
+    - type: nombre
+      vars: { a: "-9..9", b: "-9..9" }
+      enonce: "$({{nb(a)}}) \\times ({{nb(b)}})$"
+      reponse: "a*b"
+
+pourcentages:
+  titre: "Pourcentages de tête"
+  niveau: "🧭 6ᵉ – 3ᵉ"
+  exercices:
+    - type: nombre
+      vars: { t: [10, 20, 25, 50, 5], q: [20, 40, 60, 80, 100, 200, 400] }
+      enonce: "{{t}} % de {{q}}"
+      reponse: "t*q/100"
+
+carres:
+  titre: "Carrés et racines"
+  niveau: "🧭 4ᵉ – 2nde"
+  exercices:
+    - type: nombre
+      vars: { n: "2..15" }
+      enonce: "${{n}}^2$"
+      reponse: "n*n"
+    - type: nombre
+      vars: { n: "2..15" }
+      enonce: "$\\sqrt{ {{n*n}} }$"
+      reponse: "n"
+
+priorites:
+  titre: "Priorités opératoires"
+  niveau: "🧭 5ᵉ – 3ᵉ"
+  exercices:
+    - type: nombre
+      vars: { a: "2..9", b: "2..9", c: "2..9" }
+      enonce: "${{a}} + {{b}} \\times {{c}}$"
+      reponse: "a+b*c"
+    - type: nombre
+      vars: { a: "2..9", b: "2..9", c: "1..9" }
+      enonce: "${{a}} \\times {{b}} - {{c}}$"
+      reponse: "a*b-c"
+
+equations:
+  titre: "Équations éclair"
+  niveau: "🏰 4ᵉ – 2nde"
+  exercices:
+    - type: nombre
+      vars: { x: "-9..12", a: "2..9", b: "-10..10" }
+      enonce: "${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$, $x = ?$"
+      reponse: "x"
+
+derivees:
+  titre: "Nombres dérivés"
+  niveau: "🏰 1ʳᵉ – Terminale"
+  exercices:
+    - type: nombre
+      vars: { a: "1..5", x: "-4..4" }
+      enonce: "$f(x) = {{a}}x^2$, $f'({{nb(x)}}) = ?$"
+      reponse: "2*a*x"
+    - type: nombre
+      vars: { x: "-3..3" }
+      enonce: "$f(x) = x^3$, $f'({{nb(x)}}) = ?$"
+      reponse: "3*x*x"

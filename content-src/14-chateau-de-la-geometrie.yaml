@@ -1,0 +1,524 @@
+id: chateau-de-la-geometrie
+titre: Le Château de la Géométrie
+sous_titre: Angles, aires, volumes, Pythagore, Thalès et trigonométrie
+emoji: 🏰
+couleur: "#00695c"
+cycle: explorateurs
+age: 11-15 ans
+niveau: 6ᵉ – 3ᵉ
+ordre: 14
+prerequis: [cite-des-formes, port-des-decimaux]
+version: 1.0.0
+intro:
+  - neo: "Le Château de la Géométrie ! Ses architectes connaissent les secrets des triangles depuis l'Antiquité."
+  - mia: "Pythagore, Thalès, Euclide… on va rencontrer les plus grands savants grecs !"
+  - zero: "Et ils avaient des hamsters, les Grecs ?"
+
+lecons:
+  - id: angles
+    titre: Mesurer les angles - la somme dans un triangle
+    objectif: Je mesure un angle en degrés et je sais que la somme des angles d'un triangle vaut 180°.
+    mots: [degré, rapporteur, angle]
+    etapes:
+      - dialogue:
+          - mia: "Un tour complet, c'est 360°. Un angle droit, un quart de tour : 90°."
+          - neo: "Et le plus beau secret : dans N'IMPORTE quel triangle, les trois angles font 180° en tout !"
+      - texte: |
+          On mesure les angles en **degrés** (°) avec un **rapporteur**.
+          - **angle aigu** : entre 0° et 90° · **droit** : 90° · **obtus** : entre 90° et 180° · **plat** : 180°.
+
+          **Théorème** : la somme des angles d'un triangle est **180°**.
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [6, 0], C: [2, 3.5] }
+          polygones: [[A, B, C]]
+        legende: "Découpe les 3 coins d'un triangle en papier et colle-les côte à côte : ils forment un angle plat (180°) !"
+      - a_quoi_ca_sert: "Le cap d'un bateau ou d'un avion, l'inclinaison d'un toit, d'une rampe, les angles de tir en sport, les engrenages…"
+      - question:
+          type: nombre
+          vars: { a: "30..80", b: "30..80" }
+          si: "a + b < 160"
+          enonce: "Un triangle a deux angles de {{a}}° et {{b}}°. Combien mesure le troisième ?"
+          reponse: "180-a-b"
+          unite: °
+          correction: "180 − {{a}} − {{b}} = {{180-a-b}}°."
+    exercices:
+      - type: nombre
+        vars: { a: "20..100", b: "20..70" }
+        si: "a + b < 170"
+        enonce: "Deux angles d'un triangle mesurent {{a}}° et {{b}}°. Le troisième ?"
+        reponse: "180-a-b"
+        unite: °
+        correction: "180 − {{a+b}} = {{180-a-b}}°."
+      - type: nombre
+        vars: { a: "20..70" }
+        enonce: "Dans un triangle rectangle, un angle aigu mesure {{a}}°. Combien mesure l'autre angle aigu ?"
+        reponse: "90-a"
+        unite: °
+        correction: "180 − 90 − {{a}} = {{90-a}}°."
+      - type: nombre
+        vars: { a: "30..80" }
+        enonce: "Un triangle isocèle a un angle au sommet de {{a}}°. Combien mesure chacun des deux angles à la base ?"
+        reponse: "(180-a)/2"
+        unite: °
+        correction: "Les angles à la base sont égaux : (180 − {{a}}) ÷ 2 = {{nb((180-a)/2)}}°."
+      - type: qcm
+        vars: { a: "91..170" }
+        enonce: "Un angle de {{a}}° est…"
+        choix: ["obtus", "aigu", "droit", "plat"]
+        correction: "Entre 90° et 180° : obtus."
+      - type: nombre
+        enonce: "Combien mesure chaque angle d'un triangle équilatéral ?"
+        reponse: "60"
+        unite: °
+        correction: "180 ÷ 3 = 60°."
+
+  - id: figures-particulieres
+    titre: Triangles et quadrilatères particuliers
+    objectif: Je connais les propriétés des triangles et quadrilatères particuliers.
+    mots: [isocèle, équilatéral, parallélogramme, losange]
+    etapes:
+      - dialogue:
+          - neo: "Chaque figure a sa « carte d'identité » : côtés, angles, diagonales."
+          - mia: "Et les figures sont de la même famille : le carré est un rectangle ET un losange !"
+      - texte: |
+          **Triangles**
+          - **isocèle** : 2 côtés égaux (et 2 angles égaux) ;
+          - **équilatéral** : 3 côtés égaux (et 3 angles de 60°) ;
+          - **rectangle** : 1 angle droit.
+
+          **Quadrilatères**
+          | Figure | Côtés | Angles | Diagonales |
+          |---|---|---|---|
+          | parallélogramme | opposés parallèles et égaux | opposés égaux | se coupent en leur milieu |
+          | rectangle | idem | 4 angles droits | + même longueur |
+          | losange | 4 côtés égaux | opposés égaux | + perpendiculaires |
+          | carré | 4 côtés égaux | 4 droits | toutes ces propriétés |
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [5, 0], C: [6.5, 3], D: [1.5, 3] }
+          polygones: [[A, B, C, D]]
+          segments: [[A, C, "", true], [B, D, "", true]]
+        legende: "Un parallélogramme et ses diagonales qui se coupent en leur milieu."
+      - a_quoi_ca_sert: "Les charpentes (les triangles rendent les structures rigides !), le pliage des boîtes, les carrelages, les mécanismes articulés (parallélogrammes des lampes de bureau)…"
+      - question:
+          type: qcm
+          enonce: "Un quadrilatère a 4 côtés égaux et 4 angles droits. C'est…"
+          choix: ["un carré", "un losange (non carré)", "un rectangle (non carré)", "un trapèze"]
+          correction: "4 côtés égaux (losange) + 4 angles droits (rectangle) = carré."
+    exercices:
+      - type: qcm
+        enonce: "Un quadrilatère dont les diagonales se coupent en leur milieu et sont perpendiculaires est…"
+        choix: ["un losange", "un rectangle", "un trapèze", "un cerf-volant quelconque"]
+        correction: "Parallélogramme (diagonales qui se coupent en leur milieu) + diagonales perpendiculaires = losange."
+      - type: vf
+        enonce: "Vrai ou faux : tout rectangle est un parallélogramme."
+        reponse: true
+        correction: "Oui : ses côtés opposés sont parallèles et égaux."
+      - type: vf
+        enonce: "Vrai ou faux : tout losange est un carré."
+        reponse: false
+        correction: "Non : un losange n'a pas forcément d'angles droits."
+      - type: nombre
+        vars: { a: "40..80" }
+        enonce: "Dans un parallélogramme, un angle mesure {{a}}°. Combien mesure l'angle voisin ?"
+        reponse: "180-a"
+        unite: °
+        correction: "Deux angles consécutifs d'un parallélogramme font 180° : {{180-a}}°."
+
+  - id: aires-perimetres
+    titre: Aires du triangle, du parallélogramme et du disque
+    objectif: J'utilise les formules d'aire et la longueur du cercle (avec π).
+    mots: [aire, π, circonférence]
+    etapes:
+      - dialogue:
+          - mia: "Enfin MON nombre : π ≈ 3,14159… C'est le nombre de fois que le diamètre « rentre » dans le tour du cercle !"
+          - neo: "Et un triangle, c'est la moitié d'un rectangle. Donc son aire, c'est base × hauteur ÷ 2."
+      - texte: |
+          | Figure | Aire |
+          |---|---|
+          | rectangle | $L \times \ell$ |
+          | triangle | $\dfrac{b \times h}{2}$ |
+          | parallélogramme | $b \times h$ |
+          | disque de rayon $r$ | $\pi r^2$ |
+
+          **Longueur (périmètre) d'un cercle** : $2 \pi r = \pi \times d$.
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [6, 0], C: [4, 3], H: [4, 0] }
+          polygones: [[A, B, C]]
+          segments: [[C, H, "h", true], [A, B, "b"]]
+          angles_droits: [[B, H, C]]
+        legende: "La hauteur h est perpendiculaire à la base b."
+      - histoire:
+          titre: Le nombre π
+          texte: "Archimède (IIIᵉ siècle av. J.-C.) a encadré π entre 3 + 10/71 et 3 + 1/7 en dessinant des polygones à 96 côtés. Aujourd'hui, les ordinateurs en connaissent des milliers de milliards de décimales, mais 3,14 suffit pour la plupart des calculs (et la NASA utilise une quinzaine de décimales pour ses sondes)."
+      - a_quoi_ca_sert: "La surface d'une pizza, la longueur de la piste d'athlétisme, la quantité de peinture pour un mur triangulaire, la roue d'un vélo (un tour de roue = π × diamètre)…"
+      - question:
+          type: nombre
+          vars: { b: "3..14", h: "2..10" }
+          enonce: "Aire d'un triangle de base {{b}} cm et de hauteur {{h}} cm ?"
+          reponse: "b*h/2"
+          unite: cm²
+          correction: "{{b}} × {{h}} ÷ 2 = {{nb(b*h/2)}} cm²."
+    exercices:
+      - type: nombre
+        vars: { b: "3..20", h: "2..15" }
+        enonce: "Aire d'un triangle : base {{b}} m, hauteur {{h}} m ?"
+        reponse: "b*h/2"
+        unite: m²
+        correction: "{{nb(b*h/2)}} m²."
+      - type: nombre
+        vars: { r: "1..10" }
+        enonce: "Aire d'un disque de rayon {{r}} cm, arrondie au dixième (π ≈ 3,1416) ?"
+        reponse: "round(pi*r*r, 1)"
+        tolerance: 0.15
+        unite: cm²
+        correction: "π × {{r}}² ≈ {{nb(round(pi*r*r,1))}} cm²."
+      - type: nombre
+        vars: { d: "2..30" }
+        enonce: "Longueur d'un cercle de diamètre {{d}} cm, arrondie au dixième ?"
+        reponse: "round(pi*d, 1)"
+        tolerance: 0.15
+        unite: cm
+        correction: "π × {{d}} ≈ {{nb(round(pi*d,1))}} cm."
+      - type: nombre
+        vars: { b: "3..15", h: "2..10" }
+        enonce: "Aire d'un parallélogramme de base {{b}} cm et de hauteur {{h}} cm ?"
+        reponse: "b*h"
+        unite: cm²
+        correction: "{{b}} × {{h}} = {{b*h}} cm²."
+      - type: nombre
+        vars: { d: [50, 60, 70] }
+        enonce: "Une roue de vélo a un diamètre de {{d}} cm. Combien de centimètres parcourt le vélo en un tour de roue (arrondi à l'unité) ?"
+        reponse: "round(pi*d)"
+        tolerance: 1
+        unite: cm
+        correction: "π × {{d}} ≈ {{round(pi*d)}} cm."
+
+  - id: volumes
+    titre: Les volumes
+    objectif: Je calcule le volume d'un pavé, d'un prisme, d'un cylindre, d'un cône et d'une boule.
+    mots: [volume, litre]
+    etapes:
+      - dialogue:
+          - neo: "Le volume, c'est la place qu'occupe un objet. On le mesure en cubes de 1 cm de côté : des cm³."
+          - mia: "Et 1 dm³, c'est exactement 1 litre ! Une brique de lait, c'est 1 dm³."
+      - visuel:
+          type: solide
+          forme: pave
+          labels: { longueur: "L", largeur: "ℓ", hauteur: "h" }
+      - texte: |
+          | Solide | Volume |
+          |---|---|
+          | pavé droit | $L \times \ell \times h$ |
+          | cube | $c^3$ |
+          | prisme / cylindre | aire de la base × hauteur ; cylindre : $\pi r^2 h$ |
+          | pyramide / cône | $\dfrac{\text{aire de la base} \times h}{3}$ ; cône : $\dfrac{\pi r^2 h}{3}$ |
+          | boule | $\dfrac{4}{3} \pi r^3$ |
+
+          **1 dm³ = 1 L** et **1 m³ = 1 000 L**.
+      - a_quoi_ca_sert: "Remplir une piscine ou un aquarium, la contenance d'un réservoir, le béton pour une dalle, la place dans un camion de déménagement…"
+      - question:
+          type: nombre
+          vars: { L: "2..12", l: "2..8", h: "2..6" }
+          enonce: "Volume d'un pavé de {{L}} cm × {{l}} cm × {{h}} cm ?"
+          reponse: "L*l*h"
+          unite: cm³
+          correction: "{{L}} × {{l}} × {{h}} = {{L*l*h}} cm³."
+    exercices:
+      - type: nombre
+        vars: { c: "2..12" }
+        enonce: "Volume d'un cube de côté {{c}} cm ?"
+        reponse: "c^3"
+        unite: cm³
+        correction: "{{c}}³ = {{c^3}} cm³."
+      - type: nombre
+        vars: { L: [5, 8, 10, 12], l: [3, 4, 5], h: [1, 2] }
+        enonce: "Une piscine mesure {{L}} m × {{l}} m et a {{h}} m de profondeur. Combien de litres d'eau pour la remplir ?"
+        reponse: "L*l*h*1000"
+        unite: L
+        correction: "{{L*l*h}} m³ = {{nb(L*l*h*1000)}} L."
+      - type: nombre
+        vars: { r: "2..6", h: "5..15" }
+        enonce: "Volume d'un cylindre de rayon {{r}} cm et de hauteur {{h}} cm, arrondi à l'unité ?"
+        reponse: "round(pi*r*r*h)"
+        tolerance: 1
+        unite: cm³
+        correction: "π × {{r}}² × {{h}} ≈ {{round(pi*r*r*h)}} cm³."
+      - type: nombre
+        vars: { b: [9, 12, 15, 18, 24], h: [5, 10, 20] }
+        enonce: "Une pyramide a une base d'aire {{b}} cm² et une hauteur de {{h}} cm. Son volume ?"
+        reponse: "b*h/3"
+        unite: cm³
+        correction: "{{b}} × {{h}} ÷ 3 = {{nb(b*h/3)}} cm³."
+      - type: nombre
+        vars: { r: "1..6" }
+        enonce: "Volume d'une boule de rayon {{r}} cm, arrondi à l'unité ?"
+        reponse: "round(4/3*pi*r^3)"
+        tolerance: 1
+        unite: cm³
+        correction: "$\\frac{4}{3}\\pi \\times {{r}}^3 \\approx {{round(4/3*pi*r^3)}}$ cm³."
+
+  - id: pythagore
+    titre: Le théorème de Pythagore
+    objectif: J'utilise le théorème de Pythagore pour calculer une longueur dans un triangle rectangle.
+    mots: [Pythagore, hypoténuse]
+    etapes:
+      - dialogue:
+          - neo: "Un triangle rectangle de côtés 3 et 4. Le grand côté mesure… 5 ! Toujours !"
+          - mia: "Parce que 3² + 4² = 9 + 16 = 25 = 5². C'est le théorème de Pythagore !"
+      - visuel:
+          type: figure
+          forme: triangle-rectangle
+          a: 3
+          b: 4
+          label_c: "5"
+          unite: cm
+      - texte: |
+          **Théorème de Pythagore** : dans un triangle **rectangle**, le carré de l'**hypoténuse** (le plus grand côté, en face de l'angle droit) est égal à la **somme des carrés** des deux autres côtés.
+
+          Si ABC est rectangle en A : $$BC^2 = AB^2 + AC^2$$
+
+          - Pour l'hypoténuse : $BC = \sqrt{AB^2 + AC^2}$
+          - Pour un autre côté : $AB = \sqrt{BC^2 - AC^2}$
+      - histoire:
+          titre: Un peu d'histoire
+          texte: "Ce théorème porte le nom de Pythagore (VIᵉ siècle av. J.-C.), mais des tablettes babyloniennes (comme Plimpton 322, vers 1800 av. J.-C.) montrent que des triplets comme 3, 4, 5 étaient connus bien avant. La première démonstration écrite connue se trouve dans les Éléments d'Euclide (livre I, proposition 47)."
+      - a_quoi_ca_sert: "Les maçons tracent des angles droits avec une corde à 13 nœuds (3-4-5) ; la taille d'un écran de télé (diagonale) ; la longueur d'une échelle contre un mur ; la distance « à vol d'oiseau » sur une carte…"
+      - question:
+          type: nombre
+          vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 12, 15], [7, 24, 25]] }
+          enonce: "Triangle rectangle : les côtés de l'angle droit mesurent {{t_0}} cm et {{t_1}} cm. Hypoténuse ?"
+          reponse: "t_2"
+          unite: cm
+          correction: "$\\sqrt{ {{t_0}}^2 + {{t_1}}^2 } = \\sqrt{ {{t_0^2+t_1^2}} } = {{t_2}}$ cm."
+    exercices:
+      - type: nombre
+        vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [12, 16, 20], [20, 21, 29]] }
+        enonce: "Côtés de l'angle droit : {{t_0}} et {{t_1}}. Hypoténuse ?"
+        visuel: { type: figure, forme: triangle-rectangle, a: "=t_0", b: "=t_1", label_c: "?" }
+        reponse: "t_2"
+        correction: "{{t_0}}² + {{t_1}}² = {{t_0^2+t_1^2}} = {{t_2}}²."
+      - type: nombre
+        vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 40, 41]] }
+        enonce: "Hypoténuse {{t_2}} cm, un côté {{t_0}} cm. Le troisième côté ?"
+        reponse: "t_1"
+        unite: cm
+        correction: "$\\sqrt{ {{t_2}}^2 - {{t_0}}^2 } = \\sqrt{ {{t_2^2-t_0^2}} } = {{t_1}}$ cm."
+      - type: nombre
+        vars: { a: "2..9", b: "2..9" }
+        enonce: "Côtés de l'angle droit : {{a}} cm et {{b}} cm. Hypoténuse arrondie au dixième ?"
+        reponse: "round(sqrt(a*a+b*b), 1)"
+        tolerance: 0.051
+        unite: cm
+        correction: "$\\sqrt{ {{a*a+b*b}} } \\approx {{nb(round(sqrt(a*a+b*b),1))}}$ cm."
+      - type: nombre
+        vars: { h: [4, 6, 8, 12], d: [3, 2.5, 6, 5] }
+        enonce: "Une échelle est posée contre un mur. Son pied est à {{nb(d)}} m du mur et elle touche le mur à {{h}} m de hauteur. Longueur de l'échelle (au centième) ?"
+        reponse: "round(sqrt(h*h+d*d), 2)"
+        tolerance: 0.011
+        unite: m
+        correction: "$\\sqrt{ {{h}}^2 + {{nb(d)}}^2 } = \\sqrt{ {{nb(h*h+d*d)}} } \\approx {{nb(round(sqrt(h*h+d*d),2))}}$ m."
+      - type: nombre
+        vars: { l: [16, 32, 48], k: [9, 18, 27] }
+        si: "l*9 == k*16"
+        enonce: "Un écran 16:9 mesure {{l}} pouces de large et {{k}} pouces de haut. Diagonale (au dixième) ?"
+        reponse: "round(sqrt(l*l+k*k),1)"
+        tolerance: 0.051
+        unite: pouces
+        correction: "$\\sqrt{ {{l}}^2 + {{k}}^2 } \\approx {{nb(round(sqrt(l*l+k*k),1))}}$ pouces."
+
+  - id: reciproque-pythagore
+    titre: Prouver qu'un triangle est rectangle
+    objectif: J'utilise la réciproque du théorème de Pythagore.
+    mots: [réciproque]
+    etapes:
+      - dialogue:
+          - mia: "Le théorème marche aussi à l'envers ! Si les longueurs vérifient l'égalité, alors le triangle est rectangle."
+          - neo: "C'est la RÉCIPROQUE. Et si l'égalité est fausse, le triangle n'est pas rectangle."
+      - texte: |
+          On calcule **séparément** :
+          - le carré du **plus grand côté** ;
+          - la somme des carrés des **deux autres**.
+
+          S'ils sont **égaux** → le triangle est rectangle (réciproque de Pythagore). Sinon → il ne l'est pas.
+
+          Exemple : 9, 12, 15 → $15^2 = 225$ et $9^2 + 12^2 = 81 + 144 = 225$ → rectangle ✔.
+      - a_quoi_ca_sert: "Vérifier qu'un mur est bien d'équerre, qu'un terrain est bien rectangulaire, avec seulement un mètre ruban !"
+      - question:
+          type: vf
+          vars: { t: [[3, 4, 5, 1], [5, 12, 13, 1], [4, 5, 6, 0], [6, 7, 9, 0], [7, 24, 25, 1], [8, 9, 12, 0]] }
+          enonce: "Un triangle a des côtés de {{t_0}}, {{t_1}} et {{t_2}} cm. Est-il rectangle ?"
+          reponse: "t_3 == 1"
+          correction: "{{t_2}}² = {{t_2^2}} et {{t_0}}² + {{t_1}}² = {{t_0^2+t_1^2}} : {{si(t_3==1,'égaux, donc rectangle.','différents, donc pas rectangle.')}}"
+    exercices:
+      - type: vf
+        vars: { a: "3..12", b: "3..12", c: "5..17" }
+        si: "a < b && b < c && a + b > c"
+        enonce: "Côtés : {{a}}, {{b}}, {{c}}. Le triangle est-il rectangle ?"
+        reponse: "a*a + b*b == c*c"
+        correction: "{{c}}² = {{c*c}} ; {{a}}² + {{b}}² = {{a*a+b*b}}. {{si(a*a+b*b==c*c,'Égaux : rectangle.','Différents : pas rectangle.')}}"
+      - type: qcm
+        enonce: "Pour savoir si un triangle est rectangle, on compare le carré du plus grand côté avec…"
+        choix: ["la somme des carrés des deux autres côtés", "le carré de la somme des deux autres côtés", "le produit des deux autres côtés", "le périmètre"]
+        correction: "C'est la réciproque de Pythagore."
+      - type: vf
+        vars: { k: "2..6" }
+        enonce: "Un triangle de côtés {{3*k}}, {{4*k}} et {{5*k}} est-il rectangle ?"
+        reponse: true
+        correction: "C'est le triangle 3-4-5 agrandi {{k}} fois : ({{5*k}})² = {{25*k*k}} = {{9*k*k}} + {{16*k*k}}."
+
+  - id: thales
+    titre: Le théorème de Thalès
+    objectif: J'utilise le théorème de Thalès pour calculer une longueur avec des droites parallèles.
+    mots: [Thalès, parallèles, agrandissement]
+    etapes:
+      - dialogue:
+          - neo: "Comment Thalès a-t-il mesuré la hauteur d'une pyramide sans y grimper ?"
+          - mia: "Avec son ombre ! Au moment où l'ombre d'un bâton est égale à sa hauteur, l'ombre de la pyramide est égale à SA hauteur !"
+      - visuel:
+          type: figure
+          points: { A: [0, 0], M: [3, 2], B: [6, 4], N: [4, 0], C: [8, 0] }
+          segments: [[A, B], [A, C], [M, N, "", false], [B, C]]
+        legende: "(MN) parallèle à (BC) : le petit triangle AMN est une réduction du grand ABC."
+      - texte: |
+          **Théorème de Thalès** : si $M \in [AB]$, $N \in [AC]$ et **(MN) // (BC)**, alors
+          $$\frac{AM}{AB} = \frac{AN}{AC} = \frac{MN}{BC}$$
+
+          Le petit triangle est une **réduction** du grand : toutes les longueurs sont multipliées par le même coefficient.
+      - astuce:
+          texte: "Écris le tableau des longueurs « petit triangle / grand triangle » : c'est un tableau de proportionnalité, et le produit en croix fait le reste !"
+          qui: mia
+      - a_quoi_ca_sert: "Mesurer la hauteur d'un arbre ou d'un immeuble avec son ombre, les plans et les maquettes, la photographie (agrandissements), la perspective en dessin…"
+      - question:
+          type: nombre
+          vars: { am: [2, 3, 4], k: [2, 3], mn: [3, 5, 6] }
+          enonce: "(MN) // (BC). AM = {{am}} cm, AB = {{am*k}} cm et MN = {{mn}} cm. Calcule BC."
+          reponse: "mn*k"
+          unite: cm
+          correction: "$\\frac{AM}{AB} = \\frac{MN}{BC}$ : $BC = {{mn}} \\times \\frac{ {{am*k}} }{ {{am}} } = {{mn*k}}$ cm."
+    exercices:
+      - type: nombre
+        vars: { am: [2, 3, 4, 5], ab: [6, 8, 10, 12, 15], mn: [2, 3, 4, 6] }
+        si: "ab > am && (mn*ab) % am == 0"
+        enonce: "(MN) // (BC), AM = {{am}}, AB = {{ab}}, MN = {{mn}}. Calcule BC."
+        reponse: "mn*ab/am"
+        correction: "$BC = \\frac{ {{mn}} \\times {{ab}} }{ {{am}} } = {{nb(mn*ab/am)}}$"
+      - type: nombre
+        vars: { b: [1, 2], o: [1.5, 2, 2.5, 3], O: [12, 15, 18, 24] }
+        enonce: "Un bâton de {{b}} m fait une ombre de {{nb(o)}} m. Au même moment, l'ombre d'un arbre mesure {{O}} m. Hauteur de l'arbre ?"
+        reponse: "O*b/o"
+        unite: m
+        correction: "Proportionnalité : {{O}} × {{b}} ÷ {{nb(o)}} = {{nb(O*b/o)}} m."
+      - type: nombre
+        vars: { an: [3, 4, 5], ac: [9, 12, 15, 20], am: [2, 4, 6] }
+        si: "ac > an && (am*ac) % an == 0"
+        enonce: "(MN) // (BC), AN = {{an}}, AC = {{ac}}, AM = {{am}}. Calcule AB."
+        reponse: "am*ac/an"
+        correction: "$\\frac{AM}{AB} = \\frac{AN}{AC}$ donc $AB = \\frac{ {{am}} \\times {{ac}} }{ {{an}} } = {{nb(am*ac/an)}}$"
+
+  - id: trigonometrie
+    titre: La trigonométrie (cosinus, sinus, tangente)
+    objectif: J'utilise cos, sin et tan dans un triangle rectangle pour calculer une longueur ou un angle.
+    mots: [cosinus, sinus, tangente]
+    etapes:
+      - dialogue:
+          - neo: "Avec Pythagore, il fallait deux côtés. Avec la trigonométrie, un côté et un angle suffisent !"
+          - mia: "Retiens la formule magique : SOH-CAH-TOA !"
+      - texte: |
+          Dans un triangle **rectangle**, pour un angle aigu $\alpha$ :
+          $$\cos \alpha = \frac{\text{adjacent}}{\text{hypoténuse}} \qquad \sin \alpha = \frac{\text{opposé}}{\text{hypoténuse}} \qquad \tan \alpha = \frac{\text{opposé}}{\text{adjacent}}$$
+
+          **SOH-CAH-TOA** : **S**inus = **O**pposé / **H**ypoténuse, **C**osinus = **A**djacent / **H**ypoténuse, **T**angente = **O**pposé / **A**djacent.
+
+          Pour retrouver un angle : on utilise les touches $\cos^{-1}$, $\sin^{-1}$, $\tan^{-1}$ (ou Arccos…) de la calculatrice, **en mode degrés**.
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [6, 0], C: [6, 3.5] }
+          polygones: [[A, B, C]]
+          angles_droits: [[A, B, C]]
+          segments: [[A, B, "adjacent"], [B, C, "opposé"], [A, C, "hypoténuse"]]
+        legende: "Pour l'angle en A : le côté adjacent touche A, l'opposé est en face."
+      - a_quoi_ca_sert: "Calculer la hauteur d'une montagne, la pente d'une route, la trajectoire d'un satellite, les jeux vidéo 3D, la navigation, l'astronomie…"
+      - question:
+          type: nombre
+          vars: { h: [5, 8, 10, 12, 20], a: [30, 40, 50, 60] }
+          enonce: "Triangle rectangle : hypoténuse {{h}} cm, angle aigu {{a}}°. Longueur du côté ADJACENT à cet angle (au dixième) ?"
+          reponse: "round(h*cosd(a), 1)"
+          tolerance: 0.051
+          unite: cm
+          correction: "adjacent = hypoténuse × cos({{a}}°) = {{h}} × {{nb(round(cosd(a),4))}} ≈ {{nb(round(h*cosd(a),1))}} cm."
+    exercices:
+      - type: nombre
+        vars: { h: [5, 8, 10, 12, 20], a: [20, 30, 35, 45, 55, 70] }
+        enonce: "Hypoténuse {{h}} cm, angle {{a}}°. Côté OPPOSÉ à l'angle (au dixième) ?"
+        reponse: "round(h*sind(a), 1)"
+        tolerance: 0.051
+        unite: cm
+        correction: "opposé = {{h}} × sin({{a}}°) ≈ {{nb(round(h*sind(a),1))}} cm."
+      - type: nombre
+        vars: { d: [10, 20, 30, 50], a: [25, 30, 40, 50, 60] }
+        enonce: "Je suis à {{d}} m d'un arbre et je vois son sommet sous un angle de {{a}}° (depuis le sol). Hauteur de l'arbre (à l'unité) ?"
+        reponse: "round(d*tand(a))"
+        tolerance: 1
+        unite: m
+        correction: "hauteur = {{d}} × tan({{a}}°) ≈ {{round(d*tand(a))}} m."
+      - type: nombre
+        vars: { t: [[3, 4, 5], [5, 12, 13], [8, 15, 17]] }
+        enonce: "Triangle rectangle : côté adjacent {{t_0}}, hypoténuse {{t_2}}. Angle (au degré près) ?"
+        reponse: "round(acosd(t_0/t_2))"
+        tolerance: 1
+        unite: °
+        correction: "cos α = {{t_0}}/{{t_2}}, donc α = cos⁻¹({{t_0}}/{{t_2}}) ≈ {{round(acosd(t_0/t_2))}}°."
+      - type: qcm
+        enonce: "Dans un triangle rectangle, $\\tan \\alpha$ = …"
+        choix: ["opposé ÷ adjacent", "adjacent ÷ opposé", "opposé ÷ hypoténuse", "adjacent ÷ hypoténuse"]
+        correction: "TOA : Tangente = Opposé / Adjacent."
+
+  - id: transformations
+    titre: Les transformations (symétries, translation, rotation, homothétie)
+    objectif: Je reconnais les transformations et leurs effets sur les figures.
+    mots: [translation, rotation, homothétie]
+    etapes:
+      - dialogue:
+          - mia: "Les frises, les pavages et les rosaces sont construits avec des transformations !"
+          - neo: "Glisser, tourner, retourner, agrandir : quatre façons de déplacer une figure."
+      - texte: |
+          | Transformation | Effet | Conserve |
+          |---|---|---|
+          | **symétrie axiale** | retournement (miroir) | longueurs, angles, aires |
+          | **symétrie centrale** | demi-tour autour d'un point | longueurs, angles, aires |
+          | **translation** | glissement (même direction, même longueur) | longueurs, angles, aires |
+          | **rotation** | rotation d'un angle autour d'un point | longueurs, angles, aires |
+          | **homothétie** de rapport $k$ | agrandissement / réduction | angles ; longueurs × $|k|$, aires × $k^2$ |
+      - attention:
+          texte: "Quand on multiplie les longueurs par k, les aires sont multipliées par k² et les volumes par k³ ! Un cube 2 fois plus grand contient 8 fois plus d'eau."
+          qui: neo
+      - a_quoi_ca_sert: "Les animations et jeux vidéo (chaque mouvement est une transformation), les motifs des tissus et des carrelages, les zooms des photos, les œuvres d'Escher…"
+      - question:
+          type: nombre
+          vars: { k: [2, 3, 4, 5] }
+          enonce: "On agrandit une figure avec un rapport {{k}}. Par combien son AIRE est-elle multipliée ?"
+          reponse: "k*k"
+          correction: "Les aires sont multipliées par k² = {{k*k}}."
+    exercices:
+      - type: nombre
+        vars: { k: [2, 3, 4] }
+        enonce: "Un cube est agrandi avec un rapport {{k}}. Par combien son volume est-il multiplié ?"
+        reponse: "k^3"
+        correction: "Volumes × k³ = {{k^3}}."
+      - type: nombre
+        vars: { a: [12, 18, 20, 36], k: [0.5] }
+        enonce: "Une figure d'aire {{a}} cm² est réduite de moitié (rapport 0,5). Nouvelle aire ?"
+        reponse: "a/4"
+        unite: cm²
+        correction: "Aire × 0,5² = × 0,25 : {{nb(a/4)}} cm²."
+      - type: qcm
+        enonce: "Quelle transformation fait « glisser » une figure sans la tourner ?"
+        choix: ["la translation", "la rotation", "la symétrie axiale", "l'homothétie"]
+        correction: "La translation : un glissement."
+      - type: qcm
+        enonce: "Quelle transformation ne conserve PAS les longueurs (en général) ?"
+        choix: ["l'homothétie", "la rotation", "la translation", "la symétrie centrale"]
+        correction: "L'homothétie agrandit ou réduit."

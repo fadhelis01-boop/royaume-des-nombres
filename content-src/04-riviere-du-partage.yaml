@@ -1,0 +1,368 @@
+id: riviere-du-partage
+titre: La Rivière du Partage
+sous_titre: Partager, diviser, multiples et diviseurs
+emoji: 🌊
+couleur: "#1e88e5"
+cycle: graines
+age: 8-10 ans
+niveau: CE2 – CM2
+ordre: 4
+prerequis: [montagne-des-multiplications]
+version: 1.0.0
+intro:
+  - mia: "Au bord de la Rivière du Partage, les castors partagent tout équitablement."
+  - neo: "Diviser, c'est l'inverse de multiplier. Si tu connais tes tables, tu sais déjà diviser !"
+  - zero: "Une seule règle à retenir : on ne divise JAMAIS par moi. Je suis indivisible… euh, inutilisable comme diviseur."
+
+lecons:
+  - id: partager
+    titre: Partager équitablement
+    objectif: Je sais partager une quantité en parts égales et écrire la division.
+    mots: [division, quotient, partage]
+    etapes:
+      - dialogue:
+          - neo: "12 poissons pour 3 castors. Chacun doit avoir pareil !"
+          - mia: "On distribue un par un : un pour toi, un pour toi, un pour toi… jusqu'à ce qu'il n'y en ait plus."
+          - zero: "Et chacun en a 4 ! J'ai compté. Pour une fois."
+      - visuel:
+          type: objets
+          groupes: [4, 4, 4]
+          emoji: "🐟"
+        legende: "12 partagé en 3 parts égales : 4 chacun. 12 ÷ 3 = 4."
+      - texte: |
+          **Diviser**, c'est **partager en parts égales**. On écrit **12 ÷ 3 = 4** (on lit « 12 divisé par 3 égale 4 »).
+
+          Le résultat s'appelle le **quotient**.
+
+          Pour trouver 12 ÷ 3, je cherche dans les tables : **3 × ? = 12** → 3 × 4 = 12. Donc 12 ÷ 3 = 4.
+      - retiens: "La division est l'opération **inverse** de la multiplication : si $3 \\times 4 = 12$, alors $12 \\div 3 = 4$ et $12 \\div 4 = 3$."
+      - a_quoi_ca_sert: "Partager des bonbons entre amis, répartir des élèves en équipes, savoir combien chacun doit payer au restaurant…"
+      - question:
+          type: nombre
+          vars: { p: "2..5", q: "2..6" }
+          enonce: "{{p*q}} bonbons pour {{p}} enfants. Combien chacun ?"
+          reponse: "q"
+          correction: "{{p}} × {{q}} = {{p*q}}, donc {{p*q}} ÷ {{p}} = {{q}}."
+    exercices:
+      - type: nombre
+        vars: { p: "2..9", q: "2..9" }
+        enonce: "$ {{p*q}} \\div {{p}} = ?$"
+        reponse: "q"
+        indice: "Cherche dans la table de {{p}} : {{p}} × ? = {{p*q}}."
+        correction: "{{p}} × {{q}} = {{p*q}}, donc {{p*q}} ÷ {{p}} = {{q}}."
+      - type: nombre
+        vars: { p: "2..6", q: "2..5" }
+        enonce: "On partage ces cerises entre {{p}} enfants. Combien chacun ?"
+        visuel: { type: objets, groupes: ["=p*q"], emoji: "🍒" }
+        reponse: "q"
+        correction: "{{p*q}} ÷ {{p}} = {{q}}."
+      - type: qcm
+        vars: { p: "3..9", q: "3..9" }
+        si: "p != q"
+        enonce: "Quelle multiplication aide à calculer $ {{p*q}} \\div {{p}}$ ?"
+        choix: ["{{p}} × {{q}} = {{p*q}}", "{{p}} + {{q}} = {{p+q}}", "{{p*q}} × {{p}} = {{p*q*p}}", "{{p}} × {{p}} = {{p*p}}"]
+        correction: "La division défait la multiplication : {{p}} × {{q}} = {{p*q}}."
+      - type: nombre
+        vars: { a: "4..9", e: "4..8" }
+        enonce: "Au restaurant, {{e}} amis paient une note de {{a*e}} €, en parts égales. Combien paie chacun ?"
+        reponse: "a"
+        correction: "{{a*e}} ÷ {{e}} = {{a}} €."
+
+  - id: combien-de-fois
+    titre: Combien de fois ? (faire des groupes)
+    objectif: Je sais utiliser la division pour savoir combien de groupes on peut faire.
+    mots: [division]
+    etapes:
+      - dialogue:
+          - neo: "J'ai 20 œufs. Une boîte contient 6 œufs. Combien de boîtes je remplis ?"
+          - mia: "Ce n'est pas un partage cette fois : on fait des PAQUETS de 6. Combien de fois 6 dans 20 ?"
+      - texte: |
+          La division répond à **deux questions** :
+          1. **Partage** : 20 œufs pour 4 personnes → combien chacun ? (20 ÷ 4 = 5)
+          2. **Groupement** : 20 œufs par boîtes de 4 → combien de boîtes ? (20 ÷ 4 = 5)
+
+          Dans les deux cas, je cherche **combien de fois 4 dans 20**.
+      - visuel:
+          type: objets
+          groupes: [4, 4, 4, 4, 4]
+          emoji: "🥚"
+        legende: "Dans 20, il y a 5 fois 4."
+      - astuce:
+          texte: "Pour trouver combien de fois 6 dans 48, récite la table de 6 jusqu'à 48 : 6, 12, 18, 24, 30, 36, 42, 48… en comptant tes doigts : 8 fois !"
+          qui: neo
+      - a_quoi_ca_sert: "Combien de voitures pour emmener 30 enfants à 4 par voiture, combien de semaines dans 35 jours, combien de paquets de 6 pour 30 yaourts…"
+      - question:
+          type: nombre
+          vars: { b: "3..8", n: "3..9" }
+          enonce: "Combien de boîtes de {{b}} faut-il pour ranger exactement {{b*n}} gâteaux ?"
+          reponse: "n"
+          correction: "{{b*n}} ÷ {{b}} = {{n}} boîtes."
+    exercices:
+      - type: nombre
+        vars: { b: "2..9", n: "2..10" }
+        enonce: "Combien de fois {{b}} dans {{b*n}} ?"
+        reponse: "n"
+        correction: "{{b}} × {{n}} = {{b*n}}."
+      - type: nombre
+        vars: { s: "2..8" }
+        enonce: "Combien de semaines dans {{7*s}} jours ?"
+        reponse: "s"
+        correction: "{{7*s}} ÷ 7 = {{s}} semaines."
+      - type: nombre
+        vars: { p: "4..6", n: "4..9" }
+        enonce: "{{p*n}} enfants partent en sortie dans des voitures de {{p}} places. Combien de voitures ?"
+        reponse: "n"
+        correction: "{{p*n}} ÷ {{p}} = {{n}} voitures."
+      - type: qcm
+        vars: { a: "3..9", b: "3..9" }
+        enonce: "« J'ai {{a*b}} billes et je fais des sachets de {{b}}. » Quel calcul donne le nombre de sachets ?"
+        choix: ["{{a*b}} ÷ {{b}}", "{{a*b}} × {{b}}", "{{a*b}} − {{b}}", "{{a*b}} + {{b}}"]
+        correction: "Combien de fois {{b}} dans {{a*b}} : {{a*b}} ÷ {{b}} = {{a}}."
+
+  - id: le-reste
+    titre: Quand ça ne tombe pas juste — le reste
+    objectif: Je comprends le reste d'une division et je sais quoi en faire dans un problème.
+    mots: [reste]
+    etapes:
+      - dialogue:
+          - zero: "J'ai 17 graines pour 5 amis. Chacun en a 3… et il en reste 2 pour MOI !"
+          - mia: "Bien vu Zéro ! 17 ÷ 5 : 3 chacun, et il RESTE 2."
+          - neo: "Vérifions : 5 × 3 = 15, plus 2 = 17. ✔"
+      - visuel:
+          type: objets
+          groupes: [3, 3, 3, 3, 3, 2]
+          barres: 0
+          emoji: "🌰"
+        legende: "17 = 5 × 3 + 2 → quotient 3, reste 2."
+      - texte: |
+          Quand le partage ne tombe pas juste, il y a un **reste** :
+
+          $17 = 5 \times 3 + 2$ → **quotient 3, reste 2**.
+
+          Le reste est **toujours plus petit** que le diviseur (sinon, on pourrait encore donner un de plus à chacun !).
+      - attention:
+          texte: "Dans un problème, réfléchis à ce que devient le reste ! 30 enfants, voitures de 4 places : 30 ÷ 4 = 7 reste 2… mais il faut **8 voitures**, sinon 2 enfants restent sur le trottoir !"
+          qui: neo
+      - a_quoi_ca_sert: "Savoir combien de bus réserver, combien de paquets complets on peut faire, quel jour de la semaine tombera dans 100 jours (100 = 14 × 7 + 2)…"
+      - question:
+          type: champs
+          vars: { d: "3..7", q: "2..8", r: "1..6" }
+          si: "r < d"
+          enonce: "{{d*q+r}} billes partagées entre {{d}} enfants."
+          champs:
+            - { avant: "Chacun reçoit", reponse: "q", apres: "billes" }
+            - { avant: "Il en reste", reponse: "r", apres: "" }
+          correction: "{{d}} × {{q}} = {{d*q}}, et {{d*q+r}} − {{d*q}} = {{r}}."
+    exercices:
+      - type: champs
+        vars: { d: "2..9", q: "2..9", r: "1..8" }
+        si: "r < d"
+        enonce: "$ {{d*q+r}} \\div {{d}}$"
+        champs:
+          - { avant: "quotient", reponse: "q" }
+          - { avant: "reste", reponse: "r" }
+        correction: "{{d*q+r}} = {{d}} × {{q}} + {{r}}."
+      - type: nombre
+        vars: { p: [4, 5, 6], n: "15..40" }
+        si: "n % p != 0"
+        enonce: "{{n}} enfants, des voitures de {{p}} places. Combien de voitures au minimum ?"
+        reponse: "ceil(n/p)"
+        indice: "Attention au reste : personne ne doit rester à pied !"
+        correction: "{{n}} = {{p}} × {{ent(n/p)}} + {{n%p}} : il faut une voiture de plus pour les {{n%p}} derniers, soit {{ceil(n/p)}} voitures."
+      - type: nombre
+        vars: { b: [6, 10, 12], n: "20..70" }
+        si: "n % b != 0"
+        enonce: "Avec {{n}} œufs, combien de boîtes de {{b}} peut-on remplir COMPLÈTEMENT ?"
+        reponse: "ent(n/b)"
+        correction: "{{n}} = {{b}} × {{ent(n/b)}} + {{n%b}} : {{ent(n/b)}} boîtes pleines (il reste {{n%b}} œufs)."
+      - type: vf
+        vars: { d: "3..9", q: "2..9" }
+        enonce: "Vrai ou faux : dans une division par {{d}}, le reste peut être égal à {{d}}."
+        reponse: false
+        correction: "Le reste est toujours plus petit que le diviseur : si on avait encore {{d}} objets, on pourrait en redonner un à chacun."
+
+  - id: division-euclidienne
+    titre: La division euclidienne
+    objectif: J'écris l'égalité dividende = diviseur × quotient + reste.
+    mots: [dividende, diviseur, quotient, reste]
+    etapes:
+      - dialogue:
+          - neo: "Il y a plus de 2 300 ans, un savant grec, Euclide, a écrit cette règle dans un livre célèbre."
+          - mia: "Et on l'utilise encore aujourd'hui, dans les ordinateurs !"
+      - texte: |
+          Pour toute division d'un entier $a$ par un entier $b$ (non nul), on peut écrire :
+
+          $$a = b \times q + r \quad \text{avec} \quad 0 \le r < b$$
+
+          - $a$ : le **dividende** (ce qu'on partage)
+          - $b$ : le **diviseur** (en combien on partage)
+          - $q$ : le **quotient**
+          - $r$ : le **reste**
+      - exemple:
+          titre: 47 divisé par 6
+          enonce: Écris la division euclidienne de 47 par 6.
+          etapes:
+            - "Dans la table de 6 : 6 × 7 = 42 et 6 × 8 = 48 (trop grand)."
+            - "Donc le quotient est 7."
+            - "Le reste : 47 − 42 = 5, et 5 < 6 ✔."
+          reponse: $47 = 6 \times 7 + 5$
+      - histoire:
+          titre: Un peu d'histoire
+          texte: "Euclide d'Alexandrie a rassemblé vers 300 av. J.-C. les connaissances mathématiques de son époque dans les **Éléments**, un ouvrage en 13 livres. Les livres VII à IX parlent des nombres entiers et contiennent l'algorithme d'Euclide, encore enseigné et utilisé aujourd'hui."
+      - a_quoi_ca_sert: "Convertir des minutes en heures (135 min = 2 × 60 + 15 → 2 h 15 min), trouver le jour de la semaine d'une date, ranger des objets en rangées, et en informatique : les codes secrets et les calendriers utilisent le reste partout !"
+      - question:
+          type: champs
+          vars: { b: "3..9", q: "3..12", r: "0..8" }
+          si: "r < b"
+          enonce: "Complète : $ {{b*q+r}} = {{b}} \\times q + r$"
+          champs:
+            - { avant: "q =", reponse: "q" }
+            - { avant: "r =", reponse: "r" }
+          correction: "{{b*q+r}} = {{b}} × {{q}} + {{r}}."
+    exercices:
+      - type: champs
+        vars: { b: "3..12", q: "3..15", r: "0..11" }
+        si: "r < b"
+        enonce: "Division euclidienne de {{b*q+r}} par {{b}}."
+        champs:
+          - { avant: "quotient", reponse: "q" }
+          - { avant: "reste", reponse: "r" }
+        correction: "{{b*q+r}} = {{b}} × {{q}} + {{r}}."
+      - type: champs
+        vars: { m: "61..300" }
+        si: "m % 60 != 0"
+        enonce: "Convertis {{m}} minutes en heures et minutes."
+        champs:
+          - { reponse: "ent(m/60)", apres: "h" }
+          - { reponse: "m%60", apres: "min" }
+        correction: "{{m}} = 60 × {{ent(m/60)}} + {{m%60}} : {{ent(m/60)}} h {{m%60}} min."
+      - type: qcm
+        vars: { b: "4..9", q: "3..9", r: "1..3" }
+        si: "r < b"
+        enonce: "Quelle égalité est la division euclidienne de {{b*q+r}} par {{b}} ?"
+        choix: ["{{b*q+r}} = {{b}} × {{q}} + {{r}}", "{{b*q+r}} = {{b}} × {{q-1}} + {{r+b}}", "{{b*q+r}} = {{b}} × {{q+1}} − {{b-r}}", "{{b*q+r}} = {{q}} + {{b}} × {{r}}"]
+        correction: "Le reste doit être plus petit que {{b}} : seule {{b*q+r}} = {{b}} × {{q}} + {{r}} convient."
+      - type: texte
+        vars: { j: "8..60" }
+        enonce: "Aujourd'hui, c'est lundi. Quel jour serons-nous dans {{j}} jours ?"
+        reponse: ["{{si(j%7==0,'lundi',si(j%7==1,'mardi',si(j%7==2,'mercredi',si(j%7==3,'jeudi',si(j%7==4,'vendredi',si(j%7==5,'samedi','dimanche'))))))}}"]
+        indice: "Toutes les 7 jours, on retombe sur lundi. Cherche le reste de {{j}} ÷ 7."
+        correction: "{{j}} = 7 × {{ent(j/7)}} + {{j%7}} : on avance de {{j%7}} jour(s) après lundi."
+
+  - id: division-posee
+    titre: La division posée
+    objectif: Je sais poser une division d'un nombre à plusieurs chiffres par un nombre à un chiffre.
+    mots: [potence]
+    etapes:
+      - dialogue:
+          - neo: "Partager 856 bonbons entre 4 enfants… La table de 4 ne va pas jusque-là !"
+          - mia: "On partage d'abord les centaines, puis les dizaines, puis les unités. Morceau par morceau !"
+      - texte: |
+          **856 ÷ 4** (on partage chiffre par chiffre, de gauche à droite) :
+          1. **8 centaines** ÷ 4 = **2** centaines chacun, reste 0.
+          2. **5 dizaines** ÷ 4 = **1** dizaine chacun, reste **1** dizaine → elle devient 10 unités.
+          3. **10 + 6 = 16 unités** ÷ 4 = **4** unités chacun, reste 0.
+
+          Résultat : **214** (et vérification : 4 × 214 = 856 ✔).
+      - visuel:
+          type: tableau
+          entete: false
+          lignes:
+            - ["8 5 6", "│ 4"]
+            - ["− 8", "│―――"]
+            - ["0 5", "│ 2 1 4"]
+            - ["  − 4", ""]
+            - ["  1 6", ""]
+            - ["  − 1 6", ""]
+            - ["    0", ""]
+        legende: "La « potence » : le dividende à gauche, le diviseur à droite, le quotient dessous."
+      - astuce:
+          texte: "Estime le nombre de chiffres du quotient avant de commencer : 856 ÷ 4, c'est entre 200 (800 ÷ 4) et 300 → le quotient a 3 chiffres et commence par 2."
+          qui: neo
+      - a_quoi_ca_sert: "Calculer un prix à l'unité (un pack de 6 bouteilles à 9 € → 1,50 € la bouteille), une moyenne, une vitesse…"
+      - question:
+          type: nombre
+          vars: { d: "2..9", q: "21..99" }
+          enonce: "Pose et calcule : $ {{d*q}} \\div {{d}}$"
+          reponse: "q"
+          correction: "{{d*q}} ÷ {{d}} = {{q}} (vérification : {{d}} × {{q}} = {{d*q}})."
+    exercices:
+      - type: nombre
+        vars: { d: "2..9", q: "12..99" }
+        enonce: "$ {{d*q}} \\div {{d}} = ?$"
+        reponse: "q"
+        correction: "{{d*q}} ÷ {{d}} = {{q}}."
+      - type: nombre
+        vars: { d: "2..9", q: "101..499" }
+        enonce: "$ {{d*q}} \\div {{d}} = ?$"
+        reponse: "q"
+        correction: "{{d*q}} ÷ {{d}} = {{q}}."
+      - type: champs
+        vars: { d: "3..9", q: "21..120", r: "1..8" }
+        si: "r < d"
+        enonce: "$ {{d*q+r}} \\div {{d}}$"
+        champs:
+          - { avant: "quotient", reponse: "q" }
+          - { avant: "reste", reponse: "r" }
+        correction: "{{d*q+r}} = {{d}} × {{q}} + {{r}}."
+      - type: nombre
+        vars: { n: [4, 5, 6, 8], u: "12..45" }
+        enonce: "Un lot de {{n}} livres coûte {{n*u}} €. Quel est le prix d'un livre ?"
+        reponse: "u"
+        correction: "{{n*u}} ÷ {{n}} = {{u}} €."
+
+  - id: multiples-diviseurs
+    titre: Multiples, diviseurs et critères de divisibilité
+    objectif: Je reconnais les multiples et j'utilise les critères de divisibilité par 2, 3, 5, 9 et 10.
+    mots: [multiple, diviseur, divisible]
+    etapes:
+      - dialogue:
+          - mia: "24 bonbons : je peux les partager entre 2, 3, 4, 6, 8 ou 12 amis sans reste !"
+          - neo: "On dit que ce sont les DIVISEURS de 24. Et 24 est un MULTIPLE de chacun d'eux."
+          - zero: "Moi je suis un multiple de tout le monde ! 0 = 7 × 0 = 1000 × 0…"
+          - neo: "…C'est vrai, Zéro. Bien vu !"
+      - texte: |
+          - 24 est un **multiple** de 6 car $24 = 6 \times 4$.
+          - 6 est un **diviseur** de 24 : 24 est **divisible** par 6 (le reste est 0).
+
+          **Critères de divisibilité** (sans poser la division !) :
+
+          | Divisible par… | si… | Exemple |
+          |---|---|---|
+          | **2** | le chiffre des unités est 0, 2, 4, 6 ou 8 | 3 7**4** |
+          | **5** | le chiffre des unités est 0 ou 5 | 1 23**5** |
+          | **10** | le chiffre des unités est 0 | 45**0** |
+          | **3** | la somme des chiffres est un multiple de 3 | 213 → 2+1+3 = 6 |
+          | **9** | la somme des chiffres est un multiple de 9 | 819 → 8+1+9 = 18 |
+      - astuce:
+          texte: "Pour 4 : regarde le nombre formé par les deux derniers chiffres. 1 316 → 16 est dans la table de 4, donc 1 316 est divisible par 4 !"
+          qui: mia
+      - a_quoi_ca_sert: "Savoir si on peut partager sans reste, simplifier des fractions (bientôt !), organiser des équipes égales, vérifier un code-barres…"
+      - question:
+          type: vf
+          vars: { n: "100..999", d: [2, 3, 5, 9] }
+          enonce: "Vrai ou faux : {{n}} est divisible par {{d}}."
+          reponse: "n % d == 0"
+          correction: "{{si(d==2 || d==5, 'On regarde le chiffre des unités : ' + texte(n%10) + '.', 'Somme des chiffres : ' + texte(sommechiffres(n)) + '.')}} Donc {{si(n%d==0,'oui','non')}}."
+    exercices:
+      - type: vf
+        vars: { n: "100..9999", d: [2, 3, 5, 9, 10] }
+        enonce: "Vrai ou faux : {{nb(n)}} est divisible par {{d}}."
+        reponse: "n % d == 0"
+        correction: "{{si(d==2 || d==5 || d==10, 'Chiffre des unités : ' + texte(n%10) + '.', 'Somme des chiffres : ' + texte(sommechiffres(n)) + '.')}} Réponse : {{si(n%d==0,'vrai','faux')}}."
+      - type: qcm
+        vars: { k: "3..9", d: "6..9" }
+        enonce: "Lequel de ces nombres est un multiple de {{d}} ?"
+        choix: ["{{d*k}}", "{{d*k+1}}", "{{d*k-2}}", "{{d*k+3}}"]
+        correction: "{{d}} × {{k}} = {{d*k}}."
+      - type: liste
+        vars: { n: [12, 18, 20, 16, 15, 28] }
+        enonce: "Écris TOUS les diviseurs de {{n}}, séparés par des « ; »."
+        reponse: "diviseurs(n)"
+        correction: "On cherche les paires : 1 × {{n}}, 2 × {{n/2}}… Les diviseurs de {{n}} : {{diviseurs(n)}}."
+      - type: nombre
+        vars: { a: "10..99" }
+        si: "a % 3 != 0"
+        enonce: "Quel est le plus petit nombre à ajouter à {{a}} pour obtenir un multiple de 3 ?"
+        reponse: "(3 - a % 3) % 3"
+        correction: "Somme des chiffres de {{a}} : {{sommechiffres(a)}}. On ajoute {{(3 - a%3)%3}} pour obtenir {{a + (3 - a%3)%3}}."

@@ -1,0 +1,647 @@
+id: ecole-des-astuces
+titre: L'École des Astuces
+sous_titre: Bien apprendre, penser comme un mathématicien, calculer vite et réussir
+emoji: 💡
+couleur: "#fbc02d"
+cycle: astuces
+age: 7 ans et +
+niveau: Tous niveaux
+ordre: 0
+prerequis: []
+version: 1.0.0
+intro:
+  - mia: "Bienvenue à l'École des Astuces ! Ici, on n'apprend pas QUOI calculer… mais COMMENT bien penser."
+  - neo: "Méthodes de champion, trucs de calcul mental, secrets pour apprendre et réussir les contrôles. Tout est ouvert dès le début !"
+  - zero: "Et il y a une astuce pour ne jamais se tromper ? …Non ? Alors une astuce pour être content quand on se trompe ?"
+  - mia: "Oui ! C'est la toute première leçon."
+
+lecons:
+  - id: cerveau-qui-grandit
+    titre: Mon cerveau grandit quand je me trompe
+    objectif: Je sais que l'intelligence se développe avec l'effort et que les erreurs aident à apprendre.
+    mots: [effort, erreur]
+    etapes:
+      - dialogue:
+          - zero: "Je suis nul en maths. Je me trompe tout le temps."
+          - mia: "Personne n'est « nul en maths » ! Ton cerveau est comme un muscle : plus tu t'entraînes, plus il devient fort."
+          - neo: "Et quand tu te trompes, puis que tu comprends ton erreur, ton cerveau crée de nouvelles connexions. Une erreur, c'est un entraînement !"
+      - texte: |
+          **Ce que disent les scientifiques** : quand on apprend quelque chose de nouveau, les neurones de notre cerveau créent et renforcent des **connexions**. C'est en **pratiquant**, en **cherchant** et en **corrigeant ses erreurs** qu'elles se renforcent.
+
+          - Dire « **je n'y arrive pas… ENCORE** » change tout !
+          - Les plus grands mathématiciens se sont trompés des milliers de fois.
+          - Ce qui compte : l'**effort**, la **persévérance** et les **bonnes stratégies**.
+      - astuce:
+          texte: "Quand tu bloques, essaie une autre stratégie : faire un dessin, prendre des petits nombres, relire l'énoncé, demander un indice. Changer de méthode, ce n'est pas abandonner !"
+          qui: mia
+      - retiens: "Une erreur n'est pas un échec : c'est une information. Je regarde POURQUOI je me suis trompé·e, et je réessaie."
+      - a_quoi_ca_sert: "Cet état d'esprit marche pour tout : les maths, le sport, la musique, les langues… et pour toute la vie."
+      - question:
+          type: qcm
+          enonce: "Tu t'es trompé·e à un exercice. Quelle est la MEILLEURE réaction ?"
+          choix: ["Comprendre mon erreur et réessayer", "Me dire que je suis nul·le", "Passer à autre chose pour toujours", "Copier la réponse sans la comprendre"]
+          correction: "Comprendre son erreur, c'est exactement comme ça qu'on progresse !"
+    exercices:
+      - type: qcm
+        enonce: "Quelle phrase aide le plus à progresser ?"
+        choix: ["Je ne sais pas faire… ENCORE.", "Je suis nul·le en maths.", "C'est trop dur pour moi.", "Les maths, ce n'est pas pour moi."]
+        correction: "« Encore » rappelle que tu es en train d'apprendre !"
+      - type: vf
+        enonce: "Vrai ou faux : on naît « bon » ou « mauvais » en maths, et on ne peut rien y changer."
+        reponse: false
+        correction: "Faux ! Le cerveau se développe avec l'entraînement. Tout le monde peut progresser en maths."
+      - type: qcm
+        enonce: "Tu bloques sur un problème depuis un moment. Que peux-tu faire ?"
+        choix: ["Essayer une autre stratégie (dessin, petits nombres…)", "Tout effacer et abandonner", "Écrire n'importe quel nombre", "Pleurer très fort"]
+        correction: "Changer de stratégie est la meilleure idée. (Une petite pause aide aussi !)"
+
+  - id: bien-apprendre
+    titre: Les secrets pour bien apprendre
+    objectif: Je connais les méthodes les plus efficaces pour retenir - se tester, espacer, mélanger, expliquer.
+    mots: [mémoire, révision]
+    etapes:
+      - dialogue:
+          - neo: "Relire 10 fois sa leçon… c'est la méthode la MOINS efficace !"
+          - mia: "Le mieux, c'est de se TESTER : fermer le cahier et essayer de se souvenir. C'est pour ça que le Royaume te pose plein de questions !"
+      - texte: |
+          **Les 4 secrets des champions de la mémoire** (prouvés par la recherche) :
+
+          1. 🧠 **Se tester** : essayer de retrouver la réponse de tête, plutôt que relire.
+          2. 📅 **Espacer** : un peu chaque jour, puis revoir après 1 jour, 3 jours, 1 semaine… (c'est ce que font les « Révisions » du Royaume).
+          3. 🔀 **Mélanger** : alterner les types d'exercices pour apprendre à choisir la bonne méthode.
+          4. 🗣️ **Expliquer** : raconter la leçon à quelqu'un (ou à ton doudou !). Si tu sais l'expliquer, tu l'as compris.
+
+          Et n'oublie pas : **bien dormir** aide le cerveau à ranger ce qu'il a appris !
+      - a_quoi_ca_sert: "Ces méthodes marchent pour toutes les matières : l'histoire, les langues, les sciences… Tu gagneras du temps toute ta vie."
+      - question:
+          type: qcm
+          enonce: "Quelle méthode fait le mieux retenir une leçon ?"
+          choix: ["Se poser des questions sans regarder le cahier", "Relire la leçon 10 fois de suite", "Surligner tout en jaune", "Apprendre tout la veille au soir"]
+          correction: "Se tester (la « pratique de récupération ») est l'une des méthodes les plus efficaces."
+    exercices:
+      - type: ordre
+        enonce: "Range ces moments de révision du plus proche au plus lointain, comme dans la répétition espacée."
+        items: ["le lendemain", "3 jours après", "1 semaine après", "1 mois après"]
+        correction: "On espace de plus en plus : 1 jour, 3 jours, 1 semaine, 1 mois."
+      - type: vf
+        enonce: "Vrai ou faux : réviser 10 minutes chaque jour est plus efficace que 1 heure une seule fois."
+        reponse: true
+        correction: "Oui : l'apprentissage espacé ancre beaucoup mieux les connaissances."
+      - type: qcm
+        enonce: "Pour vérifier que tu as compris une leçon, le mieux est de…"
+        choix: ["l'expliquer à quelqu'un sans regarder", "la recopier", "la lire à voix basse", "regarder les images"]
+        correction: "Expliquer oblige à organiser ses idées : c'est le meilleur test de compréhension."
+
+  - id: polya
+    titre: Les 4 étapes pour résoudre n'importe quel problème
+    objectif: J'applique la méthode de Pólya - comprendre, planifier, exécuter, vérifier.
+    mots: [méthode, problème]
+    etapes:
+      - dialogue:
+          - neo: "Mon arme secrète pour TOUS les problèmes : les 4 étapes de Pólya !"
+          - mia: "On les a vues à l'Atelier des Problèmes. Ici, on les approfondit avec les bonnes questions à se poser."
+      - texte: |
+          ### 1. Comprendre 🧐
+          - Qu'est-ce qu'on cherche ? Qu'est-ce qu'on sait ? Puis-je redire le problème avec mes mots ?
+          ### 2. Faire un plan ✏️
+          - Ai-je déjà vu un problème qui ressemble ? Puis-je faire un **dessin**, un **tableau**, un **schéma en barres** ?
+          - Puis-je essayer avec des **petits nombres** ? Partir de la **fin** ?
+          ### 3. Exécuter 🧮
+          - Je calcule proprement, une étape à la fois, en vérifiant chaque étape.
+          ### 4. Vérifier et réfléchir ✅
+          - Le résultat est-il **vraisemblable** ? Ai-je répondu à **la** question ? Avec l'**unité** ?
+          - Y avait-il une méthode plus simple ?
+      - a_quoi_ca_sert: "George Pólya a écrit ces étapes pour les maths… mais les ingénieurs, les médecins et les chercheurs les utilisent pour tous les problèmes."
+      - question:
+          type: qcm
+          enonce: "Quelle question se pose-t-on à l'étape « Comprendre » ?"
+          choix: ["Qu'est-ce qu'on cherche ?", "Quel est le résultat ?", "Quelle opération est la plus facile ?", "Combien de temps reste-t-il ?"]
+          correction: "Avant tout, savoir ce qu'on cherche !"
+    exercices:
+      - type: qcm
+        enonce: "À quelle étape se demande-t-on « Mon résultat est-il vraisemblable ? »"
+        choix: ["Vérifier", "Comprendre", "Faire un plan", "Exécuter"]
+        correction: "C'est la 4ᵉ étape : vérifier."
+      - type: qcm
+        enonce: "Faire un dessin ou un schéma, c'est surtout utile pour…"
+        choix: ["trouver un plan (comprendre la situation)", "décorer sa copie", "aller plus vite au résultat sans réfléchir", "remplacer les calculs"]
+        correction: "Le dessin aide à comprendre et à trouver la bonne opération."
+      - type: nombre
+        vars: { a: "3..9", b: "2..6" }
+        enonce: "Un escargot monte de {{a}} m le jour et redescend de {{b}} m la nuit dans un puits de {{a+3*(a-b)}} m. Combien de jours pour sortir ?"
+        si: "a > b"
+        reponse: "4"
+        indice: "Attention : le dernier jour, il sort avant de redescendre ! Fais un tableau jour par jour."
+        correction: "Chaque jour complet : +{{a-b}} m. Après 3 jours et 3 nuits : {{3*(a-b)}} m. Le 4ᵉ jour, il monte de {{a}} m et atteint {{a+3*(a-b)}} m : il sort ! Réponse : 4 jours."
+
+  - id: faire-un-dessin
+    titre: Faire un dessin, un schéma ou un tableau
+    objectif: Je représente un problème par un dessin, un schéma ou un tableau pour le résoudre.
+    mots: [schéma, tableau]
+    etapes:
+      - dialogue:
+          - mia: "Mon astuce préférée : dessiner ! Un bon dessin vaut mille calculs."
+          - zero: "Moi je dessine très bien. Surtout des ronds."
+      - exemple:
+          titre: Les poteaux de la clôture
+          enonce: "On plante des poteaux tous les 2 m le long d'une clôture droite de 10 m, y compris aux deux bouts. Combien de poteaux ?"
+          etapes:
+            - "Sans dessin, on répond vite 10 ÷ 2 = 5… mais c'est faux !"
+            - "Dessinons : | — | — | — | — | — | : il y a 5 intervalles de 2 m…"
+            - "… mais 6 poteaux (un de plus que les intervalles) !"
+          reponse: "Il faut 6 poteaux."
+      - texte: |
+          **Quel dessin choisir ?**
+          - Des **objets** ou des **points** pour compter ;
+          - un **schéma en barres** pour comparer ou partager ;
+          - une **droite** pour les distances, les durées, les poteaux ;
+          - un **tableau** pour organiser des essais ou des données ;
+          - un **arbre** pour les choix successifs.
+      - a_quoi_ca_sert: "Les architectes font des plans, les ingénieurs des schémas, les entraîneurs dessinent les tactiques : visualiser aide à penser."
+      - question:
+          type: nombre
+          vars: { e: [2, 3, 5], n: "4..9" }
+          enonce: "Des arbres sont plantés tous les {{e}} m le long d'une allée droite de {{e*n}} m, y compris aux deux bouts. Combien d'arbres ?"
+          reponse: "n+1"
+          indice: "Dessine ! Compte les intervalles puis les arbres."
+          correction: "{{e*n}} ÷ {{e}} = {{n}} intervalles, donc {{n+1}} arbres."
+    exercices:
+      - type: nombre
+        vars: { n: "3..9" }
+        enonce: "On coupe une bûche en {{n}} morceaux. Combien de coups de scie faut-il ?"
+        reponse: "n-1"
+        correction: "Pour {{n}} morceaux, il faut {{n-1}} coupes (dessine la bûche !)."
+      - type: nombre
+        vars: { e: "2..5" }
+        enonce: "Un immeuble a des étages de {{e}} m de haut. Combien de mètres monte-t-on entre le rez-de-chaussée et le 4ᵉ étage ?"
+        reponse: "4*e"
+        correction: "Du RDC au 4ᵉ : 4 étages à monter, soit 4 × {{e}} = {{4*e}} m."
+      - type: nombre
+        vars: { n: "4..8" }
+        enonce: "{{n}} amis assis en rond autour d'une table : chacun serre la main de ses deux voisins seulement. Combien de poignées de main ?"
+        reponse: "n"
+        correction: "Dessine le cercle : il y a autant de poignées de main que de personnes : {{n}}."
+
+  - id: petits-cas
+    titre: Essayer des petits cas et chercher des motifs
+    objectif: Je teste des petits exemples pour découvrir une régularité, puis je généralise.
+    mots: [motif, généraliser]
+    etapes:
+      - dialogue:
+          - neo: "Combien de carrés de toutes tailles sur un échiquier 8 × 8 ? C'est énorme…"
+          - mia: "Et si on essayait autrement ? Avec un 1 × 1 : 1 carré. Un 2 × 2 : 4 + 1 = 5. Un 3 × 3 : 9 + 4 + 1 = 14… Je vois un motif !"
+      - texte: |
+          **La stratégie des petits cas** :
+          1. Je résous le problème pour 1, 2, 3, 4… (petits nombres).
+          2. Je range les résultats dans un **tableau**.
+          3. Je cherche un **motif** (on ajoute ? on multiplie ? des carrés ?).
+          4. Je **généralise**… puis je vérifie (et idéalement je démontre !).
+
+          Échiquier : $1^2 + 2^2 + \cdots + 8^2 = 204$ carrés.
+      - visuel:
+          type: tableau
+          lignes:
+            - ["taille", "1 × 1", "2 × 2", "3 × 3", "4 × 4", "…", "8 × 8"]
+            - ["carrés", "1", "5", "14", "30", "…", "204"]
+      - a_quoi_ca_sert: "C'est la démarche des chercheurs : observer des cas simples pour comprendre les cas compliqués. Les informaticiens testent aussi leurs programmes sur de petits exemples."
+      - question:
+          type: nombre
+          vars: { n: "3..6" }
+          enonce: "Combien de carrés de toutes tailles dans une grille {{n}} × {{n}} ?"
+          reponse: "n*(n+1)*(2*n+1)/6"
+          indice: "1² + 2² + … + {{n}}²"
+          correction: "$1^2 + \\cdots + {{n}}^2 = {{n*(n+1)*(2*n+1)/6}}$"
+    exercices:
+      - type: nombre
+        vars: { n: "5..12" }
+        enonce: "Avec 1 allumette on fait… rien. Pour faire une rangée de {{n}} carrés collés (□□□…), il faut 4 allumettes pour 1 carré, 7 pour 2, 10 pour 3… Combien pour {{n}} carrés ?"
+        reponse: "3*n+1"
+        indice: "Chaque nouveau carré ajoute 3 allumettes."
+        correction: "4 + 3 × ({{n}} − 1) = {{3*n+1}} allumettes."
+      - type: nombre
+        vars: { n: "5..10" }
+        enonce: "Somme des {{n}} premiers nombres impairs : 1 + 3 + 5 + … (essaie avec 1, 2, 3 termes d'abord)."
+        reponse: "n*n"
+        correction: "1 = 1², 1 + 3 = 2², 1 + 3 + 5 = 3²… donc {{n}}² = {{n*n}}."
+      - type: nombre
+        vars: { n: "4..9" }
+        enonce: "Combien de diagonales a un polygone à {{n}} côtés ? (triangle : 0, carré : 2, pentagone : 5…)"
+        reponse: "n*(n-3)/2"
+        correction: "Chaque sommet est relié à {{n-3}} autres par une diagonale ; on divise par 2 : {{n*(n-3)/2}}."
+
+  - id: partir-de-la-fin
+    titre: Partir de la fin (raisonner à rebours)
+    objectif: Je résous un problème en remontant les étapes depuis la fin.
+    mots: [à rebours]
+    etapes:
+      - dialogue:
+          - zero: "J'avais des graines. J'en ai mangé la moitié, puis j'en ai trouvé 5. Maintenant j'en ai 12. Combien j'en avais au début ?"
+          - neo: "Partons de la FIN et faisons tout à l'envers : 12 − 5 = 7, puis le double : 14 !"
+      - texte: |
+          Quand on connaît **la fin** d'une histoire et toutes les **transformations**, on remonte en faisant les **opérations inverses**, dans l'**ordre inverse** :
+          - + devient −, − devient + ;
+          - × devient ÷, ÷ devient ×.
+
+          C'est exactement ce qu'on fait pour résoudre une équation !
+      - a_quoi_ca_sert: "Retrouver l'heure de départ pour arriver à l'heure, reconstituer une dépense, les énigmes, les labyrinthes (souvent plus faciles en partant de la sortie !)…"
+      - question:
+          type: nombre
+          vars: { x: "4..20", a: "2..9" }
+          si: "x % 2 == 0"
+          enonce: "Je pense à un nombre. Je le divise par 2, puis j'ajoute {{a}}. J'obtiens {{x/2+a}}. Quel était mon nombre ?"
+          reponse: "x"
+          correction: "À rebours : {{x/2+a}} − {{a}} = {{x/2}}, puis × 2 = {{x}}."
+    exercices:
+      - type: nombre
+        vars: { x: "3..15", a: "2..5", b: "1..9" }
+        enonce: "Je multiplie un nombre par {{a}} puis je retire {{b}} : j'obtiens {{a*x-b}}. Quel est le nombre ?"
+        reponse: "x"
+        correction: "({{a*x-b}} + {{b}}) ÷ {{a}} = {{x}}."
+      - type: champs
+        vars: { h: "8..10", m: [0, 15, 30], t: "20..50", p: [5, 10, 15] }
+        enonce: "L'école commence à {{heure(h,m)}}. Le trajet dure {{t}} min et Mia met {{p}} min à se préparer. À quelle heure doit-elle commencer à se préparer ?"
+        champs:
+          - { reponse: "ent((h*60+m-t-p)/60)", apres: "h" }
+          - { reponse: "(h*60+m-t-p) % 60", apres: "min" }
+        correction: "{{heure(h,m)}} − {{t}} min − {{p}} min = {{heure(ent((h*60+m-t-p)/60),(h*60+m-t-p)%60)}}."
+      - type: nombre
+        vars: { f: "5..30" }
+        enonce: "Néo dépense la moitié de son argent, puis 3 €. Il lui reste {{f}} €. Combien avait-il au départ ?"
+        reponse: "2*(f+3)"
+        unite: €
+        correction: "({{f}} + 3) × 2 = {{2*(f+3)}} €."
+
+  - id: estimer-verifier
+    titre: Estimer et vérifier sa réponse
+    objectif: J'estime un ordre de grandeur et je vérifie mes résultats par une autre méthode.
+    mots: [estimation, vérification]
+    etapes:
+      - dialogue:
+          - zero: "J'ai calculé l'âge de ma grand-mère : 640 ans."
+          - mia: "Hmm… vraisemblable ? Non ! Les humains vivent rarement plus de 100 ans. Recalcule !"
+      - texte: |
+          **Trois réflexes de vérification :**
+          1. **L'ordre de grandeur** : j'arrondis les nombres et je calcule de tête. 48 × 21 ≈ 50 × 20 = 1 000.
+          2. **Le bon sens** : un prix de 5 000 € pour un croissant, une vitesse de 900 km/h pour un vélo… impossible !
+          3. **L'opération inverse** : si 156 ÷ 12 = 13, alors 13 × 12 doit faire 156 ✔.
+      - astuce:
+          texte: "La preuve par 9 : pour vérifier une multiplication, remplace chaque nombre par la somme de ses chiffres (et recommence jusqu'à 1 chiffre). Si les résultats ne collent pas, il y a forcément une erreur ! (Attention : s'ils collent, ce n'est pas une garantie absolue.)"
+          qui: neo
+      - a_quoi_ca_sert: "Les ingénieurs vérifient toujours les ordres de grandeur : une erreur de virgule peut coûter très cher (un pont trop fragile, un médicament mal dosé)…"
+      - question:
+          type: qcm
+          vars: { a: "31..89", b: "11..49" }
+          enonce: "Sans calculer exactement, quel résultat est vraisemblable pour ${{a}} \\times {{b}}$ ?"
+          choix: ["{{nb(a*b)}}", "{{nb(a*b*10)}}", "{{nb(a+b)}}", "{{nb(round(a*b/10))}}"]
+          correction: "≈ {{round(a/10)*10}} × {{round(b/10)*10}} = {{nb(round(a/10)*10*round(b/10)*10)}}."
+    exercices:
+      - type: vf
+        vars: { a: "12..30", b: "12..30", e: [1, 10] }
+        enonce: "Léa annonce : ${{a}} \\times {{b}} = {{nb(a*b*e)}}$. Est-ce vraisemblable ?"
+        reponse: "e == 1"
+        correction: "Ordre de grandeur : ≈ {{nb(round(a/10)*10*round(b/10)*10)}}. {{si(e==1,'Oui.','Non, c’est 10 fois trop grand.')}}"
+      - type: qcm
+        enonce: "Quelle réponse est vraisemblable pour la vitesse d'un vélo ?"
+        choix: ["20 km/h", "200 km/h", "2 km/h", "2 000 km/h"]
+        correction: "Un cycliste roule typiquement entre 15 et 30 km/h."
+      - type: qcm
+        vars: { d: "3..9", q: "12..40" }
+        enonce: "Pour vérifier que ${{d*q}} \\div {{d}} = {{q}}$, je calcule…"
+        choix: ["${{q}} \\times {{d}}$", "${{q}} + {{d}}$", "${{d*q}} - {{d}}$", "${{q}} \\div {{d}}$"]
+        correction: "L'opération inverse : {{q}} × {{d}} = {{d*q}} ✔."
+
+  - id: compenser
+    titre: "Calcul mental : ajouter ou enlever 9, 99, 19…"
+    objectif: J'utilise la compensation pour ajouter ou soustraire un nombre proche d'une dizaine ou d'une centaine.
+    mots: [compensation]
+    etapes:
+      - dialogue:
+          - neo: "247 + 99 en 2 secondes : 247 + 100 = 347, moins 1 = 346 !"
+          - mia: "On arrondit pour simplifier… puis on corrige."
+      - texte: |
+          - **+ 9** = + 10 − 1 · **+ 99** = + 100 − 1 · **+ 98** = + 100 − 2
+          - **− 9** = − 10 + 1 · **− 99** = − 100 + 1
+          - **+ 1,99 €** = + 2 € − 1 centime
+      - question:
+          type: nombre
+          vars: { a: "120..880", k: [99, 98, 199, 299] }
+          enonce: "Calcule de tête : ${{a}} + {{k}}$"
+          reponse: "a+k"
+          correction: "{{a}} + {{k + (100 - k%100)}} − {{100 - k%100}} = {{a+k}}"
+      - a_quoi_ca_sert: "Les prix en « ,99 » sont partout : avec la compensation, tu calcules le total plus vite que la caisse !"
+    exercices:
+      - type: nombre
+        vars: { a: "120..880", k: [99, 98, 199, 299, 49] }
+        enonce: "${{a}} + {{k}}$"
+        reponse: "a+k"
+        correction: "{{a+k}}"
+      - type: nombre
+        vars: { a: "300..990", k: [99, 98, 199] }
+        enonce: "${{a}} - {{k}}$"
+        reponse: "a-k"
+        correction: "{{a}} − {{k+(100-k%100)}} + {{100-k%100}} = {{a-k}}"
+      - type: nombre
+        vars: { n: "2..5", p: [1.99, 2.99, 4.99, 9.99] }
+        enonce: "{{n}} articles à {{nb(p)}} € : combien en tout ?"
+        reponse: "n*p"
+        unite: €
+        correction: "{{n}} × {{nb(p+0.01)}} − {{n}} centimes = {{nb(n*p)}} €."
+
+  - id: multiplier-par-5-25-50
+    titre: "Calcul mental : multiplier par 5, 25, 50 (et diviser)"
+    objectif: Je multiplie vite par 5, 25 et 50 en passant par 10 et 100.
+    mots: [calcul mental]
+    etapes:
+      - dialogue:
+          - mia: "× 5, c'est × 10 puis ÷ 2 ! 48 × 5 = 480 ÷ 2 = 240."
+          - neo: "× 25, c'est × 100 puis ÷ 4. Et × 50, c'est × 100 puis ÷ 2."
+      - texte: |
+          - $\times 5 = \times 10 \div 2$ : $36 \times 5 = 360 \div 2 = 180$
+          - $\times 25 = \times 100 \div 4$ : $16 \times 25 = 1\,600 \div 4 = 400$
+          - $\times 50 = \times 100 \div 2$ : $14 \times 50 = 1\,400 \div 2 = 700$
+          - Et à l'inverse : $\div 5 = \times 2 \div 10$ : $85 \div 5 = 170 \div 10 = 17$
+      - question:
+          type: nombre
+          vars: { n: "12..98" }
+          si: "n % 2 == 0"
+          enonce: "${{n}} \\times 5$"
+          reponse: "5*n"
+          correction: "{{n}} × 10 = {{10*n}}, ÷ 2 = {{5*n}}"
+      - a_quoi_ca_sert: "Les pièces de 50 centimes, les billets de 5 €, les lots de 25… et impressionner tes amis !"
+    exercices:
+      - type: nombre
+        vars: { n: "11..99" }
+        enonce: "${{n}} \\times 5$"
+        reponse: "5*n"
+        correction: "{{10*n}} ÷ 2 = {{5*n}}"
+      - type: nombre
+        vars: { n: [4, 8, 12, 16, 24, 28, 32, 36, 44] }
+        enonce: "${{n}} \\times 25$"
+        reponse: "25*n"
+        correction: "{{100*n}} ÷ 4 = {{25*n}}"
+      - type: nombre
+        vars: { n: "12..98" }
+        enonce: "${{n}} \\times 50$"
+        reponse: "50*n"
+        correction: "{{100*n}} ÷ 2 = {{nb(50*n)}}"
+      - type: nombre
+        vars: { q: "11..49" }
+        enonce: "${{5*q}} \\div 5$"
+        reponse: "q"
+        correction: "{{5*q}} × 2 = {{10*q}}, ÷ 10 = {{q}}"
+
+  - id: multiplier-par-11
+    titre: "Calcul mental : le tour de magie du × 11"
+    objectif: Je multiplie un nombre à deux chiffres par 11 de tête.
+    mots: [calcul mental]
+    etapes:
+      - dialogue:
+          - neo: "36 × 11 ? J'écarte le 3 et le 6, et je mets leur somme au milieu : 3 (9) 6 → 396 !"
+          - zero: "C'est de la magie noire ?!"
+          - mia: "Non : 36 × 11 = 36 × 10 + 36 = 360 + 36. La somme des chiffres tombe au milieu !"
+      - texte: |
+          **Pour un nombre à deux chiffres $ab$ :** $ab \times 11 = a\;(a+b)\;b$.
+          - $43 \times 11$ : 4 (4 + 3 = 7) 3 → **473**
+          - Si la somme dépasse 9, on retient 1 : $78 \times 11$ : 7 (15) 8 → 7 + 1 = 8, puis 5, puis 8 → **858**
+      - question:
+          type: nombre
+          vars: { a: "1..8", b: "0..8" }
+          si: "a + b <= 9"
+          enonce: "${{10*a+b}} \\times 11$"
+          reponse: "11*(10*a+b)"
+          correction: "{{a}} ({{a+b}}) {{b}} → {{11*(10*a+b)}}"
+      - a_quoi_ca_sert: "Un super tour de calcul mental… qui montre surtout la puissance de la distributivité : 11 = 10 + 1 !"
+    exercices:
+      - type: nombre
+        vars: { a: "1..9", b: "0..9" }
+        si: "a + b <= 9"
+        enonce: "${{10*a+b}} \\times 11$"
+        reponse: "11*(10*a+b)"
+        correction: "{{11*(10*a+b)}}"
+      - type: nombre
+        vars: { a: "2..9", b: "2..9" }
+        si: "a + b >= 10"
+        enonce: "${{10*a+b}} \\times 11$ (attention à la retenue !)"
+        reponse: "11*(10*a+b)"
+        correction: "{{a}} ({{a+b}}) {{b}} → {{a+1}} {{a+b-10}} {{b}} = {{11*(10*a+b)}}"
+
+  - id: carres-en-5
+    titre: "Calcul mental : les carrés qui finissent par 5"
+    objectif: Je calcule de tête 35², 65², 85²…
+    mots: [carré]
+    etapes:
+      - dialogue:
+          - mia: "65² ? Je prends le 6, je le multiplie par le suivant (7) : 42. Et je colle 25 au bout : 4 225 !"
+      - texte: |
+          Pour un nombre qui finit par 5 : $(10a + 5)^2 = 100\,a(a+1) + 25$.
+          - $35^2$ : $3 \times 4 = 12$, puis 25 → **1 225**
+          - $85^2$ : $8 \times 9 = 72$, puis 25 → **7 225**
+
+          Pourquoi ? Identité remarquable : $(10a+5)^2 = 100a^2 + 100a + 25 = 100a(a+1) + 25$.
+      - question:
+          type: nombre
+          vars: { a: "1..9" }
+          enonce: "${{10*a+5}}^2 = ?$"
+          reponse: "(10*a+5)^2"
+          correction: "{{a}} × {{a+1}} = {{a*(a+1)}}, puis 25 : {{nb((10*a+5)^2)}}"
+      - a_quoi_ca_sert: "Un tour rapide… et un bel exemple d'identité remarquable qui explique un « truc » !"
+    exercices:
+      - type: nombre
+        vars: { a: "1..12" }
+        enonce: "${{10*a+5}}^2$"
+        reponse: "(10*a+5)^2"
+        correction: "{{nb((10*a+5)^2)}}"
+      - type: nombre
+        vars: { a: "1..9" }
+        enonce: "${{10*a+5}} \\times {{10*a+5}}$"
+        reponse: "(10*a+5)^2"
+        correction: "{{a*(a+1)}} puis 25 : {{nb((10*a+5)^2)}}"
+
+  - id: neuf-et-preuve
+    titre: "Le 9 magique : × 9 et preuve par 9"
+    objectif: Je multiplie par 9 de tête et je vérifie un calcul avec la preuve par 9.
+    mots: [preuve par 9]
+    etapes:
+      - dialogue:
+          - neo: "× 9 = × 10 − une fois : 47 × 9 = 470 − 47 = 423."
+          - mia: "Et un multiple de 9 a toujours la somme de ses chiffres multiple de 9 : 4 + 2 + 3 = 9 ✔ !"
+      - texte: |
+          - $\times 9 = \times 10 - \times 1$
+          - **Somme des chiffres** : un nombre est divisible par 9 si la somme de ses chiffres l'est.
+          - **Preuve par 9** d'une multiplication $a \times b = c$ : on réduit chaque nombre à la somme de ses chiffres (jusqu'à un seul chiffre, 9 compte comme 0). Le produit des réductions de $a$ et $b$, réduit, doit égaler la réduction de $c$. Sinon : **erreur certaine**.
+      - question:
+          type: nombre
+          vars: { n: "12..99" }
+          enonce: "${{n}} \\times 9$"
+          reponse: "9*n"
+          correction: "{{10*n}} − {{n}} = {{9*n}}"
+      - a_quoi_ca_sert: "Vérifier un calcul posé, détecter une erreur de saisie… Les numéros de cartes bancaires utilisent un principe proche (la clé de Luhn) !"
+    exercices:
+      - type: nombre
+        vars: { n: "12..199" }
+        enonce: "${{n}} \\times 9$"
+        reponse: "9*n"
+        correction: "{{9*n}}"
+      - type: nombre
+        vars: { n: "100..9999" }
+        enonce: "Reste de {{nb(n)}} dans la division par 9 (= somme des chiffres réduite) ?"
+        reponse: "n % 9"
+        correction: "Somme des chiffres : {{sommechiffres(n)}} → reste {{n%9}}."
+      - type: vf
+        vars: { a: "12..60", b: "12..60", e: [0, 0, 9, 1] }
+        enonce: "Léo a trouvé ${{a}} \\times {{b}} = {{a*b+e}}$. La preuve par 9 détecte-t-elle une erreur ?"
+        reponse: "(a*b+e) % 9 != ((a%9)*(b%9)) % 9"
+        correction: "Réductions : {{a%9}} × {{b%9}} → {{((a%9)*(b%9))%9}} ; résultat annoncé → {{(a*b+e)%9}}. {{si((a*b+e)%9 != ((a%9)*(b%9))%9,'Différents : erreur certaine.','Égaux : pas d’erreur détectée' + si(e==0,' (et le calcul est juste).',' — pourtant le calcul est faux ! La preuve par 9 ne voit pas les erreurs de 9.'))}}"
+
+  - id: pourcentages-de-tete
+    titre: "Calcul mental : les pourcentages de tête"
+    objectif: Je calcule de tête 10 %, 5 %, 1 %, 50 %, 25 %, 20 % d'un nombre.
+    mots: [pourcentage]
+    etapes:
+      - dialogue:
+          - mia: "Un pourboire de 15 % sur 40 € ? 10 % = 4 €, 5 % = 2 €, total 6 € !"
+      - texte: |
+          - **10 %** : je divise par 10. **1 %** : par 100.
+          - **5 %** : la moitié de 10 %. **20 %** : le double de 10 %.
+          - **50 %** : la moitié. **25 %** : le quart.
+          - **Astuce magique** : $a\,\%$ de $b$ = $b\,\%$ de $a$ ! 8 % de 50 = 50 % de 8 = **4**.
+      - question:
+          type: nombre
+          vars: { t: [10, 5, 20, 15], q: [40, 60, 80, 120, 200] }
+          enonce: "{{t}} % de {{q}} ?"
+          reponse: "t*q/100"
+          correction: "{{nb(t*q/100)}}"
+      - a_quoi_ca_sert: "Les soldes, les pourboires, la TVA, les statistiques… sans jamais sortir la calculatrice."
+    exercices:
+      - type: nombre
+        vars: { t: [1, 5, 10, 15, 20, 25, 50], q: [40, 60, 80, 120, 200, 300, 400] }
+        enonce: "{{t}} % de {{q}} ?"
+        reponse: "t*q/100"
+        correction: "{{nb(t*q/100)}}"
+      - type: nombre
+        vars: { a: [4, 8, 12, 16], b: [25, 50] }
+        enonce: "Astuce magique : {{a}} % de {{b}} ?"
+        reponse: "a*b/100"
+        correction: "= {{b}} % de {{a}} = {{nb(a*b/100)}}"
+
+  - id: decomposer-multiplier
+    titre: "Calcul mental : décomposer pour multiplier"
+    objectif: Je décompose un facteur pour multiplier de tête (× 12, × 15, 98 × 7…).
+    mots: [distributivité]
+    etapes:
+      - dialogue:
+          - neo: "14 × 12 = 14 × 10 + 14 × 2 = 140 + 28 = 168 !"
+          - mia: "Et 98 × 7 = 100 × 7 − 2 × 7 = 700 − 14 = 686 !"
+      - texte: |
+          On découpe un des nombres en morceaux faciles (distributivité) :
+          - $\times 12 = \times 10 + \times 2$ · $\times 15 = \times 10 + \text{la moitié}$
+          - $98 \times 7 = (100 - 2) \times 7$
+          - $25 \times 36 = 25 \times 4 \times 9 = 100 \times 9 = 900$
+      - question:
+          type: nombre
+          vars: { n: "11..49" }
+          enonce: "${{n}} \\times 12$"
+          reponse: "12*n"
+          correction: "{{10*n}} + {{2*n}} = {{12*n}}"
+      - a_quoi_ca_sert: "Calculer un prix total, une surface, une recette multipliée… plus vite qu'en sortant son téléphone !"
+    exercices:
+      - type: nombre
+        vars: { n: "11..49" }
+        enonce: "${{n}} \\times 12$"
+        reponse: "12*n"
+        correction: "{{12*n}}"
+      - type: nombre
+        vars: { n: "12..48" }
+        si: "n % 2 == 0"
+        enonce: "${{n}} \\times 15$"
+        reponse: "15*n"
+        correction: "{{10*n}} + {{5*n}} = {{15*n}}"
+      - type: nombre
+        vars: { k: [98, 99, 101, 102], a: "3..9" }
+        enonce: "${{k}} \\times {{a}}$"
+        reponse: "k*a"
+        correction: "100 × {{a}} {{si(k<100,'−','+')}} {{abs(100-k)}} × {{a}} = {{k*a}}"
+
+  - id: reussir-controle
+    titre: Réussir un contrôle sereinement
+    objectif: J'utilise une méthode pour bien préparer et réussir un contrôle.
+    mots: [contrôle, méthode]
+    etapes:
+      - dialogue:
+          - zero: "Demain j'ai un contrôle. Je vais réviser toute la nuit !"
+          - mia: "Mauvaise idée, Zéro ! Ton cerveau a besoin de dormir pour ranger ce que tu as appris."
+          - neo: "Voici le plan de bataille des champions."
+      - texte: |
+          ### Avant (les jours d'avant)
+          - Réviser **un peu chaque jour** en se **testant** (exercices, questions sans regarder).
+          - Refaire les exercices ratés. **Dormir** suffisamment la veille.
+
+          ### Pendant
+          1. **Lire tout le sujet** au début, calmement. Respirer 3 fois profondément si stress.
+          2. Commencer par ce que je sais faire (ça donne confiance).
+          3. **Souligner** ce qu'on demande dans chaque question.
+          4. Garder **5 minutes à la fin** pour **se relire** : unités, virgules, phrases réponses.
+
+          ### Si je bloque
+          - Je passe à la suite et je reviens plus tard. J'écris ce que j'ai essayé : ça peut rapporter des points !
+      - a_quoi_ca_sert: "Toutes les évaluations de ta scolarité… et les examens, concours et entretiens plus tard."
+      - question:
+          type: qcm
+          enonce: "Au début d'un contrôle, que faut-il faire en premier ?"
+          choix: ["Lire tout le sujet calmement", "Commencer par la dernière question", "Écrire très vite sans lire", "Regarder la copie du voisin"]
+          correction: "Lire tout le sujet permet de s'organiser et de commencer par ce qu'on sait faire."
+    exercices:
+      - type: ordre
+        enonce: "Remets dans l'ordre la méthode pendant un contrôle."
+        items: ["Lire tout le sujet", "Commencer par ce que je sais faire", "Traiter les autres questions", "Me relire à la fin"]
+        correction: "Lire, commencer par le facile, continuer, se relire."
+      - type: vf
+        enonce: "Vrai ou faux : réviser toute la nuit avant un contrôle est la meilleure stratégie."
+        reponse: false
+        correction: "Faux : le sommeil est indispensable pour mémoriser. Mieux vaut réviser un peu chaque jour."
+      - type: qcm
+        enonce: "Je bloque sur une question. Que faire ?"
+        choix: ["Passer à la suite et revenir plus tard", "Rester bloqué·e jusqu'à la fin", "Rendre copie blanche", "Effacer tout ce que j'ai fait"]
+        correction: "On avance et on revient : souvent, la solution vient en faisant autre chose."
+
+  - id: rediger
+    titre: Rédiger une solution claire
+    objectif: Je rédige une solution compréhensible - calculs, explications et phrase réponse.
+    mots: [rédaction, justification]
+    etapes:
+      - dialogue:
+          - neo: "Un résultat juste mais sans explication, c'est comme un trésor sans carte : personne ne peut le retrouver !"
+          - mia: "En maths, on doit pouvoir SUIVRE ton raisonnement."
+      - texte: |
+          **Une bonne rédaction contient :**
+          1. Ce que je cherche (« Calculons le prix des cahiers. »)
+          2. Le **calcul** (avec l'opération posée ou écrite en ligne).
+          3. La **phrase réponse** avec l'**unité** (« Les cahiers coûtent 12 €. »)
+
+          Pour les plus grands : citer les **propriétés** utilisées (« D'après le théorème de Pythagore… », « Or… donc… »).
+      - exemple:
+          titre: Une rédaction modèle
+          enonce: "Inès achète 3 cahiers à 4 € et un stylo à 2 €. Combien dépense-t-elle ?"
+          etapes:
+            - "Prix des cahiers : 3 × 4 = 12 €."
+            - "Prix total : 12 + 2 = 14 €."
+          reponse: "Inès dépense 14 €."
+      - a_quoi_ca_sert: "Expliquer clairement son raisonnement est utile partout : rapports, présentations, explications à un collègue, et même pour convaincre lors d'un débat."
+      - question:
+          type: qcm
+          enonce: "Quelle est la meilleure phrase réponse pour « Combien de billes a Tom ? » (calcul : 12 + 5 = 17) ?"
+          choix: ["Tom a 17 billes.", "17", "12 + 5 = 17", "Il y en a beaucoup."]
+          correction: "Une phrase complète qui répond à LA question, avec l'unité (billes)."
+    exercices:
+      - type: qcm
+        enonce: "Qu'est-ce qu'il ne faut JAMAIS oublier dans une réponse de problème de mesure ?"
+        choix: ["l'unité (cm, €, kg…)", "la date", "le titre en couleur", "un dessin"]
+        correction: "Sans unité, « 12 » ne veut rien dire : 12 cm ? 12 € ? 12 kg ?"
+      - type: ordre
+        enonce: "Remets dans l'ordre une bonne rédaction."
+        items: ["Je dis ce que je calcule", "J'écris le calcul", "J'écris la phrase réponse avec l'unité"]
+        correction: "Annonce, calcul, phrase réponse."
+      - type: qcm
+        enonce: "Dans une démonstration, le mot « donc » sert à…"
+        choix: ["annoncer une conclusion qui découle de ce qui précède", "poser une question", "changer de sujet", "faire joli"]
+        correction: "« Donc » introduit une conséquence logique."
