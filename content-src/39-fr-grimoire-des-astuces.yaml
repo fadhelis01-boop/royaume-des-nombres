@@ -1,0 +1,156 @@
+id: fr-grimoire-des-astuces
+matiere: francais
+titre: Le Grimoire des Astuces
+sous_titre: Méthodes pour bien écrire, bien relire et bien retenir
+emoji: 🪶
+couleur: "#ffb300"
+cycle: astuces
+age: tous âges
+niveau: Tous niveaux
+ordre: 39
+prerequis: []
+version: 1.0.0
+intro:
+  - mia: "Bienvenue dans notre bibliothèque secrète ! Ici, pas de chapitre à sauver : seulement des secrets d'écrivain."
+  - neo: "Relire comme un détective, mémoriser l'orthographe, démasquer les pièges… Ces méthodes marchent partout."
+
+lecons:
+  - id: relire-comme-un-detective
+    titre: "Relire comme un détective"
+    objectif: Je relis mon texte en plusieurs passages, en cherchant un seul type d'erreur à la fois.
+    mots: [relire, corriger]
+    etapes:
+      - dialogue:
+          - zero: "J'ai écrit mon texte. Je le relis… Tout est parfait ! …Je l'ai relu en deux secondes."
+          - neo: "Un détective ne cherche pas tout en même temps. Il fait plusieurs passages, avec une seule question à chaque fois."
+      - texte: |
+          **Les 4 passages du détective** :
+          1. 🔠 **Majuscules et points** : chaque phrase commence par une majuscule et finit par un point ?
+          2. 🔗 **Accords dans le groupe nominal** : je trace un fil du nom vers ses déterminants et adjectifs.
+          3. ⚙️ **Sujet → verbe** : je cherche le sujet de chaque verbe et je vérifie la terminaison.
+          4. 🐸 **Homophones** : a/à, et/est, son/sont… je teste avec le Miroir du Temps.
+      - astuce:
+          texte: "Relis à voix basse en pointant chaque mot avec ton doigt : ton œil ne saute plus de mots."
+          qui: mia
+      - retiens: "Relire = **plusieurs passages**, une **seule question** à chaque fois : majuscules, accords, verbes, homophones."
+    exercices:
+      - type: qcm
+        vars: { t: [["Les chats noir dorment.", "noir", "Les", "dorment"], ["Mes amis joue au ballon.", "joue", "Mes", "ballon"], ["Il à un vélo.", "à", "Il", "vélo"], ["les oiseaux chantent.", "les", "oiseaux", "chantent"], ["Elle est grand et forte.", "grand", "Elle", "forte"], ["Nous avons mangé des gâteau.", "gâteau", "Nous", "mangé"]] }
+        enonce: "Quel mot contient une erreur ? « {{t_0}} »"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Le mot fautif est « {{t_1}} »."
+      - type: mot
+        vars: { t: [["Les chats noir dorment.", "Les chats noirs dorment."], ["Mes amis joue au ballon.", "Mes amis jouent au ballon."], ["Il à un vélo.", "Il a un vélo."], ["les oiseaux chantent.", "Les oiseaux chantent."], ["Elle est grand.", "Elle est grande."], ["Nous avons mangé des gâteau.", "Nous avons mangé des gâteaux."]] }
+        enonce: "Recopie la phrase en la corrigeant : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une majuscule oubliée", "un accord du nom", "un verbe mal accordé", "un homophone"]] }
+        enonce: "Range chaque vérification dans le bon passage du détective (1 = majuscules et points, 2 = accords du nom, 3 = verbes, 4 = homophones)."
+        categories: ["passage 1", "passage 2", "passage 3", "passage 4"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "1 : majuscules et points ; 2 : accords ; 3 : verbes ; 4 : homophones."
+
+  - id: retenir-un-mot
+    titre: "Retenir l'orthographe d'un mot difficile"
+    objectif: J'utilise une méthode en 5 étapes pour mémoriser durablement un mot.
+    mots: [mémoriser, orthographe]
+    etapes:
+      - dialogue:
+          - mia: "Pour retenir un mot, je le prends en photo… dans ma tête !"
+          - neo: "Et je l'épelle, je le cache, je l'écris, je vérifie. Cinq étapes, et le mot est à moi pour toujours."
+      - texte: |
+          **La méthode en 5 étapes** :
+          1. 👀 **J'observe** le mot et je repère sa difficulté (lettre muette, double consonne, accent).
+          2. 🗣️ **Je l'épelle** à voix haute, lettre par lettre.
+          3. 📸 **Je ferme les yeux** et je le « vois » dans ma tête.
+          4. ✍️ **Je le cache** et je l'écris de mémoire.
+          5. ✅ **Je vérifie**. Si j'ai fait une erreur, je recommence.
+      - astuce:
+          texte: "Invente une image pour la difficulté : dans « ho**mm**e », les deux m sont les deux jambes de l'homme !"
+          qui: mia
+      - retiens: "**Observer, épeler, photographier, cacher-écrire, vérifier.** Puis revoir le mot le lendemain."
+    exercices:
+      - type: dictee
+        vars: { m: [toujours, beaucoup, maintenant, aujourd'hui, pendant, depuis, souvent, ensuite, longtemps, quelquefois, parce que, comment, combien, dehors, dedans, environ] }
+        enonce: "Mot invariable : écoute et écris-le (il ne change jamais !)."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: qcm
+        vars: { t: [["homme", "home", "hommme"], ["beaucoup", "beaucou", "baucoup"], ["toujours", "toujour", "toujourt"], ["aujourd'hui", "aujourdhui", "aujour d'hui"], ["maintenant", "maintenent", "mintenant"], ["parce que", "parceque", "par ce que"]] }
+        enonce: "Quelle écriture est juste ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "On écrit « {{t_0}} »."
+      - type: mot
+        vars: { t: [["tou_ours", "toujours"], ["beau_oup", "beaucoup"], ["main_enant", "maintenant"], ["lon_temps", "longtemps"], ["d_puis", "depuis"], ["ens_ite", "ensuite"]] }
+        enonce: "Complète le mot invariable (le _ cache une lettre) : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+
+  - id: tableau-des-homophones
+    titre: "Le grand tableau des remplacements"
+    objectif: J'utilise le bon remplacement pour choisir entre tous les homophones grammaticaux.
+    mots: [homophone, remplacement]
+    etapes:
+      - dialogue:
+          - neo: "Voici mon Miroir du Temps complet. Un seul tableau pour tous les jumeaux !"
+      - texte: |
+          | si je peux dire… | j'écris | sinon |
+          |---|---|---|
+          | avait | **a** | à |
+          | était | **est** | et |
+          | étaient | **sont** | son |
+          | avaient | **ont** | on |
+          | ou bien | **ou** | où |
+          | me (je me lave) | **se / s'est** | ce / c'est |
+          | mes | **ses** | ces |
+          | l'avait | **l'a** | la / là |
+      - retiens: "Je **remplace** le mot douteux : si la phrase reste juste, j'ai trouvé le bon homophone."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le chien … dans sa niche.", est, et], ["Ils … faim.", ont, on], ["Mes cousins … arrivés.", sont, son], ["Elle … un parapluie.", a, à], ["Tu viens … tu restes ?", ou, où], ["Il … lavé les mains.", "s'est", "c'est"], ["Tom range … affaires.", ses, ces]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["Le soleil (est/et) chaud.", est], ["Mes amis (son/sont) là.", sont], ["Ils (on/ont) gagné.", ont], ["Je vais (a/à) l'école.", à], ["Il (a/à) un chien.", a], ["Où (ou/où) habites-tu ?", "où"]] }
+        enonce: "Écris le bon homophone : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Il est à la maison et il a un chat.", "Ils ont mis leurs bottes et sont sortis.", "On a vu son frère à la piscine."] }
+        enonce: "Écoute et écris : chaque homophone compte !"
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+
+  - id: chasser-les-lettres-muettes
+    titre: "Chasser les lettres muettes"
+    objectif: Je trouve une lettre muette grâce au féminin ou à un mot de la même famille.
+    mots: [lettre muette]
+    etapes:
+      - dialogue:
+          - zero: "Les lettres muettes, c'est comme moi quand je dors : on ne m'entend pas, mais je suis là ! 😴"
+          - mia: "Pour les réveiller, on cherche le féminin ou un mot de la famille : grand → grande, grandir."
+      - texte: |
+          - Au **féminin** : petit → peti**t**e, gris → gri**s**e, blanc → blan**ch**e.
+          - Dans la **famille** : galop → galo**p**er, sirop → siro**p**eux, rang → ran**g**er.
+          - Si rien ne marche… le dictionnaire !
+      - retiens: "Lettre muette en fin de mot ? Je cherche le **féminin** ou un **mot de la famille**."
+    exercices:
+      - type: mot
+        vars: { t: [["un galo… (pense à galoper)", "galop"], ["un siro… (pense à « sirupeux »)", "sirop"], ["un ran… (pense à ranger)", "rang"], ["un tapi… (pense à tapisser)", "tapis"], ["le bor… (pense à border)", "bord"], ["un bavar… (pense à « bavarder »)", "bavard"], ["un cha… (pense à « chaton »)", "chat"]] }
+        enonce: "Écris le mot complet : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["petit", "petite", "t"], ["gris", "grise", "s"], ["grand", "grande", "d"], ["blond", "blonde", "d"], ["gros", "grosse", "s"], ["chaud", "chaude", "d"]] }
+        enonce: "Au féminin, « {{t_0}} » devient « {{t_1}} ». Quelle est sa lettre muette au masculin ?"
+        choix: ["{{t_2}}", "{{si(t_2=='t','d','t')}}", "{{si(t_2=='s','x','s')}}"]
+        correction: "{{t_0}} : le « {{t_2}} » s'entend au féminin."
+      - type: dictee
+        vars: { m: ["Le cheval part au galop.", "Il range son tapis.", "Le chat est sur le bord du lit.", "Il fait chaud et gris."] }
+        enonce: "Écoute et écris : attention aux lettres muettes !"
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"

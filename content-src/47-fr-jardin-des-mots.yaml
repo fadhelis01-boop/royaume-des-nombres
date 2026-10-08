@@ -1,0 +1,233 @@
+id: fr-jardin-des-mots
+matiere: francais
+titre: Le Jardin des Mots
+sous_titre: Dictionnaire, familles, préfixes, synonymes et sens des mots
+emoji: 🌻
+couleur: "#f9a825"
+cycle: graines
+age: 7-11 ans
+niveau: CE1 – CM2
+ordre: 47
+prerequis: [fr-foret-des-noms]
+version: 1.0.0
+intro:
+  - mia: "Dans ce jardin, les mots poussent en familles. Dent, dentiste, dentifrice : même racine, même branche !"
+  - neo: "Et la serre aux dictionnaires nous apprendra à trouver n'importe quel mot en quelques secondes."
+  - zero: "Je cherche le mot « hamster ». Il doit être sous la lettre H. H comme Héros. 😳"
+
+lecons:
+  - id: chercher-dans-le-dictionnaire
+    titre: "Chercher un mot dans le dictionnaire"
+    objectif: Je trouve vite un mot grâce à l'ordre alphabétique (2e et 3e lettres) et aux mots-repères.
+    mots: [dictionnaire, ordre alphabétique, mot-repère]
+    etapes:
+      - dialogue:
+          - zero: "J'ouvre le dictionnaire au hasard et je lis toutes les pages jusqu'à trouver « hamster » ! Ça prendra… trois jours."
+          - neo: "Ou alors : les mots-repères en haut de chaque page ! Ils indiquent le premier et le dernier mot de la page."
+      - texte: |
+          Dans le dictionnaire, les mots sont rangés dans l'**ordre alphabétique** :
+          on compare la **1re lettre**, puis la **2e**, puis la **3e**… *ch**a**t < ch**e**val < ch**i**en*.
+
+          En haut de chaque page, deux **mots-repères** donnent le premier et le dernier mot de la page.
+          Pour chaque mot, on trouve : sa **nature** (n. m., v., adj.), sa **définition**, souvent un **exemple**.
+      - retiens: "Je compare les lettres **une par une**. Les **mots-repères** me disent si mon mot est sur la page."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Avec un vrai dictionnaire (ou celui de l'application), chronomètre-toi : combien de secondes pour trouver « girafe », puis « kangourou » ?"
+          materiel: "un dictionnaire"
+    exercices:
+      - type: ordre
+        vars: { t: [[chameau, chat, cheval, chien], [baleine, balle, banane, bateau], [pain, panda, papa, parc], [mardi, marin, marmotte, marteau], [sable, sac, sage, salade], [tomate, tomber, ton, tonnerre]] }
+        enonce: "Range dans l'ordre alphabétique (regarde la 2e ou la 3e lettre)."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
+      - type: vf
+        vars: { t: [["ballon", "balai — banane", true], ["citron", "cerise — chat", false], ["lapin", "lame — lampe", false], ["mouton", "moto — moustique", true], ["poisson", "poire — pomme", true], ["girafe", "gâteau — garçon", false]] }
+        enonce: "Les mots-repères de la page sont « {{t_1}} ». Le mot « {{t_0}} » est-il sur cette page ?"
+        reponse: "t_2"
+        niveau: 2
+        correction: "On compare lettre par lettre avec les deux mots-repères."
+      - type: qcm
+        vars: { t: [["n. f.", "nom féminin", "nom fruitier", "nombre final"], ["v.", "verbe", "voyelle", "vocabulaire"], ["adj.", "adjectif", "adverbe", "adresse"], ["n. m.", "nom masculin", "nom de mot", "nombre masculin"]] }
+        enonce: "Dans le dictionnaire, que veut dire l'abréviation « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+
+  - id: familles-de-mots
+    titre: "Les familles de mots"
+    objectif: Je regroupe les mots qui ont le même radical (la même racine).
+    mots: [famille de mots, radical]
+    etapes:
+      - dialogue:
+          - mia: "Dent, dentiste, dentifrice, dentaire, édenté : regarde, ils ont tous « dent » dedans. C'est une famille !"
+          - zero: "Hamster, hamsterie, hamsteriste… Non ? Bon."
+      - texte: |
+          Une **famille de mots** regroupe des mots formés à partir d'un même **radical** (une racine) et qui ont un **sens** commun.
+
+          *terre* : **terr**ain, **terr**estre, en**terr**er, **terr**ier, atterrir.
+          *jardin* : **jardin**ier, **jardin**age, **jardin**er.
+      - attention:
+          texte: "Il faut que le **sens** soit commun : « lait » et « laid » se ressemblent mais ne sont pas de la même famille !"
+          qui: neo
+      - astuce:
+          texte: "La famille aide à écrire ! Le **d** muet de « grand » s'entend dans « gran**d**ir » ; le **t** de « chat » s'entend dans « cha**t**on »."
+          qui: mia
+      - retiens: "Une famille = un **radical** + un **sens** commun. Elle aide à deviner les **lettres muettes**."
+    exercices:
+      - type: qcm
+        vars: { t: [["jardin", "jardinier", "jarre", "jaune"], ["dent", "dentiste", "dentelle", "danse"], ["terre", "terrier", "terrible", "tirer"], ["fleur", "fleuriste", "flèche", "flûte"], ["lait", "laitage", "laid", "laine"], ["chant", "chanteur", "champ", "chance"]] }
+        enonce: "Quel mot est de la famille de « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        explications: ["", "Il se ressemble à l'oreille, mais n'a pas le même sens.", "Il se ressemble à l'oreille, mais n'a pas le même sens."]
+        correction: "« {{t_1}} » vient de « {{t_0}} »."
+      - type: mot
+        vars: { t: [["grand (on entend la lettre muette dans « grandir »)", "grand", "d"], ["chat (pense à « chaton »)", "chat", "t"], ["lait (pense à « laitage »)", "lait", "t"], ["dent (pense à « dentiste »)", "dent", "t"], ["camp (pense à « camper »)", "camp", "p"], ["gros (pense à « grosse »)", "gros", "s"], ["bavard (pense à « bavarder »)", "bavard", "d"]] }
+        enonce: "Quelle lettre muette finit le mot {{t_0}} ?"
+        reponse: "{{t_2}}"
+        correction: "{{t_1}} : la lettre muette est « {{t_2}} »."
+      - type: classer
+        vars: { t: [[jardinier, terrain, jardinage, atterrir], [fleuriste, chanteur, fleurir, chanson], [boulanger, dentiste, boulangerie, dentaire]] }
+        enonce: "Range chaque mot dans sa famille."
+        categories: ["famille 1", "famille 2"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les mots d'une même famille partagent le radical et le sens."
+
+  - id: prefixes-suffixes
+    titre: "Préfixes et suffixes : construire des mots"
+    objectif: Je forme et je comprends des mots grâce aux préfixes (avant) et aux suffixes (après).
+    mots: [préfixe, suffixe]
+    etapes:
+      - dialogue:
+          - neo: "Faire, DÉfaire, REfaire. Le début du mot change le sens : c'est un préfixe."
+          - mia: "Et à la fin : jardin, jardinIER, maison, maisonNETTE. Ça, c'est un suffixe !"
+      - texte: |
+          Le **préfixe** se place **avant** le radical :
+          - **re-** : à nouveau (*re*faire) — **dé- / dés-** : le contraire (*dé*faire, *dés*obéir)
+          - **in- / im- / il- / ir-** : le contraire (*in*connu, *im*possible, *il*lisible, *ir*réel)
+          - **pré-** : avant (*pré*voir) — **sur-** : au-dessus, trop (*sur*charger)
+
+          Le **suffixe** se place **après** le radical :
+          - **-eur / -euse / -ier** : celui qui fait (*chant*eur, *jardin*ier)
+          - **-ette / -on** : petit (*maison*nette, *chat*on)
+          - **-ment** : forme un adverbe (*douce*ment)
+      - attention:
+          texte: "Devant **m, b, p**, « in- » devient **im-** : *im*possible, *im*buvable. Devant **l** : *il*lisible. Devant **r** : *ir*réel."
+          qui: neo
+      - retiens: "**Préfixe** = avant (re-, dé-, in-, pré-). **Suffixe** = après (-eur, -ette, -ment)."
+    exercices:
+      - type: mot
+        vars: { t: [[possible, impossible], [connu, inconnu], [lisible, illisible], [réel, irréel], [poli, impoli], [content, mécontent], [heureux, malheureux], [faire, défaire], [obéir, désobéir], [patient, impatient], [visible, invisible], [juste, injuste]] }
+        enonce: "Écris le contraire de « {{t_0}} » en ajoutant un préfixe."
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} → {{t_1}}"
+      - type: qcm
+        vars: { t: [["refaire", "faire à nouveau", "ne pas faire", "faire avant"], ["prévoir", "voir avant", "voir à nouveau", "ne pas voir"], ["maisonnette", "une petite maison", "une grande maison", "un maçon"], ["chanteur", "celui qui chante", "une chanson", "chanter mal"], ["lentement", "de façon lente", "un peu lent", "très lent"], ["surcharger", "charger trop", "décharger", "charger à nouveau"]] }
+        enonce: "Que veut dire « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} = {{t_1}}."
+      - type: classer
+        vars: { t: [[refaire, jardinier, impossible, maisonnette], [défaire, chanteur, inconnu, fillette], [prévoir, boulanger, déplacer, chaton]] }
+        enonce: "Ce mot est-il formé avec un préfixe ou un suffixe ?"
+        categories: [préfixe, suffixe]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Préfixe au début, suffixe à la fin."
+
+  - id: synonymes-contraires
+    titre: "Synonymes et contraires"
+    objectif: Je trouve un mot de même sens (synonyme) ou de sens opposé (contraire, antonyme).
+    mots: [synonyme, contraire, antonyme]
+    etapes:
+      - dialogue:
+          - zero: "Content, joyeux, heureux, ravi… Tous ces mots disent la même chose : JE SUIS CONTENT ! 😳"
+          - mia: "Ce sont des synonymes. Et triste, c'est leur contraire !"
+      - texte: |
+          - Les **synonymes** ont (presque) le **même sens** : *content = joyeux*, *maison = habitation*, *commencer = débuter*.
+          - Les **contraires** (ou **antonymes**) ont un sens **opposé** : *grand ≠ petit*, *ouvrir ≠ fermer*, *avant ≠ après*.
+      - astuce:
+          texte: "Les synonymes évitent les répétitions et rendent ton texte plus riche : au lieu de « dire » partout, essaie « répondre, murmurer, crier, demander »."
+          qui: mia
+      - retiens: "**Synonyme** = même sens. **Contraire** = sens opposé. Un synonyme doit être de la **même nature** (un nom pour un nom…)."
+    exercices:
+      - type: qcm
+        vars: { t: [["content", "joyeux", "triste", "fatigué"], ["commencer", "débuter", "finir", "attendre"], ["rapide", "vite", "lent", "lourd"], ["maison", "habitation", "jardin", "voiture"], ["peur", "frayeur", "courage", "colère"], ["parler", "discuter", "se taire", "écouter"], ["beau", "joli", "laid", "grand"]] }
+        enonce: "Quel est le synonyme de « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        explications: ["", "C'est plutôt son contraire !", "Ce mot n'a pas le même sens."]
+        correction: "{{t_0}} = {{t_1}}."
+      - type: mot
+        vars: { t: [[grand, petit], [ouvrir, fermer], [jour, nuit], [chaud, froid], [monter, descendre], [rire, pleurer], [vide, plein], [avant, après], [gagner, perdre], [lourd, léger], [entrer, sortir], [toujours, jamais]] }
+        enonce: "Écris le contraire de « {{t_0}} »."
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} ≠ {{t_1}}."
+      - type: classer
+        vars: { t: [["content / joyeux", "grand / petit", "maison / demeure", "ouvrir / fermer"], ["rapide / vite", "jour / nuit", "peur / crainte", "chaud / froid"]] }
+        enonce: "Synonymes ou contraires ?"
+        categories: [synonymes, contraires]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Même sens = synonymes ; sens opposé = contraires."
+
+  - id: sens-propre-figure
+    titre: "Sens propre, sens figuré et expressions"
+    objectif: Je comprends qu'un mot peut avoir un sens propre (concret) et un sens figuré (imagé).
+    mots: [sens propre, sens figuré, expression]
+    etapes:
+      - dialogue:
+          - zero: "Mia m'a dit que j'avais « un cœur d'or ». J'ai cherché partout : mon cœur n'est pas en or. 😳"
+          - mia: "C'est le sens figuré, Zéro ! Ça veut dire que tu es très gentil."
+      - texte: |
+          - **Sens propre** : le sens premier, concret. *Le chat a **mordu** le coussin.*
+          - **Sens figuré** : une image. *Elle a **mordu** à l'hameçon* = elle s'est fait avoir.
+
+          Quelques **expressions** : *avoir un cœur d'or* (être très gentil), *poser un lapin* (ne pas venir à un rendez-vous),
+          *coûter les yeux de la tête* (coûter très cher), *avoir la tête dans les nuages* (rêvasser).
+      - retiens: "**Propre** = sens concret. **Figuré** = sens imagé. Les expressions se comprennent **en entier**, pas mot à mot."
+    exercices:
+      - type: qcm
+        vars: { t: [["poser un lapin", "ne pas venir à un rendez-vous", "offrir un lapin", "cuisiner un lapin"], ["avoir un cœur d'or", "être très gentil", "être riche", "être malade"], ["coûter les yeux de la tête", "coûter très cher", "faire mal aux yeux", "être gratuit"], ["avoir la tête dans les nuages", "être distrait, rêvasser", "être très grand", "avoir froid"], ["donner sa langue au chat", "abandonner, ne pas trouver", "nourrir le chat", "se taire"], ["tomber dans les pommes", "s'évanouir", "cueillir des pommes", "trébucher"]] }
+        enonce: "Que veut dire « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: classer
+        vars: { t: [["Le soleil brûle ma peau.", "Je brûle d'impatience.", "La flamme brûle le bois.", "Il brûle de curiosité."], ["Le cuisinier coupe le pain.", "Il m'a coupé la parole.", "Je coupe la ficelle.", "Ça coupe l'appétit."]] }
+        enonce: "Sens propre ou sens figuré ?"
+        categories: ["sens propre", "sens figuré"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        niveau: 2
+        correction: "Le sens figuré est une image : on ne brûle pas vraiment d'impatience !"
+      - type: vf
+        vars: { t: [["« Il pleut des cordes » veut dire qu'il pleut très fort.", true], ["« Avoir le cafard » veut dire avoir un insecte chez soi.", false], ["« Être muet comme une carpe » veut dire ne rien dire.", true], ["« Casser les pieds » veut dire se blesser.", false]] }
+        enonce: "{{t_0}}"
+        reponse: "t_1"
+        correction: "Les expressions ont un sens figuré."
+
+  - id: champ-lexical-homonymes
+    titre: "Champ lexical et homonymes"
+    objectif: Je reconnais les mots d'un même thème (champ lexical) et les homonymes (même son, sens différent).
+    mots: [champ lexical, homonyme]
+    etapes:
+      - dialogue:
+          - neo: "Vague, sable, coquillage, maillot, parasol : tous ces mots parlent de la plage. C'est un champ lexical."
+          - zero: "Et « verre », « vert », « ver », « vers » ? Quatre mots, un seul son ! 🤯"
+      - texte: |
+          Le **champ lexical** est l'ensemble des mots qui se rapportent à un même **thème** : l'école → *cartable, leçon, maîtresse, récréation*.
+
+          Les **homonymes** se prononcent pareil mais ont un **sens différent** (et souvent une orthographe différente) :
+          *un **verre** d'eau, la couleur **vert**e, un **ver** de terre, aller **vers** la mer* ; *la **mer**, ma **mère**, le **maire***.
+      - retiens: "**Champ lexical** = mots d'un même thème. **Homonymes** = même son, sens différent : le **sens** dit comment écrire."
+    exercices:
+      - type: qcm
+        vars: { t: [["la mer", "vague", "cartable", "neige"], ["l'école", "récréation", "sapin", "plage"], ["l'hiver", "flocon", "parasol", "moisson"], ["la cuisine", "casserole", "skis", "trottinette"], ["le théâtre", "rideau", "tracteur", "nageoire"]] }
+        enonce: "Quel mot appartient au champ lexical de « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_1}} » fait partie du thème « {{t_0}} »."
+      - type: qcm
+        vars: { t: [["Je bois un … d'eau.", verre, vert, ver], ["Le … de terre creuse.", ver, verre, vers], ["Ma … prépare le dîner.", mère, mer, maire], ["Le … de la ville fait un discours.", maire, mer, mère], ["Il y a un … dans la pomme.", ver, vert, vers], ["Nous allons … la gare.", vers, verre, vert]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [[vague, cartable, sable, crayon, coquillage, cahier], [parasol, maîtresse, mouette, trousse, bouée, récréation]] }
+        enonce: "Plage ou école ?"
+        categories: [plage, école]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
+        correction: "Chaque mot appartient à un champ lexical."

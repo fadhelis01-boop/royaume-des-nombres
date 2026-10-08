@@ -1,0 +1,93 @@
+# Dictionnaire — mots courants supplémentaires (fréquents à l'école primaire et au collège).
+- { m: aventure, n: n, g: f, d: "Ce qui arrive d'imprévu, de surprenant ou de dangereux.", e: "Les enfants partent à l'aventure.", f: [aventurier, s'aventurer], t: lettres }
+- { m: énigme, n: n, g: f, d: "Question difficile, devinette ; chose mystérieuse.", e: "Néo adore résoudre les énigmes.", s: [devinette, mystère], f: [énigmatique], l: 2, t: monde }
+- { m: mystère, n: n, g: m, d: "Chose cachée, difficile à comprendre.", e: "Le mystère de la chambre fermée.", s: [énigme, secret], f: [mystérieux], t: monde }
+- { m: secret, n: n, g: m, d: "Ce que l'on garde caché.", e: "Peux-tu garder un secret ?", f: [secrètement, secrétaire], t: monde }
+- { m: magie, n: n, g: f, d: "Art de produire des effets extraordinaires, surnaturels.", e: "La fée utilise la magie.", f: [magique, magicien], t: monde }
+- { m: sorcière, n: n, g: f, d: "Femme qui, dans les contes, a des pouvoirs magiques, souvent pour faire le mal.", e: "La sorcière prépare une potion.", f: [sorcier, sorcellerie, ensorceler], t: lettres }
+- { m: fée, n: n, g: f, d: "Personnage des contes, doté de pouvoirs magiques, souvent bienveillant.", e: "La fée transforma la citrouille en carrosse.", f: [féerique, féerie], t: lettres }
+- { m: dragon, n: n, g: m, d: "Animal imaginaire, souvent ailé, qui crache du feu.", e: "Le chevalier affronta le dragon.", t: lettres }
+- { m: géant, n: n, g: m, d: "Personnage immense des contes ; personne très grande.", e: "Le géant dormait dans son château.", a: [nain], f: [gigantesque], t: lettres }
+- { m: ogre, n: n, g: m, d: "Géant des contes qui mange les enfants.", e: "Le Petit Poucet échappa à l'ogre.", f: [ogresse], t: lettres }
+- { m: princesse, n: n, g: f, d: "Fille d'un roi ou d'une reine.", e: "La princesse lisait dans la tour.", f: [prince, princier], t: monde }
+- { m: pirate, n: n, g: m, d: "Bandit qui attaque les bateaux en mer.", e: "Le bateau pirate hissa son drapeau noir.", t: monde }
+- { m: bateau, n: n, g: m, d: "Construction qui flotte et se déplace sur l'eau.", e: "Le bateau quitte le port.", s: [navire, embarcation], f: [batelier], t: monde }
+- { m: port, n: n, g: m, d: "Abri au bord de la mer où les bateaux s'arrêtent.", e: "Les bateaux de pêche rentrent au port.", t: monde }
+- { m: pont, n: n, g: m, d: "Construction qui permet de passer au-dessus d'une rivière, d'une route.", e: "Nous traversons le pont.", f: [ponton], t: monde }
+- { m: chemin, n: n, g: m, d: "Voie, souvent de terre, pour aller d'un lieu à un autre.", e: "Le chemin mène au moulin.", s: [sentier, route], f: [cheminer, acheminer], t: monde }
+- { m: route, n: n, g: f, d: "Large voie pour les véhicules.", e: "La route est glissante.", f: [routier, dérouter], t: monde }
+- { m: voiture, n: n, g: f, d: "Véhicule à moteur à quatre roues.", e: "La voiture est garée devant la maison.", s: [automobile, bagnole], t: monde }
+- { m: train, n: n, g: m, d: "Suite de wagons tirés par une locomotive sur des rails.", e: "Le train part à huit heures.", t: monde }
+- { m: avion, n: n, g: m, d: "Appareil qui vole grâce à des ailes et des moteurs.", e: "L'avion décolle.", f: [aviateur, aviation], t: monde }
+- { m: musique, n: n, g: f, d: "Art de combiner les sons de façon agréable.", e: "J'écoute de la musique.", f: [musicien, musical], t: arts }
+- { m: chanson, n: n, g: f, d: "Texte mis en musique pour être chanté.", e: "Nous apprenons une nouvelle chanson.", f: [chanter, chansonnier], t: arts }
+- { m: dessin, n: n, g: m, d: "Image tracée au crayon, au feutre…", e: "Il fait un dessin de sa maison.", f: [dessiner, dessinateur], t: arts }
+- { m: peinture, n: n, g: f, d: "Matière colorée pour peindre ; tableau peint.", e: "Cette peinture représente la mer.", f: [peindre, peintre], t: arts }
+- { m: couleur, n: n, g: f, d: "Impression que donne la lumière à l'œil (rouge, bleu, vert…).", e: "Quelle est ta couleur préférée ?", f: [coloré, colorier, coloriage], t: arts }
+- { m: sport, n: n, g: m, d: "Activité physique pratiquée en suivant des règles.", e: "Le football est un sport d'équipe.", f: [sportif], t: loisirs }
+- { m: jeu, n: n, g: m, d: "Activité pour s'amuser, souvent avec des règles. Pluriel : des jeux.", e: "Ce jeu de société est amusant.", f: [jouer, joueur, jouet], t: loisirs }
+- { m: équipe, n: n, g: f, d: "Groupe de personnes qui agissent ensemble.", e: "Notre équipe a gagné le match.", f: [équipier], t: loisirs }
+- { m: victoire, n: n, g: f, d: "Fait de gagner un combat, un match.", e: "Quelle belle victoire !", a: [défaite], f: [victorieux, vaincre], t: loisirs }
+- { m: défaite, n: n, g: f, d: "Fait de perdre un combat, un match.", e: "Ils ont subi une défaite.", a: [victoire], t: loisirs }
+- { m: récompense, n: n, g: f, d: "Ce que l'on reçoit pour une bonne action, un effort.", e: "En récompense, tu gagnes une étoile.", f: [récompenser], t: loisirs }
+- { m: médaille, n: n, g: f, d: "Pièce de métal que l'on reçoit en récompense.", e: "Elle a gagné une médaille d'or.", f: [médaillé, médaillon], t: loisirs }
+- { m: idée, n: n, g: f, d: "Ce que l'on pense, ce qui vient à l'esprit.", e: "J'ai une idée !", f: [idéal], t: esprit }
+- { m: question, n: n, g: f, d: "Demande que l'on pose pour savoir quelque chose.", e: "Pose ta question.", a: [réponse], f: [questionner, questionnaire], t: esprit }
+- { m: réponse, n: n, g: f, d: "Ce que l'on dit ou écrit pour répondre.", e: "Ta réponse est juste.", a: [question], f: [répondre], t: esprit }
+- { m: erreur, n: n, g: f, d: "Chose fausse, faute que l'on fait sans le vouloir.", e: "Chacun peut faire une erreur.", s: [faute, méprise], f: [erroné, errer], t: esprit }
+- { m: mémoire, n: n, g: f, d: "Capacité de se souvenir.", e: "Zéro a une mémoire d'éléphant.", f: [mémoriser, mémorable], t: esprit }
+- { m: attention, n: n, g: f, d: "Fait de se concentrer ; aussi « fais attention ! ».", e: "Écoute avec attention.", f: [attentif, attentivement], t: esprit }
+- { m: effort, n: n, g: m, d: "Travail, force que l'on emploie pour réussir.", e: "Avec un peu d'effort, tu y arriveras.", f: [s'efforcer], t: esprit }
+- { m: progrès, n: n, g: m, d: "Fait d'aller vers le mieux.", e: "Tu as fait de grands progrès en dictée.", f: [progresser, progression], t: esprit }
+- { m: savoir, n: n, g: m, d: "Ensemble des connaissances.", e: "Les livres transmettent le savoir.", s: [connaissance, culture], t: esprit }
+- { m: sagesse, n: n, g: f, d: "Qualité de quelqu'un qui agit avec raison et prudence.", e: "Le vieux sage parlait avec sagesse.", f: [sage, sagement], t: esprit }
+- { m: vérité, n: n, g: f, d: "Ce qui est vrai.", e: "Dis la vérité.", a: [mensonge], f: [vrai, véritable], t: esprit }
+- { m: mensonge, n: n, g: m, d: "Ce que l'on dit en sachant que c'est faux.", e: "Pinocchio dit un mensonge et son nez s'allonge.", a: [vérité], f: [mentir, menteur, mensonger], t: esprit }
+- { m: liberté, n: n, g: f, d: "Fait de pouvoir agir sans contrainte.", e: "L'oiseau retrouva sa liberté.", f: [libre, libérer], t: esprit }
+- { m: paix, n: n, g: f, d: "Situation où il n'y a pas de guerre ; calme.", e: "Les deux pays ont signé la paix.", a: [guerre], f: [paisible, apaiser], t: monde }
+- { m: guerre, n: n, g: f, d: "Lutte armée entre des pays ou des groupes.", e: "La guerre a duré quatre ans.", a: [paix], f: [guerrier], t: monde }
+- { m: nature, n: n, g: f, d: "Ensemble des êtres et des choses qui n'ont pas été fabriqués par l'homme ; en grammaire, la classe d'un mot (nom, verbe…).", e: "La nature du mot « vite » est adverbe.", f: [naturel, naturaliste], t: nature }
+- { m: terre, n: n, g: f, d: "Sol où poussent les plantes ; la planète Terre (avec une majuscule).", e: "La Terre tourne autour du Soleil.", f: [terrain, terrestre, atterrir, enterrer], x: "latin terra", t: nature }
+- { m: eau, n: n, g: f, d: "Liquide transparent, sans odeur, indispensable à la vie. Pluriel : des eaux.", e: "Bois de l'eau.", x: "latin aqua", t: nature }
+- { m: feu, n: n, g: m, d: "Flammes qui dégagent chaleur et lumière. Pluriel : des feux.", e: "Le feu crépite dans la cheminée.", f: [feu d'artifice], t: nature }
+- { m: air, n: n, g: m, d: "Mélange de gaz que l'on respire ; aussi une mélodie, ou l'apparence.", e: "Ouvre la fenêtre pour faire entrer l'air.", f: [aérer, aérien], t: nature }
+- { m: pierre, n: n, g: f, d: "Matière dure et minérale ; caillou.", e: "Un mur en pierre.", s: [caillou, roche], f: [pierreux, empierrer], t: nature }
+- { m: sable, n: n, g: m, d: "Petits grains de roche que l'on trouve sur les plages et dans les déserts.", e: "Les enfants font un château de sable.", f: [sablier, ensablé], t: nature }
+- { m: vent, n: n, g: m, d: "Mouvement de l'air.", e: "Le vent souffle fort.", f: [venteux, éventail], t: météo }
+- { m: froid, n: a, d: "Qui a une température basse.", e: "L'eau est froide.", a: [chaud], f: [froideur, refroidir], t: qualités }
+- { m: chaud, n: a, d: "Qui a une température élevée.", e: "Une soupe bien chaude.", a: [froid], f: [chaleur, chauffer, réchauffer], t: qualités }
+- { m: propre, n: a, d: "Qui n'est pas sale ; qui appartient à quelqu'un. Le sens propre d'un mot est son premier sens.", e: "Des mains propres.", a: [sale], f: [propreté], t: qualités }
+- { m: sale, n: a, d: "Qui n'est pas propre.", e: "Ses bottes sont sales.", a: [propre], f: [saleté, salir], t: qualités }
+- { m: plein, n: a, d: "Rempli. Féminin : pleine.", e: "Un verre plein d'eau.", a: [vide], f: [remplir, plénitude], t: qualités }
+- { m: vide, n: a, d: "Qui ne contient rien.", e: "La boîte est vide.", a: [plein], f: [vider], t: qualités }
+- { m: possible, n: a, d: "Qui peut exister ou se faire.", e: "Tout est possible.", a: [impossible], f: [possibilité], t: qualités }
+- { m: important, n: a, d: "Qui a beaucoup de valeur, de conséquence.", e: "C'est un jour important.", s: [essentiel, capital], a: [insignifiant], f: [importance], t: qualités }
+- { m: dangereux, n: a, d: "Qui peut causer un mal, un accident. Féminin : dangereuse.", e: "Ce virage est dangereux.", a: [inoffensif, sûr], f: [danger], t: qualités }
+- { m: célébrer, n: v, d: "Fêter un événement.", e: "Nous célébrons la fin de l'année.", s: [fêter], f: [célébration], l: 2, t: verbes }
+- { m: découvrir, n: v, d: "Trouver ce qui était caché ou inconnu ; enlever ce qui couvre.", e: "Les explorateurs ont découvert une île.", f: [découverte, découvreur], t: verbes }
+- { m: imaginer, n: v, d: "Se représenter dans l'esprit ; inventer.", e: "Imagine un pays où les mots seraient vivants.", f: [imagination, imaginaire], t: verbes }
+- { m: raconter, n: v, d: "Faire le récit de quelque chose.", e: "Raconte-moi une histoire.", s: [narrer, conter], f: [conte], t: verbes }
+- { m: décrire, n: v, d: "Dire ou écrire comment est une personne, un lieu, un objet.", e: "Décris ta chambre en trois phrases.", f: [description, descriptif], t: verbes }
+- { m: convaincre, n: v, d: "Amener quelqu'un à penser ou à faire quelque chose avec des arguments.", e: "Elle m'a convaincu de venir.", s: [persuader], f: [conviction, convaincant], l: 2, t: verbes }
+- { m: voyager, n: v, d: "Faire un voyage, se déplacer loin.", e: "Nous voyageons en train.", f: [voyage, voyageur], t: verbes }
+- { m: nager, n: v, d: "Se déplacer dans l'eau par des mouvements.", e: "Le poisson nage dans le bocal.", f: [nage, nageur, natation], t: verbes }
+- { m: voler, n: v, d: "Se déplacer dans l'air ; prendre ce qui appartient à un autre.", e: "L'oiseau vole. Le voleur a volé un sac.", f: [vol, voleur, envol], t: verbes }
+- { m: sauter, n: v, d: "S'élever du sol d'un bond.", e: "La grenouille saute dans la mare.", f: [saut, sauterelle], t: verbes }
+- { m: tomber, n: v, d: "Être entraîné vers le bas, perdre l'équilibre.", e: "Les feuilles tombent en automne.", f: [chute, retomber], t: verbes }
+- { m: aider, n: v, d: "Apporter son soutien à quelqu'un.", e: "Aide-moi à porter ce carton.", s: [secourir, épauler], f: [aide, entraide], t: verbes }
+- { m: partager, n: v, d: "Diviser en parts ; donner une partie de ce que l'on a.", e: "Partageons le gâteau.", f: [partage, part], t: verbes }
+- { m: offrir, n: v, d: "Donner en cadeau ; proposer.", e: "Je t'offre ce livre.", f: [offre], t: verbes }
+- { m: recevoir, n: v, d: "Obtenir ce que l'on vous donne ou envoie ; accueillir.", e: "J'ai reçu une lettre.", a: [envoyer, donner], f: [réception], t: verbes }
+- { m: envoyer, n: v, d: "Faire partir quelque chose ou quelqu'un vers une destination.", e: "J'envoie une carte postale.", a: [recevoir], f: [envoi, renvoyer], t: verbes }
+- { m: connaître, n: v, d: "Savoir ce qu'est quelqu'un ou quelque chose.", e: "Je connais cette chanson.", a: [ignorer], f: [connaissance, reconnaître, inconnu], t: verbes }
+- { m: croire, n: v, d: "Penser que quelque chose est vrai.", e: "Je crois qu'il va pleuvoir.", f: [croyance, incroyable], t: verbes }
+- { m: sembler, n: v, d: "Avoir l'air.", e: "Il semble fatigué.", s: [paraître], f: [semblant, semblable], t: verbes }
+- { m: devenir, n: v, d: "Commencer à être ce qu'on n'était pas.", e: "La chenille devient papillon.", t: verbes }
+- { m: rester, n: v, d: "Ne pas partir ; continuer d'être.", e: "Reste ici !", a: [partir], f: [reste], t: verbes }
+- { m: attendre, n: v, d: "Rester jusqu'à ce que quelqu'un vienne ou que quelque chose arrive.", e: "J'attends le bus.", f: [attente], t: verbes }
+- { m: espérer, n: v, d: "Souhaiter et croire qu'une chose arrivera.", e: "J'espère qu'il fera beau.", f: [espoir, espérance, désespérer], t: verbes }
+- { m: rêver, n: v, d: "Voir des images en dormant ; désirer fort.", e: "Je rêve de voler.", f: [rêve, rêveur, rêverie], t: verbes }
+- { m: travailler, n: v, d: "Faire des efforts pour réaliser quelque chose ; exercer un métier.", e: "Elle travaille à l'hôpital.", s: [bosser, œuvrer], f: [travail, travailleur], t: verbes }
+- { m: inventer, n: v, d: "Créer quelque chose de nouveau ; imaginer une histoire.", e: "Qui a inventé l'imprimerie ?", f: [invention, inventeur], t: verbes }
+- { m: observer, n: v, d: "Regarder avec attention.", e: "Observe les étoiles avec la lunette.", f: [observation, observatoire], t: verbes }
+- { m: réfléchir, n: v, d: "Penser avant d'agir ou de répondre ; renvoyer la lumière.", e: "Réfléchis bien avant de répondre.", f: [réflexion, irréfléchi], t: verbes }

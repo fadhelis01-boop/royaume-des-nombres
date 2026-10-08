@@ -424,6 +424,11 @@ lecons:
         enonce: "${{10*a+b}} \\times 11$ (attention à la retenue !)"
         reponse: "11*(10*a+b)"
         correction: "{{a}} ({{a+b}}) {{b}} → {{a+1}} {{a+b-10}} {{b}} = {{11*(10*a+b)}}"
+      - type: nombre
+        vars: { a: "1..9", b: "0..9" }
+        enonce: "Pour ${{10*a+b}} \\times 11$, quel chiffre (ou nombre) glisse-t-on au milieu, avant retenue ?"
+        reponse: "a+b"
+        correction: "{{a}} + {{b}} = {{a+b}}"
 
   - id: carres-en-5
     titre: "Calcul mental : les carrés qui finissent par 5"
@@ -456,6 +461,12 @@ lecons:
         enonce: "${{10*a+5}} \\times {{10*a+5}}$"
         reponse: "(10*a+5)^2"
         correction: "{{a*(a+1)}} puis 25 : {{nb((10*a+5)^2)}}"
+      - type: nombre
+        vars: { a: "1..9" }
+        enonce: "Astuce pour ${{10*a+5}}^2$ : d'abord {{a}} × {{a+1}} = ?"
+        reponse: "a*(a+1)"
+        correction: "{{a}} × {{a+1}} = {{a*(a+1)}}, puis on colle 25 : ${{10*a+5}}^2 = {{a*(a+1)}}25$."
+
 
   - id: neuf-et-preuve
     titre: "Le 9 magique : × 9 et preuve par 9"
@@ -523,6 +534,12 @@ lecons:
         enonce: "Astuce magique : {{a}} % de {{b}} ?"
         reponse: "a*b/100"
         correction: "= {{b}} % de {{a}} = {{nb(a*b/100)}}"
+      - type: nombre
+        vars: { t: [10, 20, 25, 50], q: [20, 40, 60, 80, 100, 120] }
+        enonce: "Un jeu coûte {{q}} €. Il est soldé à −{{t}} %. Combien d'euros économises-tu ?"
+        reponse: "t*q/100"
+        correction: "{{t}} % de {{q}} = {{t*q/100}} €."
+
 
   - id: decomposer-multiplier
     titre: "Calcul mental : décomposer pour multiplier"

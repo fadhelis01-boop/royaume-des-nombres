@@ -1,11 +1,15 @@
 # 🌳 Le Royaume des Nombres
 
-Application d'apprentissage des mathématiques **de 7 ans jusqu'au niveau universitaire**, guidée par trois mascottes :
+Application d'apprentissage des **mathématiques** (de 7 ans au niveau universitaire) et du **français** (du CP au lycée), guidée par trois mascottes :
 **Mia π** (la chatte qui imagine), **Néo Fibo** (le renard qui vérifie) et **Zéro** (le hamster qui fait rire).
 
 Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, installable comme une application, **hors connexion**.
 
 ## Ce qu'il y a dedans
+
+- **Deux royaumes** : le Royaume des Nombres (maths) et **l'Archipel des Mots** (français), au choix sur la carte ; chaque enfant garde sa progression dans les deux.
+- **L'Archipel des Mots** : 18 îles et le Grimoire des Astuces — sons et lettres, noms, ponctuation, verbes, accords, temps, homophones, vocabulaire, fonctions dans la phrase, conjugaison complète, participes passés, propositions, écriture (récit, portrait, lettre), lecture (fables de La Fontaine, inférences), style, poésie (syllabes, rimes, sonnet), orthographe fine (tout, même, quel que, couleurs, pronominaux, noms composés, rectifications de 1990) et Académie des Lettres (temps rares, analyse fine, étymologie, paronymes, argumentation, méthodes). Une histoire propre (Gribouille, le Sablier fêlé, la Plume d'or), des exercices de dictée lue à voix haute, mots à écrire avec barre d'accents, mots à toucher, mots à classer.
+- **Dictionnaire de l'Archipel** : plus de 500 mots expliqués aux enfants (exemples, synonymes, contraires, familles, étymologie), conjugueur de tous les temps et modes, carnet de mots à collectionner ; jeux Conjugaison éclair, Mot mystère et Dictée flash.
 
 - **Une histoire à suivre** : le Grignoteur de Nombres éteint les cristaux du Royaume. Chaque monde est un chapitre (scène en bande dessinée à l'arrivée), chaque **Défi du Gardien** réussi rallume un cristal, débloque la suite et un **diplôme à imprimer**. Trois livres, de la Forêt au Temple de la Logique, à relire dans le Livre de l'aventure.
 - **30 mondes, 199 leçons** : du **Nid des Nombres** (GS – CP, compter en touchant) et des nombres jusqu'à 1 000 (CE1) aux intégrales, nombres complexes, matrices et logique (supérieur), plus l'**École des Astuces** (méthode, pensée mathématique, calcul mental, réussir un contrôle).

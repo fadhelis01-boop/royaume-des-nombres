@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { go } from "../lib/router";
-import { useContent } from "../lib/content";
+import { histoireDe, matiereDe, prologueId, useContent } from "../lib/content";
 import { currentSession, useChild } from "../lib/store";
 import { say } from "../lib/tts";
 import { Mascot } from "./Mascot";
@@ -14,13 +14,14 @@ export function Recap() {
   const child = useChild()!;
   const { manifest, worlds } = useContent();
   const [hidden, setHidden] = useState(false);
-  const h = manifest?.histoire;
-  if (hidden || !h || currentSession(child) || !child.story?.prologue) return null;
+  const mat = matiereDe(child);
+  const h = histoireDe(manifest, mat);
+  if (hidden || !h || currentSession(child) || !child.story?.[prologueId(mat)]) return null;
   const seen = Object.entries(child.story ?? {}).sort((a, b) => b[1] - a[1]);
   let text = "";
   for (const [id] of seen) {
     if (id.startsWith("avant:")) {
-      const w = worlds.find((x) => x.id === id.slice(6));
+      const w = worlds.find((x) => x.id === id.slice(6) && x.matiere === mat);
       const ch = h.chapitres[id.slice(6)];
       if (w && ch) {
         const lit = child.crystals?.includes(w.id);
@@ -35,8 +36,8 @@ export function Recap() {
         break;
       }
     }
-    if (id === "prologue") {
-      text = "Le Grignoteur a commencé à éteindre les cristaux du Royaume. Mia, Néo et Zéro comptent sur toi !";
+    if (id === prologueId(mat)) {
+      text = mat === "francais" ? "Gribouille, la tache d'encre, a commencé à effacer les mots de l'Archipel. Mia, Néo et Zéro comptent sur toi !" : "Le Grignoteur a commencé à éteindre les cristaux du Royaume. Mia, Néo et Zéro comptent sur toi !";
       break;
     }
   }

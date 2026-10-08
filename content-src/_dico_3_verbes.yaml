@@ -1,0 +1,71 @@
+# Dictionnaire — verbes (la fiche affiche automatiquement le conjugueur).
+- { m: être, n: v, d: "Exister ; sert aussi à relier le sujet à un attribut, et d'auxiliaire.", e: "Je suis content. Elle est partie.", t: verbes }
+- { m: avoir, n: v, d: "Posséder ; sert aussi d'auxiliaire pour les temps composés.", e: "J'ai un chat. J'ai mangé.", t: verbes }
+- { m: aller, n: v, d: "Se déplacer vers un lieu.", e: "Nous allons à la plage.", s: [se rendre], a: [venir], t: verbes }
+- { m: venir, n: v, d: "Se déplacer vers le lieu où l'on est ; arriver.", e: "Viens ici !", f: [venue, devenir, revenir, prévenir], a: [aller, partir], t: verbes }
+- { m: faire, n: v, d: "Fabriquer, réaliser, agir.", e: "Je fais un gâteau.", s: [fabriquer, réaliser], f: [défaire, refaire, faisable], t: verbes }
+- { m: dire, n: v, d: "Exprimer avec des mots.", e: "Dis-moi la vérité.", s: [affirmer, déclarer], f: [redire, contredire, prédire], t: verbes }
+- { m: voir, n: v, d: "Percevoir avec les yeux.", e: "Je vois la mer.", s: [apercevoir, regarder], f: [revoir, prévoir, vision], t: verbes }
+- { m: prendre, n: v, d: "Saisir, attraper ; emporter.", e: "Prends ton manteau.", s: [saisir, attraper], f: [apprendre, comprendre, surprendre], t: verbes }
+- { m: pouvoir, n: v, d: "Être capable de ; avoir la permission de.", e: "Je peux nager.", f: [puissance, possible], t: verbes }
+- { m: vouloir, n: v, d: "Avoir envie de, désirer.", e: "Je veux une glace.", s: [désirer, souhaiter], f: [volonté, volontaire], t: verbes }
+- { m: savoir, n: v, d: "Connaître ; être capable de faire quelque chose qu'on a appris.", e: "Je sais lire.", s: [connaître], f: [savant, savoir-faire], t: verbes }
+- { m: devoir, n: v, d: "Être obligé de ; avoir une dette.", e: "Je dois partir.", t: verbes }
+- { m: mettre, n: v, d: "Placer quelque chose quelque part ; enfiler un vêtement.", e: "Mets la table.", s: [placer, poser], f: [remettre, promettre, permettre], t: verbes }
+- { m: partir, n: v, d: "Quitter un lieu, s'en aller.", e: "Le train part à midi.", s: [s'en aller, quitter], a: [arriver, rester], f: [départ, repartir], t: verbes }
+- { m: arriver, n: v, d: "Atteindre un lieu ; se produire.", e: "Nous arrivons à la gare.", a: [partir], f: [arrivée], t: verbes }
+- { m: courir, n: v, d: "Se déplacer très vite avec les jambes.", e: "Il court pour attraper le bus.", f: [coureur, course, parcourir], t: verbes }
+- { m: chanter, n: v, d: "Produire des sons musicaux avec la voix.", e: "La cigale chante tout l'été.", f: [chanteur, chanson, chant, enchanter], t: verbes }
+- { m: danser, n: v, d: "Bouger le corps en suivant le rythme d'une musique.", e: "Elles dansent dans la cour.", f: [danse, danseur], t: verbes }
+- { m: jouer, n: v, d: "S'amuser à un jeu ; interpréter un rôle ou un morceau de musique.", e: "Les enfants jouent au ballon.", f: [jeu, jouet, joueur], t: verbes }
+- { m: manger, n: v, d: "Avaler de la nourriture.", e: "Nous mangeons à midi.", s: [se nourrir, bouffer], f: [mangeoire, démanger], t: verbes }
+- { m: boire, n: v, d: "Avaler un liquide.", e: "Bois un verre d'eau.", f: [boisson, buvard], t: verbes }
+- { m: dormir, n: v, d: "Être dans le sommeil.", e: "Le bébé dort.", s: [sommeiller], a: [veiller], f: [dortoir, endormir], t: verbes }
+- { m: lire, n: v, d: "Reconnaître et comprendre des mots écrits.", e: "Je lis une histoire.", f: [lecture, lecteur, lisible, relire], t: verbes }
+- { m: écrire, n: v, d: "Tracer des lettres, des mots ; composer un texte.", e: "J'écris une lettre à ma grand-mère.", f: [écriture, écrivain, écrit, décrire], x: "latin scribere", t: verbes }
+- { m: apprendre, n: v, d: "Acquérir un savoir ; enseigner à quelqu'un.", e: "J'apprends à nager.", f: [apprenti, apprentissage], t: verbes }
+- { m: comprendre, n: v, d: "Saisir le sens de quelque chose.", e: "As-tu compris la consigne ?", f: [compréhension, compréhensible], t: verbes }
+- { m: finir, n: v, d: "Arriver au bout, terminer.", e: "J'ai fini mes devoirs.", s: [terminer, achever], a: [commencer], f: [fin, final, infini], t: verbes }
+- { m: commencer, n: v, d: "Faire la première partie de quelque chose.", e: "Le film commence.", s: [débuter, entamer], a: [finir, terminer], f: [commencement, recommencer], t: verbes }
+- { m: choisir, n: v, d: "Prendre ce que l'on préfère parmi plusieurs choses.", e: "Choisis une carte.", f: [choix], t: verbes }
+- { m: grandir, n: v, d: "Devenir plus grand.", e: "Les enfants grandissent vite.", f: [grand, agrandir], t: verbes }
+- { m: réussir, n: v, d: "Obtenir un bon résultat.", e: "Elle a réussi son examen.", a: [échouer, rater], f: [réussite], t: verbes }
+- { m: obéir, n: v, d: "Faire ce que quelqu'un demande.", e: "Le chien obéit à son maître.", a: [désobéir], f: [obéissance, obéissant], t: verbes }
+- { m: regarder, n: v, d: "Diriger ses yeux vers quelque chose.", e: "Regarde ce bel oiseau !", s: [observer, contempler], f: [regard], t: verbes }
+- { m: écouter, n: v, d: "Prêter attention à ce que l'on entend.", e: "Écoute bien la consigne.", f: [écoute, auditeur], t: verbes }
+- { m: entendre, n: v, d: "Percevoir des sons avec les oreilles.", e: "J'entends un bruit.", f: [entente, sous-entendu], t: verbes }
+- { m: parler, n: v, d: "Dire des mots ; s'exprimer.", e: "Nous parlons français.", f: [parole, parleur, parlement], t: verbes }
+- { m: penser, n: v, d: "Réfléchir ; avoir une opinion.", e: "Je pense à toi.", s: [réfléchir, songer], f: [pensée, pensif], t: verbes }
+- { m: aimer, n: v, d: "Éprouver de l'amour, de l'affection ou du goût pour quelqu'un ou quelque chose.", e: "J'aime les fraises.", s: [adorer, apprécier], a: [détester], f: [amour, aimable], t: verbes }
+- { m: trouver, n: v, d: "Découvrir ce que l'on cherchait ; estimer.", e: "J'ai trouvé un trésor. Je trouve ce film drôle.", a: [perdre], f: [trouvaille, retrouver], t: verbes }
+- { m: perdre, n: v, d: "Ne plus avoir ; ne plus trouver ; être vaincu.", e: "J'ai perdu mes clés.", a: [trouver, gagner], f: [perte, perdant], t: verbes }
+- { m: gagner, n: v, d: "Être vainqueur ; obtenir.", e: "Notre équipe a gagné.", a: [perdre], f: [gagnant, gain], t: verbes }
+- { m: chercher, n: v, d: "Essayer de trouver.", e: "Je cherche mon livre.", f: [chercheur, recherche], t: verbes }
+- { m: ouvrir, n: v, d: "Faire qu'une chose ne soit plus fermée.", e: "Ouvre la fenêtre.", a: [fermer], f: [ouverture, ouvert, rouvrir], t: verbes }
+- { m: fermer, n: v, d: "Faire qu'une chose ne soit plus ouverte.", e: "Ferme la porte, il fait froid.", a: [ouvrir], f: [fermeture, enfermer], t: verbes }
+- { m: tenir, n: v, d: "Avoir dans la main ; garder ; résister.", e: "Tiens bien la corde.", f: [retenir, obtenir, soutenir], t: verbes }
+- { m: rire, n: v, d: "Montrer sa joie par des sons et un sourire.", e: "Ils rient aux éclats.", s: [s'esclaffer, se marrer], a: [pleurer], f: [sourire, risible, rieur], t: verbes }
+- { m: pleurer, n: v, d: "Verser des larmes.", e: "Le bébé pleure.", a: [rire], f: [pleurs, pleurnicher], t: verbes }
+- { m: craindre, n: v, d: "Avoir peur de.", e: "Je crains l'orage.", s: [redouter], f: [crainte, craintif], l: 2, t: verbes }
+- { m: peindre, n: v, d: "Couvrir de peinture ; représenter avec des couleurs.", e: "Elle peint un paysage.", f: [peinture, peintre], l: 2, t: verbes }
+- { m: résoudre, n: v, d: "Trouver la solution de.", e: "Néo a résolu l'énigme.", f: [résolution, solution], l: 2, t: verbes }
+- { m: naître, n: v, d: "Venir au monde.", e: "Victor Hugo est né en 1802.", a: [mourir], f: [naissance, renaître, natal], t: verbes }
+- { m: mourir, n: v, d: "Cesser de vivre.", e: "Les fleurs meurent sans eau.", a: [naître, vivre], f: [mort, mortel], t: verbes }
+- { m: vivre, n: v, d: "Être en vie ; habiter.", e: "Ils vivent à la campagne.", f: [vie, vivant, survivre], t: verbes }
+- { m: conduire, n: v, d: "Diriger un véhicule ; mener quelqu'un quelque part.", e: "Papa conduit la voiture.", f: [conducteur, conduite], t: verbes }
+- { m: construire, n: v, d: "Bâtir, assembler des éléments.", e: "Ils construisent une cabane.", a: [détruire], f: [construction, reconstruire], t: verbes }
+- { m: détruire, n: v, d: "Démolir, faire disparaître.", e: "La tempête a détruit le pont.", a: [construire], f: [destruction], t: verbes }
+- { m: s'enfuir, n: v, d: "Partir très vite pour échapper à quelqu'un ou à quelque chose.", e: "Les voleurs se sont enfuis.", s: [se sauver, fuir], f: [fuite], l: 2, t: verbes }
+- { m: se souvenir, n: v, d: "Avoir quelque chose en mémoire.", e: "Je me souviens de mes vacances.", s: [se rappeler], a: [oublier], f: [souvenir], t: verbes }
+- { m: oublier, n: v, d: "Ne plus se souvenir ; laisser par erreur.", e: "J'ai oublié mon cahier.", a: [se souvenir], f: [oubli], t: verbes }
+- { m: protéger, n: v, d: "Mettre à l'abri d'un danger.", e: "Le parapluie protège de la pluie.", s: [défendre, abriter], f: [protection, protecteur], t: verbes }
+- { m: expliquer, n: v, d: "Faire comprendre.", e: "Mia explique la règle.", f: [explication, inexplicable], t: verbes }
+- { m: conjuguer, n: v, d: "Écrire ou dire un verbe à ses différentes formes (personnes, temps, modes).", e: "Conjugue « finir » au présent.", f: [conjugaison], l: 2, t: grammaire }
+- { m: accorder, n: v, d: "Mettre un mot en accord avec un autre (genre, nombre) ; donner.", e: "Accorde l'adjectif avec le nom.", f: [accord], t: grammaire }
+- { m: hésiter, n: v, d: "Ne pas savoir quoi décider.", e: "Il hésite entre le rouge et le bleu.", f: [hésitation], t: verbes }
+- { m: briller, n: v, d: "Émettre ou refléter une lumière vive.", e: "Les étoiles brillent.", s: [scintiller, étinceler], f: [brillant], t: verbes }
+- { m: murmurer, n: v, d: "Parler très bas.", e: "Elle murmura un secret.", s: [chuchoter], a: [crier], t: verbes }
+- { m: crier, n: v, d: "Pousser des cris ; parler très fort.", e: "Ne crie pas, le bébé dort.", s: [hurler], a: [murmurer], f: [cri, criard], t: verbes }
+- { m: s'exclamer, n: v, d: "Dire quelque chose vivement, avec surprise ou émotion.", e: "« Quelle merveille ! » s'exclama-t-il.", f: [exclamation], l: 2, t: verbes }
+- { m: répondre, n: v, d: "Dire ou écrire quelque chose à quelqu'un qui a posé une question.", e: "Réponds à la question.", f: [réponse], t: verbes }
+- { m: demander, n: v, d: "Poser une question ; dire ce que l'on veut obtenir.", e: "Je demande mon chemin.", f: [demande], t: verbes }

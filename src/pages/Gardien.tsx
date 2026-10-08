@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { go } from "../lib/router";
 import { useContent, worldProgress } from "../lib/content";
+import { histoireDe } from "../lib/content";
 import { addCrystal, addGems, getState, markStory, recordAbandon, setState, useChild } from "../lib/store";
 import { burst, centerOf, floatText, shake } from "../lib/juice";
 import { say } from "../lib/tts";
 import { fmtNum } from "../lib/expr";
+import { visuel } from "../lib/img";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
 import { MASTERY } from "../lib/rewards";
 import { sfx } from "../lib/sound";
@@ -43,6 +45,11 @@ function plan(w: World, n = N): Instance[] {
 }
 
 function villain(w: World): Line[] {
+  if (w.matiere === "francais" && w.cycle !== "graines")
+    return [
+      { who: "gribouille", text: "Attention ! Ce ne sont plus mes taches : des Taches sauvages se sont échappées de l'encrier. Elles n'écoutent personne… sauf les mots parfaitement écrits !" },
+    ];
+  if (w.matiere === "francais") return [{ who: "gribouille", text: "Splotch ! Le Grimoire est caché derrière dix taches d'encre. Chaque mot bien écrit en efface une… Tu n'y arriveras jamais ! (enfin… peut-être que si)" }];
   if (w.cycle === "graines") return [{ who: "nuage", text: "Hi hi ! Le cristal est caché derrière dix nuages. Pour chaque bonne réponse, un nuage s'envole… Tu n'y arriveras jamais ! (enfin… peut-être que si)" }];
   if (w.cycle === "explorateurs") return [{ who: "ixe", text: "Dix énigmes gardent le fragment de carte. Montre-moi que tu sais trouver les inconnues !" }];
   return [{ who: "narrateur", text: "Le Grand Oubli a effacé dix pages. Pour chaque bonne réponse, une page se réécrit…" }];
@@ -52,13 +59,13 @@ export function Gardien({ worldId }: { worldId: string }) {
   const { worlds, manifest } = useContent();
   const child = useChild()!;
   const w = worlds.find((x) => x.id === worldId);
-  const ch = w ? manifest?.histoire?.chapitres[w.id] : undefined;
+  const ch = w ? histoireDe(manifest, w.matiere)?.chapitres[w.id] : undefined;
   const [phase, setPhase] = useState<"intro" | "jeu" | "fin" | "arc">("intro");
   const [round, setRound] = useState(0);
   const qs = useMemo(() => (w ? plan(w) : []), [w, round]);
   const [score, setScore] = useState(0);
   if (!w) return <div className="page center">Monde introuvable.</div>;
-  const arc = manifest?.histoire?.arcs.find((a) => a.final === w.id);
+  const arc = histoireDe(manifest, w.matiere)?.arcs.find((a) => a.final === w.id);
 
   if (!gardienOuvert(w))
     return (
@@ -164,25 +171,32 @@ export function Gardien({ worldId }: { worldId: string }) {
 
 // ---------- Le combat ----------
 
-type Foe = "nuage" | "ixe" | "oubli";
-const foeOf = (w: World): Foe => (w.cycle === "graines" ? "nuage" : w.cycle === "explorateurs" ? "ixe" : "oubli");
-const FOE_NAME: Record<Foe, string> = { nuage: "Le Grignoteur", ixe: "Ixe", oubli: "Le Grand Oubli" };
+type Foe = "nuage" | "ixe" | "oubli" | "gribouille" | "tache";
+// En français, Gribouille devient un allié après le livre I : les îles suivantes sont gardées par des Taches sauvages.
+const foeOf = (w: World): Foe => (w.matiere === "francais" ? (w.cycle === "graines" ? "gribouille" : "tache") : w.cycle === "graines" ? "nuage" : w.cycle === "explorateurs" ? "ixe" : "oubli");
+const FOE_NAME: Record<Foe, string> = { nuage: "Le Grignoteur", ixe: "Ixe", oubli: "Le Grand Oubli", gribouille: "Gribouille", tache: "Une Tache sauvage" };
 
 const OUCH: Record<Foe, string[]> = {
   nuage: ["Aïe ! Mon nuage s'effiloche !", "Hé ! Tu calcules trop vite !", "Pfff… encore un nuage envolé.", "Comment tu as su ?!"],
   ixe: ["Démasquée ! Bon, d'accord…", "Tu as trouvé ma valeur !", "Hi hi, bien joué !"],
   oubli: ["Cette page… se réécrit…", "Ce qui est démontré me résiste !", "Non… pas une preuve !"],
+  gribouille: ["Splotch ! Tu as remis l'accent !", "Aïe, mes taches s'effacent !", "Comment tu connais cette règle ?!", "Grrr… un mot bien écrit, ça me pique !"],
+  tache: ["Sssplotch… je sèche !", "Un accord parfait ?! Je m'efface…", "Grrrblub !", "Cette règle… me dissout !"],
 };
 const TAUNT: Record<Foe, string[]> = {
   nuage: ["Hi hi ! Raté ! Je croque tes gemmes !", "Miam ! Merci pour les gemmes !", "Trop lent ! Crunch !"],
   ixe: ["Je change de couleur… raté !", "x peut valoir n'importe quoi, hi hi !"],
   oubli: ["Encore une page blanche…", "Oublié ! Oublié !"],
+  gribouille: ["Hé hé, une faute ! Je croque tes gemmes !", "Miam, un accent tombé !", "Splatch ! Raté !"],
+  tache: ["Blurp ! Une faute, je grossis !", "Splatch ! Tes gemmes sont à moi !", "Glouglou… raté !"],
 };
 
 function FoeSprite({ foe, state }: { foe: Foe; state: string }) {
   return (
     <div className={`foe foe-${foe} foe-${state}`}>
-      {foe === "oubli" ? (
+      {foe === "oubli" && visuel("persos", "grand-oubli") ? (
+        <img src={visuel("persos", "grand-oubli")} alt="Le Grand Oubli" width={130} height={130} className="mascot" />
+      ) : foe === "oubli" ? (
         <svg viewBox="0 0 120 120" width={120} height={120} aria-hidden className="oubli-svg">
           {[0, 1, 2, 3, 4].map((k) => (
             <rect key={k} x={30 + k * 4} y={22 + k * 3} width={56} height={72} rx={4} fill="#fbfaff" stroke="#b9b3cc" strokeWidth={2} transform={`rotate(${-24 + k * 12} 60 60)`} />
@@ -191,7 +205,7 @@ function FoeSprite({ foe, state }: { foe: Foe; state: string }) {
           <ellipse cx={70} cy={58} rx={5} ry={7} fill="#5b5675" />
         </svg>
       ) : (
-        <Mascot who={foe} size={120} humeur={state === "hit" ? "triste" : state === "laugh" ? "joie" : undefined} />
+        <Mascot who={foe === "tache" ? "gribouille" : foe} size={120} humeur={state === "hit" ? (foe === "nuage" ? "touche" : "surprise") : state === "laugh" ? (foe === "nuage" ? "croque" : "joie") : undefined} />
       )}
     </div>
   );
@@ -211,7 +225,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
   const [res, setRes] = useState<ExResult[]>([]);
   const [pot, setPot] = useState(30);
   const [state, setFoeState] = useState("idle");
-  const [line, setLine] = useState<string>(foe === "nuage" ? "Viens donc, petit calculateur !" : foe === "ixe" ? "Attrape-moi si tu peux !" : "Je vais tout effacer…");
+  const [line, setLine] = useState<string>(foe === "nuage" ? "Viens donc, petit calculateur !" : foe === "ixe" ? "Attrape-moi si tu peux !" : foe === "gribouille" ? "Splotch ! Tous tes mots vont finir en taches !" : foe === "tache" ? "Blurp… blurp… (la Tache sauvage gronde)" : "Je vais tout effacer…");
   const [used, setUsed] = useState<Record<string, boolean>>({});
   const [removed, setRemoved] = useState<number[]>([]);
   const [hintTxt, setHintTxt] = useState<string>();
@@ -317,7 +331,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
         <div className="crystal-meter" aria-label={`${qs.length - hp} sur ${qs.length}`}>
           {qs.map((_, k) => (
             <span key={k} className={k < res.length ? (res[k].ok ? "lit" : "miss") : k === i ? "cur" : ""}>
-              {k < res.length && res[k].ok ? "✨" : foe === "oubli" ? "📄" : "☁️"}
+              {k < res.length && res[k].ok ? "✨" : foe === "oubli" ? "📄" : foe === "gribouille" || foe === "tache" ? "⚫" : "☁️"}
             </span>
           ))}
         </div>

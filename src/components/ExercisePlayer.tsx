@@ -11,6 +11,9 @@ import { Bubble, SpeakBtn } from "./Mascot";
 import { Md } from "./Md";
 import { Droite, Visuel } from "./Visuel";
 import { Manip } from "./Manip";
+import { Icone } from "./Icone";
+import { AccentBar, Classer, DicteeControles, DicteeCorrection, Surligner } from "./FrExercices";
+import type { Lead } from "../lib/habillage";
 
 const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
 /** Types « à choix » : réussir au 2ᵉ essai ne rapporte rien (sinon cliquer au hasard paierait). */
@@ -49,7 +52,7 @@ export function ExercisePlayer({
   /** indice donné par un pouvoir (dessin de Mia) */
   powerHint?: string;
   /** petite mise en scène : l'habitant du monde qui pose la question */
-  lead?: string;
+  lead?: Lead;
   /** appelé dès que la réponse est définitive (avant « Continuer ») : pour réagir tout de suite */
   onVerdict?: (r: ExResult) => void;
 }) {
@@ -65,6 +68,9 @@ export function ExercisePlayer({
   const [order, setOrder] = useState<number[]>([]);
   const [point, setPoint] = useState<number | null>(null);
   const [manipVals, setManipVals] = useState<number[] | null>(null);
+  const [sel, setSel] = useState<number[]>([]); // surligner
+  const [cls, setCls] = useState<(number | null)[]>(() => (inst.type === "classer" ? (inst.items ?? []).map(() => null) : [])); // classer
+  const isFrText = inst.type === "mot" || inst.type === "dictee";
   const isManip = MANIP.includes(inst.type);
   const [phase, setPhase] = useState<Phase>("answer");
   const [tries, setTries] = useState(0);
@@ -84,7 +90,7 @@ export function ExercisePlayer({
   }, [inst]);
 
   useEffect(() => {
-    if (autoRead ?? (getState().settings.autoRead || activeChild()?.lecteur === "non")) speak([{ who: "narrateur", text: readable }], { key: k });
+    if (inst.type !== "dictee" && (autoRead ?? (getState().settings.autoRead || activeChild()?.lecteur === "non"))) speak([{ who: "narrateur", text: readable }], { key: k });
     if (!isTouch) inputRef.current?.focus();
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -109,6 +115,10 @@ export function ExercisePlayer({
       case "horloge":
       case "payer":
         return manipVals ? { kind: "state", values: manipVals } : null;
+      case "surligner":
+        return sel.length ? { kind: "state", values: sel } : null;
+      case "classer":
+        return cls.every((c) => c !== null) ? { kind: "state", values: cls as number[] } : null;
       default:
         return text.trim() ? { kind: "text", value: text } : null;
     }
@@ -126,6 +136,10 @@ export function ExercisePlayer({
         return point !== null ? point.toFixed(2) : "";
       case "champs":
         return fields.join(" · ");
+      case "surligner":
+        return sel.map((i) => inst.words![i]).join(", ");
+      case "classer":
+        return inst.items!.map((it, i) => `${it} → ${cls[i] !== null ? inst.categories![cls[i]!] : "?"}`).join(", ");
       default:
         return isManip ? (manipVals ?? []).join(" · ") : text;
     }
@@ -197,7 +211,8 @@ export function ExercisePlayer({
     setChoice(null);
     setPoint(null);
     setOrder([]);
-    if (inst.type !== "champs") setText("");
+    setSel([]);
+    if (inst.type !== "champs" && inst.type !== "dictee") setText("");
     if (!isTouch) setTimeout(() => inputRef.current?.focus(), 30);
   };
 
@@ -213,11 +228,23 @@ export function ExercisePlayer({
     if (inst.indice) say("mia", inst.indice);
   };
 
-  // Touche Entrée
+  // Touche Entrée (un appui maintenu ou doublé ne doit pas sauter la correction)
+  const lastEnter = useRef(0);
+  // posé directement sur les champs : plus fiable que l'écouteur global (vu en test réel)
+  const onFieldEnter = (e: React.KeyboardEvent) => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.repeat || Date.now() - lastEnter.current < 700) return;
+    lastEnter.current = Date.now();
+    if (phase === "answer") submit();
+  };
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter" && !(e.target instanceof HTMLTextAreaElement && phase === "answer")) {
         e.preventDefault();
+        if (e.repeat || Date.now() - lastEnter.current < 700) return;
+        lastEnter.current = Date.now();
         if (phase === "answer") submit();
         else if (phase === "retry") retry();
         else finish();
@@ -233,7 +260,11 @@ export function ExercisePlayer({
 
   return (
     <div ref={rootRef} className={`exercise phase-${phase} ${phase === "done" ? (okFinal ? "is-ok" : "is-ko") : ""}`}>
-      {lead && <div className="ex-lead">{lead}</div>}
+      {lead && (
+        <div className="ex-lead">
+          <Icone cat="habitants" id={lead.id} emoji={lead.emoji} size={40} /> {lead.text}
+        </div>
+      )}
       <div className="ex-head">
         <SpeakBtn segs={[{ who: "narrateur", text: readable }]} k={k} small label="Écouter la consigne" />
         <Md text={inst.enonce} className="ex-enonce" />
@@ -301,6 +332,23 @@ export function ExercisePlayer({
 
       {isManip && <Manip inst={inst} onChange={setManipVals} disabled={phase === "done"} />}
 
+      {inst.type === "dictee" && <DicteeControles texte={inst.dictee!} k={k + ":dictee"} />}
+      {isFrText && (
+        <div className="answer-line fr">
+          {inst.type === "dictee" ? (
+            <textarea id={`fr-${inst.seed}`} value={text} disabled={disabled} rows={3} className="answer-input dictee-input" placeholder="Écris ce que tu entends…" spellCheck={false} autoCorrect="off" autoCapitalize="sentences" onChange={(e) => setText(e.target.value)} aria-label="ta dictée" />
+          ) : (
+            <input id={`fr-${inst.seed}`} ref={inputRef} value={text} disabled={disabled} className="answer-input" placeholder="ta réponse" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} onChange={(e) => setText(e.target.value)}
+              onKeyDown={onFieldEnter}
+              aria-label="ta réponse"
+            />
+          )}
+        </div>
+      )}
+      {isFrText && phase === "answer" && <AccentBar inputId={`fr-${inst.seed}`} value={text} onChange={setText} />}
+      {inst.type === "surligner" && <Surligner words={inst.words!} selected={sel} onChange={setSel} reveal={phase === "done" ? inst.targets : undefined} disabled={phase !== "answer"} />}
+      {inst.type === "classer" && <Classer items={inst.items!} categories={inst.categories!} values={cls} onChange={setCls} reveal={phase === "done" ? inst.itemCats : undefined} disabled={phase !== "answer"} />}
+
       {inst.type === "droite" && (
         <div className="droite-ex">
           <Droite v={{ min: inst.min, max: inst.max, pas: inst.pas, etiquettes: (inst.visuel as Record<string, unknown> | undefined)?.etiquettes, fractions: (inst.visuel as Record<string, unknown> | undefined)?.fractions }} onPick={disabled ? undefined : (x) => setPoint(x)} picked={point} reveal={phase === "done" ? inst.value! : null} />
@@ -321,6 +369,7 @@ export function ExercisePlayer({
                 className={`answer-input small ${focusField === i ? "focus" : ""}`}
                 onFocus={() => setFocusField(i)}
                 onChange={(e) => setFields((f) => f.map((x, j) => (j === i ? e.target.value : x)))}
+                onKeyDown={onFieldEnter}
                 aria-label={`case ${i + 1}`}
               />
               {c.apres && <Md text={c.apres} inline />}
@@ -342,6 +391,7 @@ export function ExercisePlayer({
             className="answer-input"
             placeholder={inst.type === "liste" ? "ex. 3 ; −3" : inst.type === "expression" ? "ex. 3x + 2" : inst.type === "texte" ? "ta réponse" : "?"}
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={onFieldEnter}
             aria-label="ta réponse"
           />
           {inst.unite && <span className="unite">{inst.unite}</span>}
@@ -364,7 +414,7 @@ export function ExercisePlayer({
             💡 Indice
           </button>
         )}
-        {phase === "answer" && !usesKeypad && (
+        {phase === "answer" && (!usesKeypad || isFrText) && (
           <button type="button" className="btn btn-primary" disabled={!canSubmit} onClick={() => submit()} aria-label="Valider">
             <span className="btn-txt">Valider </span>✔
           </button>
@@ -384,6 +434,7 @@ export function ExercisePlayer({
       {message && (
         <div className={`feedback ${phase === "done" ? (okFinal ? "ok" : "ko") : "retry"}`} aria-live="polite">
           <Bubble who={message.who} text={message.text} size={64} humeur={message.humeur} />
+          {phase === "done" && !okFinal && inst.type === "dictee" && <DicteeCorrection attendu={inst.dictee!} donne={text} />}
           {phase === "done" && !okFinal && verdict && (
             <div className="correction">
               <div className="correction-title">✏️ La bonne réponse</div>

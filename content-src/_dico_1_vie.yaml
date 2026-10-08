@@ -1,0 +1,69 @@
+# Dictionnaire de l'Archipel des Mots — vie quotidienne : maison, famille, corps, école, nourriture.
+# Clés courtes : m mot · n nature (n v a adv p c pr d i loc) · g genre (m f mf) · d définition · e exemple
+#                s synonymes · a antonymes · f famille · x étymologie · l niveau (1-3) · t thème
+- { m: maison, n: n, g: f, d: "Bâtiment où l'on habite.", e: "Notre maison a un grand jardin.", s: [demeure, logis], f: [maisonnette], x: "latin mansio, « séjour »", t: maison }
+- { m: cuisine, n: n, g: f, d: "Pièce où l'on prépare les repas ; aussi l'art de préparer les plats.", e: "Papa fait la cuisine.", f: [cuisiner, cuisinier, cuisinière], t: maison }
+- { m: chambre, n: n, g: f, d: "Pièce où l'on dort.", e: "Range ta chambre !", t: maison }
+- { m: fenêtre, n: n, g: f, d: "Ouverture dans un mur pour laisser entrer l'air et la lumière.", e: "Ouvre la fenêtre.", t: maison }
+- { m: porte, n: n, g: f, d: "Ouverture qui permet d'entrer et de sortir, et qui se ferme.", e: "Frappe à la porte.", f: [portail, portier], t: maison }
+- { m: toit, n: n, g: m, d: "Partie qui couvre le haut d'une maison.", e: "Le chat dort sur le toit.", f: [toiture], t: maison }
+- { m: escalier, n: n, g: m, d: "Suite de marches pour monter ou descendre.", e: "Il monte l'escalier en courant.", t: maison }
+- { m: grenier, n: n, g: m, d: "Pièce sous le toit où l'on range de vieilles choses.", e: "Nous avons trouvé un coffre au grenier.", x: "latin granarium, « lieu où l'on garde le grain »", t: maison }
+- { m: cave, n: n, g: f, d: "Pièce sous la maison, souvent fraîche et sombre.", e: "Les bocaux sont rangés à la cave.", t: maison }
+- { m: jardin, n: n, g: m, d: "Terrain où l'on cultive des fleurs, des légumes ou des arbres.", e: "Les tomates poussent au jardin.", f: [jardiner, jardinier, jardinage], t: maison }
+- { m: lit, n: n, g: m, d: "Meuble sur lequel on se couche pour dormir.", e: "Au lit, il est tard !", f: [literie, s'aliter], t: maison }
+- { m: armoire, n: n, g: f, d: "Grand meuble fermé par des portes, pour ranger le linge.", e: "Les draps sont dans l'armoire.", t: maison }
+- { m: lampe, n: n, g: f, d: "Objet qui sert à éclairer.", e: "Allume la lampe pour lire.", f: [lampadaire], t: maison }
+- { m: clé, n: n, g: f, d: "Petit objet en métal qui ouvre et ferme une serrure.", e: "J'ai perdu la clé de la porte.", s: [clef], t: maison }
+- { m: famille, n: n, g: f, d: "Ensemble des parents et des enfants, et des personnes liées par le sang ou le mariage.", e: "Toute la famille est réunie.", f: [familial, familier], t: famille }
+- { m: parent, n: n, g: m, d: "Le père ou la mère ; plus largement, une personne de la même famille.", e: "Mes parents viennent me chercher.", t: famille }
+- { m: frère, n: n, g: m, d: "Garçon qui a les mêmes parents que toi.", e: "Mon petit frère a trois ans.", f: [fraternel, fraternité], a: [sœur], t: famille }
+- { m: sœur, n: n, g: f, d: "Fille qui a les mêmes parents que toi.", e: "Ma grande sœur lit beaucoup.", f: [sororité], a: [frère], t: famille }
+- { m: cousin, n: n, g: m, d: "Enfant de ton oncle ou de ta tante.", e: "Je joue avec mon cousin pendant les vacances.", t: famille }
+- { m: oncle, n: n, g: m, d: "Frère de ton père ou de ta mère.", e: "Mon oncle habite à la mer.", a: [tante], t: famille }
+- { m: tante, n: n, g: f, d: "Sœur de ton père ou de ta mère.", e: "Ma tante m'a offert un livre.", a: [oncle], t: famille }
+- { m: ancêtre, n: n, g: mf, d: "Personne de la famille qui a vécu il y a très longtemps.", e: "Nos ancêtres cultivaient la terre.", s: [aïeul], l: 2, t: famille }
+- { m: bébé, n: n, g: m, d: "Enfant très jeune, qui ne marche pas encore.", e: "Le bébé dort dans son berceau.", s: [nourrisson], t: famille }
+- { m: enfance, n: n, g: f, d: "Période de la vie entre la naissance et l'adolescence.", e: "Il se souvient de son enfance.", f: [enfant, enfantin], t: famille }
+- { m: tête, n: n, g: f, d: "Partie du corps qui porte le visage et contient le cerveau.", e: "J'ai mal à la tête.", f: [têtu, entêté], t: corps }
+- { m: visage, n: n, g: m, d: "Le devant de la tête : yeux, nez, bouche, joues.", e: "Son visage s'éclaira d'un sourire.", s: [figure, face], t: corps }
+- { m: œil, n: n, g: m, d: "Organe de la vue. Au pluriel : des yeux.", e: "Ferme un œil pour viser.", f: [œillade], t: corps }
+- { m: oreille, n: n, g: f, d: "Organe de l'ouïe, qui sert à entendre.", e: "Le lapin a de longues oreilles.", f: [oreiller], t: corps }
+- { m: main, n: n, g: f, d: "Partie du bras qui sert à prendre, toucher, écrire.", e: "Lève la main pour parler.", f: [manuel, manier], x: "latin manus", t: corps }
+- { m: pied, n: n, g: m, d: "Partie de la jambe sur laquelle on se tient debout.", e: "Il marche pieds nus.", f: [piéton, piétiner], x: "latin pes, pedis", t: corps }
+- { m: cœur, n: n, g: m, d: "Organe qui pompe le sang ; aussi le siège des sentiments.", e: "Mon cœur bat très fort.", f: [cordial, courage], t: corps }
+- { m: cerveau, n: n, g: m, d: "Organe dans la tête qui permet de penser, de bouger, de sentir.", e: "Le cerveau commande tout le corps.", f: [cérébral], t: corps }
+- { m: squelette, n: n, g: m, d: "Ensemble des os du corps.", e: "Le squelette humain compte plus de deux cents os.", t: corps }
+- { m: école, n: n, g: f, d: "Lieu où les enfants apprennent avec un enseignant.", e: "Je vais à l'école à pied.", f: [écolier, scolaire], x: "grec skholê, « loisir, étude »", t: école }
+- { m: cartable, n: n, g: m, d: "Sac où l'on range ses affaires d'école.", e: "Mon cartable est trop lourd.", t: école }
+- { m: cahier, n: n, g: m, d: "Ensemble de feuilles reliées pour écrire.", e: "Écris la date dans ton cahier.", t: école }
+- { m: crayon, n: n, g: m, d: "Objet pour écrire ou dessiner, avec une mine.", e: "Taille ton crayon.", t: école }
+- { m: leçon, n: n, g: f, d: "Ce que l'on apprend en une fois ; ce qu'il faut savoir par cœur.", e: "J'ai appris ma leçon de conjugaison.", t: école }
+- { m: devoir, n: n, g: m, d: "Travail qu'un élève doit faire ; aussi ce que l'on est obligé de faire.", e: "J'ai fini mes devoirs.", t: école }
+- { m: récréation, n: n, g: f, d: "Moment de pause où les élèves jouent dans la cour.", e: "On joue au ballon à la récréation.", s: [récré, pause], t: école }
+- { m: élève, n: n, g: mf, d: "Personne qui apprend dans une école.", e: "Les élèves écoutent la maîtresse.", s: [écolier], t: école }
+- { m: maître, n: n, g: m, d: "Personne qui enseigne ; personne qui commande ; artiste ou savant très habile.", e: "Le maître explique la leçon.", f: [maîtresse, maîtrise, maîtriser], x: "latin magister", t: école }
+- { m: bibliothèque, n: n, g: f, d: "Lieu ou meuble où l'on range des livres.", e: "J'emprunte des livres à la bibliothèque.", x: "grec biblion, « livre » + thêkê, « coffre »", l: 2, t: école }
+- { m: livre, n: n, g: m, d: "Ensemble de pages imprimées et reliées qu'on lit.", e: "Ce livre raconte une aventure.", s: [ouvrage, bouquin], f: [livret, libraire], t: école }
+- { m: page, n: n, g: f, d: "Chacun des côtés d'une feuille d'un livre ou d'un cahier.", e: "Ouvrez votre livre à la page dix.", t: école }
+- { m: pain, n: n, g: m, d: "Aliment fait de farine, d'eau et de levure, cuit au four.", e: "Le boulanger fait du pain.", f: [panier, copain], t: nourriture }
+- { m: fromage, n: n, g: m, d: "Aliment fait avec du lait caillé.", e: "Le corbeau tenait un fromage.", t: nourriture }
+- { m: légume, n: n, g: m, d: "Plante ou partie de plante que l'on mange (carotte, poireau…).", e: "Mange tes légumes !", t: nourriture }
+- { m: fruit, n: n, g: m, d: "Partie d'une plante qui contient les graines ; souvent sucrée et bonne à manger.", e: "La pomme est un fruit.", f: [fruitier], t: nourriture }
+- { m: repas, n: n, g: m, d: "Nourriture que l'on prend à certaines heures.", e: "Le repas est servi.", t: nourriture }
+- { m: gourmand, n: a, d: "Qui aime manger de bonnes choses, surtout sucrées.", e: "Zéro est très gourmand.", f: [gourmandise], t: nourriture }
+- { m: recette, n: n, g: f, d: "Explication pour préparer un plat.", e: "Suis bien la recette du gâteau.", t: nourriture }
+- { m: dessert, n: n, g: m, d: "Plat sucré que l'on mange à la fin du repas.", e: "Au dessert, il y a une tarte.", l: 1, t: nourriture }
+- { m: désert, n: n, g: m, d: "Région très sèche où il pleut très peu.", e: "Le Sahara est un grand désert.", f: [désertique], t: nature }
+- { m: cuillère, n: n, g: f, d: "Ustensile pour manger la soupe ou mélanger.", e: "Prends une cuillère pour ta soupe.", s: [cuiller], t: nourriture }
+- { m: jouet, n: n, g: m, d: "Objet avec lequel un enfant s'amuse.", e: "Il range ses jouets dans un coffre.", f: [jouer], t: maison }
+- { m: vêtement, n: n, g: m, d: "Ce que l'on porte sur le corps pour se couvrir.", e: "Mets des vêtements chauds.", s: [habit, fringues], f: [vêtir, dévêtir], t: maison }
+- { m: manteau, n: n, g: m, d: "Vêtement chaud que l'on met par-dessus les autres.", e: "Il fait froid, prends ton manteau.", t: maison }
+- { m: chaussure, n: n, g: f, d: "Ce que l'on met aux pieds pour marcher dehors.", e: "Lace tes chaussures.", f: [chausser, chaussette], t: maison }
+- { m: voisin, n: n, g: m, d: "Personne qui habite tout près.", e: "Notre voisin a un chien.", f: [voisinage, avoisiner], t: maison }
+- { m: ami, n: n, g: m, d: "Personne que l'on aime bien et avec qui on partage des moments.", e: "Mia est mon amie.", s: [copain, camarade], a: [ennemi], f: [amitié, amical], t: famille }
+- { m: anniversaire, n: n, g: m, d: "Jour où l'on fête la date de sa naissance.", e: "Pour mon anniversaire, j'ai eu un vélo.", t: famille }
+- { m: cadeau, n: n, g: m, d: "Objet que l'on offre pour faire plaisir.", e: "Ce cadeau est pour toi.", s: [présent], t: famille }
+- { m: santé, n: n, g: f, d: "État de quelqu'un qui n'est pas malade.", e: "Le sport est bon pour la santé.", f: [sain], a: [maladie], t: corps }
+- { m: médecin, n: n, g: m, d: "Personne qui soigne les malades.", e: "Le médecin m'a examiné.", s: [docteur], f: [médecine, médical, médicament], t: corps }
+- { m: sommeil, n: n, g: m, d: "État où l'on dort.", e: "Le bébé tombe de sommeil.", f: [sommeiller, somnoler], t: corps }

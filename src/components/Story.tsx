@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { activeChild, getState, markStory } from "../lib/store";
 import { speak, stopSpeaking, useTts } from "../lib/tts";
 import type { Choix, Line } from "../lib/types";
-import { Mascot, NAMES } from "./Mascot";
+import { Mascot, NAMES, poseParole } from "./Mascot";
 import { Md } from "./Md";
 
 // Une scène de l'aventure, façon bande dessinée : cases du narrateur
@@ -118,7 +118,7 @@ function renderLine(l: Line, i: number, now: boolean, k: string) {
   return (
     <div key={`${k}-${i}`} className={`bubble-row ${right ? "right" : "left"} who-${l.who} ${now ? "now" : ""}`}>
       <button type="button" className="bubble-avatar" onClick={() => speak([{ who: l.who, text: l.text }], { key: `${k}:${i}` })} aria-label={`Écouter ${NAMES[l.who]}`}>
-        <Mascot who={l.who} humeur={l.humeur} size={72} talking={now} />
+        <Mascot who={l.who} humeur={l.humeur ?? poseParole(l.who, right ? "right" : "left", i)} size={72} talking={now} />
       </button>
       <div className="bubble">
         <div className="bubble-name">{NAMES[l.who]}</div>

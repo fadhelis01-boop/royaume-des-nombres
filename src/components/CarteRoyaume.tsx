@@ -4,6 +4,7 @@ import { worldProgress, worldUnlocked } from "../lib/content";
 import { useStore } from "../lib/store";
 import type { Child, World } from "../lib/types";
 import { Avatar } from "./Avatar";
+import { Icone } from "./Icone";
 
 // La carte du Royaume : un long chemin qui monte du Nid jusqu'au Temple.
 // Chaque monde est un lieu ; quand son cristal est rallumé, le lieu reprend
@@ -11,6 +12,25 @@ import { Avatar } from "./Avatar";
 // Dessinée par le programme en attendant l'illustration (cahier des charges, section 10).
 
 const DECO: Record<string, string[]> = {
+  // Archipel des Mots
+  "fr-ile-des-sons": ["🐚", "🎵", "🦜"],
+  "fr-foret-des-noms": ["🌲", "🦉", "🏷️"],
+  "fr-cite-de-la-ponctuation": ["❗", "❓", "🏛️"],
+  "fr-vallee-des-verbes": ["🏃", "🌾", "🐎"],
+  "fr-prairie-des-accords": ["🌷", "🐑", "🎀"],
+  "fr-montagnes-du-temps": ["⏳", "🏔️", "🕰️"],
+  "fr-marais-des-homophones": ["🐸", "🪞", "🌫️"],
+  "fr-jardin-des-mots": ["🌻", "🐝", "🌱"],
+  "fr-port-des-phrases": ["⚓", "⛵", "🦀"],
+  "fr-tour-des-conjugaisons": ["🗼", "🔔", "🦇"],
+  "fr-chateau-des-participes": ["🏰", "🛡️", "🗝️"],
+  "fr-archipel-des-propositions": ["🏝️", "🌉", "🐬"],
+  "fr-atelier-de-l-ecrivain": ["✒️", "📜", "🕯️"],
+  "fr-bibliotheque-des-textes": ["📚", "🦉", "🕯️"],
+  "fr-observatoire-du-style": ["🔭", "✨", "🌙"],
+  "fr-temple-de-la-poesie": ["🎻", "🌹", "🕊️"],
+  "fr-palais-de-l-orthographe": ["👑", "🏰", "📏"],
+  "fr-academie-des-lettres": ["🎓", "🪶", "🏛️"],
   "nid-des-nombres": ["🥚", "🐣", "🪺"],
   "foret-des-nombres": ["🌳", "🐿️", "🍄"],
   "prairie-des-additions": ["🌼", "🐰", "🥕"],
@@ -193,7 +213,11 @@ export function CarteRoyaume({
               >
                 <span className="rm-ring" />
                 <span className="rm-emoji">{open ? w.emoji : "🔒"}</span>
-                {lit && <span className="rm-crystal">💎</span>}
+                {lit && (
+                <span className="rm-crystal">
+                  <Icone cat="objets" id={w.id} emoji="💎" size={30} />
+                </span>
+              )}
                 <span className="rm-label">
                   {w.titre.replace(/^(Le |La |L'|Les )/, "")}
                 </span>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { go } from "../lib/router";
-import { nextLesson, useContent } from "../lib/content";
+import { histoireDe, matiereDe, nextLesson, prologueId, useContent } from "../lib/content";
 import { getState, markStory, useChild } from "../lib/store";
 import { StoryScene } from "../components/Story";
 import { Mascot } from "../components/Mascot";
@@ -10,7 +10,11 @@ import type { Line } from "../lib/types";
 export function Aventure({ part }: { part?: string }) {
   const { manifest, worlds } = useContent();
   const child = useChild()!;
-  const h = manifest?.histoire;
+  const mat = matiereDe(child);
+  const h = histoireDe(manifest, mat);
+  const pid = prologueId(mat);
+  const decorPro = mat === "francais" ? (worlds.find((w) => w.matiere === "francais" && w.decor)?.decor ?? "img/decors/foret-des-nombres.webp") : "img/decors/foret-des-nombres.webp";
+  const tProl = mat === "francais" ? "Prologue — L'Archipel se tait" : "Prologue — Le Royaume s'éteint";
   const [open, setOpen] = useState<{ titre: string; lines: Line[]; k: string; decor?: string; couleur?: string } | null>(null);
   if (!h) return <div className="page center">L'aventure n'est pas disponible.</div>;
 
@@ -20,13 +24,13 @@ export function Aventure({ part }: { part?: string }) {
         <StoryScene
           lines={h.prologue}
           choix={h.prologueChoix}
-          titre="Prologue — Le Royaume s'éteint"
-          k="prologue"
-          decor="img/decors/foret-des-nombres.webp"
+          titre={tProl}
+          k={pid}
+          decor={decorPro}
           onDone={() => {
-            const fresh = !child.story?.prologue && !Object.keys(child.progress).length;
-            markStory("prologue");
-            if (fresh && child.age >= 8 && !child.diag) go("/diagnostic?quete=1");
+            const fresh = !child.story?.[pid] && !Object.keys(child.progress).some((k) => worlds.find((w) => w.id === k.split("/")[0])?.matiere === mat);
+            markStory(pid);
+            if (fresh && child.age >= 8 && mat === "maths" && !child.diag) go("/diagnostic?quete=1");
             else if (fresh) {
               const n = nextLesson(child, getState().settings);
               go(n ? `/lecon/${n.world.id}/${n.lesson.id}` : "/");
@@ -63,12 +67,13 @@ export function Aventure({ part }: { part?: string }) {
           <p className="small muted">Apprends les leçons d'un monde, puis réussis son Défi du Gardien pour rallumer son cristal et lire la suite de l'histoire.</p>
         </div>
       </div>
-      <button className="chapter-row" onClick={() => setOpen({ titre: "Prologue — Le Royaume s'éteint", lines: h.prologue, k: "prologue-replay", decor: "img/decors/foret-des-nombres.webp" })}>
+      <button className="chapter-row" onClick={() => setOpen({ titre: tProl, lines: h.prologue, k: `${pid}-replay`, decor: decorPro })}>
         <span>📜</span>
-        <strong>Prologue — Le Royaume s'éteint</strong>
+        <strong>{tProl}</strong>
       </button>
       {h.arcs.map((arc) => {
-        const ws = worlds.filter((w) => h.chapitres[w.id] && (arc.id === "arc-1" ? w.cycle === "graines" : arc.id === "arc-2" ? w.cycle === "explorateurs" : w.cycle === "maitres"));
+        const num = arc.id.slice(-1);
+        const ws = worlds.filter((w) => w.matiere === mat && h.chapitres[w.id] && (num === "1" ? w.cycle === "graines" : num === "2" ? w.cycle === "explorateurs" : w.cycle === "maitres"));
         const finished = !!child.story?.[`fin-${arc.id}`];
         return (
           <section key={arc.id} className="arc">

@@ -52,7 +52,7 @@ export function preprocess(src) {
 
 
 // ---------- Normalisation ----------
-const WHO = { mia: "mia", neo: "neo", "néo": "neo", zero: "zero", "zéro": "zero", narrateur: "narrateur", nuage: "nuage", grignoteur: "nuage", ixe: "ixe", enfant: "enfant", toi: "enfant" };
+const WHO = { mia: "mia", neo: "neo", "néo": "neo", zero: "zero", "zéro": "zero", narrateur: "narrateur", nuage: "nuage", grignoteur: "nuage", ixe: "ixe", enfant: "enfant", toi: "enfant", gribouille: "gribouille" };
 const HUMEURS = ["reflexion", "joie", "surprise", "triste", "fier"];
 export function lines(list, where) {
   if (!Array.isArray(list)) {
@@ -87,6 +87,11 @@ const EX_TYPES = {
   colorier: ["n", "d"],
   horloge: ["h", "m"],
   payer: ["cible"],
+  // français
+  mot: ["reponse"],
+  dictee: ["dictee"],
+  surligner: ["phrase"],
+  classer: ["categories", "mots"],
 };
 export const MANIP_TYPES = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
 export function exercise(ex, where) {
@@ -193,6 +198,7 @@ const CYCLES = ["graines", "explorateurs", "maitres", "astuces"];
 export function normalizeWorld(w, file) {
   const where = file;
   for (const k of ["id", "titre", "emoji", "couleur", "cycle", "age", "niveau", "ordre"]) if (w[k] === undefined) errors.push(`${where} : champ « ${k} » manquant`);
+  if (w.matiere && !["maths", "francais"].includes(w.matiere)) errors.push(`${where} : matière inconnue « ${w.matiere} » (maths, francais)`);
   if (!CYCLES.includes(w.cycle)) errors.push(`${where} : cycle inconnu « ${w.cycle} » (${CYCLES.join(", ")})`);
   const ids = new Set();
   const out = {
@@ -209,6 +215,7 @@ export function normalizeWorld(w, file) {
     prerequis: w.prerequis ?? [],
     intro: w.intro ? lines(w.intro, `${where} intro`) : undefined,
     version: String(w.version ?? "1.0.0"),
+    matiere: w.matiere ?? "maths",
     lecons: [],
   };
   for (const l of w.lecons ?? []) {

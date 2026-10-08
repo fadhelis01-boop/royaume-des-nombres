@@ -1,3 +1,13 @@
+- version: "1.3.0"
+  date: "2026-10-08"
+  notes:
+    - "Nouveau royaume : l'Archipel des Mots, pour apprendre le français du CP au lycée. 18 îles (sons, noms, ponctuation, verbes, accords, temps, homophones, vocabulaire, phrases, conjugaison, participes, propositions, écriture, lecture, style, poésie, orthographe fine, Académie des Lettres) et le Grimoire des Astuces."
+    - "Une histoire à part : Gribouille, la tache qui mangeait les lettres, le Sablier fêlé, puis la Plume d'or. Gribouille devient un allié ; les îles suivantes sont gardées par des Taches sauvages."
+    - "Nouveaux exercices : mot à écrire avec barre d'accents, dictée lue à voix haute (mode lent avec la ponctuation dite, correction mot à mot), mots à toucher dans une phrase, mots à classer."
+    - "Un dictionnaire de plus de 500 mots écrits pour les enfants, avec exemples, synonymes, contraires, familles et étymologie, un conjugueur complet (tous les temps, plus de 60 verbes irréguliers) et un carnet de mots à collectionner."
+    - "Trois jeux de mots (Conjugaison éclair, Mot mystère, Dictée flash), un échauffement de conjugaison, un test de niveau et un défi du jour propres au français."
+    - "Nouveaux visuels : poses des mascottes, décors des mondes, personnages de l'histoire."
+    - "Correction : la touche Entrée valide de nouveau la réponse au clavier, en maths comme en français ; « l'hippopotame », « l'hiver » s'écrivent avec l'élision."
 - version: "1.2.0"
   date: "2026-10-08"
   notes:

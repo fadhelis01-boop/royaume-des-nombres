@@ -1,0 +1,196 @@
+id: fr-cite-de-la-ponctuation
+matiere: francais
+titre: La Cité de la Ponctuation
+sous_titre: La phrase, ses signes, ses types et sa forme négative
+emoji: 🚦
+couleur: "#5e35b1"
+cycle: graines
+age: 6-9 ans
+niveau: CP – CE2
+ordre: 42
+prerequis: [fr-ile-des-sons]
+version: 1.0.0
+intro:
+  - neo: "Dans cette cité, les phrases roulent comme des voitures. La majuscule, c'est le démarrage ; le point, c'est le feu rouge."
+  - zero: "Et la virgule ? Un ralentisseur ! Et le point d'exclamation ? UN TURBO !!! 🤯"
+  - mia: "Avec les bons signes, plus aucune phrase ne se heurte. On rétablit la circulation ?"
+
+lecons:
+  - id: la-phrase
+    titre: "La phrase : une majuscule, un sens, un point"
+    objectif: Je reconnais une phrase et je remets les mots dans l'ordre pour qu'elle ait un sens.
+    mots: [phrase, majuscule, point]
+    etapes:
+      - dialogue:
+          - zero: "« mange chat le souris une » ! C'est une phrase ?"
+          - neo: "Non : les mots sont là, mais ils sont en désordre. Une phrase doit vouloir dire quelque chose."
+      - texte: |
+          Une **phrase** :
+          - a un **sens** (on comprend ce qu'elle raconte) ;
+          - commence par une **majuscule** ;
+          - se termine par un **point** ( . ? ! ).
+
+          *Le chat mange une souris.* ✔ — *mange chat le souris une* ✘
+      - retiens: "Une phrase = **majuscule** au début + **sens** + **point** à la fin."
+      - a_quoi_ca_sert: "Sans majuscule ni point, on ne sait pas où commence et où finit une idée. Le lecteur s'essouffle !"
+    exercices:
+      - type: ordre
+        vars: { t: [[Le, chat, mange, une souris.], [Ma, sœur, lit, un livre.], [Les, oiseaux, chantent, le matin.], [Tom, joue, au, ballon.], [La, pluie, tombe, sur la ville.], [Mon, chien, aime, les os.]] }
+        enonce: "Remets les mots dans l'ordre pour former une phrase."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} {{t_1}} {{t_2}} {{t_3}}"
+      - type: qcm
+        vars: { t: [["Le soleil brille.", "le soleil brille", "Le soleil brille"], ["Mia dessine un chat.", "mia dessine un chat.", "Mia dessine un chat"], ["Nous allons à la plage.", "nous allons à la plage", "Nous allons à la plage"], ["Il fait beau aujourd'hui.", "il fait beau aujourd'hui.", "Il fait beau aujourd'hui"]] }
+        enonce: "Quelle phrase est bien écrite ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        explications: ["", "Il manque quelque chose au début ou à la fin : majuscule et point !", "Il manque le point à la fin."]
+        correction: "{{t_0}} : une majuscule au début et un point à la fin."
+      - type: vf
+        vars: { t: [["Le lapin saute dans le pré.", true], ["Saute pré lapin le dans.", false], ["Mon frère a dix ans.", true], ["Ans frère dix mon a.", false], ["J'aime les fraises.", true], ["fraises les aime j'", false]] }
+        enonce: "« {{t_0}} » est-ce une phrase correcte ?"
+        reponse: "t_1"
+        correction: "Une phrase a un sens, une majuscule et un point."
+      - type: dictee
+        vars: { m: ["Le chat dort.", "Mia lit un livre.", "Il fait beau.", "Zéro mange une graine.", "Le lapin saute.", "Nous jouons au ballon."] }
+        enonce: "Écoute et écris la phrase, avec la majuscule et le point."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+  - id: types-de-phrases
+    titre: "Raconter, demander, s'écrier, ordonner"
+    objectif: Je reconnais les quatre types de phrases et je choisis le bon point.
+    mots: [phrase déclarative, phrase interrogative, phrase exclamative, phrase impérative]
+    etapes:
+      - dialogue:
+          - mia: "Il pleut. — Il pleut ? — Il pleut ! — Ne sortez pas !"
+          - zero: "Quatre phrases, quatre humeurs. La troisième est très surprise. Comme moi."
+      - texte: |
+          - **Déclarative** : elle raconte, elle informe. Elle finit par un **point** : *Il pleut.*
+          - **Interrogative** : elle pose une question. **Point d'interrogation** : *Il pleut ?*
+          - **Exclamative** : elle exprime une émotion (joie, peur, surprise). **Point d'exclamation** : *Comme il pleut !*
+          - **Impérative** : elle donne un ordre ou un conseil, sans sujet exprimé : *Prends ton parapluie.*
+      - astuce:
+          texte: "Écoute ta voix : elle **monte** à la fin d'une question, elle **s'envole** dans une exclamation."
+          qui: neo
+      - retiens: "**.** raconter — **?** demander — **!** s'exclamer — ordre : verbe à l'impératif, sans sujet."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel âge as-tu", "?", ".", "!"], ["Comme ce gâteau est bon", "!", "?", "."], ["Le train part à huit heures", ".", "?", "!"], ["Où habites-tu", "?", "!", "."], ["Quelle belle surprise", "!", ".", "?"], ["Les chats aiment dormir", ".", "!", "?"], ["Est-ce que tu viens", "?", ".", "!"]] }
+        enonce: "Quel signe faut-il à la fin ? « {{t_0}} … »"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} {{t_1}}"
+      - type: classer
+        vars: { t: [["Où vas-tu ?", "Il neige.", "Quelle chance !", "Ferme la porte."], ["Tu as faim ?", "Le chien aboie.", "Que c'est beau !", "Range ta chambre."], ["Qui est là ?", "Papa cuisine.", "Bravo !", "Écoute bien."]] }
+        enonce: "Quel type de phrase ?"
+        categories: [question, "raconter", exclamation, ordre]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "? demande, . raconte, ! s'exclame ; l'ordre n'a pas de sujet."
+      - type: mot
+        vars: { t: [["Tu viens.", "Viens-tu ?", "Est-ce que tu viens ?", "Tu viens ?"], ["Il pleut.", "Pleut-il ?", "Est-ce qu'il pleut ?", "Il pleut ?"], ["Tu as faim.", "As-tu faim ?", "Est-ce que tu as faim ?", "Tu as faim ?"]] }
+        enonce: "Transforme en question : « {{t_0}} »"
+        reponse: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}} — ou : {{t_2}}"
+
+  - id: forme-negative
+    titre: "La forme négative : ne… pas"
+    objectif: Je transforme une phrase à la forme négative avec ne… pas (n' devant une voyelle).
+    mots: [négation, forme négative]
+    etapes:
+      - dialogue:
+          - zero: "J'aime les épinards. …Non. Je n'aime PAS les épinards."
+          - neo: "Bravo, Zéro : tu viens de faire une phrase négative. La négation entoure le verbe, comme deux tranches de pain."
+      - texte: |
+          Pour dire le contraire, on entoure le **verbe** avec **ne … pas** :
+          *Je chante.* → *Je **ne** chante **pas**.*
+
+          D'autres négations : **ne … jamais**, **ne … plus**, **ne … rien**, **ne … personne**.
+      - attention:
+          texte: "Devant une voyelle, **ne** devient **n'** : *Il aime* → *Il **n'**aime **pas**.* Et à l'écrit, on n'oublie **jamais** le « ne », même si on ne le dit pas toujours à l'oral."
+          qui: neo
+      - retiens: "Négation = **ne** (ou **n'**) **devant** le verbe + **pas / plus / jamais / rien** **après**."
+    exercices:
+      - type: mot
+        vars: { t: [["Je chante.", "Je ne chante pas."], ["Il aime le chocolat.", "Il n'aime pas le chocolat."], ["Nous jouons dehors.", "Nous ne jouons pas dehors."], ["Elle écoute la radio.", "Elle n'écoute pas la radio."], ["Tu cours vite.", "Tu ne cours pas vite."], ["Ils arrivent ce soir.", "Ils n'arrivent pas ce soir."], ["Le chat dort.", "Le chat ne dort pas."], ["J'entends le bruit.", "Je n'entends pas le bruit."]] }
+        enonce: "Écris à la forme négative avec « ne… pas » : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Il ne mange jamais de soupe.", "Il mange jamais de soupe.", "Il ne mange de soupe jamais."], ["Je n'ai rien vu.", "J'ai rien vu.", "Je ne ai rien vu."], ["Elle ne vient plus.", "Elle vient plus.", "Elle ne plus vient."], ["Nous n'avons pas faim.", "Nous avons pas faim.", "Nous ne avons pas faim."]] }
+        enonce: "Quelle phrase négative est correcte à l'écrit ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        explications: ["", "Il manque le « ne » ! À l'écrit, la négation a toujours deux morceaux.", "Les deux morceaux de la négation entourent le verbe, et ne devient n' devant une voyelle."]
+        correction: "{{t_0}}"
+      - type: surligner
+        vars: { t: ["Le chien [n'aboie pas] la nuit.", "Je [ne mange jamais] de piment.", "Tom [ne joue plus] au football.", "Elle [ne dit rien]."] }
+        enonce: "Touche les mots qui forment la négation, avec le verbe."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "ne/n' + verbe + pas, jamais, plus, rien."
+
+  - id: la-virgule
+    titre: "La virgule : une petite pause"
+    objectif: Je mets des virgules entre les éléments d'une énumération.
+    mots: [virgule, énumération]
+    etapes:
+      - dialogue:
+          - zero: "J'ai acheté des graines des noix des noisettes des pommes et des carottes. *souffle* Je n'ai plus d'air."
+          - mia: "Il te manque des virgules ! Elles te laissent respirer entre chaque mot de ta liste."
+      - texte: |
+          La **virgule** marque une **petite pause**. On l'utilise surtout pour séparer les éléments d'une **liste** (une énumération) :
+          *J'ai acheté des graines**,** des noix**,** des noisettes **et** des carottes.*
+      - attention:
+          texte: "Pas de virgule devant le dernier « et » d'une liste : *du pain, du lait **et** du beurre*."
+          qui: neo
+      - retiens: "Dans une liste, une **virgule** entre chaque élément, sauf devant le dernier **et**."
+    exercices:
+      - type: qcm
+        vars: { t: [["J'aime les pommes, les poires et les fraises.", "J'aime les pommes les poires et les fraises.", "J'aime les pommes, les poires, et, les fraises."], ["Il prend son sac, sa trousse et son cahier.", "Il prend son sac sa trousse et son cahier.", "Il prend, son sac, sa trousse, et son cahier."], ["Nous avons vu un lion, un zèbre et une girafe.", "Nous avons vu un lion un zèbre et une girafe.", "Nous avons vu un lion, un zèbre, et, une girafe."]] }
+        enonce: "Quelle phrase a les virgules bien placées ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}}"
+      - type: dictee
+        vars: { m: ["J'aime le pain, le lait et le miel.", "Il a un chat, un chien et un lapin.", "Mia prend un crayon, une gomme et une règle."] }
+        enonce: "Écoute bien : n'oublie pas les virgules !"
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+      - type: nombre
+        vars: { t: [["un lion, un tigre, un ours et un loup", 2], ["du pain, du beurre et du sel", 1], ["rouge, jaune, vert, bleu et violet", 3], ["Mia, Néo et Zéro", 1]] }
+        enonce: "Combien de virgules dans : « {{t_0}} » ?"
+        reponse: "t_1"
+        correction: "Pas de virgule devant le dernier « et »."
+
+  - id: le-dialogue
+    titre: "Écrire un dialogue : guillemets, tirets et deux-points"
+    objectif: Je reconnais les signes du dialogue et je sais qui parle.
+    mots: [dialogue, guillemets, tiret, deux-points]
+    etapes:
+      - dialogue:
+          - mia: "Quand les personnages parlent dans une histoire, il faut des signes spéciaux pour le montrer."
+          - neo: "Les deux-points annoncent : quelqu'un va parler. Les guillemets ouvrent et ferment la parole. Le tiret montre qu'on change de personne."
+      - texte: |
+          *Zéro demanda **:** **«** As-tu vu mes graines ? **»***
+          *Mia répondit **:** **«** Non. **»***
+
+          Dans un long dialogue :
+          *— As-tu vu mes graines ? demanda Zéro.*
+          *— Non, répondit Mia.*
+      - retiens: "**:** annonce la parole ; **« »** l'entourent ; **—** montre qu'un nouveau personnage parle."
+    exercices:
+      - type: qcm
+        vars: { t: [["« »", "les guillemets", "les tirets", "les deux-points"], ["—", "le tiret", "les guillemets", "la virgule"], [":", "les deux-points", "le point", "le tiret"]] }
+        enonce: "Comment s'appelle ce signe : {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: qcm
+        vars: { t: [["Mia", "« Viens jouer ! » cria Mia à Zéro.", "Zéro"], ["Néo", "Néo dit à Mia : « J'ai trouvé la clé. »", "Mia"], ["Zéro", "« J'ai faim », soupira Zéro.", "Néo"], ["la maîtresse", "La maîtresse annonça : « Sortez vos cahiers. »", "les élèves"]] }
+        enonce: "« {{t_1}} » — Qui parle ?"
+        choix: ["{{t_0}}", "{{t_2}}"]
+        correction: "C'est {{t_0}} qui parle."
+      - type: vf
+        vars: { t: [["« Bonjour ! » dit le loup.", true], ["Bonjour ! dit le loup", false], ["Le roi déclara : « La fête commence. »", true], ["Le roi déclara « La fête commence. »", false]] }
+        enonce: "La ponctuation du dialogue est-elle complète ? {{t_0}}"
+        reponse: "t_1"
+        niveau: 2
+        correction: "Deux-points pour annoncer, guillemets pour entourer la parole."

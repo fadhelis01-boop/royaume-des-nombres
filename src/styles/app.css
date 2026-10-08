@@ -2753,4 +2753,73 @@ select {
 :root[data-lecteur="non"] .ex-head .speak-btn { width: 64px; height: 64px; font-size: 1.8rem; animation: glow 1.6s ease-in-out infinite alternate; }
 :root[data-lecteur="non"] .bubble .md, :root[data-lecteur="non"] .bubble p { font-size: 1.05rem; }
 
-.ex-lead { font-family: var(--title); font-size: 0.95rem; color: var(--muted); margin-bottom: 4px; }
+.ex-lead { display: flex; align-items: center; gap: 8px; font-family: var(--title); font-size: 0.95rem; color: var(--muted); margin-bottom: 4px; }
+.icone { object-fit: contain; vertical-align: middle; }
+.icone-eteint { filter: grayscale(1) brightness(0.85); }
+.icone-emoji { line-height: 1; display: inline-block; }
+
+/* ==========================================================
+   Français : barre d'accents, dictée, mots à toucher, classement
+   ========================================================== */
+.accent-bar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 8px 0; }
+.accent-key { min-width: 44px; min-height: 44px; border-radius: 12px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); font: inherit; font-size: 1.25rem; font-weight: 700; cursor: pointer; box-shadow: 0 3px 0 var(--line); touch-action: manipulation; }
+.accent-key:active { transform: translateY(2px); box-shadow: none; }
+.accent-key.maj.on { background: var(--c-violet); color: #fff; border-color: var(--c-violet); }
+.answer-line.fr .answer-input { font-family: var(--body); text-align: left; letter-spacing: 0.01em; }
+.dictee-input { width: 100%; min-height: 96px; resize: vertical; font-size: 1.25rem; line-height: 1.5; padding: 10px 14px; }
+.dictee-ctrl { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; }
+.dictee-corr { font-size: 1.2rem; line-height: 1.8; background: var(--paper); border-radius: 14px; padding: 8px 12px; }
+.dc-ko { background: var(--ko-l); color: var(--ko); border-radius: 6px; padding: 0 2px; font-weight: 700; text-decoration: underline wavy; }
+.surligner { display: flex; flex-wrap: wrap; gap: 6px; font-size: 1.3rem; line-height: 1.4; margin: 12px 0; }
+.mot-chip { border: 2px solid transparent; background: var(--paper); color: var(--ink); border-radius: 10px; padding: 4px 8px; font: inherit; cursor: pointer; box-shadow: 0 2px 0 var(--line); }
+.mot-chip.on { background: var(--c-jaune-l); border-color: var(--c-jaune); }
+.mot-chip.good { background: var(--ok-l); border-color: var(--ok); }
+.mot-chip.bad { background: var(--ko-l); border-color: var(--ko); text-decoration: line-through; }
+.mot-chip.missed { border-color: var(--ok); border-style: dashed; }
+.classer { display: grid; gap: 8px; margin: 10px 0; }
+.classer-legende { display: flex; flex-wrap: wrap; gap: 6px; }
+.cl-cat { background: color-mix(in srgb, var(--cc) 18%, var(--paper)); border: 2px solid var(--cc); border-radius: 999px; padding: 2px 10px; font-weight: 700; font-size: 0.9rem; }
+.classer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: var(--paper); border-radius: 14px; padding: 6px 10px; border: 2px solid transparent; }
+.classer-row.good { border-color: var(--ok); }
+.classer-row.bad { border-color: var(--ko); }
+.classer-mot { font-size: 1.2rem; min-width: 6em; }
+.classer-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+.cl-btn { border: 2px solid var(--cc); background: var(--paper); color: var(--ink); border-radius: 10px; padding: 4px 10px; font: inherit; font-size: 0.9rem; cursor: pointer; min-height: 40px; }
+.cl-btn.on { background: var(--cc); color: #fff; }
+.cl-btn.answer { outline: 3px dashed var(--ok); outline-offset: 2px; }
+
+/* ---------- Deux royaumes ---------- */
+.royaumes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0 12px; }
+.royaume-tab { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 8px; align-items: center; text-align: left; padding: 8px 12px; border-radius: 18px; border: 3px solid var(--line); background: var(--paper); color: var(--ink); font: inherit; cursor: pointer; }
+.royaume-tab > span { grid-row: span 2; font-size: 1.8rem; }
+.royaume-tab strong { font-family: var(--title); font-size: 0.98rem; line-height: 1.15; }
+.royaume-tab small { color: var(--muted); }
+.royaume-tab.on { border-color: var(--c-violet); background: var(--c-violet-l); box-shadow: var(--shadow); }
+.royaume-tab.fr.on { border-color: var(--c-turquoise); background: var(--c-turquoise-l); }
+@media (max-width: 420px) { .royaume-tab strong { font-size: 0.85rem; } .royaume-tab > span { font-size: 1.4rem; } }
+
+/* ---------- Dictionnaire ---------- */
+.dico-lettres { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }
+.dico-lettres .chip { min-width: 36px; }
+.dico-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 6px; margin: 10px 0; }
+.dico-item { text-align: left; background: var(--paper); border: 2px solid var(--line); border-radius: 12px; padding: 8px 12px; font: inherit; color: var(--ink); cursor: pointer; }
+.mot-du-jour { cursor: pointer; background: var(--c-jaune-l); border: 2px solid var(--c-jaune); }
+.mot-du-jour strong { display: block; font-family: var(--title); font-size: 1.6rem; }
+.fiche-mot { font-size: 2rem; margin: 6px 0 0; display: flex; align-items: center; gap: 8px; }
+.fiche-def { font-size: 1.15rem; }
+.fiche-ex { font-style: italic; color: var(--muted); }
+.fiche-liens .link { font-weight: 700; }
+.conjugueur { margin: 12px 0; }
+.conj-table { background: var(--paper); border: 2px solid var(--c-turquoise); border-radius: 14px; padding: 10px 14px; position: relative; }
+.conj-table ul { list-style: none; padding: 0; margin: 6px 0 0; columns: 2; column-gap: 24px; font-size: 1.1rem; line-height: 1.7; }
+.conj-table .speak-btn { position: absolute; top: 8px; right: 8px; }
+@media (max-width: 420px) { .conj-table ul { columns: 1; } }
+
+/* ---- jeux de l'Archipel des Mots */
+.mystere-masque { font-family: ui-monospace, monospace; font-size: 1.6rem; letter-spacing: 0.15em; text-align: center; margin: 0.6rem 0; word-break: break-word; }
+.flash-phrase { text-align: center; font-size: 1.35rem; }
+.flash-barre { height: 6px; border-radius: 3px; background: var(--accent, #7b1fa2); transform-origin: left; animation: flash-vide linear forwards; margin-top: 0.5rem; }
+@keyframes flash-vide { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { .flash-barre { animation: none; opacity: 0.5; } }
+/* Tache sauvage : la silhouette de Gribouille, sans ses couleurs ni son sourire. */
+.foe-tache .mascot { filter: grayscale(1) brightness(0.55) contrast(1.3); }

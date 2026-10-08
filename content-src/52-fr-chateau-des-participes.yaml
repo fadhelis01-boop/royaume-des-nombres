@@ -1,0 +1,184 @@
+id: fr-chateau-des-participes
+matiere: francais
+titre: Le Château des Participes
+sous_titre: é ou er ? L'accord avec être, avec avoir, et le participe employé seul
+emoji: 🏰
+couleur: "#6d4c41"
+cycle: explorateurs
+age: 10-15 ans
+niveau: CM2 – 3ᵉ
+ordre: 52
+prerequis: [fr-montagnes-du-temps, fr-port-des-phrases]
+version: 1.0.0
+intro:
+  - neo: "Deux gardiens veillent sur ce château. ÊTRE, l'Aimant doré, tend les bras vers le sujet. AVOIR, le Glouton, reste dans sa cage."
+  - mia: "Le fil d'accord ne passe la cage d'AVOIR que si la clé dorée — le COD — est placée AVANT."
+  - zero: "Un glouton en cage ? Je compatis. Moi aussi, on m'enferme loin des graines. 😳"
+
+lecons:
+  - id: e-ou-er
+    titre: "-é ou -er ? Le test du verbe vendre"
+    objectif: Je choisis entre le participe passé (-é) et l'infinitif (-er) en remplaçant par « vendu » ou « vendre ».
+    mots: [participe passé, infinitif]
+    etapes:
+      - dialogue:
+          - zero: "« Je vais mangé » ou « je vais manger » ? Je les entends pareil ! 😳"
+          - neo: "Remplace par un verbe du 3e groupe : « je vais vendre » ✔, « je vais vendu » ✘. Donc c'est l'infinitif : manger !"
+      - texte: |
+          Les verbes en -er se terminent par le même son au participe (**-é**) et à l'infinitif (**-er**).
+          **Test** : je remplace par **vendre / vendu** (ou mordre / mordu, prendre / pris).
+          - *Il a mang__ → il a **vendu*** → participe passé : **mangé**.
+          - *Il va mang__ → il va **vendre*** → infinitif : **manger**.
+
+          Après une **préposition** (à, de, pour, sans) et après un **autre verbe conjugué**, c'est presque toujours l'**infinitif**.
+      - retiens: "**vendu** marche → **-é** ; **vendre** marche → **-er**."
+    exercices:
+      - type: qcm
+        vars: { t: [["Je vais (mangé/manger) une pomme.", "manger", "mangé"], ["Il a (chanté/chanter) toute la soirée.", "chanté", "chanter"], ["Elle aime (dansé/danser).", "danser", "dansé"], ["Nous avons (gagné/gagner) le match.", "gagné", "gagner"], ["Il faut (fermé/fermer) la porte.", "fermer", "fermé"], ["Le gâteau est (décoré/décorer).", "décoré", "décorer"], ["Pour (réussi/réussir), travaille.", "réussir", "réussi"]] }
+        enonce: "Choisis : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "Remplace par « vendu » ou « vendre » : lequel marche ?"]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["Il a trouv__ un trésor.", "trouvé"], ["Je vais trouv__ la solution.", "trouver"], ["Elle a regard__ le ciel.", "regardé"], ["Tu dois regard__ la carte.", "regarder"], ["Nous avons travaill__.", "travaillé"], ["Il veut travaill__.", "travailler"]] }
+        enonce: "Écris le verbe complet : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Il a décidé de chanter.", "Elle va jouer après avoir mangé.", "Nous avons commencé à dessiner.", "Tu as oublié de fermer la porte."] }
+        enonce: "Écoute et écris : attention aux -é et aux -er !"
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+
+  - id: accord-avec-etre
+    titre: "Avec être, l'aimant doré : accord avec le sujet"
+    objectif: J'accorde le participe passé employé avec être avec le sujet, y compris à la voix passive.
+    mots: [participe passé, auxiliaire être, voix passive]
+    etapes:
+      - dialogue:
+          - mia: "L'Aimant doré tire un fil du sujet vers le participe. Elles sont part**ies**. Le gâteau a été mang**é** par Zéro."
+          - zero: "Pourquoi je suis toujours celui qui mange dans les exemples ? 😳"
+      - texte: |
+          Avec **être**, le participe passé **s'accorde avec le sujet** (genre et nombre) :
+          *Elle est arrivé**e**. Ils sont venu**s**. Les fleurs sont fané**es**.*
+
+          À la **voix passive** (être + participe passé + par…), même règle :
+          *La souris est attrapé**e** par le chat. Les maisons ont été construit**es** l'an dernier.*
+      - retiens: "**Être** → le participe s'**accorde avec le sujet**, comme un adjectif."
+    exercices:
+      - type: mot
+        vars: { v: [arriver, partir, tomber, venir, sortir, rester, naître, aller], p: "1..6", g: [[m, "garçon(s)"], [f, "fille(s)"]] }
+        enonce: "Plus-que-parfait : {{pronom(p, g_0)}} … ({{v}}) — on parle de {{g_1}}"
+        reponse: ["{{conj(v, 'plus_que_parfait', p, g_0)}}", "{{conjp(v, 'plus_que_parfait', p, g_0)}}"]
+        correction: "{{conjp(v, 'plus_que_parfait', p, g_0)}}"
+      - type: qcm
+        vars: { t: [["La lettre a été (écrit/écrite) hier.", "écrite", "écrit", "écrites"], ["Les gâteaux sont (cuit/cuits).", "cuits", "cuit", "cuites"], ["Ma voiture a été (réparé/réparée).", "réparée", "réparé", "réparés"], ["Les portes sont (fermé/fermées).", "fermées", "fermé", "fermés"]] }
+        enonce: "Choisis : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} (accord avec le sujet)."
+      - type: mot
+        vars: { t: [["Le chat attrape la souris.", "La souris est attrapée par le chat."], ["Le vent emporte les feuilles.", "Les feuilles sont emportées par le vent."], ["Tom répare la porte.", "La porte est réparée par Tom."]] }
+        enonce: "Mets à la voix passive : {{t_0}}"
+        reponse: "{{t_1}}"
+        niveau: 2
+        correction: "{{t_1}}"
+
+  - id: accord-avec-avoir
+    titre: "Avec avoir, le Glouton : le COD placé avant"
+    objectif: J'accorde le participe passé employé avec avoir seulement quand le COD est placé avant le verbe.
+    mots: [participe passé, auxiliaire avoir, COD]
+    etapes:
+      - dialogue:
+          - neo: "« Elle a mangé les pommes. » Le COD « les pommes » est APRÈS : le Glouton bloque l'accord. Pas d'accord !"
+          - mia: "Mais « Les pommes qu'elle a mangées » : le COD (que = les pommes) est AVANT la cage. Le fil passe : E-S !"
+      - texte: |
+          Avec **avoir**, le participe passé **ne s'accorde jamais avec le sujet**.
+          Il s'accorde avec le **COD** seulement si le COD est placé **avant** le verbe :
+          - *Elle a cueilli **des fleurs**.* → COD après → **pas d'accord**.
+          - *Les fleurs **qu'**elle a cueilli**es** sont belles.* → COD (que = les fleurs) avant → accord.
+          - *Ces fleurs, elle **les** a cueilli**es**.* → COD « les » avant → accord.
+      - astuce:
+          texte: "Pose la question « a cueilli quoi ? » : si la réponse est déjà écrite AVANT le verbe, on accorde."
+          qui: neo
+      - retiens: "**Avoir** : accord avec le **COD placé avant** (que, le, la, les, l'), jamais avec le sujet."
+    exercices:
+      - type: qcm
+        vars: { t: [["Elle a (mangé/mangée) une pomme.", "mangé", "mangée"], ["La pomme qu'elle a (mangé/mangée) était rouge.", "mangée", "mangé"], ["Les lettres que j'ai (écrit/écrites).", "écrites", "écrit"], ["Ils ont (vu/vus) des étoiles.", "vu", "vus"], ["Ces étoiles, je les ai (vu/vues).", "vues", "vu"], ["Mes amies ont (chanté/chantées).", "chanté", "chantées"]] }
+        enonce: "Choisis : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "Avec avoir : le COD est-il placé AVANT le verbe ? Sinon, pas d'accord (jamais avec le sujet)."]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["Les chansons que nous avons (apprendre)…", "apprises"], ["La maison qu'ils ont (construire)…", "construite"], ["Ces livres, je les ai (lire).", "lus"], ["Les photos que tu as (prendre)…", "prises"], ["Elles ont (finir) leurs devoirs.", "fini"], ["La lettre qu'elle a (écrire)…", "écrite"]] }
+        enonce: "Écris le participe passé accordé : {{t_0}}"
+        reponse: "{{t_1}}"
+        niveau: 2
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les fleurs qu'il a cueillies sont fanées.", true], ["Elle a mangée sa soupe.", false], ["Les films que j'ai vus étaient drôles.", true], ["Mes sœurs ont dansées toute la nuit.", false]] }
+        enonce: "L'accord est-il correct ? « {{t_0}} »"
+        reponse: "t_1"
+        correction: "Avec avoir : accord seulement avec le COD placé avant."
+
+  - id: participe-seul
+    titre: "Le participe passé employé seul"
+    objectif: J'accorde le participe passé employé sans auxiliaire comme un adjectif.
+    mots: [participe passé, adjectif]
+    etapes:
+      - dialogue:
+          - mia: "Sans auxiliaire, le participe se comporte comme un adjectif : « une porte fermée », « des enfants fatigués »."
+      - texte: |
+          Employé **seul** (sans être ni avoir), le participe passé s'accorde comme un **adjectif** avec le nom auquel il se rapporte :
+          *une fenêtre **ouverte**, des gâteaux **cuits**, **Fatiguées**, les filles s'endormirent.*
+      - retiens: "Participe **seul** = **adjectif** : il s'accorde avec le nom."
+    exercices:
+      - type: mot
+        vars: { t: [["une porte (fermer)", "fermée"], ["des fruits (mûrir)", "mûris"], ["des lettres (écrire) à la main", "écrites"], ["une tâche (finir)", "finie"], ["des enfants (fatiguer)", "fatigués"], ["une maison (abandonner)", "abandonnée"]] }
+        enonce: "Accorde le participe : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["(Arrivé/Arrivées) en retard, les filles s'excusèrent.", "Arrivées", "Arrivé"], ["Les vitres (cassé/cassées) seront remplacées.", "cassées", "cassé"], ["Un plat (préparé/préparés) avec soin.", "préparé", "préparés"]] }
+        enonce: "Choisis : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Les portes fermées grinçaient.", "Arrivées en retard, elles s'excusèrent.", "Voici une lettre écrite à la main.", "Il mange des fruits mûris au soleil."] }
+        enonce: "Écoute et écris : accorde les participes employés seuls !"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+
+  - id: e-ai-ais-ait-er
+    titre: "-é, -er, -ez, -ai, -ais, -ait : le son « é / è » en fin de verbe"
+    objectif: Je choisis la bonne terminaison selon le temps et la personne.
+    mots: [terminaison]
+    etapes:
+      - dialogue:
+          - zero: "Je chanté ? Je chantai ? Je chantais ? Je chanter ? Je chantez ? CINQ possibilités ! 🤯"
+          - neo: "Chaque terminaison a son temps. On identifie le temps et la personne, et le mystère disparaît."
+      - texte: |
+          - **-er** : infinitif (*il va chant**er***) — test : vendre
+          - **-é** : participe passé (*j'ai chant**é***) — test : vendu
+          - **-ez** : 2e personne du pluriel (*vous chant**ez***)
+          - **-ai** : passé simple ou futur avec « je » (*je chant**ai**, je chanter**ai***)
+          - **-ais / -ait** : imparfait ou conditionnel (*je chant**ais**, il chant**ait***)
+      - retiens: "Je repère le **temps** et la **personne** : vendre → -er, vendu → -é, vous → -ez, imparfait → -ais/-ait."
+    exercices:
+      - type: qcm
+        vars: { t: [["Hier, je (jouais/jouer) dehors quand il a plu.", "jouais", "jouer"], ["Vous (chantez/chanter) très bien.", "chantez", "chanter"], ["Il (dansait/dansé) chaque soir.", "dansait", "dansé"], ["J'ai (cherché/chercher) partout.", "cherché", "chercher"], ["Demain, je (partirai/partirais) tôt.", "partirai", "partirais"], ["Allez-vous (jouer/jouez) ?", "jouer", "jouez"]] }
+        enonce: "Choisis : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Vous allez chanter et danser.", "J'ai mangé pendant que tu jouais.", "Il marchait sans regarder.", "Demain, je visiterai le musée."] }
+        enonce: "Écoute et écris la phrase."
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+      - type: mot
+        vars: { t: [["Je vais jou__ dehors.", "jouer"], ["Hier, je jou__ dehors quand il a plu.", "jouais"], ["Vous chant__ très bien.", "chantez"], ["Il a chant__ toute la soirée.", "chanté"], ["Demain, je chanter__ pour toi.", "chanterai"], ["Il mang__ quand je suis arrivé.", "mangeait"]] }
+        enonce: "Écris le verbe complet : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"

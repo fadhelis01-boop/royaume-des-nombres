@@ -1,0 +1,219 @@
+id: fr-atelier-de-l-ecrivain
+matiere: francais
+titre: L'Atelier de l'Écrivain
+sous_titre: Enrichir, enchaîner, raconter, décrire, écrire une lettre
+emoji: ✒️
+couleur: "#ad1457"
+cycle: explorateurs
+age: 9-15 ans
+niveau: CM1 – 3ᵉ
+ordre: 54
+prerequis: [fr-port-des-phrases, fr-jardin-des-mots]
+version: 1.0.0
+intro:
+  - mia: "Dans l'Atelier, on ne corrige plus : on crée ! Enrichir une phrase, construire une histoire, faire vivre un personnage."
+  - gribouille: "Moi aussi je veux écrire une histoire. Avec un début, un problème et une fin heureuse."
+  - neo: "Les écrivains ont des outils, comme les menuisiers. On va les découvrir un par un."
+
+lecons:
+  - id: enrichir-une-phrase
+    titre: "Enrichir une phrase"
+    objectif: J'enrichis une phrase avec des adjectifs, des compléments et des verbes précis.
+    mots: [enrichir, expansion, verbe précis]
+    etapes:
+      - dialogue:
+          - zero: "« Le chat mange. » C'est fini. Mon histoire fait trois mots. 😳"
+          - mia: "« Ce matin, le petit chat roux dévore goulûment sa pâtée dans la cuisine. » Même idée, mais on la VOIT !"
+      - texte: |
+          Pour enrichir une phrase :
+          1. des **adjectifs** : le chat → le *petit* chat *roux* ;
+          2. des **compléments** : où ? quand ? comment ? → *ce matin, dans la cuisine, goulûment* ;
+          3. un **verbe plus précis** : manger → *dévorer, grignoter, savourer, engloutir* ;
+          4. un **complément du nom** : la pâtée → la pâtée *au poisson*.
+      - astuce:
+          texte: "Remplace les verbes passe-partout (faire, dire, mettre, avoir, il y a) par des verbes précis : « faire un dessin » → « dessiner », « dire » → « murmurer, s'exclamer, répondre »."
+          qui: neo
+      - retiens: "Enrichir = **adjectifs** + **compléments** (où, quand, comment) + **verbes précis**."
+      - vraie_vie:
+          titre: Défi d'écriture
+          texte: "Prends la phrase « Le chien court. » et enrichis-la sur une feuille jusqu'à ce qu'elle fasse au moins 15 mots. Lis-la à quelqu'un : peut-il imaginer la scène ?"
+          materiel: "une feuille et un crayon"
+    exercices:
+      - type: qcm
+        vars: { t: [["Le chat mange.", "Le petit chat roux dévore sa pâtée.", "Le chat mange.", "Chat mange pâtée."], ["Il fait un dessin.", "Il dessine un dragon aux ailes immenses.", "Il fait un dessin.", "Il a fait un truc."], ["La fille dit bonjour.", "La fillette murmure un timide bonjour.", "La fille dit bonjour.", "Elle dit."]] }
+        enonce: "Quelle phrase est la plus riche ? (idée de départ : « {{t_0}} »)"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["faire un gâteau", "préparer", "dire", "mettre"], ["dire tout bas", "chuchoter", "crier", "chanter"], ["manger très vite", "engloutir", "goûter", "picorer"], ["marcher lentement", "flâner", "courir", "bondir"], ["regarder longtemps", "contempler", "jeter un œil", "fermer les yeux"]] }
+        enonce: "Quel verbe précis remplace « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} → {{t_1}}"
+      - type: classer
+        vars: { t: [["roux", "dans le jardin", "énorme", "ce matin"], ["joyeux", "avec prudence", "vieux", "sous la pluie"], ["minuscule", "le soir", "brillant", "à toute vitesse"]] }
+        enonce: "Pour enrichir : adjectif ou complément (où, quand, comment) ?"
+        categories: [adjectif, complément]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Adjectif = comment est le nom ; complément = où, quand, comment se passe l'action."
+
+  - id: eviter-les-repetitions
+    titre: "Éviter les répétitions"
+    objectif: Je remplace un nom répété par un pronom, un synonyme ou une périphrase.
+    mots: [répétition, reprise, périphrase]
+    etapes:
+      - dialogue:
+          - neo: "« Le renard voit le corbeau. Le renard parle au corbeau. Le renard… » On se lasse !"
+          - mia: "« Le renard voit le corbeau. Il lui parle. Le rusé animal… » Pronoms, synonymes, périphrases : trois outils."
+      - texte: |
+          Pour ne pas répéter un nom, on utilise une **reprise** :
+          - un **pronom** : *le renard* → **il**, *le corbeau* → **lui** ;
+          - un **synonyme** ou un mot plus général : *le renard* → **l'animal** ;
+          - une **périphrase** (une expression qui décrit) : *le renard* → **le rusé personnage**, **le voleur de fromage**.
+      - retiens: "Reprise = **pronom**, **synonyme**, **périphrase**. Le lecteur doit toujours savoir de qui on parle."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le loup courait. … avait faim.", "Il", "Le loup", "Elle"], ["Léa a un chat. Elle … caresse souvent.", "le", "la", "lui"], ["Les élèves entrent. … s'assoient.", "Ils", "Les élèves", "Il"], ["Victor Hugo écrivait. Le grand … publia de nombreux livres.", "écrivain", "Victor Hugo", "livre"]] }
+        enonce: "Évite la répétition : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["le soleil", "l'astre du jour", "la lune", "le nuage"], ["Paris", "la capitale de la France", "la mer", "la campagne"], ["le lion", "le roi des animaux", "le chaton", "l'insecte"], ["le chien", "le meilleur ami de l'homme", "le poisson", "l'oiseau"]] }
+        enonce: "Quelle périphrase peut remplacer « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} = {{t_1}}"
+      - type: mot
+        vars: { t: [["Le chat dort. Le chat ronronne.", "Le chat dort. Il ronronne."], ["Ma sœur chante. Ma sœur danse.", "Ma sœur chante. Elle danse."], ["Les oiseaux volent. Les oiseaux chantent.", "Les oiseaux volent. Ils chantent."]] }
+        enonce: "Réécris en remplaçant le nom répété par un pronom : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+
+  - id: connecteurs
+    titre: "Les connecteurs : enchaîner les idées"
+    objectif: J'utilise des connecteurs de temps et de logique pour organiser un texte.
+    mots: [connecteur, organisateur]
+    etapes:
+      - dialogue:
+          - zero: "« Je me lève. Je mange. Je m'habille. Je pars. » On dirait une liste de courses. 😳"
+          - mia: "Avec des connecteurs : « D'abord, je me lève. Ensuite, je mange. Puis je m'habille. Enfin, je pars. » C'est un vrai récit !"
+      - texte: |
+          - **Temps** : d'abord, ensuite, puis, après, soudain, tout à coup, enfin, finalement, pendant ce temps.
+          - **Logique** : car, parce que (cause) — donc, c'est pourquoi (conséquence) — mais, pourtant, cependant (opposition) — de plus, en outre (ajout).
+      - retiens: "Les connecteurs **relient** les idées : **d'abord, ensuite, enfin** (temps) ; **car, donc, mais** (logique)."
+    exercices:
+      - type: ordre
+        vars: { t: [[D'abord, Ensuite, Puis, Enfin], [Au début, Soudain, Alors, Finalement], [Premièrement, Deuxièmement, Troisièmement, Pour conclure]] }
+        enonce: "Range ces connecteurs dans l'ordre d'un récit."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
+      - type: qcm
+        vars: { t: [["Il était fatigué, … il est allé se coucher.", "c'est pourquoi", "pourtant", "d'abord"], ["Elle a beaucoup révisé, … elle a échoué.", "pourtant", "donc", "ensuite"], ["Tout était calme. …, un cri retentit.", "Soudain", "Donc", "De plus"], ["Ce livre est passionnant ; …, il est très bien écrit.", "de plus", "pourtant", "soudain"]] }
+        enonce: "Complète avec le bon connecteur : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [[d'abord, car, ensuite, donc], [soudain, mais, enfin, pourtant], [puis, parce que, finalement, cependant]] }
+        enonce: "Connecteur de temps ou de logique ?"
+        categories: [temps, logique]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Temps : quand ? Logique : pourquoi, donc, mais."
+
+  - id: schema-narratif
+    titre: "Le schéma narratif : construire une histoire"
+    objectif: Je reconnais et j'ordonne les cinq étapes d'un récit.
+    mots: [schéma narratif, situation initiale, élément perturbateur, péripéties, dénouement]
+    etapes:
+      - dialogue:
+          - gribouille: "Une histoire, c'est quoi exactement ? Des mots qui se suivent ?"
+          - neo: "Une histoire a un squelette en cinq étapes. Une fois qu'on le connaît, on peut en écrire mille !"
+      - texte: |
+          1. **Situation initiale** : qui ? où ? quand ? tout est calme. *Il était une fois…*
+          2. **Élément perturbateur** : un problème arrive. *Un jour…, soudain…*
+          3. **Péripéties** : les aventures pour résoudre le problème. *Alors…, ensuite…*
+          4. **Dénouement** : le problème est résolu (ou pas). *Finalement…*
+          5. **Situation finale** : le nouvel équilibre. *Depuis ce jour…*
+      - retiens: "**Situation initiale → élément perturbateur → péripéties → dénouement → situation finale.**"
+      - vraie_vie:
+          titre: Défi d'écriture
+          texte: "Invente une histoire de Zéro le hamster en cinq phrases, une par étape du schéma narratif. Raconte-la à quelqu'un de ta famille !"
+    exercices:
+      - type: ordre
+        vars: { t: [["Il était une fois un petit lapin qui vivait heureux.", "Un jour, un renard s'approcha du terrier.", "Le lapin courut prévenir ses amis.", "Ensemble, ils chassèrent le renard.", "Depuis, le lapin vit en sécurité."], ["Zéro dormait tranquillement dans sa cage.", "Soudain, la porte s'ouvrit toute seule.", "Il explora la maison et se perdit.", "Mia le retrouva sous le canapé.", "Depuis, Zéro ferme toujours sa porte."], ["Dans un petit port vivait une vieille pêcheuse.", "Un matin, son bateau disparut.", "Elle le chercha partout avec l'aide des mouettes.", "Elle le retrouva enfin, échoué sur une île.", "Depuis, elle l'attache toujours solidement."]] }
+        enonce: "Remets les étapes de l'histoire dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Situation initiale, élément perturbateur, péripéties, dénouement, situation finale."
+      - type: qcm
+        vars: { t: [["Soudain, un orage éclata.", "élément perturbateur", "situation initiale", "situation finale"], ["Il était une fois une reine très bonne.", "situation initiale", "dénouement", "péripéties"], ["Depuis ce jour, ils vivent heureux.", "situation finale", "élément perturbateur", "péripéties"], ["Finalement, le prince retrouva la clé.", "dénouement", "situation initiale", "élément perturbateur"]] }
+        enonce: "« {{t_0}} » — Quelle étape du récit ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["la situation initiale", "Il était une fois", "Soudain,", "Depuis ce jour,"], ["l'élément perturbateur", "Un jour,", "Il était une fois", "Depuis ce jour,"], ["la situation finale", "Depuis ce jour,", "Un jour,", "Il était une fois"], ["le dénouement", "Finalement,", "Il était une fois", "Un jour,"]] }
+        enonce: "Quelle formule annonce souvent {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+
+  - id: decrire-un-personnage
+    titre: "Décrire un personnage : le portrait"
+    objectif: Je distingue le portrait physique et le portrait moral, et j'organise une description.
+    mots: [portrait, description]
+    etapes:
+      - dialogue:
+          - mia: "Pour décrire Néo : un renard orange aux yeux bleu électrique — c'est le physique. Courageux et un peu fanfaron — c'est le moral."
+      - texte: |
+          - **Portrait physique** : l'apparence (taille, visage, cheveux, vêtements, démarche).
+          - **Portrait moral** : le caractère, les qualités, les défauts, les goûts.
+
+          On organise la description : du **général au détail**, ou **de haut en bas**, et on utilise des **adjectifs précis** et des **comparaisons** (*des yeux bleus **comme** l'océan*).
+      - retiens: "Portrait **physique** (apparence) + portrait **moral** (caractère). Ordre logique, adjectifs précis, comparaisons."
+    exercices:
+      - type: classer
+        vars: { t: [[grand, courageux, roux, généreux, mince, timide], [blond, curieux, petit, menteur, musclé, patient]] }
+        enonce: "Portrait physique ou moral ?"
+        categories: [physique, moral]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
+        correction: "Physique : ce qu'on voit ; moral : le caractère."
+      - type: qcm
+        vars: { t: [["Ses yeux brillaient comme deux étoiles.", "une comparaison", "un ordre", "une question"], ["Il était grand, maigre et voûté.", "un portrait physique", "un portrait moral", "un dialogue"], ["Elle était généreuse et toujours de bonne humeur.", "un portrait moral", "un portrait physique", "une comparaison"]] }
+        enonce: "« {{t_0}} » — C'est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: surligner
+        vars: { t: ["C'était un grand garçon [courageux] et [généreux].", "La reine, [orgueilleuse], portait une robe rouge.", "Ce petit homme roux était très [timide].", "Mia est [curieuse] et elle a les yeux verts."] }
+        enonce: "Touche les mots du portrait moral (le caractère)."
+        phrase: "{{t}}"
+        correction: "Le portrait moral décrit le caractère ; le portrait physique, l'apparence."
+
+
+  - id: ecrire-une-lettre
+    titre: "Écrire une lettre ou un message"
+    objectif: Je connais les éléments d'une lettre et je choisis une formule adaptée au destinataire.
+    mots: [lettre, destinataire, formule de politesse]
+    etapes:
+      - dialogue:
+          - gribouille: "Je veux écrire à mon ami le Nuage. Comment on commence ?"
+          - mia: "Le lieu et la date, une formule d'appel, le message, une formule de fin, la signature. Et on adapte au destinataire !"
+      - texte: |
+          Une lettre contient :
+          1. le **lieu** et la **date** (en haut à droite) ;
+          2. une **formule d'appel** : *Cher Nuage,* (ami) — *Madame, Monsieur,* (inconnu, officiel) ;
+          3. le **corps** du message, en paragraphes ;
+          4. une **formule de fin** : *À bientôt !* (ami) — *Je vous prie d'agréer mes salutations distinguées.* (officiel) ;
+          5. la **signature**.
+      - retiens: "Date, **formule d'appel**, message, **formule de fin**, signature — et un **ton adapté** au destinataire."
+    exercices:
+      - type: qcm
+        vars: { t: [["à ta meilleure amie", "Chère Léa,", "Madame la Directrice,", "Monsieur,"], ["au maire de ta ville", "Monsieur le Maire,", "Salut toi !", "Coucou,"], ["à ta grand-mère", "Chère Mamie,", "Madame, Monsieur,", "Monsieur le Directeur,"]] }
+        enonce: "Quelle formule d'appel pour écrire {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["Paris, le 3 mai", "Chère Mamie,", "Je t'écris pour te raconter mes vacances…", "Je t'embrasse très fort.", "Léa"], ["Lyon, le 12 juin", "Monsieur le Maire,", "Je vous écris pour vous proposer un jardin dans notre école.", "Veuillez agréer mes salutations respectueuses.", "Tom Martin"]] }
+        enonce: "Remets les parties de la lettre dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Lieu et date, formule d'appel, message, formule de fin, signature."
+      - type: qcm
+        vars: { t: [["à un ami", "À très vite !", "Veuillez agréer mes salutations distinguées.", "Cordialement, le Président"], ["à une entreprise", "Je vous prie d'agréer mes salutations distinguées.", "Bisous !", "À plus !"]] }
+        enonce: "Quelle formule de fin pour une lettre {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

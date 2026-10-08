@@ -1,0 +1,46 @@
+# Dictionnaire — littérature, poésie, style, argumentation.
+- { m: poème, n: n, g: m, d: "Texte en vers ou en prose qui joue avec les sons, le rythme et les images.", e: "Victor Hugo a écrit de nombreux poèmes.", f: [poète, poésie, poétique], x: "grec poiêma, « création »", t: lettres }
+- { m: vers, n: n, g: m, d: "Ligne d'un poème, souvent avec un nombre précis de syllabes.", e: "Un alexandrin est un vers de douze syllabes.", t: lettres }
+- { m: rime, n: n, g: f, d: "Retour du même son à la fin de deux vers ou plus.", e: "« fleur » rime avec « couleur ».", f: [rimer], t: lettres }
+- { m: strophe, n: n, g: f, d: "Groupe de vers dans un poème (quatrain, tercet…).", e: "Ce poème a trois strophes.", l: 2, t: lettres }
+- { m: alexandrin, n: n, g: m, d: "Vers de douze syllabes.", e: "« Demain, dès l'aube, à l'heure où blanchit la campagne » est un alexandrin.", l: 2, t: lettres }
+- { m: sonnet, n: n, g: m, d: "Poème de quatorze vers : deux quatrains puis deux tercets.", e: "Ronsard a écrit de célèbres sonnets.", l: 3, t: lettres }
+- { m: fable, n: n, g: f, d: "Court récit, souvent avec des animaux, qui donne une leçon (la morale).", e: "« Le Corbeau et le Renard » est une fable de La Fontaine.", f: [fabuliste, fabuleux], t: lettres }
+- { m: morale, n: n, g: f, d: "Leçon que l'on tire d'une histoire.", e: "La morale de la fable est à la fin.", t: lettres }
+- { m: conte, n: n, g: m, d: "Récit imaginaire, souvent merveilleux, qui commence par « Il était une fois ».", e: "« Cendrillon » est un conte de Perrault.", f: [conter, conteur], t: lettres }
+- { m: roman, n: n, g: m, d: "Long récit en prose qui raconte une histoire inventée.", e: "« Vingt mille lieues sous les mers » est un roman de Jules Verne.", f: [romancier, romanesque], t: lettres }
+- { m: récit, n: n, g: m, d: "Histoire racontée, à l'oral ou à l'écrit.", e: "Le récit de ses aventures nous a passionnés.", s: [histoire, narration], f: [réciter, récitation], t: lettres }
+- { m: narrateur, n: n, g: m, d: "Celui ou celle qui raconte l'histoire dans un récit.", e: "Ici, le narrateur est aussi le héros.", f: [narration, narratif], l: 2, t: lettres }
+- { m: personnage, n: n, g: m, d: "Personne ou animal qui agit dans une histoire.", e: "Le personnage principal est un renard.", t: lettres }
+- { m: héros, n: n, g: m, d: "Personnage principal d'une histoire ; personne admirée pour son courage. Le h est aspiré : le héros.", e: "Le héros sauve le village.", f: [héroïne, héroïque, héroïsme], t: lettres }
+- { m: dialogue, n: n, g: m, d: "Échange de paroles entre des personnages, souvent avec des tirets.", e: "Le dialogue rend la scène vivante.", f: [dialoguer], t: lettres }
+- { m: théâtre, n: n, g: m, d: "Art de jouer des histoires sur une scène ; texte fait pour être joué.", e: "Molière est un auteur de théâtre.", f: [théâtral], t: lettres }
+- { m: comédie, n: n, g: f, d: "Pièce de théâtre qui fait rire.", e: "« L'Avare » est une comédie de Molière.", a: [tragédie], f: [comédien, comique], t: lettres }
+- { m: tragédie, n: n, g: f, d: "Pièce de théâtre où des héros sont écrasés par leur destin ; événement terrible.", e: "Racine a écrit des tragédies.", a: [comédie], f: [tragique], l: 2, t: lettres }
+- { m: auteur, n: n, g: m, d: "Personne qui a écrit un livre ou créé une œuvre.", e: "Qui est l'auteur de ce poème ?", s: [écrivain], t: lettres }
+- { m: écrivain, n: n, g: m, d: "Personne qui écrit des livres.", e: "George Sand était une grande écrivaine.", s: [auteur], f: [écrire], t: lettres }
+- { m: comparaison, n: n, g: f, d: "Figure qui rapproche deux choses avec un outil (comme, tel, pareil à).", e: "« Ses yeux brillaient comme des étoiles ».", f: [comparer], t: style }
+- { m: métaphore, n: n, g: f, d: "Figure qui rapproche deux choses sans outil de comparaison.", e: "« Cette fille est un rayon de soleil. »", x: "grec metaphora, « transport »", l: 2, t: style }
+- { m: personnification, n: n, g: f, d: "Figure qui donne à une chose ou un animal des traits humains.", e: "« Le vent chante dans les arbres. »", l: 2, t: style }
+- { m: hyperbole, n: n, g: f, d: "Figure d'exagération.", e: "« Je meurs de faim ! »", a: [litote], l: 3, t: style }
+- { m: litote, n: n, g: f, d: "Figure qui dit moins pour suggérer plus.", e: "« Ce n'est pas mauvais » pour dire « c'est très bon ».", a: [hyperbole], l: 3, t: style }
+- { m: oxymore, n: n, g: m, d: "Figure qui unit deux mots de sens opposés.", e: "« Cette obscure clarté qui tombe des étoiles » (Corneille).", l: 3, t: style }
+- { m: anaphore, n: n, g: f, d: "Répétition d'un mot en début de vers ou de phrase.", e: "« J'irai par la forêt, j'irai par la montagne. »", l: 3, t: style }
+- { m: allitération, n: n, g: f, d: "Répétition d'un même son de consonne.", e: "« Pour qui sont ces serpents qui sifflent sur vos têtes ? » (Racine)", a: [assonance], l: 3, t: style }
+- { m: assonance, n: n, g: f, d: "Répétition d'un même son de voyelle.", e: "« Les sanglots longs des violons » (Verlaine)", a: [allitération], l: 3, t: style }
+- { m: registre, n: n, g: m, d: "Tonalité d'un texte selon l'effet recherché : comique, lyrique, épique, tragique, pathétique, fantastique…", e: "Ce passage relève du registre comique.", s: [tonalité], l: 3, t: style }
+- { m: lyrique, n: a, d: "Qui exprime les sentiments personnels de l'auteur.", e: "« Demain, dès l'aube » est un poème lyrique.", f: [lyrisme], l: 3, t: style }
+- { m: épique, n: a, d: "Qui raconte des exploits héroïques, en les grandissant.", e: "Un combat épique.", f: [épopée], l: 3, t: style }
+- { m: fantastique, n: a, d: "Où un événement étrange fait hésiter entre une explication réelle et surnaturelle.", e: "Maupassant a écrit des contes fantastiques.", l: 2, t: style }
+- { m: thèse, n: n, g: f, d: "Opinion que l'on défend dans une argumentation.", e: "Sa thèse : il faut protéger les forêts.", a: [antithèse], l: 3, t: argumentation }
+- { m: argument, n: n, g: m, d: "Raison que l'on donne pour convaincre.", e: "Ton argument est solide.", f: [argumenter, argumentation], l: 2, t: argumentation }
+- { m: exemple, n: n, g: m, d: "Cas précis qui illustre une idée ou une règle.", e: "Donne un exemple pour prouver ce que tu dis.", f: [exemplaire], t: argumentation }
+- { m: concession, n: n, g: f, d: "Fait d'accorder une part de raison à l'adversaire avant de le contredire (certes…, mais…).", e: "« Certes, c'est cher, mais c'est utile » : une concession.", f: [concéder], l: 3, t: argumentation }
+- { m: problématique, n: n, g: f, d: "Question qui guide toute une réflexion, une dissertation.", e: "Formule ta problématique dans l'introduction.", l: 3, t: argumentation }
+- { m: dissertation, n: n, g: f, d: "Exercice où l'on répond de façon organisée à une question, avec des arguments et des exemples.", e: "Sa dissertation comporte trois parties.", l: 3, t: argumentation }
+- { m: commentaire, n: n, g: m, d: "Remarque sur quelque chose ; exercice qui analyse un texte en montrant comment il produit ses effets.", e: "Un commentaire de texte s'appuie sur des citations.", f: [commenter], l: 2, t: argumentation }
+- { m: citation, n: n, g: f, d: "Phrase reprise exactement d'un texte ou d'une personne, entre guillemets.", e: "Appuie ton idée sur une citation du poème.", f: [citer], t: argumentation }
+- { m: connecteur, n: n, g: m, d: "Mot qui relie des idées et montre leur lien (car, donc, mais, ensuite…).", e: "« Pourtant » est un connecteur d'opposition.", l: 2, t: argumentation }
+- { m: péripétie, n: n, g: f, d: "Événement imprévu qui change le cours d'une histoire.", e: "Le voyage fut plein de péripéties.", s: [rebondissement], l: 2, t: lettres }
+- { m: dénouement, n: n, g: m, d: "Moment où se résout l'intrigue d'une histoire.", e: "Au dénouement, le trésor est retrouvé.", l: 2, t: lettres }
+- { m: intrigue, n: n, g: f, d: "Suite d'événements qui forment l'action d'une histoire.", e: "L'intrigue de ce roman est passionnante.", s: [action], f: [intriguer], l: 2, t: lettres }

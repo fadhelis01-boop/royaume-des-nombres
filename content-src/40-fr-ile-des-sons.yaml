@@ -1,0 +1,254 @@
+id: fr-ile-des-sons
+matiere: francais
+titre: L'Île des Sons
+sous_titre: Les lettres, les sons, les syllabes et les accents
+emoji: 🔤
+couleur: "#ff7043"
+cycle: graines
+age: 5-7 ans
+niveau: GS – CP
+ordre: 40
+prerequis: []
+version: 1.0.0
+intro:
+  - zero: "Écoute ! Sur cette île, chaque lettre a une petite voix. Le S fait sssss, comme un serpent."
+  - mia: "On va apprendre à reconnaître les lettres, à entendre les sons et à les assembler pour lire."
+  - neo: "Lire, c'est un super-pouvoir. Et tout commence par les sons. Défi accepté ?"
+
+lecons:
+  - id: voyelles-consonnes
+    titre: Les voyelles et les consonnes
+    objectif: Je sais que l'alphabet a 26 lettres, et je reconnais les 6 voyelles.
+    mots: [lettre, voyelle, consonne, alphabet]
+    etapes:
+      - dialogue:
+          - zero: "Il y a combien de lettres dans l'alphabet ? Cent ? Mille ? 😳"
+          - neo: "Vingt-six. Et elles forment deux équipes : les voyelles et les consonnes."
+      - texte: |
+          Les **voyelles** sont les lettres qui « chantent » toutes seules : **a, e, i, o, u, y**.
+
+          Toutes les autres lettres sont des **consonnes** : b, c, d, f, g… Elles ont besoin d'une voyelle pour bien se faire entendre : **b** + **a** = **ba**.
+      - retiens: "Il y a **26 lettres**. **6 voyelles** : a, e, i, o, u, y. Les **20 autres** sont des consonnes."
+      - astuce:
+          texte: "Pour retenir les voyelles, chante-les : « A, E, I, O, U… et Y ! »"
+          qui: mia
+      - a_quoi_ca_sert: "Les voyelles sont la colle des mots : il n'existe presque aucun mot sans voyelle !"
+    exercices:
+      - type: classer
+        vars: { t: [[a, b, i, m, o, r], [e, s, u, l, y, t], [i, p, o, f, a, n], [u, c, e, d, o, v]] }
+        enonce: "Range chaque lettre dans la bonne équipe."
+        categories: [Voyelle, Consonne]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
+        correction: "Les voyelles sont a, e, i, o, u, y."
+      - type: qcm
+        vars: { t: [[o, b, m, r], [e, t, s, l], [i, p, f, n], [u, d, c, v], [a, g, h, k], [y, z, w, j]] }
+        enonce: "Laquelle de ces lettres est une voyelle ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} est une voyelle."
+      - type: nombre
+        enonce: "Combien y a-t-il de lettres dans l'alphabet ?"
+        reponse: "26"
+        correction: "L'alphabet a 26 lettres."
+      - type: nombre
+        enonce: "Combien y a-t-il de voyelles ?"
+        reponse: "6"
+        erreurs:
+          - { valeur: "5", message: "Tu as oublié le Y ! a, e, i, o, u… et y." }
+        correction: "a, e, i, o, u, y : 6 voyelles."
+      - type: nombre
+        vars: { t: [[chocolat, 3, "o, o, a"], [papillon, 3, "a, i, o"], [tomate, 3, "o, a, e"], [lapin, 2, "a, i"], [ami, 2, "a, i"], [moto, 2, "o, o"], [banane, 3, "a, a, e"], [stylo, 2, "y, o"]] }
+        enonce: "Combien de voyelles dans le mot « {{t_0}} » ?"
+        reponse: "t_1"
+        niveau: 2
+        correction: "{{t_0}} : {{t_2}}."
+
+  - id: alphabet
+    titre: L'ordre alphabétique
+    objectif: Je connais l'ordre de l'alphabet et je sais ranger des mots par leur première lettre.
+    mots: [alphabet, ordre alphabétique]
+    etapes:
+      - dialogue:
+          - mia: "A, B, C, D, E, F, G… H, I, J, K, L, M, N, O, P…"
+          - zero: "Q, R, S, T, U, V… W, X, Y, Z ! J'ai réussi sans respirer ! 🤯"
+      - texte: |
+          L'**ordre alphabétique**, c'est l'ordre des lettres de l'alphabet :
+          **a b c d e f g h i j k l m n o p q r s t u v w x y z**.
+
+          Pour ranger des mots, on regarde leur **première lettre** : **a**rbre vient avant **b**ateau, qui vient avant **c**hat.
+      - astuce:
+          texte: "Si deux mots commencent par la même lettre, on regarde la deuxième : **ch**at avant **co**chon, car h vient avant o."
+          qui: neo
+      - a_quoi_ca_sert: "C'est comme ça qu'on trouve un mot dans le dictionnaire, un nom dans une liste ou un livre à la bibliothèque."
+      - retiens: "Pour ranger des mots dans l'ordre alphabétique, je compare la **première lettre**, puis la **deuxième** si elles sont pareilles."
+    exercices:
+      - type: qcm
+        vars: { t: [[c, d, b, e], [g, h, f, j], [m, n, l, p], [p, q, o, r], [s, t, r, u], [h, i, g, k], [k, l, j, m], [u, v, t, x]] }
+        enonce: "Quelle lettre vient juste après « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "… {{t_0}}, {{t_1}} …"
+      - type: ordre
+        vars: { t: [[arbre, bateau, chat, dauphin], [ballon, fusée, lune, soleil], [ami, cerise, lapin, vélo], [école, girafe, maison, poule], [gâteau, lion, robot, tortue]] }
+        enonce: "Range ces mots dans l'ordre alphabétique."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
+      - type: ordre
+        vars: { t: [[chat, chien, cochon, cygne], [banane, bateau, biche, bonbon], [maman, merle, mouton, mûre], [pain, pomme, prune, puce]] }
+        enonce: "Même première lettre ! Regarde la deuxième lettre et range."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
+      - type: vf
+        vars: { t: [["lapin", "girafe", false], ["avion", "zèbre", true], ["mouton", "loup", false], ["cerise", "domino", true], ["orange", "pirate", true], ["vélo", "tigre", false]] }
+        enonce: "Dans le dictionnaire, « {{t_0}} » vient avant « {{t_1}} »."
+        reponse: "t_2"
+        correction: "On compare la première lettre de chaque mot."
+
+  - id: syllabes
+    titre: Les syllabes, en tapant dans les mains
+    objectif: Je découpe un mot à l'oral en syllabes, en tapant une fois dans mes mains pour chaque syllabe.
+    mots: [syllabe]
+    etapes:
+      - dialogue:
+          - neo: "Écoute : cho-co-lat. Trois petits morceaux de son. Ce sont les syllabes."
+          - zero: "Moi aussi je suis en syllabes : Zé-ro. Deux ! Je suis un mot en deux morceaux."
+      - texte: |
+          Une **syllabe** est un morceau de mot qu'on prononce d'un seul coup de voix.
+
+          Pour les compter, on **tape dans ses mains** en disant le mot :
+          **la-pin** 👏👏 (2) — **pa-pi-llon** 👏👏👏 (3) — **chat** 👏 (1).
+      - astuce:
+          texte: "Mets ta main sous ton menton : à chaque syllabe, ton menton descend !"
+          qui: mia
+      - a_quoi_ca_sert: "Les syllabes aident à lire les longs mots morceau par morceau, et à les écrire sans oublier de lettres."
+      - retiens: "Une syllabe = un coup de voix. Je **tape dans mes mains** pour compter les syllabes d'un mot."
+    exercices:
+      - type: nombre
+        vars: { t: [[chat, 1], [lapin, 2], [vélo, 2], [chocolat, 3], [papillon, 3], [ordinateur, 4], [cheval, 2], [kangourou, 3], [moto, 2], [bateau, 2], [soleil, 2], [pantalon, 3], [éléphant, 3], [domino, 3], [kiwi, 2], [robot, 2], [escargot, 3], [animal, 3], [ananas, 3], [crayon, 2], [hélicoptère, 4], [tortue, 2]] }
+        enonce: "Tape dans tes mains : combien de syllabes dans « {{t_0}} » ?"
+        reponse: "t_1"
+        correction: "« {{t_0}} » : {{t_1}} syllabe{{si(t_1>1,'s','')}}."
+      - type: qcm
+        vars: { t: [["papillon", "pa-pi-llon", "pap-illon", "pa-pillon"], ["chocolat", "cho-co-lat", "choc-o-lat", "cho-colat"], ["tomate", "to-ma-te", "tom-ate", "to-mate"], ["lapin", "la-pin", "lap-in", "l-apin"], ["maison", "mai-son", "ma-ison", "mais-on"]] }
+        enonce: "Comment découpe-t-on « {{t_0}} » en syllabes écrites ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["2 syllabes", "lapin", "chat", "papillon"], ["1 syllabe", "pain", "maman", "tomate"], ["3 syllabes", "éléphant", "lion", "loup"], ["4 syllabes", "ordinateur", "girafe", "souris"]] }
+        enonce: "Quel mot a {{t_0}} (à l'oral) ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_1}} » a {{t_0}}."
+
+  - id: sons-complexes
+    titre: "Les sons à deux lettres : ou, on, an, oi, ch…"
+    objectif: Je reconnais les sons qui s'écrivent avec deux lettres (ou plus) et je sais les lire.
+    mots: [son]
+    etapes:
+      - dialogue:
+          - zero: "O et U, ça fait… o-u ? Non ! Ça fait « ou », comme dans « hibou » !"
+          - mia: "Exactement. Certaines lettres se donnent la main pour faire un seul son."
+      - texte: |
+          Quelques équipes de lettres qui font **un seul son** :
+
+          - **ou** : hibou, loup — **on** : mouton, ballon
+          - **an / en** : maman, enfant — **in** : lapin, sapin
+          - **oi** : roi, poisson — **ch** : chat, vache
+          - **au / eau** : auto, bateau — **eu** : feu, bleu
+          - **gn** : montagne, araignée — **ph** : photo, éléphant (fait « f »)
+      - attention:
+          texte: "« ph » se prononce comme un **f** : é-lé-**ph**ant. Et « au » et « eau » se prononcent « o »."
+          qui: neo
+      - retiens: "Quand deux lettres font **un seul son**, je les lis **ensemble** : o + u = **ou**, c + h = **ch**."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Cherche dans ta chambre ou dans un livre trois objets dont le nom contient le son « on » (ballon, cochon, crayon…). Dis-les à voix haute à un adulte."
+    exercices:
+      - type: qcm
+        vars: { t: [["mouton", "on", "an", "in"], ["hibou", "ou", "on", "oi"], ["lapin", "in", "an", "on"], ["roi", "oi", "ou", "on"], ["chat", "ch", "gn", "ph"], ["bateau", "eau", "ou", "an"], ["maman", "an", "in", "ou"], ["montagne", "gn", "ch", "ph"], ["éléphant", "ph", "ch", "gn"], ["feu", "eu", "ou", "oi"], ["poisson", "oi", "eu", "in"], ["enfant", "en", "on", "ou"]] }
+        enonce: "Quel son à deux lettres entends-tu dans « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "On entend « {{t_1}} » : {{t_0}}."
+      - type: dictee
+        vars: { m: ["loup", "chat", "roi", "lapin", "ballon", "maman", "bateau", "feu", "hibou", "mouton"] }
+        enonce: "Écoute et écris le mot."
+        dictee: "{{m}}"
+        correction: "Le mot était : {{m}}."
+      - type: classer
+        vars: { t: [[hibou, mouton, loup, ballon], [roue, pont, fou, savon], [genou, crayon, mou, bonbon]] }
+        enonce: "Le son « ou » ou le son « on » ?"
+        categories: ["ou", "on"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "« ou » s'écrit o-u ; « on » s'écrit o-n."
+
+  - id: accents
+    titre: Les accents du e (é, è, ê)
+    objectif: Je sais que les accents changent le son du e et je les écris au bon endroit.
+    mots: [accent, aigu, grave, circonflexe]
+    etapes:
+      - dialogue:
+          - mia: "Le E porte des chapeaux ! Et chaque chapeau change sa voix."
+          - zero: "Moi je n'ai pas de chapeau. Mais j'ai des oreilles orange. C'est presque pareil."
+      - texte: |
+          - **é** (accent **aigu**, il monte vers la droite) se prononce **é** : été, école, bébé.
+          - **è** (accent **grave**, il descend) se prononce **è** : père, mère, élève.
+          - **ê** (accent **circonflexe**, un petit toit) se prononce **è** aussi : fête, forêt, tête.
+          - **e** sans accent est souvent muet à la fin d'un mot : pomme, table.
+      - astuce:
+          texte: "L'accent aigu é a la forme de ta main qui monte en disant « é ! » joyeusement."
+          qui: mia
+      - retiens: "**é** = aigu (son é) ; **è** = grave (son è) ; **ê** = circonflexe (son è). Sans accent, le e final est souvent **muet**."
+      - attention:
+          texte: "Un accent oublié change le mot ! « pêche » (le fruit) n'est pas « péché » ni « peche »."
+          qui: neo
+    exercices:
+      - type: qcm
+        vars: { t: [["été", "ete", "èté"], ["école", "ecole", "ècole"], ["père", "pére", "pere"], ["fête", "féte", "fete"], ["forêt", "forét", "foret"], ["bébé", "bèbè", "bebe"], ["mère", "mére", "mêre"], ["tête", "téte", "tète"], ["élève", "éléve", "eleve"], ["fenêtre", "fenétre", "fenetre"]] }
+        enonce: "Quel mot est bien écrit ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "On écrit « {{t_0}} »."
+      - type: dictee
+        vars: { m: ["été", "école", "père", "fête", "tête", "bébé", "mère", "forêt", "élève", "zèbre", "fée", "rêve"] }
+        enonce: "Écoute et écris le mot, avec ses accents."
+        dictee: "{{m}}"
+        correction: "Le mot était : {{m}}."
+      - type: classer
+        vars: { t: [[école, père, fête], [bébé, mère, tête], [été, zèbre, forêt], [fée, élève, rêve]] }
+        enonce: "Quel accent porte le premier e accentué ?"
+        categories: ["é aigu", "è grave", "ê circonflexe"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2]]
+        correction: "é monte, è descend, ê fait un petit toit."
+
+  - id: lire-des-phrases
+    titre: Lire et comprendre une petite phrase
+    objectif: Je lis une phrase simple et je montre que je l'ai comprise.
+    mots: [phrase, lire]
+    etapes:
+      - dialogue:
+          - neo: "Lire, ce n'est pas seulement faire du bruit avec sa bouche. C'est comprendre ce qui se passe."
+          - zero: "Moi je lis : « Le hamster mange une graine. » Et je comprends : j'ai faim."
+      - texte: |
+          Pour bien comprendre une phrase, je me demande :
+          - **Qui ?** (de qui parle-t-on)
+          - **Fait quoi ?** (l'action)
+          - **Où, quand, comment ?** (les détails)
+      - exemple:
+          titre: On lit ensemble
+          enonce: "« Le petit chat noir dort sur le lit. »"
+          etapes: ["Qui ? le petit chat noir.", "Fait quoi ? il dort.", "Où ? sur le lit."]
+      - retiens: "Après avoir lu, je me demande : **qui ? fait quoi ? où ?** Si je ne sais pas répondre, je relis."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le chat dort sur le lit.", "le chat", "le lit", "le chien"], ["Léa mange une pomme rouge.", "Léa", "une pomme", "le rouge"], ["Le lapin saute dans le jardin.", "le lapin", "le jardin", "la maison"], ["Papa lit un livre au salon.", "Papa", "un livre", "le salon"], ["La poule pond un œuf blanc.", "la poule", "un œuf", "le blanc"]] }
+        enonce: "« {{t_0}} » Qui fait l'action ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "C'est {{t_1}} qui fait l'action."
+      - type: qcm
+        vars: { t: [["Le chat dort sur le lit.", "il dort", "il mange", "il court"], ["Léa mange une pomme rouge.", "elle mange", "elle chante", "elle dort"], ["Le lapin saute dans le jardin.", "il saute", "il nage", "il lit"], ["Papa lit un livre au salon.", "il lit", "il cuisine", "il dort"]] }
+        enonce: "« {{t_0}} » Que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}."
+      - type: vf
+        vars: { t: [["Le chat noir dort sur le lit.", "Le chat est blanc.", false], ["Léa mange une pomme rouge.", "La pomme est rouge.", true], ["Le lapin saute dans le jardin.", "Le lapin est dans la cuisine.", false], ["Il pleut, alors Tom prend son parapluie.", "Il fait beau.", false], ["Mia a trois ballons bleus.", "Mia a des ballons.", true]] }
+        enonce: "« {{t_0}} » — Vrai ou faux : {{t_1}}"
+        reponse: "t_2"
+        correction: "Relis bien la phrase : tout est écrit dedans."

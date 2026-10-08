@@ -1,0 +1,229 @@
+id: fr-montagnes-du-temps
+matiere: francais
+titre: Les Montagnes du Temps
+sous_titre: Passé, présent, futur — imparfait, futur simple et passé composé
+emoji: ⏳
+couleur: "#00897b"
+cycle: graines
+age: 8-10 ans
+niveau: CE2 – CM1
+ordre: 45
+prerequis: [fr-vallee-des-verbes]
+version: 1.0.0
+intro:
+  - neo: "Trois sommets : le Mont du Passé, la Vallée du Présent, le Pic du Futur. Chaque temps a ses marches : les terminaisons."
+  - mia: "Hier, aujourd'hui, demain… Le verbe change de costume selon le moment."
+  - zero: "Hier j'ai mangé. Aujourd'hui je mange. Demain je mangerai. C'est ma vie, en trois temps. 😳"
+
+lecons:
+  - id: passe-present-futur
+    titre: "Hier, aujourd'hui, demain"
+    objectif: Je reconnais si une action se passe dans le passé, le présent ou le futur.
+    mots: [passé, présent, futur, temps]
+    etapes:
+      - dialogue:
+          - mia: "Écoute : « Je mangeais », « je mange », « je mangerai ». Le même verbe, trois moments."
+          - neo: "Les mots du temps aident aussi : hier, autrefois → passé ; maintenant → présent ; demain, bientôt → futur."
+      - texte: |
+          - **Passé** : ce qui est déjà arrivé. *Hier, j'**ai joué**. Autrefois, on **écrivait** à la plume.*
+          - **Présent** : ce qui se passe maintenant. *Aujourd'hui, je **joue**.*
+          - **Futur** : ce qui va arriver. *Demain, je **jouerai**.*
+      - retiens: "Le **temps du verbe** dit **quand** l'action se passe : passé, présent ou futur."
+    exercices:
+      - type: classer
+        vars: { v: [jouer, chanter, manger, regarder, danser, parler], p: "1..6" }
+        enonce: "Passé, présent ou futur ?"
+        categories: [passé, présent, futur]
+        mots: [["{{conjp(v,'imparfait',p)}}", 0], ["{{conjp(v,'present',p)}}", 1], ["{{conjp(v,'futur',p)}}", 2], ["{{conjp(v,'passe_compose',p)}}", 0]]
+        correction: "Imparfait et passé composé → passé ; présent → maintenant ; futur → demain."
+      - type: qcm
+        vars: { t: [["Demain, nous irons au zoo.", futur, présent, passé], ["Hier, il a plu toute la journée.", passé, présent, futur], ["En ce moment, Mia dessine.", présent, passé, futur], ["Autrefois, les gens s'éclairaient à la bougie.", passé, futur, présent], ["L'année prochaine, j'aurai neuf ans.", futur, passé, présent]] }
+        enonce: "« {{t_0}} » — À quel moment ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: surligner
+        vars: { t: ["[Hier], nous avons vu un film.", "[Demain], il fera beau.", "[Autrefois], les chevaux tiraient les charrues.", "[Maintenant], je comprends la règle.", "[La semaine prochaine], nous partirons."] }
+        enonce: "Touche le mot (ou le groupe) qui dit QUAND."
+        phrase: "{{t}}"
+        correction: "Les indicateurs de temps aident à choisir le temps du verbe."
+
+  - id: present-tous-groupes
+    titre: "Le présent des verbes en -ir et des verbes irréguliers"
+    objectif: Je conjugue au présent les verbes du 2e groupe et les verbes du 3e groupe les plus courants.
+    mots: [présent, 2e groupe, 3e groupe]
+    etapes:
+      - dialogue:
+          - neo: "Finir : je finis, tu finis, il finit, nous finISSons… Le 2e groupe a son ISS au pluriel."
+          - zero: "Et prendre ? Je prends, tu prends, il prend… avec un D ! Pas de T. Il est têtu, ce verbe."
+      - texte: |
+          **2e groupe** (finir) : je fin**is**, tu fin**is**, il fin**it**, nous fin**issons**, vous fin**issez**, ils fin**issent**.
+
+          **3e groupe** : les terminaisons sont souvent **s, s, t, ons, ez, ent** (je pars, tu pars, il part…),
+          mais certains verbes changent leur radical : *venir → je viens, nous venons, ils viennent* ; *pouvoir → je peux, ils peuvent*.
+
+          Les verbes en **-dre** gardent leur **d** : je pren**ds**, il pren**d**, je ren**ds**, il ren**d**.
+      - retiens: "2e groupe : **is, is, it, issons, issez, issent**. 3e groupe : souvent **s, s, t** (ou **ds, ds, d** pour -dre)."
+    exercices:
+      - type: mot
+        vars: { v: [finir, grandir, choisir, réussir, obéir, remplir, partir, dormir, venir, prendre, voir, dire, pouvoir, vouloir, mettre, lire, écrire, rendre, attendre, sortir, savoir], p: "1..6", g: [m, f] }
+        enonce: "Conjugue au présent : {{pronom(p, g)}} … ({{v}})"
+        reponse: ["{{conj(v, 'present', p)}}", "{{conjp(v, 'present', p, g)}}"]
+        correction: "{{conjp(v, 'present', p, g)}}"
+      - type: qcm
+        vars: { t: [["il", "prend", "prent", "prends"], ["je", "peux", "peut", "peus"], ["ils", "viennent", "venent", "vienent"], ["tu", "finis", "finit", "finie"], ["vous", "dites", "disez", "dises"], ["il", "rend", "rent", "rends"], ["nous", "choisissons", "choisons", "choisisons"]] }
+        enonce: "Complète au présent : {{t_0}} …"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} {{t_1}}"
+      - type: dictee
+        vars: { m: ["Nous finissons nos devoirs.", "Ils prennent le bus.", "Je peux venir avec toi.", "Vous faites du vélo.", "Elles viennent ce soir.", "Tu dis la vérité."] }
+        enonce: "Écoute et écris la phrase au présent."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+
+  - id: imparfait
+    titre: "L'imparfait : ais, ais, ait, ions, iez, aient"
+    objectif: Je conjugue tous les verbes à l'imparfait.
+    mots: [imparfait]
+    etapes:
+      - dialogue:
+          - mia: "L'imparfait, c'est le temps des souvenirs et des contes : « Il était une fois… »"
+          - neo: "Bonne nouvelle : les terminaisons sont les mêmes pour TOUS les verbes. Même être et avoir !"
+      - texte: |
+          On prend le radical de « nous » au présent (*nous chant-ons, nous finiss-ons, nous pren-ons*) et on ajoute :
+          **-ais, -ais, -ait, -ions, -iez, -aient**.
+
+          *je chantais, tu finissais, il prenait, nous allions, vous faisiez, ils voyaient*.
+          Seule exception : **être** → j'**ét**ais, tu étais…
+      - attention:
+          texte: "Les verbes en -cer et -ger : je commen**ç**ais, je man**ge**ais (pour garder le son), mais nous commencions, nous mangions."
+          qui: neo
+      - retiens: "Imparfait = radical de **nous** + **ais, ais, ait, ions, iez, aient**. Pour tous les verbes !"
+      - a_quoi_ca_sert: "Raconter ce qui durait ou se répétait dans le passé : « Quand j'étais petit, je jouais tous les jours au parc. »"
+    exercices:
+      - type: mot
+        vars: { v: [chanter, jouer, finir, prendre, faire, aller, être, avoir, voir, dire, manger, commencer, venir, lire, pouvoir, écrire], p: "1..6", g: [m, f] }
+        enonce: "Conjugue à l'imparfait : {{pronom(p, g)}} … ({{v}})"
+        reponse: ["{{conj(v, 'imparfait', p)}}", "{{conjp(v, 'imparfait', p, g)}}"]
+        correction: "{{conjp(v, 'imparfait', p, g)}}"
+      - type: qcm
+        vars: { v: [chanter, finir, prendre, faire, jouer, dormir], p: [1, 3, 4, 6] }
+        enonce: "Quelle forme est à l'imparfait ? {{pronom(p)}} …"
+        choix: ["{{conj(v,'imparfait',p)}}", "{{conj(v,'present',p)}}", "{{conj(v,'futur',p)}}"]
+        correction: "{{conjp(v,'imparfait',p)}}"
+      - type: dictee
+        vars: { m: ["Il était une fois un petit renard.", "Nous jouions dans le jardin.", "Les oiseaux chantaient le matin.", "Tu mangeais une pomme.", "Elle commençait son dessin."] }
+        enonce: "Écoute et écris la phrase à l'imparfait."
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+
+  - id: futur
+    titre: "Le futur simple"
+    objectif: Je conjugue au futur simple, y compris les verbes au futur irrégulier.
+    mots: [futur]
+    etapes:
+      - dialogue:
+          - neo: "Le futur, c'est facile : je prends l'infinitif, et j'ajoute AI, AS, A, ONS, EZ, ONT. Ce sont les terminaisons du verbe avoir !"
+          - zero: "Je mangerai. Tu mangeras. Il mangera. On mangera TOUS. 😳"
+      - texte: |
+          **Infinitif + -ai, -as, -a, -ons, -ez, -ont** : *je chanter**ai**, tu finir**as**, il prendr**a*** (le **e** final de -re tombe).
+
+          Des verbes ont un **radical spécial** :
+          être → **ser**ai, avoir → **aur**ai, aller → **ir**ai, faire → **fer**ai, venir → **viendr**ai,
+          voir → **verr**ai, pouvoir → **pourr**ai, vouloir → **voudr**ai, savoir → **saur**ai, devoir → **devr**ai.
+      - attention:
+          texte: "Ne confonds pas « je chanterai » (futur) et « je chanterais » (conditionnel) : au futur, pas de s avec « je »."
+          qui: mia
+      - retiens: "Futur = **infinitif + ai, as, a, ons, ez, ont** ; radicaux spéciaux : ser-, aur-, ir-, fer-, viendr-, verr-, pourr-…"
+    exercices:
+      - type: mot
+        vars: { v: [chanter, jouer, finir, prendre, faire, aller, être, avoir, voir, venir, pouvoir, vouloir, savoir, manger, partir, dire, lire, devoir], p: "1..6", g: [m, f] }
+        enonce: "Conjugue au futur : {{pronom(p, g)}} … ({{v}})"
+        reponse: ["{{conj(v, 'futur', p)}}", "{{conjp(v, 'futur', p, g)}}"]
+        correction: "{{conjp(v, 'futur', p, g)}}"
+      - type: qcm
+        vars: { t: [["être", "je serai", "j'êterai", "je serais"], ["aller", "j'irai", "j'allerai", "j'irais"], ["faire", "je ferai", "je fairai", "je ferais"], ["voir", "je verrai", "je voirai", "je verais"], ["venir", "je viendrai", "je venirai", "je viendrais"], ["avoir", "j'aurai", "j'avoirai", "j'aurais"]] }
+        enonce: "Futur simple de « {{t_0}} » avec « je » :"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Demain, nous irons à la mer.", "Tu verras, ce sera génial.", "Ils feront un gâteau.", "Je viendrai te chercher.", "Vous aurez une surprise."] }
+        enonce: "Écoute et écris la phrase au futur."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+
+  - id: passe-compose-avoir
+    titre: "Le passé composé avec avoir"
+    objectif: Je forme le passé composé avec l'auxiliaire avoir et le participe passé.
+    mots: [passé composé, auxiliaire, participe passé]
+    etapes:
+      - dialogue:
+          - mia: "Le passé composé est fait de deux morceaux : un auxiliaire (avoir ou être) au présent, et le participe passé."
+          - neo: "J'**ai** mang**é**. Tu **as** fin**i**. Il **a** pr**is**. Deux pièces de puzzle !"
+      - texte: |
+          **avoir au présent + participe passé** :
+          *j'ai chanté, tu as fini, il a pris, nous avons fait, vous avez vu, ils ont dit*.
+
+          Le participe passé :
+          - 1er groupe → **-é** : chanté, mangé
+          - 2e groupe → **-i** : fini, grandi
+          - 3e groupe → varié : **pris, fait, vu, dit, mis, lu, écrit, eu, été, pu, voulu**
+      - astuce:
+          texte: "Pour savoir si un participe finit par -i, -is ou -it, mets-le au féminin : pris → pri**se** (donc s), fait → fai**te** (donc t), fini → fini**e** (rien)."
+          qui: neo
+      - retiens: "Passé composé = **avoir** (présent) + **participe passé** : j'ai chanté, j'ai fini, j'ai pris."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, jouer, manger, finir, choisir, prendre, faire, voir, dire, mettre, lire, écrire, avoir, être, pouvoir, vouloir, boire], p: "1..6", g: [m, f] }
+        enonce: "Conjugue au passé composé : {{pronom(p, g)}} … ({{v}})"
+        reponse: ["{{conj(v, 'passe_compose', p, g)}}", "{{conjp(v, 'passe_compose', p, g)}}"]
+        correction: "{{conjp(v, 'passe_compose', p, g)}}"
+      - type: qcm
+        vars: { t: [["prendre", "pris", "prit", "pri"], ["faire", "fait", "fais", "fai"], ["finir", "fini", "finit", "finis"], ["mettre", "mis", "mit", "mi"], ["dire", "dit", "dis", "di"], ["écrire", "écrit", "écris", "écri"]] }
+        enonce: "Participe passé de « {{t_0}} » : j'ai …"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "j'ai {{t_1}} (au féminin : {{pp(t_0, 'f')}})"
+      - type: surligner
+        vars: { t: ["Hier, Mia [a mangé] une pomme.", "Nous [avons fini] nos devoirs.", "Les enfants [ont pris] le train.", "Tu [as vu] ce film ?", "Hier, j'[ai écrit] une lettre."] }
+        enonce: "Touche le verbe au passé composé (auxiliaire + participe)."
+        phrase: "{{t}}"
+        correction: "Le passé composé = avoir au présent + participe passé."
+
+
+  - id: passe-compose-etre
+    titre: "Le passé composé avec être : l'accord"
+    objectif: J'emploie l'auxiliaire être avec les verbes de mouvement, et j'accorde le participe avec le sujet.
+    mots: [auxiliaire être, accord du participe]
+    etapes:
+      - dialogue:
+          - neo: "Certains verbes prennent ÊTRE : aller, venir, partir, arriver, tomber, naître, mourir…"
+          - mia: "Et avec être, le participe passé s'accorde avec le sujet, comme un adjectif ! Elle est partie. Ils sont partis."
+      - texte: |
+          **être au présent + participe passé accordé avec le sujet** :
+          *il est parti, elle est parti**e**, ils sont parti**s**, elles sont parti**es***.
+
+          Les verbes qui prennent **être** : *aller, venir, arriver, partir, entrer, sortir, monter, descendre, tomber, rester, naître, mourir, devenir, retourner*…
+      - astuce:
+          texte: "Imagine la **Maison d'Être** : on y **arrive**, on y **entre**, on **monte**, on **descend**, on **tombe**, on **sort**, on **part**… Ce sont les verbes d'être !"
+          qui: mia
+      - retiens: "Avec **être**, le participe passé **s'accorde avec le sujet** : elles sont arriv**ées**."
+    exercices:
+      - type: mot
+        vars: { v: [aller, venir, partir, arriver, tomber, entrer, sortir, rester, monter, naître], p: "1..6", g: [[m, "garçon(s)"], [f, "fille(s)"]] }
+        enonce: "Conjugue au passé composé : {{pronom(p, g_0)}} … ({{v}}) — on parle de {{g_1}}"
+        reponse: ["{{conj(v, 'passe_compose', p, g_0)}}", "{{conjp(v, 'passe_compose', p, g_0)}}"]
+        correction: "{{conjp(v, 'passe_compose', p, g_0)}}"
+      - type: qcm
+        vars: { t: [["Elles sont …", "parties", "partis", "partie"], ["Léa est …", "tombée", "tombé", "tombés"], ["Les garçons sont …", "arrivés", "arrivé", "arrivées"], ["Ma mère est …", "venue", "venu", "venus"], ["Tom et Léa sont …", "allés", "allées", "allé"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        explications: ["", "Avec être, accorde avec le sujet : masculin ou féminin ? singulier ou pluriel ?", "Avec être, accorde avec le sujet : masculin ou féminin ? singulier ou pluriel ?"]
+        correction: "{{t_0}} {{t_1}}"
+      - type: classer
+        vars: { t: [[aller, manger, partir, chanter], [tomber, jouer, arriver, finir], [venir, prendre, sortir, faire], [naître, voir, rester, dire]] }
+        enonce: "Au passé composé, quel auxiliaire ?"
+        categories: [être, avoir]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les verbes de mouvement et de changement d'état prennent être."

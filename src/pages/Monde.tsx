@@ -1,5 +1,6 @@
 import { go } from "../lib/router";
 import { lessonKey, lessonUnlocked, useContent, worldProgress } from "../lib/content";
+import { histoireDe } from "../lib/content";
 import { markStory, useChild, useStore } from "../lib/store";
 import { Dialogue, Mascot } from "../components/Mascot";
 import { StoryScene } from "../components/Story";
@@ -21,7 +22,7 @@ export function Monde({ id }: { id: string }) {
     );
   const pr = worldProgress(child, w);
   const firstVisit = !w.lecons.some((l) => child.progress[lessonKey(w, l.id)]);
-  const ch = manifest?.histoire?.chapitres[w.id];
+  const ch = histoireDe(manifest, w.matiere)?.chapitres[w.id];
   const lit = child.crystals?.includes(w.id);
   // Première visite : on ouvre le chapitre de l'aventure avant tout
   if (ch && !child.story?.[`avant:${w.id}`])

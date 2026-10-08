@@ -61,6 +61,8 @@ export function newChild(name: string, avatar: Child["avatar"], age: number): Ch
     abandons: {},
     sessions: [],
     recordsJeux: {},
+    matiere: "maths",
+    carnet: [],
   };
 }
 
@@ -452,4 +454,24 @@ export function recordAbandon(key: string) {
   updateChild((c) => {
     c.abandons = { ...(c.abandons ?? {}), [key]: (c.abandons?.[key] ?? 0) + 1 };
   });
+}
+
+// ---------- Royaume (matière) ----------
+export function setMatiere(m: Child["matiere"]) {
+  updateChild((c) => {
+    c.matiere = m;
+  });
+}
+
+/** Ajoute un mot à « Mon carnet de mots » (la collection du dictionnaire). Renvoie true s'il est nouveau. */
+export function collectWord(mot: string) {
+  const c = activeChild();
+  if (!c || c.carnet?.includes(mot)) return false;
+  updateChild((x) => {
+    x.carnet = [...(x.carnet ?? []), mot];
+    x.counters.mots = (x.counters.mots ?? 0) + 1;
+  });
+  addGems(1);
+  checkBadges();
+  return true;
 }

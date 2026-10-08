@@ -53,6 +53,14 @@ eq("non-équivalence", equivalent(parse("(x+1)^2", { implicitMul: true }), parse
 const typed = (v: number) => String(clean(v)).replace(".", ",");
 function idealAnswer(inst: Instance): Answer {
   switch (inst.type) {
+    case "mot":
+      return { kind: "text", value: inst.texts![0] };
+    case "dictee":
+      return { kind: "text", value: inst.dictee! };
+    case "surligner":
+      return { kind: "state", values: inst.targets! };
+    case "classer":
+      return { kind: "state", values: inst.itemCats! };
     case "nombre": {
       if (inst.spec.forme === "fraction" || inst.spec.forme === "irreductible") {
         const { n, d } = toFraction(inst.value!);
@@ -127,7 +135,7 @@ function checkExercise(spec: ExSpec, where: string, n = 160) {
       return;
     }
     draws++;
-    seen.add(inst.enonce + JSON.stringify(inst.visuel ?? "") + (inst.choix ?? []).join("|") + inst.gauche + inst.droite + (inst.items ?? []).join("|") + inst.cibleAffiche);
+    seen.add(inst.enonce + JSON.stringify(inst.visuel ?? "") + (inst.choix ?? []).join("|") + inst.gauche + inst.droite + (inst.items ?? []).join("|") + inst.cibleAffiche + (inst.dictee ?? "") + (inst.words ?? []).join(" "));
     const w = `${where} (tirage ${seed})`;
     for (const s of [inst.enonce, inst.indice, inst.correction, inst.expectedText, inst.gauche, inst.droite, inst.unite, ...(inst.choix ?? []), ...(inst.items ?? [])])
       checkText(s, w);

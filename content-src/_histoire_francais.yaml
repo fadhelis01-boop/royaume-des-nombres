@@ -1,0 +1,309 @@
+# ============================================================
+#  L'ARCHIPEL DES MOTS — l'aventure du royaume du français
+#  Personnages : mia, neo, zero, narrateur, gribouille (la tache d'encre), enfant (« toi »)
+#  Chaque monde = un chapitre ; l'objet à rapporter est une page du Grimoire de l'Archipel,
+#  puis un éclat du Sablier du Temps, puis une plume de la Muse.
+# ============================================================
+
+prologue:
+  - narrateur: "Au-delà du Royaume des Nombres, de l'autre côté de la mer, flotte l'Archipel des Mots. Là-bas, chaque île parle : les arbres murmurent des noms, les rivières chantent des verbes."
+  - narrateur: "Au centre de l'Archipel repose le Grimoire, un grand livre magique. Tant que ses pages sont pleines, les mots gardent leur sens, leurs accents et leurs accords."
+  - zero-surprise: "Mia ! Néo ! Le panneau du port… il est écrit « BIENVNUE » ! Il manque une lettre ! Et le « é » a disparu !"
+  - neo: "Et ce n'est pas tout : regardez le Grimoire. Ses pages s'envolent une par une !"
+  - gribouille: "Splotch ! Miam, un accent aigu… crunch, un S de pluriel… Hé hé hé !"
+  - mia-reflexion: "Une tache d'encre qui mange les lettres ? On l'appellera… Gribouille."
+  - zero: "Sans accents, « pêche » devient « peche », et je ne sais plus si je vais manger un fruit ou aller à la pêche ! C'est très grave."
+  - mia: "Il nous faut quelqu'un qui aime les mots, qui écoute bien et qui n'a pas peur de se tromper… quelqu'un comme TOI !"
+  - enfant: "Moi ?"
+  - neo: "Oui, toi. Chaque règle que tu apprendras recollera une page du Grimoire. Et au bout du voyage, c'est toi qui écriras la suite de l'histoire."
+
+prologue_choix:
+  qui: mia
+  question: "Tu viens avec nous dans l'Archipel des Mots ?"
+  options:
+    - texte: "Oui ! Je veux sauver les mots !"
+      suite:
+        - neo-joie: "Défi accepté ! Le premier bateau part pour l'Île des Sons."
+        - zero-joie: "J'apporte mon dictionnaire. Enfin… un dictionnaire. Il est plus gros que moi."
+    - texte: "Je ne suis pas très fort en orthographe…"
+      suite:
+        - mia: "Personne ne naît en sachant l'orthographe ! Les plus grands écrivains faisaient des fautes à ton âge. On apprend ensemble, pas à pas."
+        - neo: "Et chaque erreur nous montre exactement quoi apprendre. C'est même la meilleure carte au trésor."
+
+arcs:
+  - id: fr-arc-1
+    titre: "Livre I — Gribouille, la tache qui mangeait les lettres"
+    sous_titre: "Les premières îles"
+    final: fr-jardin-des-mots
+    fin:
+      - narrateur: "La dernière page du premier cahier se recolle dans le Grimoire. Gribouille apparaît, tout petit, tout tremblant, une feuille froissée entre ses taches."
+      - gribouille-triste: "Ne me grondez pas… Je voulais écrire une lettre à mon ami le Nuage. Mais mes lettres coulaient partout, personne ne comprenait. Alors j'ai mangé tous les mots des autres…"
+      - mia: "Oh, Gribouille… Écrire, ça s'apprend. Les accents, les accords, tout ça : on vient de l'apprendre aussi !"
+      - enfant: "Je peux t'aider à écrire ta lettre !"
+      - gribouille-joie: "C'est vrai ? Alors… « Cher Nuage, tu me manques. » Avec un S à « tu me manques »… ah non, sans S ! Je commence à comprendre !"
+      - neo: "Mais… regardez le Grimoire. Une nouvelle page s'est ouverte. On y voit un sablier fissuré…"
+
+  - id: fr-arc-2
+    titre: "Livre II — Le Sablier fêlé"
+    sous_titre: "Les îles du milieu"
+    final: fr-bibliotheque-des-textes
+    fin:
+      - narrateur: "Le dernier éclat se glisse dans le Sablier du Temps. Le sable recommence à couler : le passé redevient passé, le futur redevient futur."
+      - gribouille-fier: "Et moi, j'ai écrit une histoire entière au passé simple ! « Il était une fois une tache qui apprit à écrire. »"
+      - zero-surprise: "« APPRIT » ! Sans E ! Gribouille, tu es devenu un vrai conteur ! 🤯"
+      - mia-reflexion: "Pourtant… les mots sont justes, mais ils ont perdu leur éclat. Les poèmes ne chantent plus. Quelque chose dort, tout au fond du Grimoire."
+
+  - id: fr-arc-3
+    titre: "Livre III — La Plume d'or"
+    sous_titre: "Les îles des maîtres"
+    final: fr-academie-des-lettres
+    fin:
+      - narrateur: "La dernière plume rejoint les autres. Au cœur du Grimoire, la Muse ouvre les yeux, et toutes les pages se mettent à briller."
+      - narrateur: "« Tu as appris à écouter les sons, à accorder, à conjuguer, à construire, à choisir chaque mot. Tu n'as plus besoin de moi pour écrire : la Plume d'or est à toi. »"
+      - mia-joie: "Tu es devenu écrivain de l'Archipel ! Officiellement ! Avec une plume et tout !"
+      - neo: "La dernière page du Grimoire est blanche. C'est voulu : c'est la tienne. Qu'est-ce que tu vas y écrire ?"
+      - zero: "Moi je propose : « Il était une fois un hamster extraordinaire. » Mais c'est toi qui décides."
+
+chapitres:
+  fr-grimoire-des-astuces:
+    titre: "Le Grimoire des Astuces"
+    objet: "🪶 La plume de secours"
+    avant:
+      - mia: "Ici, c'est notre bibliothèque secrète. Pas de page à sauver : seulement des astuces pour bien écrire, bien relire et bien retenir."
+      - neo: "Reviens quand tu veux. Ces méthodes marchent pour toutes les îles."
+    apres:
+      - zero: "Tu connais nos secrets maintenant. Chut !"
+
+  # ------------------------- LIVRE I -------------------------
+  fr-ile-des-sons:
+    titre: "Chapitre 1 — L'Île des Sons"
+    objet: "📄 La page des Sons"
+    avant:
+      - narrateur: "Sur l'Île des Sons, chaque lettre a une petite voix. Le A chante, le S siffle, le R roule comme un tambour."
+      - zero-triste: "Gribouille est passé par ici : les lettres sont toutes mélangées, plus personne ne sait lire « chocolat » !"
+      - mia: "Si tu apprends à écouter les sons et à les assembler en syllabes, les lettres retrouveront leur voix."
+    choix:
+      qui: neo
+      question: "Une petite lettre pleure sur la plage. Laquelle va-t-on aider d'abord ?"
+      options:
+        - texte: "Le H, qui ne fait jamais de bruit"
+          suite:
+            - zero: "Le H muet ! Comme moi quand je dors. Il ne parle pas, mais il change tout : « hibou », « homme »…"
+        - texte: "Le E, qui a perdu ses accents"
+          suite:
+            - mia: "Sans ses accents, le E ne sait plus s'il doit dire é, è ou ê. On va lui rendre ses chapeaux !"
+    apres:
+      - narrateur: "La page des Sons se recolle dans le Grimoire. Sur toute l'île, les lettres se remettent à chanter."
+      - zero-joie: "J'ai lu « chocolat » tout seul ! Puis je l'ai mangé. Le mot. Pas le chocolat. Enfin, les deux."
+      - neo: "Des traces d'encre partent vers la Forêt des Noms. Suivons-les !"
+
+  fr-foret-des-noms:
+    titre: "Chapitre 2 — La Forêt des Noms"
+    objet: "📄 La page des Noms"
+    avant:
+      - narrateur: "Dans la Forêt des Noms, chaque arbre porte un nom : arbre-Table, arbre-Chien, arbre-Soleil. Les petits oiseaux déterminants viennent s'y poser : un, une, le, la, les."
+      - neo: "Gribouille a effrayé les oiseaux ! Ils se posent n'importe où : « la soleil », « un table »… les arbres ne donnent plus de fruits."
+      - mia: "Apprends à reconnaître les noms et à choisir le bon déterminant, et la forêt refleurira."
+    apres:
+      - narrateur: "Chaque oiseau retrouve son arbre. Les fruits-mots mûrissent et tombent doucement dans l'herbe."
+      - zero: "J'ai trouvé un nom propre ! Il a une majuscule, comme moi : Zéro."
+      - neo: "Gribouille file vers la Cité de la Ponctuation. Vite !"
+
+  fr-cite-de-la-ponctuation:
+    titre: "Chapitre 3 — La Cité de la Ponctuation"
+    objet: "📄 La page des Phrases"
+    avant:
+      - narrateur: "Dans la Cité de la Ponctuation, les phrases roulent comme des petites voitures. Les points sont des feux rouges, les virgules des ralentisseurs."
+      - zero-surprise: "Gribouille a mangé tous les feux ! Les phrases foncent sans s'arrêter et se rentrent dedans ! Crash ! Boum ! Pas de majuscule !"
+      - neo: "Majuscule au début, point à la fin. Rétablissons la circulation !"
+    apres:
+      - narrateur: "Les feux se rallument. Les phrases s'arrêtent, repartent, posent des questions et s'exclament sans plus jamais se heurter."
+      - mia: "Écoute : on entend même les phrases respirer, grâce aux virgules."
+
+  fr-vallee-des-verbes:
+    titre: "Chapitre 4 — La Vallée des Verbes"
+    objet: "📄 La page des Verbes"
+    avant:
+      - narrateur: "Dans la Vallée des Verbes, tout bouge : les cailloux sautent, les rivières courent, les fleurs grandissent."
+      - neo: "Gribouille a semé la pagaille : les verbes ne savent plus qui fait l'action ! « Les lapins mange », « je cours vite » ou « je court vite » ?"
+      - mia: "Le verbe est le moteur de la phrase, et le sujet est le pilote. Trouve qui fait l'action, et tout repartira."
+    choix:
+      qui: zero
+      question: "Un verbe s'échappe au galop ! Comment l'attraper ?"
+      options:
+        - texte: "Avec un lasso : on le ramène à l'infinitif"
+          suite:
+            - neo-joie: "Bien joué ! « Il galope » redevient « galoper ». À l'infinitif, un verbe est calme comme un chat qui dort."
+        - texte: "On lui demande : « Qui est-ce qui galope ? »"
+          suite:
+            - mia: "Excellente question ! La réponse, c'est le sujet. Et le sujet commande au verbe."
+    apres:
+      - narrateur: "Les verbes reprennent leur course, chacun avec son sujet bien en selle."
+      - zero: "« Je cours », avec un S. « Il court », avec un T. Le T, c'est pour Toujours plus vite !"
+
+  fr-prairie-des-accords:
+    titre: "Chapitre 5 — La Prairie des Accords"
+    objet: "📄 La page des Accords"
+    avant:
+      - narrateur: "Dans la Prairie des Accords, les mots vivent en troupeau. Quand les moutons sont plusieurs, tous les mots qui les accompagnent prennent un S, comme une petite queue."
+      - zero-triste: "Mais Gribouille a coupé tous les fils ! On lit « des moutons blanc », « une chèvre content »… Les adjectifs ont perdu leur troupeau."
+      - mia-reflexion: "Je vois les fils invisibles entre les mots. Si tu les retrouves, chaque mot saura s'accorder."
+    apres:
+      - narrateur: "Des fils de lumière violette relient de nouveau les noms et leurs adjectifs. Le troupeau entier se met à briller."
+      - zero-surprise: "« Des chevaux » avec un X ! Un X ! Comme un trésor ! MILLE POINTS POUR LE X ! 🤯"
+
+  fr-montagnes-du-temps:
+    titre: "Chapitre 6 — Les Montagnes du Temps"
+    objet: "📄 La page du Temps"
+    avant:
+      - narrateur: "Trois sommets dominent l'Archipel : le Mont du Passé, brumeux ; la Vallée du Présent, ensoleillée ; le Pic du Futur, tout brillant."
+      - neo: "Gribouille a mélangé les chemins ! Hier devient demain, « je mangerai hier »… Plus personne ne sait quand les choses se passent."
+      - mia: "Chaque temps a ses terminaisons, comme des marches d'escalier. Apprends-les, et tu pourras voyager dans le temps."
+    apres:
+      - narrateur: "Les trois sommets s'illuminent. Le passé, le présent et le futur retrouvent leur place."
+      - neo: "Hier, je cherchais. Aujourd'hui, je comprends. Demain, j'expliquerai ! Défi accepté."
+
+  fr-marais-des-homophones:
+    titre: "Chapitre 7 — Le Marais des Homophones"
+    objet: "📄 La page des Jumeaux"
+    avant:
+      - narrateur: "Dans le Marais des Homophones vivent des mots jumeaux : ils se prononcent pareil, mais ne s'écrivent pas pareil. « a » et « à », « et » et « est », « son » et « sont »."
+      - gribouille: "Hé hé ! J'ai échangé tous les jumeaux. Bonne chance pour les reconnaître !"
+      - neo: "J'ai un truc : on remplace ! « est » par « était », « a » par « avait ». Si ça marche, c'est le verbe. Le Miroir du Temps ne ment jamais."
+    apres:
+      - narrateur: "Chaque jumeau retrouve sa place. Le marais s'éclaircit, et les grenouilles applaudissent."
+      - zero: "« Il est à la maison et il a un chat. » Trois jumeaux dans une phrase et aucun piège. Je suis impressionné par moi-même."
+
+  fr-jardin-des-mots:
+    titre: "Chapitre 8 — Le Jardin des Mots"
+    objet: "📄 La page du Dictionnaire"
+    avant:
+      - narrateur: "Au Jardin des Mots, les mots poussent en familles : « dent », « dentiste », « dentifrice », « dentaire » sur la même branche."
+      - mia: "Et c'est ici que se cache Gribouille ! Il s'est réfugié dans la serre aux dictionnaires."
+      - neo: "Pour l'atteindre, il faut maîtriser l'ordre alphabétique, les familles, les synonymes et les contraires. C'est le dernier chapitre du premier livre !"
+    choix:
+      qui: neo
+      question: "On aperçoit Gribouille derrière un dictionnaire géant. Que fait-on ?"
+      options:
+        - texte: "On lui parle doucement"
+          suite:
+            - gribouille-triste: "…Ne me faites pas de mal…"
+            - mia: "On ne veut pas te faire de mal, Gribouille. On veut juste comprendre."
+        - texte: "On cherche son nom dans le dictionnaire"
+          suite:
+            - zero: "« Gribouiller : écrire de façon peu lisible. » Oh… le pauvre. Il ne fait pas exprès."
+    apres:
+      - narrateur: "La page du Dictionnaire, la dernière du premier cahier, se recolle doucement…"
+
+  # ------------------------- LIVRE II -------------------------
+  fr-port-des-phrases:
+    titre: "Chapitre 9 — Le Port des Phrases"
+    objet: "⏳ Éclat du Sablier n° 1"
+    avant:
+      - gribouille-triste: "Les amis… en nettoyant le Grimoire, j'ai fait tomber le Sablier du Temps. Il s'est fêlé, et six éclats se sont envolés dans les îles."
+      - narrateur: "Au Port des Phrases, les phrases sont des bateaux : le sujet tient la barre, le verbe fait avancer, les compléments sont la cargaison."
+      - mia: "Un mot a une nature, comme un costume, et une fonction, comme un métier. Au port, on apprend les métiers des mots."
+    apres:
+      - narrateur: "Les bateaux-phrases repartent, chargés de compléments bien rangés. Le premier éclat brille sur le quai."
+      - gribouille-joie: "Je l'ai attrapé ! Euh… vous l'avez attrapé. Mais je l'ai vu en premier."
+
+  fr-tour-des-conjugaisons:
+    titre: "Chapitre 10 — La Tour des Conjugaisons"
+    objet: "⏳ Éclat du Sablier n° 2"
+    avant:
+      - narrateur: "La Tour des Conjugaisons a un étage par temps : le passé simple, le plus-que-parfait, le conditionnel, le subjonctif…"
+      - neo: "Depuis que le Sablier est fêlé, les escaliers se mélangent. On monte au futur et on arrive au passé simple !"
+      - zero-surprise: "« Que je fusse ». C'est un vrai mot ? 😳 On dirait un éternuement très poli."
+    apres:
+      - narrateur: "Chaque étage retrouve son temps. Au sommet, le deuxième éclat attend sur un coussin de velours."
+      - mia: "Tu sais maintenant conjuguer dans toutes les époques. Même les princesses des contes au passé simple !"
+
+  fr-chateau-des-participes:
+    titre: "Chapitre 11 — Le Château des Participes"
+    objet: "⏳ Éclat du Sablier n° 3"
+    avant:
+      - narrateur: "Deux gardiens surveillent le Château des Participes. ÊTRE, l'Aimant doré, tend les bras vers le sujet. AVOIR, le Glouton, reste dans sa cage."
+      - neo: "Avec être, le participe s'accorde avec le sujet. Avec avoir, il ne s'accorde que si le complément d'objet direct est placé AVANT la cage."
+      - mia: "Visuel, implacable… et inoubliable une fois qu'on l'a compris !"
+    apres:
+      - narrateur: "Les fils d'accord passent enfin là où il faut. Le troisième éclat tombe des mains du Glouton, qui fait la moue."
+      - zero: "« Les pommes que j'ai mangées. » Le complément est avant, donc E-S ! J'ai compris ET j'ai faim."
+
+  fr-archipel-des-propositions:
+    titre: "Chapitre 12 — L'Archipel des Propositions"
+    objet: "⏳ Éclat du Sablier n° 4"
+    avant:
+      - narrateur: "Ici, chaque île est une proposition, et des ponts les relient : des ponts de virgule, des ponts « et », « mais », « donc », et des ponts secrets « qui », « que », « dont », « où »."
+      - neo: "Le Sablier fêlé a fait sauter les ponts. Les phrases complexes sont coupées en morceaux."
+      - mia: "Reconstruisons les ponts : juxtaposer, coordonner, subordonner."
+    apres:
+      - narrateur: "Tous les ponts se relèvent. On peut aller d'une idée à l'autre sans jamais se perdre."
+
+  fr-atelier-de-l-ecrivain:
+    titre: "Chapitre 13 — L'Atelier de l'Écrivain"
+    objet: "⏳ Éclat du Sablier n° 5"
+    avant:
+      - narrateur: "Dans l'Atelier de l'Écrivain, on ne corrige plus : on crée. On enrichit les phrases, on chasse les répétitions, on construit des histoires."
+      - gribouille: "J'aimerais tellement écrire une vraie histoire… avec un début, un problème et une fin heureuse."
+      - mia: "Alors apprenons ensemble les secrets des conteurs."
+    apres:
+      - narrateur: "Sur l'établi, une histoire toute neuve sèche au soleil. Le cinquième éclat sert de presse-papier."
+      - gribouille-fier: "C'est MON histoire. Enfin, NOTRE histoire."
+
+  fr-bibliotheque-des-textes:
+    titre: "Chapitre 14 — La Bibliothèque des Textes"
+    objet: "⏳ Éclat du Sablier n° 6"
+    avant:
+      - narrateur: "La grande Bibliothèque garde les plus beaux textes : les fables de La Fontaine, les contes, les poèmes."
+      - neo: "Le dernier éclat est caché dans un livre. Pour le trouver, il faut vraiment comprendre ce qu'on lit, même ce qui n'est pas écrit en toutes lettres."
+      - zero: "Lire entre les lignes ? Mais il n'y a rien entre les lignes ! …Ah. C'est une image. D'accord."
+    apres:
+      - narrateur: "Le sixième éclat sort d'entre les pages d'une fable : celle du Corbeau et du Renard."
+
+  # ------------------------- LIVRE III -------------------------
+  fr-observatoire-du-style:
+    titre: "Chapitre 15 — L'Observatoire du Style"
+    objet: "🪶 Plume de la Muse n° 1"
+    avant:
+      - narrateur: "La Muse de l'Archipel dort au fond du Grimoire. Sans elle, les mots sont justes… mais gris. Ses plumes sont dispersées dans les îles des maîtres."
+      - mia: "À l'Observatoire, on regarde les mots comme des étoiles : comparaisons, métaphores, hyperboles… les figures de style font briller les phrases."
+    apres:
+      - narrateur: "Les mots se remettent à scintiller dans le ciel de l'Observatoire. La première plume descend en tournoyant."
+
+  fr-temple-de-la-poesie:
+    titre: "Chapitre 16 — Le Temple de la Poésie"
+    objet: "🪶 Plume de la Muse n° 2"
+    avant:
+      - narrateur: "Au Temple de la Poésie, les vers se comptent sur les doigts, les rimes se répondent et les strophes dansent."
+      - neo: "Douze syllabes pour un alexandrin, une césure au milieu. C'est presque des maths ! J'adore."
+    apres:
+      - narrateur: "Un sonnet entier résonne sous la voûte. La deuxième plume se pose sur l'autel."
+
+  fr-palais-de-l-orthographe:
+    titre: "Chapitre 17 — Le Palais de l'Orthographe"
+    objet: "🪶 Plume de la Muse n° 3"
+    avant:
+      - narrateur: "Le Palais de l'Orthographe garde les accords les plus redoutables : « tout », « même », « quelque », les participes des verbes pronominaux, les couleurs."
+      - zero-surprise: "On dit que même les adultes se trompent ici. Même les présidents. Même les dictionnaires, une fois, peut-être."
+      - mia: "C'est le palais de la maîtrise parfaite. Pas à pas, tu vas y arriver."
+    apres:
+      - narrateur: "Les miroirs du Palais reflètent une dictée sans une seule faute. La troisième plume brille comme de l'or."
+
+  fr-academie-des-lettres:
+    titre: "Chapitre 18 — L'Académie des Lettres"
+    objet: "🪶 La Plume d'or"
+    avant:
+      - narrateur: "Tout en haut de l'Archipel se dresse l'Académie des Lettres. On y parle la langue des grands auteurs : subjonctif imparfait, analyse fine, art d'argumenter."
+      - neo: "Le dernier défi : comprendre, analyser, convaincre. C'est le combat final de l'Archipel. Défi accepté ?"
+    choix:
+      qui: mia
+      question: "Pour réveiller la Muse, quel texte lui lis-tu ?"
+      options:
+        - texte: "Une fable de La Fontaine"
+          suite:
+            - narrateur: "« La raison du plus fort est toujours la meilleure… » La Muse sourit dans son sommeil."
+        - texte: "Un texte que j'ai écrit moi-même"
+          suite:
+            - narrateur: "Tes mots résonnent dans l'Académie. La Muse ouvre un œil : c'est la plus belle chose qu'elle ait entendue depuis longtemps."
+    apres:
+      - narrateur: "La Plume d'or se pose dans ta main."

@@ -3,6 +3,7 @@
 // Les mêmes fonctions servent dans l'application et dans le contrôle qualité
 // du contenu (scripts/check-content.ts), qui tire chaque exercice des centaines de fois.
 
+import { normOrtho, variantes1990 } from "./fr/morpho";
 import {
   countTerms,
   equivalent,
@@ -55,6 +56,12 @@ export interface Instance {
   correction?: string;
   expectedText: string; // réponse attendue, affichée après correction
   clavier: "nombre" | "algebre" | "texte" | "aucun";
+  // français
+  dictee?: string;
+  words?: string[];
+  targets?: number[];
+  categories?: string[];
+  itemCats?: number[];
   /** Erreurs fréquentes résolues (valeur → explication ciblée). */
   erreurs?: { value: number; message: string }[];
   /** QCM : explication de chaque choix affiché (après mélange). */
@@ -244,6 +251,61 @@ function build(spec: ExSpec, vars: Record<string, Value>, rng: Rng, seed: number
       base.m = Math.round(num(spec.m));
       if (base.m % 5 !== 0 || base.m < 0 || base.m > 55) return null;
       base.expectedText = `${base.h === 0 ? 12 : base.h} h ${String(base.m).padStart(2, "0")}`;
+      base.clavier = "aucun";
+      return base;
+    }
+    case "mot": {
+      // orthographe stricte : accents compris ; variantes de 1990 acceptées
+      const list = Array.isArray(spec.reponse) ? spec.reponse : [spec.reponse];
+      base.texts = list.map((r) => fill(String(r), vars, rng)).filter(Boolean);
+      if (!base.texts.length) return null;
+      base.expectedText = base.texts[0];
+      base.clavier = "texte";
+      return base;
+    }
+    case "dictee": {
+      base.dictee = fill(String(spec.dictee), vars, rng);
+      base.texts = [base.dictee];
+      base.expectedText = base.dictee;
+      base.clavier = "texte";
+      return base;
+    }
+    case "surligner": {
+      const ph = fill(String(spec.phrase), vars, rng);
+      const toks = ph.split(/\s+/).filter(Boolean);
+      base.words = toks.map((t) => t.replace(/[\[\]]/g, ""));
+      // un groupe entre crochets peut couvrir plusieurs mots : « [le petit chat] dort »
+      let dedans = false;
+      base.targets = [];
+      toks.forEach((t, i) => {
+        if (t.includes("[")) dedans = true;
+        if (dedans) base.targets!.push(i);
+        if (t.includes("]")) dedans = false;
+      });
+      if (!base.targets.length) return null;
+      // groupes de mots consécutifs réunis : « Le chien », « n'aboie pas »
+      const grp: string[] = [];
+      base.targets.forEach((i, k) => {
+        const w = base.words![i].replace(/[.,;:!?]+$/, "");
+        if (k > 0 && base.targets![k - 1] === i - 1) grp[grp.length - 1] += " " + w;
+        else grp.push(w);
+      });
+      base.expectedText = grp.join(", ");
+      base.clavier = "aucun";
+      return base;
+    }
+    case "classer": {
+      base.categories = (spec.categories ?? []).map((c) => fill(String(c), vars, rng));
+      const ms = (spec.mots ?? []).map(([m, c]) => [fill(String(m), vars, rng), Number(typeof c === "string" ? fill(c, vars, rng) : c)] as [string, number]);
+      // mélange déterministe
+      for (let i = ms.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        [ms[i], ms[j]] = [ms[j], ms[i]];
+      }
+      base.items = ms.map((x) => x[0]);
+      base.itemCats = ms.map((x) => x[1]);
+      if (base.itemCats.some((c) => !(c >= 0 && c < base.categories!.length))) return null;
+      base.expectedText = base.categories.map((c, k) => `${c} : ${ms.filter((x) => x[1] === k).map((x) => x[0]).join(", ") || "—"}`).join(" · ");
       base.clavier = "aucun";
       return base;
     }
@@ -447,6 +509,40 @@ function checkRaw(inst: Instance, ans: Answer): Verdict {
       return { ok: ans.kind === "state" && Math.abs(ans.values[0] - inst.value!) < 1e-9 };
     case "payer":
       return { ok: ans.kind === "state" && Math.abs(ans.values[0] - inst.value!) < 0.005 };
+    case "mot": {
+      if (ans.kind !== "text") return { ok: false };
+      const g = normOrtho(ans.value);
+      const ok = inst.texts!.some((t) => variantes1990(normOrtho(t)).includes(g) || normOrtho(t) === g);
+      if (ok) return { ok };
+      // presque : bonnes lettres mais accents ou apostrophe oubliés
+      if (inst.texts!.some((t) => normText(t) === normText(ans.value))) return { ok: false, almost: "Presque ! Les lettres sont justes, mais regarde bien les accents (é, è, ê, à, ç…)." };
+      return { ok: false };
+    }
+    case "dictee": {
+      if (ans.kind !== "text") return { ok: false };
+      const a = normOrtho(ans.value).split(" ");
+      const b = normOrtho(inst.dictee!).split(" ");
+      const ok = a.length === b.length && a.every((w, i) => w === b[i] || variantes1990(b[i]).includes(w));
+      if (ok) return { ok };
+      const fautes = b.filter((w, i) => a[i] !== w && !variantes1990(w).includes(a[i] ?? "")).length;
+      return { ok: false, almost: fautes <= 2 && a.length === b.length ? `Presque ! ${fautes} mot${fautes > 1 ? "s" : ""} à corriger.` : undefined };
+    }
+    case "surligner": {
+      if (ans.kind !== "state") return { ok: false };
+      const sel = [...ans.values].sort((x, y) => x - y);
+      const t = [...inst.targets!].sort((x, y) => x - y);
+      const ok = sel.length === t.length && sel.every((x, i) => x === t[i]);
+      if (ok) return { ok };
+      const bons = sel.filter((x) => t.includes(x)).length;
+      return { ok: false, almost: bons && bons < t.length && sel.length <= t.length ? `Tu en as trouvé ${bons} sur ${t.length}. Il en manque !` : undefined };
+    }
+    case "classer": {
+      if (ans.kind !== "state") return { ok: false };
+      const ok = ans.values.length === inst.itemCats!.length && ans.values.every((c, i) => c === inst.itemCats![i]);
+      if (ok) return { ok };
+      const faux = ans.values.filter((c, i) => c !== inst.itemCats![i]).length;
+      return { ok: false, almost: faux === 1 ? "Un seul mot est dans la mauvaise boîte !" : undefined };
+    }
     case "colorier":
       return { ok: ans.kind === "state" && ans.values[0] === inst.n };
     case "horloge":

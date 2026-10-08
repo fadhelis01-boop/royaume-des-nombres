@@ -113,12 +113,20 @@ Chaque exercice peut contenir des **variables tirées au sort** et des **gabarit
 | `colorier` | `n`, `d` (+ `dessin: disque / barre`) | colorie n parts sur d |
 | `horloge` | `h`, `m` | règle les aiguilles |
 | `payer` | `cible` (en €), `pieces: [0.1, 0.5, 1, 2, 5, 10]` | pose pièces et billets |
+| `mot` | `reponse` (un mot ou une liste de graphies acceptées) | écrit un mot, avec la barre d'accents ; orthographe stricte (accents compris), graphies de 1990 acceptées |
+| `dictee` | `dictee` (la phrase) | écoute (vitesse normale ou lente, ponctuation dite) puis écrit ; correction mot à mot |
+| `surligner` | `phrase` avec les cibles entre crochets : `"Le [chat] dort sur [le tapis]."` | touche les mots demandés (une cible peut compter plusieurs mots) |
+| `classer` | `categories: [nom, verbe]`, `mots: [[chat, 0], [courir, 1]]` (l'indice peut être un gabarit) | range chaque mot dans sa catégorie |
 
 **Erreurs fréquentes** : un exercice `nombre` peut lister `erreurs: [{ valeur: "a+b-10", message: "Tu as oublié la retenue…" }]` ; un `qcm` peut donner `explications: ["", "message pour le 2ᵉ choix", …]` (dans l'ordre de `choix`). L'enfant reçoit alors une explication ciblée au lieu d'un simple « faux ».
 
 **Habillages variés** : `prenom()` (prénoms du monde entier), `animal()`, `fruit()`, `objet()` donnent un mot au hasard, par exemple `"{{prenom()}} a {{a}} {{objet()}}."`. Écrivez la suite de la phrase sans pronom genré (« Combien en a-t-on en tout ? »).
 
 **Fonctions disponibles** dans les expressions : `abs sqrt round(x,n) ent floor ceil min max pgcd ppcm fact comb mod sin cos tan sind cosd tand asind acosd atand ln log exp si(cond,a,b) choix(…) alea(a,b) estpremier chiffre(n,rang) sommechiffres fib kieme(k,…) diviseurs lettres binaire romain heure(h,m) duree(min) tri(…) frac(n,d) fracb(n,d) nb(x) dec(x,n) texte majuscule pluriel`. Constantes : `pi`, `e`.
+
+**Fonctions du français** (moteur de conjugaison et de morphologie intégré) :
+`conj(verbe, temps, personne[, genre])` (forme seule : `conj('finir','present',4)` → « finissons »), `conjp(…)` (avec le pronom et l'élision : « j'aime », « qu'il soit »), `pp(verbe[, genre, nombre])` participe passé, `ppr(verbe)` participe présent, `aux(verbe)` (être/avoir), `groupe(verbe)`, `pronom(personne[, genre])`, `nomtemps(temps)`, `pluriel(nom)`, `feminin(adjectif)`, `accord(adjectif, genre, nombre)`, `det(type, nom, genre, nombre)` (avec élision : l'arbre, cet arbre, l'hiver, le héros), `elision(mot, suivant)`, `minuscule(texte)`.
+Temps : `present imparfait passe_simple futur passe_compose plus_que_parfait passe_anterieur futur_anterieur conditionnel conditionnel_passe subjonctif subjonctif_imparfait subjonctif_passe subjonctif_pqp imperatif imperatif_passe`. Personnes 1 à 6 (je … ils). `npm run test:fr` vérifie le moteur sur près de 300 formes.
 
 ## 4. Les visuels (dessinés automatiquement)
 
@@ -147,6 +155,12 @@ Un exercice défectueux est refusé avec un message précis.
   ```
   Le prologue accepte de la même façon `prologue_choix`.
 - `_histoire.yaml` : la grande histoire (prologue, livres `arcs` avec leur monde final et leur scène de fin, et un `chapitre` par monde : `titre`, `objet` (le cristal), `avant` et `apres`, des répliques comme dans les dialogues). Un monde sans chapitre fonctionne quand même.
+- **Matière** : un monde de français porte `matiere: francais` dans son en-tête (par défaut `maths`). La carte, l'histoire, le test de niveau, le défi du jour et l'échauffement suivent la matière choisie par l'enfant.
+- `_histoire_francais.yaml` : l'histoire de l'Archipel des Mots, même format que `_histoire.yaml` (livres `fr-arc-1` à `fr-arc-3`).
+- `_dico_*.yaml` : le dictionnaire, une entrée par ligne avec des clés courtes : `m` mot, `n` nature (`n v a adv p c pr d i loc`), `g` genre d'un nom (`m f mf`, obligatoire pour un nom), `d` définition, `e` exemple, `s` synonymes, `a` contraires, `f` famille, `x` étymologie, `l` niveau 1 à 3, `t` thème.
+  ```yaml
+  - { m: archipel, n: n, g: m, d: "Groupe d'îles proches les unes des autres.", e: "L'Archipel des Mots compte de nombreuses îles.", l: 2, t: nature }
+  ```
 - `_glossaire.yaml` : le Grand Livre (`mot`, `def`, `exemple`, `source`, `monde`).
 - `_enigmes.yaml` : les énigmes (`niveau` 1 à 3, `reponse`, `indice`, `solution`).
 - `_jeux.yaml` : les familles du Calcul éclair (exercices de type `nombre`).

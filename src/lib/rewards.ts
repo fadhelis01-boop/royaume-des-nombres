@@ -92,6 +92,9 @@ export const BADGES: Badge[] = [
   { id: "duel", emoji: "🤝", titre: "Duel en famille", desc: "Jouer un duel à deux sur le même écran.", test: (c) => cnt(c, "duel") >= 1 },
   { id: "defenseur", emoji: "🏰", titre: "Défenseur du Royaume", desc: "Atteindre la vague 5 de la Défense des Tables.", test: (c) => (c.recordsJeux?.defense ?? 0) >= 5 },
   { id: "pontonnier", emoji: "🌉", titre: "Bâtisseur de ponts", desc: "Réussir 10 ponts des fractions.", test: (c) => (c.recordsJeux?.pont ?? 0) >= 10 },
+  { id: "mots-10", emoji: "📒", titre: "Collectionneur de mots", desc: "Ranger 10 mots dans son carnet.", test: (c) => (c.carnet ?? []).length >= 10 },
+  { id: "mots-50", emoji: "📚", titre: "Trésor de mots", desc: "Ranger 50 mots dans son carnet.", test: (c) => (c.carnet ?? []).length >= 50 },
+  { id: "mots-200", emoji: "🖋️", titre: "Plume d'or", desc: "Ranger 200 mots dans son carnet.", test: (c) => (c.carnet ?? []).length >= 200 },
   { id: "grenouille", emoji: "🐸", titre: "Grenouille d'or", desc: "Gagner la Course de la Grenouille.", test: (c) => cnt(c, "courseGagnee") >= 1 },
 ];
 

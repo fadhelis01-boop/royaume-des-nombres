@@ -1,0 +1,234 @@
+id: fr-tour-des-conjugaisons
+matiere: francais
+titre: La Tour des Conjugaisons
+sous_titre: Passé simple, temps composés, conditionnel, impératif, subjonctif
+emoji: 🗼
+couleur: "#c62828"
+cycle: explorateurs
+age: 10-14 ans
+niveau: CM2 – 4ᵉ
+ordre: 51
+prerequis: [fr-montagnes-du-temps]
+version: 1.0.0
+intro:
+  - neo: "Un étage par temps ! Passé simple, plus-que-parfait, conditionnel, subjonctif… Il faut monter marche par marche."
+  - zero: "« Que je fusse ». « Nous chantâmes ». On dirait des formules magiques. 😳"
+  - mia: "Ce sont les temps des contes et des grands livres. Une fois maîtrisés, tu pourras raconter comme un vrai écrivain."
+
+lecons:
+  - id: passe-simple
+    titre: "Le passé simple, le temps des récits"
+    objectif: Je conjugue au passé simple les verbes des trois groupes.
+    mots: [passé simple]
+    etapes:
+      - dialogue:
+          - mia: "« Le prince ouvrit la porte, entra et vit la princesse. » C'est le temps des contes : le passé simple."
+          - neo: "Trois familles de terminaisons : -a (chanter), -i (finir, prendre), -u (courir, lire), plus le cas des -in (venir, tenir)."
+      - texte: |
+          | | 1er groupe (chanter) | -i (finir, prendre) | -u (courir) | venir |
+          |---|---|---|---|---|
+          | je | chant**ai** | fin**is** / pr**is** | cour**us** | v**ins** |
+          | tu | chant**as** | fin**is** | cour**us** | v**ins** |
+          | il, elle | chant**a** | fin**it** / pr**it** | cour**ut** | v**int** |
+          | nous | chant**âmes** | fin**îmes** | cour**ûmes** | v**înmes** |
+          | vous | chant**âtes** | fin**îtes** | cour**ûtes** | v**întes** |
+          | ils, elles | chant**èrent** | fin**irent** | cour**urent** | v**inrent** |
+      - attention:
+          texte: "À la 3e personne du singulier du 1er groupe, **pas de t** : *il chant**a***. Et l'accent circonflexe aux 1re et 2e personnes du pluriel : *nous chant**â**mes, vous fin**î**tes*."
+          qui: neo
+      - retiens: "Passé simple : **-ai, -as, -a, -âmes, -âtes, -èrent** (1er groupe) ; **-is/-us/-ins…** pour les autres."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, marcher, finir, prendre, faire, voir, venir, tenir, courir, lire, être, avoir, aller, dire, mettre, vouloir, pouvoir, savoir, écrire, naître, vivre, conduire], p: [3, 6, 3, 6, 1, 4] }
+        enonce: "Conjugue au passé simple : {{pronom(p)}} … ({{v}})"
+        reponse: ["{{conj(v, 'passe_simple', p)}}", "{{conjp(v, 'passe_simple', p)}}"]
+        correction: "{{conjp(v, 'passe_simple', p)}}"
+      - type: qcm
+        vars: { v: [chanter, finir, prendre, venir, courir, faire, voir, être, avoir], p: [3, 6] }
+        enonce: "Quelle forme est au passé simple ? {{pronom(p)}} …"
+        choix: ["{{conj(v,'passe_simple',p)}}", "{{conj(v,'imparfait',p)}}", "{{conj(v,'present',p)}}"]
+        correction: "{{conjp(v,'passe_simple',p)}}"
+      - type: dictee
+        vars: { m: ["Le loup frappa à la porte.", "Les enfants coururent vers la plage.", "Elle prit son manteau et sortit.", "Ils virent un château au loin.", "Le roi fit un grand festin."] }
+        enonce: "Écoute et écris la phrase au passé simple."
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+
+  - id: temps-composes
+    titre: "Plus-que-parfait et futur antérieur"
+    objectif: Je forme les temps composés avec l'auxiliaire au bon temps et le participe passé.
+    mots: [plus-que-parfait, futur antérieur, temps composé]
+    etapes:
+      - dialogue:
+          - neo: "Chaque temps simple a son jumeau composé : on conjugue l'auxiliaire à ce temps, et on ajoute le participe passé."
+      - texte: |
+          | temps simple de l'auxiliaire | temps composé | exemple |
+          |---|---|---|
+          | présent | **passé composé** | j'**ai** chanté |
+          | imparfait | **plus-que-parfait** | j'**avais** chanté, j'**étais** parti |
+          | futur | **futur antérieur** | j'**aurai** chanté, je **serai** parti |
+          | passé simple | **passé antérieur** | j'**eus** chanté |
+          | conditionnel | **conditionnel passé** | j'**aurais** chanté |
+
+          Le **plus-que-parfait** raconte une action **antérieure** à une autre action passée : *Quand il arriva, le train **était parti**.*
+          Le **futur antérieur** : une action future **terminée avant** une autre : *Quand tu **auras fini**, nous partirons.*
+      - retiens: "Temps composé = **auxiliaire** (au temps simple correspondant) + **participe passé** (accordé avec être)."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, finir, prendre, faire, voir, partir, arriver, venir, lire, écrire], t: [[plus_que_parfait, "plus-que-parfait"], [futur_anterieur, "futur antérieur"]], p: "1..6", g: [m, f] }
+        enonce: "Conjugue au {{t_1}} : {{pronom(p, g)}} … ({{v}})"
+        reponse: ["{{conj(v, t_0, p, g)}}", "{{conjp(v, t_0, p, g)}}"]
+        correction: "{{conjp(v, t_0, p, g)}}"
+      - type: qcm
+        vars: { t: [["j'avais mangé", "plus-que-parfait", "passé composé", "futur antérieur"], ["nous aurons fini", "futur antérieur", "plus-que-parfait", "conditionnel passé"], ["ils étaient partis", "plus-que-parfait", "passé composé", "futur antérieur"], ["tu aurais vu", "conditionnel passé", "futur antérieur", "plus-que-parfait"], ["elle est venue", "passé composé", "plus-que-parfait", "futur antérieur"]] }
+        enonce: "À quel temps est « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » : {{t_1}}."
+      - type: classer
+        vars: { t: [["je chantais", "j'avais chanté", "il viendra", "il sera venu"], ["nous finissons", "nous avons fini", "tu prendrais", "tu aurais pris"], ["elle part", "elle est partie", "vous lirez", "vous aurez lu"]] }
+        enonce: "Temps simple ou temps composé ?"
+        categories: [temps simple, temps composé]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Temps composé = auxiliaire + participe passé."
+
+
+  - id: conditionnel
+    titre: "Le conditionnel et le piège -rai / -rais"
+    objectif: Je conjugue au conditionnel et je distingue « je chanterai » (futur) de « je chanterais » (conditionnel).
+    mots: [conditionnel]
+    etapes:
+      - dialogue:
+          - zero: "Si j'étais un éléphant, je mangerais des tonnes de graines. Avec un S ! Parce que c'est un rêve. 😳"
+          - mia: "Le conditionnel exprime ce qui dépend d'une condition, un souhait, une politesse : « Je voudrais un verre d'eau »."
+      - texte: |
+          **Radical du futur + terminaisons de l'imparfait** : *je chanter**ais**, tu finir**ais**, il prendr**ait**, nous ser**ions**, vous aur**iez**, ils ir**aient***.
+
+          Le conditionnel sert à :
+          - exprimer une **condition** : *Si j'avais le temps, je **lirais**.*
+          - un **souhait** ou une **politesse** : *Je **voudrais** un livre.*
+          - une information **incertaine** : *Le voleur **serait** en fuite.*
+      - astuce:
+          texte: "Le piège -rai / -rais ? Remplace « je » par « nous » : *je viendrai → nous viendr**ons*** (futur) ; *je viendrais → nous viendr**ions*** (conditionnel)."
+          qui: neo
+      - retiens: "Conditionnel = **radical du futur + ais, ais, ait, ions, iez, aient**. « Si » + imparfait → conditionnel."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, finir, prendre, être, avoir, aller, faire, vouloir, pouvoir, voir, venir, savoir, devoir, aimer], p: "1..6" }
+        enonce: "Conjugue au conditionnel présent : {{pronom(p)}} … ({{v}})"
+        reponse: ["{{conj(v, 'conditionnel', p)}}", "{{conjp(v, 'conditionnel', p)}}"]
+        correction: "{{conjp(v, 'conditionnel', p)}}"
+      - type: qcm
+        vars: { t: [["Demain, je (viendrai/viendrais) te voir.", "viendrai"], ["Si j'avais des ailes, je (volerai/volerais).", "volerais"], ["Je (voudrai/voudrais) un chocolat chaud, s'il vous plaît.", "voudrais"], ["L'année prochaine, j'(irai/irais) au collège.", "irai"], ["Si tu venais, je (serai/serais) content.", "serais"]] }
+        enonce: "Choisis la bonne forme : {{t_0}}"
+        choix: ["{{t_1}}", "{{si(t_1=='viendrai','viendrais',si(t_1=='volerais','volerai',si(t_1=='voudrais','voudrai',si(t_1=='irai','irais',si(t_1=='serais','serai','x')))))}}"]
+        explications: ["", "Remplace « je » par « nous » : nous …rons (futur) ou nous …rions (conditionnel) ?"]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Si j'étais riche, je voyagerais.", "Je voudrais un verre d'eau.", "Tu pourrais m'aider ?", "Nous irions à la mer s'il faisait beau."] }
+        enonce: "Écoute et écris : attention aux terminaisons du conditionnel !"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+
+  - id: imperatif
+    titre: "L'impératif : donner un ordre ou un conseil"
+    objectif: Je conjugue à l'impératif présent (trois personnes, sans sujet).
+    mots: [impératif]
+    etapes:
+      - dialogue:
+          - neo: "« Range ta chambre ! » « Allons-y ! » « Écoutez bien ! » L'impératif n'a que trois personnes et pas de sujet."
+      - texte: |
+          L'**impératif présent** n'a que **3 personnes** : 2e du singulier, 1re et 2e du pluriel, **sans pronom sujet**.
+          - *chante, chantons, chantez* — *finis, finissons, finissez* — *prends, prenons, prenez*
+          - Les verbes en **-er** (et aller, ouvrir, cueillir…) **perdent le s** à la 2e personne : *chant**e**, v**a**, ouvr**e***.
+          - Irréguliers : être (*sois, soyons, soyez*), avoir (*aie, ayons, ayez*), savoir (*sache…*), vouloir (*veuille…*).
+      - attention:
+          texte: "Le s revient devant **en** et **y** pour la prononciation : *Manges-en ! Vas-y !*"
+          qui: neo
+      - retiens: "Impératif : **3 personnes, pas de sujet**. Verbes en -er : **pas de s** à « tu » (chante !)."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, finir, prendre, aller, venir, faire, être, avoir, écouter, ouvrir, dire, savoir, manger], p: [2, 4, 5] }
+        enonce: "Conjugue à l'impératif ({{si(p==2,'2e personne du singulier',si(p==4,'1re personne du pluriel','2e personne du pluriel'))}}) : {{v}}"
+        reponse: "{{conj(v, 'imperatif', p)}}"
+        correction: "{{conj(v, 'imperatif', p)}} !"
+      - type: qcm
+        vars: { t: [["Range", "Ranges", "Rangez-tu"], ["Va", "Vas", "Allez-tu"], ["Sois", "Soit", "Es"], ["Ouvre", "Ouvres", "Ouvrir"], ["Aie", "Ai", "As"], ["Finis", "Finit", "Fini"]] }
+        enonce: "Impératif, 2e personne du singulier : quelle forme est juste ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}} !"
+      - type: dictee
+        vars: { m: ["Range ta chambre !", "Va à l'école.", "Finissons ce travail.", "Soyez prudents.", "Prends ton manteau."] }
+        enonce: "Écoute et écris la phrase à l'impératif."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+
+  - id: subjonctif
+    titre: "Le subjonctif présent : il faut que…"
+    objectif: Je conjugue au subjonctif présent après « il faut que », « je veux que », « bien que »…
+    mots: [subjonctif]
+    etapes:
+      - dialogue:
+          - mia: "Le subjonctif, c'est le mode du souhait, du doute, de l'obligation : « Il faut que tu viennes. »"
+          - zero: "Il faut que je mange. Il faut que je dorme. Il faut que je… re-mange. 😳"
+      - texte: |
+          On l'emploie après **il faut que, je veux que, je souhaite que, bien que, pour que, avant que**…
+          Radical : celui de « ils » au présent (*ils chant-ent, ils finiss-ent, ils prenn-ent*) + **-e, -es, -e, -ions, -iez, -ent**.
+
+          *Il faut que je chant**e**, que tu finiss**es**, qu'il prenn**e**, que nous fass**ions**, que vous soy**ez**, qu'ils ai**ent***.
+          Irréguliers : être (*que je sois*), avoir (*que j'aie*), aller (*que j'aille*), faire (*que je fasse*), pouvoir (*que je puisse*), savoir (*que je sache*), vouloir (*que je veuille*).
+      - retiens: "Subjonctif = **que** + radical de **ils** + **e, es, e, ions, iez, ent**. À connaître : sois, aie, aille, fasse, puisse, sache."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, finir, prendre, être, avoir, aller, faire, pouvoir, savoir, venir, vouloir, voir, dire, partir, lire], p: "1..6" }
+        enonce: "Il faut que {{pronom(p)}} … ({{v}}, subjonctif présent)"
+        reponse: ["{{conj(v, 'subjonctif', p)}}", "{{conjp(v, 'subjonctif', p)}}"]
+        correction: "{{conjp(v, 'subjonctif', p)}}"
+      - type: qcm
+        vars: { t: [["Il faut que tu … (être)", "sois", "es", "soit"], ["Je veux qu'il … (venir)", "vienne", "vient", "viendra"], ["Bien qu'elle … (avoir) peur", "ait", "a", "aie"], ["Il faut que nous … (faire)", "fassions", "faisons", "ferions"], ["Pour que tu … (pouvoir)", "puisses", "peux", "pourras"]] }
+        enonce: "Complète au subjonctif : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["il est", "qu'il soit", "nous avons", "que nous ayons"], ["elle vient", "qu'elle vienne", "tu fais", "que tu fasses"], ["vous allez", "que vous alliez", "ils peuvent", "qu'ils puissent"]] }
+        enonce: "Indicatif présent ou subjonctif présent ?"
+        categories: [indicatif, subjonctif]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le subjonctif suit souvent « que » : il faut que, je veux que…"
+
+
+  - id: valeurs-des-temps
+    titre: "Imparfait ou passé simple ? Le décor et l'action"
+    objectif: J'emploie l'imparfait pour le décor et les habitudes, le passé simple pour les actions soudaines du récit.
+    mots: [imparfait, passé simple, récit]
+    etapes:
+      - dialogue:
+          - mia: "Dans un récit, l'imparfait peint le décor : « Il faisait nuit, la pluie tombait. »"
+          - neo: "Et le passé simple fait avancer l'histoire : « Soudain, la porte s'ouvrit. » Le décor, puis l'action !"
+      - texte: |
+          - **Imparfait** : le **décor**, les descriptions, les **habitudes**, ce qui **dure** : *Le château **était** sombre. Chaque soir, le roi **lisait**.*
+          - **Passé simple** : les **actions** principales, **soudaines**, qui se succèdent : *Un cri **retentit**. Le roi **se leva** et **courut** vers la fenêtre.*
+      - astuce:
+          texte: "Imagine un film : l'imparfait, c'est le paysage en arrière-plan ; le passé simple, ce sont les personnages qui bougent."
+          qui: mia
+      - retiens: "**Imparfait** = décor, habitude, durée. **Passé simple** = action soudaine, qui fait avancer l'histoire."
+    exercices:
+      - type: qcm
+        vars: { t: [["Il (faisait/fit) nuit et la lune (brillait/brilla).", "faisait … brillait", "fit … brilla"], ["Soudain, la porte (s'ouvrait/s'ouvrit).", "s'ouvrit", "s'ouvrait"], ["Chaque matin, le berger (menait/mena) ses moutons.", "menait", "mena"], ["Tout à coup, un loup (surgissait/surgit).", "surgit", "surgissait"], ["La forêt (était/fut) calme et silencieuse.", "était", "fut"]] }
+        enonce: "Choisis : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "Décor ou habitude → imparfait ; action soudaine → passé simple."]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["Il pleuvait depuis des heures.", "Soudain, un éclair déchira le ciel.", "Le village dormait.", "Le chevalier sortit son épée."], ["Les oiseaux chantaient.", "Brusquement, le pont s'effondra.", "La maison était silencieuse.", "Elle poussa un cri."]] }
+        enonce: "Décor (imparfait) ou action (passé simple) ?"
+        categories: ["décor", "action"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Imparfait = décor ; passé simple = action."
+      - type: qcm
+        vars: { t: [["Chaque été, nous allions à la mer.", "une habitude (imparfait)", "une action soudaine", "un futur"], ["Soudain, la porte s'ouvrit.", "une action soudaine (passé simple)", "une habitude", "une description"], ["La maison était grande et sombre.", "une description (imparfait)", "une action soudaine", "un ordre"], ["La Terre tourne autour du Soleil.", "une vérité générale (présent)", "une habitude passée", "une action soudaine"]] }
+        enonce: "Quelle est la valeur du temps dans « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

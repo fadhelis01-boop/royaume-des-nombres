@@ -1,0 +1,57 @@
+# Dictionnaire — adjectifs, sentiments, caractère.
+- { m: grand, n: a, d: "De haute taille ; important.", e: "Une grande maison.", a: [petit], f: [grandir, grandeur, agrandir], t: qualités }
+- { m: petit, n: a, d: "De faible taille ; jeune.", e: "Un petit chat.", a: [grand], f: [petitesse, rapetisser], t: qualités }
+- { m: beau, n: a, d: "Agréable à regarder ou à entendre. Devant une voyelle : bel ; féminin : belle.", e: "Un bel arbre, une belle journée.", s: [joli, magnifique], a: [laid], f: [beauté, embellir], t: qualités }
+- { m: vieux, n: a, d: "Qui a beaucoup d'années. Devant une voyelle : vieil ; féminin : vieille.", e: "Un vieil homme, une vieille maison.", s: [âgé, ancien], a: [jeune, neuf], f: [vieillesse, vieillir], t: qualités }
+- { m: nouveau, n: a, d: "Qui vient d'apparaître ou d'arriver. Devant une voyelle : nouvel ; féminin : nouvelle.", e: "Un nouvel ami.", s: [récent, neuf], a: [ancien, vieux], f: [nouveauté, renouveler], t: qualités }
+- { m: content, n: a, d: "Qui éprouve de la satisfaction, de la joie.", e: "Je suis content de te voir.", s: [heureux, ravi], a: [mécontent, triste], f: [contentement], t: sentiments }
+- { m: heureux, n: a, d: "Qui ressent un grand bonheur. Féminin : heureuse.", e: "Ils vécurent heureux.", s: [joyeux, content], a: [malheureux, triste], f: [bonheur, heureusement], t: sentiments }
+- { m: triste, n: a, d: "Qui a du chagrin ; qui rend mélancolique.", e: "Il est triste de partir.", s: [malheureux, mélancolique], a: [gai, joyeux], f: [tristesse, attrister], t: sentiments }
+- { m: joie, n: n, g: f, d: "Sentiment de grand plaisir, de bonheur.", e: "Elle sauta de joie.", s: [allégresse, gaieté], a: [tristesse, chagrin], f: [joyeux, réjouir], t: sentiments }
+- { m: peur, n: n, g: f, d: "Sentiment que l'on éprouve devant un danger.", e: "Zéro a peur du noir.", s: [crainte, frayeur, effroi], a: [courage], f: [peureux, apeuré], t: sentiments }
+- { m: colère, n: n, g: f, d: "Sentiment violent de mécontentement.", e: "Le roi entra dans une grande colère.", s: [fureur, rage], a: [calme], f: [coléreux], t: sentiments }
+- { m: courage, n: n, g: m, d: "Force qui permet d'affronter le danger ou la difficulté.", e: "Il a eu le courage de dire la vérité.", s: [bravoure, audace], a: [lâcheté, peur], f: [courageux, encourager, décourager], x: "de cœur", t: caractère }
+- { m: courageux, n: a, d: "Qui a du courage. Féminin : courageuse.", e: "Un chevalier courageux.", s: [brave, vaillant, audacieux], a: [lâche, peureux], t: caractère }
+- { m: timide, n: a, d: "Qui manque d'assurance et n'ose pas parler ou agir devant les autres.", e: "Ce garçon timide rougit.", s: [réservé], a: [audacieux, effronté], f: [timidité], t: caractère }
+- { m: curieux, n: a, d: "Qui veut savoir, apprendre, découvrir ; parfois indiscret. Féminin : curieuse.", e: "Mia est curieuse de tout.", f: [curiosité], t: caractère }
+- { m: généreux, n: a, d: "Qui donne volontiers. Féminin : généreuse.", e: "Elle est généreuse avec ses amis.", s: [bon], a: [avare, égoïste], f: [générosité], t: caractère }
+- { m: avare, n: a, d: "Qui aime garder son argent et déteste dépenser.", e: "Harpagon est avare.", a: [généreux, prodigue], f: [avarice], l: 2, t: caractère }
+- { m: rusé, n: a, d: "Qui sait tromper par des moyens habiles.", e: "Le renard est rusé.", s: [malin, habile], a: [naïf], f: [ruse], t: caractère }
+- { m: naïf, n: a, d: "Qui croit trop facilement ce qu'on lui dit. Féminin : naïve.", e: "Le corbeau naïf lâcha son fromage.", s: [crédule], a: [rusé, méfiant], f: [naïveté], l: 2, t: caractère }
+- { m: orgueilleux, n: a, d: "Qui se croit supérieur aux autres. Féminin : orgueilleuse.", e: "La reine orgueilleuse interrogea son miroir.", s: [vaniteux, prétentieux], a: [modeste, humble], f: [orgueil], l: 2, t: caractère }
+- { m: modeste, n: a, d: "Qui ne se vante pas de ses qualités.", e: "Malgré sa victoire, elle reste modeste.", s: [humble], a: [orgueilleux, vaniteux], f: [modestie], l: 2, t: caractère }
+- { m: patient, n: a, d: "Qui sait attendre calmement.", e: "Sois patient, le gâteau cuit.", a: [impatient], f: [patience, patienter], t: caractère }
+- { m: honnête, n: a, d: "Qui ne vole pas et ne ment pas.", e: "Un marchand honnête.", s: [loyal, intègre], a: [malhonnête], f: [honnêteté], t: caractère }
+- { m: fidèle, n: a, d: "Qui reste attaché à quelqu'un ou à ses promesses.", e: "Un chien fidèle.", s: [loyal, dévoué], a: [infidèle, traître], f: [fidélité], t: caractère }
+- { m: paresseux, n: a, d: "Qui n'aime pas faire d'efforts, travailler. Féminin : paresseuse.", e: "Le paresseux reste au lit.", a: [travailleur], f: [paresse], t: caractère }
+- { m: rapide, n: a, d: "Qui va vite.", e: "Le guépard est rapide.", s: [vif, prompt], a: [lent], f: [rapidité, rapidement], t: qualités }
+- { m: lent, n: a, d: "Qui manque de vitesse.", e: "La tortue est lente.", a: [rapide], f: [lenteur, ralentir], t: qualités }
+- { m: lourd, n: a, d: "Qui pèse beaucoup.", e: "Ce sac est lourd.", a: [léger], f: [lourdeur, alourdir], t: qualités }
+- { m: léger, n: a, d: "Qui pèse peu. Féminin : légère.", e: "Une plume légère.", a: [lourd], f: [légèreté, alléger], t: qualités }
+- { m: doux, n: a, d: "Agréable au toucher ou au goût ; calme et gentil. Féminin : douce.", e: "Un pull tout doux.", a: [rêche, dur], f: [douceur, adoucir], t: qualités }
+- { m: obscur, n: a, d: "Sombre, sans lumière ; difficile à comprendre.", e: "Une nuit obscure.", s: [sombre, ténébreux], a: [clair, lumineux], f: [obscurité, obscurcir], l: 2, t: qualités }
+- { m: lumineux, n: a, d: "Qui donne ou reçoit beaucoup de lumière. Féminin : lumineuse.", e: "Une pièce lumineuse.", a: [sombre, obscur], f: [lumière], t: qualités }
+- { m: immense, n: a, d: "Extrêmement grand.", e: "L'océan est immense.", s: [gigantesque, colossal], a: [minuscule], f: [immensité], t: qualités }
+- { m: minuscule, n: a, d: "Très très petit ; se dit aussi d'une petite lettre (a, b, c).", e: "Une fourmi minuscule. Écris en minuscules.", s: [infime], a: [immense, majuscule], t: qualités }
+- { m: étrange, n: a, d: "Qui surprend parce qu'il n'est pas habituel.", e: "Un bruit étrange venait du grenier.", s: [bizarre, insolite], a: [normal, ordinaire], f: [étrangeté], t: qualités }
+- { m: merveilleux, n: a, d: "Extraordinaire, qui émerveille ; où la magie existe (dans les contes). Féminin : merveilleuse.", e: "Un voyage merveilleux.", s: [magnifique, féerique], f: [merveille, émerveiller], t: qualités }
+- { m: célèbre, n: a, d: "Connu de beaucoup de gens.", e: "Victor Hugo est un écrivain célèbre.", s: [illustre, fameux], a: [inconnu], f: [célébrité], t: qualités }
+- { m: fragile, n: a, d: "Qui se casse ou s'abîme facilement.", e: "Attention, ce vase est fragile.", a: [solide, robuste], f: [fragilité], t: qualités }
+- { m: solide, n: a, d: "Qui résiste, ne se casse pas facilement.", e: "Un pont solide.", s: [robuste, résistant], a: [fragile], f: [solidité, consolider], t: qualités }
+- { m: facile, n: a, d: "Qui se fait sans effort.", e: "Cet exercice est facile.", s: [simple, aisé], a: [difficile], f: [facilité, faciliter], t: qualités }
+- { m: difficile, n: a, d: "Qui demande des efforts.", e: "Le Palais de l'Orthographe est difficile.", s: [ardu, compliqué], a: [facile], f: [difficulté], t: qualités }
+- { m: silencieux, n: a, d: "Où l'on n'entend pas de bruit ; qui ne parle pas. Féminin : silencieuse.", e: "La bibliothèque est silencieuse.", a: [bruyant], f: [silence], t: qualités }
+- { m: bruyant, n: a, d: "Qui fait beaucoup de bruit.", e: "Une rue bruyante.", a: [silencieux, calme], f: [bruit], t: qualités }
+- { m: émerveillé, n: a, d: "Rempli d'admiration, comme devant une merveille.", e: "Les enfants, émerveillés, regardaient le feu d'artifice.", s: [ébloui], l: 2, t: sentiments }
+- { m: inquiet, n: a, d: "Qui se fait du souci. Féminin : inquiète.", e: "Maman est inquiète quand je rentre tard.", s: [soucieux, anxieux], a: [serein, rassuré], f: [inquiétude, inquiéter], t: sentiments }
+- { m: fier, n: a, d: "Content de soi ou de quelqu'un ; parfois trop sûr de soi. Féminin : fière.", e: "Il est fier de son fils.", f: [fierté], t: sentiments }
+- { m: jaloux, n: a, d: "Qui voudrait avoir ce qu'a un autre ou qui craint de perdre l'affection de quelqu'un. Féminin : jalouse.", e: "Il est jaloux du vélo de son frère.", s: [envieux], f: [jalousie], t: sentiments }
+- { m: honte, n: n, g: f, d: "Sentiment pénible quand on a mal agi ou qu'on se sent ridicule.", e: "Il rougit de honte.", f: [honteux], t: sentiments }
+- { m: surprise, n: n, g: f, d: "Ce que l'on ressent devant quelque chose d'inattendu ; aussi un cadeau inattendu.", e: "Quelle surprise !", s: [étonnement], f: [surprendre, surprenant], t: sentiments }
+- { m: ennui, n: n, g: m, d: "Sentiment de lassitude quand on n'a rien d'intéressant à faire ; aussi un souci.", e: "Il bâille d'ennui.", f: [ennuyeux, s'ennuyer], t: sentiments }
+- { m: nostalgie, n: n, g: f, d: "Regret mélancolique du passé ou d'un lieu lointain.", e: "Il pense à son enfance avec nostalgie.", x: "grec nostos, « retour » + algos, « douleur »", l: 3, t: sentiments }
+- { m: mélancolie, n: n, g: f, d: "Tristesse vague et douce.", e: "Les poèmes de Verlaine sont pleins de mélancolie.", f: [mélancolique], l: 3, t: sentiments }
+- { m: rouge, n: a, d: "De la couleur du sang, de la fraise.", e: "Une robe rouge.", f: [rougir, rougeur], t: couleurs }
+- { m: marron, n: a, d: "De la couleur de la châtaigne. Adjectif de couleur invariable.", e: "Des chaussures marron.", t: couleurs }
+- { m: orange, n: a, d: "De la couleur du fruit orange. Adjectif de couleur invariable.", e: "Des ballons orange.", t: couleurs }
+- { m: rose, n: a, d: "D'un rouge très pâle. Il s'accorde, comme mauve, fauve, pourpre, écarlate.", e: "Des rubans roses.", t: couleurs }

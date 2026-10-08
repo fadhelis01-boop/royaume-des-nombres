@@ -2,14 +2,37 @@ import { say, speak, stopSpeaking, useTts, type Seg } from "../lib/tts";
 import type { Line, Who } from "../lib/types";
 import { Md } from "./Md";
 import { activeChild } from "../lib/store";
+import { visuel } from "../lib/img";
 
-export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi" };
+export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi", gribouille: "Gribouille" };
 
 export function mascotSrc(who: Who, humeur?: string) {
+  const pose = visuel("mascottes", humeur ? `${who}-${humeur}` : undefined) ?? visuel("mascottes", `${who}-neutre`);
+  if (pose) return pose;
   if (who === "mia") return humeur === "reflexion" ? "img/mascottes/mia-reflexion.webp" : "img/mascottes/mia.webp";
   if (who === "neo") return "img/mascottes/neo.webp";
   if (who === "zero") return "img/mascottes/zero.webp";
   return "";
+}
+
+/** Gribouille : une tache d'encre qui mange les accents et mélange les lettres (dessin provisoire en SVG). */
+function Gribouille({ size, humeur }: { size: number; humeur?: string }) {
+  const sad = humeur === "triste" || humeur === "touche";
+  const happy = humeur === "joie" || humeur === "croque" || humeur === "fier";
+  return (
+    <svg viewBox="0 0 120 110" width={size} height={size} aria-hidden className="svg-gribouille">
+      <path d="M30 30 C20 10 50 4 58 18 C66 2 98 8 92 28 C112 30 114 58 98 64 C110 84 86 100 70 90 C62 106 36 104 38 86 C14 92 6 66 22 58 C6 48 14 26 30 30 Z" fill="#2c2a4a" stroke="#14122a" strokeWidth={3} />
+      <circle cx={18} cy={82} r={5} fill="#2c2a4a" />
+      <circle cx={104} cy={86} r={4} fill="#2c2a4a" />
+      <circle cx={96} cy={14} r={3.5} fill="#2c2a4a" />
+      <ellipse cx={48} cy={50} rx={9} ry={sad ? 7 : 10} fill="#fff" />
+      <ellipse cx={74} cy={50} rx={9} ry={sad ? 7 : 10} fill="#fff" />
+      <circle cx={50} cy={52} r={4.5} fill="#14122a" />
+      <circle cx={76} cy={52} r={4.5} fill="#14122a" />
+      {happy ? <path d="M46 70 Q61 84 78 70" fill="#ff8fb1" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" /> : sad ? <path d="M48 78 Q61 68 76 78" fill="none" stroke="#fff" strokeWidth={3} strokeLinecap="round" /> : <path d="M50 72 Q61 78 74 72" fill="none" stroke="#fff" strokeWidth={3} strokeLinecap="round" />}
+      {!sad && <text x={86} y={38} fontSize={16} fontWeight={700} fill="#ffd23f">é</text>}
+    </svg>
+  );
 }
 
 /** Le Grignoteur : un petit nuage gris qui mange les nombres (dessiné en SVG). */
@@ -54,6 +77,21 @@ function Ixe({ size }: { size: number }) {
   );
 }
 
+/** Illustration du Grignoteur ou d'Ixe selon l'humeur (img/persos/…), si elle existe. Après le livre I, le Grignoteur est devenu Nuage, l'ami. */
+function persoSrc(who: "nuage" | "ixe", humeur?: string) {
+  let key: string;
+  if (who === "ixe") key = { joie: "rire", surprise: "surprise", fier: "amie", reflexion: "camouflage" }[humeur ?? ""] ?? "neutre";
+  else {
+    const ami = !!activeChild()?.story?.["fin-arc-1"];
+    const map: Record<string, string> = ami
+      ? { reflexion: "compte", triste: "triste", touche: "touche" }
+      : { joie: "espiegle", triste: "triste", surprise: "esquive", touche: "touche", croque: "croque", esquive: "esquive", fier: "ami" };
+    key = map[humeur ?? ""] ?? (ami ? "ami" : "espiegle");
+  }
+  const base = who === "ixe" ? "ixe" : "grignoteur";
+  return visuel("persos", `${base}-${key}`) ?? visuel("persos", `${base}-${who === "ixe" ? "neutre" : "espiegle"}`);
+}
+
 const REACTIONS: Record<string, string> = { joie: "✨", surprise: "❗", triste: "💧", fier: "⭐", reflexion: "" };
 
 export function Mascot({ who, humeur, size = 72, talking = false, className = "" }: { who: Who; humeur?: string; size?: number; talking?: boolean; className?: string }) {
@@ -66,6 +104,11 @@ export function Mascot({ who, humeur, size = 72, talking = false, className = ""
         📖
       </span>
     );
+  else if ((me === "nuage" || me === "ixe") && persoSrc(me, humeur))
+    body = <img src={persoSrc(me, humeur)} alt={NAMES[who]} className={`mascot mascot-${me}`} style={{ width: size, height: size }} draggable={false} />;
+  else if (me === "gribouille" && visuel("persos", `gribouille-${humeur ?? "neutre"}`))
+    body = <img src={visuel("persos", `gribouille-${humeur ?? "neutre"}`)} alt={NAMES[who]} className="mascot mascot-gribouille" style={{ width: size, height: size }} draggable={false} />;
+  else if (me === "gribouille") body = <Gribouille size={size} humeur={humeur} />;
   else if (me === "nuage") body = <Nuage size={size} humeur={humeur} />;
   else if (me === "ixe") body = <Ixe size={size} />;
   else body = <img src={mascotSrc(me, humeur)} alt={NAMES[who]} className={`mascot mascot-${me}`} style={{ width: size, height: size }} draggable={false} />;
@@ -133,7 +176,7 @@ export function Bubble({ who, text, humeur, k, side = "left", size = 76 }: { who
 export function Dialogue({ lines, k, autoplay = false }: { lines: Line[]; k: string; autoplay?: boolean }) {
   const t = useTts();
   const playing = t.playing && t.key === k;
-  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left" };
+  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left", gribouille: "right" };
   void autoplay;
   return (
     <div className="dialogue">
@@ -142,7 +185,7 @@ export function Dialogue({ lines, k, autoplay = false }: { lines: Line[]; k: str
         return (
           <div key={i} className={`bubble-row ${sides[l.who]} who-${l.who} ${talking ? "now" : ""}`}>
             <button type="button" className="bubble-avatar" onClick={() => speak([{ who: l.who, text: l.text }], { key: `${k}:${i}` })} aria-label={`Écouter ${NAMES[l.who]}`}>
-              <Mascot who={l.who} humeur={l.humeur} size={70} talking={talking || (t.playing && t.key === `${k}:${i}`)} />
+              <Mascot who={l.who} humeur={l.humeur ?? poseParole(l.who, sides[l.who], i)} size={70} talking={talking || (t.playing && t.key === `${k}:${i}`)} />
             </button>
             <div className="bubble">
               <div className="bubble-name">{NAMES[l.who]}</div>
@@ -156,4 +199,10 @@ export function Dialogue({ lines, k, autoplay = false }: { lines: Line[]; k: str
       </div>
     </div>
   );
+}
+
+/** Sans humeur précise, une réplique sur deux le personnage désigne sa bulle (pose « explique » tournée vers elle). */
+export function poseParole(who: Who, side: "left" | "right", i: number): string | undefined {
+  if (i % 2 || !["mia", "neo", "zero"].includes(who)) return undefined;
+  return side === "left" ? "explique-droite" : "explique-gauche";
 }

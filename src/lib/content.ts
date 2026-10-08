@@ -4,7 +4,7 @@ import { dbGet, dbSet } from "./db";
 import { normalizeWorld, preprocess, resetReport } from "./normalize.mjs";
 import { setWorldsForBadges } from "./store";
 import { instantiate } from "./gen";
-import type { Child, Manifest, Settings, World } from "./types";
+import type { Child, Manifest, Matiere, Settings, World } from "./types";
 
 // Chargement du contenu : les mondes intégrés (public/content, mis à jour à
 // chaque publication) + les mondes importés depuis l'Espace parents (stockés
@@ -132,9 +132,15 @@ export function findLesson(worldId: string, lessonId: string) {
   return w && idx >= 0 ? { world: w, lesson: w.lecons[idx], idx } : null;
 }
 
-/** Prochaine leçon conseillée : la première non terminée d'un monde débloqué. */
-export function nextLesson(c: Child | null, s: Settings) {
+export const matiereDe = (c: Child | null): Matiere => c?.matiere ?? "maths";
+/** L'histoire du royaume : les Nombres (maths) ou l'Archipel des Mots (français). */
+export const histoireDe = (m: Manifest | null | undefined, mat: Matiere) => (mat === "francais" ? m?.histoireFr : m?.histoire);
+export const prologueId = (mat: Matiere) => (mat === "francais" ? "prologue-fr" : "prologue");
+
+/** Prochaine leçon conseillée : la première non terminée d'un monde débloqué (du royaume choisi). */
+export function nextLesson(c: Child | null, s: Settings, mat: Matiere = matiereDe(c)) {
   for (const w of st.worlds) {
+    if (w.matiere !== mat) continue;
     if (w.cycle === "astuces" || !worldUnlocked(c, w, st.worlds, s)) continue;
     const idx = w.lecons.findIndex((l) => !c?.progress[lessonKey(w, l.id)]?.done);
     if (idx >= 0 && lessonUnlocked(c, w, idx, s)) return { world: w, lesson: w.lecons[idx], idx };

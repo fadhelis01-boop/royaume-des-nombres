@@ -1,0 +1,225 @@
+id: fr-port-des-phrases
+matiere: francais
+titre: Le Port des Phrases
+sous_titre: Nature et fonction, compléments, attribut, groupe nominal étendu
+emoji: ⚓
+couleur: "#0277bd"
+cycle: explorateurs
+age: 9-12 ans
+niveau: CM1 – 5ᵉ
+ordre: 50
+prerequis: [fr-prairie-des-accords, fr-vallee-des-verbes]
+version: 1.0.0
+intro:
+  - neo: "Au port, chaque phrase est un bateau. Le sujet tient la barre, le verbe fait avancer, les compléments sont la cargaison."
+  - mia: "Et chaque mot a deux cartes : sa nature (son costume) et sa fonction (son métier dans la phrase)."
+  - zero: "Moi ma nature, c'est hamster. Ma fonction… sujet de toutes les catastrophes. 😳"
+
+lecons:
+  - id: nature-et-fonction
+    titre: "Nature et fonction : le costume et le métier"
+    objectif: Je distingue la nature d'un mot (ce qu'il est) de sa fonction (ce qu'il fait dans la phrase).
+    mots: [nature, fonction]
+    etapes:
+      - dialogue:
+          - mia: "Un mot a une carte d'identité fixe : « chien » est un nom. C'est sa nature, son costume."
+          - neo: "Mais dans la phrase, il peut changer de métier : sujet dans « Le chien court », complément dans « Je caresse le chien »."
+      - texte: |
+          - La **nature** (ou classe grammaticale) ne change jamais : *nom, verbe, adjectif, déterminant, pronom, adverbe, préposition, conjonction*.
+          - La **fonction** dépend de la place et du rôle dans la phrase : *sujet, complément d'objet, complément circonstanciel, attribut, épithète…*
+
+          *Le **chien** aboie* : « chien » = nom (nature), **sujet** (fonction).
+          *Léa appelle le **chien*** : « chien » = nom (nature), **complément d'objet** (fonction).
+      - retiens: "**Nature** = le costume (fixe). **Fonction** = le métier dans la phrase (change selon la place)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le chat dort.", "chat", "sujet", "complément", "verbe"], ["Mia mange une pomme.", "pomme", "complément", "sujet", "attribut"], ["La pomme est rouge.", "pomme", "sujet", "complément", "attribut"], ["Je regarde le ciel.", "ciel", "complément", "sujet", "verbe"]] }
+        enonce: "« {{t_0}} » — Quelle est la FONCTION du mot « {{t_1}} » ?"
+        choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "« {{t_1}} » est un nom (nature) ; ici sa fonction est : {{t_2}}."
+      - type: classer
+        vars: { t: [[nom, sujet, adjectif, complément], [verbe, attribut, déterminant, épithète], [pronom, sujet, adverbe, complément]] }
+        enonce: "Nature (costume) ou fonction (métier) ?"
+        categories: [nature, fonction]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Natures : nom, verbe, adjectif, pronom… Fonctions : sujet, complément, attribut, épithète."
+      - type: qcm
+        vars: { t: [["Le jardin du voisin est fleuri.", "jardin", "nom", "verbe", "adjectif"], ["Les enfants courent vite.", "courent", "verbe", "nom", "adjectif"], ["Un énorme nuage passe.", "énorme", "adjectif", "nom", "verbe"], ["Elle chante bien.", "Elle", "pronom", "nom", "déterminant"]] }
+        enonce: "« {{t_0}} » — Quelle est la NATURE du mot « {{t_1}} » ?"
+        choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "« {{t_1}} » : {{t_2}}."
+
+  - id: cod-coi
+    titre: "Le complément d'objet : direct ou indirect"
+    objectif: Je trouve le COD (qui ? quoi ?) et le COI (à qui ? de quoi ?) après le verbe.
+    mots: [COD, COI, complément d'objet]
+    etapes:
+      - dialogue:
+          - neo: "Le complément d'objet complète le verbe. Sans lui, la phrase est souvent incomplète : « Je mange… quoi ? »"
+          - mia: "S'il est collé au verbe, c'est un COD. S'il y a un petit mot (à, de) entre les deux, c'est un COI."
+      - texte: |
+          - **COD** (complément d'objet **direct**) : sujet + verbe + **qui ? / quoi ?** — *Léa mange **une pomme**.* (Léa mange quoi ?)
+          - **COI** (complément d'objet **indirect**) : sujet + verbe + **à qui ? à quoi ? de qui ? de quoi ?** — *Il parle **à son ami**.* (il parle à qui ?)
+
+          On ne peut **ni supprimer ni déplacer** le complément d'objet sans changer le sens.
+      - retiens: "**COD** : verbe + qui/quoi (sans préposition). **COI** : verbe + à/de + qui/quoi."
+    exercices:
+      - type: surligner
+        vars: { t: ["Mia lit [un roman].", "Le chat attrape [la souris].", "Nous regardons [les étoiles].", "Tom écrit [une lettre] à sa grand-mère.", "J'ai perdu [mes clés]."] }
+        enonce: "Touche le COD (le verbe + qui ? quoi ?)."
+        phrase: "{{t}}"
+        correction: "Le COD répond à « qui ? » ou « quoi ? » juste après le verbe."
+      - type: classer
+        vars: { t: [["Il mange une pomme.", "Il parle à sa sœur.", "Je vois la mer.", "Elle pense à ses vacances."], ["Tu bois du lait.", "Nous parlons de nos projets.", "Léa aime les chats.", "Il obéit à ses parents."]] }
+        enonce: "Le complément placé après le verbe est-il un COD ou un COI ?"
+        categories: [COD, COI]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "COI = il y a « à » ou « de » entre le verbe et le complément."
+      - type: qcm
+        vars: { t: [["Tom téléphone à Léa.", "à Léa", "COI", "COD", "sujet"], ["Le chien ronge un os.", "un os", "COD", "COI", "sujet"], ["Je me souviens de cette journée.", "de cette journée", "COI", "COD", "attribut"], ["Elle cueille des fleurs.", "des fleurs", "COD", "COI", "attribut"]] }
+        enonce: "« {{t_0}} » — Fonction de « {{t_1}} » ?"
+        choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "« {{t_1}} » est {{t_2}}."
+
+  - id: complements-circonstanciels
+    titre: "Les compléments circonstanciels : où, quand, comment"
+    objectif: Je reconnais les compléments circonstanciels de lieu, de temps et de manière (déplaçables et supprimables).
+    mots: [complément circonstanciel, lieu, temps, manière]
+    etapes:
+      - dialogue:
+          - zero: "« Ce matin, dans la cuisine, je mange tranquillement. » J'ai trop de détails ?"
+          - neo: "Non, ce sont des compléments circonstanciels : ils donnent les circonstances. Et on peut les enlever ou les déplacer !"
+      - texte: |
+          Les **compléments circonstanciels** (CC) précisent les **circonstances** de l'action :
+          - **lieu** (où ?) : *dans la cuisine*
+          - **temps** (quand ?) : *ce matin*
+          - **manière** (comment ?) : *tranquillement*
+          - aussi : **cause** (pourquoi ?), **but** (pour quoi faire ?), **moyen** (avec quoi ?)
+
+          Test : on peut souvent les **supprimer** ou les **déplacer** : *Je mange tranquillement ce matin.*
+      - retiens: "CC = où ? quand ? comment ? pourquoi ? On peut les **déplacer** ou les **supprimer**."
+    exercices:
+      - type: classer
+        vars: { t: [["dans le jardin", 0, "hier soir", 1, "avec soin", 2, "sous la table", 0], ["à la plage", 0, "demain", 1, "lentement", 2, "pendant l'été", 1], ["au cinéma", 0, "à midi", 1, "en silence", 2, "près de l'école", 0], ["chez moi", 0, "la nuit", 1, "à toute vitesse", 2, "avec douceur", 2]] }
+        enonce: "Lieu, temps ou manière ?"
+        categories: [lieu, temps, manière]
+        mots: [["{{t_0}}", "{{t_1}}"], ["{{t_2}}", "{{t_3}}"], ["{{t_4}}", "{{t_5}}"], ["{{t_6}}", "{{t_7}}"]]
+        correction: "Où ? → lieu ; quand ? → temps ; comment ? → manière."
+      - type: surligner
+        vars: { t: ["[Ce matin], Léa joue [dans le parc].", "[Demain], nous partirons [en train].", "Le chat dort [sur le canapé] [depuis une heure].", "[Doucement], il ouvre la porte."] }
+        enonce: "Touche les compléments circonstanciels (tout ce qu'on peut enlever)."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "On peut supprimer ou déplacer les compléments circonstanciels."
+      - type: qcm
+        vars: { t: [["Il est resté chez lui à cause de la pluie.", "à cause de la pluie", "cause", "lieu", "temps"], ["Elle travaille pour réussir.", "pour réussir", "but", "manière", "lieu"], ["Il coupe le pain avec un couteau.", "avec un couteau", "moyen", "temps", "cause"], ["Nous partirons à l'aube.", "à l'aube", "temps", "lieu", "but"]] }
+        enonce: "« {{t_0}} » — Quelle circonstance exprime « {{t_1}} » ?"
+        choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        niveau: 2
+        correction: "{{t_1}} : complément circonstanciel de {{t_2}}."
+
+  - id: attribut-du-sujet
+    titre: "L'attribut du sujet et les verbes d'état"
+    objectif: Je reconnais l'attribut du sujet après un verbe d'état et je l'accorde avec le sujet.
+    mots: [attribut du sujet, verbe d'état]
+    etapes:
+      - dialogue:
+          - mia: "« Le ciel est bleu. » « Bleu » n'est pas un objet qu'on manipule : il dit comment est le ciel. C'est un attribut."
+          - neo: "Il vient après un verbe d'état : être, paraître, sembler, devenir, demeurer, rester, avoir l'air. Je retiens : PDSDRAE !"
+      - texte: |
+          L'**attribut du sujet** donne une **qualité** au sujet, à travers un **verbe d'état** :
+          **être, paraître, sembler, devenir, demeurer, rester, avoir l'air**.
+
+          *Les fleurs **sont** belle**s**.* — *Léa **semble** fatigué**e**.* — *Ils **deviennent** grand**s**.*
+
+          L'attribut **s'accorde avec le sujet** (genre et nombre).
+      - attention:
+          texte: "Ne confonds pas avec le COD : « Il **mange** une pomme » (action) / « Il **est** un bon élève » (état : « un bon élève » est attribut)."
+          qui: neo
+      - retiens: "Verbe d'**état** + **attribut** qui **s'accorde avec le sujet** : elles sont content**es**."
+    exercices:
+      - type: mot
+        vars: { t: [["Les filles semblent … (fatigué)", "fatiguées"], ["Ma sœur est … (grand)", "grande"], ["Ces gâteaux paraissent … (délicieux)", "délicieux"], ["La mer devient … (calme)", "calme"], ["Les rues restent … (désert)", "désertes"], ["Mes amies sont … (heureux)", "heureuses"]] }
+        enonce: "Accorde l'attribut : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}} : l'attribut s'accorde avec le sujet."
+      - type: classer
+        vars: { t: [["Le chat est noir.", "Le chat mange sa pâtée.", "Léa semble heureuse.", "Léa cueille une fleur."], ["Il devient célèbre.", "Il lit un journal.", "Elles restent calmes.", "Elles regardent la mer."]] }
+        enonce: "Attribut du sujet ou COD ?"
+        categories: ["attribut", "COD"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Après un verbe d'état → attribut ; après un verbe d'action → COD."
+      - type: qcm
+        vars: { t: [["sembler", "sembler", "courir", "manger"], ["devenir", "devenir", "jouer", "prendre"], ["rester", "rester", "écrire", "lancer"], ["paraître", "paraître", "chanter", "pousser"]] }
+        enonce: "Lequel est un verbe d'état ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Verbes d'état : être, paraître, sembler, devenir, demeurer, rester, avoir l'air."
+
+  - id: groupe-nominal-etendu
+    titre: "Enrichir le groupe nominal : épithète et complément du nom"
+    objectif: J'enrichis un nom avec un adjectif épithète ou un complément du nom.
+    mots: [épithète, complément du nom, expansion]
+    etapes:
+      - dialogue:
+          - zero: "« Un gâteau ». C'est un peu triste. « Un énorme gâteau au chocolat de ma grand-mère » ! J'ai faim. 😳"
+          - mia: "Tu viens d'enrichir le nom avec des expansions : un adjectif épithète et des compléments du nom."
+      - texte: |
+          On peut enrichir un nom avec des **expansions** :
+          - l'**adjectif épithète**, collé au nom : *un **énorme** gâteau*, *une robe **rouge*** ;
+          - le **complément du nom**, introduit par une préposition (de, à, en…) : *un gâteau **au chocolat***, *la maison **de ma grand-mère***, *une tasse **en porcelaine*** ;
+          - la **proposition relative** (qui, que…) : *le gâteau **que j'adore***.
+      - retiens: "Enrichir un nom : **adjectif épithète**, **complément du nom** (de, à, en + nom), **relative** (qui, que)."
+    exercices:
+      - type: classer
+        vars: { t: [["un chien noir", "un sac de sport", "une grande maison", "une tarte aux pommes"], ["un vieux livre", "une boîte en carton", "un ciel bleu", "la clé du garage"]] }
+        enonce: "L'expansion est-elle un adjectif épithète ou un complément du nom ?"
+        categories: ["adjectif épithète", "complément du nom"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le complément du nom est introduit par une préposition (de, à, en…)."
+      - type: surligner
+        vars: { t: ["J'ai mangé une tarte [aux fraises].", "La voiture [de mon père] est rouge.", "Il porte un pull [en laine].", "Le chant [des oiseaux] me réveille."] }
+        enonce: "Touche le complément du nom."
+        phrase: "{{t}}"
+        correction: "Le complément du nom commence par une préposition : de, à, en, aux…"
+      - type: qcm
+        vars: { t: [["Le chat [du voisin] miaule.", "complément du nom", "adjectif épithète", "COD"], ["Une [petite] fille joue.", "adjectif épithète", "complément du nom", "attribut"], ["Le livre [que je lis] est passionnant.", "proposition relative", "complément du nom", "COD"]] }
+        enonce: "« {{t_0}} » — Quelle expansion est entre crochets ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+
+  - id: pronoms-complements
+    titre: "Les pronoms compléments : le, la, les, lui, leur, en, y"
+    objectif: Je remplace un complément par le bon pronom pour éviter les répétitions.
+    mots: [pronom complément]
+    etapes:
+      - dialogue:
+          - neo: "« Je vois Léa. Je dis bonjour à Léa. » Répétition ! « Je vois Léa. Je lui dis bonjour. »"
+      - texte: |
+          - COD : **le, la, l', les** — *Je mange la pomme → Je **la** mange.*
+          - COI (à quelqu'un) : **lui** (singulier), **leur** (pluriel) — *Je parle à Tom → Je **lui** parle.*
+          - **en** remplace « de + chose » ou une quantité — *Je mange du pain → J'**en** mange.*
+          - **y** remplace « à + chose » ou un lieu — *Je vais à Paris → J'**y** vais.*
+      - attention:
+          texte: "**leur** pronom (devant un verbe) ne prend **jamais de s** : *je **leur** parle*. Mais *leurs* déterminant devant un nom pluriel : *leurs livres*."
+          qui: neo
+      - retiens: "COD → le/la/les ; à quelqu'un → lui/leur ; de quelque chose → en ; à un lieu → y."
+    exercices:
+      - type: qcm
+        vars: { t: [["Je regarde le film. → Je … regarde.", le, lui, leur], ["Je parle à mes cousins. → Je … parle.", leur, les, lui], ["Elle offre un cadeau à sa mère. → Elle … offre un cadeau.", lui, la, leur], ["Il boit de l'eau. → Il … boit.", en, y, la], ["Nous allons à la piscine. → Nous … allons.", y, en, la], ["Tu ranges tes jouets. → Tu … ranges.", les, leur, en]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Je … ai dit la vérité. (à mes parents)", leur, leurs], ["Ils ont pris … vélos.", leurs, leur], ["Donne-… un verre d'eau. (aux enfants)", leur, leurs], ["Les élèves rangent … cahiers.", leurs, leur]] }
+        enonce: "« leur » ou « leurs » ? {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "Devant un verbe, leur (pronom) est invariable ; devant un nom pluriel, leurs prend un s."]
+        niveau: 2
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["Je mange la pomme.", "Je la mange."], ["Je parle à Tom.", "Je lui parle."], ["Il prend du pain.", "Il en prend."], ["Nous allons au parc.", "Nous y allons."], ["Elle appelle ses amies.", "Elle les appelle."]] }
+        enonce: "Remplace le complément par un pronom : {{t_0}}"
+        reponse: "{{t_1}}"
+        niveau: 2
+        correction: "{{t_1}}"

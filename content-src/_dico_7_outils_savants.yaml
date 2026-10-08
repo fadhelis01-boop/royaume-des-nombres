@@ -1,0 +1,68 @@
+# Dictionnaire — mots-outils, mots du monde (ville, métiers, temps) et mots savants.
+- { m: et, n: c, d: "Conjonction qui ajoute, relie deux éléments. Ne pas confondre avec « est » (verbe être).", e: "Mia et Néo jouent.", t: outils }
+- { m: mais, n: c, d: "Conjonction qui marque une opposition.", e: "Il est petit mais costaud.", s: [cependant, pourtant], t: outils }
+- { m: ou, n: c, d: "Conjonction qui marque un choix (= ou bien). Ne pas confondre avec « où » (le lieu).", e: "Tu veux du thé ou du lait ?", t: outils }
+- { m: où, n: pr, d: "Mot qui indique le lieu ou le moment.", e: "Où vas-tu ? La ville où je suis né.", t: outils }
+- { m: donc, n: c, d: "Conjonction qui marque une conséquence.", e: "Je pense, donc je suis.", s: [par conséquent, ainsi], t: outils }
+- { m: car, n: c, d: "Conjonction qui donne une cause, une explication.", e: "Je reste ici, car il pleut.", s: [parce que, puisque], t: outils }
+- { m: pourtant, n: adv, d: "Adverbe qui marque une opposition.", e: "Il a travaillé ; pourtant, il a échoué.", s: [cependant, néanmoins, toutefois], t: outils }
+- { m: cependant, n: adv, d: "Adverbe qui marque une opposition.", e: "C'est difficile ; cependant, j'y arriverai.", s: [pourtant, toutefois], l: 2, t: outils }
+- { m: néanmoins, n: adv, d: "Adverbe qui marque une opposition (registre soutenu).", e: "La route était longue ; néanmoins, nous sommes arrivés à temps.", s: [pourtant, cependant], l: 3, t: outils }
+- { m: puisque, n: c, d: "Conjonction qui donne une cause déjà connue.", e: "Puisque tu es là, aide-moi.", t: outils }
+- { m: quand, n: c, d: "Conjonction qui indique le moment. Ne pas confondre avec « quant à » ni avec « qu'en ».", e: "Quand il pleut, je lis.", s: [lorsque], t: outils }
+- { m: très, n: adv, d: "Adverbe qui renforce un adjectif ou un adverbe.", e: "Il est très gentil.", s: [fort, extrêmement], t: outils }
+- { m: beaucoup, n: adv, d: "Adverbe qui indique une grande quantité.", e: "Il y a beaucoup de monde.", a: [peu], t: outils }
+- { m: toujours, n: adv, d: "En tout temps ; encore.", e: "Il est toujours en retard.", a: [jamais], t: outils }
+- { m: jamais, n: adv, d: "À aucun moment.", e: "Je n'ai jamais vu la mer.", a: [toujours], t: outils }
+- { m: soudain, n: adv, d: "Tout à coup, brusquement.", e: "Soudain, un éclair déchira le ciel.", s: [tout à coup, subitement, brusquement], t: outils }
+- { m: ensuite, n: adv, d: "Après cela.", e: "D'abord je lis, ensuite je dors.", s: [puis, après], t: outils }
+- { m: enfin, n: adv, d: "À la fin, après une attente.", e: "Enfin, le jour du départ arriva.", s: [finalement], t: outils }
+- { m: avec, n: p, d: "Préposition qui indique l'accompagnement ou le moyen.", e: "Je joue avec mon frère.", a: [sans], t: outils }
+- { m: sans, n: p, d: "Préposition qui indique l'absence. Ne pas confondre avec « sang », « cent », « s'en ».", e: "Un café sans sucre.", a: [avec], t: outils }
+- { m: pendant, n: p, d: "Préposition qui indique la durée.", e: "Il a dormi pendant la nuit.", s: [durant], t: outils }
+- { m: chez, n: p, d: "Préposition : dans la maison de.", e: "Je vais chez ma grand-mère.", t: outils }
+- { m: quelque, n: d, d: "Déterminant : un peu de, plusieurs (quelques amis). Devant un nombre, adverbe invariable : environ.", e: "Quelques amis sont venus. Il y avait quelque deux cents personnes.", l: 2, t: outils }
+- { m: tout, n: d, d: "Déterminant, pronom ou adverbe. Adverbe (= entièrement), il est invariable sauf devant un adjectif féminin commençant par une consonne ou un h aspiré.", e: "Tous les jours. Elles sont tout émues. Elle est toute petite.", l: 2, t: outils }
+- { m: même, n: a, d: "Adjectif (identique, variable) ou adverbe (aussi, y compris, invariable).", e: "Ils ont les mêmes goûts. Même les rois pleurent.", l: 2, t: outils }
+- { m: hélas, n: i, d: "Interjection qui exprime le regret, la tristesse.", e: "Hélas ! il était trop tard.", l: 2, t: outils }
+- { m: ville, n: n, g: f, d: "Grande agglomération où vivent beaucoup d'habitants.", e: "Paris est une grande ville.", s: [cité], a: [campagne], f: [village, citadin], t: monde }
+- { m: village, n: n, g: m, d: "Petite agglomération à la campagne.", e: "Le village a une église et une école.", f: [villageois], t: monde }
+- { m: pays, n: n, g: m, d: "Territoire d'un peuple, d'une nation.", e: "La France est un pays d'Europe.", f: [paysage, paysan], t: monde }
+- { m: voyage, n: n, g: m, d: "Fait de se déplacer loin de chez soi.", e: "Bon voyage !", f: [voyager, voyageur], t: monde }
+- { m: carte, n: n, g: f, d: "Dessin qui représente un territoire ; aussi un carton (à jouer, postale…).", e: "Regarde la carte de l'Archipel.", f: [cartographe], t: monde }
+- { m: trésor, n: n, g: m, d: "Ensemble d'objets précieux cachés ; chose très précieuse.", e: "Les pirates cachèrent leur trésor.", t: monde }
+- { m: château, n: n, g: m, d: "Grande demeure fortifiée d'un seigneur ou d'un roi. Pluriel : des châteaux.", e: "Le château a quatre tours.", f: [châtelain], x: "latin castellum", t: monde }
+- { m: roi, n: n, g: m, d: "Homme qui règne sur un royaume.", e: "Le roi porte une couronne.", f: [reine, royaume, royal, royauté], t: monde }
+- { m: royaume, n: n, g: m, d: "Pays gouverné par un roi ou une reine.", e: "Bienvenue au Royaume des Nombres !", t: monde }
+- { m: chevalier, n: n, g: m, d: "Au Moyen Âge, noble qui combattait à cheval.", e: "Le chevalier défend le château.", f: [cheval, chevalerie, chevaleresque], t: monde }
+- { m: métier, n: n, g: m, d: "Travail que l'on fait pour gagner sa vie.", e: "Quel métier veux-tu faire plus tard ?", s: [profession], t: monde }
+- { m: boulanger, n: n, g: m, d: "Personne qui fabrique et vend du pain.", e: "Le boulanger se lève très tôt.", f: [boulangerie], t: monde }
+- { m: pêcheur, n: n, g: m, d: "Personne qui pêche des poissons. Ne pas confondre avec « pécheur » (qui commet un péché).", e: "Le pêcheur rentre au port.", f: [pêche, pêcher], l: 2, t: monde }
+- { m: jour, n: n, g: m, d: "Temps entre le lever et le coucher du soleil ; durée de 24 heures.", e: "Il fait jour.", a: [nuit], f: [journée, journal, aujourd'hui], t: temps }
+- { m: nuit, n: n, g: f, d: "Temps entre le coucher et le lever du soleil.", e: "La nuit, les chouettes chassent.", a: [jour], f: [nocturne, minuit], t: temps }
+- { m: hier, n: adv, d: "Le jour avant aujourd'hui.", e: "Hier, il a plu.", a: [demain], t: temps }
+- { m: demain, n: adv, d: "Le jour après aujourd'hui.", e: "Demain, nous irons à la mer.", a: [hier], t: temps }
+- { m: autrefois, n: adv, d: "Dans le passé, il y a longtemps.", e: "Autrefois, on s'éclairait à la bougie.", s: [jadis], a: [aujourd'hui], t: temps }
+- { m: siècle, n: n, g: m, d: "Durée de cent ans.", e: "Victor Hugo a vécu au XIXe siècle.", f: [séculaire], t: temps }
+- { m: éminent, n: a, d: "Remarquable, supérieur. Paronyme de « imminent ».", e: "Un éminent savant.", s: [illustre, remarquable], l: 3, t: savants }
+- { m: imminent, n: a, d: "Qui va arriver très bientôt. Paronyme de « éminent ».", e: "Le départ est imminent.", s: [proche], l: 3, t: savants }
+- { m: prodigue, n: a, d: "Qui dépense sans compter. Paronyme de « prodige ».", e: "Le fils prodigue a tout dépensé.", a: [avare, économe], l: 3, t: savants }
+- { m: prodige, n: n, g: m, d: "Chose extraordinaire ; personne exceptionnellement douée.", e: "Mozart était un enfant prodige.", s: [merveille, miracle], f: [prodigieux], l: 2, t: savants }
+- { m: conjecture, n: n, g: f, d: "Supposition, hypothèse. Paronyme de « conjoncture ».", e: "On en est réduit aux conjectures.", s: [hypothèse], l: 3, t: savants }
+- { m: conjoncture, n: n, g: f, d: "Situation d'ensemble à un moment donné. Paronyme de « conjecture ».", e: "La conjoncture économique est difficile.", l: 3, t: savants }
+- { m: effraction, n: n, g: f, d: "Fait de forcer une porte, une serrure pour entrer.", e: "Les voleurs sont entrés par effraction.", l: 3, t: savants }
+- { m: infraction, n: n, g: f, d: "Faute contre la loi ou un règlement.", e: "Brûler un feu rouge est une infraction.", l: 3, t: savants }
+- { m: éphémère, n: a, d: "Qui dure très peu de temps.", e: "La beauté éphémère d'une bulle de savon.", s: [passager, fugace], a: [durable, éternel], x: "grec ephêmeros, « qui dure un jour »", l: 3, t: savants }
+- { m: perspicace, n: a, d: "Qui comprend vite et voit ce qui échappe aux autres.", e: "Néo, perspicace, devina la solution.", s: [clairvoyant, sagace], l: 3, t: savants }
+- { m: inexorable, n: a, d: "Que rien ne peut arrêter ou fléchir.", e: "La marche inexorable du temps.", s: [implacable, inflexible], l: 3, t: savants }
+- { m: sagace, n: a, d: "Qui a un esprit fin et pénétrant.", e: "Un détective sagace.", s: [perspicace], l: 3, t: savants }
+- { m: véhément, n: a, d: "Qui s'exprime avec force et passion.", e: "Un discours véhément.", s: [fougueux, passionné], l: 3, t: savants }
+- { m: fallacieux, n: a, d: "Trompeur, qui cherche à induire en erreur. Féminin : fallacieuse.", e: "Un argument fallacieux.", s: [trompeur, mensonger], l: 3, t: savants }
+- { m: philanthrope, n: n, g: mf, d: "Personne qui aide les autres sans intérêt personnel.", e: "Ce philanthrope a financé une école.", a: [misanthrope], x: "grec philos, « ami » + anthrôpos, « homme »", l: 3, t: savants }
+- { m: misanthrope, n: n, g: mf, d: "Personne qui n'aime pas les êtres humains et les fuit.", e: "« Le Misanthrope » est une comédie de Molière.", a: [philanthrope], x: "grec misein, « haïr » + anthrôpos, « homme »", l: 3, t: savants }
+- { m: hippopotame, n: n, g: m, d: "Gros mammifère d'Afrique qui vit dans les fleuves.", e: "L'hippopotame se baigne dans le fleuve.", x: "grec hippos, « cheval » + potamos, « fleuve »", t: animaux }
+- { m: chronologie, n: n, g: f, d: "Ordre dans lequel les événements se sont produits.", e: "Range les événements dans l'ordre chronologique.", f: [chronologique], x: "grec khronos, « temps » + logos, « discours »", l: 2, t: savants }
+- { m: démocratie, n: n, g: f, d: "Régime où le pouvoir appartient au peuple, qui élit ses représentants.", e: "La France est une démocratie.", f: [démocratique], x: "grec dêmos, « peuple » + kratos, « pouvoir »", l: 2, t: savants }
+- { m: omnivore, n: a, d: "Qui mange de tout (plantes et animaux).", e: "L'ours est omnivore.", x: "latin omnis, « tout » + vorare, « dévorer »", l: 2, t: savants }
+- { m: anachronisme, n: n, g: m, d: "Erreur qui place quelque chose à une époque où elle n'existait pas.", e: "Un chevalier avec un téléphone : quel anachronisme !", x: "grec ana, « en arrière » + khronos, « temps »", l: 3, t: savants }
+- { m: polyglotte, n: a, d: "Qui parle plusieurs langues.", e: "Ce guide polyglotte parle cinq langues.", x: "grec polus, « nombreux » + glôtta, « langue »", l: 3, t: savants }

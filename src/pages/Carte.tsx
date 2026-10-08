@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { go } from "../lib/router";
-import { CYCLES, lessonKey, nextLesson, useContent, worldProgress, worldUnlocked } from "../lib/content";
-import { dayKey, dueCards, useChild, useStore } from "../lib/store";
+import { CYCLES, lessonKey, matiereDe, nextLesson, prologueId, useContent, worldProgress, worldUnlocked } from "../lib/content";
+import { dayKey, dueCards, setMatiere, useChild, useStore } from "../lib/store";
 import { Bubble, Mascot } from "../components/Mascot";
 import { CarteRoyaume } from "../components/CarteRoyaume";
 import { Recap } from "../components/Seance";
 import type { World } from "../lib/types";
 
 export function Carte() {
-  const { worlds } = useContent();
+  const { worlds: tous } = useContent();
   const child = useChild()!;
+  const mat = matiereDe(child);
+  const worlds = tous.filter((w) => w.matiere === mat);
+  const fr = mat === "francais";
+  const astuces = worlds.find((w) => w.cycle === "astuces");
   const settings = useStore((s) => s.settings);
   const next = nextLesson(child, settings);
   // leçon commencée mais pas finie (reprise)
@@ -28,7 +32,7 @@ export function Carte() {
   const dailyDone = child.daily?.day === dayKey() && child.daily.done;
   const greet = greeting(child.name, child.streak);
 
-  const crystals = child.crystals ?? [];
+  const crystals = (child.crystals ?? []).filter((id) => worlds.some((w) => w.id === id));
   const [vue, setVue] = useState<"carte" | "liste">(() => {
     try {
       return localStorage.getItem("rdn-vue") === "liste" ? "liste" : "carte";
@@ -45,13 +49,25 @@ export function Carte() {
     }
   };
   return (
-    <div className="page carte">
-      {!child.story?.prologue && (
+    <div className={`page carte ${fr ? "royaume-fr" : ""}`}>
+      <div className="royaumes" role="tablist" aria-label="Choisis ton royaume">
+        <button role="tab" aria-selected={!fr} className={`royaume-tab ${!fr ? "on" : ""}`} onClick={() => setMatiere("maths")}>
+          <span>🔢</span>
+          <strong>Le Royaume des Nombres</strong>
+          <small>maths</small>
+        </button>
+        <button role="tab" aria-selected={fr} className={`royaume-tab fr ${fr ? "on" : ""}`} onClick={() => setMatiere("francais")}>
+          <span>📚</span>
+          <strong>L'Archipel des Mots</strong>
+          <small>français</small>
+        </button>
+      </div>
+      {!child.story?.[prologueId(mat)] && (
         <button className="story-banner" onClick={() => go("/aventure/prologue")}>
           <span className="story-banner-icon">📖</span>
           <span>
-            <strong>L'aventure commence !</strong>
-            <small>Le Royaume des Nombres s'éteint… Écoute l'histoire.</small>
+            <strong>{fr ? "Une nouvelle aventure commence !" : "L'aventure commence !"}</strong>
+            <small>{fr ? "Les mots de l'Archipel s'effacent… Écoute l'histoire." : "Le Royaume des Nombres s'éteint… Écoute l'histoire."}</small>
           </span>
         </button>
       )}
@@ -84,14 +100,18 @@ export function Carte() {
           <span className="qc-emoji">🏃</span>
           <span>
             <strong>Échauffement</strong>
-            <small>2 minutes de calcul rapide</small>
+            <small>{fr ? "2 minutes de conjugaison éclair" : "2 minutes de calcul rapide"}</small>
           </span>
         </button>
         <button className="quick-card" onClick={() => go("/aventure")}>
           <span className="qc-emoji">📖</span>
           <span>
             <strong>L'aventure</strong>
-            <small>💎 {crystals.length} cristal{crystals.length > 1 ? "aux" : ""} rallumé{crystals.length > 1 ? "s" : ""}</small>
+            <small>
+              {fr
+                ? `📜 ${crystals.length} page${crystals.length > 1 ? "s" : ""} du Grimoire sauvée${crystals.length > 1 ? "s" : ""}`
+                : `💎 ${crystals.length} cristal${crystals.length > 1 ? "aux" : ""} rallumé${crystals.length > 1 ? "s" : ""}`}
+            </small>
           </span>
         </button>
         <button className={`quick-card ${dailyDone ? "done" : ""}`} onClick={() => go("/defi-du-jour")}>
@@ -101,12 +121,21 @@ export function Carte() {
             <small>{dailyDone ? "Réussi ! Reviens demain" : "5 questions + 1 énigme"}</small>
           </span>
         </button>
-        {worlds.some((w) => w.id === "ecole-des-astuces") && (
-          <button className="quick-card" onClick={() => go("/monde/ecole-des-astuces")}>
-            <span className="qc-emoji">💡</span>
+        {astuces && (
+          <button className="quick-card" onClick={() => go(`/monde/${astuces.id}`)}>
+            <span className="qc-emoji">{astuces.emoji}</span>
             <span>
-              <strong>École des Astuces</strong>
-              <small>Méthodes et calcul rapide</small>
+              <strong>{astuces.titre}</strong>
+              <small>{fr ? "Bien relire, retenir l'orthographe" : "Méthodes et calcul rapide"}</small>
+            </span>
+          </button>
+        )}
+        {fr && (
+          <button className="quick-card" onClick={() => go("/dico")}>
+            <span className="qc-emoji">📖</span>
+            <span>
+              <strong>Le dictionnaire</strong>
+              <small>📒 {child.carnet?.length ?? 0} mots dans ton carnet · conjugueur</small>
             </span>
           </button>
         )}
@@ -141,8 +170,8 @@ export function Carte() {
         return (
           <section key={cy} className={`cycle cycle-${cy}`}>
             <h2 className="cycle-title">
-              <span>{CYCLES[cy].emoji}</span> {CYCLES[cy].titre}
-              <small>{CYCLES[cy].sous}</small>
+              <span>{CYCLES[cy].emoji}</span> {fr && cy === "astuces" ? "Le Grimoire des Astuces" : CYCLES[cy].titre}
+              <small>{fr && cy === "astuces" ? "Méthodes pour bien écrire, relire et retenir" : fr && cy === "graines" ? "5 – 10 ans · lire, écrire, accorder" : CYCLES[cy].sous}</small>
             </h2>
             <div className="path">
               {ws.map((w, i) => (
@@ -153,13 +182,27 @@ export function Carte() {
         );
       })}
       <div className="center muted small" style={{ marginTop: 24 }}>
-        <button className="link" onClick={() => go("/livre")}>
-          📖 Le Grand Livre des maths
-        </button>{" "}
-        ·{" "}
-        <button className="link" onClick={() => go("/inventer")}>
-          ✍️ Inventer un problème
-        </button>{" "}
+        {fr ? (
+          <>
+            <button className="link" onClick={() => go("/dico")}>
+              📖 Le dictionnaire
+            </button>{" "}
+            ·{" "}
+            <button className="link" onClick={() => go("/jeux")}>
+              🎮 Jeux de mots
+            </button>{" "}
+          </>
+        ) : (
+          <>
+            <button className="link" onClick={() => go("/livre")}>
+              📖 Le Grand Livre des maths
+            </button>{" "}
+            ·{" "}
+            <button className="link" onClick={() => go("/inventer")}>
+              ✍️ Inventer un problème
+            </button>{" "}
+          </>
+        )}
         ·{" "}
         <button className="link" onClick={() => go("/diagnostic")}>
           🧭 Test de niveau

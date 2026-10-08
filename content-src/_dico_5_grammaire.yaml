@@ -1,0 +1,57 @@
+# Dictionnaire — mots de la grammaire, de l'orthographe et de la conjugaison.
+- { m: nom, n: n, g: m, d: "Mot qui désigne une personne, un animal, une chose ou une idée. Le nom commun prend un déterminant ; le nom propre, une majuscule.", e: "« Chat », « Paris », « courage » sont des noms.", f: [nommer, nominal], x: "latin nomen", t: grammaire }
+- { m: verbe, n: n, g: m, d: "Mot qui exprime une action ou un état, et qui se conjugue.", e: "Dans « Le chat dort », le verbe est « dort ».", f: [verbal], x: "latin verbum, « parole »", t: grammaire }
+- { m: adjectif, n: n, g: m, d: "Mot qui précise une qualité du nom et s'accorde avec lui.", e: "Dans « un chat noir », « noir » est un adjectif.", t: grammaire }
+- { m: adverbe, n: n, g: m, d: "Mot invariable qui précise le sens d'un verbe, d'un adjectif ou d'un autre adverbe.", e: "Il court vite. Elle est très gentille.", f: [adverbial], t: grammaire }
+- { m: déterminant, n: n, g: m, d: "Petit mot placé devant le nom, qui indique son genre et son nombre (le, une, mes, ce…).", e: "Dans « mon vélo », « mon » est un déterminant.", t: grammaire }
+- { m: pronom, n: n, g: m, d: "Mot qui remplace un nom ou un groupe nominal (il, elle, le, lui, qui…).", e: "« Le chat dort » → « Il dort ».", f: [pronominal], x: "latin pro, « à la place de » + nomen", t: grammaire }
+- { m: préposition, n: n, g: f, d: "Mot invariable qui relie un mot à son complément (à, de, dans, pour, avec, sur…).", e: "Le livre est sur la table.", l: 2, t: grammaire }
+- { m: conjonction, n: n, g: f, d: "Mot invariable qui relie des mots ou des propositions (mais, ou, et, donc, or, ni, car ; que, quand, si…).", e: "Je voulais venir, mais il pleuvait.", l: 2, t: grammaire }
+- { m: interjection, n: n, g: f, d: "Mot qui exprime une émotion, un cri (Oh ! Aïe ! Hélas !).", e: "« Aïe ! » est une interjection.", l: 2, t: grammaire }
+- { m: sujet, n: n, g: m, d: "Mot ou groupe qui fait l'action du verbe ou dont on dit quelque chose ; on le trouve avec « qui est-ce qui ? ».", e: "« Mia » est le sujet de « Mia chante ».", t: grammaire }
+- { m: complément, n: n, g: m, d: "Mot ou groupe qui complète le sens d'un autre mot (COD, COI, complément circonstanciel, du nom…).", e: "« une pomme » est le complément de « mange ».", f: [compléter], t: grammaire }
+- { m: COD, n: n, g: m, d: "Complément d'objet direct : il complète le verbe sans préposition ; on le trouve avec « quoi ? » ou « qui ? » après le verbe.", e: "Léa mange une pomme (mange quoi ? une pomme).", l: 2, t: grammaire }
+- { m: COI, n: n, g: m, d: "Complément d'objet indirect : il complète le verbe avec une préposition (à, de).", e: "Il parle à sa sœur.", l: 2, t: grammaire }
+- { m: attribut, n: n, g: m, d: "Mot qui donne une qualité au sujet (ou au COD) par l'intermédiaire d'un verbe comme être, sembler, devenir.", e: "Dans « Le ciel est bleu », « bleu » est attribut du sujet.", l: 2, t: grammaire }
+- { m: épithète, n: a, d: "Se dit d'un adjectif placé directement à côté du nom, sans verbe.", e: "Dans « un chat noir », « noir » est épithète.", l: 2, t: grammaire }
+- { m: phrase, n: n, g: f, d: "Suite de mots qui a un sens, commence par une majuscule et finit par un point.", e: "Écris une phrase avec le mot « soleil ».", f: [phraser, paraphrase], t: grammaire }
+- { m: proposition, n: n, g: f, d: "Partie de phrase organisée autour d'un verbe conjugué ; aussi une idée que l'on suggère.", e: "« Je pense / donc je suis » : deux propositions.", l: 2, t: grammaire }
+- { m: ponctuation, n: n, g: f, d: "Ensemble des signes qui organisent un texte (. , ; : ! ? « » …).", e: "La ponctuation aide à lire à voix haute.", f: [ponctuer], t: grammaire }
+- { m: virgule, n: n, g: f, d: "Signe de ponctuation (,) qui marque une petite pause.", e: "Mets une virgule entre les éléments d'une liste.", t: grammaire }
+- { m: majuscule, n: n, g: f, d: "Grande lettre (A, B, C) au début d'une phrase et des noms propres.", e: "Paris s'écrit avec une majuscule.", a: [minuscule], t: grammaire }
+- { m: syllabe, n: n, g: f, d: "Groupe de sons que l'on prononce d'une seule émission de voix.", e: "« pa-pil-lon » a trois syllabes.", t: grammaire }
+- { m: voyelle, n: n, g: f, d: "Lettre qui se prononce seule (a, e, i, o, u, y).", e: "Le mot « oiseau » contient beaucoup de voyelles.", a: [consonne], t: grammaire }
+- { m: consonne, n: n, g: f, d: "Lettre qui se prononce avec une voyelle (b, c, d, f…).", e: "« Rythme » a beaucoup de consonnes.", a: [voyelle], t: grammaire }
+- { m: accent, n: n, g: m, d: "Signe sur une voyelle (é, è, ê) qui change sa prononciation ou son sens ; aussi la façon de prononcer d'une région.", e: "« où » prend un accent grave.", f: [accentuer], t: grammaire }
+- { m: genre, n: n, g: m, d: "Masculin ou féminin, pour un nom ou un mot qui s'accorde ; aussi une catégorie d'œuvres (le conte, le roman…).", e: "« Table » est du genre féminin.", t: grammaire }
+- { m: nombre, n: n, g: m, d: "En grammaire : singulier ou pluriel. En maths : ce qui sert à compter.", e: "L'adjectif s'accorde en genre et en nombre.", t: grammaire }
+- { m: singulier, n: n, g: m, d: "Forme d'un mot qui désigne un seul élément.", e: "« cheval » est au singulier.", a: [pluriel], t: grammaire }
+- { m: pluriel, n: n, g: m, d: "Forme d'un mot qui désigne plusieurs éléments.", e: "« chevaux » est au pluriel.", a: [singulier], t: grammaire }
+- { m: accord, n: n, g: m, d: "Changement de forme d'un mot pour s'adapter au genre et au nombre d'un autre.", e: "L'accord du participe passé avec être.", f: [accorder], t: grammaire }
+- { m: infinitif, n: n, g: m, d: "Forme du verbe non conjuguée, celle du dictionnaire (chanter, finir, prendre).", e: "« Manger » est à l'infinitif.", t: conjugaison }
+- { m: radical, n: n, g: m, d: "Partie du verbe qui porte son sens et qui change peu (chant- dans chanter).", e: "Le radical de « finir » est « fin- ».", l: 2, t: conjugaison }
+- { m: terminaison, n: n, g: f, d: "Fin d'un verbe conjugué, qui change selon la personne et le temps.", e: "« -ons » est la terminaison de « nous chantons ».", t: conjugaison }
+- { m: auxiliaire, n: n, g: m, d: "Verbe être ou avoir qui aide à former les temps composés.", e: "J'ai mangé : l'auxiliaire est « avoir ».", l: 2, t: conjugaison }
+- { m: participe, n: n, g: m, d: "Forme du verbe qui peut servir d'adjectif ; le participe passé sert aux temps composés (mangé, fini, pris).", e: "« fini » est le participe passé de « finir ».", t: conjugaison }
+- { m: temps, n: n, g: m, d: "En conjugaison : forme du verbe qui situe l'action (présent, passé, futur). Aussi : la météo, la durée.", e: "« Je chanterai » est au futur.", t: conjugaison }
+- { m: mode, n: n, g: m, d: "Manière dont le verbe présente l'action : indicatif (réel), subjonctif (souhait, doute), impératif (ordre), conditionnel (hypothèse).", e: "« Il faut que tu viennes » est au subjonctif.", l: 3, t: conjugaison }
+- { m: imparfait, n: n, g: m, d: "Temps du passé pour les descriptions et les habitudes (je chantais).", e: "Il faisait beau et les oiseaux chantaient.", t: conjugaison }
+- { m: passé simple, n: loc, d: "Temps du récit écrit pour les actions courtes et soudaines (il chanta, ils vinrent).", e: "Soudain, la porte s'ouvrit.", l: 2, t: conjugaison }
+- { m: subjonctif, n: n, g: m, d: "Mode du souhait, du doute, de l'obligation, souvent après « que ».", e: "Il faut que je parte.", l: 2, t: conjugaison }
+- { m: conditionnel, n: n, g: m, d: "Mode de l'hypothèse, du souhait poli, du futur dans le passé (je chanterais).", e: "Si j'avais des ailes, je volerais.", l: 2, t: conjugaison }
+- { m: impératif, n: n, g: m, d: "Mode de l'ordre et du conseil, sans sujet exprimé (chante, chantons, chantez).", e: "Range ta chambre !", t: conjugaison }
+- { m: homophone, n: n, g: m, d: "Mot qui se prononce comme un autre mais s'écrit différemment (a / à, ver / vert / verre).", e: "« Mer » et « mère » sont homophones.", x: "grec homos, « semblable » + phônê, « son »", l: 2, t: orthographe }
+- { m: synonyme, n: n, g: m, d: "Mot qui a un sens proche d'un autre (content / heureux).", e: "« Bouquin » est un synonyme familier de « livre ».", a: [antonyme], x: "grec sun, « avec » + onoma, « nom »", t: vocabulaire }
+- { m: antonyme, n: n, g: m, d: "Mot de sens contraire (grand / petit).", e: "« Chaud » est l'antonyme de « froid ».", s: [contraire], a: [synonyme], l: 2, t: vocabulaire }
+- { m: paronyme, n: n, g: m, d: "Mot qui ressemble beaucoup à un autre sans avoir le même sens (éminent / imminent).", e: "« Collision » et « collusion » sont des paronymes.", l: 3, t: vocabulaire }
+- { m: préfixe, n: n, g: m, d: "Élément placé au début d'un mot pour en changer le sens (re-, dé-, in-).", e: "« re- » dans « refaire ».", a: [suffixe], l: 2, t: vocabulaire }
+- { m: suffixe, n: n, g: m, d: "Élément placé à la fin d'un mot pour former un autre mot (-ette, -ment, -eur).", e: "« -ette » dans « fillette ».", a: [préfixe], l: 2, t: vocabulaire }
+- { m: étymologie, n: n, g: f, d: "Origine d'un mot, son histoire.", e: "L'étymologie de « bibliothèque » est grecque.", f: [étymologique], x: "grec etumos, « vrai » + logos, « parole »", l: 3, t: vocabulaire }
+- { m: orthographe, n: n, g: f, d: "Manière correcte d'écrire les mots.", e: "Vérifie l'orthographe dans le dictionnaire.", f: [orthographier, orthographique], x: "grec orthos, « droit » + graphein, « écrire »", t: orthographe }
+- { m: dictée, n: n, g: f, d: "Exercice où l'on écrit un texte lu à voix haute.", e: "La dictée du Palais est redoutable.", f: [dicter], t: orthographe }
+- { m: dictionnaire, n: n, g: m, d: "Livre (ou application) qui donne la liste des mots dans l'ordre alphabétique avec leur sens.", e: "Cherche ce mot dans le dictionnaire.", t: vocabulaire }
+- { m: définition, n: n, g: f, d: "Phrase qui explique le sens d'un mot.", e: "Lis la définition du mot « archipel ».", f: [définir], t: vocabulaire }
+- { m: vocabulaire, n: n, g: m, d: "Ensemble des mots d'une langue ou que connaît une personne.", e: "Lire enrichit le vocabulaire.", s: [lexique], t: vocabulaire }
+- { m: champ lexical, n: loc, d: "Ensemble des mots qui se rapportent à un même thème.", e: "« vague, sable, marée » appartiennent au champ lexical de la mer.", l: 2, t: vocabulaire }
+- { m: sens propre, n: loc, d: "Premier sens d'un mot, concret.", e: "Au sens propre, « une tempête » est un vent violent.", a: [sens figuré], l: 2, t: vocabulaire }
+- { m: sens figuré, n: loc, d: "Sens imagé d'un mot.", e: "« Une tempête de rires » : sens figuré.", a: [sens propre], l: 2, t: vocabulaire }

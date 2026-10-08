@@ -3,6 +3,7 @@ import { go } from "../lib/router";
 import { useContent } from "../lib/content";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
 import { updateChild } from "../lib/store";
+import { getState } from "../lib/store";
 import { ExercisePlayer } from "../components/ExercisePlayer";
 import { Bubble } from "../components/Mascot";
 
@@ -22,7 +23,8 @@ export function Diagnostic() {
         /* ignoré */
       }
     }
-    return worlds.filter((w) => w.cycle !== "astuces" && byWorld.has(w.id)).map((w) => ({ world: w, qs: byWorld.get(w.id)!.slice(0, 2) }));
+    const mat = getState().children.find((c) => c.id === getState().activeId)?.matiere ?? "maths";
+    return worlds.filter((w) => w.matiere === mat && w.cycle !== "astuces" && byWorld.has(w.id)).map((w) => ({ world: w, qs: byWorld.get(w.id)!.slice(0, 2) }));
   }, [manifest, worlds]);
   const [started, setStarted] = useState(false);
   const [wi, setWi] = useState(0);
@@ -58,7 +60,8 @@ export function Diagnostic() {
     );
 
   if (done || !plan.length) {
-    const first = worlds.find((w) => w.cycle !== "astuces" && !validated.includes(w.id));
+    const mat = getState().children.find((c) => c.id === getState().activeId)?.matiere ?? "maths";
+    const first = worlds.find((w) => w.matiere === mat && w.cycle !== "astuces" && !validated.includes(w.id));
     return (
       <div className="page narrow center">
         <h1>Résultat 🎉</h1>

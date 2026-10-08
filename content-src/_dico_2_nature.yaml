@@ -1,0 +1,60 @@
+# Dictionnaire — nature, animaux, météo, ciel.
+- { m: animal, n: n, g: m, d: "Être vivant qui peut se déplacer et se nourrir (chien, oiseau, poisson…). Pluriel : des animaux.", e: "Le zoo abrite des animaux du monde entier.", f: [animalier], x: "latin anima, « souffle, vie »", t: animaux }
+- { m: chat, n: n, g: m, d: "Petit animal domestique à moustaches, qui miaule.", e: "Le chat ronronne sur mes genoux.", s: [matou, minou], f: [chaton, chatte], t: animaux }
+- { m: chien, n: n, g: m, d: "Animal domestique fidèle, qui aboie.", e: "Le chien garde la maison.", f: [chiot, chienne], t: animaux }
+- { m: cheval, n: n, g: m, d: "Grand animal à crinière que l'on peut monter. Pluriel : des chevaux.", e: "Le cheval galope dans le pré.", f: [chevalier, chevaucher, chevalin], x: "latin caballus", t: animaux }
+- { m: oiseau, n: n, g: m, d: "Animal couvert de plumes, avec un bec et des ailes. Pluriel : des oiseaux.", e: "Les oiseaux construisent leur nid.", f: [oisillon, oiselier], t: animaux }
+- { m: poisson, n: n, g: m, d: "Animal qui vit dans l'eau et respire avec des branchies.", e: "Les poissons nagent dans la rivière.", f: [poissonnier, pêcher], t: animaux }
+- { m: loup, n: n, g: m, d: "Animal sauvage qui ressemble à un grand chien et vit en meute.", e: "Le loup hurle à la lune.", f: [louve, louveteau], t: animaux }
+- { m: renard, n: n, g: m, d: "Animal sauvage roux à la queue touffue, réputé rusé.", e: "Le renard flatte le corbeau.", f: [renardeau], t: animaux }
+- { m: corbeau, n: n, g: m, d: "Grand oiseau noir.", e: "Maître Corbeau, sur un arbre perché…", t: animaux }
+- { m: fourmi, n: n, g: f, d: "Petit insecte qui vit en colonie dans une fourmilière.", e: "La fourmi n'est pas prêteuse.", f: [fourmilière, fourmiller], t: animaux }
+- { m: cigale, n: n, g: f, d: "Insecte du Sud qui chante l'été en faisant vibrer son ventre.", e: "La cigale chante tout l'été.", t: animaux }
+- { m: insecte, n: n, g: m, d: "Petit animal à six pattes, au corps en trois parties.", e: "La coccinelle est un insecte.", f: [insecticide], x: "latin insectus, « coupé »", t: animaux }
+- { m: papillon, n: n, g: m, d: "Insecte aux grandes ailes colorées, qui sort d'une chenille.", e: "Le papillon butine les fleurs.", t: animaux }
+- { m: abeille, n: n, g: f, d: "Insecte qui fabrique le miel et la cire.", e: "Les abeilles vivent dans une ruche.", t: animaux }
+- { m: serpent, n: n, g: m, d: "Reptile sans pattes, au corps long, qui rampe.", e: "Le serpent siffle.", t: animaux }
+- { m: grenouille, n: n, g: f, d: "Petit animal qui saute, vit près de l'eau et coasse.", e: "La grenouille saute dans la mare.", f: [têtard], t: animaux }
+- { m: baleine, n: n, g: f, d: "Très grand mammifère marin, le plus gros animal du monde.", e: "La baleine souffle un jet d'eau.", f: [baleineau], t: animaux }
+- { m: mammifère, n: n, g: m, d: "Animal dont la femelle allaite ses petits.", e: "La vache et la baleine sont des mammifères.", l: 2, t: animaux }
+- { m: troupeau, n: n, g: m, d: "Groupe d'animaux de la même espèce qui vivent ensemble.", e: "Le berger garde son troupeau.", t: animaux }
+- { m: nid, n: n, g: m, d: "Abri que les oiseaux construisent pour pondre leurs œufs.", e: "Les oisillons attendent au nid.", f: [nicher, nichée], t: animaux }
+- { m: arbre, n: n, g: m, d: "Grande plante avec un tronc, des branches et des feuilles.", e: "Le chêne est un arbre.", f: [arbuste, arboriculteur], t: nature }
+- { m: feuille, n: n, g: f, d: "Partie verte et plate d'une plante ; aussi morceau de papier.", e: "En automne, les feuilles tombent.", f: [feuillage, feuilleter], t: nature }
+- { m: fleur, n: n, g: f, d: "Partie colorée d'une plante, qui donne ensuite le fruit.", e: "La rose est une fleur parfumée.", f: [fleurir, fleuriste, floraison], t: nature }
+- { m: racine, n: n, g: f, d: "Partie d'une plante qui pousse sous la terre ; aussi partie d'un mot qui porte le sens.", e: "« terr » est la racine de « terrain ».", t: nature }
+- { m: graine, n: n, g: f, d: "Petite partie d'une plante qui, semée, donne une nouvelle plante.", e: "Je sème des graines de tournesol.", s: [semence], t: nature }
+- { m: forêt, n: n, g: f, d: "Grand espace couvert d'arbres.", e: "Ils se sont perdus dans la forêt.", s: [bois], f: [forestier], t: nature }
+- { m: montagne, n: n, g: f, d: "Très grande élévation de terrain.", e: "Le Mont-Blanc est une haute montagne.", f: [montagnard, montagneux], a: [plaine], t: nature }
+- { m: rivière, n: n, g: f, d: "Cours d'eau qui se jette dans un autre cours d'eau.", e: "Nous pêchons au bord de la rivière.", s: [ruisseau], t: nature }
+- { m: fleuve, n: n, g: m, d: "Grand cours d'eau qui se jette dans la mer.", e: "La Loire est un fleuve.", f: [fluvial], t: nature }
+- { m: mer, n: n, g: f, d: "Grande étendue d'eau salée.", e: "Nous nous baignons dans la mer.", f: [marin, maritime, amerrir], x: "latin mare", t: nature }
+- { m: océan, n: n, g: m, d: "Immense étendue d'eau salée, plus grande qu'une mer.", e: "L'océan Atlantique sépare l'Europe de l'Amérique.", f: [océanique], t: nature }
+- { m: île, n: n, g: f, d: "Terre entourée d'eau de tous côtés.", e: "Robinson vivait seul sur une île.", f: [îlot, insulaire], x: "latin insula", t: nature }
+- { m: archipel, n: n, g: m, d: "Groupe d'îles proches les unes des autres.", e: "L'Archipel des Mots compte de nombreuses îles.", l: 2, t: nature }
+- { m: volcan, n: n, g: m, d: "Montagne d'où peuvent sortir de la lave, des cendres et des gaz.", e: "Le volcan s'est réveillé.", f: [volcanique], x: "du dieu romain Vulcain", t: nature }
+- { m: marais, n: n, g: m, d: "Terrain plat couvert d'eau peu profonde et de plantes.", e: "Les grenouilles chantent dans le marais.", s: [marécage], t: nature }
+- { m: prairie, n: n, g: f, d: "Terrain couvert d'herbe.", e: "Les vaches broutent dans la prairie.", s: [pré], t: nature }
+- { m: vallée, n: n, g: f, d: "Creux entre des montagnes ou des collines, souvent avec une rivière.", e: "Le village est niché au fond de la vallée.", s: [val], t: nature }
+- { m: saison, n: n, g: f, d: "Chacune des quatre parties de l'année : printemps, été, automne, hiver.", e: "L'hiver est la saison la plus froide.", f: [saisonnier], t: temps }
+- { m: printemps, n: n, g: m, d: "Saison qui suit l'hiver, où la nature se réveille.", e: "Au printemps, les arbres fleurissent.", f: [printanier], t: temps }
+- { m: été, n: n, g: m, d: "Saison la plus chaude, entre le printemps et l'automne.", e: "En été, nous allons à la mer.", f: [estival], t: temps }
+- { m: automne, n: n, g: m, d: "Saison qui suit l'été, où les feuilles tombent.", e: "L'automne apporte la pluie.", f: [automnal], t: temps }
+- { m: hiver, n: n, g: m, d: "Saison la plus froide, entre l'automne et le printemps.", e: "En hiver, il neige parfois.", f: [hivernal, hiberner], t: temps }
+- { m: pluie, n: n, g: f, d: "Eau qui tombe des nuages en gouttes.", e: "La pluie mouille le jardin.", f: [pleuvoir, pluvieux, parapluie], t: météo }
+- { m: neige, n: n, g: f, d: "Eau gelée qui tombe en flocons blancs.", e: "Les enfants font un bonhomme de neige.", f: [neiger, enneigé], t: météo }
+- { m: orage, n: n, g: m, d: "Mauvais temps avec du tonnerre, des éclairs et de la pluie.", e: "L'orage a éclaté pendant la nuit.", f: [orageux], s: [tempête], t: météo }
+- { m: tempête, n: n, g: f, d: "Vent très violent, souvent avec de la pluie.", e: "La tempête a arraché des arbres.", f: [tempêter], t: météo }
+- { m: nuage, n: n, g: m, d: "Amas de gouttelettes d'eau dans le ciel.", e: "Un gros nuage gris cache le soleil.", f: [nuageux], t: météo }
+- { m: arc-en-ciel, n: n, g: m, d: "Arc de couleurs qui apparaît dans le ciel quand le soleil brille pendant la pluie. Pluriel : des arcs-en-ciel.", e: "L'arc-en-ciel a sept couleurs.", t: météo }
+- { m: soleil, n: n, g: m, d: "Étoile qui éclaire et chauffe la Terre.", e: "Le soleil se couche à l'ouest.", f: [ensoleillé, solaire], t: ciel }
+- { m: lune, n: n, g: f, d: "Astre qui tourne autour de la Terre et brille la nuit.", e: "La lune est pleine ce soir.", f: [lunaire, alunir], t: ciel }
+- { m: étoile, n: n, g: f, d: "Astre qui brille par lui-même dans le ciel la nuit.", e: "Les étoiles scintillent.", f: [étoilé], t: ciel }
+- { m: planète, n: n, g: f, d: "Astre qui tourne autour d'une étoile, comme la Terre autour du Soleil.", e: "Mars est une planète rouge.", f: [planétaire], t: ciel }
+- { m: aube, n: n, g: f, d: "Moment où le jour commence à se lever.", e: "Demain, dès l'aube, je partirai.", s: [aurore, point du jour], a: [crépuscule], t: temps }
+- { m: crépuscule, n: n, g: m, d: "Lumière faible juste après le coucher du soleil.", e: "Au crépuscule, les chauves-souris sortent.", a: [aube], l: 2, t: temps }
+- { m: paysage, n: n, g: m, d: "Étendue de pays que l'on voit d'un seul coup d'œil.", e: "Du haut de la colline, le paysage est magnifique.", f: [paysagiste], t: nature }
+- { m: environnement, n: n, g: m, d: "Tout ce qui nous entoure : la nature, l'air, l'eau, les êtres vivants.", e: "Il faut protéger l'environnement.", l: 2, t: nature }
+- { m: espèce, n: n, g: f, d: "Groupe d'êtres vivants semblables qui peuvent avoir des petits ensemble.", e: "Le panda est une espèce menacée.", l: 2, t: nature }
+- { m: sauvage, n: a, d: "Qui vit en liberté dans la nature ; qui n'est pas apprivoisé.", e: "Le loup est un animal sauvage.", a: [domestique, apprivoisé], f: [sauvagement], t: animaux }
+- { m: domestique, n: a, d: "Se dit d'un animal qui vit auprès de l'homme.", e: "Le chat est un animal domestique.", a: [sauvage], f: [domestiquer], x: "latin domus, « maison »", l: 2, t: animaux }

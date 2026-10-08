@@ -1,4 +1,6 @@
 // Moteur d'expressions mathématiques — sans eval(), sûr et déterministe.
+import * as FC from "./fr/conjugaison";
+import * as FR from "./fr/morpho";
 //
 // Deux usages :
 //  • « auteur » : les fichiers de contenu décrivent des exercices paramétrés
@@ -106,6 +108,8 @@ const FUNCS = new Set([
   "pow", "mod", "sin", "cos", "tan", "sind", "cosd", "tand", "asin", "acos", "atan", "asind", "acosd", "atand", "ln", "log", "exp",
   "choix", "prenom", "animal", "fruit", "objet", "alea", "aleanz", "si", "signe", "estpremier", "frac", "fracb", "nb", "dec", "texte", "fixe", "nombrediviseurs",
   "chiffre", "sommechiffres", "fib", "kieme", "lettres", "diviseurs", "majuscule", "pluriel", "heure", "duree", "binaire", "romain", "rac", "tri", "melange",
+  // français
+  "conj", "conjp", "pp", "ppr", "feminin", "accord", "det", "elision", "nomtemps", "pronom", "aux", "groupe", "minuscule",
 ]);
 
 export interface ParseOpts {
@@ -595,8 +599,36 @@ function callFn(name: string, argNodes: Node[], ctx: EvalCtx): Value {
       const s = String(args[0]);
       return s.charAt(0).toUpperCase() + s.slice(1);
     }
-    case "pluriel": // pluriel(n, 'pomme', 'pommes')
+    case "pluriel": // pluriel(n, 'pomme', 'pommes')  ou  pluriel('cheval') → « chevaux »
+      if (args.length === 1) return FR.pluriel(String(args[0]));
       return Math.abs(n(0)) >= 2 ? String(args[2]) : String(args[1]);
+    // ---- français : conjugaison, accords, déterminants ----
+    case "conj": // conj('finir', 'futur', 4) → « finirons » ; conj('aller','passe_compose',3,'f') → « est allée »
+      return FC.conjuguer(String(args[0]), String(args[1]) as FC.Temps, n(2), args[3] === "f" ? "f" : "m");
+    case "conjp": // avec le pronom et l'élision : « j'aime », « qu'il soit »
+      return FC.avecPronom(String(args[0]), String(args[1]) as FC.Temps, n(2), args[3] === "f" ? "f" : "m")[0];
+    case "pp": // participe passé accordé : pp('prendre', 'f', 2) → « prises »
+      return FC.participe(String(args[0]), args[1] === "f" ? "f" : "m", args.length > 2 && n(2) >= 2 ? 2 : 1);
+    case "ppr":
+      return FC.participePresent(String(args[0]));
+    case "aux":
+      return FC.infos(String(args[0])).aux;
+    case "groupe":
+      return FC.infos(String(args[0])).groupe;
+    case "feminin":
+      return FR.feminin(String(args[0]));
+    case "accord": // accord('beau', 'f', 2) → « belles »
+      return FR.accorder(String(args[0]), args[1] === "f" ? "f" : "m", n(2) >= 2 ? 2 : 1);
+    case "det": // det('defini', 'arbre', 'm', 1) → « l'arbre »
+      return FR.determinant(String(args[0]) as FR.TypeDet, String(args[1]), args[2] === "f" ? "f" : "m", n(3) >= 2 ? 2 : 1);
+    case "elision": // elision('le', 'arbre') → « l'arbre »
+      return FR.elision(String(args[0]), String(args[1]));
+    case "nomtemps":
+      return FC.TEMPS_NOMS[String(args[0]) as FC.Temps] ?? String(args[0]);
+    case "pronom": // pronom(3, 'f') → « elle »
+      return n(0) === 3 ? (args[1] === "f" ? "elle" : "il") : n(0) === 6 ? (args[1] === "f" ? "elles" : "ils") : FC.PRONOMS[n(0) - 1];
+    case "minuscule":
+      return String(args[0]).toLowerCase();
     case "heure": {
       // heure(h, m) → « 14 h 05 »
       const h = ((Math.round(n(0)) % 24) + 24) % 24,

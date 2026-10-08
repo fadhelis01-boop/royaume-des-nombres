@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { go } from "../lib/router";
-import { getContent, nextLesson } from "../lib/content";
+import { getContent, matiereDe, nextLesson } from "../lib/content";
 import { addXp, dayKey, dayNumber, getState, updateChild, useChild } from "../lib/store";
 import { XP } from "../lib/rewards";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
@@ -13,8 +13,9 @@ export function DefiDuJour() {
   const already = child.daily?.day === dayKey() && child.daily.done;
   const qs = useMemo(() => {
     const { worlds } = getContent();
+    const mat = matiereDe(child);
     const done = Object.entries(child.progress)
-      .filter(([, p]) => p.done)
+      .filter(([k, p]) => p.done && worlds.find((w) => w.id === k.split("/")[0])?.matiere === mat)
       .map(([k]) => k);
     const keys = done.length ? done : (() => {
       const n = nextLesson(child, getState().settings);

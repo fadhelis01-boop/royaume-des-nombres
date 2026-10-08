@@ -18,6 +18,7 @@ const PERSONA: Record<Who, { pitch: number; rate: number }> = {
   zero: { pitch: 0.7, rate: 0.92 },
   narrateur: { pitch: 1.05, rate: 0.96 },
   nuage: { pitch: 0.85, rate: 0.9 },
+  gribouille: { pitch: 0.7, rate: 0.95 },
   ixe: { pitch: 1.2, rate: 1.12 },
   enfant: { pitch: 1.4, rate: 1.0 },
 };
@@ -204,6 +205,7 @@ export function previewVoice(who: Who, name: string) {
     zero: "Moi je sais ! … Zéro.",
     narrateur: "Bienvenue dans le Royaume des Nombres.",
     nuage: "Miam… un sept. Euh… pardon.",
+    gribouille: "Splotch ! J'ai mangé tous tes accents ! Hé hé.",
     ixe: "Je peux être n'importe quel nombre !",
     enfant: "C'est moi !",
   };

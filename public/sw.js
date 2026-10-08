@@ -22,7 +22,7 @@ self.addEventListener("install", (event) => {
         // Toutes les leçons, pour fonctionner hors connexion dès l'installation
         const m = await (await fetch("./content/manifest.json", { cache: "reload" })).json();
         const content = await caches.open(CONTENT_CACHE);
-        await content.addAll(m.worlds.map((w) => "./content/" + w.file));
+        await content.addAll([...m.worlds.map((w) => "./content/" + w.file), "./content/dictionnaire.json"]);
       } catch (e) {
         /* hors ligne pendant l'installation */
       }

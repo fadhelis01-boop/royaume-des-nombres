@@ -1,0 +1,216 @@
+id: fr-academie-des-lettres
+matiere: francais
+titre: L'Académie des Lettres
+sous_titre: Temps rares, analyse fine, étymologie, paronymes, argumentation, méthodes
+emoji: 🎓
+couleur: "#4e342e"
+cycle: maitres
+age: 13 ans et +
+niveau: 3ᵉ – lycée
+ordre: 63
+prerequis: [fr-palais-de-l-orthographe]
+version: 1.0.0
+intro:
+  - mia: "Voici le sommet de l'Archipel. Ici, on ne se contente plus d'écrire juste : on écrit avec précision, avec élégance, avec force."
+  - neo: "Et on remonte aux racines des mots… le code source de la langue !"
+  - zero: "Je ne suis pas sûr d'être à la hauteur… mais je ne suis plus le même Zéro qu'au début. 💪"
+
+lecons:
+  - id: temps-rares
+    titre: "Passé simple complet et subjonctif imparfait"
+    objectif: Je conjugue le passé simple à toutes les personnes et je reconnais le subjonctif imparfait.
+    mots: [passé simple, subjonctif imparfait, subjonctif plus-que-parfait]
+    etapes:
+      - texte: |
+          **Passé simple** — quatre familles de terminaisons :
+          - en **-a** (verbes en -er) : *je chantai, il chanta, nous chantâmes, ils chantèrent* ;
+          - en **-i** : *je finis, il prit, nous vîmes, ils firent* ;
+          - en **-u** : *je courus, il voulut, nous eûmes, ils furent* ;
+          - en **-in** : *je vins, il tint, nous vînmes, ils tinrent*.
+
+          **Subjonctif imparfait** : on part du passé simple (2ᵉ pers. du sing.) et on ajoute *-se, -ses, -^t, -sions, -siez, -sent* → *que je chantasse, qu'il chantât, qu'il fût, qu'il eût, qu'il vînt*.
+          On le rencontre dans la littérature classique, surtout à la 3ᵉ personne : *Il fallait qu'il **partît**.*
+          **Subjonctif plus-que-parfait** : *qu'il **eût** chanté, qu'il **fût** venu* — il sert aussi de « conditionnel passé 2ᵉ forme » : *On **eût dit** un roi.*
+      - retiens: "Passé simple : -a, -i, -u, -in. Subjonctif imparfait = passé simple + -sse (qu'il chantât, qu'il fût)."
+    exercices:
+      - type: mot
+        vars: { v: [chanter, finir, prendre, venir, courir, faire, voir, vouloir, tenir, être, avoir, savoir, naître, mourir, écrire, conduire], p: [1, 2, 3, 4, 5, 6] }
+        enonce: "Conjugue au passé simple : {{pronom(p)}} … ({{v}})"
+        reponse: ["{{conj(v, 'passe_simple', p)}}", "{{conjp(v, 'passe_simple', p)}}"]
+        correction: "{{conjp(v, 'passe_simple', p)}}"
+      - type: mot
+        vars: { v: [chanter, finir, prendre, venir, être, avoir, faire, pouvoir, savoir, aller], p: [3] }
+        enonce: "Subjonctif imparfait, 3ᵉ personne du singulier : il fallait qu'il … ({{v}})"
+        reponse: ["{{conj(v, 'subjonctif_imparfait', p)}}", "{{conjp(v, 'subjonctif_imparfait', p)}}"]
+        niveau: 2
+        correction: "qu'il {{conj(v, 'subjonctif_imparfait', p)}}"
+      - type: qcm
+        vars: { t: [["qu'il chantât", "subjonctif imparfait", "passé simple", "plus-que-parfait"], ["il chanta", "passé simple", "subjonctif imparfait", "imparfait"], ["qu'il eût chanté", "subjonctif plus-que-parfait", "passé antérieur", "passé simple"], ["il eut chanté", "passé antérieur", "subjonctif plus-que-parfait", "plus-que-parfait"], ["qu'il fût venu", "subjonctif plus-que-parfait", "passé simple", "passé antérieur"], ["nous vînmes", "passé simple", "subjonctif imparfait", "imparfait"]] }
+        enonce: "À quel temps est « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}} — attention à l'accent circonflexe qui distingue « qu'il eût » (subjonctif) de « il eut » (passé simple)."
+
+  - id: analyse-fine
+    titre: "Analyse fine : attribut du COD, apposition, compléments"
+    objectif: Je donne la fonction précise de groupes plus rares.
+    mots: [attribut du COD, apposition, complément d'agent, complément du nom, complément de l'adjectif]
+    etapes:
+      - texte: |
+          - **Attribut du COD** : qualité donnée au COD par le verbe (*trouver, juger, élire, nommer, rendre…*) → *Je trouve ce film **passionnant**. On l'a élu **président**.*
+          - **Complément d'agent** : qui fait l'action dans une phrase passive → *La souris est mangée **par le chat**.*
+          - **Apposition** : groupe détaché par une virgule qui désigne la même réalité que le nom → ***Poète engagé**, Hugo s'exila.*
+          - **Complément du nom** : *la maison **de mon oncle*** ; **complément de l'adjectif** : *fier **de son fils***.
+      - retiens: "Pour l'attribut du COD, le verbe *être* est caché : *je trouve ce film passionnant* = *je trouve que ce film **est** passionnant*."
+    exercices:
+      - type: qcm
+        vars: { t: [["passionnant", "Je trouve ce film passionnant.", "attribut du COD", "COD", "épithète"], ["président", "On l'a élu président.", "attribut du COD", "attribut du sujet", "COD"], ["par le chat", "La souris a été mangée par le chat.", "complément d'agent", "complément circonstanciel de lieu", "COI"], ["poète engagé", "Victor Hugo, poète engagé, s'exila.", "apposition", "attribut du sujet", "épithète"], ["de son fils", "Il est fier de son fils.", "complément de l'adjectif", "complément du nom", "COI"], ["de mon oncle", "J'aime la maison de mon oncle.", "complément du nom", "complément de l'adjectif", "COI"], ["habile", "Ses voisins le jugent habile.", "attribut du COD", "épithète", "attribut du sujet"]] }
+        enonce: "Quelle est la fonction de « {{t_0}} » dans : {{t_1}}"
+        choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "{{t_2}}"
+      - type: surligner
+        vars: { t: ["Le roi a été trahi [par son ministre].", "Ce gâteau a été préparé [par ma grand-mère].", "La ville fut assiégée [par l'ennemi].", "Le match a été gagné [par notre équipe]."] }
+        enonce: "Touche le complément d'agent."
+        phrase: "{{t}}"
+        correction: "Le complément d'agent fait l'action : on peut retourner la phrase à la voix active."
+      - type: surligner
+        vars: { t: ["Je trouve cette histoire [émouvante].", "Le jury a déclaré Mia [gagnante].", "Ils ont nommé Néo [capitaine].", "Cette nouvelle rend Zéro [heureux]."] }
+        enonce: "Touche l'attribut du COD."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "Le verbe être est caché : le COD « est » cet attribut."
+
+  - id: etymologie
+    titre: "Étymologie : racines grecques et latines"
+    objectif: Je devine le sens d'un mot savant grâce à ses racines.
+    mots: [étymologie, racine, préfixe, suffixe]
+    etapes:
+      - dialogue:
+          - neo: "« Hippopotame » = hippo (cheval) + potamos (fleuve) : un cheval de fleuve ! Les mots sont des puzzles."
+      - texte: |
+          | Racine grecque | sens | | Racine latine | sens |
+          |---|---|---|---|---|
+          | hydro | eau | | aqua | eau |
+          | chrono | temps | | omni | tout |
+          | graphie | écrire | | -vore | qui mange |
+          | phone | son, voix | | -cide | qui tue |
+          | bio | vie | | ped- | pied |
+          | géo | terre | | multi | nombreux |
+          | -logie | étude, discours | | magn- | grand |
+          | philo | qui aime | | ambul- | marcher |
+          | poly | plusieurs | | -fuge | qui fait fuir |
+      - retiens: "Décompose le mot savant en racines : leur sens additionné donne le sens du mot."
+    exercices:
+      - type: qcm
+        vars: { t: [["chrono", "temps", "eau", "vie"], ["hydro", "eau", "feu", "terre"], ["bio", "vie", "livre", "deux"], ["géo", "terre", "air", "géant"], ["philo", "qui aime", "qui craint", "qui mange"], ["poly", "plusieurs", "ville", "poli"], ["phone", "son, voix", "lumière", "peur"], ["-vore", "qui mange", "qui vole", "qui voit"], ["-cide", "qui tue", "qui coupe", "qui décide"], ["anthropo", "homme, être humain", "animal", "arbre"]] }
+        enonce: "Que signifie la racine « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} = {{t_1}}"
+      - type: mot
+        vars: { t: [["géo (terre) + graphie (écrire, décrire)", "géographie"], ["bio (vie) + logie (étude)", "biologie"], ["chrono (temps) + mètre (mesure)", "chronomètre"], ["omni (tout) + vore (qui mange)", "omnivore"], ["herbi (herbe) + vore (qui mange)", "herbivore"], ["hippo (cheval) + drome (course)", "hippodrome"], ["démo (peuple) + cratie (pouvoir)", "démocratie"], ["micro (petit) + scope (observer)", "microscope"], ["télé (loin) + phone (voix)", "téléphone"], ["insecti (insecte) + cide (qui tue)", "insecticide"]] }
+        enonce: "Quel mot forment ces racines : {{t_0}} ?"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [[hydro, aqua, géo, terra], [pyro, ignis, bio, vita], [anthropo, homo, chrono, tempus], [poly, multi, micro, minus]] }
+        enonce: "Racine grecque ou latine ?"
+        categories: [grecque, latine]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        niveau: 2
+        correction: "Les mots savants de la science viennent surtout du grec ; le français courant vient surtout du latin."
+
+  - id: paronymes
+    titre: "Les paronymes : les faux jumeaux"
+    objectif: Je ne confonds plus les mots qui se ressemblent sans avoir le même sens.
+    mots: [paronyme, homonyme, précision]
+    etapes:
+      - dialogue:
+          - zero: "Éminent, imminent… c'est le même mot avec une faute, non ? 😅"
+          - mia: "Non ! Ce sont des **paronymes** : presque la même forme, un sens très différent."
+      - texte: |
+          - **éminent** (remarquable) / **imminent** (qui va arriver)
+          - **effraction** (entrée par force) / **infraction** (faute contre la loi)
+          - **collision** (choc) / **collusion** (entente secrète)
+          - **prodige** (merveille) / **prodigue** (qui dépense trop)
+          - **conjecture** (supposition) / **conjoncture** (situation)
+          - **acception** (sens d'un mot) / **acceptation** (fait d'accepter)
+          - **évoquer** (rappeler) / **invoquer** (appeler à l'aide, citer à l'appui)
+      - retiens: "Un doute ? Pense au sens précis et cherche le mot dans le dictionnaire."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le danger est ___ : il va arriver d'un instant à l'autre.", "imminent", "éminent", "immanent"], ["C'est un savant ___, connu dans le monde entier.", "éminent", "imminent", "émanant"], ["Les voleurs sont entrés par ___.", "effraction", "infraction", "affection"], ["Rouler trop vite est une ___ au code de la route.", "infraction", "effraction", "inflexion"], ["La ___ entre les deux voitures a été violente.", "collision", "collusion", "collation"], ["Ce fils ___ dépense tout son héritage.", "prodigue", "prodige", "prolixe"], ["La ___ économique est difficile cette année.", "conjoncture", "conjecture", "conjonction"], ["Ce mot a plusieurs ___ : plusieurs sens.", "acceptions", "acceptations", "exceptions"], ["Grand-père aime ___ ses souvenirs d'enfance.", "évoquer", "invoquer", "révoquer"]] }
+        enonce: "Choisis le bon mot : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["conjecture", "une supposition", "une situation d'ensemble", "une conjonction"], ["collusion", "une entente secrète", "un choc entre deux objets", "un repas léger"], ["prodigue", "qui dépense sans compter", "un enfant très doué", "qui produit beaucoup"], ["imminent", "qui va arriver très bientôt", "remarquable, illustre", "qui reste à l'intérieur"]] }
+        enonce: "Que signifie « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}"
+      - type: mot
+        vars: { t: [["Un enfant ___ joue du piano à quatre ans (merveilleux).", "prodige"], ["Le voleur est entré par ___ (en forçant).", "effraction"], ["Il a eu une ___ avec un camion (un choc).", "collision"], ["L'orage est ___ (il va éclater).", "imminent"]] }
+        enonce: "Écris le bon paronyme : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+
+  - id: argumenter
+    titre: "Argumenter : thèse, arguments, exemples, connecteurs"
+    objectif: Je construis et j'analyse une argumentation.
+    mots: [thèse, argument, exemple, concession, connecteur logique]
+    etapes:
+      - texte: |
+          - La **thèse** est l'opinion défendue : *Il faut lire chaque jour.*
+          - L'**argument** est la raison qui la soutient : *car la lecture enrichit le vocabulaire.*
+          - L'**exemple** est un fait précis qui illustre l'argument : *Victor Hugo lisait sans cesse.*
+          - La **concession** reconnaît une part de vérité à l'adversaire avant de le contredire : ***Certes**, lire prend du temps, **mais** c'est un voyage.*
+
+          **Connecteurs logiques** — cause : *car, parce que, puisque, en effet* ; conséquence : *donc, c'est pourquoi, par conséquent, si bien que* ; opposition : *mais, pourtant, cependant, néanmoins* ; addition : *de plus, en outre*.
+      - retiens: "Thèse → argument → exemple. Les connecteurs logiques montrent le chemin de la pensée."
+    exercices:
+      - type: classer
+        vars: { t: [[car, donc, mais, "parce que", "c'est pourquoi", pourtant], [puisque, "par conséquent", cependant, "en effet", "si bien que", néanmoins], ["parce que", donc, toutefois, car, "c'est pourquoi", "en revanche"]] }
+        enonce: "Classe ces connecteurs logiques."
+        categories: [cause, conséquence, opposition]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
+        correction: "Cause : pourquoi ? Conséquence : quel résultat ? Opposition : contraste."
+      - type: qcm
+        vars: { t: [["« Il faut protéger les forêts. »", "la thèse", "un argument", "un exemple"], ["« … car elles abritent des milliers d'espèces. »", "un argument", "la thèse", "un exemple"], ["« … ainsi, la forêt amazonienne compte des milliers d'espèces d'arbres. »", "un exemple", "la thèse", "une concession"], ["« Certes, le bois est utile, mais… »", "une concession", "un exemple", "la thèse"]] }
+        enonce: "Dans un texte argumentatif, {{t_0}} est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Les écrans fatiguent les yeux, ___ il faut limiter leur usage.", "c'est pourquoi", "parce que", "pourtant"], ["Il faut faire du sport, ___ il renforce le cœur.", "car", "donc", "cependant"], ["Ce roman est long ; ___, on ne s'y ennuie jamais.", "pourtant", "car", "par conséquent"], ["Il pleuvait, ___ la sortie a été annulée.", "si bien que", "puisque", "néanmoins"]] }
+        enonce: "Choisis le connecteur logique : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+
+  - id: methodes
+    titre: "Méthodes : commentaire et dissertation"
+    objectif: Je connais les étapes du commentaire de texte et de la dissertation.
+    mots: [commentaire, dissertation, problématique, plan]
+    etapes:
+      - dialogue:
+          - neo: "Une dissertation, c'est un algorithme : analyser le sujet, poser un problème, le résoudre en étapes."
+          - mia: "Et un commentaire, c'est montrer COMMENT un texte produit ses effets, avec des citations précises."
+      - texte: |
+          **Dissertation** : 1. analyser les mots du sujet → 2. formuler une **problématique** (une vraie question) → 3. chercher des arguments et des exemples → 4. faire un **plan** (souvent en 2 ou 3 parties : thèse / antithèse / synthèse, ou plan thématique) → 5. rédiger l'**introduction** (amorce, sujet, problématique, annonce du plan) → 6. développer → 7. **conclure** (bilan + ouverture).
+
+          **Commentaire** : on ne raconte pas le texte, on l'**analyse** ; chaque idée s'appuie sur une **citation** et un **procédé** (figure, temps, champ lexical…) et son **effet**.
+      - retiens: "Commentaire : **idée + citation + procédé + effet**. Dissertation : **problématique + plan + exemples**."
+    exercices:
+      - type: ordre
+        vars: { t: [["Analyser le sujet", "Formuler la problématique", "Chercher arguments et exemples", "Construire le plan", "Rédiger l'introduction", "Rédiger le développement", "Conclure"]] }
+        enonce: "Remets les étapes de la dissertation dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}", "{{t_5}}", "{{t_6}}"]
+        correction: "Analyser, problématiser, chercher, planifier, introduire, développer, conclure."
+      - type: ordre
+        vars: { t: [["L'amorce", "La présentation du sujet", "La problématique", "L'annonce du plan"]] }
+        enonce: "Remets les éléments de l'introduction dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Amorce, sujet, problématique, annonce du plan."
+      - type: qcm
+        vars: { t: [["Dans un commentaire, que faut-il éviter ?", "raconter le texte au lieu de l'analyser", "citer le texte", "nommer les procédés"], ["Que contient la conclusion ?", "un bilan et une ouverture", "de nouveaux arguments", "la problématique seule"], ["Qu'est-ce qu'une problématique ?", "une question qui guide toute la réflexion", "un résumé du texte", "la liste des exemples"], ["Dans un commentaire, une bonne analyse associe…", "une citation, un procédé et son effet", "une opinion et une émotion", "un résumé et une date"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

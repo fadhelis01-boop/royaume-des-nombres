@@ -6,6 +6,7 @@ import { burst, centerOf } from "../lib/juice";
 import { say } from "../lib/tts";
 import { Avatar } from "../components/Avatar";
 import { Bubble } from "../components/Mascot";
+import { Icone } from "../components/Icone";
 
 // Boutique, personnage et cabane : la « boucle longue » du jeu.
 // On dépense ce qu'on a gagné en apprenant ; rien n'est payant, rien n'est caché.
@@ -72,7 +73,7 @@ export function Boutique({ tab: initial }: { tab?: string }) {
                     </button>
                     {mine.map((it) => (
                       <button key={it.id} className={`shop-item ${child.equipped?.[s] === it.id ? "on" : ""}`} onClick={() => equip(s, it.id)}>
-                        <span className="shop-emoji">{it.emoji}</span>
+                        <span className="shop-emoji"><Icone cat="boutique" id={it.id} emoji={it.emoji} size={52} /></span>
                         <span>{it.nom}</span>
                       </button>
                     ))}
@@ -102,7 +103,7 @@ export function Boutique({ tab: initial }: { tab?: string }) {
               return (
                 <button key={it.id} className={`shop-item ${has ? "owned" : can ? "can" : "cant"}`} disabled={has} onClick={(e) => buy(it.id, it.prix, e.currentTarget)} aria-label={`${it.nom}, ${it.prix} gemmes${has ? ", déjà à toi" : ""}`}>
                   <span className="shop-emoji" style={it.couleur ? { color: it.couleur } : undefined}>
-                    {it.emoji}
+                    <Icone cat="boutique" id={it.id} emoji={it.emoji} size={52} />
                   </span>
                   <span>{it.nom}</span>
                   <span className="shop-price">{has ? "✔ à toi" : `💎 ${it.prix}`}</span>
@@ -121,7 +122,7 @@ export function Boutique({ tab: initial }: { tab?: string }) {
               const it = itemById(id ?? undefined);
               return (
                 <button key={i} className={`cabane-slot ${slot === i ? "sel" : ""}`} onClick={() => setSlot(slot === i ? null : i)} aria-label={it ? it.nom : "emplacement vide"}>
-                  {it ? it.emoji : "＋"}
+                  {it ? <Icone cat="boutique" id={it.id} emoji={it.emoji} size={56} /> : "＋"}
                 </button>
               );
             })}
@@ -147,7 +148,7 @@ export function Boutique({ tab: initial }: { tab?: string }) {
                       setSlot(null);
                     }}
                   >
-                    <span className="shop-emoji">{it.emoji}</span>
+                    <span className="shop-emoji"><Icone cat="boutique" id={it.id} emoji={it.emoji} size={52} /></span>
                     <span>{it.nom}</span>
                   </button>
                 ))}

@@ -36,10 +36,14 @@ const Diplome = lazy(() => import("./pages/Diplome").then((m) => ({ default: m.D
 const DefiDuJour = lazy(() => import("./pages/DefiDuJour").then((m) => ({ default: m.DefiDuJour })));
 const Revisions = lazy(() => import("./pages/Revisions").then((m) => ({ default: m.Revisions })));
 const Jeux = lazy(() => import("./pages/Jeux").then((m) => ({ default: m.Jeux })));
+const Dico = lazy(() => import("./pages/Dico").then((m) => ({ default: m.Dico })));
 const Boutique = lazy(() => import("./pages/Boutique").then((m) => ({ default: m.Boutique })));
 const DefenseTables = lazy(() => import("./pages/jeux/DefenseTables").then((m) => ({ default: m.DefenseTables })));
 const PontFractions = lazy(() => import("./pages/jeux/PontFractions").then((m) => ({ default: m.PontFractions })));
 const CourseGrenouille = lazy(() => import("./pages/jeux/CourseGrenouille").then((m) => ({ default: m.CourseGrenouille })));
+const ConjugaisonEclair = lazy(() => import("./pages/jeux/JeuxMots").then((m) => ({ default: m.ConjugaisonEclair })));
+const MotMystere = lazy(() => import("./pages/jeux/JeuxMots").then((m) => ({ default: m.MotMystere })));
+const DicteeFlash = lazy(() => import("./pages/jeux/JeuxMots").then((m) => ({ default: m.DicteeFlash })));
 const Duel = lazy(() => import("./pages/jeux/Duel").then((m) => ({ default: m.Duel })));
 
 const NAV = [
@@ -145,7 +149,7 @@ export default function App() {
         break;
       case "jeux":
         page =
-          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : <Jeux />;
+          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : p[1] === "conjugaison" ? <ConjugaisonEclair /> : p[1] === "mystere" ? <MotMystere /> : p[1] === "flash" ? <DicteeFlash /> : <Jeux />;
         break;
       case "aventure":
         page = <Aventure part={p[1]} />;
@@ -170,6 +174,9 @@ export default function App() {
         break;
       case "tresors":
         page = <Tresors />;
+        break;
+      case "dico":
+        page = <Dico mot={p[1]} />;
         break;
       case "boutique":
         page = <Boutique tab={p[1]} />;

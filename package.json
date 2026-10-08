@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "content": "node scripts/build-content.mjs",
+    "content": "node scripts/index-visuels.mjs && node scripts/build-content.mjs",
+    "test:fr": "rolldown scripts/test-francais.ts --platform node --format esm -o .tmp/test-fr.mjs && node .tmp/test-fr.mjs",
     "content:check": "rolldown scripts/check-content.ts --platform node --format esm -o .tmp/check.mjs --log-level warn && node .tmp/check.mjs",
     "typecheck": "tsc --noEmit",
     "build": "npm run content && npm run content:check && tsc --noEmit && vite build",

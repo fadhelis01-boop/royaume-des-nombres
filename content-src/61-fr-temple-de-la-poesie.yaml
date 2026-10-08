@@ -1,0 +1,156 @@
+id: fr-temple-de-la-poesie
+matiere: francais
+titre: Le Temple de la Poésie
+sous_titre: Syllabes, rimes, strophes, sonnet — lire et sentir un poème
+emoji: 🎻
+couleur: "#7b1fa2"
+cycle: maitres
+age: 11 ans et +
+niveau: 6ᵉ – lycée
+ordre: 61
+prerequis: [fr-observatoire-du-style]
+version: 1.0.0
+intro:
+  - neo: "Douze syllabes pour un alexandrin, une césure au milieu… La poésie, c'est presque des maths ! J'adore."
+  - mia: "Et c'est surtout de la musique : les rimes se répondent, les sons dansent, les images naissent."
+
+lecons:
+  - id: compter-les-syllabes
+    titre: "Compter les syllabes d'un vers"
+    objectif: Je compte les syllabes d'un vers en tenant compte du e muet et de l'élision.
+    mots: [syllabe, vers, e muet, élision, diérèse]
+    etapes:
+      - dialogue:
+          - zero: "« Maître Corbeau, sur un arbre perché » : je compte… Maî-tre-Cor-beau… Le e de « maître », il compte ou pas ? 😳"
+          - neo: "En poésie, le e muet se prononce devant une consonne : Maî-**tre**-Cor-beau ! Mais il tombe devant une voyelle et en fin de vers."
+      - texte: |
+          Règles pour compter les syllabes d'un **vers** :
+          - le **e muet** se prononce (et compte) **devant une consonne** : *Maî-**tre** Cor-beau* ;
+          - il **ne compte pas** devant une **voyelle** (élision) : *Que vous ê-tes jo-li* → *ê-t(e) jo* ;
+          - il **ne compte jamais en fin de vers** : *un fro-ma-g(e)*.
+          - **Diérèse** : on sépare deux voyelles qui se prononcent d'habitude ensemble (*li-on* au lieu de *lion*) — **synérèse** : l'inverse.
+
+          *Maî / tre / Cor / beau, / sur / un / ar / bre / per / ché* → **10 syllabes**.
+      - retiens: "**e muet** : compte devant consonne, tombe devant voyelle et en fin de vers."
+    exercices:
+      - type: nombre
+        vars: { t: [["Maître Corbeau, sur un arbre perché", 10], ["Tenait en son bec un fromage.", 8], ["La Cigale, ayant chanté", 7], ["Demain, dès l'aube, à l'heure où blanchit la campagne,", 12], ["Les sanglots longs", 4], ["Il pleure dans mon cœur", 6], ["Comme il pleut sur la ville ;", 6]] }
+        enonce: "Combien de syllabes dans ce vers : « {{t_0}} » ?"
+        reponse: "t_1"
+        correction: "{{t_1}} syllabes."
+      - type: qcm
+        vars: { t: [["une table bleue", "le e de « table » compte (devant consonne)", "le e de « table » ne compte pas", "aucun e ne compte"], ["une belle âme", "le e de « belle » ne compte pas (devant voyelle)", "le e de « belle » compte", "on compte deux e"], ["en fin de vers : « … sa colère »", "le e final ne compte pas", "le e final compte", "il compte double"]] }
+        enonce: "Dans « {{t_0}} », que dire du e muet ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [[12, "alexandrin", "octosyllabe", "décasyllabe"], [10, "décasyllabe", "alexandrin", "octosyllabe"], [8, "octosyllabe", "alexandrin", "décasyllabe"]] }
+        enonce: "Un vers de {{t_0}} syllabes s'appelle…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} syllabes : {{t_1}}."
+
+  - id: les-rimes
+    titre: "Les rimes : disposition et richesse"
+    objectif: Je reconnais les rimes plates, croisées et embrassées, et leur richesse.
+    mots: [rime, rimes plates, rimes croisées, rimes embrassées]
+    etapes:
+      - dialogue:
+          - mia: "Les rimes, c'est la répétition d'un son à la fin des vers. Et elles peuvent danser de trois façons !"
+      - texte: |
+          **Disposition** :
+          - **plates** (ou suivies) : **AABB**
+          - **croisées** : **ABAB**
+          - **embrassées** : **ABBA**
+
+          **Richesse** (sons communs à partir de la dernière voyelle prononcée) :
+          - **pauvre** : 1 son commun (*ami / joli*) ;
+          - **suffisante** : 2 sons (*cheval / val*) ;
+          - **riche** : 3 sons ou plus (*étoile / toile* → t-oi-l).
+      - retiens: "**AABB** plates, **ABAB** croisées, **ABBA** embrassées. Plus il y a de sons communs, plus la rime est **riche**."
+    exercices:
+      - type: qcm
+        vars: { t: [["AABB", "plates", "croisées", "embrassées"], ["ABAB", "croisées", "plates", "embrassées"], ["ABBA", "embrassées", "croisées", "plates"]] }
+        enonce: "Des rimes disposées {{t_0}} sont…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : rimes {{t_1}}."
+      - type: qcm
+        vars: { t: [["« matin / chemin / rose / chose »", "plates (AABB)", "croisées (ABAB)", "embrassées (ABBA)"], ["« nuit / fleur / bruit / cœur »", "croisées (ABAB)", "plates (AABB)", "embrassées (ABBA)"], ["« mer / ciel / miel / hiver »", "embrassées (ABBA)", "croisées (ABAB)", "plates (AABB)"]] }
+        enonce: "Les mots en fin de vers sont {{t_0}}. Quelle disposition des rimes ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["fleur", "couleur", "fleuve", "flamme"], ["étoile", "toile", "étole", "étang"], ["chanson", "maison", "chanter", "chemin"], ["nuage", "orage", "nuance", "nuit"]] }
+        enonce: "Quel mot rime avec « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} / {{t_1}}"
+
+  - id: strophes-et-sonnet
+    titre: "Strophes, alexandrin, césure et sonnet"
+    objectif: Je reconnais les strophes, la césure de l'alexandrin et la forme du sonnet.
+    mots: [strophe, quatrain, tercet, sonnet, césure, hémistiche]
+    etapes:
+      - texte: |
+          - Une **strophe** est un groupe de vers : **distique** (2), **tercet** (3), **quatrain** (4), **quintil** (5), **sizain** (6).
+          - L'**alexandrin** (12 syllabes) est souvent coupé en deux **hémistiches** de 6 par la **césure** : *Demain, dès l'aube, à l'heure // où blanchit la campagne.*
+          - Le **sonnet** : **14 vers**, deux **quatrains** puis deux **tercets**, souvent en alexandrins ; le dernier vers (la « chute ») frappe l'esprit.
+      - retiens: "Sonnet = **4 + 4 + 3 + 3** vers. Alexandrin = **6 // 6** autour de la césure."
+    exercices:
+      - type: nombre
+        vars: { t: [["un quatrain", 4], ["un tercet", 3], ["un distique", 2], ["un sonnet", 14], ["un alexandrin (en syllabes)", 12], ["un hémistiche d'alexandrin (en syllabes)", 6]] }
+        enonce: "Combien de vers (ou de syllabes) compte {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Quelle suite de strophes forme un sonnet ?", "4 + 4 + 3 + 3 vers", "3 + 3 + 4 + 4 vers", "4 + 4 + 4 + 2 vers"], ["Comment appelle-t-on le dernier vers frappant d'un sonnet ?", "la chute", "la césure", "le refrain"], ["Une strophe de six vers s'appelle…", "un sizain", "un quatrain", "un tercet"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Où se place la césure dans un alexandrin classique ?", "après la 6e syllabe", "après la 4e syllabe", "après la 8e syllabe"], ["Comment s'appelle la moitié d'un alexandrin ?", "un hémistiche", "un tercet", "un quatrain"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: demain-des-l-aube
+    titre: "Lire un poème : « Demain, dès l'aube » de Victor Hugo"
+    objectif: Je comprends un poème, son émotion et sa chute.
+    mots: [poème, chute, lyrisme]
+    etapes:
+      - texte: |
+          **Demain, dès l'aube…** — Victor Hugo, *Les Contemplations* (1856)
+
+          Demain, dès l'aube, à l'heure où blanchit la campagne,
+          Je partirai. Vois-tu, je sais que tu m'attends.
+          J'irai par la forêt, j'irai par la montagne.
+          Je ne puis demeurer loin de toi plus longtemps.
+
+          Je marcherai les yeux fixés sur mes pensées,
+          Sans rien voir au dehors, sans entendre aucun bruit,
+          Seul, inconnu, le dos courbé, les mains croisées,
+          Triste, et le jour pour moi sera comme la nuit.
+
+          Je ne regarderai ni l'or du soir qui tombe,
+          Ni les voiles au loin descendant vers Harfleur,
+          Et quand j'arriverai, je mettrai sur ta tombe
+          Un bouquet de houx vert et de bruyère en fleur.
+      - dialogue:
+          - mia: "Victor Hugo a écrit ce poème pour sa fille Léopoldine, morte quatre ans plus tôt. On croit d'abord à un rendez-vous… et le dernier vers nous apprend la vérité."
+          - neo: "C'est la chute : le mot « tombe » change tout le sens du poème."
+      - retiens: "Un poème **lyrique** exprime les sentiments du poète. La **chute** est la fin qui surprend et éclaire tout le texte."
+    exercices:
+      - type: qcm
+        vars: { t: [["À quel moment de la journée part le poète ?", "à l'aube", "le soir", "à midi"], ["Où se rend le poète, d'après le dernier vers ?", "sur la tombe d'un être cher", "chez un ami vivant", "à la mer"], ["Quel est le sentiment dominant du poème ?", "la tristesse, le deuil", "la colère", "la joie"], ["Que dépose-t-il à la fin ?", "un bouquet de houx et de bruyère", "une lettre", "une couronne d'or"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["« le jour pour moi sera comme la nuit »", "une comparaison", "une métaphore", "une anaphore"], ["« J'irai par la forêt, j'irai par la montagne »", "une anaphore (répétition de « j'irai »)", "une litote", "un oxymore"], ["Les vers de ce poème sont des…", "alexandrins (12 syllabes)", "octosyllabes", "décasyllabes"]] }
+        enonce: "{{t_0}} — quelle réponse est juste ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le poème est écrit à la première personne.", true], ["Le poète admire le paysage pendant sa marche.", false], ["Le poème est composé de trois quatrains.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Relis le poème : écrit au « je », le poète marche « sans rien voir au dehors », en trois strophes de quatre vers."

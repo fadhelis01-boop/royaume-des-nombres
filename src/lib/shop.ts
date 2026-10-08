@@ -71,7 +71,7 @@ export const CAT_LABEL: Record<Cat, string> = {
 
 /** Points d'ancrage des accessoires sur chaque mascotte (en % de la boîte carrée). */
 export const ANCHORS: Record<"mia" | "neo" | "zero", Record<"chapeau" | "lunettes" | "cou", [number, number, number]>> = {
-  mia: { chapeau: [62, 6, 0.36], lunettes: [62, 44, 0.3], cou: [60, 60, 0.24] },
-  neo: { chapeau: [84, 13, 0.3], lunettes: [86, 32, 0.24], cou: [80, 54, 0.22] },
-  zero: { chapeau: [50, 4, 0.36], lunettes: [50, 34, 0.32], cou: [50, 54, 0.26] },
+  mia: { chapeau: [47, 12, 0.36], lunettes: [47, 34, 0.3], cou: [47, 44, 0.22] },
+  neo: { chapeau: [47, 13, 0.32], lunettes: [47, 33, 0.26], cou: [47, 45, 0.22] },
+  zero: { chapeau: [50, 16, 0.34], lunettes: [50, 36, 0.32], cou: [50, 48, 0.24] },
 };

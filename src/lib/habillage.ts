@@ -1,37 +1,44 @@
 // Habillage des questions : un habitant du monde « présente » chaque question,
 // avec une phrase différente. Les nombres changent déjà à chaque tirage ; ainsi
 // la mise en scène change aussi, et la 5ᵉ question ne ressemble plus à la 1ʳᵉ.
+// Le 3ᵉ élément est l'identifiant de l'illustration (img/habitants/<id>.webp), quand elle existe.
 
-const HABITANTS: Record<string, [string, string][]> = {
-  "nid-des-nombres": [["🐣", "un bébé nombre"], ["🐦", "Maman Oiselle"], ["🐿️", "l'écureuil du nid"]],
-  "foret-des-nombres": [["🐿️", "un écureuil"], ["🦔", "un hérisson"], ["🦉", "la chouette de l'Arbre-Monde"]],
-  "prairie-des-additions": [["🐰", "un lapin"], ["🦔", "une hérissonne"], ["🐝", "une abeille"]],
-  "montagne-des-multiplications": [["🦫", "une marmotte"], ["🐐", "le bouquetin guide"], ["🦅", "un aigle"]],
-  "riviere-du-partage": [["🦫", "un castor"], ["🐸", "une grenouille"], ["🐟", "un poisson bavard"]],
-  "marche-des-mesures": [["🦔", "la marchande"], ["🐭", "une souris"], ["🐰", "un client pressé"]],
-  "cite-des-formes": [["🐢", "la tortue géomètre"], ["🦫", "un castor architecte"], ["🕊️", "un pigeon"]],
-  "village-des-fractions": [["🐰", "le lapin pâtissier"], ["🐭", "la souris boulangère"], ["🐦", "un oiseau gourmand"]],
-  "port-des-decimaux": [["🦦", "une loutre du port"], ["🐦", "le pélican capitaine"], ["🦀", "un crabe"]],
-  "atelier-des-problemes": [["🦝", "le raton laveur bricoleur"], ["🕷️", "l'araignée détective"], ["🔎", "le carnet d'enquête"]],
-  "jardin-de-fibonacci": [["🐌", "un escargot"], ["🐝", "une abeille"], ["🐰", "un lapin"]],
-  "tour-des-proportions": [["🦒", "la girafe cartographe"], ["🐜", "une fourmi"], ["🚂", "le chef de gare"]],
-  "royaume-des-relatifs": [["🐧", "un manchot"], ["🦭", "le phoque"], ["👑", "le roi Zéro"]],
-  "grotte-de-l-algebre": [["🦎", "Ixe"], ["🦇", "une chauve-souris"], ["🦎", "un axolotl"]],
-  "chateau-de-la-geometrie": [["🦉", "le hibou architecte"], ["🐐", "une chèvre des remparts"], ["📐", "l'arpenteur"]],
-  "tour-des-puissances": [["🐿️", "un écureuil volant"], ["🐰", "l'astronaute lapin"], ["🚀", "le contrôle de vol"]],
-  "observatoire-des-donnees": [["🦦", "un suricate guetteur"], ["🦉", "le hibou statisticien"], ["🔭", "l'astronome"]],
+type H = [string, string, string];
+const HABITANTS: Record<string, H[]> = {
+  "nid-des-nombres": [["🐣", "un bébé nombre", "bebe-nombre"], ["🐦", "Maman Oiselle", "oiselle"], ["🐿️", "l'écureuil du nid", "ecureuil"]],
+  "foret-des-nombres": [["🐿️", "un écureuil", "ecureuil"], ["🦔", "un hérisson", "herisson"], ["🦉", "la chouette de l'Arbre-Monde", "chouette"]],
+  "prairie-des-additions": [["🐰", "un lapin", "lapin"], ["🦔", "une hérissonne", "herissonne"], ["🐝", "une abeille", "abeille"]],
+  "montagne-des-multiplications": [["🦫", "une marmotte", "marmotte"], ["🐐", "le bouquetin guide", "bouquetin"], ["🦅", "un aigle", "aigle"]],
+  "riviere-du-partage": [["🦫", "un castor", "castor"], ["🐸", "une grenouille", "grenouille"], ["🐟", "un poisson bavard", "poisson"]],
+  "marche-des-mesures": [["🦔", "la marchande", "marchande"], ["🐭", "une souris", "souris"], ["🐰", "un client pressé", "client"]],
+  "cite-des-formes": [["🐢", "la tortue géomètre", "tortue"], ["🦫", "un castor architecte", "castor-architecte"], ["🕊️", "un pigeon", "pigeon"]],
+  "village-des-fractions": [["🐰", "le lapin pâtissier", "patissier"], ["🐭", "la souris boulangère", "boulangere"], ["🐦", "un oiseau gourmand", "oiseau"]],
+  "port-des-decimaux": [["🦦", "une loutre du port", "loutre"], ["🐦", "le pélican capitaine", "pelican"], ["🦀", "un crabe", "crabe"]],
+  "atelier-des-problemes": [["🦝", "le raton laveur bricoleur", "raton"], ["🕷️", "l'araignée détective", "araignee"], ["🐌", "un escargot curieux", "escargot"]],
+  "jardin-de-fibonacci": [["🐌", "un escargot", "escargot"], ["🐝", "une abeille", "abeille"], ["🐰", "un lapin", "lapin"]],
+  "tour-des-proportions": [["🦒", "la girafe cartographe", "girafe"], ["🐜", "une fourmi", "fourmi"], ["🦊", "le chef de gare", "chef-gare"]],
+  "royaume-des-relatifs": [["🐧", "un manchot", "manchot"], ["🦭", "le phoque", "phoque"], ["🐧", "un manchot frileux", "manchot"]],
+  "grotte-de-l-algebre": [["🦇", "une chauve-souris", "chauve-souris"], ["🦎", "un axolotl", "axolotl"], ["🦇", "une chauve-souris rieuse", "chauve-souris"]],
+  "chateau-de-la-geometrie": [["🦉", "le hibou architecte", "hibou"], ["🐐", "une chèvre des remparts", "chevre"], ["🦉", "le hibou des tours", "hibou"]],
+  "tour-des-puissances": [["🐿️", "un écureuil volant", "ecureuil-volant"], ["🐰", "l'astronaute lapin", "lapin-astronaute"], ["🐿️", "un écureuil pilote", "ecureuil-volant"]],
+  "observatoire-des-donnees": [["🦦", "un suricate guetteur", "suricate"], ["🦉", "le hibou statisticien", "hibou-stat"], ["🦦", "une suricate qui compte", "suricate"]],
 };
-const PAR_CYCLE: Record<string, [string, string][]> = {
-  astuces: [["💡", "la Lampe des Astuces"], ["🦉", "la chouette de l'École"]],
-  maitres: [["📜", "un vieux livre"], ["🧭", "une savante"], ["🦉", "le gardien de la Bibliothèque"]],
+const PAR_CYCLE: Record<string, H[]> = {
+  astuces: [["🦉", "la chouette de l'École", "chouette"]],
+  maitres: [["🦉", "le gardien de la Bibliothèque", "hibou"], ["🦉", "une chouette savante", "chouette"]],
 };
-const LEADS = ["{e} {n} a besoin de toi :", "{e} {n} te lance un défi :", "{e} {n} se gratte la tête :", "{e} {n} te demande :", "{e} {n} parie que tu ne trouveras pas :"];
+const LEADS = ["{n} a besoin de toi :", "{n} te lance un défi :", "{n} se gratte la tête :", "{n} te demande :", "{n} parie que tu ne trouveras pas :"];
 
-export function leadFor(worldId: string, cycle: string, seed: number): string {
+export interface Lead {
+  emoji: string;
+  id: string;
+  text: string;
+}
+
+export function leadFor(worldId: string, cycle: string, seed: number): Lead | undefined {
   const pool = HABITANTS[worldId] ?? PAR_CYCLE[cycle];
-  if (!pool) return "";
-  const [e, n] = pool[seed % pool.length];
-  const t = LEADS[Math.floor(seed / 7) % LEADS.length];
-  const s = t.replace("{e}", e).replace("{n}", n);
-  return s.replace(/^(\S+) (\p{Ll})/u, (_, a, b) => `${a} ${b.toUpperCase()}`);
+  if (!pool) return undefined;
+  const [emoji, n, id] = pool[seed % pool.length];
+  const t = LEADS[Math.floor(seed / 7) % LEADS.length].replace("{n}", n);
+  return { emoji, id, text: t.charAt(0).toUpperCase() + t.slice(1) };
 }

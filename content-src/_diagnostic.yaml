@@ -140,3 +140,77 @@
   question: { type: qcm, enonce: "Négation de « ∀x ∈ ℝ, f(x) > 0 » ?", choix: ["∃x ∈ ℝ, f(x) ≤ 0", "∀x ∈ ℝ, f(x) ≤ 0", "∃x ∈ ℝ, f(x) > 0", "∀x ∈ ℝ, f(x) < 0"] }
 - monde: temple-de-la-logique
   question: { type: qcm, enonce: "Contraposée de « S'il pleut, alors le sol est mouillé » ?", choix: ["Si le sol n'est pas mouillé, alors il ne pleut pas", "Si le sol est mouillé, alors il pleut", "S'il ne pleut pas, le sol n'est pas mouillé", "Il pleut et le sol est mouillé"] }
+
+# ---- Archipel des Mots (français) : 2 questions par île, dans l'ordre de la carte.
+- monde: fr-ile-des-sons
+  question: { type: qcm, vars: { t: [["gâteau", "g dur comme dans gare", "j comme dans girafe"], ["girafe", "j comme dans jour", "g dur comme dans gare"], ["glace", "g dur comme dans gare", "j comme dans girafe"]] }, enonce: "Dans « {{t_0}} », le g se prononce…", choix: ["{{t_1}}", "{{t_2}}"] }
+- monde: fr-ile-des-sons
+  question: { type: qcm, vars: { t: [["une pomme", "pomme", "pome", "pomm"], ["un bateau", "bateau", "bato", "batau"], ["un poisson", "poisson", "poison", "poisom"]] }, enonce: "Comment s'écrit : {{t_0}} ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-foret-des-noms
+  question: { type: qcm, vars: { t: [["un cheval", "des chevaux", "des chevals", "des chevaus"], ["un jeu", "des jeux", "des jeus", "des jeu"], ["un bijou", "des bijoux", "des bijous", "des bijou"], ["un journal", "des journaux", "des journals", "des journeaux"]] }, enonce: "Le pluriel de « {{t_0}} » ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-foret-des-noms
+  question: { type: qcm, vars: { t: [["courage", "nom", "verbe", "adjectif"], ["rapide", "adjectif", "nom", "verbe"], ["courir", "verbe", "nom", "adjectif"], ["Paris", "nom propre", "verbe", "adjectif"]] }, enonce: "Quelle est la nature du mot « {{t_0}} » ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-cite-de-la-ponctuation
+  question: { type: qcm, vars: { t: [["Quel âge as-tu", "?", ".", "!"], ["Quelle belle surprise", "!", "?", ","], ["Il fait beau aujourd'hui", ".", "?", "!"]] }, enonce: "Quel signe termine la phrase : « {{t_0}} … »", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-cite-de-la-ponctuation
+  question: { type: qcm, vars: { t: [["une phrase négative", "Je ne joue pas.", "Je joue.", "Joue-t-il ?"], ["une phrase interrogative", "Viens-tu ce soir ?", "Je viens ce soir.", "Viens ce soir !"], ["une phrase impérative", "Ferme la porte.", "Tu fermes la porte.", "Fermes-tu la porte ?"]] }, enonce: "Laquelle est {{t_0}} ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-vallee-des-verbes
+  question: { type: qcm, vars: { t: [["Dans la cour jouent les enfants.", "les enfants", "la cour", "jouent"], ["Le chat de Léa dort.", "le chat de Léa", "Léa", "dort"], ["Au loin brillent les étoiles.", "les étoiles", "au loin", "brillent"]] }, enonce: "Quel est le sujet ? « {{t_0}} »", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-vallee-des-verbes
+  question: { type: qcm, vars: { t: [["finir", "2e groupe", "1er groupe", "3e groupe"], ["chanter", "1er groupe", "2e groupe", "3e groupe"], ["prendre", "3e groupe", "1er groupe", "2e groupe"], ["aller", "3e groupe", "1er groupe", "2e groupe"]] }, enonce: "« {{t_0}} » est un verbe du…", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-prairie-des-accords
+  question: { type: qcm, vars: { t: [["une fille", "heureuse", "heureux", "heureuze"], ["des robes", "vertes", "verts", "verte"], ["un", "bel arbre", "beau arbre", "belle arbre"]] }, enonce: "Complète : {{t_0}} …", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-prairie-des-accords
+  question: { type: qcm, vars: { t: [["Les enfants de ma voisine …", "jouent", "joue", "joues"], ["Le chien des voisins …", "aboie", "aboient", "aboies"], ["Mia et Néo …", "chantent", "chante", "chantes"]] }, enonce: "{{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-montagnes-du-temps
+  question: { type: qcm, vars: { t: [["être", "je serai", "je serais", "j'êterai"], ["aller", "j'irai", "j'allerai", "j'irais"], ["faire", "je ferai", "je fairai", "je ferais"]] }, enonce: "Futur simple de « {{t_0}} » avec je :", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-montagnes-du-temps
+  question: { type: qcm, vars: { t: [["Elle (partir), passé composé", "elle est partie", "elle a parti", "elle est parti"], ["Nous (finir), imparfait", "nous finissions", "nous finissons", "nous finirons"], ["Ils (prendre), présent", "ils prennent", "ils prendent", "ils prenent"]] }, enonce: "Conjugue : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-marais-des-homophones
+  question: { type: qcm, vars: { t: [["Il … un chien.", "a", "à"], ["Je vais … la piscine.", "à", "a"], ["Le ciel … bleu.", "est", "et"], ["Mes amis … partis.", "sont", "son"]] }, enonce: "Complète : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}"] }
+- monde: fr-marais-des-homophones
+  question: { type: qcm, vars: { t: [["… vas-tu ?", "Où", "Ou"], ["Les élèves … fini.", "ont", "on"], ["Il … lave les mains.", "se", "ce"], ["Mets-le …, sur la table.", "là", "la"]] }, enonce: "Complète : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}"] }
+- monde: fr-jardin-des-mots
+  question: { type: qcm, vars: { t: [["grand", "petit", "géant", "haut"], ["rapide", "lent", "vif", "pressé"], ["ouvrir", "fermer", "entrouvrir", "rouvrir"]] }, enonce: "Le contraire de « {{t_0}} » :", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-jardin-des-mots
+  question: { type: qcm, vars: { t: [["refaire", "re- : de nouveau", "re- : le contraire", "re- : avant"], ["impossible", "im- : le contraire", "im- : dedans", "im- : très"], ["fillette", "-ette : petit", "-ette : un métier", "-ette : une action"]] }, enonce: "Dans « {{t_0}} », que veut dire le préfixe ou le suffixe ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-port-des-phrases
+  question: { type: qcm, vars: { t: [["Léa mange une pomme.", "une pomme", "COD", "COI", "complément circonstanciel"], ["Il parle à sa sœur.", "à sa sœur", "COI", "COD", "sujet"], ["Le matin, je cours.", "le matin", "complément circonstanciel de temps", "COD", "sujet"]] }, enonce: "Dans « {{t_0}} », quelle est la fonction de « {{t_1}} » ?", choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"] }
+- monde: fr-port-des-phrases
+  question: { type: qcm, vars: { t: [["Le ciel est bleu.", "attribut du sujet", "épithète", "COD"], ["un ciel bleu", "épithète", "attribut du sujet", "COD"]] }, enonce: "Fonction de « bleu » dans « {{t_0}} » :", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-tour-des-conjugaisons
+  question: { type: qcm, vars: { t: [["Il faut que tu … (être)", "sois", "es", "soit"], ["Si j'avais des ailes, je … (voler)", "volerais", "volerai", "vole"], ["Soudain, la porte … (s'ouvrir, passé simple)", "s'ouvrit", "s'ouvrait", "s'ouvra"]] }, enonce: "{{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-tour-des-conjugaisons
+  question: { type: qcm, vars: { t: [["j'avais mangé", "plus-que-parfait", "passé composé", "futur antérieur"], ["nous aurons fini", "futur antérieur", "plus-que-parfait", "conditionnel passé"], ["ils vinrent", "passé simple", "imparfait", "présent"]] }, enonce: "À quel temps est « {{t_0}} » ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-chateau-des-participes
+  question: { type: qcm, vars: { t: [["Elles sont (arriver).", "arrivées", "arrivé", "arrivés"], ["Les fleurs que j'ai (cueillir).", "cueillies", "cueilli", "cueillis"], ["Elles ont (chanter).", "chanté", "chantées", "chantés"]] }, enonce: "Accorde le participe : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-chateau-des-participes
+  question: { type: qcm, vars: { t: [["Il va (manger).", "manger", "mangé", "mangeait"], ["Il a (manger).", "mangé", "manger", "mangeait"], ["Vous (chanter) bien.", "chantez", "chanter", "chanté"]] }, enonce: "Complète : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-archipel-des-propositions
+  question: { type: qcm, vars: { t: [["Je pense qu'il viendra.", "une subordonnée complétive", "une relative", "une circonstancielle"], ["Le livre que je lis est passionnant.", "une subordonnée relative", "une complétive", "une circonstancielle"], ["Quand il pleut, je lis.", "une subordonnée circonstancielle de temps", "une relative", "une complétive"]] }, enonce: "« {{t_0}} » contient…", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-archipel-des-propositions
+  question: { type: nombre, vars: { t: [["Le chat dort.", 1], ["Le chat dort et le chien aboie.", 2], ["Je crois que tu as raison mais je vérifie.", 3]] }, enonce: "Combien de propositions dans : « {{t_0}} » ?", reponse: "t_1" }
+- monde: fr-atelier-de-l-ecrivain
+  question: { type: qcm, vars: { t: [["Soudain, un orage éclata.", "élément perturbateur", "situation initiale", "situation finale"], ["Il était une fois une reine très bonne.", "situation initiale", "dénouement", "péripéties"]] }, enonce: "« {{t_0}} » — Quelle étape du récit ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-atelier-de-l-ecrivain
+  question: { type: qcm, vars: { t: [["au maire de ta ville", "Monsieur le Maire,", "Salut !", "Coucou,"], ["à ta meilleure amie", "Chère Léa,", "Madame,", "Monsieur le Directeur,"]] }, enonce: "Quelle formule d'appel pour écrire {{t_0}} ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-bibliotheque-des-textes
+  question: { type: qcm, vars: { t: [["Léa ferma son parapluie et secoua ses bottes.", "Il pleuvait dehors.", "Il faisait très chaud.", "Léa allait se coucher."], ["Ses mains tremblaient et son cœur battait très fort.", "Il avait peur.", "Il s'ennuyait.", "Il riait."]] }, enonce: "« {{t_0}} » — Que peut-on déduire ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-bibliotheque-des-textes
+  question: { type: qcm, vars: { t: [["une recette", "dire quoi faire", "raconter", "émouvoir"], ["une publicité", "convaincre", "raconter", "expliquer"], ["un conte", "raconter une histoire", "convaincre", "donner une consigne"]] }, enonce: "Quel est le but principal d'{{t_0}} ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-observatoire-du-style
+  question: { type: qcm, vars: { t: [["Ses yeux brillaient comme des étoiles.", "une comparaison", "une métaphore", "une hyperbole"], ["Cette fille est un rayon de soleil.", "une métaphore", "une comparaison", "une litote"], ["Je meurs de faim !", "une hyperbole", "une litote", "un oxymore"]] }, enonce: "« {{t_0}} » est…", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-observatoire-du-style
+  question: { type: qcm, vars: { t: [["bagnole", "familier", "courant", "soutenu"], ["automobile", "soutenu", "familier", "courant"], ["voiture", "courant", "familier", "soutenu"]] }, enonce: "« {{t_0}} » appartient au niveau de langue…", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-temple-de-la-poesie
+  question: { type: nombre, vars: { t: [["Maître Corbeau, sur un arbre perché", 10], ["Il pleure dans mon cœur", 6], ["Demain, dès l'aube, à l'heure où blanchit la campagne,", 12]] }, enonce: "Combien de syllabes dans ce vers : « {{t_0}} » ?", reponse: "t_1" }
+- monde: fr-temple-de-la-poesie
+  question: { type: qcm, vars: { t: [["ABAB", "croisées", "plates", "embrassées"], ["ABBA", "embrassées", "croisées", "plates"], ["AABB", "plates", "embrassées", "croisées"]] }, enonce: "Des rimes {{t_0}} sont…", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-palais-de-l-orthographe
+  question: { type: qcm, vars: { t: [["Elles sont … émues.", "tout", "toutes", "toute"], ["Elle est … petite.", "toute", "tout", "toutes"], ["… soit ta décision, je t'aiderai.", "Quelle que", "Quelque", "Quel que"]] }, enonce: "Complète : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-palais-de-l-orthographe
+  question: { type: qcm, vars: { t: [["Elles se sont (parler).", "parlé", "parlées", "parlés"], ["Elle s'est (laver) les mains.", "lavé", "lavée", "lavées"], ["des chaussures (marron)", "marron", "marrons", "marronnes"]] }, enonce: "Écris la bonne forme : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-academie-des-lettres
+  question: { type: qcm, vars: { t: [["qu'il chantât", "subjonctif imparfait", "passé simple", "imparfait"], ["il eut chanté", "passé antérieur", "subjonctif plus-que-parfait", "plus-que-parfait"]] }, enonce: "À quel temps est « {{t_0}} » ?", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+- monde: fr-academie-des-lettres
+  question: { type: qcm, vars: { t: [["Le danger est … : il va arriver.", "imminent", "éminent", "immanent"], ["Les voleurs sont entrés par …", "effraction", "infraction", "affection"]] }, enonce: "Choisis le bon mot : {{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }

@@ -1,7 +1,7 @@
 // Types du contenu (produit par scripts/build-content.mjs à partir de content-src/*.yaml)
 // et de la progression des enfants.
 
-export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant";
+export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant" | "gribouille";
 export interface Line {
   who: Who;
   text: string;
@@ -15,7 +15,7 @@ export type VisSpec = { type: string; [k: string]: unknown };
 
 export interface ExSpec {
   id?: string;
-  type: "nombre" | "qcm" | "vf" | "comparer" | "liste" | "expression" | "ordre" | "droite" | "texte" | "champs" | "blocs" | "partage" | "sauts" | "colorier" | "horloge" | "payer";
+  type: "nombre" | "qcm" | "vf" | "comparer" | "liste" | "expression" | "ordre" | "droite" | "texte" | "champs" | "blocs" | "partage" | "sauts" | "colorier" | "horloge" | "payer" | "mot" | "dictee" | "surligner" | "classer";
   vars?: Record<string, unknown>;
   si?: string;
   enonce: string;
@@ -59,6 +59,14 @@ export interface ExSpec {
   emoji?: string;
   dessin?: "disque" | "barre";
   clavier?: "nombre" | "algebre" | "texte";
+  // français
+  /** dictée : le texte lu à voix haute et à écrire */
+  dictee?: string;
+  /** surligner : la phrase, les mots à toucher entre crochets « Le [chat] dort. » */
+  phrase?: string;
+  /** classer : les catégories et les mots [mot, n° de catégorie] */
+  categories?: string[];
+  mots?: [string, number | string][];
 }
 
 export type Step =
@@ -102,7 +110,10 @@ export interface World {
   lecons: Lesson[];
   version: string;
   source?: "integre" | "importe";
+  /** le royaume : les nombres (maths) ou les mots (français) */
+  matiere: Matiere;
 }
+export type Matiere = "maths" | "francais";
 
 export interface GlossEntry {
   mot: string;
@@ -137,6 +148,7 @@ export interface Manifest {
   jeux: Record<string, { titre: string; niveau: string; exercices: ExSpec[] }>;
   changelog: { version: string; date: string; notes: string[] }[];
   histoire?: Histoire;
+  histoireFr?: Histoire;
 }
 
 export interface Choix {
@@ -210,6 +222,8 @@ export interface Child {
   abandons: Record<string, number>; // leçons / défis quittés en cours de route (pour les parents)
   sessions: { day: string; start: number; min: number; q: number }[]; // séances récentes
   recordsJeux: Record<string, number>; // niveaux atteints dans les mini-jeux
+  matiere: Matiere; // royaume affiché sur la carte
+  carnet: string[]; // mots découverts (dictionnaire) : la collection de l'enfant
 }
 
 export interface Settings {

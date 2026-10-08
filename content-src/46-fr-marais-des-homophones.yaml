@@ -1,0 +1,244 @@
+id: fr-marais-des-homophones
+matiere: francais
+titre: Le Marais des Homophones
+sous_titre: a/à, et/est, son/sont, on/ont, ou/où, ce/se, ces/ses, la/là
+emoji: 🐸
+couleur: "#43a047"
+cycle: graines
+age: 7-11 ans
+niveau: CE1 – CM2
+ordre: 46
+prerequis: [fr-vallee-des-verbes]
+version: 1.0.0
+intro:
+  - zero: "Ici, les mots ont des jumeaux ! Ils se prononcent pareil, mais ne s'écrivent pas pareil. C'est un piège géant. 😳"
+  - neo: "J'ai un super-pouvoir : le Miroir du Temps. Je remplace par un autre mot ; si la phrase tient debout, j'ai trouvé le bon jumeau."
+  - mia: "On les démasque un par un ?"
+
+lecons:
+  - id: a-ou-a
+    titre: "a ou à ?"
+    objectif: Je distingue « a » (verbe avoir) et « à » (petit mot de lien) en remplaçant par « avait ».
+    mots: [homophone, a, à]
+    etapes:
+      - dialogue:
+          - neo: "« Léa a un vélo » : je remplace par « avait » → « Léa avait un vélo ». Ça marche : c'est le verbe avoir, sans accent."
+          - zero: "« Je vais avait la plage » ? …Ça ne marche pas. Donc c'est « à », avec accent !"
+      - texte: |
+          - **a** (sans accent) = le verbe **avoir** → on peut le remplacer par **avait** : *Il **a** faim → il **avait** faim.*
+          - **à** (avec accent) = un petit mot de **lien** (préposition) → on ne peut **pas** dire « avait » : *Je vais **à** l'école.*
+      - astuce:
+          texte: "Le Miroir du Temps : si « avait » marche, c'est **a**. Sinon, c'est **à**, avec son accent comme une petite flèche."
+          qui: neo
+      - retiens: "**a** = avait ; **à** = tout le reste (à l'école, à vélo, à midi)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Tom … un chien.", a], ["Je vais … la piscine.", à], ["Elle … dix ans.", a], ["Nous partons … midi.", à], ["Il … froid.", a], ["Mia joue … la marelle.", à], ["Ma sœur … perdu sa clé.", a], ["Il habite … Paris.", à]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{si(t_1=='a','à','a')}}"]
+        explications: ["", "Essaie de remplacer par « avait » : si ça marche, c'est « a » sans accent ; sinon c'est « à »."]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Il a un vélo rouge.", "Je vais à la plage.", "Léa a mal à la tête.", "Tom a écrit à sa grand-mère."] }
+        enonce: "Écoute et écris : attention aux « a » et aux « à » !"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Léa [a] mal à la tête.", "Tom [a] écrit à sa grand-mère.", "Il [a] une boîte à outils.", "À midi, Mia [a] faim."] }
+        enonce: "Touche le « a » du verbe avoir."
+        phrase: "{{t}}"
+        correction: "On peut le remplacer par « avait »."
+
+
+  - id: et-ou-est
+    titre: "et ou est ?"
+    objectif: Je distingue « est » (verbe être) et « et » (pour ajouter) en remplaçant par « était ».
+    mots: [et, est]
+    etapes:
+      - dialogue:
+          - neo: "« Le ciel est bleu » → « le ciel était bleu ». Ça marche : c'est le verbe être."
+          - zero: "« Du pain était du beurre » ? Bizarre ! Donc c'est « et » : du pain ET du beurre."
+      - texte: |
+          - **est** = le verbe **être** → on peut dire **était** : *Le chat **est** noir → le chat **était** noir.*
+          - **et** = pour **ajouter**, on peut dire **et puis** : *un chat **et** un chien → un chat **et puis** un chien.*
+      - retiens: "**est** = était ; **et** = et puis."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le soleil … chaud.", est], ["J'ai un crayon … une gomme.", et], ["Mia … ma meilleure amie.", est], ["Il chante … il danse.", et], ["Cette pomme … rouge … sucrée.", "est … et"], ["Paul … Léa jouent.", et]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{si(t_1=='est','et',si(t_1=='et','est','et … est'))}}"]
+        explications: ["", "Remplace par « était » : si ça marche, c'est « est » ; sinon c'est « et » (et puis)."]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Le chat est noir et blanc.", "Mia est grande et forte.", "Il est midi et j'ai faim."] }
+        enonce: "Écoute et écris la phrase."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Le chat [est] noir et blanc.", "Il [est] midi et j'ai faim.", "Mia [est] grande et forte.", "Le ciel [est] gris et il pleut."] }
+        enonce: "Touche « est », le verbe être."
+        phrase: "{{t}}"
+        correction: "On peut le remplacer par « était »."
+
+
+  - id: son-ou-sont
+    titre: "son ou sont ?"
+    objectif: Je distingue « sont » (verbe être) et « son » (déterminant, à lui ou à elle).
+    mots: [son, sont]
+    etapes:
+      - dialogue:
+          - neo: "« Ils sont contents » → « ils étaient contents » : c'est le verbe être au pluriel."
+          - mia: "« Son chat » → « mon chat » : c'est un déterminant, il dit à qui est la chose."
+      - texte: |
+          - **sont** = verbe **être** (pluriel) → on peut dire **étaient** : *Les enfants **sont** là.*
+          - **son** = déterminant (à lui, à elle) → on peut dire **mon** : ***son** vélo → **mon** vélo.*
+      - retiens: "**sont** = étaient ; **son** = mon."
+    exercices:
+      - type: qcm
+        vars: { t: [["Les oiseaux … dans le nid.", sont], ["Léa range … cartable.", son], ["Mes parents … partis.", sont], ["Tom aime … chien.", son], ["Ils … très gentils.", sont], ["Il a perdu … ballon.", son]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{si(t_1=='son','sont','son')}}"]
+        explications: ["", "Remplace par « étaient » : si ça marche, c'est « sont » ; si « mon » marche, c'est « son »."]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Ses amis sont partis avec son frère.", "Les livres sont sur son bureau.", "Son chien et son chat sont gentils."] }
+        enonce: "Écoute et écris : son ou sont ?"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Les fleurs [sont] dans son jardin.", "Son frère et sa sœur [sont] là.", "Où [sont] son sac et son manteau ?"] }
+        enonce: "Touche « sont », le verbe être."
+        phrase: "{{t}}"
+        correction: "On peut le remplacer par « étaient »."
+
+
+  - id: on-ou-ont
+    titre: "on ou ont ?"
+    objectif: Je distingue « ont » (verbe avoir) et « on » (pronom, comme « il »).
+    mots: [on, ont]
+    etapes:
+      - dialogue:
+          - neo: "« Ils ont faim » → « ils avaient faim » : c'est le verbe avoir."
+          - zero: "« On mange » → « il mange » : c'est un pronom ! On = quelqu'un, ou nous."
+      - texte: |
+          - **ont** = verbe **avoir** (pluriel) → on peut dire **avaient** : *Ils **ont** un chat.*
+          - **on** = pronom sujet → on peut dire **il** : ***On** joue → **il** joue.*
+      - retiens: "**ont** = avaient ; **on** = il."
+    exercices:
+      - type: qcm
+        vars: { t: [["Mes amis … un chien.", ont], ["… va au cinéma ce soir.", on], ["Les élèves … fini leur travail.", ont], ["Ce matin, … a vu un arc-en-ciel.", on], ["Ils … peur du noir.", ont], ["Quand … est fatigué, … dort.", "on … on"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{si(t_1=='ont','on',si(t_1=='on','ont','ont … ont'))}}"]
+        explications: ["", "Remplace par « avaient » : si ça marche, c'est « ont » ; si « il » marche, c'est « on »."]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["On a vu qu'ils ont gagné.", "Mes amis ont un chat.", "On joue dehors ?", "Ils ont dit qu'on partait."] }
+        enonce: "Écoute et écris : on ou ont ?"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Les enfants [ont] faim, on mange ?", "On dit qu'ils [ont] un secret.", "Mes parents [ont] acheté une voiture."] }
+        enonce: "Touche « ont », le verbe avoir."
+        phrase: "{{t}}"
+        correction: "On peut le remplacer par « avaient »."
+
+
+  - id: ou-ou
+    titre: "ou ou où ?"
+    objectif: Je distingue « ou » (ou bien, le choix) et « où » (le lieu, la question « où ? »).
+    mots: [ou, où]
+    etapes:
+      - dialogue:
+          - mia: "« Tu veux du jus ou de l'eau ? » → « ou bien de l'eau » : c'est un choix, pas d'accent."
+          - neo: "« Où vas-tu ? » : on demande un lieu. L'accent grave est là pour indiquer l'endroit !"
+      - texte: |
+          - **ou** = **ou bien** (un choix) : *Pomme **ou** poire ?*
+          - **où** = le **lieu** (ou le moment) : ***Où** habites-tu ? La ville **où** je suis né.*
+      - retiens: "**ou** = ou bien ; **où** = l'endroit."
+    exercices:
+      - type: qcm
+        vars: { t: [["Tu préfères le rouge … le bleu ?", ou], ["… as-tu caché le trésor ?", où], ["C'est la maison … j'ai grandi.", où], ["Viens à pied … à vélo.", ou], ["Je ne sais pas … sont mes clés.", où], ["Du thé … du café ?", ou]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{si(t_1=='ou','où','ou')}}"]
+        explications: ["", "Si tu peux dire « ou bien », pas d'accent ; si c'est un lieu, accent : où."]
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Où vas-tu ?", "Tu veux du thé ou du lait ?", "La ville où je suis né est loin.", "Rouge ou bleu, où est mon crayon ?"] }
+        enonce: "Écoute et écris : ou ou où ?"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["[Où] as-tu mis le sel ou le poivre ?", "C'est la maison [où] j'habite.", "Je ne sais pas [où] aller, ici ou ailleurs."] }
+        enonce: "Touche « où », le mot du lieu."
+        phrase: "{{t}}"
+        correction: "« où » indique le lieu ; « ou » = ou bien."
+
+
+  - id: ce-se-ces-ses
+    titre: "ce / se, ces / ses, c'est / s'est"
+    objectif: Je distingue les homophones en c et en s, en reconnaissant le pronom réfléchi « se ».
+    mots: [ce, se, ces, ses]
+    etapes:
+      - dialogue:
+          - neo: "Le S de « se » veut dire « soi-même » : il se lave = il lave lui-même. Pareil pour s'est."
+          - mia: "Et « ses » = les siens (à lui) ; « ces » = ceux-là, qu'on montre du doigt."
+      - texte: |
+          - **se** : devant un **verbe**, veut dire « soi-même » : *Il **se** lave.* (je **me** lave)
+          - **ce** : devant un **nom** (ce chat-là) ou dans « ce que », « c'est » : ***ce** livre*.
+          - **ses** = les siens (à lui, à elle) → on peut dire **mes** : *Il range **ses** jouets.*
+          - **ces** = ceux-là (on les montre) → on peut dire **ces …-là** : ***Ces** fleurs sont belles.*
+          - **s'est** = verbe pronominal au passé composé : *Il **s'est** levé.* (je **me suis** levé)
+          - **c'est** = cela est : ***C'est** beau.*
+      - retiens: "**se/s'est** → soi-même (je me…) ; **ses** → mes ; **ces** → ces…-là ; **ce/c'est** → cela."
+    exercices:
+      - type: qcm
+        vars: { t: [["Le chat … lèche les pattes.", se, ce], ["Regarde … nuage !", ce, se], ["Tom a oublié … gants.", ses, ces], ["… montagnes sont très hautes.", Ces, Ses], ["Elle … est réveillée tôt.", "s'", "c'"], ["… est mon livre préféré.", "C'", "S'"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "Essaie : « me/mes » (à soi) ou « ceci/ces…-là » (on montre) ?"]
+        niveau: 2
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Il se lave les mains.", "Ces chats sont mignons.", "Elle range ses jouets.", "C'est mon ami.", "Il s'est levé tôt."] }
+        enonce: "Écoute et écris la phrase."
+        dictee: "{{m}}"
+        niveau: 2
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Le chat [se] lèche, ce matin.", "Ces enfants [se] cachent.", "Il [se] lave avec ce savon.", "Elle range ses jouets et [se] couche."] }
+        enonce: "Touche « se », le pronom devant un verbe."
+        phrase: "{{t}}"
+        correction: "« se » accompagne un verbe : se laver, se cacher."
+
+
+  - id: la-l-a-la
+    titre: "la, l'a ou là ?"
+    objectif: Je distingue « la » (déterminant ou pronom), « l'a » (l'avait) et « là » (l'endroit).
+    mots: [la, là]
+    etapes:
+      - dialogue:
+          - zero: "La, là, l'a… Ils sont trois ! Des triplés ! 😳"
+          - neo: "Même méthode : « là » = ici, là-bas ; « l'a » = l'avait ; sinon c'est « la »."
+      - texte: |
+          - **là** = un **endroit** → on peut dire **ici** ou **là-bas** : *Pose-le **là**.*
+          - **l'a** = « le » ou « la » + **a** (avoir) → on peut dire **l'avait** : *Il **l'a** vu.*
+          - **la** = déterminant (*la table*) ou pronom (*je **la** vois*).
+      - retiens: "**là** = ici ; **l'a** = l'avait ; **la** = le reste."
+    exercices:
+      - type: qcm
+        vars: { t: [["Mets ton sac …, près de la porte.", là, "l'a"], ["Cette chanson, il … apprise par cœur.", "l'a", là], ["… lune est pleine ce soir.", La, Là], ["Mon chat ? Je … caresse.", la, "l'a"], ["Ma clé ? Léa … trouvée.", "l'a", la]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "« là » = ici ; « l'a » = l'avait ; sinon « la »."]
+        niveau: 2
+        correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Il l'a posée là.", "La clé est là.", "Cette chanson, elle l'a apprise."] }
+        enonce: "Écoute et écris : la, l'a ou là ?"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Pose la boîte [là], sur la table.", "[Là], la lune brille.", "Ta balle est [là], je l'ai trouvée."] }
+        enonce: "Touche « là », le mot du lieu."
+        phrase: "{{t}}"
+        correction: "« là » indique un endroit : on peut dire « ici »."

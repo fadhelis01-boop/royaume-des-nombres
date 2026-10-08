@@ -1,0 +1,207 @@
+id: fr-palais-de-l-orthographe
+matiere: francais
+titre: Le Palais de l'Orthographe
+sous_titre: Tout, même, quelque, couleurs, pronominaux, noms composés — la maîtrise fine
+emoji: 🏰
+couleur: "#283593"
+cycle: maitres
+age: 12 ans et +
+niveau: 5ᵉ – lycée
+ordre: 62
+prerequis: [fr-chateau-des-participes, fr-temple-de-la-poesie]
+version: 1.0.0
+intro:
+  - zero: "Un palais où chaque mot a ses caprices ? « Tout » qui change d'avis, « même » qui se déguise… 😰"
+  - mia: "Les caprices ont des règles. Une fois qu'on les connaît, plus aucun piège ne tient."
+
+lecons:
+  - id: tout
+    titre: "« Tout » : déterminant, pronom ou adverbe ?"
+    objectif: J'accorde « tout » quand il le faut, et seulement quand il le faut.
+    mots: [tout, adverbe, h aspiré]
+    etapes:
+      - dialogue:
+          - neo: "« Elle est toute petite » mais « elle est tout étonnée » ? Il y a un algorithme, je le sens !"
+      - texte: |
+          - **Déterminant ou pronom** : *tout* s'accorde → *tout le pain, toute la nuit, tous les jours, toutes les filles* ; *Ils sont tous venus.*
+          - **Adverbe** (= *tout à fait, entièrement*, devant un adjectif) : **invariable**… → *Ils sont tout émus. Elles sont tout étonnées.*
+          - … **sauf** devant un adjectif **féminin** qui commence par une **consonne** ou un **h aspiré** : on l'accorde pour l'oreille → *Elle est **toute** petite. Elles sont **toutes** honteuses.*
+      - retiens: "Adverbe *tout* = invariable, sauf devant un adjectif **féminin** commençant par **consonne** ou **h aspiré**."
+    exercices:
+      - type: mot
+        vars: { t: [["Elle est ___ contente.", "toute"], ["Ils sont ___ émus.", "tout"], ["Elles sont ___ émues.", "tout"], ["Elles sont ___ honteuses.", "toutes"], ["Elle est ___ heureuse.", "tout"], ["J'ai mangé ___ la tarte.", "toute"], ["Je pense à vous ___ les jours.", "tous"], ["Elles sont ___ petites.", "toutes"], ["Il est ___ étonné.", "tout"]] }
+        enonce: "Écris tout, toute, tous ou toutes : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Elles sont tout étonnées.", "adverbe (invariable devant voyelle)", "déterminant", "pronom"], ["Toutes les portes sont ouvertes.", "déterminant (s'accorde avec « portes »)", "adverbe", "pronom"], ["Ils sont tous partis.", "pronom (s'accorde : « tous »)", "adverbe", "déterminant"], ["Elle est toute rouge.", "adverbe accordé devant consonne", "déterminant", "pronom"]] }
+        enonce: "Dans « {{t_0}} », quelle est la classe de « tout » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: surligner
+        vars: { t: ["Elle est [tout] émue et toute rouge.", "Toutes les filles sont [tout] étonnées.", "Il est [tout] heureux de voir tous ses amis.", "Elles sont toutes honteuses, mais [tout] enjouées."] }
+        enonce: "Touche le « tout » adverbe resté invariable."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "Devant une voyelle (ou un h muet), l'adverbe « tout » reste invariable."
+
+  - id: meme-quelque
+    titre: "« Même », « quelque » et « quel que »"
+    objectif: Je distingue même adjectif / adverbe, quelque / quel que.
+    mots: [même, quelque, quel que]
+    etapes:
+      - texte: |
+          **Même**
+          - **adjectif** (= *identique*, ou après un pronom) : variable → *les **mêmes** goûts, eux-**mêmes**, elles-**mêmes**.*
+          - **adverbe** (= *aussi, y compris*) : invariable → ***Même** les rois pleurent.*
+
+          **Quelque / quel que**
+          - **quelque(s)** + nom = *un peu de, plusieurs* : *quelques amis, quelque temps.*
+          - **quelque** + nombre = *environ* : invariable → *quelque deux cents personnes.*
+          - **quel que** + verbe *être* au subjonctif : en deux mots, *quel* s'accorde avec le sujet → ***Quelle que** soit ta décision… **Quels que** soient tes choix…*
+      - retiens: "**Quel que soit** : en deux mots, et *quel* s'accorde avec le nom qui suit le verbe."
+    exercices:
+      - type: mot
+        vars: { t: [["Ils ont les ___ goûts.", "mêmes"], ["Elles l'ont fait elles-___.", "mêmes"], ["Je l'ai construit moi-___.", "même"], ["Nous partageons les ___ rêves.", "mêmes"], ["Elle-___ ne le savait pas.", "même"]] }
+        enonce: "Écris même ou mêmes : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Je viendrai, ___ soit la météo.", "quelle que", "quelque", "quel que"], ["Je viendrai, ___ soient les obstacles.", "quels que", "quelques", "quel que"], ["J'ai invité ___ amis.", "quelques", "quels que", "quelque"], ["Il y avait ___ deux cents personnes (environ).", "quelque", "quelques", "quelles que"], ["___ soient tes idées, parle !", "Quelles que", "Quelques", "Quel que"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Même les rois pleurent.", "adverbe (invariable)", "adjectif (variable)", "pronom"], ["Ils ont les mêmes chaussures.", "adjectif (= identiques)", "adverbe", "pronom"], ["Elles-mêmes l'ont dit.", "adjectif (après un pronom)", "adverbe", "nom"]] }
+        enonce: "Dans « {{t_0}} », « même » est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+
+  - id: demi-nu-couleurs
+    titre: "Demi, nu et les adjectifs de couleur"
+    objectif: J'accorde demi, nu et les couleurs, simples ou composées.
+    mots: [demi, nu, couleur, adjectif composé]
+    etapes:
+      - texte: |
+          **Demi, nu**
+          - **avant** le nom, avec un trait d'union : **invariable** → *une **demi**-heure, **nu**-pieds.*
+          - **après** le nom : accord en **genre** seulement pour *demi* → *trois heures et **demie***; accord complet pour *nu* → *pieds **nus**.*
+
+          **Couleurs**
+          - adjectif de couleur simple : **s'accorde** → *des robes **vertes**.*
+          - nom employé comme couleur (marron, orange, cerise, olive…) : **invariable** → *des yeux **marron**.* Exceptions qui s'accordent : *rose, mauve, fauve, pourpre, écarlate* → *des rubans **roses***.
+          - couleur **composée** : **invariable** → *des yeux **bleu clair**, des robes **bleu-vert**.*
+      - retiens: "Couleur = adjectif simple ? On accorde. Nom ou mot composé ? Invariable (sauf rose, mauve, fauve, pourpre, écarlate)."
+    exercices:
+      - type: mot
+        vars: { t: [["des chaussures ___ (marron)", "marron"], ["des rubans ___ (rose)", "roses"], ["des yeux ___ (bleu clair)", "bleu clair"], ["des fleurs ___ (jaune)", "jaunes"], ["des pulls ___ (orange)", "orange"], ["des robes ___ (vert foncé)", "vert foncé"], ["des cheveux ___ (châtain)", "châtains"], ["des voiles ___ (mauve)", "mauves"]] }
+        enonce: "Accorde la couleur si besoin : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["Il est midi et ___ (demi).", "demi"], ["Il est trois heures et ___ (demi).", "demie"], ["J'ai attendu une ___-heure (demi).", "demi"], ["Il marche ___-pieds (nu).", "nu"], ["Il marche pieds ___ (nu).", "nus"], ["Elle sort tête ___ (nu).", "nue"], ["deux kilos et ___ (demi)", "demi"]] }
+        enonce: "Écris la bonne forme : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [[vert, marron, rose, "bleu clair"], [jaune, orange, mauve, "vert pomme"], [noir, cerise, écarlate, "gris foncé"], [blanc, olive, fauve, "rouge vif"]] }
+        enonce: "Au pluriel, cette couleur s'accorde-t-elle ? (des robes…)"
+        categories: ["s'accorde", "invariable"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        niveau: 2
+        correction: "Adjectifs simples et rose/mauve/fauve/écarlate s'accordent ; noms de choses et couleurs composées restent invariables."
+
+  - id: participes-pronominaux
+    titre: "Participes des verbes pronominaux et « fait + infinitif »"
+    objectif: J'accorde le participe passé d'un verbe pronominal.
+    mots: [verbe pronominal, COD, COI]
+    etapes:
+      - dialogue:
+          - mia: "« Elle s'est lavée » mais « elle s'est lavé les mains » ? Pose la question : elle a lavé QUOI ?"
+      - texte: |
+          1. Verbes **essentiellement pronominaux** (qui n'existent qu'avec *se* : s'enfuir, se souvenir, s'évanouir…) : accord avec le **sujet** → *Elles se sont **enfuies**.*
+          2. Les autres : on remplace *être* par *avoir* et on cherche le **COD** :
+             - le COD est *se*, placé avant → accord : *Elle s'est **lavée**.* (elle a lavé *elle-même*)
+             - le COD est **après** → pas d'accord : *Elle s'est **lavé** les mains.*
+             - *se* est **COI** (parler **à**, sourire **à**, plaire **à**, succéder **à**, ressembler **à**, téléphoner **à**…) → invariable : *Ils se sont **parlé**. Elles se sont **souri**.*
+          3. **fait + infinitif** : toujours invariable → *Elle s'est **fait** couper les cheveux.* (Depuis 1990, *laissé + infinitif* aussi : *Elle s'est **laissé** surprendre.*)
+      - retiens: "Pronominal : remplace *être* par *avoir*, cherche le COD. Avant → accord ; après ou absent → invariable."
+    exercices:
+      - type: mot
+        vars: { t: [["Elle s'est ___ (laver).", "lavée"], ["Elle s'est ___ les mains (laver).", "lavé"], ["Ils se sont ___ (parler).", "parlé"], ["Elles se sont ___ (enfuir).", "enfuies"], ["Elles se sont ___ (sourire).", "souri"], ["Elles se sont ___ longuement (regarder).", "regardées"], ["Les lettres qu'elles se sont ___ (écrire).", "écrites"], ["Elles se sont ___ des lettres (écrire).", "écrit"], ["Ils se sont ___ (succéder).", "succédé"], ["Elle s'est ___ de son rêve (souvenir).", "souvenue"]] }
+        enonce: "Écris le participe passé bien accordé : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["Elle s'est ___ couper les cheveux (faire).", "fait"], ["Les maisons qu'il a ___ construire (faire).", "fait"], ["Ils se sont ___ piéger (faire).", "fait"], ["La robe qu'elle s'est ___ coudre (faire).", "fait"]] }
+        enonce: "Écris le participe : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "« fait » suivi d'un infinitif est toujours invariable : {{t_1}}."
+      - type: qcm
+        vars: { t: [["Elles se sont téléphoné.", "invariable : on téléphone À quelqu'un (se = COI)", "accord avec le sujet", "accord avec un COD placé après"], ["Elle s'est coupée.", "accord : elle a coupé elle-même (se = COD avant)", "invariable : se = COI", "accord avec le sujet car verbe essentiellement pronominal"], ["Elles se sont évanouies.", "accord avec le sujet : verbe essentiellement pronominal", "invariable : se = COI", "accord avec un COD placé après"]] }
+        enonce: "Pourquoi écrit-on : « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+
+  - id: noms-composes-reforme
+    titre: "Pluriel des noms composés et rectifications de 1990"
+    objectif: Je mets les noms composés au pluriel et je connais les rectifications de 1990.
+    mots: [nom composé, rectifications de 1990]
+    etapes:
+      - texte: |
+          On met au pluriel les **noms** et les **adjectifs**, jamais les **verbes**, **adverbes** ou **prépositions** :
+          - nom + nom : *des choux-**fleurs**, des wagons-restaurants* — sauf si le 2ᵉ est un complément : *des timbres-poste* (de la poste) ;
+          - adjectif + nom, nom + adjectif : *des chauves-souris, des coffres-forts* ;
+          - verbe + nom : *des tire-bouchons* ; adverbe + nom : *des haut-parleurs* ;
+          - avec préposition : *des arcs-en-ciel, des pommes de terre*.
+
+          **Rectifications de 1990** (facultatives, les deux graphies sont correctes) : *nénufar, ognon, évènement, chaine, il ruissèle, vingt-et-un, des après-midis, un compte-goutte / des compte-gouttes*.
+      - retiens: "Seuls les **noms** et les **adjectifs** prennent la marque du pluriel. Les graphies de 1990 sont admises, jamais obligatoires."
+    exercices:
+      - type: mot
+        vars: { t: [["un chou-fleur", "des choux-fleurs"], ["un coffre-fort", "des coffres-forts"], ["une chauve-souris", "des chauves-souris"], ["un arc-en-ciel", "des arcs-en-ciel"], ["un timbre-poste", "des timbres-poste"], ["un tire-bouchon", "des tire-bouchons"], ["un haut-parleur", "des haut-parleurs"], ["une pomme de terre", "des pommes de terre"], ["un rouge-gorge", "des rouges-gorges"], ["un wagon-restaurant", "des wagons-restaurants"]] }
+        enonce: "Mets au pluriel : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["oignon", "ognon", "onion", "oignion"], ["nénuphar", "nénufar", "nénuphare", "nénufard"], ["événement", "évènement", "évenement", "évènnement"], ["chaîne", "chaine", "chênne", "chaîn"], ["il ruisselle", "il ruissèle", "il ruisele", "il ruissel"]] }
+        enonce: "Quelle autre graphie de « {{t_0}} » les rectifications de 1990 autorisent-elles ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} (et « {{t_0}} » reste correct)."
+      - type: qcm
+        vars: { t: [["haut-parleur", "haut est un adverbe : il ne varie pas", "haut est un adjectif : il varie", "parleur est un verbe : il ne varie pas"], ["tire-bouchon", "tire est un verbe : il ne varie pas", "tire est un nom : il varie", "bouchon est invariable"], ["timbre-poste", "poste est un complément (de la poste) : il ne varie pas", "poste est un adjectif", "timbre est un verbe"]] }
+        enonce: "Au pluriel de « {{t_0}} », quelle règle s'applique ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_1}}"
+
+  - id: grande-dictee
+    titre: "La grande dictée du Palais"
+    objectif: J'écris sans faute des phrases qui cumulent les pièges.
+    mots: [dictée, relecture]
+    etapes:
+      - dialogue:
+          - neo: "Ma méthode de relecture : une passe pour les accords dans le groupe nominal, une passe pour les verbes, une passe pour les participes."
+          - zero: "Trois passes… comme trois boucliers ! 🛡️"
+      - retiens: "Relis **trois fois** : accords du nom, accords du verbe, participes passés."
+    exercices:
+      - type: dictee
+        vars: { m: ["Les quelques roses qu'elle s'est offertes étaient toutes fanées.", "Quelle que soit la saison, ils se sont toujours souri.", "Elle est restée une heure et demie, pieds nus, sur la plage.", "Les chauves-souris se sont enfuies dès l'aube.", "Ses yeux bleu clair et ses rubans roses la rendaient tout heureuse.", "Ils se sont succédé sans même se regarder."] }
+        enonce: "Grande dictée : écoute et écris."
+        dictee: "{{m}}"
+        niveau: 3
+        correction: "{{m}}"
+      - type: dictee
+        vars: { m: ["Elle s'est fait couper les cheveux par sa grand-mère.", "Tous les tire-bouchons sont rangés dans les mêmes tiroirs.", "Elles se sont lavé les mains, puis se sont assises.", "Il a vu quelque deux cents oiseaux aux plumes orange."] }
+        enonce: "Écoute et écris : chaque phrase cache deux pièges."
+        dictee: "{{m}}"
+        niveau: 3
+        correction: "{{m}}"
+      - type: surligner
+        vars: { t: ["Les fleurs que j'ai [cueilli] sont [fanée].", "Elles se sont [parlées] pendant des heures.", "Il porte des chaussettes vertes et des chaussures [marrons].", "Elles sont [toute] émues.", "J'ai mangé [quelques] deux cents grammes de pâtes.", "Elle s'est [faite] couper les cheveux."] }
+        enonce: "Touche les mots mal orthographiés."
+        phrase: "{{t}}"
+        niveau: 3
+        correction: "Corrigé : cueillies, fanées, parlé, marron, tout, quelque, fait."

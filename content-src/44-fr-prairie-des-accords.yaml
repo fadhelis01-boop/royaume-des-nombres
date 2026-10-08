@@ -1,0 +1,229 @@
+id: fr-prairie-des-accords
+matiere: francais
+titre: La Prairie des Accords
+sous_titre: L'adjectif, le genre, le nombre et les chaînes d'accord
+emoji: 🐑
+couleur: "#8e24aa"
+cycle: graines
+age: 7-10 ans
+niveau: CE1 – CM1
+ordre: 44
+prerequis: [fr-foret-des-noms, fr-vallee-des-verbes]
+version: 1.0.0
+intro:
+  - mia: "Dans cette prairie, les mots vivent en troupeau. Je vois des fils de lumière entre eux : ce sont les accords !"
+  - neo: "Quand le nom change (féminin, pluriel), tous les mots attachés à lui changent aussi."
+  - zero: "Des moutons blancS. Des chevAUX. Je sens que je vais adorer les terminaisons. 😳"
+
+lecons:
+  - id: l-adjectif
+    titre: "L'adjectif : il dit comment est le nom"
+    objectif: Je reconnais l'adjectif et je sais qu'il accompagne un nom.
+    mots: [adjectif, qualificatif]
+    etapes:
+      - dialogue:
+          - zero: "« Un hamster. » C'est bien. « Un PETIT hamster TOUT DOUX ». C'est mieux, non ?"
+          - mia: "Petit et doux sont des adjectifs : ils colorient le nom, ils disent comment il est."
+      - texte: |
+          L'**adjectif qualificatif** donne une **précision sur le nom** : sa taille, sa couleur, son caractère…
+          *un chat **noir**, une **grande** maison, des enfants **joyeux***.
+
+          Il peut être **avant** le nom (*un **petit** chat*) ou **après** (*un chat **noir***).
+      - astuce:
+          texte: "Test : on peut mettre « **très** » devant un adjectif : très noir, très grand. Pas devant un nom !"
+          qui: neo
+      - retiens: "L'adjectif **précise le nom**. On peut ajouter « **très** » devant."
+    exercices:
+      - type: surligner
+        vars: { t: ["Un [petit] chat [noir] dort.", "La [vieille] maison est [abandonnée].", "Mia porte une robe [violette].", "Les [grands] arbres sont [verts].", "J'ai lu un livre [passionnant].", "Un [gros] chien [méchant] aboie."] }
+        enonce: "Touche les adjectifs."
+        phrase: "{{t}}"
+        correction: "On peut mettre « très » devant chaque adjectif."
+      - type: classer
+        vars: { t: [[rapide, voiture, rouge, route], [gentil, chien, petit, niche], [joyeux, fête, beau, gâteau], [froid, hiver, blanc, neige]] }
+        enonce: "Adjectif ou nom ?"
+        categories: [adjectif, nom]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "très + adjectif ; un/une + nom."
+      - type: qcm
+        vars: { t: [["un ciel", "bleu", "nuage", "voler"], ["une soupe", "chaude", "cuillère", "manger"], ["un chien", "fidèle", "niche", "aboyer"], ["une fleur", "parfumée", "jardin", "pousser"]] }
+        enonce: "Quel adjectif peut compléter « {{t_0}} … » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} {{t_1}}"
+
+  - id: accord-genre
+    titre: "L'adjectif au féminin"
+    objectif: J'accorde l'adjectif au féminin, avec les règles et leurs exceptions courantes.
+    mots: [féminin, accord]
+    etapes:
+      - dialogue:
+          - neo: "Un chat noir, une chatte noir… E ! Une chatte noir**e**. L'adjectif s'habille comme son nom."
+          - zero: "Et beau ? Une chatte beaue ? 😳"
+          - mia: "Ah non ! Une **belle** chatte. Certains adjectifs se transforment complètement."
+      - texte: |
+          En général, on **ajoute un e** : petit → petit**e**, noir → noir**e**, joli → joli**e**.
+          Si l'adjectif finit déjà par **e**, il ne change pas : rouge → rouge, facile → facile.
+
+          Les transformations à connaître :
+          - **-er → -ère** : fier → fi**ère**, léger → lég**ère**
+          - **-eux → -euse** : heureux → heur**euse**
+          - **-f → -ve** : vif → vi**ve**, neuf → neu**ve**
+          - **-el, -en, -on → on double** : cruel → cru**elle**, ancien → anci**enne**, bon → b**onne**
+          - les spéciaux : beau → **belle**, nouveau → **nouvelle**, vieux → **vieille**, blanc → **blanche**, doux → **douce**, long → **longue**, gentil → **gentille**
+      - retiens: "Féminin = **+ e** en général. Attention aux familles **-ère, -euse, -ve, -elle/-enne/-onne** et aux spéciaux (belle, vieille, blanche…)."
+    exercices:
+      - type: mot
+        vars: { a: [petit, grand, noir, joli, rouge, fier, léger, heureux, peureux, vif, neuf, cruel, ancien, bon, mignon, gentil, beau, nouveau, vieux, blanc, doux, long, sportif, gros, gris, bleu] }
+        enonce: "Écris au féminin : un … {{a}} → une … ?"
+        reponse: "{{feminin(a)}}"
+        correction: "{{a}} → {{feminin(a)}}"
+      - type: qcm
+        vars: { t: [["heureux", "heureuse", "heureuxe", "heureuse"], ["vieux", "vieille", "vieuxe", "vieuse"], ["blanc", "blanche", "blance", "blanque"], ["neuf", "neuve", "neufe", "neuffe"], ["gentil", "gentille", "gentile", "gentil"], ["beau", "belle", "beaue", "bele"], ["fier", "fière", "fiere", "fiére"], ["bon", "bonne", "bone", "bonnes"]] }
+        enonce: "Une fille … ({{t_0}})"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "une fille {{t_1}}"
+      - type: classer
+        vars: { t: [[heureux, heureuse, vif, vive], [léger, légère, gentil, gentille], [blanc, blanche, doux, douce], [ancien, ancienne, sportif, sportive]] }
+        enonce: "Masculin ou féminin ?"
+        categories: [masculin, féminin]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "-eux → -euse, -f → -ve, -er → -ère, -en → -enne…"
+
+
+  - id: accord-nombre
+    titre: "L'adjectif au pluriel"
+    objectif: J'accorde l'adjectif au pluriel (s, x, -aux) et en genre et en nombre à la fois.
+    mots: [pluriel, accord]
+    etapes:
+      - dialogue:
+          - mia: "Quand le nom est au pluriel, l'adjectif prend aussi la marque du pluriel. Ils marchent ensemble !"
+          - zero: "Des chats noirs. Des chattes noires. E ET S ! Double récompense ! 🤯"
+      - texte: |
+          En général, on **ajoute un s** : des chats noir**s**, des fleurs joli**es**.
+          - **-eau → -eaux** : beau → beau**x**, nouveau → nouveau**x**
+          - **-al → -aux** : national → nation**aux**, génial → géni**aux** (mais banal → banal**s**, final → final**s**)
+          - **-s, -x** ne changent pas : gris → gris, heureux → heureux
+
+          Au **féminin pluriel**, on ajoute **e + s** : des robes vert**es**, des filles heureu**ses**.
+      - retiens: "Accord en **nombre** : + **s** (ou -x, -aux). Féminin pluriel : **-es**."
+    exercices:
+      - type: mot
+        vars: { t: [[noir, m], [noir, f], [petit, m], [petit, f], [beau, m], [beau, f], [heureux, m], [heureux, f], [national, m], [national, f], [nouveau, m], [gris, m], [gris, f], [vif, f], [gentil, f], [joli, f], [vert, m]] }
+        enonce: "Accorde l'adjectif « {{t_0}} » au {{si(t_1=='f','féminin','masculin')}} pluriel."
+        reponse: "{{accord(t_0, t_1, 2)}}"
+        correction: "{{accord(t_0, t_1, 2)}}"
+      - type: qcm
+        vars: { t: [["des chiens", "noirs", "noir", "noires"], ["des fleurs", "jolies", "jolie", "jolis"], ["des chevaux", "beaux", "beau", "beaus"], ["des maisons", "grises", "gris", "grise"], ["des parcs", "nationaux", "nationals", "nationales"], ["des filles", "heureuses", "heureux", "heureuse"]] }
+        enonce: "Complète : {{t_0}} …"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} {{t_1}}"
+      - type: mot
+        vars: { t: [["des chevaux ___ (noir)", "noirs"], ["des journaux ___ (local)", "locaux"], ["des tableaux ___ (beau)", "beaux"], ["des garçons ___ (heureux)", "heureux"], ["des amies ___ (fidèle)", "fidèles"], ["des robes ___ (gris)", "grises"], ["des chemins ___ (étroit)", "étroits"], ["des chants ___ (joyeux)", "joyeux"]] }
+        enonce: "Accorde l'adjectif : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"
+
+
+  - id: chaine-d-accord
+    titre: "La chaîne d'accord dans le groupe nominal"
+    objectif: J'accorde le déterminant, le nom et l'adjectif ensemble, comme une chaîne.
+    mots: [groupe nominal, chaîne d'accord]
+    etapes:
+      - dialogue:
+          - mia: "Regarde les fils de lumière : le déterminant, le nom et l'adjectif sont attachés. Si l'un change, tous changent."
+          - neo: "C'est le nom qui commande : il donne son genre et son nombre à tout le groupe."
+      - texte: |
+          Le **groupe nominal** (GN) réunit un **déterminant**, un **nom** et parfois un ou plusieurs **adjectifs**.
+          Le **nom est le chef** : il transmet son **genre** et son **nombre** à tout le groupe.
+
+          *un petit chat noir* → *de**s** petit**s** chat**s** noir**s***
+          *une belle fleur rouge* → *de**s** belle**s** fleur**s** rouge**s***
+      - astuce:
+          texte: "Trace un fil (une flèche) du nom vers chaque mot qui l'accompagne : chaque mot touché par le fil doit s'accorder !"
+          qui: mia
+      - retiens: "Dans un GN, **tout s'accorde avec le nom** : déterminant, nom et adjectifs portent les mêmes marques."
+    exercices:
+      - type: mot
+        vars: { t: [[chat, m, noir], [fleur, f, rouge], [chien, m, gentil], [maison, f, ancien], [cheval, m, blanc], [robe, f, neuf], [oiseau, m, bleu], [histoire, f, drôle], [gâteau, m, délicieux], [voiture, f, rapide], [jeu, m, amusant], [étoile, f, brillant]] }
+        enonce: "Écris au pluriel : {{det('indefini', t_0, t_1, 1)}} {{accord(t_2, t_1, 1)}} → des …"
+        reponse: ["{{det('indefini', pluriel(t_0), t_1, 2)}} {{accord(t_2, t_1, 2)}}", "{{pluriel(t_0)}} {{accord(t_2, t_1, 2)}}"]
+        correction: "{{det('indefini', pluriel(t_0), t_1, 2)}} {{accord(t_2, t_1, 2)}}"
+      - type: surligner
+        vars: { t: ["[Les petites souris grises] dorment.", "Mia a [des yeux verts].", "[Les grands arbres] perdent leurs feuilles.", "J'aime [les belles histoires].", "[Des oiseaux bleus] chantent."] }
+        enonce: "Touche tout le groupe nominal accordé au pluriel."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "Déterminant, nom et adjectif s'accordent ensemble."
+      - type: qcm
+        vars: { t: [["des chevaux blancs", "des chevals blancs", "des chevaux blanc"], ["les jolies fleurs", "les jolie fleurs", "les jolies fleur"], ["des gâteaux délicieux", "des gâteaus délicieux", "des gâteaux délicieuxs"], ["des robes neuves", "des robes neufs", "des robe neuves"]] }
+        enonce: "Quel groupe est bien accordé ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}}"
+
+  - id: accord-sujet-verbe
+    titre: "Accorder le verbe avec son sujet, même caché"
+    objectif: J'accorde le verbe avec son sujet, même quand il est loin ou après le verbe.
+    mots: [accord, sujet, verbe]
+    etapes:
+      - dialogue:
+          - zero: "« Les enfants de ma voisine joue. » Le verbe est à côté de « voisine », alors il est au singulier, non ?"
+          - neo: "Piège ! Qui est-ce qui joue ? Les enfants ! Le verbe s'accorde avec le sujet, pas avec le mot d'à côté."
+      - texte: |
+          Le verbe s'accorde **toujours avec son sujet**, même si :
+          - le sujet est **loin** du verbe : *Les enfants de ma voisine jou**ent**.*
+          - le sujet est **après** le verbe : *Dans la forêt vivent des loups.* → vivent (les loups vivent).
+          - il y a **deux sujets** : *Léa et Tom chant**ent**.* (= ils)
+      - attention:
+          texte: "Pose toujours la question « Qui est-ce qui … ? » avant d'écrire la terminaison."
+          qui: neo
+      - retiens: "**Qui est-ce qui** + verbe ? → le sujet → l'accord. Deux sujets singuliers = un sujet **pluriel**."
+    exercices:
+      - type: qcm
+        vars: { t: [["Les enfants de ma voisine …", "jouent", "joue"], ["Le chien des voisins …", "aboie", "aboient"], ["Léa et Tom …", "chantent", "chante"], ["Dans la mare … des grenouilles.", "nagent", "nage"], ["La maîtresse des élèves …", "parle", "parlent"], ["Mon frère et moi …", "jouons", "jouent"]] }
+        enonce: "Complète : {{t_0}} (choisis la bonne forme)"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        explications: ["", "Qui est-ce qui fait l'action ? Cherche le vrai sujet !"]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { v: [jouer, chanter, danser, marcher, crier, parler, regarder, sauter], t: [["Les amis de Zéro", 6], ["Le frère de mes amis", 3], ["Léa et sa sœur", 6], ["Toi et moi", 4], ["Le chat des voisins", 3], ["Ta sœur et toi", 5]] }
+        enonce: "Conjugue au présent : {{t_0}} … ({{v}})"
+        reponse: "{{conj(v, 'present', t_1)}}"
+        niveau: 2
+        correction: "{{t_0}} {{conj(v, 'present', t_1)}}"
+      - type: dictee
+        vars: { m: ["Les enfants de ma voisine jouent dehors.", "Dans le ciel volent les oiseaux.", "Le chien des voisins aboie souvent.", "Mia et Néo regardent les étoiles."] }
+        enonce: "Écoute et écris : cherche bien le sujet de chaque verbe !"
+        dictee: "{{m}}"
+        correction: "{{m}}"
+
+
+  - id: adjectifs-particuliers
+    titre: "Les adjectifs qui jouent des tours"
+    objectif: Je maîtrise beau/bel, les adjectifs en -al et les adjectifs de couleur.
+    mots: [adjectif, couleur, invariable]
+    etapes:
+      - dialogue:
+          - mia: "« Un beau arbre » ? Ça accroche l'oreille ! On dit « un bel arbre »."
+          - neo: "Et les couleurs : des yeux **marron**, sans s ! Car marron, c'est d'abord le nom d'un fruit."
+      - texte: |
+          - Devant un nom masculin qui commence par une **voyelle** : beau → **bel**, nouveau → **nouvel**, vieux → **vieil** : *un **bel** arbre, un **vieil** homme*.
+          - Les adjectifs de couleur qui viennent d'un **nom** (marron, orange, citron, émeraude…) restent **invariables** : *des chaussettes **orange***. Exceptions : **rose**, mauve, fauve qui s'accordent.
+          - Deux couleurs ensemble restent invariables : *des yeux **bleu clair***.
+      - retiens: "**bel, nouvel, vieil** devant une voyelle. Couleur = nom d'une chose (marron, orange) → **invariable** (sauf rose)."
+    exercices:
+      - type: qcm
+        vars: { t: [["un … arbre (beau)", "bel", "beau", "belle"], ["un … ami (nouveau)", "nouvel", "nouveau", "nouvelle"], ["un … homme (vieux)", "vieil", "vieux", "vieille"], ["un … garçon (beau)", "beau", "bel", "belle"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [[marron, m], [orange, f], [rose, f], [rouge, f], [vert, m], [citron, f], [bleu, f], [noir, f]] }
+        enonce: "Accorde la couleur au pluriel : des {{si(t_1=='f','chaussettes','pulls')}} … ({{t_0}})"
+        reponse: "{{accord(t_0, t_1, 2)}}"
+        niveau: 2
+        correction: "des {{si(t_1=='f','chaussettes','pulls')}} {{accord(t_0, t_1, 2)}}"
+      - type: mot
+        vars: { t: [["un ___ oiseau (beau)", "bel"], ["un ___ homme (vieux)", "vieil"], ["un ___ ami (nouveau)", "nouvel"], ["des chevaux ___ (royal)", "royaux"], ["des ___ amis (nouveau)", "nouveaux"], ["une ___ maison (vieux)", "vieille"], ["un ___ château (beau)", "beau"]] }
+        enonce: "Écris la bonne forme : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}} — devant une voyelle ou un h muet : bel, vieil, nouvel."

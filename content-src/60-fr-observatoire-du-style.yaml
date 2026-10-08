@@ -1,0 +1,209 @@
+id: fr-observatoire-du-style
+matiere: francais
+titre: L'Observatoire du Style
+sous_titre: Figures de style, registres, niveaux de langue
+emoji: 🔭
+couleur: "#3949ab"
+cycle: maitres
+age: 12 ans et +
+niveau: 5ᵉ – lycée
+ordre: 60
+prerequis: [fr-bibliotheque-des-textes]
+version: 1.0.0
+intro:
+  - mia: "À l'Observatoire, on regarde les mots comme des étoiles. Certaines phrases brillent plus que d'autres : ce sont les figures de style."
+  - neo: "Comparaison, métaphore, hyperbole… Chaque figure a un nom et un effet. On va apprendre à les reconnaître ET à les utiliser."
+
+lecons:
+  - id: comparaison-metaphore
+    titre: "Comparaison, métaphore, personnification"
+    objectif: Je distingue la comparaison (avec un outil), la métaphore (sans outil) et la personnification.
+    mots: [comparaison, métaphore, personnification]
+    etapes:
+      - dialogue:
+          - zero: "« Zéro est rond comme un ballon. » C'est méchant ou c'est une figure de style ? 😳"
+          - mia: "C'est une comparaison : il y a un outil, « comme ». Sans outil, « Zéro est un ballon », ce serait une métaphore !"
+      - texte: |
+          - **Comparaison** : rapproche deux éléments avec un **outil** (comme, tel, pareil à, ressembler à) : *Ses yeux brillent **comme** des étoiles.*
+          - **Métaphore** : rapproche **sans outil** : *Ses yeux **sont** des étoiles.* (métaphore filée si elle se prolonge)
+          - **Personnification** : donne des traits **humains** à une chose ou un animal : *Le vent **hurle** sa colère.*
+      - retiens: "**Comparaison** = avec un outil (comme…). **Métaphore** = sans outil. **Personnification** = la chose agit comme un humain."
+    exercices:
+      - type: qcm
+        vars: { t: [["Tes mains sont froides comme la glace.", "comparaison", "métaphore", "personnification"], ["Cet enfant est un ange.", "métaphore", "comparaison", "hyperbole"], ["Le soleil sourit aux promeneurs.", "personnification", "comparaison", "litote"], ["La lune, tel un fromage, flotte dans le ciel.", "comparaison", "métaphore", "oxymore"], ["La mer en colère dévore la plage.", "personnification", "comparaison", "anaphore"], ["Mon cœur est un oiseau blessé.", "métaphore", "comparaison", "antithèse"]] }
+        enonce: "« {{t_0}} » — Quelle figure de style ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: surligner
+        vars: { t: ["Ses yeux brillent [comme] des étoiles.", "Il est fort [tel] un lion.", "Sa voix [ressemble à] un murmure.", "Elle court, [pareille à] une gazelle."] }
+        enonce: "Touche l'outil de comparaison."
+        phrase: "{{t}}"
+        correction: "comme, tel, pareil à, ressembler à…"
+      - type: classer
+        vars: { t: [["Il est rusé comme un renard.", "Ce garçon est une fusée.", "L'arbre pleure ses feuilles.", "Elle est douce comme un agneau."], ["Tes yeux sont deux lacs.", "Il dort comme un loir.", "Le vent chante dans les branches.", "Ma chambre est une porcherie."]] }
+        enonce: "Range chaque phrase."
+        categories: [comparaison, métaphore, personnification]
+        mots: [["{{t_0}}", "{{si(t_0=='Tes yeux sont deux lacs.',1,0)}}"], ["{{t_1}}", "{{si(t_1=='Il dort comme un loir.',0,1)}}"], ["{{t_2}}", 2], ["{{t_3}}", "{{si(t_3=='Ma chambre est une porcherie.',1,0)}}"]]
+        niveau: 2
+        correction: "Comparaison : un outil ; métaphore : pas d'outil ; personnification : comportement humain."
+
+  - id: figures-d-insistance
+    titre: "Hyperbole, litote, euphémisme : exagérer ou atténuer"
+    objectif: Je reconnais les figures qui exagèrent (hyperbole) ou atténuent (litote, euphémisme).
+    mots: [hyperbole, litote, euphémisme]
+    etapes:
+      - dialogue:
+          - zero: "Je meurs de faim ! Je t'ai dit un million de fois ! 🤯"
+          - neo: "Deux hyperboles, Zéro : tu exagères. À l'inverse, « Ce n'est pas mauvais » pour dire « c'est délicieux », c'est une litote."
+      - texte: |
+          - **Hyperbole** : **exagération** pour frapper : *Je meurs de faim. Je te l'ai dit mille fois.*
+          - **Litote** : dire **moins** pour faire entendre **plus** : *Ce n'est pas mauvais* (= c'est très bon). *Va, je ne te hais point* (= je t'aime, Corneille).
+          - **Euphémisme** : **adoucir** une réalité dure : *Il nous a quittés* (= il est mort).
+      - retiens: "**Hyperbole** = exagérer ; **litote** = dire moins pour dire plus ; **euphémisme** = adoucir."
+    exercices:
+      - type: qcm
+        vars: { t: [["J'ai attendu des siècles !", "hyperbole", "litote", "euphémisme"], ["Ce n'est pas bête du tout.", "litote", "hyperbole", "métaphore"], ["Il s'est éteint paisiblement.", "euphémisme", "hyperbole", "comparaison"], ["Je suis mort de rire.", "hyperbole", "euphémisme", "litote"], ["Il n'est pas très malin.", "litote", "hyperbole", "personnification"], ["Les personnes à mobilité réduite.", "euphémisme", "hyperbole", "anaphore"]] }
+        enonce: "« {{t_0}} » — Quelle figure de style ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["« Ce n'est pas mauvais » veut dire :", "c'est très bon", "c'est mauvais", "c'est moyen"], ["« Va, je ne te hais point » (Corneille) veut dire :", "je t'aime", "je te déteste", "je t'ignore"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["L'hyperbole atténue la réalité.", false], ["L'euphémisme adoucit une réalité désagréable.", true], ["La litote dit moins pour faire entendre plus.", true]] }
+        enonce: "{{t_0}}"
+        reponse: "t_1"
+        correction: "Hyperbole = exagérer ; litote = dire moins ; euphémisme = adoucir."
+
+  - id: figures-d-opposition-et-de-construction
+    titre: "Antithèse, oxymore, anaphore, gradation, chiasme"
+    objectif: Je reconnais les figures d'opposition et de construction et leur effet.
+    mots: [antithèse, oxymore, anaphore, gradation, chiasme]
+    etapes:
+      - dialogue:
+          - mia: "« Cette obscure clarté qui tombe des étoiles » (Corneille) : obscure et clarté, deux contraires collés ! C'est un oxymore."
+      - texte: |
+          - **Antithèse** : oppose deux idées dans une phrase : *Je vis, je meurs ; je me brûle et me noie* (Louise Labé).
+          - **Oxymore** : unit deux mots **contraires** côte à côte : *cette obscure clarté*, *un silence assourdissant*.
+          - **Anaphore** : **répétition** d'un mot en début de vers ou de phrase : ***Paris*** *outragé !* ***Paris*** *brisé !* ***Paris*** *martyrisé !*
+          - **Gradation** : termes de plus en plus forts : *Va, cours, vole, et nous venge* (Corneille).
+          - **Chiasme** : structure croisée A B / B A : *Il faut manger pour vivre et non vivre pour manger* (Molière).
+      - retiens: "Opposition : **antithèse** (deux idées), **oxymore** (deux mots collés). Construction : **anaphore** (répétition), **gradation** (crescendo), **chiasme** (croisement)."
+    exercices:
+      - type: qcm
+        vars: { t: [["un silence assourdissant", "oxymore", "anaphore", "gradation"], ["Va, cours, vole, et nous venge.", "gradation", "chiasme", "oxymore"], ["Il faut manger pour vivre et non vivre pour manger.", "chiasme", "anaphore", "litote"], ["Paris outragé ! Paris brisé ! Paris martyrisé !", "anaphore", "chiasme", "euphémisme"], ["Je vis, je meurs ; je me brûle et me noie.", "antithèse", "comparaison", "litote"], ["une douce violence", "oxymore", "gradation", "hyperbole"]] }
+        enonce: "« {{t_0}} » — Quelle figure de style ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une obscure clarté", "Je pense, je doute, je tremble.", "un doux poison", "Il marche, il court, il s'envole."], ["un soleil noir", "C'est un roc… c'est un pic… c'est un cap !", "une brûlante froideur", "Je suis inquiet, angoissé, terrifié."]] }
+        enonce: "Oxymore ou gradation ?"
+        categories: [oxymore, gradation]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        niveau: 2
+        correction: "Oxymore : deux mots contraires collés ; gradation : de plus en plus fort."
+      - type: qcm
+        vars: { t: [["oxymore", "deux mots contraires réunis", "une exagération", "une répétition en début de vers"], ["anaphore", "une répétition en début de vers ou de phrase", "un adoucissement", "une structure croisée"], ["chiasme", "une structure croisée A B / B A", "une comparaison", "deux idées opposées"]] }
+        enonce: "Qu'est-ce qu'un(e) {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: sonorites
+    titre: "Allitération et assonance : la musique des mots"
+    objectif: Je repère les répétitions de sons (consonnes ou voyelles) et leur effet.
+    mots: [allitération, assonance]
+    etapes:
+      - dialogue:
+          - zero: "« Pour qui sont ces serpents qui sifflent sur vos têtes ? » Sssss… J'ai peur ! 😳"
+          - neo: "C'est voulu : Racine répète le son « s » pour qu'on entende les serpents. C'est une allitération."
+      - texte: |
+          - **Allitération** : répétition d'un même son **consonne** : *Pour qui **s**ont **c**es **s**erpents qui **s**iffl**ent** **s**ur vos têtes ?* (Racine) → le sifflement.
+          - **Assonance** : répétition d'un même son **voyelle** : *Tout m'afflige et me nuit et conspire à me nuire* (Racine) → le son « i », aigu, la plainte.
+      - retiens: "**Allitération** = consonne répétée ; **assonance** = voyelle répétée. Elles créent une **musique** qui renforce le sens."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pour qui sont ces serpents qui sifflent sur vos têtes ?", "allitération en s", "assonance en a", "anaphore"], ["Les sanglots longs des violons de l'automne", "assonance en on", "allitération en t", "gradation"], ["Un frais parfum sortait des touffes d'asphodèle", "allitération en f", "assonance en i", "chiasme"]] }
+        enonce: "« {{t_0}} » — Quel procédé sonore ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["consonne répétée", "voyelle répétée"], ["« sifflent sur vos têtes » (s)", "« sanglots longs des violons » (on)"], ["« ruisseau, roche, rivière » (r)", "« la nuit, la pluie, l'ennui » (ui)"]] }
+        enonce: "Associe : allitération ou assonance ?"
+        categories: [allitération, assonance]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1]]
+        correction: "Allitération = consonne ; assonance = voyelle."
+      - type: vf
+        vars: { t: [["L'allitération répète un son de voyelle.", false], ["L'assonance répète un son de voyelle.", true], ["Les sonorités peuvent imiter un bruit.", true]] }
+        enonce: "{{t_0}}"
+        reponse: "t_1"
+        correction: "Allitération = consonnes ; assonance = voyelles."
+
+  - id: registres
+    titre: "Les registres (ou tonalités)"
+    objectif: Je reconnais l'effet qu'un texte cherche à produire : faire rire, émouvoir, effrayer, émerveiller…
+    mots: [registre, tonalité, comique, tragique, lyrique, épique, fantastique]
+    etapes:
+      - texte: |
+          Le **registre** est l'**effet** produit sur le lecteur :
+          - **comique** : faire rire (quiproquos, exagérations) ;
+          - **tragique** : un destin malheureux et inévitable ;
+          - **pathétique** : émouvoir, faire pleurer ;
+          - **lyrique** : exprimer ses sentiments personnels (je, nature, amour) ;
+          - **épique** : raconter des exploits héroïques, grandioses ;
+          - **fantastique** : faire hésiter entre explication rationnelle et surnaturelle ;
+          - **satirique** : se moquer pour critiquer ;
+          - **polémique** : attaquer violemment une idée.
+      - retiens: "Je me demande quelle **émotion** le texte veut me faire ressentir : rire, pitié, peur, admiration, émerveillement…"
+    exercices:
+      - type: qcm
+        vars: { t: [["Le héros, seul contre mille ennemis, brandit son épée et les mit tous en déroute.", "épique", "comique", "lyrique"], ["Ô mon amour, quand je pense à toi, mon cœur s'envole vers les étoiles.", "lyrique", "épique", "polémique"], ["La poignée tourna toute seule. Était-ce le vent… ou autre chose ?", "fantastique", "comique", "épique"], ["Il tomba dans le seau de peinture, glissa sur le savon et finit dans le gâteau.", "comique", "tragique", "lyrique"], ["L'orpheline, affamée et grelottante, tendait la main aux passants indifférents.", "pathétique", "comique", "épique"]] }
+        enonce: "« {{t_0}} » — Quel registre ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["faire rire", "comique", "tragique", "lyrique"], ["exprimer ses sentiments", "lyrique", "épique", "satirique"], ["raconter des exploits héroïques", "épique", "pathétique", "comique"], ["hésiter entre réel et surnaturel", "fantastique", "lyrique", "comique"]] }
+        enonce: "Quel registre cherche à {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le registre pathétique cherche à émouvoir le lecteur.", true], ["Le registre épique grandit les exploits d'un héros.", true], ["Le registre lyrique sert surtout à faire rire.", false], ["Le registre fantastique fait hésiter entre réel et surnaturel.", true], ["Dans le registre tragique, le héros échappe facilement à son destin.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Comique : rire ; lyrique : sentiments ; épique : exploits ; tragique : destin ; pathétique : émotion ; fantastique : hésitation."
+
+
+  - id: niveaux-de-langue
+    titre: "Les niveaux de langue : familier, courant, soutenu"
+    objectif: J'adapte mon niveau de langue à la situation et au destinataire.
+    mots: [niveau de langue, familier, courant, soutenu]
+    etapes:
+      - dialogue:
+          - zero: "« Wesh, ça roule ? » au directeur de l'école… Mauvaise idée ? 😳"
+          - mia: "Mauvaise idée ! On adapte sa façon de parler à la situation : familier avec les copains, courant en classe, soutenu à l'écrit officiel."
+      - texte: |
+          | familier | courant | soutenu |
+          |---|---|---|
+          | une bagnole | une voiture | une automobile |
+          | bosser | travailler | œuvrer |
+          | j'ai la trouille | j'ai peur | je suis effrayé, je redoute |
+          | ouais | oui | certes, assurément |
+      - retiens: "**Familier** (amis), **courant** (tous les jours), **soutenu** (écrit, officiel, littéraire). On **adapte** à la situation."
+    exercices:
+      - type: classer
+        vars: { t: [[bagnole, voiture, automobile], [bosser, travailler, œuvrer], [fric, argent, fortune], [bouquin, livre, ouvrage], [se marrer, rire, s'esclaffer]] }
+        enonce: "Range chaque mot selon son niveau de langue."
+        categories: [familier, courant, soutenu]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2]]
+        correction: "Familier, courant, soutenu."
+      - type: qcm
+        vars: { t: [["à ton meilleur ami", "Salut ! Tu viens ce soir ?", "Je vous prie de bien vouloir venir.", "Veuillez agréer…"], ["au directeur de l'école", "Bonjour Monsieur, pourrais-je vous parler ?", "Salut chef !", "Wesh, ça roule ?"], ["dans une lettre officielle", "Je vous prie d'agréer mes salutations distinguées.", "À plus !", "Bisous !"]] }
+        enonce: "Quelle phrase convient pour s'adresser {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["bagnole", "voiture"], ["bouquin", "livre"], ["fric", "argent"], ["boulot", "travail"], ["fringues", "vêtements"], ["bouffer", "manger"], ["gamin", "enfant"]] }
+        enonce: "Remplace ce mot familier par un mot courant : « {{t_0}} »"
+        reponse: "{{t_1}}"
+        correction: "{{t_1}}"

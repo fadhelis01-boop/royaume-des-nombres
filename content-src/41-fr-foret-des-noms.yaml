@@ -1,0 +1,253 @@
+id: fr-foret-des-noms
+matiere: francais
+titre: La Forêt des Noms
+sous_titre: Les noms, les déterminants, le genre et le nombre
+emoji: 🌲
+couleur: "#2e7d32"
+cycle: graines
+age: 6-8 ans
+niveau: CP – CE1
+ordre: 41
+prerequis: [fr-ile-des-sons]
+version: 1.0.0
+intro:
+  - mia: "Regarde : chaque arbre porte un nom. L'arbre-Chat, l'arbre-Maison, l'arbre-Soleil !"
+  - neo: "Et les petits oiseaux, ce sont les déterminants : un, une, le, la, les. Ils annoncent le nom."
+  - zero: "Moi j'ai un nom propre : Zéro, avec une majuscule. Je suis un arbre très important."
+
+lecons:
+  - id: le-nom
+    titre: "Le nom : personne, animal, chose ou idée"
+    objectif: Je reconnais un nom commun et un nom propre (qui prend une majuscule).
+    mots: [nom, nom commun, nom propre, majuscule]
+    etapes:
+      - dialogue:
+          - neo: "Un nom, c'est un mot qui désigne quelqu'un ou quelque chose : un chat, une table, la joie."
+          - zero: "Et « Zéro » ? C'est un nom ? C'est MON nom !"
+          - mia: "Oui ! C'est un nom propre : il désigne une seule personne… ou un seul hamster. Il prend une majuscule."
+      - texte: |
+          Le **nom commun** désigne une personne, un animal, une chose ou une idée : *un garçon, un lapin, une chaise, la peur*.
+          On peut presque toujours mettre **un, une, le, la** devant.
+
+          Le **nom propre** désigne **une seule** personne, un seul animal ou un seul lieu : *Léa, Médor, Paris, la Loire*.
+          Il commence **toujours par une majuscule**.
+      - astuce:
+          texte: "Pour savoir si un mot est un nom, essaie de mettre « un » ou « une » devant : « une table » ✔, « un manger » ✘."
+          qui: neo
+      - retiens: "Nom **commun** : un chat, une ville. Nom **propre** : Minou, Paris, avec une **majuscule**."
+      - a_quoi_ca_sert: "Sans noms, on ne pourrait parler de rien ni de personne ! Et la majuscule montre tout de suite qu'on parle de quelqu'un de précis."
+    exercices:
+      - type: classer
+        vars: { t: [[chat, Léa, table, Paris], [maison, Médor, fleur, Lyon], [ballon, Tom, forêt, Marseille], [gâteau, Mia, rivière, France], [école, Zéro, crayon, Nice]] }
+        enonce: "Nom commun ou nom propre ?"
+        categories: ["nom commun", "nom propre"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les noms propres ont une majuscule."
+      - type: surligner
+        vars: { t: ["Le [chat] de [Léa] dort sur le [lit].", "Mon [frère] mange une [pomme] rouge.", "La [maîtresse] lit une [histoire] aux [enfants].", "[Tom] joue au [ballon] dans le [jardin].", "Un [oiseau] chante sur la [branche]."] }
+        enonce: "Touche tous les noms de la phrase."
+        phrase: "{{t}}"
+        correction: "Les noms désignent des personnes, des animaux ou des choses."
+      - type: qcm
+        vars: { t: [["chien", "manger", "joli"], ["maison", "dormir", "petit"], ["fleur", "courir", "rouge"], ["livre", "lire", "grand"], ["soleil", "briller", "chaud"]] }
+        enonce: "Lequel de ces mots est un nom ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        explications: ["", "« {{t_1}} » est une action : c'est un verbe. On ne dit pas « un {{t_1}} ».", "« {{t_2}} » dit comment est quelque chose : c'est un adjectif."]
+        correction: "On peut dire « un {{t_0}} » ou « une {{t_0}} » : c'est un nom."
+      - type: mot
+        vars: { t: [["paris", "Paris"], ["léa", "Léa"], ["marseille", "Marseille"], ["tom", "Tom"], ["la france", "la France"], ["médor", "Médor"]] }
+        enonce: "Recopie ce nom propre avec sa majuscule : « {{t_0}} »"
+        reponse: "{{t_1}}"
+        correction: "Un nom propre prend une majuscule : {{t_1}}."
+
+  - id: determinants
+    titre: "Les petits mots devant le nom : un, une, le, la, les, l'"
+    objectif: Je choisis le bon déterminant devant un nom, et j'écris l' devant une voyelle.
+    mots: [déterminant, article]
+    etapes:
+      - dialogue:
+          - zero: "« La soleil », « un table »… ça sonne bizarre, non ?"
+          - mia: "Les oiseaux déterminants se sont trompés d'arbre ! Chaque nom a son oiseau."
+      - texte: |
+          Le **déterminant** est un petit mot placé **devant le nom**. Il nous dit si le nom est **masculin ou féminin**, **singulier ou pluriel**.
+
+          | | masculin | féminin | pluriel |
+          |---|---|---|---|
+          | on ne sait pas lequel | **un** chat | **une** souris | **des** chats |
+          | on sait lequel | **le** chat | **la** souris | **les** chats |
+      - attention:
+          texte: "Devant une voyelle (ou un h muet), **le** et **la** deviennent **l'** : l'arbre, l'école, l'hôpital. On n'écrit jamais « la école »."
+          qui: neo
+      - retiens: "**un, le** → masculin ; **une, la** → féminin ; **des, les** → pluriel ; **l'** devant une voyelle."
+      - question:
+          type: qcm
+          vars: { t: [[arbre, "l'arbre", "le arbre", "la arbre"], [école, "l'école", "la école", "le école"], [oiseau, "l'oiseau", "le oiseau", "la oiseau"], [étoile, "l'étoile", "la étoile", "le étoile"]] }
+          enonce: "Comment écrit-on ?"
+          choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+          correction: "Devant une voyelle : {{t_1}}."
+    exercices:
+      - type: classer
+        vars: { t: [[chat, table, arbre, ballon, fleur, école], [livre, maison, oiseau, vélo, pomme, étoile], [soleil, lune, orange, gâteau, porte, enfant], [cheval, robe, avion, crayon, chaise, île]] }
+        enonce: "Le, la ou l' ? Range chaque nom."
+        categories: ["le", "la", "l'"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
+        correction: "l' devant une voyelle ; le pour un nom masculin ; la pour un nom féminin."
+      - type: mot
+        vars: { t: [[arbre, m], [école, f], [table, f], [chat, m], [oiseau, m], [maison, f], [étoile, f], [orange, f], [hôpital, m], [lapin, m], [fleur, f], [avion, m]] }
+        enonce: "Écris le nom avec « le », « la » ou « l' » devant : … {{t_0}}"
+        reponse: "{{det('defini', t_0, t_1, 1)}}"
+        correction: "{{det('defini', t_0, t_1, 1)}}"
+      - type: qcm
+        vars: { t: [[un, "chat", "une"], [une, "souris", "un"], [un, "ballon", "une"], [une, "fleur", "un"], [un, "crayon", "une"], [une, "voiture", "un"], [un, "cheval", "une"], [une, "girafe", "un"]] }
+        enonce: "Quel déterminant va avec « … {{t_1}} » ?"
+        choix: ["{{t_0}}", "{{t_2}}"]
+        correction: "On dit « {{t_0}} {{t_1}} »."
+      - type: surligner
+        vars: { t: ["[Le] chat mange [une] souris.", "[La] maîtresse lit [un] livre.", "[Les] enfants jouent dans [le] jardin.", "[Un] oiseau chante sur [l'arbre].", "[Des] fleurs poussent près de [la] rivière."] }
+        enonce: "Touche les déterminants (les petits mots devant les noms)."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "Les déterminants sont juste devant les noms."
+
+  - id: genre
+    titre: "Masculin ou féminin ?"
+    objectif: Je sais si un nom est masculin (un, le) ou féminin (une, la), et je trouve le féminin de noms courants.
+    mots: [masculin, féminin, genre]
+    etapes:
+      - dialogue:
+          - mia: "Chaque nom a un genre : masculin ou féminin. « Un » ou « une », c'est le test magique !"
+          - zero: "« Un hamster ». Masculin. « Une… hamsterette » ? 😳"
+          - neo: "Pas toujours ! Pour certains animaux, le féminin est un tout autre mot."
+      - texte: |
+          - **Masculin** : on peut dire **un** ou **le** : un livre, le soleil.
+          - **Féminin** : on peut dire **une** ou **la** : une table, la lune.
+
+          Souvent, on forme le féminin en ajoutant un **e** : un ami → une ami**e**, un marchand → une marchand**e**.
+          Mais parfois le mot change : un lion → une lio**nne**, un boulanger → une boulang**ère**, un coq → une **poule**.
+      - retiens: "Pour trouver le genre d'un nom, je mets **un** ou **une** devant. Le féminin prend souvent un **e**."
+    exercices:
+      - type: classer
+        vars: { t: [[soleil, lune, livre, table], [ballon, fleur, crayon, maison], [gâteau, pomme, nuage, étoile], [vélo, voiture, arbre, forêt]] }
+        enonce: "Masculin (un) ou féminin (une) ?"
+        categories: ["masculin", "féminin"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Mets « un » ou « une » devant chaque nom."
+      - type: mot
+        vars: { t: [["un ami", "une amie"], ["un marchand", "une marchande"], ["un lion", "une lionne"], ["un chat", "une chatte"], ["un boulanger", "une boulangère"], ["un chanteur", "une chanteuse"], ["un loup", "une louve"], ["un voisin", "une voisine"], ["un cousin", "une cousine"], ["un épicier", "une épicière"]] }
+        enonce: "Écris au féminin : {{t_0}} → …"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} → {{t_1}}."
+      - type: qcm
+        vars: { t: [["un coq", "une poule", "une coque", "une coqe"], ["un cheval", "une jument", "une chevale", "une chevalle"], ["un taureau", "une vache", "une taurelle", "une taurette"], ["un garçon", "une fille", "une garçonne", "une garçone"], ["un roi", "une reine", "une roie", "une roitte"]] }
+        enonce: "Quel est le féminin de « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "{{t_0}} → {{t_1}} : le mot change complètement !"
+
+  - id: pluriel-s
+    titre: "Un ou plusieurs : le pluriel avec s"
+    objectif: Je mets un s au nom quand il y en a plusieurs, même si on ne l'entend pas.
+    mots: [singulier, pluriel]
+    etapes:
+      - dialogue:
+          - zero: "Un chat. Des chats. Je n'entends aucune différence ! C'est un complot ? 😳"
+          - neo: "La différence se voit, mais ne s'entend pas : c'est le s du pluriel. Il est muet, mais très important."
+      - texte: |
+          **Singulier** = un seul : *un chat, la fleur*.
+          **Pluriel** = plusieurs : *des chat**s**, les fleur**s***.
+
+          Au pluriel, on ajoute en général un **s** à la fin du nom. On ne l'entend pas, mais on l'écrit !
+      - attention:
+          texte: "Les mots qui finissent déjà par **s, x ou z** ne changent pas : une souris → des souris ; un nez → des nez ; une noix → des noix."
+          qui: neo
+      - retiens: "**Plusieurs** → j'ajoute un **s** muet. Le déterminant m'aide : **les, des, mes**… annoncent le pluriel."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Écris la liste de courses avec un adulte : 3 pommes, 2 carottes, 6 œufs… Vérifie qu'il ne manque aucun s !"
+          materiel: "un papier et un crayon"
+    exercices:
+      - type: mot
+        vars: { n: [chat, chien, livre, table, fleur, pomme, ballon, maison, crayon, voiture, souris, nez, noix, robot, fourmi, étoile] }
+        enonce: "Écris au pluriel : un/une {{n}} → des …"
+        reponse: "{{pluriel(n)}}"
+        correction: "des {{pluriel(n)}}"
+      - type: classer
+        vars: { t: [["les chats", "le chat", "des fleurs", "une fleur"], ["mes livres", "la maison", "des ballons", "un robot"], ["les souris", "une pomme", "des oiseaux", "le cheval"], ["ces enfants", "un enfant", "des crayons", "ma chaise"]] }
+        enonce: "Singulier (un seul) ou pluriel (plusieurs) ?"
+        categories: ["singulier", "pluriel"]
+        mots: [["{{t_0}}", 1], ["{{t_1}}", 0], ["{{t_2}}", 1], ["{{t_3}}", 0]]
+        correction: "Les, des, mes annoncent le pluriel."
+      - type: surligner
+        vars: { t: ["Les [chats] mangent des [croquettes].", "Mes [amis] ont des [vélos] rouges.", "Les [oiseaux] font des [nids].", "Des [enfants] cueillent des [fleurs]."] }
+        enonce: "Touche les noms au pluriel."
+        phrase: "{{t}}"
+        correction: "Les noms au pluriel prennent un s (ou un x)."
+
+  - id: pluriel-x
+    titre: "Les noms qui prennent un x"
+    objectif: Je sais que les noms en -eau, -au, -eu prennent un x au pluriel, et je connais quelques exceptions.
+    mots: [pluriel, exception]
+    etapes:
+      - dialogue:
+          - zero: "Un gâteau, des gâteaus ! …Non ? 😳"
+          - mia: "Des gâteau**x** ! Les mots en -eau mettent un x au pluriel. Comme une petite croix de trésor."
+      - texte: |
+          - Les noms en **-eau, -au, -eu** prennent un **x** : un bateau → des bateau**x**, un tuyau → des tuyau**x**, un jeu → des jeu**x**.
+          - Les noms en **-al** deviennent **-aux** : un cheval → des chev**aux**, un journal → des journ**aux**.
+          - **Sept noms** en -ou prennent un x : bijou, caillou, chou, genou, hibou, joujou, pou.
+      - astuce:
+          texte: "Pour les 7 noms en -ou, retiens la phrase : « Viens mon **chou**, mon **bijou**, mon **joujou**, sur mes **genoux**, jette des **cailloux** à ce **hibou** plein de **poux** ! »"
+          qui: mia
+      - attention:
+          texte: "Quelques exceptions prennent un s : des pneus, des bleus, des bals, des festivals, des carnavals."
+          qui: neo
+      - retiens: "**-eau, -au, -eu** → **x** ; **-al** → **-aux** ; **7 noms en -ou** → x ; les autres -ou → s (des clous, des trous)."
+    exercices:
+      - type: mot
+        vars: { n: [bateau, gâteau, oiseau, château, chapeau, tuyau, jeu, cheveu, feu, cheval, journal, animal, hôpital, bijou, caillou, chou, genou, hibou, clou, trou, pneu, bal, festival] }
+        enonce: "Écris au pluriel : un {{n}} → des …"
+        reponse: "{{pluriel(n)}}"
+        correction: "des {{pluriel(n)}}"
+      - type: qcm
+        vars: { t: [["des hiboux", "des hibous", "des hibouxs"], ["des chevaux", "des chevals", "des chevaus"], ["des bateaux", "des bateaus", "des batos"], ["des clous", "des cloux", "des clouxs"], ["des pneus", "des pneux", "des pneuxs"], ["des genoux", "des genous", "des genouxs"], ["des jeux", "des jeus", "des jeuxs"]] }
+        enonce: "Quelle écriture est juste ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "On écrit « {{t_0}} »."
+      - type: classer
+        vars: { t: [[bateau, clou, cheveu, trou, genou, sac], [gâteau, sou, jeu, fou, hibou, ami], [château, cou, feu, kangourou, caillou, vélo]] }
+        enonce: "Au pluriel, ce nom prend-il un s ou un x ?"
+        categories: ["s", "x"]
+        mots: [["{{t_0}}", 1], ["{{t_1}}", 0], ["{{t_2}}", 1], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 0]]
+        correction: "-eau, -eu → x ; les 7 noms en -ou (bijou, caillou, chou, genou, hibou, joujou, pou) → x ; les autres → s."
+
+  - id: nature-des-mots
+    titre: "Nom, verbe ou adjectif ? Le costume des mots"
+    objectif: Je trie les mots selon leur nature (nom, verbe, adjectif), comme on reconnaît un costume.
+    mots: [nature, nom, verbe, adjectif]
+    etapes:
+      - dialogue:
+          - mia: "Chaque mot porte un costume : c'est sa nature. Le nom, le verbe, l'adjectif… On les reconnaît à leur costume."
+          - neo: "Et chacun a son test : un/une pour le nom, hier/demain pour le verbe, très pour l'adjectif."
+      - texte: |
+          - Le **nom** : on peut mettre **un/une** devant (*un chat, une idée*).
+          - Le **verbe** : on peut le conjuguer, dire **hier… / demain…** (*il court, il courra*).
+          - L'**adjectif** : il dit **comment est** le nom ; on peut mettre **très** devant (*très grand, très rouge*).
+      - retiens: "Tests magiques : **un/une** → nom ; **hier/demain** → verbe ; **très** → adjectif."
+    exercices:
+      - type: classer
+        vars: { t: [[chat, courir, petit, maison, manger, rouge], [fleur, chanter, joli, livre, dormir, grand], [arbre, sauter, gentil, table, lire, bleu], [oiseau, jouer, rapide, ballon, écrire, doux]] }
+        enonce: "Range chaque mot selon son costume."
+        categories: [nom, verbe, adjectif]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
+        correction: "un/une → nom ; hier/demain → verbe ; très → adjectif."
+      - type: surligner
+        vars: { t: ["Le [petit] chat dort sur un [grand] lit.", "Une [jolie] fleur pousse dans le jardin [fleuri].", "Mon [gros] chien a un collier [rouge].", "La [vieille] dame porte un chapeau [bleu]."] }
+        enonce: "Touche les adjectifs (ils disent comment sont les choses)."
+        phrase: "{{t}}"
+        niveau: 2
+        correction: "On peut mettre « très » devant un adjectif."
+      - type: qcm
+        vars: { t: [["très", "adjectif", "nom", "verbe"], ["un", "nom", "verbe", "adjectif"], ["demain", "verbe", "nom", "adjectif"]] }
+        enonce: "Je peux mettre « {{t_0}} … » devant ce mot : quel est son costume (sa nature) ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Le test « {{t_0}} » marche pour un {{t_1}}."

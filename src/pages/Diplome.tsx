@@ -1,5 +1,6 @@
 import { go } from "../lib/router";
 import { useContent, worldProgress } from "../lib/content";
+import { histoireDe } from "../lib/content";
 import { useChild } from "../lib/store";
 import { Mascot } from "../components/Mascot";
 
@@ -9,7 +10,7 @@ export function Diplome({ worldId }: { worldId: string }) {
   const child = useChild()!;
   const w = worlds.find((x) => x.id === worldId);
   if (!w) return <div className="page center">Monde introuvable.</div>;
-  const ch = manifest?.histoire?.chapitres[w.id];
+  const ch = histoireDe(manifest, w.matiere)?.chapitres[w.id];
   const lit = child.crystals?.includes(w.id);
   const pr = worldProgress(child, w);
   const date = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });

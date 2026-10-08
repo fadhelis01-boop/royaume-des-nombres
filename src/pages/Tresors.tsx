@@ -2,6 +2,7 @@ import { useContent, worldProgress } from "../lib/content";
 import { useChild } from "../lib/store";
 import { BADGES, levelOf, TITLES, xpForLevel } from "../lib/rewards";
 import { Bubble, Mascot } from "../components/Mascot";
+import { Icone } from "../components/Icone";
 
 export function Tresors() {
   const child = useChild()!;
@@ -38,7 +39,7 @@ export function Tresors() {
           const got = child.badges.includes(b.id);
           return (
             <div key={b.id} className={`badge ${got ? "got" : ""}`} title={b.desc}>
-              <span className="badge-emoji">{got ? b.emoji : "❔"}</span>
+              <span className="badge-emoji">{got ? <Icone cat="badges" id={b.id} emoji={b.emoji} size={56} /> : "❔"}</span>
               <strong>{b.titre}</strong>
               <small>{b.desc}</small>
             </div>
