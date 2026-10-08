@@ -5,6 +5,8 @@ const VERSION = "__BUILD__";
 const APP_CACHE = "royaume-app-" + VERSION;
 const CONTENT_CACHE = "royaume-content";
 const IMG_CACHE = "royaume-images";
+// liste injectée à la compilation (vite.config.ts) : tout le code, pages à la demande comprises
+const ASSETS = /*ASSETS*/[];
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/apple-touch-icon.png", "./img/mascottes/mia.webp", "./img/mascottes/mia-reflexion.webp", "./img/mascottes/neo.webp", "./img/mascottes/zero.webp", "./content/manifest.json"];
 
 self.addEventListener("install", (event) => {
@@ -16,7 +18,7 @@ self.addEventListener("install", (event) => {
       try {
         const html = await (await fetch("./index.html", { cache: "reload" })).text();
         const assets = [...html.matchAll(/(?:src|href)="(\.\/assets\/[^"]+)"/g)].map((m) => m[1]);
-        await cache.addAll(assets);
+        await cache.addAll([...new Set([...assets, ...ASSETS])]);
         // Toutes les leçons, pour fonctionner hors connexion dès l'installation
         const m = await (await fetch("./content/manifest.json", { cache: "reload" })).json();
         const content = await caches.open(CONTENT_CACHE);

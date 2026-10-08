@@ -43,8 +43,8 @@ export function Diagnostic() {
   if (!started)
     return (
       <div className="page narrow">
-        <h1>🧭 Le petit test</h1>
-        <Bubble who="neo" text="Je vais te poser quelques questions, de plus en plus difficiles. Ce n'est PAS une interro : ça sert juste à trouver où commencer ton aventure !" />
+        <h1>🧭 Première quête : la carte des talents</h1>
+        <Bubble who="neo" text="Première quête ! Pour savoir quels cristaux tu peux déjà rallumer, montre-moi ce que tu sais. Les questions deviennent de plus en plus difficiles. Ce n'est PAS une interro : on cherche juste où commencer ton aventure !" />
         <Bubble who="mia" text="Si tu ne sais pas, ce n'est pas grave du tout : ça veut dire qu'on va l'apprendre ensemble." side="right" />
         <div className="center">
           <button className="btn btn-primary btn-xl" onClick={() => setStarted(true)}>

@@ -104,7 +104,7 @@ function lex(src: string, userMode = false): Tok[] {
 const FUNCS = new Set([
   "abs", "sqrt", "racine", "cbrt", "round", "arrondi", "floor", "ent", "ceil", "min", "max", "pgcd", "ppcm", "fact", "comb", "perm",
   "pow", "mod", "sin", "cos", "tan", "sind", "cosd", "tand", "asin", "acos", "atan", "asind", "acosd", "atand", "ln", "log", "exp",
-  "choix", "alea", "aleanz", "si", "signe", "estpremier", "frac", "fracb", "nb", "dec", "texte", "fixe", "nombrediviseurs",
+  "choix", "prenom", "animal", "fruit", "objet", "alea", "aleanz", "si", "signe", "estpremier", "frac", "fracb", "nb", "dec", "texte", "fixe", "nombrediviseurs",
   "chiffre", "sommechiffres", "fib", "kieme", "lettres", "diviseurs", "majuscule", "pluriel", "heure", "duree", "binaire", "romain", "rac", "tri", "melange",
 ]);
 
@@ -570,6 +570,15 @@ function callFn(name: string, argNodes: Node[], ctx: EvalCtx): Value {
     case "choix":
       if (!args.length) throw new ExprError("choix() vide");
       return args[Math.floor(rng() * args.length)];
+    // Habillages variés pour les énoncés : prénoms du monde entier, animaux, fruits, objets.
+    case "prenom":
+      return PRENOMS[Math.floor(rng() * PRENOMS.length)];
+    case "animal":
+      return ANIMAUX[Math.floor(rng() * ANIMAUX.length)];
+    case "fruit":
+      return FRUITS[Math.floor(rng() * FRUITS.length)];
+    case "objet":
+      return OBJETS[Math.floor(rng() * OBJETS.length)];
     case "frac":
       return fracStr(n(0), n(1), true, ctx.math ?? true);
     case "fracb":
@@ -703,3 +712,8 @@ export function equivalent(a: Node, b: Node, variables: string[], fixed: Record<
 
 export const toNumber = num;
 export const isTruthy = truthy;
+
+const PRENOMS = ["Léa", "Tom", "Inès", "Sami", "Chloé", "Yanis", "Aïcha", "Lucas", "Mei", "Noah", "Fatou", "Hugo", "Sofia", "Malik", "Jade", "Elio", "Nour", "Gabin", "Lina", "Kenzo", "Zoé", "Adam", "Maya", "Ilyes", "Rose", "Théo", "Yuna", "Samuel", "Amira", "Louis"];
+const ANIMAUX = ["écureuils", "lapins", "hérissons", "castors", "marmottes", "loutres", "chouettes", "renards", "tortues", "abeilles"];
+const FRUITS = ["pommes", "poires", "cerises", "fraises", "prunes", "abricots", "mandarines", "noix", "noisettes", "figues"];
+const OBJETS = ["billes", "cartes", "perles", "crayons", "autocollants", "coquillages", "timbres", "boutons", "images", "jetons"];

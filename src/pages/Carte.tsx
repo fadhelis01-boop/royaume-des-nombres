@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { go } from "../lib/router";
 import { CYCLES, lessonKey, nextLesson, useContent, worldProgress, worldUnlocked } from "../lib/content";
 import { dayKey, dueCards, useChild, useStore } from "../lib/store";
 import { Bubble, Mascot } from "../components/Mascot";
+import { CarteRoyaume } from "../components/CarteRoyaume";
+import { Recap } from "../components/Seance";
 import type { World } from "../lib/types";
 
 export function Carte() {
@@ -26,6 +29,21 @@ export function Carte() {
   const greet = greeting(child.name, child.streak);
 
   const crystals = child.crystals ?? [];
+  const [vue, setVue] = useState<"carte" | "liste">(() => {
+    try {
+      return localStorage.getItem("rdn-vue") === "liste" ? "liste" : "carte";
+    } catch {
+      return "carte";
+    }
+  });
+  const choisirVue = (v: "carte" | "liste") => {
+    setVue(v);
+    try {
+      localStorage.setItem("rdn-vue", v);
+    } catch {
+      /* stockage indisponible : on garde la vue pour cette visite */
+    }
+  };
   return (
     <div className="page carte">
       {!child.story?.prologue && (
@@ -37,6 +55,7 @@ export function Carte() {
           </span>
         </button>
       )}
+      <Recap />
       <Bubble who={child.avatar} text={greet} />
 
       <div className="quick">
@@ -91,6 +110,13 @@ export function Carte() {
             </span>
           </button>
         )}
+        <button className="quick-card" onClick={() => go("/boutique")}>
+          <span className="qc-emoji">🛍️</span>
+          <span>
+            <strong>Mon coin</strong>
+            <small>💎 {child.gems ?? 0} gemmes · boutique et cabane</small>
+          </span>
+        </button>
         <button className="quick-card" onClick={() => go("/revisions")}>
           <span className="qc-emoji">🔁</span>
           <span>
@@ -100,7 +126,16 @@ export function Carte() {
         </button>
       </div>
 
-      {(Object.keys(CYCLES) as World["cycle"][]).map((cy) => {
+      <div className="tabs vue-tabs" role="tablist" aria-label="Affichage des mondes">
+        <button role="tab" aria-selected={vue === "carte"} className={`tab ${vue === "carte" ? "active" : ""}`} onClick={() => choisirVue("carte")}>
+          🗺️ La carte
+        </button>
+        <button role="tab" aria-selected={vue === "liste"} className={`tab ${vue === "liste" ? "active" : ""}`} onClick={() => choisirVue("liste")}>
+          📋 La liste
+        </button>
+      </div>
+      {vue === "carte" && <CarteRoyaume worlds={worlds} child={child} />}
+      {vue === "liste" && (Object.keys(CYCLES) as World["cycle"][]).map((cy) => {
         const ws = worlds.filter((w) => w.cycle === cy);
         if (!ws.length) return null;
         return (

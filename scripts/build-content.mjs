@@ -76,9 +76,19 @@ function main() {
   }
   // L'aventure (fil rouge narratif)
   const h = opt("_histoire.yaml", null);
+  // Un choix narratif : une question, 2 ou 3 options, chacune suivie de quelques répliques.
+  const choix = (c, where) => {
+    if (!c) return undefined;
+    if (!c.question || !Array.isArray(c.options) || c.options.length < 2) {
+      errors.push(`${where} : il faut « question » et au moins 2 « options »`);
+      return undefined;
+    }
+    return { qui: c.qui ?? "mia", question: String(c.question), options: c.options.map((o, i) => ({ texte: String(o.texte ?? ""), suite: lines(o.suite ?? [], `${where} option ${i + 1}`) })) };
+  };
   if (h) {
     manifest.histoire = {
       prologue: lines(h.prologue ?? [], "histoire prologue"),
+      prologueChoix: choix(h.prologue_choix, "histoire prologue choix"),
       arcs: (h.arcs ?? []).map((a) => {
         if (!worldIds.has(a.final)) errors.push(`histoire ${a.id} : monde final inconnu ${a.final}`);
         return { id: a.id, titre: a.titre, sousTitre: a.sous_titre, final: a.final, fin: lines(a.fin ?? [], `histoire ${a.id} fin`) };
@@ -87,7 +97,7 @@ function main() {
     };
     for (const [id, c] of Object.entries(h.chapitres ?? {})) {
       if (!worldIds.has(id)) errors.push(`histoire : chapitre pour un monde inconnu ${id}`);
-      manifest.histoire.chapitres[id] = { titre: c.titre, objet: c.objet, avant: lines(c.avant ?? [], `histoire ${id} avant`), apres: lines(c.apres ?? [], `histoire ${id} apres`) };
+      manifest.histoire.chapitres[id] = { titre: c.titre, objet: c.objet, avant: lines(c.avant ?? [], `histoire ${id} avant`), apres: lines(c.apres ?? [], `histoire ${id} apres`), choix: choix(c.choix, `histoire ${id} choix`) };
     }
     for (const id of worldIds) if (!manifest.histoire.chapitres[id]) warns.push(`histoire : pas de chapitre pour le monde ${id}`);
   }

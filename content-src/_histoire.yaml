@@ -18,6 +18,19 @@ prologue:
   - neo: "Oui, toi. À chaque fois que tu apprendras quelque chose, un nombre reviendra. Et si tu réussis le Défi du Gardien d'un monde, son cristal se rallumera !"
   - mia: "Tu seras notre nouvelle Étoile du Royaume. Prête, prêt ? Défi accepté !"
 
+prologue_choix:
+  qui: mia
+  question: "Alors, tu nous aides à sauver le Royaume ?"
+  options:
+    - texte: "Oui ! Défi accepté !"
+      suite:
+        - neo-joie: "Je le savais ! Bienvenue dans l'équipe !"
+        - zero-joie: "Une Étoile du Royaume ! Je vais faire un gâteau. Avec zéro part. Non, attends…"
+    - texte: "J'ai un peu peur… mais je veux bien essayer"
+      suite:
+        - mia: "C'est normal d'avoir un peu peur. On sera toujours avec toi, et se tromper fait partie du voyage."
+        - neo: "Les plus grands explorateurs avaient peur aussi. Ils y sont allés quand même !"
+
 arcs:
   - id: arc-1
     titre: "Livre I — Le Grignoteur de Nombres"
@@ -70,6 +83,16 @@ chapitres:
       - narrateur: "Tout commence dans un petit nid, au creux d'un arbre. C'est là que naissent les nombres du Royaume."
       - zero-triste: "Les bébés nombres ont peur : le Grignoteur est passé par ici. Ils ne savent plus qui vient après qui…"
       - mia: "Aide-les à se compter, à se reconnaître et à se ranger. Ils retrouveront leur courage !"
+    choix:
+      qui: zero
+      question: "Un bébé nombre pleure tout seul au bord du nid. On fait quoi ?"
+      options:
+        - texte: "On le console et on l'aide à retrouver sa place"
+          suite:
+            - zero-joie: "Tu as entendu ? Il dit « merci » ! Enfin… il dit « trois ». C'est pareil."
+        - texte: "On cherche d'abord qui l'a effrayé"
+          suite:
+            - neo: "Bonne idée, détective ! Regarde : des miettes de chiffres… Le Grignoteur n'est pas loin."
     apres:
       - narrateur: "L'Œuf de lumière se met à briller. Un, deux, trois… les bébés nombres sortent du nid en riant."
       - zero-joie: "Ils me suivent ! Je suis leur chef ! …Je suis le chef de rien. Mais quel chef !"
@@ -82,6 +105,16 @@ chapitres:
       - narrateur: "Dans la Forêt des Nombres, les arbres portaient fièrement leurs chiffres. Mais ce matin, beaucoup d'écorces sont vides."
       - neo: "Le Grignoteur a mangé les dizaines ! Sans elles, plus personne ne sait compter les glands."
       - mia: "Si tu apprends à faire des paquets de 10 et à lire les grands nombres, les arbres retrouveront leurs chiffres."
+    choix:
+      qui: mia
+      question: "Deux chemins traversent la forêt. Lequel prend-on ?"
+      options:
+        - texte: "Le sentier des écureuils, qui comptent leurs glands"
+          suite:
+            - mia-joie: "Ils comptent par paquets de 10 ! Regarde comme ils vont vite."
+        - texte: "Le chemin qui longe la rivière"
+          suite:
+            - neo: "Sur les galets, il manque des chiffres… On est sur la bonne piste !"
     apres:
       - narrateur: "Le Cristal Émeraude se rallume. Sur chaque tronc, les chiffres repoussent comme des feuilles au printemps."
       - zero-surprise: "Le chêne a retrouvé son 7 ! Et l'Arbre-Monde compte jusqu'à… UN MILLION ! 🤯"
@@ -179,6 +212,16 @@ chapitres:
       - nuage-triste: "« Je ne comprends rien aux problèmes. Les mots se mélangent et les nombres se moquent de moi. Alors je les mange. »"
       - mia: "Il a peut-être juste besoin d'une méthode… Comme celle des détectives !"
       - neo: "Comprendre, chercher, calculer, vérifier. Et dessiner des barres. Montrons-lui que ça marche !"
+    choix:
+      qui: mia
+      question: "Que fait-on de la lettre du Grignoteur ?"
+      options:
+        - texte: "On lui écrit une réponse gentille"
+          suite:
+            - narrateur: "Tu écris : « Personne n'est nul en maths. On peut t'apprendre. » Le papier disparaît dans un petit nuage gris…"
+        - texte: "On la garde comme indice"
+          suite:
+            - neo: "Bien vu ! L'écriture tremble… Il n'est peut-être pas si méchant."
     apres:
       - narrateur: "Le Cristal Détective s'allume. Au mur de l'Atelier, chaque problème a enfin sa solution."
       - nuage: "(caché sous la table) …Avec des barres, c'est moins effrayant. Peut-être que moi aussi je pourrais…"
@@ -191,6 +234,18 @@ chapitres:
       - narrateur: "Dans le Jardin, les plantes poussent en suivant des règles secrètes : 1, 1, 2, 3, 5, 8…"
       - neo: "C'est mon jardin ! Et le Grignoteur s'est perdu au milieu de la grande spirale."
       - mia: "Pour l'atteindre, il faut comprendre les motifs, les suites et la logique. C'est le dernier chapitre du premier livre !"
+    choix:
+      qui: neo
+      question: "On aperçoit le Grignoteur au centre de la spirale. Comment l'approcher ?"
+      options:
+        - texte: "Doucement, en lui parlant"
+          suite:
+            - nuage-triste: "…Ne me faites pas de mal…"
+            - mia: "On ne veut pas te faire de mal. On veut juste que les nombres reviennent."
+        - texte: "En courant pour l'attraper"
+          suite:
+            - nuage-surprise: "Aaah ! Hi hi, raté !"
+            - mia-reflexion: "Il s'est caché plus loin dans la spirale… Il faudra être plus malin que lui."
     apres:
       - narrateur: "Le Cristal Spirale tourbillonne de lumière, et le premier livre de l'aventure s'achève…"
 
@@ -202,6 +257,16 @@ chapitres:
       - nuage: "Les amis, j'ai entendu parler d'une créature qui change de couleur ET de valeur. Elle a besoin d'aide !"
       - narrateur: "Elle s'appelle Ixe. Personne ne sait où elle se cache. Il faudra reconstituer sa carte, morceau par morceau."
       - neo: "Premier indice : en haut de la Tour des Proportions, où tout grandit et rapetisse dans les mêmes proportions."
+    choix:
+      qui: nuage
+      question: "Ixe est introuvable. Par où commencer ?"
+      options:
+        - texte: "Grimper en haut de la tour pour tout voir"
+          suite:
+            - neo: "D'en haut, la plaine ressemble à une carte à l'échelle… Le premier fragment est là !"
+        - texte: "Interroger les habitants"
+          suite:
+            - zero: "Une fourmi dit avoir vu un caméléon dix fois plus grand qu'elle. Ça fait… un petit caméléon."
     apres:
       - narrateur: "Au sommet de la Tour, le premier fragment de carte brille. On y voit une grotte… et un x tracé à l'encre verte."
       - ixe: "(une voix lointaine) Je suis là… et ailleurs… et nulle part…"
@@ -224,6 +289,16 @@ chapitres:
       - narrateur: "Au fond de la Grotte, les murs sont couverts de lettres qui remplacent des nombres."
       - ixe: "Vous ne m'attraperez pas ! Je suis x, et x peut valoir n'importe quoi !"
       - neo: "Peut-être. Mais avec une balance bien équilibrée, on peut trouver ta vraie valeur !"
+    choix:
+      qui: ixe
+      question: "Ixe te défie : « Devine qui je suis ! » Tu réponds…"
+      options:
+        - texte: "« Tu es un nombre caché, et je vais te trouver ! »"
+          suite:
+            - ixe: "Hi hi ! Alors trouve ma valeur… si tu peux !"
+        - texte: "« Tu es notre amie, même si tu changes tout le temps ! »"
+          suite:
+            - ixe-joie: "Oh… personne ne m'avait jamais dit ça. Bon… je te laisse un indice : regarde la balance."
     apres:
       - narrateur: "Sur la grande balance de la grotte, le troisième fragment se pose. La balance est parfaitement équilibrée."
       - ixe: "Bien joué… mais je me suis déjà enfui vers le Château !"
@@ -274,6 +349,16 @@ chapitres:
       - ixe: "La Bibliothèque de l'Infini est en danger. Le Grand Oubli efface les livres des savants, page après page."
       - narrateur: "Pour la sauver, il faut retrouver onze volumes perdus dans les terres des Maîtres. Le premier est au cœur du Volcan."
       - mia: "Les trajectoires de la lave dessinent des paraboles. Comprends-les, et le livre se réécrira."
+    choix:
+      qui: mia
+      question: "La lave jaillit en courbes. On s'approche comment ?"
+      options:
+        - texte: "On observe d'abord la forme des jets"
+          suite:
+            - mia-reflexion: "Ils sont symétriques ! Le point le plus haut est pile au milieu…"
+        - texte: "On fonce vers le livre !"
+          suite:
+            - neo-surprise: "Ouh là ! Sans calculer la trajectoire, c'est dangereux. On reprend avec méthode !"
     apres:
       - narrateur: "Le Livre des Paraboles se remplit à nouveau : sommets, discriminants, racines… Plus rien n'est oublié."
 
@@ -365,6 +450,16 @@ chapitres:
       - narrateur: "Au cœur du Temple, le Grand Oubli tourbillonne : une page blanche immense, qui efface tout ce qu'elle touche."
       - mia: "Il n'a qu'une faiblesse : ce qui est DÉMONTRÉ ne peut jamais être oublié."
       - neo: "Raisonnement, contre-exemples, preuves par l'absurde… C'est le combat final. Défi accepté !"
+    choix:
+      qui: neo
+      question: "Le Grand Oubli s'approche. Quelle arme choisis-tu ?"
+      options:
+        - texte: "Une démonstration solide"
+          suite:
+            - mia-fier: "Ce qui est démontré ne s'efface jamais. Il recule déjà !"
+        - texte: "Un contre-exemple malin"
+          suite:
+            - neo-joie: "Un seul contre-exemple suffit à briser une fausse règle. Il vacille !"
     apres:
       - narrateur: "Le Livre des Preuves brille d'une lumière plus forte que toutes les autres réunies…"
 

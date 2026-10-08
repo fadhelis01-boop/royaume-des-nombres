@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { go } from "../lib/router";
-import { useContent } from "../lib/content";
-import { markStory, useChild } from "../lib/store";
+import { nextLesson, useContent } from "../lib/content";
+import { getState, markStory, useChild } from "../lib/store";
 import { StoryScene } from "../components/Story";
 import { Mascot } from "../components/Mascot";
 import type { Line } from "../lib/types";
@@ -19,12 +19,18 @@ export function Aventure({ part }: { part?: string }) {
       <div className="page narrow">
         <StoryScene
           lines={h.prologue}
+          choix={h.prologueChoix}
           titre="Prologue — Le Royaume s'éteint"
           k="prologue"
           decor="img/decors/foret-des-nombres.webp"
           onDone={() => {
+            const fresh = !child.story?.prologue && !Object.keys(child.progress).length;
             markStory("prologue");
-            go("/");
+            if (fresh && child.age >= 8 && !child.diag) go("/diagnostic?quete=1");
+            else if (fresh) {
+              const n = nextLesson(child, getState().settings);
+              go(n ? `/lecon/${n.world.id}/${n.lesson.id}` : "/");
+            } else go("/");
           }}
           doneLabel="Je relève le défi ! ➜"
         />

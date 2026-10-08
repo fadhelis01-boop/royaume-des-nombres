@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { go } from "../lib/router";
-import { exportBackup, importBackup, removeChild, setState, updateChild, updateSettings, useStore, dayKey, minutesToday } from "../lib/store";
+import { exportBackup, importBackup, removeChild, setState, updateChild, updateSettings, useStore, dayKey, minutesToday, newChild, applyChildMode } from "../lib/store";
 import { importWorldFile, refreshContent, removeImportedWorld, useContent, worldProgress } from "../lib/content";
 import { checkForAppUpdate, isIos, isStandalone, promptInstall, usePwa } from "../lib/pwa";
 import { frenchVoices, previewVoice, ttsSupported } from "../lib/tts";
@@ -162,7 +162,8 @@ function Suivi() {
     const [w, l] = key.split("/");
     const W = worlds.find((x) => x.id === w);
     const L = W?.lecons.find((x) => x.id === l);
-    return L ? `${W!.emoji} ${L.titre}` : key.startsWith("jeu:") ? "🎮 Jeux" : key;
+    if (!L && W && l?.startsWith("gardien")) return `${W.emoji} Défi du Gardien — ${W.titre}`;
+    return L ? `${W!.emoji} ${L.titre} (${W!.niveau})` : key.startsWith("jeu:") ? "🎮 Jeux" : key;
   };
   const weak = Object.entries(c.skills)
     .filter(([k, s]) => k.includes("/") && s.ok + s.ko >= 4)
@@ -258,6 +259,7 @@ function Suivi() {
           <p className="small muted">Conseil : proposez à l'enfant de relire la leçon puis de refaire le défi ; la page Révisions → « Retravailler mes erreurs » cible ces notions.</p>
         </>
       )}
+      <Coince c={c} lessonTitle={lessonTitle} />
       {c.mistakes.length > 0 && (
         <details>
           <summary>Dernières erreurs ({c.mistakes.length})</summary>
@@ -295,6 +297,61 @@ function Suivi() {
   );
 }
 
+/** Où l'enfant décroche, et comment se passent ses séances. */
+function Coince({ c, lessonTitle }: { c: Child; lessonTitle: (k: string) => string }) {
+  const ab = Object.entries(c.abandons ?? {})
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8);
+  const ss = (c.sessions ?? []).slice(-10).reverse();
+  const avg = ss.length ? Math.round(ss.reduce((t, x) => t + x.min, 0) / ss.length) : 0;
+  return (
+    <>
+      <h3>Où ça coince</h3>
+      {ab.length ? (
+        <>
+          <ul>
+            {ab.map(([k, n]) => (
+              <li key={k}>
+                {lessonTitle(k.replace(":defi", ""))}
+                {k.endsWith(":defi") ? " — défi" : ""} : quitté {n} fois avant la fin
+              </li>
+            ))}
+          </ul>
+          <p className="small muted">Une leçon souvent quittée est peut-être trop difficile ou trop longue pour l'instant. Proposez de la faire ensemble, ou de passer par l'École des Astuces.</p>
+        </>
+      ) : (
+        <p className="small muted">Aucune leçon abandonnée en cours de route : très bon signe.</p>
+      )}
+      <h3>Séances récentes</h3>
+      {ss.length ? (
+        <>
+          <p className="small">
+            Durée moyenne : <strong>{avg} min</strong>. L'application propose une pause vers 15 minutes (l'enfant peut continuer).
+          </p>
+          <table className="tableau small">
+            <tbody>
+              <tr>
+                <th>Jour</th>
+                <th>Durée</th>
+                <th>Réponses</th>
+              </tr>
+              {ss.map((x) => (
+                <tr key={x.start}>
+                  <td>{new Date(x.start).toLocaleString("fr-FR", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</td>
+                  <td>{x.min} min</td>
+                  <td>{x.q}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      ) : (
+        <p className="small muted">Pas encore de séance enregistrée.</p>
+      )}
+    </>
+  );
+}
+
 // ---------- Profils ----------
 function Profils() {
   const children = useStore((s) => s.children);
@@ -320,7 +377,7 @@ function ProfileEdit({ c }: { c: Child }) {
       <label>
         Âge :{" "}
         <select value={c.age} onChange={(e) => updateChild((x) => void (x.age = Number(e.target.value)), c.id)}>
-          {Array.from({ length: 14 }, (_, i) => i + 6).map((a) => (
+          {Array.from({ length: 15 }, (_, i) => i + 5).map((a) => (
             <option key={a} value={a}>
               {a} ans
             </option>
@@ -335,6 +392,19 @@ function ProfileEdit({ c }: { c: Child }) {
               {NAMES[a]}
             </option>
           ))}
+        </select>
+      </label>
+      <label>
+        Lecture :{" "}
+        <select
+          value={c.lecteur ?? "oui"}
+          onChange={(e) => {
+            updateChild((x) => void (x.lecteur = e.target.value as Child["lecteur"]), c.id);
+            applyChildMode();
+          }}
+        >
+          <option value="oui">lit seul</option>
+          <option value="non">ne lit pas encore (tout en voix et en pictogrammes)</option>
         </select>
       </label>
       <div className="row">
@@ -354,7 +424,7 @@ function ProfileEdit({ c }: { c: Child }) {
               if (confirm === "del") removeChild(c.id);
               else
                 updateChild(
-                  (x) => ({ ...x, xp: 0, stars: 0, streak: 0, bestStreak: 0, days: {}, badges: [], progress: {}, srs: {}, skills: {}, mistakes: [], games: {}, tables: {}, enigmes: [], validatedWorlds: [], counters: {}, inventions: [], diag: undefined, daily: undefined }),
+                  (x) => ({ ...newChild(x.name, x.avatar, x.age), id: x.id, createdAt: x.createdAt, lecteur: x.lecteur }),
                   c.id,
                 );
               setConfirm("");

@@ -30,7 +30,7 @@ export function Monde({ id }: { id: string }) {
         <button className="back" onClick={() => go("/")}>
           ← Carte
         </button>
-        <StoryScene lines={ch.avant} titre={ch.titre} decor={w.decor} couleur={w.couleur} k={`avant-${w.id}`} onDone={() => markStory(`avant:${w.id}`)} doneLabel="À l'aventure ! ➜" />
+        <StoryScene lines={ch.avant} choix={ch.choix} titre={ch.titre} decor={w.decor} couleur={w.couleur} k={`avant-${w.id}`} onDone={() => markStory(`avant:${w.id}`)} doneLabel="À l'aventure ! ➜" />
       </div>
     );
   const bossOpen = w.cycle !== "astuces" && gardienOuvert(w);
@@ -39,7 +39,7 @@ export function Monde({ id }: { id: string }) {
       <button className="back" onClick={() => go("/")}>
         ← Carte
       </button>
-      <div className="monde-banner" style={w.decor ? { backgroundImage: `url(${w.decor})` } : undefined}>
+      <div className={`monde-banner ${lit || w.id === "ecole-des-astuces" ? "" : "eteint"}`} style={w.decor ? { backgroundImage: `url(${w.decor})` } : undefined}>
         <div className="monde-banner-in">
           <span className="monde-emoji">{w.emoji}</span>
           <h1>{w.titre}</h1>

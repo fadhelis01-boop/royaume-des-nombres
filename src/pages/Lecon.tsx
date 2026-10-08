@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
 import { findLesson, lessonKey } from "../lib/content";
-import { saveStep, useChild, getState, bump, addXp, updateChild } from "../lib/store";
+import { saveStep, useChild, getState, bump, addXp, addGems, updateChild, recordAbandon } from "../lib/store";
+import { sfx } from "../lib/sound";
 import { speak, stopSpeaking, useTts, type Seg } from "../lib/tts";
 import { instantiate, newSeed } from "../lib/gen";
 import { Bubble, Dialogue, Mascot } from "../components/Mascot";
 import { Md } from "../components/Md";
 import { Visuel } from "../components/Visuel";
 import { ExercisePlayer } from "../components/ExercisePlayer";
-import type { Step, Who } from "../lib/types";
+import type { Step, Who, World } from "../lib/types";
 
 /** Ce que la voix lit pour une étape. */
 export function stepSegments(s: Step): Seg[] {
@@ -62,7 +63,7 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
   useEffect(() => {
     if (!step) return;
     const segs = stepSegments(step);
-    const auto = continuous || getState().settings.autoRead;
+    const auto = continuous || getState().settings.autoRead || child.lecteur === "non";
     if (!auto || !segs.length) {
       if (continuous && step.kind === "question") setContinuous(false);
       return;
@@ -98,7 +99,14 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
   return (
     <div className="page lecon" style={{ "--wc": found.world.couleur } as React.CSSProperties}>
       <div className="lecon-top">
-        <button className="back" onClick={() => go(`/monde/${worldId}`)} aria-label="Quitter la leçon">
+        <button
+          className="back"
+          onClick={() => {
+            if (!isLast && i > 0) recordAbandon(key);
+            go(`/monde/${worldId}`);
+          }}
+          aria-label="Quitter la leçon"
+        >
           ✕
         </button>
         <div className="steps-bar" aria-label={`étape ${i + 1} sur ${steps.length}`}>
@@ -125,25 +133,41 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
       {i === 0 && <p className="objectif">🎯 {lesson.objectif}</p>}
 
       <div className="step-card" key={i}>
-        <StepView step={step} k={`step:${key}:${i}`} onAnswered={() => setAnswered((a) => ({ ...a, [i]: true }))} statKey={lessonKey(found.world, lesson.id)} />
+        <StepView step={step} k={`step:${key}:${i}`} onAnswered={() => setAnswered((a) => ({ ...a, [i]: true }))} statKey={lessonKey(found.world, lesson.id)} cycle={found.world.cycle} />
       </div>
 
       <div className="lecon-nav">
-        <button className="btn btn-soft" disabled={i === 0} onClick={() => setI(i - 1)}>
-          ← Précédent
+        <button className="btn btn-soft" disabled={i === 0} onClick={() => setI(i - 1)} aria-label="Précédent">
+          ←<span className="btn-txt"> Précédent</span>
         </button>
         {step.kind !== "question" && stepSegments(step).length > 0 && (
-          <button className="btn btn-soft" onClick={() => (tts.playing && tts.key === `step:${key}:${i}` ? stopSpeaking() : speak(stepSegments(step), { key: `step:${key}:${i}` }))}>
-            {tts.playing && tts.key === `step:${key}:${i}` ? "⏹ Stop" : "🔊 Relire"}
+          <button className="btn btn-soft" aria-label="Relire" onClick={() => (tts.playing && tts.key === `step:${key}:${i}` ? stopSpeaking() : speak(stepSegments(step), { key: `step:${key}:${i}` }))}>
+            {tts.playing && tts.key === `step:${key}:${i}` ? (
+              <>
+                ⏹<span className="btn-txt"> Stop</span>
+              </>
+            ) : (
+              <>
+                🔊<span className="btn-txt"> Relire</span>
+              </>
+            )}
           </button>
         )}
         {blocked ? (
-          <button className="btn btn-ghost" onClick={() => setAnswered((a) => ({ ...a, [i]: true }))}>
-            Passer
+          <button className="btn btn-ghost" onClick={() => setAnswered((a) => ({ ...a, [i]: true }))} aria-label="Passer">
+            ⏭<span className="btn-txt"> Passer</span>
           </button>
         ) : (
-          <button className="btn btn-primary" onClick={goNext}>
-            {isLast ? "⭐ Au défi !" : "Suivant →"}
+          <button className="btn btn-primary" onClick={goNext} aria-label={isLast ? "Au défi" : "Suivant"}>
+            {isLast ? (
+              <>
+                ⭐<span className="btn-txt"> Au défi !</span>
+              </>
+            ) : (
+              <>
+                <span className="btn-txt">Suivant </span>→
+              </>
+            )}
           </button>
         )}
       </div>
@@ -151,7 +175,7 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
   );
 }
 
-function StepView({ step, k, onAnswered, statKey }: { step: Step; k: string; onAnswered: () => void; statKey: string }) {
+function StepView({ step, k, onAnswered, statKey, cycle }: { step: Step; k: string; onAnswered: () => void; statKey: string; cycle: World["cycle"] }) {
   switch (step.kind) {
     case "dialogue":
       return <Dialogue lines={step.lines} k={k} />;
@@ -205,7 +229,7 @@ function StepView({ step, k, onAnswered, statKey }: { step: Step; k: string; onA
     case "exemple":
       return <Exemple step={step} />;
     case "question":
-      return <InlineQuestion spec={step.ex} onAnswered={onAnswered} statKey={statKey} />;
+      return <InlineQuestion spec={step.ex} onAnswered={onAnswered} statKey={statKey} cycle={cycle} />;
     case "explique":
       return <Explique step={step} onAnswered={onAnswered} />;
     case "vraie_vie":
@@ -318,19 +342,49 @@ function Exemple({ step }: { step: Extract<Step, { kind: "exemple" }> }) {
   );
 }
 
-function InlineQuestion({ spec, onAnswered, statKey }: { spec: Parameters<typeof instantiate>[0]; onAnswered: () => void; statKey: string }) {
+const RENCONTRE: Partial<Record<World["cycle"], { who: Who; avant: string; gagne: string; perdu: string }>> = {
+  graines: {
+    who: "nuage",
+    avant: "Hi hi ! J'ai volé la réponse de cette question ! Si tu la trouves, je te la rends… et je te donne 3 gemmes !",
+    gagne: "Grrr… tu l'as trouvée ! Bon, voilà tes gemmes. Mais je reviendrai !",
+    perdu: "Hi hi, je garde la réponse… pour l'instant ! Regarde bien la correction.",
+  },
+  explorateurs: {
+    who: "ixe",
+    avant: "Coucou ! Je me suis cachée dans la réponse de cette question. Trouve-moi et je te donne 3 gemmes !",
+    gagne: "Démasquée ! Quel flair de détective ! Voilà tes gemmes.",
+    perdu: "Raté, je change de couleur ! La correction va t'aider à me retrouver la prochaine fois.",
+  },
+};
+
+function InlineQuestion({ spec, onAnswered, statKey, cycle }: { spec: Parameters<typeof instantiate>[0]; onAnswered: () => void; statKey: string; cycle: World["cycle"] }) {
   const [seed, setSeed] = useState(newSeed);
   const [done, setDone] = useState(false);
+  const [issue, setIssue] = useState<boolean | null>(null);
   const inst = useMemo(() => instantiate(spec, seed), [spec, seed]);
+  // une question sur trois environ, le Grignoteur (ou Ixe) surgit : la même question devient une petite quête
+  const rencontre = RENCONTRE[cycle] && seed % 3 === 0 ? RENCONTRE[cycle] : undefined;
   return (
     <div className="st-question">
       <div className="st-label">🧠 À toi de jouer !</div>
+      {rencontre && (
+        <div className={`rencontre ${issue === null ? "arrive" : issue ? "fuit" : "rit"}`}>
+          <Bubble who={rencontre.who} humeur={issue === null ? "joie" : issue ? "triste" : "joie"} text={issue === null ? rencontre.avant : issue ? rencontre.gagne : rencontre.perdu} size={60} />
+        </div>
+      )}
       {!done ? (
         <ExercisePlayer
           key={seed}
           inst={inst}
           statKey={statKey}
-          onResult={() => {
+          onResult={(r) => {
+            if (rencontre) {
+              setIssue(r.ok);
+              if (r.ok) {
+                addGems(3);
+                sfx.gem();
+              }
+            }
             setDone(true);
             onAnswered();
           }}
@@ -343,6 +397,7 @@ function InlineQuestion({ spec, onAnswered, statKey }: { spec: Parameters<typeof
             onClick={() => {
               setSeed(newSeed());
               setDone(false);
+              setIssue(null);
             }}
           >
             🔁 Une autre question

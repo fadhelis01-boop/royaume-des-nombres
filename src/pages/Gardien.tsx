@@ -1,7 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { go } from "../lib/router";
 import { useContent, worldProgress } from "../lib/content";
-import { addCrystal, getState, markStory, setState, useChild } from "../lib/store";
+import { addCrystal, addGems, getState, markStory, recordAbandon, setState, useChild } from "../lib/store";
+import { burst, centerOf, floatText, shake } from "../lib/juice";
+import { say } from "../lib/tts";
+import { fmtNum } from "../lib/expr";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
 import { MASTERY } from "../lib/rewards";
 import { sfx } from "../lib/sound";
@@ -9,7 +12,7 @@ import { ExercisePlayer, type ExResult } from "../components/ExercisePlayer";
 import { Bubble, Mascot } from "../components/Mascot";
 import { StoryScene } from "../components/Story";
 import { rankSpecs } from "./Defi";
-import type { Line, World } from "../lib/types";
+import type { Line, Who, World } from "../lib/types";
 
 // Le Défi du Gardien : le « boss » de chaque monde. 10 questions qui mélangent
 // toutes les leçons, de la première à la dernière. 80 % → le cristal se rallume.
@@ -21,13 +24,13 @@ export function gardienOuvert(w: World) {
   return getState().settings.unlockAll || worldProgress(c, w).done === w.lecons.length;
 }
 
-function plan(w: World): Instance[] {
+function plan(w: World, n = N): Instance[] {
   const picks = w.lecons.map((l) => {
     const r = rankSpecs(l.exercices);
     return r.slice(Math.floor(r.length / 2)); // la moitié la plus exigeante de chaque leçon
   });
   const out: Instance[] = [];
-  for (let i = 0; out.length < N && i < N * 4; i++) {
+  for (let i = n === N ? 0 : Math.floor(Math.random() * picks.length); out.length < n && i < n * 6; i++) {
     const pool = picks[i % picks.length];
     if (!pool.length) continue;
     try {
@@ -53,13 +56,7 @@ export function Gardien({ worldId }: { worldId: string }) {
   const [phase, setPhase] = useState<"intro" | "jeu" | "fin" | "arc">("intro");
   const [round, setRound] = useState(0);
   const qs = useMemo(() => (w ? plan(w) : []), [w, round]);
-  const [i, setI] = useState(0);
-  const [res, setRes] = useState<ExResult[]>([]);
   const [score, setScore] = useState(0);
-  useEffect(() => {
-    setI(0);
-    setRes([]);
-  }, [round]);
   if (!w) return <div className="page center">Monde introuvable.</div>;
   const arc = manifest?.histoire?.arcs.find((a) => a.final === w.id);
 
@@ -145,44 +142,214 @@ export function Gardien({ worldId }: { worldId: string }) {
     );
   }
 
+  return (
+    <Combat
+      key={round}
+      w={w}
+      qs={qs}
+      chObjet={ch?.objet}
+      onEnd={(sc, pot) => {
+        setScore(sc);
+        if (sc >= MASTERY - 1e-9) {
+          addGems(pot);
+          sfx.victory(w.id);
+          if (addCrystal(w.id))
+            setState({ celebration: { kind: "world", emoji: "💎", title: "Cristal rallumé !", text: `${ch?.objet ?? "Le cristal"} brille à nouveau sur ${w.titre}. Tu gagnes ${pot + 25} gemmes. Le Royaume te dit merci !` } }, false);
+        }
+        setPhase("fin");
+      }}
+    />
+  );
+}
+
+// ---------- Le combat ----------
+
+type Foe = "nuage" | "ixe" | "oubli";
+const foeOf = (w: World): Foe => (w.cycle === "graines" ? "nuage" : w.cycle === "explorateurs" ? "ixe" : "oubli");
+const FOE_NAME: Record<Foe, string> = { nuage: "Le Grignoteur", ixe: "Ixe", oubli: "Le Grand Oubli" };
+
+const OUCH: Record<Foe, string[]> = {
+  nuage: ["Aïe ! Mon nuage s'effiloche !", "Hé ! Tu calcules trop vite !", "Pfff… encore un nuage envolé.", "Comment tu as su ?!"],
+  ixe: ["Démasquée ! Bon, d'accord…", "Tu as trouvé ma valeur !", "Hi hi, bien joué !"],
+  oubli: ["Cette page… se réécrit…", "Ce qui est démontré me résiste !", "Non… pas une preuve !"],
+};
+const TAUNT: Record<Foe, string[]> = {
+  nuage: ["Hi hi ! Raté ! Je croque tes gemmes !", "Miam ! Merci pour les gemmes !", "Trop lent ! Crunch !"],
+  ixe: ["Je change de couleur… raté !", "x peut valoir n'importe quoi, hi hi !"],
+  oubli: ["Encore une page blanche…", "Oublié ! Oublié !"],
+};
+
+function FoeSprite({ foe, state }: { foe: Foe; state: string }) {
+  return (
+    <div className={`foe foe-${foe} foe-${state}`}>
+      {foe === "oubli" ? (
+        <svg viewBox="0 0 120 120" width={120} height={120} aria-hidden className="oubli-svg">
+          {[0, 1, 2, 3, 4].map((k) => (
+            <rect key={k} x={30 + k * 4} y={22 + k * 3} width={56} height={72} rx={4} fill="#fbfaff" stroke="#b9b3cc" strokeWidth={2} transform={`rotate(${-24 + k * 12} 60 60)`} />
+          ))}
+          <ellipse cx={50} cy={58} rx={5} ry={7} fill="#5b5675" />
+          <ellipse cx={70} cy={58} rx={5} ry={7} fill="#5b5675" />
+        </svg>
+      ) : (
+        <Mascot who={foe} size={120} humeur={state === "hit" ? "triste" : state === "laugh" ? "joie" : undefined} />
+      )}
+    </div>
+  );
+}
+
+function rangeHint(v: number) {
+  const step = Math.abs(v) >= 100 ? 50 : Math.abs(v) >= 20 ? 10 : Math.abs(v) >= 5 ? 5 : 1;
+  const lo = Math.floor(v / step) * step;
+  const hi = lo + step;
+  return lo === v ? `Je dessine la droite : la réponse est entre ${fmtNum(v - step)} et ${fmtNum(v + step)}, pile au milieu !` : `Je dessine la droite : la réponse est entre ${fmtNum(lo)} et ${fmtNum(hi)}.`;
+}
+
+function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; chObjet?: string; onEnd: (score: number, pot: number) => void }) {
+  const foe = foeOf(w);
+  const [qs, setQs] = useState(initial);
+  const [i, setI] = useState(0);
+  const [res, setRes] = useState<ExResult[]>([]);
+  const [pot, setPot] = useState(30);
+  const [state, setFoeState] = useState("idle");
+  const [line, setLine] = useState<string>(foe === "nuage" ? "Viens donc, petit calculateur !" : foe === "ixe" ? "Attrape-moi si tu peux !" : "Je vais tout effacer…");
+  const [used, setUsed] = useState<Record<string, boolean>>({});
+  const [removed, setRemoved] = useState<number[]>([]);
+  const [hintTxt, setHintTxt] = useState<string>();
+  const [shield, setShield] = useState(false);
+  const [double, setDouble] = useState(false);
+  const foeRef = useRef<HTMLDivElement>(null);
+  const progress = useRef({ done: false, answered: 0 });
+  useEffect(
+    () => () => {
+      if (!progress.current.done && progress.current.answered > 0) recordAbandon(`${w.id}/gardien`);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
   const q = qs[i];
   if (!q) return null;
-  const lights = res.filter((r) => r.ok).length;
+  const hp = qs.length - res.filter((r) => r.ok).length;
+  const isChoice = ["qcm", "vf", "comparer"].includes(q.type);
+
+  const eliminate = () => {
+    const wrong = (q.choix ?? []).map((_, k) => k).filter((k) => k !== q.correct && !removed.includes(k));
+    if (wrong.length > 1 || (wrong.length === 1 && q.type !== "vf")) setRemoved([...removed, wrong[Math.floor(Math.random() * wrong.length)]]);
+  };
+
+  const power = (who: Who) => {
+    if (used[who]) return;
+    setUsed({ ...used, [who]: true });
+    sfx.star();
+    if (who === "mia") {
+      const t = q.indice ? q.indice : q.value !== undefined && q.type === "nombre" ? rangeHint(q.value) : isChoice ? "Relis bien chaque proposition : je t'en barre une qui est impossible !" : "Fais un petit dessin ou un schéma avant de répondre : ça aide toujours !";
+      if (!q.indice && isChoice) eliminate();
+      setHintTxt(t);
+      say("mia", t);
+    } else if (who === "neo") {
+      if (isChoice && q.type !== "vf") {
+        eliminate();
+        say("neo", "Coup de queue ! Une mauvaise réponse en moins.");
+      } else {
+        setShield(true);
+        say("neo", "Bouclier ! Si tu te trompes à cette question, elle ne compte pas.");
+      }
+    } else {
+      setDouble(true);
+      say("zero", "Je me gonfle ! Toutes les gemmes du combat seront doublées !");
+    }
+  };
+
+  // réaction immédiate du méchant, dès la réponse
+  const onVerdict = (r: ExResult) => {
+    const [x, y] = centerOf(foeRef.current);
+    progress.current.answered++;
+    if (r.ok) {
+      setFoeState("hit");
+      sfx.hit();
+      shake(foeRef.current);
+      burst(x, y, 3);
+      setLine(OUCH[foe][Math.floor(Math.random() * OUCH[foe].length)]);
+    } else if (shield) {
+      setLine("Le bouclier de Néo t'a protégé ! Nouvelle question.");
+      setFoeState("idle");
+    } else {
+      setFoeState("laugh");
+      sfx.whoosh();
+      const lost = Math.min(3, pot - 10);
+      if (lost > 0) {
+        setPot(pot - lost);
+        floatText(x, y, `−${lost} 💎 croquées !`, "steal");
+      }
+      setLine(TAUNT[foe][Math.floor(Math.random() * TAUNT[foe].length)]);
+    }
+    window.setTimeout(() => setFoeState("idle"), 700);
+  };
+
+  // passage à la question suivante
+  const onResult = (r: ExResult) => {
+    setRemoved([]);
+    setHintTxt(undefined);
+    if (!r.ok && shield) {
+      setShield(false);
+      const extra = plan(w, 1);
+      if (extra.length) {
+        setQs(qs.map((x, k) => (k === i ? extra[0] : x)));
+        return;
+      }
+    }
+    setShield(false);
+    const all = [...res, r];
+    setRes(all);
+    if (i + 1 < qs.length) setI(i + 1);
+    else {
+      progress.current.done = true;
+      const sc = all.reduce((t, x) => t + (x.ok ? (x.firstTry ? 1 : 0.5) : 0), 0) / all.length;
+      onEnd(sc, double ? pot * 2 : pot);
+    }
+  };
+
   return (
-    <div className="page defi" style={{ "--wc": w.couleur } as React.CSSProperties}>
+    <div className="page defi combat" style={{ "--wc": w.couleur } as React.CSSProperties}>
       <div className="lecon-top">
-        <button className="back" onClick={() => go(`/monde/${w.id}`)}>
+        <button className="back" onClick={() => go(`/monde/${w.id}`)} aria-label="Quitter le combat">
           ✕
         </button>
-        <div className="crystal-meter" aria-label={`${lights} nuages chassés sur 10`}>
+        <div className="crystal-meter" aria-label={`${qs.length - hp} sur ${qs.length}`}>
           {qs.map((_, k) => (
             <span key={k} className={k < res.length ? (res[k].ok ? "lit" : "miss") : k === i ? "cur" : ""}>
-              {k < res.length && res[k].ok ? "✨" : "☁️"}
+              {k < res.length && res[k].ok ? "✨" : foe === "oubli" ? "📄" : "☁️"}
             </span>
           ))}
         </div>
       </div>
-      <h1 className="lecon-title small">🏆 Défi du Gardien — {w.titre}</h1>
-      <ExercisePlayer
-        key={q.seed}
-        inst={q}
-        statKey={`${w.id}/gardien`}
-        onResult={(r) => {
-          const all = [...res, r];
-          setRes(all);
-          if (i + 1 < qs.length) setI(i + 1);
-          else {
-            const sc = all.reduce((t, x) => t + (x.ok ? (x.firstTry ? 1 : 0.5) : 0), 0) / all.length;
-            setScore(sc);
-            if (sc >= MASTERY - 1e-9 && addCrystal(w.id)) {
-              sfx.fanfare();
-              setState({ celebration: { kind: "world", emoji: "💎", title: "Cristal rallumé !", text: `${ch?.objet ?? "Le cristal"} brille à nouveau sur ${w.titre}. Le Royaume te dit merci !` } }, false);
-            }
-            setPhase("fin");
-          }
-        }}
-        continueLabel={i + 1 < qs.length ? "Question suivante" : "Le cristal va-t-il se rallumer ?"}
-      />
+      <div className="arena" style={w.decor ? { backgroundImage: `url(${w.decor})` } : undefined}>
+        <div className="arena-foe" ref={foeRef}>
+          <FoeSprite foe={foe} state={state} />
+          <div className="foe-hp" role="meter" aria-valuemin={0} aria-valuemax={qs.length} aria-valuenow={hp} aria-label={`${FOE_NAME[foe]} : ${hp} points de vie`}>
+            <span style={{ width: `${(hp / qs.length) * 100}%` }} />
+          </div>
+          <div className="foe-line" aria-live="polite">
+            <strong>{FOE_NAME[foe]} :</strong> {line}
+          </div>
+        </div>
+        <div className="arena-side">
+          <div className="pot" title="gemmes à gagner">
+            💎 {pot}
+            {double && " ×2"}
+          </div>
+          <div className="powers" role="group" aria-label="pouvoirs des compagnons, un seul usage chacun">
+            {(["mia", "neo", "zero"] as Who[]).map((who) => (
+              <button key={who} className={`power ${used[who] ? "used" : ""}`} disabled={used[who]} onClick={() => power(who)} title={who === "mia" ? "Mia dessine un indice" : who === "neo" ? "Néo : coup de queue ou bouclier" : "Zéro double les gemmes"}>
+                <Mascot who={who} size={40} />
+                <span>{who === "mia" ? "Indice" : who === "neo" ? (isChoice && q.type !== "vf" ? "Élimine" : "Bouclier") : "×2 💎"}</span>
+              </button>
+            ))}
+          </div>
+          {shield && <div className="shield-on">🛡️ Bouclier actif</div>}
+        </div>
+      </div>
+      {chObjet && <p className="small muted center">Il protège {chObjet}.</p>}
+      <ExercisePlayer key={q.seed} inst={q} statKey={`${w.id}/gardien`} onResult={onResult} onVerdict={onVerdict} removed={removed} powerHint={hintTxt} continueLabel={i + 1 < qs.length ? "Attaque suivante ⚔️" : "Le coup final !"} />
     </div>
   );
 }

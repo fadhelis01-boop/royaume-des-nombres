@@ -8,6 +8,10 @@ export function Jeux() {
   const child = useChild()!;
   const { manifest } = useContent();
   const games = [
+    { id: "defense", emoji: "🏰", titre: "La Défense du Royaume", desc: "Des Grignoteurs foncent sur le château : réponds vite et juste !", best: child.recordsJeux?.defense, bestLabel: "vague", who: "neo" },
+    { id: "pont", emoji: "🌉", titre: "Le Pont des Fractions", desc: "Comble le ravin exactement avec des planches de ½, ⅓, ¼…", best: child.recordsJeux?.pont, bestLabel: "ponts", who: "mia" },
+    { id: "course", emoji: "🐸", titre: "La Course de la Grenouille", desc: "Atteins la cible en sautant malin, plus vite que le Grignoteur.", best: child.counters["courseGagnee"], bestLabel: "victoires", who: "neo" },
+    { id: "duel", emoji: "🤝", titre: "Duel en famille", desc: "À deux sur le même écran, chacun à son niveau !", who: "zero" },
     { id: "eclair", emoji: "⚡", titre: "Calcul éclair", desc: "Un maximum de calculs en 60 secondes !", best: child.games["eclair"], who: "neo" },
     { id: "additions", emoji: "➕", titre: "La Tour des Additions", desc: `Toutes les additions jusqu'à 10 + 10 par cœur (${additionsMastered(child)}/100).`, who: "neo" },
     { id: "tables", emoji: "✖️", titre: "La Tour des Tables", desc: `Les tables de multiplication par cœur (${tablesMastered(child)}/64).`, who: "mia" },

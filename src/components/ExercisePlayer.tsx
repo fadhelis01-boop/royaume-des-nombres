@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { check, prettyExpr, readNumber, type Answer, type Instance, type Verdict } from "../lib/gen";
 import { ENCOURAGE, pick, PRAISE } from "../lib/rewards";
 import { sfx } from "../lib/sound";
-import { getState, recordAnswer, bump } from "../lib/store";
+import { activeChild, getState, recordAnswer, bump, touchSession } from "../lib/store";
+import { rewardCorrect, rewardWrong } from "../lib/juice";
 import { say, speak, stopSpeaking } from "../lib/tts";
 import type { Who } from "../lib/types";
 import { applyKey, Keypad, keypadExtras } from "./Keypad";
@@ -12,6 +13,8 @@ import { Droite, Visuel } from "./Visuel";
 import { Manip } from "./Manip";
 
 const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
+/** Types « à choix » : réussir au 2ᵉ essai ne rapporte rien (sinon cliquer au hasard paierait). */
+const CHOICE = ["qcm", "vf", "comparer"];
 
 export interface ExResult {
   ok: boolean;
@@ -30,6 +33,10 @@ export function ExercisePlayer({
   maxTries = 2,
   autoRead,
   continueLabel = "Continuer",
+  removed = [],
+  powerHint,
+  lead,
+  onVerdict,
 }: {
   inst: Instance;
   statKey: string;
@@ -37,7 +44,20 @@ export function ExercisePlayer({
   maxTries?: number;
   autoRead?: boolean;
   continueLabel?: string;
+  /** choix retirés par un pouvoir (coup de queue de Néo) */
+  removed?: number[];
+  /** indice donné par un pouvoir (dessin de Mia) */
+  powerHint?: string;
+  /** petite mise en scène : l'habitant du monde qui pose la question */
+  lead?: string;
+  /** appelé dès que la réponse est définitive (avant « Continuer ») : pour réagir tout de suite */
+  onVerdict?: (r: ExResult) => void;
 }) {
+  const isChoice = CHOICE.includes(inst.type);
+  // Vrai/faux : un 2ᵉ essai serait gagné d'avance, donc un seul essai.
+  if (inst.type === "vf") maxTries = 1;
+  const rootRef = useRef<HTMLDivElement>(null);
+  const [struck, setStruck] = useState<number[]>([]);
   const [text, setText] = useState("");
   const [fields, setFields] = useState<string[]>(() => (inst.champs ?? []).map(() => ""));
   const [focusField, setFocusField] = useState(0);
@@ -64,7 +84,7 @@ export function ExercisePlayer({
   }, [inst]);
 
   useEffect(() => {
-    if (autoRead ?? getState().settings.autoRead) speak([{ who: "narrateur", text: readable }], { key: k });
+    if (autoRead ?? (getState().settings.autoRead || activeChild()?.lecteur === "non")) speak([{ who: "narrateur", text: readable }], { key: k });
     if (!isTouch) inputRef.current?.focus();
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -124,19 +144,25 @@ export function ExercisePlayer({
     setVerdict(v);
     const n = tries + 1;
     setTries(n);
+    touchSession();
     if (v.ok) {
       sfx.ok();
       const who = pick(WHOS);
-      const t = pick(PRAISE[who as "mia"]);
+      const scored = n === 1 || !isChoice;
+      const t = scored ? pick(PRAISE[who as "mia"]) : "Oui, c'est ça ! La prochaine fois, prends le temps de réfléchir avant de choisir : au hasard, ça ne rapporte rien.";
       setMessage({ who, text: t, humeur: "joie" });
       if (isManip) bump("manip");
-      say(who, t);
+      const juice = rewardCorrect({ firstTry: n === 1, scored, anchor: rootRef.current?.querySelector(".ex-actions, .keypad") });
+      if (!juice.spoke) say(who, t);
       setOkFinal(true);
       setPhase("done");
-      recordAnswer({ key: statKey, ok: true, firstTry: n === 1, hint });
+      recordAnswer({ key: statKey, ok: true, firstTry: n === 1, hint, scored });
+      onVerdict?.({ ok: true, firstTry: n === 1, hint });
       return;
     }
     sfx.oops();
+    rewardWrong();
+    if (isChoice && choice !== null) setStruck((s) => [...s, choice]);
     const given = givenText();
     const isZero = /^\s*0\s*$/.test(given) && inst.value !== 0 && inst.type === "nombre";
     if (n < maxTries) {
@@ -149,6 +175,7 @@ export function ExercisePlayer({
       return;
     }
     recordAnswer({ key: statKey, ok: false, firstTry: false, hint, q: inst.enonce, given, expected: inst.expectedText, isZero });
+    onVerdict?.({ ok: false, firstTry: false, hint });
     const t = v.why
       ? `${v.why} La bonne réponse : ${inst.expectedText}.`
       : v.almost
@@ -205,9 +232,10 @@ export function ExercisePlayer({
   const usesKeypad = ["nombre", "liste", "expression", "champs"].includes(inst.type);
 
   return (
-    <div className={`exercise phase-${phase} ${phase === "done" ? (okFinal ? "is-ok" : "is-ko") : ""}`}>
+    <div ref={rootRef} className={`exercise phase-${phase} ${phase === "done" ? (okFinal ? "is-ok" : "is-ko") : ""}`}>
+      {lead && <div className="ex-lead">{lead}</div>}
       <div className="ex-head">
-        <SpeakBtn segs={[{ who: "narrateur", text: readable }]} k={k} small />
+        <SpeakBtn segs={[{ who: "narrateur", text: readable }]} k={k} small label="Écouter la consigne" />
         <Md text={inst.enonce} className="ex-enonce" />
       </div>
       {inst.visuel && inst.type !== "droite" && <Visuel v={inst.visuel} />}
@@ -219,7 +247,8 @@ export function ExercisePlayer({
             <button
               key={i}
               type="button"
-              disabled={disabled}
+              hidden={removed.includes(i) && phase !== "done"}
+              disabled={disabled || struck.includes(i)}
               className={`choice ${choice === i ? "sel" : ""} ${phase === "done" && i === inst.correct ? "good" : ""} ${phase !== "answer" && choice === i && i !== inst.correct ? "bad" : ""}`}
               onClick={() => {
                 setChoice(i);
@@ -243,7 +272,7 @@ export function ExercisePlayer({
           </div>
           <div className="compare-btns">
             {inst.choix!.map((c, i) => (
-              <button key={c} type="button" disabled={disabled} className={`choice big ${choice === i ? "sel" : ""} ${phase === "done" && i === inst.correct ? "good" : ""}`} onClick={() => setChoice(i)}>
+              <button key={c} type="button" hidden={removed.includes(i) && phase !== "done"} disabled={disabled || struck.includes(i)} className={`choice big ${choice === i ? "sel" : ""} ${phase === "done" && i === inst.correct ? "good" : ""}`} onClick={() => setChoice(i)}>
                 {c}
               </button>
             ))}
@@ -336,11 +365,16 @@ export function ExercisePlayer({
           </button>
         )}
         {phase === "answer" && !usesKeypad && (
-          <button type="button" className="btn btn-primary" disabled={!canSubmit} onClick={() => submit()}>
-            Valider ✔
+          <button type="button" className="btn btn-primary" disabled={!canSubmit} onClick={() => submit()} aria-label="Valider">
+            <span className="btn-txt">Valider </span>✔
           </button>
         )}
       </div>
+      {powerHint && phase !== "done" && (
+        <div className="hint-box power-hint">
+          <Bubble who="mia" humeur="reflexion" text={powerHint} size={56} />
+        </div>
+      )}
       {hint && inst.indice && (
         <div className="hint-box">
           <Bubble who="mia" humeur="reflexion" text={inst.indice} size={56} />
@@ -365,13 +399,13 @@ export function ExercisePlayer({
           )}
           <div className="ex-actions">
             {phase === "retry" && (
-              <button type="button" className="btn btn-primary" onClick={retry} autoFocus>
-                Réessayer 🔁
+              <button type="button" className="btn btn-primary" onClick={retry} autoFocus aria-label="Réessayer">
+                <span className="btn-txt">Réessayer </span>🔁
               </button>
             )}
             {phase === "done" && (
-              <button type="button" className="btn btn-primary" onClick={finish} autoFocus>
-                {continueLabel} ➜
+              <button type="button" className="btn btn-primary" onClick={finish} autoFocus aria-label={continueLabel}>
+                <span className="btn-txt">{continueLabel} </span>➜
               </button>
             )}
           </div>

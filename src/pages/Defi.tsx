@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
 import { findLesson, lessonUnlocked } from "../lib/content";
-import { finishDefi, getState, useChild } from "../lib/store";
+import { finishDefi, getState, recordAbandon, useChild } from "../lib/store";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
 import { sfx } from "../lib/sound";
 import { ExercisePlayer, type ExResult } from "../components/ExercisePlayer";
 import { Bubble, Mascot } from "../components/Mascot";
 import { Confetti } from "../components/Confetti";
 import type { ExSpec } from "../lib/types";
+import { leadFor } from "../lib/habillage";
 
 /** Classe les exercices du plus simple au plus difficile (niveau, puis ordre d'écriture). */
 export function rankSpecs(specs: ExSpec[]): ExSpec[] {
@@ -153,7 +154,14 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
   return (
     <div className="page defi" style={{ "--wc": world.couleur } as React.CSSProperties}>
       <div className="lecon-top">
-        <button className="back" onClick={() => go(`/monde/${world.id}`)} aria-label="Quitter le défi">
+        <button
+          className="back"
+          onClick={() => {
+            if (idx > 0) recordAbandon(`${world.id}/${lesson.id}:defi`);
+            go(`/monde/${world.id}`);
+          }}
+          aria-label="Quitter le défi"
+        >
           ✕
         </button>
         <div className="dots">
@@ -167,7 +175,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
       </div>
       <h1 className="lecon-title small">⭐ Défi : {lesson.titre}</h1>
       {eased && <Bubble who="neo" text="Tiens, une question un peu plus simple pour reprendre des forces. On remonte ensuite, d'accord ?" size={50} />}
-      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} continueLabel={idx + 1 < plan.length ? "Question suivante" : "Voir mes étoiles"} />
+      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < plan.length ? "Question suivante" : "Voir mes étoiles"} />
     </div>
   );
 }

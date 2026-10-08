@@ -116,6 +116,8 @@ Chaque exercice peut contenir des **variables tirées au sort** et des **gabarit
 
 **Erreurs fréquentes** : un exercice `nombre` peut lister `erreurs: [{ valeur: "a+b-10", message: "Tu as oublié la retenue…" }]` ; un `qcm` peut donner `explications: ["", "message pour le 2ᵉ choix", …]` (dans l'ordre de `choix`). L'enfant reçoit alors une explication ciblée au lieu d'un simple « faux ».
 
+**Habillages variés** : `prenom()` (prénoms du monde entier), `animal()`, `fruit()`, `objet()` donnent un mot au hasard, par exemple `"{{prenom()}} a {{a}} {{objet()}}."`. Écrivez la suite de la phrase sans pronom genré (« Combien en a-t-on en tout ? »).
+
 **Fonctions disponibles** dans les expressions : `abs sqrt round(x,n) ent floor ceil min max pgcd ppcm fact comb mod sin cos tan sind cosd tand asind acosd atand ln log exp si(cond,a,b) choix(…) alea(a,b) estpremier chiffre(n,rang) sommechiffres fib kieme(k,…) diviseurs lettres binaire romain heure(h,m) duree(min) tri(…) frac(n,d) fracb(n,d) nb(x) dec(x,n) texte majuscule pluriel`. Constantes : `pi`, `e`.
 
 ## 4. Les visuels (dessinés automatiquement)
@@ -132,6 +134,18 @@ Un exercice défectueux est refusé avec un message précis.
 
 ## 6. Les autres fichiers
 
+- `_histoire.yaml` : un chapitre peut proposer un **choix** à l'enfant (sans enjeu pédagogique) :
+  ```yaml
+  choix:
+    qui: mia
+    question: "Deux chemins traversent la forêt. Lequel prend-on ?"
+    options:
+      - texte: "Le sentier des écureuils"
+        suite: [ { mia-joie: "Ils comptent par paquets de 10 !" } ]
+      - texte: "Le chemin de la rivière"
+        suite: [ { neo: "On est sur la bonne piste !" } ]
+  ```
+  Le prologue accepte de la même façon `prologue_choix`.
 - `_histoire.yaml` : la grande histoire (prologue, livres `arcs` avec leur monde final et leur scène de fin, et un `chapitre` par monde : `titre`, `objet` (le cristal), `avant` et `apres`, des répliques comme dans les dialogues). Un monde sans chapitre fonctionne quand même.
 - `_glossaire.yaml` : le Grand Livre (`mot`, `def`, `exemple`, `source`, `monde`).
 - `_enigmes.yaml` : les énigmes (`niveau` 1 à 3, `reponse`, `indice`, `solution`).

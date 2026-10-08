@@ -53,6 +53,14 @@ export function newChild(name: string, avatar: Child["avatar"], age: number): Ch
     crystals: [],
     story: {},
     vraieVie: [],
+    gems: 0,
+    owned: [],
+    equipped: {},
+    cabane: Array(9).fill(null),
+    lecteur: age <= 6 ? "non" : "oui",
+    abandons: {},
+    sessions: [],
+    recordsJeux: {},
   };
 }
 
@@ -129,6 +137,13 @@ export async function loadState() {
   const activeId = (await dbGet<string>("activeId")) ?? "";
   applySettings(settings);
   setState({ ready: true, settings, children, activeId: children.some((c) => c.id === activeId) ? activeId : "" }, false);
+  applyChildMode();
+}
+
+/** Mode « je ne lis pas encore » : classe sur la racine pour agrandir les pictogrammes. */
+export function applyChildMode() {
+  const c = activeChild();
+  document.documentElement.dataset.lecteur = c?.lecteur === "non" ? "non" : "";
 }
 
 export function updateSettings(p: Partial<Settings>) {
@@ -152,11 +167,15 @@ export function updateChild(fn: (c: Child) => Child | void, id = state.activeId)
 
 export function addChild(c: Child) {
   setState({ children: [...state.children, c], activeId: c.id });
+  applyChildMode();
 }
 export function removeChild(id: string) {
   setState({ children: state.children.filter((c) => c.id !== id), activeId: state.activeId === id ? "" : state.activeId });
 }
-export const selectChild = (id: string) => setState({ activeId: id });
+export function selectChild(id: string) {
+  setState({ activeId: id });
+  applyChildMode();
+}
 
 // ---------- Jours, séries, temps ----------
 export const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -233,7 +252,7 @@ export function checkBadges() {
 }
 
 // ---------- Réponses ----------
-export function recordAnswer(opts: { key: string; ok: boolean; firstTry: boolean; hint: boolean; q?: string; given?: string; expected?: string; isZero?: boolean }) {
+export function recordAnswer(opts: { key: string; ok: boolean; firstTry: boolean; hint: boolean; q?: string; given?: string; expected?: string; isZero?: boolean; scored?: boolean }) {
   if (!activeChild()) return 0;
   let xp = 0;
   updateChild((c) => {
@@ -244,7 +263,7 @@ export function recordAnswer(opts: { key: string; ok: boolean; firstTry: boolean
       sk.ok++;
       c.counters.ok = (c.counters.ok ?? 0) + 1;
       if (!opts.firstTry) c.counters.comeback = (c.counters.comeback ?? 0) + 1;
-      xp = opts.firstTry ? (opts.hint ? XP.correctAfterHint : XP.correct) : XP.correctSecondTry;
+      xp = opts.scored === false ? 0 : opts.firstTry ? (opts.hint ? XP.correctAfterHint : XP.correct) : XP.correctSecondTry;
     } else {
       d.ko++;
       sk.ko++;
@@ -292,6 +311,7 @@ export function finishDefi(key: string, score: number) {
   });
   let xp = gained * XP.star;
   if (score >= MASTERY - 1e-9 && !prev?.done) xp += XP.lessonDone;
+  addGems(gained * 3 + (score >= MASTERY - 1e-9 && !prev?.done ? 5 : 0));
   if (xp) addXp(xp);
   else checkBadges();
   return { stars, gained, newBest: stars > prevStars };
@@ -344,5 +364,92 @@ export function addCrystal(worldId: string) {
     x.crystals = [...(x.crystals ?? []), worldId];
   });
   addXp(XP.lessonDone * 2);
+  addGems(25);
   return true;
+}
+
+// ---------- Gemmes, boutique, cabane ----------
+/** Gemmes gagnées en apprenant. Aucune n'est achetable : pas d'argent réel dans le Royaume. */
+export function addGems(n: number) {
+  if (!activeChild() || n <= 0) return;
+  updateChild((c) => {
+    c.gems = (c.gems ?? 0) + n;
+    c.counters.gemsTotal = (c.counters.gemsTotal ?? 0) + n;
+  });
+  checkBadges();
+}
+
+export function buyItem(id: string, prix: number) {
+  const c = activeChild();
+  if (!c || (c.gems ?? 0) < prix || c.owned?.includes(id)) return false;
+  updateChild((x) => {
+    x.gems -= prix;
+    x.owned = [...(x.owned ?? []), id];
+    x.counters.achats = (x.counters.achats ?? 0) + 1;
+  });
+  checkBadges();
+  return true;
+}
+
+export function equip(slot: keyof Child["equipped"], id: string | undefined) {
+  updateChild((c) => {
+    c.equipped = { ...(c.equipped ?? {}), [slot]: id };
+    if (!id) delete c.equipped[slot];
+  });
+}
+
+export function placeInCabane(index: number, id: string | null) {
+  updateChild((c) => {
+    const cab = [...(c.cabane ?? Array(9).fill(null))];
+    // un objet n'existe qu'une fois dans la cabane
+    for (let i = 0; i < cab.length; i++) if (id && cab[i] === id) cab[i] = null;
+    cab[index] = id;
+    c.cabane = cab;
+  });
+}
+
+export function setLecteur(v: Child["lecteur"]) {
+  updateChild((c) => {
+    c.lecteur = v;
+  });
+  applyChildMode();
+}
+
+// ---------- Séances (pour finir proprement après ~15 min, et pour les parents) ----------
+const SESSION_GAP = 30 * 60000; // 30 min sans activité = nouvelle séance
+
+/** Appelé à chaque réponse : prolonge la séance en cours ou en ouvre une nouvelle. */
+export function touchSession(): { isNew: boolean; min: number } {
+  const c = activeChild();
+  if (!c) return { isNew: false, min: 0 };
+  const now = Date.now();
+  let isNew = false;
+  let min = 0;
+  updateChild((x) => {
+    const ss = x.sessions ?? [];
+    const last = ss[ss.length - 1];
+    if (!last || now - (last.start + last.min * 60000) > SESSION_GAP) {
+      ss.push({ day: dayKey(), start: now, min: 0, q: 1 });
+      isNew = true;
+    } else {
+      last.min = Math.round((now - last.start) / 60000);
+      last.q++;
+      min = last.min;
+    }
+    x.sessions = ss.slice(-40);
+  });
+  return { isNew, min };
+}
+
+export function currentSession(c: Child | null) {
+  const last = c?.sessions?.[c.sessions.length - 1];
+  if (!last || Date.now() - (last.start + last.min * 60000) > SESSION_GAP) return null;
+  return last;
+}
+
+/** Une leçon ou un défi quitté avant la fin : utile aux parents pour voir où ça coince. */
+export function recordAbandon(key: string) {
+  updateChild((c) => {
+    c.abandons = { ...(c.abandons ?? {}), [key]: (c.abandons?.[key] ?? 0) + 1 };
+  });
 }

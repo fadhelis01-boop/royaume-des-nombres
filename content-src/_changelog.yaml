@@ -1,3 +1,14 @@
+- version: "1.2.0"
+  date: "2026-10-08"
+  notes:
+    - "La carte du Royaume : un vrai chemin du Nid jusqu'au Temple. Chaque cristal rallumé redonne ses couleurs au lieu, et ton personnage t'attend là où tu en es."
+    - "Gemmes et boutique : chaque bonne réponse rapporte des gemmes (plus en série). On les dépense pour habiller son personnage (chapeaux, lunettes, compagnons) et décorer sa cabane. Rien ne s'achète avec de l'argent."
+    - "Le Défi du Gardien devient un combat : le Grignoteur esquive, encaisse et croque des gemmes ; Mia, Néo et Zéro ont chacun un pouvoir (indice, coup de queue ou bouclier, gemmes doublées)."
+    - "Combos, gerbes d'étoiles, sons de victoire propres à chaque monde ; le Grignoteur ou Ixe surgissent parfois en pleine leçon."
+    - "Quatre nouveaux jeux : la Défense du Royaume (tables et additions), le Pont des Fractions, la Course de la Grenouille et le Duel en famille sur le même écran."
+    - "Des choix dans l'histoire, un « Précédemment dans le Royaume » à chaque retour, une pause proposée vers 15 minutes."
+    - "Mode « je ne lis pas encore » (gros pictogrammes, tout est lu), habitants du monde qui présentent les questions, arrivée par l'histoire avant le test (devenu une première quête)."
+    - "Au QCM, réussir au hasard au 2ᵉ essai ne rapporte plus rien. Pour les parents : où l'enfant décroche et la durée de ses séances."
 - version: "1.1.0"
   date: "2026-10-08"
   notes:

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useRoute, go } from "./lib/router";
 import { useStore, useChild, setState, tickMinute, minutesToday } from "./lib/store";
 import { useContent } from "./lib/content";
@@ -13,25 +13,34 @@ import { Carte } from "./pages/Carte";
 import { Monde } from "./pages/Monde";
 import { LeconPage } from "./pages/Lecon";
 import { DefiPage } from "./pages/Defi";
-import { Revisions } from "./pages/Revisions";
-import { Jeux } from "./pages/Jeux";
-import { CalculEclair } from "./pages/jeux/CalculEclair";
-import { CompteEstBon } from "./pages/jeux/CompteEstBon";
-import { ViseJuste } from "./pages/jeux/ViseJuste";
-import { Tables } from "./pages/jeux/Tables";
-import { Enigmes } from "./pages/jeux/Enigmes";
-import { DefiDuJour } from "./pages/DefiDuJour";
-import { Demander } from "./pages/Demander";
-import { GrandLivre } from "./pages/GrandLivre";
-import { Tresors } from "./pages/Tresors";
-import { Diagnostic } from "./pages/Diagnostic";
-import { Inventer } from "./pages/Inventer";
-import { Parents } from "./pages/Parents";
-import { Aide } from "./pages/Aide";
-import { Aventure } from "./pages/Aventure";
-import { Gardien } from "./pages/Gardien";
-import { Diplome } from "./pages/Diplome";
 import { Echauffement } from "./pages/Echauffement";
+import { Avatar } from "./components/Avatar";
+import { FinDeSeance } from "./components/Seance";
+import { ComboBadge } from "./components/ComboBadge";
+
+const CalculEclair = lazy(() => import("./pages/jeux/CalculEclair").then((m) => ({ default: m.CalculEclair })));
+const CompteEstBon = lazy(() => import("./pages/jeux/CompteEstBon").then((m) => ({ default: m.CompteEstBon })));
+const ViseJuste = lazy(() => import("./pages/jeux/ViseJuste").then((m) => ({ default: m.ViseJuste })));
+const Tables = lazy(() => import("./pages/jeux/Tables").then((m) => ({ default: m.Tables })));
+const Enigmes = lazy(() => import("./pages/jeux/Enigmes").then((m) => ({ default: m.Enigmes })));
+const Demander = lazy(() => import("./pages/Demander").then((m) => ({ default: m.Demander })));
+const GrandLivre = lazy(() => import("./pages/GrandLivre").then((m) => ({ default: m.GrandLivre })));
+const Tresors = lazy(() => import("./pages/Tresors").then((m) => ({ default: m.Tresors })));
+const Diagnostic = lazy(() => import("./pages/Diagnostic").then((m) => ({ default: m.Diagnostic })));
+const Inventer = lazy(() => import("./pages/Inventer").then((m) => ({ default: m.Inventer })));
+const Parents = lazy(() => import("./pages/Parents").then((m) => ({ default: m.Parents })));
+const Aide = lazy(() => import("./pages/Aide").then((m) => ({ default: m.Aide })));
+const Aventure = lazy(() => import("./pages/Aventure").then((m) => ({ default: m.Aventure })));
+const Gardien = lazy(() => import("./pages/Gardien").then((m) => ({ default: m.Gardien })));
+const Diplome = lazy(() => import("./pages/Diplome").then((m) => ({ default: m.Diplome })));
+const DefiDuJour = lazy(() => import("./pages/DefiDuJour").then((m) => ({ default: m.DefiDuJour })));
+const Revisions = lazy(() => import("./pages/Revisions").then((m) => ({ default: m.Revisions })));
+const Jeux = lazy(() => import("./pages/Jeux").then((m) => ({ default: m.Jeux })));
+const Boutique = lazy(() => import("./pages/Boutique").then((m) => ({ default: m.Boutique })));
+const DefenseTables = lazy(() => import("./pages/jeux/DefenseTables").then((m) => ({ default: m.DefenseTables })));
+const PontFractions = lazy(() => import("./pages/jeux/PontFractions").then((m) => ({ default: m.PontFractions })));
+const CourseGrenouille = lazy(() => import("./pages/jeux/CourseGrenouille").then((m) => ({ default: m.CourseGrenouille })));
+const Duel = lazy(() => import("./pages/jeux/Duel").then((m) => ({ default: m.Duel })));
 
 const NAV = [
   { path: "/", icon: "🗺️", label: "Carte" },
@@ -136,7 +145,7 @@ export default function App() {
         break;
       case "jeux":
         page =
-          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : <Jeux />;
+          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : <Jeux />;
         break;
       case "aventure":
         page = <Aventure part={p[1]} />;
@@ -161,6 +170,9 @@ export default function App() {
         break;
       case "tresors":
         page = <Tresors />;
+        break;
+      case "boutique":
+        page = <Boutique tab={p[1]} />;
         break;
       case "diagnostic":
         page = <Diagnostic />;
@@ -196,7 +208,7 @@ export default function App() {
         {child && !isParents ? (
           <>
             <button className="tb-child" onClick={() => go("/profils")} aria-label="Changer d'enfant">
-              <Mascot who={child.avatar} size={40} />
+              <Avatar child={child} size={40} showCompanion={false} />
               <span className="tb-name">{child.name}</span>
             </button>
             <div className="tb-level" title={`${lvl!.title} — ${lvl!.cur} / ${lvl!.next} points`}>
@@ -207,12 +219,16 @@ export default function App() {
                 <span style={{ width: `${Math.min(100, (lvl!.cur / lvl!.next) * 100)}%` }} />
               </span>
             </div>
+            <button className="tb-stat tb-gems" title="gemmes : ouvrir la boutique" onClick={() => go("/boutique")}>
+              💎 {child.gems ?? 0}
+            </button>
             <span className="tb-stat" title="étoiles">
               ⭐ {child.stars}
             </span>
             <span className="tb-stat" title="jours d'affilée">
-              🔥 {child.streak}
+              📅 {child.streak}
             </span>
+            <ComboBadge />
           </>
         ) : (
           <button className="tb-brand" onClick={() => go("/")}>
@@ -224,7 +240,18 @@ export default function App() {
         </button>
       </header>
 
-      <main className="main">{overLimit ? <PauseOverlay limit={settings.dailyLimit} /> : page}</main>
+      <main className="main">
+        <Suspense
+          fallback={
+            <div className="splash small">
+              <Mascot who="zero" size={80} talking />
+            </div>
+          }
+        >
+          {overLimit ? <PauseOverlay limit={settings.dailyLimit} /> : page}
+        </Suspense>
+      </main>
+      {child && !isParents && !celebration && <FinDeSeance />}
 
       {child && !isParents && !immersive && (
         <nav className="bottomnav">

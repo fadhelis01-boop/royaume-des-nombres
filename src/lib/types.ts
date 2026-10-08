@@ -139,14 +139,21 @@ export interface Manifest {
   histoire?: Histoire;
 }
 
+export interface Choix {
+  qui: Who;
+  question: string;
+  options: { texte: string; suite: Line[] }[];
+}
 export interface Chapitre {
   titre: string;
   objet: string;
   avant: Line[];
   apres: Line[];
+  choix?: Choix;
 }
 export interface Histoire {
   prologue: Line[];
+  prologueChoix?: Choix;
   arcs: { id: string; titre: string; sousTitre?: string; final: string; fin: Line[] }[];
   chapitres: Record<string, Chapitre>;
 }
@@ -195,6 +202,14 @@ export interface Child {
   crystals: string[]; // mondes dont le cristal est rallumé (Défi du Gardien réussi)
   story: Record<string, number>; // scènes de l'aventure déjà vues (id → date)
   vraieVie: string[]; // défis « vraie vie » réalisés
+  gems: number; // monnaie du jeu, gagnée en apprenant (jamais achetée)
+  owned: string[]; // objets de la boutique possédés
+  equipped: Partial<Record<"chapeau" | "lunettes" | "cou" | "compagnon" | "cadre", string>>;
+  cabane: (string | null)[]; // 9 emplacements de la cabane
+  lecteur: "oui" | "non"; // « non » : mode « je ne lis pas encore » (tout en voix et pictogrammes)
+  abandons: Record<string, number>; // leçons / défis quittés en cours de route (pour les parents)
+  sessions: { day: string; start: number; min: number; q: number }[]; // séances récentes
+  recordsJeux: Record<string, number>; // niveaux atteints dans les mini-jeux
 }
 
 export interface Settings {

@@ -69,10 +69,11 @@ export function NouvelEnfant() {
   const [age, setAge] = useState(7);
   const [avatar, setAvatar] = useState<Child["avatar"]>("mia");
   const ok = name.trim().length >= 1;
-  const create = (diag: boolean) => {
+  const create = () => {
     addChild(newChild(name.trim(), avatar, age));
-    // l'aventure commence par le prologue (le test de niveau vient juste après)
-    go(diag ? "/diagnostic" : "/aventure/prologue");
+    // On vit l'histoire AVANT tout test : le prologue, puis une « première quête »
+    // (le test de niveau déguisé pour les plus grands, une première leçon pour les petits).
+    go("/aventure/prologue");
   };
   return (
     <div className="page narrow">
@@ -80,7 +81,7 @@ export function NouvelEnfant() {
       <input className="big-input" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ton prénom" maxLength={20} autoFocus />
       <Bubble who="neo" text="Quel âge as-tu ?" side="right" />
       <div className="age-picker">
-        {[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((a) => (
+        {[5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((a) => (
           <button key={a} className={`chip ${age === a ? "sel" : ""}`} onClick={() => setAge(a)}>
             {a === 18 ? "18 +" : a}
           </button>
@@ -96,20 +97,9 @@ export function NouvelEnfant() {
         ))}
       </div>
       <div className="stack center">
-        {age >= 8 ? (
-          <>
-            <button className="btn btn-primary btn-xl" disabled={!ok} onClick={() => create(true)}>
-              🧭 Faire le petit test pour commencer au bon endroit
-            </button>
-            <button className="btn btn-soft" disabled={!ok} onClick={() => create(false)}>
-              Commencer depuis le début
-            </button>
-          </>
-        ) : (
-          <button className="btn btn-primary btn-xl" disabled={!ok} onClick={() => create(false)}>
-            C'est parti ! 🚀
-          </button>
-        )}
+        <button className="btn btn-primary btn-xl" disabled={!ok} onClick={create}>
+          C'est parti ! 🚀
+        </button>
       </div>
     </div>
   );

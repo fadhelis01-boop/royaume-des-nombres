@@ -14,12 +14,17 @@ Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, install
 - **Cours actifs** : une question toutes les deux étapes, moments « Explique à Néo », défis dans la vraie vie. Une leçon se valide à 80 % ; les défis s'adaptent après deux erreurs.
 - **Visuels dessinés** : blocs base 10, tableau de numération, droite graduée avec sauts, **modèle en barres (méthode de Singapour)**, fractions, horloge, monnaie, figures, solides, balance, arbres de probabilités, graphiques de fonctions, diagrammes.
 - **Problème ↔ calcul dans les deux sens** : l'Atelier des Problèmes (méthode des barres, 4 étapes de Pólya, pièges des énoncés) et « Invente un problème ».
-- **Jeux** : Échauffement de 2 minutes, Calcul éclair (16 familles, avec mode zen sans chrono), Tour des Additions et Tour des Tables (suivi fait par fait), Le compte est bon (avec solveur), Vise juste (droite graduée), 30 énigmes, défi du jour.
+- **Jeux** : la Défense du Royaume (tables et additions), le Pont des Fractions, la Course de la Grenouille, le **Duel en famille** sur le même écran, l'Échauffement de 2 minutes, Calcul éclair (16 familles, avec mode zen sans chrono), Tour des Additions et Tour des Tables (suivi fait par fait), Le compte est bon (avec solveur), Vise juste (droite graduée), 30 énigmes, défi du jour.
+- **Un vrai jeu** : carte du Royaume qui se reconstruit cristal après cristal, **gemmes** gagnées en apprenant et dépensées à la **boutique** (personnage, compagnons, cabane ; jamais d'argent réel ni de coffre au hasard), **combats** contre le Grignoteur avec les pouvoirs des trois mascottes, combos et effets, apparitions surprises en pleine leçon, choix dans l'histoire.
 - **Récompenses** : points, niveaux et titres, étoiles, 33 badges (dont la persévérance), album d'autocollants, séries de jours, célébrations.
 - **Révisions espacées** (1, 3, 7, 16, 35 jours), pratique entrelacée, « retravailler mes erreurs ».
 - **Test de positionnement** adaptatif pour commencer au bon niveau.
 - **Demande à Mia** : questions libres (au clavier ou au micro). Hors ligne : réponses tirées des leçons et du **Grand Livre** (95 définitions sourcées). Avec une clé d'API Claude ajoutée par un parent : réponses adaptées à l'âge, **sourcées** (recherche limitée à des sites de référence : Eduscol, Lumni, Khan Academy, Wikipédia, Bibmath…).
-- **Espace parents** (code PIN) : suivi détaillé (temps, réussite, points à consolider, erreurs), plusieurs enfants, voix des personnages, taille du texte, mode dyslexie (police OpenDyslexic), musique douce, limite de temps d'écran, déblocage, sauvegarde / transfert, guide pédagogique, **import de nouveaux domaines**.
+- **Espace parents** (code PIN) : suivi détaillé (temps, réussite, points à consolider, erreurs, **leçons quittées en cours de route, durée des séances**), mode « je ne lis pas encore », plusieurs enfants, voix des personnages, taille du texte, mode dyslexie (police OpenDyslexic), musique douce, limite de temps d'écran, déblocage, sauvegarde / transfert, guide pédagogique, **import de nouveaux domaines**.
+
+## Illustrations
+
+Le cahier des charges destiné au graphiste (style unifié, 34 poses de mascottes, personnages de l'histoire, 28 décors, objets, carte) est dans [`docs/cahier-des-charges-graphiste.html`](docs/cahier-des-charges-graphiste.html).
 
 ## Ajouter un domaine sans programmer
 

@@ -1,6 +1,6 @@
 {
   "name": "royaume-des-nombres",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Le Royaume des Nombres — apprendre les mathématiques de 7 ans à l'université avec Mia π, Néo Fibo et Zéro",
   "type": "module",
   "private": true,

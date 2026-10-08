@@ -85,6 +85,14 @@ export const BADGES: Badge[] = [
   { id: "additions", emoji: "➕", titre: "As des additions", desc: "Connaître toutes les additions jusqu'à 10 + 10.", test: (c) => additionsMastered(c) >= 100 },
   { id: "echauffement", emoji: "🏃", titre: "Échauffé", desc: "Faire 7 échauffements du jour.", test: (c) => cnt(c, "echauffement") >= 7 },
   { id: "inventeur", emoji: "✍️", titre: "Inventivité", desc: "Inventer 3 problèmes.", test: (c) => cnt(c, "invente") >= 3 },
+  { id: "combo-5", emoji: "🔥", titre: "En feu", desc: "Réussir 5 questions d'affilée du premier coup.", test: (c) => cnt(c, "comboMax") >= 5 },
+  { id: "combo-10", emoji: "☄️", titre: "Inarrêtable", desc: "Réussir 10 questions d'affilée du premier coup.", test: (c) => cnt(c, "comboMax") >= 10 },
+  { id: "premier-achat", emoji: "🛍️", titre: "Premier trésor", desc: "S'offrir un objet à la boutique avec ses gemmes.", test: (c) => cnt(c, "achats") >= 1 },
+  { id: "decorateur", emoji: "🏡", titre: "Décorateur", desc: "Installer 5 objets dans sa cabane.", test: (c) => (c.cabane ?? []).filter(Boolean).length >= 5 },
+  { id: "duel", emoji: "🤝", titre: "Duel en famille", desc: "Jouer un duel à deux sur le même écran.", test: (c) => cnt(c, "duel") >= 1 },
+  { id: "defenseur", emoji: "🏰", titre: "Défenseur du Royaume", desc: "Atteindre la vague 5 de la Défense des Tables.", test: (c) => (c.recordsJeux?.defense ?? 0) >= 5 },
+  { id: "pontonnier", emoji: "🌉", titre: "Bâtisseur de ponts", desc: "Réussir 10 ponts des fractions.", test: (c) => (c.recordsJeux?.pont ?? 0) >= 10 },
+  { id: "grenouille", emoji: "🐸", titre: "Grenouille d'or", desc: "Gagner la Course de la Grenouille.", test: (c) => cnt(c, "courseGagnee") >= 1 },
 ];
 
 export function tablesMastered(c: Child): number {

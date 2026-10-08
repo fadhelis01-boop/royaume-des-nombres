@@ -216,7 +216,8 @@ for (const e of manifest.enigmes) {
   checkText(e.solution, `énigme ${e.id}`);
 }
 if (manifest.histoire) {
-  const all = [manifest.histoire.prologue, ...manifest.histoire.arcs.map((a) => a.fin), ...Object.values(manifest.histoire.chapitres).flatMap((c) => [c.avant, c.apres])];
+  const choixLines = [manifest.histoire.prologueChoix, ...Object.values(manifest.histoire.chapitres).map((c) => c.choix)].filter((x) => !!x).flatMap((x) => [[{ who: x!.qui, text: x!.question }, ...x!.options.map((o) => ({ who: x!.qui, text: o.texte }))], ...x!.options.map((o) => o.suite)]);
+  const all = [manifest.histoire.prologue, ...manifest.histoire.arcs.map((a) => a.fin), ...Object.values(manifest.histoire.chapitres).flatMap((c) => [c.avant, c.apres]), ...choixLines];
   all.forEach((ls, i) => ls.forEach((l) => checkText(l.text, `histoire ${i}`)));
 }
 for (const g of manifest.glossaire) {
