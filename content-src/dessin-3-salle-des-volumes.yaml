@@ -1,0 +1,227 @@
+id: de-salle-des-volumes
+matiere: dessin
+titre: La Salle des Volumes
+sous_titre: Proportions, cube, cylindre et sphère, ombre et lumière, valeurs, couleurs complémentaires, textures
+emoji: 🧊
+couleur: "#76309f"
+cycle: explorateurs
+age: 10 ans et +
+niveau: Apprenti (CM2 – 6ᵉ)
+ordre: 603
+prerequis: [de-jardin-des-formes]
+version: 1.0.0
+intro:
+  - narrateur: "Dans la Salle des Volumes, le Brouillard Plat a tout écrasé : les objets n'ont plus d'épaisseur, plus d'ombre."
+  - mia: "Avec un peu de lumière et d'ombre, un cercle devient une boule, un carré devient un cube. Magie ? Non : observation !"
+
+lecons:
+  - id: proportions
+    titre: "Les proportions"
+    objectif: Je compare les tailles des parties d'un objet pour le dessiner juste.
+    mots: [proportion, unité de mesure, crayon-mesure]
+    etapes:
+      - texte: |
+          Les **proportions**, ce sont les tailles des parties **les unes par rapport aux autres**. Un chat aux oreilles géantes, c'est drôle… mais faux !
+          **La méthode du crayon-mesure** : bras tendu, un œil fermé, tu mesures une partie de l'objet (par exemple la hauteur de la tête) avec ton crayon, puis tu comptes combien de fois elle entre dans le reste. Cette partie devient ton **unité**.
+          Un adulte mesure environ **7 à 8 têtes** de haut ; un enfant de 6 ans environ **6 têtes**.
+      - retiens: "Proportions = tailles relatives. Choisir une unité (ex. la tête) et compter combien de fois elle entre dans le reste."
+    exercices:
+      - type: nombre
+        vars: { t: [5, 6, 7, 8], h: [3, 4] }
+        enonce: "Sur mon dessin, la tête mesure {{h}} cm. Le personnage mesure {{t}} têtes de haut. Quelle hauteur dois-je lui donner ?"
+        reponse: "t*h"
+        unite: cm
+        correction: "{{t}} × {{h}} = {{t*h}} cm."
+      - type: qcm
+        vars: { t: [["Combien de têtes mesure environ un adulte ?", "7 à 8", "3", "15"], ["À quoi sert le crayon-mesure ?", "à comparer les tailles des parties du modèle", "à tracer des cercles", "à gommer"], ["Pourquoi un bébé semble-t-il avoir une grosse tête ?", "sa tête est grande par rapport à son corps", "le dessin est raté", "c'est une illusion"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Pour bien dessiner, il faut comparer les tailles entre elles.", true], ["Un enfant a les mêmes proportions qu'un adulte.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un enfant a une tête plus grande par rapport à son corps (environ 5 à 6 têtes)."
+
+  - id: cube-et-lumiere
+    titre: "Un cube qui prend la lumière"
+    objectif: Je dessine un cube et je place les ombres selon la lumière.
+    mots: [cube, arête, face éclairée, ombre propre, ombre portée]
+    etapes:
+      - dessin:
+          titre: Le cube éclairé
+          etapes:
+            - consigne: "Dessine un carré devant."
+              couche: construction
+              trace: "M25 40 L60 40 L60 75 L25 75 Z"
+            - consigne: "Dessine un carré identique, décalé en haut à droite (derrière)."
+              trace: "M40 25 L75 25 L75 60 L40 60 Z"
+            - consigne: "Relie les coins correspondants : tu as un cube transparent !"
+              trace: "M25 40 L40 25 M60 40 L75 25 M60 75 L75 60 M25 75 L40 60"
+            - consigne: "La lumière vient d'en haut à gauche : dessine sa flèche."
+              couche: proportions
+              trace: "M5 5 L18 18"
+            - consigne: "Dessine l'ombre portée du cube sur le sol, à l'opposé de la lumière (à droite)."
+              couche: valeurs
+              trace: "M60 75 L75 60 L95 66 L80 82 Z"
+            - consigne: "Colorie : face du dessus très claire, face avant moyenne, face de droite foncée."
+              couche: couleur
+              trace: ""
+      - texte: |
+          - La **face éclairée** (tournée vers la lumière) est la plus **claire**.
+          - L'**ombre propre** : la partie de l'objet qui ne reçoit pas la lumière.
+          - L'**ombre portée** : l'ombre que l'objet projette sur le sol, **à l'opposé** de la lumière (comme en physique !).
+      - retiens: "Face éclairée (claire), face intermédiaire, ombre propre (foncée), ombre portée sur le sol, à l'opposé de la source."
+    exercices:
+      - type: qcm
+        vars: { t: [["La lumière vient de la gauche. Où est l'ombre portée ?", "à droite de l'objet", "à gauche de l'objet", "au-dessus"], ["Quelle face d'un cube est la plus claire ?", "celle tournée vers la lumière", "celle du dessous", "toutes pareilles"], ["Qu'est-ce que l'ombre portée ?", "l'ombre projetée par l'objet sur le sol", "la partie sombre de l'objet lui-même", "un reflet"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["de faces a un cube", 6], ["d'arêtes a un cube", 12], ["de sommets a un cube", 8]] }
+        enonce: "Combien {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["L'ombre portée est toujours du même côté que la lumière.", false], ["Trois valeurs (clair, moyen, foncé) suffisent pour donner du volume à un cube.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'ombre portée est à l'opposé de la source de lumière."
+
+  - id: cylindre-et-sphere
+    titre: "Cylindre et sphère"
+    objectif: Je dessine un cylindre et une sphère avec leur modelé.
+    mots: [cylindre, sphère, ellipse, modelé, reflet]
+    etapes:
+      - dessin:
+          titre: La sphère éclairée
+          etapes:
+            - consigne: "Dessine un grand cercle."
+              couche: construction
+              trace: "M50 50 m-25 0 a25 25 0 1 0 50 0 a25 25 0 1 0 -50 0"
+            - consigne: "La lumière vient d'en haut à gauche : dessine un petit rond pour le point le plus brillant."
+              couche: valeurs
+              trace: "M40 40 m-4 0 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0"
+            - consigne: "Trace la limite de l'ombre propre, en bas à droite, en arc."
+              trace: "M68 62 C60 76 42 78 32 68"
+            - consigne: "Dessine l'ombre portée : un ovale aplati sur le sol, décalé à droite."
+              trace: "M42 80 a18 5 0 1 0 36 0 a18 5 0 1 0 -36 0"
+            - consigne: "Ombre doucement, du clair vers le foncé, sans traits durs : c'est le modelé."
+              couche: couleur
+              trace: ""
+      - texte: |
+          **Cylindre** : deux **ellipses** (le cercle du haut et celui du bas vus en biais) reliées par deux traits verticaux. Le bas de l'ellipse du fond est caché.
+          **Sphère** : un cercle, un point de lumière, un passage progressif vers l'ombre (le **modelé**), un léger **reflet** dans l'ombre (la lumière renvoyée par le sol) et l'ombre portée.
+      - retiens: "Sphère : point lumineux, dégradé, reflet, ombre portée. Cylindre : deux ellipses + deux verticales."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que devient un cercle vu en biais ?", "une ellipse (un ovale)", "un carré", "un triangle"], ["Comment passer de la lumière à l'ombre sur une sphère ?", "progressivement (un dégradé)", "avec un trait noir net", "sans changer"], ["Pourquoi voit-on un léger reflet clair dans l'ombre d'une boule ?", "le sol renvoie un peu de lumière", "la boule produit de la lumière", "c'est une erreur"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une balle", "une boîte de conserve", "une orange", "un verre droit"], ["une bille", "un tuyau", "la Lune", "une bougie"]] }
+        enonce: "Plutôt une sphère ou un cylindre ?"
+        categories: [sphère, cylindre]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Boule : sphère ; boîte, tuyau, bougie : cylindre."
+      - type: vf
+        vars: { t: [["Le haut d'un cylindre vu de côté est dessiné comme une ellipse.", true], ["Sur une sphère, le point le plus clair est du côté de la lumière.", true], ["Une sphère se dessine avec des angles droits.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une sphère n'a aucun angle : seulement des courbes et des dégradés."
+
+  - id: valeurs
+    titre: "Les valeurs : du blanc au noir"
+    objectif: Je réalise une échelle de valeurs et je l'utilise.
+    mots: [valeur, dégradé, contraste, hachures]
+    etapes:
+      - texte: |
+          La **valeur**, c'est le degré de clair ou de foncé, indépendamment de la couleur. Une **échelle de valeurs** va du blanc au noir en 5 à 9 cases.
+          Pour foncer : appuyer plus, prendre une mine plus tendre, ou superposer des **hachures** (traits parallèles), puis des **hachures croisées**.
+          Le **contraste** (clair à côté de foncé) attire l'œil : on le met là où l'on veut que le spectateur regarde.
+      - vraie_vie:
+          titre: Mon échelle de valeurs
+          texte: "Dessine 5 cases côte à côte. Laisse la 1ʳᵉ blanche, puis fonce chaque case un peu plus que la précédente jusqu'au noir. Essaie une échelle au crayon, puis une en hachures."
+          materiel: crayons HB et 2B, une feuille
+      - retiens: "Valeur = clair/foncé. Foncer : appuyer, mine tendre, hachures, hachures croisées. Le contraste attire le regard."
+    exercices:
+      - type: ordre
+        vars: { t: [["blanc", "gris très clair", "gris moyen", "gris foncé", "noir"]] }
+        enonce: "Range ces valeurs du plus clair au plus foncé."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Du blanc au noir."
+      - type: qcm
+        vars: { t: [["Que sont des hachures ?", "des traits parallèles qui foncent une zone", "des points de couleur", "des gommages"], ["Où met-on le plus de contraste ?", "là où l'on veut attirer le regard", "partout pareil", "dans les coins"], ["La valeur d'une couleur, c'est…", "son degré de clair ou de foncé", "son prix", "son nom"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les hachures croisées donnent une zone plus foncée que des hachures simples.", true], ["Un jaune et un bleu foncé ont la même valeur.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le jaune est une couleur de valeur claire, le bleu foncé une valeur sombre."
+
+  - id: complementaires
+    titre: "Les couleurs complémentaires"
+    objectif: J'utilise les couleurs complémentaires pour créer du contraste.
+    mots: [complémentaire, cercle chromatique, contraste]
+    etapes:
+      - texte: |
+          Sur le cercle chromatique, deux couleurs **opposées** sont **complémentaires** :
+          - **rouge ↔ vert**, **bleu ↔ orange**, **jaune ↔ violet**.
+          Côte à côte, elles se renforcent : contraste maximal (les publicités et les drapeaux l'utilisent). Mélangées, elles se « neutralisent » en gris-brun.
+          Astuce de peintre : pour assombrir une couleur sans noir, on ajoute un peu de sa complémentaire.
+      - retiens: "Rouge-vert, bleu-orange, jaune-violet. Côte à côte : contraste. Mélangées : gris-brun."
+    exercices:
+      - type: qcm
+        vars: { t: [["rouge", "vert", "orange", "violet"], ["bleu", "orange", "vert", "violet"], ["jaune", "violet", "vert", "orange"], ["vert", "rouge", "bleu", "jaune"], ["orange", "bleu", "rouge", "jaune"], ["violet", "jaune", "bleu", "rouge"]] }
+        enonce: "Quelle est la complémentaire du {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} ↔ {{t_1}}"
+      - type: vf
+        vars: { t: [["Deux complémentaires côte à côte créent un fort contraste.", true], ["Mélanger deux complémentaires donne une couleur très vive.", false], ["Un peu de complémentaire permet d'assombrir une couleur.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Mélangées, deux complémentaires donnent une teinte grise ou brune."
+      - type: qcm
+        vars: { t: [["Pour qu'une fleur rouge ressorte au maximum, je peins le fond en…", "vert", "rouge", "rose"], ["Pour faire ressortir une orange, je choisis un fond…", "bleu", "orange", "jaune"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: textures
+    titre: "Les textures"
+    objectif: Je représente différentes matières avec des traits adaptés.
+    mots: [texture, frottage, matière]
+    etapes:
+      - texte: |
+          La **texture**, c'est l'aspect de la surface : lisse, rugueuse, poilue, écailleuse, granuleuse…
+          - **Fourrure** : petits traits courts dans le sens des poils.
+          - **Bois** : longues lignes ondulées et quelques nœuds.
+          - **Pierre** : taches, points, petites fissures.
+          - **Métal ou verre** : contrastes forts et reflets blancs.
+          Le **frottage** (inventé par Max Ernst) : poser une feuille sur une surface en relief et frotter avec le crayon couché.
+      - vraie_vie:
+          titre: La chasse aux textures
+          texte: "Avec une feuille fine et un crayon couché, fais le frottage de 5 surfaces : une pièce, une feuille d'arbre, l'écorce, un mur, une semelle. Devine ensuite laquelle est laquelle !"
+          materiel: papier fin, crayon gras ou craie grasse
+      - retiens: "Texture = aspect de la surface. Traits courts (fourrure), lignes ondulées (bois), points (pierre), reflets (métal). Frottage : Max Ernst."
+    exercices:
+      - type: qcm
+        vars: { t: [["la fourrure d'un chat", "des petits traits courts dans le sens des poils", "de grands aplats lisses", "des points réguliers"], ["une planche de bois", "des lignes ondulées avec des nœuds", "des cercles", "des zigzags"], ["une casserole en métal", "des contrastes forts et des reflets blancs", "des traits poilus", "des pointillés"]] }
+        enonce: "Pour dessiner {{t_0}}, j'utilise…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une pierre ponce", "une vitre", "une écorce", "une bille en verre"], ["le sable", "un miroir", "un tapis", "une pomme lisse"]] }
+        enonce: "Texture plutôt rugueuse ou lisse ?"
+        categories: [rugueuse, lisse]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le toucher aide à imaginer la texture à dessiner."
+      - type: vf
+        vars: { t: [["Le frottage permet de relever la texture d'une surface.", true], ["Toutes les matières se dessinent avec le même trait.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chaque matière a sa façon d'être dessinée."

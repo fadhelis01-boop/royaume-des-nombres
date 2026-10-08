@@ -1,0 +1,170 @@
+id: ch-laboratoire-royal
+matiere: chimie
+titre: Le Laboratoire Royal
+sous_titre: Vitesse des réactions, équilibres, acides et bases, dosages, chimie organique
+emoji: 🏛️
+couleur: "#0b4f6c"
+cycle: maitres
+age: 16 ans et +
+niveau: Expert (1ʳᵉ – Terminale)
+ordre: 106
+prerequis: [ch-tour-de-la-mole]
+version: 1.0.0
+intro:
+  - neo: "Au Laboratoire Royal, on ne se demande plus seulement QUOI réagit, mais à quelle VITESSE, jusqu'OÙ, et comment le mesurer."
+  - mia: "Et on découvre la chimie du carbone : celle du vivant, des médicaments, des parfums et des plastiques."
+
+lecons:
+  - id: cinetique
+    titre: "La vitesse des réactions"
+    objectif: Je connais les facteurs qui accélèrent une réaction.
+    mots: [cinétique, facteur cinétique, catalyseur]
+    etapes:
+      - texte: |
+          La **cinétique** étudie la vitesse des réactions. Une réaction est plus rapide quand :
+          - la **température** augmente (les particules s'agitent et se rencontrent plus souvent, avec plus d'énergie) ;
+          - la **concentration** des réactifs augmente (plus de rencontres) ;
+          - la **surface de contact** augmente (poudre plutôt que bloc) ;
+          - un **catalyseur** est présent : il accélère la réaction **sans être consommé** (les **enzymes** sont les catalyseurs du vivant ; le pot catalytique des voitures en contient).
+      - retiens: "Température, concentration, surface de contact et catalyseur accélèrent une réaction. Un catalyseur n'est pas consommé."
+      - a_quoi_ca_sert: "Le réfrigérateur ralentit les réactions qui abîment les aliments ; la cocotte-minute les accélère ; l'industrie utilise des catalyseurs pour économiser de l'énergie."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pourquoi conserve-t-on les aliments au réfrigérateur ?", "le froid ralentit les réactions de dégradation", "le froid tue tous les microbes", "le froid arrête le temps"], ["Pourquoi un comprimé effervescent écrasé se dissout-il plus vite ?", "la surface de contact est plus grande", "il est plus concentré", "il est plus chaud"], ["Qu'est-ce qu'un catalyseur ?", "une espèce qui accélère une réaction sans être consommée", "un réactif qui disparaît", "un produit de la réaction"], ["Comment s'appellent les catalyseurs biologiques ?", "les enzymes", "les ions", "les vitamines"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Chauffer accélère en général une réaction.", true], ["Un catalyseur est consommé pendant la réaction.", false], ["Diluer un réactif accélère la réaction.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Diluer diminue la concentration, donc ralentit ; le catalyseur est régénéré."
+      - type: classer
+        vars: { t: [["chauffer", "refroidir", "réduire en poudre", "diluer"], ["ajouter un catalyseur", "mettre au réfrigérateur", "augmenter la concentration", "travailler avec un gros bloc"]] }
+        enonce: "Cette action accélère-t-elle ou ralentit-elle la réaction ?"
+        categories: [accélère, ralentit]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Chaleur, concentration, surface et catalyseur accélèrent."
+
+  - id: equilibres
+    titre: "Les équilibres chimiques"
+    objectif: Je sais qu'une réaction peut être limitée et atteindre un équilibre.
+    mots: [équilibre, réaction totale, Le Chatelier]
+    etapes:
+      - texte: |
+          Certaines réactions sont **totales** (un réactif disparaît complètement). D'autres s'arrêtent avant : la réaction directe et la réaction inverse se produisent **en même temps, à la même vitesse**. On écrit ⇌. C'est un **équilibre dynamique** : à l'échelle microscopique, ça réagit toujours, mais les quantités ne bougent plus.
+          **Principe de Le Chatelier** (qualitatif) : si on perturbe un équilibre, il **se déplace pour s'opposer** en partie à la perturbation (on ajoute un réactif → il en consomme ; on retire un produit → il en refabrique).
+      - retiens: "Équilibre ⇌ : réactions directe et inverse à la même vitesse. Perturbé, il se déplace pour s'opposer à la perturbation."
+    exercices:
+      - type: qcm
+        vars: { t: [["On ajoute un réactif à un mélange à l'équilibre.", "l'équilibre se déplace vers la formation des produits", "l'équilibre se déplace vers les réactifs", "rien ne change"], ["On retire un produit au fur et à mesure qu'il se forme.", "l'équilibre se déplace vers les produits", "la réaction s'arrête", "l'équilibre se déplace vers les réactifs"], ["On ajoute un produit à un mélange à l'équilibre.", "l'équilibre se déplace vers les réactifs", "vers les produits", "rien ne change"]] }
+        enonce: "{{t_0}} Que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : l'équilibre s'oppose à la perturbation."
+      - type: vf
+        vars: { t: [["À l'équilibre, plus aucune réaction ne se produit.", false], ["Le symbole ⇌ indique une réaction qui peut se faire dans les deux sens.", true], ["Une réaction totale consomme entièrement le réactif limitant.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'équilibre est dynamique : les deux réactions continuent, à la même vitesse."
+      - type: qcm
+        vars: { t: [["Le procédé industriel qui fabrique l'ammoniac (procédé Haber-Bosch) retire l'ammoniac formé.", "pour déplacer l'équilibre vers la production d'ammoniac", "pour arrêter la réaction", "pour refroidir l'usine"]] }
+        enonce: "{{t_0}} Pourquoi ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: ph-et-pka
+    titre: "pH, couples acide/base et pKa"
+    objectif: Je calcule un pH et j'utilise la notion de pKa.
+    mots: [ion oxonium, logarithme, couple acide-base, pKa]
+    etapes:
+      - texte: |
+          En solution aqueuse, l'acidité est liée aux ions **oxonium H₃O⁺**. Par définition :
+          $$pH = -\log [H_3O^+]$$ (concentration en mol/L).
+          Si $[H_3O^+] = 10^{-3}$ mol/L, alors pH = 3. Quand le pH baisse de 1, la concentration en H₃O⁺ est **multipliée par 10**.
+          Un **acide** cède un ion H⁺, une **base** en capte un : ils forment un **couple** (CH₃COOH / CH₃COO⁻).
+          Chaque couple a un **pKa**. Si **pH < pKa**, c'est la forme **acide** qui prédomine ; si **pH > pKa**, c'est la forme **basique**.
+      - retiens: "$pH = -\\log [H_3O^+]$. pH − 1 → 10 fois plus de H₃O⁺. pH < pKa : forme acide majoritaire ; pH > pKa : forme basique."
+    exercices:
+      - type: nombre
+        vars: { k: "1..13" }
+        enonce: "$[H_3O^+] = 10^{-{{k}}}$ mol/L. Quel est le pH ?"
+        reponse: "k"
+        correction: "pH = −log(10^−{{k}}) = {{k}}."
+      - type: nombre
+        vars: { a: "2..6", d: "1..3" }
+        enonce: "Une solution passe de pH {{a+d}} à pH {{a}}. Par combien la concentration en H₃O⁺ a-t-elle été multipliée ?"
+        reponse: "10^d"
+        correction: "Le pH a baissé de {{d}} : la concentration est multipliée par 10 à la puissance {{d}}, soit {{10^d}}."
+      - type: qcm
+        vars: { t: [["pKa = 4,8 (acide éthanoïque) et pH = 3", "la forme acide CH₃COOH", "la forme basique CH₃COO⁻", "les deux à égalité"], ["pKa = 4,8 et pH = 7", "la forme basique CH₃COO⁻", "la forme acide CH₃COOH", "les deux à égalité"], ["pKa = 4,8 et pH = 4,8", "les deux formes à égalité", "la forme acide", "la forme basique"]] }
+        enonce: "{{t_0}} : quelle forme prédomine ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: dosages
+    titre: "Doser une solution : le titrage"
+    objectif: J'exploite l'équivalence d'un titrage.
+    mots: [titrage, équivalence, burette, indicateur coloré]
+    etapes:
+      - texte: |
+          **Titrer**, c'est déterminer la concentration inconnue d'une espèce en la faisant réagir avec une solution de concentration connue, versée avec une **burette**.
+          À l'**équivalence**, les réactifs ont été introduits **dans les proportions de l'équation** : on le repère avec un **indicateur coloré** qui change de couleur, ou par un saut de pH.
+          Pour une réaction 1 : 1 (acide + base → …) : $C_A \times V_A = C_B \times V_{B,eq}$.
+      - exemple:
+          titre: Titrer du vinaigre (dilué)
+          enonce: "10 mL de vinaigre dilué sont titrés par de la soude à 0,10 mol/L ; l'équivalence est atteinte pour 12 mL versés."
+          etapes: ["$C_A \\times 10 = 0{,}10 \\times 12$", "$C_A = 0{,}12$ mol/L"]
+      - retiens: "À l'équivalence, les réactifs sont dans les proportions stœchiométriques. Réaction 1:1 : $C_A V_A = C_B V_{B,eq}$."
+    exercices:
+      - type: nombre
+        vars: { va: [10, 20], cb: [0.1, 0.2], veq: [8, 10, 12, 15, 16] }
+        enonce: "{{va}} mL d'acide sont titrés par une base à {{cb}} mol/L (réaction 1:1). Équivalence pour {{veq}} mL. Concentration de l'acide (mol/L) ?"
+        reponse: "cb*veq/va"
+        unite: mol/L
+        correction: "$C_A = C_B V_{eq} / V_A = {{cb}} \\times {{veq}} / {{va}} = {{cb*veq/va}}$ mol/L."
+      - type: qcm
+        vars: { t: [["Avec quel instrument verse-t-on précisément la solution titrante ?", "une burette graduée", "un bécher", "un entonnoir"], ["Comment repère-t-on souvent l'équivalence ?", "par le changement de couleur d'un indicateur", "par l'odeur", "quand la burette est vide"], ["À l'équivalence…", "les réactifs ont été mélangés dans les proportions de l'équation", "il ne reste que de l'eau", "le pH vaut toujours 14"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le titrage permet de trouver une concentration inconnue.", true], ["À l'équivalence d'un titrage acide fort / base forte, le pH vaut 7 (à 25 °C).", true], ["On peut faire un titrage sans connaître la concentration de la solution titrante.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Il faut une solution titrante de concentration connue."
+
+  - id: chimie-organique
+    titre: "La chimie du carbone"
+    objectif: Je reconnais les principaux groupes caractéristiques et je nomme les alcanes simples.
+    mots: [chimie organique, alcane, groupe caractéristique, nomenclature]
+    etapes:
+      - texte: |
+          La **chimie organique** est la chimie des composés du **carbone** (avec H, O, N…). Le carbone forme **4 liaisons** : il construit des chaînes et des cycles.
+          **Alcanes** (seulement C et H, liaisons simples) : méthane CH₄, éthane C₂H₆, propane C₃H₈, butane C₄H₁₀, pentane, hexane… (préfixes : méth = 1 C, éth = 2, prop = 3, but = 4, pent = 5, hex = 6).
+          **Groupes caractéristiques** (ils donnent les propriétés) :
+          | Groupe | Famille | Exemple |
+          |---|---|---|
+          | –OH | alcool | éthanol |
+          | –COOH | acide carboxylique | acide éthanoïque (vinaigre) |
+          | –CHO | aldéhyde | éthanal |
+          | C=O dans la chaîne | cétone | propanone (acétone) |
+          | –COO– | ester | parfums, arômes de fruits |
+          | –NH₂ | amine | méthylamine |
+      - retiens: "Le carbone fait 4 liaisons. Préfixes : méth 1, éth 2, prop 3, but 4. –OH alcool, –COOH acide, –COO– ester, –NH₂ amine."
+      - a_quoi_ca_sert: "Médicaments (l'aspirine est un ester et un acide), arômes, carburants, plastiques, colorants : presque toute l'industrie chimique est organique."
+    exercices:
+      - type: qcm
+        vars: { t: [["–OH", "alcools", "acides carboxyliques", "amines"], ["–COOH", "acides carboxyliques", "alcools", "esters"], ["–NH₂", "amines", "alcools", "cétones"], ["–COO–", "esters", "amines", "alcanes"]] }
+        enonce: "Le groupe {{t_0}} caractérise la famille des…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: nombre
+        vars: { t: [["méthane", 1], ["éthane", 2], ["propane", 3], ["butane", 4], ["pentane", 5], ["hexane", 6]] }
+        enonce: "Combien d'atomes de carbone dans une molécule de {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}."
+      - type: nombre
+        vars: { n: "1..8" }
+        enonce: "Un alcane a pour formule $C_nH_{2n+2}$. Combien d'atomes d'hydrogène pour n = {{n}} ?"
+        reponse: "2*n+2"
+        correction: "2 × {{n}} + 2 = {{2*n+2}}."

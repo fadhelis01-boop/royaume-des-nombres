@@ -1,0 +1,204 @@
+id: bio-jardin-des-fonctions
+matiere: biologie
+titre: Le Jardin des Fonctions
+sous_titre: Photosynthèse, respiration, digestion, classification, écosystèmes, microbes utiles
+emoji: 🌻
+couleur: "#36872a"
+cycle: explorateurs
+age: 10 ans et +
+niveau: Apprenti (CM2 – 6ᵉ)
+ordre: 303
+prerequis: [bio-sous-bois-des-cycles]
+version: 1.0.0
+intro:
+  - neo: "Comment une plante fabrique-t-elle du bois avec de l'air et de la lumière ? Comment ton sandwich devient-il de l'énergie pour courir ? C'est ce qu'on va découvrir."
+  - zero: "Le sandwich, je sais où il va : dans mon ventre. Fin de l'enquête."
+
+lecons:
+  - id: photosynthese
+    titre: "La photosynthèse"
+    objectif: J'explique comment une plante fabrique sa matière.
+    mots: [photosynthèse, chlorophylle, dioxyde de carbone, glucose, dioxygène]
+    etapes:
+      - texte: |
+          Les feuilles contiennent un pigment vert, la **chlorophylle**, qui capte la **lumière**. Avec cette énergie, la plante fabrique des **sucres** (sa nourriture et sa matière) à partir :
+          - du **dioxyde de carbone** (CO₂) de l'**air**, qui entre par de minuscules trous des feuilles ;
+          - de l'**eau** puisée par les racines.
+          Elle rejette du **dioxygène** (O₂) : c'est grâce aux plantes et aux algues que l'air contient de l'oxygène !
+          Bilan : eau + dioxyde de carbone + lumière → sucres + dioxygène.
+          Le bois d'un arbre vient donc surtout… de l'air !
+      - retiens: "Photosynthèse : CO₂ (air) + eau + lumière → sucres + O₂. La matière des plantes vient surtout de l'air."
+      - a_quoi_ca_sert: "Toute notre nourriture vient, directement ou non, de la photosynthèse. Les forêts et les océans absorbent une partie du CO₂ que nous rejetons."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel gaz la plante prend-elle dans l'air pour la photosynthèse ?", "le dioxyde de carbone", "le dioxygène", "l'azote"], ["Quel gaz la plante rejette-t-elle pendant la photosynthèse ?", "le dioxygène", "le dioxyde de carbone", "la vapeur d'essence"], ["Quel pigment capte la lumière ?", "la chlorophylle", "le sang", "la mélanine"], ["D'où vient surtout la matière du bois d'un arbre ?", "du dioxyde de carbone de l'air", "de la terre", "de l'engrais"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les plantes mangent la terre pour grandir.", false], ["La photosynthèse a besoin de lumière.", true], ["Sans photosynthèse, il n'y aurait presque pas d'oxygène dans l'air.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le sol apporte l'eau et des sels minéraux, mais la matière vient surtout du CO₂ de l'air."
+      - type: classer
+        vars: { t: [["la lumière", "le dioxygène", "l'eau", "les sucres", "le dioxyde de carbone"]] }
+        enonce: "Dans la photosynthèse, est-ce ce que la plante utilise ou ce qu'elle produit ?"
+        categories: ["utilisé", "produit"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0]]
+        correction: "Utilisés : lumière, eau, CO₂. Produits : sucres et dioxygène."
+
+  - id: respiration
+    titre: "La respiration"
+    objectif: Je sais que tous les êtres vivants respirent pour produire de l'énergie.
+    mots: [respiration, poumons, branchies, énergie]
+    etapes:
+      - texte: |
+          **Tous** les êtres vivants respirent, y compris les plantes (jour et nuit) : ils utilisent le **dioxygène** pour « brûler » doucement les sucres et obtenir de l'**énergie**, et rejettent du **dioxyde de carbone** et de l'eau.
+          Les organes changent selon l'animal : **poumons** (mammifères, oiseaux), **branchies** (poissons, têtards), la **peau** aussi chez la grenouille, des petits tubes (**trachées**) chez les insectes.
+          Chez nous, l'air entre par le nez, descend par la trachée jusqu'aux **poumons**, où l'oxygène passe dans le **sang**.
+      - retiens: "Respirer = utiliser O₂ et rejeter CO₂ pour produire de l'énergie. Poumons, branchies, peau, trachées selon les espèces."
+    exercices:
+      - type: qcm
+        vars: { t: [["le poisson", "des branchies", "des poumons", "des trachées"], ["le chien", "des poumons", "des branchies", "des feuilles"], ["la sauterelle", "des trachées", "des branchies", "des poumons"], ["le têtard", "des branchies", "des poumons", "des trachées"]] }
+        enonce: "Avec quoi respire {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les plantes respirent aussi.", true], ["On expire plus de dioxyde de carbone qu'on n'en inspire.", true], ["La respiration sert à produire de l'énergie.", true], ["Le poisson respire l'oxygène de l'air à la surface.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le poisson utilise l'oxygène dissous dans l'eau, grâce à ses branchies."
+      - type: qcm
+        vars: { t: [["Où l'oxygène passe-t-il dans le sang ?", "dans les poumons", "dans l'estomac", "dans le cœur"], ["Quel gaz rejetons-nous en expirant ?", "du dioxyde de carbone (et de la vapeur d'eau)", "uniquement de l'oxygène", "de l'azote pur"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: digestion
+    titre: "Le voyage des aliments"
+    objectif: Je décris le trajet et la transformation des aliments.
+    mots: [digestion, œsophage, estomac, intestin, nutriments]
+    etapes:
+      - texte: |
+          1. **Bouche** : les dents broient, la salive commence à transformer les aliments.
+          2. **Œsophage** : le tube qui descend à l'estomac.
+          3. **Estomac** : il brasse les aliments avec des sucs acides.
+          4. **Intestin grêle** (environ 6 à 7 m !) : les aliments sont découpés en **nutriments** minuscules qui passent dans le **sang**.
+          5. **Gros intestin** : on récupère l'eau ; ce qui n'est pas digéré forme les selles.
+          Le sang apporte les nutriments à toutes les cellules du corps.
+      - retiens: "Bouche → œsophage → estomac → intestin grêle (passage dans le sang) → gros intestin. Digérer = découper en nutriments."
+    exercices:
+      - type: ordre
+        vars: { t: [["la bouche", "l'œsophage", "l'estomac", "l'intestin grêle", "le gros intestin"]] }
+        enonce: "Remets le trajet des aliments dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Bouche, œsophage, estomac, intestin grêle, gros intestin."
+      - type: qcm
+        vars: { t: [["Où les nutriments passent-ils dans le sang ?", "dans l'intestin grêle", "dans l'œsophage", "dans la bouche"], ["Quel est le rôle de l'estomac ?", "brasser les aliments avec des sucs", "respirer", "fabriquer le sang"], ["Combien mesure environ l'intestin grêle d'un adulte ?", "6 à 7 mètres", "30 centimètres", "100 mètres"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les aliments passent par les poumons.", false], ["Les nutriments sont transportés par le sang.", true], ["La digestion commence dans la bouche.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'air va aux poumons, les aliments vont dans le tube digestif."
+
+  - id: classification
+    titre: "Classer en groupes emboîtés"
+    objectif: Je range des êtres vivants dans des groupes emboîtés.
+    mots: [classification, groupe, vertébré, arthropode]
+    etapes:
+      - texte: |
+          Les scientifiques rangent les êtres vivants dans des **boîtes emboîtées**, selon les caractères qu'ils **partagent** :
+          - **Vertébrés** (un squelette interne avec une colonne vertébrale) : poissons, amphibiens, reptiles, oiseaux, mammifères.
+          - Parmi eux, les **tétrapodes** (4 membres) : amphibiens, reptiles, oiseaux, mammifères (les ailes et les bras sont des membres).
+          - **Arthropodes** (squelette externe et pattes articulées) : insectes (6 pattes), arachnides (8 pattes), crustacés (crabe), mille-pattes.
+          Plus deux êtres partagent de caractères, plus ils sont **apparentés**.
+      - retiens: "Groupes emboîtés selon des caractères partagés. Vertébrés : colonne vertébrale. Arthropodes : squelette externe, pattes articulées."
+    exercices:
+      - type: classer
+        vars: { t: [["le chat", "la fourmi", "le serpent", "le crabe"], ["le saumon", "l'araignée", "le pigeon", "le scarabée"], ["la grenouille", "la crevette", "l'humain", "le mille-pattes"]] }
+        enonce: "Vertébré ou arthropode ?"
+        categories: [vertébré, arthropode]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Colonne vertébrale → vertébré ; squelette externe et pattes articulées → arthropode."
+      - type: qcm
+        vars: { t: [["le crabe", "un crustacé (arthropode)", "un poisson", "un insecte"], ["le scorpion", "un arachnide (8 pattes)", "un insecte", "un reptile"], ["la chauve-souris", "un mammifère", "un oiseau", "un insecte"]] }
+        enonce: "{{t_0}} est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les ailes d'un oiseau sont des membres, comme nos bras.", true], ["Le serpent est un vertébré.", true], ["Les insectes ont une colonne vertébrale.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les insectes sont des arthropodes : squelette externe, pas de colonne vertébrale."
+
+  - id: ecosystemes
+    titre: "Les écosystèmes"
+    objectif: Je décris un écosystème et l'effet d'une perturbation.
+    mots: [écosystème, réseau alimentaire, biodiversité]
+    etapes:
+      - texte: |
+          Un **écosystème** = un milieu (mare, forêt, prairie) + tous les êtres vivants qui y vivent + leurs relations.
+          Les chaînes alimentaires s'entremêlent en un **réseau alimentaire**. Si une espèce disparaît, les autres sont touchées : moins d'insectes pollinisateurs → moins de fruits → moins de nourriture pour les oiseaux…
+          La **biodiversité** (la variété des espèces) rend les écosystèmes plus solides. L'humain la menace (pollution, destruction des milieux, espèces invasives) mais peut aussi la protéger (haies, mares, réserves).
+      - retiens: "Écosystème = milieu + êtres vivants + relations. Tout est lié : une disparition a des effets en chaîne. Biodiversité = solidité."
+    exercices:
+      - type: qcm
+        vars: { t: [["Les abeilles disparaissent d'un verger.", "il y aura moins de fruits (moins de pollinisation)", "il y aura plus de fruits", "rien ne change"], ["On supprime tous les renards d'une région.", "les lapins risquent de pulluler et de manger trop de plantes", "les lapins disparaissent", "rien ne change"], ["On plante des haies entre les champs.", "les oiseaux et insectes y trouvent abri : la biodiversité augmente", "la biodiversité diminue", "les champs disparaissent"]] }
+        enonce: "{{t_0}} Que peut-il se passer ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Dans un écosystème, les espèces sont reliées entre elles.", true], ["La disparition d'une seule espèce n'a jamais d'effet.", false], ["Une mare dans un jardin peut augmenter la biodiversité.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Tout est lié : une disparition peut se répercuter sur tout le réseau."
+      - type: classer
+        vars: { t: [["planter une haie", "déverser des produits chimiques dans une rivière", "laisser un coin d'herbes sauvages", "relâcher une tortue exotique dans un étang"]] }
+        enonce: "Cette action protège-t-elle ou menace-t-elle la biodiversité ?"
+        categories: [protège, menace]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Relâcher un animal exotique peut créer une espèce invasive qui chasse les espèces locales."
+
+  - id: microbes-utiles
+    titre: "Les micro-organismes utiles"
+    objectif: Je connais le rôle des levures et des bactéries dans l'alimentation.
+    mots: [levure, fermentation, bactérie lactique]
+    etapes:
+      - texte: |
+          - La **levure** (un champignon microscopique) se nourrit de sucre et rejette du **dioxyde de carbone** : les bulles font **gonfler la pâte à pain**. C'est une **fermentation**.
+          - Des **bactéries lactiques** transforment le lait en **yaourt** ou en fromage.
+          - Notre **intestin** abrite des milliards de bactéries utiles (le **microbiote**) qui aident à digérer et nous protègent.
+      - experience:
+          titre: Le ballon de la levure
+          securite: orange
+          materiel: ["une petite bouteille", "un sachet de levure de boulanger", "2 cuillères de sucre", "de l'eau tiède (pas chaude)", "un ballon de baudruche"]
+          prediction:
+            question: "Levure + sucre + eau tiède dans une bouteille fermée par un ballon : que fera le ballon au bout de 30 minutes ?"
+            choix: ["Il se gonfle peu à peu", "Il reste plat", "Il éclate tout de suite"]
+          etapes:
+            - "Verse l'eau tiède, le sucre et la levure dans la bouteille ; mélange doucement."
+            - "Fixe le ballon sur le goulot."
+            - "Laisse dans un endroit tiède et observe toutes les 10 minutes."
+          observation: "Des bulles apparaissent et le ballon se gonfle lentement."
+          explication: "La levure est vivante : elle mange le sucre et rejette du CO₂, qui remplit le ballon. Dans le four, ce gaz fait lever la pâte. Avec de l'eau trop chaude, la levure meurt et rien ne se passe."
+      - retiens: "Levures et bactéries utiles : pain, yaourt, fromage, microbiote. La fermentation produit du gaz (CO₂)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce qui fait gonfler la pâte à pain ?", "le CO₂ produit par la levure", "la chaleur du four seulement", "l'air qu'on souffle dedans"], ["Qui transforme le lait en yaourt ?", "des bactéries lactiques", "le réfrigérateur", "le sucre"], ["Qu'est-ce que le microbiote intestinal ?", "les bactéries utiles de notre intestin", "une maladie", "un organe"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["La levure est un être vivant.", true], ["Toutes les bactéries sont nuisibles.", false], ["Si l'eau est trop chaude, la levure meurt.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Beaucoup de bactéries sont utiles : yaourt, fromage, digestion."
+      - type: classer
+        vars: { t: [["le pain", "la salade nature", "le yaourt", "la pomme crue"], ["le fromage", "le riz cuit", "la choucroute", "l'eau"]] }
+        enonce: "Cet aliment est-il fabriqué grâce à des micro-organismes ?"
+        categories: ["oui (fermentation)", "non"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Pain, yaourt, fromage, choucroute : fermentations par des levures ou des bactéries."

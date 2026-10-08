@@ -1,0 +1,258 @@
+id: de-jardin-des-formes
+matiere: dessin
+titre: Le Jardin des Formes
+sous_titre: Maison, papillon en miroir, couleurs secondaires, arbre, chat, feuille symétrique
+emoji: 🦋
+couleur: "#8a3fc2"
+cycle: graines
+age: 8 ans et +
+niveau: Explorateur (CE2 – CM1)
+ordre: 602
+prerequis: [de-atelier-des-traits]
+version: 1.0.0
+intro:
+  - mia: "Dans mon jardin, tout est fait de formes : les maisons, les arbres, les papillons, et même les chats !"
+  - zero: "Même moi ? Je suis une sphère parfaite."
+  - mia: "Exactement : un grand cercle, deux petits pour les oreilles… On te dessinera aussi."
+
+lecons:
+  - id: maison-pas-a-pas
+    titre: "Une maison avec des formes"
+    objectif: Je dessine une maison en assemblant des formes.
+    mots: [carré, triangle, rectangle, assembler]
+    etapes:
+      - dessin:
+          titre: La maison
+          etapes:
+            - consigne: "Dessine un grand carré : les murs."
+              couche: construction
+              trace: "M25 50 L75 50 L75 88 L25 88 Z"
+            - consigne: "Pose un triangle dessus : le toit."
+              trace: "M20 50 L50 22 L80 50"
+            - consigne: "Dessine la porte : un rectangle au milieu, en bas."
+              trace: "M44 88 L44 68 L56 68 L56 88"
+            - consigne: "Ajoute deux fenêtres carrées."
+              trace: "M30 58 L40 58 L40 66 L30 66 Z M60 58 L70 58 L70 66 L60 66 Z"
+            - consigne: "Ajoute la cheminée sur le toit."
+              trace: "M64 36 L64 26 L71 26 L71 43"
+            - consigne: "Colorie ta maison et dessine un jardin autour !"
+              couche: couleur
+              trace: ""
+      - retiens: "Maison = carré (murs) + triangle (toit) + rectangles (porte, fenêtres)."
+    exercices:
+      - type: qcm
+        vars: { t: [["le toit", "un triangle", "un cercle", "un ovale"], ["les murs", "un carré", "un triangle", "un cercle"], ["la porte", "un rectangle", "un triangle", "un ovale"]] }
+        enonce: "Pour dessiner {{t_0}} de la maison, j'utilise…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["les murs", "le toit", "la porte et les fenêtres", "la cheminée", "la couleur"]] }
+        enonce: "Remets les étapes de la maison dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Grandes formes, puis détails, puis couleur."
+      - type: vf
+        vars: { t: [["On dessine la cheminée avant les murs.", false], ["Une maison simple se dessine avec des formes géométriques.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On commence par les grandes formes."
+
+  - id: symetrie-papillon
+    titre: "La symétrie du papillon"
+    objectif: Je dessine une forme symétrique avec un axe.
+    mots: [symétrie, axe de symétrie, miroir]
+    etapes:
+      - texte: |
+          Un papillon est **symétrique** : si on le plie en deux le long de son corps, les deux moitiés se superposent. Le pli s'appelle l'**axe de symétrie**.
+          Dans cet exercice, le **mode miroir** est activé : dessine la moitié **gauche**, la droite apparaît toute seule !
+      - dessin:
+          titre: Le papillon miroir
+          miroir: true
+          etapes:
+            - consigne: "Trace le corps sur l'axe, au milieu."
+              trace: "M50 25 L50 75"
+            - consigne: "Dessine la grande aile du haut (à gauche)."
+              trace: "M50 40 C30 15 12 25 20 45 C25 55 40 50 50 48"
+            - consigne: "Dessine la petite aile du bas."
+              trace: "M50 52 C35 55 22 68 32 76 C40 80 46 68 50 60"
+            - consigne: "Ajoute l'antenne."
+              trace: "M50 25 C47 18 44 15 42 13"
+            - consigne: "Décore l'aile avec des ronds : ils seront symétriques !"
+              couche: détails
+              trace: "M30 35 m-4 0 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0"
+      - experience:
+          titre: Le papillon plié
+          securite: vert
+          materiel: ["une feuille", "de la gouache de plusieurs couleurs"]
+          etapes:
+            - "Plie la feuille en deux, puis ouvre-la."
+            - "Mets des taches de peinture sur UNE seule moitié, près du pli."
+            - "Replie, appuie bien, puis ouvre."
+          observation: "Un motif parfaitement symétrique apparaît, comme des ailes de papillon."
+          explication: "La peinture s'est imprimée de l'autre côté du pli : chaque tache a son reflet à la même distance de l'axe."
+      - retiens: "Symétrie : les deux moitiés se superposent quand on plie le long de l'axe."
+    exercices:
+      - type: classer
+        vars: { t: [["un papillon", "une main", "un visage de face", "un escargot"], ["la lettre A", "la lettre F", "un cœur", "la lettre G"]] }
+        enonce: "A-t-il (à peu près) un axe de symétrie vertical ?"
+        categories: ["oui", "non"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Papillon, visage, A, cœur : symétriques. Main, escargot, F, G : non."
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'un axe de symétrie ?", "la ligne de pliage où les deux moitiés se superposent", "le bord de la feuille", "un trait au hasard"], ["Un point est à 3 cm à gauche de l'axe. Où est son symétrique ?", "à 3 cm à droite de l'axe", "à 6 cm à droite", "sur l'axe"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Dans la nature, la symétrie n'est jamais tout à fait parfaite.", true], ["Un carré a plusieurs axes de symétrie.", true], ["La lettre R est symétrique.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un carré a 4 axes ; la lettre R n'en a aucun."
+
+  - id: couleurs-secondaires
+    titre: "Les couleurs secondaires et le cercle chromatique"
+    objectif: Je fabrique les couleurs secondaires et je les place sur le cercle.
+    mots: [couleur secondaire, cercle chromatique, couleurs chaudes, couleurs froides]
+    etapes:
+      - texte: |
+          En mélangeant deux primaires à parts égales, on obtient une **couleur secondaire** :
+          - rouge + jaune = **orange** ; jaune + bleu = **vert** ; bleu + rouge = **violet**.
+          Sur le **cercle chromatique**, chaque secondaire se place **entre** ses deux primaires.
+          **Couleurs chaudes** (rouge, orange, jaune : le feu, le soleil) et **couleurs froides** (bleu, vert, violet : l'eau, la nuit).
+      - retiens: "Orange = rouge + jaune ; vert = jaune + bleu ; violet = bleu + rouge. Chaudes : rouge, orange, jaune. Froides : bleu, vert, violet."
+    exercices:
+      - type: qcm
+        vars: { t: [["orange", "rouge et jaune", "bleu et jaune", "rouge et bleu"], ["vert", "jaune et bleu", "rouge et jaune", "rouge et bleu"], ["violet", "rouge et bleu", "jaune et bleu", "rouge et jaune"]] }
+        enonce: "Quelles primaires mélanger pour obtenir du {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} = {{t_1}}"
+      - type: classer
+        vars: { t: [["rouge", "bleu", "orange", "vert", "jaune", "violet"]] }
+        enonce: "Couleur chaude ou froide ?"
+        categories: [chaude, froide]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
+        correction: "Chaudes : feu et soleil. Froides : eau, glace, nuit."
+      - type: qcm
+        vars: { t: [["un coucher de soleil brûlant", "des couleurs chaudes", "des couleurs froides"], ["une nuit glacée sous la neige", "des couleurs froides", "des couleurs chaudes"], ["un feu de camp", "des couleurs chaudes", "des couleurs froides"]] }
+        enonce: "Pour peindre {{t_0}}, je choisis plutôt…"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}"
+
+  - id: arbre-pas-a-pas
+    titre: "Un arbre pas à pas"
+    objectif: Je dessine un arbre du tronc au feuillage.
+    mots: [tronc, branche, feuillage]
+    etapes:
+      - dessin:
+          titre: L'arbre
+          etapes:
+            - consigne: "Trace le tronc : deux traits verticaux, un peu plus larges en bas."
+              couche: construction
+              trace: "M44 92 L46 60 M56 92 L54 60"
+            - consigne: "Fais partir trois branches du haut du tronc."
+              trace: "M47 62 L35 48 M53 62 L66 46 M50 60 L50 44"
+            - consigne: "Entoure les branches d'un grand nuage de feuillage."
+              trace: "M30 50 C18 45 22 25 38 28 C40 15 60 15 63 28 C78 25 84 45 70 52 C65 60 35 60 30 50 Z"
+            - consigne: "Ajoute de l'herbe au pied de l'arbre."
+              couche: détails
+              trace: "M20 92 L80 92 M30 92 L32 87 M38 92 L40 86 M62 92 L64 87 M70 92 L72 86"
+            - consigne: "Colorie : un vert clair au soleil, un vert plus foncé à l'ombre !"
+              couche: couleur
+              trace: ""
+      - retiens: "Arbre : tronc (plus large en bas), branches, masse de feuillage, puis détails et ombres."
+    exercices:
+      - type: ordre
+        vars: { t: [["le tronc", "les branches", "le feuillage", "l'herbe et les détails", "la couleur"]] }
+        enonce: "Remets les étapes de l'arbre dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Tronc, branches, feuillage, détails, couleur."
+      - type: qcm
+        vars: { t: [["Comment est le tronc d'un arbre en bas ?", "plus large", "plus fin", "invisible"], ["Pour montrer l'ombre dans le feuillage, j'utilise…", "un vert plus foncé", "du jaune vif", "du blanc"], ["En automne, quelles couleurs pour les feuilles ?", "orange, rouge, jaune, brun", "bleu et violet", "uniquement noir"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["On dessine chaque feuille une par une avant le feuillage.", false], ["Les branches deviennent plus fines vers le bout.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On dessine d'abord la masse du feuillage, puis quelques détails."
+
+  - id: chat-en-formes
+    titre: "Un chat avec des formes"
+    objectif: Je construis un animal avec des cercles, ovales et triangles.
+    mots: [construction, ovale, repère, croix de construction]
+    etapes:
+      - dessin:
+          titre: Le chat
+          etapes:
+            - consigne: "Dessine un grand cercle : c'est la tête."
+              couche: construction
+              trace: "M50 35 m-16 0 a16 16 0 1 0 32 0 a16 16 0 1 0 -32 0"
+            - consigne: "Dessine un ovale plus grand sous la tête : le corps."
+              trace: "M50 70 m-18 0 a18 20 0 1 0 36 0 a18 20 0 1 0 -36 0"
+            - consigne: "Ajoute deux triangles sur la tête : les oreilles."
+              trace: "M37 26 L36 12 L46 21 M63 26 L64 12 L54 21"
+            - consigne: "Trace une croix légère sur la tête, puis les yeux sur la ligne horizontale."
+              couche: proportions
+              trace: "M50 20 L50 50 M35 35 L65 35 M42 34 L45 34 M55 34 L58 34"
+            - consigne: "Ajoute le museau (un petit triangle) et les moustaches."
+              couche: détails
+              trace: "M48 40 L52 40 L50 43 Z M44 41 L33 39 M44 43 L33 45 M56 41 L67 39 M56 43 L67 45"
+            - consigne: "Dessine une queue en forme de S."
+              trace: "M67 78 C82 72 74 58 86 52"
+            - consigne: "Repasse le contour, gomme la croix, colorie ton chat !"
+              couche: couleur
+              trace: ""
+      - retiens: "Un objet complexe = assemblage de formes simples. On construit léger, on repasse le contour, on gomme les constructions."
+    exercices:
+      - type: qcm
+        vars: { t: [["la tête du chat", "un cercle", "un triangle", "un rectangle"], ["les oreilles", "des triangles", "des cercles", "des carrés"], ["le corps", "un ovale", "un carré", "un triangle"]] }
+        enonce: "Quelle forme pour {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["À quoi sert la croix légère sur la tête ?", "à placer les yeux et le museau au bon endroit", "à décorer", "à faire les moustaches"], ["Que fait-on des traits de construction à la fin ?", "on les gomme", "on les repasse en noir", "on les colorie"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les yeux du chat se placent sur la ligne horizontale de la croix.", true], ["On commence le chat par les moustaches.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On construit d'abord les grandes formes, les détails viennent après."
+
+  - id: feuille-symetrique
+    titre: "Dessiner une feuille"
+    objectif: J'observe et je dessine une feuille avec ses nervures.
+    mots: [nervure, observation, symétrie]
+    etapes:
+      - dessin:
+          titre: La feuille
+          miroir: true
+          etapes:
+            - consigne: "Trace la nervure centrale : c'est l'axe de symétrie."
+              trace: "M50 90 L50 15"
+            - consigne: "Dessine le contour de la moitié gauche ; le miroir fait l'autre moitié."
+              trace: "M50 15 C35 25 28 45 32 62 C35 75 44 84 50 88"
+            - consigne: "Ajoute des nervures secondaires, en biais vers le haut."
+              trace: "M50 40 L38 32 M50 55 L36 48 M50 70 L40 64"
+      - vraie_vie:
+          titre: Compare avec une vraie feuille
+          texte: "Ramasse une feuille tombée et pose-la à côté de ton dessin. Qu'est-ce qui est différent ? (Indice : dans la nature, la symétrie n'est jamais parfaite.) Les nervures sont les « tuyaux » qui transportent l'eau et les sucres."
+          materiel: une feuille d'arbre
+      - retiens: "Feuille : nervure centrale (axe), contour, nervures secondaires. Les nervures transportent l'eau et la sève."
+    exercices:
+      - type: qcm
+        vars: { t: [["À quoi servent les nervures d'une feuille ?", "à transporter l'eau et la sève", "à faire joli", "à faire tomber la feuille"], ["La nervure centrale est souvent…", "l'axe de symétrie de la feuille", "le bord de la feuille", "une tache"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les deux moitiés d'une vraie feuille sont parfaitement identiques.", false], ["Dessiner d'après une vraie feuille aide à mieux l'observer.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La nature est presque symétrique, jamais parfaitement."
+      - type: ordre
+        vars: { t: [["la nervure centrale", "le contour", "les nervures secondaires", "la couleur"]] }
+        enonce: "Remets les étapes de la feuille dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Axe, contour, nervures, couleur."

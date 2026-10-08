@@ -1,0 +1,179 @@
+id: mu-tour-des-harmoniques
+matiere: musique
+titre: La Tour des Harmoniques
+sous_titre: Acoustique, harmoniques et timbre, tempérament égal, modes, cadences, formes savantes, synthèse
+emoji: 🔔
+couleur: "#8a4508"
+cycle: maitres
+age: 14 ans et +
+niveau: Ingénieur – Expert (3ᵉ – Terminale)
+ordre: 505
+prerequis: [mu-opera-des-formes]
+version: 1.0.0
+intro:
+  - neo: "Ici, la musique devient des nombres : fréquences, rapports, puissances de deux. Pythagore aurait adoré."
+  - mia: "Et pourtant, ça reste de l'émotion. Comprendre comment ça marche ne retire rien à la magie."
+
+lecons:
+  - id: harmoniques-et-timbre
+    titre: "Harmoniques et timbre"
+    objectif: J'explique pourquoi deux instruments jouant la même note sonnent différemment.
+    mots: [fréquence fondamentale, harmonique, timbre, octave]
+    etapes:
+      - texte: |
+          Un son musical n'est presque jamais une fréquence unique. Une corde vibre à la fois à sa **fréquence fondamentale** f et à des multiples : 2f, 3f, 4f… ce sont les **harmoniques**.
+          La **hauteur** perçue est celle de la fondamentale ; le **mélange** des harmoniques (lesquels sont forts ou faibles) fait le **timbre** : c'est pour ça qu'une flûte et un violon jouant le même la (440 Hz) ne sonnent pas pareil.
+          Rapports simples, déjà connus de **Pythagore** avec une corde divisée : **octave** = fréquence × 2, **quinte** ≈ × 3/2, **quarte** ≈ × 4/3.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "La 440 Hz, son pur", freq: 440, timbre: pur }, { etiquette: "La 440 Hz, façon flûte", notes: "La4:3", timbre: flute }, { etiquette: "La 440 Hz, façon violon", notes: "La4:3", timbre: violon }]
+        legende: "Même hauteur, timbres différents : seuls les harmoniques changent."
+      - retiens: "Harmoniques : 2f, 3f, 4f… Le timbre = la recette des harmoniques. Octave × 2, quinte × 3/2, quarte × 4/3."
+    exercices:
+      - type: nombre
+        vars: { f: [110, 220, 440, 261.6] }
+        enonce: "La fondamentale vaut {{f}} Hz. Quelle est la fréquence du 3ᵉ harmonique ?"
+        reponse: "3*f"
+        tolerance: 0.1
+        unite: Hz
+        correction: "3 × {{f}} = {{3*f}} Hz."
+      - type: nombre
+        vars: { f: [220, 440, 330] }
+        enonce: "Une note a pour fréquence {{f}} Hz. Quelle est la fréquence de la même note une octave plus haut ?"
+        reponse: "2*f"
+        unite: Hz
+        correction: "Octave : × 2, soit {{2*f}} Hz."
+      - type: qcm
+        vars: { t: [["Pourquoi une flûte et un violon jouant le même la sonnent-ils différemment ?", "leurs harmoniques n'ont pas les mêmes intensités (timbre)", "ils ne jouent pas la même fréquence fondamentale", "le violon joue toujours plus fort"], ["Quel rapport de fréquences correspond à une quinte (pythagoricienne) ?", "3/2", "2/1", "5/4"], ["Qu'est-ce qui détermine la hauteur perçue d'un son ?", "la fréquence fondamentale", "le nombre d'harmoniques", "la durée"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: temperament-egal
+    titre: "Le tempérament égal"
+    objectif: Je calcule la fréquence d'une note dans le tempérament égal.
+    mots: [tempérament égal, demi-ton, diapason, La 440]
+    etapes:
+      - texte: |
+          Pour pouvoir jouer dans toutes les tonalités, on divise l'octave en **12 demi-tons égaux** : chaque demi-ton multiplie la fréquence par $\sqrt[12]{2} \approx 1{,}0595$.
+          Référence : le **La4 = 440 Hz** (le diapason). Formule (n = numéro MIDI, La4 = 69) : $$f = 440 \times 2^{\frac{n-69}{12}}$$
+          Compromis : les quintes du tempérament égal (× 1,4983) sont très légèrement plus petites que la quinte « pure » 3/2 (× 1,5).
+      - retiens: "12 demi-tons égaux ; un demi-ton = × $2^{1/12}$ ≈ 1,0595. La4 = 440 Hz. $f = 440 \\times 2^{(n-69)/12}$."
+    exercices:
+      - type: nombre
+        vars: { k: [1, 2, -1] }
+        enonce: "Le La4 vaut 440 Hz. Quelle est la fréquence du La {{si(k==1,'une octave au-dessus',si(k==2,'deux octaves au-dessus','une octave en dessous'))}} ?"
+        reponse: "440*2^k"
+        unite: Hz
+        correction: "440 × 2^{{k}} = {{440*2^k}} Hz."
+      - type: nombre
+        vars: { d: [3, 4, 7, 12] }
+        enonce: "Dans le tempérament égal, par combien est multipliée la fréquence quand on monte de {{d}} demi-tons ? (arrondis au millième)"
+        reponse: "2^(d/12)"
+        tolerance: 0.001
+        correction: "2 puissance ({{d}}/12) ≈ {{dec(2^(d/12),3)}}."
+      - type: vf
+        vars: { t: [["Le La de référence vaut 440 Hz.", true], ["Dans le tempérament égal, tous les demi-tons ont le même rapport de fréquences.", true], ["La quinte tempérée est exactement égale à 3/2.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La quinte tempérée (≈ 1,4983) est très légèrement plus petite que 3/2 : c'est le compromis du tempérament égal."
+
+  - id: modes-et-cadences
+    titre: "Modes et cadences"
+    objectif: Je reconnais quelques modes et les principales cadences.
+    mots: [mode, dorien, mixolydien, cadence parfaite, demi-cadence, cadence plagale, cadence rompue]
+    etapes:
+      - texte: |
+          **Modes** : on joue les notes blanches du clavier en partant d'une autre note que do :
+          - de **ré** à ré : mode **dorien** (couleur mineure avec une sixte majeure : musique celtique, jazz modal) ;
+          - de **sol** à sol : mode **mixolydien** (majeur avec une 7ᵉ mineure : rock, blues) ;
+          - de **la** à la : mode **éolien** = la gamme mineure naturelle.
+          **Cadences** (fins de phrases) :
+          - **parfaite** : V → I (conclusion forte) ;
+          - **demi-cadence** : se termine sur V (question en suspens) ;
+          - **plagale** : IV → I (le « Amen » des cantiques) ;
+          - **rompue** : V → VI (surprise : on attendait I).
+      - retiens: "Dorien (ré), mixolydien (sol), éolien (la) = notes blanches depuis une autre tonique. Cadences : parfaite V-I, demi (sur V), plagale IV-I, rompue V-VI."
+    exercices:
+      - type: qcm
+        vars: { t: [["V → I", "cadence parfaite", "cadence plagale", "cadence rompue"], ["IV → I", "cadence plagale", "cadence parfaite", "demi-cadence"], ["V → VI", "cadence rompue", "cadence parfaite", "cadence plagale"], ["… → V (on s'arrête sur V)", "demi-cadence", "cadence parfaite", "cadence plagale"]] }
+        enonce: "Quel nom porte l'enchaînement {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["ré", "dorien", "mixolydien", "éolien"], ["sol", "mixolydien", "dorien", "éolien"], ["la", "éolien (mineur naturel)", "dorien", "mixolydien"]] }
+        enonce: "Notes blanches du clavier, de {{t_0}} à {{t_0}} : quel mode ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["[Fa4 La4 Do5]:2 [Do4 Mi4 Sol4]:4", "une cadence plagale (« Amen »)", "une cadence rompue"], ["[Sol4 Si4 Ré5]:2 [La4 Do5 Mi5]:4", "une cadence rompue (surprise)", "une cadence plagale"]] }
+        enonce: "Écoute ces deux accords (en do majeur). Quelle cadence ?"
+        visuel: { type: son, notes: "{{t_0}}", tempo: 80 }
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}"
+
+  - id: formes-savantes
+    titre: "Forme sonate et fugue"
+    objectif: Je connais les grandes étapes de la forme sonate et de la fugue.
+    mots: [forme sonate, exposition, développement, réexposition, fugue, sujet, contrepoint]
+    etapes:
+      - texte: |
+          **Forme sonate** (1ᵉʳ mouvement de beaucoup de symphonies et sonates classiques) :
+          1. **Exposition** : un premier thème dans la tonalité principale, un second thème dans une autre tonalité ;
+          2. **Développement** : les thèmes sont transformés, morcelés, passent par d'autres tonalités (tension) ;
+          3. **Réexposition** : les thèmes reviennent, cette fois tous deux dans la tonalité principale (résolution).
+          **Fugue** (sommet du **contrepoint**, Bach) : un **sujet** est exposé par une voix, puis imité par les autres voix (la **réponse**, souvent à la quinte) ; les voix s'entremêlent de manière indépendante.
+      - retiens: "Sonate : exposition (2 thèmes), développement (tension), réexposition (retour au ton principal). Fugue : un sujet imité par toutes les voix."
+    exercices:
+      - type: ordre
+        vars: { t: [["l'exposition", "le développement", "la réexposition"]] }
+        enonce: "Remets les parties de la forme sonate dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "Exposition, développement, réexposition."
+      - type: qcm
+        vars: { t: [["Dans quelle partie de la forme sonate les thèmes sont-ils transformés et morcelés ?", "le développement", "l'exposition", "la réexposition"], ["Quel compositeur est célèbre pour ses fugues ?", "Jean-Sébastien Bach", "Frédéric Chopin", "Louis Armstrong"], ["Comment s'appelle le thème principal d'une fugue ?", "le sujet", "le refrain", "le couplet"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Dans la réexposition, le second thème revient dans la tonalité principale.", true], ["Dans une fugue, une seule voix joue du début à la fin.", false], ["Le contrepoint superpose des mélodies indépendantes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La fugue est polyphonique : plusieurs voix indépendantes."
+
+  - id: synthese-et-fourier
+    titre: "Synthèse sonore et Fourier"
+    objectif: Je comprends la synthèse additive et l'idée de la décomposition de Fourier.
+    mots: [synthèse additive, spectre, Fourier, filtre]
+    etapes:
+      - texte: |
+          Le mathématicien **Joseph Fourier** (1822) a montré qu'un signal périodique peut s'écrire comme une **somme de sinusoïdes** (fondamentale + harmoniques). Le **spectre** d'un son montre l'intensité de chaque fréquence.
+          - **Synthèse additive** : on construit un son en additionnant des sinusoïdes (c'est ce que fait le moteur de cette application pour imiter une flûte ou un orgue).
+          - **Synthèse soustractive** : on part d'un son riche (dent de scie) et on **filtre** certaines fréquences.
+          Applications : égaliseurs, auto-tune, reconnaissance de musique, compression MP3, et même l'analyse des séismes ou des images.
+      - visuel:
+          type: graphe
+          xmin: 0
+          xmax: 6.28
+          ymin: -2
+          ymax: 2
+          fonctions: [{ f: "sin(x)", label: "son pur" }, { f: "sin(x)+sin(2*x)/2", label: "avec un harmonique" }]
+        legende: "Une sinusoïde pure (son pur), puis la même avec un 2ᵉ harmonique ajouté : la forme change, donc le timbre aussi."
+      - retiens: "Fourier : tout son périodique = somme de sinusoïdes. Additive : on additionne ; soustractive : on filtre. Le spectre montre les fréquences présentes."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que montre le spectre d'un son ?", "l'intensité de chaque fréquence qu'il contient", "la durée du son", "la couleur de l'instrument"], ["En quoi consiste la synthèse additive ?", "additionner des sinusoïdes", "filtrer un son riche", "enregistrer un instrument"], ["Qui a montré qu'un signal périodique est une somme de sinusoïdes ?", "Joseph Fourier", "Isaac Newton", "Wolfgang Amadeus Mozart"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["additionner des sinusoïdes", "filtrer un son en dent de scie", "construire un timbre harmonique par harmonique", "enlever les aigus d'un son riche"]] }
+        enonce: "Synthèse additive ou soustractive ?"
+        categories: [additive, soustractive]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Additive : on construit ; soustractive : on sculpte en filtrant."
+      - type: vf
+        vars: { t: [["La compression MP3 utilise l'analyse fréquentielle des sons.", true], ["Un son pur ne contient qu'une seule fréquence.", true], ["Un son de violon est une sinusoïde pure.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le violon est riche en harmoniques : c'est ce qui fait son timbre."

@@ -1,0 +1,143 @@
+id: bio-tour-de-l-adn
+matiere: biologie
+titre: La Tour de l'ADN
+sous_titre: ADN et chromosomes, gènes et allèles, lois de Mendel, évolution, immunité et vaccins
+emoji: 🧬
+couleur: "#27691f"
+cycle: explorateurs
+age: 14 ans et +
+niveau: Ingénieur (3ᵉ – 2nde)
+ordre: 305
+prerequis: [bio-palais-du-corps]
+version: 1.0.0
+intro:
+  - narrateur: "Le Virus Glitch s'est glissé dans la Tour de l'ADN et brouille les messages des cellules."
+  - neo: "Pour le repérer, il faut lire le code du vivant. Il s'écrit avec seulement quatre lettres."
+
+lecons:
+  - id: adn-chromosomes
+    titre: "ADN, chromosomes et gènes"
+    objectif: Je situe l'ADN, les chromosomes et les gènes.
+    mots: [ADN, chromosome, gène, caryotype]
+    etapes:
+      - texte: |
+          Dans le noyau de chaque cellule, l'**ADN** est une très longue molécule en **double hélice**, écrite avec 4 « lettres » (bases) : **A, T, G, C** (A s'associe à T, G à C).
+          L'ADN est enroulé en **chromosomes**. L'être humain en a **46**, soit **23 paires** : dans chaque paire, un chromosome vient de la mère, l'autre du père. La 23ᵉ paire détermine le sexe (XX ou XY, avec des exceptions rares).
+          Un **gène** est un morceau d'ADN qui porte une information (par exemple pour fabriquer une protéine qui intervient dans la couleur des yeux).
+      - histoire:
+          titre: La double hélice
+          texte: "En 1952, **Rosalind Franklin** obtient grâce aux rayons X une image de l'ADN (le « cliché 51 ») qui révèle sa forme en hélice. En 1953, **James Watson** et **Francis Crick** publient le modèle de la double hélice, en s'appuyant sur ses données. Franklin est morte en 1958 ; son rôle essentiel n'a été pleinement reconnu que bien plus tard."
+      - retiens: "ADN (A-T, G-C) → enroulé en chromosomes (46 = 23 paires chez l'humain) → les gènes sont des portions d'ADN."
+    exercices:
+      - type: nombre
+        vars: { t: [["de chromosomes dans une cellule humaine (non sexuelle)", 46], ["de paires de chromosomes chez l'humain", 23], ["de lettres (bases) différentes dans l'ADN", 4]] }
+        enonce: "Combien {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["A", "T"], ["T", "A"], ["G", "C"], ["C", "G"]] }
+        enonce: "Dans la double hélice d'ADN, quelle base s'associe toujours à {{t_0}} ?"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} s'associe à {{t_1}}."
+      - type: qcm
+        vars: { t: [["Où se trouve l'ADN dans une cellule animale ?", "surtout dans le noyau", "dans la membrane", "dans le sang seulement"], ["Qui a obtenu le cliché aux rayons X révélant l'hélice de l'ADN ?", "Rosalind Franklin", "Charles Darwin", "Marie Curie"], ["Qu'est-ce qu'un gène ?", "une portion d'ADN qui porte une information", "une cellule entière", "un organe"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: mendel
+    titre: "L'hérédité : les lois de Mendel"
+    objectif: Je prévois des proportions avec un échiquier de croisement.
+    mots: [allèle, dominant, récessif, génotype, phénotype]
+    etapes:
+      - histoire:
+          titre: Le moine et les petits pois
+          texte: "Vers 1865, **Gregor Mendel**, moine à Brno, croise des milliers de plants de pois et compte les caractères de leurs descendants. Il découvre des lois statistiques de l'hérédité, longtemps ignorées puis redécouvertes en 1900."
+      - texte: |
+          Un gène peut exister en plusieurs versions : les **allèles**. On en reçoit **deux** (un de chaque parent).
+          - Un allèle **dominant** (majuscule, A) s'exprime même s'il est seul.
+          - Un allèle **récessif** (minuscule, a) ne s'exprime que s'il est en double (aa).
+          Croisement de deux parents **Aa** : chacun transmet A ou a avec la même probabilité.
+          | | A | a |
+          |---|---|---|
+          | **A** | AA | Aa |
+          | **a** | Aa | aa |
+          → **3 chances sur 4** de montrer le caractère dominant, **1 sur 4** de montrer le récessif.
+      - retiens: "Deux allèles par gène. Dominant (A) s'exprime seul ; récessif (a) seulement en double (aa). Aa × Aa → 3/4 dominant, 1/4 récessif."
+    exercices:
+      - type: qcm
+        vars: { t: [["AA", "le caractère dominant", "le caractère récessif", "aucun caractère"], ["Aa", "le caractère dominant", "le caractère récessif", "les deux à moitié"], ["aa", "le caractère récessif", "le caractère dominant", "aucun caractère"]] }
+        enonce: "Un individu de génotype {{t_0}} montre…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Aa × Aa", "1 sur 4", "1 sur 2", "0"], ["Aa × aa", "1 sur 2", "1 sur 4", "3 sur 4"], ["AA × aa", "0", "1 sur 4", "1 sur 2"], ["aa × aa", "4 sur 4 (toujours)", "1 sur 4", "0"]] }
+        enonce: "Croisement {{t_0}} : quelle est la probabilité qu'un enfant soit aa (caractère récessif) ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Fais l'échiquier : {{t_1}}."
+      - type: nombre
+        vars: { n: [40, 80, 100, 400] }
+        enonce: "Deux parents Aa ont (dans une expérience sur des pois) {{n}} descendants. Combien environ montrent le caractère récessif ?"
+        reponse: "n/4"
+        correction: "1/4 de {{n}} = {{n/4}} environ."
+
+  - id: evolution
+    titre: "L'évolution et la sélection naturelle"
+    objectif: J'explique le mécanisme de la sélection naturelle.
+    mots: [évolution, mutation, sélection naturelle, ancêtre commun, fossile]
+    etapes:
+      - texte: |
+          En 1859, **Charles Darwin** (et **Alfred Russel Wallace**, indépendamment) expliquent l'évolution des espèces :
+          1. Les individus d'une espèce sont **tous un peu différents** (en partie à cause de **mutations** de l'ADN, qui arrivent au hasard).
+          2. Dans un milieu donné, certains ont plus de chances de **survivre et de se reproduire**.
+          3. Ils transmettent leurs caractères : au fil des générations, ces caractères deviennent fréquents. C'est la **sélection naturelle**.
+          Toutes les espèces actuelles descendent d'**ancêtres communs**. L'humain n'est pas le descendant du chimpanzé : ils ont un **ancêtre commun** qui vivait il y a environ 6 à 7 millions d'années.
+          Les **fossiles** et la comparaison de l'ADN des espèces confirment l'évolution.
+      - retiens: "Variations (mutations au hasard) + tri par le milieu (sélection naturelle) + transmission = évolution. Ancêtres communs, pas « l'homme descend du singe actuel »."
+      - a_quoi_ca_sert: "Comprendre pourquoi certaines bactéries deviennent résistantes aux antibiotiques (il faut suivre le traitement jusqu'au bout) ou pourquoi le vaccin contre la grippe change chaque année."
+    exercices:
+      - type: ordre
+        vars: { t: [["des individus naissent un peu différents", "certains survivent mieux dans le milieu", "ils ont plus de descendants", "leur caractère devient fréquent dans l'espèce"]] }
+        enonce: "Remets les étapes de la sélection naturelle dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Variation, survie, reproduction, transmission."
+      - type: vf
+        vars: { t: [["L'humain descend du chimpanzé actuel.", false], ["Les mutations de l'ADN arrivent au hasard.", true], ["Les fossiles sont des preuves de l'évolution.", true], ["Un individu change ses gènes pendant sa vie pour s'adapter.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Humain et chimpanzé ont un ancêtre commun ; ce sont les populations qui évoluent, sur des générations."
+      - type: qcm
+        vars: { t: [["Pourquoi faut-il prendre un antibiotique jusqu'au bout ?", "pour ne pas laisser survivre les bactéries les plus résistantes", "pour finir la boîte", "pour avoir bon goût"], ["Quel scientifique a publié « L'Origine des espèces » en 1859 ?", "Charles Darwin", "Gregor Mendel", "Isaac Newton"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: immunite-vaccins
+    titre: "L'immunité et les vaccins"
+    objectif: J'explique comment le corps se défend et comment agit un vaccin.
+    mots: [immunité, anticorps, lymphocyte, vaccin, mémoire immunitaire]
+    etapes:
+      - texte: |
+          Le corps se défend contre les **microbes** :
+          1. **Barrières** : peau, mucus, larmes.
+          2. **Réaction rapide** : des globules blancs avalent les microbes (c'est l'inflammation : rougeur, chaleur).
+          3. **Réaction spécifique** : des **lymphocytes** fabriquent des **anticorps** adaptés à CE microbe précis. Ensuite, des lymphocytes « **mémoire** » restent : à la prochaine rencontre, la réponse est très rapide.
+          Un **vaccin** présente au corps un microbe inactivé ou un morceau de microbe (ou les instructions pour en fabriquer un morceau) : le corps crée sa mémoire **sans tomber malade**. Les vaccins ont fait disparaître la variole de la planète (1980).
+          ⚠️ Les **antibiotiques** tuent les bactéries mais sont **inefficaces contre les virus** (rhume, grippe).
+      - retiens: "Barrières, réaction rapide, puis anticorps spécifiques et mémoire. Vaccin = entraîner la mémoire sans être malade. Antibiotiques : contre les bactéries, pas les virus."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que fabriquent les lymphocytes contre un microbe précis ?", "des anticorps", "du sucre", "des hormones de croissance"], ["Comment agit un vaccin ?", "il entraîne la mémoire immunitaire sans rendre malade", "il tue tous les microbes du corps", "il remplace le sang"], ["Les antibiotiques sont efficaces contre…", "les bactéries", "les virus du rhume", "toutes les maladies"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les antibiotiques soignent la grippe.", false], ["La variole a disparu grâce à la vaccination.", true], ["Après une infection, le corps garde souvent une mémoire du microbe.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La grippe est un virus : les antibiotiques n'y peuvent rien."
+      - type: ordre
+        vars: { t: [["le microbe franchit la barrière de la peau", "des globules blancs avalent les microbes", "des lymphocytes fabriquent des anticorps", "des lymphocytes mémoire restent pour la prochaine fois"]] }
+        enonce: "Remets la défense du corps dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Barrière franchie, réaction rapide, anticorps, mémoire."

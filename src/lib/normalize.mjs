@@ -52,7 +52,7 @@ export function preprocess(src) {
 
 
 // ---------- Normalisation ----------
-const WHO = { mia: "mia", neo: "neo", "néo": "neo", zero: "zero", "zéro": "zero", narrateur: "narrateur", nuage: "nuage", grignoteur: "nuage", ixe: "ixe", enfant: "enfant", toi: "enfant", gribouille: "gribouille" };
+const WHO = { mia: "mia", neo: "neo", "néo": "neo", zero: "zero", "zéro": "zero", narrateur: "narrateur", nuage: "nuage", grignoteur: "nuage", ixe: "ixe", enfant: "enfant", toi: "enfant", gribouille: "gribouille", neutre: "neutre", "grand-neutre": "neutre" };
 const HUMEURS = ["reflexion", "joie", "surprise", "triste", "fier"];
 export function lines(list, where) {
   if (!Array.isArray(list)) {
@@ -109,7 +109,7 @@ export function exercise(ex, where) {
   return ex;
 }
 
-const STEP_KINDS = ["dialogue", "texte", "visuel", "a_quoi_ca_sert", "astuce", "attention", "retiens", "exemple", "question", "histoire", "explique", "vraie_vie"];
+const STEP_KINDS = ["dialogue", "texte", "visuel", "a_quoi_ca_sert", "astuce", "attention", "retiens", "exemple", "question", "histoire", "explique", "vraie_vie", "experience", "dessin"];
 function step(s, where) {
   const kind = STEP_KINDS.find((k) => k in (s ?? {}));
   if (!kind) {
@@ -156,6 +156,25 @@ function step(s, where) {
       const choix = (o.choix ?? []).map((c) => ({ texte: String(c.texte ?? ""), ok: c.ok !== false, retour: String(c.retour ?? "") }));
       return { kind, texte: String(o.texte ?? ""), qui, choix };
     }
+    case "experience": {
+      const o = s.experience ?? {};
+      const sec = String(o.securite ?? "orange");
+      if (!["vert", "orange", "rouge"].includes(sec)) errors.push(`${where} : securite « ${sec} » inconnue (vert, orange, rouge)`);
+      if (!o.titre || !o.observation || !o.explication) errors.push(`${where} : expérience incomplète (titre, observation, explication)`);
+      if (sec !== "rouge" && (!Array.isArray(o.etapes) || !o.etapes.length)) errors.push(`${where} : expérience sans étapes`);
+      const pr = o.prediction && Array.isArray(o.prediction.choix) && o.prediction.choix.length >= 2 ? { question: String(o.prediction.question ?? "Que va-t-il se passer ?"), choix: o.prediction.choix.map(String) } : undefined;
+      return { kind, titre: String(o.titre ?? ""), securite: sec, materiel: (o.materiel ?? []).map(String), etapes: (o.etapes ?? []).map(String), prediction: pr, observation: String(o.observation ?? ""), explication: String(o.explication ?? "") };
+    }
+    case "dessin": {
+      const o = s.dessin ?? {};
+      const et = Array.isArray(o.etapes) ? o.etapes : [];
+      if (!o.titre || et.length < 2) errors.push(`${where} : dessin pas à pas incomplet (titre et au moins 2 étapes)`);
+      et.forEach((e, k) => {
+        if (!e?.consigne) errors.push(`${where} : dessin étape ${k + 1} sans consigne`);
+        if (e?.trace && !/^[MmLlHhVvCcSsQqTtAaZz0-9.,\s-]+$/.test(String(e.trace))) errors.push(`${where} : dessin étape ${k + 1} : tracé SVG invalide`);
+      });
+      return { kind, titre: String(o.titre ?? ""), miroir: !!o.miroir, etapes: et.map((e) => ({ consigne: String(e?.consigne ?? ""), trace: String(e?.trace ?? ""), couche: e?.couche ? String(e.couche) : undefined })) };
+    }
     case "vraie_vie": {
       const o = typeof s.vraie_vie === "object" && s.vraie_vie ? s.vraie_vie : { texte: s.vraie_vie };
       if (typeof o.texte !== "string") errors.push(`${where} : défi vraie vie sans texte`);
@@ -198,7 +217,7 @@ const CYCLES = ["graines", "explorateurs", "maitres", "astuces"];
 export function normalizeWorld(w, file) {
   const where = file;
   for (const k of ["id", "titre", "emoji", "couleur", "cycle", "age", "niveau", "ordre"]) if (w[k] === undefined) errors.push(`${where} : champ « ${k} » manquant`);
-  if (w.matiere && !["maths", "francais"].includes(w.matiere)) errors.push(`${where} : matière inconnue « ${w.matiere} » (maths, francais)`);
+  if (w.matiere !== undefined && !/^[a-z0-9-]+$/.test(String(w.matiere))) errors.push(`${where} : identifiant de matière invalide « ${w.matiere} » (minuscules, chiffres, tirets)`);
   if (!CYCLES.includes(w.cycle)) errors.push(`${where} : cycle inconnu « ${w.cycle} » (${CYCLES.join(", ")})`);
   const ids = new Set();
   const out = {

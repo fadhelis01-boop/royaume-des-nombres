@@ -1,0 +1,202 @@
+id: bio-sous-bois-des-cycles
+matiere: biologie
+titre: Le Sous-bois des Cycles
+sous_titre: Cycles de vie, habitats, chaînes alimentaires, squelette et muscles, dents, microbes
+emoji: 🐛
+couleur: "#3d9a2f"
+cycle: graines
+age: 8 ans et +
+niveau: Explorateur (CE2 – CM1)
+ordre: 302
+prerequis: [bio-clairiere-du-vivant]
+version: 1.0.0
+intro:
+  - narrateur: "Dans le Sous-bois, les chenilles ne deviennent plus papillons et les têtards restent têtards. Tout est figé, gris."
+  - mia: "La vie, c'est un cycle qui tourne. On va le remettre en marche."
+
+lecons:
+  - id: cycles-de-vie
+    titre: "Les cycles de vie"
+    objectif: Je décris le cycle de vie d'un papillon, d'une grenouille et d'une poule.
+    mots: [cycle de vie, métamorphose, larve, chenille, chrysalide, têtard]
+    etapes:
+      - texte: |
+          - **Papillon** : œuf → **chenille** (la larve, qui mange beaucoup) → **chrysalide** → papillon adulte. Ce grand changement s'appelle la **métamorphose**.
+          - **Grenouille** : œufs dans l'eau → **têtard** (respire avec des branchies, a une queue) → têtard avec pattes → grenouille adulte (respire avec des poumons et par la peau).
+          - **Poule** : œuf → poussin (qui ressemble déjà à l'adulte) → poule. Pas de métamorphose.
+      - retiens: "Papillon : œuf, chenille, chrysalide, papillon. Grenouille : œuf, têtard, grenouille. Métamorphose = grande transformation."
+    exercices:
+      - type: ordre
+        vars: { t: [["l'œuf", "la chenille", "la chrysalide", "le papillon"], ["les œufs dans l'eau", "le têtard", "le têtard avec des pattes", "la grenouille"]] }
+        enonce: "Remets le cycle de vie dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
+      - type: qcm
+        vars: { t: [["Comment s'appelle le bébé de la grenouille ?", "le têtard", "la chenille", "l'asticot"], ["Comment s'appelle la larve du papillon ?", "la chenille", "le têtard", "le poussin"], ["Comment s'appelle la grande transformation d'une chenille en papillon ?", "la métamorphose", "la germination", "la digestion"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["le papillon", "la poule", "la grenouille", "le chat"], ["la coccinelle", "le lapin", "le moustique", "le cheval"]] }
+        enonce: "Cet animal fait-il une métamorphose ?"
+        categories: ["métamorphose", "pas de métamorphose"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Papillon, grenouille, coccinelle, moustique changent complètement de forme."
+
+  - id: habitats
+    titre: "Chacun son habitat"
+    objectif: J'associe un être vivant à son milieu de vie et à ses adaptations.
+    mots: [habitat, milieu de vie, adaptation]
+    etapes:
+      - texte: |
+          Chaque être vivant vit dans un **milieu** adapté : la **mare**, la **forêt**, le **désert**, la **banquise**, l'**océan**…
+          Il possède des **adaptations** : le chameau stocke des graisses dans ses bosses et supporte longtemps le manque d'eau ; l'ours polaire a une épaisse couche de graisse et de fourrure ; le poisson a des branchies ; le cactus a des épines au lieu de feuilles pour perdre moins d'eau.
+      - retiens: "Chaque être vivant a un habitat et des adaptations qui l'aident à y survivre."
+    exercices:
+      - type: qcm
+        vars: { t: [["le chameau", "le désert", "la banquise", "la mare"], ["l'ours polaire", "la banquise", "le désert", "la forêt tropicale"], ["la grenouille", "la mare", "le désert", "la banquise"], ["le cactus", "le désert", "l'océan", "la banquise"], ["le requin", "l'océan", "la mare", "la forêt"]] }
+        enonce: "Quel est l'habitat de {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Pourquoi le cactus a-t-il des épines plutôt que de grandes feuilles ?", "pour perdre moins d'eau", "pour faire joli", "pour manger les insectes"], ["Qu'est-ce qui protège l'ours polaire du froid ?", "sa graisse et sa fourrure épaisse", "il ne sent pas le froid", "il vit dans des maisons"], ["Que stockent les bosses du chameau ?", "de la graisse", "de l'eau", "du sable"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les bosses du chameau sont pleines d'eau.", false], ["Une adaptation aide un être vivant à survivre dans son milieu.", true], ["Un poisson peut vivre longtemps hors de l'eau.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les bosses contiennent de la graisse, une réserve d'énergie."
+
+  - id: chaines-alimentaires
+    titre: "Qui mange qui ?"
+    objectif: Je construis une chaîne alimentaire.
+    mots: [chaîne alimentaire, producteur, herbivore, carnivore, omnivore]
+    etapes:
+      - texte: |
+          Une **chaîne alimentaire** montre qui mange qui. La flèche veut dire « **est mangé par** » :
+          **herbe → lapin → renard**.
+          - Au début, toujours un **producteur** : une **plante** (elle fabrique sa nourriture avec la lumière).
+          - **Herbivores** : mangent des plantes (lapin, vache). **Carnivores** : mangent des animaux (renard, lion). **Omnivores** : mangent les deux (ours, humain, sanglier).
+          Les **décomposeurs** (vers de terre, champignons, bactéries) recyclent les êtres morts en sels minéraux pour les plantes.
+      - retiens: "La flèche = « est mangé par ». Une chaîne commence par une plante. Herbivore, carnivore, omnivore. Les décomposeurs recyclent."
+    exercices:
+      - type: ordre
+        vars: { t: [["l'herbe", "la sauterelle", "la grenouille", "le héron"], ["les algues", "le petit poisson", "le gros poisson", "le phoque"], ["la feuille de salade", "l'escargot", "la grive", "l'épervier"]] }
+        enonce: "Remets la chaîne alimentaire dans l'ordre (de la plante au dernier mangeur)."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} → {{t_1}} → {{t_2}} → {{t_3}}."
+      - type: classer
+        vars: { t: [["la vache", "le lion", "l'ours", "le lapin", "le loup", "le sanglier"], ["le mouton", "le requin", "l'humain", "la girafe", "l'aigle", "la poule"]] }
+        enonce: "Herbivore, carnivore ou omnivore ?"
+        categories: [herbivore, carnivore, omnivore]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
+        correction: "La poule, comme l'ours, le sanglier et l'humain, mange de tout."
+      - type: qcm
+        vars: { t: [["Par quoi commence toujours une chaîne alimentaire ?", "par une plante (un producteur)", "par un carnivore", "par un humain"], ["Que veut dire la flèche dans « herbe → lapin » ?", "l'herbe est mangée par le lapin", "le lapin est mangé par l'herbe", "l'herbe et le lapin sont amis"], ["Quel est le rôle du ver de terre ?", "décomposer les restes et enrichir le sol", "manger les renards", "fabriquer du sucre avec la lumière"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: squelette-et-muscles
+    titre: "Squelette et muscles"
+    objectif: Je sais comment le squelette et les muscles permettent de bouger.
+    mots: [squelette, os, articulation, muscle, tendon]
+    etapes:
+      - texte: |
+          Notre **squelette** (206 os chez l'adulte) **soutient** le corps et **protège** les organes (le crâne protège le cerveau, les côtes protègent le cœur et les poumons).
+          Les os se rejoignent aux **articulations** (genou, coude, épaule) qui permettent de plier.
+          Les **muscles**, attachés aux os par des **tendons**, se **contractent** (raccourcissent) pour tirer sur les os : c'est ainsi qu'on bouge. Un muscle ne peut que tirer, jamais pousser : pour plier et déplier le bras, il faut deux muscles (biceps et triceps).
+      - vraie_vie:
+          titre: Sens tes muscles
+          texte: "Pose ta main sur le haut de ton bras et plie le coude : tu sens le biceps gonfler et durcir. Déplie le bras : c'est le muscle de l'arrière (triceps) qui travaille."
+      - retiens: "206 os, articulations pour plier, muscles qui se contractent et tirent sur les os par les tendons."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel os protège le cerveau ?", "le crâne", "le fémur", "la rotule"], ["Comment s'appelle l'endroit où deux os se rejoignent et bougent ?", "une articulation", "un tendon", "un muscle"], ["Qu'est-ce qui relie un muscle à un os ?", "un tendon", "une veine", "un nerf"], ["Que font les côtes ?", "elles protègent le cœur et les poumons", "elles digèrent", "elles fabriquent les muscles"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["d'os chez un adulte", 206]] }
+        enonce: "Combien {{t_0}} environ ?"
+        reponse: "t_1"
+        correction: "{{t_1}} os."
+      - type: vf
+        vars: { t: [["Un muscle peut pousser sur un os.", false], ["Quand on plie le bras, le biceps se contracte.", true], ["Le squelette protège certains organes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un muscle ne fait que tirer ; il faut deux muscles qui travaillent à tour de rôle."
+
+  - id: les-dents
+    titre: "Des dents pour chaque repas"
+    objectif: Je connais les types de dents et comment en prendre soin.
+    mots: [incisive, canine, molaire, dent de lait, carie]
+    etapes:
+      - texte: |
+          - Les **incisives** (devant, plates et coupantes) **coupent**.
+          - Les **canines** (pointues) **déchirent**.
+          - Les **molaires** (au fond, larges) **broient** les aliments.
+          Un enfant a **20 dents de lait**, remplacées peu à peu par **32 dents définitives** chez l'adulte (avec les dents de sagesse).
+          Le sucre nourrit des bactéries qui fabriquent de l'acide : il attaque l'émail et provoque des **caries**. On se brosse les dents **2 fois par jour, 2 minutes**.
+          Les animaux ont des dents adaptées à leur régime : le lion a de grandes canines, la vache de larges molaires pour broyer l'herbe.
+      - retiens: "Incisives coupent, canines déchirent, molaires broient. 20 dents de lait, 32 dents d'adulte. Brossage 2 fois 2 minutes."
+    exercices:
+      - type: qcm
+        vars: { t: [["couper une tranche de pomme", "les incisives", "les molaires", "les canines"], ["broyer des aliments", "les molaires", "les incisives", "les canines"], ["déchirer la viande", "les canines", "les incisives", "les molaires"]] }
+        enonce: "Quelles dents servent à {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["de dents de lait a un enfant", 20], ["de dents définitives a un adulte (avec les dents de sagesse)", 32]] }
+        enonce: "Combien {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Quel animal a de grandes canines ?", "le lion (carnivore)", "la vache (herbivore)", "le lapin"], ["Pourquoi le sucre abîme-t-il les dents ?", "des bactéries le transforment en acide qui attaque l'émail", "il est trop dur", "il est froid"], ["Combien de fois par jour faut-il se brosser les dents ?", "au moins 2 fois, 2 minutes", "1 fois par semaine", "seulement quand on a mal"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: microbes-et-savon
+    titre: "Les microbes et le savon"
+    objectif: Je comprends pourquoi on se lave les mains.
+    mots: [microbe, bactérie, virus, hygiène, savon]
+    etapes:
+      - texte: |
+          Les **microbes** (bactéries, virus, champignons microscopiques) sont invisibles à l'œil nu. La plupart sont **inoffensifs** ou même **utiles** (ceux de notre intestin, ceux qui font le yaourt) ; certains rendent **malades**.
+          Ils passent de main en main, puis à la bouche et au nez. Le **savon** décroche la graisse sur laquelle ils s'accrochent : l'eau les emporte.
+          Il faut se laver les mains **30 secondes**, avant de manger, après les toilettes, après s'être mouché, en rentrant à la maison.
+      - experience:
+          titre: Le poivre qui s'enfuit
+          securite: vert
+          materiel: ["une assiette creuse avec de l'eau", "du poivre moulu", "du savon liquide"]
+          prediction:
+            question: "On saupoudre du poivre sur l'eau (le poivre joue les « microbes »), puis on touche le centre avec un doigt plein de savon. Que va faire le poivre ?"
+            choix: ["Il s'enfuit vers les bords", "Il colle au doigt", "Il coule au fond"]
+          etapes:
+            - "Saupoudre le poivre sur toute la surface de l'eau."
+            - "Trempe ton doigt sec au centre : rien ne se passe."
+            - "Mets du savon sur ton doigt et trempe-le à nouveau au centre."
+          observation: "Avec le savon, le poivre fuit d'un coup vers les bords de l'assiette."
+          explication: "Le savon casse la « peau » de l'eau (la tension superficielle) et repousse le poivre. En vrai, le savon agit surtout en décrochant les microbes de la peau pour que l'eau les rince : c'est pour ça qu'il faut frotter 30 secondes et rincer."
+      - retiens: "Microbes invisibles : la plupart sont utiles, certains rendent malades. Savon + frotter 30 s + rincer."
+    exercices:
+      - type: vf
+        vars: { t: [["Tous les microbes sont dangereux.", false], ["On peut voir les microbes à l'œil nu.", false], ["Il faut se laver les mains avant de manger.", true], ["Le yaourt est fabriqué grâce à des bactéries.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La plupart des microbes sont inoffensifs ou utiles, mais tous sont invisibles sans microscope."
+      - type: classer
+        vars: { t: [["après être allé aux toilettes", "en regardant la télévision", "avant de manger", "en lisant un livre"], ["après s'être mouché", "en dormant", "en rentrant de l'école", "en chantant"]] }
+        enonce: "Faut-il se laver les mains à ce moment-là ?"
+        categories: ["oui, je me lave les mains", "pas spécialement"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Avant de manger, après les toilettes, après s'être mouché, en rentrant à la maison."
+      - type: nombre
+        vars: { t: [["Pendant combien de secondes faut-il se frotter les mains avec du savon (au moins) ?", 30]] }
+        enonce: "{{t_0}}"
+        reponse: "t_1"
+        unite: s
+        correction: "Au moins {{t_1}} secondes, en frottant aussi entre les doigts et sous les ongles."

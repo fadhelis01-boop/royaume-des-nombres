@@ -1,13 +1,20 @@
-# 🌳 Le Royaume des Nombres
+# 🌌 La Galaxie des Savoirs
 
-Application d'apprentissage des **mathématiques** (de 7 ans au niveau universitaire) et du **français** (du CP au lycée), guidée par trois mascottes :
+Application d'apprentissage pour les enfants **de 7 ans jusqu'au niveau avancé**, en 8 planètes : **maths, français, chimie, physique, biologie, Terre & Univers, musique et dessin**. Elle est guidée par trois mascottes :
 **Mia π** (la chatte qui imagine), **Néo Fibo** (le renard qui vérifie) et **Zéro** (le hamster qui fait rire).
 
 Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, installable comme une application, **hors connexion**.
 
 ## Ce qu'il y a dedans
 
-- **Deux royaumes** : le Royaume des Nombres (maths) et **l'Archipel des Mots** (français), au choix sur la carte ; chaque enfant garde sa progression dans les deux.
+- **Huit planètes en trois familles**, choisies dans l'écran « Galaxie » ; chaque enfant garde sa progression partout :
+  - **Les fondamentaux** : 🔢 le Royaume des Nombres (maths), 📚 l'Archipel des Mots (français).
+  - **Les sciences** : 🧪 le Marais d'Acidia (chimie), ⚙️ les Cimes de la Gravité (physique et électricité), 🌿 la Canopée des Biomes (biologie), 🔭 l'Observatoire des Étoiles (Terre, climat, astronomie).
+  - **Les arts** : 🎵 la Cité des Résonances (musique), ✏️ l'Atelier de Mia (dessin).
+- **Chaque planète** a ses mondes du niveau 0 (7 ans) au niveau supérieur, un monde « méthode », une histoire avec ses gardiens et ses Muses (d'après la bible « L'Alchimie des Mondes »), un échauffement, un quiz éclair et un test de niveau.
+- **Sciences** : démarche OHERIC, expériences réelles classées par niveau de sécurité (🟢 seul, 🟠 avec un adulte, 🔴 à regarder seulement), pari avant l'expérience, explication après ; visuels atome, graphiques, tableaux.
+- **Arts** : dessin pas à pas avec guide à suivre au doigt ou au stylet (miroir, gomme, couleurs, galerie) ; musique avec sons à écouter dans les exercices, portée et clavier interactifs, studio (piano pentatonique, boîte à rythmes) et jeu de l'Oreille d'or.
+- **Ajouter une matière sans programmer** : une entrée dans `content-src/_planetes.yaml` et des fichiers de mondes.
 - **L'Archipel des Mots** : 18 îles et le Grimoire des Astuces — sons et lettres, noms, ponctuation, verbes, accords, temps, homophones, vocabulaire, fonctions dans la phrase, conjugaison complète, participes passés, propositions, écriture (récit, portrait, lettre), lecture (fables de La Fontaine, inférences), style, poésie (syllabes, rimes, sonnet), orthographe fine (tout, même, quel que, couleurs, pronominaux, noms composés, rectifications de 1990) et Académie des Lettres (temps rares, analyse fine, étymologie, paronymes, argumentation, méthodes). Une histoire propre (Gribouille, le Sablier fêlé, la Plume d'or), des exercices de dictée lue à voix haute, mots à écrire avec barre d'accents, mots à toucher, mots à classer.
 - **Dictionnaire de l'Archipel** : plus de 500 mots expliqués aux enfants (exemples, synonymes, contraires, familles, étymologie), conjugueur de tous les temps et modes, carnet de mots à collectionner ; jeux Conjugaison éclair, Mot mystère et Dictée flash.
 
@@ -28,7 +35,7 @@ Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, install
 
 ## Illustrations
 
-Le cahier des charges destiné au graphiste (style unifié, 34 poses de mascottes, personnages de l'histoire, 28 décors, objets, carte) est dans [`docs/cahier-des-charges-graphiste.html`](docs/cahier-des-charges-graphiste.html).
+Les visuels des nouvelles planètes (médaillons, décors, Grand Neutre) sont générés avec le pipeline local ComfyUI. Le cahier des charges destiné au graphiste (style unifié, 34 poses de mascottes, personnages de l'histoire, 28 décors, objets, carte) est dans [`docs/cahier-des-charges-graphiste.html`](docs/cahier-des-charges-graphiste.html).
 
 ## Ajouter un domaine sans programmer
 

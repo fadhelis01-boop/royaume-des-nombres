@@ -1,7 +1,7 @@
 // Types du contenu (produit par scripts/build-content.mjs à partir de content-src/*.yaml)
 // et de la progression des enfants.
 
-export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant" | "gribouille";
+export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant" | "gribouille" | "neutre";
 export interface Line {
   who: Who;
   text: string;
@@ -81,7 +81,11 @@ export type Step =
   | { kind: "question"; ex: ExSpec; auto?: boolean }
   | { kind: "explique"; texte: string; qui: Who; choix: { texte: string; ok: boolean; retour: string }[] }
   | { kind: "vraie_vie"; texte: string; titre: string; materiel?: string }
-  | { kind: "histoire"; texte: string; titre?: string };
+  | { kind: "histoire"; texte: string; titre?: string }
+  /** expérience à faire pour de vrai : vert = seul, orange = avec un adulte, rouge = à regarder seulement (jamais à la maison) */
+  | { kind: "experience"; titre: string; securite: "vert" | "orange" | "rouge"; materiel: string[]; etapes: string[]; prediction?: { question: string; choix: string[] }; observation: string; explication: string }
+  /** dessin pas à pas : chaque étape ajoute des tracés guides (chemins SVG dans un carré 0–100) */
+  | { kind: "dessin"; titre: string; etapes: { consigne: string; trace: string; couche?: string }[]; miroir?: boolean };
 
 export interface Lesson {
   id: string;
@@ -110,10 +114,44 @@ export interface World {
   lecons: Lesson[];
   version: string;
   source?: "integre" | "importe";
-  /** le royaume : les nombres (maths) ou les mots (français) */
+  /** la planète (matière) : maths, francais, chimie… — voir content-src/_planetes.yaml */
   matiere: Matiere;
 }
-export type Matiere = "maths" | "francais";
+export type Matiere = string;
+
+export type FoeSprite = "nuage" | "ixe" | "oubli" | "gribouille" | "tache" | "neutre";
+export interface Gardien {
+  sprite: FoeSprite;
+  nom: string;
+  qui: Who;
+  ouverture: string;
+  cri: string;
+  aie: string[];
+  nargue: string[];
+  jeton: string;
+}
+export interface Planete {
+  id: string;
+  famille: string;
+  titre: string;
+  matiere: string;
+  emoji: string;
+  couleur: string;
+  accroche: string;
+  prologue: { id: string; titre: string; appel: string };
+  objet: { emoji: string; un: string; des: string };
+  echauffement: string;
+  astuces: string;
+  liens: { texte: string; vers: string }[];
+  jeux: string[];
+  gardiens: Partial<Record<"graines" | "explorateurs" | "maitres", Gardien>>;
+}
+export interface Famille {
+  id: string;
+  titre: string;
+  emoji: string;
+  accroche: string;
+}
 
 export interface GlossEntry {
   mot: string;
@@ -147,8 +185,11 @@ export interface Manifest {
   diagnostic: DiagQuestion[];
   jeux: Record<string, { titre: string; niveau: string; exercices: ExSpec[] }>;
   changelog: { version: string; date: string; notes: string[] }[];
-  histoire?: Histoire;
-  histoireFr?: Histoire;
+  /** une histoire par planète (clé = id de la planète) */
+  histoires: Record<string, Histoire>;
+  planetes: Planete[];
+  familles: Famille[];
+  dicoCount?: number;
 }
 
 export interface Choix {

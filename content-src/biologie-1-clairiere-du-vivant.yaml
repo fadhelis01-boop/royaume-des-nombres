@@ -1,0 +1,236 @@
+id: bio-clairiere-du-vivant
+matiere: biologie
+titre: La Clairière du Vivant
+sous_titre: Vivant ou pas, les cinq sens, la plante, les familles d'animaux, les besoins, la graine
+emoji: 🌱
+couleur: "#4caf3a"
+cycle: graines
+age: 7 ans et +
+niveau: Éveil (CE1)
+ordre: 301
+version: 1.0.0
+intro:
+  - narrateur: "Dans la Clairière, Mousse, un lichen qui parle très lentement, est tout gris : « Plus… personne… ne sait… ce qui est vivant… »"
+  - mia: "On va l'aider ! Le vivant, c'est mon domaine préféré."
+
+lecons:
+  - id: vivant-ou-pas
+    titre: "Vivant ou pas vivant ?"
+    objectif: Je reconnais un être vivant grâce à ses caractéristiques.
+    mots: [vivant, naître, grandir, se nourrir, se reproduire, mourir]
+    etapes:
+      - dialogue:
+          - zero: "Une voiture bouge, elle boit de l'essence… elle est vivante !"
+          - mia: "Elle bouge, mais elle ne naît pas, ne grandit pas, n'a pas de bébés. Un être vivant fait tout ça."
+      - texte: |
+          Un **être vivant** :
+          - **naît** (ou germe), **grandit**, **se nourrit**, **respire**,
+          - **se reproduit** (a des petits ou des graines),
+          - **meurt**.
+          Les **plantes** sont vivantes même si elles ne bougent pas beaucoup ! Une pierre, l'eau, une voiture, un robot ne sont **pas vivants**.
+          Une bûche ou une feuille morte viennent d'un être vivant, mais **ne sont plus vivantes**.
+      - retiens: "Vivant = naît, grandit, se nourrit, respire, se reproduit, meurt. Les plantes sont vivantes."
+    exercices:
+      - type: classer
+        vars: { t: [["un arbre", "une pierre", "un chat", "un nuage"], ["une fourmi", "une voiture", "une fleur", "un robot"], ["un champignon", "le soleil", "un poisson", "un caillou"]] }
+        enonce: "Vivant ou pas vivant ?"
+        categories: [vivant, "pas vivant"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les plantes, les animaux et les champignons sont vivants : ils naissent, grandissent, se nourrissent, se reproduisent."
+      - type: vf
+        vars: { t: [["Une plante est vivante.", true], ["Un robot qui marche est vivant.", false], ["Un être vivant finit par mourir.", true], ["Le feu est vivant car il grandit.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le feu « grandit » mais ne se nourrit pas, ne naît pas et n'a pas de petits : il n'est pas vivant."
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'un être vivant ne fait PAS forcément ?", "se déplacer", "se nourrir", "grandir"], ["Pourquoi un arbre est-il vivant ?", "il pousse, se nourrit et fait des graines", "il est grand", "il fait de l'ombre"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: les-cinq-sens
+    titre: "Mes cinq sens"
+    objectif: J'associe chaque sens à son organe.
+    mots: [vue, ouïe, odorat, goût, toucher, organe]
+    etapes:
+      - texte: |
+          | Sens | Organe | Il me permet de… |
+          |---|---|---|
+          | la **vue** | les yeux 👀 | voir les couleurs, les formes |
+          | l'**ouïe** | les oreilles 👂 | entendre les sons |
+          | l'**odorat** | le nez 👃 | sentir les odeurs |
+          | le **goût** | la langue 👅 | goûter le sucré, le salé, l'acide, l'amer |
+          | le **toucher** | la peau ✋ | sentir le chaud, le froid, le doux, le piquant |
+          Les sens envoient des messages au **cerveau**, qui les comprend.
+      - attention:
+          texte: "On ne goûte jamais une baie, un champignon ou un liquide inconnu : certains sont très toxiques."
+          qui: mia
+      - retiens: "Vue (yeux), ouïe (oreilles), odorat (nez), goût (langue), toucher (peau). Le cerveau interprète les messages."
+    exercices:
+      - type: qcm
+        vars: { t: [["l'odeur d'un gâteau", "l'odorat (le nez)", "la vue (les yeux)", "le toucher (la peau)"], ["le chant d'un oiseau", "l'ouïe (les oreilles)", "le goût (la langue)", "l'odorat (le nez)"], ["la douceur d'un chaton", "le toucher (la peau)", "l'ouïe (les oreilles)", "la vue (les yeux)"], ["le goût sucré d'une fraise", "le goût (la langue)", "l'odorat seulement", "la vue"], ["les couleurs d'un arc-en-ciel", "la vue (les yeux)", "le toucher", "l'ouïe"]] }
+        enonce: "Quel sens utilise-t-on pour percevoir {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["citron", "bonbon", "frites", "café sans sucre"], ["vinaigre", "miel", "chips", "endive"]] }
+        enonce: "Quelle saveur domine ?"
+        categories: [acide, sucré, salé, amer]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "La langue perçoit le sucré, le salé, l'acide, l'amer (et l'umami)."
+      - type: vf
+        vars: { t: [["C'est le cerveau qui comprend ce que nos sens perçoivent.", true], ["On peut goûter une baie inconnue si elle est jolie.", false], ["La peau est l'organe du toucher.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Jamais de baie inconnue : certaines sont mortelles."
+
+  - id: parties-de-la-plante
+    titre: "Les parties d'une plante"
+    objectif: Je nomme les parties d'une plante et leur rôle.
+    mots: [racine, tige, feuille, fleur, fruit, graine]
+    etapes:
+      - texte: |
+          - Les **racines** tiennent la plante dans le sol et puisent l'**eau** et les sels minéraux.
+          - La **tige** porte la plante et transporte l'eau jusqu'aux feuilles.
+          - Les **feuilles** fabriquent la nourriture de la plante grâce à la **lumière**.
+          - La **fleur** permet la reproduction : elle deviendra un **fruit** qui contient les **graines**.
+      - dessin:
+          titre: Une plante pas à pas
+          etapes:
+            - consigne: "Trace la ligne du sol."
+              couche: construction
+              trace: "M10 70 L90 70"
+            - consigne: "Dessine les racines sous le sol."
+              trace: "M50 70 L50 88 M50 76 L40 86 M50 78 L61 88"
+            - consigne: "Trace la tige au-dessus du sol."
+              trace: "M50 70 L50 30"
+            - consigne: "Ajoute deux feuilles."
+              trace: "M50 55 C38 46 30 54 50 60 M50 46 C62 37 70 45 50 51"
+            - consigne: "Dessine la fleur en haut : un cœur et des pétales."
+              trace: "M50 30 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 M50 25 C44 14 56 14 50 25 M55 30 C66 24 66 36 55 30 M45 30 C34 24 34 36 45 30"
+      - retiens: "Racines (eau), tige (transport), feuilles (nourriture grâce à la lumière), fleur → fruit → graines."
+      - a_quoi_ca_sert: "Les légumes que l'on mange sont différentes parties de plantes : carotte (racine), poireau (feuilles), brocoli (fleurs), tomate (fruit), petit pois (graine)."
+    exercices:
+      - type: qcm
+        vars: { t: [["la carotte", "une racine", "une feuille", "un fruit"], ["la salade", "des feuilles", "une racine", "des graines"], ["la tomate", "un fruit", "une tige", "une racine"], ["le petit pois", "une graine", "une feuille", "une racine"], ["l'asperge", "une tige", "un fruit", "une racine"], ["le chou-fleur", "des fleurs", "une racine", "une graine"]] }
+        enonce: "Quand je mange {{t_0}}, je mange…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: qcm
+        vars: { t: [["puiser l'eau dans le sol", "les racines", "les feuilles", "la fleur"], ["fabriquer la nourriture avec la lumière", "les feuilles", "les racines", "la tige"], ["donner un fruit et des graines", "la fleur", "la racine", "la tige"]] }
+        enonce: "Quelle partie de la plante sert à {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["la graine", "la petite pousse", "la plante avec ses feuilles", "la fleur", "le fruit avec de nouvelles graines"]] }
+        enonce: "Remets la vie d'une plante dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Graine, pousse, plante, fleur, fruit… et de nouvelles graines."
+
+  - id: familles-d-animaux
+    titre: "Les familles d'animaux"
+    objectif: Je range des animaux dans les grandes familles.
+    mots: [mammifère, oiseau, poisson, insecte, reptile, amphibien]
+    etapes:
+      - texte: |
+          - **Mammifères** : des **poils**, les mamans **allaitent** (chien, vache, humain, baleine).
+          - **Oiseaux** : des **plumes**, un **bec**, pondent des œufs (pigeon, pingouin, poule).
+          - **Poissons** : des **nageoires**, des **écailles**, respirent dans l'eau avec des **branchies**.
+          - **Insectes** : **6 pattes**, souvent des ailes (abeille, fourmi, papillon).
+          - **Reptiles** : des **écailles** sèches, pondent sur terre (lézard, serpent, tortue).
+          - **Amphibiens** : peau **nue et humide**, vivent dans l'eau puis sur terre (grenouille, salamandre).
+      - retiens: "Poils → mammifère ; plumes → oiseau ; nageoires + branchies → poisson ; 6 pattes → insecte ; écailles sèches → reptile ; peau nue humide → amphibien."
+    exercices:
+      - type: qcm
+        vars: { t: [["la grenouille", "un amphibien", "un reptile", "un poisson"], ["le lézard", "un reptile", "un amphibien", "un mammifère"], ["l'abeille", "un insecte", "un oiseau", "un reptile"], ["le dauphin", "un mammifère", "un poisson", "un amphibien"], ["la poule", "un oiseau", "un mammifère", "un reptile"], ["le saumon", "un poisson", "un amphibien", "un mammifère"]] }
+        enonce: "{{t_0}} est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: classer
+        vars: { t: [["lapin", "aigle", "papillon", "requin"], ["humain", "perroquet", "fourmi", "truite"], ["cheval", "hibou", "coccinelle", "thon"]] }
+        enonce: "Range chaque animal dans sa famille."
+        categories: [mammifère, oiseau, insecte, poisson]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "Poils, plumes, 6 pattes, nageoires."
+      - type: vf
+        vars: { t: [["Le dauphin est un poisson.", false], ["L'araignée est un insecte.", false], ["Les oiseaux ont des plumes.", true], ["La salamandre est un amphibien.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le dauphin est un mammifère ; l'araignée a 8 pattes (arachnide)."
+
+  - id: besoins-du-vivant
+    titre: "De quoi ont-ils besoin ?"
+    objectif: Je connais les besoins des êtres vivants.
+    mots: [besoin, eau, air, nourriture, lumière]
+    etapes:
+      - texte: |
+          Tous les êtres vivants ont besoin d'**eau**, d'**air** (pour respirer) et de **nourriture**.
+          - Les **animaux** mangent d'autres êtres vivants (plantes ou animaux).
+          - Les **plantes** fabriquent leur propre nourriture : elles ont besoin de **lumière**, d'eau, d'air et de sels minéraux du sol.
+          Il leur faut aussi une **température** adaptée et un **abri**.
+      - experience:
+          titre: Les deux plantes
+          securite: vert
+          materiel: ["deux petites plantes identiques en pot", "un placard", "de l'eau"]
+          prediction:
+            question: "On met une plante au placard (dans le noir) et l'autre près d'une fenêtre, en les arrosant pareil. Au bout de deux semaines…"
+            choix: ["la plante du placard jaunit et s'affaiblit", "les deux sont pareilles", "la plante du placard pousse mieux"]
+          etapes:
+            - "Arrose les deux plantes de la même façon."
+            - "Mets-en une dans le placard et l'autre à la lumière."
+            - "Observe-les tous les 3 jours pendant deux semaines (et note !)."
+          observation: "La plante du placard pâlit, jaunit et pousse en longueur, toute faible ; l'autre reste verte."
+          explication: "Sans lumière, la plante ne peut plus fabriquer sa nourriture. Elle utilise ses réserves et s'étire pour chercher la lumière. (Remets-la vite à la fenêtre !)"
+      - retiens: "Tous les vivants ont besoin d'eau, d'air, de nourriture. Les plantes fabriquent leur nourriture avec la lumière."
+    exercices:
+      - type: qcm
+        vars: { t: [["De quoi une plante a-t-elle besoin que l'animal n'utilise pas pour se nourrir ?", "de lumière", "d'eau", "d'air"], ["Pourquoi un poisson rouge a-t-il besoin d'un aquarium assez grand et d'eau propre ?", "il a besoin d'oxygène dissous dans l'eau", "pour nager plus vite", "pour être joli"], ["Que se passe-t-il pour une plante privée de lumière ?", "elle jaunit et s'affaiblit", "elle devient plus verte", "rien du tout"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les plantes mangent la terre.", false], ["Tous les êtres vivants ont besoin d'eau.", true], ["Un animal fabrique sa nourriture avec la lumière.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les plantes fabriquent leur nourriture avec la lumière, l'eau, l'air (et des sels minéraux), pas en « mangeant » la terre."
+      - type: classer
+        vars: { t: [["de la lumière pour fabriquer sa nourriture", "manger d'autres êtres vivants", "puiser de l'eau par les racines", "boire avec la bouche"]] }
+        enonce: "Ce besoin est-il celui d'une plante ou d'un animal ?"
+        categories: [plante, animal]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les plantes fabriquent leur nourriture ; les animaux la trouvent en mangeant."
+
+  - id: la-graine-qui-pousse
+    titre: "La graine qui pousse"
+    objectif: Je fais germer une graine et je suis sa croissance.
+    mots: [germer, germination, graine, pousse]
+    etapes:
+      - texte: |
+          Une graine contient un **minuscule bébé plante** et des **réserves** de nourriture. Pour **germer**, elle a besoin d'**eau**, d'**air** et d'une **température douce** — pas de lumière au début ! (la lumière devient indispensable une fois les feuilles sorties).
+      - experience:
+          titre: Le haricot dans le coton
+          securite: vert
+          materiel: ["un pot de yaourt transparent ou un verre", "du coton", "3 graines de haricot ou de lentille", "de l'eau"]
+          etapes:
+            - "Mets le coton au fond, pose les graines dessus, humidifie le coton (sans noyer les graines)."
+            - "Place le pot dans une pièce tiède. Garde le coton humide."
+            - "Observe et dessine la graine tous les deux jours pendant deux semaines."
+          observation: "Après quelques jours, une petite racine sort de la graine, puis une tige qui monte et deux premières feuilles."
+          explication: "Grâce à l'eau et à la chaleur, la graine se réveille : elle utilise ses réserves pour faire sa racine et sa tige. Ensuite, ses feuilles prennent le relais avec la lumière."
+      - retiens: "Pour germer, une graine a besoin d'eau, d'air et de chaleur. D'abord la racine, puis la tige et les feuilles."
+    exercices:
+      - type: ordre
+        vars: { t: [["la graine gonfle d'eau", "une petite racine sort", "une tige monte", "les premières feuilles s'ouvrent"]] }
+        enonce: "Remets la germination dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "D'abord la racine, puis la tige, puis les feuilles."
+      - type: qcm
+        vars: { t: [["De quoi une graine a-t-elle besoin pour germer ?", "d'eau, d'air et de chaleur", "de terre et de soleil uniquement", "d'engrais"], ["Que sort en premier de la graine ?", "la racine", "la fleur", "le fruit"], ["Que contient une graine ?", "un petit bébé plante et des réserves", "de la terre", "de l'eau seulement"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une graine peut germer sans terre, dans du coton humide.", true], ["Une graine noyée sous l'eau germe mieux.", false], ["Une graine contient des réserves de nourriture.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Noyée, la graine manque d'air et peut pourrir."

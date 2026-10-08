@@ -1,0 +1,101 @@
+# L'histoire de la planète Physique : les Cimes de la Gravité (bible, acte II).
+prologue:
+  - narrateur: "Sur les Cimes de la Gravité, tout bougeait : les cascades, les cerfs-volants, le dirigeable du Capitaine Poulie, les girouettes qui chantaient dans le vent."
+  - narrateur: "Puis le Grand Neutre est arrivé. Il ne casse rien : il immobilise. Les balles restent suspendues en l'air, les ombres ont disparu, les lampes se sont tues."
+  - zero-surprise: "Une pomme qui flotte en l'air ! C'est la fin du monde… ou le début d'un pique-nique ?"
+  - neo: "C'est surtout une énigme. Ici, chaque loi de la physique comprise remet un mouvement en marche."
+  - mia: "Le Capitaine Poulie nous attend au pied du sentier. Il a besoin d'aide pour redécoller."
+prologue_choix:
+  qui: neo
+  question: "Par quoi commence-t-on ?"
+  options:
+    - texte: "Par le Carnet du Physicien : les unités et la méthode"
+      suite:
+        - neo-joie: "Très bon choix. Un physicien sans unités, c'est un capitaine sans boussole."
+    - texte: "Par la Colline des Forces : je veux voir les objets bouger !"
+      suite:
+        - zero-joie: "YOUHOU ! On va faire tomber des trucs ! (Pour la science.)"
+
+arcs:
+  - id: physique-arc-1
+    titre: "Livre I — Le Mythe du Poids"
+    sous_titre: "Forces, lumière, mesures, premier circuit"
+    final: ph-sentier-des-mesures
+    fin:
+      - narrateur: "Le dirigeable du Capitaine Poulie reprend de l'altitude, sa lampe allumée. Le Mythe du Poids s'est fissuré : une plume froissée et une feuille l'ont battu."
+      - narrateur: "Dans les nuages apparaît Maître Gravis, la Muse des Cimes : « Galilée a fait rouler des billes sur des plans inclinés pour comprendre la chute, au lieu de croire ce que tout le monde disait. Et toi, quelle idée reçue aimerais-tu tester ? »"
+      - neo: "Là-haut, sur le Pic, le Titan Inertie bloque encore tout."
+
+  - id: physique-arc-2
+    titre: "Livre II — Le Titan Inertie"
+    sous_titre: "Électricité, mouvement, ondes"
+    final: ph-gorge-des-ondes
+    fin:
+      - narrateur: "Le Titan Inertie se met à glisser, doucement, puis s'éloigne en ligne droite… exactement comme Newton l'avait prévu."
+      - narrateur: "Maître Gravis sourit : « Émilie du Châtelet a traduit Newton en français et l'a enrichi : sans elle, beaucoup ne l'auraient jamais compris. Ibn al-Haytham, mille ans plus tôt, expliquait déjà la lumière par l'expérience. La physique est une conversation à travers les siècles. »"
+      - mia: "Mais au sommet, le Grand Neutre éteint les champs et les ondes eux-mêmes…"
+
+  - id: physique-arc-3
+    titre: "Livre III — Au sommet des Cimes"
+    sous_titre: "Énergie, champs, relativité, quanta"
+    final: ph-observatoire-des-champs
+    fin:
+      - narrateur: "Les aurores s'allument au-dessus de l'Observatoire, les ondes recommencent à danser, le Grand Neutre recule dans un dernier souffle gris."
+      - neo-fier: "De la pomme qui tombe jusqu'aux photons : tu as parcouru trois siècles de physique."
+      - zero: "Et maintenant je sais pourquoi je flotterais dans la station spatiale : je tomberais tout le temps, avec style."
+      - mia: "Les Cimes bougent de nouveau. Merci, Éveilleur."
+
+chapitres:
+  ph-colline-des-forces:
+    titre: "La colline immobile"
+    objet: "la girouette de la Colline"
+    avant:
+      - narrateur: "Sur la Colline des Forces, une balle reste suspendue en l'air et le Mythe du Poids ricane."
+      - zero: "Il dit que les objets lourds tombent toujours plus vite. C'est vrai, non ?"
+      - neo: "On ne croit pas : on vérifie."
+    apres:
+      - narrateur: "La balle retombe enfin, la girouette se remet à tourner, et les ombres reviennent sous les arbres."
+  ph-sentier-des-mesures:
+    titre: "Le Capitaine Poulie"
+    objet: "le dirigeable du Capitaine"
+    avant:
+      - narrateur: "Le Capitaine Poulie, une moustache en guidon de vélo, fait les cent pas : « Distance, durée, vitesse… et ma lampe ne s'allume plus ! »"
+    apres:
+      - narrateur: "« Circuit fermé, lampe allumée, cap sur le Pic ! » Le dirigeable décolle."
+  ph-forge-des-courants:
+    titre: "La Forge des Courants"
+    objet: "le grand marteau électrique"
+    avant:
+      - mia: "La Forge alimente toutes les Cimes en électricité. Elle est éteinte."
+      - neo: "Pense à de l'eau dans des tuyaux : la tension pousse, l'intensité coule."
+    apres:
+      - zero-joie: "Tout s'allume ! Et je n'ai mis aucune fourchette dans aucune prise. Je suis fier de moi."
+  ph-pic-du-mouvement:
+    titre: "Le Titan Inertie"
+    objet: "le sommet du Pic"
+    avant:
+      - narrateur: "Le Titan Inertie est assis sur le Pic. Tant que les forces se compensent, il ne bouge pas d'un millimètre."
+    apres:
+      - neo: "Une force non compensée, et le voilà parti. Newton avait raison."
+  ph-gorge-des-ondes:
+    titre: "La Gorge des Ondes"
+    objet: "l'arc-en-ciel de la Gorge"
+    avant:
+      - mia: "Ici, l'écho ne répond plus et l'arc-en-ciel s'est éteint."
+    apres:
+      - narrateur: "L'écho rebondit de nouveau sur les parois, et un arc-en-ciel immense traverse la Gorge."
+  ph-sommet-de-l-energie:
+    titre: "Le Sommet de l'Énergie"
+    objet: "le grand manège de l'énergie"
+    avant:
+      - zero: "Des montagnes russes au sommet d'une montagne ? J'ai le vertige… et l'envie !"
+    apres:
+      - neo: "Hauteur, vitesse, chaleur : l'énergie change de forme mais ne disparaît jamais."
+  ph-observatoire-des-champs:
+    titre: "L'Observatoire des Champs"
+    objet: "la coupole des aurores"
+    avant:
+      - narrateur: "Au dernier sommet, le Grand Neutre éteint une à une les ondes et les champs."
+      - mia: "C'est le moment de rassembler tout ce que tu as compris."
+    apres:
+      - narrateur: "La coupole s'ouvre sur un ciel plein d'aurores. Le Grand Neutre n'est plus qu'un petit nuage gris qui s'enfuit."

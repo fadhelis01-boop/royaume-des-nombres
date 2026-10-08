@@ -1,5 +1,5 @@
 /* ==========================================================
-   Le Royaume des Nombres — feuille de style
+   La Galaxie des Savoirs — feuille de style
    Couleurs des personnages : Mia (violet, turquoise), Néo (orange, bleu nuit),
    Zéro (blanc, orange). Formes rondes, gros boutons, contrastes AA.
    ========================================================== */
@@ -2823,3 +2823,106 @@ select {
 @media (prefers-reduced-motion: reduce) { .flash-barre { animation: none; opacity: 0.5; } }
 /* Tache sauvage : la silhouette de Gribouille, sans ses couleurs ni son sourire. */
 .foe-tache .mascot { filter: grayscale(1) brightness(0.55) contrast(1.3); }
+
+/* ==========================================================
+   La Galaxie des Savoirs : planètes, studios, expériences, dessin
+   ========================================================== */
+.planete-bar { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; border-radius: 20px; border: 3px solid var(--pc, var(--c-violet)); background: color-mix(in srgb, var(--pc, var(--c-violet)) 12%, var(--paper)); color: var(--ink); font: inherit; cursor: pointer; text-align: left; margin-bottom: 12px; }
+.planete-bar .pb-emoji { font-size: 2.1rem; }
+.planete-bar .pb-txt { flex: 1; display: grid; }
+.planete-bar strong { font-family: var(--title); font-size: 1.15rem; }
+.planete-bar small { color: var(--muted); }
+.planete-bar .pb-go { font-size: 0.85rem; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: var(--pc, var(--c-violet)); color: #fff; white-space: nowrap; }
+@media (max-width: 420px) { .planete-bar .pb-go { font-size: 0; padding: 8px; } .planete-bar .pb-go::before { content: "🌌"; font-size: 1.2rem; } }
+
+.galaxie { background: radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--c-violet) 18%, transparent), transparent 40%), radial-gradient(circle at 85% 60%, color-mix(in srgb, var(--c-turquoise) 14%, transparent), transparent 45%); border-radius: var(--radius); }
+.famille { margin: 22px 0; }
+.famille-titre { font-family: var(--title); display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.famille-titre small { width: 100%; font-family: var(--body); font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+.planetes { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.planete-card { position: relative; display: flex; gap: 12px; align-items: center; text-align: left; padding: 14px; border-radius: var(--radius); border: 3px solid color-mix(in srgb, var(--pc) 55%, var(--line)); background: var(--paper); color: var(--ink); font: inherit; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.15s; }
+.planete-card:hover { transform: translateY(-2px) rotate(-0.5deg); }
+.planete-card.on { border-color: var(--pc); background: color-mix(in srgb, var(--pc) 10%, var(--paper)); }
+.planete-card.bientot { opacity: 0.6; cursor: default; }
+.pc-astre { flex: none; width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, #fff8, transparent 45%), var(--pc); box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.15), 0 0 0 6px color-mix(in srgb, var(--pc) 22%, transparent); }
+.pc-astre img { border-radius: 50%; object-fit: cover; }
+.pc-emoji { font-size: 2.6rem; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25)); }
+.pc-txt { display: grid; gap: 3px; min-width: 0; }
+.pc-txt strong { font-family: var(--title); font-size: 1.08rem; line-height: 1.15; }
+.pc-txt small { color: var(--muted); font-size: 0.85rem; }
+.pc-txt .pc-matiere { color: var(--pc); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.75rem; }
+.pc-bar { display: block; height: 8px; border-radius: 4px; background: var(--grid); overflow: hidden; margin-top: 4px; }
+.pc-bar i { display: block; height: 100%; background: var(--pc); border-radius: 4px; }
+.pc-prog { font-size: 0.8rem; font-weight: 700; }
+.pc-ici { position: absolute; top: -10px; right: 12px; background: var(--pc); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+
+/* visuels sonores et musicaux */
+.son-vis { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.son-btn { font: inherit; font-weight: 700; font-size: 1.05rem; padding: 12px 18px; border-radius: 999px; border: 3px solid var(--c-orange); background: var(--c-orange-l); color: var(--ink); cursor: pointer; min-height: 48px; }
+.son-btn.on { background: var(--c-orange); color: #fff; transform: scale(1.05); }
+.portee-svg, .clavier-svg { width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto; }
+.portee-svg { --bg: #fffdf7; background: #fffdf7; border-radius: 12px; --ink: #2b2540; }
+.atome-svg { width: 100%; max-width: 260px; height: auto; display: block; margin: 0 auto; }
+
+/* expériences */
+.st-experience { display: grid; gap: 12px; }
+.secu-badge { display: grid; gap: 2px; padding: 10px 14px; border-radius: 16px; border: 2px solid; }
+.secu-badge.secu-vert { border-color: var(--ok); background: var(--ok-l); }
+.secu-badge.secu-orange { border-color: var(--c-orange); background: var(--c-orange-l); }
+.secu-badge.secu-rouge { border-color: var(--ko); background: var(--ko-l); }
+.xp-materiel ul { margin: 6px 0 0; padding-left: 22px; columns: 2; }
+@media (max-width: 480px) { .xp-materiel ul { columns: 1; } }
+.xp-etapes { display: grid; gap: 6px; padding-left: 22px; }
+.xp-etapes label { cursor: pointer; }
+.xp-etapes input { width: 20px; height: 20px; vertical-align: middle; }
+.xp-resultat { padding: 12px; border-radius: 16px; background: var(--c-turquoise-l); }
+
+/* dessin */
+.toile { display: grid; gap: 10px; justify-items: center; }
+.toile-zone { position: relative; width: min(100%, 460px); aspect-ratio: 1; border-radius: 18px; background: #fffdf7; border: 3px solid var(--line); box-shadow: var(--shadow); overflow: hidden; background-size: cover; touch-action: none; }
+.toile-guides, .toile-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.toile-canvas { touch-action: none; cursor: crosshair; }
+.toile-guides path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.toile-guides .g-fait { stroke: #b8b2c8; stroke-width: 0.8; }
+.toile-guides .g-actuel { stroke: var(--c-orange); stroke-width: 1.3; stroke-dasharray: 2.2 1.8; animation: guide-pulse 1.6s ease-in-out infinite; }
+.toile-guides .g-axe { stroke: var(--c-turquoise); stroke-width: 0.5; stroke-dasharray: 1 1.5; }
+@keyframes guide-pulse { 50% { opacity: 0.45; } }
+@media (prefers-reduced-motion: reduce) { .toile-guides .g-actuel { animation: none; } }
+.toile-outils { display: grid; gap: 8px; justify-items: center; width: min(100%, 460px); }
+.toile-palette { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.pastille { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--line); cursor: pointer; }
+.pastille.on { border-color: var(--ink); transform: scale(1.15); }
+.toile-btns { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; }
+.epaisseur { width: 40px; height: 40px; border-radius: 12px; border: 2px solid var(--line); background: var(--paper); display: grid; place-items: center; cursor: pointer; }
+.epaisseur.on { border-color: var(--c-violet); background: var(--c-violet-l); }
+.epaisseur i { display: block; border-radius: 50%; background: var(--ink); }
+.st-dessin { display: grid; gap: 10px; }
+.st-dessin-btns { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+/* studios */
+.studio-reglages { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin: 10px 0; }
+.studio-reglages select, .studio-reglages input:not([type]), .studio-reglages input[type="text"] { font: inherit; padding: 6px 10px; border-radius: 10px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); }
+.piano { display: flex; justify-content: center; margin: 12px auto; max-width: 100%; overflow-x: auto; padding-bottom: 6px; }
+.touche-wrap { position: relative; }
+.touche { font: inherit; cursor: pointer; border: 2px solid #3d3557; touch-action: manipulation; }
+.touche.blanche { width: 44px; height: 170px; background: #fff; border-radius: 0 0 10px 10px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; color: #3d3557; font-weight: 700; font-size: 0.8rem; }
+.touche.blanche:active { background: var(--c-jaune-l); }
+.touche.noire { position: absolute; z-index: 2; top: 0; right: -14px; width: 28px; height: 104px; background: #2b2540; border-radius: 0 0 8px 8px; }
+.touche.noire:active { background: var(--c-orange); }
+.touche.eteinte { opacity: 0.35; cursor: default; }
+.touche.noire.eteinte { opacity: 0.55; }
+@media (max-width: 480px) { .touche.blanche { width: 34px; height: 140px; } .touche.noire { width: 22px; right: -11px; height: 86px; } }
+.sequenceur { display: grid; gap: 8px; overflow-x: auto; }
+.seq-ligne { display: grid; grid-template-columns: 8.5em repeat(8, minmax(30px, 1fr)); gap: 5px; align-items: center; }
+.seq-nom { font-size: 0.85rem; font-weight: 700; }
+.seq-pas { aspect-ratio: 1; border-radius: 10px; border: 2px solid var(--line); background: var(--paper); cursor: pointer; }
+.seq-pas.temps { border-color: color-mix(in srgb, var(--c-orange) 55%, var(--line)); }
+.seq-pas.on { background: var(--c-orange); border-color: var(--c-orange-d); }
+.seq-pas.joue { outline: 3px solid var(--c-turquoise); }
+.galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.oeuvre { margin: 0; background: var(--paper); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+.oeuvre img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fffdf7; display: block; }
+.oeuvre figcaption { display: grid; gap: 2px; padding: 8px; }
+.oeuvre figcaption span { display: flex; gap: 6px; }
+.games.compact .game-card small { display: none; }
+.planete-bar .pb-emoji img { display: block; border-radius: 50%; box-shadow: 0 0 0 3px color-mix(in srgb, var(--pc) 35%, transparent); }

@@ -1,0 +1,168 @@
+id: ch-labo-du-savant
+matiere: chimie
+titre: Le Labo du Savant
+sous_titre: La démarche scientifique, la sécurité, mesurer et noter
+emoji: 🥽
+couleur: "#0f8a66"
+cycle: astuces
+age: 7 ans et +
+niveau: Tous niveaux
+ordre: 100
+version: 1.0.0
+intro:
+  - neo: "Bienvenue dans mon labo ! Avant de transformer la matière, on apprend à travailler comme de vrais savants."
+  - zero: "Je peux goûter les potions ?!"
+  - mia: "Jamais, Zéro ! C'est la première règle du labo. On va toutes les apprendre."
+
+lecons:
+  - id: demarche-scientifique
+    titre: "La démarche scientifique : OHERIC"
+    objectif: Je connais les étapes pour répondre à une question scientifique.
+    mots: [observation, hypothèse, expérience, résultat, conclusion]
+    etapes:
+      - dialogue:
+          - zero: "Mon glaçon a fondu plus vite dans le jus que dans l'huile. C'est de la magie !"
+          - neo: "Ou une énigme scientifique ! On va la résoudre avec la méthode OHERIC."
+      - texte: |
+          Pour répondre à une question, les scientifiques suivent toujours le même chemin :
+          1. **O**bserver : je remarque quelque chose (« le glaçon fond plus vite ici »).
+          2. **H**ypothèse : je propose une explication possible (« peut-être que le jus est plus chaud »).
+          3. **E**xpérience : je teste mon idée en ne changeant **qu'une seule chose** à la fois.
+          4. **R**ésultat : je note ce que j'observe, avec des mesures.
+          5. **I**nterprétation : mon hypothèse est-elle confirmée ou non ?
+          6. **C**onclusion : je réponds à la question… et souvent j'en trouve une nouvelle !
+      - retiens: "**OHERIC** : Observer, Hypothèse, Expérience, Résultat, Interprétation, Conclusion. Dans une expérience, on ne change **qu'un seul facteur** à la fois."
+      - a_quoi_ca_sert: "Les médecins testent un médicament, les cuisiniers améliorent une recette, les ingénieurs testent un pont : tous utilisent cette méthode."
+    exercices:
+      - type: ordre
+        vars: { t: [["Observer", "Faire une hypothèse", "Faire une expérience", "Noter les résultats", "Interpréter", "Conclure"]] }
+        enonce: "Remets les étapes de la démarche scientifique dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}", "{{t_5}}"]
+        correction: "O-H-E-R-I-C : Observer, Hypothèse, Expérience, Résultat, Interprétation, Conclusion."
+      - type: qcm
+        vars: { t: [["« Je pense que les graines ont besoin de lumière pour germer. »", "une hypothèse", "un résultat", "une conclusion"], ["« La plante dans le placard mesure 2 cm, celle à la fenêtre 6 cm. »", "un résultat", "une hypothèse", "une observation au hasard"], ["« Les feuilles de mon basilic jaunissent. »", "une observation", "une conclusion", "une expérience"], ["« Donc la lumière aide bien la plante à grandir. »", "une conclusion", "une hypothèse", "une observation"]] }
+        enonce: "{{t_0}} C'est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["si l'eau tiède dissout le sucre plus vite que l'eau froide", "la température de l'eau", "la quantité de sucre et le verre", "la couleur du verre"], ["si une balle rebondit plus haut sur le carrelage que sur le tapis", "le sol", "la balle et la hauteur de lâcher", "la couleur du tapis"], ["si une plante pousse mieux avec de l'engrais", "l'engrais", "la plante, l'eau et la lumière", "le nom de la plante"]] }
+        enonce: "Tu veux savoir {{t_0}}. Que dois-tu faire varier (et seulement ça) ?"
+        choix: ["{{t_1}}", "{{t_3}}", "tout changer en même temps"]
+        correction: "On change seulement {{t_1}} ; on garde identiques {{t_2}}. C'est un test juste."
+      - type: vf
+        vars: { t: [["Une expérience ratée ne sert à rien.", false], ["Si l'expérience contredit mon hypothèse, j'ai quand même appris quelque chose.", true], ["Pour comparer, il faut changer une seule chose à la fois.", true], ["Un vrai scientifique ne se trompe jamais.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les scientifiques se trompent souvent : une hypothèse réfutée est un vrai résultat."
+
+  - id: securite-au-labo
+    titre: "Les règles d'or de la sécurité"
+    objectif: Je connais les gestes de sécurité et les pictogrammes de danger.
+    mots: [pictogramme, sécurité, toxique, inflammable, corrosif]
+    etapes:
+      - dialogue:
+          - zero: "Je mélange tous les produits de la salle de bain pour faire une super potion !"
+          - neo: "STOP ! Mélanger des produits ménagers peut dégager des gaz dangereux. On va apprendre les règles d'or."
+      - texte: |
+          **Les 6 règles d'or du laboratoire**
+          1. Je fais une expérience **seulement avec un adulte** quand c'est indiqué.
+          2. Je ne **goûte jamais** et je ne sens pas directement un produit (on rabat l'odeur avec la main).
+          3. Je ne **mélange jamais** des produits ménagers (eau de Javel + vinaigre = gaz toxique !).
+          4. Je protège mes yeux et mes mains si nécessaire (lunettes, gants).
+          5. Je range, je nettoie, je **me lave les mains** à la fin.
+          6. Je respecte les **pictogrammes** sur les étiquettes.
+
+          **Les pictogrammes de danger** (losange rouge, fond blanc) : ☠️ toxique, 🔥 inflammable, 🧪 corrosif (ronge la peau et les métaux), ⚠️ nocif ou irritant, 🌳 dangereux pour l'environnement.
+      - attention:
+          texte: "Les produits de la maison ne sont pas des jouets : eau de Javel, déboucheur, produits pour le lave-vaisselle peuvent brûler ou empoisonner. On ne les touche jamais sans un adulte."
+          qui: neo
+      - retiens: "On ne goûte pas, on ne mélange pas les produits ménagers, on lit les pictogrammes, on se lave les mains."
+    exercices:
+      - type: qcm
+        vars: { t: [["🔥", "inflammable : il peut prendre feu facilement", "il est très chaud", "il se mange chaud"], ["☠️", "toxique : il peut empoisonner", "il est périmé", "c'est pour Halloween"], ["🧪 (corrosif)", "il ronge la peau et les métaux", "il sent mauvais", "il est très froid"], ["🌳 (environnement)", "il est dangereux pour la nature", "il est fait avec des plantes", "il est bio"]] }
+        enonce: "Que signifie le pictogramme {{t_0}} sur une étiquette ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Je peux goûter une expérience si elle est faite avec des aliments.", false], ["On peut mélanger de l'eau de Javel et du vinaigre pour mieux nettoyer.", false], ["Après une expérience, je me lave les mains.", true], ["Pour sentir un produit, on rabat l'odeur avec la main au lieu de mettre le nez dessus.", true], ["Les pictogrammes de danger sont dans un losange rouge.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Règles d'or : on ne goûte pas, on ne mélange pas les produits ménagers, on se lave les mains."
+      - type: classer
+        vars: { t: [["porter des lunettes", "goûter la solution", "lire l'étiquette", "mélanger deux produits ménagers"], ["se laver les mains", "sentir le flacon de très près", "travailler avec un adulte", "courir dans le labo"], ["ranger le matériel", "mettre un produit dans une bouteille d'eau", "attacher ses cheveux longs", "jouer avec des allumettes"]] }
+        enonce: "Bon geste ou geste dangereux ?"
+        categories: ["bon geste", "dangereux"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Au labo, on protège ses yeux, on lit les étiquettes, on ne goûte et ne mélange rien au hasard."
+
+  - id: mesurer-volumes-masses
+    titre: "Mesurer : volumes, masses, températures"
+    objectif: Je choisis le bon instrument et la bonne unité, et je lis une mesure.
+    mots: [masse, volume, gramme, litre, millilitre, thermomètre]
+    etapes:
+      - texte: |
+          | Je mesure… | Instrument | Unités |
+          |---|---|---|
+          | une **masse** (combien c'est lourd) | balance | gramme (g), kilogramme (kg) : 1 kg = 1 000 g |
+          | un **volume** (la place occupée) | verre doseur, éprouvette graduée | litre (L), millilitre (mL) : 1 L = 1 000 mL |
+          | une **température** | thermomètre | degré Celsius (°C) |
+          | une **durée** | chronomètre | seconde (s), minute (min) |
+
+          Dans une éprouvette, on lit le volume **les yeux à la hauteur du liquide**, en bas de la courbe (le *ménisque*).
+      - retiens: "Masse → balance (g, kg). Volume → éprouvette (mL, L). Température → thermomètre (°C). 1 L = 1 000 mL ; 1 kg = 1 000 g."
+      - vraie_vie:
+          titre: Défi dans la cuisine
+          texte: "Avec un adulte, mesure 200 mL d'eau dans un verre doseur, puis pèse-la sur la balance de cuisine (en enlevant le poids du verre). Que trouves-tu ? (Indice : environ 200 g, car 1 mL d'eau pèse environ 1 g.)"
+          materiel: verre doseur, balance de cuisine, eau
+    exercices:
+      - type: qcm
+        vars: { t: [["la masse d'une pomme", "une balance", "un thermomètre", "une règle"], ["le volume de lait pour une recette", "un verre doseur", "une balance", "un chronomètre"], ["la température de l'eau du bain", "un thermomètre", "un verre doseur", "une balance"], ["la durée d'une course", "un chronomètre", "un thermomètre", "une éprouvette"]] }
+        enonce: "Pour mesurer {{t_0}}, j'utilise…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["1 L", "mL", 1000], ["2 L", "mL", 2000], ["0,5 L", "mL", 500], ["1 kg", "g", 1000], ["3 kg", "g", 3000], ["0,25 L", "mL", 250], ["1,5 kg", "g", 1500]] }
+        enonce: "Convertis : {{t_0}} = … {{t_1}}"
+        reponse: "t_2"
+        correction: "{{t_0}} = {{t_2}} {{t_1}}"
+      - type: qcm
+        vars: { t: [["une baignoire pleine", "environ 150 L", "environ 150 mL", "environ 15 000 L"], ["une cuillère à café", "environ 5 mL", "environ 5 L", "environ 500 mL"], ["une bouteille d'eau", "1,5 L", "1,5 mL", "150 L"], ["un enfant de 8 ans", "environ 25 kg", "environ 25 g", "environ 250 kg"], ["une fourmi", "quelques milligrammes", "quelques kilogrammes", "quelques grammes"]] }
+        enonce: "Quelle est la bonne mesure pour {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : avoir le bon ordre de grandeur, c'est vérifier qu'un résultat est possible."
+
+  - id: noter-et-schematiser
+    titre: "Noter ses résultats : tableau et schéma"
+    objectif: Je range mes mesures dans un tableau et je fais un schéma légendé.
+    mots: [tableau, schéma, légende, titre]
+    etapes:
+      - texte: |
+          Un bon savant **note tout**, tout de suite. Deux outils :
+          - le **tableau de résultats** : une colonne pour ce que je change, une colonne pour ce que je mesure ;
+          - le **schéma légendé** : un dessin simple (pas une œuvre d'art !), à la règle, avec des **flèches** et des **noms**, et un **titre**.
+      - visuel:
+          type: tableau
+          lignes:
+            - ["Température de l'eau", "Temps pour dissoudre 1 sucre"]
+            - ["froide (10 °C)", "3 min"]
+            - ["tiède (30 °C)", "1 min 30 s"]
+            - ["chaude (50 °C)", "40 s"]
+        legende: "Un tableau de résultats : on voit tout de suite que plus l'eau est chaude, plus le sucre se dissout vite."
+      - retiens: "Tableau : ce que je change → ce que je mesure. Schéma : titre, traits simples, légendes avec des flèches."
+    exercices:
+      - type: qcm
+        enonce: "D'après le tableau (eau froide : 3 min ; tiède : 1 min 30 s ; chaude : 40 s), quelle conclusion est juste ?"
+        vars: { t: [["Plus l'eau est chaude, plus le sucre se dissout vite.", "Plus l'eau est froide, plus le sucre se dissout vite.", "La température ne change rien."]] }
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "40 s < 1 min 30 s < 3 min : la dissolution est plus rapide dans l'eau chaude."
+      - type: qcm
+        vars: { t: [["Que doit contenir un schéma scientifique ?", "un titre, des traits simples et des légendes", "beaucoup de couleurs et de décorations", "des personnages"], ["Où place-t-on ce que l'on change dans un tableau de résultats ?", "dans la première colonne", "dans le titre", "nulle part"], ["Quand faut-il noter ses résultats ?", "tout de suite, pendant l'expérience", "le lendemain, de mémoire", "seulement si l'expérience réussit"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["1 min 30 s", 90], ["2 min", 120], ["3 min", 180], ["1 min 15 s", 75], ["2 min 40 s", 160]] }
+        enonce: "Pour comparer facilement, convertis en secondes : {{t_0}} = … s"
+        reponse: "t_1"
+        unite: s
+        correction: "1 min = 60 s, donc {{t_0}} = {{t_1}} s."

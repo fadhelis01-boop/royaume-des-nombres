@@ -4,7 +4,7 @@ import { dbGet, dbSet } from "./db";
 import { normalizeWorld, preprocess, resetReport } from "./normalize.mjs";
 import { setWorldsForBadges } from "./store";
 import { instantiate } from "./gen";
-import type { Child, Manifest, Matiere, Settings, World } from "./types";
+import type { Child, Gardien, Manifest, Matiere, Planete, Settings, World } from "./types";
 
 // Chargement du contenu : les mondes intégrés (public/content, mis à jour à
 // chaque publication) + les mondes importés depuis l'Espace parents (stockés
@@ -133,9 +133,24 @@ export function findLesson(worldId: string, lessonId: string) {
 }
 
 export const matiereDe = (c: Child | null): Matiere => c?.matiere ?? "maths";
-/** L'histoire du royaume : les Nombres (maths) ou l'Archipel des Mots (français). */
-export const histoireDe = (m: Manifest | null | undefined, mat: Matiere) => (mat === "francais" ? m?.histoireFr : m?.histoire);
-export const prologueId = (mat: Matiere) => (mat === "francais" ? "prologue-fr" : "prologue");
+/** La planète (matière) décrite dans content-src/_planetes.yaml. */
+export const planeteDe = (m: Manifest | null | undefined, mat: Matiere): Planete | undefined => m?.planetes?.find((p) => p.id === mat) ?? m?.planetes?.[0];
+/** L'histoire d'une planète (chaque matière a la sienne). */
+export const histoireDe = (m: Manifest | null | undefined, mat: Matiere) => m?.histoires?.[mat];
+export const prologueId = (mat: Matiere, m: Manifest | null | undefined = st.manifest) => planeteDe(m, mat)?.prologue.id ?? `prologue-${mat}`;
+/** Le gardien (boss) d'un monde : il dépend de la planète et du cycle. */
+export function gardienDe(m: Manifest | null | undefined, w: World): Gardien {
+  const g = planeteDe(m, w.matiere)?.gardiens;
+  return (
+    g?.[w.cycle as "graines"] ??
+    g?.graines ?? { sprite: "neutre", nom: "Le Grand Neutre", qui: "narrateur", ouverture: "Le Grand Neutre a tout rendu gris. Chaque bonne réponse lui reprend une couleur.", cri: "Gris…", aie: ["Aïe !"], nargue: ["Raté !"], jeton: "🌫️" }
+  );
+}
+/** « 💎 3 cristaux rallumés » — le compteur d'aventure d'une planète. */
+export function objetLabel(p: Planete | undefined, n: number) {
+  if (!p) return `${n}`;
+  return `${p.objet.emoji} ${n} ${n > 1 ? p.objet.des : p.objet.un}`;
+}
 
 /** Prochaine leçon conseillée : la première non terminée d'un monde débloqué (du royaume choisi). */
 export function nextLesson(c: Child | null, s: Settings, mat: Matiere = matiereDe(c)) {

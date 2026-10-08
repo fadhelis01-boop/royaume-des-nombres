@@ -9,6 +9,7 @@ import { AccentBar } from "../components/FrExercices";
 import { avecPronom, formes, TEMPS_NOMS, type Temps } from "../lib/fr/conjugaison";
 import { normOrtho } from "../lib/fr/morpho";
 import type { Child } from "../lib/types";
+import { QuizEclair } from "./jeux/JeuxSavoirs";
 
 // Échauffement du jour : 10 faits numériques en 2 minutes, choisis là où
 // l'enfant en a le plus besoin (automatiser les faits libère la mémoire
@@ -39,7 +40,8 @@ function pickFacts(c: Child): Fact[] {
 
 export function Echauffement() {
   const child = useChild()!;
-  return child.matiere === "francais" ? <EchauffementFr /> : <EchauffementMaths />;
+  // maths : faits numériques ; français : conjugaison ; autres planètes : questions éclair de la planète
+  return child.matiere === "francais" ? <EchauffementFr /> : !child.matiere || child.matiere === "maths" ? <EchauffementMaths /> : <QuizEclair n={6} echauffement />;
 }
 
 function EchauffementMaths() {

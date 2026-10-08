@@ -1,0 +1,160 @@
+id: uni-climat-et-avenir
+matiere: univers
+titre: Le Belvédère du Climat
+sous_titre: Bilan d'énergie de la Terre, cycle du carbone, conséquences, empreinte carbone, agir
+emoji: 🌡️
+couleur: "#1b2a6b"
+cycle: maitres
+age: 15 ans et +
+niveau: Expert – Savant (lycée – supérieur, introduction)
+ordre: 406
+prerequis: [uni-planete-vivante]
+version: 1.0.0
+intro:
+  - neo: "Le climat, c'est de la physique, de la chimie, de la biologie… et des choix humains. Ici, on raisonne avec des chiffres sourcés."
+  - mia: "Et on garde espoir : chaque dixième de degré évité compte."
+
+lecons:
+  - id: bilan-radiatif
+    titre: "Le bilan d'énergie de la Terre"
+    objectif: J'explique l'équilibre entre l'énergie reçue et l'énergie renvoyée.
+    mots: [bilan radiatif, albédo, rayonnement infrarouge]
+    etapes:
+      - texte: |
+          La Terre **reçoit** l'énergie du Soleil (surtout de la lumière visible). Elle en **réfléchit** environ **30 %** directement vers l'espace (nuages, glaces, déserts : c'est l'**albédo**) ; le reste chauffe le sol, les océans et l'air.
+          Pour garder une température stable, la Terre doit **renvoyer** autant d'énergie qu'elle en absorbe, sous forme d'**infrarouges**. Les gaz à effet de serre en retiennent une partie : si on en ajoute, il faut que la surface se réchauffe pour rétablir l'équilibre.
+          **Rétroaction** : quand la banquise fond, la mer sombre (albédo faible) absorbe plus d'énergie… ce qui accélère le réchauffement.
+      - retiens: "Énergie reçue = énergie renvoyée à l'équilibre. Albédo ≈ 30 %. Plus de gaz à effet de serre → la surface se réchauffe. Fonte des glaces = rétroaction qui amplifie."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce que l'albédo ?", "la part de lumière solaire réfléchie", "la température du Soleil", "un gaz à effet de serre"], ["Quelle surface a l'albédo le plus élevé ?", "la neige fraîche", "l'océan", "une forêt de conifères"], ["Pourquoi la fonte de la banquise accélère-t-elle le réchauffement ?", "l'eau sombre absorbe plus d'énergie que la glace blanche", "la glace produit du CO₂", "l'eau est plus chaude que l'air"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { e: [340, 100, 1000] }
+        enonce: "Une surface reçoit {{e}} unités d'énergie solaire et réfléchit 30 %. Combien en absorbe-t-elle ?"
+        reponse: "e*0.7"
+        correction: "70 % de {{e}} = {{e*0.7}}."
+      - type: vf
+        vars: { t: [["À l'équilibre, la Terre renvoie autant d'énergie qu'elle en absorbe.", true], ["La Terre renvoie son énergie vers l'espace surtout sous forme d'infrarouges.", true], ["Les nuages n'ont aucun effet sur l'énergie reçue.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les nuages réfléchissent la lumière solaire (et retiennent aussi des infrarouges)."
+
+  - id: cycle-du-carbone
+    titre: "Le cycle du carbone"
+    objectif: Je décris les réservoirs et les échanges de carbone.
+    mots: [cycle du carbone, puits de carbone, réservoir, combustion]
+    etapes:
+      - texte: |
+          Le carbone circule entre plusieurs **réservoirs** : l'**atmosphère** (CO₂), les **êtres vivants** (forêts, sols), les **océans** (CO₂ dissous, coquilles) et les **roches** (calcaire, charbon, pétrole, gaz).
+          - La **photosynthèse** prend du CO₂ à l'air ; la **respiration** et la **décomposition** en rendent.
+          - Les **combustibles fossiles** ont stocké du carbone pendant des **millions d'années** ; nous le relâchons en **quelques décennies**.
+          - Les **puits de carbone** (océans, forêts) absorbent environ **la moitié** de nos émissions ; l'autre moitié s'accumule dans l'atmosphère. Le CO₂ dissous **acidifie** les océans.
+      - retiens: "Réservoirs : air, vivant, océans, roches. Les fossiles libèrent en décennies un carbone stocké en millions d'années. Océans et forêts absorbent environ la moitié de nos émissions."
+    exercices:
+      - type: classer
+        vars: { t: [["la photosynthèse des forêts", "la combustion du pétrole", "la dissolution du CO₂ dans l'océan", "la déforestation par le feu"]] }
+        enonce: "Ce processus retire-t-il du CO₂ de l'air ou en ajoute-t-il ?"
+        categories: ["retire du CO₂", "ajoute du CO₂"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Photosynthèse et océans absorbent ; combustions et feux de forêt émettent."
+      - type: qcm
+        vars: { t: [["Quelle part de nos émissions de CO₂ les puits naturels absorbent-ils environ ?", "la moitié", "la totalité", "rien du tout"], ["Quel effet le CO₂ dissous a-t-il sur les océans ?", "il les acidifie", "il les rend plus salés", "il les refroidit"], ["Combien de temps a-t-il fallu pour former le pétrole ?", "des millions d'années", "quelques années", "un siècle"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le carbone du charbon vient d'anciennes plantes.", true], ["Planter des arbres compense à lui seul toutes les émissions mondiales.", false], ["Les coquillages stockent du carbone dans le calcaire.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les forêts aident, mais ne suffisent pas : il faut surtout réduire les émissions."
+
+  - id: consequences
+    titre: "Les conséquences du réchauffement"
+    objectif: Je connais les principales conséquences observées et projetées.
+    mots: [GIEC, niveau des mers, événements extrêmes, scénario]
+    etapes:
+      - texte: |
+          Le **GIEC** (Groupe d'experts intergouvernemental sur l'évolution du climat) rassemble les connaissances scientifiques publiées. Ses rapports concluent que le réchauffement actuel est dû **sans équivoque** aux activités humaines.
+          Conséquences **déjà observées** : réchauffement d'environ **1,2 °C**, hausse du niveau moyen des mers d'environ **20 cm depuis 1900**, recul des glaciers, canicules plus fréquentes et plus intenses, pluies extrêmes, acidification des océans, déplacement d'espèces.
+          Pour le futur, tout dépend des **scénarios** d'émissions : chaque tonne de CO₂ évitée limite le réchauffement.
+      - retiens: "GIEC : réchauffement d'origine humaine, sans équivoque. Déjà : ≈ +1,2 °C, mers +20 cm depuis 1900, extrêmes plus fréquents. Le futur dépend de nos émissions."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que fait le GIEC ?", "il évalue et résume les connaissances scientifiques sur le climat", "il prévoit la météo du lendemain", "il fabrique des panneaux solaires"], ["De combien le niveau moyen des mers a-t-il monté depuis 1900 environ ?", "d'environ 20 cm", "d'environ 20 m", "il n'a pas bougé"], ["De quoi dépend le climat de la fin du siècle ?", "surtout des émissions de gaz à effet de serre à venir", "uniquement du hasard", "des phases de la Lune"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["des canicules plus fréquentes", "plus de lumière solaire chaque année", "le recul des glaciers", "des marées deux fois plus fortes"]] }
+        enonce: "Conséquence observée du réchauffement climatique ou affirmation fausse ?"
+        categories: ["conséquence observée", "faux"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le Soleil n'est pas devenu plus brillant ; les marées ne dépendent pas du climat."
+      - type: vf
+        vars: { t: [["Selon le GIEC, le réchauffement actuel est dû aux activités humaines.", true], ["Chaque tonne de CO₂ évitée compte.", true], ["Il est désormais trop tard pour agir sur le climat.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chaque dixième de degré évité réduit les risques : agir reste utile."
+
+  - id: empreinte-carbone
+    titre: "L'empreinte carbone"
+    objectif: J'estime des ordres de grandeur d'émissions et je compare des choix.
+    mots: [empreinte carbone, CO₂ équivalent, tonne, sobriété]
+    etapes:
+      - texte: |
+          L'**empreinte carbone** mesure les gaz à effet de serre émis par nos activités, en **tonnes de CO₂ équivalent** (t CO₂e) par an.
+          - En France, elle est d'environ **9 tonnes par habitant et par an** (en comptant les produits importés).
+          - Pour respecter l'Accord de Paris, il faudrait viser environ **2 tonnes** vers 2050.
+          Les gros postes : **transports** (voiture, avion), **logement** (chauffage), **alimentation** (surtout la viande de bœuf), **biens achetés** (appareils, vêtements).
+          Ordres de grandeur : un aller-retour Paris–New York en avion ≈ 1 à 2 t CO₂e par passager ; 1 kg de bœuf ≈ 30 kg CO₂e ; 1 kg de légumes de saison ≈ moins de 1 kg CO₂e.
+      - retiens: "Empreinte française ≈ 9 t CO₂e par personne et par an ; objectif ≈ 2 t. Gros postes : transports, logement, alimentation, achats."
+    exercices:
+      - type: nombre
+        vars: { k: [1, 2, 3, 5] }
+        enonce: "Si 1 kg de bœuf émet environ 30 kg de CO₂e, combien émettent {{k}} kg ?"
+        reponse: "30*k"
+        unite: kg CO₂e
+        correction: "30 × {{k}} = {{30*k}} kg CO₂e."
+      - type: nombre
+        vars: { e: [9] }
+        enonce: "Pour passer d'environ {{e}} t à 2 t par personne et par an, de combien de tonnes faut-il réduire l'empreinte ?"
+        reponse: "e-2"
+        unite: t
+        correction: "{{e}} − 2 = {{e-2}} t, soit une réduction d'environ les trois quarts."
+      - type: ordre
+        vars: { t: [["1 kg de légumes de saison", "1 kg de poulet", "1 kg de bœuf", "un aller-retour Paris-New York en avion"]] }
+        enonce: "Range du moins émetteur au plus émetteur (ordres de grandeur)."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Moins de 1 kg < quelques kg < environ 30 kg < plus d'une tonne de CO₂e."
+
+  - id: agir
+    titre: "Atténuer et s'adapter"
+    objectif: Je distingue atténuation et adaptation et je connais des leviers d'action.
+    mots: [atténuation, adaptation, sobriété, efficacité, développement durable]
+    etapes:
+      - texte: |
+          - **Atténuer** : réduire les émissions (énergies bas-carbone, isolation, transports en commun et vélo, moins de gaspillage, alimentation plus végétale, protéger les forêts).
+          - **S'adapter** : se préparer aux changements déjà inévitables (végétaliser les villes contre les canicules, protéger les côtes, économiser l'eau, adapter l'agriculture).
+          Les leviers sont **individuels** (nos choix) **et collectifs** (lois, entreprises, investissements, coopération internationale) : les deux sont nécessaires.
+          Le **développement durable** cherche à répondre aux besoins d'aujourd'hui sans compromettre ceux des générations futures (dimensions environnementale, sociale et économique).
+      - retiens: "Atténuer = réduire les émissions ; s'adapter = se protéger des effets inévitables. Leviers individuels ET collectifs."
+    exercices:
+      - type: classer
+        vars: { t: [["isoler les maisons", "planter des arbres dans les cours d'école pour l'ombre", "remplacer une centrale à charbon par des éoliennes", "construire des digues contre la montée des eaux"], ["prendre le vélo plutôt que la voiture", "installer des systèmes d'alerte canicule", "réduire le gaspillage alimentaire", "choisir des cultures qui résistent à la sécheresse"]] }
+        enonce: "Atténuation (réduire les émissions) ou adaptation (se protéger des effets) ?"
+        categories: [atténuation, adaptation]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Atténuer agit sur la cause ; s'adapter agit sur les conséquences."
+      - type: qcm
+        vars: { t: [["Qu'est-ce que le développement durable ?", "répondre aux besoins d'aujourd'hui sans compromettre ceux des générations futures", "produire toujours plus", "arrêter toute activité humaine"], ["Pourquoi faut-il des actions collectives en plus des gestes individuels ?", "certains leviers (énergie, transports, lois) dépendent de choix collectifs", "les gestes individuels sont interdits", "pour faire joli"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Végétaliser une ville aide à lutter contre les canicules.", true], ["Seuls les gestes individuels comptent.", false], ["L'adaptation remplace la réduction des émissions.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Il faut à la fois atténuer et s'adapter, individuellement et collectivement."

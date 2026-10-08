@@ -1,0 +1,162 @@
+id: bio-palais-du-corps
+matiere: biologie
+titre: Le Palais du Corps
+sous_titre: La cellule, le cœur et le sang, le cerveau et les nerfs, bien manger et dormir, grandir
+emoji: ❤️
+couleur: "#2f7726"
+cycle: explorateurs
+age: 12 ans et +
+niveau: Chercheur (5ᵉ – 4ᵉ)
+ordre: 304
+prerequis: [bio-jardin-des-fonctions]
+version: 1.0.0
+intro:
+  - mia: "Ton corps est un palais de 30 000 milliards de cellules qui travaillent ensemble. Visitons-le, pièce par pièce."
+  - zero: "30 000 milliards ?! Et moi qui croyais être un seul hamster…"
+
+lecons:
+  - id: la-cellule
+    titre: "La cellule, brique du vivant"
+    objectif: Je décris une cellule animale et une cellule végétale.
+    mots: [cellule, membrane, cytoplasme, noyau, paroi, chloroplaste]
+    etapes:
+      - texte: |
+          Tous les êtres vivants sont faits de **cellules** (une seule pour une bactérie, des milliers de milliards pour nous).
+          Une cellule **animale** a : une **membrane** (l'enveloppe), du **cytoplasme** (l'intérieur), un **noyau** (qui contient l'ADN, le « mode d'emploi »).
+          Une cellule **végétale** a en plus : une **paroi** rigide, des **chloroplastes** (verts, pour la photosynthèse) et une grande **vacuole**.
+          Une cellule se divise en deux pour en faire de nouvelles : c'est ainsi qu'on grandit et qu'on cicatrise.
+      - retiens: "Cellule = membrane + cytoplasme + noyau. Végétale : en plus paroi, chloroplastes, vacuole. On grandit par division des cellules."
+    exercices:
+      - type: classer
+        vars: { t: [["la membrane", "la paroi rigide", "le noyau", "les chloroplastes"]] }
+        enonce: "Cet élément est-il présent dans toutes les cellules (animales et végétales) ou seulement dans les végétales ?"
+        categories: ["animales et végétales", "végétales seulement"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Paroi et chloroplastes sont propres aux cellules végétales."
+      - type: qcm
+        vars: { t: [["Quelle partie de la cellule contient l'ADN ?", "le noyau", "la membrane", "la paroi"], ["À quoi servent les chloroplastes ?", "à la photosynthèse", "à respirer seulement", "à digérer"], ["Comment grandit-on ?", "nos cellules se divisent et se multiplient", "nos cellules gonflent sans fin", "on mange des cellules toutes faites"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une bactérie est faite d'une seule cellule.", true], ["Les cellules animales ont une paroi rigide.", false], ["Toutes les cellules d'un être vivant viennent de la division d'une première cellule.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La paroi est propre aux cellules végétales (et à celles des champignons et bactéries)."
+
+  - id: coeur-et-sang
+    titre: "Le cœur et la circulation du sang"
+    objectif: Je décris la circulation sanguine.
+    mots: [cœur, artère, veine, capillaire, globule rouge]
+    etapes:
+      - texte: |
+          Le **cœur** est un muscle creux à **4 cavités** qui pompe le sang sans arrêt (environ 70 battements par minute au repos chez l'adulte).
+          - Les **artères** emmènent le sang du cœur vers les organes ; les **veines** le ramènent au cœur ; les minuscules **capillaires** sont entre les deux.
+          - Il y a **deux circulations** : cœur → poumons → cœur (le sang se charge en oxygène) ; cœur → organes → cœur (il distribue oxygène et nutriments, récupère le CO₂).
+          - Les **globules rouges** transportent l'oxygène ; les **globules blancs** défendent le corps ; les **plaquettes** font coaguler le sang.
+          ⚠️ Le sang des veines n'est **pas bleu** : il est rouge foncé. Les veines paraissent bleues à travers la peau à cause de la façon dont la lumière la traverse.
+      - retiens: "Cœur = pompe à 4 cavités. Artères (du cœur), veines (vers le cœur), capillaires. Globules rouges : oxygène. Le sang n'est jamais bleu."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quels vaisseaux ramènent le sang au cœur ?", "les veines", "les artères", "les nerfs"], ["Quelles cellules transportent l'oxygène ?", "les globules rouges", "les globules blancs", "les plaquettes"], ["Combien le cœur a-t-il de cavités ?", "4", "2", "1"], ["Où le sang se charge-t-il en oxygène ?", "dans les poumons", "dans l'estomac", "dans les muscles"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le sang des veines est bleu.", false], ["Le cœur est un muscle.", true], ["Les globules blancs nous défendent contre les microbes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le sang est toujours rouge (plus foncé dans les veines)."
+      - type: nombre
+        vars: { b: [60, 70, 80], m: [10, 60] }
+        enonce: "Un cœur bat {{b}} fois par minute. Combien de battements en {{m}} minutes ?"
+        reponse: "b*m"
+        correction: "{{b}} × {{m}} = {{b*m}} battements."
+
+  - id: cerveau-et-nerfs
+    titre: "Le cerveau et les nerfs"
+    objectif: Je comprends le trajet d'un message nerveux.
+    mots: [cerveau, nerf, neurone, réflexe, organe des sens]
+    etapes:
+      - texte: |
+          Un message nerveux suit ce chemin : **organe des sens** (il capte) → **nerf** → **cerveau** (il analyse et décide) → **nerf** → **muscle** (il agit).
+          Le cerveau contient environ **86 milliards de neurones** reliés entre eux.
+          Un **réflexe** (retirer la main d'une plaque chaude) est très rapide car il passe par la **moelle épinière** sans attendre le cerveau.
+          Le cerveau a besoin de **sommeil** pour ranger les souvenirs : dormir aide vraiment à apprendre !
+          ⚠️ Alcool, drogues et écrans tard le soir perturbent le cerveau et le sommeil.
+      - retiens: "Sens → nerf → cerveau → nerf → muscle. Réflexe : par la moelle épinière, très rapide. Le sommeil aide à mémoriser."
+    exercices:
+      - type: ordre
+        vars: { t: [["l'œil voit le ballon arriver", "le nerf transmet le message", "le cerveau décide d'attraper", "un nerf commande les muscles", "les bras attrapent le ballon"]] }
+        enonce: "Remets le trajet du message nerveux dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Organe des sens → nerf → cerveau → nerf → muscles."
+      - type: qcm
+        vars: { t: [["Pourquoi retire-t-on la main d'une plaque chaude avant même d'avoir réfléchi ?", "c'est un réflexe qui passe par la moelle épinière", "la main est plus intelligente que le cerveau", "la chaleur pousse la main"], ["Pourquoi est-il utile de bien dormir avant un contrôle ?", "le sommeil aide le cerveau à ranger ce qu'on a appris", "pour avoir moins faim", "ça ne sert à rien"], ["Quelles cellules transportent les messages nerveux ?", "les neurones", "les globules rouges", "les cellules de la peau"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les écrans tard le soir peuvent retarder l'endormissement.", true], ["Le cerveau ne travaille pas pendant le sommeil.", false], ["Un réflexe est plus rapide qu'un mouvement réfléchi.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Pendant le sommeil, le cerveau trie et consolide les souvenirs de la journée."
+
+  - id: bien-manger
+    titre: "Bien manger, bouger, dormir"
+    objectif: Je compose un repas équilibré.
+    mots: [équilibre alimentaire, groupe d'aliments, énergie, sommeil]
+    etapes:
+      - texte: |
+          Les grands **groupes d'aliments** :
+          - **fruits et légumes** (vitamines, fibres) : à chaque repas ;
+          - **féculents** (pain, pâtes, riz, pommes de terre) : de l'énergie ;
+          - **produits laitiers** (calcium pour les os) ;
+          - **viandes, poissons, œufs, légumes secs** (protéines pour construire les muscles) ;
+          - **matières grasses** et **produits sucrés** : en petite quantité.
+          Boire de l'**eau**. Bouger au moins **1 heure par jour** quand on est enfant. Dormir **9 à 12 h** par nuit entre 6 et 12 ans.
+      - retiens: "Un repas équilibré : légumes/fruits + féculents + protéines + laitage, peu de gras et de sucre, de l'eau. Bouger et bien dormir."
+    exercices:
+      - type: classer
+        vars: { t: [["une pomme", "des pâtes", "un yaourt", "du poulet"], ["des carottes", "du pain", "du fromage", "des lentilles"], ["une banane", "du riz", "du lait", "un œuf"]] }
+        enonce: "Range chaque aliment dans son groupe."
+        categories: ["fruits et légumes", "féculents", "produits laitiers", "protéines"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "Les lentilles sont des légumes secs : riches en protéines (et aussi en féculents)."
+      - type: qcm
+        vars: { t: [["Quel repas est le plus équilibré ?", "salade, poisson, riz, yaourt, fruit", "frites, soda, gâteau", "pain et chocolat seulement"], ["Que boire à table ?", "de l'eau", "du soda à chaque repas", "rien du tout"], ["Combien de temps un enfant devrait-il bouger par jour ?", "au moins 1 heure", "5 minutes", "jamais"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les produits laitiers apportent du calcium pour les os.", true], ["Les produits sucrés sont à manger en grande quantité.", false], ["Un enfant de 9 ans a besoin d'environ 9 à 12 heures de sommeil.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Sucre et gras : avec modération."
+
+  - id: grandir
+    titre: "Grandir : puberté et reproduction"
+    objectif: Je connais les grandes étapes de la reproduction humaine et de la puberté.
+    mots: [puberté, ovule, spermatozoïde, fécondation, embryon, fœtus]
+    etapes:
+      - texte: |
+          La **puberté** (souvent entre 9 et 15 ans, chacun à son rythme) transforme le corps d'enfant en corps capable d'avoir des enfants. Elle est commandée par des **hormones**. Chez tous : poussée de croissance, poils, changements d'humeur. Les filles ont leurs **règles** ; la voix des garçons mue.
+          La **reproduction** : une cellule de la mère (l'**ovule**) et une cellule du père (le **spermatozoïde**) s'unissent : c'est la **fécondation**. La cellule-œuf se divise et devient un **embryon**, puis un **fœtus** qui grandit dans l'**utérus** pendant environ **9 mois**.
+          Le corps de chacun lui appartient : personne n'a le droit de le toucher sans son accord. En cas de question ou de souci, on en parle à un adulte de confiance.
+      - retiens: "Puberté entre 9 et 15 ans environ, commandée par les hormones. Ovule + spermatozoïde → fécondation → embryon → fœtus, 9 mois de grossesse."
+    exercices:
+      - type: ordre
+        vars: { t: [["la fécondation", "la cellule-œuf", "l'embryon", "le fœtus", "la naissance"]] }
+        enonce: "Remets les étapes dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Fécondation, cellule-œuf, embryon, fœtus, naissance."
+      - type: qcm
+        vars: { t: [["Combien de temps dure environ une grossesse humaine ?", "9 mois", "3 mois", "2 ans"], ["Qu'est-ce qui commande les changements de la puberté ?", "des hormones", "la nourriture seulement", "le hasard"], ["Comment s'appelle l'union de l'ovule et du spermatozoïde ?", "la fécondation", "la digestion", "la germination"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Tous les enfants commencent leur puberté exactement au même âge.", false], ["Mon corps m'appartient : personne ne peut le toucher sans mon accord.", true], ["Pendant la puberté, on grandit beaucoup.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chacun a son rythme, et c'est normal. Ton corps t'appartient."

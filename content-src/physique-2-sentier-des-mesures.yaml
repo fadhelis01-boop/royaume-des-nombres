@@ -1,0 +1,190 @@
+id: ph-sentier-des-mesures
+matiere: physique
+titre: Le Sentier des Mesures
+sous_titre: Mesurer, comparer des vitesses, l'équilibre, le premier circuit, les miroirs
+emoji: 📏
+couleur: "#2a6fd0"
+cycle: graines
+age: 8 ans et +
+niveau: Explorateur (CE2 – CM1)
+ordre: 202
+prerequis: [ph-colline-des-forces]
+version: 1.0.0
+intro:
+  - narrateur: "Le Capitaine Poulie, pilote d'un petit dirigeable, est bloqué au départ du sentier."
+  - mia: "Il a besoin qu'on mesure tout : la distance, le temps, la vitesse… et qu'on répare sa lampe."
+
+lecons:
+  - id: mesurer-longueurs-temps
+    titre: "Mesurer des longueurs et des durées"
+    objectif: Je mesure avec une règle, un mètre ruban et un chronomètre.
+    mots: [règle, mètre ruban, chronomètre, précision]
+    etapes:
+      - texte: |
+          - **Longueur** : on place le **zéro** de la règle au bout de l'objet (pas le bord de la règle !). 1 m = 100 cm ; 1 cm = 10 mm.
+          - **Durée** : le chronomètre mesure en minutes, secondes et parfois centièmes de seconde. 1 min = 60 s.
+          Toute mesure a une petite **incertitude** : on mesure plusieurs fois et on garde la valeur moyenne.
+      - vraie_vie:
+          titre: Le défi des mesures
+          texte: "Mesure ta taille, la longueur de ton pied et la largeur de ta main. Puis chronomètre combien de temps tu mets pour traverser ta chambre : refais-le 3 fois. Les temps sont-ils exactement pareils ?"
+          materiel: mètre ruban, chronomètre (ou téléphone d'un adulte)
+      - retiens: "On mesure à partir du zéro. 1 m = 100 cm, 1 cm = 10 mm, 1 min = 60 s. On répète une mesure pour être plus précis."
+    exercices:
+      - type: nombre
+        vars: { t: [["1 m", "cm", 100], ["2 m", "cm", 200], ["3 cm", "mm", 30], ["1 m 20 cm", "cm", 120], ["2 min", "s", 120], ["1 min 30 s", "s", 90]] }
+        enonce: "Convertis : {{t_0}} = … {{t_1}}"
+        reponse: "t_2"
+        correction: "{{t_0}} = {{t_2}} {{t_1}}"
+      - type: qcm
+        vars: { t: [["la longueur d'un crayon", "une règle", "un chronomètre", "une balance"], ["la largeur d'une pièce de la maison", "un mètre ruban", "une règle de 20 cm", "un thermomètre"], ["la durée d'un 50 mètres en courant", "un chronomètre", "un mètre ruban", "une horloge sans aiguille des secondes"]] }
+        enonce: "Pour mesurer {{t_0}}, je prends…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { a: [10, 11, 12], b: [12, 13], c: [11, 14] }
+        enonce: "Trois chronométrages : {{a}} s, {{b}} s et {{c}} s. Quelle est la durée moyenne ?"
+        reponse: "(a+b+c)/3"
+        tolerance: 0.01
+        unite: s
+        correction: "({{a}} + {{b}} + {{c}}) ÷ 3 = {{(a+b+c)/3}} s."
+
+  - id: rapide-ou-lent
+    titre: "Rapide ou lent ? La vitesse"
+    objectif: Je compare des vitesses avec la distance et la durée.
+    mots: [vitesse, distance, durée, km/h]
+    etapes:
+      - texte: |
+          Pour savoir qui est le plus **rapide** :
+          - sur une **même distance**, c'est celui qui met **le moins de temps** ;
+          - pendant une **même durée**, c'est celui qui va **le plus loin**.
+          La **vitesse** dit quelle distance on parcourt en une unité de temps : 50 km/h = 50 kilomètres en une heure.
+          Quelques vitesses : un escargot ≈ 0,05 km/h ; un enfant qui marche ≈ 4 km/h ; un vélo ≈ 15 km/h ; un guépard ≈ 100 km/h ; un avion de ligne ≈ 900 km/h.
+      - attention:
+          texte: "En ville, une voiture à 30 km/h a besoin d'environ 13 mètres pour s'arrêter ; à 50 km/h, d'environ 25 mètres. On traverse toujours sur le passage piéton, en regardant !"
+          qui: neo
+      - retiens: "Même distance : le plus rapide met le moins de temps. Même durée : le plus rapide va le plus loin."
+    exercices:
+      - type: qcm
+        vars: { t: [["Léo court 100 m en 18 s, Inès en 16 s.", "Inès", "Léo", "ils vont aussi vite"], ["En 1 heure, un vélo fait 15 km et une trottinette 10 km.", "le vélo", "la trottinette", "ils vont aussi vite"], ["Un escargot fait 1 m en 1 min, une tortue 5 m en 1 min.", "la tortue", "l'escargot", "ils vont aussi vite"]] }
+        enonce: "{{t_0}} Qui est le plus rapide ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["l'escargot", "l'enfant qui marche", "le vélo", "le guépard", "l'avion de ligne"]] }
+        enonce: "Range du plus lent au plus rapide."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Escargot (0,05 km/h), enfant (4 km/h), vélo (15 km/h), guépard (100 km/h), avion (900 km/h)."
+      - type: nombre
+        vars: { v: [4, 15, 30, 50], h: [2, 3] }
+        enonce: "Un objet roule toujours à {{v}} km/h. Quelle distance parcourt-il en {{h}} heures ?"
+        reponse: "v*h"
+        unite: km
+        correction: "{{v}} km par heure × {{h}} h = {{v*h}} km."
+
+  - id: la-bascule
+    titre: "La bascule en équilibre"
+    objectif: Je comprends l'équilibre d'une balançoire à bascule.
+    mots: [équilibre, levier, pivot]
+    etapes:
+      - dialogue:
+          - zero: "Avec Néo sur la bascule, je reste coincé en l'air ! Il est trop lourd !"
+          - neo: "Recule-moi vers le milieu, ou recule-toi vers le bout : tu vas voir."
+      - texte: |
+          Une bascule est un **levier** qui tourne autour d'un **pivot**. Pour l'**équilibre**, ce qui compte, c'est la masse **et** la distance au pivot.
+          Un enfant **léger loin** du pivot peut équilibrer un enfant **lourd près** du pivot : 20 kg à 2 m équilibrent 40 kg à 1 m (20 × 2 = 40 × 1).
+      - visuel:
+          type: balance
+          gauche: ["🧒 20 kg"]
+          droite: ["🧒 20 kg"]
+        legende: "Masses égales à égale distance : la bascule est en équilibre."
+      - retiens: "Équilibre : masse × distance au pivot doit être pareil des deux côtés. Plus lourd → plus près du pivot."
+      - a_quoi_ca_sert: "Les ciseaux, la brouette, le décapsuleur, la pince et le pied-de-biche sont des leviers : ils démultiplient la force."
+    exercices:
+      - type: nombre
+        vars: { m: [20, 25, 30], d: [1, 2], k: [2] }
+        enonce: "Sur une bascule, un enfant de {{m*k}} kg est assis à {{d}} m du pivot. À quelle distance doit s'asseoir un enfant de {{m}} kg pour l'équilibre ?"
+        reponse: "d*k"
+        unite: m
+        correction: "{{m*k}} × {{d}} = {{m}} × ? → ? = {{d*k}} m (le plus léger s'assoit plus loin)."
+      - type: qcm
+        vars: { t: [["Zéro (léger) et Néo (lourd) sont à égale distance du pivot.", "Néo descend, Zéro monte", "Zéro descend", "équilibre parfait"], ["Néo se rapproche du pivot.", "la bascule tend vers l'équilibre", "Néo descend encore plus", "rien ne change"]] }
+        enonce: "{{t_0}} Que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un enfant léger peut équilibrer un adulte s'il s'assoit plus loin du pivot.", true], ["Sur une bascule, seule la masse compte.", false], ["Une paire de ciseaux est un levier.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La distance au pivot compte autant que la masse."
+
+  - id: premier-circuit
+    titre: "Mon premier circuit électrique"
+    objectif: Je réalise un circuit fermé qui allume une lampe.
+    mots: [circuit, pile, lampe, interrupteur, conducteur, isolant]
+    etapes:
+      - texte: |
+          Pour allumer une lampe, il faut une **boucle complète** sans coupure : **pile → fil → lampe → fil → pile**. C'est un **circuit fermé**.
+          Si on coupe la boucle (fil débranché, **interrupteur ouvert**), le circuit est **ouvert** : la lampe s'éteint.
+          Les **conducteurs** laissent passer le courant (métaux : cuivre, fer, aluminium ; mine de crayon). Les **isolants** l'arrêtent (plastique, bois sec, verre, caoutchouc).
+      - attention:
+          texte: "On fait les expériences UNIQUEMENT avec des piles (4,5 V maximum). JAMAIS avec les prises électriques de la maison (230 V) : le courant du secteur peut tuer."
+          qui: neo
+      - experience:
+          titre: Le testeur de conducteurs
+          securite: orange
+          materiel: ["une pile plate 4,5 V", "une petite ampoule (3,5 V) sur son support", "3 fils avec pinces crocodiles", "une cuillère, une gomme, un trombone, une règle en plastique, une clé"]
+          etapes:
+            - "Relie la pile à la lampe avec un fil, puis la lampe à un 2ᵉ fil."
+            - "Relie un 3ᵉ fil à l'autre borne de la pile : tu as deux extrémités libres."
+            - "Pince chaque objet entre les deux extrémités libres et regarde la lampe."
+          observation: "La lampe s'allume avec la cuillère, le trombone, la clé ; elle reste éteinte avec la gomme et la règle en plastique."
+          explication: "Les métaux sont conducteurs : ils ferment le circuit. Le plastique et le caoutchouc sont isolants : c'est pour ça qu'on en entoure les fils électriques."
+      - retiens: "Une lampe s'allume si le circuit est fermé. Métaux = conducteurs ; plastique, bois, verre = isolants. Jamais d'expérience avec les prises !"
+    exercices:
+      - type: classer
+        vars: { t: [["une clé en fer", "une gomme", "un trombone", "une règle en plastique"], ["une pièce de monnaie", "un crayon de couleur en bois", "du papier aluminium", "un élastique"], ["une cuillère en métal", "un verre", "un fil de cuivre", "un bouchon en liège"]] }
+        enonce: "Conducteur ou isolant ?"
+        categories: [conducteur, isolant]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les métaux conduisent le courant ; plastique, bois, verre, caoutchouc, liège sont isolants."
+      - type: qcm
+        vars: { t: [["Un fil est débranché de la pile.", "la lampe est éteinte : circuit ouvert", "la lampe brille plus fort", "la lampe s'allume"], ["L'interrupteur est fermé et tout est bien branché.", "la lampe est allumée", "la lampe est éteinte", "la pile explose"], ["On remplace un fil par une ficelle.", "la lampe s'éteint : la ficelle est isolante", "la lampe brille pareil", "la lampe change de couleur"]] }
+        enonce: "{{t_0}} Que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["On peut faire des expériences avec les prises de la maison si on fait attention.", false], ["Pour qu'une lampe s'allume, le circuit doit former une boucle complète.", true], ["Les fils électriques sont entourés de plastique pour nous protéger.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Jamais d'expérience avec le secteur (230 V) : c'est mortel."
+
+  - id: miroirs
+    titre: "Miroir, miroir"
+    objectif: Je sais qu'un miroir renvoie la lumière.
+    mots: [réflexion, miroir, rayon]
+    etapes:
+      - texte: |
+          Un **miroir** renvoie la lumière : c'est la **réflexion**. Le rayon qui arrive et le rayon renvoyé font le **même angle** avec le miroir, comme une balle qui rebondit sur un mur.
+          Dans un miroir, la droite et la gauche semblent inversées : lève ta main droite, ton reflet lève… celle qui est en face de ta droite.
+      - retiens: "Un miroir réfléchit la lumière ; le rayon repart avec le même angle qu'il est arrivé."
+      - a_quoi_ca_sert: "Rétroviseurs, périscopes, catadioptres des vélos, miroirs des virages dangereux, télescopes."
+      - vraie_vie:
+          titre: Le défi du rayon de soleil
+          texte: "Par une journée ensoleillée, avec un petit miroir, envoie une tache de lumière sur un mur. Vise une cible ! (Ne vise jamais les yeux de quelqu'un.)"
+          materiel: un petit miroir
+    exercices:
+      - type: qcm
+        vars: { t: [["Comment s'appelle le renvoi de la lumière par un miroir ?", "la réflexion", "la réfraction", "l'ombre"], ["Un rayon arrive sur un miroir avec un angle de 30°. Avec quel angle repart-il ?", "30°", "60°", "90°"], ["À quoi sert le rétroviseur d'une voiture ?", "voir derrière soi grâce à la réflexion", "éclairer la route", "faire de l'ombre"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un miroir renvoie la lumière.", true], ["On peut viser les yeux de quelqu'un avec un rayon de soleil renvoyé.", false], ["Un catadioptre de vélo renvoie la lumière des phares vers la voiture.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Ne jamais viser les yeux : la lumière du Soleil concentrée peut les abîmer."
+      - type: qcm
+        vars: { t: [["Pourquoi le mot AMBULANCE est-il écrit à l'envers à l'avant des ambulances ?", "pour que les conducteurs devant le lisent à l'endroit dans leur rétroviseur", "c'est une erreur d'impression", "pour faire joli"], ["Dans un miroir, je lève la main droite. Mon reflet lève la main qui est…", "en face de ma main droite", "en face de ma main gauche", "derrière moi"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

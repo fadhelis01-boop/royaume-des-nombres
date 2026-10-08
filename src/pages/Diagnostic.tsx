@@ -24,6 +24,20 @@ export function Diagnostic() {
       }
     }
     const mat = getState().children.find((c) => c.id === getState().activeId)?.matiere ?? "maths";
+    // Monde sans questions de test prévues : on en pioche 2 dans ses leçons (questions rapides, de la 2ᵉ moitié du monde).
+    for (const w of worlds) {
+      if (w.matiere !== mat || w.cycle === "astuces" || byWorld.has(w.id)) continue;
+      const pool = w.lecons.slice(Math.floor(w.lecons.length / 2)).flatMap((l) => l.exercices.filter((e) => ["qcm", "vf", "nombre"].includes(e.type) && !e.visuel));
+      const qs: Instance[] = [];
+      for (let t = 0; qs.length < 2 && t < 20 && pool.length; t++) {
+        try {
+          qs.push(instantiate(pool[Math.floor(Math.random() * pool.length)], newSeed()));
+        } catch {
+          /* suivant */
+        }
+      }
+      if (qs.length) byWorld.set(w.id, qs);
+    }
     return worlds.filter((w) => w.matiere === mat && w.cycle !== "astuces" && byWorld.has(w.id)).map((w) => ({ world: w, qs: byWorld.get(w.id)!.slice(0, 2) }));
   }, [manifest, worlds]);
   const [started, setStarted] = useState(false);
@@ -38,6 +52,7 @@ export function Diagnostic() {
     updateChild((c) => {
       c.validatedWorlds = [...new Set([...c.validatedWorlds, ...val])];
       c.diag = { at: Date.now(), validated: val };
+      c.counters[`diag:${c.matiere ?? "maths"}`] = 1;
     });
     setDone(true);
   };
@@ -46,7 +61,7 @@ export function Diagnostic() {
     return (
       <div className="page narrow">
         <h1>🧭 Première quête : la carte des talents</h1>
-        <Bubble who="neo" text="Première quête ! Pour savoir quels cristaux tu peux déjà rallumer, montre-moi ce que tu sais. Les questions deviennent de plus en plus difficiles. Ce n'est PAS une interro : on cherche juste où commencer ton aventure !" />
+        <Bubble who="neo" text="Première quête ! Pour savoir quels mondes de cette planète tu connais déjà, montre-moi ce que tu sais. Les questions deviennent de plus en plus difficiles. Ce n'est PAS une interro : on cherche juste où commencer ton aventure !" />
         <Bubble who="mia" text="Si tu ne sais pas, ce n'est pas grave du tout : ça veut dire qu'on va l'apprendre ensemble." side="right" />
         <div className="center">
           <button className="btn btn-primary btn-xl" onClick={() => setStarted(true)}>

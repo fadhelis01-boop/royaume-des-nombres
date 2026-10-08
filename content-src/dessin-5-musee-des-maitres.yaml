@@ -1,0 +1,181 @@
+id: de-musee-des-maitres
+matiere: dessin
+titre: Le Musée des Maîtres
+sous_titre: Histoire de l'art, couleur et émotion, clair-obscur, design de personnage, storyboard, style personnel
+emoji: 🏛️
+couleur: "#4b1d6b"
+cycle: maitres
+age: 14 ans et +
+niveau: Expert – Savant (lycée – supérieur, introduction)
+ordre: 605
+prerequis: [de-galerie-des-perspectives]
+version: 1.0.0
+intro:
+  - narrateur: "Le Grand Neutre voudrait que toutes les images se ressemblent. Dans le Musée, les tableaux pâlissent un à un."
+  - mia: "Pour les sauver, il faut connaître ceux qui les ont peints… et trouver ta propre façon de voir le monde."
+
+lecons:
+  - id: histoire-de-l-art
+    titre: "Un voyage dans l'histoire de l'art"
+    objectif: Je situe les grandes périodes de l'art et quelques œuvres.
+    mots: [art pariétal, Renaissance, impressionnisme, cubisme, art contemporain]
+    etapes:
+      - texte: |
+          | Période | Repères |
+          |---|---|
+          | **Art pariétal** | grottes de **Lascaux** (environ 17 000 à 18 000 ans) et **Chauvet** (plus de 30 000 ans) |
+          | Antiquité | sculptures grecques, fresques de Pompéi, art égyptien |
+          | **Renaissance** (XVᵉ – XVIᵉ s.) | perspective, Léonard de Vinci (*La Joconde*), Michel-Ange, Raphaël |
+          | Baroque (XVIIᵉ s.) | Caravage, Rembrandt : contrastes de lumière |
+          | **Impressionnisme** (fin XIXᵉ) | Monet (*Impression, soleil levant*, 1872), Berthe Morisot : la lumière, les touches visibles |
+          | Postimpressionnisme | Van Gogh, Cézanne, Gauguin |
+          | **Cubisme** (début XXᵉ) | Picasso, Braque : l'objet vu sous plusieurs angles à la fois |
+          | Art moderne et contemporain | Matisse, Frida Kahlo, Kandinsky (abstraction), Warhol (pop art), le street art… |
+          Partout dans le monde : estampes japonaises (Hokusai, *La Grande Vague*), calligraphie, art des peuples d'Afrique et d'Océanie (qui a inspiré Picasso), peintures aborigènes…
+      - retiens: "Lascaux, Renaissance (perspective, Léonard), baroque (lumière), impressionnisme (Monet), cubisme (Picasso), abstraction, pop art… et toutes les cultures du monde."
+    exercices:
+      - type: ordre
+        vars: { t: [["les peintures de Lascaux", "la Renaissance", "l'impressionnisme", "le cubisme", "le pop art"]] }
+        enonce: "Range dans l'ordre chronologique."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Préhistoire, XVᵉ-XVIᵉ s., fin XIXᵉ, début XXᵉ, années 1960."
+      - type: qcm
+        vars: { t: [["Claude Monet", "l'impressionnisme", "le cubisme", "la Renaissance"], ["Pablo Picasso (Les Demoiselles d'Avignon)", "le cubisme", "l'impressionnisme", "le baroque"], ["Léonard de Vinci", "la Renaissance", "le pop art", "le cubisme"], ["Andy Warhol", "le pop art", "la Renaissance", "l'impressionnisme"], ["Hokusai (La Grande Vague)", "l'estampe japonaise", "le cubisme", "l'art pariétal"]] }
+        enonce: "À quel mouvement ou art associe-t-on {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: vf
+        vars: { t: [["Le mot « impressionnisme » vient d'un tableau de Monet.", true], ["Les peintures de Lascaux datent du Moyen Âge.", false], ["Les cubistes montrent un objet sous plusieurs angles à la fois.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Lascaux date de la préhistoire (environ 17 000 à 18 000 ans)."
+
+  - id: couleur-et-emotion
+    titre: "Couleur et émotion"
+    objectif: Je choisis des harmonies de couleurs pour exprimer une émotion.
+    mots: [harmonie, camaïeu, palette, atmosphère]
+    etapes:
+      - texte: |
+          Les couleurs créent une **atmosphère** :
+          - couleurs **chaudes** et saturées : énergie, joie, chaleur, colère ;
+          - couleurs **froides** : calme, mystère, tristesse, froid ;
+          - couleurs **désaturées** (grisées) : nostalgie, brouillard, souvenir.
+          Harmonies : **camaïeu** (nuances d'une seule couleur, très calme), **analogues** (couleurs voisines sur le cercle), **complémentaires** (contraste fort).
+          Picasso a eu une **période bleue** (tristesse) puis une **période rose** (plus douce) : la couleur raconte aussi l'artiste.
+      - retiens: "Chaud = énergie, froid = calme ou tristesse, désaturé = souvenir. Camaïeu, analogues, complémentaires."
+    exercices:
+      - type: qcm
+        vars: { t: [["une scène de fête joyeuse au soleil", "des couleurs chaudes et vives", "un camaïeu de gris-bleu", "uniquement du noir"], ["un souvenir lointain et un peu triste", "des couleurs désaturées, grisées", "des couleurs fluo", "du rouge vif"], ["une forêt calme au clair de lune", "des couleurs froides (bleus, violets)", "des orangés vifs", "du jaune pur"]] }
+        enonce: "Pour peindre {{t_0}}, je choisis…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'un camaïeu ?", "des nuances d'une seule couleur", "un mélange de complémentaires", "un tableau noir et blanc"], ["Quelle « période » de Picasso évoque la tristesse ?", "la période bleue", "la période rose", "la période cubiste"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les mêmes formes peintes avec d'autres couleurs peuvent changer l'émotion d'une image.", true], ["Les couleurs n'ont aucun effet sur le spectateur.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La couleur est l'un des outils les plus puissants pour créer une émotion."
+
+  - id: clair-obscur
+    titre: "Lumière dramatique : le clair-obscur"
+    objectif: J'utilise une lumière contrastée pour créer une ambiance.
+    mots: [clair-obscur, contre-jour, source de lumière, ambiance]
+    etapes:
+      - texte: |
+          Le **clair-obscur** (Caravage, Rembrandt, Georges de La Tour) : une source de lumière unique et forte (une bougie, une fenêtre) éclaire une partie de la scène, le reste plonge dans l'ombre. Effet : **dramatique**, mystérieux, on sait tout de suite où regarder.
+          Autres éclairages : **contre-jour** (la lumière derrière le sujet : silhouette lumineuse), lumière **diffuse** d'un ciel nuageux (ombres douces), lumière **par en dessous** (effet inquiétant, comme une lampe de poche sous le menton).
+      - retiens: "Clair-obscur : une seule source forte, grands contrastes, effet dramatique. Contre-jour, diffus, par en dessous : chaque lumière crée son ambiance."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel peintre est célèbre pour le clair-obscur ?", "Caravage", "Monet", "Warhol"], ["Quel éclairage donne un effet inquiétant ?", "une lumière par en dessous", "une lumière douce de nuage", "le soleil de midi"], ["Que donne un contre-jour ?", "une silhouette entourée de lumière", "aucune ombre", "un objet tout blanc"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une seule bougie dans une pièce sombre", "un ciel couvert", "un projecteur sur une scène noire", "une journée de brouillard"]] }
+        enonce: "Lumière contrastée (dramatique) ou diffuse (douce) ?"
+        categories: [contrastée, diffuse]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Une source unique et forte = contrastes ; ciel couvert, brouillard = lumière diffuse."
+      - type: vf
+        vars: { t: [["Dans le clair-obscur, l'œil va d'abord vers la zone la plus éclairée.", true], ["Une lumière diffuse crée des ombres très nettes.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Lumière diffuse = ombres douces et floues."
+
+  - id: design-de-personnage
+    titre: "Créer un personnage"
+    objectif: J'utilise les formes et la silhouette pour exprimer le caractère d'un personnage.
+    mots: [silhouette, design, caractère, feuille de modèle]
+    etapes:
+      - texte: |
+          Les créateurs de dessins animés et de jeux vidéo utilisent le **langage des formes** :
+          - formes **rondes** : gentil, doux, rassurant (comme Zéro !) ;
+          - formes **carrées** : solide, fiable, têtu ;
+          - formes **triangulaires** et pointues : dynamique, rusé ou menaçant.
+          Un bon personnage se reconnaît à sa seule **silhouette** noire. On le dessine sous plusieurs angles et expressions sur une **feuille de modèle** pour qu'il reste toujours le même.
+      - dessin:
+          titre: Deux personnages, deux caractères
+          etapes:
+            - consigne: "À gauche, dessine un personnage tout en rondeurs : un grand cercle pour le corps, un plus petit pour la tête."
+              trace: "M28 65 m-16 0 a16 16 0 1 0 32 0 a16 16 0 1 0 -32 0 M28 38 m-10 0 a10 10 0 1 0 20 0 a10 10 0 1 0 -20 0"
+            - consigne: "À droite, un personnage tout en triangles : un triangle pour le corps, un autre pour la tête."
+              trace: "M72 82 L86 50 L58 50 Z M72 48 L80 28 L64 28 Z"
+            - consigne: "Ajoute des yeux : ronds et doux à gauche, en amande à droite."
+              couche: détails
+              trace: "M24 37 L24 39 M32 37 L32 39 M67 36 L70 35 M74 35 L77 36"
+            - consigne: "Lequel a l'air gentil ? Lequel a l'air rusé ? Colorie-les pour renforcer leur caractère."
+              couche: couleur
+              trace: ""
+      - retiens: "Rond = gentil, carré = solide, triangle = dynamique ou rusé. Une silhouette doit suffire à reconnaître le personnage."
+    exercices:
+      - type: qcm
+        vars: { t: [["un héros doux et rassurant", "des formes rondes", "des formes pointues", "uniquement des lignes droites"], ["un méchant rusé", "des formes pointues, triangulaires", "des formes toutes rondes", "un cercle parfait"], ["un garde du corps solide", "des formes carrées", "des formes rondes et molles", "des spirales"]] }
+        enonce: "Pour dessiner {{t_0}}, je privilégie…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["À quoi sert une feuille de modèle ?", "à garder un personnage identique sous tous les angles", "à le colorier", "à écrire son histoire"], ["Comment tester si un personnage est bien conçu ?", "on doit le reconnaître à sa seule silhouette", "il doit avoir beaucoup de détails", "il doit être tout noir"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Zéro, tout rond, paraît gentil grâce à ses formes.", true], ["La forme d'un personnage n'a aucun effet sur l'impression qu'il donne.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le langage des formes est utilisé par tous les studios d'animation."
+
+  - id: storyboard-et-style
+    titre: "Storyboard et style personnel"
+    objectif: Je découpe une histoire en images et je cultive mon style.
+    mots: [storyboard, plan, cadrage, style]
+    etapes:
+      - texte: |
+          Un **storyboard** est la BD de préparation d'un film ou d'un dessin animé : une case par **plan**, avec le **cadrage** (plan large, gros plan…), les mouvements de caméra (flèches) et les dialogues.
+          Exemple d'histoire en 4 cases : 1. plan large du décor ; 2. le héros arrive (plan moyen) ; 3. il découvre quelque chose (gros plan sur son visage étonné) ; 4. ce qu'il voit (plan large surprenant).
+          **Ton style** naît de tes choix répétés : tes formes préférées, tes couleurs, ta façon de tracer. Il se construit avec **beaucoup de dessins**, de **curiosité** pour les autres artistes et tes **propres expériences**.
+      - vraie_vie:
+          titre: Ton storyboard
+          texte: "Invente une histoire en 4 cases où Zéro découvre un trésor. Varie les plans (large, moyen, gros plan). Range ensuite ton dessin dans ta galerie, avec un titre."
+          materiel: une feuille partagée en 4 cases
+      - retiens: "Storyboard = une case par plan, avec cadrage et mouvements. Le style se construit par la pratique et la curiosité."
+    exercices:
+      - type: ordre
+        vars: { t: [["plan large : le décor", "plan moyen : le héros arrive", "gros plan : son visage étonné", "plan large : ce qu'il découvre"]] }
+        enonce: "Remets ce storyboard dans un ordre logique."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Situer, présenter le personnage, montrer l'émotion, révéler."
+      - type: qcm
+        vars: { t: [["À quoi sert un storyboard ?", "à préparer les plans d'un film ou d'un dessin animé", "à vendre des billets", "à colorier un dessin"], ["Comment se construit un style personnel ?", "en dessinant beaucoup et en étant curieux", "en copiant un seul artiste toute sa vie", "il est donné à la naissance"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un gros plan sert à montrer une émotion.", true], ["Tous les artistes doivent avoir le même style.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La diversité des styles fait la richesse de l'art."

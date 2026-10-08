@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { go } from "../lib/router";
-import { useContent, worldProgress } from "../lib/content";
-import { histoireDe } from "../lib/content";
+import { gardienDe, getContent, histoireDe, planeteDe, useContent, worldProgress } from "../lib/content";
 import { addCrystal, addGems, getState, markStory, recordAbandon, setState, useChild } from "../lib/store";
 import { burst, centerOf, floatText, shake } from "../lib/juice";
 import { say } from "../lib/tts";
@@ -14,7 +13,7 @@ import { ExercisePlayer, type ExResult } from "../components/ExercisePlayer";
 import { Bubble, Mascot } from "../components/Mascot";
 import { StoryScene } from "../components/Story";
 import { rankSpecs } from "./Defi";
-import type { Line, Who, World } from "../lib/types";
+import type { FoeSprite, Line, Who, World } from "../lib/types";
 
 // Le Défi du Gardien : le « boss » de chaque monde. 10 questions qui mélangent
 // toutes les leçons, de la première à la dernière. 80 % → le cristal se rallume.
@@ -45,14 +44,8 @@ function plan(w: World, n = N): Instance[] {
 }
 
 function villain(w: World): Line[] {
-  if (w.matiere === "francais" && w.cycle !== "graines")
-    return [
-      { who: "gribouille", text: "Attention ! Ce ne sont plus mes taches : des Taches sauvages se sont échappées de l'encrier. Elles n'écoutent personne… sauf les mots parfaitement écrits !" },
-    ];
-  if (w.matiere === "francais") return [{ who: "gribouille", text: "Splotch ! Le Grimoire est caché derrière dix taches d'encre. Chaque mot bien écrit en efface une… Tu n'y arriveras jamais ! (enfin… peut-être que si)" }];
-  if (w.cycle === "graines") return [{ who: "nuage", text: "Hi hi ! Le cristal est caché derrière dix nuages. Pour chaque bonne réponse, un nuage s'envole… Tu n'y arriveras jamais ! (enfin… peut-être que si)" }];
-  if (w.cycle === "explorateurs") return [{ who: "ixe", text: "Dix énigmes gardent le fragment de carte. Montre-moi que tu sais trouver les inconnues !" }];
-  return [{ who: "narrateur", text: "Le Grand Oubli a effacé dix pages. Pour chaque bonne réponse, une page se réécrit…" }];
+  const g = gardienDe(getContent().manifest, w);
+  return g.ouverture ? [{ who: g.qui, text: g.ouverture }] : [];
 }
 
 export function Gardien({ worldId }: { worldId: string }) {
@@ -70,7 +63,7 @@ export function Gardien({ worldId }: { worldId: string }) {
   if (!gardienOuvert(w))
     return (
       <div className="page narrow center">
-        <Mascot who="nuage" size={110} />
+        <Mascot who={spriteWho(gardienDe(manifest, w).sprite)} size={110} />
         <h1>🔒 Défi du Gardien</h1>
         <Bubble who="mia" text={`Le Défi du Gardien s'ouvre quand toutes les leçons de ${w.titre} sont validées (2 étoiles). Encore un peu d'entraînement !`} />
         <button className="btn btn-primary" onClick={() => go(`/monde/${w.id}`)}>
@@ -130,7 +123,7 @@ export function Gardien({ worldId }: { worldId: string }) {
       <div className="page narrow center">
         <Mascot who={w.cycle === "graines" ? "nuage" : "ixe"} size={110} humeur="joie" />
         <h1>{Math.round(score * 10)} / 10</h1>
-        <Bubble who="mia" text="Presque ! Le cristal a clignoté… Il faut 8 bonnes réponses sur 10 pour le rallumer. Révise les leçons où tu as hésité, puis retente ta chance : les questions changent à chaque fois !" />
+        <Bubble who="mia" text="Presque ! Il faut 8 bonnes réponses sur 10 pour gagner. Révise les leçons où tu as hésité, puis retente ta chance : les questions changent à chaque fois !" />
         <div className="stack">
           <button
             className="btn btn-primary"
@@ -161,7 +154,7 @@ export function Gardien({ worldId }: { worldId: string }) {
           addGems(pot);
           sfx.victory(w.id);
           if (addCrystal(w.id))
-            setState({ celebration: { kind: "world", emoji: "💎", title: "Cristal rallumé !", text: `${ch?.objet ?? "Le cristal"} brille à nouveau sur ${w.titre}. Tu gagnes ${pot + 25} gemmes. Le Royaume te dit merci !` } }, false);
+            setState({ celebration: { kind: "world", emoji: planeteDe(manifest, w.matiere)?.objet.emoji ?? "💎", title: "Monde sauvé !", text: `${ch?.objet ?? "Ce monde"} retrouve ses couleurs sur ${w.titre}. Tu gagnes ${pot + 25} gemmes. Merci, ${child.name} !` } }, false);
         }
         setPhase("fin");
       }}
@@ -171,27 +164,11 @@ export function Gardien({ worldId }: { worldId: string }) {
 
 // ---------- Le combat ----------
 
-type Foe = "nuage" | "ixe" | "oubli" | "gribouille" | "tache";
-// En français, Gribouille devient un allié après le livre I : les îles suivantes sont gardées par des Taches sauvages.
-const foeOf = (w: World): Foe => (w.matiere === "francais" ? (w.cycle === "graines" ? "gribouille" : "tache") : w.cycle === "graines" ? "nuage" : w.cycle === "explorateurs" ? "ixe" : "oubli");
-const FOE_NAME: Record<Foe, string> = { nuage: "Le Grignoteur", ixe: "Ixe", oubli: "Le Grand Oubli", gribouille: "Gribouille", tache: "Une Tache sauvage" };
+// Le gardien vient du registre des planètes (content-src/_planetes.yaml) : sprite, nom, répliques.
+type Foe = FoeSprite;
+const spriteWho = (f: Foe): Who => (f === "tache" ? "gribouille" : f === "oubli" ? "narrateur" : f);
 
-const OUCH: Record<Foe, string[]> = {
-  nuage: ["Aïe ! Mon nuage s'effiloche !", "Hé ! Tu calcules trop vite !", "Pfff… encore un nuage envolé.", "Comment tu as su ?!"],
-  ixe: ["Démasquée ! Bon, d'accord…", "Tu as trouvé ma valeur !", "Hi hi, bien joué !"],
-  oubli: ["Cette page… se réécrit…", "Ce qui est démontré me résiste !", "Non… pas une preuve !"],
-  gribouille: ["Splotch ! Tu as remis l'accent !", "Aïe, mes taches s'effacent !", "Comment tu connais cette règle ?!", "Grrr… un mot bien écrit, ça me pique !"],
-  tache: ["Sssplotch… je sèche !", "Un accord parfait ?! Je m'efface…", "Grrrblub !", "Cette règle… me dissout !"],
-};
-const TAUNT: Record<Foe, string[]> = {
-  nuage: ["Hi hi ! Raté ! Je croque tes gemmes !", "Miam ! Merci pour les gemmes !", "Trop lent ! Crunch !"],
-  ixe: ["Je change de couleur… raté !", "x peut valoir n'importe quoi, hi hi !"],
-  oubli: ["Encore une page blanche…", "Oublié ! Oublié !"],
-  gribouille: ["Hé hé, une faute ! Je croque tes gemmes !", "Miam, un accent tombé !", "Splatch ! Raté !"],
-  tache: ["Blurp ! Une faute, je grossis !", "Splatch ! Tes gemmes sont à moi !", "Glouglou… raté !"],
-};
-
-function FoeSprite({ foe, state }: { foe: Foe; state: string }) {
+function FoeView({ foe, state }: { foe: Foe; state: string }) {
   return (
     <div className={`foe foe-${foe} foe-${state}`}>
       {foe === "oubli" && visuel("persos", "grand-oubli") ? (
@@ -205,7 +182,7 @@ function FoeSprite({ foe, state }: { foe: Foe; state: string }) {
           <ellipse cx={70} cy={58} rx={5} ry={7} fill="#5b5675" />
         </svg>
       ) : (
-        <Mascot who={foe === "tache" ? "gribouille" : foe} size={120} humeur={state === "hit" ? (foe === "nuage" ? "touche" : "surprise") : state === "laugh" ? (foe === "nuage" ? "croque" : "joie") : undefined} />
+        <Mascot who={foe === "tache" ? "gribouille" : foe === "neutre" ? "neutre" : foe} size={120} humeur={state === "hit" ? (foe === "nuage" ? "touche" : "surprise") : state === "laugh" ? (foe === "nuage" ? "croque" : "joie") : undefined} />
       )}
     </div>
   );
@@ -219,13 +196,14 @@ function rangeHint(v: number) {
 }
 
 function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; chObjet?: string; onEnd: (score: number, pot: number) => void }) {
-  const foe = foeOf(w);
+  const g = gardienDe(getContent().manifest, w);
+  const foe: Foe = g.sprite;
   const [qs, setQs] = useState(initial);
   const [i, setI] = useState(0);
   const [res, setRes] = useState<ExResult[]>([]);
   const [pot, setPot] = useState(30);
   const [state, setFoeState] = useState("idle");
-  const [line, setLine] = useState<string>(foe === "nuage" ? "Viens donc, petit calculateur !" : foe === "ixe" ? "Attrape-moi si tu peux !" : foe === "gribouille" ? "Splotch ! Tous tes mots vont finir en taches !" : foe === "tache" ? "Blurp… blurp… (la Tache sauvage gronde)" : "Je vais tout effacer…");
+  const [line, setLine] = useState<string>(g.cri);
   const [used, setUsed] = useState<Record<string, boolean>>({});
   const [removed, setRemoved] = useState<number[]>([]);
   const [hintTxt, setHintTxt] = useState<string>();
@@ -282,7 +260,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
       sfx.hit();
       shake(foeRef.current);
       burst(x, y, 3);
-      setLine(OUCH[foe][Math.floor(Math.random() * OUCH[foe].length)]);
+      setLine(g.aie[Math.floor(Math.random() * g.aie.length)]);
     } else if (shield) {
       setLine("Le bouclier de Néo t'a protégé ! Nouvelle question.");
       setFoeState("idle");
@@ -294,7 +272,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
         setPot(pot - lost);
         floatText(x, y, `−${lost} 💎 croquées !`, "steal");
       }
-      setLine(TAUNT[foe][Math.floor(Math.random() * TAUNT[foe].length)]);
+      setLine(g.nargue[Math.floor(Math.random() * g.nargue.length)]);
     }
     window.setTimeout(() => setFoeState("idle"), 700);
   };
@@ -331,19 +309,19 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
         <div className="crystal-meter" aria-label={`${qs.length - hp} sur ${qs.length}`}>
           {qs.map((_, k) => (
             <span key={k} className={k < res.length ? (res[k].ok ? "lit" : "miss") : k === i ? "cur" : ""}>
-              {k < res.length && res[k].ok ? "✨" : foe === "oubli" ? "📄" : foe === "gribouille" || foe === "tache" ? "⚫" : "☁️"}
+              {k < res.length && res[k].ok ? "✨" : g.jeton}
             </span>
           ))}
         </div>
       </div>
       <div className="arena" style={w.decor ? { backgroundImage: `url(${w.decor})` } : undefined}>
         <div className="arena-foe" ref={foeRef}>
-          <FoeSprite foe={foe} state={state} />
-          <div className="foe-hp" role="meter" aria-valuemin={0} aria-valuemax={qs.length} aria-valuenow={hp} aria-label={`${FOE_NAME[foe]} : ${hp} points de vie`}>
+          <FoeView foe={foe} state={state} />
+          <div className="foe-hp" role="meter" aria-valuemin={0} aria-valuemax={qs.length} aria-valuenow={hp} aria-label={`${g.nom} : ${hp} points de vie`}>
             <span style={{ width: `${(hp / qs.length) * 100}%` }} />
           </div>
           <div className="foe-line" aria-live="polite">
-            <strong>{FOE_NAME[foe]} :</strong> {line}
+            <strong>{g.nom} :</strong> {line}
           </div>
         </div>
         <div className="arena-side">

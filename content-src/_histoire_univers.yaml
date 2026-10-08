@@ -1,0 +1,90 @@
+# L'histoire de la planète Terre & Univers : l'Observatoire des Étoiles.
+prologue:
+  - narrateur: "Il y a encore peu, depuis l'Observatoire des Étoiles, on voyait tout : les saisons tourner, la Lune changer de visage, les volcans fumer doucement et des milliards d'étoiles."
+  - narrateur: "Puis le Grand Neutre a tiré un voile gris sur le ciel. Plus de jour, plus de nuit, plus de saisons. Les étoiles s'éteignent une à une."
+  - zero-surprise: "Plus de nuit ? Mais alors… plus jamais de dodo ?!"
+  - neo: "Pire : plus personne ne sait comment fonctionne notre planète. Et ce qu'on ne comprend pas, on ne peut pas le protéger."
+  - mia: "Chaque fois que tu comprendras un secret de la Terre ou du ciel, une étoile se rallumera."
+prologue_choix:
+  qui: neo
+  question: "Par où commencer ?"
+  options:
+    - texte: "Par la Lunette de l'Astronome : se repérer et observer sans danger"
+      suite:
+        - neo-joie: "Le bon réflexe : boussole, échelles, et jamais le Soleil en face !"
+    - texte: "Par la Cour du Jour et de la Nuit"
+      suite:
+        - zero-joie: "On va remettre la nuit ! Pour le dodo !"
+
+arcs:
+  - id: univers-arc-1
+    titre: "Livre I — Le Voile Gris"
+    sous_titre: "Le jour, la nuit, les saisons, la Terre"
+    final: uni-jardin-de-la-terre
+    fin:
+      - narrateur: "Le voile se déchire : le Soleil se couche enfin, et pour la première fois depuis longtemps, une nuit étoilée tombe sur l'Observatoire."
+      - narrateur: "Une silhouette scintillante apparaît sur la coupole : Uranie, la Muse du ciel. « Il y a deux mille ans, Ératosthène a mesuré le tour de la Terre avec un bâton et des ombres. Toi, qu'aimerais-tu mesurer ? »"
+      - neo: "Mais plus loin, dans le Système solaire, le Brouillard Gris brouille encore les orbites…"
+  - id: univers-arc-2
+    titre: "Livre II — Le Brouillard des orbites"
+    sous_titre: "Système solaire et planète vivante"
+    final: uni-planete-vivante
+    fin:
+      - narrateur: "Les planètes reprennent leur ronde, les volcans et les océans retrouvent leurs couleurs sur le grand globe de l'Observatoire."
+      - narrateur: "Uranie raconte : « Wegener avait raison trop tôt : on s'est moqué de sa dérive des continents pendant cinquante ans. La science change d'avis… quand les preuves l'exigent. »"
+      - mia: "Il reste le plus grand défi : les étoiles elles-mêmes, et l'avenir de notre climat."
+  - id: univers-arc-3
+    titre: "Livre III — Rallumer le ciel"
+    sous_titre: "Étoiles, galaxies, climat"
+    final: uni-climat-et-avenir
+    fin:
+      - narrateur: "Des milliards d'étoiles se rallument d'un coup au-dessus de l'Observatoire. Le Grand Neutre se dissout dans l'immensité du ciel."
+      - neo-fier: "Du sol sous tes pieds jusqu'au Big Bang, et jusqu'à l'avenir de notre climat : tu sais maintenant raisonner à toutes les échelles."
+      - mia: "Et tu sais que notre planète est précieuse, et qu'on peut agir pour elle."
+      - zero: "Et la nuit est revenue. Je vais pouvoir dormir. Bonne nuit, l'Univers !"
+
+chapitres:
+  uni-cour-du-jour-et-de-la-nuit:
+    titre: "La Cour du Jour et de la Nuit"
+    objet: "la première étoile du soir"
+    avant:
+      - narrateur: "Dans la Cour, une horloge solaire ne fait plus d'ombre, et la Lune reste figée en croissant depuis des semaines."
+      - mia: "Remettons la Terre en rotation… au moins dans nos têtes !"
+    apres:
+      - narrateur: "Le soir tombe enfin sur la Cour. Une première étoile s'allume, puis la Lune reprend son voyage."
+  uni-jardin-de-la-terre:
+    titre: "Le Jardin de la Terre"
+    objet: "le grand globe du Jardin"
+    avant:
+      - narrateur: "Le grand globe du Jardin est tout gris : on ne distingue plus les mers des continents."
+    apres:
+      - zero-joie: "Le globe est redevenu bleu ! Et j'ai trié mes déchets. Même mes épluchures de carotte."
+  uni-systeme-solaire:
+    titre: "Le Carrousel du Système solaire"
+    objet: "le carrousel des planètes"
+    avant:
+      - neo: "Le carrousel des planètes est arrêté. Il faut se rappeler l'ordre… et comprendre pourquoi il tourne."
+    apres:
+      - narrateur: "Mercure, Vénus, la Terre, Mars… le carrousel repart, et la Lune glisse devant le Soleil pour une éclipse parfaite."
+  uni-planete-vivante:
+    titre: "La Planète vivante"
+    objet: "le cœur de la Terre"
+    avant:
+      - narrateur: "Le Brouillard Gris a recouvert les volcans, les montagnes et l'atmosphère."
+    apres:
+      - mia: "Tu as compris que la Terre bouge, respire et se réchauffe. Et ce qu'on peut faire pour elle."
+  uni-vie-des-etoiles:
+    titre: "La Nébuleuse des Étoiles"
+    objet: "la nébuleuse natale"
+    avant:
+      - narrateur: "Dans la Nébuleuse, des étoiles s'éteignent avant même d'être nées."
+    apres:
+      - neo: "Fusion, supernovas, galaxies, Big Bang : les étoiles brillent à nouveau, et tu sais pourquoi."
+  uni-climat-et-avenir:
+    titre: "Le Belvédère du Climat"
+    objet: "le Belvédère"
+    avant:
+      - narrateur: "Au Belvédère, le Grand Neutre attend : il voudrait que tout le monde baisse les bras."
+      - mia: "Avec des chiffres justes et des idées claires, on ne baisse jamais les bras."
+    apres:
+      - narrateur: "Le Belvédère s'illumine de mille couleurs : la Terre vue d'en haut, bleue, verte, vivante."

@@ -1,0 +1,88 @@
+# L'histoire de la planète Musique : la Cité des Résonances (bible, acte III).
+prologue:
+  - narrateur: "La Cité des Résonances était la plus bruyante et la plus joyeuse de la Galaxie : les fontaines chantaient, les cloches répondaient aux oiseaux, chaque rue avait sa chanson."
+  - narrateur: "Le Grand Neutre est arrivé sans un bruit. Il a posé sur la Cité un silence gris, épais comme du coton. La Fanfare s'est pétrifiée, les instruments sont devenus de pierre."
+  - zero-surprise: "Plus de musique ?! Mais comment je vais danser, moi ?"
+  - neo: "La musique, c'est de la physique, des mathématiques… et de l'émotion. Chaque chose que tu comprendras redonnera une voix à la Cité."
+  - mia: "Écoute bien. La musique commence toujours par les oreilles."
+prologue_choix:
+  qui: zero
+  question: "On commence par quoi ?"
+  options:
+    - texte: "Par le Conservatoire des Astuces : apprendre à s'entraîner"
+      suite:
+        - mia-joie: "Excellent ! Les grands musiciens ont surtout de bonnes méthodes."
+    - texte: "Par la Place des Sons : réveiller la Fanfare !"
+      suite:
+        - zero-joie: "BOUM ! BOUM ! Euh… doucement d'abord. Forte, piano. J'apprends déjà !"
+
+arcs:
+  - id: musique-arc-1
+    titre: "Livre I — La Fanfare Muette"
+    sous_titre: "Écouter, les notes, le rythme"
+    final: mu-rue-des-notes
+    fin:
+      - narrateur: "Un tambour résonne, puis une flûte, puis toute la Fanfare reprend vie et défile dans la Rue des Notes."
+      - narrateur: "Sur la place, une statue s'anime : Madame Résonance, la Muse de la Cité. « Pythagore a découvert qu'une corde coupée en deux sonne à l'octave. Les nombres et la musique sont amis depuis toujours. Et toi, quelle mélodie aimerais-tu inventer ? »"
+      - neo: "Mais au Théâtre, le Titan de Discorde désaccorde encore tout…"
+  - id: musique-arc-2
+    titre: "Livre II — Le Titan de Discorde"
+    sous_titre: "Gammes, accords, formes, orchestre"
+    final: mu-opera-des-formes
+    fin:
+      - narrateur: "Une cadence parfaite résonne : V… I. Le Titan de Discorde s'apaise, s'assoit au premier rang et écoute l'orchestre, ému."
+      - narrateur: "Madame Résonance raconte : « Hildegarde de Bingen composait au Moyen Âge ; Clara Schumann était l'une des plus grandes pianistes de son siècle ; Duke Ellington a fait du jazz un art d'orchestre. La musique appartient à tous. »"
+      - mia: "Il reste la Tour des Harmoniques et le Studio : c'est là que le Grand Neutre se cache."
+  - id: musique-arc-3
+    titre: "Livre III — La Cité retrouvée"
+    sous_titre: "Acoustique, harmonie, création"
+    final: mu-studio-du-maitre
+    fin:
+      - narrateur: "Toutes les cloches de la Cité sonnent ensemble, en harmonie. Le silence gris se déchire en mille notes."
+      - neo-fier: "Des fréquences aux accords de jazz, du tempo à l'échantillonnage : tu comprends la musique de l'intérieur."
+      - zero-joie: "Et maintenant… on DANSE ! Sur une valse, à trois temps : UN-deux-trois, UN-deux-trois !"
+
+chapitres:
+  mu-place-des-sons:
+    titre: "La Place des Sons"
+    objet: "le tambour de la Fanfare"
+    avant:
+      - narrateur: "Sur la Place, la Fanfare Muette est pétrifiée. Pas un bruit, pas même le vent."
+      - mia: "Commençons par écouter le silence… puis les petits sons qui reviennent."
+    apres:
+      - narrateur: "Boum ! Le tambour de la Fanfare se réveille et donne la pulsation à toute la Place."
+  mu-rue-des-notes:
+    titre: "La Rue des Notes"
+    objet: "la partition de la Fanfare"
+    avant:
+      - neo: "Les notes ont des noms, des places, des durées. Lisons la partition de la Fanfare."
+    apres:
+      - zero-joie: "Do, ré, mi, sol, la ! Je joue sans fausse note, grâce à la pentatonique !"
+  mu-theatre-des-gammes:
+    titre: "Le Théâtre des Gammes"
+    objet: "le diapason d'or"
+    avant:
+      - narrateur: "Au Théâtre, le Titan de Discorde fait grincer les violons et trébucher les rythmes."
+    apres:
+      - neo: "Tons, demi-tons, accords majeurs et mineurs : le Théâtre est de nouveau accordé."
+  mu-opera-des-formes:
+    titre: "L'Opéra des Formes"
+    objet: "la baguette du chef d'orchestre"
+    avant:
+      - mia: "Dans l'Opéra, la musique raconte des histoires. Il faut retrouver leurs chapitres."
+    apres:
+      - narrateur: "L'orchestre au complet joue une symphonie entière. Le Titan de Discorde applaudit."
+  mu-tour-des-harmoniques:
+    titre: "La Tour des Harmoniques"
+    objet: "la cloche des harmoniques"
+    avant:
+      - neo: "Ici, la musique devient fréquences et rapports. Pythagore serait fier de toi."
+    apres:
+      - narrateur: "La grande cloche de la Tour sonne : on entend sa fondamentale… et tous ses harmoniques."
+  mu-studio-du-maitre:
+    titre: "Le Studio du Maître"
+    objet: "la console du Studio"
+    avant:
+      - narrateur: "Dans le Studio, le Grand Neutre essaie de tout réduire à un seul bruit gris."
+    apres:
+      - narrateur: "Sur la console, toutes les pistes s'allument. Le Grand Neutre, assourdi par tant de musique, s'enfuit en se bouchant les oreilles."

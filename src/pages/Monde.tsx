@@ -115,7 +115,7 @@ export function Monde({ id }: { id: string }) {
               {lit
                 ? "Cristal rallumé ! Tu peux rejouer pour t'entraîner."
                 : bossOpen
-                  ? `10 questions de tout le monde, 8 justes pour rallumer ${ch?.objet ?? "le cristal"}.`
+                  ? `10 questions de tout le monde, 8 justes pour sauver ${ch?.objet ?? "ce monde"}.`
                   : `S'ouvre quand toutes les leçons ont 2 étoiles (${pr.done}/${pr.total}).`}
             </small>
             <div className="row">

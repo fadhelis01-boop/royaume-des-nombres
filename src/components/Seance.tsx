@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { go } from "../lib/router";
-import { histoireDe, matiereDe, prologueId, useContent } from "../lib/content";
+import { histoireDe, matiereDe, planeteDe, prologueId, useContent } from "../lib/content";
 import { currentSession, useChild } from "../lib/store";
 import { say } from "../lib/tts";
 import { Mascot } from "./Mascot";
 import { Avatar } from "./Avatar";
 
 // Une séance a un début et une fin, comme un épisode :
-// « Précédemment dans le Royaume… » à l'arrivée, et une vraie clôture vers 15 minutes.
+// « Précédemment sur {planeteDe(manifest, mat)?.titre ?? "la planète"}… » à l'arrivée, et une vraie clôture vers 15 minutes.
 
 /** Rappel de l'histoire en arrivant (seulement au début d'une nouvelle séance). */
 export function Recap() {
@@ -25,7 +25,7 @@ export function Recap() {
       const ch = h.chapitres[id.slice(6)];
       if (w && ch) {
         const lit = child.crystals?.includes(w.id);
-        text = lit ? `Tu as rallumé ${ch.objet} dans ${w.titre}. Mais le Grignoteur rôde encore ailleurs…` : `Tu étais dans ${w.titre}. ${ch.objet} attend toujours d'être rallumé !`;
+        text = lit ? `Tu as sauvé ${ch.objet} dans ${w.titre}. Mais le danger rôde encore ailleurs…` : `Tu étais dans ${w.titre}. ${ch.objet} t'attend toujours !`;
         break;
       }
     }
@@ -37,7 +37,7 @@ export function Recap() {
       }
     }
     if (id === prologueId(mat)) {
-      text = mat === "francais" ? "Gribouille, la tache d'encre, a commencé à effacer les mots de l'Archipel. Mia, Néo et Zéro comptent sur toi !" : "Le Grignoteur a commencé à éteindre les cristaux du Royaume. Mia, Néo et Zéro comptent sur toi !";
+      text = `${planeteDe(manifest, mat)?.prologue.appel.replace(/ Écoute l'histoire\.$/, "") ?? ""} Mia, Néo et Zéro comptent sur toi !`;
       break;
     }
   }
@@ -46,11 +46,11 @@ export function Recap() {
     <div className="recap card" role="note">
       <Mascot who="narrateur" size={48} />
       <div>
-        <div className="recap-title">Précédemment dans le Royaume…</div>
+        <div className="recap-title">Précédemment sur {planeteDe(manifest, mat)?.titre ?? "la planète"}…</div>
         <p>{text}</p>
       </div>
       <div className="recap-actions">
-        <button className="btn btn-small btn-soft" onClick={() => say("narrateur", "Précédemment dans le Royaume… " + text)} aria-label="Écouter">
+        <button className="btn btn-small btn-soft" onClick={() => say("narrateur", `Précédemment sur ${planeteDe(manifest, mat)?.titre ?? "la planète"}… ` + text)} aria-label="Écouter">
           🔊
         </button>
         <button className="btn btn-small" onClick={() => setHidden(true)} aria-label="Fermer">
@@ -96,7 +96,7 @@ export function FinDeSeance() {
         <p>
           {s!.q} réponses en {s!.min} minutes. C'est le moment idéal pour faire une pause : ton cerveau range ce que tu as appris pendant que tu joues ailleurs.
         </p>
-        <p className="muted small">Pendant ce temps, le Grignoteur prépare un mauvais coup… À demain ?</p>
+        <p className="muted small">Pendant ce temps, le Grand Neutre prépare un mauvais coup… À demain ?</p>
         <div className="stack">
           <button
             className="btn btn-primary"

@@ -1,0 +1,214 @@
+id: de-galerie-des-perspectives
+matiere: dessin
+titre: La Galerie des Perspectives
+sous_titre: Perspective à 1 et 2 points de fuite, le visage, le corps en mouvement, la composition, la BD
+emoji: 🖼️
+couleur: "#62278a"
+cycle: explorateurs
+age: 12 ans et +
+niveau: Chercheur – Ingénieur (5ᵉ – 2nde)
+ordre: 604
+prerequis: [de-salle-des-volumes]
+version: 1.0.0
+intro:
+  - narrateur: "La Galerie des Perspectives n'a plus de profondeur : ses couloirs semblent peints à plat sur les murs."
+  - neo: "La perspective, c'est de la géométrie au service du dessin. Les peintres de la Renaissance l'ont mise en équations."
+
+lecons:
+  - id: perspective-un-point
+    titre: "La perspective à un point de fuite"
+    objectif: Je dessine une rue ou un couloir avec un point de fuite.
+    mots: [ligne d'horizon, point de fuite, fuyantes]
+    etapes:
+      - texte: |
+          Les lignes parallèles qui s'éloignent de nous (rails, bords de route) semblent se rejoindre en un point : le **point de fuite**, placé sur la **ligne d'horizon** (à la hauteur de nos yeux). Ces lignes s'appellent les **fuyantes**.
+          Les objets **rapetissent** en s'éloignant. Les lignes verticales restent verticales ; les lignes face à nous restent horizontales.
+          C'est l'architecte **Filippo Brunelleschi** qui, à Florence vers 1415, en démontre les règles ; **Leon Battista Alberti** les publie en 1435.
+      - dessin:
+          titre: La route vers l'horizon
+          etapes:
+            - consigne: "Trace la ligne d'horizon, horizontale, un peu au-dessus du milieu."
+              couche: construction
+              trace: "M5 45 L95 45"
+            - consigne: "Marque le point de fuite au milieu de l'horizon."
+              trace: "M48 45 L52 45 M50 43 L50 47"
+            - consigne: "Trace les bords de la route : deux fuyantes du bas vers le point de fuite."
+              trace: "M10 95 L50 45 M90 95 L50 45"
+            - consigne: "Dessine la façade d'un bâtiment à gauche (un rectangle)."
+              trace: "M8 25 L24 25 L24 78 L8 78 Z"
+            - consigne: "Relie ses coins droits au point de fuite : c'est son côté qui s'éloigne."
+              couche: proportions
+              trace: "M24 25 L50 45 M24 78 L50 45"
+            - consigne: "Ajoute des poteaux de plus en plus petits le long de la route."
+              couche: détails
+              trace: "M78 80 L78 66 M68 68 L68 59 M61 60 L61 54"
+      - retiens: "Ligne d'horizon = hauteur des yeux. Les fuyantes convergent vers le point de fuite. Les objets rapetissent au loin."
+    exercices:
+      - type: qcm
+        vars: { t: [["Où se trouve le point de fuite ?", "sur la ligne d'horizon", "en bas de la feuille", "n'importe où"], ["À quoi correspond la ligne d'horizon ?", "à la hauteur de nos yeux", "au sol", "au haut du ciel"], ["Que font des rails qui s'éloignent de nous ?", "ils semblent se rejoindre au loin", "ils s'écartent", "ils restent parallèles sur le dessin"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["En perspective, les lignes verticales restent verticales.", true], ["Un arbre lointain doit être dessiné plus grand qu'un arbre proche de même taille.", false], ["Brunelleschi a étudié la perspective à Florence au XVᵉ siècle.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Plus c'est loin, plus c'est petit."
+      - type: qcm
+        vars: { t: [["On regarde un paysage depuis le haut d'une tour. Où place-t-on l'horizon ?", "haut dans l'image", "très bas dans l'image", "il disparaît"], ["On est allongé dans l'herbe. Où place-t-on l'horizon ?", "très bas dans l'image", "très haut dans l'image", "au milieu exactement"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : l'horizon est toujours à la hauteur des yeux de celui qui regarde."
+
+  - id: perspective-deux-points
+    titre: "La perspective à deux points de fuite"
+    objectif: Je dessine un bâtiment vu par un angle.
+    mots: [deux points de fuite, arête verticale, angle]
+    etapes:
+      - texte: |
+          Quand on voit un bâtiment **par son angle**, ses deux faces s'éloignent dans deux directions : il faut **deux points de fuite**, tous deux sur la ligne d'horizon, souvent loin à gauche et à droite.
+          On commence par l'**arête verticale la plus proche**, puis on relie ses extrémités aux deux points de fuite.
+      - dessin:
+          titre: Le bloc vu par l'angle
+          etapes:
+            - consigne: "Trace la ligne d'horizon et marque un point de fuite à chaque extrémité."
+              couche: construction
+              trace: "M2 40 L98 40 M5 37 L5 43 M95 37 L95 43"
+            - consigne: "Trace l'arête verticale la plus proche, au centre."
+              trace: "M50 30 L50 75"
+            - consigne: "Relie le haut et le bas de l'arête au point de fuite de gauche."
+              trace: "M50 30 L5 40 M50 75 L5 40"
+            - consigne: "Relie le haut et le bas de l'arête au point de fuite de droite."
+              trace: "M50 30 L95 40 M50 75 L95 40"
+            - consigne: "Ferme les deux faces avec deux arêtes verticales plus courtes."
+              couche: proportions
+              trace: "M25 35.6 L25 55.6 M75 35.6 L75 55.6"
+      - retiens: "Deux points de fuite sur l'horizon ; on part de l'arête la plus proche ; verticales toujours verticales."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quand utilise-t-on deux points de fuite ?", "quand on voit un objet par son angle", "quand on le voit de face", "jamais"], ["Par quoi commence-t-on en perspective à 2 points ?", "par l'arête verticale la plus proche", "par le toit", "par les fenêtres"], ["Où sont les deux points de fuite ?", "sur la ligne d'horizon", "en haut et en bas", "au centre de l'objet"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une rue vue dans l'axe", "un immeuble vu par son coin", "des rails droit devant soi", "une boîte posée en biais"]] }
+        enonce: "Un point de fuite ou deux points de fuite ?"
+        categories: ["1 point", "2 points"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Vue de face/dans l'axe : 1 point ; vue de biais par un angle : 2 points."
+      - type: vf
+        vars: { t: [["En perspective à 2 points, les arêtes verticales convergent aussi.", false], ["Les deux points de fuite sont à la même hauteur.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "À 2 points, les verticales restent verticales (c'est à 3 points qu'elles convergent)."
+
+  - id: le-visage
+    titre: "Les proportions du visage"
+    objectif: Je place correctement les yeux, le nez, la bouche et les oreilles.
+    mots: [proportions, ligne des yeux, axe, oreille]
+    etapes:
+      - dessin:
+          titre: Le visage de face
+          etapes:
+            - consigne: "Dessine un ovale (plus haut que large) : la tête."
+              couche: construction
+              trace: "M50 50 m-22 0 a22 30 0 1 0 44 0 a22 30 0 1 0 -44 0"
+            - consigne: "Trace l'axe vertical et la ligne des yeux, à MI-HAUTEUR de la tête."
+              couche: proportions
+              trace: "M50 20 L50 80 M28 50 L72 50"
+            - consigne: "Place les yeux sur la ligne : l'espace entre eux vaut environ la largeur d'un œil."
+              trace: "M36 50 a4 2.5 0 1 0 8 0 a4 2.5 0 1 0 -8 0 M56 50 a4 2.5 0 1 0 8 0 a4 2.5 0 1 0 -8 0"
+            - consigne: "Le bas du nez se place à peu près à mi-chemin entre les yeux et le menton."
+              trace: "M46 63 L54 63"
+            - consigne: "La bouche, un peu en dessous du nez."
+              trace: "M42 70 Q50 74 58 70"
+            - consigne: "Les oreilles vont du niveau des yeux au niveau du nez."
+              couche: détails
+              trace: "M28 50 C24 52 24 60 29 62 M72 50 C76 52 76 60 71 62"
+      - retiens: "Yeux à mi-hauteur de la tête ; un œil d'écart entre les yeux ; nez à mi-chemin yeux-menton ; oreilles des yeux au nez."
+    exercices:
+      - type: qcm
+        vars: { t: [["Où sont les yeux sur la hauteur de la tête ?", "à mi-hauteur", "au quart supérieur", "tout en haut"], ["Quelle distance entre les deux yeux ?", "environ la largeur d'un œil", "la largeur de la tête", "aucune"], ["Entre quels niveaux se placent les oreilles ?", "entre les yeux et le bas du nez", "entre le menton et le cou", "au-dessus de la tête"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les débutants placent souvent les yeux trop haut.", true], ["La bouche est au même niveau que les oreilles.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La bouche est sous le nez, plus bas que les oreilles."
+      - type: ordre
+        vars: { t: [["l'ovale de la tête", "l'axe et la ligne des yeux", "les yeux", "le nez", "la bouche et les oreilles"]] }
+        enonce: "Remets la construction du visage dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Construction, proportions, puis détails."
+
+  - id: corps-en-mouvement
+    titre: "Le corps en mouvement"
+    objectif: Je dessine un personnage en mouvement avec une ligne d'action et un bonhomme fil de fer.
+    mots: [ligne d'action, bonhomme fil de fer, articulation, canon]
+    etapes:
+      - texte: |
+          1. **Ligne d'action** : une seule courbe qui résume le mouvement (un personnage qui court, qui saute, qui se penche).
+          2. **Bonhomme fil de fer** : des traits pour les os, des petits ronds pour les **articulations** (épaules, coudes, hanches, genoux).
+          3. On « habille » ensuite avec des **volumes** : cylindres pour les membres, ovales pour le torse.
+          Repères : un adulte mesure environ 7,5 têtes ; les bras tendus le long du corps arrivent à mi-cuisse ; les coudes au niveau de la taille.
+      - retiens: "Ligne d'action → fil de fer avec articulations → volumes. Adulte ≈ 7,5 têtes ; coudes à la taille."
+    exercices:
+      - type: ordre
+        vars: { t: [["la ligne d'action", "le bonhomme fil de fer", "les volumes (cylindres, ovales)", "les vêtements et les détails"]] }
+        enonce: "Remets les étapes du personnage en mouvement dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Mouvement d'abord, détails à la fin."
+      - type: qcm
+        vars: { t: [["Qu'est-ce que la ligne d'action ?", "une courbe qui résume le mouvement du personnage", "le contour des vêtements", "la ligne d'horizon"], ["Au niveau de quoi arrivent les coudes, bras le long du corps ?", "de la taille", "du menton", "des genoux"], ["Avec quelle forme dessine-t-on les bras et les jambes en volume ?", "des cylindres", "des cubes", "des triangles"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un personnage qui court a une ligne d'action penchée vers l'avant.", true], ["On dessine les plis des vêtements avant le squelette.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On part toujours de la structure (mouvement, squelette)."
+
+  - id: composition-et-bd
+    titre: "Composition et bande dessinée"
+    objectif: J'organise une image et je raconte une histoire en cases.
+    mots: [règle des tiers, plan, case, bulle, cadrage]
+    etapes:
+      - texte: |
+          **Composition** : la **règle des tiers** divise l'image en 3 × 3 ; on place le sujet principal sur une ligne ou un croisement plutôt qu'au centre, pour une image plus vivante.
+          **Bande dessinée** :
+          - les **cases** se lisent de gauche à droite, de haut en bas ;
+          - les **plans** : plan **d'ensemble** (le décor), plan **moyen** (le personnage en entier), **gros plan** (le visage, l'émotion) ;
+          - les **bulles** contiennent les paroles ; une bulle en nuage = une pensée ; les **onomatopées** (BOUM, SPLASH) imitent les sons.
+      - dessin:
+          titre: La grille des tiers
+          etapes:
+            - consigne: "Trace deux lignes verticales qui coupent l'image en trois."
+              couche: construction
+              trace: "M33 5 L33 95 M66 5 L66 95"
+            - consigne: "Trace deux lignes horizontales qui la coupent en trois."
+              trace: "M5 33 L95 33 M5 66 L95 66"
+            - consigne: "Dessine un soleil sur un croisement en haut à droite."
+              trace: "M66 33 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0"
+            - consigne: "Trace la ligne de l'horizon sur la ligne du bas."
+              trace: "M5 66 L95 66"
+      - retiens: "Règle des tiers : sujet sur les lignes ou croisements. BD : cases de gauche à droite, plans (ensemble, moyen, gros plan), bulles."
+    exercices:
+      - type: qcm
+        vars: { t: [["montrer l'émotion d'un personnage", "un gros plan", "un plan d'ensemble", "une case vide"], ["montrer où se passe l'histoire", "un plan d'ensemble", "un gros plan", "une bulle"], ["montrer le personnage en entier", "un plan moyen", "un gros plan", "une onomatopée"]] }
+        enonce: "Pour {{t_0}}, je choisis…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Dans quel ordre lit-on les cases d'une BD française ?", "de gauche à droite, de haut en bas", "de droite à gauche", "au hasard"], ["Que contient une bulle en forme de nuage ?", "une pensée", "un cri", "le titre"], ["Que conseille la règle des tiers ?", "placer le sujet sur les lignes ou les croisements de la grille", "toujours au centre exact", "sur le bord de l'image"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["BOUM", "« Bonjour, Mia ! »", "SPLASH", "« J'ai une idée ! »"]] }
+        enonce: "Onomatopée ou parole dans une bulle ?"
+        categories: [onomatopée, parole]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les onomatopées imitent des bruits."

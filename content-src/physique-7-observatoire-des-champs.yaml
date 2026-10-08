@@ -1,0 +1,165 @@
+id: ph-observatoire-des-champs
+matiere: physique
+titre: L'Observatoire des Champs
+sous_titre: Champs, ondes et interférences, thermodynamique, relativité, monde quantique
+emoji: 🔭
+couleur: "#122e63"
+cycle: maitres
+age: 16 ans et +
+niveau: Expert – Savant (Terminale – supérieur, introduction)
+ordre: 207
+prerequis: [ph-sommet-de-l-energie, ph-gorge-des-ondes]
+version: 1.0.0
+intro:
+  - narrateur: "Au sommet des Cimes, le Grand Neutre en personne tente d'éteindre les champs et les ondes. Ici se jouent les idées les plus audacieuses de la physique."
+  - neo: "Relativité, quanta… ça semble magique. Mais chaque idée a été vérifiée par des milliers d'expériences."
+
+lecons:
+  - id: champs
+    titre: "Champs électrique et magnétique"
+    objectif: Je connais les lois de base de l'électromagnétisme et l'induction.
+    mots: [champ, loi de Coulomb, électroaimant, induction]
+    etapes:
+      - texte: |
+          Un **champ** décrit une influence qui existe en chaque point de l'espace.
+          - **Électrique** : deux charges s'attirent (signes opposés) ou se repoussent (même signe). Loi de Coulomb : $F = k \dfrac{|q_A q_B|}{d^2}$ ($k \approx 9 \times 10^9$ N·m²/C²).
+          - **Magnétique** : créé par les aimants… et par le **courant électrique** (expérience d'Ørsted, 1820) : une bobine parcourue par un courant devient un **électroaimant**.
+          - **Induction** (Faraday, 1831) : un aimant qui **bouge** près d'une bobine y fait apparaître une tension. C'est le principe de l'**alternateur** : presque toute l'électricité du monde est produite ainsi (centrales, éoliennes, barrages).
+      - retiens: "Coulomb : $F \\propto q_A q_B / d^2$. Un courant crée un champ magnétique ; un champ magnétique qui varie crée une tension (induction → alternateurs)."
+    exercices:
+      - type: qcm
+        vars: { t: [["deux charges positives", "elles se repoussent", "elles s'attirent", "rien"], ["une charge positive et une négative", "elles s'attirent", "elles se repoussent", "rien"], ["deux électrons", "ils se repoussent", "ils s'attirent", "ils fusionnent"]] }
+        enonce: "Que font {{t_0}} placées à proximité ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Comment fonctionne un alternateur de centrale ou d'éolienne ?", "un aimant tourne près de bobines : induction", "une pile géante", "la lumière frappe des panneaux"], ["Qu'est-ce qu'un électroaimant ?", "une bobine parcourue par un courant, qui devient un aimant", "un aimant qui produit du courant tout seul", "une pile magnétique"], ["Qui a montré qu'un courant fait dévier une boussole ?", "Ørsted (1820)", "Newton (1687)", "Mendeleïev (1869)"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { k: [2, 3, 4] }
+        enonce: "Si la distance entre deux charges est divisée par {{k}}, par combien la force électrique est-elle multipliée ?"
+        reponse: "k^2"
+        correction: "Force en 1/d² : × {{k}}² = {{k^2}}."
+
+  - id: ondes-et-interferences
+    titre: "Ondes, longueur d'onde, interférences"
+    objectif: J'utilise λ = v / f et je comprends les interférences.
+    mots: [onde, longueur d'onde, période, interférences, diffraction]
+    etapes:
+      - texte: |
+          Une **onde** transporte de l'énergie **sans transporter de matière** (le bouchon monte et descend sans avancer).
+          - **Période** T (s), **fréquence** f = 1/T (Hz), **longueur d'onde** λ (m) : distance entre deux crêtes.
+          - Relation : $\lambda = \dfrac{v}{f}$.
+          - **Diffraction** : une onde s'étale en passant par une petite ouverture.
+          - **Interférences** : deux ondes qui se superposent s'**additionnent** (crêtes avec crêtes) ou s'**annulent** (crêtes avec creux). C'est le principe du casque à **réduction de bruit**, et la preuve (Young, 1801) que la lumière est une onde.
+      - retiens: "$\\lambda = v / f$ ; $f = 1/T$. Une onde transporte de l'énergie, pas de matière. Interférences : renforcement ou annulation."
+    exercices:
+      - type: nombre
+        vars: { f: [170, 340, 680, 1700] }
+        enonce: "Un son de {{f}} Hz se propage dans l'air à 340 m/s. Quelle est sa longueur d'onde ?"
+        reponse: "340/f"
+        tolerance: 0.001
+        unite: m
+        correction: "λ = v / f = 340 / {{f}} = {{340/f}} m."
+      - type: nombre
+        vars: { T: [0.5, 0.25, 0.1, 0.02] }
+        enonce: "Une onde a une période de {{T}} s. Quelle est sa fréquence ?"
+        reponse: "1/T"
+        tolerance: 0.01
+        unite: Hz
+        correction: "f = 1 / T = 1 / {{T}} = {{1/T}} Hz."
+      - type: qcm
+        vars: { t: [["Comment fonctionne un casque à réduction de bruit ?", "il émet une onde qui annule le bruit par interférences", "il bouche très fort les oreilles", "il absorbe le son avec de l'eau"], ["Une onde à la surface de l'eau transporte…", "de l'énergie, pas de matière", "de l'eau d'un bord à l'autre", "rien du tout"], ["Que montre l'expérience des fentes de Young ?", "que la lumière se comporte comme une onde", "que la lumière est un liquide", "que le son va plus vite que la lumière"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: thermodynamique
+    titre: "Chaleur, température et thermodynamique"
+    objectif: Je distingue chaleur et température et je connais les deux principes.
+    mots: [kelvin, énergie interne, premier principe, second principe]
+    etapes:
+      - texte: |
+          - La **température** mesure l'agitation des particules. Échelle absolue : le **kelvin** (K) : $T(K) = \theta(°C) + 273{,}15$. Le **zéro absolu** (0 K = −273,15 °C) est inaccessible.
+          - La **chaleur** (transfert thermique, Q) est de l'énergie qui passe **spontanément du corps chaud au corps froid**.
+          - **1er principe** : l'énergie se conserve : $\Delta U = W + Q$ (variation d'énergie interne = travail reçu + chaleur reçue).
+          - **2nd principe** (qualitatif) : dans un système isolé, l'**entropie** ne peut qu'augmenter ; un moteur thermique ne peut **jamais** convertir toute la chaleur en travail.
+      - retiens: "T(K) = θ(°C) + 273,15. La chaleur va du chaud vers le froid. ΔU = W + Q. Aucun moteur thermique n'a un rendement de 100 %."
+    exercices:
+      - type: nombre
+        vars: { c: [0, 20, 37, 100, -73] }
+        enonce: "Convertis {{c}} °C en kelvins (utilise 273)."
+        reponse: "c+273"
+        unite: K
+        correction: "T = {{c}} + 273 = {{c+273}} K."
+      - type: nombre
+        vars: { W: [100, 200, 500], Q: [-50, 150, 300] }
+        enonce: "Un gaz reçoit un travail W = {{W}} J et une chaleur Q = {{Q}} J. Variation de son énergie interne ΔU ?"
+        reponse: "W+Q"
+        unite: J
+        correction: "ΔU = W + Q = {{W}} + ({{Q}}) = {{W+Q}} J."
+      - type: vf
+        vars: { t: [["La chaleur passe spontanément d'un corps froid vers un corps chaud.", false], ["On peut atteindre une température de −300 °C.", false], ["Aucun moteur thermique ne transforme toute la chaleur en travail.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "−273,15 °C est le zéro absolu, on ne peut pas descendre plus bas ; la chaleur va spontanément du chaud vers le froid."
+
+  - id: relativite
+    titre: "La relativité restreinte"
+    objectif: Je comprends les idées clés de la relativité d'Einstein.
+    mots: [relativité, vitesse de la lumière, dilatation du temps, E = mc²]
+    etapes:
+      - texte: |
+          En 1905, **Albert Einstein** part de deux idées : les lois de la physique sont les mêmes pour tous les observateurs en mouvement uniforme, et la **vitesse de la lumière dans le vide (c)** est **la même pour tous**.
+          Conséquences, vérifiées par l'expérience :
+          - **dilatation du temps** : une horloge en mouvement rapide « tique » plus lentement, d'un facteur $\gamma = 1/\sqrt{1 - v^2/c^2}$ ;
+          - rien ne peut dépasser c ;
+          - **équivalence masse-énergie** : $E = m c^2$ (au cœur du Soleil et des centrales nucléaires, un peu de masse devient énergie).
+          Le **GPS** doit corriger ces effets (et ceux de la relativité générale) : sans corrections, il dériverait de plusieurs kilomètres par jour.
+      - retiens: "c est la même pour tous et infranchissable. Temps dilaté par $\\gamma$. $E = mc^2$. Le GPS en tient compte."
+    exercices:
+      - type: nombre
+        vars: { m: [1, 2, 3, 5] }
+        enonce: "Avec $E = mc^2$ et $c^2 = 9 \times 10^{16}$ m²/s², l'énergie de {{m}} kg de masse vaut combien de fois $10^{16}$ J ?"
+        reponse: "9*m"
+        correction: "E = {{m}} × 9 × 10¹⁶ = {{9*m}} × 10¹⁶ J : une énergie colossale pour une petite masse."
+      - type: qcm
+        vars: { t: [["Pourquoi le GPS doit-il tenir compte de la relativité ?", "les horloges des satellites ne battent pas au même rythme que sur Terre", "les satellites vont plus vite que la lumière", "pour économiser les piles"], ["Que dit le second postulat d'Einstein ?", "la vitesse de la lumière dans le vide est la même pour tous les observateurs", "le temps est le même partout", "la lumière n'a pas de vitesse"], ["Un vaisseau peut-il dépasser la vitesse de la lumière ?", "non, c'est une limite infranchissable", "oui, avec assez de carburant", "oui, dans le vide"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["v = 0,6 c", "1,25", "0,8", "1,6"], ["v = 0,8 c", "≈ 1,67", "1,25", "0,6"]] }
+        enonce: "Pour {{t_0}}, que vaut le facteur $\\gamma = 1/\\sqrt{1 - v^2/c^2}$ ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Pour 0,6 c : √(1 − 0,36) = 0,8 → γ = 1,25. Pour 0,8 c : √(1 − 0,64) = 0,6 → γ ≈ 1,67."
+
+  - id: quantique
+    titre: "Le monde quantique"
+    objectif: J'utilise E = h·f et je connais les idées de base de la physique quantique.
+    mots: [photon, quantum, constante de Planck, niveaux d'énergie, dualité]
+    etapes:
+      - texte: |
+          - En 1900, **Max Planck** puis **Einstein** (1905, effet photoélectrique) montrent que la lumière échange son énergie par **paquets** : les **photons**. Énergie d'un photon : $E = h f$ ($h \approx 6{,}63 \times 10^{-34}$ J·s). Le bleu (f plus grande) transporte plus d'énergie par photon que le rouge ; les UV encore plus (d'où les coups de soleil).
+          - Les électrons d'un atome n'ont que certains **niveaux d'énergie** permis : en passant d'un niveau à un autre, ils émettent ou absorbent un photon d'énergie précise → chaque élément a son **spectre** (on identifie ainsi la composition des étoiles !).
+          - **Dualité onde-corpuscule** : lumière et électrons se comportent tantôt comme des ondes, tantôt comme des particules.
+          Applications : lasers, LED, panneaux solaires, transistors (donc tous les ordinateurs), IRM.
+      - retiens: "Photon : $E = hf$. Énergie des atomes quantifiée → spectres de raies. Dualité onde-corpuscule. Lasers, LED, transistors en découlent."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel photon transporte le plus d'énergie ?", "un photon ultraviolet", "un photon rouge", "un photon infrarouge"], ["Comment les astronomes savent-ils de quoi sont faites les étoiles ?", "grâce aux raies de leur spectre lumineux", "en y envoyant des sondes", "grâce à leur couleur seulement à l'œil nu"], ["Quel objet du quotidien repose sur la physique quantique ?", "le transistor de ton téléphone", "un levier", "une poulie"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { k: [2, 3, 4] }
+        enonce: "Si la fréquence d'un photon est multipliée par {{k}}, par combien son énergie est-elle multipliée ?"
+        reponse: "k"
+        correction: "E = h × f : proportionnelle, donc × {{k}}."
+      - type: vf
+        vars: { t: [["L'énergie d'un atome peut prendre n'importe quelle valeur.", false], ["La lumière se comporte parfois comme une onde, parfois comme des particules.", true], ["Les UV donnent des coups de soleil car leurs photons transportent beaucoup d'énergie.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les niveaux d'énergie d'un atome sont quantifiés : seules certaines valeurs sont permises."

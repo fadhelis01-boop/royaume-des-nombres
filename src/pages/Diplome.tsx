@@ -1,6 +1,6 @@
 import { go } from "../lib/router";
 import { useContent, worldProgress } from "../lib/content";
-import { histoireDe } from "../lib/content";
+import { histoireDe, planeteDe } from "../lib/content";
 import { useChild } from "../lib/store";
 import { Mascot } from "../components/Mascot";
 
@@ -25,12 +25,12 @@ export function Diplome({ worldId }: { worldId: string }) {
         </button>
       </div>
       <div className="diplome" style={{ "--wc": w.couleur } as React.CSSProperties}>
-        <div className="diplome-top">Royaume des Nombres</div>
+        <div className="diplome-top">La Galaxie des Savoirs · {planeteDe(manifest, w.matiere)?.titre}</div>
         <h1>Diplôme du Gardien</h1>
         <p>Ce diplôme est décerné à</p>
         <div className="diplome-name">{child.name}</div>
         <p>
-          pour avoir {lit ? "rallumé" : "travaillé à rallumer"} <strong>{ch?.objet ?? "le cristal"}</strong>
+          pour avoir {lit ? "sauvé" : "travaillé à sauver"} <strong>{ch?.objet ?? w.titre}</strong>
           <br />
           dans <strong>
             {w.emoji} {w.titre}

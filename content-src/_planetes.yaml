@@ -1,0 +1,378 @@
+# La Galaxie des Savoirs : une planète = une matière.
+# AJOUTER UNE MATIÈRE SANS RECODER : ajouter une entrée ici, puis des mondes avec `matiere: <id>`
+# (et, si on veut, une histoire `histoire: _histoire_<id>.yaml`). Voir docs/FORMAT-CONTENU.md.
+#
+# Champs :
+#   id, famille (fondamentaux | sciences | arts), titre (nom de la planète), matiere (nom court),
+#   emoji, couleur, accroche (une phrase pour la galaxie),
+#   histoire (fichier) + prologue { id, titre, appel },
+#   objet { emoji, un, des, fait } : ce que rapporte chaque Défi du Gardien (« 💎 3 cristaux rallumés »),
+#   echauffement, astuces (sous-titre du monde « astuces »), liens (raccourcis en bas de la carte),
+#   gardiens { graines | explorateurs | maitres } : sprite (nuage, ixe, oubli, gribouille, tache, neutre),
+#     nom, qui (personnage qui parle à l'ouverture), ouverture, cri (au début du combat),
+#     aie (quand il perd un point), nargue (quand l'enfant se trompe), jeton (case de vie)
+#   jeux : les jeux mis en avant pour cette planète (ordre d'affichage).
+
+familles:
+  fondamentaux: { titre: "Les fondamentaux", emoji: "📐", accroche: "Compter, lire, écrire : les clés de tout le reste." }
+  sciences: { titre: "Les sciences", emoji: "🔬", accroche: "Comprendre la matière, la vie, les forces et le ciel." }
+  arts: { titre: "Les arts", emoji: "🎨", accroche: "Écouter, jouer, dessiner, créer." }
+
+planetes:
+  - id: maths
+    famille: fondamentaux
+    titre: Le Royaume des Nombres
+    matiere: Maths
+    emoji: "🔢"
+    couleur: "#5b4bdb"
+    accroche: "Compter, calculer, raisonner, jusqu'aux mathématiques des grands."
+    histoire: _histoire.yaml
+    prologue: { id: prologue, titre: "Prologue — Le Royaume s'éteint", appel: "Le Royaume des Nombres s'éteint… Écoute l'histoire." }
+    objet: { emoji: "💎", un: "cristal rallumé", des: "cristaux rallumés" }
+    echauffement: "2 minutes de calcul rapide"
+    astuces: "Méthodes et calcul rapide"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+      - { texte: "✍️ Inventer un problème", vers: "/inventer" }
+    jeux: [defense, pont, course, duel, eclair, additions, tables, compte, vise, enigmes]
+    gardiens:
+      graines:
+        sprite: nuage
+        nom: Le Grignoteur
+        qui: nuage
+        ouverture: "Hi hi ! Le cristal est caché derrière dix nuages. Pour chaque bonne réponse, un nuage s'envole… Tu n'y arriveras jamais ! (enfin… peut-être que si)"
+        cri: "Viens donc, petit calculateur !"
+        aie: ["Aïe ! Mon nuage s'effiloche !", "Hé ! Tu calcules trop vite !", "Pfff… encore un nuage envolé.", "Comment tu as su ?!"]
+        nargue: ["Hi hi ! Raté ! Je croque tes gemmes !", "Miam ! Merci pour les gemmes !", "Trop lent ! Crunch !"]
+        jeton: "☁️"
+      explorateurs:
+        sprite: ixe
+        nom: Ixe
+        qui: ixe
+        ouverture: "Dix énigmes gardent le fragment de carte. Montre-moi que tu sais trouver les inconnues !"
+        cri: "Attrape-moi si tu peux !"
+        aie: ["Démasquée ! Bon, d'accord…", "Tu as trouvé ma valeur !", "Hi hi, bien joué !"]
+        nargue: ["Je change de couleur… raté !", "x peut valoir n'importe quoi, hi hi !"]
+        jeton: "☁️"
+      maitres:
+        sprite: oubli
+        nom: Le Grand Oubli
+        qui: narrateur
+        ouverture: "Le Grand Oubli a effacé dix pages. Pour chaque bonne réponse, une page se réécrit…"
+        cri: "Je vais tout effacer…"
+        aie: ["Cette page… se réécrit…", "Ce qui est démontré me résiste !", "Non… pas une preuve !"]
+        nargue: ["Encore une page blanche…", "Oublié ! Oublié !"]
+        jeton: "📄"
+
+  - id: francais
+    famille: fondamentaux
+    titre: L'Archipel des Mots
+    matiere: Français
+    emoji: "📚"
+    couleur: "#c2185b"
+    accroche: "Lire, écrire, conjuguer, raconter… jusqu'à la plume d'or."
+    histoire: _histoire_francais.yaml
+    prologue: { id: prologue-fr, titre: "Prologue — L'Archipel se tait", appel: "Les mots de l'Archipel s'effacent… Écoute l'histoire." }
+    objet: { emoji: "📜", un: "page du Grimoire sauvée", des: "pages du Grimoire sauvées" }
+    echauffement: "2 minutes de conjugaison éclair"
+    astuces: "Bien relire, retenir l'orthographe"
+    liens:
+      - { texte: "📖 Le dictionnaire", vers: "/dico" }
+      - { texte: "🎮 Jeux de mots", vers: "/jeux" }
+    jeux: [conjugaison, mystere, flash]
+    gardiens:
+      graines:
+        sprite: gribouille
+        nom: Gribouille
+        qui: gribouille
+        ouverture: "Splotch ! Le Grimoire est caché derrière dix taches d'encre. Chaque mot bien écrit en efface une… Tu n'y arriveras jamais ! (enfin… peut-être que si)"
+        cri: "Splotch ! Tous tes mots vont finir en taches !"
+        aie: ["Splotch ! Tu as remis l'accent !", "Aïe, mes taches s'effacent !", "Comment tu connais cette règle ?!", "Grrr… un mot bien écrit, ça me pique !"]
+        nargue: ["Hé hé, une faute ! Je croque tes gemmes !", "Miam, un accent tombé !", "Splatch ! Raté !"]
+        jeton: "⚫"
+      explorateurs:
+        sprite: tache
+        nom: Une Tache sauvage
+        qui: gribouille
+        ouverture: "Attention ! Ce ne sont plus mes taches : des Taches sauvages se sont échappées de l'encrier. Elles n'écoutent personne… sauf les mots parfaitement écrits !"
+        cri: "Blurp… blurp… (la Tache sauvage gronde)"
+        aie: ["Sssplotch… je sèche !", "Un accord parfait ?! Je m'efface…", "Grrrblub !", "Cette règle… me dissout !"]
+        nargue: ["Blurp ! Une faute, je grossis !", "Splatch ! Tes gemmes sont à moi !", "Glouglou… raté !"]
+        jeton: "⚫"
+      maitres:
+        sprite: tache
+        nom: Une Tache sauvage
+        qui: gribouille
+        ouverture: "Attention ! Ce ne sont plus mes taches : des Taches sauvages se sont échappées de l'encrier. Elles n'écoutent personne… sauf les mots parfaitement écrits !"
+        cri: "Blurp… blurp… (la Tache sauvage gronde)"
+        aie: ["Sssplotch… je sèche !", "Un accord parfait ?! Je m'efface…", "Grrrblub !", "Cette règle… me dissout !"]
+        nargue: ["Blurp ! Une faute, je grossis !", "Splatch ! Tes gemmes sont à moi !", "Glouglou… raté !"]
+        jeton: "⚫"
+
+  - id: chimie
+    famille: sciences
+    titre: Le Marais d'Acidia
+    matiere: Chimie
+    emoji: "🧪"
+    couleur: "#16a37a"
+    accroche: "Mélanger, dissoudre, transformer : la matière change de couleur."
+    histoire: _histoire_chimie.yaml
+    prologue: { id: prologue-chimie, titre: "Prologue — Le Marais devient gris", appel: "Le Grand Neutre a figé le Marais d'Acidia… Écoute l'histoire." }
+    objet: { emoji: "💧", un: "couleur rendue au Marais", des: "couleurs rendues au Marais" }
+    echauffement: "2 minutes de questions éclair"
+    astuces: "La méthode du savant et la sécurité au labo"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: Dame Bulle
+        qui: narrateur
+        ouverture: "Dame Bulle, une grosse bulle grise, flotte au-dessus de la mare : « L'air, ce n'est RIEN ! Et quand le sucre fond, il DISPARAÎT ! » Seules des preuves peuvent la faire éclater."
+        cri: "Plop… prouve-le donc !"
+        aie: ["Plop ! Ma bulle se fissure…", "Une preuve ?! Je me dégonfle !", "Pfffiou… tu as raison."]
+        nargue: ["Plop plop ! Je grossis !", "Tu vois ? Ça disparaît, hi hi !", "Une bulle de plus pour moi !"]
+        jeton: "💧"
+      explorateurs:
+        sprite: neutre
+        nom: Le Brouillard Gris
+        qui: narrateur
+        ouverture: "Un brouillard gris recouvre le laboratoire : il mélange tout, les atomes, les formules, les couleurs. Chaque bonne réponse le dissipe un peu."
+        cri: "Tout se ressemble… tout est gris…"
+        aie: ["Le brouillard se déchire !", "Une formule exacte… je recule.", "Tu équilibres trop bien !"]
+        nargue: ["Gris, gris, tout est gris !", "Je t'ai embrouillé !"]
+        jeton: "🌫️"
+      maitres:
+        sprite: neutre
+        nom: Corrosion
+        qui: narrateur
+        ouverture: "Corrosion ronge les tours du laboratoire en volant leurs électrons. Pour la vaincre, il faut maîtriser l'oxydoréduction et l'équilibre."
+        cri: "Je ronge… je rouille… je gagne…"
+        aie: ["Mes électrons… repris !", "L'équilibre me bloque !", "Grrr… une demi-équation parfaite."]
+        nargue: ["Une tour de plus rouillée !", "Crrrouic ! Raté !"]
+        jeton: "🟫"
+
+  - id: physique
+    famille: sciences
+    titre: Les Cimes de la Gravité
+    matiere: Physique
+    emoji: "⚙️"
+    couleur: "#1e6fd9"
+    accroche: "Forces, mouvement, lumière, électricité, énergie."
+    histoire: _histoire_physique.yaml
+    prologue: { id: prologue-physique, titre: "Prologue — Les Cimes s'arrêtent", appel: "Plus rien ne bouge sur les Cimes de la Gravité… Écoute l'histoire." }
+    objet: { emoji: "⚡", un: "force réveillée", des: "forces réveillées" }
+    echauffement: "2 minutes de questions éclair"
+    astuces: "Mesurer, les unités et la méthode du physicien"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: Le Mythe du Poids
+        qui: narrateur
+        ouverture: "Le Mythe du Poids, un gros rocher gris, gronde : « Les choses lourdes tombent TOUJOURS plus vite ! Et sans force, rien ne bouge ! » Il ne craint qu'une chose : les preuves."
+        cri: "Lourd = plus vite ! Lourd = plus vite !"
+        aie: ["Une preuve… je me fissure !", "Aïe, l'expérience a parlé !", "Grrr… tu as raison."]
+        nargue: ["Ha ! Le Mythe a encore gagné !", "Boum ! Raté !"]
+        jeton: "⛰️"
+      explorateurs:
+        sprite: neutre
+        nom: Le Titan Inertie
+        qui: narrateur
+        ouverture: "Le Titan Inertie s'est assis sur la montagne : rien ne démarre, rien ne s'arrête. Pour le faire bouger, il faut comprendre les forces et l'énergie."
+        cri: "Je ne bougerai pas… sauf si tu sais pourquoi."
+        aie: ["Je… glisse !", "Une force bien calculée !", "Mon énergie s'échappe !"]
+        nargue: ["Immobile ! Hé hé.", "Trop lent pour moi !"]
+        jeton: "🗿"
+      maitres:
+        sprite: neutre
+        nom: Le Grand Neutre
+        qui: narrateur
+        ouverture: "Au sommet des Cimes, le Grand Neutre en personne tente d'éteindre les champs et les ondes. Seules les lois exactes de la physique peuvent le repousser."
+        cri: "Uniforme… immobile… silencieux…"
+        aie: ["Une loi exacte… je pâlis.", "Les ondes reviennent !", "Ce champ… me repousse."]
+        nargue: ["Tout redevient gris…", "Silence…"]
+        jeton: "🌫️"
+
+  - id: biologie
+    famille: sciences
+    titre: La Canopée des Biomes
+    matiere: Biologie
+    emoji: "🌿"
+    couleur: "#3f9b2c"
+    accroche: "Le vivant : plantes, animaux, corps humain, cellules, ADN."
+    histoire: _histoire_biologie.yaml
+    prologue: { id: prologue-biologie, titre: "Prologue — L'Arbre-Monde s'endort", appel: "L'Arbre-Monde perd ses couleurs… Écoute l'histoire." }
+    objet: { emoji: "🍃", un: "branche réveillée", des: "branches réveillées" }
+    echauffement: "2 minutes de questions éclair"
+    astuces: "Observer, classer et dessiner le vivant"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: Mousse Grise
+        qui: narrateur
+        ouverture: "Une mousse grise recouvre les feuilles : les plantes ne savent plus de quoi elles ont besoin, les animaux ont oublié leur famille. Chaque bonne réponse fait refleurir une branche."
+        cri: "Tout dort… tout dort…"
+        aie: ["Une fleur s'ouvre !", "Aïe, la vie revient !", "Tu connais trop bien le vivant…"]
+        nargue: ["Une feuille de plus qui grisonne !", "Zzz… raté."]
+        jeton: "🍂"
+      explorateurs:
+        sprite: neutre
+        nom: Le Virus Glitch
+        qui: narrateur
+        ouverture: "Le Virus Glitch s'est glissé dans les cellules de la Canopée et brouille leurs messages. Pour le chasser, il faut comprendre comment fonctionne le corps."
+        cri: "Bzzt… je copie… je brouille…"
+        aie: ["Bzzt ! Repéré par tes anticorps !", "Mon code est corrigé !", "Glitch… effacé…"]
+        nargue: ["Bzzt ! Erreur de copie !", "Glitch ! Glitch !"]
+        jeton: "🦠"
+      maitres:
+        sprite: neutre
+        nom: Le Grand Neutre
+        qui: narrateur
+        ouverture: "Le Grand Neutre s'attaque au cœur de l'Arbre-Monde : il veut effacer la diversité du vivant. Seules la génétique et l'évolution bien comprises peuvent le repousser."
+        cri: "Tous pareils… tous gris…"
+        aie: ["La diversité… me résiste !", "Une mutation de génie !", "L'évolution… me dépasse."]
+        nargue: ["Tout devient pareil…", "Gris…"]
+        jeton: "🌫️"
+
+  - id: univers
+    famille: sciences
+    titre: L'Observatoire des Étoiles
+    matiere: Terre & Univers
+    emoji: "🔭"
+    couleur: "#3b2f8f"
+    accroche: "La Terre, le climat, le Soleil, la Lune, les planètes et les étoiles."
+    histoire: _histoire_univers.yaml
+    prologue: { id: prologue-univers, titre: "Prologue — Le ciel s'éteint", appel: "Les étoiles disparaissent une à une… Écoute l'histoire." }
+    objet: { emoji: "⭐", un: "étoile rallumée", des: "étoiles rallumées" }
+    echauffement: "2 minutes de questions éclair"
+    astuces: "Les échelles, les ordres de grandeur, observer le ciel"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: Le Voile Gris
+        qui: narrateur
+        ouverture: "Un voile gris s'est posé sur le ciel : plus de jour, plus de nuit, plus de saisons. Chaque bonne réponse rallume une étoile."
+        cri: "Plus de ciel… plus rien…"
+        aie: ["Une étoile perce mon voile !", "Le Soleil revient !", "Tu connais trop bien le ciel…"]
+        nargue: ["Encore une étoile éteinte !", "Nuit grise…"]
+        jeton: "🌑"
+      explorateurs:
+        sprite: neutre
+        nom: Le Brouillard Gris
+        qui: narrateur
+        ouverture: "Le Brouillard Gris brouille les cartes du ciel et du climat. Pour le dissiper, il faut comprendre la Terre, l'énergie et le système solaire."
+        cri: "Je cache tout…"
+        aie: ["Le brouillard se lève !", "Une orbite exacte !", "Tu vois à travers moi…"]
+        nargue: ["Perdu dans le brouillard !", "Gris, gris…"]
+        jeton: "🌫️"
+      maitres:
+        sprite: neutre
+        nom: Le Grand Neutre
+        qui: narrateur
+        ouverture: "Le Grand Neutre veut éteindre les étoiles elles-mêmes. Seule la connaissance exacte de l'Univers peut les rallumer."
+        cri: "Froid… sombre… uniforme…"
+        aie: ["La lumière des étoiles… revient.", "L'Univers est trop vaste pour moi !", "Une loi cosmique !"]
+        nargue: ["Une étoile s'éteint…", "Silence cosmique…"]
+        jeton: "🌌"
+
+  - id: musique
+    famille: arts
+    titre: La Cité des Résonances
+    matiere: Musique
+    emoji: "🎵"
+    couleur: "#e0711a"
+    accroche: "Écouter, chanter, jouer, lire une partition, composer."
+    histoire: _histoire_musique.yaml
+    prologue: { id: prologue-musique, titre: "Prologue — La Cité se tait", appel: "Plus un son dans la Cité des Résonances… Écoute l'histoire." }
+    objet: { emoji: "🎶", un: "instrument réveillé", des: "instruments réveillés" }
+    echauffement: "2 minutes d'oreille et de rythme"
+    astuces: "Bien écouter, bien s'entraîner"
+    liens:
+      - { texte: "🎹 Le studio de musique", vers: "/studio/musique" }
+      - { texte: "👂 L'Oreille d'or", vers: "/jeux/oreille" }
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [oreille, studio-musique, eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: La Fanfare Muette
+        qui: narrateur
+        ouverture: "La Fanfare Muette est pétrifiée : tambours, flûtes et violons sont devenus gris et silencieux. Chaque bonne réponse rend sa voix à un instrument."
+        cri: "… (un silence épais)"
+        aie: ["Boum ! Le tambour revient !", "Tuuu ! Une flûte s'éveille !", "La musique… revient…"]
+        nargue: ["Chut… silence…", "Encore un instrument muet !"]
+        jeton: "🔇"
+      explorateurs:
+        sprite: neutre
+        nom: Le Titan de Discorde
+        qui: narrateur
+        ouverture: "Le Titan de Discorde désaccorde la Cité : les notes se cognent, les rythmes trébuchent. Pour l'apaiser, il faut comprendre la musique de l'intérieur."
+        cri: "Crrrriiing ! Tout faux !"
+        aie: ["Une harmonie… je m'apaise…", "Ce rythme est juste !", "Accord parfait… aïe."]
+        nargue: ["Dissonance ! Hi hi !", "Faux ! Faux !"]
+        jeton: "🎺"
+      maitres:
+        sprite: neutre
+        nom: Le Grand Neutre
+        qui: narrateur
+        ouverture: "Le Grand Neutre veut réduire toute la musique à un seul bruit gris. Seule une connaissance profonde de l'harmonie et du son peut le repousser."
+        cri: "Un seul son… gris… pour toujours."
+        aie: ["Des harmoniques… partout !", "Cette forme musicale… me dépasse.", "La musique revient !"]
+        nargue: ["Bruit gris…", "Plus de mélodie !"]
+        jeton: "🌫️"
+
+  - id: dessin
+    famille: arts
+    titre: L'Atelier de Mia
+    matiere: Dessin
+    emoji: "✏️"
+    couleur: "#8e3fc4"
+    accroche: "Traits, formes, couleurs, perspective, personnages : dessiner pas à pas."
+    histoire: _histoire_dessin.yaml
+    prologue: { id: prologue-dessin, titre: "Prologue — L'Atelier sans couleurs", appel: "Les couleurs de l'Atelier ont disparu… Écoute l'histoire." }
+    objet: { emoji: "🎨", un: "tableau recoloré", des: "tableaux recolorés" }
+    echauffement: "2 minutes de questions éclair"
+    astuces: "Observer, s'entraîner, garder ses progrès"
+    liens:
+      - { texte: "🖌️ Le studio de dessin", vers: "/studio/dessin" }
+      - { texte: "🖼️ Ma galerie", vers: "/studio/dessin/galerie" }
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [studio-dessin, eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: La Gomme Grise
+        qui: narrateur
+        ouverture: "La Gomme Grise efface les traits et boit les couleurs des tableaux. Chaque bonne réponse redonne ses couleurs à un dessin."
+        cri: "Je gomme… je gomme…"
+        aie: ["Un trait revient !", "Une couleur ! Je recule !", "Tu sais trop bien dessiner…"]
+        nargue: ["Effacé ! Hé hé.", "Encore un dessin tout gris !"]
+        jeton: "⚪"
+      explorateurs:
+        sprite: neutre
+        nom: Le Brouillard Plat
+        qui: narrateur
+        ouverture: "Le Brouillard Plat écrase tout : plus de volume, plus de perspective, plus d'ombre. Pour le repousser, il faut comprendre l'espace et la lumière."
+        cri: "Tout est plat… tout est plat…"
+        aie: ["Un point de fuite ! Je recule !", "Une ombre juste !", "Du volume… aïe !"]
+        nargue: ["Plat ! Plat !", "Pas de profondeur !"]
+        jeton: "📄"
+      maitres:
+        sprite: neutre
+        nom: Le Grand Neutre
+        qui: narrateur
+        ouverture: "Le Grand Neutre veut que toutes les images se ressemblent. Seul un regard d'artiste, nourri d'observation et de culture, peut le repousser."
+        cri: "Toutes pareilles… toutes grises…"
+        aie: ["Un style ! Le tien !", "Cette composition… me dépasse.", "Les couleurs reviennent !"]
+        nargue: ["Encore une image grise…", "Pareil, pareil…"]
+        jeton: "🌫️"

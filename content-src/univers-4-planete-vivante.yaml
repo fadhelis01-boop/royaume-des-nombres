@@ -1,0 +1,163 @@
+id: uni-planete-vivante
+matiere: univers
+titre: La Planète vivante
+sous_titre: L'intérieur de la Terre, la tectonique, l'atmosphère, météo et climat, effet de serre, énergies
+emoji: 🌋
+couleur: "#2a3f8f"
+cycle: explorateurs
+age: 12 ans et +
+niveau: Chercheur – Ingénieur (5ᵉ – 2nde)
+ordre: 404
+prerequis: [uni-systeme-solaire]
+version: 1.0.0
+intro:
+  - narrateur: "Le Brouillard Gris brouille les cartes de la Terre et du climat. Même les volcans ne savent plus quand se réveiller."
+  - neo: "Notre planète bouge, respire, se réchauffe. Comprendre comment, c'est le premier pas pour en prendre soin."
+
+lecons:
+  - id: interieur-de-la-terre
+    titre: "L'intérieur de la Terre"
+    objectif: Je décris la structure interne de la Terre.
+    mots: [croûte, manteau, noyau, lithosphère]
+    etapes:
+      - texte: |
+          De l'extérieur vers le centre (rayon ≈ 6 370 km) :
+          - la **croûte** : fine (environ 7 km sous les océans, 30 à 70 km sous les continents) ;
+          - le **manteau** : roches très chaudes, solides mais capables de se déformer très lentement (quelques centimètres par an) ;
+          - le **noyau** : surtout du **fer** et du nickel, **liquide** à l'extérieur, **solide** au centre (graine), où la température dépasse 5 000 °C.
+          La croûte et le haut du manteau forment la **lithosphère**, découpée en **plaques**.
+          On connaît cette structure grâce aux **ondes sismiques** des séismes, qui changent de vitesse selon les couches traversées.
+      - retiens: "Croûte (fine), manteau (épais, solide mais déformable), noyau de fer (liquide puis solide au centre). Connu grâce aux ondes sismiques."
+    exercices:
+      - type: ordre
+        vars: { t: [["la croûte", "le manteau", "le noyau externe liquide", "la graine solide"]] }
+        enonce: "Range les couches de la Terre de la surface vers le centre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Croûte, manteau, noyau externe, graine."
+      - type: qcm
+        vars: { t: [["De quoi est surtout fait le noyau terrestre ?", "de fer (et de nickel)", "de lave", "d'eau"], ["Comment connaît-on l'intérieur de la Terre ?", "grâce aux ondes des séismes", "grâce à un trou jusqu'au centre", "en devinant"], ["Quelle couche est la plus fine ?", "la croûte", "le manteau", "le noyau"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le manteau terrestre est un océan de lave liquide.", false], ["Le centre de la Terre est solide.", true], ["Le forage le plus profond n'a atteint qu'environ 12 km.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le manteau est solide mais se déforme très lentement ; on n'a jamais foré au-delà d'environ 12 km."
+
+  - id: tectonique
+    titre: "La tectonique des plaques"
+    objectif: J'explique les séismes, les volcans et les montagnes par le mouvement des plaques.
+    mots: [plaque, dérive des continents, subduction, dorsale]
+    etapes:
+      - histoire:
+          titre: Alfred Wegener
+          texte: "En 1912, **Alfred Wegener** remarque que les côtes de l'Amérique du Sud et de l'Afrique s'emboîtent comme un puzzle, et qu'on y trouve les mêmes fossiles. Il propose la **dérive des continents**. On se moque de lui… jusqu'aux années 1960, quand l'étude des fonds océaniques confirme l'idée : c'est la **tectonique des plaques**."
+      - texte: |
+          La lithosphère est découpée en une quinzaine de grandes **plaques** qui bougent de quelques **centimètres par an** (à peu près la vitesse de pousse des ongles).
+          - Elles **s'écartent** aux **dorsales** (au milieu des océans) : du magma remonte et crée un nouveau plancher océanique.
+          - Elles **se rapprochent** : une plaque plonge sous l'autre (**subduction**, avec des volcans explosifs) ou deux continents se heurtent et forment des **montagnes** (l'Himalaya grandit encore !).
+          Séismes et volcans se concentrent surtout aux **frontières des plaques**.
+      - retiens: "Plaques mobiles (quelques cm/an). Écartement aux dorsales, rapprochement (subduction, montagnes). Séismes et volcans aux frontières."
+    exercices:
+      - type: qcm
+        vars: { t: [["À quelle vitesse bougent les plaques ?", "quelques centimètres par an", "plusieurs kilomètres par jour", "elles ne bougent pas"], ["Comment s'est formé l'Himalaya ?", "par la collision de deux plaques continentales", "par un volcan géant", "par le vent"], ["Où se concentrent surtout les séismes ?", "aux frontières des plaques", "au centre des continents", "au hasard partout"], ["Qui a proposé la dérive des continents en 1912 ?", "Alfred Wegener", "Isaac Newton", "Charles Darwin"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { v: [2, 3, 5], a: [100, 1000, 1000000] }
+        enonce: "Une plaque se déplace de {{v}} cm par an. De combien de mètres se déplace-t-elle en {{a}} ans ?"
+        reponse: "v*a/100"
+        unite: m
+        correction: "{{v}} × {{a}} = {{v*a}} cm = {{v*a/100}} m."
+      - type: vf
+        vars: { t: [["L'Amérique et l'Afrique ont été réunies autrefois.", true], ["Les montagnes ne bougent plus jamais.", false], ["Aux dorsales, un nouveau fond océanique se forme.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les continents dérivent toujours : l'Atlantique s'élargit de quelques centimètres par an."
+
+  - id: atmosphere-meteo-climat
+    titre: "Atmosphère, météo et climat"
+    objectif: Je distingue la météo et le climat.
+    mots: [atmosphère, troposphère, couche d'ozone, météo, climat]
+    etapes:
+      - texte: |
+          L'**atmosphère** est la couche de gaz qui entoure la Terre. Les nuages et la météo se passent dans la couche basse, la **troposphère** (jusqu'à 10-15 km). Plus haut, la **couche d'ozone** (dans la stratosphère) filtre une grande partie des **UV** dangereux du Soleil.
+          - La **météo** : le temps qu'il fait **à un endroit, un jour donné** (« demain, pluie à Lyon »).
+          - Le **climat** : les conditions **moyennes** sur une longue période (au moins **30 ans**) dans une région (« climat océanique : doux et humide »).
+          Un hiver froid ne contredit pas le réchauffement climatique : il faut regarder les moyennes sur des décennies.
+      - retiens: "Météo = temps d'un jour, d'un lieu. Climat = moyennes sur 30 ans ou plus. L'ozone filtre les UV."
+    exercices:
+      - type: classer
+        vars: { t: [["« Il pleuvra demain à Nantes. »", "« À Nice, les étés sont chauds et secs. »", "« Ce matin, il gèle à Strasbourg. »", "« Le Sahara reçoit très peu de pluie chaque année. »"]] }
+        enonce: "Cette phrase parle-t-elle de météo ou de climat ?"
+        categories: [météo, climat]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Météo : un jour, un lieu. Climat : des moyennes sur de longues périodes."
+      - type: qcm
+        vars: { t: [["Que filtre la couche d'ozone ?", "une grande partie des UV du Soleil", "la pluie", "le bruit"], ["Sur combien d'années au moins calcule-t-on un climat ?", "30 ans", "1 semaine", "1 an"], ["Dans quelle couche de l'atmosphère se forment les nuages ?", "la troposphère", "la couche d'ozone", "l'espace"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un hiver très froid prouve que le climat ne se réchauffe pas.", false], ["Le climat décrit des conditions moyennes.", true], ["L'atmosphère nous protège d'une partie du rayonnement du Soleil.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le climat se juge sur des décennies, pas sur une saison."
+
+  - id: effet-de-serre
+    titre: "L'effet de serre"
+    objectif: J'explique l'effet de serre naturel et son renforcement par les activités humaines.
+    mots: [effet de serre, gaz à effet de serre, dioxyde de carbone, méthane, réchauffement climatique]
+    etapes:
+      - texte: |
+          Le Soleil chauffe le sol ; le sol renvoie de la chaleur (des rayons infrarouges). Certains gaz de l'atmosphère — vapeur d'eau, **dioxyde de carbone (CO₂)**, **méthane**… — retiennent une partie de cette chaleur, comme la vitre d'une serre : c'est l'**effet de serre**.
+          - **Naturel**, il est indispensable : sans lui, la température moyenne de la Terre serait d'environ **−18 °C** au lieu de **+15 °C**.
+          - Depuis le XIXᵉ siècle, en brûlant du charbon, du pétrole et du gaz, et en déboisant, les humains ont fait passer le CO₂ de l'air d'environ **280 ppm** à **plus de 420 ppm** : l'effet de serre se **renforce** et la Terre s'est déjà réchauffée d'environ **1,2 °C** en moyenne.
+          Conséquences : canicules plus fréquentes, glaciers qui fondent, montée du niveau des mers, sécheresses et pluies extrêmes.
+      - retiens: "Effet de serre naturel : +15 °C au lieu de −18 °C. Les humains le renforcent (CO₂ 280 → plus de 420 ppm) : réchauffement d'environ 1,2 °C."
+    exercices:
+      - type: qcm
+        vars: { t: [["Sans effet de serre naturel, la température moyenne de la Terre serait d'environ…", "−18 °C", "+50 °C", "+15 °C"], ["Quel gaz, émis surtout en brûlant charbon, pétrole et gaz, renforce l'effet de serre ?", "le dioxyde de carbone", "le diazote", "le dioxygène"], ["De combien la Terre s'est-elle déjà réchauffée environ depuis l'ère industrielle ?", "d'environ 1,2 °C", "de 15 °C", "de 0 °C"], ["Quel gaz est émis notamment par les rizières et l'élevage des ruminants ?", "le méthane", "l'hélium", "l'oxygène"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["L'effet de serre est entièrement mauvais.", false], ["La quantité de CO₂ dans l'air a augmenté depuis 150 ans.", true], ["La fonte des glaciers fait partie des conséquences du réchauffement.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'effet de serre naturel permet la vie ; c'est son renforcement par les humains qui pose problème."
+      - type: ordre
+        vars: { t: [["le Soleil chauffe le sol", "le sol émet de la chaleur (infrarouges)", "les gaz à effet de serre retiennent une partie de cette chaleur", "l'air près du sol se réchauffe"]] }
+        enonce: "Remets les étapes de l'effet de serre dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Rayonnement solaire, infrarouges du sol, gaz qui retiennent la chaleur, réchauffement."
+
+  - id: energies
+    titre: "Les énergies de la planète"
+    objectif: Je distingue énergies renouvelables et non renouvelables.
+    mots: [énergie fossile, énergie renouvelable, nucléaire, transition énergétique]
+    etapes:
+      - texte: |
+          - **Non renouvelables** : charbon, pétrole, gaz (**fossiles**, formés en millions d'années, émettent du CO₂ en brûlant) ; l'uranium des centrales **nucléaires** (stock limité ; peu de CO₂, mais des déchets radioactifs à gérer très longtemps).
+          - **Renouvelables** : **solaire**, **éolien** (vent), **hydraulique** (barrages), **biomasse** (bois), **géothermie** (chaleur du sol). Elles se reconstituent en permanence, mais certaines sont **intermittentes** (pas de soleil la nuit, pas de vent par temps calme).
+          La **transition énergétique** combine économies d'énergie, efficacité (isolation, LED) et énergies peu émettrices.
+      - retiens: "Fossiles (charbon, pétrole, gaz) : limitées et émettrices de CO₂. Renouvelables : solaire, éolien, hydraulique, biomasse, géothermie. L'énergie la plus propre est celle qu'on ne consomme pas."
+    exercices:
+      - type: classer
+        vars: { t: [["le solaire", "le charbon", "l'éolien", "le pétrole"], ["l'hydraulique", "le gaz naturel", "la géothermie", "l'uranium"]] }
+        enonce: "Énergie renouvelable ou non renouvelable ?"
+        categories: [renouvelable, "non renouvelable"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Soleil, vent, eau, chaleur du sol se renouvellent ; charbon, pétrole, gaz et uranium sont en quantité limitée."
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'une énergie intermittente ?", "une énergie qui n'est pas toujours disponible (soleil, vent)", "une énergie très chère", "une énergie dangereuse"], ["Quel est l'inconvénient principal des énergies fossiles pour le climat ?", "elles émettent du CO₂ en brûlant", "elles sont trop rares dans les maisons", "elles font du bruit"], ["Quelle action fait économiser de l'énergie ?", "bien isoler une maison", "laisser les appareils en veille", "chauffer fenêtres ouvertes"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le pétrole s'est formé en quelques années.", false], ["Une centrale nucléaire émet très peu de CO₂ en fonctionnant.", true], ["Les panneaux solaires produisent aussi la nuit.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le pétrole vient de restes d'êtres vivants transformés pendant des millions d'années."

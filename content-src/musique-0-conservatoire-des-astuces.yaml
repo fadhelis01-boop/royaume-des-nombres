@@ -1,0 +1,140 @@
+id: mu-conservatoire-des-astuces
+matiere: musique
+titre: Le Conservatoire des Astuces
+sous_titre: S'entraîner efficacement, compter un rythme, mémoriser, chanter juste, protéger ses oreilles
+emoji: 🎼
+couleur: "#c45f0e"
+cycle: astuces
+age: 7 ans et +
+niveau: Tous niveaux
+ordre: 500
+version: 1.0.0
+intro:
+  - zero: "Les grands musiciens sont nés avec un don, non ? Moi je suis né avec… des joues."
+  - mia: "Les grands musiciens ont surtout beaucoup, beaucoup travaillé, avec de bonnes méthodes. On va les apprendre."
+
+lecons:
+  - id: bien-s-entrainer
+    titre: "Bien s'entraîner"
+    objectif: J'organise mon entraînement musical.
+    mots: [entraînement, régularité, tempo, métronome]
+    etapes:
+      - texte: |
+          Les méthodes des musiciens (qui marchent aussi pour tout apprendre) :
+          1. **Un peu chaque jour** plutôt que beaucoup une fois par semaine (10 à 20 minutes, c'est déjà très bien).
+          2. **Découper** : on travaille un petit passage difficile, pas tout le morceau à chaque fois.
+          3. **Lentement d'abord**, sans erreur, puis on accélère petit à petit avec un **métronome**.
+          4. **Répéter juste** : une erreur répétée s'apprend aussi ! On ralentit dès qu'on se trompe.
+          5. **S'écouter** (ou s'enregistrer) pour repérer ce qu'on peut améliorer.
+      - retiens: "Un peu chaque jour, découper, lentement puis plus vite, répéter juste, s'écouter."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quelle façon de s'entraîner est la plus efficace ?", "15 minutes chaque jour", "2 heures une fois par mois", "seulement la veille du concert"], ["Un passage est difficile. Que faire ?", "le travailler seul, lentement, puis accélérer", "jouer tout le morceau très vite", "le sauter"], ["Je me trompe toujours au même endroit. Que faire ?", "ralentir et répéter juste ce passage", "jouer plus fort", "continuer à jouer vite"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une erreur répétée plusieurs fois finit par s'apprendre.", true], ["Le métronome aide à garder un tempo régulier.", true], ["Il faut toujours commencer un morceau à la vitesse finale.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Lentement et juste d'abord ; la vitesse vient ensuite."
+      - type: ordre
+        vars: { t: [["choisir un petit passage", "le jouer lentement sans erreur", "accélérer un peu avec le métronome", "le rejouer dans le morceau entier"]] }
+        enonce: "Remets la méthode dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Découper, lentement, accélérer, replacer."
+
+  - id: compter-un-rythme
+    titre: "Compter un rythme"
+    objectif: Je compte les temps et je frappe un rythme régulier.
+    mots: [pulsation, temps, battement]
+    etapes:
+      - texte: |
+          La **pulsation** est le battement régulier de la musique, comme un cœur : c'est ce que tu frappes du pied.
+          On compte les **temps** à voix haute : « **1, 2, 3, 4** ». Pour les moitiés de temps : « **1 et 2 et 3 et 4 et** ».
+          Le **tempo** est la vitesse de la pulsation, en battements par minute (BPM) : 60 BPM = un battement par seconde.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Pulsation à 60", rythme: "X.x.x.x.", tempo: 60 }, { etiquette: "Pulsation à 120", rythme: "X.x.x.x.", tempo: 120 }]
+        legende: "Écoute la même pulsation lente puis rapide. Frappe dans tes mains avec elle !"
+      - retiens: "Pulsation = battement régulier. On compte « 1 et 2 et… ». Tempo en BPM : 60 BPM = 1 battement par seconde."
+    exercices:
+      - type: nombre
+        vars: { b: [60, 90, 120], m: [1, 2] }
+        enonce: "À {{b}} battements par minute, combien de battements en {{m}} minute(s) ?"
+        reponse: "b*m"
+        correction: "{{b}} × {{m}} = {{b*m}}."
+      - type: qcm
+        vars: { t: [[60, 120, "le son B est plus rapide"], [140, 70, "le son A est plus rapide"]] }
+        enonce: "Écoute les deux pulsations. Laquelle est la plus rapide ?"
+        visuel: { type: son, sons: [{ etiquette: "Son A", rythme: "X.x.x.x.", tempo: "{{t_0}}" }, { etiquette: "Son B", rythme: "X.x.x.x.", tempo: "{{t_1}}" }] }
+        choix: ["{{t_2}}", "{{si(t_2=='le son A est plus rapide','le son B est plus rapide','le son A est plus rapide')}}", "elles vont à la même vitesse"]
+        correction: "{{t_2}}."
+      - type: vf
+        vars: { t: [["60 battements par minute font un battement par seconde.", true], ["La pulsation change de vitesse à chaque mesure.", false], ["Compter « 1 et 2 et » aide à placer les demi-temps.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La pulsation est régulière : c'est le repère commun des musiciens."
+
+  - id: memoriser-une-melodie
+    titre: "Mémoriser une mélodie"
+    objectif: J'utilise des astuces pour retenir une mélodie.
+    mots: [mémoriser, phrase musicale, répétition]
+    etapes:
+      - texte: |
+          - Écoute le morceau plusieurs fois **avant** de le jouer.
+          - **Chante-le** (même doucement) : ce qu'on chante, on le retient.
+          - Repère les **répétitions** et les **phrases** (comme les phrases d'un texte).
+          - Apprends phrase par phrase, puis **enchaîne**.
+          - Rejoue-le le lendemain : le **sommeil** aide la mémoire.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Phrase 1", notes: "Do4 Do4 Do4 Ré4 Mi4:2 Ré4:2", tempo: 100 }, { etiquette: "Phrase 2", notes: "Do4 Mi4 Ré4 Ré4 Do4:4", tempo: 100 }]
+        legende: "« Au clair de la lune » (chanson traditionnelle) : deux phrases à mémoriser l'une après l'autre."
+      - retiens: "Écouter, chanter, repérer les répétitions, apprendre phrase par phrase, dormir dessus."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que faire avant de jouer un nouveau morceau ?", "l'écouter plusieurs fois", "le jouer tout de suite très vite", "rien"], ["Pourquoi chanter une mélodie aide-t-il ?", "chanter aide à la mémoriser", "ça ne sert à rien", "pour déranger les voisins"], ["Comment apprendre un long morceau ?", "phrase par phrase, puis enchaîner", "tout d'un coup", "en lisant seulement le titre"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        enonce: "Écoute les deux extraits : sont-ils identiques ou différents ?"
+        vars: { t: [["Do4 Ré4 Mi4 Do4", "Do4 Ré4 Mi4 Do4", "identiques"], ["Do4 Ré4 Mi4 Do4", "Do4 Ré4 Mi4 Ré4", "différents"], ["Sol4 Mi4 Sol4 Mi4", "Sol4 Mi4 Sol4 Mi4", "identiques"], ["Mi4 Ré4 Do4 Ré4", "Mi4 Ré4 Do4 Do4", "différents"]] }
+        visuel: { type: son, sons: [{ etiquette: "Extrait A", notes: "{{t_0}}", tempo: 110 }, { etiquette: "Extrait B", notes: "{{t_1}}", tempo: 110 }] }
+        choix: ["{{t_2}}", "{{si(t_2=='identiques','différents','identiques')}}"]
+        correction: "{{t_2}} : écoute bien la dernière note."
+      - type: vf
+        vars: { t: [["Le sommeil aide à retenir ce qu'on a appris.", true], ["Repérer les passages qui se répètent facilite la mémorisation.", true], ["Il faut connaître tout le morceau avant d'en jouer une seule phrase.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On apprend phrase par phrase ; le sommeil consolide la mémoire."
+
+  - id: proteger-ses-oreilles
+    titre: "Protéger ses oreilles et sa voix"
+    objectif: Je connais les gestes pour protéger mon audition et ma voix.
+    mots: [décibel, audition, bouchons d'oreille, voix]
+    etapes:
+      - texte: |
+          **Les oreilles** : au-delà de **85 dB** pendant longtemps, l'oreille interne s'abîme, et c'est **définitif**. Signes d'alerte : sifflements, oreilles « cotonneuses » après un concert.
+          - Garde le volume des écouteurs **en dessous de la moitié** et fais des pauses.
+          - Au concert, éloigne-toi des enceintes et mets des **bouchons d'oreille**.
+          **La voix** : on ne force pas en criant ; on boit de l'eau ; on s'échauffe en douceur (sirènes « ouuu » du grave à l'aigu, bourdonnements « mmm »).
+      - retiens: "Au-delà de 85 dB longtemps : danger définitif. Volume modéré, pauses, bouchons au concert. La voix ne se force pas : s'échauffer et boire."
+    exercices:
+      - type: classer
+        vars: { t: [["mettre des bouchons d'oreille au concert", "écouter de la musique à fond pendant des heures", "faire des pauses avec les écouteurs", "se coller aux enceintes"], ["baisser le volume des écouteurs", "crier pendant toute la récréation", "s'échauffer la voix avant de chanter", "dormir avec des écouteurs à fond"]] }
+        enonce: "Bon réflexe ou danger pour les oreilles et la voix ?"
+        categories: ["bon réflexe", "danger"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Volume modéré, pauses, bouchons ; on ne force pas sa voix."
+      - type: vf
+        vars: { t: [["Des sifflements dans les oreilles après un concert sont un signal d'alerte.", true], ["Une oreille abîmée par le bruit guérit toujours.", false], ["Boire de l'eau aide la voix.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les cellules ciliées de l'oreille interne détruites ne repoussent pas."
+      - type: qcm
+        vars: { t: [["À partir de quel niveau sonore, longtemps, l'oreille s'abîme-t-elle ?", "environ 85 dB", "environ 20 dB", "environ 200 dB"], ["Comment s'échauffer la voix ?", "faire des sirènes douces du grave à l'aigu", "crier très fort d'un coup", "chanter le plus aigu possible tout de suite"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

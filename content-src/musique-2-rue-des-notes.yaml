@@ -1,0 +1,203 @@
+id: mu-rue-des-notes
+matiere: musique
+titre: La Rue des Notes
+sous_titre: Les 7 notes, la portée et la clé de sol, les durées, les silences, la gamme pentatonique
+emoji: 🎹
+couleur: "#d9700f"
+cycle: graines
+age: 8 ans et +
+niveau: Explorateur (CE2 – CM1)
+ordre: 502
+prerequis: [mu-place-des-sons]
+version: 1.0.0
+intro:
+  - neo: "Les notes ont des noms, des places et des durées. Une fois qu'on les connaît, on peut lire n'importe quelle partition !"
+  - zero: "Do, ré, mi, fa, sol, la, si… et après ? Zéro ?"
+  - mia: "Et après, ça recommence : do, une octave plus haut !"
+
+lecons:
+  - id: les-sept-notes
+    titre: "Les 7 notes et le clavier"
+    objectif: Je connais le nom des notes et je les trouve sur un clavier.
+    mots: [note, gamme, octave, clavier]
+    etapes:
+      - texte: |
+          Il y a **7 noms de notes** : **do, ré, mi, fa, sol, la, si**… puis on recommence au **do** suivant, plus aigu : c'est une **octave**.
+          Sur un clavier, le **do** est la touche blanche juste à gauche d'un **groupe de 2 touches noires**. Les touches noires forment des groupes de 2 et de 3 : c'est le repère !
+          Dans d'autres pays, on utilise des lettres : **C D E F G A B** (C = do, A = la…).
+      - visuel:
+          type: clavier
+          de: Do4
+          a: Si4
+          notes: "Do4"
+        legende: "Le do est juste à gauche du groupe de deux touches noires. Touche les notes pour les entendre."
+      - visuel:
+          type: son
+          notes: "Do4 Ré4 Mi4 Fa4 Sol4 La4 Si4 Do5:2"
+          etiquette: "Écouter la gamme de do"
+      - retiens: "Do, ré, mi, fa, sol, la, si, (do). Le do est à gauche du groupe de 2 touches noires. Do = C, ré = D, mi = E, fa = F, sol = G, la = A, si = B."
+    exercices:
+      - type: mot
+        vars: { t: [["do", "ré"], ["ré", "mi"], ["mi", "fa"], ["fa", "sol"], ["sol", "la"], ["la", "si"], ["si", "do"]] }
+        enonce: "Quelle note vient juste après {{t_0}} ?"
+        reponse: "{{t_1}}"
+        correction: "Après {{t_0}} vient {{t_1}}."
+      - type: qcm
+        vars: { t: [["C", "do", "la", "si"], ["A", "la", "do", "ré"], ["G", "sol", "si", "fa"], ["E", "mi", "ré", "fa"], ["D", "ré", "do", "mi"], ["F", "fa", "mi", "sol"], ["B", "si", "do", "la"]] }
+        enonce: "Dans la notation en lettres, quelle note est {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} = {{t_1}}"
+      - type: nombre
+        vars: { t: [["de noms de notes différents", 7]] }
+        enonce: "Combien y a-t-il {{t_0}} ?"
+        reponse: "t_1"
+        correction: "7 : do, ré, mi, fa, sol, la, si."
+
+  - id: la-portee
+    titre: "La portée et la clé de sol"
+    objectif: Je lis les notes sur la portée en clé de sol.
+    mots: [portée, ligne, interligne, clé de sol]
+    etapes:
+      - texte: |
+          On écrit les notes sur une **portée** : **5 lignes** et 4 **interlignes**. Plus la note est **haute** sur la portée, plus elle est **aiguë**.
+          La **clé de sol** s'enroule autour de la **2ᵉ ligne** (en partant du bas) : la note sur cette ligne est un **sol**.
+          Repères en clé de sol : **mi** sur la 1ʳᵉ ligne, **sol** sur la 2ᵉ, **si** sur la 3ᵉ, **ré** sur la 4ᵉ, **fa** sur la 5ᵉ ; le **do** grave se place sur une petite ligne en dessous de la portée.
+      - visuel:
+          type: portee
+          notes: "Do4 Ré4 Mi4 Fa4 Sol4 La4 Si4 Do5"
+          durees: "noire noire noire noire noire noire noire noire"
+        legende: "La gamme de do, du do grave (sur sa petite ligne) au do aigu."
+      - retiens: "Portée = 5 lignes. Plus haut = plus aigu. Clé de sol : le sol est sur la 2ᵉ ligne ; mi 1ʳᵉ ligne, si 3ᵉ, ré 4ᵉ, fa 5ᵉ."
+    exercices:
+      - type: qcm
+        vars: { t: [["Sol4", "sol", "la", "fa"], ["Mi4", "mi", "fa", "ré"], ["Si4", "si", "la", "do"], ["Do4", "do", "ré", "si"], ["Fa5", "fa", "mi", "sol"], ["Ré5", "ré", "do", "mi"], ["La4", "la", "sol", "si"]] }
+        enonce: "Quelle est cette note (clé de sol) ?"
+        visuel: { type: portee, notes: "{{t_0}}", noms: non, durees: "ronde" }
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "C'est un {{t_1}}."
+      - type: qcm
+        vars: { t: [["Combien de lignes a une portée ?", "5", "4", "7"], ["Autour de quelle ligne s'enroule la clé de sol ?", "la 2ᵉ ligne", "la 1ʳᵉ ligne", "la 5ᵉ ligne"], ["Une note placée plus haut sur la portée est…", "plus aiguë", "plus grave", "plus longue"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Do4 Mi4 Sol4", "do, mi, sol", "ré, fa, la", "do, ré, mi"], ["Mi4 Fa4 Sol4", "mi, fa, sol", "do, ré, mi", "fa, sol, la"], ["Sol4 La4 Si4", "sol, la, si", "fa, sol, la", "la, si, do"], ["Do5 Si4 La4", "do, si, la", "la, si, do", "ré, do, si"]] }
+        enonce: "Lis ces trois notes de gauche à droite :"
+        visuel: { type: portee, notes: "{{t_0}}", noms: non, durees: "noire noire noire" }
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: les-durees
+    titre: "Ronde, blanche, noire, croche"
+    objectif: Je connais la durée des figures de notes.
+    mots: [ronde, blanche, noire, croche, temps]
+    etapes:
+      - texte: |
+          La **forme** de la note indique sa **durée** (avec la **noire** = 1 temps) :
+          | Figure | Aspect | Durée |
+          |---|---|---|
+          | **ronde** | tête vide, sans queue | 4 temps |
+          | **blanche** | tête vide + queue | 2 temps |
+          | **noire** | tête pleine + queue | 1 temps |
+          | **croche** | noire + un crochet | ½ temps |
+          Donc 1 ronde = 2 blanches = 4 noires = 8 croches.
+      - visuel:
+          type: portee
+          notes: "Sol4 Sol4 Sol4 Sol4"
+          durees: "ronde blanche noire croche"
+        legende: "Ronde (4 temps), blanche (2), noire (1), croche (½)."
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Une ronde", notes: "Sol4:4", tempo: 90 }, { etiquette: "Deux blanches", notes: "Sol4:2 Sol4:2", tempo: 90 }, { etiquette: "Quatre noires", notes: "Sol4 Sol4 Sol4 Sol4", tempo: 90 }, { etiquette: "Huit croches", notes: "Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5", tempo: 90 }]
+      - retiens: "Ronde 4, blanche 2, noire 1, croche ½ temps. 1 ronde = 2 blanches = 4 noires = 8 croches."
+    exercices:
+      - type: nombre
+        vars: { t: [["une ronde", 4], ["une blanche", 2], ["une noire", 1], ["deux noires", 2], ["une blanche et une noire", 3], ["deux rondes", 8]] }
+        enonce: "Combien de temps dure(nt) {{t_0}} ?"
+        reponse: "t_1"
+        unite: temps
+        correction: "{{t_1}} temps."
+      - type: nombre
+        vars: { t: [["noires dans une ronde", 4], ["croches dans une noire", 2], ["blanches dans une ronde", 2], ["croches dans une blanche", 4], ["croches dans une ronde", 8]] }
+        enonce: "Combien de {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}."
+      - type: qcm
+        vars: { t: [["ronde", "une ronde (4 temps)", "une noire (1 temps)", "une croche (½ temps)"], ["blanche", "une blanche (2 temps)", "une ronde (4 temps)", "une noire (1 temps)"], ["noire", "une noire (1 temps)", "une blanche (2 temps)", "une ronde (4 temps)"], ["croche", "une croche (½ temps)", "une noire (1 temps)", "une blanche (2 temps)"]] }
+        enonce: "Quelle est cette figure de note ?"
+        visuel: { type: portee, notes: "Sol4", durees: "{{t_0}}", noms: non }
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: les-silences
+    titre: "Les silences qui comptent"
+    objectif: Je connais les figures de silence.
+    mots: [pause, demi-pause, soupir, demi-soupir]
+    etapes:
+      - texte: |
+          En musique, le silence se **compte** aussi ! Chaque figure de note a son silence de même durée :
+          - **pause** = 4 temps (comme la ronde) ;
+          - **demi-pause** = 2 temps (comme la blanche) ;
+          - **soupir** = 1 temps (comme la noire) ;
+          - **demi-soupir** = ½ temps (comme la croche).
+          Le silence permet de respirer, de créer de l'attente, du suspense.
+      - visuel:
+          type: son
+          notes: "Do4 Mi4 _ Sol4 _ _ Do5:2"
+          tempo: 90
+          etiquette: "Écoute : des notes et des silences"
+      - retiens: "Pause 4, demi-pause 2, soupir 1, demi-soupir ½ temps. Le silence se compte."
+    exercices:
+      - type: qcm
+        vars: { t: [["la pause", "4 temps", "1 temps", "2 temps"], ["la demi-pause", "2 temps", "4 temps", "½ temps"], ["le soupir", "1 temps", "2 temps", "4 temps"], ["le demi-soupir", "½ temps", "1 temps", "2 temps"]] }
+        enonce: "Combien dure {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: qcm
+        vars: { t: [["la ronde", "la pause", "le soupir", "la demi-pause"], ["la blanche", "la demi-pause", "la pause", "le soupir"], ["la noire", "le soupir", "la demi-pause", "la pause"]] }
+        enonce: "Quel silence a la même durée que {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["une noire, un soupir et une blanche", 4], ["une pause", 4], ["deux soupirs et une noire", 3], ["une demi-pause et une blanche", 4]] }
+        enonce: "Combien de temps en tout pour : {{t_0}} ?"
+        reponse: "t_1"
+        unite: temps
+        correction: "{{t_1}} temps."
+
+  - id: pentatonique
+    titre: "La gamme pentatonique : impossible de jouer faux"
+    objectif: J'improvise avec 5 notes.
+    mots: [pentatonique, improviser]
+    etapes:
+      - texte: |
+          La gamme **pentatonique** n'utilise que **5 notes** : **do, ré, mi, sol, la** (on enlève fa et si). Elle est utilisée partout dans le monde (chansons traditionnelles, blues, musiques d'Asie et d'Afrique).
+          Magie : toutes ses notes « vont bien ensemble » : on peut **improviser** sans jamais sonner faux !
+          Sur un clavier, les **5 touches noires** forment aussi une gamme pentatonique.
+      - visuel:
+          type: clavier
+          de: Do4
+          a: Si4
+          notes: "Do4 Ré4 Mi4 Sol4 La4"
+        legende: "Les 5 notes de la pentatonique de do. Touche-les dans n'importe quel ordre : ça sonne toujours bien !"
+      - vraie_vie:
+          titre: Improvise dans le studio
+          texte: "Va dans le studio de musique (Salle de jeux), laisse le mode pentatonique activé et invente une petite mélodie de 8 notes. Rejoue-la trois fois de suite : tu as composé !"
+      - retiens: "Pentatonique = 5 notes : do, ré, mi, sol, la. Idéale pour improviser."
+    exercices:
+      - type: nombre
+        vars: { t: [["de notes dans une gamme pentatonique", 5]] }
+        enonce: "Combien {{t_0}} ?"
+        reponse: "t_1"
+        correction: "5 notes."
+      - type: classer
+        vars: { t: [["do", "fa", "mi", "si", "sol", "la"]] }
+        enonce: "Cette note fait-elle partie de la pentatonique de do ?"
+        categories: ["oui", "non"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 0]]
+        correction: "Pentatonique de do : do, ré, mi, sol, la (sans fa ni si)."
+      - type: vf
+        vars: { t: [["Les touches noires d'un piano forment une gamme pentatonique.", true], ["La gamme pentatonique a 7 notes.", false], ["On trouve des gammes pentatoniques dans des musiques du monde entier.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Pentatonique : « penta » = 5 en grec."

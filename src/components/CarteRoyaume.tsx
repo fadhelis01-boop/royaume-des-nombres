@@ -12,6 +12,29 @@ import { Icone } from "./Icone";
 // Dessinée par le programme en attendant l'illustration (cahier des charges, section 10).
 
 const DECO: Record<string, string[]> = {
+  // Chimie
+  "ch-labo-du-savant": ["🥽", "📓", "⚗️"], "ch-mare-des-etats": ["🧊", "💧", "🐸"], "ch-marais-des-melanges": ["🧂", "🥬", "🌫️"],
+  "ch-grotte-des-particules": ["⚛️", "🔥", "💨"], "ch-atelier-des-atomes": ["🧬", "🔬", "🧪"], "ch-tour-de-la-mole": ["⚖️", "🍋", "🔋"],
+  "ch-laboratoire-royal": ["🏛️", "🧫", "🌡️"], "ch-sanctuaire-de-l-energie": ["🔮", "🌿", "☀️"],
+  // Physique
+  "ph-carnet-du-physicien": ["📓", "📏", "⏱️"], "ph-colline-des-forces": ["🧲", "🎈", "🌗"], "ph-sentier-des-mesures": ["📏", "🎈", "💡"],
+  "ph-forge-des-courants": ["⚡", "🔋", "💡"], "ph-pic-du-mouvement": ["🏔️", "🛷", "🍎"], "ph-gorge-des-ondes": ["🌈", "🔊", "🔍"],
+  "ph-sommet-de-l-energie": ["🎢", "🌬️", "🛰️"], "ph-observatoire-des-champs": ["🔭", "🧲", "✨"],
+  // Biologie
+  "bio-herbier-de-mia": ["🔍", "🌼", "📓"], "bio-clairiere-du-vivant": ["🌱", "🐰", "🍄"], "bio-sous-bois-des-cycles": ["🐛", "🦋", "🐸"],
+  "bio-jardin-des-fonctions": ["🌻", "🐝", "🍞"], "bio-palais-du-corps": ["❤️", "🦴", "🧠"], "bio-tour-de-l-adn": ["🧬", "🌿", "🦠"],
+  "bio-noyau-du-vivant": ["🔬", "🧪", "⚡"], "bio-coeur-de-l-arbre-monde": ["🌳", "🐾", "🌍"],
+  // Terre & Univers
+  "uni-lunette-de-l-astronome": ["🧭", "🔭", "⭐"], "uni-cour-du-jour-et-de-la-nuit": ["🌙", "☀️", "🌦️"], "uni-jardin-de-la-terre": ["🌍", "🌋", "♻️"],
+  "uni-systeme-solaire": ["☄️", "🌕", "🌞"], "uni-planete-vivante": ["🌋", "🌬️", "🌊"], "uni-vie-des-etoiles": ["🌟", "🌌", "✨"],
+  "uni-climat-et-avenir": ["🌡️", "🌱", "🚲"],
+  // Musique
+  "mu-conservatoire-des-astuces": ["🎼", "⏱️", "👂"], "mu-place-des-sons": ["🥁", "🎺", "🎶"], "mu-rue-des-notes": ["🎹", "🎵", "🎼"],
+  "mu-theatre-des-gammes": ["🎭", "🎻", "🎶"], "mu-opera-des-formes": ["🎻", "🎺", "🎼"], "mu-tour-des-harmoniques": ["🔔", "〰️", "🎛️"],
+  "mu-studio-du-maitre": ["🎧", "🎚️", "🎷"],
+  // Dessin
+  "de-carnet-de-croquis": ["📒", "✏️", "🖌️"], "de-atelier-des-traits": ["✏️", "🔺", "🎨"], "de-jardin-des-formes": ["🦋", "🏠", "🐱"],
+  "de-salle-des-volumes": ["🧊", "⚪", "💡"], "de-galerie-des-perspectives": ["🖼️", "📐", "🛤️"], "de-musee-des-maitres": ["🏛️", "🖼️", "🌟"],
   // Archipel des Mots
   "fr-ile-des-sons": ["🐚", "🎵", "🦜"],
   "fr-foret-des-noms": ["🌲", "🦉", "🏷️"],
@@ -19,7 +42,7 @@ const DECO: Record<string, string[]> = {
   "fr-vallee-des-verbes": ["🏃", "🌾", "🐎"],
   "fr-prairie-des-accords": ["🌷", "🐑", "🎀"],
   "fr-montagnes-du-temps": ["⏳", "🏔️", "🕰️"],
-  "fr-marais-des-homophones": ["🐸", "🪞", "🌫️"],
+  "fr-marais-des-homophones": ["🐸", "↔️", "🌫️"],
   "fr-jardin-des-mots": ["🌻", "🐝", "🌱"],
   "fr-port-des-phrases": ["⚓", "⛵", "🦀"],
   "fr-tour-des-conjugaisons": ["🗼", "🔔", "🦇"],
@@ -30,8 +53,8 @@ const DECO: Record<string, string[]> = {
   "fr-observatoire-du-style": ["🔭", "✨", "🌙"],
   "fr-temple-de-la-poesie": ["🎻", "🌹", "🕊️"],
   "fr-palais-de-l-orthographe": ["👑", "🏰", "📏"],
-  "fr-academie-des-lettres": ["🎓", "🪶", "🏛️"],
-  "nid-des-nombres": ["🥚", "🐣", "🪺"],
+  "fr-academie-des-lettres": ["🎓", "✒️", "🏛️"],
+  "nid-des-nombres": ["🥚", "🐣", "🐣"],
   "foret-des-nombres": ["🌳", "🐿️", "🍄"],
   "prairie-des-additions": ["🌼", "🐰", "🥕"],
   "montagne-des-multiplications": ["🏔️", "🌰", "🦫"],
@@ -51,9 +74,9 @@ const DECO: Record<string, string[]> = {
   "labyrinthe-des-fonctions": ["🎢", "🌿", "🗺️"],
   "volcan-du-second-degre": ["🌋", "🔥", "📕"],
   "palais-de-l-arithmetique": ["🔐", "🏮", "📗"],
-  "jardin-des-suites": ["🪜", "🌱", "📘"],
+  "jardin-des-suites": ["📈", "🌱", "📘"],
   "vallee-des-derivees": ["🏔️", "🎿", "📙"],
-  "monts-exponentiels": ["📈", "🪷", "📒"],
+  "monts-exponentiels": ["📈", "🌸", "📒"],
   "mer-des-integrales": ["🌊", "⛵", "📓"],
   "fete-foraine-des-probabilites": ["🎡", "🎲", "📔"],
   "archipel-des-vecteurs": ["🏝️", "🧭", "⛵"],

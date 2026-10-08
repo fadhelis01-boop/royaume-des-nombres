@@ -1,3 +1,13 @@
+- version: "2.0.0"
+  date: "2026-10-08"
+  notes:
+    - "Le Royaume des Nombres devient « La Galaxie des Savoirs » : 8 planètes en trois familles. Les fondamentaux (maths, français), les sciences (chimie, physique, biologie, Terre et Univers) et les arts (musique, dessin). On change de planète quand on veut ; la progression est gardée partout."
+    - "6 nouvelles planètes, de 7 ans au niveau supérieur : 46 nouveaux mondes et plus de 200 leçons. Chacune a son monde « méthode », son histoire, ses gardiens (le Grand Neutre et ses avatars : Dame Bulle, le Mythe du Poids, la Fanfare Muette…) et ses Muses."
+    - "Expériences à faire pour de vrai, avec un niveau de sécurité (seul, avec un adulte, à regarder seulement), un pari avant de commencer et l'explication après."
+    - "Dessin pas à pas : on suit un guide au doigt ou au stylet, couche par couche, avec miroir, gomme, couleurs ; une galerie garde tous les dessins."
+    - "Musique : sons à écouter dans les exercices, portée et clavier interactifs, studio avec un piano où rien ne sonne faux et une boîte à rythmes, jeu de l'Oreille d'or."
+    - "Quiz éclair et échauffement pour chaque planète, test de niveau automatique pour toutes les matières, Grand Livre par planète (139 mots), nouveaux badges."
+    - "Nouveaux visuels : médaillons des planètes, décors des mondes de sciences, le Grand Neutre. Les décors en double ont été supprimés (site plus léger)."
 - version: "1.3.0"
   date: "2026-10-08"
   notes:

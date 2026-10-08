@@ -2,6 +2,7 @@ import { useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "reac
 import { evaluate, fmtNum, fracStr, parse, toNumber, type Node } from "../lib/expr";
 import type { VisSpec } from "../lib/types";
 import { Md } from "./Md";
+import { AtomeVis, ClavierVis, PorteeVis, SonVis } from "./VisuelsSavoirs";
 
 // Tous les visuels sont dessinés à partir de données (aucune image à fabriquer) :
 // un nouveau monde peut ainsi illustrer ses leçons sans une ligne de code.
@@ -101,6 +102,14 @@ function renderVis(v: Any): ReactNode {
       return <Solide forme={s(v.forme)} labels={v.labels as Any | undefined} />;
     case "image":
       return <img src={s(v.src)} alt={s(v.alt)} className="vis-img" loading="lazy" />;
+    case "son":
+      return <SonVis v={v} />;
+    case "portee":
+      return <PorteeVis v={v} />;
+    case "clavier":
+      return <ClavierVis v={v} />;
+    case "atome":
+      return <AtomeVis v={v} />;
   }
   throw new Error(`type « ${s(v.type)} » inconnu`);
 }

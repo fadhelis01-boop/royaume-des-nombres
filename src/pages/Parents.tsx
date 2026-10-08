@@ -740,9 +740,12 @@ function Sauvegarde() {
 function Guide() {
   return (
     <div className="card guide">
-      <h3>🎓 Comment fonctionne le Royaume des Nombres ?</h3>
+      <h3>🎓 Comment fonctionne la Galaxie des Savoirs ?</h3>
       <p>
-        L'application suit les principes des pays les plus performants en mathématiques (Singapour, Japon, Corée, Estonie…) et les résultats de la recherche en sciences de l'éducation :
+        La Galaxie réunit 8 planètes, rangées en trois familles : <strong>les fondamentaux</strong> (maths, français), <strong>les sciences</strong> (chimie, physique, biologie, Terre &amp; Univers) et <strong>les arts</strong> (musique, dessin). Chaque planète a ses mondes (de 7 ans au niveau supérieur), son histoire, son monde « méthode », ses gardiens et ses jeux. L'enfant change de planète quand il veut ; sa progression est gardée partout.
+      </p>
+      <p>
+        L'application suit les principes des pays les plus performants (Singapour, Japon, Corée, Estonie, Finlande…) et les résultats de la recherche en sciences de l'éducation :
       </p>
       <ul>
         <li>
@@ -770,6 +773,15 @@ function Guide() {
           <strong>Les deux sens</strong> : traduire un problème en calcul (Atelier des problèmes) ET inventer un problème à partir d'un calcul (« Invente un problème »).
         </li>
         <li>
+          <strong>La démarche scientifique</strong> (OHERIC : observer, hypothèse, expérience, résultat, interprétation, conclusion) : en sciences, l'enfant parie avant de vérifier, et réalise de vraies expériences sûres, classées par niveau de sécurité (🟢 seul, 🟠 avec un adulte, 🔴 à regarder seulement, jamais à la maison).
+        </li>
+        <li>
+          <strong>Le dessin décomposé</strong> : chaque dessin pas à pas avance par couches (construction, proportions, contour, détails, couleur), avec un guide à suivre au doigt ou au stylet. Le trait n'est jamais noté ; la galerie garde les dessins pour comparer les progrès.
+        </li>
+        <li>
+          <strong>La musique par l'oreille et par le corps</strong> : écouter, frapper la pulsation, comparer des sons, puis lire et composer (studio avec clavier « sans fausse note » et boîte à rythmes).
+        </li>
+        <li>
           <strong>La méthode explicite</strong> : l'École des Astuces enseigne comment chercher (les 4 étapes de Pólya), vérifier, estimer, calculer de tête plus vite, et réussir un contrôle.
         </li>
       </ul>
@@ -780,13 +792,14 @@ function Guide() {
         <li>Demandez-lui d'expliquer ce qu'il a appris : expliquer, c'est le meilleur moyen de comprendre.</li>
         <li>Valorisez les efforts (« tu as persévéré ! ») plus que la vitesse ou la note.</li>
         <li>Regardez l'onglet Suivi : les « points à consolider » indiquent où aider.</li>
-        <li>Les maths sont partout : faites calculer la monnaie, doubler une recette, estimer un trajet, lire l'heure.</li>
+        <li>Les savoirs sont partout : faites calculer la monnaie, doubler une recette, observer la Lune, écouter une musique ensemble, dessiner une plante du jardin.</li>
+        <li>Pour les expériences 🟠, restez à côté de votre enfant ; aucune expérience 🔴 ne doit être reproduite à la maison.</li>
       </ul>
       <h3>📏 Correspondance avec l'école (France)</h3>
       <ul>
-        <li>🌱 Les Graines : CE1 à CM2 (cycles 2 et 3) — nombres, quatre opérations, fractions, décimaux, mesures, géométrie, problèmes.</li>
-        <li>🧭 Les Explorateurs : 6ᵉ à 3ᵉ (cycles 3 et 4) — proportionnalité, relatifs, algèbre, géométrie, données, fonctions.</li>
-        <li>🏰 Les Maîtres : seconde, première et terminale (spécialité mathématiques), avec des ouvertures vers le supérieur (nombres complexes, matrices, logique).</li>
+        <li>🌱 Les Graines : CP à CM1 (cycles 2 et 3) — les fondations de chaque matière.</li>
+        <li>🧭 Les Explorateurs : CM2 à la seconde (cycles 3 et 4) — les notions du collège.</li>
+        <li>🏰 Les Maîtres : première, terminale, avec des introductions rigoureuses au supérieur.</li>
       </ul>
       <p className="small muted">
         L'enfant peut avancer à son rythme, plus vite ou plus lentement que sa classe : c'est la maîtrise qui compte, pas l'âge.

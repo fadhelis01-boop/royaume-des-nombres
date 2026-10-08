@@ -1,0 +1,171 @@
+id: ph-sommet-de-l-energie
+matiere: physique
+titre: Le Sommet de l'Énergie
+sous_titre: Formes d'énergie, énergie cinétique et potentielle, F = ma, chute libre, gravitation
+emoji: 🎢
+couleur: "#173a7a"
+cycle: maitres
+age: 15 ans et +
+niveau: Ingénieur – Expert (2nde – Terminale)
+ordre: 206
+prerequis: [ph-pic-du-mouvement]
+version: 1.0.0
+intro:
+  - neo: "L'énergie ne se crée pas et ne se perd pas : elle se transforme. C'est la loi la plus solide de toute la physique."
+  - zero: "Même mon énergie à moi ? Quand je fais la sieste, elle va où ?"
+  - mia: "Elle se repose… et elle vient de ce que tu as mangé. Tout est lié."
+
+lecons:
+  - id: formes-d-energie
+    titre: "Les formes d'énergie et leurs conversions"
+    objectif: J'identifie les formes d'énergie et les conversions dans une chaîne énergétique.
+    mots: [énergie, conversion, conservation, rendement]
+    etapes:
+      - texte: |
+          Formes d'énergie : **cinétique** (mouvement), **potentielle** (position en hauteur, ressort tendu), **thermique**, **chimique** (aliments, carburants, piles), **électrique**, **lumineuse** (rayonnante), **nucléaire**.
+          Un convertisseur transforme une forme en une autre : une lampe convertit l'énergie électrique en lumière… et en chaleur (perdue).
+          **Conservation** : l'énergie totale se conserve. **Rendement** = énergie utile / énergie reçue (toujours < 1). Une LED a un bien meilleur rendement qu'une ampoule à filament.
+      - retiens: "L'énergie se conserve et se transforme. Rendement = utile / reçue, toujours inférieur à 100 %."
+    exercices:
+      - type: qcm
+        vars: { t: [["une éolienne", "cinétique (vent) → électrique", "électrique → cinétique", "chimique → lumineuse"], ["un moteur électrique", "électrique → cinétique", "cinétique → électrique", "thermique → chimique"], ["une pile", "chimique → électrique", "électrique → chimique", "lumineuse → chimique"], ["un panneau solaire photovoltaïque", "lumineuse → électrique", "électrique → lumineuse", "chimique → thermique"], ["la photosynthèse", "lumineuse → chimique", "chimique → lumineuse", "électrique → chimique"]] }
+        enonce: "Quelle conversion réalise {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { r: [100, 200, 500, 1000], u: [20, 40, 50, 80] }
+        si: "u < 100"
+        enonce: "Un appareil reçoit {{r}} J et fournit {{r*u/100}} J d'énergie utile. Quel est son rendement (en %) ?"
+        reponse: "u"
+        unite: "%"
+        correction: "{{r*u/100}} / {{r}} × 100 = {{u}} %."
+      - type: vf
+        vars: { t: [["Une machine peut avoir un rendement de 120 %.", false], ["L'énergie perdue par une lampe part surtout sous forme de chaleur.", true], ["L'énergie totale se conserve toujours.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Rendement toujours inférieur à 100 % : une partie de l'énergie est dissipée (souvent en chaleur)."
+
+  - id: cinetique-potentielle
+    titre: "Énergie cinétique et énergie potentielle"
+    objectif: Je calcule Ec = ½mv² et Ep = mgh.
+    mots: [énergie cinétique, énergie potentielle, énergie mécanique]
+    etapes:
+      - texte: |
+          - **Énergie cinétique** : $E_c = \dfrac{1}{2} m v^2$ (J, avec m en kg, v en m/s). Doubler la vitesse **quadruple** l'énergie : c'est pourquoi les chocs à grande vitesse sont si graves.
+          - **Énergie potentielle de pesanteur** : $E_p = m g h$ (h en m, g = 9,8 N/kg).
+          - **Énergie mécanique** : $E_m = E_c + E_p$. Sans frottement, elle se **conserve** : sur des montagnes russes, la hauteur se change en vitesse, et inversement.
+      - exemple:
+          titre: Une voiture en ville
+          enonce: "Une voiture de 1 000 kg roule à 50 km/h ≈ 13,9 m/s."
+          etapes: ["$E_c = 0{,}5 \\times 1000 \\times 13{,}9^2 \\approx 96\\,600$ J", "À 100 km/h, l'énergie est 4 fois plus grande ≈ 386 000 J : il faut 4 fois plus de distance de freinage."]
+      - retiens: "$E_c = \\frac12 m v^2$ ; $E_p = mgh$ ; $E_m = E_c + E_p$ conservée sans frottement. Vitesse × 2 ⇒ Ec × 4."
+    exercices:
+      - type: nombre
+        vars: { m: [2, 10, 50, 80], v: [2, 3, 5, 10] }
+        enonce: "Calcule l'énergie cinétique d'un objet de {{m}} kg à {{v}} m/s."
+        reponse: "0.5*m*v^2"
+        unite: J
+        correction: "Ec = ½ × {{m}} × {{v}}² = {{0.5*m*v^2}} J."
+      - type: nombre
+        vars: { m: [1, 2, 5, 40], h: [2, 5, 10, 20] }
+        enonce: "Calcule l'énergie potentielle de pesanteur d'un objet de {{m}} kg à {{h}} m de hauteur (g = 9,8 N/kg)."
+        reponse: "m*9.8*h"
+        tolerance: 0.01
+        unite: J
+        correction: "Ep = {{m}} × 9,8 × {{h}} = {{m*9.8*h}} J."
+      - type: nombre
+        vars: { k: [2, 3, 4] }
+        enonce: "Si la vitesse d'une voiture est multipliée par {{k}}, par combien est multipliée son énergie cinétique ?"
+        reponse: "k^2"
+        correction: "Ec dépend du carré de la vitesse : {{k}}² = {{k^2}}."
+
+  - id: deuxieme-loi
+    titre: "La deuxième loi de Newton"
+    objectif: J'utilise F = m × a.
+    mots: [accélération, force résultante, Newton]
+    etapes:
+      - texte: |
+          L'**accélération** a (en m/s²) mesure la variation de vitesse par seconde.
+          **2ᵉ loi de Newton** : $\vec F = m \vec a$ — la somme des forces est égale à la masse fois l'accélération. Une force donnée accélère **moins** un objet **plus lourd**.
+      - exemple:
+          titre: Pousser un chariot
+          enonce: "On exerce une force résultante de 30 N sur un chariot de 15 kg."
+          etapes: ["$a = F / m = 30 / 15 = 2$ m/s²", "Sa vitesse augmente de 2 m/s chaque seconde."]
+      - retiens: "$F = m \\times a$ (N = kg × m/s²). Même force, objet plus lourd ⇒ moins d'accélération."
+    exercices:
+      - type: nombre
+        vars: { m: [2, 5, 10, 1000], a: [2, 3, 0.5] }
+        enonce: "Quelle force faut-il pour donner une accélération de {{a}} m/s² à une masse de {{m}} kg ?"
+        reponse: "m*a"
+        unite: N
+        correction: "F = m × a = {{m}} × {{a}} = {{m*a}} N."
+      - type: nombre
+        vars: { F: [10, 20, 60, 100], m: [5, 10, 20] }
+        enonce: "Une force de {{F}} N agit sur une masse de {{m}} kg. Accélération ?"
+        reponse: "F/m"
+        tolerance: 0.01
+        unite: "m/s²"
+        correction: "a = F / m = {{F}} / {{m}} = {{F/m}} m/s²."
+      - type: vf
+        vars: { t: [["Avec la même force, un camion accélère moins qu'une voiture.", true], ["Une accélération de 0 m/s² signifie que l'objet est forcément immobile.", false], ["Le newton est égal à un kg·m/s².", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "a = 0 : vitesse constante, l'objet peut très bien se déplacer (inertie)."
+
+  - id: chute-libre
+    titre: "La chute libre"
+    objectif: Je calcule la vitesse et la hauteur de chute sans frottement.
+    mots: [chute libre, accélération de la pesanteur]
+    etapes:
+      - texte: |
+          En **chute libre** (seul le poids agit, pas de frottement de l'air), tous les objets ont la **même accélération** g ≈ 9,8 m/s², quelle que soit leur masse.
+          Lâché sans vitesse : $v = g\,t$ et la distance parcourue $h = \dfrac{1}{2} g t^2$.
+          En 1971, l'astronaute David Scott a lâché un marteau et une plume sur la Lune (sans air) : ils sont arrivés ensemble.
+      - retiens: "Chute libre : même accélération g pour tous. $v = gt$, $h = \\frac12 g t^2$ (départ sans vitesse)."
+    exercices:
+      - type: nombre
+        vars: { t: [1, 2, 3] }
+        enonce: "Une bille est lâchée sans vitesse (chute libre, g = 9,8 m/s²). Quelle est sa vitesse après {{t}} s ?"
+        reponse: "9.8*t"
+        tolerance: 0.01
+        unite: m/s
+        correction: "v = g × t = 9,8 × {{t}} = {{9.8*t}} m/s."
+      - type: nombre
+        vars: { t: [1, 2, 3] }
+        enonce: "Quelle distance a-t-elle parcourue après {{t}} s ? ($h = \\frac12 g t^2$)"
+        reponse: "0.5*9.8*t^2"
+        tolerance: 0.01
+        unite: m
+        correction: "h = 0,5 × 9,8 × {{t}}² = {{0.5*9.8*t^2}} m."
+      - type: qcm
+        vars: { t: [["Dans le vide, une boule de pétanque et une bille lâchées ensemble…", "arrivent en même temps", "la boule arrive avant", "la bille arrive avant"], ["Pourquoi, dans l'air, une plume tombe-t-elle lentement ?", "les frottements de l'air la freinent beaucoup", "elle n'a pas de poids", "la Terre l'attire moins"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: gravitation
+    titre: "La gravitation universelle"
+    objectif: J'utilise la loi de la gravitation de Newton.
+    mots: [gravitation, attraction, orbite, constante de gravitation]
+    etapes:
+      - texte: |
+          Newton a compris que la force qui fait tomber la pomme est **la même** que celle qui retient la Lune autour de la Terre : la **gravitation**. Deux corps de masses $m_A$ et $m_B$, séparés par une distance d, s'attirent :
+          $$F = G\,\frac{m_A\, m_B}{d^2}$$ avec $G \approx 6{,}67 \times 10^{-11}$ N·m²/kg².
+          Si la distance **double**, la force est **divisée par 4**. Un satellite en orbite « tombe » en permanence autour de la Terre, mais va assez vite de côté pour ne jamais la toucher.
+      - retiens: "$F = G m_A m_B / d^2$. Distance × 2 ⇒ force ÷ 4. La même force fait tomber la pomme et tourner la Lune."
+    exercices:
+      - type: nombre
+        vars: { k: [2, 3, 4, 10] }
+        enonce: "Si la distance entre deux astres est multipliée par {{k}}, par combien la force de gravitation est-elle divisée ?"
+        reponse: "k^2"
+        correction: "La force dépend de 1/d² : divisée par {{k}}² = {{k^2}}."
+      - type: nombre
+        vars: { k: [2, 3, 5] }
+        enonce: "Si la masse de l'un des deux corps est multipliée par {{k}}, par combien la force est-elle multipliée ?"
+        reponse: "k"
+        correction: "La force est proportionnelle à chaque masse : × {{k}}."
+      - type: vf
+        vars: { t: [["Un satellite en orbite est en chute permanente autour de la Terre.", true], ["Il n'y a pas de gravitation dans la Station spatiale internationale.", false], ["La Terre attire la Lune et la Lune attire la Terre avec la même force.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Dans l'ISS, la gravitation existe (≈ 90 % de celle au sol) : les astronautes flottent parce qu'ils tombent avec la station."

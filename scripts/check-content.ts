@@ -200,6 +200,12 @@ function checkStep(s: Step, where: string) {
     case "vraie_vie":
       checkText(s.texte, where);
       break;
+    case "experience":
+      [s.titre, s.observation, s.explication, ...s.materiel, ...s.etapes, s.prediction?.question, ...(s.prediction?.choix ?? [])].forEach((t) => checkText(t, where));
+      break;
+    case "dessin":
+      s.etapes.forEach((e) => checkText(e.consigne, where));
+      break;
   }
 }
 

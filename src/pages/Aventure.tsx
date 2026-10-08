@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { go } from "../lib/router";
-import { histoireDe, matiereDe, nextLesson, prologueId, useContent } from "../lib/content";
+import { histoireDe, matiereDe, nextLesson, objetLabel, planeteDe, prologueId, useContent } from "../lib/content";
 import { getState, markStory, useChild } from "../lib/store";
 import { StoryScene } from "../components/Story";
 import { Mascot } from "../components/Mascot";
@@ -13,8 +13,9 @@ export function Aventure({ part }: { part?: string }) {
   const mat = matiereDe(child);
   const h = histoireDe(manifest, mat);
   const pid = prologueId(mat);
-  const decorPro = mat === "francais" ? (worlds.find((w) => w.matiere === "francais" && w.decor)?.decor ?? "img/decors/foret-des-nombres.webp") : "img/decors/foret-des-nombres.webp";
-  const tProl = mat === "francais" ? "Prologue — L'Archipel se tait" : "Prologue — Le Royaume s'éteint";
+  const pl = planeteDe(manifest, mat);
+  const decorPro = mat === "maths" ? "img/decors/foret-des-nombres.webp" : worlds.find((w) => w.matiere === mat && w.decor)?.decor;
+  const tProl = pl?.prologue.titre ?? "Prologue";
   const [open, setOpen] = useState<{ titre: string; lines: Line[]; k: string; decor?: string; couleur?: string } | null>(null);
   if (!h) return <div className="page center">L'aventure n'est pas disponible.</div>;
 
@@ -30,7 +31,7 @@ export function Aventure({ part }: { part?: string }) {
           onDone={() => {
             const fresh = !child.story?.[pid] && !Object.keys(child.progress).some((k) => worlds.find((w) => w.id === k.split("/")[0])?.matiere === mat);
             markStory(pid);
-            if (fresh && child.age >= 8 && mat === "maths" && !child.diag) go("/diagnostic?quete=1");
+            if (fresh && child.age >= 8 && !child.counters[`diag:${mat}`] && !(mat === "maths" && child.diag)) go("/diagnostic?quete=1");
             else if (fresh) {
               const n = nextLesson(child, getState().settings);
               go(n ? `/lecon/${n.world.id}/${n.lesson.id}` : "/");
@@ -62,9 +63,9 @@ export function Aventure({ part }: { part?: string }) {
         <Mascot who="nuage" size={70} humeur={child.story?.["fin-arc-1"] ? "joie" : undefined} />
         <div>
           <strong>
-            💎 {crystals.length} cristal{crystals.length > 1 ? "aux" : ""} rallumé{crystals.length > 1 ? "s" : ""}
+            {objetLabel(pl, crystals.length)}
           </strong>
-          <p className="small muted">Apprends les leçons d'un monde, puis réussis son Défi du Gardien pour rallumer son cristal et lire la suite de l'histoire.</p>
+          <p className="small muted">Apprends les leçons d'un monde, puis réussis son Défi du Gardien pour le sauver et lire la suite de l'histoire.</p>
         </div>
       </div>
       <button className="chapter-row" onClick={() => setOpen({ titre: tProl, lines: h.prologue, k: `${pid}-replay`, decor: decorPro })}>

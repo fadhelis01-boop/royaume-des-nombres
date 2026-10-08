@@ -1,0 +1,148 @@
+id: ph-carnet-du-physicien
+matiere: physique
+titre: Le Carnet du Physicien
+sous_titre: Unités, conversions, ordres de grandeur, notation scientifique, méthode de calcul
+emoji: 📓
+couleur: "#1a5fbf"
+cycle: astuces
+age: 9 ans et +
+niveau: Tous niveaux
+ordre: 200
+version: 1.0.0
+intro:
+  - neo: "Un physicien sans unités, c'est comme un cuisinier sans balance : il ne sait jamais combien il en met."
+  - zero: "Moi je mesure tout en hamsters. Cette table fait 12 hamsters de long !"
+  - mia: "C'est un début… mais pour se comprendre partout dans le monde, il faut les mêmes unités."
+
+lecons:
+  - id: unites-si
+    titre: "Les unités du Système international"
+    objectif: Je connais les unités de base et leurs symboles.
+    mots: [unité, Système international, symbole]
+    etapes:
+      - texte: |
+          Depuis la Révolution française et le **mètre**, le monde entier utilise le **Système international (SI)** :
+          | Grandeur | Unité | Symbole |
+          |---|---|---|
+          | longueur | mètre | m |
+          | masse | kilogramme | kg |
+          | durée | seconde | s |
+          | intensité électrique | ampère | A |
+          | température | kelvin | K (on utilise aussi le degré Celsius, °C) |
+          D'autres unités en découlent : la vitesse en m/s, la force en **newton** (N), l'énergie en **joule** (J), la puissance en **watt** (W), la tension en **volt** (V).
+      - attention:
+          texte: "Un résultat sans unité ne veut rien dire : « la vitesse est 3 » ? 3 km/h (une tortue pressée) ou 3 km/s (une fusée) ?"
+          qui: neo
+      - retiens: "Mètre (m), kilogramme (kg), seconde (s), ampère (A), kelvin (K). Toujours écrire l'unité !"
+    exercices:
+      - type: qcm
+        vars: { t: [["une force", "le newton (N)", "le joule (J)", "le watt (W)"], ["une énergie", "le joule (J)", "le newton (N)", "le volt (V)"], ["une puissance", "le watt (W)", "le joule (J)", "l'ampère (A)"], ["une tension électrique", "le volt (V)", "l'ampère (A)", "le watt (W)"], ["une intensité électrique", "l'ampère (A)", "le volt (V)", "le newton (N)"], ["une masse", "le kilogramme (kg)", "le newton (N)", "le litre (L)"]] }
+        enonce: "Quelle est l'unité d'{{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: mot
+        vars: { t: [["mètre", "m"], ["seconde", "s"], ["kilogramme", "kg"], ["newton", "N"], ["joule", "J"], ["watt", "W"], ["volt", "V"], ["ampère", "A"]] }
+        enonce: "Écris le symbole de l'unité : {{t_0}}"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} : {{t_1}}"
+      - type: vf
+        vars: { t: [["Le kilogramme est une unité de masse.", true], ["Le newton est une unité d'énergie.", false], ["Un résultat de physique doit toujours avoir une unité.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le newton mesure une force ; l'énergie se mesure en joules."
+
+  - id: conversions
+    titre: "Convertir sans se tromper"
+    objectif: Je convertis longueurs, masses, durées et vitesses.
+    mots: [conversion, préfixe, kilo, milli]
+    etapes:
+      - texte: |
+          Les **préfixes** multiplient l'unité : **kilo** (k) = × 1 000 ; **centi** (c) = ÷ 100 ; **milli** (m) = ÷ 1 000 ; **micro** (µ) = ÷ 1 000 000 ; **méga** (M) = × 1 000 000.
+          - 1 km = 1 000 m ; 1 m = 100 cm = 1 000 mm.
+          - 1 h = 60 min = 3 600 s.
+          - **Vitesse** : pour passer des km/h aux m/s, on **divise par 3,6** (car 1 km/h = 1 000 m / 3 600 s). 36 km/h = 10 m/s.
+      - retiens: "k = ×1 000, m = ÷1 000. 1 h = 3 600 s. km/h → m/s : ÷ 3,6 ; m/s → km/h : × 3,6."
+    exercices:
+      - type: nombre
+        vars: { t: [["3 km", "m", 3000], ["2,5 km", "m", 2500], ["4 m", "cm", 400], ["1,2 m", "mm", 1200], ["2 h", "s", 7200], ["5 min", "s", 300], ["3 kg", "g", 3000], ["750 g", "kg", 0.75]] }
+        enonce: "Convertis : {{t_0}} = … {{t_1}}"
+        reponse: "t_2"
+        correction: "{{t_0}} = {{t_2}} {{t_1}}"
+      - type: nombre
+        vars: { v: [18, 36, 54, 72, 90, 108] }
+        enonce: "Convertis {{v}} km/h en m/s."
+        reponse: "v/3.6"
+        unite: m/s
+        correction: "{{v}} ÷ 3,6 = {{v/3.6}} m/s."
+      - type: nombre
+        vars: { v: [5, 10, 20, 25, 30] }
+        enonce: "Convertis {{v}} m/s en km/h."
+        reponse: "v*3.6"
+        unite: km/h
+        correction: "{{v}} × 3,6 = {{v*3.6}} km/h."
+
+  - id: ordres-de-grandeur
+    titre: "Ordres de grandeur et notation scientifique"
+    objectif: J'écris un nombre en notation scientifique et j'estime un ordre de grandeur.
+    mots: [notation scientifique, puissance de dix, ordre de grandeur]
+    etapes:
+      - texte: |
+          En physique, on manie des nombres immenses et minuscules. La **notation scientifique** les écrit $a \times 10^n$ avec $1 \le a < 10$ :
+          - vitesse de la lumière : $300\,000\,000$ m/s $= 3 \times 10^8$ m/s ;
+          - taille d'un atome : $0{,}000\,000\,000\,1$ m $= 1 \times 10^{-10}$ m ;
+          - distance Terre-Soleil : environ $1{,}5 \times 10^{11}$ m.
+          L'**ordre de grandeur** est la puissance de 10 la plus proche : il sert à **vérifier** qu'un résultat est plausible.
+      - retiens: "$a \\times 10^n$ avec $1 \\le a < 10$. Exposant positif : grand nombre ; négatif : petit nombre."
+    exercices:
+      - type: nombre
+        vars: { t: [["3 000", 3], ["50 000", 4], ["1 000 000", 6], ["700", 2], ["0,01", -2], ["0,000 3", -4], ["300 000 000", 8]] }
+        enonce: "On écrit {{t_0}} sous la forme $a \\times 10^n$. Que vaut n ?"
+        reponse: "t_1"
+        correction: "n = {{t_1}}."
+      - type: qcm
+        vars: { t: [["la taille d'un être humain", "1 m", "1 mm", "1 km"], ["la masse d'une voiture", "1 000 kg", "10 kg", "1 000 000 kg"], ["la durée d'un battement de cœur", "1 s", "1 min", "1 h"], ["l'épaisseur d'un cheveu", "0,1 mm", "1 cm", "1 m"], ["la distance Paris-Marseille", "plusieurs centaines de km", "quelques km", "des millions de km"]] }
+        enonce: "Quel est l'ordre de grandeur de {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["$3 \\times 10^8$ est plus grand que $9 \\times 10^7$.", true], ["$10^{-3}$ est un nombre négatif.", false], ["$2{,}5 \\times 10^3 = 2\\,500$.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "$10^{-3} = 0{,}001$ : c'est petit, mais positif."
+
+  - id: methode-de-calcul
+    titre: "Résoudre un exercice de physique en 6 étapes"
+    objectif: J'applique une méthode pour résoudre un problème.
+    mots: [méthode, données, formule, vérification]
+    etapes:
+      - texte: |
+          1. **Lire** et faire un **schéma**.
+          2. Lister les **données** avec leurs **unités** (et les convertir si besoin).
+          3. Écrire ce qu'on **cherche**.
+          4. Choisir la **formule** et l'écrire **littéralement** (avec des lettres).
+          5. **Calculer** (les unités dans le calcul).
+          6. **Vérifier** : l'unité est-elle bonne ? L'ordre de grandeur est-il plausible ? Puis **répondre par une phrase**.
+      - exemple:
+          titre: Un vélo en balade
+          enonce: "Lina parcourt 12 km en 40 min. Quelle est sa vitesse moyenne en km/h ?"
+          etapes: ["Données : d = 12 km ; t = 40 min = 40/60 h ≈ 0,667 h", "Cherche : v", "Formule : v = d / t", "Calcul : v = 12 / 0,667 = 18 km/h", "Vérification : 18 km/h, c'est une vitesse de vélo tranquille. Plausible !"]
+          reponse: "Lina roule à 18 km/h de moyenne."
+      - retiens: "Schéma, données + unités, inconnue, formule littérale, calcul, vérification + phrase réponse."
+    exercices:
+      - type: ordre
+        vars: { t: [["Lire et faire un schéma", "Lister les données et leurs unités", "Écrire ce qu'on cherche", "Choisir et écrire la formule", "Calculer", "Vérifier et répondre par une phrase"]] }
+        enonce: "Remets les 6 étapes de la méthode dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}", "{{t_5}}"]
+        correction: "Lire, données, inconnue, formule, calcul, vérification."
+      - type: qcm
+        vars: { t: [["Un élève trouve qu'un chat court à 300 km/h.", "le résultat n'est pas plausible : il faut chercher l'erreur", "c'est normal, les chats sont rapides", "il faut arrondir à 3 000"], ["Un élève trouve qu'une voiture roule à 0,02 km/h sur l'autoroute.", "le résultat n'est pas plausible : erreur de conversion probable", "c'est un embouteillage normal", "il faut multiplier par 0"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : l'ordre de grandeur sert de garde-fou."
+      - type: nombre
+        vars: { d: [6, 9, 12, 15], m: [15, 30, 45, 60] }
+        enonce: "Un cycliste parcourt {{d}} km en {{m}} min. Vitesse moyenne en km/h ?"
+        reponse: "d/(m/60)"
+        tolerance: 0.1
+        unite: km/h
+        correction: "{{m}} min = {{m/60}} h ; v = {{d}} / {{m/60}} = {{d/(m/60)}} km/h."

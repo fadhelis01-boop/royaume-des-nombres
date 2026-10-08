@@ -1,0 +1,220 @@
+id: ch-atelier-des-atomes
+matiere: chimie
+titre: L'Atelier des Atomes
+sous_titre: Atomes, éléments, tableau périodique, molécules, équations, pH, ions
+emoji: 🧬
+couleur: "#11727f"
+cycle: explorateurs
+age: 12 ans et +
+niveau: Chercheur (5ᵉ – 4ᵉ)
+ordre: 104
+prerequis: [ch-grotte-des-particules]
+version: 1.0.0
+intro:
+  - neo: "Les particules de la grotte, on va maintenant les ouvrir. À l'intérieur : des atomes, les briques de LEGO de tout l'Univers."
+  - mia: "Avec seulement une centaine de sortes d'atomes, la nature fabrique tout : l'eau, les arbres, toi, moi…"
+
+lecons:
+  - id: l-atome
+    titre: "L'atome : noyau et électrons"
+    objectif: Je décris la structure d'un atome.
+    mots: [atome, noyau, proton, neutron, électron, numéro atomique]
+    etapes:
+      - texte: |
+          Un **atome** est minuscule (environ un dix-milliardième de mètre). Il contient :
+          - un **noyau** très petit au centre, fait de **protons** (charge positive +) et de **neutrons** (neutres) ;
+          - des **électrons** (charge négative −) qui se répartissent autour du noyau.
+          Un atome est **électriquement neutre** : il a **autant d'électrons que de protons**.
+          Le nombre de protons s'appelle le **numéro atomique Z** : c'est lui qui dit quel élément c'est (Z = 6 : carbone ; Z = 8 : oxygène).
+      - visuel:
+          type: atome
+          z: 6
+          neutrons: 6
+        legende: "Le modèle simple de l'atome de carbone : 6 protons et 6 neutrons dans le noyau, 6 électrons répartis en couches (2 puis 4)."
+      - attention:
+          texte: "Ce dessin est un **modèle** pour comprendre : en réalité les électrons ne tournent pas sur des cercles comme des planètes, et le noyau est des dizaines de milliers de fois plus petit que l'atome."
+          qui: neo
+      - retiens: "Atome = noyau (protons + neutrons) + électrons. Neutre : autant d'électrons que de protons. Z = nombre de protons."
+    exercices:
+      - type: nombre
+        vars: { t: [["de carbone (Z = 6)", 6], ["d'oxygène (Z = 8)", 8], ["d'hydrogène (Z = 1)", 1], ["de sodium (Z = 11)", 11], ["d'azote (Z = 7)", 7], ["de chlore (Z = 17)", 17]] }
+        enonce: "Combien d'électrons possède un atome {{t_0}} ?"
+        reponse: "t_1"
+        correction: "Un atome est neutre : autant d'électrons que de protons, donc {{t_1}}."
+      - type: qcm
+        vars: { t: [["Quelle particule a une charge positive ?", "le proton", "l'électron", "le neutron"], ["Quelle particule est neutre ?", "le neutron", "le proton", "l'électron"], ["Où se trouvent les protons ?", "dans le noyau", "autour du noyau", "entre les atomes"], ["Qu'est-ce qui définit l'élément chimique ?", "le nombre de protons", "le nombre de neutrons", "la couleur de l'atome"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un atome neutre a autant de protons que d'électrons.", true], ["On peut voir un atome avec une loupe.", false], ["Presque toute la masse de l'atome est dans le noyau.", true], ["Les électrons tournent sur des cercles exactement comme des planètes.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le dessin en cercles est un modèle simplifié ; la masse est concentrée dans le noyau."
+
+  - id: elements-et-symboles
+    titre: "Les éléments et leurs symboles"
+    objectif: Je connais les symboles des éléments courants.
+    mots: [élément, symbole, Mendeleïev]
+    etapes:
+      - texte: |
+          Chaque élément a un **symbole** : une majuscule, parfois suivie d'une minuscule.
+          | Élément | Symbole | Élément | Symbole |
+          |---|---|---|---|
+          | hydrogène | H | sodium | Na (du latin *natrium*) |
+          | carbone | C | chlore | Cl |
+          | azote | N | fer | Fe (latin *ferrum*) |
+          | oxygène | O | cuivre | Cu (latin *cuprum*) |
+          | soufre | S | or | Au (latin *aurum*) |
+          | calcium | Ca | hélium | He |
+      - histoire:
+          titre: Le tableau périodique
+          texte: "En 1869, le chimiste russe **Dmitri Mendeleïev** range les éléments connus par masse croissante, en colonnes de propriétés semblables. Il laisse des cases vides et prédit des éléments encore inconnus, découverts quelques années plus tard (le gallium, le germanium). Aujourd'hui on range les éléments par **numéro atomique** : le tableau en compte 118."
+      - retiens: "Symbole = majuscule (+ minuscule). H, C, N, O, Na, Cl, Fe, Cu, Au, Ca. Le tableau périodique range les 118 éléments par numéro atomique."
+    exercices:
+      - type: mot
+        vars: { t: [["hydrogène", "H"], ["carbone", "C"], ["oxygène", "O"], ["azote", "N"], ["sodium", "Na"], ["chlore", "Cl"], ["fer", "Fe"], ["cuivre", "Cu"], ["or", "Au"], ["calcium", "Ca"], ["hélium", "He"], ["soufre", "S"]] }
+        enonce: "Quel est le symbole de l'élément {{t_0}} ?"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} : {{t_1}}"
+      - type: qcm
+        vars: { t: [["Fe", "le fer", "le fluor", "le francium"], ["Na", "le sodium", "l'azote", "le néon"], ["Au", "l'or", "l'argent", "l'aluminium"], ["Cu", "le cuivre", "le curium", "le calcium"], ["Cl", "le chlore", "le carbone", "le calcium"]] }
+        enonce: "Quel élément a pour symbole {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}"
+      - type: vf
+        vars: { t: [["Un symbole chimique commence toujours par une majuscule.", true], ["Le tableau périodique range les éléments par numéro atomique.", true], ["Mendeleïev avait prédit des éléments encore inconnus.", true], ["Il existe des milliers d'éléments chimiques différents.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On connaît 118 éléments ; ce sont leurs combinaisons qui forment des millions de substances."
+
+  - id: molecules-et-formules
+    titre: "Molécules et formules chimiques"
+    objectif: Je lis une formule chimique et je compte les atomes.
+    mots: [molécule, formule, indice]
+    etapes:
+      - texte: |
+          Une **molécule** est un assemblage d'atomes liés entre eux. On l'écrit avec une **formule** : les symboles des atomes, et en **indice** le nombre de chaque atome (1 ne s'écrit pas).
+          - **H₂O** (eau) : 2 atomes d'hydrogène + 1 atome d'oxygène = 3 atomes.
+          - **CO₂** (dioxyde de carbone) : 1 carbone + 2 oxygènes.
+          - **O₂** (dioxygène) : 2 oxygènes.
+          - **CH₄** (méthane) : 1 carbone + 4 hydrogènes.
+          - **C₆H₁₂O₆** (glucose) : 6 C, 12 H, 6 O = 24 atomes.
+      - retiens: "Dans une formule, l'indice en bas à droite compte les atomes de l'élément juste avant. H₂O : 2 H et 1 O."
+    exercices:
+      - type: nombre
+        vars: { t: [["H₂O", 3], ["CO₂", 3], ["O₂", 2], ["CH₄", 5], ["NH₃", 4], ["C₆H₁₂O₆", 24], ["H₂SO₄", 7], ["C₂H₆O", 9]] }
+        enonce: "Combien d'atomes en tout dans une molécule de {{t_0}} ?"
+        reponse: "t_1"
+        correction: "On additionne les indices (un symbole sans indice compte 1) : {{t_1}} atomes."
+      - type: nombre
+        vars: { t: [["d'hydrogène dans CH₄", 4], ["d'oxygène dans CO₂", 2], ["d'hydrogène dans H₂O", 2], ["de carbone dans C₆H₁₂O₆", 6], ["d'hydrogène dans NH₃", 3], ["d'oxygène dans H₂SO₄", 4]] }
+        enonce: "Combien d'atomes {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["l'eau", "H₂O", "HO₂", "H₂O₂"], ["le dioxyde de carbone", "CO₂", "C₂O", "CO"], ["le dioxygène", "O₂", "O", "O₃"], ["le méthane", "CH₄", "C₄H", "CH₂"]] }
+        enonce: "Quelle est la formule de {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}"
+
+  - id: equations-chimiques
+    titre: "Écrire et équilibrer une équation"
+    objectif: J'équilibre une équation chimique simple.
+    mots: [équation, coefficient, équilibrer]
+    etapes:
+      - texte: |
+          Une **équation chimique** résume une réaction : **réactifs → produits**. Comme les atomes ne disparaissent pas (Lavoisier !), il doit y avoir **le même nombre de chaque atome des deux côtés**.
+          On ajuste avec des **coefficients** devant les formules (on ne change jamais les indices !).
+          Exemple : l'hydrogène brûle dans l'oxygène pour donner de l'eau.
+          - H₂ + O₂ → H₂O : à gauche 2 O, à droite 1 O ✗
+          - H₂ + O₂ → **2** H₂O : 2 O de chaque côté, mais 4 H à droite ✗
+          - **2** H₂ + O₂ → **2** H₂O : 4 H et 2 O de chaque côté ✓
+      - retiens: "On équilibre avec des coefficients devant les formules, jamais en changeant les indices. Même nombre de chaque atome des deux côtés."
+    exercices:
+      - type: champs
+        enonce: "Équilibre : 2 H₂ + O₂ → … H₂O"
+        champs:
+          - { avant: "2 H₂ + O₂ →", reponse: "2", apres: "H₂O" }
+        correction: "2 H₂ + O₂ → 2 H₂O : 4 H et 2 O de chaque côté."
+      - type: qcm
+        vars: { t: [["C + O₂ → CO₂", "elle est déjà équilibrée", "il faut un 2 devant CO₂", "il faut un 2 devant C"], ["CH₄ + 2 O₂ → CO₂ + 2 H₂O", "elle est équilibrée", "il manque un 2 devant CO₂", "il manque un 3 devant H₂O"], ["Fe + S → FeS", "elle est déjà équilibrée", "il faut un 2 devant Fe", "il faut un 2 devant S"]] }
+        enonce: "Que dire de l'équation {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : compte chaque atome des deux côtés."
+      - type: champs
+        enonce: "Équilibre la combustion du méthane : CH₄ + … O₂ → CO₂ + … H₂O"
+        champs:
+          - { avant: "CH₄ +", reponse: "2", apres: "O₂ → CO₂ +" }
+          - { reponse: "2", apres: "H₂O" }
+        correction: "CH₄ + 2 O₂ → CO₂ + 2 H₂O : 1 C, 4 H et 4 O de chaque côté."
+      - type: vf
+        vars: { t: [["Pour équilibrer, on peut changer H₂O en H₂O₂.", false], ["Dans une équation équilibrée, chaque atome est en même nombre des deux côtés.", true], ["Les coefficients se placent devant les formules.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Changer un indice change la substance (H₂O₂ est l'eau oxygénée !) : on n'ajuste que les coefficients."
+
+  - id: le-ph
+    titre: "L'échelle de pH"
+    objectif: Je situe une solution sur l'échelle de pH.
+    mots: [pH, acide, basique, neutre]
+    etapes:
+      - texte: |
+          Le **pH** mesure l'acidité d'une solution, sur une échelle de **0 à 14** :
+          - **pH < 7** : solution **acide** (jus de citron ≈ 2, vinaigre ≈ 3, soda ≈ 3) ;
+          - **pH = 7** : solution **neutre** (eau pure) ;
+          - **pH > 7** : solution **basique** (eau de mer ≈ 8, bicarbonate ≈ 8 à 9, savon ≈ 10, eau de Javel ≈ 11 à 12).
+          Plus le pH est loin de 7, plus la solution est acide ou basique… et plus elle peut être **corrosive** (pH très bas ou très haut : danger pour la peau et les yeux).
+          On mesure le pH avec du **papier pH** (il change de couleur) ou un **pH-mètre**.
+      - retiens: "pH < 7 acide, = 7 neutre, > 7 basique. Loin de 7 = plus corrosif."
+      - a_quoi_ca_sert: "Le pH de la piscine (autour de 7,2 à 7,6), le pH de la peau (légèrement acide, vers 5,5), l'acidité des océans qui augmente avec le CO₂…"
+    exercices:
+      - type: qcm
+        vars: { t: [[2, "acide", "basique", "neutre"], [3, "acide", "neutre", "basique"], [7, "neutre", "acide", "basique"], [9, "basique", "acide", "neutre"], [12, "basique", "neutre", "acide"], [5, "acide", "basique", "neutre"]] }
+        enonce: "Une solution de pH {{t_0}} est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "pH {{t_0}} : {{t_1}}."
+      - type: ordre
+        vars: { t: [["jus de citron (pH ≈ 2)", "eau pure (pH = 7)", "eau de mer (pH ≈ 8)", "savon (pH ≈ 10)"], ["vinaigre (pH ≈ 3)", "lait (pH ≈ 6,6)", "bicarbonate (pH ≈ 8,5)", "eau de Javel (pH ≈ 12)"]] }
+        enonce: "Range du plus acide au plus basique."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Du pH le plus petit au plus grand."
+      - type: vf
+        vars: { t: [["Une solution de pH 1 est très acide et peut être corrosive.", true], ["Une solution basique a un pH inférieur à 7.", false], ["L'eau pure a un pH de 7.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Basique : pH > 7."
+
+  - id: les-ions
+    titre: "Les ions"
+    objectif: Je sais qu'un ion est un atome qui a gagné ou perdu des électrons.
+    mots: [ion, cation, anion]
+    etapes:
+      - texte: |
+          Un **ion** est un atome (ou un groupe d'atomes) qui a **gagné ou perdu des électrons** : il n'est plus neutre.
+          - Il a **perdu** des électrons → plus de charges + que de − → ion **positif** (cation) : Na⁺, Cu²⁺, Fe³⁺.
+          - Il a **gagné** des électrons → ion **négatif** (anion) : Cl⁻, OH⁻ (hydroxyde).
+          Le sel de cuisine (chlorure de sodium) est fait d'ions **Na⁺** et **Cl⁻**. Dans l'eau, ces ions se séparent : c'est pour ça que l'eau salée **conduit le courant**.
+          L'acidité vient des ions **H⁺** ; le caractère basique des ions **OH⁻**.
+      - visuel:
+          type: atome
+          z: 11
+          charge: 1
+        legende: "L'ion sodium Na⁺ : 11 protons mais seulement 10 électrons. Charge : +1."
+      - retiens: "Ion positif = électrons perdus. Ion négatif = électrons gagnés. Sel = Na⁺ + Cl⁻. Acide : H⁺ ; base : OH⁻."
+    exercices:
+      - type: qcm
+        vars: { t: [["Na⁺", "un électron perdu", "un électron gagné", "un proton gagné"], ["Cl⁻", "un électron gagné", "un électron perdu", "un neutron perdu"], ["Cu²⁺", "deux électrons perdus", "deux électrons gagnés", "deux protons perdus"], ["O²⁻", "deux électrons gagnés", "deux électrons perdus", "deux protons gagnés"]] }
+        enonce: "L'ion {{t_0}} vient d'un atome qui a…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: nombre
+        vars: { t: [["l'ion Na⁺ (Z = 11)", 10], ["l'ion Cl⁻ (Z = 17)", 18], ["l'ion Mg²⁺ (Z = 12)", 10], ["l'ion O²⁻ (Z = 8)", 10], ["l'ion Ca²⁺ (Z = 20)", 18]] }
+        enonce: "Combien d'électrons possède {{t_0}} ?"
+        reponse: "t_1"
+        correction: "On part de Z électrons, puis on enlève (charge +) ou on ajoute (charge −) : {{t_1}}."
+      - type: vf
+        vars: { t: [["L'eau salée conduit le courant électrique grâce à ses ions.", true], ["Un ion négatif a perdu des électrons.", false], ["Les solutions acides contiennent beaucoup d'ions H⁺.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un ion négatif a GAGNÉ des électrons (ils sont négatifs)."

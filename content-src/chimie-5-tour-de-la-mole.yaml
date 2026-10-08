@@ -1,0 +1,216 @@
+id: ch-tour-de-la-mole
+matiere: chimie
+titre: La Tour de la Mole
+sous_titre: Quantité de matière, masse molaire, concentrations, dilution, énergie, piles
+emoji: ⚗️
+couleur: "#0e5f74"
+cycle: explorateurs
+age: 14 ans et +
+niveau: Ingénieur (3ᵉ – 2nde)
+ordre: 105
+prerequis: [ch-atelier-des-atomes]
+version: 1.0.0
+intro:
+  - zero: "On ne peut pas compter les atomes un par un, il y en a trop ! UN MILLIARD DE MILLIARDS ! 🤯"
+  - neo: "Encore plus, Zéro. Alors les chimistes les comptent par paquets géants : les moles."
+
+lecons:
+  - id: la-mole
+    titre: "La mole : compter par paquets géants"
+    objectif: J'utilise la constante d'Avogadro.
+    mots: [mole, quantité de matière, constante d'Avogadro]
+    etapes:
+      - texte: |
+          Comme on compte les œufs par **douzaines**, les chimistes comptent les entités (atomes, molécules, ions) par **moles**.
+          Une **mole** contient exactement $N_A = 6{,}022 \times 10^{23}$ entités : c'est la **constante d'Avogadro**.
+          La **quantité de matière** $n$ (en mol) d'un échantillon de $N$ entités : $n = \dfrac{N}{N_A}$.
+      - exemple:
+          titre: Combien de molécules ?
+          enonce: "Combien de molécules dans 2 mol d'eau ?"
+          etapes: ["$N = n \\times N_A = 2 \\times 6{,}022 \\times 10^{23}$", "$N \\approx 1{,}2 \\times 10^{24}$ molécules"]
+      - retiens: "1 mol = $6{,}022 \\times 10^{23}$ entités. $n = N / N_A$ et $N = n \\times N_A$."
+    exercices:
+      - type: nombre
+        vars: { n: [2, 3, 5, 10, 0.5] }
+        enonce: "Combien de moles dans un échantillon de ${{n}} \\times 6{,}022 \\times 10^{23}$ molécules ?"
+        reponse: "n"
+        unite: mol
+        correction: "$n = N / N_A$ = {{n}} mol."
+      - type: qcm
+        vars: { t: [["Que vaut la constante d'Avogadro ?", "$6{,}022 \\times 10^{23}$ par mole", "$6{,}022 \\times 10^{-23}$ par mole", "$3 \\times 10^{8}$ par mole"], ["Quelle est l'unité de la quantité de matière ?", "la mole (mol)", "le gramme (g)", "le litre (L)"], ["Une mole d'atomes de fer et une mole de molécules d'eau contiennent…", "le même nombre d'entités", "la même masse", "le même volume"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une mole de plumes et une mole de plomb contiennent le même nombre d'atomes… s'il s'agit d'atomes.", true], ["Une mole de sucre et une mole de sel ont la même masse.", false], ["La mole sert à compter des entités trop petites pour être comptées une à une.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Même nombre d'entités, mais pas la même masse : chaque entité a sa propre masse."
+
+  - id: masse-molaire
+    titre: "La masse molaire"
+    objectif: Je calcule une masse molaire et une quantité de matière.
+    mots: [masse molaire, g/mol]
+    etapes:
+      - texte: |
+          La **masse molaire** $M$ (en g/mol) est la masse d'une mole. Pour une molécule, on **additionne** les masses molaires des atomes :
+          H = 1 ; C = 12 ; N = 14 ; O = 16 ; Na = 23 ; Cl = 35,5 g/mol.
+          - $M(H_2O) = 2 \times 1 + 16 = 18$ g/mol
+          - $M(CO_2) = 12 + 2 \times 16 = 44$ g/mol
+          Relation essentielle : $n = \dfrac{m}{M}$ (n en mol, m en g, M en g/mol).
+      - retiens: "$n = m / M$. La masse molaire d'une molécule = somme des masses molaires de ses atomes."
+    exercices:
+      - type: nombre
+        vars: { t: [["H₂O", 18], ["CO₂", 44], ["O₂", 32], ["CH₄", 16], ["NH₃", 17], ["NaCl", 58.5], ["C₆H₁₂O₆", 180]] }
+        enonce: "Masse molaire de {{t_0}} (H = 1, C = 12, N = 14, O = 16, Na = 23, Cl = 35,5) ?"
+        reponse: "t_1"
+        unite: g/mol
+        correction: "$M = {{t_1}}$ g/mol."
+      - type: nombre
+        vars: { t: [["d'eau", 18], ["de dioxyde de carbone", 44], ["de méthane", 16]], k: [1, 2, 3, 5] }
+        enonce: "Quelle quantité de matière dans {{k*t_1}} g {{t_0}} (M = {{t_1}} g/mol) ?"
+        reponse: "k"
+        unite: mol
+        correction: "$n = m/M = {{k*t_1}} / {{t_1}} = {{k}}$ mol."
+      - type: nombre
+        vars: { t: [["d'eau (M = 18 g/mol)", 18], ["de glucose (M = 180 g/mol)", 180], ["de sel NaCl (M = 58,5 g/mol)", 58.5]], k: [2, 0.5, 3] }
+        enonce: "Quelle masse de {{k}} mol {{t_0}} ?"
+        reponse: "k*t_1"
+        unite: g
+        correction: "$m = n \\times M$ = {{k*t_1}} g."
+
+  - id: concentrations
+    titre: "Concentrations et dilution"
+    objectif: Je calcule une concentration et je prépare une dilution.
+    mots: [soluté, solvant, concentration, dilution]
+    etapes:
+      - texte: |
+          Dans une **solution**, le **soluté** (ce qu'on dissout) est mélangé au **solvant** (souvent l'eau).
+          - **Concentration en masse** : $C_m = \dfrac{m}{V}$ (g/L).
+          - **Concentration en quantité de matière** : $C = \dfrac{n}{V}$ (mol/L).
+          **Diluer**, c'est ajouter du solvant : la quantité de soluté ne change pas, donc $C_1 \times V_1 = C_2 \times V_2$. Le **facteur de dilution** est $F = C_1 / C_2 = V_2 / V_1$.
+      - exemple:
+          titre: Préparer un sirop
+          enonce: "On dilue 20 mL de sirop pur dans de l'eau pour obtenir 200 mL de boisson. Quel est le facteur de dilution ?"
+          etapes: ["$F = V_2 / V_1 = 200 / 20$", "$F = 10$ : la boisson est 10 fois moins concentrée que le sirop."]
+      - retiens: "$C_m = m/V$ ; $C = n/V$. Dilution : $C_1 V_1 = C_2 V_2$, la quantité de soluté se conserve."
+      - a_quoi_ca_sert: "Doser un sirop, préparer un médicament pour enfant, une solution pour les lentilles, l'eau d'un aquarium…"
+    exercices:
+      - type: nombre
+        vars: { m: [5, 10, 20, 30, 50], V: [0.5, 1, 2] }
+        enonce: "On dissout {{m}} g de sucre dans de l'eau pour obtenir {{V}} L de solution. Concentration en masse ?"
+        reponse: "m/V"
+        unite: g/L
+        correction: "$C_m = {{m}} / {{V}} = {{m/V}}$ g/L."
+      - type: nombre
+        vars: { c: [1, 0.5, 2], v1: [10, 20, 50], f: [2, 5, 10] }
+        enonce: "On prélève {{v1}} mL d'une solution à {{c}} mol/L et on complète avec de l'eau jusqu'à {{v1*f}} mL. Nouvelle concentration (mol/L) ?"
+        reponse: "c/f"
+        unite: mol/L
+        correction: "$C_2 = C_1 V_1 / V_2 = {{c}} \\times {{v1}} / {{v1*f}} = {{c/f}}$ mol/L."
+      - type: qcm
+        vars: { t: [["Quand on dilue une solution, la quantité de soluté…", "ne change pas", "augmente", "diminue"], ["Quand on dilue une solution, sa concentration…", "diminue", "augmente", "ne change pas"], ["Dans l'eau sucrée, le solvant est…", "l'eau", "le sucre", "le verre"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: stoechiometrie
+    titre: "Bilan de matière"
+    objectif: J'utilise une équation pour prévoir les quantités.
+    mots: [stœchiométrie, réactif limitant, avancement]
+    etapes:
+      - texte: |
+          Les coefficients d'une équation donnent les **proportions** dans lesquelles les espèces réagissent.
+          $2\,H_2 + O_2 \to 2\,H_2O$ : 2 mol de dihydrogène réagissent avec 1 mol de dioxygène et donnent 2 mol d'eau.
+          Si un réactif est en quantité insuffisante, il s'épuise le premier : c'est le **réactif limitant**. L'autre est en **excès**.
+      - exemple:
+          titre: Qui s'épuise le premier ?
+          enonce: "On fait réagir 4 mol de H₂ avec 3 mol de O₂ (2 H₂ + O₂ → 2 H₂O)."
+          etapes: ["4 mol de H₂ ont besoin de 4 / 2 = 2 mol de O₂.", "On a 3 mol de O₂ : il y en a assez. H₂ est le réactif limitant.", "On obtient 4 mol d'eau ; il reste 1 mol de O₂ en excès."]
+      - retiens: "Les coefficients donnent les proportions. Le réactif limitant est celui qui s'épuise en premier."
+    exercices:
+      - type: nombre
+        vars: { a: [2, 4, 6, 10] }
+        enonce: "2 H₂ + O₂ → 2 H₂O. Combien de moles d'eau avec {{a}} mol de H₂ et assez de O₂ ?"
+        reponse: "a"
+        unite: mol
+        correction: "Même coefficient (2) pour H₂ et H₂O : {{a}} mol d'eau."
+      - type: nombre
+        vars: { a: [1, 2, 3, 5] }
+        enonce: "CH₄ + 2 O₂ → CO₂ + 2 H₂O. Combien de moles de O₂ faut-il pour brûler {{a}} mol de méthane ?"
+        reponse: "2*a"
+        unite: mol
+        correction: "Il faut 2 fois plus de O₂ : {{2*a}} mol."
+      - type: qcm
+        vars: { t: [["4 mol de H₂ et 1 mol de O₂", "O₂", "H₂", "aucun"], ["2 mol de H₂ et 3 mol de O₂", "H₂", "O₂", "aucun"], ["6 mol de H₂ et 3 mol de O₂", "aucun : proportions exactes", "H₂", "O₂"]] }
+        enonce: "2 H₂ + O₂ → 2 H₂O. Avec {{t_0}}, quel est le réactif limitant ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: energie-des-reactions
+    titre: "Réactions qui chauffent, réactions qui refroidissent"
+    objectif: Je distingue réaction exothermique et endothermique.
+    mots: [exothermique, endothermique, énergie]
+    etapes:
+      - texte: |
+          - Une réaction **exothermique** **libère** de l'énergie (chaleur) : combustion, chaufferette chimique, ciment qui prend, respiration cellulaire.
+          - Une réaction **endothermique** **absorbe** de l'énergie : le milieu se refroidit (poche de froid instantané pour le sport, cuisson qui demande d'apporter de la chaleur, photosynthèse qui utilise la lumière).
+      - retiens: "Exo = énergie qui sort (ça chauffe). Endo = énergie qui entre (ça refroidit le milieu ou il faut chauffer)."
+    exercices:
+      - type: classer
+        vars: { t: [["une bûche qui brûle", "une poche de froid instantané", "une chaufferette", "la photosynthèse"], ["la combustion du gaz", "faire fondre de la glace (changement d'état)", "la respiration cellulaire", "cuire un gâteau au four"]] }
+        enonce: "Exothermique (libère de la chaleur) ou endothermique (en absorbe) ?"
+        categories: [exothermique, endothermique]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Combustions et respiration libèrent de l'énergie ; photosynthèse et fusion en absorbent."
+      - type: vf
+        vars: { t: [["Une combustion est exothermique.", true], ["Une poche de froid instantané repose sur un phénomène endothermique.", true], ["Une réaction exothermique refroidit toujours le milieu.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Exothermique = libère de la chaleur, donc réchauffe le milieu."
+      - type: qcm
+        vars: { t: [["Pourquoi le béton chauffe-t-il en séchant ?", "la prise du ciment est exothermique", "le soleil le chauffe toujours", "il contient du feu"], ["D'où vient l'énergie qui permet aux plantes de faire la photosynthèse ?", "de la lumière du Soleil", "de la terre", "du vent"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: oxydoreduction-et-piles
+    titre: "Oxydoréduction : rouille et piles"
+    objectif: Je comprends qu'une pile fonctionne grâce à un échange d'électrons.
+    mots: [oxydation, réduction, oxydant, réducteur, pile]
+    etapes:
+      - texte: |
+          Une réaction d'**oxydoréduction** est un **échange d'électrons** :
+          - le **réducteur** **perd** des électrons : il est **oxydé** ;
+          - l'**oxydant** **gagne** des électrons : il est **réduit**.
+          Exemple : le fer rouille parce qu'il est oxydé par le dioxygène (en présence d'eau).
+          Dans une **pile**, on sépare l'oxydation et la réduction : les électrons sont obligés de passer par un fil… ce flux d'électrons est un **courant électrique** !
+      - experience:
+          titre: La pile au citron
+          securite: orange
+          materiel: ["un citron", "une pièce ou une plaque de cuivre", "un clou galvanisé (recouvert de zinc)", "une petite diode électroluminescente (LED) ou un multimètre", "des fils avec pinces"]
+          etapes:
+            - "Roule le citron sur la table pour libérer le jus, puis plante le clou et la pièce de cuivre, sans qu'ils se touchent."
+            - "Relie-les au multimètre (ou à la LED ; il faut souvent 3 ou 4 citrons en série pour l'allumer)."
+          observation: "Le multimètre indique une petite tension, autour de 0,9 V par citron."
+          explication: "Le zinc est oxydé (il perd des électrons), les électrons traversent le fil jusqu'au cuivre où une réduction a lieu. Le jus de citron, acide et plein d'ions, ferme le circuit. C'est le principe de toutes les piles."
+      - retiens: "Oxydation = perte d'électrons ; réduction = gain. Une pile produit un courant en forçant les électrons à passer par un fil."
+      - a_quoi_ca_sert: "Piles et batteries (téléphone, voiture électrique), protection contre la rouille (zinguer l'acier), métallurgie…"
+    exercices:
+      - type: qcm
+        vars: { t: [["Une espèce qui perd des électrons est…", "oxydée", "réduite", "neutralisée"], ["Une espèce qui gagne des électrons est…", "réduite", "oxydée", "évaporée"], ["Dans une pile, le courant est…", "un flux d'électrons dans le fil", "un flux d'atomes de citron", "de la chaleur"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} (moyen mnémotechnique : « Oxydation = Perte » → OP)."
+      - type: vf
+        vars: { t: [["La rouille est une oxydation du fer.", true], ["Une pile au citron peut alimenter un téléphone.", false], ["Dans une oxydoréduction, des électrons passent d'une espèce à une autre.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une pile au citron donne environ 0,9 V et un courant minuscule : de quoi allumer une LED avec plusieurs citrons, pas plus."
+      - type: nombre
+        vars: { n: [2, 3, 4, 5] }
+        enonce: "Une pile citron donne environ 0,9 V. Quelle tension environ avec {{n}} citrons branchés en série ?"
+        reponse: "0.9*n"
+        tolerance: 0.05
+        unite: V
+        correction: "En série, les tensions s'additionnent : {{n}} × 0,9 = {{0.9*n}} V."

@@ -1,0 +1,220 @@
+id: de-atelier-des-traits
+matiere: dessin
+titre: L'Atelier des Traits
+sous_titre: Les traits, les formes magiques, les couleurs primaires, un personnage en formes, dessiner ce qu'on voit
+emoji: ✏️
+couleur: "#9a4fd1"
+cycle: graines
+age: 6 ans et +
+niveau: Éveil (CP – CE1)
+ordre: 601
+version: 1.0.0
+intro:
+  - narrateur: "Dans l'Atelier, la Gomme Grise a effacé tous les traits. Les tableaux sont vides et blancs."
+  - mia: "On va tout redessiner, trait par trait. Prends ton crayon… ou ton doigt !"
+
+lecons:
+  - id: les-traits
+    titre: "Les traits : droit, courbe, zigzag, spirale"
+    objectif: Je trace différents types de traits avec contrôle.
+    mots: [trait, droit, courbe, zigzag, spirale]
+    etapes:
+      - texte: |
+          Tout dessin est fait de **traits**. Il en existe de toutes sortes : **droits**, **courbes**, en **zigzag**, en **spirale**, **pointillés**…
+          Astuce de Mia : regarde **le point d'arrivée** pendant que tu traces, pas la pointe du crayon. Ton trait sera plus sûr !
+      - dessin:
+          titre: Le parcours des traits
+          etapes:
+            - consigne: "Trace un trait bien droit, de gauche à droite."
+              trace: "M15 18 L85 18"
+            - consigne: "Trace une courbe, comme une colline."
+              trace: "M15 42 Q50 18 85 42"
+            - consigne: "Trace un zigzag, comme les dents d'une scie."
+              trace: "M15 66 L25 56 L35 66 L45 56 L55 66 L65 56 L75 66 L85 56"
+            - consigne: "Trace une vague qui monte et qui descend."
+              trace: "M15 86 C25 76 35 76 45 86 C55 96 65 96 75 86 C80 81 83 81 85 82"
+      - retiens: "Droit, courbe, zigzag, vague, spirale… Regarde là où tu veux arriver."
+    exercices:
+      - type: qcm
+        vars: { t: [["le bord d'une table", "un trait droit", "un zigzag", "une spirale"], ["la coquille d'un escargot", "une spirale", "un trait droit", "un zigzag"], ["un éclair dans le ciel", "un zigzag", "une spirale", "un trait droit"], ["l'arc-en-ciel", "une courbe", "un zigzag", "un trait droit"]] }
+        enonce: "Pour dessiner {{t_0}}, j'utilise plutôt…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Où regarder pendant qu'on trace un trait ?", "vers le point d'arrivée", "la pointe du crayon uniquement", "ailleurs"], ["Quel trait fait penser à des vagues ?", "une ligne ondulée", "un trait droit", "un point"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une règle", "un serpent", "le bord d'une porte", "une vague"], ["un mât de bateau", "une banane", "une échelle", "un nuage"]] }
+        enonce: "Plutôt des traits droits ou des traits courbes ?"
+        categories: ["traits droits", "traits courbes"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les objets fabriqués ont souvent des traits droits ; la nature préfère les courbes."
+
+  - id: formes-magiques
+    titre: "Les formes magiques"
+    objectif: Je dessine un cercle, un carré, un triangle, un rectangle et un ovale.
+    mots: [cercle, carré, triangle, rectangle, ovale]
+    etapes:
+      - texte: |
+          Avec **5 formes magiques**, on peut dessiner presque tout : le **cercle**, l'**ovale**, le **carré**, le **rectangle** et le **triangle**.
+          Une maison = un carré + un triangle. Un chat = des cercles, des ovales et des triangles. Un bonhomme de neige = trois cercles !
+      - dessin:
+          titre: Les cinq formes
+          etapes:
+            - consigne: "Dessine un cercle, bien rond."
+              trace: "M30 25 m-15 0 a15 15 0 1 0 30 0 a15 15 0 1 0 -30 0"
+            - consigne: "Dessine un carré : 4 côtés égaux."
+              trace: "M58 12 L85 12 L85 39 L58 39 Z"
+            - consigne: "Dessine un triangle."
+              trace: "M30 50 L45 78 L15 78 Z"
+            - consigne: "Dessine un rectangle, plus long que haut."
+              trace: "M55 55 L88 55 L88 75 L55 75 Z"
+            - consigne: "Dessine un ovale, un cercle étiré."
+              trace: "M50 90 m-20 0 a20 7 0 1 0 40 0 a20 7 0 1 0 -40 0"
+      - retiens: "Cercle, ovale, carré, rectangle, triangle : les 5 formes magiques qui construisent tous les dessins."
+    exercices:
+      - type: qcm
+        vars: { t: [["une roue", "un cercle", "un triangle", "un carré"], ["une part de pizza", "un triangle", "un cercle", "un rectangle"], ["une porte", "un rectangle", "un cercle", "un triangle"], ["un œuf", "un ovale", "un carré", "un triangle"], ["un dé vu de face", "un carré", "un ovale", "un triangle"]] }
+        enonce: "Quelle forme magique pour {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["un triangle", 3], ["un carré", 4], ["un rectangle", 4], ["un cercle", 0]] }
+        enonce: "Combien de coins (sommets) a {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["un bonhomme de neige", "trois cercles", "trois triangles", "deux carrés"], ["une maison simple", "un carré et un triangle", "trois cercles", "un ovale"], ["un sapin simple", "des triangles empilés et un rectangle", "des cercles", "un ovale"]] }
+        enonce: "Avec quelles formes dessiner {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: couleurs-primaires
+    titre: "Les trois couleurs primaires"
+    objectif: Je connais les couleurs primaires de la peinture.
+    mots: [couleur primaire, rouge, jaune, bleu, mélange]
+    etapes:
+      - texte: |
+          En peinture, les trois **couleurs primaires** sont le **rouge**, le **jaune** et le **bleu** (les imprimeurs utilisent plus précisément le magenta, le jaune et le cyan). On ne peut pas les obtenir en mélangeant d'autres couleurs… mais **en les mélangeant**, on fabrique presque toutes les autres !
+          Le **blanc** éclaircit une couleur, le **noir** l'assombrit.
+      - experience:
+          titre: La palette magique
+          securite: vert
+          materiel: ["de la gouache rouge, jaune et bleue", "une assiette en carton", "un pinceau", "un verre d'eau", "une feuille"]
+          prediction:
+            question: "Que donne le mélange du jaune et du bleu ?"
+            choix: ["du vert", "du violet", "de l'orange"]
+          etapes:
+            - "Mets une noisette de chaque couleur sur l'assiette."
+            - "Mélange un peu de jaune et un peu de bleu, peins une tache."
+            - "Rince le pinceau et essaie rouge + jaune, puis rouge + bleu."
+          observation: "Jaune + bleu donne du vert, rouge + jaune de l'orange, rouge + bleu du violet."
+          explication: "Ce sont les couleurs secondaires. Chaque pigment absorbe une partie de la lumière : en les mélangeant, on combine ce qu'ils absorbent (c'est la synthèse soustractive)."
+      - retiens: "Primaires (peinture) : rouge, jaune, bleu. On ne peut pas les fabriquer, mais elles fabriquent les autres."
+    exercices:
+      - type: classer
+        vars: { t: [["rouge", "vert", "jaune", "orange", "bleu", "violet"]] }
+        enonce: "Couleur primaire ou couleur mélangée ?"
+        categories: ["primaire", "mélangée"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
+        correction: "Primaires : rouge, jaune, bleu."
+      - type: qcm
+        vars: { t: [["jaune + bleu", "vert", "violet", "orange"], ["rouge + jaune", "orange", "vert", "violet"], ["rouge + bleu", "violet", "orange", "vert"], ["rouge + blanc", "rose", "noir", "marron"]] }
+        enonce: "En peinture, {{t_0}} donne…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} = {{t_1}}"
+      - type: vf
+        vars: { t: [["On peut obtenir du jaune en mélangeant d'autres couleurs de peinture.", false], ["Le blanc éclaircit une couleur.", true], ["Le vert est une couleur primaire en peinture.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le jaune est primaire : il ne se fabrique pas par mélange."
+
+  - id: personnage-formes
+    titre: "Mon premier personnage en formes"
+    objectif: J'assemble des formes simples pour créer un personnage.
+    mots: [personnage, assembler, formes]
+    etapes:
+      - dialogue:
+          - zero: "Un robot ! Je veux dessiner un robot qui me ressemble !"
+          - mia: "Facile : un cercle pour la tête, un rectangle pour le corps, des traits pour les bras et les jambes."
+      - dessin:
+          titre: Le petit robot
+          etapes:
+            - consigne: "Dessine un cercle en haut : la tête."
+              couche: construction
+              trace: "M50 25 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"
+            - consigne: "Dessine un rectangle sous la tête : le corps."
+              trace: "M36 40 L64 40 L64 70 L36 70 Z"
+            - consigne: "Ajoute les bras : deux traits en biais."
+              trace: "M36 45 L22 58 M64 45 L78 58"
+            - consigne: "Ajoute les jambes : deux traits vers le bas."
+              trace: "M43 70 L43 90 M57 70 L57 90"
+            - consigne: "Dessine les yeux et un grand sourire."
+              couche: détails
+              trace: "M45 22 L45 24 M55 22 L55 24 M44 29 Q50 34 56 29"
+            - consigne: "Colorie ton robot avec tes couleurs préférées !"
+              couche: couleur
+              trace: ""
+      - retiens: "Un personnage = des formes simples assemblées : cercle, rectangle, traits. Puis les détails et la couleur."
+    exercices:
+      - type: ordre
+        vars: { t: [["la tête (un cercle)", "le corps (un rectangle)", "les bras et les jambes", "les détails du visage", "la couleur"]] }
+        enonce: "Dans quel ordre dessiner le robot ?"
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Les grandes formes d'abord, les détails et la couleur à la fin."
+      - type: qcm
+        vars: { t: [["Par quoi commencer un dessin ?", "par les grandes formes", "par les petits détails", "par la couleur"], ["Que faire en dernier ?", "la couleur", "la tête", "le corps"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["On peut dessiner un personnage avec seulement des formes simples.", true], ["Il faut commencer par dessiner les cils.", false], ["Les dessins animés utilisent souvent des personnages faits de formes simples.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Grandes formes d'abord, détails ensuite."
+
+  - id: contour-d-objet
+    titre: "Je dessine ce que je vois"
+    objectif: Je dessine le contour d'un objet réel en l'observant.
+    mots: [contour, observation, modèle]
+    etapes:
+      - texte: |
+          Le **dessin d'observation** : on dessine **ce qu'on voit**, pas ce qu'on croit savoir.
+          1. Pose un objet simple devant toi (une tasse, une pomme, une chaussure).
+          2. Regarde-le longtemps : quelle **forme magique** ressemble à sa silhouette ?
+          3. Trace d'abord sa **forme générale** légèrement, puis le **contour** en suivant le bord avec les yeux.
+          4. Regarde plus souvent l'objet que ta feuille !
+      - vraie_vie:
+          titre: Défi observation
+          texte: "Dessine une tasse posée devant toi, en regardant l'objet au moins autant que ta feuille. Range-la ensuite dans ta galerie (ou dans ton carnet) avec la date."
+          materiel: une tasse, un crayon, une feuille
+      - dessin:
+          titre: Une tasse
+          etapes:
+            - consigne: "Dessine l'ovale du haut de la tasse (l'ouverture)."
+              trace: "M50 30 m-20 0 a20 6 0 1 0 40 0 a20 6 0 1 0 -40 0"
+            - consigne: "Trace les deux côtés de la tasse, vers le bas."
+              trace: "M30 30 L33 75 M70 30 L67 75"
+            - consigne: "Trace le fond arrondi."
+              trace: "M33 75 Q50 83 67 75"
+            - consigne: "Ajoute l'anse sur le côté."
+              trace: "M69 40 C84 40 84 62 68 62"
+      - retiens: "Dessin d'observation : regarder longtemps, trouver la forme générale, suivre le contour, regarder l'objet plus que la feuille."
+    exercices:
+      - type: qcm
+        vars: { t: [["Dans un dessin d'observation, que dessine-t-on ?", "ce qu'on voit vraiment", "ce qu'on imagine", "un objet inventé"], ["Que regarder le plus pendant qu'on dessine d'après nature ?", "l'objet", "la feuille", "la télévision"], ["Par quoi commencer ?", "la forme générale, légèrement", "les ombres très foncées", "la signature"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["une pomme", "un cercle", "un triangle", "un rectangle"], ["une bouteille", "un rectangle (avec un goulot)", "un cercle", "un triangle"], ["une part de gâteau", "un triangle", "un cercle", "un ovale"]] }
+        enonce: "Quelle forme générale pour commencer {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le haut d'un verre vu un peu de dessus est un ovale.", true], ["Pour dessiner d'après nature, il vaut mieux ne pas regarder l'objet.", false], ["On peut corriger un trait de construction léger.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un cercle vu en biais devient un ovale : c'est la perspective."

@@ -3,7 +3,7 @@
 import { existsSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-const CATS = ["mascottes", "boutique", "objets", "badges", "habitants", "persos"];
+const CATS = ["mascottes", "boutique", "objets", "badges", "habitants", "persos", "planetes", "dessins"];
 const out = {};
 for (const c of CATS) {
   const d = path.join("public", "img", c);

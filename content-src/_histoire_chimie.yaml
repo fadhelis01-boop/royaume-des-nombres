@@ -1,0 +1,110 @@
+# L'histoire de la planète Chimie : le Marais d'Acidia (bible « L'Alchimie des Mondes », acte I).
+prologue:
+  - narrateur: "Il fut un temps où, sur la planète Acidia, l'eau chantait en couleurs : les mares viraient au rose, au vert, au violet, et les bulles dansaient."
+  - narrateur: "Puis une brume grise est arrivée : le Grand Neutre. Il ne détruit rien… il rend tout pareil. Plus de couleurs, plus de bulles, plus de réactions."
+  - zero-surprise: "UN VISITEUR !!! C'est un visiteur ou une grosse graine ?!"
+  - neo: "Zéro, de la politesse. Bienvenue, Éveilleur. Ici, la seule magie qui existe, c'est la science qu'on n'a pas encore comprise."
+  - mia: "Le Grand Neutre efface tout ce qu'il touche…"
+  - neo: "… sauf ce qu'on COMPREND. Chaque loi de la chimie que tu apprendras rendra une couleur au Marais."
+  - zero: "Donc la chimie, c'est comme la cuisine : tout est dans le mélange ! Mais on ne goûte pas. Jamais. Je le sais, j'ai essayé."
+prologue_choix:
+  qui: mia
+  question: "Par où commencer ?"
+  options:
+    - texte: "Par le Labo du Savant, pour apprendre les règles"
+      suite:
+        - neo-joie: "Excellent réflexe : un vrai savant commence par la sécurité et la méthode."
+    - texte: "Directement à la Mare des États !"
+      suite:
+        - zero-joie: "YOUHOU ! Les têtards Pip et Pop nous attendent !"
+        - mia: "D'accord, mais on reviendra au Labo : les règles d'or, c'est important."
+
+arcs:
+  - id: chimie-arc-1
+    titre: "Livre I — Le Marais qui ne bouillonne plus"
+    sous_titre: "États, mélanges, couleurs"
+    final: ch-marais-des-melanges
+    fin:
+      - narrateur: "L'eau du village est redevenue claire. Les habitants gris reprennent des couleurs, un à un, comme des aquarelles qui sèchent."
+      - narrateur: "Au centre de la mare, une statue de pierre se fissure : c'est Dame Acidia, la Muse du Marais."
+      - narrateur: "« Merci, Éveilleur. Il y a longtemps, un homme appelé Lavoisier a pesé tout ce qui entrait et sortait de ses expériences. Il a compris que rien ne se perd. Et toi, qu'aurais-tu pesé en premier ? »"
+      - neo: "Mais regardez, au fond de la grotte… le brouillard gris s'est réfugié là où la matière devient invisible."
+
+  - id: chimie-arc-2
+    titre: "Livre II — Le Brouillard des atomes"
+    sous_titre: "Particules, atomes, moles"
+    final: ch-tour-de-la-mole
+    fin:
+      - narrateur: "La Tour de la Mole s'illumine. Des milliards de milliards d'atomes, bien comptés, scintillent dans le laboratoire."
+      - narrateur: "Dame Acidia raconte : « Mendeleïev a rangé les éléments et laissé des cases vides pour ceux qu'on ne connaissait pas encore. Marie Curie en a découvert deux, le polonium et le radium. Quelle case aurais-tu voulu remplir ? »"
+      - zero: "Moi, la case du Zéronium. Un élément très rare. Très mignon."
+      - mia: "Écoutez… quelque chose ronge les tours du Laboratoire Royal."
+
+  - id: chimie-arc-3
+    titre: "Livre III — Corrosion"
+    sous_titre: "Équilibres, énergie, chimie du vivant et de demain"
+    final: ch-sanctuaire-de-l-energie
+    fin:
+      - narrateur: "Corrosion recule : chaque électron volé a été rendu, chaque équilibre rétabli. Le Sanctuaire brille de toutes les couleurs du chou rouge."
+      - neo: "Tu sais maintenant prévoir une réaction, la mesurer, la rendre plus propre. C'est exactement ce que font les chimistes qui inventent les médicaments et les batteries de demain."
+      - mia: "Et le Marais d'Acidia chante de nouveau. Merci, Éveilleur."
+      - zero: "Le Grand Neutre est parti bouder sur une autre planète. On le suit ?"
+
+chapitres:
+  ch-mare-des-etats:
+    titre: "Pip et Pop au bord de l'eau"
+    objet: "la première couleur du Marais"
+    avant:
+      - narrateur: "Deux têtards gris, Pip et Pop, tremblent sur un nénuphar."
+      - zero: "Pip, Pop ! Vous êtes solides, liquides ou gazeux ?"
+      - mia: "Ce sont des têtards, Zéro… Mais leur question, c'est justement : de quoi est fait leur monde ?"
+    apres:
+      - narrateur: "La mare frémit et prend une teinte bleu-vert. Pip et Pop retrouvent leurs taches dorées."
+      - zero-joie: "On a prouvé à Dame Bulle que l'air, c'est quelque chose ! Plop !"
+  ch-marais-des-melanges:
+    titre: "L'eau trouble du village"
+    objet: "l'eau claire du village"
+    avant:
+      - narrateur: "Dans le village, l'eau du puits est grise et trouble. Les habitants n'osent plus la boire."
+      - neo: "Tamis, filtre, décantation, évaporation : on a tout un arsenal de savant."
+    apres:
+      - mia-joie: "Regarde ! Le chou rouge a viré au rose dans le citron, au vert dans le bicarbonate. Les couleurs reviennent partout !"
+  ch-grotte-des-particules:
+    titre: "La Grotte des Particules"
+    objet: "la lanterne des particules"
+    avant:
+      - narrateur: "Le brouillard gris s'est caché dans une grotte où tout est minuscule."
+      - zero: "Ça veut dire qu'on va devoir rétrécir ?"
+      - neo: "Non : on va zoomer avec notre imagination et un très bon modèle."
+    apres:
+      - neo-fier: "Tu as compris que rien ne se perd et que les réactions créent de nouvelles substances. Lavoisier serait fier."
+  ch-atelier-des-atomes:
+    titre: "Les briques de l'Univers"
+    objet: "le tableau des éléments"
+    avant:
+      - mia: "Dans cet atelier, il y a une centaine de sortes de briques… et avec elles, on construit tout."
+    apres:
+      - zero-surprise: "H₂O, CO₂, NaCl… je parle couramment le chimiste maintenant ! 🤯"
+  ch-tour-de-la-mole:
+    titre: "La Tour de la Mole"
+    objet: "la balance d'Avogadro"
+    avant:
+      - zero: "Compter des atomes un par un, ça prendrait combien de temps ?"
+      - neo: "Pour une seule cuillère d'eau ? Bien plus que l'âge de l'Univers. D'où les moles."
+    apres:
+      - mia: "Tu sais doser, diluer, prévoir. Le brouillard a disparu de la Tour."
+  ch-laboratoire-royal:
+    titre: "Le Laboratoire Royal"
+    objet: "la burette d'or"
+    avant:
+      - narrateur: "Les tours du Laboratoire Royal rouillent à vue d'œil : Corrosion est tout près."
+    apres:
+      - neo: "Vitesse, équilibre, pH, chimie du carbone : il ne reste plus qu'à affronter Corrosion dans son Sanctuaire."
+  ch-sanctuaire-de-l-energie:
+    titre: "Le Sanctuaire de l'Énergie"
+    objet: "le cœur du Marais"
+    avant:
+      - narrateur: "Au centre du Sanctuaire, Corrosion vole les électrons des tours, une à une."
+      - mia: "Cette fois, on va comprendre l'énergie elle-même."
+    apres:
+      - narrateur: "Le cœur du Marais se met à battre en couleurs. Corrosion n'est plus qu'une petite tache de rouille, qui s'excuse."

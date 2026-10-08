@@ -1,0 +1,81 @@
+# L'histoire de la planète Dessin : l'Atelier de Mia.
+prologue:
+  - narrateur: "Sur la planète Dessin, l'Atelier de Mia débordait de couleurs : les murs étaient couverts de dessins, les pinceaux dansaient tout seuls, les crayons poussaient comme des arbres."
+  - narrateur: "La Gomme Grise, envoyée par le Grand Neutre, est passée pendant la nuit. Au matin, tous les tableaux étaient blancs. Plus un trait, plus une couleur."
+  - mia-triste: "Mes dessins… tous effacés."
+  - zero: "Mia, ne pleure pas ! On va tout redessiner. Enfin… toi. Moi je ne sais pas dessiner."
+  - mia: "Tout le monde peut apprendre à dessiner, Zéro. Toi aussi. Et toi aussi, Éveilleur."
+  - neo: "Chaque dessin que tu feras rendra ses couleurs à un tableau de l'Atelier."
+prologue_choix:
+  qui: mia
+  question: "On commence par quoi ?"
+  options:
+    - texte: "Par le Carnet de croquis : les secrets des dessinateurs"
+      suite:
+        - mia-joie: "Observer, décomposer, s'entraîner un peu chaque jour. Tu vas voir, ça marche !"
+    - texte: "Directement à l'Atelier des Traits !"
+      suite:
+        - zero-joie: "Un trait droit ! Un zigzag ! Je suis un artiste !"
+
+arcs:
+  - id: dessin-arc-1
+    titre: "Livre I — La Gomme Grise"
+    sous_titre: "Traits, formes, couleurs, symétrie"
+    final: de-jardin-des-formes
+    fin:
+      - narrateur: "Les premiers tableaux retrouvent leurs traits : une maison, un arbre, un papillon, un chat. La Gomme Grise, toute usée, roule sous une armoire."
+      - narrateur: "Un vieux pinceau s'anime et parle : c'est la Muse de l'Atelier. « Il y a plus de 30 000 ans, quelqu'un a dessiné des chevaux sur les murs d'une grotte, avec du charbon et de la terre. Toi aussi, tu fais partie de cette longue histoire. Que dessineras-tu demain ? »"
+      - mia: "Mais dans la Salle des Volumes, tout est encore aplati…"
+  - id: dessin-arc-2
+    titre: "Livre II — Le Brouillard Plat"
+    sous_titre: "Volumes, lumière, perspective, personnages"
+    final: de-galerie-des-perspectives
+    fin:
+      - narrateur: "Les couloirs de la Galerie retrouvent leur profondeur, les objets leurs ombres, les visages leurs proportions."
+      - narrateur: "La Muse raconte : « Brunelleschi a trouvé les lois de la perspective ; Caravage a peint avec la lumière ; Hokusai a dessiné toute sa vie, jusqu'à 89 ans, en disant qu'il apprenait encore. »"
+      - zero: "Même à 89 ans ? Alors j'ai le temps de devenir bon !"
+  - id: dessin-arc-3
+    titre: "Livre III — Le Musée retrouvé"
+    sous_titre: "Art, émotion, style"
+    final: de-musee-des-maitres
+    fin:
+      - narrateur: "Dans le Musée, toutes les œuvres brillent de nouveau, de Lascaux jusqu'au street art. Le Grand Neutre, incapable de supporter tant de styles différents, s'efface de lui-même."
+      - mia-joie: "Tu as appris à voir, à construire, à éclairer, à raconter. Et surtout, tu as commencé à trouver TON style."
+      - zero-fier: "Et moi j'ai dessiné un robot. Il me ressemble. Il est très beau."
+
+chapitres:
+  de-atelier-des-traits:
+    titre: "L'Atelier des Traits"
+    objet: "le premier tableau"
+    avant:
+      - narrateur: "Tous les tableaux de l'Atelier sont blancs. Il faut tout recommencer… par un simple trait."
+    apres:
+      - narrateur: "Un trait, puis une forme, puis une couleur : le premier tableau reprend vie."
+  de-jardin-des-formes:
+    titre: "Le Jardin des Formes"
+    objet: "la fresque du jardin"
+    avant:
+      - mia: "Dans mon jardin, tout est fait de formes. Même toi, Zéro !"
+    apres:
+      - zero-joie: "Un chat avec des cercles et des triangles ! Il miaule presque !"
+  de-salle-des-volumes:
+    titre: "La Salle des Volumes"
+    objet: "la sphère de lumière"
+    avant:
+      - narrateur: "Le Brouillard Plat a tout écrasé : les cubes sont des carrés, les boules des cercles."
+    apres:
+      - neo: "Une face claire, une face sombre, une ombre portée : et le volume revient. C'est de l'optique !"
+  de-galerie-des-perspectives:
+    titre: "La Galerie des Perspectives"
+    objet: "le point de fuite"
+    avant:
+      - narrateur: "Les couloirs de la Galerie semblent peints à plat sur les murs."
+    apres:
+      - mia: "Horizon, points de fuite, proportions : la Galerie a retrouvé sa profondeur."
+  de-musee-des-maitres:
+    titre: "Le Musée des Maîtres"
+    objet: "le cadre d'or du Musée"
+    avant:
+      - narrateur: "Dans le Musée, les tableaux pâlissent un à un : le Grand Neutre veut que toutes les images se ressemblent."
+    apres:
+      - narrateur: "Chaque tableau retrouve ses couleurs, ses contrastes et son histoire."

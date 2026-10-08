@@ -342,7 +342,7 @@ export function exportBackup(): string {
 }
 export function importBackup(json: string): number {
   const data = JSON.parse(json);
-  if (data.app !== "royaume-des-nombres" || !Array.isArray(data.children)) throw new Error("Ce fichier n'est pas une sauvegarde du Royaume des Nombres.");
+  if (data.app !== "royaume-des-nombres" || !Array.isArray(data.children)) throw new Error("Ce fichier n'est pas une sauvegarde de la Galaxie des Savoirs (ni de l'ancien Royaume des Nombres).");
   const byId = new Map(state.children.map((c) => [c.id, c]));
   for (const c of data.children as Child[]) byId.set(c.id, { ...newChild(c.name, c.avatar, c.age), ...c });
   setState({ children: [...byId.values()], settings: { ...state.settings, ...data.settings, apiKey: state.settings.apiKey, pin: state.settings.pin || data.settings?.pin || "" } });

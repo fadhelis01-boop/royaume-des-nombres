@@ -1,0 +1,199 @@
+id: mu-place-des-sons
+matiere: musique
+titre: La Place des Sons
+sous_titre: Silence et son, fort et doux, aigu et grave, la pulsation, lent et rapide, les instruments
+emoji: 🥁
+couleur: "#e8801f"
+cycle: graines
+age: 6 ans et +
+niveau: Éveil (CP – CE1)
+ordre: 501
+version: 1.0.0
+intro:
+  - narrateur: "Sur la Place des Sons, la Fanfare Muette est pétrifiée : tambours, flûtes et violons sont gris et silencieux."
+  - zero: "Je vais les réveiller : BOUM BOUM BOUM !"
+  - mia: "D'abord, apprenons à bien écouter. La musique commence par les oreilles."
+
+lecons:
+  - id: silence-et-son
+    titre: "Le silence et les sons"
+    objectif: J'écoute attentivement les sons qui m'entourent.
+    mots: [son, silence, écouter, bruit]
+    etapes:
+      - texte: |
+          Ferme les yeux une minute et **écoute** : même dans le « silence », on entend plein de petits sons (le frigo, un oiseau, une voiture, ta respiration).
+          Un **son** peut être **long** ou **court**, **proche** ou **lointain**. La musique joue avec les sons… et avec les **silences**, aussi importants que les notes.
+      - vraie_vie:
+          titre: La minute d'écoute
+          texte: "Assieds-toi, ferme les yeux pendant une minute, puis dessine ou écris tous les sons que tu as entendus. Lesquels étaient proches ? lointains ? longs ? courts ?"
+      - retiens: "Écouter, c'est remarquer tous les sons, même les tout petits. Le silence fait aussi partie de la musique."
+    exercices:
+      - type: qcm
+        vars: { t: [["une seule note très brève", "court", "long"], ["une note qui dure plusieurs secondes", "long", "court"]] }
+        enonce: "Écoute ce son. Est-il long ou court ?"
+        visuel: { type: son, notes: "{{si(t_1=='court','Sol4:0.25','Sol4:4')}}", timbre: flute, tempo: 60 }
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "C'était un son {{t_1}}."
+      - type: classer
+        vars: { t: [["le chant d'un oiseau", "le vent dans les arbres", "le klaxon d'une voiture", "une sonnerie de téléphone"], ["la pluie", "un moteur de tondeuse", "le ruisseau", "la sirène des pompiers"]] }
+        enonce: "Ce son vient-il de la nature ou d'une machine ?"
+        categories: ["la nature", "une machine"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 0], ["{{t_2}}", 1], ["{{t_3}}", 1]]
+        correction: "Oiseaux, vent, pluie, ruisseau : sons naturels."
+      - type: vf
+        vars: { t: [["Le silence fait partie de la musique.", true], ["Il n'y a jamais aucun son autour de nous.", false], ["Pour bien écouter, on peut fermer les yeux.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Même dans une pièce calme, on entend de petits sons : il faut juste bien écouter."
+
+  - id: fort-et-doux
+    titre: "Fort ou doux ?"
+    objectif: Je distingue un son fort d'un son doux.
+    mots: [fort, doux, intensité, nuance]
+    etapes:
+      - texte: |
+          Un son peut être **fort** (comme un tambour frappé très fort) ou **doux** (comme un chuchotement). C'est l'**intensité**.
+          En musique, on dit **forte** (f) pour fort et **piano** (p) pour doux : ce sont des **nuances**.
+          ⚠️ Fort ne veut pas dire aigu ! Une grosse note grave peut être très forte, une petite note aiguë très douce.
+      - retiens: "Fort (forte, f) ou doux (piano, p) : c'est l'intensité. Ne pas confondre avec aigu/grave."
+    exercices:
+      - type: qcm
+        vars: { t: [[0.08, 0.35, "le deuxième est plus fort"], [0.35, 0.08, "le deuxième est plus doux"]] }
+        enonce: "Écoute les deux sons (même note). Que remarques-tu ?"
+        visuel: { type: son, sons: [{ etiquette: "Son 1", notes: "La4:2", volume: "{{t_0}}" }, { etiquette: "Son 2", notes: "La4:2", volume: "{{t_1}}" }] }
+        choix: ["{{t_2}}", "{{si(t_2=='le deuxième est plus fort','le deuxième est plus doux','le deuxième est plus fort')}}", "le deuxième est plus aigu"]
+        correction: "{{t_2}} : la note est la même, seule la force change."
+      - type: classer
+        vars: { t: [["un chuchotement", "un coup de tonnerre", "une berceuse", "une fanfare dans la rue"], ["le ronronnement d'un chat", "un feu d'artifice", "une goutte d'eau", "un marteau-piqueur"]] }
+        enonce: "Son plutôt fort ou plutôt doux ?"
+        categories: ["doux (piano)", "fort (forte)"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Piano = doux ; forte = fort."
+      - type: qcm
+        vars: { t: [["Que signifie « piano » comme nuance ?", "doux", "fort", "aigu"], ["Que signifie « forte » ?", "fort", "doux", "rapide"], ["Une note grave est-elle forcément forte ?", "non : grave et fort, ce n'est pas pareil", "oui, toujours", "seulement le soir"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: aigu-et-grave
+    titre: "Aigu ou grave ?"
+    objectif: Je distingue un son aigu d'un son grave.
+    mots: [aigu, grave, hauteur]
+    etapes:
+      - texte: |
+          Un son **aigu** est « haut » et fin (un sifflet, un petit oiseau, une souris). Un son **grave** est « bas » et profond (un gros tambour, un lion qui rugit, une contrebasse).
+          C'est la **hauteur** du son. Sur un piano, les notes graves sont à **gauche**, les notes aiguës à **droite**.
+      - visuel:
+          type: clavier
+          de: Do3
+          a: Si5
+          notes: "Do3 Do5"
+        legende: "Touche les touches du clavier : à gauche les graves, à droite les aigus."
+      - retiens: "Aigu : haut et fin. Grave : bas et profond. Piano : graves à gauche, aigus à droite."
+    exercices:
+      - type: qcm
+        vars: { t: [["Do3", "Do5", "le son B est plus aigu"], ["Sol5", "Sol3", "le son A est plus aigu"], ["Mi4", "Mi5", "le son B est plus aigu"], ["La5", "La3", "le son A est plus aigu"]] }
+        enonce: "Écoute les deux sons. Lequel est le plus aigu ?"
+        visuel: { type: son, sons: [{ etiquette: "Son A", notes: "{{t_0}}:2" }, { etiquette: "Son B", notes: "{{t_1}}:2" }] }
+        choix: ["{{t_2}}", "{{si(t_2=='le son A est plus aigu','le son B est plus aigu','le son A est plus aigu')}}"]
+        correction: "{{t_2}}."
+      - type: classer
+        vars: { t: [["le sifflet de l'arbitre", "le rugissement du lion", "le chant d'un petit oiseau", "le grondement du tonnerre"], ["le couinement d'une souris", "la corne de brume d'un bateau", "une petite clochette", "une contrebasse"]] }
+        enonce: "Son plutôt aigu ou plutôt grave ?"
+        categories: [aigu, grave]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les petits objets et animaux font souvent des sons aigus, les gros des sons graves."
+      - type: qcm
+        vars: { t: [["Sur un piano, où sont les notes graves ?", "à gauche", "à droite", "au milieu seulement"], ["Sur un piano, où sont les notes aiguës ?", "à droite", "à gauche", "sous le piano"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: la-pulsation
+    titre: "La pulsation"
+    objectif: Je frappe la pulsation d'une musique.
+    mots: [pulsation, régulier, battement]
+    etapes:
+      - texte: |
+          Dans presque toutes les musiques, il y a un battement **régulier**, comme ton cœur ou le tic-tac d'une horloge : la **pulsation**. C'est ce qui donne envie de taper du pied ou de marcher en rythme.
+          Le **rythme**, lui, ce sont les sons longs et courts que l'on joue **par-dessus** la pulsation.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "La pulsation (régulière)", rythme: "X.x.x.x.X.x.x.x.", tempo: 90 }, { etiquette: "Un rythme par-dessus", rythme: "X.xxx.x.X.xx.xx.", tempo: 90 }]
+        legende: "Écoute d'abord la pulsation et frappe avec elle, puis écoute un rythme."
+      - retiens: "Pulsation = battement régulier (comme le cœur). Rythme = sons longs et courts joués par-dessus."
+    exercices:
+      - type: qcm
+        vars: { t: [["X.x.x.x.", "régulier (une pulsation)", "irrégulier"], ["Xx..x.xx", "irrégulier", "régulier (une pulsation)"], ["x.x.x.x.", "régulier (une pulsation)", "irrégulier"], ["X..xx.x.", "irrégulier", "régulier (une pulsation)"]] }
+        enonce: "Écoute ces frappes. Sont-elles régulières ?"
+        visuel: { type: son, rythme: "{{t_0}}", tempo: 90 }
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}."
+      - type: vf
+        vars: { t: [["Le tic-tac d'une horloge est régulier comme une pulsation.", true], ["La pulsation change de vitesse tout le temps.", false], ["On peut marcher au rythme de la pulsation.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La pulsation est régulière : c'est elle qu'on suit en dansant."
+      - type: nombre
+        vars: { t: [["X.x.x.x.", 4], ["X.x.x.x.x.x.", 6], ["X.x.", 2], ["X.x.x.x.X.x.x.x.", 8]] }
+        enonce: "Écoute et compte : combien de frappes entends-tu ?"
+        visuel: { type: son, rythme: "{{t_0}}", tempo: 80 }
+        reponse: "t_1"
+        correction: "{{t_1}} frappes."
+
+  - id: lent-et-rapide
+    titre: "Lent ou rapide ?"
+    objectif: Je distingue une musique lente d'une musique rapide.
+    mots: [tempo, lent, rapide]
+    etapes:
+      - texte: |
+          La vitesse d'une musique s'appelle le **tempo**. Une **berceuse** est **lente** (pour s'endormir), une **marche** est modérée, une **danse** peut être très **rapide**.
+          Les musiciens utilisent des mots italiens : **adagio** (lent), **moderato** (modéré), **allegro** (rapide), **presto** (très rapide).
+      - retiens: "Tempo = vitesse. Adagio (lent), moderato, allegro (rapide), presto (très rapide)."
+    exercices:
+      - type: qcm
+        vars: { t: [[60, "lente"], [160, "rapide"], [70, "lente"], [150, "rapide"]] }
+        enonce: "Écoute cette mélodie. Est-elle lente ou rapide ?"
+        visuel: { type: son, notes: "Do4 Ré4 Mi4 Sol4 Mi4 Ré4 Do4:2", tempo: "{{t_0}}" }
+        choix: ["{{t_1}}", "{{si(t_1=='lente','rapide','lente')}}"]
+        correction: "Elle était {{t_1}}."
+      - type: qcm
+        vars: { t: [["une berceuse", "lent (adagio)", "très rapide (presto)", "rapide (allegro)"], ["une course-poursuite dans un dessin animé", "très rapide (presto)", "lent (adagio)", "modéré (moderato)"], ["un défilé qui marche au pas", "modéré (moderato)", "presto", "adagio"]] }
+        enonce: "Quel tempo convient à {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["adagio", "moderato", "allegro", "presto"]] }
+        enonce: "Range ces tempos du plus lent au plus rapide."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Adagio, moderato, allegro, presto."
+
+  - id: les-instruments
+    titre: "Les familles d'instruments"
+    objectif: Je range les instruments dans leurs familles.
+    mots: [cordes, vents, percussions, claviers, voix]
+    etapes:
+      - texte: |
+          - **Cordes** : on frotte (violon, violoncelle, contrebasse), on pince (guitare, harpe) ou on frappe les cordes.
+          - **Vents** : on souffle (flûte, clarinette, saxophone, trompette, trombone).
+          - **Percussions** : on frappe ou on secoue (tambour, batterie, xylophone, maracas, triangle).
+          - **Claviers** : piano, orgue, synthétiseur.
+          - Et le plus ancien de tous les instruments : la **voix** !
+      - retiens: "Cordes (frotter, pincer), vents (souffler), percussions (frapper, secouer), claviers, et la voix."
+    exercices:
+      - type: classer
+        vars: { t: [["le violon", "la flûte", "le tambour", "la guitare", "la trompette", "les maracas"], ["la harpe", "le saxophone", "le xylophone", "le violoncelle", "la clarinette", "le triangle"]] }
+        enonce: "Range chaque instrument dans sa famille."
+        categories: [cordes, vents, percussions]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
+        correction: "Cordes : on frotte ou on pince. Vents : on souffle. Percussions : on frappe ou on secoue."
+      - type: qcm
+        vars: { t: [["Comment joue-t-on du violon ?", "on frotte les cordes avec un archet", "on souffle dedans", "on le secoue"], ["Comment joue-t-on de la trompette ?", "on souffle en faisant vibrer les lèvres", "on pince des cordes", "on la frappe"], ["Quel est le plus ancien instrument ?", "la voix", "le piano", "la guitare électrique"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le piano est un instrument à clavier.", true], ["La flûte est une percussion.", false], ["La harpe est un instrument à cordes pincées.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La flûte est un instrument à vent."

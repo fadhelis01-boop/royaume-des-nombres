@@ -4,7 +4,7 @@ import { Md } from "./Md";
 import { activeChild } from "../lib/store";
 import { visuel } from "../lib/img";
 
-export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi", gribouille: "Gribouille" };
+export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi", gribouille: "Gribouille", neutre: "Le Grand Neutre" };
 
 export function mascotSrc(who: Who, humeur?: string) {
   const pose = visuel("mascottes", humeur ? `${who}-${humeur}` : undefined) ?? visuel("mascottes", `${who}-neutre`);
@@ -31,6 +31,37 @@ function Gribouille({ size, humeur }: { size: number; humeur?: string }) {
       <circle cx={76} cy={52} r={4.5} fill="#14122a" />
       {happy ? <path d="M46 70 Q61 84 78 70" fill="#ff8fb1" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" /> : sad ? <path d="M48 78 Q61 68 76 78" fill="none" stroke="#fff" strokeWidth={3} strokeLinecap="round" /> : <path d="M50 72 Q61 78 74 72" fill="none" stroke="#fff" strokeWidth={3} strokeLinecap="round" />}
       {!sad && <text x={86} y={38} fontSize={16} fontWeight={700} fill="#ffd23f">é</text>}
+    </svg>
+  );
+}
+
+/** Le Grand Neutre et ses avatars : une brume grise, triste plutôt qu'effrayante (bible : « gris et triste, pas terrifiant »). */
+export function Neutre({ size, humeur, teinte = "#9aa0ab" }: { size: number; humeur?: string; teinte?: string }) {
+  const hit = humeur === "touche" || humeur === "surprise" || humeur === "triste";
+  const happy = humeur === "joie" || humeur === "croque" || humeur === "fier";
+  return (
+    <svg viewBox="0 0 120 110" width={size} height={size} aria-hidden className="svg-neutre">
+      <defs>
+        <radialGradient id="neutre-g" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stopColor="#e4e6ea" />
+          <stop offset="100%" stopColor={teinte} />
+        </radialGradient>
+      </defs>
+      <path d="M22 70 C6 66 8 42 26 42 C24 22 48 14 58 28 C66 10 96 14 94 36 C114 36 116 62 100 68 C104 86 82 96 70 86 C60 100 36 98 36 84 C26 90 16 82 22 70 Z" fill="url(#neutre-g)" stroke="#7d828c" strokeWidth={2.5} opacity={0.96} />
+      <circle cx={14} cy={88} r={4} fill={teinte} opacity={0.6} />
+      <circle cx={106} cy={84} r={3} fill={teinte} opacity={0.6} />
+      {hit ? (
+        <>
+          <path d="M42 52 l8 6 M50 52 l-8 6" stroke="#4b4f58" strokeWidth={3} strokeLinecap="round" />
+          <path d="M70 52 l8 6 M78 52 l-8 6" stroke="#4b4f58" strokeWidth={3} strokeLinecap="round" />
+        </>
+      ) : (
+        <>
+          <path d="M40 56 Q46 50 52 56" fill="none" stroke="#4b4f58" strokeWidth={3} strokeLinecap="round" />
+          <path d="M68 56 Q74 50 80 56" fill="none" stroke="#4b4f58" strokeWidth={3} strokeLinecap="round" />
+        </>
+      )}
+      {happy ? <path d="M50 70 Q60 78 70 70" fill="none" stroke="#4b4f58" strokeWidth={3} strokeLinecap="round" /> : <path d="M50 74 Q60 68 70 74" fill="none" stroke="#4b4f58" strokeWidth={3} strokeLinecap="round" />}
     </svg>
   );
 }
@@ -109,6 +140,9 @@ export function Mascot({ who, humeur, size = 72, talking = false, className = ""
   else if (me === "gribouille" && visuel("persos", `gribouille-${humeur ?? "neutre"}`))
     body = <img src={visuel("persos", `gribouille-${humeur ?? "neutre"}`)} alt={NAMES[who]} className="mascot mascot-gribouille" style={{ width: size, height: size }} draggable={false} />;
   else if (me === "gribouille") body = <Gribouille size={size} humeur={humeur} />;
+  else if (me === "neutre" && visuel("persos", `neutre-${humeur ?? "neutre"}`))
+    body = <img src={visuel("persos", `neutre-${humeur ?? "neutre"}`)} alt={NAMES[who]} className="mascot mascot-neutre" style={{ width: size, height: size }} draggable={false} />;
+  else if (me === "neutre") body = <Neutre size={size} humeur={humeur} />;
   else if (me === "nuage") body = <Nuage size={size} humeur={humeur} />;
   else if (me === "ixe") body = <Ixe size={size} />;
   else body = <img src={mascotSrc(me, humeur)} alt={NAMES[who]} className={`mascot mascot-${me}`} style={{ width: size, height: size }} draggable={false} />;
@@ -176,7 +210,7 @@ export function Bubble({ who, text, humeur, k, side = "left", size = 76 }: { who
 export function Dialogue({ lines, k, autoplay = false }: { lines: Line[]; k: string; autoplay?: boolean }) {
   const t = useTts();
   const playing = t.playing && t.key === k;
-  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left", gribouille: "right" };
+  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left", gribouille: "right", neutre: "right" };
   void autoplay;
   return (
     <div className="dialogue">

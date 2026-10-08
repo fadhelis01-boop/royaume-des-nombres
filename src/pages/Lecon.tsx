@@ -5,6 +5,7 @@ import { saveStep, useChild, getState, bump, addXp, addGems, updateChild, record
 import { sfx } from "../lib/sound";
 import { speak, stopSpeaking, useTts, type Seg } from "../lib/tts";
 import { instantiate, newSeed } from "../lib/gen";
+import { DessinPasAPas, Experience } from "../components/EtapesSavoirs";
 import { Bubble, Dialogue, Mascot } from "../components/Mascot";
 import { Md } from "../components/Md";
 import { Visuel } from "../components/Visuel";
@@ -37,6 +38,10 @@ export function stepSegments(s: Step): Seg[] {
       return [{ who: s.qui, text: s.texte + " " + s.choix.map((c) => c.texte).join(" ? Ou : ") + " ?" }];
     case "vraie_vie":
       return [{ who: "zero", text: `${s.titre}. ${s.texte}` }];
+    case "experience":
+      return [{ who: "neo", text: `Expérience : ${s.titre}. ${s.securite === "rouge" ? "Celle-ci, on la regarde seulement, jamais à la maison." : s.securite === "orange" ? "À faire avec un adulte." : ""} Il te faut : ${s.materiel.join(", ")}. ${s.etapes.join(" ")}` }];
+    case "dessin":
+      return [{ who: "mia", text: `Dessin pas à pas : ${s.titre}. ${s.etapes[0]?.consigne ?? ""}` }];
   }
 }
 
@@ -234,6 +239,10 @@ function StepView({ step, k, onAnswered, statKey, cycle }: { step: Step; k: stri
       return <Explique step={step} onAnswered={onAnswered} />;
     case "vraie_vie":
       return <VraieVie step={step} id={`${statKey}:${k}`} />;
+    case "experience":
+      return <Experience step={step} id={`${statKey}:${k}`} />;
+    case "dessin":
+      return <DessinPasAPas step={step} onAnswered={onAnswered} />;
   }
 }
 

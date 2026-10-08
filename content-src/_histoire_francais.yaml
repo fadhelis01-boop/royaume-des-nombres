@@ -67,7 +67,7 @@ arcs:
 chapitres:
   fr-grimoire-des-astuces:
     titre: "Le Grimoire des Astuces"
-    objet: "🪶 La plume de secours"
+    objet: "✒️ La plume de secours"
     avant:
       - mia: "Ici, c'est notre bibliothèque secrète. Pas de page à sauver : seulement des astuces pour bien écrire, bien relire et bien retenir."
       - neo: "Reviens quand tu veux. Ces méthodes marchent pour toutes les îles."
@@ -263,7 +263,7 @@ chapitres:
   # ------------------------- LIVRE III -------------------------
   fr-observatoire-du-style:
     titre: "Chapitre 15 — L'Observatoire du Style"
-    objet: "🪶 Plume de la Muse n° 1"
+    objet: "✒️ Plume de la Muse n° 1"
     avant:
       - narrateur: "La Muse de l'Archipel dort au fond du Grimoire. Sans elle, les mots sont justes… mais gris. Ses plumes sont dispersées dans les îles des maîtres."
       - mia: "À l'Observatoire, on regarde les mots comme des étoiles : comparaisons, métaphores, hyperboles… les figures de style font briller les phrases."
@@ -272,7 +272,7 @@ chapitres:
 
   fr-temple-de-la-poesie:
     titre: "Chapitre 16 — Le Temple de la Poésie"
-    objet: "🪶 Plume de la Muse n° 2"
+    objet: "✒️ Plume de la Muse n° 2"
     avant:
       - narrateur: "Au Temple de la Poésie, les vers se comptent sur les doigts, les rimes se répondent et les strophes dansent."
       - neo: "Douze syllabes pour un alexandrin, une césure au milieu. C'est presque des maths ! J'adore."
@@ -281,7 +281,7 @@ chapitres:
 
   fr-palais-de-l-orthographe:
     titre: "Chapitre 17 — Le Palais de l'Orthographe"
-    objet: "🪶 Plume de la Muse n° 3"
+    objet: "✒️ Plume de la Muse n° 3"
     avant:
       - narrateur: "Le Palais de l'Orthographe garde les accords les plus redoutables : « tout », « même », « quelque », les participes des verbes pronominaux, les couleurs."
       - zero-surprise: "On dit que même les adultes se trompent ici. Même les présidents. Même les dictionnaires, une fois, peut-être."
@@ -291,7 +291,7 @@ chapitres:
 
   fr-academie-des-lettres:
     titre: "Chapitre 18 — L'Académie des Lettres"
-    objet: "🪶 La Plume d'or"
+    objet: "✒️ La Plume d'or"
     avant:
       - narrateur: "Tout en haut de l'Archipel se dresse l'Académie des Lettres. On y parle la langue des grands auteurs : subjonctif imparfait, analyse fine, art d'argumenter."
       - neo: "Le dernier défi : comprendre, analyser, convaincre. C'est le combat final de l'Archipel. Défi accepté ?"

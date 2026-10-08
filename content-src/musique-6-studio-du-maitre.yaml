@@ -1,0 +1,172 @@
+id: mu-studio-du-maitre
+matiere: musique
+titre: Le Studio du Maître
+sous_titre: Harmonie jazz, psychoacoustique, acoustique des salles, son numérique, composer, droits et IA
+emoji: 🎧
+couleur: "#6b3606"
+cycle: maitres
+age: 16 ans et +
+niveau: Maître – Savant (supérieur, introduction)
+ordre: 506
+prerequis: [mu-tour-des-harmoniques]
+version: 1.0.0
+intro:
+  - narrateur: "Au sommet de la Cité, le Grand Neutre veut réduire toute la musique à un seul bruit gris."
+  - neo: "Dans ce studio, on étudie la musique comme les ingénieurs du son, les arrangeurs et les compositeurs d'aujourd'hui."
+
+lecons:
+  - id: harmonie-jazz
+    titre: "Accords de septième et II – V – I"
+    objectif: Je construis des accords de septième et je reconnais le II-V-I.
+    mots: [accord de septième, II-V-I, septième de dominante, accord enrichi]
+    etapes:
+      - texte: |
+          On ajoute une 4ᵉ note à l'accord parfait : la **septième**.
+          - **Do7M** (septième majeure) : do-mi-sol-**si** — doux, rêveur ;
+          - **Do7** (septième de dominante) : do-mi-sol-**si♭** — tension qui appelle une résolution ;
+          - **Rém7** (mineur 7) : ré-fa-la-**do**.
+          En jazz, l'enchaînement roi est le **II – V – I** : en do majeur, **Rém7 → Sol7 → Do7M**. La note **fa** de Sol7 descend vers **mi**, le **si** monte vers **do** : c'est la résolution.
+      - visuel:
+          type: son
+          notes: "[Ré4 Fa4 La4 Do5]:2 [Sol3 Si3 Ré4 Fa4]:2 [Do4 Mi4 Sol4 Si4]:4"
+          tempo: 80
+          etiquette: "Écouter II – V – I en do majeur"
+      - retiens: "Accord de 7ᵉ = accord parfait + septième. Do7 (si♭) est une dominante qui veut résoudre. Jazz : II – V – I (Rém7 – Sol7 – Do7M)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Do7 (septième de dominante)", "do-mi-sol-si♭", "do-mi-sol-si", "do-mi♭-sol-si♭"], ["Do7M (septième majeure)", "do-mi-sol-si", "do-mi-sol-si♭", "do-mi♭-sol-si"], ["Rém7", "ré-fa-la-do", "ré-fa♯-la-do", "ré-fa-la-do♯"]] }
+        enonce: "Quelles notes forment l'accord {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: qcm
+        vars: { t: [["do majeur", "Rém7 – Sol7 – Do7M", "Do7M – Sol7 – Rém7", "Fa7M – Do7 – Sol7"], ["fa majeur", "Solm7 – Do7 – Fa7M", "Rém7 – Sol7 – Do7M", "Do7 – Fa7M – Solm7"]] }
+        enonce: "Quel est l'enchaînement II – V – I en {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["La septième de dominante crée une tension qui appelle une résolution.", true], ["Un accord de septième contient 3 notes.", false], ["Le II – V – I est très utilisé en jazz.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un accord de septième contient 4 notes."
+
+  - id: psychoacoustique
+    titre: "Psychoacoustique : comment on entend"
+    objectif: J'utilise l'échelle des décibels et je connais quelques phénomènes de perception.
+    mots: [décibel, logarithme, intensité, sonie, masquage]
+    etapes:
+      - texte: |
+          L'oreille perçoit des intensités immenses (du chuchotement au réacteur d'avion : un facteur de mille milliards). On utilise donc une échelle **logarithmique**, le **décibel** :
+          - **+10 dB** = intensité acoustique **× 10** (et un son perçu environ **deux fois plus fort**) ;
+          - **+3 dB** ≈ intensité **× 2** (deux instruments identiques au lieu d'un).
+          **Masquage** : un son fort peut rendre inaudible un son plus faible de fréquence voisine (le MP3 en profite pour supprimer ce qu'on n'entendrait pas).
+          Notre sensibilité dépend de la fréquence : l'oreille est la plus sensible vers **2 000 – 5 000 Hz** (la zone de la voix et des cris).
+      - retiens: "Décibel = échelle logarithmique. +10 dB : intensité × 10 (≈ deux fois plus fort perçu) ; +3 dB : × 2. Masquage ; sensibilité maximale vers 2 à 5 kHz."
+    exercices:
+      - type: nombre
+        vars: { k: [1, 2, 3] }
+        enonce: "On augmente le niveau sonore de {{10*k}} dB. Par combien est multipliée l'intensité acoustique ?"
+        reponse: "10^k"
+        correction: "Chaque +10 dB multiplie l'intensité par 10 : 10 puissance {{k}} = {{10^k}}."
+      - type: qcm
+        vars: { t: [["Deux enceintes identiques au lieu d'une : de combien de dB le niveau augmente-t-il environ ?", "3 dB", "10 dB", "100 dB"], ["Qu'est-ce que le masquage ?", "un son fort qui rend inaudible un son plus faible proche en fréquence", "un casque anti-bruit", "un son qui disparaît avec le temps"], ["Vers quelles fréquences l'oreille est-elle la plus sensible ?", "vers 2 000 à 5 000 Hz", "vers 20 Hz", "au-delà de 20 000 Hz"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["L'échelle des décibels est logarithmique.", true], ["Passer de 60 à 70 dB double l'intensité acoustique.", false], ["La compression MP3 exploite les limites de notre perception.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "+10 dB multiplie l'intensité par 10 (c'est +3 dB qui la double)."
+
+  - id: acoustique-des-salles
+    titre: "L'acoustique des salles"
+    objectif: J'explique la réverbération et le rôle des matériaux.
+    mots: [réverbération, écho, absorption, temps de réverbération]
+    etapes:
+      - texte: |
+          Dans une salle, le son arrive directement… puis par des milliers de **réflexions** sur les murs : c'est la **réverbération**. Le **temps de réverbération** est le temps que met le son pour diminuer de 60 dB après l'arrêt de la source.
+          - Une église en pierre : plusieurs secondes (idéal pour l'orgue, difficile pour la parole) ;
+          - une salle de classe : on vise moins d'une seconde (pour bien comprendre) ;
+          - une salle de concert : souvent autour de 2 secondes.
+          Les matériaux **durs et lisses** (pierre, verre, carrelage) réfléchissent ; les matériaux **mous et poreux** (rideaux, moquette, mousses, public !) **absorbent**.
+          Un **écho** est une réflexion assez tardive (plus de 0,1 s environ) pour être entendue séparément.
+      - retiens: "Réverbération = réflexions multiples. Matériaux durs réfléchissent, mous absorbent. Parole : réverbération courte ; orgue : longue."
+    exercices:
+      - type: classer
+        vars: { t: [["le carrelage", "les rideaux épais", "le verre", "la moquette"], ["la pierre", "les sièges rembourrés", "le béton lisse", "les panneaux de mousse"]] }
+        enonce: "Ce matériau réfléchit-il ou absorbe-t-il plutôt le son ?"
+        categories: [réfléchit, absorbe]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Dur et lisse : réfléchit ; mou et poreux : absorbe."
+      - type: qcm
+        vars: { t: [["Pourquoi une salle vide résonne-t-elle plus qu'une salle pleine ?", "le public absorbe une partie du son", "le son voyage plus vite quand c'est vide", "les murs changent"], ["Quelle réverbération faut-il pour bien comprendre la parole ?", "courte (moins d'une seconde environ)", "très longue (5 secondes)", "aucune importance"], ["Qu'est-ce qu'un écho ?", "une réflexion assez tardive pour être entendue séparément", "un son très aigu", "un instrument"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { d: [17, 34, 51, 85] }
+        enonce: "Une falaise est à {{d}} m. Au bout de combien de secondes entend-on l'écho d'un cri (son : 340 m/s) ?"
+        reponse: "2*d/340"
+        tolerance: 0.01
+        unite: s
+        correction: "Aller-retour : 2 × {{d}} / 340 = {{2*d/340}} s."
+
+  - id: son-numerique
+    titre: "Le son numérique"
+    objectif: J'explique l'échantillonnage et la quantification.
+    mots: [échantillonnage, fréquence d'échantillonnage, Nyquist, quantification, bit]
+    etapes:
+      - texte: |
+          Pour numériser un son, on mesure la tension du micro à intervalles réguliers : c'est l'**échantillonnage**.
+          - La **fréquence d'échantillonnage** du CD est **44 100 Hz** (44 100 mesures par seconde).
+          - **Théorème de Nyquist-Shannon** : on peut reproduire des fréquences jusqu'à la **moitié** de la fréquence d'échantillonnage (22 050 Hz pour le CD, au-delà de la limite de l'oreille humaine, ~20 000 Hz).
+          - Chaque mesure est codée sur un nombre de **bits** (16 bits pour le CD : 65 536 niveaux possibles) : c'est la **quantification**.
+          Débit d'un CD stéréo : 44 100 × 16 × 2 ≈ **1,4 million de bits par seconde**.
+      - retiens: "Échantillonnage (CD : 44,1 kHz), Nyquist : fréquence max = moitié de la fréquence d'échantillonnage. Quantification : 16 bits = 65 536 niveaux."
+    exercices:
+      - type: nombre
+        vars: { fe: [8000, 22050, 44100, 48000, 96000] }
+        enonce: "Fréquence d'échantillonnage de {{fe}} Hz : quelle est la plus haute fréquence qu'on peut reproduire (Nyquist) ?"
+        reponse: "fe/2"
+        unite: Hz
+        correction: "{{fe}} ÷ 2 = {{fe/2}} Hz."
+      - type: nombre
+        vars: { b: [8, 16, 24] }
+        enonce: "Combien de niveaux différents peut coder un échantillon sur {{b}} bits ?"
+        reponse: "2^b"
+        correction: "2 puissance {{b}} = {{2^b}} niveaux."
+      - type: qcm
+        vars: { t: [["Quelle est la fréquence d'échantillonnage d'un CD audio ?", "44 100 Hz", "440 Hz", "1 000 000 Hz"], ["Pourquoi 44 100 Hz suffisent-ils pour la musique ?", "on reproduit jusqu'à 22 050 Hz, au-delà de ce que l'oreille entend", "parce que la musique est lente", "par hasard"], ["Qu'est-ce que la quantification ?", "coder chaque mesure avec un nombre fini de niveaux (bits)", "compter les musiciens", "mesurer le tempo"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: composer-et-droits
+    titre: "Composer, créer, respecter les droits"
+    objectif: Je connais les étapes d'une composition et les règles du droit d'auteur et de l'IA.
+    mots: [motif, développement, arrangement, droit d'auteur, domaine public, intelligence artificielle]
+    etapes:
+      - texte: |
+          **Composer** : partir d'un **motif** (quelques notes, un rythme), le **développer** (répéter, transposer, varier, inverser), choisir une **forme** (couplet-refrain, ABA…), puis **arranger** (qui joue quoi : instruments, accompagnement, nuances).
+          **Droits** : une œuvre est protégée par le **droit d'auteur** (en France, jusqu'à 70 ans après la mort de l'auteur) ; ensuite, elle entre dans le **domaine public** (Mozart, Bach : libres d'utilisation). Reprendre ou échantillonner une œuvre protégée nécessite une **autorisation**.
+          **IA et musique** : des outils peuvent générer de la musique ; les questions éthiques et juridiques (données d'entraînement, droits des artistes, transparence) sont débattues. Bon réflexe : **dire** quand on a utilisé une IA, et respecter le travail des créateurs.
+      - vraie_vie:
+          titre: Ton premier morceau
+          texte: "Dans le studio de musique, invente un motif de 4 notes en pentatonique. Joue-le 2 fois (partie A), invente une partie B différente, puis rejoue A. Tu as composé une forme ABA ! Ajoute une boucle de rythme avec la boîte à rythmes de Zéro."
+      - retiens: "Motif → développement → forme → arrangement. Droit d'auteur jusqu'à 70 ans après la mort de l'auteur, puis domaine public. IA : transparence et respect des créateurs."
+    exercices:
+      - type: ordre
+        vars: { t: [["trouver un motif", "le développer et le varier", "choisir une forme", "arranger pour les instruments"]] }
+        enonce: "Remets les étapes de la composition dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Motif, développement, forme, arrangement."
+      - type: qcm
+        vars: { t: [["Peut-on jouer et enregistrer librement une sonate de Mozart (la partition) ?", "oui, elle est dans le domaine public", "non, jamais", "seulement le dimanche"], ["Combien de temps dure en France le droit d'auteur après la mort de l'auteur ?", "70 ans", "5 ans", "pour toujours"], ["Que faire avant d'utiliser un extrait d'une chanson récente dans son propre morceau publié ?", "demander l'autorisation des ayants droit", "rien, c'est libre", "changer juste le titre"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Transposer un motif, c'est le rejouer plus haut ou plus bas.", true], ["Une œuvre du domaine public peut être utilisée librement.", true], ["Il est inutile de dire qu'on a utilisé une IA pour créer.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La transparence sur l'usage d'une IA est un bon réflexe éthique."

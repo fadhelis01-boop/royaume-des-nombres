@@ -16,11 +16,11 @@ export function Accueil() {
             <Mascot who="zero" size={110} talking />
             <Mascot who="neo" size={130} talking />
           </div>
-          <h1>Le Royaume des Nombres</h1>
-          <p className="lead">Apprends les maths et le français en t'amusant, de 7 ans jusqu'au niveau des grands !</p>
+          <h1>La Galaxie des Savoirs</h1>
+          <p className="lead">Maths, français, sciences, musique et dessin : apprends en t'amusant, de 7 ans jusqu'au niveau des grands !</p>
         </div>
         <Bubble who="neo" text="Salut ! Je suis Néo Fibo. Un problème ? Défi accepté !" />
-        <Bubble who="mia" text="Moi c'est Mia π. Et si on essayait autrement ? Viens, on va explorer le Royaume ensemble !" side="right" />
+        <Bubble who="mia" text="Moi c'est Mia π. Et si on essayait autrement ? Viens, on va explorer la Galaxie ensemble : chaque planète est un savoir !" side="right" />
         <Bubble who="zero" text="Et moi… Zéro. Je ne vaux rien. Mais derrière un 1, je vaux DIX ! 😳" />
         <div className="center">
           <button className="btn btn-primary btn-xl" onClick={() => go("/nouveau")}>
@@ -71,9 +71,9 @@ export function NouvelEnfant() {
   const ok = name.trim().length >= 1;
   const create = () => {
     addChild(newChild(name.trim(), avatar, age));
-    // On vit l'histoire AVANT tout test : le prologue, puis une « première quête »
-    // (le test de niveau déguisé pour les plus grands, une première leçon pour les petits).
-    go("/aventure/prologue");
+    // L'enfant choisit d'abord sa planète dans la Galaxie ; la carte de la planète
+    // propose ensuite son prologue (l'histoire avant tout test).
+    go("/galaxie");
   };
   return (
     <div className="page narrow">

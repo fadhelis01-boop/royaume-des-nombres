@@ -1,6 +1,8 @@
 // Compile les mondes (content-src/*.yaml) en JSON servis par l'application.
 //
-//   content-src/NN-<monde>.yaml    un monde = un domaine des maths (leçons, exercices)
+//   content-src/_planetes.yaml     les planètes de la Galaxie (une par matière) et leurs familles
+//   content-src/NN-<monde>.yaml    un monde = un domaine d'une matière (leçons, exercices)
+//   content-src/_histoire*.yaml    l'histoire de chaque planète
 //   content-src/_glossaire.yaml    le Grand Livre (définitions sourcées)
 //   content-src/_enigmes.yaml      énigmes du jour
 //   content-src/_diagnostic.yaml   test de positionnement
@@ -30,7 +32,8 @@ function main() {
     version: "",
     updatedAt: new Date().toISOString().slice(0, 10),
     worlds: [],
-    glossaire: opt("_glossaire.yaml", []),
+    // le Grand Livre : _glossaire.yaml (maths) + _glossaire_*.yaml (autres planètes)
+    glossaire: readdirSync(SRC).filter((f) => /^_glossaire.*\.ya?ml$/.test(f)).sort().flatMap((f) => load(f) ?? []),
     enigmes: opt("_enigmes.yaml", []),
     diagnostic: [],
     jeux: {},
@@ -76,8 +79,13 @@ function main() {
     if (!g.mot || !g.def) errors.push(`glossaire : entrée incomplète ${g.mot ?? "?"}`);
     if (g.monde && !worldIds.has(g.monde)) errors.push(`glossaire ${g.mot} : monde inconnu ${g.monde}`);
   }
-  // L'aventure (fil rouge narratif)
-  const h = opt("_histoire.yaml", null);
+  // La Galaxie des Savoirs : les planètes (une par matière) et leurs familles
+  const reg = opt("_planetes.yaml", { familles: {}, planetes: [] });
+  manifest.familles = Object.entries(reg.familles ?? {}).map(([id, f]) => ({ id, titre: f.titre, emoji: f.emoji, accroche: f.accroche ?? "" }));
+  const famIds = new Set(manifest.familles.map((f) => f.id));
+  const SPRITES = ["nuage", "ixe", "oubli", "gribouille", "tache", "neutre"];
+  manifest.planetes = [];
+  manifest.histoires = {};
   // Un choix narratif : une question, 2 ou 3 options, chacune suivie de quelques répliques.
   const choix = (c, where) => {
     if (!c) return undefined;
@@ -87,38 +95,44 @@ function main() {
     }
     return { qui: c.qui ?? "mia", question: String(c.question), options: c.options.map((o, i) => ({ texte: String(o.texte ?? ""), suite: lines(o.suite ?? [], `${where} option ${i + 1}`) })) };
   };
-  if (h) {
-    manifest.histoire = {
-      prologue: lines(h.prologue ?? [], "histoire prologue"),
-      prologueChoix: choix(h.prologue_choix, "histoire prologue choix"),
-      arcs: (h.arcs ?? []).map((a) => {
-        if (!worldIds.has(a.final)) errors.push(`histoire ${a.id} : monde final inconnu ${a.final}`);
-        return { id: a.id, titre: a.titre, sousTitre: a.sous_titre, final: a.final, fin: lines(a.fin ?? [], `histoire ${a.id} fin`) };
-      }),
-      chapitres: {},
-    };
-    for (const [id, c] of Object.entries(h.chapitres ?? {})) {
-      if (!worldIds.has(id)) errors.push(`histoire : chapitre pour un monde inconnu ${id}`);
-      manifest.histoire.chapitres[id] = { titre: c.titre, objet: c.objet, avant: lines(c.avant ?? [], `histoire ${id} avant`), apres: lines(c.apres ?? [], `histoire ${id} apres`), choix: choix(c.choix, `histoire ${id} choix`) };
+  for (const pl of reg.planetes ?? []) {
+    const where = `planète ${pl.id ?? "?"}`;
+    for (const k of ["id", "famille", "titre", "matiere", "emoji", "couleur", "prologue", "objet"]) if (pl[k] === undefined) errors.push(`${where} : champ « ${k} » manquant`);
+    if (!famIds.has(pl.famille)) errors.push(`${where} : famille inconnue « ${pl.famille} »`);
+    const gardiens = {};
+    for (const [cy, g] of Object.entries(pl.gardiens ?? {})) {
+      if (!SPRITES.includes(g.sprite)) errors.push(`${where} gardien ${cy} : sprite inconnu « ${g.sprite} » (${SPRITES.join(", ")})`);
+      gardiens[cy] = { sprite: g.sprite, nom: g.nom, qui: lines([{ [g.qui ?? "narrateur"]: "." }], `${where} gardien ${cy}`)[0].who, ouverture: g.ouverture ?? "", cri: g.cri ?? "", aie: g.aie ?? ["Aïe !"], nargue: g.nargue ?? ["Raté !"], jeton: g.jeton ?? "☁️" };
     }
-    for (const w of loaded) if (w.matiere === "maths" && !manifest.histoire.chapitres[w.id]) warns.push(`histoire : pas de chapitre pour le monde ${w.id}`);
-  }
-  const hf = opt("_histoire_francais.yaml", null);
-  if (hf) {
-    manifest.histoireFr = {
-      prologue: lines(hf.prologue ?? [], "histoire fr prologue"),
-      prologueChoix: choix(hf.prologue_choix, "histoire fr prologue choix"),
-      arcs: (hf.arcs ?? []).map((a) => {
-        if (!worldIds.has(a.final)) errors.push(`histoire fr ${a.id} : monde final inconnu ${a.final}`);
-        return { id: a.id, titre: a.titre, sousTitre: a.sous_titre, final: a.final, fin: lines(a.fin ?? [], `histoire fr ${a.id} fin`) };
-      }),
-      chapitres: {},
-    };
-    for (const [id, c] of Object.entries(hf.chapitres ?? {})) {
-      if (!worldIds.has(id)) errors.push(`histoire fr : chapitre pour un monde inconnu ${id}`);
-      manifest.histoireFr.chapitres[id] = { titre: c.titre, objet: c.objet, avant: lines(c.avant ?? [], `histoire fr ${id} avant`), apres: lines(c.apres ?? [], `histoire fr ${id} apres`), choix: choix(c.choix, `histoire fr ${id} choix`) };
+    manifest.planetes.push({
+      id: pl.id, famille: pl.famille, titre: pl.titre, matiere: pl.matiere, emoji: pl.emoji, couleur: pl.couleur, accroche: pl.accroche ?? "",
+      prologue: pl.prologue, objet: pl.objet, echauffement: pl.echauffement ?? "2 minutes de questions éclair", astuces: pl.astuces ?? "Méthodes et astuces",
+      liens: pl.liens ?? [], jeux: pl.jeux ?? [], gardiens,
+    });
+    const h = pl.histoire ? opt(pl.histoire, null) : null;
+    if (pl.histoire && !h) warns.push(`${where} : histoire ${pl.histoire} introuvable (la planète fonctionne sans)`);
+    if (h) {
+      const tag = `histoire ${pl.id}`;
+      const H = {
+        prologue: lines(h.prologue ?? [], `${tag} prologue`),
+        prologueChoix: choix(h.prologue_choix, `${tag} prologue choix`),
+        arcs: (h.arcs ?? []).map((a) => {
+          if (!worldIds.has(a.final)) errors.push(`${tag} ${a.id} : monde final inconnu ${a.final}`);
+          return { id: a.id, titre: a.titre, sousTitre: a.sous_titre, final: a.final, fin: lines(a.fin ?? [], `${tag} ${a.id} fin`) };
+        }),
+        chapitres: {},
+      };
+      for (const [id, c] of Object.entries(h.chapitres ?? {})) {
+        if (!worldIds.has(id)) errors.push(`${tag} : chapitre pour un monde inconnu ${id}`);
+        H.chapitres[id] = { titre: c.titre, objet: c.objet, avant: lines(c.avant ?? [], `${tag} ${id} avant`), apres: lines(c.apres ?? [], `${tag} ${id} apres`), choix: choix(c.choix, `${tag} ${id} choix`) };
+      }
+      for (const w of loaded) if (w.matiere === pl.id && w.cycle !== "astuces" && !H.chapitres[w.id]) warns.push(`${tag} : pas de chapitre pour le monde ${w.id}`);
+      manifest.histoires[pl.id] = H;
     }
   }
+  const plIds = new Set(manifest.planetes.map((p) => p.id));
+  for (const w of loaded) if (!plIds.has(w.matiere)) errors.push(`${w.id} : planète (matière) inconnue « ${w.matiere} » — à déclarer dans _planetes.yaml`);
+  for (const p of manifest.planetes) if (!loaded.some((w) => w.matiere === p.id)) warns.push(`planète ${p.id} : aucun monde pour l'instant`);
   // ---- Dictionnaire du français : content-src/_dico_*.yaml → public/content/dictionnaire.json (chargé à la demande)
   const NAT = { n: "nom", v: "verbe", a: "adjectif", adv: "adverbe", p: "préposition", c: "conjonction", pr: "pronom", d: "déterminant", i: "interjection", loc: "locution" };
   const dico = [];
@@ -142,7 +156,6 @@ function main() {
   dico.sort((x, y) => x.mot.localeCompare(y.mot, "fr"));
   writeFileSync(path.join(OUT, "dictionnaire.json"), JSON.stringify(dico));
   manifest.dicoCount = dico.length;
-  if (manifest.histoireFr) for (const w of loaded) if (w.matiere === "francais" && !manifest.histoireFr.chapitres[w.id]) warns.push(`histoire fr : pas de chapitre pour le monde ${w.id}`);
   manifest.version = manifest.changelog[0]?.version ?? "1.0.0";
   writeFileSync(path.join(OUT, "manifest.json"), JSON.stringify(manifest));
   console.log(

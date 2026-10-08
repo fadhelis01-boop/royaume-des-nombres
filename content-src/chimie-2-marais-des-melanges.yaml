@@ -1,0 +1,211 @@
+id: ch-marais-des-melanges
+matiere: chimie
+titre: Le Marais des Mélanges
+sous_titre: Séparer, changer d'état, acide ou base, le cycle de l'eau
+emoji: 🧫
+couleur: "#1f9c7a"
+cycle: graines
+age: 8 ans et +
+niveau: Explorateur (CE2 – CM1)
+ordre: 102
+prerequis: [ch-mare-des-etats]
+version: 1.0.0
+intro:
+  - narrateur: "L'eau du village est devenue trouble et grise. Les habitants, décolorés, n'osent plus la boire."
+  - mia: "On va la rendre claire. Il existe des techniques de savant pour séparer ce qui est mélangé."
+
+lecons:
+  - id: tamiser-filtrer
+    titre: "Tamiser et filtrer"
+    objectif: Je sépare un mélange avec un tamis ou un filtre.
+    mots: [tamis, filtre, filtration, filtrat]
+    etapes:
+      - texte: |
+          - Le **tamis** (une passoire) garde les gros morceaux et laisse passer les petits : on sépare le gravier du sable.
+          - Le **filtre** (papier filtre, filtre à café, coton) a des trous minuscules : il retient même le sable fin et laisse passer l'eau. L'eau qui ressort s'appelle le **filtrat**.
+          ⚠️ Un filtre rend l'eau **plus claire**, mais pas forcément **potable** : il ne retient ni les microbes, ni le sel dissous !
+      - experience:
+          titre: Clarifier l'eau boueuse
+          securite: vert
+          materiel: ["un verre d'eau boueuse (eau + terre)", "un filtre à café", "un entonnoir ou une bouteille coupée", "un verre propre"]
+          etapes:
+            - "Place le filtre dans l'entonnoir, au-dessus du verre propre."
+            - "Verse doucement l'eau boueuse."
+            - "Compare l'eau avant et après."
+          observation: "L'eau qui coule est bien plus claire ; la terre reste dans le filtre."
+          explication: "Les grains de terre sont plus gros que les trous du filtre : ils sont retenus. Attention : cette eau n'est pas potable, elle peut encore contenir des microbes invisibles. Ne la bois pas !"
+      - retiens: "Tamis : sépare les gros des petits morceaux. Filtre : retient les grains solides, laisse passer le liquide. Une eau filtrée n'est pas forcément potable."
+      - a_quoi_ca_sert: "Les stations de traitement filtrent l'eau sur du sable ; la cafetière filtre le café ; l'aspirateur filtre la poussière."
+    exercices:
+      - type: qcm
+        vars: { t: [["séparer des cailloux et du sable", "un tamis", "un aimant", "un congélateur"], ["séparer de la terre et de l'eau", "un filtre", "une balance", "un thermomètre"], ["séparer le marc de café et le café", "un filtre", "un tamis à gros trous", "un chronomètre"]] }
+        enonce: "Pour {{t_0}}, j'utilise…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une eau filtrée et claire est toujours bonne à boire.", false], ["Un filtre retient le sel dissous dans l'eau.", false], ["Le filtrat est le liquide qui traverse le filtre.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le filtre ne retient ni le sel dissous ni les microbes : clair ne veut pas dire potable."
+      - type: ordre
+        vars: { t: [["Placer le filtre dans l'entonnoir", "Poser l'entonnoir sur un verre propre", "Verser doucement le mélange", "Récupérer le filtrat"]] }
+        enonce: "Remets les étapes de la filtration dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
+
+  - id: decanter-evaporer
+    titre: "Laisser reposer, laisser s'évaporer"
+    objectif: Je sépare par décantation et par évaporation.
+    mots: [décantation, évaporation, cristaux]
+    etapes:
+      - texte: |
+          - **Décanter** : on laisse reposer un mélange. Les grains les plus lourds tombent au fond, le liquide devient plus clair au-dessus. On peut ensuite verser doucement le dessus.
+          - **Évaporer** : on laisse l'eau partir dans l'air (au soleil, ou en chauffant). Ce qui était dissous **reste** : le sel réapparaît sous forme de **cristaux**.
+      - experience:
+          titre: Le sel revient !
+          securite: vert
+          materiel: ["une assiette sombre", "un peu d'eau", "une cuillère de sel"]
+          prediction:
+            question: "On dissout du sel dans l'eau et on laisse l'assiette au soleil plusieurs jours. Que restera-t-il ?"
+            choix: ["Des cristaux de sel", "Rien du tout", "De l'eau sale"]
+          etapes:
+            - "Dissous une cuillère de sel dans un fond d'eau."
+            - "Verse dans l'assiette et pose-la au soleil ou près d'un radiateur."
+            - "Observe chaque jour."
+          observation: "L'eau disparaît peu à peu, et de petits cristaux blancs apparaissent : c'est le sel."
+          explication: "L'eau s'est évaporée (elle est partie dans l'air sous forme de vapeur), mais le sel ne s'évapore pas : il reste. C'est exactement ce qui se passe dans les marais salants !"
+      - retiens: "Décanter : laisser reposer, le solide tombe au fond. Évaporer : l'eau s'en va, ce qui était dissous reste."
+      - a_quoi_ca_sert: "Les marais salants de Guérande récoltent le sel de mer par évaporation au soleil et au vent."
+    exercices:
+      - type: qcm
+        vars: { t: [["récupérer le sel de l'eau de mer", "l'évaporation", "la filtration", "le tamisage"], ["éclaircir une eau boueuse sans rien utiliser", "la décantation", "l'évaporation", "le tamisage"], ["enlever des grains de sable d'une eau", "la filtration", "l'évaporation", "le congélateur"]] }
+        enonce: "Quelle technique choisir pour {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Quand l'eau salée s'évapore, le sel s'évapore aussi.", false], ["Une eau boueuse laissée au repos devient plus claire en haut.", true], ["Les marais salants utilisent le soleil et le vent.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le sel ne s'évapore pas : il reste en cristaux."
+      - type: classer
+        vars: { t: [["tamis", "évaporation", "filtre à café", "marais salant"], ["passoire", "laisser l'eau au soleil", "papier filtre", "faire chauffer l'eau salée"]] }
+        enonce: "Cette technique garde-t-elle le solide en laissant passer le liquide, ou fait-elle partir l'eau ?"
+        categories: ["garde le solide, laisse passer le liquide", "fait partir l'eau"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Tamis et filtres retiennent ; l'évaporation fait partir l'eau."
+
+  - id: changements-d-etat
+    titre: "Les quatre changements d'état"
+    objectif: Je nomme les changements d'état de l'eau.
+    mots: [fusion, solidification, vaporisation, condensation, ébullition]
+    etapes:
+      - texte: |
+          | Changement | De… vers… | Exemple |
+          |---|---|---|
+          | **fusion** | solide → liquide | le glaçon fond |
+          | **solidification** | liquide → solide | l'eau gèle au congélateur |
+          | **vaporisation** | liquide → gaz | l'eau bout dans la casserole, le linge sèche |
+          | **condensation** | gaz → liquide | la buée sur le miroir de la salle de bain |
+
+          L'eau pure **fond à 0 °C** et **bout à 100 °C** (au niveau de la mer). Pendant qu'elle bout, sa température **reste à 100 °C**.
+      - attention:
+          texte: "Zéro croit que l'eau qui bout depuis longtemps devient « super chaude ». Non : tant qu'il reste de l'eau liquide, elle reste à 100 °C (à pression normale). Par contre la vapeur brûle : on ne met jamais la main au-dessus d'une casserole qui bout !"
+          qui: neo
+      - retiens: "Fusion (S→L), solidification (L→S), vaporisation (L→G), condensation (G→L). Eau : 0 °C et 100 °C."
+    exercices:
+      - type: qcm
+        vars: { t: [["la buée sur une vitre froide", "condensation", "fusion", "solidification"], ["le chocolat qui fond dans la casserole", "fusion", "condensation", "vaporisation"], ["la flaque qui sèche au soleil", "vaporisation", "solidification", "fusion"], ["l'eau qui devient glaçon", "solidification", "condensation", "fusion"], ["la rosée du matin sur l'herbe", "condensation", "vaporisation", "fusion"]] }
+        enonce: "Quel changement d'état : {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["fusion", "solidification", "vaporisation", "condensation"]] }
+        enonce: "Ce changement d'état se fait-il en chauffant ou en refroidissant ?"
+        categories: ["en chauffant", "en refroidissant"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "On chauffe pour la fusion et la vaporisation ; on refroidit pour la solidification et la condensation."
+      - type: vf
+        vars: { t: [["L'eau qui bout depuis 10 minutes est à 200 °C.", false], ["La buée est de la vapeur d'eau redevenue liquide.", true], ["Pendant l'ébullition, la température de l'eau reste à 100 °C (à pression normale).", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Tant qu'elle bout, l'eau liquide reste à 100 °C (au niveau de la mer)."
+
+  - id: acide-ou-base
+    titre: "Acide ou base ? Le chou magique"
+    objectif: Je découvre un indicateur coloré.
+    mots: [acide, base, indicateur, neutre]
+    etapes:
+      - dialogue:
+          - zero: "Du jus de chou rouge qui change de couleur ? C'est une potion de sorcière !"
+          - neo: "C'est de la chimie : le chou contient un pigment qui change de couleur selon que le liquide est acide ou basique. On appelle ça un **indicateur**."
+      - experience:
+          titre: Le jus de chou rouge
+          securite: orange
+          materiel: ["quelques feuilles de chou rouge", "de l'eau chaude (préparée par un adulte)", "4 verres", "du jus de citron", "du vinaigre blanc", "une cuillère de bicarbonate de soude", "de l'eau du robinet"]
+          prediction:
+            question: "Le jus de chou est violet. Que deviendra-t-il avec du citron ?"
+            choix: ["Rose ou rouge", "Vert", "Il restera violet"]
+          etapes:
+            - "L'adulte verse l'eau chaude sur le chou coupé ; laisse refroidir 10 minutes puis filtre : tu obtiens un jus violet."
+            - "Verse un peu de jus dans chaque verre."
+            - "Ajoute : verre 1 rien, verre 2 citron, verre 3 vinaigre, verre 4 bicarbonate."
+          observation: "Avec le citron et le vinaigre, le jus devient rose-rouge ; avec le bicarbonate, il devient vert-bleu ; seul, il reste violet."
+          explication: "Le citron et le vinaigre sont **acides** : l'indicateur devient rouge-rose. Le bicarbonate est une **base** : l'indicateur devient vert-bleu. L'eau pure est **neutre**. Ne goûte pas : au labo, on ne goûte jamais."
+      - retiens: "Un indicateur change de couleur selon l'acidité. Citron, vinaigre : acides. Bicarbonate, savon : basiques. Eau pure : neutre."
+      - a_quoi_ca_sert: "Les jardiniers mesurent l'acidité du sol (les hortensias changent de couleur !), les piscinistes surveillent l'eau des piscines."
+    exercices:
+      - type: classer
+        vars: { t: [["jus de citron", "bicarbonate", "vinaigre", "savon"], ["jus d'orange", "lessive", "vinaigre", "bicarbonate"]] }
+        enonce: "Acide ou basique ?"
+        categories: [acide, basique]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les agrumes et le vinaigre sont acides ; le bicarbonate, le savon et la lessive sont basiques."
+      - type: qcm
+        vars: { t: [["du vinaigre", "rose-rouge", "vert-bleu", "violet"], ["du bicarbonate", "vert-bleu", "rose-rouge", "violet"], ["de l'eau pure", "violet", "rose-rouge", "vert-bleu"], ["du jus de citron", "rose-rouge", "vert-bleu", "violet"]] }
+        enonce: "De quelle couleur devient le jus de chou rouge avec {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un indicateur change de couleur selon que le liquide est acide ou basique.", true], ["On peut goûter les liquides de l'expérience pour vérifier.", false], ["L'eau pure est neutre.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Au labo, on ne goûte jamais : on observe la couleur de l'indicateur."
+
+  - id: cycle-de-l-eau
+    titre: "Le cycle de l'eau"
+    objectif: J'explique le voyage de l'eau avec les changements d'état.
+    mots: [cycle, évaporation, condensation, précipitations]
+    etapes:
+      - texte: |
+          L'eau de la Terre voyage sans cesse :
+          1. Le soleil chauffe les océans, les lacs : l'eau **s'évapore** (liquide → gaz).
+          2. En montant, la vapeur se refroidit : elle **se condense** en minuscules gouttes qui forment les **nuages**.
+          3. Les gouttes grossissent et tombent : ce sont les **précipitations** (pluie, neige, grêle).
+          4. L'eau ruisselle dans les rivières, s'infiltre dans le sol… et retourne à la mer. Et ça recommence !
+      - experience:
+          titre: Un cycle de l'eau dans un bocal
+          securite: orange
+          materiel: ["un grand bocal ou saladier", "un film alimentaire", "de l'eau chaude (versée par un adulte)", "des glaçons"]
+          etapes:
+            - "Verse un peu d'eau chaude au fond du bocal (avec l'adulte)."
+            - "Ferme avec le film alimentaire et pose des glaçons dessus."
+            - "Observe le dessous du film pendant 10 minutes."
+          observation: "De la buée puis des gouttes apparaissent sous le film, et finissent par retomber, comme de la pluie."
+          explication: "L'eau chaude s'évapore, la vapeur se condense au contact du film refroidi par les glaçons, et les gouttes retombent : c'est le cycle de l'eau en miniature."
+      - retiens: "Évaporation → condensation (nuages) → précipitations → ruissellement → et ça recommence. L'eau sur Terre est toujours la même, elle circule."
+    exercices:
+      - type: ordre
+        vars: { t: [["L'eau de la mer s'évapore", "La vapeur se condense en nuages", "Il pleut", "L'eau rejoint les rivières puis la mer"]] }
+        enonce: "Remets les étapes du cycle de l'eau dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Évaporation, condensation, précipitations, ruissellement."
+      - type: qcm
+        vars: { t: [["De quoi sont faits les nuages ?", "de minuscules gouttes d'eau ou de glace", "de fumée", "de coton"], ["Qu'est-ce qui fait évaporer l'eau des océans ?", "la chaleur du Soleil", "le vent seulement", "les poissons"], ["Comment appelle-t-on la pluie, la neige et la grêle ?", "les précipitations", "les condensations", "les évaporations"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["L'eau que nous buvons a peut-être été bue par un dinosaure.", true], ["Les nuages sont faits de vapeur d'eau invisible.", false], ["Le cycle de l'eau s'arrête l'hiver.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La vapeur est invisible ; les nuages sont faits de gouttelettes. Et l'eau circule depuis des milliards d'années !"

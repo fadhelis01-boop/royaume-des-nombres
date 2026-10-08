@@ -44,9 +44,16 @@ const CourseGrenouille = lazy(() => import("./pages/jeux/CourseGrenouille").then
 const ConjugaisonEclair = lazy(() => import("./pages/jeux/JeuxMots").then((m) => ({ default: m.ConjugaisonEclair })));
 const MotMystere = lazy(() => import("./pages/jeux/JeuxMots").then((m) => ({ default: m.MotMystere })));
 const DicteeFlash = lazy(() => import("./pages/jeux/JeuxMots").then((m) => ({ default: m.DicteeFlash })));
+const QuizEclair = lazy(() => import("./pages/jeux/JeuxSavoirs").then((m) => ({ default: m.QuizEclair })));
+const OreilleDor = lazy(() => import("./pages/jeux/JeuxSavoirs").then((m) => ({ default: m.OreilleDor })));
+const StudioMusique = lazy(() => import("./pages/Studios").then((m) => ({ default: m.StudioMusique })));
+const StudioDessin = lazy(() => import("./pages/Studios").then((m) => ({ default: m.StudioDessin })));
+const GalerieDessins = lazy(() => import("./pages/Studios").then((m) => ({ default: m.Galerie })));
+const Galaxie = lazy(() => import("./pages/Galaxie").then((m) => ({ default: m.Galaxie })));
 const Duel = lazy(() => import("./pages/jeux/Duel").then((m) => ({ default: m.Duel })));
 
 const NAV = [
+  { path: "/galaxie", icon: "🌌", label: "Galaxie" },
   { path: "/", icon: "🗺️", label: "Carte" },
   { path: "/jeux", icon: "🎮", label: "Jeux" },
   { path: "/revisions", icon: "🔁", label: "Révisions" },
@@ -132,6 +139,12 @@ export default function App() {
       case "profils":
         page = <Accueil />;
         break;
+      case "galaxie":
+        page = <Galaxie />;
+        break;
+      case "studio":
+        page = p[1] === "musique" ? <StudioMusique /> : p[2] === "galerie" ? <GalerieDessins /> : <StudioDessin />;
+        break;
       case "nouveau":
         page = <NouvelEnfant />;
         break;
@@ -149,7 +162,7 @@ export default function App() {
         break;
       case "jeux":
         page =
-          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : p[1] === "conjugaison" ? <ConjugaisonEclair /> : p[1] === "mystere" ? <MotMystere /> : p[1] === "flash" ? <DicteeFlash /> : <Jeux />;
+          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : p[1] === "conjugaison" ? <ConjugaisonEclair /> : p[1] === "mystere" ? <MotMystere /> : p[1] === "flash" ? <DicteeFlash /> : p[1] === "eclair-sciences" ? <QuizEclair /> : p[1] === "oreille" ? <OreilleDor /> : p[1] === "studio-musique" ? <StudioMusique /> : p[1] === "studio-dessin" ? <StudioDessin /> : <Jeux />;
         break;
       case "aventure":
         page = <Aventure part={p[1]} />;
@@ -239,7 +252,7 @@ export default function App() {
           </>
         ) : (
           <button className="tb-brand" onClick={() => go("/")}>
-            <img src="icons/icon-192.png" alt="" width={34} height={34} /> Royaume des Nombres
+            <img src="icons/icon-192.png" alt="" width={34} height={34} /> Galaxie des Savoirs
           </button>
         )}
         <button className="tb-parent" onClick={() => go(isParents ? "/" : "/parents")} aria-label={isParents ? "Retour aux enfants" : "Espace parents"} title={isParents ? "Retour" : "Espace parents"}>
@@ -312,7 +325,7 @@ function PauseOverlay({ limit }: { limit: number }) {
       <p>
         Tu as bien travaillé aujourd'hui ({limit} minutes). Ton cerveau range tout ce que tu as appris pendant que tu joues dehors, que tu lis ou que tu dors. 😴
       </p>
-      <p className="muted">À demain dans le Royaume des Nombres ! (Un adulte peut prolonger dans l'Espace parents.)</p>
+      <p className="muted">À demain dans la Galaxie des Savoirs ! (Un adulte peut prolonger dans l'Espace parents.)</p>
       <button className="btn btn-soft" onClick={() => go("/parents")}>
         🔒 Espace parents
       </button>

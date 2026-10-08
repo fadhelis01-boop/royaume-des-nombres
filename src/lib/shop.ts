@@ -45,8 +45,8 @@ export const ITEMS: Item[] = [
   { id: "cadre-or", nom: "Cadre doré", emoji: "🟡", cat: "cadre", prix: 60, couleur: "#e8b100" },
   // Cabane
   { id: "tapis", nom: "Tapis", emoji: "🟫", cat: "cabane", prix: 10 },
-  { id: "plante", nom: "Plante", emoji: "🪴", cat: "cabane", prix: 15 },
-  { id: "lampe", nom: "Lampe", emoji: "🪔", cat: "cabane", prix: 20 },
+  { id: "plante", nom: "Plante", emoji: "🌱", cat: "cabane", prix: 15 },
+  { id: "lampe", nom: "Lampe", emoji: "💡", cat: "cabane", prix: 20 },
   { id: "livres", nom: "Étagère de livres", emoji: "📚", cat: "cabane", prix: 25 },
   { id: "tableau", nom: "Tableau à craie", emoji: "🖼️", cat: "cabane", prix: 25 },
   { id: "guirlande", nom: "Guirlande", emoji: "🎏", cat: "cabane", prix: 30 },

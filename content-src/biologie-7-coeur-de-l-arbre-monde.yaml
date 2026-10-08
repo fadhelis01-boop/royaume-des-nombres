@@ -1,0 +1,126 @@
+id: bio-coeur-de-l-arbre-monde
+matiere: biologie
+titre: Le Cœur de l'Arbre-Monde
+sous_titre: Régulation des gènes, génomique, CRISPR et éthique, microbiote, écologie des populations
+emoji: 🌳
+couleur: "#1a4d16"
+cycle: maitres
+age: 17 ans et +
+niveau: Maître – Savant (supérieur, introduction)
+ordre: 307
+prerequis: [bio-noyau-du-vivant]
+version: 1.0.0
+intro:
+  - narrateur: "Le Grand Neutre s'attaque au cœur de l'Arbre-Monde : il veut effacer la diversité du vivant."
+  - mia: "Ici, on touche aux grandes questions de la biologie d'aujourd'hui… et aux choix que la société devra faire."
+
+lecons:
+  - id: regulation-des-genes
+    titre: "Tous les gènes ne s'expriment pas partout"
+    objectif: J'explique pourquoi des cellules ayant le même ADN sont différentes.
+    mots: [expression des gènes, régulation, différenciation, épigénétique]
+    etapes:
+      - texte: |
+          Presque toutes tes cellules ont **le même ADN**. Pourtant un neurone et une cellule de peau sont très différents : chaque type de cellule n'**exprime** qu'une partie de ses gènes. C'est la **régulation de l'expression des gènes**.
+          Des protéines régulatrices **allument** ou **éteignent** les gènes selon le tissu, le moment de la vie ou l'environnement. Au cours du développement, les cellules se **différencient** ainsi.
+          L'**épigénétique** étudie des marques chimiques sur l'ADN et ses protéines d'emballage qui modifient l'expression des gènes **sans changer la séquence** ; certaines sont influencées par l'environnement.
+      - retiens: "Même ADN, gènes exprimés différents. La régulation allume ou éteint les gènes ; l'épigénétique modifie l'expression sans changer la séquence."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pourquoi un neurone et une cellule de la peau sont-ils différents alors qu'ils ont le même ADN ?", "ils n'expriment pas les mêmes gènes", "ils ont des ADN différents", "le neurone n'a pas d'ADN"], ["Qu'étudie l'épigénétique ?", "des modifications de l'expression des gènes sans changement de séquence", "les fossiles", "les mutations de séquence uniquement"], ["Comment s'appelle la spécialisation d'une cellule pendant le développement ?", "la différenciation", "la photosynthèse", "la réplication"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Toutes les cellules d'un même individu expriment tous leurs gènes en même temps.", false], ["Des facteurs de l'environnement peuvent influencer l'expression de certains gènes.", true], ["Les globules rouges matures des mammifères n'ont pas de noyau.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chaque type de cellule n'exprime qu'une partie de ses gènes (et les globules rouges des mammifères perdent leur noyau en mûrissant)."
+      - type: qcm
+        vars: { t: [["Le génome humain contient environ…", "20 000 gènes codant des protéines", "200 gènes", "20 millions de gènes"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} (pour environ 3 milliards de paires de bases)."
+
+  - id: genomique-et-crispr
+    titre: "Génomique, CRISPR et éthique"
+    objectif: Je connais les outils modernes de la génétique et leurs enjeux éthiques.
+    mots: [génome, séquençage, CRISPR-Cas9, thérapie génique, bioéthique]
+    etapes:
+      - texte: |
+          - Le **génome humain** (environ 3 milliards de paires de bases) a été séquencé pour la première fois en 2003 (Projet Génome humain) ; aujourd'hui, séquencer un génome coûte bien moins cher et prend quelques jours.
+          - **CRISPR-Cas9** est un outil qui permet de **couper l'ADN à un endroit précis** pour le modifier. Il vient d'un système de défense des bactéries contre les virus. **Emmanuelle Charpentier** et **Jennifer Doudna** ont reçu le prix Nobel de chimie 2020 pour cette découverte.
+          - Applications : recherche, agriculture, premières **thérapies géniques** (par exemple pour certaines maladies du sang).
+          - **Éthique** : modifier l'ADN d'embryons humains (transmis à la descendance) est interdit dans de nombreux pays ; la **bioéthique** réfléchit aux limites (sécurité, consentement, inégalités, « bébés à la carte »).
+      - retiens: "Génome séquencé (2003). CRISPR-Cas9 coupe l'ADN avec précision (Nobel 2020 : Charpentier et Doudna). Grandes promesses, grandes questions éthiques."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que permet CRISPR-Cas9 ?", "couper l'ADN à un endroit précis pour le modifier", "voir l'ADN à l'œil nu", "fabriquer des vaccins uniquement"], ["Qui a reçu le prix Nobel de chimie 2020 pour CRISPR-Cas9 ?", "Emmanuelle Charpentier et Jennifer Doudna", "Watson et Crick", "Marie Curie"], ["D'où vient le système CRISPR à l'origine ?", "de la défense des bactéries contre les virus", "des plantes carnivores", "du cerveau humain"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Modifier l'ADN d'embryons humains destinés à naître est interdit dans de nombreux pays.", true], ["Une thérapie génique peut viser à corriger l'effet d'un gène défectueux.", true], ["Les questions éthiques ne concernent pas les scientifiques.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les scientifiques participent pleinement à la réflexion éthique, avec toute la société."
+      - type: nombre
+        vars: { t: [["En quelle année le premier génome humain complet a-t-il été publié (Projet Génome humain) ?", 2003]] }
+        enonce: "{{t_0}}"
+        reponse: "t_1"
+        correction: "{{t_1}} (une version quasi complète, comblant les derniers trous, a été publiée en 2022)."
+
+  - id: microbiote
+    titre: "Le microbiote, un organe invisible"
+    objectif: J'explique le rôle du microbiote dans la santé.
+    mots: [microbiote, symbiose, antibiotique, dysbiose]
+    etapes:
+      - texte: |
+          Notre intestin abrite des milliers de milliards de micro-organismes (bactéries surtout) : le **microbiote intestinal**. C'est une **symbiose** : nous leur offrons un habitat et de la nourriture ; ils nous aident à **digérer** les fibres, produisent certaines **vitamines** (K, B) et **éduquent notre système immunitaire**.
+          Un déséquilibre (**dysbiose**) est associé à diverses maladies ; les **antibiotiques**, utiles contre les infections, perturbent aussi le microbiote : à n'utiliser que sur prescription.
+          Une alimentation variée, riche en **fibres** (légumes, fruits, céréales complètes, légumineuses), favorise un microbiote diversifié.
+      - retiens: "Microbiote = symbiose : digestion des fibres, vitamines, immunité. Fibres et variété le nourrissent ; les antibiotiques le perturbent."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'une symbiose ?", "une association où les deux partenaires sont gagnants", "une maladie", "une compétition mortelle"], ["Qu'est-ce qui favorise un microbiote diversifié ?", "une alimentation riche en fibres et variée", "beaucoup de sucres raffinés", "les antibiotiques à chaque rhume"], ["Que produit en partie le microbiote pour nous ?", "certaines vitamines", "des os", "de l'oxygène"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les antibiotiques peuvent perturber le microbiote.", true], ["Le microbiote est uniquement nuisible.", false], ["Le microbiote participe à l'éducation du système immunitaire.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le microbiote est un partenaire essentiel de notre santé."
+      - type: classer
+        vars: { t: [["lentilles", "soda", "pain complet", "bonbons"], ["brocoli", "biscuits industriels", "pomme avec la peau", "frites"]] }
+        enonce: "Riche en fibres (bon pour le microbiote) ou pauvre en fibres ?"
+        categories: ["riche en fibres", "pauvre en fibres"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Légumineuses, légumes, fruits et céréales complètes apportent des fibres."
+
+  - id: ecologie-des-populations
+    titre: "La dynamique des populations"
+    objectif: Je modélise simplement la croissance d'une population.
+    mots: [population, croissance exponentielle, capacité de charge, proies-prédateurs]
+    etapes:
+      - texte: |
+          - Sans limite, une population **double** à intervalles réguliers : croissance **exponentielle** (une bactérie qui se divise toutes les 20 min donne plus d'un milliard de bactéries en 10 h).
+          - En réalité, les ressources sont limitées : la population se stabilise autour de la **capacité de charge** du milieu (courbe en S, « logistique »).
+          - **Proies et prédateurs** : quand les proies abondent, les prédateurs se multiplient ; puis les proies diminuent, et les prédateurs aussi… d'où des **cycles** décalés (célèbre exemple : lièvres et lynx du Canada).
+      - retiens: "Sans limite : croissance exponentielle (doublements). Avec ressources limitées : stabilisation (capacité de charge). Proies-prédateurs : cycles décalés."
+    exercices:
+      - type: nombre
+        vars: { n: [2, 3, 5, 10] }
+        enonce: "Une bactérie se divise en deux à chaque génération. Combien de bactéries après {{n}} générations (en partant d'une seule) ?"
+        reponse: "2^n"
+        correction: "2 à la puissance {{n}} = {{2^n}}."
+      - type: nombre
+        vars: { h: [1, 2, 3] }
+        enonce: "Une bactérie se divise toutes les 20 minutes. Combien de bactéries au bout de {{h}} h, en partant d'une seule ?"
+        reponse: "2^(3*h)"
+        correction: "{{h}} h = {{3*h}} générations : 2^{{3*h}} = {{2^(3*h)}}."
+      - type: qcm
+        vars: { t: [["Que se passe-t-il quand une population atteint la capacité de charge de son milieu ?", "elle se stabilise", "elle double encore indéfiniment", "elle disparaît immédiatement"], ["Les lynx deviennent nombreux. Qu'arrive-t-il ensuite aux lièvres ?", "leur nombre diminue", "leur nombre explose", "rien"], ["Pourquoi une croissance exponentielle ne peut-elle pas durer ?", "les ressources du milieu sont limitées", "les êtres vivants s'ennuient", "c'est interdit"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

@@ -1,0 +1,194 @@
+id: ch-grotte-des-particules
+matiere: chimie
+titre: La Grotte des Particules
+sous_titre: Le modèle particulaire, la masse qui se conserve, les transformations chimiques
+emoji: ⚛️
+couleur: "#178a8c"
+cycle: explorateurs
+age: 10 ans et +
+niveau: Apprenti (CM2 – 6ᵉ)
+ordre: 103
+prerequis: [ch-marais-des-melanges]
+version: 1.0.0
+intro:
+  - neo: "Dans cette grotte, on va zoomer un milliard de fois. Tu vas voir de quoi est vraiment faite la matière."
+  - zero: "Un MILLIARD de fois ?! 🤯 Je vais voir mes propres poils en géant !"
+
+lecons:
+  - id: modele-particulaire
+    titre: "Tout est fait de particules"
+    objectif: J'explique les trois états avec le modèle des particules.
+    mots: [particule, molécule, modèle]
+    etapes:
+      - texte: |
+          La matière est faite de **particules** minuscules (des molécules), bien trop petites pour être vues, même au microscope ordinaire. Ce **modèle** explique les trois états :
+          - **solide** : particules **collées, rangées**, qui vibrent sur place → forme propre ;
+          - **liquide** : particules **collées mais désordonnées**, qui glissent les unes sur les autres → il coule ;
+          - **gaz** : particules **très éloignées**, qui bougent vite dans tous les sens → il occupe tout l'espace et se comprime.
+          Quand on chauffe, les particules s'agitent plus : c'est pour ça que la matière change d'état.
+      - retiens: "Solide : serrées et rangées. Liquide : serrées et désordonnées. Gaz : éloignées et très agitées. Chauffer = agiter les particules."
+      - a_quoi_ca_sert: "On peut comprimer l'air dans un pneu (les particules d'un gaz sont éloignées) mais pas l'eau : c'est le principe des freins hydrauliques."
+    exercices:
+      - type: qcm
+        vars: { t: [["serrées, rangées, vibrant sur place", "solide", "liquide", "gaz"], ["serrées mais désordonnées, glissant les unes sur les autres", "liquide", "solide", "gaz"], ["très éloignées, bougeant vite en tous sens", "gaz", "liquide", "solide"]] }
+        enonce: "Des particules {{t_0}} : c'est un…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["On peut comprimer un gaz car ses particules sont éloignées.", true], ["Quand on chauffe, les particules s'agitent moins.", false], ["Les particules d'un solide sont immobiles et ne vibrent pas du tout.", false], ["Les molécules sont visibles avec une loupe.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chauffer agite les particules ; même dans un solide, elles vibrent. Et elles sont bien trop petites pour une loupe."
+      - type: qcm
+        vars: { t: [["On peut enfoncer le piston d'une seringue bouchée remplie d'air.", "les particules d'air sont éloignées et peuvent se rapprocher", "l'air disparaît", "l'air devient liquide"], ["Une odeur de gâteau se répand dans toute la maison.", "les particules de gaz bougent en tous sens et se dispersent", "l'odeur est un solide", "le gâteau rétrécit"]] }
+        enonce: "{{t_0}} Pourquoi ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: masse-conservee
+    titre: "Rien ne se perd, rien ne se crée"
+    objectif: Je sais que la masse se conserve lors d'une transformation.
+    mots: [conservation, masse, Lavoisier]
+    etapes:
+      - histoire:
+          titre: Un peu d'histoire
+          texte: "Au XVIIIᵉ siècle, le chimiste français **Antoine Lavoisier** pèse avec une grande précision tout ce qui entre et sort de ses expériences, en récipient fermé. Il montre que la masse totale ne change pas. On résume son idée par : « Rien ne se perd, rien ne se crée, tout se transforme. » Son épouse, **Marie-Anne Paulze Lavoisier**, l'aidait, dessinait les appareils et traduisait des textes scientifiques."
+      - texte: |
+          Lors d'une transformation (dissolution, changement d'état, réaction chimique), **la masse totale se conserve** — à condition de tout peser, y compris les gaz (donc en récipient fermé).
+          Exemple : 100 g de glace donnent **100 g** d'eau liquide. Le volume, lui, peut changer (la glace prend un peu plus de place que l'eau).
+      - retiens: "La masse totale se conserve toujours (récipient fermé). Le volume peut changer, la masse non."
+    exercices:
+      - type: nombre
+        vars: { m: [50, 80, 100, 150, 250] }
+        enonce: "Un glaçon de {{m}} g fond complètement dans un bocal fermé. Quelle est la masse de l'eau obtenue ?"
+        reponse: "m"
+        unite: g
+        correction: "{{m}} g : la masse se conserve lors d'un changement d'état."
+      - type: nombre
+        vars: { a: [150, 200, 250], b: [5, 8, 10, 12] }
+        enonce: "Dans une bouteille fermée, on mélange {{a}} g de vinaigre et {{b}} g de bicarbonate. Ça mousse ! Quelle est la masse totale après la réaction (bouteille encore fermée) ?"
+        reponse: "a+b"
+        unite: g
+        correction: "{{a}} + {{b}} = {{a+b}} g : en récipient fermé, le gaz formé est resté dans la bouteille, la masse se conserve."
+      - type: qcm
+        vars: { t: [["On fait la même réaction dans un verre ouvert : la balance indique un peu moins qu'au départ. Pourquoi ?", "le gaz produit s'est échappé dans l'air", "de la matière a été détruite", "la balance est cassée"], ["Le bois brûle et il ne reste qu'un peu de cendres. La matière a-t-elle disparu ?", "non, elle est partie surtout sous forme de gaz et de fumée", "oui, le feu détruit la matière", "oui, elle est devenue de la lumière"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : rien ne se perd, tout se transforme."
+
+  - id: transformation-chimique
+    titre: "Transformation physique ou chimique ?"
+    objectif: Je distingue un simple changement d'aspect d'une vraie réaction chimique.
+    mots: [réaction chimique, réactif, produit]
+    etapes:
+      - texte: |
+          - **Transformation physique** : la matière change d'état, de forme ou se mélange, mais **reste la même substance** (le glaçon fond : c'est toujours de l'eau ; le sucre se dissout : c'est toujours du sucre).
+          - **Transformation chimique** (une **réaction**) : des substances disparaissent (les **réactifs**) et de **nouvelles** apparaissent (les **produits**). Indices : un gaz se dégage, la couleur change, de la chaleur ou de la lumière apparaît, une odeur nouvelle…
+      - experience:
+          titre: Le ballon qui se gonfle tout seul
+          securite: vert
+          materiel: ["une petite bouteille vide", "du vinaigre blanc", "2 cuillères de bicarbonate de soude", "un ballon de baudruche", "un entonnoir"]
+          prediction:
+            question: "On met du bicarbonate dans le ballon et du vinaigre dans la bouteille, puis on fait tomber le bicarbonate. Que va faire le ballon ?"
+            choix: ["Il se gonfle tout seul", "Il reste vide", "Il éclate tout de suite"]
+          etapes:
+            - "Avec l'entonnoir, mets le bicarbonate dans le ballon."
+            - "Verse un fond de vinaigre dans la bouteille."
+            - "Fixe le ballon sur le goulot sans faire tomber la poudre, puis redresse-le pour la verser dedans."
+          observation: "Ça mousse et le ballon se gonfle tout seul."
+          explication: "Le vinaigre (acide) et le bicarbonate (base) réagissent : il se forme un **nouveau gaz**, le dioxyde de carbone (CO₂), qui gonfle le ballon. C'est une transformation **chimique**."
+      - retiens: "Physique : même substance, aspect différent. Chimique : de nouvelles substances apparaissent (gaz, couleur, chaleur…)."
+      - a_quoi_ca_sert: "La levure qui fait gonfler le gâteau, la rouille sur un vélo, la cuisson d'un œuf, une bougie qui brûle : ce sont des réactions chimiques."
+    exercices:
+      - type: classer
+        vars: { t: [["un glaçon fond", "un œuf cuit", "le sucre se dissout", "le fer rouille"], ["l'eau bout", "une bûche brûle", "on casse un verre", "le pain grille"], ["on découpe du papier", "le lait tourne", "la cire chaude fond", "le vinaigre réagit avec le bicarbonate"]] }
+        enonce: "Transformation physique ou chimique ?"
+        categories: [physique, chimique]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Chimique quand une nouvelle substance apparaît (cuisson, combustion, rouille, lait tourné)."
+      - type: qcm
+        vars: { t: [["Quel gaz se forme quand le vinaigre réagit avec le bicarbonate ?", "le dioxyde de carbone (CO₂)", "l'oxygène", "la vapeur d'eau seulement"], ["Comment appelle-t-on les substances de départ d'une réaction ?", "les réactifs", "les produits", "les indicateurs"], ["Quel indice NE prouve PAS une réaction chimique ?", "un changement d'état", "un gaz nouveau qui se dégage", "un changement de couleur inattendu"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Faire fondre du chocolat est une réaction chimique.", false], ["Cuire un œuf est une transformation chimique : on ne peut pas le « décuire ».", true], ["Dans une réaction chimique, la masse totale se conserve.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Fondre = physique ; cuire = chimique. La masse se conserve toujours."
+
+  - id: l-air-et-ses-gaz
+    titre: "De quoi est fait l'air ?"
+    objectif: Je connais la composition de l'air.
+    mots: [azote, oxygène, dioxyde de carbone, atmosphère]
+    etapes:
+      - texte: |
+          L'air est un **mélange de gaz** :
+          - environ **78 %** de **diazote** (on dit souvent « azote ») ;
+          - environ **21 %** de **dioxygène** (« oxygène »), indispensable pour respirer et pour brûler ;
+          - environ **1 %** d'autres gaz : surtout de l'argon, un peu de dioxyde de carbone (environ 0,04 %), de la vapeur d'eau…
+          Nous inspirons de l'oxygène et rejetons du dioxyde de carbone ; les plantes, à la lumière, font l'inverse.
+      - visuel:
+          type: diagramme
+          max: 100
+          barres: [{ v: 78, label: "diazote" }, { v: 21, label: "dioxygène" }, { v: 1, label: "autres" }]
+        legende: "La composition de l'air sec, en pourcentage du volume."
+      - retiens: "Air ≈ 78 % diazote + 21 % dioxygène + 1 % autres gaz."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel gaz est le plus abondant dans l'air ?", "le diazote", "le dioxygène", "le dioxyde de carbone"], ["Quel gaz de l'air respire-t-on pour vivre ?", "le dioxygène", "le diazote", "l'argon"], ["Quel gaz rejette-t-on en expirant, en plus grande quantité qu'on ne l'inspire ?", "le dioxyde de carbone", "le diazote", "l'hélium"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["de diazote", 78], ["de dioxygène", 21]] }
+        enonce: "Environ quel pourcentage {{t_0}} dans l'air ?"
+        reponse: "t_1"
+        tolerance: 1
+        unite: "%"
+        correction: "Environ {{t_1}} %."
+      - type: nombre
+        vars: { v: [100, 200, 500, 1000] }
+        enonce: "Dans {{v}} L d'air, combien de litres de dioxygène environ (21 %) ?"
+        reponse: "v*21/100"
+        unite: L
+        correction: "21 % de {{v}} L = {{v*21/100}} L."
+
+  - id: combustion
+    titre: "Le feu : le triangle de la combustion"
+    objectif: Je sais ce qu'il faut pour qu'un feu brûle, et comment l'éteindre.
+    mots: [combustion, combustible, comburant, triangle du feu]
+    etapes:
+      - texte: |
+          Une **combustion** est une réaction chimique qui dégage de la chaleur et souvent de la lumière (une flamme). Il faut **trois choses** — le **triangle du feu** :
+          1. un **combustible** (ce qui brûle : bois, papier, gaz, cire) ;
+          2. un **comburant** (le dioxygène de l'air) ;
+          3. une **énergie d'activation** (une flamme, une étincelle, de la chaleur).
+          Pour **éteindre** un feu, on enlève **un** des trois côtés : on retire le combustible, on étouffe (plus d'oxygène), ou on refroidit (avec de l'eau — **jamais sur de l'huile en feu ni sur un appareil électrique !**).
+      - attention:
+          texte: "On ne joue jamais avec le feu. Une poêle d'huile qui s'enflamme : on coupe le feu et on couvre avec un couvercle (on étouffe). Jamais d'eau dessus : l'huile brûlante serait projetée partout."
+          qui: neo
+      - experience:
+          titre: La bougie sous le verre (à regarder)
+          securite: rouge
+          materiel: []
+          etapes: []
+          observation: "Quand on pose un verre retourné sur une bougie allumée, la flamme faiblit puis s'éteint au bout de quelques secondes."
+          explication: "Sous le verre, la bougie consomme le dioxygène disponible et en manque bientôt : sans comburant, la combustion s'arrête. C'est le principe de la couverture anti-feu : étouffer."
+      - retiens: "Triangle du feu : combustible + comburant (dioxygène) + énergie. On éteint en retirant un des trois."
+    exercices:
+      - type: qcm
+        vars: { t: [["le bois de la cheminée", "le combustible", "le comburant", "l'énergie d'activation"], ["le dioxygène de l'air", "le comburant", "le combustible", "l'énergie d'activation"], ["l'allumette qu'on gratte", "l'énergie d'activation", "le comburant", "le combustible"]] }
+        enonce: "Dans le triangle du feu, {{t_0}} joue le rôle de…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["On couvre une poêle en feu avec un couvercle.", "on retire le comburant (on étouffe)", "on retire le combustible", "on ajoute de l'énergie"], ["Les pompiers arrosent un feu de forêt.", "on refroidit (on retire l'énergie)", "on ajoute du comburant", "on retire le dioxygène de toute la Terre"], ["On coupe le gaz de la gazinière.", "on retire le combustible", "on ajoute du comburant", "on refroidit"]] }
+        enonce: "{{t_0}} Quel côté du triangle enlève-t-on ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["On peut éteindre de l'huile en feu avec de l'eau.", false], ["Sans dioxygène, rien ne peut brûler (dans les conditions habituelles).", true], ["Une combustion est une réaction chimique.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Jamais d'eau sur de l'huile en feu : on étouffe avec un couvercle."

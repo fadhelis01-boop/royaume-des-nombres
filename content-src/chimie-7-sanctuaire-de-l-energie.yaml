@@ -1,0 +1,172 @@
+id: ch-sanctuaire-de-l-energie
+matiere: chimie
+titre: Le Sanctuaire de l'Énergie
+sous_titre: Thermodynamique, orbitales, spectroscopie, mécanismes, chimie verte
+emoji: 🔮
+couleur: "#0a3d5c"
+cycle: maitres
+age: 17 ans et +
+niveau: Maître – Savant (supérieur, introduction)
+ordre: 107
+prerequis: [ch-laboratoire-royal]
+version: 1.0.0
+intro:
+  - narrateur: "Au cœur du Marais, Corrosion ronge les tours du Sanctuaire. Ici, on comprend POURQUOI les réactions se font, et comment la chimie peut protéger la planète."
+  - neo: "Ce sont des introductions rigoureuses au niveau supérieur. On simplifie, mais on ne dit jamais rien de faux."
+
+lecons:
+  - id: enthalpie-entropie
+    titre: "Enthalpie, entropie et enthalpie libre"
+    objectif: Je prévois si une réaction est spontanée avec ΔG = ΔH − TΔS.
+    mots: [enthalpie, entropie, enthalpie libre, spontané]
+    etapes:
+      - texte: |
+          - **ΔH** (variation d'**enthalpie**) : chaleur échangée à pression constante. ΔH < 0 : exothermique ; ΔH > 0 : endothermique.
+          - **ΔS** (variation d'**entropie**) : mesure du « désordre », plus précisément du nombre de façons d'arranger l'énergie et la matière. Un gaz qui se forme fait en général augmenter S.
+          - **ΔG = ΔH − T·ΔS** (enthalpie libre, T en kelvins) : à température et pression constantes, une transformation est **spontanée si ΔG < 0**.
+          ⚠️ « Spontanée » ne veut pas dire « rapide » : le diamant devrait se transformer en graphite, mais c'est infiniment lent (cinétique !).
+      - exemple:
+          titre: La glace fond-elle à 25 °C ?
+          enonce: "Fusion de la glace : ΔH ≈ +6,0 kJ/mol, ΔS ≈ +0,022 kJ/(mol·K). À T = 298 K :"
+          etapes: ["ΔG = 6,0 − 298 × 0,022 ≈ 6,0 − 6,56 ≈ −0,56 kJ/mol", "ΔG < 0 : la fusion est spontanée à 25 °C (et à 273 K, ΔG ≈ 0 : c'est l'équilibre de fusion)."]
+      - retiens: "ΔG = ΔH − TΔS (T en K). ΔG < 0 : spontané. Spontané ≠ rapide."
+    exercices:
+      - type: nombre
+        vars: { h: [-50, -20, 10, 30], s: [0.1, 0.05, -0.05], T: [300, 400] }
+        enonce: "ΔH = {{h}} kJ/mol, ΔS = {{s}} kJ/(mol·K), T = {{T}} K. Calcule ΔG (kJ/mol)."
+        reponse: "h-T*s"
+        tolerance: 0.01
+        unite: kJ/mol
+        correction: "ΔG = {{h}} − {{T}} × ({{s}}) = {{h-T*s}} kJ/mol."
+      - type: qcm
+        vars: { t: [["ΔH < 0 et ΔS > 0", "spontanée à toute température", "jamais spontanée", "spontanée seulement à haute température"], ["ΔH > 0 et ΔS < 0", "jamais spontanée", "toujours spontanée", "spontanée à basse température"], ["ΔH > 0 et ΔS > 0", "spontanée seulement à haute température", "jamais spontanée", "spontanée à basse température"], ["ΔH < 0 et ΔS < 0", "spontanée seulement à basse température", "spontanée à toute température", "jamais spontanée"]] }
+        enonce: "Une réaction avec {{t_0}} est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Étudie le signe de ΔH − TΔS quand T varie : {{t_1}}."
+      - type: vf
+        vars: { t: [["Une réaction spontanée est toujours rapide.", false], ["Dans ΔG = ΔH − TΔS, la température est en kelvins.", true], ["La formation d'un gaz augmente en général l'entropie.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La thermodynamique dit si c'est possible, la cinétique dit à quelle vitesse."
+
+  - id: orbitales
+    titre: "Orbitales et configuration électronique"
+    objectif: J'écris la configuration électronique des premiers éléments.
+    mots: [orbitale, sous-couche, configuration électronique, quantique]
+    etapes:
+      - texte: |
+          En mécanique quantique, un électron n'a pas de trajectoire : il est décrit par une **orbitale**, une zone où il a de grandes chances de se trouver. Les orbitales se regroupent en **sous-couches** : s (2 électrons max), p (6), d (10), f (14).
+          On les remplit dans l'ordre d'énergie croissante (règle de Klechkowski) : 1s, 2s, 2p, 3s, 3p, 4s, 3d…
+          Exemples : H : 1s¹ ; C : 1s² 2s² 2p² ; O : 1s² 2s² 2p⁴ ; Na : 1s² 2s² 2p⁶ 3s¹.
+          Les électrons de la **dernière couche** (électrons de valence) expliquent la réactivité : Na perd facilement son électron 3s¹ (→ Na⁺).
+      - retiens: "s : 2, p : 6, d : 10 électrons au maximum. Ordre : 1s 2s 2p 3s 3p 4s 3d. Les électrons de valence gouvernent la réactivité."
+    exercices:
+      - type: nombre
+        vars: { t: [["1s² 2s² 2p²", 6], ["1s² 2s² 2p⁴", 8], ["1s² 2s² 2p⁶ 3s¹", 11], ["1s² 2s² 2p⁶ 3s² 3p⁵", 17], ["1s² 2s¹", 3], ["1s² 2s² 2p⁶", 10]] }
+        enonce: "Configuration {{t_0}} : quel est le numéro atomique Z de l'atome ?"
+        reponse: "t_1"
+        correction: "On additionne les exposants : Z = {{t_1}}."
+      - type: qcm
+        vars: { t: [["Combien d'électrons au maximum dans une sous-couche p ?", "6", "2", "10"], ["Combien d'électrons au maximum dans une sous-couche d ?", "10", "6", "14"], ["Quelle sous-couche se remplit juste après 3p ?", "4s", "3d", "4p"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["En mécanique quantique, l'électron suit une trajectoire circulaire précise.", false], ["Le sodium (3s¹) forme facilement l'ion Na⁺.", true], ["Le néon (1s² 2s² 2p⁶) a sa couche externe pleine, ce qui le rend très peu réactif.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'orbitale est une probabilité de présence, pas une trajectoire."
+
+  - id: spectroscopie
+    titre: "La lumière qui analyse la matière"
+    objectif: Je sais à quoi servent les spectroscopies.
+    mots: [spectroscopie, absorbance, infrarouge, RMN]
+    etapes:
+      - texte: |
+          Les molécules **absorbent** certaines radiations : en mesurant lesquelles, on identifie et on dose les substances.
+          - **UV-visible** : la couleur d'une solution est la **complémentaire** de la couleur absorbée (une solution qui absorbe le rouge paraît bleu-vert). Loi de Beer-Lambert : l'absorbance est proportionnelle à la concentration ($A = k \times C$) → dosage.
+          - **Infrarouge (IR)** : chaque liaison (O–H, C=O…) vibre à des fréquences caractéristiques → on reconnaît les groupes caractéristiques.
+          - **RMN** : les noyaux d'hydrogène, placés dans un champ magnétique, révèlent leur environnement → on reconstruit la molécule (c'est le même principe physique que l'IRM à l'hôpital).
+      - retiens: "UV-visible : couleur et dosage (A proportionnelle à C). IR : liaisons et groupes. RMN : environnement des atomes d'hydrogène."
+    exercices:
+      - type: nombre
+        vars: { a: [0.2, 0.3, 0.4], k: [2] }
+        enonce: "Pour une solution, A = k × C avec k = {{k}} L/mol. On mesure A = {{a}}. Concentration (mol/L) ?"
+        reponse: "a/k"
+        unite: mol/L
+        correction: "C = A / k = {{a}} / {{k}} = {{a/k}} mol/L."
+      - type: qcm
+        vars: { t: [["Repérer un groupe C=O dans une molécule", "la spectroscopie infrarouge", "la balance", "le pH-mètre"], ["Doser un colorant dans une boisson", "la spectroscopie UV-visible", "la RMN seulement", "le thermomètre"], ["Connaître l'environnement des atomes d'hydrogène", "la RMN", "le papier pH", "la filtration"]] }
+        enonce: "Quelle technique pour : {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["absorbe surtout le rouge", "bleu-vert", "rouge", "noire"], ["absorbe surtout le bleu", "jaune-orangé", "bleue", "blanche"], ["n'absorbe rien dans le visible", "incolore", "noire", "violette"]] }
+        enonce: "Une solution qui {{t_0}} paraît…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "On voit la couleur complémentaire de celle absorbée : {{t_1}}."
+
+  - id: mecanismes
+    titre: "Les mécanismes réactionnels"
+    objectif: Je lis une flèche courbe et je distingue nucléophile et électrophile.
+    mots: [mécanisme, nucléophile, électrophile, flèche courbe]
+    etapes:
+      - texte: |
+          Une équation dit « qui donne quoi » ; un **mécanisme** raconte **comment**, étape par étape.
+          - Un site **nucléophile** est riche en électrons (doublet libre, charge −) : il « aime les noyaux » (les charges +).
+          - Un site **électrophile** est pauvre en électrons (charge + ou partielle δ+).
+          Une **flèche courbe** part toujours d'un **doublet d'électrons** (du nucléophile) et va vers l'électrophile : elle montre le déplacement des électrons, jamais celui des atomes.
+          Exemple : l'ion hydroxyde HO⁻ (nucléophile) attaque le carbone δ+ lié au chlore dans CH₃Cl (électrophile) → CH₃OH + Cl⁻.
+      - retiens: "Nucléophile = riche en électrons ; électrophile = pauvre. La flèche courbe va du doublet vers le site électrophile."
+    exercices:
+      - type: qcm
+        vars: { t: [["HO⁻", "nucléophile", "électrophile", "ni l'un ni l'autre"], ["le carbone δ+ lié à un chlore", "électrophile", "nucléophile", "un catalyseur"], ["l'ion H⁺", "électrophile", "nucléophile", "un solvant"], ["l'ammoniac NH₃ (doublet libre sur N)", "nucléophile", "électrophile", "un ion"]] }
+        enonce: "{{t_0}} est plutôt…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une flèche courbe représente le déplacement d'un doublet d'électrons.", true], ["La flèche courbe part de l'électrophile vers le nucléophile.", false], ["Un mécanisme décrit les étapes d'une réaction.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La flèche part du doublet (nucléophile) et va vers l'électrophile."
+      - type: qcm
+        vars: { t: [["Pourquoi le carbone lié au chlore est-il δ+ ?", "le chlore est plus électronégatif et attire les électrons de la liaison", "le carbone a perdu un proton", "le chlore est un métal"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: chimie-verte
+    titre: "La chimie verte"
+    objectif: J'évalue une synthèse avec l'économie d'atomes.
+    mots: [chimie verte, économie d'atomes, solvant, développement durable]
+    etapes:
+      - texte: |
+          La **chimie verte** (12 principes énoncés par Paul Anastas et John Warner en 1998) cherche à concevoir des procédés plus sûrs et plus propres :
+          - **prévenir** les déchets plutôt que les traiter ;
+          - maximiser l'**économie d'atomes** : que la plus grande part des atomes des réactifs se retrouve dans le produit voulu ;
+          - utiliser des **catalyseurs** plutôt que des réactifs en grande quantité ;
+          - préférer des **solvants** sûrs (eau, éthanol) ou s'en passer ;
+          - utiliser des **matières premières renouvelables** et économiser l'énergie.
+          $$\text{économie d'atomes} = \frac{M(\text{produit voulu})}{\sum M(\text{réactifs})} \times 100\ \%$$
+      - retiens: "Chimie verte : moins de déchets, plus d'atomes utiles, catalyseurs, solvants sûrs, ressources renouvelables, moins d'énergie."
+      - a_quoi_ca_sert: "Fabriquer des médicaments avec moins de déchets toxiques, des plastiques biosourcés, des procédés industriels moins gourmands en énergie."
+    exercices:
+      - type: nombre
+        vars: { p: [80, 90, 120, 150], r: [100, 150, 200] }
+        si: "p < r"
+        enonce: "Les réactifs ont une masse molaire totale de {{r}} g/mol, le produit voulu {{p}} g/mol. Économie d'atomes (en %) ?"
+        reponse: "100*p/r"
+        tolerance: 0.1
+        unite: "%"
+        correction: "{{p}} / {{r}} × 100 = {{100*p/r}} %."
+      - type: classer
+        vars: { t: [["utiliser un catalyseur", "jeter les sous-produits", "choisir l'eau comme solvant", "chauffer plus que nécessaire"], ["prévenir les déchets", "utiliser un solvant toxique par habitude", "partir de biomasse renouvelable", "utiliser un réactif en très grand excès sans raison"]] }
+        enonce: "Ce choix respecte-t-il la chimie verte ?"
+        categories: ["chimie verte", "à éviter"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Prévenir, catalyser, solvants sûrs, ressources renouvelables, sobriété énergétique."
+      - type: vf
+        vars: { t: [["Une réaction d'addition (tous les atomes dans le produit) a une économie d'atomes de 100 %.", true], ["La chimie verte interdit toute industrie chimique.", false], ["Il vaut mieux éviter de produire un déchet que de devoir le traiter.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La chimie verte améliore les procédés, elle ne les interdit pas."

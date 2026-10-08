@@ -1,0 +1,243 @@
+id: ch-mare-des-etats
+matiere: chimie
+titre: La Mare des États
+sous_titre: Solide, liquide, gaz, mélanger, dissoudre, flotter
+emoji: 💧
+couleur: "#2bb58a"
+cycle: graines
+age: 7 ans et +
+niveau: Éveil (CE1)
+ordre: 101
+version: 1.0.0
+intro:
+  - narrateur: "Au bord de la Mare des États, tout est gris et figé. Pip et Pop, deux têtards curieux, attendent sur une feuille de nénuphar."
+  - zero: "Des têtards qui parlent ? LE VIDE ABSOLU !!! 😳"
+  - mia: "Ils vont nous poser plein de questions sur l'eau, les cailloux et les bulles. Aidons-les !"
+
+lecons:
+  - id: solide-liquide-gaz
+    titre: "Solide, liquide ou gaz ?"
+    objectif: Je reconnais l'état d'une matière.
+    mots: [solide, liquide, gaz, état]
+    etapes:
+      - dialogue:
+          - zero: "L'air, ce n'est rien ! On ne le voit pas !"
+          - neo: "On ne le voit pas, mais on le sent quand le vent souffle, et il gonfle les ballons. L'air est un gaz : c'est de la matière."
+      - texte: |
+          Toute la matière autour de nous existe sous trois **états** :
+          - **solide** 🧊 : il garde sa forme tout seul (une pierre, un glaçon, une cuillère) ;
+          - **liquide** 💧 : il coule et prend la forme du récipient, mais sa surface reste plate et horizontale (l'eau, le lait, l'huile) ;
+          - **gaz** 💨 : il est souvent invisible, il occupe **tout** l'espace disponible (l'air, la vapeur d'eau, les bulles de la limonade).
+      - retiens: "Solide : garde sa forme. Liquide : coule, surface plate. Gaz : invisible souvent, occupe tout l'espace."
+      - a_quoi_ca_sert: "Savoir l'état d'une matière, c'est savoir comment la transporter : un sac pour le sable, une bouteille pour le jus, une bonbonne fermée pour le gaz."
+    exercices:
+      - type: classer
+        vars: { t: [[caillou, lait, "air", glaçon, jus, vapeur], [cuillère, huile, "bulles de la limonade", bois, eau, "vent"], [sable, sirop, "fumée", clé, miel, "air d'un ballon"]] }
+        enonce: "Range chaque matière : solide, liquide ou gaz ?"
+        categories: [solide, liquide, gaz]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
+        correction: "Le sable est fait de minuscules grains solides : chaque grain garde sa forme, même si le tas coule."
+      - type: qcm
+        vars: { t: [["Je garde ma forme, même posé sur la table.", "solide", "liquide", "gaz"], ["Je prends la forme du verre et je coule.", "liquide", "solide", "gaz"], ["Je remplis toute la pièce et on ne me voit pas.", "gaz", "liquide", "solide"]] }
+        enonce: "Devinette : « {{t_0}} » Qui suis-je ?"
+        choix: ["un {{t_1}}", "un {{t_2}}", "un {{t_3}}"]
+        correction: "Un {{t_1}}."
+      - type: vf
+        vars: { t: [["L'air est de la matière.", true], ["Le sable est un liquide parce qu'il coule.", false], ["Le miel est un liquide.", true], ["Un gaz garde toujours la même forme.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le sable est fait de grains solides ; l'air est un gaz : c'est bien de la matière."
+
+  - id: fondre-et-geler
+    titre: "Le glaçon qui fond"
+    objectif: Je sais que l'eau peut changer d'état quand on la chauffe ou la refroidit.
+    mots: [fondre, geler, fusion, solidification]
+    etapes:
+      - texte: |
+          L'eau peut être **solide** (glace), **liquide** (eau) ou **gaz** (vapeur d'eau). C'est toujours de l'eau !
+          - Quand on **chauffe** la glace, elle **fond** : elle devient liquide (à 0 °C).
+          - Quand on **refroidit** l'eau liquide au congélateur, elle **gèle** : elle devient glace.
+      - experience:
+          titre: La course des glaçons
+          securite: vert
+          materiel: ["3 glaçons de même taille", "3 assiettes", "un peu de sel", "un chiffon"]
+          prediction:
+            question: "Un glaçon nature, un glaçon couvert de sel, un glaçon enveloppé dans un chiffon : lequel fondra le plus vite ?"
+            choix: ["le glaçon salé", "le glaçon dans le chiffon", "le glaçon nature"]
+          etapes:
+            - "Pose un glaçon dans chaque assiette."
+            - "Saupoudre le deuxième glaçon de sel, enveloppe le troisième dans le chiffon."
+            - "Regarde toutes les 5 minutes et note quel glaçon a le plus fondu."
+          observation: "Le glaçon salé fond le plus vite ; celui dans le chiffon fond le plus lentement."
+          explication: "Le sel fait fondre la glace à une température plus basse que 0 °C : c'est pour ça qu'on sale les routes en hiver. Le chiffon, lui, isole le glaçon de l'air de la pièce, plus chaud : la chaleur arrive plus lentement."
+      - retiens: "Chauffer la glace → elle fond (liquide). Refroidir l'eau → elle gèle (solide). L'eau pure gèle et fond à 0 °C."
+    exercices:
+      - type: qcm
+        vars: { t: [["On sort un glaçon du congélateur et on le laisse sur la table.", "il fond", "il gèle", "il disparaît sans laisser d'eau"], ["On met de l'eau dans le congélateur.", "elle gèle", "elle fond", "elle bout"], ["On met du chocolat au soleil.", "il fond", "il gèle", "il devient un gaz"], ["On met du beurre fondu au réfrigérateur.", "il redevient solide", "il bout", "il devient un gaz"]] }
+        enonce: "{{t_0}} Que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["La glace, l'eau et la vapeur sont toutes de l'eau.", true], ["Quand un glaçon fond, l'eau disparaît.", false], ["On sale les routes en hiver pour faire fondre la glace.", true], ["L'eau pure gèle à 100 °C.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'eau pure gèle (et fond) à 0 °C ; elle bout à 100 °C."
+      - type: nombre
+        vars: { t: [["fond (ou gèle)", 0], ["bout (au niveau de la mer)", 100]] }
+        enonce: "À quelle température (en °C) l'eau pure {{t_0}} ?"
+        reponse: "t_1"
+        unite: "°C"
+        correction: "{{t_1}} °C."
+
+  - id: melanger
+    titre: "Ça se mélange ?"
+    objectif: Je distingue un mélange où on ne voit plus qu'un seul liquide et un mélange où on voit plusieurs parties.
+    mots: [mélange, homogène, hétérogène]
+    etapes:
+      - texte: |
+          Quand on mélange deux matières :
+          - parfois on **ne voit plus qu'une seule chose** (eau + sirop) : c'est un mélange **homogène** ;
+          - parfois on **voit encore plusieurs parties** (eau + huile, eau + sable) : c'est un mélange **hétérogène**.
+      - experience:
+          titre: L'eau, l'huile et le sirop
+          securite: vert
+          materiel: ["2 verres transparents", "de l'eau", "du sirop", "de l'huile", "une cuillère"]
+          prediction:
+            question: "Que va-t-il se passer si on mélange l'eau avec l'huile, puis qu'on attend ?"
+            choix: ["L'huile remonte et reste au-dessus", "On ne voit plus l'huile", "L'huile tombe au fond"]
+          etapes:
+            - "Verre 1 : eau + une cuillère de sirop. Mélange."
+            - "Verre 2 : eau + une cuillère d'huile. Mélange fort, puis attends une minute."
+          observation: "Le sirop se mélange complètement : un seul liquide coloré. L'huile, elle, forme des gouttes qui remontent et finissent en couche au-dessus de l'eau."
+          explication: "L'huile ne se mélange pas à l'eau, et elle est moins dense (plus « légère » à volume égal) : elle flotte. C'est pour ça que la vinaigrette se sépare et qu'on la secoue avant de servir !"
+      - retiens: "Homogène : on ne voit qu'une seule partie. Hétérogène : on voit plusieurs parties. L'huile ne se mélange pas à l'eau et flotte dessus."
+    exercices:
+      - type: classer
+        vars: { t: [["eau + sirop", "eau + huile", "eau + sel bien mélangé", "eau + sable"], ["lait + chocolat en poudre bien mélangé", "eau + cailloux", "eau + sucre bien mélangé", "vinaigrette laissée au repos"], ["thé sucré", "soupe avec des légumes en morceaux", "jus de pomme", "eau + huile"]] }
+        enonce: "Homogène (une seule partie visible) ou hétérogène (plusieurs parties visibles) ?"
+        categories: [homogène, hétérogène]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Si tu vois plusieurs parties, c'est hétérogène."
+      - type: vf
+        vars: { t: [["L'huile flotte au-dessus de l'eau.", true], ["Une vinaigrette au repos reste parfaitement mélangée.", false], ["Dans un mélange homogène, on ne voit qu'une seule partie.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'huile ne se mélange pas à l'eau et flotte : on secoue la vinaigrette avant de la servir."
+      - type: qcm
+        vars: { t: [["Pourquoi secoue-t-on la vinaigrette avant de la servir ?", "parce que l'huile et le vinaigre se séparent au repos", "pour la refroidir", "pour qu'elle devienne solide"], ["Que voit-on dans un verre d'eau et d'huile au repos ?", "une couche d'huile au-dessus de l'eau", "un seul liquide", "l'huile au fond"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: dissoudre
+    titre: "Dissoudre ou pas ?"
+    objectif: Je sais qu'une matière dissoute ne disparaît pas.
+    mots: [dissoudre, soluble, insoluble, solution]
+    etapes:
+      - dialogue:
+          - zero: "J'ai mis du sucre dans l'eau et POUF : il a disparu ! C'est de la magie !"
+          - neo: "Goûte… (avec de l'eau propre et du sucre de la cuisine, pas au labo !) L'eau est sucrée : le sucre est toujours là, en morceaux minuscules. Il s'est **dissous**."
+      - texte: |
+          Le sucre et le sel **se dissolvent** dans l'eau : ils se cassent en morceaux si petits qu'on ne les voit plus. On dit qu'ils sont **solubles**. Le mélange obtenu s'appelle une **solution**.
+          Le sable, le poivre ou les cailloux ne se dissolvent pas : ils sont **insolubles**.
+          ⚖️ Preuve que rien ne disparaît : si on pèse l'eau et le sucre avant, puis la solution après, la **masse est la même** !
+      - retiens: "Dissoudre, ce n'est pas disparaître : la matière est toujours là, en morceaux invisibles. La masse ne change pas."
+      - a_quoi_ca_sert: "Le chocolat chaud, le sirop, l'eau de mer (du sel dissous), le café… et même l'eau du robinet qui contient des sels minéraux dissous."
+    exercices:
+      - type: classer
+        vars: { t: [[sucre, sable, sel, poivre], ["sucre en poudre", cailloux, "sel fin", "huile"], ["café soluble", "perles de verre", "sirop", "riz"]] }
+        enonce: "Dans l'eau, cette matière se dissout-elle ?"
+        categories: ["se dissout (soluble)", "ne se dissout pas (insoluble)"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Sucre, sel, café soluble et sirop se dissolvent ; sable, cailloux, riz et huile non."
+      - type: nombre
+        vars: { e: [200, 250, 300, 500], s: [10, 20, 25, 30, 50] }
+        enonce: "On pèse {{e}} g d'eau et {{s}} g de sucre. On mélange jusqu'à ce que le sucre soit dissous. Combien pèse la solution ?"
+        reponse: "e+s"
+        unite: g
+        correction: "{{e}} + {{s}} = {{e+s}} g : en se dissolvant, le sucre ne disparaît pas, la masse se conserve."
+      - type: vf
+        vars: { t: [["Quand le sucre se dissout, il disparaît pour toujours.", false], ["L'eau de mer contient du sel dissous.", true], ["Le sable est soluble dans l'eau.", false], ["Une solution peut être transparente même si elle contient quelque chose de dissous.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Dissoudre n'est pas disparaître : la matière est toujours là."
+
+  - id: flotter-couler
+    titre: "Ça flotte ou ça coule ?"
+    objectif: Je prédis puis je vérifie si un objet flotte.
+    mots: [flotter, couler, prédire]
+    etapes:
+      - dialogue:
+          - zero: "Les objets lourds coulent, les objets légers flottent. Facile !"
+          - mia: "Alors pourquoi un énorme bateau en acier flotte, et un petit caillou coule ?"
+          - neo: "Ce qui compte, ce n'est pas le poids tout seul, mais le poids **par rapport à la place** que l'objet prend dans l'eau."
+      - experience:
+          titre: Prédire puis tester
+          securite: vert
+          materiel: ["une bassine d'eau", "un bouchon", "une clé", "une pomme", "une boule de pâte à modeler", "une feuille d'aluminium"]
+          prediction:
+            question: "Une boule de pâte à modeler coule. Peut-on la faire flotter sans rien ajouter ?"
+            choix: ["Oui, en lui donnant une forme de bateau", "Non, c'est impossible", "Oui, en la rendant plus petite"]
+          etapes:
+            - "Avant chaque test, dis « flotte » ou « coule » : c'est ta prédiction."
+            - "Pose doucement chaque objet sur l'eau et note le résultat."
+            - "Écrase la pâte à modeler en forme de petit bateau creux et repose-la."
+          observation: "Le bouchon et la pomme flottent, la clé coule. La boule de pâte coule… mais le bateau en pâte flotte !"
+          explication: "En forme de bateau, la pâte pousse beaucoup plus d'eau : l'eau la soutient plus fort. C'est pour ça que les gros bateaux en acier, creux et remplis d'air, flottent."
+      - retiens: "Ce n'est pas le poids seul qui compte : la forme et la matière aussi. Un objet creux qui pousse beaucoup d'eau peut flotter."
+    exercices:
+      - type: classer
+        vars: { t: [[bouchon, clé, pomme, caillou], ["bouteille vide fermée", "pièce de monnaie", "branche de bois", "bille en verre"], ["balle de ping-pong", "cuillère en métal", "glaçon", "boule de pâte à modeler"]] }
+        enonce: "Dans l'eau, ça flotte ou ça coule ?"
+        categories: [flotte, coule]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le glaçon flotte : la glace est un peu moins dense que l'eau liquide."
+      - type: vf
+        vars: { t: [["Les objets lourds coulent toujours.", false], ["Un grand bateau en acier peut flotter.", true], ["La forme d'un objet peut changer s'il flotte ou s'il coule.", true], ["Un glaçon coule au fond du verre.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Ce n'est pas le poids seul : la forme compte (le bateau creux pousse beaucoup d'eau)."
+      - type: qcm
+        vars: { t: [["Pourquoi le bateau en pâte à modeler flotte-t-il alors que la boule coule ?", "sa forme creuse pousse plus d'eau", "il est devenu plus léger", "la pâte a changé de matière"], ["Que fait un scientifique AVANT de tester ?", "une prédiction", "une conclusion", "rien"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: l-air-existe
+    titre: "L'air existe !"
+    objectif: Je montre par une expérience que l'air est de la matière.
+    mots: [air, gaz, matière]
+    etapes:
+      - dialogue:
+          - narrateur: "Dame Bulle, la gardienne grise de la Mare, flotte au-dessus de l'eau : « L'air, ce n'est RIEN ! »"
+          - neo: "Alors prouvons-lui le contraire."
+      - experience:
+          titre: Le verre qui ne se mouille pas
+          securite: vert
+          materiel: ["un verre", "une bassine d'eau", "un mouchoir en papier"]
+          prediction:
+            question: "On coince un mouchoir au fond d'un verre, on retourne le verre et on l'enfonce tout droit dans l'eau. Le mouchoir sera-t-il mouillé ?"
+            choix: ["Non, il restera sec", "Oui, il sera trempé"]
+          etapes:
+            - "Tasse le mouchoir tout au fond du verre (il ne doit pas tomber)."
+            - "Retourne le verre et enfonce-le bien droit dans l'eau, jusqu'au fond de la bassine."
+            - "Ressors-le bien droit et touche le mouchoir."
+          observation: "Le mouchoir est resté sec ! L'eau n'est pas entrée jusqu'en haut du verre."
+          explication: "Le verre n'était pas vide : il était plein d'air. L'air a pris la place et a empêché l'eau d'entrer. L'air est bien de la matière : il occupe de la place (et il a même une masse : un ballon gonflé pèse un tout petit peu plus qu'un ballon vide)."
+      - retiens: "L'air est un gaz : c'est de la matière. Il occupe de la place et il a une masse."
+    exercices:
+      - type: vf
+        vars: { t: [["Un verre « vide » est en fait rempli d'air.", true], ["L'air ne pèse rien du tout.", false], ["Le vent, c'est de l'air qui bouge.", true], ["L'air peut empêcher l'eau d'entrer dans un verre retourné.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'air est de la matière : il occupe de la place et a une masse."
+      - type: qcm
+        vars: { t: [["un ballon gonflé", "il contient de l'air, qui prend de la place", "il contient du vide", "il contient de l'eau"], ["une bouée", "l'air à l'intérieur la rend capable de flotter", "elle est en métal", "elle est vide de tout"], ["un pneu de vélo", "l'air comprimé dedans le rend dur", "il est rempli d'eau", "il est plein de sable"]] }
+        enonce: "Que montre {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        enonce: "Dame Bulle dit : « L'air n'est rien. » Quelle preuve la fait éclater ?"
+        vars: { t: [["le mouchoir reste sec dans le verre retourné", "l'air est invisible", "on ne sent pas l'air quand il ne bouge pas"], ["un ballon gonflé pèse un peu plus qu'un ballon vide", "l'air n'a pas de couleur", "on ne peut pas attraper l'air avec la main"]] }
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}} : c'est une preuve que l'air est de la matière."

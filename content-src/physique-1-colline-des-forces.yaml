@@ -1,0 +1,249 @@
+id: ph-colline-des-forces
+matiere: physique
+titre: La Colline des Forces
+sous_titre: Pousser, tirer, tomber, aimants, lumière et ombres, chaud et froid, le son
+emoji: 🧲
+couleur: "#2f7de1"
+cycle: graines
+age: 7 ans et +
+niveau: Éveil (CE1)
+ordre: 201
+version: 1.0.0
+intro:
+  - narrateur: "Sur la Colline des Forces, plus rien ne bouge : les balles restent en l'air, les girouettes sont figées, les ombres ont disparu."
+  - zero: "C'est le Mythe du Poids qui a fait ça ! Il dit que seuls les objets lourds tombent vite."
+  - neo: "On va le vérifier… avec des expériences. C'est comme ça qu'on bat un mythe."
+
+lecons:
+  - id: pousser-tirer
+    titre: "Pousser, tirer"
+    objectif: Je sais qu'une force peut mettre en mouvement, arrêter ou déformer un objet.
+    mots: [force, pousser, tirer, déformer]
+    etapes:
+      - texte: |
+          Quand on **pousse** ou qu'on **tire** un objet, on exerce une **force**. Une force peut :
+          - **mettre en mouvement** (je pousse la balançoire) ;
+          - **arrêter** ou **ralentir** (le gardien arrête le ballon) ;
+          - **changer la direction** (je frappe la balle de tennis) ;
+          - **déformer** (j'écrase la pâte à modeler, je tends un élastique).
+          Plus la force est grande, plus l'effet est grand.
+      - retiens: "Une force pousse ou tire. Elle peut mettre en mouvement, arrêter, changer la direction ou déformer."
+      - vraie_vie:
+          titre: Défi à la maison
+          texte: "Trouve dans ta maison 3 choses qu'on pousse (une porte, un tiroir…) et 3 choses qu'on tire (une chasse d'eau, une fermeture éclair…)."
+    exercices:
+      - type: classer
+        vars: { t: [["fermer un tiroir", "ouvrir une porte avec la poignée vers soi", "lancer un ballon", "tirer une luge"], ["appuyer sur un bouton", "tirer la chasse d'eau", "pousser un caddie", "remonter une fermeture éclair"]] }
+        enonce: "Pousser ou tirer ?"
+        categories: [pousser, tirer]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Pousser : on éloigne de soi. Tirer : on rapproche de soi."
+      - type: qcm
+        vars: { t: [["J'écrase une boule de pâte à modeler.", "la force la déforme", "la force la met en mouvement", "il n'y a pas de force"], ["Le gardien arrête le ballon.", "la force arrête un mouvement", "la force déforme le gardien", "il n'y a pas de force"], ["Je pousse ma petite sœur sur la balançoire.", "la force met en mouvement", "la force arrête", "la force déforme"], ["La raquette renvoie la balle.", "la force change la direction", "la force arrête la balle pour toujours", "il n'y a pas de force"]] }
+        enonce: "{{t_0}} Que fait la force ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Pour déplacer un objet immobile, il faut exercer une force.", true], ["Une force ne peut pas déformer un objet.", false], ["Plus je pousse fort, plus l'objet part vite.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une force peut mettre en mouvement, arrêter, dévier ou déformer."
+
+  - id: ca-tombe
+    titre: "Ça tombe !"
+    objectif: Je sais que la Terre attire tous les objets vers le bas.
+    mots: [chute, poids, attraction, air]
+    etapes:
+      - dialogue:
+          - narrateur: "Le Mythe du Poids gronde : « Les objets lourds tombent PLUS VITE ! »"
+          - mia: "Faisons l'expérience avec deux feuilles de papier identiques."
+      - experience:
+          titre: La feuille froissée
+          securite: vert
+          materiel: ["2 feuilles de papier identiques"]
+          prediction:
+            question: "On froisse une des deux feuilles en boule et on les lâche en même temps, à la même hauteur. Laquelle touche le sol en premier ?"
+            choix: ["La boule", "La feuille à plat", "Les deux en même temps"]
+          etapes:
+            - "Froisse une feuille en boule bien serrée, garde l'autre à plat."
+            - "Tiens-les à la même hauteur et lâche-les exactement en même temps."
+          observation: "La boule tombe bien plus vite que la feuille à plat, qui flotte et zigzague."
+          explication: "Les deux feuilles ont le même poids ! Ce qui freine la feuille plate, c'est l'**air** qu'elle doit pousser. Sans air (sur la Lune, ou dans un tube vide d'air), une plume et un marteau tombent exactement en même temps : un astronaute l'a fait en 1971. Le Mythe du Poids est battu !"
+      - retiens: "La Terre attire tous les objets vers le bas. Ce qui ralentit la chute, c'est l'air, pas la légèreté."
+    exercices:
+      - type: vf
+        vars: { t: [["Une feuille froissée tombe plus vite qu'une feuille à plat, alors qu'elles pèsent pareil.", true], ["Sans air, une plume et un marteau tombent en même temps.", true], ["Les objets tombent parce que l'air les pousse vers le bas.", false], ["Un parachute fonctionne grâce à l'air qui freine.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "C'est la Terre qui attire les objets ; l'air, lui, freine."
+      - type: qcm
+        vars: { t: [["Pourquoi la feuille à plat tombe-t-elle lentement ?", "l'air la freine", "elle est plus légère", "la Terre ne l'attire pas"], ["Qu'est-ce qui attire les objets vers le sol ?", "la Terre", "l'air", "le vent"], ["Sur la Lune, sans air, une plume et un marteau lâchés ensemble…", "arrivent en même temps", "la plume arrive après", "le marteau flotte"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["un parachute", "une bille", "une feuille d'arbre", "une pierre"], ["une plume", "une clé", "un pissenlit", "une balle de tennis"]] }
+        enonce: "Dans l'air, cet objet tombe-t-il plutôt lentement (l'air le freine beaucoup) ou vite ?"
+        categories: ["lentement", "vite"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les objets larges et légers sont très freinés par l'air."
+
+  - id: les-aimants
+    titre: "Les aimants"
+    objectif: Je sais ce qu'un aimant attire et je découvre ses deux pôles.
+    mots: [aimant, pôle, attirer, repousser, fer]
+    etapes:
+      - texte: |
+          Un **aimant** attire les objets en **fer** (et quelques autres métaux comme le nickel), même à distance, à travers le papier ou l'eau.
+          Il n'attire **pas** le bois, le plastique, le verre, l'aluminium, le cuivre, ni la plupart des pièces en or ou en argent.
+          Un aimant a deux **pôles** : nord et sud. Deux pôles **différents** s'**attirent** ; deux pôles **identiques** se **repoussent**.
+      - experience:
+          titre: La pêche à l'aimant
+          securite: vert
+          materiel: ["un aimant", "un trombone", "une pièce de monnaie", "une gomme", "une cuillère en métal", "une capsule", "une feuille de papier"]
+          prediction:
+            question: "Avant de tester : quels objets l'aimant va-t-il attirer ?"
+            choix: ["seulement certains objets en métal", "tous les objets en métal", "tous les objets"]
+          etapes:
+            - "Approche l'aimant de chaque objet et trie : attiré / pas attiré."
+            - "Pose un trombone sur la feuille et déplace l'aimant SOUS la feuille."
+          observation: "Le trombone est attiré (et suit l'aimant même à travers le papier) ; la gomme non ; certains métaux oui, d'autres non."
+          explication: "Seuls les métaux comme le fer, l'acier ou le nickel sont attirés. L'aluminium d'une canette ou le cuivre ne le sont pas : tous les métaux ne sont pas magnétiques."
+      - retiens: "Un aimant attire le fer, pas tous les métaux. Pôles différents s'attirent, pôles identiques se repoussent."
+      - a_quoi_ca_sert: "Fermer la porte du réfrigérateur, trier les déchets métalliques, la boussole, les haut-parleurs, les trains à sustentation magnétique."
+    exercices:
+      - type: classer
+        vars: { t: [["un trombone", "une gomme", "un clou", "une règle en plastique"], ["une boîte de conserve en acier", "une canette en aluminium", "une épingle", "un crayon en bois"], ["une clé en fer", "un verre", "une vis", "un bouchon"]] }
+        enonce: "L'aimant attire-t-il cet objet ?"
+        categories: ["attiré", "pas attiré"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "L'aimant attire le fer et l'acier, pas l'aluminium, le bois, le verre ni le plastique."
+      - type: qcm
+        vars: { t: [["un pôle nord et un pôle sud", "ils s'attirent", "ils se repoussent", "rien ne se passe"], ["deux pôles nord", "ils se repoussent", "ils s'attirent", "ils fondent"], ["deux pôles sud", "ils se repoussent", "ils s'attirent", "ils deviennent un seul aimant"]] }
+        enonce: "On approche {{t_0}} : que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Pôles différents s'attirent, pôles identiques se repoussent."
+      - type: vf
+        vars: { t: [["Un aimant attire tous les métaux.", false], ["Un aimant peut attirer un trombone à travers une feuille de papier.", true], ["L'aiguille d'une boussole est un petit aimant.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'aluminium et le cuivre, par exemple, ne sont pas attirés."
+
+  - id: lumiere-et-ombres
+    titre: "La lumière et les ombres"
+    objectif: J'explique comment se forme une ombre.
+    mots: [lumière, ombre, source, opaque, transparent]
+    etapes:
+      - dialogue:
+          - zero: "Mon ombre me suit partout ! Elle m'espionne !"
+          - mia: "Ton ombre, c'est l'endroit où la lumière ne passe pas parce que ton corps la bloque."
+      - texte: |
+          La lumière part d'une **source** (le Soleil, une lampe) et voyage en **ligne droite**.
+          Quand un objet **opaque** (qui ne laisse pas passer la lumière : un livre, ta main) est sur son chemin, il y a derrière lui une zone sans lumière : l'**ombre**.
+          Un objet **transparent** (une vitre) laisse passer la lumière : presque pas d'ombre. Un objet **translucide** (papier calque) en laisse passer une partie.
+          L'ombre est toujours **du côté opposé** à la source de lumière. Plus l'objet est **près** de la lampe, plus son ombre est **grande**.
+      - experience:
+          titre: Le théâtre d'ombres
+          securite: vert
+          materiel: ["une lampe de poche", "un mur clair", "tes mains", "un petit jouet"]
+          prediction:
+            question: "Si on approche le jouet de la lampe, son ombre sur le mur va…"
+            choix: ["grandir", "rapetisser", "disparaître"]
+          etapes:
+            - "Dans une pièce sombre, éclaire le mur avec la lampe."
+            - "Fais des animaux avec tes mains entre la lampe et le mur."
+            - "Avance puis recule le jouet vers la lampe et regarde son ombre."
+          observation: "Plus le jouet est près de la lampe, plus son ombre est grande (et plus floue) ; plus il est près du mur, plus elle est petite et nette."
+          explication: "Près de la lampe, l'objet bloque une plus grande partie des rayons qui partent en éventail : la zone sans lumière sur le mur est plus grande."
+      - retiens: "La lumière va en ligne droite. Un objet opaque arrête la lumière : derrière lui, l'ombre, du côté opposé à la source."
+      - a_quoi_ca_sert: "Le parasol, l'ombre d'un arbre en été, les cadrans solaires qui donnent l'heure, le théâtre d'ombres."
+    exercices:
+      - type: classer
+        vars: { t: [["un livre", "une vitre", "un mur", "un verre d'eau"], ["une planche en bois", "un film plastique transparent", "ta main", "une bouteille d'eau transparente"]] }
+        enonce: "Opaque (bloque la lumière) ou transparent (la laisse passer) ?"
+        categories: [opaque, transparent]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Un objet opaque arrête la lumière et donne une ombre bien nette."
+      - type: qcm
+        vars: { t: [["Le soleil est à gauche de l'arbre. Où est son ombre ?", "à droite de l'arbre", "à gauche de l'arbre", "sous les nuages"], ["Le matin, le Soleil est à l'est. Vers où pointe l'ombre d'un piquet ?", "vers l'ouest", "vers l'est", "vers le haut"], ["J'approche ma main de la lampe. Son ombre sur le mur…", "grandit", "rapetisse", "change de couleur"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "L'ombre est toujours du côté opposé à la source de lumière. {{t_1}}."
+      - type: vf
+        vars: { t: [["La lumière voyage en ligne droite.", true], ["Une ombre est faite d'une matière noire.", false], ["Sans source de lumière, il n'y a pas d'ombre.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une ombre n'est pas une matière : c'est une zone où la lumière n'arrive pas."
+
+  - id: chaud-froid
+    titre: "Chaud, froid, tiède : le thermomètre"
+    objectif: Je lis une température sur un thermomètre.
+    mots: [température, thermomètre, degré Celsius]
+    etapes:
+      - texte: |
+          Notre peau peut se tromper : après un bain chaud, l'eau tiède paraît froide ! Pour mesurer précisément, on utilise un **thermomètre**. L'unité est le **degré Celsius** (°C).
+          Repères : l'eau gèle à **0 °C** ; une journée agréable : 20 °C ; notre corps : environ **37 °C** ; l'eau bout à **100 °C**.
+          Au-dessous de 0, on écrit un signe moins : **−5 °C** (cinq degrés sous zéro).
+      - retiens: "Le thermomètre mesure la température en °C. Glace 0 °C, corps 37 °C, eau bouillante 100 °C."
+    exercices:
+      - type: nombre
+        vars: { t: [["la température normale du corps humain", 37], ["la température où l'eau gèle", 0], ["la température où l'eau bout (au niveau de la mer)", 100]] }
+        enonce: "Environ combien de degrés pour {{t_0}} ?"
+        reponse: "t_1"
+        unite: "°C"
+        correction: "{{t_1}} °C."
+      - type: comparer
+        vars: { a: "-10..35", b: "-10..35" }
+        si: "a != b"
+        enonce: "Compare ces deux températures (en °C) : choisis <, = ou >."
+        gauche: "a"
+        droite: "b"
+      - type: qcm
+        vars: { t: [["un jour de neige", "−2 °C", "25 °C", "60 °C"], ["une belle journée d'été", "28 °C", "−5 °C", "80 °C"], ["un enfant qui a de la fièvre", "39 °C", "30 °C", "50 °C"], ["l'intérieur d'un congélateur", "−18 °C", "4 °C", "20 °C"]] }
+        enonce: "Quelle température pour {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: le-son-tremble
+    titre: "Le son tremble"
+    objectif: Je sais qu'un son est produit par une vibration.
+    mots: [son, vibration, aigu, grave]
+    etapes:
+      - texte: |
+          Tout **son** naît d'une **vibration** : la peau du tambour, la corde de guitare, tes cordes vocales tremblent très vite. Cette vibration se propage dans l'air jusqu'à tes oreilles.
+          Pose la main sur ta gorge et chante « aaaa » : tu sens la vibration !
+      - experience:
+          titre: La règle qui chante
+          securite: vert
+          materiel: ["une règle en plastique ou en bois", "une table"]
+          prediction:
+            question: "Si la partie de la règle qui dépasse de la table est plus courte, le son sera…"
+            choix: ["plus aigu", "plus grave", "pareil"]
+          etapes:
+            - "Tiens fermement une extrémité de la règle sur la table, l'autre partie dépasse dans le vide."
+            - "Fais vibrer la partie libre d'une pichenette."
+            - "Recommence avec une partie libre plus courte, puis plus longue."
+          observation: "Partie courte : vibration rapide et son aigu. Partie longue : vibration lente et son grave."
+          explication: "Plus un objet vibre vite, plus le son est aigu ; plus il vibre lentement, plus il est grave. C'est le même principe dans tous les instruments."
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Son grave", freq: 150 }, { etiquette: "Son aigu", freq: 900 }]
+        legende: "Écoute : le son grave vibre 150 fois par seconde, le son aigu 900 fois par seconde."
+      - retiens: "Un son est une vibration. Vibration rapide = son aigu ; vibration lente = son grave."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce qui produit un son ?", "une vibration", "une couleur", "une odeur"], ["Une corde qui vibre très vite donne un son…", "aigu", "grave", "silencieux"], ["Une grosse corde qui vibre lentement donne un son…", "grave", "aigu", "lumineux"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [[200, 600, "le son B"], [800, 300, "le son A"], [440, 880, "le son B"]] }
+        enonce: "Écoute les deux sons. Lequel est le plus aigu ?"
+        visuel: { type: son, sons: [{ etiquette: "Son A", freq: "{{t_0}}" }, { etiquette: "Son B", freq: "{{t_1}}" }] }
+        choix: ["{{t_2}}", "{{si(t_2=='le son A','le son B','le son A')}}", "ils sont pareils"]
+        correction: "Le plus aigu est celui qui vibre le plus vite : {{t_2}}."
+      - type: vf
+        vars: { t: [["Quand je parle, mes cordes vocales vibrent.", true], ["Un son aigu est forcément fort.", false], ["Sans vibration, il n'y a pas de son.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Aigu/grave (la hauteur) et fort/doux (l'intensité), ce sont deux choses différentes."

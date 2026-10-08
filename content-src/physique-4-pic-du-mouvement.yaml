@@ -1,0 +1,202 @@
+id: ph-pic-du-mouvement
+matiere: physique
+titre: Le Pic du Mouvement
+sous_titre: Référentiel, vitesse, forces, poids et masse, inertie, actions réciproques, masse volumique
+emoji: 🏔️
+couleur: "#1f4fa3"
+cycle: explorateurs
+age: 12 ans et +
+niveau: Chercheur (5ᵉ – 3ᵉ)
+ordre: 204
+prerequis: [ph-sentier-des-mesures]
+version: 1.0.0
+intro:
+  - narrateur: "Sur le Pic du Mouvement, le Titan Inertie s'est assis : rien ne démarre, rien ne s'arrête."
+  - neo: "Pour le faire bouger, il faut comprendre ce que Galilée et Newton ont découvert."
+
+lecons:
+  - id: referentiel
+    titre: "Bouger… par rapport à quoi ?"
+    objectif: Je décris un mouvement par rapport à un référentiel.
+    mots: [référentiel, trajectoire, mouvement, repos]
+    etapes:
+      - dialogue:
+          - zero: "Dans le train, je suis immobile sur mon siège. Mais Mia, sur le quai, dit que je file à 200 km/h ! Qui a raison ?"
+          - neo: "Vous avez raison tous les deux : tout dépend de ce qu'on prend comme repère, le **référentiel**."
+      - texte: |
+          Un objet est **en mouvement** ou **au repos** **par rapport à** un objet de référence, le **référentiel**.
+          La **trajectoire** est le chemin suivi : **rectiligne** (droite), **circulaire** (cercle), **curviligne** (courbe quelconque).
+          Le mouvement est **uniforme** si la vitesse est constante, **accéléré** si elle augmente, **ralenti** si elle diminue.
+      - retiens: "Mouvement et repos dépendent du référentiel. Trajectoire rectiligne, circulaire ou curviligne. Uniforme, accéléré ou ralenti."
+    exercices:
+      - type: qcm
+        vars: { t: [["Zéro assis dans le train, par rapport au train", "au repos", "en mouvement", "impossible à dire"], ["Zéro assis dans le train, par rapport au quai", "en mouvement", "au repos", "impossible à dire"], ["un satellite géostationnaire, par rapport au sol terrestre", "au repos", "en mouvement rapide", "en chute"], ["la Terre, par rapport au Soleil", "en mouvement", "au repos", "immobile"]] }
+        enonce: "Comment est {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : tout dépend du référentiel."
+      - type: qcm
+        vars: { t: [["la pointe d'une aiguille de montre", "circulaire", "rectiligne", "curviligne quelconque"], ["une bille qui tombe tout droit", "rectiligne", "circulaire", "curviligne quelconque"], ["un ballon lancé vers un panier", "curviligne", "rectiligne", "circulaire"]] }
+        enonce: "Quelle est la trajectoire de {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["une voiture qui démarre au feu vert", "un vélo qui freine", "un skieur qui prend de la vitesse", "un ballon qui roule et s'arrête"]] }
+        enonce: "Mouvement accéléré ou ralenti ?"
+        categories: [accéléré, ralenti]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Accéléré : la vitesse augmente ; ralenti : elle diminue."
+
+  - id: calculer-une-vitesse
+    titre: "Calculer une vitesse"
+    objectif: J'utilise v = d / t avec les bonnes unités.
+    mots: [vitesse moyenne, distance, durée]
+    etapes:
+      - texte: |
+          $$v = \frac{d}{t}$$ (vitesse moyenne = distance ÷ durée). Si d en m et t en s → v en m/s ; si d en km et t en h → v en km/h.
+          On en déduit $d = v \times t$ et $t = d / v$.
+      - retiens: "$v = d/t$, $d = v \\times t$, $t = d/v$. Vérifie que les unités vont ensemble !"
+    exercices:
+      - type: nombre
+        vars: { d: [100, 200, 400], t: [10, 20, 25, 50] }
+        enonce: "Un coureur parcourt {{d}} m en {{t}} s. Vitesse moyenne en m/s ?"
+        reponse: "d/t"
+        tolerance: 0.01
+        unite: m/s
+        correction: "v = {{d}} / {{t}} = {{d/t}} m/s."
+      - type: nombre
+        vars: { v: [60, 80, 90, 120], t: [2, 3, 0.5] }
+        enonce: "Une voiture roule à {{v}} km/h pendant {{t}} h. Distance parcourue ?"
+        reponse: "v*t"
+        unite: km
+        correction: "d = v × t = {{v}} × {{t}} = {{v*t}} km."
+      - type: nombre
+        vars: { d: [150, 300, 450], v: [50, 75, 150] }
+        enonce: "Il faut parcourir {{d}} km à {{v}} km/h. Combien d'heures dure le trajet ?"
+        reponse: "d/v"
+        tolerance: 0.01
+        unite: h
+        correction: "t = d / v = {{d}} / {{v}} = {{d/v}} h."
+
+  - id: les-forces
+    titre: "Représenter une force"
+    objectif: Je décris une force par ses 4 caractéristiques.
+    mots: [force, newton, vecteur, dynamomètre]
+    etapes:
+      - texte: |
+          Une force est une **action** d'un objet sur un autre. On la représente par une **flèche** (un vecteur) qui précise :
+          1. le **point d'application** (où elle agit) ;
+          2. la **direction** (la droite : verticale, horizontale…) ;
+          3. le **sens** (vers le haut, vers la droite…) ;
+          4. la **valeur** (l'intensité), en **newtons** (N), mesurée avec un **dynamomètre**.
+          Forces de **contact** (la main qui pousse, le frottement, la réaction du sol) et forces **à distance** (le poids, la force magnétique, la force électrique).
+      - retiens: "Une force : point d'application, direction, sens, valeur (en N). Contact ou à distance."
+    exercices:
+      - type: classer
+        vars: { t: [["la main qui pousse un chariot", "le poids d'une pomme", "le frottement des freins", "l'attraction d'un aimant sur un clou"], ["la réaction du sol sous tes pieds", "l'attraction de la Lune sur les océans", "la corde qui tire un seau", "la force électrique entre deux ballons frottés"]] }
+        enonce: "Force de contact ou force à distance ?"
+        categories: ["de contact", "à distance"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le poids, le magnétisme et la force électrique agissent à distance."
+      - type: qcm
+        vars: { t: [["Avec quel instrument mesure-t-on une force ?", "un dynamomètre", "un thermomètre", "un voltmètre"], ["Quelle est l'unité de force ?", "le newton (N)", "le kilogramme (kg)", "le joule (J)"], ["Quelle est la direction du poids ?", "verticale, vers le bas", "horizontale", "verticale, vers le haut"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Une force se représente par une flèche.", true], ["Le poids est une force de contact.", false], ["Pour décrire une force, il suffit de donner sa valeur.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Il faut aussi le point d'application, la direction et le sens."
+
+  - id: poids-et-masse
+    titre: "Poids et masse : ce n'est pas pareil !"
+    objectif: Je calcule un poids avec P = m × g.
+    mots: [masse, poids, intensité de pesanteur]
+    etapes:
+      - texte: |
+          - La **masse** m (en **kg**) est la quantité de matière : elle est **la même partout**, sur Terre comme sur la Lune.
+          - Le **poids** P (en **N**) est la force d'attraction de la planète : il **dépend de l'endroit**.
+          $$P = m \times g$$ avec g ≈ **9,8 N/kg** sur Terre, ≈ **1,6 N/kg** sur la Lune, ≈ 3,7 N/kg sur Mars.
+          Sur la Lune, un astronaute garde sa masse mais pèse environ **6 fois moins** : il bondit !
+      - retiens: "Masse (kg) : la même partout. Poids (N) : P = m × g. g ≈ 9,8 N/kg sur Terre, 1,6 N/kg sur la Lune."
+    exercices:
+      - type: nombre
+        vars: { m: [1, 2, 5, 10, 30, 70] }
+        enonce: "Quel est le poids sur Terre d'un objet de {{m}} kg (g = 9,8 N/kg) ?"
+        reponse: "m*9.8"
+        tolerance: 0.01
+        unite: N
+        correction: "P = m × g = {{m}} × 9,8 = {{m*9.8}} N."
+      - type: nombre
+        vars: { m: [10, 30, 60, 90] }
+        enonce: "Quel est le poids sur la Lune d'un astronaute équipé de {{m}} kg (g = 1,6 N/kg) ?"
+        reponse: "m*1.6"
+        tolerance: 0.01
+        unite: N
+        correction: "P = {{m}} × 1,6 = {{m*1.6}} N."
+      - type: qcm
+        vars: { t: [["Sur la Lune, la masse d'un astronaute…", "est la même que sur Terre", "est 6 fois plus petite", "est nulle"], ["Sur la Lune, le poids d'un astronaute…", "est environ 6 fois plus petit", "est le même que sur Terre", "est plus grand"], ["Dans le langage courant, « je pèse 30 kg » veut dire…", "ma masse est de 30 kg", "mon poids est de 30 N", "ma taille est de 30 cm"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: lois-de-newton
+    titre: "Inertie et actions réciproques"
+    objectif: J'énonce le principe d'inertie et le principe des actions réciproques.
+    mots: [inertie, action, réaction, Newton]
+    etapes:
+      - histoire:
+          titre: Galilée et Newton
+          texte: "Pendant des siècles, on a cru qu'un objet s'arrête « naturellement » si on cesse de le pousser. **Galilée** (vers 1600) comprend que c'est le **frottement** qui l'arrête. **Isaac Newton** publie en 1687 ses lois du mouvement. **Émilie du Châtelet** traduit son grand ouvrage en français au XVIIIᵉ siècle, en l'enrichissant de commentaires : sa traduction est encore utilisée."
+      - texte: |
+          **Principe d'inertie** (1ʳᵉ loi) : si les forces qui agissent sur un objet **se compensent** (ou s'il n'y en a aucune), il reste **immobile** ou continue en **ligne droite à vitesse constante**. Un palet sur la glace glisse longtemps parce qu'il y a très peu de frottement.
+          **Actions réciproques** (3ᵉ loi) : si A exerce une force sur B, alors B exerce sur A une force de **même valeur**, même direction, **sens opposé**. Tu pousses le mur, le mur te pousse. La fusée pousse les gaz vers le bas, les gaz poussent la fusée vers le haut.
+      - retiens: "Forces compensées : repos ou mouvement rectiligne uniforme. A agit sur B ⇒ B agit sur A, même valeur, sens opposé."
+      - a_quoi_ca_sert: "La ceinture de sécurité (sans elle, ton corps continue tout droit quand la voiture freine), les fusées, la nage (tu pousses l'eau vers l'arrière)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pourquoi faut-il attacher sa ceinture ?", "si la voiture freine, notre corps continue sur sa lancée (inertie)", "pour avoir plus chaud", "pour aller plus vite"], ["Comment avance une fusée dans l'espace, sans air ?", "elle éjecte des gaz qui la poussent en retour", "elle s'appuie sur l'air", "grâce à ses ailes"], ["Un palet de hockey glisse longtemps sur la glace parce que…", "il y a très peu de frottement", "la glace le pousse", "il est très léger"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un objet en mouvement s'arrête toujours tout seul, même sans frottement.", false], ["Quand je pousse un mur, le mur me pousse avec une force de même valeur.", true], ["Si les forces se compensent, un objet peut être en mouvement rectiligne uniforme.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Sans frottement, un objet lancé continue indéfiniment : c'est l'inertie."
+      - type: nombre
+        vars: { f: [50, 120, 300] }
+        enonce: "Une patineuse pousse son partenaire avec une force de {{f}} N. Avec quelle force (en N) le partenaire pousse-t-il la patineuse ?"
+        reponse: "f"
+        unite: N
+        correction: "Actions réciproques : même valeur, {{f}} N, sens opposé (ils s'éloignent tous les deux)."
+
+  - id: masse-volumique-pression
+    titre: "Masse volumique et pression"
+    objectif: J'utilise ρ = m / V et je comprends la pression.
+    mots: [masse volumique, densité, pression, pascal]
+    etapes:
+      - texte: |
+          **Masse volumique** : $\rho = \dfrac{m}{V}$ (kg/m³ ou g/cm³). Eau : **1 g/cm³** (1 000 kg/m³) ; huile ≈ 0,92 ; fer ≈ 7,9 ; or ≈ 19,3 ; liège ≈ 0,2.
+          Un objet plein **flotte** sur l'eau si sa masse volumique est **plus petite** que celle de l'eau.
+          **Pression** : force répartie sur une surface, $p = \dfrac{F}{S}$ (en **pascals**, Pa). Même force sur une petite surface = forte pression : le couteau aiguisé coupe, les raquettes à neige empêchent de s'enfoncer.
+      - retiens: "$\\rho = m/V$ ; eau = 1 g/cm³ ; flotte si ρ < 1 g/cm³. $p = F/S$ : petite surface → grande pression."
+    exercices:
+      - type: nombre
+        vars: { m: [20, 50, 79, 193], V: [10] }
+        enonce: "Un objet a une masse de {{m}} g pour un volume de {{V}} cm³. Masse volumique en g/cm³ ?"
+        reponse: "m/V"
+        tolerance: 0.01
+        unite: g/cm³
+        correction: "ρ = {{m}} / {{V}} = {{m/V}} g/cm³."
+      - type: classer
+        vars: { t: [["liège (0,2 g/cm³)", "fer (7,9 g/cm³)", "glace (0,92 g/cm³)", "verre (2,5 g/cm³)"], ["bois de pin (0,5 g/cm³)", "aluminium (2,7 g/cm³)", "huile (0,92 g/cm³)", "or (19,3 g/cm³)"]] }
+        enonce: "Un bloc plein de cette matière flotte-t-il sur l'eau (1 g/cm³) ?"
+        categories: [flotte, coule]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Flotte si la masse volumique est inférieure à 1 g/cm³."
+      - type: qcm
+        vars: { t: [["Pourquoi les raquettes à neige empêchent-elles de s'enfoncer ?", "elles répartissent le poids sur une grande surface : la pression diminue", "elles rendent plus léger", "elles chauffent la neige"], ["Pourquoi un couteau aiguisé coupe-t-il mieux ?", "la force s'exerce sur une toute petite surface : forte pression", "il est plus lourd", "il est plus froid"], ["Pourquoi un bateau en acier (7,9 g/cm³) flotte-t-il ?", "il est creux : sa masse volumique moyenne avec l'air est inférieure à celle de l'eau", "l'acier flotte toujours", "il est tiré par des câbles"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

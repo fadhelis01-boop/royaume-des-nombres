@@ -68,11 +68,26 @@ lecons:
           titre: Défi dans la vraie vie
           texte: "Mesure ta main avec une règle…"
           materiel: "une règle"
+      - experience:                     # une vraie expérience (sciences)
+          titre: Le ballon qui se gonfle tout seul
+          securite: vert                # vert (seul) | orange (avec un adulte) | rouge (à regarder seulement)
+          materiel: ["une bouteille", "du vinaigre", "du bicarbonate", "un ballon"]
+          prediction: { question: "Que va faire le ballon ?", choix: ["Il se gonfle", "Il reste plat"] }   # facultatif
+          etapes: ["…", "…"]            # (vide pour une expérience rouge)
+          observation: "Le ballon se gonfle."
+          explication: "Il se forme du dioxyde de carbone…"
+      - dessin:                         # dessin pas à pas, guides dans un carré 0–100
+          titre: Le chat
+          miroir: false                 # true : symétrie automatique autour de l'axe vertical
+          etapes:
+            - consigne: "Dessine un grand cercle : la tête."
+              couche: construction      # facultatif (construction, proportions, détails, valeurs, couleur…)
+              trace: "M50 35 m-16 0 a16 16 0 1 0 32 0 a16 16 0 1 0 -32 0"   # chemin SVG (vide = étape libre)
     exercices:                    # tirés au sort pour le défi et les révisions
       - …
 ```
 
-Personnages des dialogues : `mia`, `neo`, `zero`, `narrateur`, `nuage` (le Grignoteur), `ixe`, `enfant` (l'avatar de l'enfant) ; humeur facultative : `-joie`, `-surprise`, `-reflexion`, `-triste`, `-fier` (ex. `zero-surprise`).
+Personnages des dialogues : `mia`, `neo`, `zero`, `narrateur`, `nuage` (le Grignoteur), `ixe`, `gribouille`, `neutre` (le Grand Neutre), `enfant` (l'avatar de l'enfant) ; humeur facultative : `-joie`, `-surprise`, `-reflexion`, `-triste`, `-fier` (ex. `zero-surprise`).
 
 Des questions « À toi de jouer » sont **insérées automatiquement** toutes les deux étapes du cours (les exercices les plus faciles d'abord). Pour l'éviter : `auto_questions: false` dans la leçon.
 
@@ -130,7 +145,15 @@ Temps : `present imparfait passe_simple futur passe_compose plus_que_parfait pas
 
 ## 4. Les visuels (dessinés automatiquement)
 
-`objets` (groupes d'émojis, `barres` pour barrer) · `blocs` (base 10) · `abaque` (tableau de numération) · `droite` (graduée, `sauts`, `marques`, `point`, `fractions`) · `barres` (méthode de Singapour : `lignes`, `total`, `ecart`) · `fraction` (`disque`, `barre`, `rectangle`) · `grille` · `figure` (`forme: rectangle | carre | triangle-rectangle | cercle` ou `points`, `segments`, `polygones`, `angles_droits`) · `horloge` · `monnaie` · `graphe` (`fonctions`, `points`, `segments`, `aire`) · `diagramme` · `tableau` · `motif` · `balance` · `arbre` · `solide` · `image`.
+`objets` (groupes d'émojis, `barres` pour barrer) · `blocs` (base 10) · `abaque` (tableau de numération) · `droite` (graduée, `sauts`, `marques`, `point`, `fractions`) · `barres` (méthode de Singapour : `lignes`, `total`, `ecart`) · `fraction` (`disque`, `barre`, `rectangle`) · `grille` · `figure` (`forme: rectangle | carre | triangle-rectangle | cercle` ou `points`, `segments`, `polygones`, `angles_droits`) · `horloge` · `monnaie` · `graphe` (`fonctions`, `points`, `segments`, `aire`) · `diagramme` · `tableau` · `motif` · `balance` · `arbre` · `solide` · `image` · `son` · `portee` · `clavier` · `atome`.
+
+**Visuels des nouvelles planètes** :
+- `son` : un ou plusieurs boutons d'écoute. `{ type: son, notes: "Do4 Ré4 Mi4:2 _ [Do4 Mi4 Sol4]:3", tempo: 90, timbre: piano }` (durée en temps après `:`, `_` = silence, `[…]` = accord ; timbres `piano flute violon orgue cloche pur`), ou `rythme: "X.x.x.x."` (x frappe, X accent, . silence), ou `freq: 440` (son pur en Hz). Plusieurs sons : `sons: [{ etiquette: "Son A", notes: … }, …]` ; `volume` de 0 à 1.
+- `portee` : notes sur une portée en clé de sol. `{ type: portee, notes: "Do4 Mi4 Sol4", durees: "ronde blanche noire", noms: non }` (`croche`, `double-croche`, `_` pour un soupir ; `cache: 2` remplace le nom de la 2ᵉ note par « ? »).
+- `clavier` : `{ type: clavier, de: Do4, a: Si4, notes: "Do4 Mi4 Sol4" }` (touches colorées, jouables).
+- `atome` : modèle simple. `{ type: atome, z: 6, neutrons: 6, charge: 0 }` (couches 2, 8, 8…).
+
+Notes : noms français (`Do Ré Mi Fa Sol La Si`, `#` dièse, `b` bémol) ou anglais (`C D E F G A B`), suivis de l'octave (La4 = 440 Hz).
 
 Dans un visuel, une valeur `"=expression"` est calculée (`nombre: "=a*10+b"`), une valeur texte peut contenir des `{{ … }}`.
 
@@ -155,8 +178,10 @@ Un exercice défectueux est refusé avec un message précis.
   ```
   Le prologue accepte de la même façon `prologue_choix`.
 - `_histoire.yaml` : la grande histoire (prologue, livres `arcs` avec leur monde final et leur scène de fin, et un `chapitre` par monde : `titre`, `objet` (le cristal), `avant` et `apres`, des répliques comme dans les dialogues). Un monde sans chapitre fonctionne quand même.
-- **Matière** : un monde de français porte `matiere: francais` dans son en-tête (par défaut `maths`). La carte, l'histoire, le test de niveau, le défi du jour et l'échauffement suivent la matière choisie par l'enfant.
-- `_histoire_francais.yaml` : l'histoire de l'Archipel des Mots, même format que `_histoire.yaml` (livres `fr-arc-1` à `fr-arc-3`).
+- **Planètes (matières)** : `_planetes.yaml` décrit chaque planète de la Galaxie : `id`, `famille` (fondamentaux, sciences, arts), `titre`, `matiere`, `emoji`, `couleur`, `accroche`, `histoire` (fichier), `prologue { id, titre, appel }`, `objet { emoji, un, des }` (ce que rapporte un Défi du Gardien), `echauffement`, `astuces`, `liens` (raccourcis de la carte), `jeux` (jeux mis en avant) et `gardiens` par cycle (`sprite` : nuage, ixe, oubli, gribouille, tache, neutre ; `nom`, `qui`, `ouverture`, `cri`, `aie`, `nargue`, `jeton`). Un monde indique sa planète par `matiere: chimie` (par défaut `maths`). **Ajouter une matière = ajouter une entrée ici et des mondes, sans recoder.**
+- `_histoire*.yaml` : une histoire par planète (le fichier est nommé dans `_planetes.yaml`), même format que `_histoire.yaml`.
+- `_glossaire*.yaml` : le Grand Livre ; `monde` rattache le mot à un monde (donc à une planète).
+- Test de niveau : si `_diagnostic.yaml` ne prévoit rien pour un monde, deux questions sont tirées automatiquement de ses leçons.
 - `_dico_*.yaml` : le dictionnaire, une entrée par ligne avec des clés courtes : `m` mot, `n` nature (`n v a adv p c pr d i loc`), `g` genre d'un nom (`m f mf`, obligatoire pour un nom), `d` définition, `e` exemple, `s` synonymes, `a` contraires, `f` famille, `x` étymologie, `l` niveau 1 à 3, `t` thème.
   ```yaml
   - { m: archipel, n: n, g: m, d: "Groupe d'îles proches les unes des autres.", e: "L'Archipel des Mots compte de nombreuses îles.", l: 2, t: nature }

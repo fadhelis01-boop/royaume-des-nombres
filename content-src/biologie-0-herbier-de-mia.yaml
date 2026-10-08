@@ -1,0 +1,149 @@
+id: bio-herbier-de-mia
+matiere: biologie
+titre: L'Herbier de Mia
+sous_titre: Observer, décrire, classer, faire un schéma, utiliser loupe et microscope
+emoji: 🔍
+couleur: "#3a8a2a"
+cycle: astuces
+age: 7 ans et +
+niveau: Tous niveaux
+ordre: 300
+version: 1.0.0
+intro:
+  - mia: "Bienvenue dans mon herbier ! Ici, on apprend à bien REGARDER le vivant. C'est le premier talent d'un biologiste."
+  - zero: "Je regarde très bien : là, c'est une plante verte. Fini !"
+  - mia: "Combien de feuilles ? De quelle forme ? Est-ce qu'elles sont toutes pareilles ? Regarder, c'est se poser des questions."
+
+lecons:
+  - id: bien-observer
+    titre: "Bien observer et décrire"
+    objectif: Je décris un être vivant avec précision.
+    mots: [observer, décrire, critère]
+    etapes:
+      - texte: |
+          Pour bien observer un être vivant :
+          1. Je regarde **l'ensemble** puis les **détails** (avec une loupe si besoin).
+          2. Je **compte** (pattes, pétales, ailes…).
+          3. Je **compare** avec ce que je connais (plus grand que, de la forme de…).
+          4. J'utilise mes **sens**… mais jamais le goût, et je ne touche pas les animaux ou plantes inconnus.
+          5. Je **note** et je **dessine** ce que je vois, pas ce que j'imagine.
+      - retiens: "Observer : l'ensemble, les détails, compter, comparer, noter et dessiner ce que je vois vraiment."
+      - vraie_vie:
+          titre: Défi de l'observateur
+          texte: "Ramasse 3 feuilles d'arbres différents (tombées au sol). Pour chacune, compte les pointes du bord, regarde les nervures, mesure-la. Dessine-les côte à côte."
+          materiel: une loupe si tu en as, une règle, un crayon
+    exercices:
+      - type: qcm
+        vars: { t: [["Que dois-tu faire avec une plante inconnue ?", "l'observer sans la goûter", "la goûter un tout petit peu", "l'arracher pour la ramener"], ["Pour décrire un insecte, que peut-on compter ?", "ses pattes et ses ailes", "ses dents", "ses cheveux"], ["Un bon dessin d'observation montre…", "ce que je vois vraiment", "ce que j'imagine", "ce qui est le plus joli"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["un insecte", 6], ["une araignée", 8], ["un oiseau", 2], ["un chien", 4]] }
+        enonce: "Combien de pattes a {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}} pattes."
+      - type: vf
+        vars: { t: [["Une araignée est un insecte.", false], ["Les insectes ont 6 pattes.", true], ["La loupe aide à voir les détails.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'araignée a 8 pattes : ce n'est pas un insecte, c'est un arachnide."
+
+  - id: classer-le-vivant
+    titre: "Classer : ce que les êtres vivants ont"
+    objectif: Je classe des êtres vivants selon ce qu'ils possèdent.
+    mots: [classer, critère, caractère]
+    etapes:
+      - texte: |
+          Les scientifiques classent les êtres vivants selon ce qu'ils **ont** (des **caractères** : plumes, poils, nageoires, 6 pattes, 4 membres, squelette interne…), et **pas** selon ce qu'ils **font** ou **où ils vivent**.
+          Exemple : la baleine vit dans l'eau comme un poisson, mais elle a des **poils** (quelques-uns) et allaite ses petits : c'est un **mammifère**, comme nous. La chauve-souris vole mais c'est aussi un mammifère.
+      - retiens: "On classe selon ce que les êtres vivants ONT (poils, plumes, écailles…), pas selon ce qu'ils font ni où ils vivent."
+    exercices:
+      - type: qcm
+        vars: { t: [["la baleine", "un mammifère", "un poisson", "un oiseau"], ["la chauve-souris", "un mammifère", "un oiseau", "un insecte"], ["le pingouin", "un oiseau", "un poisson", "un mammifère"], ["le requin", "un poisson", "un mammifère", "un reptile"]] }
+        enonce: "Dans la classification, {{t_0}} est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}, d'après ce qu'il possède."
+      - type: classer
+        vars: { t: [["chat", "aigle", "dauphin", "poule"], ["lapin", "pigeon", "chauve-souris", "autruche"], ["vache", "pingouin", "baleine", "moineau"]] }
+        enonce: "A des poils ou a des plumes ?"
+        categories: ["des poils (mammifère)", "des plumes (oiseau)"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Plumes = oiseaux ; poils = mammifères (même le dauphin et la baleine ont quelques poils à la naissance)."
+      - type: vf
+        vars: { t: [["On classe les animaux selon l'endroit où ils vivent.", false], ["Tous les animaux qui volent sont des oiseaux.", false], ["Les mammifères allaitent leurs petits.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On classe selon ce que les êtres vivants possèdent."
+
+  - id: schema-legende
+    titre: "Faire un schéma légendé"
+    objectif: Je réalise un schéma scientifique propre.
+    mots: [schéma, légende, titre, échelle]
+    etapes:
+      - texte: |
+          Un **schéma** n'est pas un dessin artistique : il doit être **clair** et **exact**.
+          - un **titre** (« Schéma d'une fleur de tulipe ») ;
+          - des **traits simples**, au crayon ;
+          - des **légendes** écrites à l'horizontale, reliées par des **traits à la règle** qui ne se croisent pas ;
+          - si possible, l'**échelle** ou le grossissement (× 10 à la loupe).
+      - dessin:
+          titre: Une fleur légendée
+          etapes:
+            - consigne: "Trace la tige : une ligne verticale."
+              trace: "M50 95 L50 50"
+            - consigne: "Dessine le cœur de la fleur : un petit cercle en haut de la tige."
+              trace: "M50 50 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"
+            - consigne: "Ajoute les pétales autour du cœur (quatre ovales)."
+              trace: "M50 44 C44 30 56 30 50 44 M56 50 C70 44 70 56 56 50 M50 56 C56 70 44 70 50 56 M44 50 C30 56 30 44 44 50"
+            - consigne: "Ajoute deux feuilles sur la tige."
+              trace: "M50 78 C38 70 32 76 50 82 M50 68 C62 60 68 66 50 72"
+            - consigne: "Trace les traits de légende à la règle vers la droite (pétale, cœur, tige, feuille) : ils ne se croisent pas."
+              trace: "M68 46 L88 30 M56 50 L88 42 M50 88 L88 88 M58 66 L88 70"
+      - retiens: "Schéma = titre + traits simples + légendes horizontales reliées à la règle, sans croisement."
+    exercices:
+      - type: qcm
+        vars: { t: [["Que doit toujours avoir un schéma scientifique ?", "un titre et des légendes", "beaucoup de couleurs", "des ombres et du relief"], ["Comment trace-t-on les traits de légende ?", "à la règle, sans qu'ils se croisent", "à main levée, en zigzag", "en couleur fluo"], ["Que signifie « × 10 » à côté d'un schéma ?", "que c'est grossi 10 fois", "qu'il y a 10 erreurs", "que c'est 10 fois plus petit"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Un schéma doit être le plus beau possible, comme une œuvre d'art.", false], ["Les légendes s'écrivent à l'horizontale.", true], ["Un schéma doit montrer ce qu'on observe vraiment.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un schéma vise la clarté et l'exactitude, pas la beauté."
+      - type: ordre
+        vars: { t: [["Observer attentivement", "Tracer les formes au crayon", "Tracer les traits de légende à la règle", "Écrire les légendes", "Ajouter le titre"]] }
+        enonce: "Remets les étapes d'un schéma dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Observer, tracer, traits de légende, légendes, titre."
+
+  - id: loupe-microscope
+    titre: "Loupe et microscope"
+    objectif: Je sais utiliser une loupe et je connais les parties du microscope.
+    mots: [loupe, microscope, grossissement, lame, objectif]
+    etapes:
+      - texte: |
+          - La **loupe** grossit 2 à 10 fois : parfaite pour les insectes, les fleurs, les cristaux de sel.
+          - Le **microscope** grossit 40 à 1 000 fois : il permet de voir les **cellules**. On place l'échantillon, très fin, sur une **lame** de verre, éclairée par-dessous. On regarde dans l'**oculaire** ; l'**objectif** est près de la lame. Grossissement total = oculaire × objectif (10 × 40 = 400).
+          On commence toujours par le **plus petit** grossissement, puis on augmente.
+      - histoire:
+          titre: Les premiers microscopes
+          texte: "En 1665, **Robert Hooke** observe du liège au microscope et voit de petites cases qu'il appelle « cellules ». Peu après, le drapier néerlandais **Antoni van Leeuwenhoek**, avec des microscopes qu'il fabrique lui-même, est le premier à observer des bactéries et des spermatozoïdes."
+      - retiens: "Loupe : × 2 à × 10. Microscope : × 40 à × 1 000, grossissement = oculaire × objectif. Toujours commencer par le plus faible grossissement."
+    exercices:
+      - type: nombre
+        vars: { o: [10, 15], b: [4, 10, 40, 100] }
+        enonce: "Oculaire × {{o}} et objectif × {{b}} : quel est le grossissement total ?"
+        reponse: "o*b"
+        correction: "{{o}} × {{b}} = {{o*b}}."
+      - type: qcm
+        vars: { t: [["observer une coccinelle", "une loupe", "un microscope", "un télescope"], ["observer les cellules d'une peau d'oignon", "un microscope", "une loupe", "des jumelles"], ["observer un oiseau au loin", "des jumelles", "un microscope", "une loupe"]] }
+        enonce: "Pour {{t_0}}, j'utilise…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Au microscope, on commence par le plus fort grossissement.", false], ["Robert Hooke a donné leur nom aux cellules.", true], ["Leeuwenhoek a été le premier à observer des bactéries.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On commence par le plus faible grossissement pour trouver la zone à observer."

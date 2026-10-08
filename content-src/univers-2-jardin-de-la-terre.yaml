@@ -1,0 +1,178 @@
+id: uni-jardin-de-la-terre
+matiere: univers
+titre: Le Jardin de la Terre
+sous_titre: Continents et océans, roches, volcans et séismes, l'eau de la planète, déchets et recyclage
+emoji: 🌍
+couleur: "#3d6fc4"
+cycle: graines
+age: 8 ans et +
+niveau: Explorateur (CE2 – CM1)
+ordre: 402
+prerequis: [uni-cour-du-jour-et-de-la-nuit]
+version: 1.0.0
+intro:
+  - narrateur: "Dans le Jardin de la Terre, un globe géant tourne au ralenti, tout gris. On ne distingue plus les mers des continents."
+  - mia: "Notre planète est la seule que l'on connaisse où la vie existe. Apprenons à la connaître… et à la protéger."
+
+lecons:
+  - id: continents-oceans
+    titre: "Continents et océans"
+    objectif: Je nomme les continents et les océans.
+    mots: [continent, océan, globe, planisphère]
+    etapes:
+      - texte: |
+          Vue de l'espace, la Terre est **bleue** : les océans couvrent environ **71 %** de sa surface.
+          - **6 continents** (selon le découpage usuel en France) : l'**Afrique**, l'**Amérique**, l'**Antarctique**, l'**Asie**, l'**Europe**, l'**Océanie**.
+          - **5 océans** : **Pacifique** (le plus grand), **Atlantique**, **Indien**, **Arctique**, **Austral**.
+          Un **globe** représente la Terre en boule ; un **planisphère** l'étale à plat (ce qui déforme un peu les surfaces).
+      - retiens: "Océans ≈ 71 % de la surface. 6 continents, 5 océans ; le Pacifique est le plus grand."
+    exercices:
+      - type: classer
+        vars: { t: [["l'Afrique", "le Pacifique", "l'Asie", "l'Atlantique"], ["l'Europe", "l'océan Indien", "l'Océanie", "l'Arctique"], ["l'Amérique", "l'océan Austral", "l'Antarctique", "le Pacifique"]] }
+        enonce: "Continent ou océan ?"
+        categories: [continent, océan]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Afrique, Amérique, Antarctique, Asie, Europe, Océanie ; Pacifique, Atlantique, Indien, Arctique, Austral."
+      - type: qcm
+        vars: { t: [["Quel est le plus grand océan ?", "le Pacifique", "l'Atlantique", "l'Arctique"], ["Sur quel continent se trouve la France ?", "l'Europe", "l'Asie", "l'Afrique"], ["Quelle part de la surface de la Terre est couverte d'océans ?", "environ 71 %", "environ 10 %", "environ 50 %"], ["Quel continent est couvert de glace autour du pôle Sud ?", "l'Antarctique", "l'Arctique", "l'Océanie"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["L'Arctique est un continent.", false], ["Un planisphère est une carte du monde à plat.", true], ["La Terre est plus couverte d'eau que de terres.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'Arctique est un océan gelé ; l'Antarctique est un continent."
+
+  - id: roches-et-sols
+    titre: "Roches et sols"
+    objectif: Je reconnais quelques roches et je sais comment se forme le sol.
+    mots: [roche, granite, calcaire, argile, sable, sol, érosion]
+    etapes:
+      - texte: |
+          Le sol de notre jardin repose sur des **roches**. Quelques roches courantes :
+          - le **granite** (dur, avec des grains visibles, dans les montagnes et en Bretagne) ;
+          - le **calcaire** (souvent blanc, fait de restes de coquillages ; il **mousse** avec du vinaigre) ;
+          - l'**argile** (très fine, elle devient pâteuse avec l'eau : on en fait des poteries) ;
+          - le **sable** (de minuscules grains de roche).
+          L'**érosion** (pluie, gel, vent, rivières) casse lentement les roches en morceaux. Mélangés à des débris de plantes et d'animaux décomposés (l'**humus**), ils forment le **sol**. Il faut des centaines d'années pour former quelques centimètres de sol !
+      - experience:
+          titre: Le test du vinaigre
+          securite: vert
+          materiel: ["un morceau de craie", "un caillou de granite ou un galet", "du vinaigre blanc", "un compte-gouttes ou une cuillère"]
+          prediction:
+            question: "On verse quelques gouttes de vinaigre sur la craie et sur le galet. Que va-t-il se passer ?"
+            choix: ["La craie fait des bulles, pas le galet", "Les deux font des bulles", "Rien ne se passe"]
+          etapes:
+            - "Pose les deux roches sur une assiette."
+            - "Verse quelques gouttes de vinaigre sur chacune et observe de près."
+          observation: "La craie fait de petites bulles qui pétillent ; le galet de granite ne réagit pas."
+          explication: "La craie est du calcaire : le vinaigre (acide) réagit avec lui et dégage du dioxyde de carbone. Les géologues utilisent ce test pour reconnaître le calcaire."
+      - retiens: "Granite (dur, grains), calcaire (mousse au vinaigre), argile (pâteuse), sable. L'érosion forme le sol, très lentement."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quelle roche fait des bulles avec du vinaigre ?", "le calcaire", "le granite", "le verre"], ["Avec quelle roche fabrique-t-on des poteries ?", "l'argile", "le granite", "le sable"], ["Qu'est-ce que l'érosion ?", "l'usure lente des roches par l'eau, le vent, le gel", "la fabrication des roches par les humains", "une plante"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["La craie est une roche calcaire.", true], ["Un sol se forme en quelques jours.", false], ["Le sable est fait de petits grains de roche.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Il faut des centaines d'années pour former quelques centimètres de sol : il est précieux."
+      - type: ordre
+        vars: { t: [["la roche est fissurée par le gel et la pluie", "elle se casse en petits morceaux", "les morceaux se mélangent aux débris de plantes", "un sol fertile se forme"]] }
+        enonce: "Remets la formation d'un sol dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Érosion, fragmentation, mélange avec l'humus, sol."
+
+  - id: volcans-seismes
+    titre: "Volcans et séismes"
+    objectif: Je sais ce que sont un volcan et un séisme, et comment se protéger.
+    mots: [volcan, lave, magma, cratère, séisme]
+    etapes:
+      - texte: |
+          Sous la croûte terrestre, des roches très chaudes peuvent fondre : c'est le **magma**. Quand il remonte et sort à la surface par un **volcan**, on l'appelle **lave**. Certains volcans émettent des coulées de lave (Piton de la Fournaise, à La Réunion), d'autres explosent en projetant cendres et gaz.
+          Un **séisme** (tremblement de terre) est une secousse brutale du sol, due à des roches qui cassent et glissent en profondeur.
+          En cas de séisme : **à l'intérieur**, on s'abrite sous une table solide, loin des fenêtres ; **à l'extérieur**, on s'éloigne des bâtiments et des fils électriques.
+      - retiens: "Magma sous terre, lave en surface. Séisme = roches qui cassent et glissent. Se protéger : sous une table, loin des vitres."
+    exercices:
+      - type: qcm
+        vars: { t: [["Comment appelle-t-on le magma quand il sort d'un volcan ?", "la lave", "le sable", "la cendre seulement"], ["Que faire pendant un séisme si on est en classe ?", "s'abriter sous une table solide", "courir dehors en passant par les escaliers", "se mettre près des fenêtres"], ["Qu'est-ce qui provoque un séisme ?", "des roches qui cassent et glissent en profondeur", "le vent", "la pluie"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Il y a un volcan actif en France, à La Réunion.", true], ["Pendant un séisme, il faut se mettre près des fenêtres.", false], ["Le magma est de la roche fondue.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le Piton de la Fournaise, à La Réunion, est l'un des volcans les plus actifs du monde."
+      - type: ordre
+        vars: { t: [["le magma se forme en profondeur", "il remonte par une cheminée", "il arrive dans le cratère", "la lave s'écoule sur les flancs"]] }
+        enonce: "Remets le trajet du magma dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Magma, cheminée, cratère, coulée de lave."
+
+  - id: l-eau-de-la-planete
+    titre: "L'eau de la planète"
+    objectif: Je sais que l'eau douce est rare et précieuse.
+    mots: [eau douce, eau salée, nappe phréatique, potable]
+    etapes:
+      - texte: |
+          Presque toute l'eau de la Terre est **salée** (les océans) : environ **97 %**. L'**eau douce** ne fait que **3 %**, et la plus grande partie est gelée (glaciers, calottes polaires) ou cachée sous terre (**nappes phréatiques**). L'eau douce facile à utiliser (rivières, lacs) représente moins de 1 % de toute l'eau !
+          L'**eau potable** (qu'on peut boire sans danger) est traitée dans des usines avant d'arriver au robinet. Les eaux usées sont nettoyées en **station d'épuration** avant de retourner dans la nature.
+      - retiens: "97 % d'eau salée, 3 % d'eau douce (surtout en glace). L'eau potable est traitée ; il faut l'économiser."
+      - vraie_vie:
+          titre: Chasse au gaspillage
+          texte: "Combien de litres pour un bain (environ 150 L) ? Et pour une douche de 5 minutes (environ 60 L) ? Ferme le robinet pendant que tu te brosses les dents : tu économises plusieurs litres à chaque fois."
+    exercices:
+      - type: nombre
+        vars: { t: [["d'eau salée", 97], ["d'eau douce", 3]] }
+        enonce: "Environ quel pourcentage de l'eau de la Terre est constitué {{t_0}} ?"
+        reponse: "t_1"
+        tolerance: 0.5
+        unite: "%"
+        correction: "Environ {{t_1}} %."
+      - type: qcm
+        vars: { t: [["Où se trouve la plus grande partie de l'eau douce ?", "dans les glaciers et les calottes polaires", "dans les rivières", "dans les nuages"], ["Qu'est-ce qu'une eau potable ?", "une eau qu'on peut boire sans danger", "une eau en pot", "une eau salée"], ["Où nettoie-t-on les eaux usées avant de les rendre à la nature ?", "dans une station d'épuration", "dans la mer directement", "dans le jardin"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["fermer le robinet en se brossant les dents", "prendre un bain tous les jours", "prendre une douche courte", "laisser couler l'eau pour qu'elle refroidisse longtemps"]] }
+        enonce: "Économie d'eau ou gaspillage ?"
+        categories: ["économie", "gaspillage"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Une douche courte consomme bien moins d'eau qu'un bain."
+
+  - id: dechets-recyclage
+    titre: "Déchets et recyclage"
+    objectif: Je trie les déchets et je comprends l'intérêt de réduire, réutiliser, recycler.
+    mots: [déchet, tri, recyclage, compost]
+    etapes:
+      - texte: |
+          La meilleure façon de gérer un déchet… c'est de **ne pas le produire** ! On retient les « 3 R » : **Réduire**, **Réutiliser**, **Recycler**.
+          Le **tri** (les consignes varient selon les communes) :
+          - **emballages et papiers** (bouteilles et flacons en plastique, cartons, boîtes de conserve, canettes, journaux) : ils deviennent de nouveaux objets ;
+          - **verre** (bouteilles, pots, bocaux) : recyclable à l'infini ;
+          - **déchets alimentaires** (épluchures, restes) : au **compost**, ils deviennent un engrais naturel ;
+          - les piles, ampoules, appareils électriques vont dans des points de collecte spéciaux.
+          Une bouteille en plastique jetée dans la nature peut mettre des **centaines d'années** à se dégrader.
+      - retiens: "Réduire, réutiliser, recycler. Verre recyclable à l'infini, épluchures au compost, piles en point de collecte."
+    exercices:
+      - type: classer
+        vars: { t: [["une bouteille en verre", "une épluchure de pomme", "un carton de céréales", "une pile usagée"], ["un pot de confiture vide", "du marc de café", "une canette", "une ampoule usagée"]] }
+        enonce: "Où va ce déchet ?"
+        categories: ["verre", "compost", "emballages et papiers", "point de collecte spécial"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "Verre au conteneur à verre, déchets alimentaires au compost, emballages au bac de tri, piles et ampoules en point de collecte."
+      - type: qcm
+        vars: { t: [["Quelle est la meilleure solution pour la planète ?", "ne pas produire le déchet (réduire)", "le jeter dans la nature", "le brûler dans le jardin"], ["Que devient un déchet de cuisine dans un composteur ?", "un engrais naturel pour les plantes", "du plastique", "de l'eau potable"], ["Combien de temps une bouteille en plastique peut-elle mettre à se dégrader dans la nature ?", "des centaines d'années", "une semaine", "un mois"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le verre peut être recyclé à l'infini.", true], ["Les piles usagées vont avec les épluchures.", false], ["Réutiliser un pot de confiture, c'est éviter un déchet.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les piles contiennent des substances polluantes : point de collecte spécial."

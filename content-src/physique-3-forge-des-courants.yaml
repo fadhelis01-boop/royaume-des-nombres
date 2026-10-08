@@ -1,0 +1,181 @@
+id: ph-forge-des-courants
+matiere: physique
+titre: La Forge des Courants
+sous_titre: Circuits en série et en dérivation, tension, intensité, loi d'Ohm, puissance, sécurité
+emoji: ⚡
+couleur: "#2459b8"
+cycle: explorateurs
+age: 11 ans et +
+niveau: Apprenti – Chercheur (6ᵉ – 4ᵉ)
+ordre: 203
+prerequis: [ph-sentier-des-mesures]
+version: 1.0.0
+intro:
+  - neo: "Dans la Forge, le courant électrique coule comme de l'eau dans des tuyaux. C'est l'image qu'on va utiliser tout le temps."
+  - zero: "UN MILLIARD DE VOLTS !!! 🤯"
+  - neo: "Non, Zéro. Ici : des piles de 4,5 V au maximum. La sécurité d'abord."
+
+lecons:
+  - id: serie-derivation
+    titre: "Série ou dérivation ?"
+    objectif: Je reconnais un circuit en série et un circuit avec des dérivations.
+    mots: [série, dérivation, boucle, nœud]
+    etapes:
+      - texte: |
+          - **En série** : tous les éléments sont dans **une seule boucle**, l'un après l'autre. Si une lampe grille, le circuit est ouvert : **tout s'éteint** (les vieilles guirlandes de Noël !). Plus on ajoute de lampes, moins elles brillent.
+          - **En dérivation** (ou parallèle) : le circuit a **plusieurs boucles** qui se séparent à des **nœuds**. Chaque lampe a sa propre boucle : si l'une grille, **les autres restent allumées**. C'est ainsi qu'est câblée une maison.
+      - retiens: "Série : une seule boucle, tout s'éteint si un élément est coupé. Dérivation : plusieurs boucles indépendantes."
+      - a_quoi_ca_sert: "Dans ta maison, toutes les prises et les lampes sont en dérivation : éteindre la lumière du salon n'éteint pas le réfrigérateur."
+    exercices:
+      - type: qcm
+        vars: { t: [["Dans une guirlande en série, une ampoule grille.", "toutes les ampoules s'éteignent", "seule cette ampoule s'éteint", "les autres brillent plus"], ["Dans un circuit en dérivation, une lampe grille.", "les autres restent allumées", "tout s'éteint", "la pile s'arrête"], ["On ajoute une 3ᵉ lampe en série avec 2 lampes.", "les lampes brillent moins", "les lampes brillent plus", "rien ne change"]] }
+        enonce: "{{t_0}} Que se passe-t-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les appareils d'une maison sont branchés en dérivation.", true], ["Dans un circuit en série, il y a plusieurs boucles.", false], ["Un nœud est un point où le circuit se sépare en plusieurs branches.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Série : une seule boucle ; dérivation : plusieurs boucles reliées par des nœuds."
+      - type: classer
+        vars: { t: [["une guirlande ancienne où tout s'éteint si une ampoule grille", "les prises d'une maison", "une lampe de poche à 2 piles mises bout à bout", "les phares avant d'une voiture (l'un grille, l'autre reste allumé)"]] }
+        enonce: "Série ou dérivation ?"
+        categories: [série, dérivation]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Si un élément coupé éteint tout : série. Si les autres continuent : dérivation."
+
+  - id: tension-intensite
+    titre: "Tension et intensité"
+    objectif: Je sais ce que mesurent un voltmètre et un ampèremètre, et comment les brancher.
+    mots: [tension, volt, voltmètre, intensité, ampère, ampèremètre]
+    etapes:
+      - texte: |
+          Avec l'image de l'eau dans des tuyaux :
+          - la **tension** U (en **volts**, V) est comme la **pression** que fournit la pompe (la pile). On la mesure avec un **voltmètre** branché **en dérivation** (aux bornes de l'élément).
+          - l'**intensité** I (en **ampères**, A) est comme le **débit** d'eau : la quantité d'électricité qui passe chaque seconde. On la mesure avec un **ampèremètre** branché **en série** (dans la boucle).
+          Lois à retenir :
+          - **en série**, l'intensité est **la même partout** ;
+          - **en dérivation**, l'intensité dans la branche principale est **la somme** des intensités des branches.
+      - retiens: "U en volts (voltmètre en dérivation) ; I en ampères (ampèremètre en série). Série : même I partout. Dérivation : I principale = somme des I des branches."
+    exercices:
+      - type: qcm
+        vars: { t: [["Comment branche-t-on un voltmètre ?", "en dérivation, aux bornes de l'élément", "en série dans la boucle", "n'importe comment"], ["Comment branche-t-on un ampèremètre ?", "en série, dans la boucle", "en dérivation", "sur la prise de la maison"], ["Quelle est l'unité de l'intensité ?", "l'ampère (A)", "le volt (V)", "le watt (W)"], ["Quelle est l'unité de la tension ?", "le volt (V)", "l'ampère (A)", "l'ohm (Ω)"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { a: [0.1, 0.2, 0.3], b: [0.1, 0.25, 0.4] }
+        enonce: "Deux lampes en dérivation sont parcourues par {{a}} A et {{b}} A. Quelle est l'intensité dans la branche principale ?"
+        reponse: "a+b"
+        tolerance: 0.001
+        unite: A
+        correction: "On additionne : {{a}} + {{b}} = {{a+b}} A."
+      - type: nombre
+        vars: { i: [0.15, 0.2, 0.3] }
+        enonce: "Dans un circuit en série, l'ampèremètre indique {{i}} A près de la pile. Quelle intensité traverse la lampe située plus loin dans la boucle ?"
+        reponse: "i"
+        unite: A
+        correction: "En série, l'intensité est la même partout : {{i}} A."
+
+  - id: loi-d-ohm
+    titre: "La loi d'Ohm"
+    objectif: J'utilise la relation U = R × I.
+    mots: [résistance, ohm, loi d'Ohm]
+    etapes:
+      - texte: |
+          Une **résistance** freine le courant (comme un tuyau étroit freine l'eau). Elle se mesure en **ohms** (Ω).
+          **Loi d'Ohm** (pour un conducteur ohmique) : $U = R \times I$ (U en V, R en Ω, I en A).
+          On en déduit $I = U / R$ et $R = U / I$.
+      - exemple:
+          titre: Calculer une intensité
+          enonce: "Une résistance de 100 Ω est soumise à une tension de 6 V. Quelle est l'intensité ?"
+          etapes: ["$I = U / R = 6 / 100$", "$I = 0{,}06$ A, soit 60 mA."]
+      - retiens: "$U = R \\times I$ ; $I = U / R$ ; $R = U / I$. Ω, V, A."
+    exercices:
+      - type: nombre
+        vars: { R: [10, 20, 50, 100], I: [0.1, 0.2, 0.5] }
+        enonce: "R = {{R}} Ω et I = {{I}} A. Quelle est la tension U ?"
+        reponse: "R*I"
+        tolerance: 0.001
+        unite: V
+        correction: "U = R × I = {{R}} × {{I}} = {{R*I}} V."
+      - type: nombre
+        vars: { U: [6, 12, 9], R: [20, 30, 60] }
+        enonce: "U = {{U}} V et R = {{R}} Ω. Quelle est l'intensité I ?"
+        reponse: "U/R"
+        tolerance: 0.001
+        unite: A
+        correction: "I = U / R = {{U}} / {{R}} = {{U/R}} A."
+      - type: nombre
+        vars: { U: [4.5, 6, 12], I: [0.05, 0.1, 0.3] }
+        enonce: "U = {{U}} V et I = {{I}} A. Quelle est la résistance R ?"
+        reponse: "U/I"
+        tolerance: 0.01
+        unite: "Ω"
+        correction: "R = U / I = {{U}} / {{I}} = {{U/I}} Ω."
+
+  - id: puissance-energie
+    titre: "Puissance et énergie électriques"
+    objectif: Je calcule une puissance, une énergie et le coût d'une consommation.
+    mots: [puissance, watt, énergie, kilowattheure]
+    etapes:
+      - texte: |
+          - La **puissance** P (en **watts**, W) dit à quel rythme un appareil consomme de l'énergie : $P = U \times I$. Une ampoule LED : 8 W ; un four : 2 500 W.
+          - L'**énergie** consommée dépend aussi de la **durée** : $E = P \times t$. En joules (J) si P en W et t en s ; en **kilowattheures** (kWh) si P en kW et t en h — c'est l'unité de la facture.
+          1 kWh = 1 000 W pendant 1 heure = 3 600 000 J.
+      - exemple:
+          titre: Combien coûte un radiateur ?
+          enonce: "Un radiateur de 2 kW fonctionne 5 h. Le kWh coûte environ 0,25 €."
+          etapes: ["$E = P \\times t = 2 \\times 5 = 10$ kWh", "Coût ≈ 10 × 0,25 = 2,50 €"]
+      - retiens: "$P = U \\times I$ (W). $E = P \\times t$ (kWh si kW × h). Éteindre ce qui ne sert pas = moins d'énergie et moins de dépense."
+      - a_quoi_ca_sert: "Comprendre sa facture, choisir des appareils économes (étiquette énergie), éteindre les veilles."
+    exercices:
+      - type: nombre
+        vars: { U: [230], I: [0.5, 2, 4, 10] }
+        enonce: "Un appareil branché sur le secteur (230 V) est traversé par {{I}} A. Quelle est sa puissance ?"
+        reponse: "U*I"
+        unite: W
+        correction: "P = U × I = 230 × {{I}} = {{U*I}} W."
+      - type: nombre
+        vars: { p: [0.5, 1, 2, 3], h: [2, 4, 5, 10] }
+        enonce: "Un appareil de {{p}} kW fonctionne {{h}} h. Quelle énergie consomme-t-il ?"
+        reponse: "p*h"
+        unite: kWh
+        correction: "E = P × t = {{p}} × {{h}} = {{p*h}} kWh."
+      - type: qcm
+        vars: { t: [["Quelle ampoule consomme le moins pour éclairer pareil ?", "une LED de 8 W", "une ampoule à incandescence de 60 W", "elles consomment pareil"], ["Dans quelle unité est comptée l'énergie sur la facture d'électricité ?", "le kilowattheure (kWh)", "le watt (W)", "le volt (V)"], ["Un appareil de 1 000 W qui fonctionne 1 h consomme…", "1 kWh", "1 W", "1 000 kWh"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: securite-electrique
+    titre: "La sécurité électrique"
+    objectif: Je connais les dangers de l'électricité et les protections.
+    mots: [court-circuit, fusible, disjoncteur, prise de terre, électrisation]
+    etapes:
+      - texte: |
+          - Le **court-circuit** : le courant passe par un chemin sans résistance (deux fils qui se touchent). L'intensité devient énorme, les fils chauffent : **risque d'incendie**.
+          - Le **fusible** et le **disjoncteur** coupent le courant si l'intensité devient trop grande.
+          - La **prise de terre** évacue le courant si un appareil métallique a un défaut ; le **disjoncteur différentiel** coupe le courant s'il passe par une personne.
+          - Le corps humain conduit le courant : l'**électrisation** peut brûler, faire arrêter le cœur. Le secteur (230 V) est **très dangereux**, surtout avec de l'**eau** (salle de bain).
+      - attention:
+          texte: "Règles d'or : on ne met jamais d'objet dans une prise, on ne touche pas un appareil électrique avec les mains mouillées, on ne s'approche jamais d'un câble tombé au sol ni d'une ligne à haute tension, on ne grimpe pas sur un pylône."
+          qui: neo
+      - retiens: "Court-circuit = danger d'incendie. Fusible et disjoncteur protègent l'installation, le différentiel protège les personnes. Eau + électricité = danger."
+    exercices:
+      - type: vf
+        vars: { t: [["On peut toucher un sèche-cheveux branché avec les mains mouillées si on fait vite.", false], ["Un disjoncteur coupe le courant en cas d'intensité trop forte.", true], ["Un court-circuit peut provoquer un incendie.", true], ["On peut récupérer un cerf-volant coincé dans une ligne électrique avec un bâton.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'électricité du secteur peut tuer : prudence absolue."
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'un court-circuit ?", "un passage du courant sans résistance, qui fait chauffer les fils", "un circuit très court et sans danger", "une panne de pile"], ["Quel dispositif protège les personnes en cas de fuite de courant ?", "le disjoncteur différentiel", "l'interrupteur", "l'ampoule"], ["Pourquoi l'eau est-elle dangereuse près de l'électricité ?", "elle conduit le courant vers notre corps", "elle éteint l'électricité", "elle ne change rien"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["brancher un appareil avec les mains sèches", "mettre une fourchette dans une prise", "faire réparer une prise abîmée par un électricien", "utiliser une rallonge dans la baignoire"], ["débrancher en tirant sur la prise, pas sur le fil", "toucher un câble tombé au sol", "installer des cache-prises chez les petits", "grimper sur un pylône"]] }
+        enonce: "Bon réflexe ou danger ?"
+        categories: ["bon réflexe", "danger"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Mains sèches, prises en bon état, cache-prises ; jamais d'objet dans une prise ni d'électricité près de l'eau."

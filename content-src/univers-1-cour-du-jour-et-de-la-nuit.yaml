@@ -1,0 +1,146 @@
+id: uni-cour-du-jour-et-de-la-nuit
+matiere: univers
+titre: La Cour du Jour et de la Nuit
+sous_titre: Le jour et la nuit, les saisons, les formes de la Lune, la météo
+emoji: 🌙
+couleur: "#5c4fc4"
+cycle: graines
+age: 7 ans et +
+niveau: Éveil (CE1)
+ordre: 401
+version: 1.0.0
+intro:
+  - narrateur: "Un voile gris s'est posé sur le ciel : plus de jour, plus de nuit, plus de saisons. Les habitants ne savent plus quand se lever."
+  - zero: "Moi je me lève quand j'ai faim. C'est très précis."
+  - mia: "On va rallumer le ciel, étoile après étoile."
+
+lecons:
+  - id: jour-et-nuit
+    titre: "Le jour et la nuit"
+    objectif: J'explique l'alternance du jour et de la nuit par la rotation de la Terre.
+    mots: [rotation, jour, nuit, axe]
+    etapes:
+      - dialogue:
+          - zero: "Le Soleil se lève, traverse le ciel et se couche : c'est donc lui qui tourne autour de nous !"
+          - neo: "C'est ce qu'on croyait pendant longtemps. En fait, c'est la Terre qui **tourne sur elle-même**, comme une toupie, en 24 heures."
+      - texte: |
+          La Terre tourne sur elle-même autour d'un **axe** (de l'ouest vers l'est) en **24 heures** : c'est la **rotation**.
+          À chaque instant, la moitié de la Terre tournée vers le Soleil est **éclairée** (c'est le **jour**), l'autre moitié est dans l'ombre (c'est la **nuit**).
+          Quand il fait jour en France, il fait nuit en Australie, de l'autre côté de la Terre.
+      - experience:
+          titre: La Terre et la lampe
+          securite: vert
+          materiel: ["une lampe de poche (le Soleil)", "un ballon ou une orange (la Terre)", "un autocollant (ta maison)"]
+          etapes:
+            - "Dans une pièce sombre, éclaire le ballon avec la lampe immobile."
+            - "Colle l'autocollant sur le ballon et fais tourner lentement le ballon sur lui-même."
+            - "Regarde quand l'autocollant est dans la lumière, puis dans l'ombre."
+          observation: "L'autocollant passe tour à tour dans la partie éclairée (le jour) et dans la partie sombre (la nuit)."
+          explication: "La lampe ne bouge pas : c'est la rotation du ballon qui crée l'alternance jour/nuit, comme la Terre en 24 heures."
+      - retiens: "La Terre tourne sur elle-même en 24 h : la moitié face au Soleil vit le jour, l'autre la nuit."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pourquoi y a-t-il le jour et la nuit ?", "parce que la Terre tourne sur elle-même", "parce que le Soleil s'éteint la nuit", "parce que la Lune cache le Soleil"], ["Combien de temps la Terre met-elle pour faire un tour sur elle-même ?", "24 heures", "1 an", "1 mois"], ["Quand il est midi en France, en Australie il est…", "la nuit", "aussi midi", "le matin pile à la même heure"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le Soleil tourne autour de la Terre en 24 heures.", false], ["La moitié de la Terre est toujours éclairée par le Soleil.", true], ["La nuit, le Soleil continue de briller de l'autre côté de la Terre.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "C'est la Terre qui tourne sur elle-même ; le Soleil brille toujours."
+      - type: nombre
+        vars: { j: [2, 3, 7] }
+        enonce: "Combien d'heures dans {{j}} jours ?"
+        reponse: "24*j"
+        unite: h
+        correction: "24 × {{j}} = {{24*j}} heures."
+
+  - id: les-saisons
+    titre: "Les quatre saisons"
+    objectif: Je reconnais les saisons et leurs caractéristiques.
+    mots: [printemps, été, automne, hiver, durée du jour]
+    etapes:
+      - texte: |
+          En France, l'année compte **4 saisons** de 3 mois environ : le **printemps** (21 mars), l'**été** (21 juin), l'**automne** (22-23 septembre), l'**hiver** (21 décembre).
+          - En **été**, les jours sont **longs**, le Soleil monte **haut** dans le ciel, il fait chaud.
+          - En **hiver**, les jours sont **courts**, le Soleil reste **bas**, il fait froid.
+          - Dans l'**hémisphère Sud** (Australie, Argentine), c'est l'inverse : Noël tombe en été !
+          (On comprendra le **pourquoi** des saisons dans le Système solaire.)
+      - retiens: "Printemps, été, automne, hiver. Été : jours longs, Soleil haut. Hiver : jours courts, Soleil bas. Inversé dans l'hémisphère Sud."
+    exercices:
+      - type: ordre
+        vars: { t: [["le printemps", "l'été", "l'automne", "l'hiver"]] }
+        enonce: "Range les saisons dans l'ordre, à partir du printemps."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Printemps, été, automne, hiver."
+      - type: qcm
+        vars: { t: [["les feuilles tombent des arbres", "l'automne", "le printemps", "l'été"], ["les jours sont les plus longs", "l'été", "l'hiver", "l'automne"], ["les bourgeons et les fleurs apparaissent", "le printemps", "l'automne", "l'hiver"], ["les jours sont les plus courts", "l'hiver", "l'été", "le printemps"]] }
+        enonce: "En France, quelle saison : {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["En Australie, Noël tombe en été.", true], ["En hiver, le Soleil monte très haut dans le ciel.", false], ["L'été commence vers le 21 juin en France.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "En hiver, le Soleil reste bas ; dans l'hémisphère Sud, les saisons sont inversées."
+
+  - id: formes-de-la-lune
+    titre: "Les formes de la Lune"
+    objectif: Je reconnais les phases de la Lune.
+    mots: [Lune, phase, pleine lune, nouvelle lune, croissant, quartier]
+    etapes:
+      - texte: |
+          La **Lune** ne produit pas de lumière : elle est éclairée par le **Soleil**. Elle tourne autour de la Terre en environ **29 jours et demi** (d'une pleine lune à la suivante).
+          Selon sa position, on en voit une partie éclairée plus ou moins grande : ce sont les **phases** :
+          **nouvelle lune** (invisible) → premier **croissant** → **premier quartier** (moitié) → **pleine lune** (disque entier) → **dernier quartier** → dernier croissant → nouvelle lune.
+          Astuce (hémisphère Nord) : si la Lune a la forme d'un **p** (bosse à droite), elle grandit (« **p**remier ») ; si elle a la forme d'un **d** (bosse à gauche), elle décroît (« **d**ernier »).
+      - retiens: "La Lune est éclairée par le Soleil. Phases : nouvelle lune, croissant, premier quartier, pleine lune, dernier quartier… en 29,5 jours."
+    exercices:
+      - type: ordre
+        vars: { t: [["la nouvelle lune", "le premier croissant", "le premier quartier", "la pleine lune", "le dernier quartier"]] }
+        enonce: "Remets les phases de la Lune dans l'ordre."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Nouvelle lune, premier croissant, premier quartier, pleine lune, dernier quartier."
+      - type: qcm
+        vars: { t: [["D'où vient la lumière de la Lune ?", "du Soleil, qu'elle renvoie", "elle produit sa lumière", "des étoiles"], ["Combien de temps entre deux pleines lunes ?", "environ 29 jours et demi", "7 jours", "1 an"], ["Comment s'appelle la phase où l'on voit le disque entier ?", "la pleine lune", "la nouvelle lune", "le premier quartier"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["La Lune change vraiment de forme.", false], ["À la nouvelle lune, on ne voit presque pas la Lune.", true], ["La Lune brille par elle-même.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La Lune est toujours une boule : on voit seulement une partie plus ou moins grande de sa face éclairée."
+
+  - id: la-meteo
+    titre: "La météo"
+    objectif: Je décris le temps qu'il fait et je connais les instruments de la météo.
+    mots: [météo, nuage, précipitations, vent, thermomètre, pluviomètre, girouette]
+    etapes:
+      - texte: |
+          La **météo** décrit le temps qu'il fait à un endroit et à un moment : température, nuages, pluie, vent.
+          Instruments : **thermomètre** (température), **pluviomètre** (quantité de pluie, en mm), **girouette** (direction du vent), **anémomètre** (vitesse du vent), **baromètre** (pression de l'air).
+          Les **météorologues** utilisent des stations, des satellites et des ordinateurs pour faire des **prévisions** (de plus en plus fiables, mais jamais certaines à 100 %).
+      - vraie_vie:
+          titre: Ma station météo
+          texte: "Pendant une semaine, note chaque jour à la même heure : la température (thermomètre), l'état du ciel (☀️ ⛅ ☁️ 🌧️), le vent (fort, faible). Fais un tableau, puis un graphique des températures."
+          materiel: un thermomètre d'extérieur, un carnet
+      - retiens: "Thermomètre (température), pluviomètre (pluie), girouette (direction du vent), anémomètre (vitesse du vent), baromètre (pression)."
+    exercices:
+      - type: qcm
+        vars: { t: [["la quantité de pluie tombée", "un pluviomètre", "un thermomètre", "une girouette"], ["la direction du vent", "une girouette", "un pluviomètre", "un baromètre"], ["la vitesse du vent", "un anémomètre", "un thermomètre", "un pluviomètre"], ["la température de l'air", "un thermomètre", "une girouette", "un anémomètre"]] }
+        enonce: "Quel instrument mesure {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["la pluie", "le vent", "la neige", "la tempête", "la grêle", "la brise"]] }
+        enonce: "Précipitation (de l'eau qui tombe) ou mouvement de l'air ?"
+        categories: ["précipitation", "air en mouvement"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
+        correction: "Pluie, neige, grêle : précipitations. Vent, brise, tempête : de l'air qui bouge."
+      - type: vf
+        vars: { t: [["Une prévision météo est toujours exacte à 100 %.", false], ["Les satellites aident à prévoir la météo.", true], ["La pluie se mesure en millimètres.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les prévisions sont de plus en plus fiables, mais l'atmosphère reste en partie imprévisible."

@@ -43,7 +43,7 @@ export function Boutique({ tab: initial }: { tab?: string }) {
         <Avatar child={child} size={110} humeur="fier" />
         <div>
           <div className="gems-big">💎 {child.gems ?? 0}</div>
-          <p className="small muted">Les gemmes se gagnent en répondant juste : 1 par bonne réponse du premier coup, plus en série, 3 par étoile, 25 par cristal rallumé.</p>
+          <p className="small muted">Les gemmes se gagnent en répondant juste : 1 par bonne réponse du premier coup, plus en série, 3 par étoile, 25 par monde sauvé (Défi du Gardien réussi).</p>
         </div>
       </div>
       <div className="tabs" role="tablist">

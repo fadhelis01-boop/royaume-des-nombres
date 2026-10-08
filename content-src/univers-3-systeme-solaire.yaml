@@ -1,0 +1,163 @@
+id: uni-systeme-solaire
+matiere: univers
+titre: Le Carrousel du Système solaire
+sous_titre: Les planètes, rotation et révolution, les saisons expliquées, phases et éclipses, marées
+emoji: ☄️
+couleur: "#33309a"
+cycle: explorateurs
+age: 10 ans et +
+niveau: Apprenti – Chercheur (CM2 – 5ᵉ)
+ordre: 403
+prerequis: [uni-jardin-de-la-terre]
+version: 1.0.0
+intro:
+  - neo: "Huit planètes, des centaines de lunes, des comètes… et une étoile au centre. Bienvenue dans le carrousel du Soleil."
+  - zero: "Est-ce qu'on peut aller sur Saturne ? Je veux faire du toboggan sur ses anneaux."
+
+lecons:
+  - id: les-planetes
+    titre: "Les huit planètes"
+    objectif: Je range les planètes dans l'ordre et je connais leurs caractéristiques.
+    mots: [planète, planète rocheuse, planète géante, orbite]
+    etapes:
+      - texte: |
+          Autour du **Soleil** tournent **8 planètes**, dans l'ordre : **Mercure, Vénus, Terre, Mars, Jupiter, Saturne, Uranus, Neptune**.
+          Moyen mnémotechnique : « **M**e **V**oici **T**oute **M**ouillée, **J**'ai **S**uivi **U**n **N**uage. »
+          - Les 4 premières sont **rocheuses** (petites, avec un sol solide).
+          - Les 4 dernières sont **géantes** (surtout du gaz ou des glaces, pas de sol où se poser) ; elles ont toutes des anneaux, Saturne a les plus spectaculaires.
+          **Jupiter** est la plus grosse (plus de 1 000 Terres pourraient y tenir en volume). **Vénus** est la plus chaude (environ 460 °C, à cause de son effet de serre énorme). Pluton est classée depuis 2006 comme **planète naine**.
+      - retiens: "Mercure, Vénus, Terre, Mars (rocheuses) ; Jupiter, Saturne, Uranus, Neptune (géantes). Jupiter la plus grosse, Vénus la plus chaude."
+    exercices:
+      - type: ordre
+        vars: { t: [["Mercure", "Vénus", "la Terre", "Mars", "Jupiter", "Saturne", "Uranus", "Neptune"]] }
+        enonce: "Range les planètes de la plus proche à la plus éloignée du Soleil."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}", "{{t_5}}", "{{t_6}}", "{{t_7}}"]
+        correction: "Me Voici Toute Mouillée, J'ai Suivi Un Nuage."
+      - type: classer
+        vars: { t: [["Mercure", "Jupiter", "Mars", "Neptune"], ["Vénus", "Saturne", "la Terre", "Uranus"]] }
+        enonce: "Planète rocheuse ou planète géante ?"
+        categories: [rocheuse, géante]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les 4 planètes proches du Soleil sont rocheuses ; les 4 lointaines sont géantes."
+      - type: qcm
+        vars: { t: [["Quelle est la plus grosse planète ?", "Jupiter", "Saturne", "la Terre"], ["Quelle est la planète la plus chaude ?", "Vénus", "Mercure", "Mars"], ["Quelle planète est surnommée la planète rouge ?", "Mars", "Vénus", "Jupiter"], ["Que s'est-il passé pour Pluton en 2006 ?", "elle a été classée planète naine", "elle a explosé", "elle est devenue une étoile"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: rotation-revolution
+    titre: "Rotation et révolution"
+    objectif: Je distingue la rotation (le jour) et la révolution (l'année).
+    mots: [rotation, révolution, année bissextile]
+    etapes:
+      - texte: |
+          La Terre fait deux mouvements à la fois :
+          - la **rotation** : elle tourne **sur elle-même** en **24 heures** → le jour et la nuit ;
+          - la **révolution** : elle tourne **autour du Soleil** en **365 jours et environ 6 heures** → une année.
+          Les 6 heures en trop s'accumulent : tous les 4 ans, on ajoute un **29 février** (année **bissextile**, 366 jours).
+          La Terre file sur son orbite à environ **30 km par seconde** !
+      - retiens: "Rotation sur elle-même : 24 h (jour/nuit). Révolution autour du Soleil : 365 j 1/4 (année). Année bissextile tous les 4 ans."
+    exercices:
+      - type: qcm
+        vars: { t: [["La Terre tourne sur elle-même : c'est…", "la rotation", "la révolution", "l'éclipse"], ["La Terre tourne autour du Soleil : c'est…", "la révolution", "la rotation", "la marée"], ["La révolution de la Terre dure…", "environ 365 jours et 6 heures", "24 heures", "29 jours et demi"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["2024 est une année bissextile.", true], ["2023 est une année bissextile.", false], ["La rotation de la Terre provoque l'alternance du jour et de la nuit.", true], ["La Terre est immobile dans l'espace.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une année est bissextile (en règle générale) si son numéro est divisible par 4."
+      - type: nombre
+        vars: { a: [2, 3, 4] }
+        enonce: "Combien de jours y a-t-il en {{a}} années, dont exactement une bissextile ?"
+        reponse: "365*a+1"
+        unite: jours
+        correction: "365 × {{a}} + 1 = {{365*a+1}} jours."
+
+  - id: pourquoi-les-saisons
+    titre: "Pourquoi y a-t-il des saisons ?"
+    objectif: J'explique les saisons par l'inclinaison de l'axe de la Terre.
+    mots: [inclinaison, axe, solstice, équinoxe]
+    etapes:
+      - dialogue:
+          - zero: "C'est facile : en été, la Terre est plus près du Soleil, donc il fait plus chaud !"
+          - neo: "Raté ! La Terre est même au plus près du Soleil… début janvier, en plein hiver chez nous. Et quand c'est l'été en France, c'est l'hiver en Australie, à la même distance du Soleil."
+      - texte: |
+          L'**axe** de rotation de la Terre est **incliné** d'environ **23,4°** et garde toujours la même direction pendant que la Terre tourne autour du Soleil.
+          - Quand l'hémisphère Nord **penche vers le Soleil** (juin) : le Soleil monte **haut**, ses rayons arrivent presque à la verticale et chauffent plus, les jours sont **longs** → **été**.
+          - Six mois plus tard, il **penche à l'opposé** (décembre) : Soleil bas, rayons rasants, jours courts → **hiver**.
+          **Solstices** (21 juin, 21 décembre) : jour le plus long / le plus court. **Équinoxes** (vers le 20 mars et le 22 septembre) : jour et nuit de même durée partout.
+      - retiens: "Saisons = axe incliné de 23,4° (pas la distance au Soleil !). Soleil haut et jours longs en été, bas et courts en hiver."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pourquoi y a-t-il des saisons ?", "parce que l'axe de la Terre est incliné", "parce que la Terre s'approche et s'éloigne beaucoup du Soleil", "parce que le Soleil change de puissance"], ["De combien l'axe de la Terre est-il incliné ?", "environ 23,4°", "90°", "0°"], ["Que se passe-t-il au solstice de juin dans l'hémisphère Nord ?", "c'est le jour le plus long", "c'est le jour le plus court", "jour et nuit durent pareil"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["En été, la Terre est beaucoup plus proche du Soleil qu'en hiver.", false], ["Aux équinoxes, le jour et la nuit durent environ 12 heures partout.", true], ["Quand c'est l'été en France, c'est l'hiver en Argentine.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La Terre est au plus près du Soleil début janvier : la distance n'explique pas les saisons."
+      - type: qcm
+        vars: { t: [["vers le 21 juin", "solstice d'été (hémisphère Nord)", "équinoxe de printemps", "solstice d'hiver"], ["vers le 21 décembre", "solstice d'hiver (hémisphère Nord)", "solstice d'été", "équinoxe d'automne"], ["vers le 20 mars", "équinoxe de printemps", "solstice d'hiver", "solstice d'été"]] }
+        enonce: "Quel événement {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+
+  - id: phases-et-eclipses
+    titre: "Phases de la Lune et éclipses"
+    objectif: J'explique les phases de la Lune et les éclipses.
+    mots: [phase, éclipse de Soleil, éclipse de Lune, alignement]
+    etapes:
+      - texte: |
+          La Lune tourne autour de la Terre en environ un mois. Une moitié de la Lune est **toujours** éclairée par le Soleil ; selon sa position, nous voyons une **portion plus ou moins grande** de cette moitié éclairée : ce sont les **phases**.
+          - **Éclipse de Soleil** : la **Lune passe entre le Soleil et la Terre** et cache le Soleil (ça n'arrive qu'à la **nouvelle lune**).
+          - **Éclipse de Lune** : la **Terre passe entre le Soleil et la Lune** ; la Lune est dans l'ombre de la Terre et prend une couleur rouge-orangé (à la **pleine lune**).
+          Il n'y a pas d'éclipse chaque mois, car l'orbite de la Lune est légèrement inclinée.
+      - retiens: "Phases : on voit plus ou moins la moitié éclairée. Éclipse de Soleil : Lune entre Soleil et Terre (nouvelle lune). Éclipse de Lune : Terre entre Soleil et Lune (pleine lune)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pendant une éclipse de Soleil, qui est au milieu ?", "la Lune", "la Terre", "le Soleil"], ["Pendant une éclipse de Lune, qui est au milieu ?", "la Terre", "la Lune", "le Soleil"], ["À quelle phase peut-il y avoir une éclipse de Soleil ?", "à la nouvelle lune", "à la pleine lune", "au premier quartier"], ["De quelle couleur devient souvent la Lune pendant une éclipse totale de Lune ?", "rouge-orangé", "verte", "bleue"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["le Soleil", "la Lune", "la Terre"], ["le Soleil", "la Terre", "la Lune"]] }
+        enonce: "Range ces astres dans l'ordre de l'alignement, en partant du Soleil, pour une éclipse de {{si(t_1=='la Lune','Soleil','Lune')}}."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}}, {{t_1}}, {{t_2}}."
+      - type: vf
+        vars: { t: [["Il y a une éclipse de Soleil chaque mois.", false], ["Une moitié de la Lune est toujours éclairée par le Soleil.", true], ["On peut regarder une éclipse de Lune à l'œil nu sans danger.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'orbite de la Lune est inclinée : les alignements parfaits sont rares."
+
+  - id: gravitation-et-marees
+    titre: "La gravitation et les marées"
+    objectif: Je relie la gravitation au mouvement des astres et aux marées.
+    mots: [gravitation, orbite, marée]
+    etapes:
+      - texte: |
+          Tous les objets qui ont une masse s'**attirent** : c'est la **gravitation**. Plus ils sont massifs et proches, plus l'attraction est forte.
+          - C'est elle qui maintient la Lune autour de la Terre, et les planètes autour du Soleil (qui contient 99,8 % de la masse du Système solaire).
+          - La Lune (et, un peu moins, le Soleil) attire l'eau des océans : le niveau de la mer monte et descend environ **deux fois par jour** : ce sont les **marées**.
+          - Les marées sont les plus fortes (**vives-eaux**) quand le Soleil, la Terre et la Lune sont **alignés** (nouvelle et pleine lune).
+      - retiens: "La gravitation tient les astres en orbite. Les marées viennent surtout de l'attraction de la Lune : deux marées hautes par jour environ."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce qui retient la Lune autour de la Terre ?", "la gravitation", "un câble invisible", "le vent solaire"], ["Quel astre est surtout responsable des marées ?", "la Lune", "Mars", "l'étoile Polaire"], ["Combien de marées hautes environ par jour sur les côtes françaises de l'Atlantique ?", "deux", "une par mois", "dix"], ["Quand les marées sont-elles les plus fortes ?", "quand Soleil, Terre et Lune sont alignés", "quand il pleut", "en été uniquement"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Le Soleil contient presque toute la masse du Système solaire.", true], ["Sans gravitation, les planètes partiraient en ligne droite.", true], ["Les marées sont provoquées par le vent.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les marées viennent de l'attraction de la Lune et du Soleil sur les océans."
+      - type: nombre
+        vars: { h: [6, 12] }
+        enonce: "Entre une marée haute et la marée basse suivante, il s'écoule environ 6 h. Combien de marées hautes en {{h*2}} heures environ ?"
+        reponse: "h/6"
+        correction: "Une marée haute environ toutes les 12 h : {{h/6}}."

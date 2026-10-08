@@ -1,0 +1,98 @@
+# L'histoire de la planète Biologie : la Canopée des Biomes (bible, acte IV).
+prologue:
+  - narrateur: "Sur la Canopée des Biomes poussait l'Arbre-Monde, si grand que ses branches abritaient toutes les formes de vie : des fourmis aux baleines volantes des nuages."
+  - narrateur: "Mais le Grand Neutre est passé. Les feuilles sont devenues grises, les chenilles ne deviennent plus papillons, les oiseaux ont oublié leurs chants."
+  - mia-triste: "C'est ma planète préférée… Tout ce qui vit est une œuvre d'art en mouvement. Et là, plus rien ne bouge."
+  - zero: "On pourrait arroser l'arbre ? Avec un très, très grand arrosoir ?"
+  - neo: "L'arbre ne manque pas d'eau : il manque de gens qui le COMPRENNENT. Chaque secret du vivant que tu découvriras réveillera une branche."
+  - narrateur: "Au pied de l'arbre, une petite voix très lente murmure : « Bon… jour… je… suis… Mousse… »"
+prologue_choix:
+  qui: mia
+  question: "On commence par quoi ?"
+  options:
+    - texte: "Par l'Herbier de Mia : apprendre à observer"
+      suite:
+        - mia-joie: "Mon herbier ! Avec une loupe, un carnet et de la patience, on voit des merveilles."
+    - texte: "Directement dans la Clairière du Vivant"
+      suite:
+        - zero-joie: "En avant ! Je veux voir des lapins !"
+        - mia: "On reviendra à l'Herbier : un vrai biologiste sait d'abord bien regarder."
+
+arcs:
+  - id: biologie-arc-1
+    titre: "Livre I — Le réveil de la Clairière"
+    sous_titre: "Le vivant, les plantes, les animaux, les cycles"
+    final: bio-sous-bois-des-cycles
+    fin:
+      - narrateur: "Les chenilles deviennent papillons, les têtards perdent leur queue, et les premières branches basses de l'Arbre-Monde reverdissent."
+      - narrateur: "Mousse le lichen sourit, lentement : « Merci… Je… suis… content… »"
+      - narrateur: "Une voix ancienne sort du tronc : c'est l'Ancienne Sève, la Muse de la Canopée. « Il y a longtemps, Hooke et Leeuwenhoek ont regardé le vivant au microscope et découvert un monde invisible. Et toi, qu'aimerais-tu observer de tout près ? »"
+      - neo: "Mais plus haut dans l'arbre, quelque chose brouille les messages des cellules…"
+  - id: biologie-arc-2
+    titre: "Livre II — Le Virus Glitch"
+    sous_titre: "Fonctions du vivant, corps humain, génétique"
+    final: bio-tour-de-l-adn
+    fin:
+      - narrateur: "Repéré par des anticorps parfaitement fabriqués, le Virus Glitch se fige, se désassemble… et disparaît."
+      - narrateur: "L'Ancienne Sève raconte : « Darwin a passé vingt ans à vérifier son idée avant de la publier. Rosalind Franklin a photographié l'ADN avec des rayons X. La science avance avec patience. »"
+      - mia: "Mais au cœur de l'arbre, le Grand Neutre essaie d'effacer la diversité elle-même."
+  - id: biologie-arc-3
+    titre: "Livre III — Le Cœur de l'Arbre-Monde"
+    sous_titre: "La biologie moléculaire et les grands défis"
+    final: bio-coeur-de-l-arbre-monde
+    fin:
+      - narrateur: "Le cœur de l'Arbre-Monde se remet à battre. La sève dorée remonte jusqu'aux plus hautes branches, et des milliers d'espèces sortent de leur sommeil gris."
+      - mia-joie: "Tu as compris le vivant, de la graine jusqu'à l'ADN. Et tu sais aussi qu'avec ce savoir viennent des choix à faire, ensemble."
+      - zero: "Et j'ai appris que je suis fait de 30 000 milliards de cellules. Ça fait beaucoup de Zéros !"
+
+chapitres:
+  bio-clairiere-du-vivant:
+    titre: "Mousse, le lichen très lent"
+    objet: "la première fleur de la Clairière"
+    avant:
+      - narrateur: "Mousse, un lichen couvert de gris, murmure : « Plus… personne… ne sait… ce qui… est vivant… »"
+      - mia: "Un caillou, une graine, une fourmi, le feu… on va trier tout ça."
+    apres:
+      - narrateur: "Une fleur s'ouvre au milieu de la Clairière, puis une deuxième. Mousse reprend une jolie couleur vert-de-gris."
+  bio-sous-bois-des-cycles:
+    titre: "Le Sous-bois figé"
+    objet: "le grand cycle du Sous-bois"
+    avant:
+      - zero-surprise: "Une chenille qui ne devient jamais papillon ? Elle doit s'ennuyer à mourir !"
+    apres:
+      - narrateur: "Un papillon sort de sa chrysalide, une grenouille saute dans la mare : le cycle de la vie tourne de nouveau."
+  bio-jardin-des-fonctions:
+    titre: "Le Jardin des Fonctions"
+    objet: "la ruche dorée"
+    avant:
+      - neo: "Comment une plante fabrique-t-elle du bois avec de l'air ? C'est l'une des plus belles énigmes du vivant."
+    apres:
+      - mia: "Photosynthèse, respiration, digestion : tu as compris comment le vivant fabrique et utilise son énergie."
+  bio-palais-du-corps:
+    titre: "Le Palais du Corps"
+    objet: "le cœur du Palais"
+    avant:
+      - narrateur: "Un palais étrange se dresse sur une branche : ses salles ressemblent à l'intérieur d'un corps humain."
+    apres:
+      - zero-fier: "Je sais maintenant que mon sang n'est pas bleu. Et que dormir, c'est apprendre. Je vais beaucoup apprendre ce soir."
+  bio-tour-de-l-adn:
+    titre: "La Tour de l'ADN"
+    objet: "l'hélice de cristal"
+    avant:
+      - narrateur: "Au sommet d'une tour en double hélice, le Virus Glitch copie de travers les messages des cellules."
+    apres:
+      - neo: "Gènes, allèles, évolution, vaccins : le Virus Glitch n'a plus de secret pour toi."
+  bio-noyau-du-vivant:
+    titre: "Le Noyau du Vivant"
+    objet: "le ribosome d'or"
+    avant:
+      - mia: "Entrons au cœur d'une cellule, là où l'ADN devient protéine."
+    apres:
+      - narrateur: "Les messages des cellules circulent de nouveau sans erreur : A, U, G, C, comme une musique."
+  bio-coeur-de-l-arbre-monde:
+    titre: "Le Cœur de l'Arbre-Monde"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "Au cœur du tronc, le Grand Neutre veut rendre toutes les espèces identiques."
+    apres:
+      - narrateur: "La diversité revient, foisonnante. Le Grand Neutre recule, incapable de supporter autant de différences."

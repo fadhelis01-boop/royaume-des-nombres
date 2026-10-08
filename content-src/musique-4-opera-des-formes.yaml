@@ -1,0 +1,181 @@
+id: mu-opera-des-formes
+matiere: musique
+titre: L'Opéra des Formes
+sous_titre: Tonalités et armures, accords I-IV-V, formes musicales, l'orchestre, l'histoire de la musique
+emoji: 🎻
+couleur: "#a8520a"
+cycle: explorateurs
+age: 12 ans et +
+niveau: Chercheur (5ᵉ – 3ᵉ)
+ordre: 504
+prerequis: [mu-theatre-des-gammes]
+version: 1.0.0
+intro:
+  - mia: "Dans l'Opéra, la musique raconte des histoires : elle a des chapitres, des personnages (les instruments) et des époques."
+  - zero: "Et des chanteurs qui chantent tellement fort que les verres cassent ?"
+  - neo: "C'est très rare… mais physiquement possible : c'est la résonance !"
+
+lecons:
+  - id: tonalites-et-armures
+    titre: "Tonalités, armures, majeur et mineur relatif"
+    objectif: Je reconnais une tonalité à son armure.
+    mots: [tonalité, armure, relatif mineur, cycle des quintes]
+    etapes:
+      - texte: |
+          L'**armure** est la liste des dièses ou bémols placés au début de chaque ligne de la partition. Elle indique la **tonalité** :
+          | Armure | Majeur | Relatif mineur |
+          |---|---|---|
+          | rien | do majeur | la mineur |
+          | 1 dièse (fa♯) | sol majeur | mi mineur |
+          | 2 dièses | ré majeur | si mineur |
+          | 1 bémol (si♭) | fa majeur | ré mineur |
+          | 2 bémols | si♭ majeur | sol mineur |
+          Chaque tonalité majeure a un **relatif mineur** avec la même armure, qui commence **une tierce mineure plus bas** (do majeur → la mineur).
+          Le **cycle des quintes** : en montant de quinte en quinte (do, sol, ré, la…), on ajoute un dièse à chaque fois.
+      - retiens: "Armure → tonalité. Rien : do majeur / la mineur. 1♯ : sol / mi mineur. 1♭ : fa / ré mineur. Relatif mineur = tierce mineure en dessous."
+    exercices:
+      - type: qcm
+        vars: { t: [["aucune altération", "do majeur", "sol majeur", "fa majeur"], ["un dièse (fa♯)", "sol majeur", "ré majeur", "fa majeur"], ["deux dièses", "ré majeur", "sol majeur", "la majeur"], ["un bémol (si♭)", "fa majeur", "si♭ majeur", "do majeur"]] }
+        enonce: "Une armure avec {{t_0}} indique (en majeur)…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["do majeur", "la mineur", "mi mineur", "ré mineur"], ["sol majeur", "mi mineur", "la mineur", "si mineur"], ["fa majeur", "ré mineur", "la mineur", "sol mineur"], ["ré majeur", "si mineur", "mi mineur", "fa♯ mineur"]] }
+        enonce: "Quel est le relatif mineur de {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}} : même armure, une tierce mineure plus bas."
+      - type: ordre
+        vars: { t: [["do", "sol", "ré", "la", "mi"]] }
+        enonce: "Range ces tonalités majeures selon le cycle des quintes (0, 1, 2, 3, 4 dièses)."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Do (0), sol (1♯), ré (2♯), la (3♯), mi (4♯)."
+
+  - id: accords-i-iv-v
+    titre: "L'enchaînement I – IV – V – I"
+    objectif: Je reconnais les accords principaux d'une tonalité.
+    mots: [degré, tonique, sous-dominante, dominante, cadence]
+    etapes:
+      - texte: |
+          Dans une gamme, on numérote les notes en chiffres romains : **degrés**. Sur chaque degré, on peut construire un accord.
+          Les trois accords les plus importants :
+          - **I** = **tonique** (repos) : en do majeur, do-mi-sol ;
+          - **IV** = **sous-dominante** : fa-la-do ;
+          - **V** = **dominante** (tension, envie de revenir au I) : sol-si-ré.
+          L'enchaînement **I – IV – V – I** est la base de milliers de chansons (blues, rock, comptines). Le passage **V → I** est une **cadence parfaite** : on entend « la fin ».
+      - visuel:
+          type: son
+          notes: "[Do4 Mi4 Sol4]:2 [Fa4 La4 Do5]:2 [Sol4 Si4 Ré5]:2 [Do4 Mi4 Sol4]:4"
+          tempo: 90
+          etiquette: "Écouter I – IV – V – I en do majeur"
+      - retiens: "I tonique (repos), IV sous-dominante, V dominante (tension). V → I = cadence parfaite. En do : do, fa, sol."
+    exercices:
+      - type: qcm
+        vars: { t: [["l'accord I", "do-mi-sol", "fa-la-do", "sol-si-ré"], ["l'accord IV", "fa-la-do", "do-mi-sol", "la-do-mi"], ["l'accord V", "sol-si-ré", "fa-la-do", "mi-sol-si"]] }
+        enonce: "En do majeur, quelles notes forment {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Comment s'appelle l'accord du Vᵉ degré ?", "la dominante", "la tonique", "la sous-dominante"], ["Quel enchaînement donne une impression de fin ?", "V → I (cadence parfaite)", "I → V", "IV → IV"], ["Sur quel degré est construit l'accord de repos ?", "le Iᵉʳ (la tonique)", "le Vᵉ", "le VIIᵉ"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["[Sol4 Si4 Ré5]:2 [Do4 Mi4 Sol4]:4", "on entend une fin (cadence parfaite)", "on entend une question en suspens"], ["[Do4 Mi4 Sol4]:2 [Sol4 Si4 Ré5]:4", "on entend une question en suspens", "on entend une fin (cadence parfaite)"]] }
+        enonce: "Écoute ces deux accords. Quelle impression donnent-ils ?"
+        visuel: { type: son, notes: "{{t_0}}", tempo: 90 }
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}} : terminer sur le V laisse en suspens, finir V → I rassure."
+
+  - id: formes-musicales
+    titre: "Les formes musicales"
+    objectif: Je reconnais la structure d'un morceau.
+    mots: [forme, couplet, refrain, ABA, rondo, thème, variation]
+    etapes:
+      - texte: |
+          Un morceau est construit comme une histoire, avec des parties qu'on nomme par des lettres :
+          - **couplet / refrain** : le refrain revient (même texte, même musique), les couplets changent (chansons) ;
+          - **ABA** : une partie, une partie contrastée, puis le retour de la première ;
+          - **rondo** : A B A C A… le thème A revient comme un refrain ;
+          - **thème et variations** : un thème, puis plusieurs versions transformées (Mozart, *Ah ! vous dirai-je, maman*).
+      - retiens: "Couplet/refrain, ABA, rondo (ABACA), thème et variations. On repère ce qui revient."
+    exercices:
+      - type: qcm
+        vars: { t: [["A B A", "forme ABA (ternaire)", "rondo", "thème et variations"], ["A B A C A D A", "rondo", "forme ABA", "couplet sans refrain"], ["thème, variation 1, variation 2, variation 3", "thème et variations", "rondo", "forme ABA"]] }
+        enonce: "Quelle forme : {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Dans une chanson, le refrain revient avec les mêmes paroles.", true], ["Dans un rondo, le thème A ne revient jamais.", false], ["« Ah ! vous dirai-je, maman » a inspiré des variations à Mozart.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Dans un rondo, le thème A revient entre chaque nouvelle partie."
+      - type: qcm
+        enonce: "Écoute : la première et la troisième partie sont-elles pareilles ?"
+        vars: { t: [["Do4 Mi4 Sol4 Mi4 _ La4 Fa4 Ré4 Fa4 _ Do4 Mi4 Sol4 Mi4", "oui : c'est une forme ABA", "non : la troisième partie est nouvelle (ABC)"], ["Do4 Mi4 Sol4 Mi4 _ La4 Fa4 Ré4 Fa4 _ Si3 Ré4 Sol4 Si4", "non : la troisième partie est nouvelle (ABC)", "oui : c'est une forme ABA"]] }
+        visuel: { type: son, notes: "{{t_0}}", tempo: 130 }
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_1}}"
+
+  - id: l-orchestre
+    titre: "L'orchestre symphonique"
+    objectif: Je connais les familles et la disposition de l'orchestre.
+    mots: [orchestre, chef d'orchestre, cordes, bois, cuivres, percussions]
+    etapes:
+      - texte: |
+          Un **orchestre symphonique** réunit souvent 60 à 100 musiciens, dirigés par le **chef d'orchestre** :
+          - **cordes** (les plus nombreuses, devant) : violons, altos, violoncelles, contrebasses ;
+          - **bois** : flûtes, hautbois, clarinettes, bassons (la flûte est un « bois » même en métal : c'est la façon de produire le son qui compte) ;
+          - **cuivres** : cors, trompettes, trombones, tuba (on fait vibrer les lèvres dans une embouchure) ;
+          - **percussions** (au fond) : timbales, grosse caisse, cymbales, triangle…
+          Plus un instrument est **grand**, plus il joue **grave** (contrebasse contre violon, tuba contre trompette).
+      - retiens: "Cordes (devant, nombreuses), bois, cuivres, percussions (au fond). Plus grand = plus grave."
+    exercices:
+      - type: classer
+        vars: { t: [["le violoncelle", "la clarinette", "le trombone", "les timbales"], ["l'alto", "le hautbois", "le cor", "les cymbales"], ["la contrebasse", "le basson", "le tuba", "la grosse caisse"]] }
+        enonce: "Range chaque instrument dans sa famille."
+        categories: [cordes, bois, cuivres, percussions]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
+        correction: "Bois : on souffle avec une anche ou un biseau ; cuivres : les lèvres vibrent dans une embouchure."
+      - type: ordre
+        vars: { t: [["le violon", "l'alto", "le violoncelle", "la contrebasse"]] }
+        enonce: "Range ces cordes de la plus aiguë à la plus grave."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Violon, alto, violoncelle, contrebasse : du plus petit au plus grand."
+      - type: vf
+        vars: { t: [["La flûte traversière fait partie des bois.", true], ["Les percussions sont placées devant le chef d'orchestre.", false], ["Le tuba joue plus grave que la trompette.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les cordes sont devant ; les percussions au fond de l'orchestre."
+
+  - id: histoire-de-la-musique
+    titre: "Un voyage dans l'histoire de la musique"
+    objectif: Je situe les grandes périodes et quelques compositeurs.
+    mots: [baroque, classique, romantique, jazz, période]
+    etapes:
+      - texte: |
+          | Période | Dates (environ) | Compositeurs |
+          |---|---|---|
+          | Moyen Âge | jusqu'à 1400 | Hildegarde de Bingen, chant grégorien |
+          | Renaissance | 1400 – 1600 | Josquin des Prés |
+          | **Baroque** | 1600 – 1750 | **Bach**, Vivaldi (*Les Quatre Saisons*), Haendel |
+          | **Classique** | 1750 – 1820 | **Mozart**, Haydn, le jeune Beethoven |
+          | **Romantique** | 1820 – 1900 | Chopin, Schubert, Clara et Robert Schumann, Verdi |
+          | XXᵉ – XXIᵉ siècle | depuis 1900 | Debussy, Ravel, Stravinsky ; le **jazz** (Louis Armstrong, Duke Ellington), le rock, le rap, les musiques électroniques |
+          Et partout dans le monde, des traditions très riches : raga indien, gamelan indonésien, polyrythmies d'Afrique de l'Ouest, musique arabo-andalouse…
+      - retiens: "Baroque (Bach, Vivaldi), classique (Mozart), romantique (Chopin), XXᵉ (Debussy, jazz…). Chaque culture a sa musique."
+    exercices:
+      - type: ordre
+        vars: { t: [["le Moyen Âge", "la Renaissance", "le baroque", "le classique", "le romantisme"]] }
+        enonce: "Range ces périodes dans l'ordre chronologique."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "Moyen Âge, Renaissance, baroque (1600-1750), classique (1750-1820), romantique (XIXᵉ)."
+      - type: qcm
+        vars: { t: [["Vivaldi (Les Quatre Saisons)", "baroque", "romantique", "jazz"], ["Mozart", "classique", "baroque", "Moyen Âge"], ["Chopin", "romantique", "baroque", "Renaissance"], ["Louis Armstrong", "jazz (XXᵉ siècle)", "baroque", "classique"], ["Jean-Sébastien Bach", "baroque", "romantique", "jazz"]] }
+        enonce: "À quelle période ou quel style appartient {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: vf
+        vars: { t: [["Le jazz est né aux États-Unis au début du XXᵉ siècle.", true], ["Mozart a vécu après Chopin.", false], ["Le gamelan est une musique traditionnelle d'Indonésie.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Mozart (1756-1791) a vécu avant Chopin (1810-1849)."

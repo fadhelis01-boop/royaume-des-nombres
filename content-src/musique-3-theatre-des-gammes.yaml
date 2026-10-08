@@ -1,0 +1,145 @@
+id: mu-theatre-des-gammes
+matiere: musique
+titre: Le Théâtre des Gammes
+sous_titre: Tons et demi-tons, dièses et bémols, gamme majeure, intervalles, accords, mesures, nuances
+emoji: 🎭
+couleur: "#c4610c"
+cycle: explorateurs
+age: 10 ans et +
+niveau: Apprenti (CM2 – 6ᵉ)
+ordre: 503
+prerequis: [mu-rue-des-notes]
+version: 1.0.0
+intro:
+  - narrateur: "Au Théâtre des Gammes, le Titan de Discorde désaccorde les instruments : les notes se cognent et les rythmes trébuchent."
+  - neo: "Pour l'apaiser, il faut comprendre comment les notes s'organisent entre elles."
+
+lecons:
+  - id: tons-et-demi-tons
+    titre: "Tons, demi-tons, dièses et bémols"
+    objectif: Je repère les tons et demi-tons sur un clavier.
+    mots: [ton, demi-ton, dièse, bémol, altération]
+    etapes:
+      - texte: |
+          Sur un clavier, l'écart entre **deux touches voisines** (blanche ou noire) est un **demi-ton**. Deux demi-tons font un **ton**.
+          Entre **mi-fa** et **si-do**, il n'y a pas de touche noire : ce sont des **demi-tons** naturels. Entre les autres notes blanches voisines, il y a un **ton**.
+          Les **altérations** : le **dièse** (♯) monte la note d'un demi-ton ; le **bémol** (♭) la descend d'un demi-ton. La touche noire entre do et ré s'appelle **do♯** ou **ré♭**.
+      - visuel:
+          type: clavier
+          de: Do4
+          a: Do5
+          notes: "Mi4 Fa4 Si4 Do5"
+        legende: "Mi-fa et si-do : des demi-tons naturels (pas de touche noire entre eux)."
+      - retiens: "Demi-ton = touches voisines ; ton = 2 demi-tons. Mi-fa et si-do sont des demi-tons. ♯ monte, ♭ descend d'un demi-ton."
+    exercices:
+      - type: qcm
+        vars: { t: [["do et ré", "un ton", "un demi-ton"], ["mi et fa", "un demi-ton", "un ton"], ["si et do", "un demi-ton", "un ton"], ["sol et la", "un ton", "un demi-ton"], ["fa et sol", "un ton", "un demi-ton"]] }
+        enonce: "Quel est l'écart entre {{t_0}} (notes blanches voisines) ?"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}} : {{t_1}}."
+      - type: qcm
+        vars: { t: [["Que fait un dièse ?", "il monte la note d'un demi-ton", "il descend la note d'un demi-ton", "il double sa durée"], ["Que fait un bémol ?", "il descend la note d'un demi-ton", "il monte la note d'un ton", "il la rend plus forte"], ["Comment appelle-t-on aussi la touche noire entre do et ré ?", "do dièse ou ré bémol", "do bémol", "mi dièse"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["un ton", 2], ["une octave (de do à do)", 12], ["deux tons", 4]] }
+        enonce: "Combien de demi-tons dans {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}} demi-tons."
+
+  - id: gamme-majeure
+    titre: "La gamme majeure"
+    objectif: Je connais la structure de la gamme majeure.
+    mots: [gamme majeure, tonique, degré]
+    etapes:
+      - texte: |
+          Une **gamme majeure** suit toujours le même schéma d'écarts : **ton, ton, demi-ton, ton, ton, ton, demi-ton** (T T ½ T T T ½).
+          La gamme de **do majeur** n'utilise que les touches blanches : do ré mi **fa** sol la si **do** (les demi-tons tombent entre mi-fa et si-do).
+          Pour commencer une gamme majeure sur une autre note (sa **tonique**), il faut ajouter des dièses ou des bémols pour respecter le schéma : **sol majeur** a un **fa♯**, **fa majeur** a un **si♭**.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Do majeur", notes: "Do4 Ré4 Mi4 Fa4 Sol4 La4 Si4 Do5:2", tempo: 110 }, { etiquette: "Sol majeur (avec fa♯)", notes: "Sol4 La4 Si4 Do5 Ré5 Mi5 Fa#5 Sol5:2", tempo: 110 }]
+      - retiens: "Gamme majeure : T T ½ T T T ½. Do majeur : touches blanches. Sol majeur : fa♯. Fa majeur : si♭."
+    exercices:
+      - type: qcm
+        vars: { t: [["Quel est le schéma de la gamme majeure ?", "T T ½ T T T ½", "T ½ T T ½ T T", "½ ½ T T T T T"], ["Quelle altération a la gamme de sol majeur ?", "fa dièse", "si bémol", "aucune"], ["Quelle altération a la gamme de fa majeur ?", "si bémol", "fa dièse", "do dièse"], ["Quelle gamme majeure n'utilise que les touches blanches ?", "do majeur", "sol majeur", "ré majeur"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { t: [["de notes différentes dans une gamme majeure", 7], ["de demi-tons dans le schéma de la gamme majeure", 2], ["de tons dans le schéma de la gamme majeure", 5]] }
+        enonce: "Combien {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Toutes les gammes majeures ont le même schéma de tons et demi-tons.", true], ["La gamme de do majeur contient un fa dièse.", false], ["La tonique est la note de départ de la gamme.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Do majeur : uniquement des notes naturelles (touches blanches)."
+
+  - id: intervalles-et-accords
+    titre: "Intervalles et accords"
+    objectif: Je reconnais quelques intervalles et les accords majeurs et mineurs.
+    mots: [intervalle, tierce, quinte, octave, accord, majeur, mineur]
+    etapes:
+      - texte: |
+          Un **intervalle** est l'écart entre deux notes. On le nomme en comptant les notes, **en incluant les deux** : do-mi = **tierce** (do, ré, mi = 3), do-sol = **quinte** (5), do-do = **octave** (8).
+          Un **accord** est un ensemble de notes jouées **ensemble**. L'accord parfait superpose deux tierces :
+          - **majeur** (lumineux) : do-mi-sol → une **tierce majeure** (4 demi-tons) puis une tierce mineure ;
+          - **mineur** (plus sombre) : do-mi♭-sol → une **tierce mineure** (3 demi-tons) puis une tierce majeure.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Accord de do majeur", notes: "[Do4 Mi4 Sol4]:3" }, { etiquette: "Accord de do mineur", notes: "[Do4 Mib4 Sol4]:3" }]
+        legende: "Écoute : le majeur paraît lumineux, le mineur plus sombre ou mélancolique."
+      - retiens: "Intervalle : on compte les deux notes (do-mi = tierce, do-sol = quinte). Accord majeur : do-mi-sol ; mineur : do-mi♭-sol."
+    exercices:
+      - type: qcm
+        vars: { t: [["do-mi", "une tierce", "une quinte", "une octave"], ["do-sol", "une quinte", "une tierce", "une quarte"], ["do-do (aigu)", "une octave", "une quinte", "une seconde"], ["do-ré", "une seconde", "une tierce", "une quinte"], ["ré-la", "une quinte", "une tierce", "une sixte"]] }
+        enonce: "Quel intervalle entre {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "On compte toutes les notes, en incluant les deux : {{t_1}}."
+      - type: qcm
+        vars: { t: [["Do4 Mi4 Sol4", "majeur", "mineur"], ["Do4 Mib4 Sol4", "mineur", "majeur"], ["Sol4 Si4 Ré5", "majeur", "mineur"], ["La4 Do5 Mi5", "mineur", "majeur"], ["Fa4 La4 Do5", "majeur", "mineur"], ["Ré4 Fa4 La4", "mineur", "majeur"]] }
+        enonce: "Écoute cet accord. Est-il majeur (lumineux) ou mineur (plus sombre) ?"
+        visuel: { type: son, notes: "[{{t_0}}]:3" }
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "C'était un accord {{t_1}}."
+      - type: nombre
+        vars: { t: [["une tierce majeure", 4], ["une tierce mineure", 3], ["une quinte juste", 7], ["une octave", 12]] }
+        enonce: "Combien de demi-tons dans {{t_0}} ?"
+        reponse: "t_1"
+        correction: "{{t_1}} demi-tons."
+
+  - id: mesures-tempo-nuances
+    titre: "Mesures, tempo et nuances"
+    objectif: Je lis une indication de mesure et les nuances d'une partition.
+    mots: [mesure, barre de mesure, chiffrage, crescendo, decrescendo]
+    etapes:
+      - texte: |
+          La musique est découpée en **mesures** par des **barres de mesure**. Le **chiffrage** en début de partition indique combien de temps par mesure :
+          - **2/4** : 2 temps (marche) ; **3/4** : 3 temps (valse : UN-deux-trois) ; **4/4** : 4 temps (le plus courant).
+          Le premier temps de la mesure est souvent **accentué**.
+          **Nuances** : **pp** (très doux), **p**, **mf** (moyennement fort), **f**, **ff** (très fort) ; **crescendo** (<) : de plus en plus fort ; **decrescendo** (>) : de plus en plus doux.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "Une valse (3 temps)", rythme: "X.x.x.X.x.x.X.x.x.", tempo: 120 }, { etiquette: "Une marche (2 temps)", rythme: "X.x.X.x.X.x.X.x.", tempo: 110 }]
+        legende: "Écoute où tombe la frappe forte : tous les 3 temps (valse) ou tous les 2 temps (marche)."
+      - retiens: "2/4, 3/4 (valse), 4/4. Premier temps accentué. pp, p, mf, f, ff ; crescendo = de plus en plus fort."
+    exercices:
+      - type: qcm
+        vars: { t: [["X.x.x.X.x.x.X.x.x.", "3 temps (comme une valse)", "2 temps (comme une marche)", "4 temps"], ["X.x.X.x.X.x.X.x.", "2 temps (comme une marche)", "3 temps (comme une valse)", "4 temps"], ["X.x.x.x.X.x.x.x.", "4 temps", "3 temps (comme une valse)", "2 temps (comme une marche)"]] }
+        enonce: "Écoute : la frappe forte revient tous les combien de temps ?"
+        visuel: { type: son, rythme: "{{t_0}}", tempo: 110 }
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}."
+      - type: ordre
+        vars: { t: [["pp", "p", "mf", "f", "ff"]] }
+        enonce: "Range ces nuances de la plus douce à la plus forte."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "pianissimo, piano, mezzo forte, forte, fortissimo."
+      - type: qcm
+        vars: { t: [["Combien de temps dans une mesure à 3/4 ?", "3", "4", "2"], ["Que signifie « crescendo » ?", "de plus en plus fort", "de plus en plus vite", "de plus en plus aigu"], ["Quelle danse est à 3 temps ?", "la valse", "la marche militaire", "le rock"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"

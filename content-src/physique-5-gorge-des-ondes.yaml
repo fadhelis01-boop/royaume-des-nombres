@@ -1,0 +1,172 @@
+id: ph-gorge-des-ondes
+matiere: physique
+titre: La Gorge des Ondes
+sous_titre: Le son, la lumière, les couleurs, les lentilles, le spectre
+emoji: 🌈
+couleur: "#1c4590"
+cycle: explorateurs
+age: 13 ans et +
+niveau: Chercheur – Ingénieur (4ᵉ – 2nde)
+ordre: 205
+prerequis: [ph-pic-du-mouvement]
+version: 1.0.0
+intro:
+  - narrateur: "Dans la Gorge des Ondes, l'écho ne répond plus et l'arc-en-ciel s'est éteint."
+  - mia: "Le son et la lumière sont deux voyageurs très différents. On va comprendre comment ils se déplacent."
+
+lecons:
+  - id: propagation-du-son
+    titre: "Comment voyage le son"
+    objectif: Je sais que le son a besoin d'un milieu et je calcule une distance avec sa vitesse.
+    mots: [propagation, milieu matériel, vide, écho]
+    etapes:
+      - texte: |
+          Le son est une vibration qui se transmet de proche en proche dans la matière : il a besoin d'un **milieu matériel** (air, eau, solide). Il **ne se propage pas dans le vide** : dans l'espace, une explosion serait silencieuse !
+          Vitesse du son : environ **340 m/s** dans l'air, **1 500 m/s** dans l'eau, plus de **5 000 m/s** dans l'acier.
+          **L'écho** est un son renvoyé par une paroi. On s'en sert pour mesurer des distances (sonar des bateaux, chauves-souris).
+      - exemple:
+          titre: À quelle distance est l'orage ?
+          enonce: "Tu vois l'éclair, puis tu entends le tonnerre 6 secondes plus tard."
+          etapes: ["La lumière arrive presque instantanément ; le son met 6 s.", "$d = v \\times t = 340 \\times 6 = 2\\,040$ m", "L'orage est à environ 2 km (astuce : nombre de secondes ÷ 3 ≈ distance en km)."]
+      - retiens: "Le son a besoin de matière (pas de son dans le vide). Air ≈ 340 m/s, eau ≈ 1 500 m/s. $d = v \\times t$."
+    exercices:
+      - type: nombre
+        vars: { t: [3, 5, 6, 9, 12] }
+        enonce: "Le tonnerre arrive {{t}} s après l'éclair. À quelle distance est l'orage (son : 340 m/s) ?"
+        reponse: "340*t"
+        unite: m
+        correction: "d = 340 × {{t}} = {{340*t}} m."
+      - type: nombre
+        vars: { t: [2, 4, 6] }
+        enonce: "Un sonar envoie un son vers le fond de la mer ; l'écho revient après {{t}} s. Profondeur (son dans l'eau : 1 500 m/s) ?"
+        reponse: "1500*t/2"
+        unite: m
+        correction: "Le son fait l'aller ET le retour : d = 1 500 × {{t}} ÷ 2 = {{1500*t/2}} m."
+      - type: vf
+        vars: { t: [["Dans l'espace, on n'entend pas les explosions.", true], ["Le son va plus vite dans l'air que dans l'eau.", false], ["Les chauves-souris s'orientent grâce à l'écho.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le son va environ 4 fois plus vite dans l'eau que dans l'air."
+
+  - id: frequence-et-decibels
+    titre: "Hauteur et intensité : hertz et décibels"
+    objectif: Je relie la fréquence à la hauteur et je protège mes oreilles.
+    mots: [fréquence, hertz, ultrason, décibel]
+    etapes:
+      - texte: |
+          - La **fréquence** f (en **hertz**, Hz) = nombre de vibrations par seconde. Elle donne la **hauteur** : plus f est grande, plus le son est **aigu**. L'oreille humaine entend de **20 Hz à 20 000 Hz** environ. Au-delà : **ultrasons** (chauves-souris, échographie) ; en dessous : **infrasons**.
+          - L'**intensité** (le volume) se mesure en **décibels** (dB). Conversation ≈ 60 dB ; rue animée ≈ 80 dB ; concert ≈ 105 dB. À partir de **85 dB** de façon prolongée, l'oreille s'abîme ; **120 dB** fait mal. Les dégâts sont **définitifs**.
+      - visuel:
+          type: son
+          sons: [{ etiquette: "100 Hz", freq: 100 }, { etiquette: "440 Hz (le La)", freq: 440 }, { etiquette: "2 000 Hz", freq: 2000 }]
+        legende: "Trois fréquences : du grave à l'aigu."
+      - retiens: "Fréquence (Hz) → hauteur. Audible : 20 à 20 000 Hz. Intensité en dB : danger dès 85 dB longtemps."
+    exercices:
+      - type: qcm
+        vars: { t: [[30, "audible (grave)", "ultrason", "infrason"], [440, "audible", "ultrason", "infrason"], [40000, "ultrason", "audible", "infrason"], [10, "infrason", "audible", "ultrason"]] }
+        enonce: "Un son de {{t_0}} Hz est…"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Audible de 20 à 20 000 Hz environ : {{t_1}}."
+      - type: qcm
+        vars: { t: [[880, 440, "le son A, qui a la plus grande fréquence"], [300, 600, "le son B, qui a la plus grande fréquence"]] }
+        enonce: "Son A : {{t_0}} Hz ; son B : {{t_1}} Hz. Écoute-les : lequel est le plus aigu ?"
+        visuel: { type: son, sons: [{ etiquette: "Son A", freq: "{{t_0}}" }, { etiquette: "Son B", freq: "{{t_1}}" }] }
+        choix: ["{{t_2}}", "{{si(t_2=='le son A, qui a la plus grande fréquence','le son B','le son A')}}", "ils ont la même hauteur"]
+        correction: "{{t_2}}."
+      - type: classer
+        vars: { t: [["une conversation (60 dB)", "un concert au premier rang (110 dB)", "une bibliothèque (30 dB)", "un marteau-piqueur à 1 m (120 dB)"], ["un chuchotement (20 dB)", "des écouteurs à fond pendant des heures (100 dB)", "la pluie (50 dB)", "un pétard près de l'oreille (140 dB)"]] }
+        enonce: "Sans danger ou dangereux pour les oreilles ?"
+        categories: ["sans danger", "dangereux"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Au-delà de 85 dB longtemps, l'oreille s'abîme définitivement : bouchons d'oreilles et volume raisonnable !"
+
+  - id: la-lumiere
+    titre: "La lumière, la plus rapide"
+    objectif: Je connais la vitesse de la lumière et l'année-lumière.
+    mots: [vitesse de la lumière, année-lumière, propagation rectiligne]
+    etapes:
+      - texte: |
+          La lumière n'a **pas besoin de matière** : elle traverse le vide de l'espace. Elle va à environ **300 000 km/s** (3 × 10⁸ m/s), la plus grande vitesse possible.
+          - La lumière du Soleil met environ **8 minutes** pour arriver sur Terre.
+          - Une **année-lumière** est une **distance** (pas une durée !) : la distance parcourue par la lumière en un an, environ **9 500 milliards de km**.
+          Quand tu regardes une étoile, tu vois la lumière qu'elle a envoyée il y a longtemps : tu regardes dans le passé.
+      - retiens: "Lumière : ≈ 300 000 km/s, même dans le vide. L'année-lumière est une distance (≈ 9,5 × 10¹² km)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'une année-lumière ?", "une distance", "une durée", "une vitesse"], ["Combien de temps met la lumière du Soleil pour arriver sur Terre ?", "environ 8 minutes", "environ 8 secondes", "environ 8 heures"], ["La lumière peut-elle traverser le vide ?", "oui", "non", "seulement la nuit"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { s: [1, 2, 5, 10] }
+        enonce: "La lumière parcourt 300 000 km par seconde. Quelle distance (en km) en {{s}} s ?"
+        reponse: "300000*s"
+        unite: km
+        correction: "300 000 × {{s}} = {{300000*s}} km."
+      - type: vf
+        vars: { t: [["On voit l'éclair avant d'entendre le tonnerre parce que la lumière est bien plus rapide que le son.", true], ["Une étoile que l'on voit existe forcément encore aujourd'hui.", false], ["L'année-lumière mesure le temps.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On voit la lumière partie il y a longtemps : l'étoile a pu changer depuis."
+
+  - id: couleurs
+    titre: "Les couleurs de la lumière"
+    objectif: J'explique la décomposition de la lumière blanche et la synthèse des couleurs.
+    mots: [spectre, prisme, synthèse additive, synthèse soustractive]
+    etapes:
+      - texte: |
+          La lumière **blanche** est un mélange de toutes les couleurs. Un **prisme** (ou des gouttes de pluie : l'arc-en-ciel !) la **décompose** : rouge, orange, jaune, vert, bleu, indigo, violet. C'est le **spectre**.
+          - **Synthèse additive** (lumières, écrans) : rouge + vert + bleu = **blanc** ; rouge + vert = **jaune**.
+          - **Synthèse soustractive** (peintures, encres) : chaque pigment **absorbe** des couleurs. Cyan + magenta + jaune ≈ **noir** ; jaune + cyan = vert.
+          Un objet nous paraît rouge parce qu'il **renvoie** le rouge et absorbe les autres couleurs.
+      - histoire:
+          titre: Ibn al-Haytham et Newton
+          texte: "Vers l'an 1000, le savant **Ibn al-Haytham**, au Caire, montre par des expériences que la lumière vient des objets jusqu'à l'œil (et non l'inverse) : son Traité d'optique fonde la méthode expérimentale. En 1666, **Isaac Newton** décompose la lumière blanche avec un prisme, puis la recompose avec un second prisme."
+      - retiens: "Lumière blanche = toutes les couleurs. Lumières : R + V + B = blanc. Peintures : on absorbe des couleurs. Un objet rouge renvoie le rouge."
+    exercices:
+      - type: qcm
+        vars: { t: [["lumière rouge + lumière verte", "jaune", "marron", "violet"], ["lumière rouge + lumière verte + lumière bleue", "blanc", "noir", "marron"], ["lumière rouge + lumière bleue", "magenta", "vert", "jaune"], ["lumière verte + lumière bleue", "cyan", "rouge", "jaune"]] }
+        enonce: "En mélangeant des lumières (synthèse additive) : {{t_0}} = ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["Pourquoi une tomate paraît-elle rouge ?", "elle renvoie la lumière rouge et absorbe les autres", "elle fabrique de la lumière rouge", "elle absorbe le rouge"], ["Que fait un prisme à la lumière blanche ?", "il la décompose en couleurs", "il la rend noire", "il l'arrête complètement"], ["Comment se forme un arc-en-ciel ?", "les gouttes de pluie décomposent la lumière du Soleil", "les nuages sont colorés", "le vent colore l'air"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: ordre
+        vars: { t: [["rouge", "orange", "jaune", "vert", "bleu", "violet"]] }
+        enonce: "Remets les couleurs de l'arc-en-ciel dans l'ordre, en commençant par le rouge."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}", "{{t_5}}"]
+        correction: "Rouge, orange, jaune, vert, bleu, (indigo), violet."
+
+  - id: lentilles-et-oeil
+    titre: "Lentilles, loupe et œil"
+    objectif: Je comprends le rôle d'une lentille convergente.
+    mots: [réfraction, lentille convergente, foyer, image]
+    etapes:
+      - texte: |
+          Quand la lumière passe de l'air à l'eau ou au verre, elle **change de direction** : c'est la **réfraction** (la paille semble « cassée » dans le verre d'eau).
+          Une **lentille convergente** (plus épaisse au centre) fait converger les rayons parallèles en un point : le **foyer**. Utilisations : **loupe**, appareil photo, projecteur, et… ton **œil** (le cristallin est une lentille qui forme l'image sur la rétine).
+          Myopie : l'image se forme avant la rétine → lunettes à lentilles **divergentes**. Hypermétropie : après → lentilles **convergentes**.
+      - attention:
+          texte: "Ne regarde JAMAIS le Soleil, ni à l'œil nu ni avec une loupe, des jumelles ou un télescope : la lentille concentre la lumière et peut brûler la rétine pour toujours."
+          qui: neo
+      - retiens: "Réfraction : la lumière dévie en changeant de milieu. Lentille convergente → foyer. L'œil a une lentille, le cristallin."
+    exercices:
+      - type: qcm
+        vars: { t: [["Pourquoi une paille paraît-elle cassée dans un verre d'eau ?", "la lumière dévie en passant de l'eau à l'air (réfraction)", "l'eau tord la paille", "c'est un reflet"], ["Quelle partie de l'œil joue le rôle de lentille ?", "le cristallin", "la paupière", "le nerf optique"], ["Où se forme l'image chez une personne myope ?", "avant la rétine", "après la rétine", "sur le cristallin"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["On peut regarder le Soleil avec des jumelles si on fait vite.", false], ["Une loupe est une lentille convergente.", true], ["Une lentille convergente est plus épaisse au centre qu'au bord.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Jamais le Soleil à travers une lentille : brûlure définitive de la rétine."
+      - type: classer
+        vars: { t: [["une loupe", "la paille « cassée » dans l'eau", "le reflet dans une vitrine", "un rétroviseur"]] }
+        enonce: "Réfraction (la lumière traverse et dévie) ou réflexion (la lumière rebondit) ?"
+        categories: [réfraction, réflexion]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 0], ["{{t_2}}", 1], ["{{t_3}}", 1]]
+        correction: "Loupe et paille : la lumière traverse (réfraction) ; vitrine et rétroviseur : elle rebondit (réflexion)."

@@ -1,0 +1,151 @@
+id: uni-lunette-de-l-astronome
+matiere: univers
+titre: La Lunette de l'Astronome
+sous_titre: Se repérer, les échelles de l'Univers, lire le ciel, observer sans danger
+emoji: 🧭
+couleur: "#4a3fa0"
+cycle: astuces
+age: 7 ans et +
+niveau: Tous niveaux
+ordre: 400
+version: 1.0.0
+intro:
+  - neo: "Avant d'explorer la Terre et le ciel, on règle nos instruments : la boussole, la lunette… et notre sens des distances."
+  - zero: "Moi je sais : la Lune est à côté. Je l'ai vue derrière l'arbre du jardin !"
+  - mia: "Elle a l'air proche… mais elle est à environ 384 000 km. Les distances du ciel trompent nos yeux."
+
+lecons:
+  - id: points-cardinaux
+    titre: "Les points cardinaux"
+    objectif: Je m'oriente avec le Soleil et la boussole.
+    mots: [nord, sud, est, ouest, boussole]
+    etapes:
+      - texte: |
+          Les quatre **points cardinaux** : **Nord**, **Est**, **Sud**, **Ouest** (dans le sens des aiguilles d'une montre : « **N**e **E**ssaie **S**urtout pas d'**O**ublier »).
+          - Le Soleil se **lève à l'est** et se **couche à l'ouest** (environ). En France, à midi, il est au **sud**.
+          - L'aiguille aimantée d'une **boussole** indique le **nord** (le nord magnétique, proche du nord géographique).
+          - La nuit, dans l'hémisphère Nord, l'**étoile Polaire** indique le nord.
+      - retiens: "N, E, S, O dans le sens des aiguilles. Soleil : lever à l'est, coucher à l'ouest, au sud à midi (en France). La boussole montre le nord."
+    exercices:
+      - type: qcm
+        vars: { t: [["Où se lève le Soleil ?", "à l'est", "à l'ouest", "au nord"], ["Où se couche le Soleil ?", "à l'ouest", "à l'est", "au sud"], ["Que montre l'aiguille d'une boussole ?", "le nord", "le sud", "la maison"], ["En France, où est le Soleil vers midi ?", "au sud", "au nord", "à l'ouest"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: qcm
+        vars: { t: [["le nord", "le sud", "l'est", "l'ouest"], ["l'est", "l'ouest", "le nord", "le sud"], ["le sud", "le nord", "l'ouest", "l'est"]] }
+        enonce: "Je regarde vers {{t_0}}. Qu'y a-t-il dans mon dos ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Dans mon dos : {{t_1}}."
+      - type: ordre
+        vars: { t: [["Nord", "Est", "Sud", "Ouest"]] }
+        enonce: "Range les points cardinaux en tournant dans le sens des aiguilles d'une montre, à partir du nord."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Nord, Est, Sud, Ouest."
+
+  - id: echelles-de-l-univers
+    titre: "Les échelles de l'Univers"
+    objectif: Je compare les grandes distances de l'Univers.
+    mots: [kilomètre, unité astronomique, année-lumière, échelle]
+    etapes:
+      - texte: |
+          | Distance | Valeur approximative |
+          |---|---|
+          | Tour de la Terre | 40 000 km |
+          | Terre → Lune | 384 000 km (environ 30 Terres alignées) |
+          | Terre → Soleil | 150 millions de km = **1 unité astronomique (UA)** |
+          | Soleil → Neptune | 30 UA |
+          | Soleil → étoile la plus proche (Proxima du Centaure) | 4,2 **années-lumière** |
+          | Taille de notre galaxie (Voie lactée) | environ 100 000 années-lumière |
+          Une **année-lumière** est la distance parcourue par la lumière en un an (≈ 9 500 milliards de km).
+      - retiens: "Terre-Lune ≈ 384 000 km ; Terre-Soleil ≈ 150 millions de km (1 UA) ; étoile la plus proche ≈ 4,2 années-lumière."
+    exercices:
+      - type: ordre
+        vars: { t: [["le tour de la Terre", "la distance Terre-Lune", "la distance Terre-Soleil", "la distance jusqu'à l'étoile la plus proche", "la taille de la Voie lactée"]] }
+        enonce: "Range ces distances de la plus petite à la plus grande."
+        items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
+        correction: "40 000 km < 384 000 km < 150 millions de km < 4,2 années-lumière < 100 000 années-lumière."
+      - type: qcm
+        vars: { t: [["la distance Terre-Lune", "environ 384 000 km", "environ 384 km", "environ 384 millions de km"], ["la distance Terre-Soleil", "environ 150 millions de km", "environ 150 000 km", "environ 1 500 km"], ["une unité astronomique (UA)", "la distance moyenne Terre-Soleil", "la taille de la Terre", "une année"]] }
+        enonce: "Que vaut {{t_0}} ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: nombre
+        vars: { v: [100, 1000] }
+        enonce: "Une voiture qui roulerait sans s'arrêter à {{v}} km/h jusqu'à la Lune (384 000 km) mettrait combien d'heures ?"
+        reponse: "384000/v"
+        unite: h
+        correction: "384 000 ÷ {{v}} = {{384000/v}} heures."
+
+  - id: lire-le-ciel
+    titre: "Lire le ciel : constellations et planètes"
+    objectif: Je reconnais quelques constellations et je distingue étoile et planète.
+    mots: [constellation, étoile, planète, Grande Ourse, étoile Polaire]
+    etapes:
+      - texte: |
+          - Une **constellation** est un dessin imaginaire qui relie des étoiles (la **Grande Ourse** et sa « casserole », **Orion** et ses trois étoiles alignées, **Cassiopée** en W). Les étoiles d'une constellation peuvent être très éloignées les unes des autres.
+          - En prolongeant de 5 fois le bord de la casserole de la Grande Ourse, on trouve l'**étoile Polaire**, qui indique le nord.
+          - Une **étoile** produit sa propre lumière et **scintille** souvent ; une **planète** (Vénus, Jupiter, Mars) renvoie la lumière du Soleil, brille d'un éclat plus **fixe** et se déplace lentement parmi les étoiles d'une nuit à l'autre.
+          - Le **Soleil** est une étoile, la plus proche de nous.
+      - vraie_vie:
+          titre: Défi de la nuit étoilée
+          texte: "Par une nuit claire, loin des lumières, avec un adulte, cherche la casserole de la Grande Ourse puis l'étoile Polaire. Repère un point très brillant qui ne scintille pas : c'est peut-être Vénus ou Jupiter !"
+      - retiens: "Constellation = dessin d'étoiles. Grande Ourse → étoile Polaire (nord). Étoile : sa propre lumière ; planète : lumière du Soleil renvoyée."
+    exercices:
+      - type: qcm
+        vars: { t: [["Qu'est-ce qu'une constellation ?", "un dessin imaginaire reliant des étoiles", "une galaxie", "une planète"], ["Quelle étoile indique le nord ?", "l'étoile Polaire", "le Soleil", "Vénus"], ["Pourquoi Vénus brille-t-elle ?", "elle renvoie la lumière du Soleil", "elle produit sa propre lumière", "elle est en feu"], ["Le Soleil est…", "une étoile", "une planète", "une lune"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: vf
+        vars: { t: [["Les étoiles d'une même constellation sont toutes à la même distance de nous.", false], ["Une planète se déplace lentement parmi les étoiles au fil des nuits.", true], ["Le Soleil est une étoile.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une constellation est un alignement vu depuis la Terre : ses étoiles peuvent être très éloignées les unes des autres."
+      - type: classer
+        vars: { t: [["le Soleil", "Mars", "l'étoile Polaire", "Jupiter"], ["Sirius", "Vénus", "Bételgeuse", "Saturne"]] }
+        enonce: "Étoile ou planète ?"
+        categories: [étoile, planète]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Les étoiles produisent leur lumière ; les planètes tournent autour d'une étoile."
+
+  - id: observer-sans-danger
+    titre: "Observer sans danger"
+    objectif: Je connais les règles de sécurité pour observer le ciel.
+    mots: [sécurité, éclipse, lunettes spéciales]
+    etapes:
+      - attention:
+          texte: "Ne regarde JAMAIS le Soleil directement, ni à l'œil nu, ni avec des lunettes de soleil, des jumelles ou un télescope : tu peux perdre la vue définitivement, sans même avoir mal sur le moment."
+          qui: neo
+      - texte: |
+          - Pour une **éclipse de Soleil**, on utilise des **lunettes spéciales éclipse** certifiées, ou on observe une **image projetée** (un trou d'épingle dans un carton).
+          - La **Lune**, les **étoiles** et les **planètes** s'observent sans danger, à l'œil nu, aux jumelles ou au télescope.
+          - On observe loin des lumières de la ville, en laissant à ses yeux **15 à 20 minutes** pour s'habituer au noir.
+      - experience:
+          titre: Le sténopé (image du Soleil sans danger)
+          securite: orange
+          materiel: ["deux cartons blancs", "une épingle"]
+          etapes:
+            - "Perce un tout petit trou au centre du premier carton."
+            - "Dos au Soleil, tiens ce carton au-dessus de ton épaule et place le second carton à environ 1 m derrière, à l'ombre."
+            - "Regarde le second carton (jamais le Soleil !)."
+          observation: "Un petit disque lumineux apparaît sur le second carton : c'est une image du Soleil."
+          explication: "La lumière voyage en ligne droite : en passant par le petit trou, elle forme une image renversée du Soleil. Pendant une éclipse partielle, on y voit le Soleil « croqué »."
+      - retiens: "Jamais le Soleil en direct. Éclipse : lunettes certifiées ou image projetée. Lune et étoiles : sans danger."
+    exercices:
+      - type: vf
+        vars: { t: [["On peut regarder le Soleil avec des lunettes de soleil ordinaires.", false], ["Regarder la Lune au télescope est sans danger.", true], ["Le soleil peut abîmer les yeux sans qu'on ait mal sur le moment.", true], ["On peut regarder le Soleil aux jumelles s'il y a des nuages.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Jamais le Soleil directement : les dégâts sur la rétine sont définitifs."
+      - type: qcm
+        vars: { t: [["Comment observer une éclipse de Soleil sans danger ?", "avec des lunettes éclipse certifiées ou une image projetée", "avec des lunettes de soleil", "en plissant les yeux"], ["Combien de temps laisser ses yeux s'habituer au noir ?", "environ 15 à 20 minutes", "1 seconde", "2 heures"], ["Où observe-t-on le mieux les étoiles ?", "loin des lumières de la ville", "sous un lampadaire", "en plein jour"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_1}}"
+      - type: classer
+        vars: { t: [["regarder la Lune aux jumelles", "regarder le Soleil au télescope", "projeter l'image du Soleil sur un carton", "fixer le Soleil couchant longtemps"]] }
+        enonce: "Sans danger ou dangereux pour les yeux ?"
+        categories: ["sans danger", "dangereux"]
+        mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
+        correction: "Le Soleil ne s'observe jamais directement."
