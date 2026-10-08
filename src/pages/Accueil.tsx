@@ -17,7 +17,7 @@ export function Accueil() {
             <Mascot who="neo" size={130} talking />
           </div>
           <h1>Le Royaume des Nombres</h1>
-          <p className="lead">Apprends les maths en t'amusant, de 7 ans jusqu'aux mathématiques des grands !</p>
+          <p className="lead">Apprends les maths et le français en t'amusant, de 7 ans jusqu'au niveau des grands !</p>
         </div>
         <Bubble who="neo" text="Salut ! Je suis Néo Fibo. Un problème ? Défi accepté !" />
         <Bubble who="mia" text="Moi c'est Mia π. Et si on essayait autrement ? Viens, on va explorer le Royaume ensemble !" side="right" />

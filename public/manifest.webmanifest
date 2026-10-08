@@ -1,7 +1,7 @@
 {
   "name": "Le Royaume des Nombres",
   "short_name": "Royaume Maths",
-  "description": "Apprendre les mathématiques de 7 ans à l'université avec Mia π, Néo Fibo et Zéro.",
+  "description": "Apprendre les mathématiques et le français, de 7 ans à l'université, avec Mia π, Néo Fibo et Zéro.",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
