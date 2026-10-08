@@ -55,6 +55,9 @@ lecons:
           visuel: { type: objets, groupes: ["=a", "=b"], emoji: "🌼", signe: "+" }
           reponse: "a+b"
           correction: "{{a}} + {{b}} = {{a+b}}."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Pendant le goûter : compte les biscuits dans ton assiette, puis ceux qu'on t'en donne en plus. Combien en tout ? Écris le calcul avec le signe + sur un papier."
     exercices:
       - type: nombre
         vars: { a: "1..9", b: "1..9" }
@@ -118,6 +121,13 @@ lecons:
           reponse: "10-a"
           correction: "{{a}} et {{10-a}} sont des amis de 10."
     exercices:
+      - type: colorier
+        vars: { n: "2..8" }
+        enonce: "Colorie {{n}} cases de la boîte de 10. Les cases restées blanches sont les amies de {{n}} pour faire 10 !"
+        n: "n"
+        d: "10"
+        dessin: barre
+        correction: "{{n}} + {{10-n}} = 10 : ce sont des amis de 10 !"
       - type: nombre
         vars: { a: "0..10" }
         enonce: "Quel est l'ami de 10 du nombre {{a}} ?"
@@ -249,7 +259,24 @@ lecons:
           visuel: { type: droite, min: 0, max: 20, pas: 1, etiquettes: [0, 5, 10, 15, 20], sauts: [{ de: "=a", a: 10, label: "+{{10-a}}" }, { de: 10, a: "=a+b", label: "+{{a+b-10}}" }] }
           reponse: "a+b"
           correction: "{{a}} + {{10-a}} = 10, puis 10 + {{a+b-10}} = {{a+b}}."
+      - explique:
+          texte: "Comment as-tu calculé 8 + 5 ?"
+          qui: neo
+          choix:
+            - { texte: "8 + 2 = 10, puis 10 + 3 = 13", ok: true, retour: "Parfait : tu es passé par 10, c'est la méthode des champions !" }
+            - { texte: "J'ai compté sur mes doigts à partir de 8 : 9, 10, 11, 12, 13", ok: true, retour: "Ça marche ! Essaie la prochaine fois de passer par 10 : c'est encore plus rapide." }
+            - { texte: "8 + 5, ça fait 85", ok: false, retour: "Oups ! On ne colle pas les chiffres : on ajoute 5 à 8. Essaie avec la grenouille !" }
     exercices:
+      - type: sauts
+        vars: { a: "5..9", b: "3..9" }
+        si: "a + b > 10"
+        enonce: "Calcule {{a}} + {{b}} : fais d'abord sauter la grenouille jusqu'à 10, puis le reste."
+        depart: "a"
+        cible: "a+b"
+        min: 0
+        max: 20
+        sauts_permis: [1, 2, 3, 4, 5]
+        correction: "{{a}} + {{10-a}} = 10, puis + {{a+b-10}} = {{a+b}}."
       - type: nombre
         vars: { a: "5..9", b: "3..9" }
         si: "a + b > 10"
@@ -401,6 +428,16 @@ lecons:
           correction: "Unités : {{a%10}} + {{b%10}} = {{a%10+b%10}}, j'écris {{(a+b)%10}} et je retiens 1. Dizaines : 1 + {{ent(a/10)}} + {{ent(b/10)}} = {{ent((a+b)/10)}}. Résultat : {{a+b}}."
     exercices:
       - type: nombre
+        vars: { a: "25..69", b: "15..29" }
+        si: "a%10 + b%10 >= 10"
+        enonce: "$ {{a}} + {{b}} = ?$"
+        reponse: "a+b"
+        niveau: 2
+        erreurs:
+          - { valeur: "a+b-10", message: "Tu as oublié la RETENUE ! {{a%10}} + {{b%10}} = {{a%10+b%10}} : on écrit {{(a+b)%10}} et on retient 1 dizaine." }
+          - { valeur: "(ent(a/10)+ent(b/10))*100 + (a%10+b%10)", message: "Tu as écrit {{a%10+b%10}} en entier dans la colonne des unités. On n'écrit que {{(a+b)%10}}, et la dizaine part en retenue !" }
+        correction: "{{a}} + {{b}} = {{a+b}}."
+      - type: nombre
         vars: { a: "15..79", b: "15..79" }
         si: "a%10 + b%10 >= 10"
         enonce: "$ {{a}} + {{b}} = ?$"
@@ -464,6 +501,15 @@ lecons:
           reponse: "a-b"
           correction: "On casse une dizaine : {{a%10+10}} − {{b%10}} = {{(a%10+10)-b%10}} ; puis {{ent(a/10)-1}} − {{ent(b/10)}} = {{ent(a/10)-1-ent(b/10)}}. Résultat {{a-b}} (vérif : {{a-b}} + {{b}} = {{a}})."
     exercices:
+      - type: nombre
+        vars: { a: "31..98", b: "12..29" }
+        si: "a%10 < b%10 && b < a"
+        enonce: "$ {{a}} - {{b}} = ?$"
+        reponse: "a-b"
+        niveau: 2
+        erreurs:
+          - { valeur: "(ent(a/10)-ent(b/10))*10 + (b%10 - a%10)", message: "Piège classique : tu as fait {{b%10}} − {{a%10}} au lieu de {{a%10}} − {{b%10}}. Quand le chiffre du haut est trop petit, on CASSE une dizaine : {{a%10+10}} − {{b%10}}." }
+        correction: "{{a}} − {{b}} = {{a-b}}."
       - type: nombre
         vars: { a: "31..99", b: "11..29" }
         si: "b < a"
@@ -529,6 +575,15 @@ lecons:
           indice: "+ {{k}}, c'est + {{k+1}} − 1."
           correction: "{{a}} + {{k+1}} = {{a+k+1}}, puis − 1 = {{a+k}}."
     exercices:
+      - type: nombre
+        vars: { a: "21..89", k: [9, 19, 29] }
+        enonce: "Calcule de tête : $ {{a}} + {{k}}$"
+        reponse: "a+k"
+        niveau: 2
+        erreurs:
+          - { valeur: "a+k+1", message: "Tu as ajouté {{k+1}}… mais il fallait ajouter {{k}} : n'oublie pas d'enlever 1 à la fin !" }
+          - { valeur: "a+k+2", message: "Tu as ajouté 1 au lieu de l'enlever : + {{k}} = + {{k+1}} − 1." }
+        correction: "{{a}} + {{k+1}} − 1 = {{a+k}}."
       - type: nombre
         vars: { a: "21..89", k: [9, 19, 29, 39] }
         enonce: "$ {{a}} + {{k}} = ?$"

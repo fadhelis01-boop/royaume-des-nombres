@@ -43,7 +43,17 @@ lecons:
           enonce: "{{p*q}} bonbons pour {{p}} enfants. Combien chacun ?"
           reponse: "q"
           correction: "{{p}} × {{q}} = {{p*q}}, donc {{p*q}} ÷ {{p}} = {{q}}."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Au goûter, partage équitablement des fruits secs, des raisins ou des biscuits entre les personnes de la famille. Chacun en a-t-il autant ? Reste-t-il quelque chose ?"
     exercices:
+      - type: partage
+        vars: { p: "2..4", q: "2..5" }
+        enonce: "Partage les {{p*q}} poissons entre les {{p}} castors : touche les paniers !"
+        total: "p*q"
+        parts: "p"
+        emoji: "🐟"
+        correction: "{{p*q}} ÷ {{p}} = {{q}} poissons chacun."
       - type: nombre
         vars: { p: "2..9", q: "2..9" }
         enonce: "$ {{p*q}} \\div {{p}} = ?$"
@@ -154,6 +164,15 @@ lecons:
             - { avant: "Il en reste", reponse: "r", apres: "" }
           correction: "{{d}} × {{q}} = {{d*q}}, et {{d*q+r}} − {{d*q}} = {{r}}."
     exercices:
+      - type: nombre
+        vars: { p: [4, 5], n: "17..39" }
+        si: "n % p != 0"
+        enonce: "{{n}} enfants partent en sortie, {{p}} par voiture. Combien de voitures faut-il ?"
+        reponse: "ceil(n/p)"
+        niveau: 2
+        erreurs:
+          - { valeur: "ent(n/p)", message: "Et les enfants qui restent ({{n%p}}) ? Ils ne peuvent pas rester sur le trottoir : il faut une voiture de plus !" }
+        correction: "{{n}} = {{p}} × {{ent(n/p)}} + {{n%p}} : il faut {{ceil(n/p)}} voitures."
       - type: champs
         vars: { d: "2..9", q: "2..9", r: "1..8" }
         si: "r < d"

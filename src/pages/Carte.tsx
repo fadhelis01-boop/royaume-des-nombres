@@ -25,8 +25,18 @@ export function Carte() {
   const dailyDone = child.daily?.day === dayKey() && child.daily.done;
   const greet = greeting(child.name, child.streak);
 
+  const crystals = child.crystals ?? [];
   return (
     <div className="page carte">
+      {!child.story?.prologue && (
+        <button className="story-banner" onClick={() => go("/aventure/prologue")}>
+          <span className="story-banner-icon">📖</span>
+          <span>
+            <strong>L'aventure commence !</strong>
+            <small>Le Royaume des Nombres s'éteint… Écoute l'histoire.</small>
+          </span>
+        </button>
+      )}
       <Bubble who={child.avatar} text={greet} />
 
       <div className="quick">
@@ -51,6 +61,20 @@ export function Carte() {
             </span>
           </button>
         ) : null}
+        <button className="quick-card" onClick={() => go("/echauffement")}>
+          <span className="qc-emoji">🏃</span>
+          <span>
+            <strong>Échauffement</strong>
+            <small>2 minutes de calcul rapide</small>
+          </span>
+        </button>
+        <button className="quick-card" onClick={() => go("/aventure")}>
+          <span className="qc-emoji">📖</span>
+          <span>
+            <strong>L'aventure</strong>
+            <small>💎 {crystals.length} cristal{crystals.length > 1 ? "aux" : ""} rallumé{crystals.length > 1 ? "s" : ""}</small>
+          </span>
+        </button>
         <button className={`quick-card ${dailyDone ? "done" : ""}`} onClick={() => go("/defi-du-jour")}>
           <span className="qc-emoji">{dailyDone ? "✅" : "🎁"}</span>
           <span>
@@ -128,7 +152,7 @@ function WorldCard({ w, side }: { w: World; side: "left" | "right" }) {
     >
       <div className="wc-art" style={w.decor ? { backgroundImage: `url(${w.decor})` } : undefined}>
         <span className="wc-emoji">{unlocked ? w.emoji : "🔒"}</span>
-        {complete && <span className="wc-crown">👑</span>}
+        {child.crystals?.includes(w.id) ? <span className="wc-crown">💎</span> : complete && <span className="wc-crown">👑</span>}
       </div>
       <div className="wc-body">
         <strong>{w.titre}</strong>

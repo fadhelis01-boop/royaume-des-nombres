@@ -55,6 +55,10 @@ lecons:
           choix: ["{{o_1}}", "{{si(o_1=='cm','km','cm')}}", "{{si(o_1=='m','mm','m')}}", "{{si(o_1=='mm','km','mm')}}"]
           si: "o_1 != ''"
           correction: "Pour {{o_0}}, on utilise les {{o_1}}."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Avec une règle ou un mètre ruban, mesure ta main, ton cahier et ton lit. Commence bien au 0 ! Range-les du plus court au plus long."
+          materiel: "une règle ou un mètre ruban"
     exercices:
       - type: nombre
         vars: { m: "2..9" }
@@ -127,6 +131,10 @@ lecons:
           reponse: "1000*k"
           unite: g
           correction: "{{k}} × 1 000 = {{nb(1000*k)}} g."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Avec une balance de cuisine, pèse une pomme, un livre et ta trousse. Devine d'abord, puis vérifie : qui est le plus lourd ?"
+          materiel: "une balance de cuisine"
     exercices:
       - type: nombre
         vars: { k: "2..9" }
@@ -239,6 +247,12 @@ lecons:
           unite: €
           correction: "De {{p}} à {{b}} : {{b-p}} €."
     exercices:
+      - type: payer
+        vars: { e: "3..18", c: [0, 0, 50, 20] }
+        enonce: "Paie exactement {{dec(e + c/100, 2)}} € avec tes pièces et billets."
+        cible: "e + c/100"
+        pieces: [0.1, 0.2, 0.5, 1, 2, 5, 10]
+        correction: "Il fallait exactement {{dec(e + c/100, 2)}} € : commence par les plus gros billets, puis complète avec les pièces."
       - type: nombre
         vars: { a: [1, 2, 5, 10], b: [1, 2, 5, 10, 20], c: [0.5, 0.2, 1, 2] }
         enonce: "Combien d'argent en tout ?"
@@ -303,6 +317,12 @@ lecons:
           choix: ["{{heure(h,m)}}", "{{heure(m/5,h*5)}}", "{{heure(h+1,m)}}", "{{heure(h,(m+30)%60)}}"]
           correction: "Petite aiguille : {{h}} h ; grande aiguille sur le {{si(m==0,12,m/5)}} : {{m}} min. Il est {{heure(h,m)}}."
     exercices:
+      - type: horloge
+        vars: { h: "1..11", m: [0, 15, 30, 45, 10, 20, 40] }
+        enonce: "Règle l'horloge sur {{heure(h,m)}}."
+        h: "h"
+        m: "m"
+        correction: "La petite aiguille près du {{h}}, la grande sur le {{si(m==0,12,m/5)}}."
       - type: qcm
         vars: { h: "1..11", m: [0, 5, 10, 15, 20, 30, 40, 45, 50] }
         enonce: "Quelle heure est-il (le matin) ?"

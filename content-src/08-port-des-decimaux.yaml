@@ -171,6 +171,17 @@ lecons:
           droite: "a + c/100"
           correction: "Ajoute un zéro : {{nb(a)}},{{b}}0 et {{nb(a + c/100)}}. On compare les centièmes : {{b*10}} et {{c}}."
     exercices:
+      - type: qcm
+        vars: { a: "1..8", b: "1..9", c: "10..99" }
+        si: "b*10 > c && ent(c/10) != b"
+        enonce: "Quel est le plus grand : {{nb(a + b/10)}} ou {{nb(a + c/100)}} ?"
+        choix: ["{{nb(a + b/10)}}", "{{nb(a + c/100)}}", "Ils sont égaux"]
+        explications:
+          - ""
+          - "Piège ! {{c}} paraît plus grand que {{b}}, mais il faut comparer chiffre par chiffre : {{b}} dixièmes contre {{ent(c/10)}} dixièmes. (Ajoute un zéro : {{nb(a)}},{{b}}0.)"
+          - "Ils ne sont pas égaux : compare les dixièmes, {{b}} et {{ent(c/10)}}."
+        niveau: 2
+        correction: "{{nb(a + b/10)}} = {{dec(a+b/10,2)}} > {{nb(a + c/100)}}."
       - type: comparer
         vars: { a: "0..9", b: "1..9", c: "10..99" }
         enonce: "Compare."
@@ -285,6 +296,15 @@ lecons:
           reponse: "a/100*k"
           correction: "Les chiffres glissent : {{nb(a/100*k)}}."
     exercices:
+      - type: nombre
+        vars: { a: "11..99", k: [10, 100] }
+        si: "a % 10 != 0"
+        enonce: "${{nb(a/10)}} \\times {{k}} = ?$"
+        reponse: "a/10*k"
+        niveau: 2
+        erreurs:
+          - { valeur: "a/10", message: "Tu as « ajouté un zéro » après la virgule, comme Zéro : {{nb(a/10)}}0 vaut toujours {{nb(a/10)}} ! Les chiffres doivent GLISSER vers la gauche." }
+        correction: "{{nb(a/10*k)}}"
       - type: nombre
         vars: { a: "11..999", k: [10, 100, 1000] }
         si: "a % 10 != 0"

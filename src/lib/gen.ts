@@ -55,6 +55,21 @@ export interface Instance {
   correction?: string;
   expectedText: string; // réponse attendue, affichée après correction
   clavier: "nombre" | "algebre" | "texte" | "aucun";
+  /** Erreurs fréquentes résolues (valeur → explication ciblée). */
+  erreurs?: { value: number; message: string }[];
+  /** QCM : explication de chaque choix affiché (après mélange). */
+  choixMsg?: string[];
+  // manipulation
+  total?: number;
+  parts?: number;
+  depart?: number;
+  sauts?: number[];
+  n?: number;
+  d?: number;
+  h?: number;
+  m?: number;
+  pieces?: number[];
+  emoji?: string;
 }
 
 // ---------- Gabarits « {{ expression }} » ----------
@@ -184,12 +199,69 @@ function build(spec: ExSpec, vars: Record<string, Value>, rng: Rng, seed: number
     clavier: spec.clavier === "texte" ? "texte" : "nombre",
   };
   const u = unite ? " " + unite : "";
+  const num = (e: unknown) => toNumber(evalStr(String(e), { vars, rng }));
+  if (spec.erreurs?.length) {
+    base.erreurs = spec.erreurs.map((x) => ({ value: num(x.valeur), message: fill(x.message, vars, rng) })).filter((x) => isFinite(x.value));
+  }
   switch (spec.type) {
+    case "blocs": {
+      base.value = Math.round(num(spec.cible));
+      if (!(base.value >= 0 && base.value <= 9999)) return null;
+      base.expectedText = fmtNum(base.value);
+      base.clavier = "aucun";
+      return base;
+    }
+    case "partage": {
+      base.total = Math.round(num(spec.total));
+      base.parts = Math.round(num(spec.parts));
+      if (!(base.parts >= 2 && base.parts <= 8 && base.total >= base.parts && base.total <= 60 && base.total % base.parts === 0)) return null;
+      base.emoji = spec.emoji ? fill(spec.emoji, vars, rng) : "🍎";
+      base.expectedText = `${base.total / base.parts} dans chaque panier`;
+      base.clavier = "aucun";
+      return base;
+    }
+    case "sauts": {
+      base.depart = num(spec.depart);
+      base.value = num(spec.cible);
+      base.min = spec.min !== undefined ? num(spec.min) : Math.min(base.depart, base.value) - 5;
+      base.max = spec.max !== undefined ? num(spec.max) : Math.max(base.depart, base.value) + 5;
+      base.sauts = spec.sauts_permis ?? [1, 10, -1, -10];
+      if (base.value < base.min || base.value > base.max || base.depart < base.min || base.depart > base.max) return null;
+      base.expectedText = `arriver sur ${fmtNum(base.value)}`;
+      base.clavier = "aucun";
+      return base;
+    }
+    case "colorier": {
+      base.n = Math.round(num(spec.n));
+      base.d = Math.round(num(spec.d));
+      if (!(base.d >= 2 && base.d <= 12 && base.n >= 0 && base.n <= base.d)) return null;
+      base.expectedText = `${base.n} part${base.n > 1 ? "s" : ""} sur ${base.d}`;
+      base.clavier = "aucun";
+      return base;
+    }
+    case "horloge": {
+      base.h = ((Math.round(num(spec.h)) % 12) + 12) % 12;
+      base.m = Math.round(num(spec.m));
+      if (base.m % 5 !== 0 || base.m < 0 || base.m > 55) return null;
+      base.expectedText = `${base.h === 0 ? 12 : base.h} h ${String(base.m).padStart(2, "0")}`;
+      base.clavier = "aucun";
+      return base;
+    }
+    case "payer": {
+      base.value = Math.round(num(spec.cible) * 100) / 100;
+      base.pieces = spec.pieces ?? [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20];
+      if (!(base.value > 0 && base.value <= 500)) return null;
+      base.expectedText = `${fmtNum(base.value, false, base.value % 1 ? 2 : undefined)} €`;
+      base.clavier = "aucun";
+      return base;
+    }
     case "nombre": {
       const v = toNumber(evalStr(String(spec.reponse), { vars, rng }));
       if (!isFinite(v)) return null;
       base.value = v;
       base.tolerance = spec.tolerance ?? 0;
+      // une « erreur fréquente » qui tombe sur la bonne réponse n'a pas de sens pour ce tirage
+      if (base.erreurs) base.erreurs = base.erreurs.filter((e) => Math.abs(e.value - v) > 1e-9);
       if (spec.forme === "fraction" || spec.forme === "irreductible") {
         const { n, d } = toFraction(v);
         base.expectedText = d === 1 ? fmtNum(n) : `${n}/${d}`;
@@ -223,6 +295,7 @@ function build(spec: ExSpec, vars: Record<string, Value>, rng: Rng, seed: number
       const order = spec.ordre_fixe ? opts.map((_, i) => i) : shuffle(opts.map((_, i) => i), rng);
       base.choix = order.map((i) => opts[i]);
       base.correct = order.indexOf(0);
+      if (spec.explications?.length) base.choixMsg = order.map((i) => (spec.explications![i] ? fill(spec.explications![i], vars, rng) : ""));
       base.expectedText = opts[0];
       base.clavier = "aucun";
       return base;
@@ -323,12 +396,15 @@ export type Answer =
   | { kind: "choice"; index: number }
   | { kind: "order"; order: number[] } // indices des items (dans l'ordre choisi)
   | { kind: "point"; value: number }
-  | { kind: "fields"; values: string[] };
+  | { kind: "fields"; values: string[] }
+  | { kind: "state"; values: number[] };
 
 export interface Verdict {
   ok: boolean;
   /** « presque » : bonne valeur mais mauvaise forme (ex. fraction non simplifiée). */
   almost?: string;
+  /** Explication ciblée d'une erreur fréquente. */
+  why?: string;
   invalid?: string; // saisie illisible : on ne compte pas d'erreur
 }
 
@@ -352,7 +428,34 @@ export function readNumber(raw: string): { v: number; frac?: { n: number; d: num
 const close = (a: number, b: number, tol = 0) => Math.abs(a - b) <= Math.max(tol, 1e-9 * Math.max(1, Math.abs(b)));
 
 export function check(inst: Instance, ans: Answer): Verdict {
+  const v = checkRaw(inst, ans);
+  if (v.ok || v.invalid) return v;
+  // erreur fréquente reconnue → explication ciblée
+  if (inst.type === "qcm" && ans.kind === "choice" && inst.choixMsg?.[ans.index]) return { ...v, why: inst.choixMsg[ans.index] };
+  if (inst.erreurs?.length && ans.kind === "text") {
+    const r = readNumber(ans.value);
+    const hit = r && inst.erreurs.find((e) => Math.abs(e.value - r.v) < 1e-9);
+    if (hit) return { ...v, why: hit.message };
+  }
+  return v;
+}
+
+function checkRaw(inst: Instance, ans: Answer): Verdict {
   switch (inst.type) {
+    case "blocs":
+    case "sauts":
+      return { ok: ans.kind === "state" && Math.abs(ans.values[0] - inst.value!) < 1e-9 };
+    case "payer":
+      return { ok: ans.kind === "state" && Math.abs(ans.values[0] - inst.value!) < 0.005 };
+    case "colorier":
+      return { ok: ans.kind === "state" && ans.values[0] === inst.n };
+    case "horloge":
+      return { ok: ans.kind === "state" && ((ans.values[0] % 12) + 12) % 12 === inst.h && ans.values[1] === inst.m };
+    case "partage": {
+      if (ans.kind !== "state") return { ok: false };
+      const each = inst.total! / inst.parts!;
+      return { ok: ans.values.length === inst.parts && ans.values.every((x) => x === each) };
+    }
     case "qcm":
     case "vf":
     case "comparer":

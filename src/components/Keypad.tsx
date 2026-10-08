@@ -9,7 +9,7 @@ const NUM = [["7", "8", "9"], ["4", "5", "6"], ["1", "2", "3"], [",", "0", "⌫"
 const EXTRA_NUM = ["−", "/", ";"];
 const ALG = [["+", "−", "×", "÷"], ["²", "^", "√", "π"], ["e", "ln(", "exp(", "sin("]];
 
-export function Keypad({ mode, onKey, onSubmit, canSubmit, letters = ["x"] }: { mode: KeypadMode; onKey: (k: string) => void; onSubmit: () => void; canSubmit: boolean; letters?: string[] }) {
+export function Keypad({ mode, onKey, onSubmit, canSubmit, letters = ["x"], extras = EXTRA_NUM }: { mode: KeypadMode; onKey: (k: string) => void; onSubmit: () => void; canSubmit: boolean; letters?: string[]; extras?: string[] }) {
   const press = (k: string) => {
     sfx.tap();
     onKey(k);
@@ -34,7 +34,7 @@ export function Keypad({ mode, onKey, onSubmit, canSubmit, letters = ["x"] }: { 
           ))}
         </div>
         <div className="keypad-side">
-          {EXTRA_NUM.map((k) => (
+          {extras.map((k) => (
             <button key={k} type="button" className="key key-op" onClick={() => press(k)} title={k === ";" ? "séparer plusieurs réponses" : undefined}>
               {k}
             </button>
@@ -46,6 +46,17 @@ export function Keypad({ mode, onKey, onSubmit, canSubmit, letters = ["x"] }: { 
       </div>
     </div>
   );
+}
+
+/** Touches annexes utiles pour la réponse attendue : un enfant de 6 ans qui
+ *  répond « 8 » n'a pas besoin de « − », « / » ni « ; ». */
+export function keypadExtras(type: string, nums: number[]): string[] {
+  if (type === "expression") return EXTRA_NUM;
+  const k: string[] = [];
+  if (nums.some((n) => n < 0)) k.push("−");
+  if (nums.some((n) => !Number.isInteger(n))) k.push("/");
+  if (type === "liste") k.push(";");
+  return k;
 }
 
 /** Applique une touche du clavier à une saisie. */

@@ -1,10 +1,12 @@
 import { go } from "../lib/router";
 import { lessonKey, lessonUnlocked, useContent, worldProgress } from "../lib/content";
-import { useChild, useStore } from "../lib/store";
+import { markStory, useChild, useStore } from "../lib/store";
 import { Dialogue, Mascot } from "../components/Mascot";
+import { StoryScene } from "../components/Story";
+import { gardienOuvert } from "./Gardien";
 
 export function Monde({ id }: { id: string }) {
-  const { worlds } = useContent();
+  const { worlds, manifest } = useContent();
   const child = useChild()!;
   const settings = useStore((s) => s.settings);
   const w = worlds.find((x) => x.id === id);
@@ -19,6 +21,19 @@ export function Monde({ id }: { id: string }) {
     );
   const pr = worldProgress(child, w);
   const firstVisit = !w.lecons.some((l) => child.progress[lessonKey(w, l.id)]);
+  const ch = manifest?.histoire?.chapitres[w.id];
+  const lit = child.crystals?.includes(w.id);
+  // Première visite : on ouvre le chapitre de l'aventure avant tout
+  if (ch && !child.story?.[`avant:${w.id}`])
+    return (
+      <div className="page narrow">
+        <button className="back" onClick={() => go("/")}>
+          ← Carte
+        </button>
+        <StoryScene lines={ch.avant} titre={ch.titre} decor={w.decor} couleur={w.couleur} k={`avant-${w.id}`} onDone={() => markStory(`avant:${w.id}`)} doneLabel="À l'aventure ! ➜" />
+      </div>
+    );
+  const bossOpen = w.cycle !== "astuces" && gardienOuvert(w);
   return (
     <div className="page monde" style={{ "--wc": w.couleur } as React.CSSProperties}>
       <button className="back" onClick={() => go("/")}>
@@ -29,6 +44,7 @@ export function Monde({ id }: { id: string }) {
           <span className="monde-emoji">{w.emoji}</span>
           <h1>{w.titre}</h1>
           {w.sousTitre && <p>{w.sousTitre}</p>}
+          {ch && w.cycle !== "astuces" && <p className="small crystal-tag">{lit ? `💎 ${ch.objet} — rallumé !` : `🌑 ${ch.objet} — éteint`}</p>}
           <p className="small">
             {w.niveau} · {w.age} · {pr.done}/{pr.total} leçons · ⭐ {pr.stars}/{pr.maxStars}
           </p>
@@ -89,6 +105,33 @@ export function Monde({ id }: { id: string }) {
           );
         })}
       </ol>
+      {w.cycle !== "astuces" && (
+        <div className={`boss-card ${bossOpen ? "" : "locked"} ${lit ? "lit" : ""}`}>
+          <div className="boss-icon">{lit ? "💎" : bossOpen ? "🏆" : "🔒"}</div>
+          <div className="boss-body">
+            <strong>Défi du Gardien</strong>
+            <small>
+              {lit
+                ? "Cristal rallumé ! Tu peux rejouer pour t'entraîner."
+                : bossOpen
+                  ? `10 questions de tout le monde, 8 justes pour rallumer ${ch?.objet ?? "le cristal"}.`
+                  : `S'ouvre quand toutes les leçons ont 2 étoiles (${pr.done}/${pr.total}).`}
+            </small>
+            <div className="row">
+              {bossOpen && (
+                <button className="btn btn-orange" onClick={() => go(`/gardien/${w.id}`)}>
+                  {lit ? "🔁 Rejouer" : "⚔️ Relever le défi"}
+                </button>
+              )}
+              {lit && (
+                <button className="btn btn-soft small" onClick={() => go(`/diplome/${w.id}`)}>
+                  🎓 Mon diplôme
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       {pr.done === pr.total && (
         <div className="card center">
           <Mascot who="zero" size={90} talking />

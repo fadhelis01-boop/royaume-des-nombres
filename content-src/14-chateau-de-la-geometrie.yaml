@@ -295,6 +295,15 @@ lecons:
           correction: "$\\sqrt{ {{t_0}}^2 + {{t_1}}^2 } = \\sqrt{ {{t_0^2+t_1^2}} } = {{t_2}}$ cm."
     exercices:
       - type: nombre
+        vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13]] }
+        enonce: "Côtés de l'angle droit : {{t_0}} et {{t_1}}. Longueur de l'hypoténuse ?"
+        reponse: "t_2"
+        niveau: 2
+        erreurs:
+          - { valeur: "t_0+t_1", message: "On n'additionne pas les côtés : on additionne leurs CARRÉS ({{t_0}}² + {{t_1}}² = {{t_0^2+t_1^2}}), puis on prend la racine." }
+          - { valeur: "t_0^2+t_1^2", message: "Presque ! {{t_0^2+t_1^2}}, c'est le carré de l'hypoténuse. Il reste à prendre la racine carrée." }
+        correction: "$\\sqrt{ {{t_0^2+t_1^2}} } = {{t_2}}$"
+      - type: nombre
         vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [12, 16, 20], [20, 21, 29]] }
         enonce: "Côtés de l'angle droit : {{t_0}} et {{t_1}}. Hypoténuse ?"
         visuel: { type: figure, forme: triangle-rectangle, a: "=t_0", b: "=t_1", label_c: "?" }

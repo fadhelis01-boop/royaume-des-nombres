@@ -58,11 +58,23 @@ lecons:
           etapes: ["étape 1", "étape 2"]
           reponse: …
       - question: { …un exercice… }   # « À toi de jouer » au milieu du cours
+      - explique:                       # l'enfant explique son raisonnement à un personnage
+          texte: "Comment as-tu calculé 8 + 5 ?"
+          qui: neo
+          choix:
+            - { texte: "8 + 2 = 10, puis 13", ok: true, retour: "Bravo !" }
+            - { texte: "85", ok: false, retour: "On ne colle pas les chiffres…" }
+      - vraie_vie:                      # un défi à faire hors de l'écran
+          titre: Défi dans la vraie vie
+          texte: "Mesure ta main avec une règle…"
+          materiel: "une règle"
     exercices:                    # tirés au sort pour le défi et les révisions
       - …
 ```
 
-Personnages des dialogues : `mia`, `neo`, `zero`, `narrateur` ; humeur facultative : `mia-reflexion`, `zero-surprise`, `neo-joie`.
+Personnages des dialogues : `mia`, `neo`, `zero`, `narrateur`, `nuage` (le Grignoteur), `ixe`, `enfant` (l'avatar de l'enfant) ; humeur facultative : `-joie`, `-surprise`, `-reflexion`, `-triste`, `-fier` (ex. `zero-surprise`).
+
+Des questions « À toi de jouer » sont **insérées automatiquement** toutes les deux étapes du cours (les exercices les plus faciles d'abord). Pour l'éviter : `auto_questions: false` dans la leçon.
 
 ## 3. Les exercices (générés à l'infini)
 
@@ -95,6 +107,14 @@ Chaque exercice peut contenir des **variables tirées au sort** et des **gabarit
 | `droite` | `min`, `max`, `pas`, `cible` (+ `cible_affiche`, `tolerance`) | touche la droite graduée |
 | `texte` | `reponse: [mots acceptés]` | tape un mot |
 | `champs` | `champs: [{avant, reponse, apres}]` | remplit plusieurs cases |
+| `blocs` | `cible` | construit le nombre avec centaines, dizaines, unités |
+| `partage` | `total`, `parts` (+ `emoji`) | répartit des objets dans des paniers |
+| `sauts` | `depart`, `cible`, `min`, `max`, `sauts_permis: [10, 1, -1]` | fait sauter la grenouille sur la droite |
+| `colorier` | `n`, `d` (+ `dessin: disque / barre`) | colorie n parts sur d |
+| `horloge` | `h`, `m` | règle les aiguilles |
+| `payer` | `cible` (en €), `pieces: [0.1, 0.5, 1, 2, 5, 10]` | pose pièces et billets |
+
+**Erreurs fréquentes** : un exercice `nombre` peut lister `erreurs: [{ valeur: "a+b-10", message: "Tu as oublié la retenue…" }]` ; un `qcm` peut donner `explications: ["", "message pour le 2ᵉ choix", …]` (dans l'ordre de `choix`). L'enfant reçoit alors une explication ciblée au lieu d'un simple « faux ».
 
 **Fonctions disponibles** dans les expressions : `abs sqrt round(x,n) ent floor ceil min max pgcd ppcm fact comb mod sin cos tan sind cosd tand asind acosd atand ln log exp si(cond,a,b) choix(…) alea(a,b) estpremier chiffre(n,rang) sommechiffres fib kieme(k,…) diviseurs lettres binaire romain heure(h,m) duree(min) tri(…) frac(n,d) fracb(n,d) nb(x) dec(x,n) texte majuscule pluriel`. Constantes : `pi`, `e`.
 
@@ -112,6 +132,7 @@ Un exercice défectueux est refusé avec un message précis.
 
 ## 6. Les autres fichiers
 
+- `_histoire.yaml` : la grande histoire (prologue, livres `arcs` avec leur monde final et leur scène de fin, et un `chapitre` par monde : `titre`, `objet` (le cristal), `avant` et `apres`, des répliques comme dans les dialogues). Un monde sans chapitre fonctionne quand même.
 - `_glossaire.yaml` : le Grand Livre (`mot`, `def`, `exemple`, `source`, `monde`).
 - `_enigmes.yaml` : les énigmes (`niveau` 1 à 3, `reponse`, `indice`, `solution`).
 - `_jeux.yaml` : les familles du Calcul éclair (exercices de type `nombre`).

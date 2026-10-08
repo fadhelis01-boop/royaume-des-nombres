@@ -5,3 +5,4 @@ export function exercise(ex: unknown, where: string): ExSpec;
 export function resetReport(): { errors: string[]; exCount: number };
 export function getErrors(): string[];
 export function getExerciseCount(): number;
+export function lines(list: unknown, where: string): import("./types").Line[];

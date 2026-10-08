@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { dbGet, dbSet } from "./db";
-import { BADGES, levelOf, starsFor, XP } from "./rewards";
+import { BADGES, levelOf, MASTERY, starsFor, XP } from "./rewards";
 import { configureTts } from "./tts";
 import { setSoundEnabled, sfx } from "./sound";
 import type { Child, Settings, World } from "./types";
@@ -17,6 +17,7 @@ export const DEFAULT_SETTINGS: Settings = {
   rate: 1,
   autoRead: true,
   sounds: true,
+  music: false,
   fontScale: 1,
   dys: false,
   reduceMotion: false,
@@ -282,7 +283,7 @@ export function finishDefi(key: string, score: number) {
     p.best = Math.max(p.best, score);
     p.stars = Math.max(p.stars, stars);
     p.lastAt = Date.now();
-    if (stars >= 1) {
+    if (score >= MASTERY - 1e-9) {
       p.done = true;
       c.srs[key] ??= { key, box: 1, due: dayNumber() + 1 };
     }
@@ -290,7 +291,7 @@ export function finishDefi(key: string, score: number) {
     if (score >= 0.999) c.counters.perfect = (c.counters.perfect ?? 0) + 1;
   });
   let xp = gained * XP.star;
-  if (stars >= 1 && !prev?.done) xp += XP.lessonDone;
+  if (score >= MASTERY - 1e-9 && !prev?.done) xp += XP.lessonDone;
   if (xp) addXp(xp);
   else checkBadges();
   return { stars, gained, newBest: stars > prevStars };
@@ -324,4 +325,24 @@ export function importBackup(json: string): number {
   for (const c of data.children as Child[]) byId.set(c.id, { ...newChild(c.name, c.avatar, c.age), ...c });
   setState({ children: [...byId.values()], settings: { ...state.settings, ...data.settings, apiKey: state.settings.apiKey, pin: state.settings.pin || data.settings?.pin || "" } });
   return data.children.length;
+}
+
+// ---------- Aventure ----------
+export function markStory(id: string) {
+  updateChild((c) => {
+    c.story = { ...(c.story ?? {}), [id]: Date.now() };
+  });
+  checkBadges();
+}
+export const storySeen = (c: Child | null, id: string) => !!c?.story?.[id];
+
+/** Défi du Gardien réussi : le cristal du monde se rallume. */
+export function addCrystal(worldId: string) {
+  const c = activeChild();
+  if (!c || c.crystals?.includes(worldId)) return false;
+  updateChild((x) => {
+    x.crystals = [...(x.crystals ?? []), worldId];
+  });
+  addXp(XP.lessonDone * 2);
+  return true;
 }

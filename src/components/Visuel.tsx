@@ -111,35 +111,73 @@ function Objets({ v }: { v: Any }) {
   const raw = v.par_groupe !== undefined ? Array.from({ length: Math.min(20, Math.round(n(v.nb_groupes, 1))) }, () => v.par_groupe) : arr<unknown>(v.groupes);
   const groups = raw.map((g) => Math.max(0, Math.min(120, Math.round(n(g)))));
   const emoji = s(v.emoji) || "🍎";
+  const emojis = arr<string>(v.emojis).map(s);
   const crossed = n(v.barres);
   const signe = s(v.signe);
   const total = groups.reduce((a, b) => a + b, 0);
+  // « comptable: true » : l'enfant touche chaque objet, qui reçoit son numéro (1, 2, 3…)
+  const countable = !!v.comptable;
+  const [marks, setMarks] = useState<Record<number, number>>({});
+  const counted = Object.keys(marks).length;
+  const tap = (id: number) => {
+    if (!countable) return;
+    setMarks((m) => {
+      if (m[id] !== undefined) {
+        // on retire le dernier compté seulement (pour éviter les trous)
+        const max = Math.max(...Object.values(m));
+        if (m[id] !== max) return m;
+        const copy = { ...m };
+        delete copy[id];
+        return copy;
+      }
+      return { ...m, [id]: Object.keys(m).length + 1 };
+    });
+  };
   let idx = 0;
   const size = total > 60 ? "xs" : total > 30 ? "s" : total > 12 ? "m" : "l";
   return (
-    <div className={`objets objets-${size}`}>
+    <div className={`objets objets-${size} ${countable ? "countable" : ""}`}>
       {groups.map((g, gi) => (
         <div key={gi} className="objets-wrap">
           {gi > 0 && signe && <span className="objets-signe">{signe}</span>}
           <div className="objets-groupe">
             {Array.from({ length: g }, (_, i) => {
               idx++;
+              const id = idx;
               const isCrossed = idx > total - crossed;
+              const mark = marks[id];
               return (
-                <span key={i} className={`pop-in ${isCrossed ? "barre" : ""}`} style={{ animationDelay: `${Math.min(idx, 40) * 0.04}s` }}>
-                  {emoji}
+                <span
+                  key={i}
+                  className={`pop-in ${isCrossed ? "barre" : ""} ${mark ? "marked" : ""}`}
+                  style={{ animationDelay: `${Math.min(idx, 40) * 0.04}s` }}
+                  onClick={() => tap(id)}
+                  role={countable ? "button" : undefined}
+                >
+                  {emojis[gi] ?? emoji}
+                  {mark !== undefined && <b className="count-mark">{mark}</b>}
                 </span>
               );
             })}
           </div>
         </div>
       ))}
+      {countable && (
+        <div className="count-status">
+          {counted ? `Tu as compté : ${counted}` : "Touche chaque dessin pour le compter"}
+          {counted > 0 && (
+            <button type="button" className="link" onClick={() => setMarks({})}>
+              recommencer
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
 
 // ---------- Blocs base 10 ----------
-function Blocs({ nombre }: { nombre: number }) {
+export function Blocs({ nombre }: { nombre: number }) {
   const N = Math.max(0, Math.round(nombre));
   const m = Math.floor(N / 1000),
     c = Math.floor((N % 1000) / 100),
@@ -634,7 +672,7 @@ function Figure({ v }: { v: Any }) {
 }
 
 // ---------- Horloge ----------
-function Horloge({ h, m, numerique }: { h: number; m: number; numerique: boolean }) {
+export function Horloge({ h, m, numerique }: { h: number; m: number; numerique: boolean }) {
   const R = 90;
   const ah = (((h % 12) + m / 60) / 12) * 2 * Math.PI,
     am = (m / 60) * 2 * Math.PI;
@@ -669,7 +707,7 @@ function Horloge({ h, m, numerique }: { h: number; m: number; numerique: boolean
 }
 
 // ---------- Monnaie (euros) ----------
-function Monnaie({ valeurs }: { valeurs: number[] }) {
+export function Monnaie({ valeurs }: { valeurs: number[] }) {
   return (
     <div className="monnaie">
       {valeurs.map((v, i) =>

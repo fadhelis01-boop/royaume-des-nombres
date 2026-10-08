@@ -21,6 +21,10 @@ export function CalculEclair() {
   const [left, setLeft] = useState(DUREE);
   const [flash, setFlash] = useState<"ok" | "ko" | null>(null);
   const [over, setOver] = useState(false);
+  // Mode zen : pas de chrono, 20 questions, la bonne réponse s'affiche en cas d'erreur.
+  const [zen, setZen] = useState(false);
+  const [shown, setShown] = useState<string | null>(null);
+  const ZEN_N = 20;
   const inputRef = useRef<HTMLInputElement>(null);
   const jeux = manifest?.jeux ?? {};
 
@@ -38,12 +42,28 @@ export function CalculEclair() {
   };
 
   useEffect(() => {
-    if (!fam || over) return;
+    if (!fam || over || zen) return;
     const id = window.setInterval(() => setLeft((l) => l - 1), 1000);
     return () => clearInterval(id);
   }, [fam, over]);
 
+  const finish = () => {
+    setOver(true);
+    sfx.fanfare();
+    const key = zen ? `eclair-zen:${fam}` : `eclair:${fam}`;
+    updateChild((c) => {
+      c.games[key] = Math.max(c.games[key] ?? 0, score);
+      if (!zen) c.games["eclair"] = Math.max(c.games["eclair"] ?? 0, score);
+    });
+    bump("eclair-parties");
+    addXp(Math.min(60, score * 3));
+  };
   useEffect(() => {
+    if (zen && fam && !over && score + errors.length >= ZEN_N) finish();
+  }, [score, errors.length]);
+
+  useEffect(() => {
+    if (zen) return;
     if (fam && left <= 0 && !over) {
       setOver(true);
       sfx.fanfare();
@@ -82,8 +102,18 @@ export function CalculEclair() {
       setErrors((e) => [...e, { q: q.enonce, a: q.expectedText }]);
       setFlash("ko");
     }
-    setTimeout(() => setFlash(null), 250);
     setVal("");
+    if (zen && !v.ok) {
+      // en mode zen on prend le temps de voir la bonne réponse
+      setShown(q.expectedText);
+      setTimeout(() => {
+        setShown(null);
+        setFlash(null);
+        setQ(draw(fam!));
+      }, 1600);
+      return;
+    }
+    setTimeout(() => setFlash(null), 250);
     setQ(draw(fam!));
   };
 
@@ -94,7 +124,15 @@ export function CalculEclair() {
           ← Jeux
         </button>
         <h1>⚡ Calcul éclair</h1>
-        <Bubble who="neo" text="60 secondes. Le plus de calculs justes possible. On y va ? Défi accepté !" />
+        <Bubble who="neo" text={zen ? "Mode zen : 20 calculs, sans chrono. Prends ton temps, on vise la justesse !" : "60 secondes. Le plus de calculs justes possible. On y va ? Défi accepté !"} />
+        <div className="tabs">
+          <button className={`tab ${!zen ? "active" : ""}`} onClick={() => setZen(false)}>
+            ⏱ Chrono (60 s)
+          </button>
+          <button className={`tab ${zen ? "active" : ""}`} onClick={() => setZen(true)}>
+            🧘 Zen (sans chrono)
+          </button>
+        </div>
         <div className="fam-grid">
           {Object.entries(jeux).map(([id, j]) => (
             <button key={id} className="fam-card" onClick={() => start(id)}>
@@ -108,10 +146,10 @@ export function CalculEclair() {
     );
 
   if (over) {
-    const best = child.games[`eclair:${fam}`] ?? 0;
+    const best = child.games[`${zen ? "eclair-zen" : "eclair"}:${fam}`] ?? 0;
     return (
       <div className="page center">
-        <h1>⏱ Temps écoulé !</h1>
+        <h1>{zen ? "🧘 Série terminée !" : "⏱ Temps écoulé !"}</h1>
         <div className="score-big">{score}</div>
         <p>{score >= best && score > 0 ? "🏅 Nouveau record ! " : `Ton record : ${best}. `}</p>
         <Bubble who={score >= 15 ? "zero" : "mia"} text={score >= 15 ? `${score} ! ${score >= 30 ? "TRENTE ?! 🤯" : "C'est énorme ! 😳"}` : "Chaque partie entraîne ta mémoire des calculs. Tu vas devenir de plus en plus rapide !"} />
@@ -145,10 +183,13 @@ export function CalculEclair() {
         <button className="back" onClick={() => setFam(null)}>
           ✕
         </button>
-        <div className={`timer ${left <= 10 ? "hurry" : ""}`}>⏱ {left}s</div>
+        {zen ? <div className="timer">🧘 {score + errors.length + 1}/{ZEN_N}</div> : <div className={`timer ${left <= 10 ? "hurry" : ""}`}>⏱ {left}s</div>}
         <div className="score-pill">⭐ {score}</div>
       </div>
-      <div className={`eclair-q ${flash ?? ""}`}>{q && <Md text={q.enonce} />}</div>
+      <div className={`eclair-q ${flash ?? ""}`}>
+        {q && <Md text={q.enonce} />}
+        {shown && <div className="small">La bonne réponse : <strong>{shown}</strong></div>}
+      </div>
       <input ref={inputRef} className="answer-input xl" value={val} inputMode="none" onChange={(e) => setVal(e.target.value)} onKeyDown={(e) => e.key === "Enter" && submit()} aria-label="réponse" />
       <Keypad mode="nombre" onKey={(k) => setVal((v) => applyKey(v, k))} onSubmit={submit} canSubmit={!!val.trim()} />
       <Mascot who="neo" size={60} className="eclair-neo" talking={flash === "ok"} />

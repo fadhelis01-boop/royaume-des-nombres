@@ -1,0 +1,378 @@
+# ============================================================
+#  L'AVENTURE — le fil rouge qui encadre tout l'apprentissage
+#  Personnages : mia, neo, zero, narrateur, nuage (le Grignoteur), ixe, enfant (« toi »)
+#  Chaque monde = un chapitre : « avant » (à la première visite) et « apres »
+#  (quand l'enfant réussit le Défi du Gardien et rallume le cristal du monde).
+# ============================================================
+
+prologue:
+  - narrateur: "Il était une fois un royaume où les nombres vivaient partout : sur les arbres, dans les rivières, sur les toits des maisons."
+  - narrateur: "Au cœur de chaque région brillait un cristal magique. Tant qu'il brillait, les nombres restaient bien à leur place."
+  - zero-surprise: "Mia ! Néo ! Venez vite ! Le grand chêne de la forêt… il n'a plus son 7 !"
+  - neo: "Ce n'est pas tout : les cristaux s'éteignent un par un ! Le Royaume devient tout gris…"
+  - nuage: "Miam… un 7… crunch… un 3… Hi hi hi !"
+  - mia-reflexion: "Vous avez entendu ? Quelqu'un mange les nombres ! On l'appellera… le Grignoteur."
+  - zero: "Et si on n'a plus de nombres, plus personne ne pourra compter les graines. Mes graines !"
+  - mia: "Il nous faut de l'aide. Quelqu'un de courageux, de curieux… quelqu'un comme TOI !"
+  - enfant: "Moi ?"
+  - neo: "Oui, toi. À chaque fois que tu apprendras quelque chose, un nombre reviendra. Et si tu réussis le Défi du Gardien d'un monde, son cristal se rallumera !"
+  - mia: "Tu seras notre nouvelle Étoile du Royaume. Prête, prêt ? Défi accepté !"
+
+arcs:
+  - id: arc-1
+    titre: "Livre I — Le Grignoteur de Nombres"
+    sous_titre: "Les Graines"
+    final: jardin-de-fibonacci
+    fin:
+      - narrateur: "Le dernier cristal des Graines se rallume. Une lumière dorée envahit le Jardin… et le Grignoteur apparaît enfin, tout petit, tout tremblant."
+      - nuage-triste: "Ne me grondez pas… Je mangeais les nombres parce que je ne savais pas compter. Tout le monde se moquait de moi. Alors je voulais qu'il n'y ait plus de nombres du tout…"
+      - mia: "Oh… Personne n'est nul en maths, petit nuage. On n'a juste pas encore appris. Moi aussi, au début, je me trompais tout le temps !"
+      - neo: "Et tu sais quoi ? Notre Étoile du Royaume pourrait t'apprendre. Elle a tout appris, nombre après nombre."
+      - enfant: "D'accord ! On commence par compter les gouttes de pluie ?"
+      - nuage-joie: "Une… deux… trois ! J'ai compté TROIS ! Je ne mangerai plus jamais de nombres. Je les COLLECTIONNERAI !"
+      - zero: "Bienvenue dans l'équipe, Nuage. Tu peux t'asseoir à côté de moi. Mais pas sur mes graines."
+      - narrateur: "Ainsi finit le premier livre. Mais au loin, dans une grotte sombre, quelque chose change de couleur…"
+
+  - id: arc-2
+    titre: "Livre II — Ixe, le caméléon qui change de valeur"
+    sous_titre: "Les Explorateurs"
+    final: labyrinthe-des-fonctions
+    fin:
+      - narrateur: "Au centre du Labyrinthe des Fonctions, sous une grande courbe lumineuse, Ixe attend."
+      - ixe: "Vous m'avez trouvé ! Personne n'y arrivait, parce que je change tout le temps de valeur : parfois 3, parfois −7, parfois un demi…"
+      - neo: "Mais avec les équations, on sait te retrouver à coup sûr : il suffit de garder la balance en équilibre !"
+      - ixe: "Alors je ne suis plus un mystère. Je suis… une INCONNUE. Et une inconnue, ça se cherche avec méthode !"
+      - nuage-joie: "Moi je l'ai reconnu tout de suite : il avait un x sur le ventre !"
+      - mia: "Ixe, veux-tu nous guider dans les grandes aventures qui nous attendent ?"
+      - ixe: "Avec plaisir. Car j'ai entendu dire que la Bibliothèque de l'Infini… perd ses pages."
+      - narrateur: "Ainsi finit le deuxième livre."
+
+  - id: arc-3
+    titre: "Livre III — La Bibliothèque de l'Infini"
+    sous_titre: "Les Maîtres"
+    final: temple-de-la-logique
+    fin:
+      - narrateur: "Dans le Temple de la Logique, la dernière page blanche se remplit d'une écriture d'or."
+      - neo: "Le Grand Oubli voulait effacer toutes les découvertes des savants… Mais une chose démontrée ne peut jamais être oubliée !"
+      - mia: "Pythagore, Euclide, al-Khwârizmî, Newton, Gauss… et maintenant toi. Tu as rejoint la grande famille des mathématiciens."
+      - ixe: "La Bibliothèque de l'Infini n'aura jamais de dernière page. Il reste toujours quelque chose à découvrir."
+      - nuage-joie: "Et moi je sais compter jusqu'à l'infini ! Enfin… presque."
+      - zero-surprise: "L'INFINI ?! 🤯 C'est encore plus grand qu'un MILLION ?"
+      - mia: "Bien plus grand, Zéro. Notre Étoile du Royaume est devenue Grand Sage du Royaume. Mais la plus belle aventure commence maintenant : continuer à se poser des questions."
+      - narrateur: "Fin du troisième livre… et début de toutes les autres histoires que tu inventeras."
+
+chapitres:
+  # ------------------------- LIVRE I -------------------------
+  nid-des-nombres:
+    titre: "Chapitre 1 — Le Nid des Nombres"
+    objet: "🥚 L'Œuf de lumière"
+    avant:
+      - narrateur: "Tout commence dans un petit nid, au creux d'un arbre. C'est là que naissent les nombres du Royaume."
+      - zero-triste: "Les bébés nombres ont peur : le Grignoteur est passé par ici. Ils ne savent plus qui vient après qui…"
+      - mia: "Aide-les à se compter, à se reconnaître et à se ranger. Ils retrouveront leur courage !"
+    apres:
+      - narrateur: "L'Œuf de lumière se met à briller. Un, deux, trois… les bébés nombres sortent du nid en riant."
+      - zero-joie: "Ils me suivent ! Je suis leur chef ! …Je suis le chef de rien. Mais quel chef !"
+      - neo: "Regardez, des miettes grises mènent vers la forêt. Suivons-les !"
+
+  foret-des-nombres:
+    titre: "Chapitre 2 — La Forêt des Nombres"
+    objet: "💚 Le Cristal Émeraude"
+    avant:
+      - narrateur: "Dans la Forêt des Nombres, les arbres portaient fièrement leurs chiffres. Mais ce matin, beaucoup d'écorces sont vides."
+      - neo: "Le Grignoteur a mangé les dizaines ! Sans elles, plus personne ne sait compter les glands."
+      - mia: "Si tu apprends à faire des paquets de 10 et à lire les grands nombres, les arbres retrouveront leurs chiffres."
+    apres:
+      - narrateur: "Le Cristal Émeraude se rallume. Sur chaque tronc, les chiffres repoussent comme des feuilles au printemps."
+      - zero-surprise: "Le chêne a retrouvé son 7 ! Et l'Arbre-Monde compte jusqu'à… UN MILLION ! 🤯"
+      - nuage: "Grrr… Je me venge dans la prairie ! Les additions sont mes préférées…"
+
+  prairie-des-additions:
+    titre: "Chapitre 3 — La Prairie des Additions"
+    objet: "💛 Le Cristal Soleil"
+    avant:
+      - narrateur: "Dans la Prairie, les lapins et les hérissons préparent la grande fête des récoltes."
+      - neo: "Problème : plus personne ne sait réunir les paniers. On compte, on se trompe, on recommence… et la fête est annulée !"
+      - mia: "Et si on essayait autrement ? Les amis de 10, les doubles, les sauts sur la droite… tu vas devenir rapide comme l'éclair."
+    apres:
+      - narrateur: "Le Cristal Soleil inonde la Prairie de lumière. La grande fête des récoltes peut commencer !"
+      - zero: "J'ai calculé combien de carottes on va manger : beaucoup. C'est un nombre très précis."
+      - neo: "Un hérisson a vu le Grignoteur filer vers la montagne. Il avait l'air… triste."
+
+  montagne-des-multiplications:
+    titre: "Chapitre 4 — La Montagne des Multiplications"
+    objet: "🤎 Le Cristal de Roche"
+    avant:
+      - narrateur: "Sur la Montagne, les sentiers se divisent en groupes tous pareils. Les marmottes y rangent leurs provisions."
+      - zero-triste: "Le Grignoteur a mélangé toutes les tables ! 7 × 8 vaut maintenant… banane."
+      - neo: "Remettons de l'ordre. Une table après l'autre. Un problème ? Défi accepté !"
+    apres:
+      - narrateur: "Le Cristal de Roche brille au sommet. Les marmottes chantent leurs tables en chœur."
+      - zero: "7 × 8 = 56. Pas banane. J'étais un peu déçu, mais c'est mieux pour tout le monde."
+      - mia: "Le Grignoteur a laissé tomber un mouchoir… mouillé de larmes. Pourquoi pleure-t-il ?"
+
+  riviere-du-partage:
+    titre: "Chapitre 5 — La Rivière du Partage"
+    objet: "💙 Le Cristal d'Eau"
+    avant:
+      - narrateur: "Le long de la Rivière, les castors partagent tout équitablement. C'est leur règle d'or."
+      - neo: "Mais depuis le passage du Grignoteur, les parts sont injustes et les castors se disputent !"
+      - mia: "Apprends à partager et à diviser : chaque castor aura sa juste part, et la paix reviendra."
+    apres:
+      - narrateur: "Le Cristal d'Eau rend à la rivière sa couleur turquoise. Les castors se serrent la patte."
+      - zero: "Un castor m'a donné la moitié de son sandwich. 12 ÷ 2 = 6 bouchées. J'ai vérifié."
+      - neo: "Au marché, quelqu'un a vu un petit nuage voler… les poids de la balance !"
+
+  marche-des-mesures:
+    titre: "Chapitre 6 — Le Marché des Mesures"
+    objet: "🧡 Le Cristal Ambré"
+    avant:
+      - narrateur: "Au Marché, tout se pèse, se mesure, se compte et se paie. Enfin… normalement."
+      - zero-surprise: "Les horloges sont arrêtées, les règles n'ont plus de graduations et ma tirelire est vide !"
+      - mia: "Mètres, kilos, litres, euros, heures : remets le marché en marche !"
+    apres:
+      - narrateur: "Le Cristal Ambré tinte comme une cloche. Les horloges repartent : tic, tac, tic, tac."
+      - zero: "Ma tirelire est pleine ! 3 pièces de 1 centime. Je suis riche."
+      - neo: "Sur une balance, quelqu'un a écrit avec des miettes : « Je veux juste avoir une forme. »"
+
+  cite-des-formes:
+    titre: "Chapitre 7 — La Cité des Formes"
+    objet: "🩵 Le Cristal Prisme"
+    avant:
+      - narrateur: "La Cité des Formes est pleine de maisons triangulaires, de ponts ronds et de fenêtres carrées."
+      - mia-reflexion: "Mais tout est tordu ! Les carrés n'ont plus d'angles droits et les cercles sont tout cabossés…"
+      - neo: "Avec l'équerre, la règle et le compas, rebâtissons la ville. Les architectes, c'est nous !"
+    apres:
+      - narrateur: "Le Cristal Prisme projette des arcs-en-ciel sur chaque façade. La Cité est plus belle que jamais."
+      - nuage-triste: "(une petite voix, derrière une cheminée) …Moi je n'ai pas de forme. Je suis tout mou."
+      - mia: "Tu as entendu ? Il était là ! Il se cache dans le Village des Fractions, j'en suis sûre."
+
+  village-des-fractions:
+    titre: "Chapitre 8 — Le Village des Fractions"
+    objet: "💗 Le Cristal Rose"
+    avant:
+      - narrateur: "Au Village des Fractions, on fête les anniversaires avec des gâteaux partagés en parts parfaites."
+      - zero-surprise: "Quelqu'un a mangé des morceaux de TOUS les gâteaux ! Il manque un quart ici, un tiers là…"
+      - mia: "Apprends à compter les parts : moitiés, tiers, quarts… et tu sauras exactement ce qui manque."
+    apres:
+      - narrateur: "Le Cristal Rose s'allume, et chaque gâteau retrouve ses parts égales."
+      - zero: "On m'a donné 2/4 de gâteau. Ou bien 1/2. C'est pareil ! J'ai compris tout seul. Enfin presque tout seul."
+      - neo: "Les traces du Grignoteur mènent au port. Il essaie de s'enfuir en bateau !"
+
+  port-des-decimaux:
+    titre: "Chapitre 9 — Le Port des Décimaux"
+    objet: "🩶 Le Cristal Marin"
+    avant:
+      - narrateur: "Au Port, les bateaux sont pesés au gramme près, et les prix sont écrits avec une virgule."
+      - neo: "Le Grignoteur a avalé toutes les virgules ! 2,50 € est devenu 250 €. Les marins sont furieux."
+      - mia: "Remets chaque virgule à sa place, et le port retrouvera son calme."
+    apres:
+      - narrateur: "Le Cristal Marin brille comme un phare. Les bateaux peuvent repartir."
+      - zero: "Le capitaine m'a nommé mousse honoraire. Je pèse 0,03 kilo. C'est écrit sur mon diplôme."
+      - mia: "Le Grignoteur s'est réfugié dans l'Atelier des Problèmes. Il a laissé une lettre…"
+
+  atelier-des-problemes:
+    titre: "Chapitre 10 — L'Atelier des Problèmes"
+    objet: "💜 Le Cristal Détective"
+    avant:
+      - narrateur: "Sur la porte de l'Atelier, une lettre griffonnée est accrochée."
+      - nuage-triste: "« Je ne comprends rien aux problèmes. Les mots se mélangent et les nombres se moquent de moi. Alors je les mange. »"
+      - mia: "Il a peut-être juste besoin d'une méthode… Comme celle des détectives !"
+      - neo: "Comprendre, chercher, calculer, vérifier. Et dessiner des barres. Montrons-lui que ça marche !"
+    apres:
+      - narrateur: "Le Cristal Détective s'allume. Au mur de l'Atelier, chaque problème a enfin sa solution."
+      - nuage: "(caché sous la table) …Avec des barres, c'est moins effrayant. Peut-être que moi aussi je pourrais…"
+      - zero: "Il est là ! Il court vers le Jardin de Fibonacci !"
+
+  jardin-de-fibonacci:
+    titre: "Chapitre 11 — Le Jardin de Fibonacci"
+    objet: "🌀 Le Cristal Spirale"
+    avant:
+      - narrateur: "Dans le Jardin, les plantes poussent en suivant des règles secrètes : 1, 1, 2, 3, 5, 8…"
+      - neo: "C'est mon jardin ! Et le Grignoteur s'est perdu au milieu de la grande spirale."
+      - mia: "Pour l'atteindre, il faut comprendre les motifs, les suites et la logique. C'est le dernier chapitre du premier livre !"
+    apres:
+      - narrateur: "Le Cristal Spirale tourbillonne de lumière, et le premier livre de l'aventure s'achève…"
+
+  # ------------------------- LIVRE II -------------------------
+  tour-des-proportions:
+    titre: "Chapitre 12 — La Tour des Proportions"
+    objet: "🗺️ Fragment de carte n° 1"
+    avant:
+      - nuage: "Les amis, j'ai entendu parler d'une créature qui change de couleur ET de valeur. Elle a besoin d'aide !"
+      - narrateur: "Elle s'appelle Ixe. Personne ne sait où elle se cache. Il faudra reconstituer sa carte, morceau par morceau."
+      - neo: "Premier indice : en haut de la Tour des Proportions, où tout grandit et rapetisse dans les mêmes proportions."
+    apres:
+      - narrateur: "Au sommet de la Tour, le premier fragment de carte brille. On y voit une grotte… et un x tracé à l'encre verte."
+      - ixe: "(une voix lointaine) Je suis là… et ailleurs… et nulle part…"
+
+  royaume-des-relatifs:
+    titre: "Chapitre 13 — Le Royaume des Relatifs"
+    objet: "🗺️ Fragment de carte n° 2"
+    avant:
+      - narrateur: "Ici, on descend sous zéro : −1, −2, −10… Le Royaume des Relatifs est tout à l'envers."
+      - zero-fier: "C'est MON royaume. Je suis au milieu de tout. Les positifs à droite, les négatifs à gauche, et moi : le roi."
+      - mia: "Majesté, il paraît qu'un caméléon est passé par vos terres glacées…"
+    apres:
+      - narrateur: "Le deuxième fragment apparaît, gravé dans la glace à −20 °C."
+      - zero: "Le roi Zéro vous remercie. Et a un peu froid."
+
+  grotte-de-l-algebre:
+    titre: "Chapitre 14 — La Grotte de l'Algèbre"
+    objet: "🗺️ Fragment de carte n° 3"
+    avant:
+      - narrateur: "Au fond de la Grotte, les murs sont couverts de lettres qui remplacent des nombres."
+      - ixe: "Vous ne m'attraperez pas ! Je suis x, et x peut valoir n'importe quoi !"
+      - neo: "Peut-être. Mais avec une balance bien équilibrée, on peut trouver ta vraie valeur !"
+    apres:
+      - narrateur: "Sur la grande balance de la grotte, le troisième fragment se pose. La balance est parfaitement équilibrée."
+      - ixe: "Bien joué… mais je me suis déjà enfui vers le Château !"
+
+  chateau-de-la-geometrie:
+    titre: "Chapitre 15 — Le Château de la Géométrie"
+    objet: "🗺️ Fragment de carte n° 4"
+    avant:
+      - narrateur: "Le Château a été bâti par les plus grands savants : Pythagore, Thalès, Euclide."
+      - mia: "Ses tours sont si hautes qu'on ne peut pas les mesurer avec une règle… sauf avec des triangles !"
+    apres:
+      - narrateur: "En haut de la plus haute tour, grâce à Pythagore, tu trouves le quatrième fragment."
+      - zero: "J'ai mesuré la tour avec mon ombre. Elle fait 3 Zéros de haut. Ou 30 mètres."
+
+  tour-des-puissances:
+    titre: "Chapitre 16 — La Tour des Puissances"
+    objet: "🗺️ Fragment de carte n° 5"
+    avant:
+      - zero-surprise: "Une tour où les nombres doublent, triplent, se multiplient par dix à chaque étage ! UN MILLIARD !"
+      - neo: "Le cinquième fragment est tout en haut. Il faut monter très vite… avec les puissances !"
+    apres:
+      - narrateur: "Au 10ᵉ étage, 10¹⁰ marches plus haut (heureusement il y avait un ascenseur), le cinquième fragment t'attend."
+
+  observatoire-des-donnees:
+    titre: "Chapitre 17 — L'Observatoire des Données"
+    objet: "🗺️ Fragment de carte n° 6"
+    avant:
+      - narrateur: "De l'Observatoire, on voit tout le Royaume en chiffres et en graphiques."
+      - mia: "Si on étudie les traces d'Ixe, on peut deviner où il va le plus probablement !"
+    apres:
+      - narrateur: "Le graphique est clair : Ixe se cache, avec une grande probabilité, au centre du Labyrinthe des Fonctions."
+      - nuage-joie: "J'ai calculé une moyenne ! Toute seule ! Enfin… tout seul. Enfin, je suis un nuage."
+
+  labyrinthe-des-fonctions:
+    titre: "Chapitre 18 — Le Labyrinthe des Fonctions"
+    objet: "🗺️ La carte complète"
+    avant:
+      - narrateur: "Le Labyrinthe est fait de courbes et de droites qui se croisent. Chaque chemin est une fonction."
+      - neo: "Avec les fragments réunis, la carte est presque complète. Il ne manque que le chemin final !"
+    apres:
+      - narrateur: "La carte se reconstitue entièrement, et le chemin vers le cœur du Labyrinthe s'illumine…"
+
+  # ------------------------- LIVRE III -------------------------
+  volcan-du-second-degre:
+    titre: "Chapitre 19 — Le Volcan du Second Degré"
+    objet: "📕 Le Livre des Paraboles"
+    avant:
+      - ixe: "La Bibliothèque de l'Infini est en danger. Le Grand Oubli efface les livres des savants, page après page."
+      - narrateur: "Pour la sauver, il faut retrouver onze volumes perdus dans les terres des Maîtres. Le premier est au cœur du Volcan."
+      - mia: "Les trajectoires de la lave dessinent des paraboles. Comprends-les, et le livre se réécrira."
+    apres:
+      - narrateur: "Le Livre des Paraboles se remplit à nouveau : sommets, discriminants, racines… Plus rien n'est oublié."
+
+  palais-de-l-arithmetique:
+    titre: "Chapitre 20 — Le Palais de l'Arithmétique"
+    objet: "📗 Le Livre des Nombres premiers"
+    avant:
+      - narrateur: "Le Palais garde les codes secrets du Royaume. Mais le Grand Oubli a brouillé toutes les serrures."
+      - neo: "Nombres premiers, PGCD, congruences… avec eux, on ouvre n'importe quel coffre !"
+    apres:
+      - narrateur: "Le Livre des Nombres premiers est sauvé. Et il n'aura jamais de fin : Euclide l'a démontré."
+
+  jardin-des-suites:
+    titre: "Chapitre 21 — Le Jardin des Suites"
+    objet: "📘 Le Livre des Suites"
+    avant:
+      - neo: "Mon jardin a bien grandi ! Mais le Grand Oubli a effacé toutes les règles des suites."
+      - mia: "Sans elles, on ne peut plus prévoir comment les plantes poussent, ni où mène l'infini."
+    apres:
+      - narrateur: "Le Livre des Suites se réécrit, terme après terme, jusqu'à l'infini… Gauss sourit dans sa page."
+
+  vallee-des-derivees:
+    titre: "Chapitre 22 — La Vallée des Dérivées"
+    objet: "📙 Le Livre du Mouvement"
+    avant:
+      - narrateur: "Dans la Vallée, tout bouge : les rivières, les vents, les étoiles. Mais plus personne ne sait à quelle vitesse."
+      - ixe: "Le Livre de Newton et Leibniz est presque vide. Il nous faut les dérivées !"
+    apres:
+      - narrateur: "Le Livre du Mouvement retrouve ses tangentes et ses vitesses. La Vallée se remet à vivre."
+
+  monts-exponentiels:
+    titre: "Chapitre 23 — Les Monts Exponentiels"
+    objet: "📒 Le Livre de la Croissance"
+    avant:
+      - narrateur: "Les Monts grimpent de plus en plus vite : c'est la croissance exponentielle."
+      - zero-surprise: "Une montagne qui grandit toute seule ?! Je préfère rester en bas."
+    apres:
+      - narrateur: "Le Livre de la Croissance est sauvé, avec ses exponentielles et ses logarithmes."
+
+  mer-des-integrales:
+    titre: "Chapitre 24 — La Mer des Intégrales"
+    objet: "📓 Le Livre des Aires infinies"
+    avant:
+      - narrateur: "La Mer des Intégrales additionne une infinité de vagues minuscules."
+      - nuage-joie: "Moi je suis fait d'une infinité de petites gouttes. Je suis une intégrale !"
+    apres:
+      - narrateur: "Le Livre des Aires infinies refait surface. Archimède serait fier de toi."
+
+  fete-foraine-des-probabilites:
+    titre: "Chapitre 25 — La Fête foraine des Probabilités"
+    objet: "📔 Le Livre du Hasard"
+    avant:
+      - narrateur: "À la Fête foraine, chaque stand est un jeu de hasard. Le Grand Oubli y a caché un livre."
+      - neo: "Pour le gagner, il faut savoir si les jeux sont justes. Pascal et Fermat nous montrent le chemin !"
+    apres:
+      - narrateur: "Tu as gagné le Livre du Hasard. Pas par chance : par le calcul."
+
+  archipel-des-vecteurs:
+    titre: "Chapitre 26 — L'Archipel des Vecteurs"
+    objet: "🧭 Le Livre des Directions"
+    avant:
+      - narrateur: "Pour naviguer d'île en île, il faut une direction, un sens et une distance."
+      - ixe: "Le livre est caché sur l'une des îles. Calcule bien ta route !"
+    apres:
+      - narrateur: "Le Livre des Directions est retrouvé. Plus aucun navire ne se perdra dans l'Archipel."
+
+  ile-des-complexes:
+    titre: "Chapitre 27 — L'Île des Complexes"
+    objet: "🔷 Le Livre Imaginaire"
+    avant:
+      - mia-reflexion: "Sur cette île existe un nombre impossible, dont le carré vaut −1…"
+      - zero: "Un nombre imaginaire ? J'ai un ami imaginaire. Il s'appelle Zéro Bis."
+    apres:
+      - narrateur: "Le Livre Imaginaire se réécrit, et il est bien réel : il fait tourner les moteurs et chanter les radios."
+
+  pont-des-matrices:
+    titre: "Chapitre 28 — Le Pont des Matrices"
+    objet: "🟦 Le Livre des Tableaux magiques"
+    avant:
+      - narrateur: "Le dernier pont avant le Temple est fait de tableaux de nombres qui tournent et se combinent."
+      - neo: "Il ne reste plus qu'à le traverser. Le Temple de la Logique est juste derrière !"
+    apres:
+      - narrateur: "Le Pont des Matrices s'illumine. Au bout, les portes du Temple s'ouvrent lentement…"
+
+  temple-de-la-logique:
+    titre: "Chapitre 29 — Le Temple de la Logique"
+    objet: "📜 Le Livre des Preuves"
+    avant:
+      - narrateur: "Au cœur du Temple, le Grand Oubli tourbillonne : une page blanche immense, qui efface tout ce qu'elle touche."
+      - mia: "Il n'a qu'une faiblesse : ce qui est DÉMONTRÉ ne peut jamais être oublié."
+      - neo: "Raisonnement, contre-exemples, preuves par l'absurde… C'est le combat final. Défi accepté !"
+    apres:
+      - narrateur: "Le Livre des Preuves brille d'une lumière plus forte que toutes les autres réunies…"
+
+  ecole-des-astuces:
+    titre: "L'École des Astuces"
+    objet: "💡 La Lampe des Astuces"
+    avant:
+      - mia: "Ici, pas de cristal à sauver : c'est notre quartier général secret !"
+      - neo: "On y apprend les méthodes des champions. Reviens quand tu veux pour t'entraîner."
+    apres:
+      - narrateur: "La Lampe des Astuces éclaire désormais tout le Royaume."

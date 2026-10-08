@@ -229,6 +229,14 @@ lecons:
           correction: "{{nb(a+b)}}."
     exercices:
       - type: nombre
+        vars: { a: "2..12", b: "2..12" }
+        enonce: "$ {{a}} - ({{nb(-b)}}) = ?$"
+        reponse: "a+b"
+        niveau: 2
+        erreurs:
+          - { valeur: "a-b", message: "Soustraire un nombre NÉGATIF, c'est ajouter son opposé : − (−{{b}}) = + {{b}}. Enlever une dette rend plus riche !" }
+        correction: "{{a}} + {{b}} = {{a+b}}"
+      - type: nombre
         vars: { a: "-15..15", b: "-15..15" }
         si: "a < 0 || b < 0"
         enonce: "$({{nb(a)}}) + ({{nb(b)}}) = ?$"
@@ -335,6 +343,14 @@ lecons:
           reponse: "a+b*c"
           correction: "{{b}} × {{c}} = {{b*c}} d'abord, puis {{a}} + {{b*c}} = {{a+b*c}}."
     exercices:
+      - type: nombre
+        vars: { a: "2..9", b: "2..9", c: "2..9" }
+        enonce: "${{a}} + {{b}} \\times {{c}} = ?$"
+        reponse: "a+b*c"
+        niveau: 2
+        erreurs:
+          - { valeur: "(a+b)*c", message: "La multiplication passe AVANT l'addition : d'abord {{b}} × {{c}} = {{b*c}}, ensuite {{a}} + {{b*c}}." }
+        correction: "{{a+b*c}}"
       - type: nombre
         vars: { a: "2..9", b: "2..9", c: "2..9" }
         enonce: "${{a}} \\times {{b}} - {{c}} = ?$"

@@ -47,6 +47,12 @@ lecons:
           choix: ["{{si(d==2,'une moitié',si(d==3,'un tiers','un quart'))}}", "{{si(d==2,'un tiers','une moitié')}}", "{{si(d==4,'un tiers','un quart')}}"]
           correction: "Le disque est partagé en {{d}} parts égales."
     exercices:
+      - type: colorier
+        vars: { d: [2, 3, 4] }
+        enonce: "Colorie {{si(d==2,'la moitié',si(d==3,'un tiers','un quart'))}} de la pizza."
+        n: "1"
+        d: "d"
+        correction: "{{si(d==2,'La moitié',si(d==3,'Un tiers','Un quart'))}} = 1 part sur {{d}}."
       - type: qcm
         vars: { d: [2, 3, 4, 5, 6, 8, 10] }
         enonce: "Le gâteau est coupé en {{d}} parts égales. Chaque part, c'est…"
@@ -110,7 +116,18 @@ lecons:
           reponse: "n/d"
           forme: fraction
           correction: "{{n}} parts colorées sur {{d}} : {{n}}/{{d}}."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Plie une feuille en 2, puis en 4, puis en 8. Colorie 3 parts sur 8. Quelle fraction de la feuille as-tu coloriée ? Montre-la à un adulte !"
+          materiel: "une feuille et des crayons"
     exercices:
+      - type: colorier
+        vars: { d: [4, 5, 6, 8], n: "1..7" }
+        si: "n < d"
+        enonce: "Colorie $\\frac{ {{n}} }{ {{d}} }$ du gâteau."
+        n: "n"
+        d: "d"
+        correction: "{{n}} parts sur {{d}}."
       - type: nombre
         vars: { d: [3, 4, 5, 6, 8, 10], n: "1..9" }
         si: "n < d"
@@ -368,6 +385,17 @@ lecons:
           forme: fraction
           correction: "On garde les {{d}}ᵉ : {{a}} + {{b}} = {{a+b}}, donc {{a+b}}/{{d}}."
     exercices:
+      - type: qcm
+        vars: { a: "1..3", b: "1..3", d: [5, 7, 9] }
+        si: "a*b != a+b"
+        enonce: "$\\frac{ {{a}} }{ {{d}} } + \\frac{ {{b}} }{ {{d}} } = ?$"
+        choix: ["$\\frac{ {{a+b}} }{ {{d}} }$", "$\\frac{ {{a+b}} }{ {{2*d}} }$", "$\\frac{ {{a*b}} }{ {{d}} }$"]
+        explications:
+          - ""
+          - "Tu as additionné les dénominateurs ! Des {{d}}ᵉ + des {{d}}ᵉ restent des {{d}}ᵉ : seule la quantité de parts s'additionne."
+          - "On ADDITIONNE les parts ({{a}} + {{b}}), on ne les multiplie pas."
+        niveau: 2
+        correction: "{{a+b}}/{{d}}."
       - type: nombre
         vars: { a: "1..6", b: "1..6", d: [7, 9, 10, 11] }
         si: "a + b < d"

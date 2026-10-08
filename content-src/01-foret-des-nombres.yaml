@@ -53,7 +53,16 @@ lecons:
           reponse: "d*10+u"
           indice: "Compte d'abord les barres de 10 : 10, 20, 30… puis ajoute les petits cubes."
           correction: "{{d}} dizaines et {{u}} unités : {{d*10+u}}."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Prends une grosse poignée de pâtes (ou de boutons). Fais des tas de 10. Combien de tas ? Combien de pâtes en tout ? Demande à un adulte de vérifier en comptant une par une : c'est beaucoup plus long !"
+          materiel: "des pâtes, des boutons ou des Lego"
     exercices:
+      - type: blocs
+        vars: { n: "11..99" }
+        enonce: "Construis le nombre {{n}} avec des barres de dix et des petits cubes."
+        cible: "n"
+        correction: "{{n}} = {{ent(n/10)}} × 10 + {{n%10}} : {{ent(n/10)}} barres de dix et {{n%10}} petits cubes."
       - type: nombre
         vars: { d: "1..9", u: "0..9" }
         enonce: "Combien y a-t-il de cubes ?"
@@ -73,7 +82,7 @@ lecons:
         champs:
           - { reponse: "ent(n/10)", apres: "dizaines" }
           - { reponse: "n % 10", apres: "unités" }
-        correction: "{{n}} = {{ent(n/10)}} dizaines et {{n%10}} unités."
+        correction: "{{n}} = {{ent(n/10)}} × 10 + {{n%10}} : {{ent(n/10)}} barres de dix et {{n%10}} petits cubes."
       - type: nombre
         vars: { d: "3..9" }
         enonce: "Combien d'unités y a-t-il dans {{d}} dizaines ?"
@@ -124,7 +133,27 @@ lecons:
           enonce: "Quel est le chiffre des dizaines dans {{n}} ?"
           reponse: "chiffre(n,1)"
           correction: "{{n}} : {{chiffre(n,2)}} centaines, {{chiffre(n,1)}} dizaines, {{chiffre(n,0)}} unités."
+      - explique:
+          texte: "Dans 347, comment sais-tu que le 4 vaut 40 ?"
+          qui: neo
+          choix:
+            - { texte: "Il est à la place des dizaines : 4 dizaines = 40", ok: true, retour: "Exactement ! C'est la PLACE du chiffre qui donne sa valeur." }
+            - { texte: "Parce que 4 est plus petit que 7", ok: false, retour: "Hmm, la taille du chiffre ne compte pas : c'est sa place qui compte. Regarde le tableau." }
+            - { texte: "Je l'ai vu sur les blocs : 4 barres de 10", ok: true, retour: "Très bien vu ! Les 4 barres de dix font 40." }
     exercices:
+      - type: blocs
+        vars: { n: "101..599" }
+        enonce: "Construis le nombre {{n}} avec les blocs."
+        cible: "n"
+        correction: "{{n}} = {{chiffre(n,2)}} × 100 + {{chiffre(n,1)}} × 10 + {{chiffre(n,0)}}."
+      - type: nombre
+        vars: { c: "2..9", u: "2..9" }
+        enonce: "Écris en chiffres : {{c}} centaines et {{u}} unités."
+        reponse: "c*100+u"
+        niveau: 2
+        erreurs:
+          - { valeur: "c*10+u", message: "Tu as oublié de garder la place des dizaines ! Sans le 0 de Zéro, le {{c}} ne vaut que des dizaines." }
+        correction: "{{c}} centaines, 0 dizaine, {{u}} unités : {{c*100+u}}."
       - type: champs
         vars: { n: "101..999" }
         enonce: "Décompose {{n}}."
@@ -274,6 +303,15 @@ lecons:
           cible: "n"
           tolerance: 0.5
     exercices:
+      - type: sauts
+        vars: { a: "0..40", b: "45..95" }
+        enonce: "Fais aller la grenouille de {{a}} à {{b}} avec le moins de sauts possible."
+        depart: "a"
+        cible: "b"
+        min: 0
+        max: 100
+        sauts_permis: [10, 1, -10, -1]
+        correction: "De {{a}} à {{b}}, il y a {{b-a}} : des sauts de 10 d'abord ({{ent((b-a)/10)}}), puis des sauts de 1 ({{(b-a)%10}})."
       - type: droite
         vars: { n: "1..19" }
         enonce: "Place {{n}} sur la droite."
@@ -346,6 +384,13 @@ lecons:
           ordre_fixe: true
           correction: "{{n}} finit par {{n%10}}, il est donc {{si(n%2==0,'pair','impair')}}."
     exercices:
+      - type: partage
+        vars: { k: "3..8" }
+        enonce: "Partage les {{2*k}} chaussettes en 2 tas égaux. ({{2*k}} est-il pair ?)"
+        total: "2*k"
+        parts: "2"
+        emoji: "🧦"
+        correction: "{{k}} et {{k}} : on peut faire 2 tas égaux, donc {{2*k}} est pair."
       - type: qcm
         vars: { n: "10..9999" }
         enonce: "{{n}} est-il pair ou impair ?"
@@ -412,6 +457,15 @@ lecons:
           reponse: "a*1000000 + b*1000"
           correction: "{{a}} millions = {{a*1000000}} ; {{b}} mille = {{b*1000}} ; total : {{a*1000000+b*1000}}."
     exercices:
+      - type: nombre
+        vars: { a: "2..9", b: "2..9" }
+        enonce: "Écris en chiffres : {{a}} millions {{b}} mille."
+        reponse: "a*1000000+b*1000"
+        niveau: 2
+        erreurs:
+          - { valeur: "a*1000+b", message: "Attention : chaque classe a 3 chiffres ! {{b}} mille s'écrit 00{{b}} 000 dans la classe des milliers." }
+          - { valeur: "a*1000000+b*100", message: "Il manque un zéro : {{b}} mille = {{b*1000}}." }
+        correction: "{{nb(a*1000000+b*1000)}}"
       - type: nombre
         vars: { a: "2..99", b: "100..999" }
         enonce: "Écris en chiffres : {{a}} mille {{b}}."

@@ -380,6 +380,15 @@ lecons:
           correction: "${{a}}x = {{nb(a*x+b)}} - ({{nb(b)}}) = {{nb(a*x)}}$, donc $x = {{nb(x)}}$."
     exercices:
       - type: nombre
+        vars: { a: "2..9", x: "1..9", b: "1..15" }
+        enonce: "Résous : ${{a}}x + {{b}} = {{a*x+b}}$"
+        reponse: "x"
+        niveau: 2
+        erreurs:
+          - { valeur: "(a*x+2*b)/a", message: "Pour enlever + {{b}}, on SOUSTRAIT {{b}} des deux côtés (on ne l'ajoute pas)." }
+          - { valeur: "a*x+b-b-a", message: "{{a}}x veut dire {{a}} × x : pour isoler x, on DIVISE par {{a}}, on ne soustrait pas {{a}}." }
+        correction: "${{a}}x = {{a*x}}$ donc $x = {{x}}$."
+      - type: nombre
         vars: { a: "2..9", x: "-8..10", b: "-20..20" }
         enonce: "Résous : ${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$"
         reponse: "x"

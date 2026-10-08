@@ -168,6 +168,13 @@ lecons:
           reponse: "a"
           unite: €
           correction: "{{a+e}} − {{e}} = {{a}} €."
+      - explique:
+          texte: "« Inès a 5 images de plus que Sami. Inès en a 20. » Comment trouves-tu les images de Sami ?"
+          qui: neo
+          choix:
+            - { texte: "Je dessine deux barres : celle de Sami est plus courte de 5, donc 20 − 5", ok: true, retour: "Parfait : le dessin t'a donné la bonne opération, même avec le mot « plus » !" }
+            - { texte: "Il y a « plus », donc je fais 20 + 5", ok: false, retour: "C'est le piège ! Sami en a MOINS qu'Inès. Dessine les barres pour le voir." }
+            - { texte: "Je pars de 20 et je recule de 5", ok: true, retour: "Oui ! Reculer de 5, c'est faire 20 − 5 = 15." }
     exercices:
       - type: nombre
         vars: { a: "20..80", e: "5..30" }
@@ -282,6 +289,10 @@ lecons:
           reponse: "b - n*p"
           unite: €
           correction: "Étape 1 : {{n}} × {{p}} = {{n*p}} €. Étape 2 : {{b}} − {{n*p}} = {{b-n*p}} €."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Au supermarché (ou avec un prospectus), choisis 3 articles. Estime le total de tête, puis calcule-le vraiment. Combien rendra-t-on sur un billet de 20 € ?"
+          materiel: "un prospectus ou un ticket de caisse"
     exercices:
       - type: nombre
         vars: { e: "20..30", p: "4..9", c: "100..250" }

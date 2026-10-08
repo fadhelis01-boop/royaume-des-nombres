@@ -1,3 +1,13 @@
+- version: "1.1.0"
+  date: "2026-10-08"
+  notes:
+    - "Une grande histoire encadre l'apprentissage : le Grignoteur éteint les cristaux du Royaume ; chaque monde est un chapitre, chaque Défi du Gardien rallume un cristal. Trois livres, un prologue, des scènes en bande dessinée et un livre de l'aventure à relire."
+    - "Nouveau monde pour les plus jeunes : le Nid des Nombres (GS – CP), avec des objets à toucher pour compter."
+    - "On manipule : construire un nombre avec des blocs, partager dans des paniers, faire sauter la grenouille, colorier une fraction, régler une horloge, payer avec des pièces."
+    - "Les questions arrivent dès le début du cours, et plus seulement à la fin. Moments « Explique à Néo » et défis dans la vraie vie."
+    - "Les erreurs classiques reçoivent une explication ciblée (retenue oubliée, soustraction à l'envers, aire et périmètre, 2,15 contre 2,5, fractions…)."
+    - "Une leçon est validée à 80 % ; le défi s'adapte après deux erreurs de suite ; Défi du Gardien et diplôme à imprimer pour chaque monde."
+    - "Échauffement de 2 minutes, Tour des Additions, Calcul éclair en mode zen sans chrono, musique douce facultative, police OpenDyslexic, clavier simplifié pour les petits."
 - version: "1.0.0"
   date: "2026-10-08"
   notes:

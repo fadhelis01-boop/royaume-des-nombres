@@ -1,0 +1,114 @@
+import { useState } from "react";
+import { go } from "../lib/router";
+import { useContent } from "../lib/content";
+import { markStory, useChild } from "../lib/store";
+import { StoryScene } from "../components/Story";
+import { Mascot } from "../components/Mascot";
+import type { Line } from "../lib/types";
+
+/** Le Livre de l'aventure : prologue, chapitres débloqués (à réécouter) et fins des livres. */
+export function Aventure({ part }: { part?: string }) {
+  const { manifest, worlds } = useContent();
+  const child = useChild()!;
+  const h = manifest?.histoire;
+  const [open, setOpen] = useState<{ titre: string; lines: Line[]; k: string; decor?: string; couleur?: string } | null>(null);
+  if (!h) return <div className="page center">L'aventure n'est pas disponible.</div>;
+
+  if (part === "prologue")
+    return (
+      <div className="page narrow">
+        <StoryScene
+          lines={h.prologue}
+          titre="Prologue — Le Royaume s'éteint"
+          k="prologue"
+          decor="img/decors/foret-des-nombres.webp"
+          onDone={() => {
+            markStory("prologue");
+            go("/");
+          }}
+          doneLabel="Je relève le défi ! ➜"
+        />
+      </div>
+    );
+
+  if (open)
+    return (
+      <div className="page narrow">
+        <button className="back" onClick={() => setOpen(null)}>
+          ← Le Livre
+        </button>
+        <StoryScene lines={open.lines} titre={open.titre} k={open.k} decor={open.decor} couleur={open.couleur} onDone={() => setOpen(null)} doneLabel="Refermer le chapitre" />
+      </div>
+    );
+
+  const crystals = child.crystals ?? [];
+  return (
+    <div className="page narrow">
+      <button className="back" onClick={() => go("/")}>
+        ← Carte
+      </button>
+      <h1>📖 Le Livre de l'aventure</h1>
+      <div className="card row">
+        <Mascot who="nuage" size={70} humeur={child.story?.["fin-arc-1"] ? "joie" : undefined} />
+        <div>
+          <strong>
+            💎 {crystals.length} cristal{crystals.length > 1 ? "aux" : ""} rallumé{crystals.length > 1 ? "s" : ""}
+          </strong>
+          <p className="small muted">Apprends les leçons d'un monde, puis réussis son Défi du Gardien pour rallumer son cristal et lire la suite de l'histoire.</p>
+        </div>
+      </div>
+      <button className="chapter-row" onClick={() => setOpen({ titre: "Prologue — Le Royaume s'éteint", lines: h.prologue, k: "prologue-replay", decor: "img/decors/foret-des-nombres.webp" })}>
+        <span>📜</span>
+        <strong>Prologue — Le Royaume s'éteint</strong>
+      </button>
+      {h.arcs.map((arc) => {
+        const ws = worlds.filter((w) => h.chapitres[w.id] && (arc.id === "arc-1" ? w.cycle === "graines" : arc.id === "arc-2" ? w.cycle === "explorateurs" : w.cycle === "maitres"));
+        const finished = !!child.story?.[`fin-${arc.id}`];
+        return (
+          <section key={arc.id} className="arc">
+            <h2>
+              {arc.titre} <small className="muted">{arc.sousTitre}</small>
+            </h2>
+            {ws.map((w) => {
+              const ch = h.chapitres[w.id];
+              const lit = crystals.includes(w.id);
+              const begun = !!child.story?.[`avant:${w.id}`];
+              return (
+                <div key={w.id} className={`chapter-row ${lit ? "lit" : begun ? "" : "locked"}`} style={{ "--wc": w.couleur } as React.CSSProperties}>
+                  <span>{lit ? "💎" : begun ? w.emoji : "🔒"}</span>
+                  <div className="chapter-body">
+                    <strong>{ch.titre}</strong>
+                    <small className="muted">{lit ? `${ch.objet} — rallumé !` : begun ? `${ch.objet} — à rallumer (Défi du Gardien)` : "Chapitre pas encore commencé"}</small>
+                    <div className="row">
+                      {begun && (
+                        <button className="link small" onClick={() => setOpen({ titre: ch.titre, lines: ch.avant, k: `avant-${w.id}`, decor: w.decor, couleur: w.couleur })}>
+                          ▶ Début du chapitre
+                        </button>
+                      )}
+                      {lit && (
+                        <button className="link small" onClick={() => setOpen({ titre: `${ch.titre} — la victoire`, lines: ch.apres, k: `apres-${w.id}`, decor: w.decor, couleur: w.couleur })}>
+                          ⭐ La victoire
+                        </button>
+                      )}
+                      {!begun && (
+                        <button className="link small" onClick={() => go(`/monde/${w.id}`)}>
+                          Aller au monde
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+            {finished && (
+              <button className="chapter-row lit" onClick={() => setOpen({ titre: `${arc.titre} — Fin`, lines: arc.fin, k: `fin-${arc.id}` })}>
+                <span>🏁</span>
+                <strong>Fin du livre : réécouter</strong>
+              </button>
+            )}
+          </section>
+        );
+      })}
+    </div>
+  );
+}

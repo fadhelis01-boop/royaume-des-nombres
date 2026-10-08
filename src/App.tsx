@@ -5,6 +5,7 @@ import { useContent } from "./lib/content";
 import { usePwa, applyUpdate } from "./lib/pwa";
 import { levelOf } from "./lib/rewards";
 import { stopSpeaking } from "./lib/tts";
+import { setMusicKey, startMusic, stopMusic } from "./lib/music";
 import { Mascot } from "./components/Mascot";
 import { Confetti } from "./components/Confetti";
 import { Accueil, NouvelEnfant } from "./pages/Accueil";
@@ -27,6 +28,10 @@ import { Diagnostic } from "./pages/Diagnostic";
 import { Inventer } from "./pages/Inventer";
 import { Parents } from "./pages/Parents";
 import { Aide } from "./pages/Aide";
+import { Aventure } from "./pages/Aventure";
+import { Gardien } from "./pages/Gardien";
+import { Diplome } from "./pages/Diplome";
+import { Echauffement } from "./pages/Echauffement";
 
 const NAV = [
   { path: "/", icon: "🗺️", label: "Carte" },
@@ -47,6 +52,19 @@ export default function App() {
   const parentUnlocked = useStore((s) => s.parentUnlocked);
   const pwa = usePwa();
   const [lastInput, setLastInput] = useState(Date.now());
+
+  // Musique d'ambiance (option) : une tonalité par monde, coupée quand l'app est cachée.
+  useEffect(() => {
+    if (!settings.music || !child) {
+      stopMusic();
+      return;
+    }
+    setMusicKey(route.parts[1] ?? "carte");
+    startMusic();
+    const vis = () => (document.visibilityState === "visible" ? startMusic() : stopMusic());
+    document.addEventListener("visibilitychange", vis);
+    return () => document.removeEventListener("visibilitychange", vis);
+  }, [settings.music, child?.id, route.parts[1]]);
 
   // Changement de page : on arrête la voix et on remonte en haut.
   useEffect(() => {
@@ -118,7 +136,19 @@ export default function App() {
         break;
       case "jeux":
         page =
-          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "enigmes" ? <Enigmes /> : <Jeux />;
+          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : <Jeux />;
+        break;
+      case "aventure":
+        page = <Aventure part={p[1]} />;
+        break;
+      case "gardien":
+        page = <Gardien worldId={p[1]} />;
+        break;
+      case "diplome":
+        page = <Diplome worldId={p[1]} />;
+        break;
+      case "echauffement":
+        page = <Echauffement />;
         break;
       case "defi-du-jour":
         page = <DefiDuJour />;
@@ -150,7 +180,7 @@ export default function App() {
 
   const lvl = child ? levelOf(child.xp) : null;
   const overLimit = !!child && settings.dailyLimit > 0 && minutesToday(child) >= settings.dailyLimit && !isParents && !parentUnlocked;
-  const immersive = p[0] === "lecon" || p[0] === "defi" || (p[0] === "jeux" && !!p[1]) || p[0] === "diagnostic" || p[0] === "defi-du-jour";
+  const immersive = p[0] === "lecon" || p[0] === "defi" || (p[0] === "jeux" && !!p[1]) || p[0] === "diagnostic" || p[0] === "defi-du-jour" || p[0] === "gardien" || p[0] === "echauffement" || p[1] === "prologue";
 
   return (
     <div className={`app ${immersive ? "immersive" : ""}`}>

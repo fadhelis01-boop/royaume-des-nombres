@@ -1,6 +1,6 @@
 import { go } from "../lib/router";
 import { useChild } from "../lib/store";
-import { tablesMastered } from "../lib/rewards";
+import { additionsMastered, tablesMastered } from "../lib/rewards";
 import { useContent } from "../lib/content";
 import { Bubble } from "../components/Mascot";
 
@@ -9,7 +9,8 @@ export function Jeux() {
   const { manifest } = useContent();
   const games = [
     { id: "eclair", emoji: "⚡", titre: "Calcul éclair", desc: "Un maximum de calculs en 60 secondes !", best: child.games["eclair"], who: "neo" },
-    { id: "tables", emoji: "✖️", titre: "La Tour des Tables", desc: `Deviens maître des tables de multiplication (${tablesMastered(child)}/64).`, who: "mia" },
+    { id: "additions", emoji: "➕", titre: "La Tour des Additions", desc: `Toutes les additions jusqu'à 10 + 10 par cœur (${additionsMastered(child)}/100).`, who: "neo" },
+    { id: "tables", emoji: "✖️", titre: "La Tour des Tables", desc: `Les tables de multiplication par cœur (${tablesMastered(child)}/64).`, who: "mia" },
     { id: "compte", emoji: "🧮", titre: "Le compte est bon", desc: "Atteins le nombre cible avec + − × ÷.", best: child.counters["compte"], bestLabel: "réussis", who: "neo" },
     { id: "vise", emoji: "🎯", titre: "Vise juste", desc: "Place les nombres sur la droite, au plus près !", best: child.games["vise"], who: "mia" },
     { id: "enigmes", emoji: "🧩", titre: "Énigmes de Mia", desc: `Des casse-têtes pour réfléchir (${child.enigmes.length}/${manifest?.enigmes.length ?? 0} résolues).`, who: "mia" },

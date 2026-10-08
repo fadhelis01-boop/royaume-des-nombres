@@ -72,6 +72,16 @@ function idealAnswer(inst: Instance): Answer {
       return { kind: "order", order: inst.items!.map((_, i) => i) };
     case "droite":
       return { kind: "point", value: inst.value! };
+    case "blocs":
+    case "sauts":
+    case "payer":
+      return { kind: "state", values: [inst.value!] };
+    case "colorier":
+      return { kind: "state", values: [inst.n!] };
+    case "horloge":
+      return { kind: "state", values: [inst.h!, inst.m!] };
+    case "partage":
+      return { kind: "state", values: Array(inst.parts!).fill(inst.total! / inst.parts!) };
     default:
       return { kind: "choice", index: inst.correct! };
   }
@@ -121,6 +131,11 @@ function checkExercise(spec: ExSpec, where: string, n = 160) {
     const w = `${where} (tirage ${seed})`;
     for (const s of [inst.enonce, inst.indice, inst.correction, inst.expectedText, inst.gauche, inst.droite, inst.unite, ...(inst.choix ?? []), ...(inst.items ?? [])])
       checkText(s, w);
+    for (const e of inst.erreurs ?? []) {
+      checkText(e.message, w);
+      if (Math.abs(e.value - (inst.value ?? NaN)) < 1e-9) errors.push(`${w} : une « erreur fréquente » est égale à la bonne réponse`);
+    }
+    for (const m of inst.choixMsg ?? []) checkText(m, w);
     for (const c of inst.champs ?? []) {
       checkText(c.avant, w);
       checkText(c.apres, w);
@@ -167,7 +182,15 @@ function checkStep(s: Step, where: string) {
       if (s.visuel) checkVisuel(s.visuel, where);
       break;
     case "question":
-      checkExercise(s.ex, where);
+      if (!s.auto) checkExercise(s.ex, where);
+      break;
+    case "explique":
+      checkText(s.texte, where);
+      s.choix.forEach((c) => (checkText(c.texte, where), checkText(c.retour, where)));
+      if (!s.choix.some((c) => c.ok)) errors.push(`${where} : explique sans aucune bonne méthode`);
+      break;
+    case "vraie_vie":
+      checkText(s.texte, where);
       break;
   }
 }
@@ -191,6 +214,10 @@ for (const [id, j] of Object.entries(manifest.jeux)) j.exercices.forEach((e, i) 
 for (const e of manifest.enigmes) {
   checkText(e.texte, `énigme ${e.id}`);
   checkText(e.solution, `énigme ${e.id}`);
+}
+if (manifest.histoire) {
+  const all = [manifest.histoire.prologue, ...manifest.histoire.arcs.map((a) => a.fin), ...Object.values(manifest.histoire.chapitres).flatMap((c) => [c.avant, c.apres])];
+  all.forEach((ls, i) => ls.forEach((l) => checkText(l.text, `histoire ${i}`)));
 }
 for (const g of manifest.glossaire) {
   checkText(g.def, `glossaire ${g.mot}`);

@@ -41,6 +41,14 @@ lecons:
           correction: "${{a}}^{ {{n}} } = {{a^n}}$"
     exercices:
       - type: nombre
+        vars: { a: "2..5", n: "3..4" }
+        enonce: "${{a}}^{ {{n}} } = ?$"
+        reponse: "a^n"
+        niveau: 2
+        erreurs:
+          - { valeur: "a*n", message: "${{a}}^{ {{n}} }$, ce n'est pas {{a}} × {{n}} : c'est {{a}} multiplié par lui-même {{n}} fois." }
+        correction: "{{a^n}}"
+      - type: nombre
         vars: { a: "2..9", n: "2..4" }
         enonce: "${{a}}^{ {{n}} } = ?$"
         reponse: "a^n"

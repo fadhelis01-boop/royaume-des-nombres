@@ -71,7 +71,8 @@ export function NouvelEnfant() {
   const ok = name.trim().length >= 1;
   const create = (diag: boolean) => {
     addChild(newChild(name.trim(), avatar, age));
-    go(diag ? "/diagnostic" : "/");
+    // l'aventure commence par le prologue (le test de niveau vient juste après)
+    go(diag ? "/diagnostic" : "/aventure/prologue");
   };
   return (
     <div className="page narrow">

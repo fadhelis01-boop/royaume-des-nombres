@@ -163,6 +163,15 @@ lecons:
           correction: "{{t}}/100 × {{q}} = {{nb(t*q/100)}}."
     exercices:
       - type: nombre
+        vars: { t: [10, 20, 25, 50], q: [40, 60, 80, 120] }
+        enonce: "{{t}} % de {{q}} = ?"
+        reponse: "t*q/100"
+        niveau: 2
+        erreurs:
+          - { valeur: "t*q", message: "N'oublie pas : « pour cent » veut dire « sur 100 ». Il faut diviser par 100 : {{t}} × {{q}} ÷ 100." }
+          - { valeur: "q-t", message: "Retirer {{t}} n'est pas prendre {{t}} %. On calcule {{t}}/100 de {{q}}." }
+        correction: "{{nb(t*q/100)}}"
+      - type: nombre
         vars: { t: [5, 10, 15, 20, 25, 30, 40, 50, 75], q: [20, 40, 60, 80, 120, 200, 360, 500] }
         enonce: "{{t}} % de {{q}} = ?"
         reponse: "t*q/100"

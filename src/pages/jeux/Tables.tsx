@@ -2,7 +2,7 @@ import { Fragment, useMemo, useRef, useState } from "react";
 import { go } from "../../lib/router";
 import { sfx } from "../../lib/sound";
 import { addXp, updateChild, useChild } from "../../lib/store";
-import { tablesMastered } from "../../lib/rewards";
+import { additionsMastered, tablesMastered } from "../../lib/rewards";
 import { applyKey, Keypad } from "../../components/Keypad";
 import { Bubble, Mascot } from "../../components/Mascot";
 import type { Child } from "../../lib/types";
@@ -22,16 +22,22 @@ const TRUCS: Record<number, string> = {
   10: "×10 : Zéro vient se coller à droite ! 7 × 10 = 70.",
 };
 
-const known = (c: Child, a: number, b: number) => {
-  const t1 = c.tables[`${a}x${b}`],
-    t2 = c.tables[`${b}x${a}`];
+type Op = "x" | "+";
+const ADD_TRUCS = "Astuces : les amis de 10 (7 + 3), les doubles (6 + 6 = 12) et les presque-doubles (6 + 7 = 12 + 1), et + 9 = + 10 − 1.";
+const known = (c: Child, a: number, b: number, op: Op = "x") => {
+  const t1 = c.tables[`${a}${op}${b}`],
+    t2 = c.tables[`${b}${op}${a}`];
   const ok = (t1?.ok ?? 0) + (t2?.ok ?? 0),
     ko = (t1?.ko ?? 0) + (t2?.ko ?? 0);
   if (!ok && !ko) return 0; // jamais vu
   return ok >= 2 && ok > ko * 2 ? 2 : 1; // 2 = sûr, 1 = en cours
 };
 
-export function Tables() {
+export function Tables({ initialOp = "x" }: { initialOp?: Op }) {
+  const [op, setOp] = useState<Op>(initialOp);
+  const lo = op === "x" ? 2 : 1;
+  const res = (a: number, b: number) => (op === "x" ? a * b : a + b);
+  const sym = op === "x" ? "×" : "+";
   const child = useChild()!;
   const [session, setSession] = useState<[number, number][] | null>(null);
   const [i, setI] = useState(0);
@@ -42,10 +48,10 @@ export function Tables() {
 
   const pickFacts = (table?: number): [number, number][] => {
     const all: { f: [number, number]; w: number }[] = [];
-    for (let a = 2; a <= 10; a++)
-      for (let b = 2; b <= 10; b++) {
+    for (let a = lo; a <= 10; a++)
+      for (let b = lo; b <= 10; b++) {
         if (table && a !== table) continue;
-        const k = known(child, a, b);
+        const k = known(child, a, b, op);
         all.push({ f: [a, b], w: (k === 2 ? 1 : k === 1 ? 5 : 3) + Math.random() * 2 });
       }
     return all
@@ -57,9 +63,9 @@ export function Tables() {
 
   const grid = useMemo(() => {
     const rows: number[][] = [];
-    for (let a = 2; a <= 10; a++) {
+    for (let a = lo; a <= 10; a++) {
       const r: number[] = [];
-      for (let b = 2; b <= 10; b++) r.push(known(child, a, b));
+      for (let b = lo; b <= 10; b++) r.push(known(child, a, b, op));
       rows.push(r);
     }
     return rows;
@@ -76,16 +82,16 @@ export function Tables() {
   const submit = () => {
     if (!session || fb || !val.trim()) return;
     const [a, b] = session[i];
-    const ok = Number(val.replace(/\s/g, "")) === a * b;
+    const ok = Number(val.replace(/\s/g, "")) === res(a, b);
     updateChild((c) => {
-      const t = (c.tables[`${a}x${b}`] ??= { ok: 0, ko: 0 });
+      const t = (c.tables[`${a}${op}${b}`] ??= { ok: 0, ko: 0 });
       ok ? t.ok++ : t.ko++;
     });
     if (ok) {
       sfx.ok();
       setScore((s) => s + 1);
     } else sfx.oops();
-    setFb({ ok, ans: a * b });
+    setFb({ ok, ans: res(a, b) });
   };
   const next = () => {
     if (!session) return;
@@ -114,16 +120,16 @@ export function Tables() {
           <span className="score-pill">⭐ {score}</span>
         </div>
         <div className={`eclair-q ${fb ? (fb.ok ? "ok" : "ko") : ""}`}>
-          {a} × {b} = {fb ? fb.ans : "?"}
+          {a} {sym} {b} = {fb ? fb.ans : "?"}
         </div>
         {!fb ? (
           <>
             <input ref={inputRef} className="answer-input xl" value={val} inputMode="none" onChange={(e) => setVal(e.target.value)} onKeyDown={(e) => e.key === "Enter" && submit()} aria-label="réponse" autoFocus />
-            <Keypad mode="nombre" onKey={(k) => setVal((v) => applyKey(v, k))} onSubmit={submit} canSubmit={!!val.trim()} />
+            <Keypad mode="nombre" extras={[]} onKey={(k) => setVal((v) => applyKey(v, k))} onSubmit={submit} canSubmit={!!val.trim()} />
           </>
         ) : (
           <div className="center">
-            {fb.ok ? <Bubble who="neo" text="Exact !" size={50} /> : <Bubble who="mia" text={`${a} × ${b} = ${fb.ans}. ${TRUCS[Math.max(a, b)] ?? ""}`} size={50} />}
+            {fb.ok ? <Bubble who="neo" text="Exact !" size={50} /> : <Bubble who="mia" text={`${a} ${sym} ${b} = ${fb.ans}. ${op === "x" ? TRUCS[Math.max(a, b)] ?? "" : ADD_TRUCS}`} size={50} />}
             <button className="btn btn-primary" onClick={next} autoFocus onKeyDown={(e) => e.key === "Enter" && next()}>
               Suivant ➜
             </button>
@@ -151,17 +157,26 @@ export function Tables() {
       </div>
     );
 
-  const m = tablesMastered(child);
+  const m = op === "x" ? tablesMastered(child) : additionsMastered(child);
+  const totalFacts = op === "x" ? 64 : 100;
   return (
     <div className="page">
       <button className="back" onClick={() => go("/jeux")}>
         ← Jeux
       </button>
-      <h1>✖️ La Tour des Tables</h1>
-      <Bubble who="neo" text={`Tu connais ${m} faits sur 64 (des tables de 2 à 9). Chaque case verte est conquise ! Les cases jaunes sont en cours, les grises jamais vues.`} />
-      <div className="tables-grid" role="table" aria-label="maîtrise des tables">
-        <div className="tg-cell head">×</div>
-        {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((b) => (
+      <h1>{op === "x" ? "✖️ La Tour des Tables" : "➕ La Tour des Additions"}</h1>
+      <div className="tabs">
+        <button className={`tab ${op === "+" ? "active" : ""}`} onClick={() => setOp("+")}>
+          ➕ Additions (1 à 10)
+        </button>
+        <button className={`tab ${op === "x" ? "active" : ""}`} onClick={() => setOp("x")}>
+          ✖️ Tables (2 à 10)
+        </button>
+      </div>
+      <Bubble who="neo" text={`Tu connais ${m} faits sur ${totalFacts}. Chaque case verte est conquise ! Les cases jaunes sont en cours, les grises jamais vues.`} />
+      <div className="tables-grid" role="table" aria-label="maîtrise des faits" style={{ gridTemplateColumns: `repeat(${12 - lo}, minmax(0, 1fr))` }}>
+        <div className="tg-cell head">{sym}</div>
+        {Array.from({ length: 11 - lo }, (_, k) => k + lo).map((b) => (
           <div key={b} className="tg-cell head">
             {b}
           </div>
@@ -169,11 +184,11 @@ export function Tables() {
         {grid.map((row, ai) => (
           <Fragment key={ai}>
             <div className="tg-cell head">
-              {ai + 2}
+              {ai + lo}
             </div>
             {row.map((k, bi) => (
-              <div key={`${ai}-${bi}`} className={`tg-cell k${k}`} title={`${ai + 2} × ${bi + 2} = ${(ai + 2) * (bi + 2)}`}>
-                {k === 2 ? (ai + 2) * (bi + 2) : ""}
+              <div key={`${ai}-${bi}`} className={`tg-cell k${k}`} title={`${ai + lo} ${sym} ${bi + lo} = ${res(ai + lo, bi + lo)}`}>
+                {k === 2 ? res(ai + lo, bi + lo) : ""}
               </div>
             ))}
           </Fragment>
@@ -186,9 +201,9 @@ export function Tables() {
       </div>
       <h2>Une table en particulier</h2>
       <div className="table-picks">
-        {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((t) => (
+        {Array.from({ length: 11 - lo }, (_, k) => k + lo).map((t) => (
           <button key={t} className="chip" onClick={() => start(t)}>
-            Table de {t}
+            {op === "x" ? "Table de" : "Ajouter"} {t}
           </button>
         ))}
       </div>

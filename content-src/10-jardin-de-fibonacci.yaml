@@ -92,6 +92,15 @@ lecons:
           reponse: "a+4*r"
           correction: "On ajoute {{r}} à chaque fois : {{a+3*r}} + {{r}} = {{a+4*r}}."
     exercices:
+      - type: sauts
+        vars: { a: "1..6", r: [2, 3, 4, 5] }
+        enonce: "Suite qui grandit de {{r}} en {{r}} : la grenouille part de {{a}}. Fais-la arriver au 5ᵉ terme."
+        depart: "a"
+        cible: "a+4*r"
+        min: 0
+        max: 30
+        sauts_permis: [2, 3, 4, 5, -1]
+        correction: "{{a}}, {{a+r}}, {{a+2*r}}, {{a+3*r}}, {{a+4*r}}."
       - type: nombre
         vars: { a: "1..30", r: "2..12" }
         enonce: "{{a}} ; {{a+r}} ; {{a+2*r}} ; {{a+3*r}} ; ?"

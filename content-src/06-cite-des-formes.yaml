@@ -103,6 +103,10 @@ lecons:
           choix: ["droit", "aigu", "obtus", "plat"]
           ordre_fixe: true
           correction: "À 3 h, les aiguilles font un quart de tour : un angle droit."
+      - vraie_vie:
+          titre: Défi dans la vraie vie
+          texte: "Fabrique une équerre en pliant une feuille deux fois. Chasse les angles droits dans la maison : une porte, un livre, une fenêtre… Combien en trouves-tu en 5 minutes ?"
+          materiel: "une feuille de papier"
     exercices:
       - type: qcm
         vars: { h: [1, 2, 4, 5, 3, 9] }
@@ -207,6 +211,15 @@ lecons:
           correction: "{{L}} + {{l}} + {{L}} + {{l}} = {{2*(L+l)}} cm."
     exercices:
       - type: nombre
+        vars: { L: "4..9", l: "2..3" }
+        enonce: "Périmètre d'un rectangle de {{L}} cm sur {{l}} cm ?"
+        reponse: "2*(L+l)"
+        niveau: 2
+        erreurs:
+          - { valeur: "L*l", message: "Ça, c'est l'AIRE (la surface) ! Le périmètre, c'est le tour : {{L}} + {{l}} + {{L}} + {{l}}." }
+          - { valeur: "L+l", message: "Tu as compté seulement deux côtés. Un rectangle en a quatre !" }
+        correction: "{{L}} + {{l}} + {{L}} + {{l}} = {{2*(L+l)}} cm."
+      - type: nombre
         vars: { c: "2..15" }
         enonce: "Périmètre d'un carré de côté {{c}} cm ?"
         visuel: { type: figure, forme: carre, cote: "=c", unite: cm }
@@ -274,6 +287,15 @@ lecons:
           reponse: "l*c"
           correction: "{{l}} × {{c}} = {{l*c}} carreaux."
     exercices:
+      - type: nombre
+        vars: { L: "4..9", l: "2..3" }
+        enonce: "Aire d'un rectangle de {{L}} cm sur {{l}} cm (en cm²) ?"
+        reponse: "L*l"
+        niveau: 2
+        erreurs:
+          - { valeur: "2*(L+l)", message: "Ça, c'est le PÉRIMÈTRE (le tour) ! L'aire, c'est la surface à l'intérieur : {{L}} × {{l}}." }
+          - { valeur: "L+l", message: "On ne fait pas {{L}} + {{l}} : l'aire, c'est {{l}} rangées de {{L}} carreaux, donc une multiplication." }
+        correction: "{{L}} × {{l}} = {{L*l}} cm²."
       - type: nombre
         vars: { L: "3..12", l: "2..9" }
         enonce: "Aire d'un rectangle de {{L}} cm sur {{l}} cm ?"

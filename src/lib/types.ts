@@ -15,7 +15,7 @@ export type VisSpec = { type: string; [k: string]: unknown };
 
 export interface ExSpec {
   id?: string;
-  type: "nombre" | "qcm" | "vf" | "comparer" | "liste" | "expression" | "ordre" | "droite" | "texte" | "champs";
+  type: "nombre" | "qcm" | "vf" | "comparer" | "liste" | "expression" | "ordre" | "droite" | "texte" | "champs" | "blocs" | "partage" | "sauts" | "colorier" | "horloge" | "payer";
   vars?: Record<string, unknown>;
   si?: string;
   enonce: string;
@@ -42,6 +42,22 @@ export interface ExSpec {
   indice?: string;
   correction?: string;
   niveau?: 1 | 2 | 3;
+  /** Erreurs fréquentes : si l'enfant répond `valeur`, on lui explique précisément son erreur. */
+  erreurs?: { valeur: string; message: string }[];
+  /** QCM : une explication par choix (alignée sur `choix`, la 1ʳᵉ = bonne réponse). */
+  explications?: string[];
+  // manipulation
+  total?: string;
+  parts?: string;
+  depart?: string;
+  sauts_permis?: number[];
+  n?: string;
+  d?: string;
+  h?: string;
+  m?: string;
+  pieces?: number[];
+  emoji?: string;
+  dessin?: "disque" | "barre";
   clavier?: "nombre" | "algebre" | "texte";
 }
 
@@ -54,7 +70,9 @@ export type Step =
   | { kind: "attention"; texte: string; qui?: Who }
   | { kind: "retiens"; texte: string }
   | { kind: "exemple"; titre?: string; enonce: string; etapes: string[]; reponse?: string; visuel?: VisSpec }
-  | { kind: "question"; ex: ExSpec }
+  | { kind: "question"; ex: ExSpec; auto?: boolean }
+  | { kind: "explique"; texte: string; qui: Who; choix: { texte: string; ok: boolean; retour: string }[] }
+  | { kind: "vraie_vie"; texte: string; titre: string; materiel?: string }
   | { kind: "histoire"; texte: string; titre?: string };
 
 export interface Lesson {
@@ -118,6 +136,19 @@ export interface Manifest {
   diagnostic: DiagQuestion[];
   jeux: Record<string, { titre: string; niveau: string; exercices: ExSpec[] }>;
   changelog: { version: string; date: string; notes: string[] }[];
+  histoire?: Histoire;
+}
+
+export interface Chapitre {
+  titre: string;
+  objet: string;
+  avant: Line[];
+  apres: Line[];
+}
+export interface Histoire {
+  prologue: Line[];
+  arcs: { id: string; titre: string; sousTitre?: string; final: string; fin: Line[] }[];
+  chapitres: Record<string, Chapitre>;
 }
 
 // ---------- Progression ----------
@@ -174,6 +205,7 @@ export interface Settings {
   rate: number;
   autoRead: boolean;
   sounds: boolean;
+  music: boolean;
   fontScale: number;
   dys: boolean;
   reduceMotion: boolean;

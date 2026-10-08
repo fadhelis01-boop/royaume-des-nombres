@@ -50,6 +50,13 @@ lecons:
           reponse: "g*n"
           correction: "{{g}} groupes de {{n}} : {{g}} × {{n}} = {{g*n}}."
     exercices:
+      - type: partage
+        vars: { g: "2..4", n: "2..5" }
+        enonce: "Remplis {{g}} nids avec le même nombre d'œufs ({{g*n}} œufs). Combien dans chaque nid ? C'est {{g}} × ? = {{g*n}}"
+        total: "g*n"
+        parts: "g"
+        emoji: "🥚"
+        correction: "{{g}} nids de {{n}} œufs : {{g}} × {{n}} = {{g*n}}."
       - type: nombre
         vars: { l: "2..6", c: "2..6" }
         enonce: "Combien de points ? ({{l}} rangées de {{c}})"
@@ -218,7 +225,24 @@ lecons:
           enonce: "$ {{a}} \\times {{b}} = ?$"
           reponse: "a*b"
           correction: "{{a}} × {{b}} = {{a*b}}."
+      - explique:
+          texte: "Comment retrouves-tu 7 × 9 si tu l'as oublié ?"
+          qui: mia
+          choix:
+            - { texte: "7 × 10 = 70, puis j'enlève 7 : 63", ok: true, retour: "Génial, c'est l'astuce du × 9 !" }
+            - { texte: "Je fais 9 × 7 : c'est pareil", ok: true, retour: "Oui ! Et si tu connais la table de 9 avec les doigts, c'est gagné." }
+            - { texte: "J'écris 79", ok: false, retour: "Non : 7 × 9, c'est 7 groupes de 9, pas 7 et 9 collés. Essaie l'astuce du × 10 − une fois !" }
     exercices:
+      - type: nombre
+        vars: { a: "6..9", b: "6..9" }
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        niveau: 2
+        erreurs:
+          - { valeur: "a+b", message: "Tu as additionné ! {{a}} × {{b}}, c'est {{a}} groupes de {{b}}, pas {{a}} + {{b}}." }
+          - { valeur: "a*b+a", message: "C'est {{a}} × {{b+1}}, une fois de trop ! Recompte dans la table de {{a}}." }
+          - { valeur: "a*b-a", message: "C'est {{a}} × {{b-1}}, une fois de moins. Ajoute encore {{a}} !" }
+        correction: "{{a}} × {{b}} = {{a*b}}."
       - type: nombre
         vars: { a: "6..9", b: "2..9" }
         enonce: "$ {{a}} \\times {{b}} = ?$"
@@ -338,6 +362,15 @@ lecons:
           reponse: "a*b"
           correction: "{{b}} × {{a%10}} = {{b*(a%10)}} ; {{b}} × {{ent(a/10)}} dizaines = {{b*ent(a/10)}} dizaines ; total {{a*b}}."
     exercices:
+      - type: nombre
+        vars: { a: "15..49", b: "3..9" }
+        si: "(a%10)*b >= 10"
+        enonce: "$ {{a}} \\times {{b}} = ?$"
+        reponse: "a*b"
+        niveau: 2
+        erreurs:
+          - { valeur: "ent(a/10)*b*10 + ((a%10)*b)%10", message: "Tu as oublié la retenue : {{b}} × {{a%10}} = {{(a%10)*b}}, on écrit {{((a%10)*b)%10}} et on retient {{ent((a%10)*b/10)}}." }
+        correction: "{{a}} × {{b}} = {{a*b}}."
       - type: nombre
         vars: { a: "12..99", b: "2..9" }
         enonce: "$ {{a}} \\times {{b}} = ?$"

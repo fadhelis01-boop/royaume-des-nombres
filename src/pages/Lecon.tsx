@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
 import { findLesson, lessonKey } from "../lib/content";
-import { saveStep, useChild, getState } from "../lib/store";
+import { saveStep, useChild, getState, bump, addXp, updateChild } from "../lib/store";
 import { speak, stopSpeaking, useTts, type Seg } from "../lib/tts";
 import { instantiate, newSeed } from "../lib/gen";
 import { Bubble, Dialogue, Mascot } from "../components/Mascot";
@@ -32,6 +32,10 @@ export function stepSegments(s: Step): Seg[] {
       return s.legende ? [{ who: "narrateur", text: s.legende }] : [];
     case "question":
       return [];
+    case "explique":
+      return [{ who: s.qui, text: s.texte + " " + s.choix.map((c) => c.texte).join(" ? Ou : ") + " ?" }];
+    case "vraie_vie":
+      return [{ who: "zero", text: `${s.titre}. ${s.texte}` }];
   }
 }
 
@@ -85,7 +89,7 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
     );
 
   const isLast = i === steps.length - 1;
-  const blocked = step.kind === "question" && !answered[i];
+  const blocked = (step.kind === "question" || step.kind === "explique") && !answered[i];
   const goNext = () => {
     if (isLast) go(`/defi/${worldId}/${lessonId}`);
     else setI(i + 1);
@@ -202,7 +206,81 @@ function StepView({ step, k, onAnswered, statKey }: { step: Step; k: string; onA
       return <Exemple step={step} />;
     case "question":
       return <InlineQuestion spec={step.ex} onAnswered={onAnswered} statKey={statKey} />;
+    case "explique":
+      return <Explique step={step} onAnswered={onAnswered} />;
+    case "vraie_vie":
+      return <VraieVie step={step} id={`${statKey}:${k}`} />;
   }
+}
+
+/** « Explique à Néo » : l'enfant choisit la méthode qu'il a utilisée (métacognition). */
+function Explique({ step, onAnswered }: { step: Extract<Step, { kind: "explique" }>; onAnswered: () => void }) {
+  const [pick, setPick] = useState<number | null>(null);
+  const c = pick !== null ? step.choix[pick] : null;
+  return (
+    <div className="st-explique">
+      <div className="st-label">🗣️ Explique-moi comment tu fais !</div>
+      <Bubble who={step.qui} text={step.texte} humeur="reflexion" />
+      <div className="choices grid">
+        {step.choix.map((ch, j) => (
+          <button
+            key={j}
+            type="button"
+            className={`choice ${pick === j ? (ch.ok ? "good" : "sel") : ""}`}
+            onClick={() => {
+              setPick(j);
+              if (ch.ok) {
+                bump("explique");
+                onAnswered();
+              }
+            }}
+          >
+            <Md text={ch.texte} inline />
+          </button>
+        ))}
+      </div>
+      {c && <Bubble who={step.qui} text={c.retour || (c.ok ? "Oui ! C'est une très bonne méthode." : "Hmm… est-ce que ça marche vraiment ? Essaie une autre idée.")} humeur={c.ok ? "joie" : "reflexion"} />}
+      {c?.ok && <p className="small muted center">💬 Dis-le aussi à voix haute à quelqu'un : expliquer, c'est le meilleur moyen de bien comprendre !</p>}
+    </div>
+  );
+}
+
+/** Défi à faire « pour de vrai » avec un adulte : les maths quittent l'écran. */
+function VraieVie({ step, id }: { step: Extract<Step, { kind: "vraie_vie" }>; id: string }) {
+  const child = useChild()!;
+  const done = child.vraieVie?.includes(id);
+  return (
+    <div className="st-vraievie">
+      <div className="st-label">🏡 {step.titre}</div>
+      <div className="st-row">
+        <Mascot who="zero" size={64} humeur="joie" />
+        <div>
+          <Md text={step.texte} />
+          {step.materiel && <p className="small">🧰 Il te faut : {step.materiel}</p>}
+        </div>
+      </div>
+      <div className="center">
+        {done ? (
+          <p className="ok-text">✅ Défi réalisé, bravo !</p>
+        ) : (
+          <button
+            type="button"
+            className="btn btn-soft"
+            onClick={() => {
+              updateChild((x) => {
+                x.vraieVie = [...(x.vraieVie ?? []), id];
+              });
+              bump("vraievie");
+              addXp(20);
+            }}
+          >
+            ✅ Je l'ai fait avec un adulte !
+          </button>
+        )}
+        <p className="small muted">Tu peux aussi le faire plus tard et continuer la leçon.</p>
+      </div>
+    </div>
+  );
 }
 
 function Exemple({ step }: { step: Extract<Step, { kind: "exemple" }> }) {

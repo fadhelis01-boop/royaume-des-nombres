@@ -5,10 +5,13 @@ import { sfx } from "../lib/sound";
 import { getState, recordAnswer, bump } from "../lib/store";
 import { say, speak, stopSpeaking } from "../lib/tts";
 import type { Who } from "../lib/types";
-import { applyKey, Keypad } from "./Keypad";
+import { applyKey, Keypad, keypadExtras } from "./Keypad";
 import { Bubble, SpeakBtn } from "./Mascot";
 import { Md } from "./Md";
 import { Droite, Visuel } from "./Visuel";
+import { Manip } from "./Manip";
+
+const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
 
 export interface ExResult {
   ok: boolean;
@@ -41,11 +44,13 @@ export function ExercisePlayer({
   const [choice, setChoice] = useState<number | null>(null);
   const [order, setOrder] = useState<number[]>([]);
   const [point, setPoint] = useState<number | null>(null);
+  const [manipVals, setManipVals] = useState<number[] | null>(null);
+  const isManip = MANIP.includes(inst.type);
   const [phase, setPhase] = useState<Phase>("answer");
   const [tries, setTries] = useState(0);
   const [hint, setHint] = useState(false);
   const [verdict, setVerdict] = useState<Verdict | null>(null);
-  const [message, setMessage] = useState<{ who: Who; text: string } | null>(null);
+  const [message, setMessage] = useState<{ who: Who; text: string; humeur?: string } | null>(null);
   const [okFinal, setOkFinal] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const k = `ex:${inst.seed}`;
@@ -77,6 +82,13 @@ export function ExercisePlayer({
         return point === null ? null : { kind: "point", value: point };
       case "champs":
         return fields.every((f) => f.trim()) ? { kind: "fields", values: fields } : null;
+      case "blocs":
+      case "partage":
+      case "sauts":
+      case "colorier":
+      case "horloge":
+      case "payer":
+        return manipVals ? { kind: "state", values: manipVals } : null;
       default:
         return text.trim() ? { kind: "text", value: text } : null;
     }
@@ -95,7 +107,7 @@ export function ExercisePlayer({
       case "champs":
         return fields.join(" · ");
       default:
-        return text;
+        return isManip ? (manipVals ?? []).join(" · ") : text;
     }
   };
 
@@ -116,7 +128,8 @@ export function ExercisePlayer({
       sfx.ok();
       const who = pick(WHOS);
       const t = pick(PRAISE[who as "mia"]);
-      setMessage({ who, text: t });
+      setMessage({ who, text: t, humeur: "joie" });
+      if (isManip) bump("manip");
       say(who, t);
       setOkFinal(true);
       setPhase("done");
@@ -126,18 +139,22 @@ export function ExercisePlayer({
     sfx.oops();
     const given = givenText();
     const isZero = /^\s*0\s*$/.test(given) && inst.value !== 0 && inst.type === "nombre";
-    if (isZero) bump("zero");
     if (n < maxTries) {
-      const who: Who = isZero ? "zero" : v.almost ? "neo" : pick(WHOS);
-      const t = isZero ? "Zéro ? …C'était MA réponse ! 😄 Mais ici, ce n'est pas ça. Réessaie !" : v.almost ?? pick(ENCOURAGE[who as "mia"]);
-      setMessage({ who, text: t });
+      // erreur fréquente reconnue : Néo explique précisément ce qui s'est passé
+      const who: Who = isZero ? "zero" : v.why || v.almost ? "neo" : pick(WHOS);
+      const t = isZero ? "Zéro ? …C'était MA réponse ! 😄 Mais ici, ce n'est pas ça. Réessaie !" : v.why ? `${v.why} Réessaie !` : v.almost ?? pick(ENCOURAGE[who as "mia"]);
+      setMessage({ who, text: t, humeur: "reflexion" });
       say(who, t);
       setPhase("retry");
       return;
     }
     recordAnswer({ key: statKey, ok: false, firstTry: false, hint, q: inst.enonce, given, expected: inst.expectedText, isZero });
-    const t = v.almost ? `${v.almost} La réponse attendue : ${inst.expectedText}.` : `La bonne réponse était : ${inst.expectedText}. Ce n'est pas grave, on apprend en se trompant !`;
-    setMessage({ who: "mia", text: t });
+    const t = v.why
+      ? `${v.why} La bonne réponse : ${inst.expectedText}.`
+      : v.almost
+        ? `${v.almost} La réponse attendue : ${inst.expectedText}.`
+        : `La bonne réponse était : ${inst.expectedText}. Ce n'est pas grave, on apprend en se trompant !`;
+    setMessage({ who: "mia", text: t, humeur: "reflexion" });
     speak([{ who: "mia", text: t }, ...(inst.correction ? [{ who: "neo" as Who, text: inst.correction }] : [])], { key: k + ":fb" });
     setPhase("done");
   };
@@ -253,6 +270,8 @@ export function ExercisePlayer({
         </div>
       )}
 
+      {isManip && <Manip inst={inst} onChange={setManipVals} disabled={phase === "done"} />}
+
       {inst.type === "droite" && (
         <div className="droite-ex">
           <Droite v={{ min: inst.min, max: inst.max, pas: inst.pas, etiquettes: (inst.visuel as Record<string, unknown> | undefined)?.etiquettes, fractions: (inst.visuel as Record<string, unknown> | undefined)?.fractions }} onPick={disabled ? undefined : (x) => setPoint(x)} picked={point} reveal={phase === "done" ? inst.value! : null} />
@@ -307,7 +326,7 @@ export function ExercisePlayer({
       )}
       {inst.type === "nombre" && text && readNumber(text) === null && /[^\d\s,./−-]/.test(text) && <p className="hint-small">Écris seulement un nombre.</p>}
 
-      {usesKeypad && phase === "answer" && <Keypad mode={inst.clavier === "algebre" ? "algebre" : "nombre"} letters={inst.exprVars?.length ? inst.exprVars : ["x"]} onKey={onKey} onSubmit={() => submit()} canSubmit={canSubmit} />}
+      {usesKeypad && phase === "answer" && <Keypad mode={inst.clavier === "algebre" ? "algebre" : "nombre"} letters={inst.exprVars?.length ? inst.exprVars : ["x"]} extras={inst.clavier === "algebre" ? undefined : keypadExtras(inst.type, [inst.value ?? 0, ...(inst.values ?? []), ...(inst.champs ?? []).map((c) => c.value)])} onKey={onKey} onSubmit={() => submit()} canSubmit={canSubmit} />}
 
       {/* ----- Actions ----- */}
       <div className="ex-actions">
@@ -330,7 +349,7 @@ export function ExercisePlayer({
 
       {message && (
         <div className={`feedback ${phase === "done" ? (okFinal ? "ok" : "ko") : "retry"}`} aria-live="polite">
-          <Bubble who={message.who} text={message.text} size={64} />
+          <Bubble who={message.who} text={message.text} size={64} humeur={message.humeur} />
           {phase === "done" && !okFinal && verdict && (
             <div className="correction">
               <div className="correction-title">✏️ La bonne réponse</div>

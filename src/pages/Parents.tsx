@@ -409,6 +409,7 @@ function Reglages() {
           </>
         )}
         <Toggle label="Petits sons (bonne réponse, étoiles…)" v={s.sounds} on={(v) => updateSettings({ sounds: v })} />
+        <Toggle label="Musique d'ambiance douce (une mélodie par monde)" v={s.music} on={(v) => updateSettings({ music: v })} />
       </section>
       <section className="card">
         <h3>👀 Confort de lecture</h3>
@@ -416,7 +417,7 @@ function Reglages() {
           Taille du texte : {Math.round(s.fontScale * 100)} %
           <input type="range" min={0.85} max={1.5} step={0.05} value={s.fontScale} onChange={(e) => updateSettings({ fontScale: Number(e.target.value) })} />
         </label>
-        <Toggle label="Mode lecture facilitée (dyslexie : espacement accru, lignes aérées)" v={s.dys} on={(v) => updateSettings({ dys: v })} />
+        <Toggle label="Mode lecture facilitée (dyslexie : police OpenDyslexic, espacement accru, lignes aérées)" v={s.dys} on={(v) => updateSettings({ dys: v })} />
         <Toggle label="Réduire les animations" v={s.reduceMotion} on={(v) => updateSettings({ reduceMotion: v })} />
         <label>
           Thème :{" "}

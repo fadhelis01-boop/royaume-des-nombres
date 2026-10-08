@@ -13,7 +13,7 @@
 import { readdirSync, writeFileSync, mkdirSync, existsSync, readFileSync, rmSync } from "node:fs";
 import path from "node:path";
 import * as yaml from "js-yaml";
-import { preprocess, normalizeWorld, exercise, getErrors, getExerciseCount } from "../src/lib/normalize.mjs";
+import { preprocess, normalizeWorld, exercise, getErrors, getExerciseCount, lines } from "../src/lib/normalize.mjs";
 
 const SRC = "content-src";
 const OUT = "public/content";
@@ -73,6 +73,23 @@ function main() {
   for (const g of manifest.glossaire) {
     if (!g.mot || !g.def) errors.push(`glossaire : entrée incomplète ${g.mot ?? "?"}`);
     if (g.monde && !worldIds.has(g.monde)) errors.push(`glossaire ${g.mot} : monde inconnu ${g.monde}`);
+  }
+  // L'aventure (fil rouge narratif)
+  const h = opt("_histoire.yaml", null);
+  if (h) {
+    manifest.histoire = {
+      prologue: lines(h.prologue ?? [], "histoire prologue"),
+      arcs: (h.arcs ?? []).map((a) => {
+        if (!worldIds.has(a.final)) errors.push(`histoire ${a.id} : monde final inconnu ${a.final}`);
+        return { id: a.id, titre: a.titre, sousTitre: a.sous_titre, final: a.final, fin: lines(a.fin ?? [], `histoire ${a.id} fin`) };
+      }),
+      chapitres: {},
+    };
+    for (const [id, c] of Object.entries(h.chapitres ?? {})) {
+      if (!worldIds.has(id)) errors.push(`histoire : chapitre pour un monde inconnu ${id}`);
+      manifest.histoire.chapitres[id] = { titre: c.titre, objet: c.objet, avant: lines(c.avant ?? [], `histoire ${id} avant`), apres: lines(c.apres ?? [], `histoire ${id} apres`) };
+    }
+    for (const id of worldIds) if (!manifest.histoire.chapitres[id]) warns.push(`histoire : pas de chapitre pour le monde ${id}`);
   }
   manifest.version = manifest.changelog[0]?.version ?? "1.0.0";
   writeFileSync(path.join(OUT, "manifest.json"), JSON.stringify(manifest));
