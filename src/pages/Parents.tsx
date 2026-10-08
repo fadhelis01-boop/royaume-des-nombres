@@ -560,9 +560,9 @@ function AssistantCfg() {
   return (
     <div className="stack">
       <section className="card">
-        <h3>🤖 « Demande à Mia » — réponses complètes et sourcées</h3>
+        <h3>🤖 « Demande à Lya » — réponses complètes et sourcées</h3>
         <p>
-          Sans configuration, Mia répond avec les leçons et le Grand Livre de l'application (hors connexion). Pour répondre à <em>toutes</em> les questions avec des explications adaptées à l'âge et des <strong>sources vérifiables</strong> (Eduscol, Wikipédia, Khan Academy, Lumni, Bibmath…), l'application peut utiliser l'IA Claude d'Anthropic avec <strong>votre propre clé d'API</strong>.
+          Sans configuration, Lya répond avec les leçons et le Grand Livre de l'application (hors connexion). Pour répondre à <em>toutes</em> les questions avec des explications adaptées à l'âge et des <strong>sources vérifiables</strong> (Eduscol, Wikipédia, Khan Academy, Lumni, Bibmath…), l'application peut utiliser l'IA Claude d'Anthropic avec <strong>votre propre clé d'API</strong>.
         </p>
         <ol className="small">
           <li>
@@ -590,7 +590,7 @@ function AssistantCfg() {
           </select>
         </label>
         <p className="small muted">
-          Confidentialité : la clé reste sur cet appareil (elle n'est pas incluse dans les sauvegardes). Les questions sont envoyées uniquement à Anthropic pour obtenir la réponse ; aucune donnée personnelle de l'enfant n'est transmise (seulement son âge, pour adapter les explications). Mia est réglée pour rester sur les mathématiques et les sciences, ne jamais demander d'informations personnelles, et guider vers la réponse plutôt que la donner directement.
+          Confidentialité : la clé reste sur cet appareil (elle n'est pas incluse dans les sauvegardes). Les questions sont envoyées uniquement à Anthropic pour obtenir la réponse ; aucune donnée personnelle de l'enfant n'est transmise (seulement son âge, pour adapter les explications). Lya est réglée pour rester sur les mathématiques et les sciences, ne jamais demander d'informations personnelles, et guider vers la réponse plutôt que la donner directement.
         </p>
       </section>
     </div>

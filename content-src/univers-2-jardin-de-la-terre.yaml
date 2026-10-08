@@ -20,11 +20,18 @@ lecons:
     objectif: Je nomme les continents et les océans.
     mots: [continent, océan, globe, planisphère]
     etapes:
+      - dialogue:
+          - zero: "La Terre est faite de quoi, surtout ? De terre ?"
+          - neo: "Surtout d'eau ! Les océans couvrent plus des deux tiers de la planète."
+      - a_quoi_ca_sert: "Connaître les continents et les océans aide à comprendre l'actualité, les voyages et d'où viennent les objets et les aliments."
       - texte: |
           Vue de l'espace, la Terre est **bleue** : les océans couvrent environ **71 %** de sa surface.
           - **6 continents** (selon le découpage usuel en France) : l'**Afrique**, l'**Amérique**, l'**Antarctique**, l'**Asie**, l'**Europe**, l'**Océanie**.
           - **5 océans** : **Pacifique** (le plus grand), **Atlantique**, **Indien**, **Arctique**, **Austral**.
           Un **globe** représente la Terre en boule ; un **planisphère** l'étale à plat (ce qui déforme un peu les surfaces).
+      - astuce:
+          texte: "Les continents : Afrique, Amérique, Antarctique, Asie, Europe, Océanie (les 5 anneaux olympiques représentent les continents habités). Les 5 océans : Pacifique (le plus grand), Atlantique, Indien, Arctique, Austral."
+          qui: mia
       - retiens: "Océans ≈ 71 % de la surface. 6 continents, 5 océans ; le Pacifique est le plus grand."
     exercices:
       - type: classer
@@ -49,6 +56,10 @@ lecons:
     objectif: Je reconnais quelques roches et je sais comment se forme le sol.
     mots: [roche, granite, calcaire, argile, sable, sol, érosion]
     etapes:
+      - dialogue:
+          - zero: "La terre de mon jardin, elle vient d'où ?"
+          - mia: "Des roches et des feuilles mortes transformées pendant des centaines d'années !"
+      - a_quoi_ca_sert: "Les roches servent à construire nos maisons, et le sol nourrit les plantes qui nous nourrissent. Il faut des siècles pour faire quelques centimètres de sol !"
       - texte: |
           Le sol de notre jardin repose sur des **roches**. Quelques roches courantes :
           - le **granite** (dur, avec des grains visibles, dans les montagnes et en Bretagne) ;
@@ -68,6 +79,9 @@ lecons:
             - "Verse quelques gouttes de vinaigre sur chacune et observe de près."
           observation: "La craie fait de petites bulles qui pétillent ; le galet de granite ne réagit pas."
           explication: "La craie est du calcaire : le vinaigre (acide) réagit avec lui et dégage du dioxyde de carbone. Les géologues utilisent ce test pour reconnaître le calcaire."
+      - astuce:
+          texte: "Le sol, c'est une lasagne : en haut l'humus (feuilles décomposées), au milieu un mélange, en bas la roche qui s'effrite."
+          qui: neo
       - retiens: "Granite (dur, grains), calcaire (mousse au vinaigre), argile (pâteuse), sable. L'érosion forme le sol, très lentement."
     exercices:
       - type: qcm
@@ -91,10 +105,17 @@ lecons:
     objectif: Je sais ce que sont un volcan et un séisme, et comment se protéger.
     mots: [volcan, lave, magma, cratère, séisme]
     etapes:
+      - dialogue:
+          - zero: "La Terre peut trembler ? J'ai peur !"
+          - neo: "Comprendre les séismes et les volcans, c'est apprendre à se protéger. Je t'explique."
+      - a_quoi_ca_sert: "Connaître les bons gestes en cas de séisme ou d'éruption peut sauver des vies. Des millions de personnes vivent près de volcans actifs."
       - texte: |
           Sous la croûte terrestre, des roches très chaudes peuvent fondre : c'est le **magma**. Quand il remonte et sort à la surface par un **volcan**, on l'appelle **lave**. Certains volcans émettent des coulées de lave (Piton de la Fournaise, à La Réunion), d'autres explosent en projetant cendres et gaz.
           Un **séisme** (tremblement de terre) est une secousse brutale du sol, due à des roches qui cassent et glissent en profondeur.
           En cas de séisme : **à l'intérieur**, on s'abrite sous une table solide, loin des fenêtres ; **à l'extérieur**, on s'éloigne des bâtiments et des fils électriques.
+      - astuce:
+          texte: "Séisme : je me protège sous une table solide, loin des fenêtres, et je sors seulement quand la secousse est finie."
+          qui: zero
       - retiens: "Magma sous terre, lave en surface. Séisme = roches qui cassent et glissent. Se protéger : sous une table, loin des vitres."
     exercices:
       - type: qcm
@@ -118,9 +139,15 @@ lecons:
     objectif: Je sais que l'eau douce est rare et précieuse.
     mots: [eau douce, eau salée, nappe phréatique, potable]
     etapes:
+      - dialogue:
+          - zero: "Il y a plein d'eau sur Terre, je peux laisser le robinet ouvert !"
+          - mia: "Presque toute cette eau est salée ! L'eau douce est rare et précieuse."
       - texte: |
           Presque toute l'eau de la Terre est **salée** (les océans) : environ **97 %**. L'**eau douce** ne fait que **3 %**, et la plus grande partie est gelée (glaciers, calottes polaires) ou cachée sous terre (**nappes phréatiques**). L'eau douce facile à utiliser (rivières, lacs) représente moins de 1 % de toute l'eau !
           L'**eau potable** (qu'on peut boire sans danger) est traitée dans des usines avant d'arriver au robinet. Les eaux usées sont nettoyées en **station d'épuration** avant de retourner dans la nature.
+      - astuce:
+          texte: "Si toute l'eau de la Terre tenait dans une bouteille d'un litre, l'eau douce facilement disponible tiendrait dans moins d'une cuillère à café."
+          qui: mia
       - retiens: "97 % d'eau salée, 3 % d'eau douce (surtout en glace). L'eau potable est traitée ; il faut l'économiser."
       - vraie_vie:
           titre: Chasse au gaspillage
@@ -150,6 +177,10 @@ lecons:
     objectif: Je trie les déchets et je comprends l'intérêt de réduire, réutiliser, recycler.
     mots: [déchet, tri, recyclage, compost]
     etapes:
+      - dialogue:
+          - zero: "Je jette tout dans la même poubelle, c'est plus rapide."
+          - neo: "Mais beaucoup de choses peuvent revivre si on les trie ! Apprenons les bons gestes."
+      - a_quoi_ca_sert: "Trier et réduire ses déchets protège la nature, économise des matières premières et de l'énergie."
       - texte: |
           La meilleure façon de gérer un déchet… c'est de **ne pas le produire** ! On retient les « 3 R » : **Réduire**, **Réutiliser**, **Recycler**.
           Le **tri** (les consignes varient selon les communes) :
@@ -158,6 +189,9 @@ lecons:
           - **déchets alimentaires** (épluchures, restes) : au **compost**, ils deviennent un engrais naturel ;
           - les piles, ampoules, appareils électriques vont dans des points de collecte spéciaux.
           Une bouteille en plastique jetée dans la nature peut mettre des **centaines d'années** à se dégrader.
+      - astuce:
+          texte: "Les 3 R dans l'ordre d'importance : Réduire (le meilleur déchet est celui qu'on ne produit pas), Réutiliser, Recycler."
+          qui: neo
       - retiens: "Réduire, réutiliser, recycler. Verre recyclable à l'infini, épluchures au compost, piles en point de collecte."
     exercices:
       - type: classer

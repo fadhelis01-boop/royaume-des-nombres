@@ -20,6 +20,9 @@ lecons:
     objectif: Je mesure avec une règle, un mètre ruban et un chronomètre.
     mots: [règle, mètre ruban, chronomètre, précision]
     etapes:
+      - dialogue:
+          - zero: "Ma queue mesure… euh… un petit bout."
+          - neo: "Avec une règle, on peut être bien plus précis ! Apprenons à mesurer."
       - texte: |
           - **Longueur** : on place le **zéro** de la règle au bout de l'objet (pas le bord de la règle !). 1 m = 100 cm ; 1 cm = 10 mm.
           - **Durée** : le chronomètre mesure en minutes, secondes et parfois centièmes de seconde. 1 min = 60 s.
@@ -28,6 +31,9 @@ lecons:
           titre: Le défi des mesures
           texte: "Mesure ta taille, la longueur de ton pied et la largeur de ta main. Puis chronomètre combien de temps tu mets pour traverser ta chambre : refais-le 3 fois. Les temps sont-ils exactement pareils ?"
           materiel: mètre ruban, chronomètre (ou téléphone d'un adulte)
+      - astuce:
+          texte: "Avec une règle, commence toujours au zéro, pas au bord de la règle ! Et pour un chronomètre, déclenche et arrête au bon moment."
+          qui: mia
       - retiens: "On mesure à partir du zéro. 1 m = 100 cm, 1 cm = 10 mm, 1 min = 60 s. On répète une mesure pour être plus précis."
     exercices:
       - type: nombre
@@ -53,6 +59,10 @@ lecons:
     objectif: Je compare des vitesses avec la distance et la durée.
     mots: [vitesse, distance, durée, km/h]
     etapes:
+      - dialogue:
+          - zero: "Je suis plus rapide qu'un escargot, mais moins qu'un guépard !"
+          - mia: "Pour comparer des vitesses, il faut une distance et une durée."
+      - a_quoi_ca_sert: "Comparer des vitesses sert pour savoir si on arrivera à l'heure, choisir un moyen de transport ou comprendre les limitations de vitesse."
       - texte: |
           Pour savoir qui est le plus **rapide** :
           - sur une **même distance**, c'est celui qui met **le moins de temps** ;
@@ -62,6 +72,9 @@ lecons:
       - attention:
           texte: "En ville, une voiture à 30 km/h a besoin d'environ 13 mètres pour s'arrêter ; à 50 km/h, d'environ 25 mètres. On traverse toujours sur le passage piéton, en regardant !"
           qui: neo
+      - astuce:
+          texte: "Le plus rapide va plus loin dans le même temps, ou met moins de temps pour la même distance."
+          qui: zero
       - retiens: "Même distance : le plus rapide met le moins de temps. Même durée : le plus rapide va le plus loin."
     exercices:
       - type: qcm
@@ -97,6 +110,9 @@ lecons:
           gauche: ["🧒 20 kg"]
           droite: ["🧒 20 kg"]
         legende: "Masses égales à égale distance : la bascule est en équilibre."
+      - astuce:
+          texte: "Sur une bascule, le plus lourd doit se rapprocher du milieu pour faire équilibre. C'est le secret des leviers et des pinces !"
+          qui: neo
       - retiens: "Équilibre : masse × distance au pivot doit être pareil des deux côtés. Plus lourd → plus près du pivot."
       - a_quoi_ca_sert: "Les ciseaux, la brouette, le décapsuleur, la pince et le pied-de-biche sont des leviers : ils démultiplient la force."
     exercices:
@@ -122,6 +138,10 @@ lecons:
     objectif: Je réalise un circuit fermé qui allume une lampe.
     mots: [circuit, pile, lampe, interrupteur, conducteur, isolant]
     etapes:
+      - dialogue:
+          - zero: "J'ai une pile et une ampoule, mais rien ne s'allume !"
+          - mia: "Il manque un chemin complet pour le courant : un circuit fermé."
+      - a_quoi_ca_sert: "Comprendre un circuit, c'est comprendre comment s'allument ta lampe de poche, tes jouets et toute la maison."
       - texte: |
           Pour allumer une lampe, il faut une **boucle complète** sans coupure : **pile → fil → lampe → fil → pile**. C'est un **circuit fermé**.
           Si on coupe la boucle (fil débranché, **interrupteur ouvert**), le circuit est **ouvert** : la lampe s'éteint.
@@ -139,6 +159,9 @@ lecons:
             - "Pince chaque objet entre les deux extrémités libres et regarde la lampe."
           observation: "La lampe s'allume avec la cuillère, le trombone, la clé ; elle reste éteinte avec la gomme et la règle en plastique."
           explication: "Les métaux sont conducteurs : ils ferment le circuit. Le plastique et le caoutchouc sont isolants : c'est pour ça qu'on en entoure les fils électriques."
+      - astuce:
+          texte: "Le courant a besoin d'une boucle complète : pas de trou dans le chemin. Un circuit ouvert, c'est un pont coupé : rien ne passe."
+          qui: mia
       - retiens: "Une lampe s'allume si le circuit est fermé. Métaux = conducteurs ; plastique, bois, verre = isolants. Jamais d'expérience avec les prises !"
     exercices:
       - type: classer
@@ -163,9 +186,15 @@ lecons:
     objectif: Je sais qu'un miroir renvoie la lumière.
     mots: [réflexion, miroir, rayon]
     etapes:
+      - dialogue:
+          - zero: "Dans le miroir, il y a un autre hamster qui m'imite !"
+          - neo: "C'est toi ! Le miroir renvoie la lumière. Découvrons comment."
       - texte: |
           Un **miroir** renvoie la lumière : c'est la **réflexion**. Le rayon qui arrive et le rayon renvoyé font le **même angle** avec le miroir, comme une balle qui rebondit sur un mur.
           Dans un miroir, la droite et la gauche semblent inversées : lève ta main droite, ton reflet lève… celle qui est en face de ta droite.
+      - astuce:
+          texte: "La lumière rebondit sur un miroir comme une balle sur un mur : elle repart avec le même angle."
+          qui: zero
       - retiens: "Un miroir réfléchit la lumière ; le rayon repart avec le même angle qu'il est arrivé."
       - a_quoi_ca_sert: "Rétroviseurs, périscopes, catadioptres des vélos, miroirs des virages dangereux, télescopes."
       - vraie_vie:

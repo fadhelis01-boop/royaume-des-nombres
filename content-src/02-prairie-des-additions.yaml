@@ -177,6 +177,9 @@ lecons:
           La **moitié**, c'est l'inverse : la moitié de 14, c'est 7.
 
           **Presque-doubles :** 7 + 8, c'est le double de 7 plus 1 → 14 + 1 = 15.
+      - astuce:
+          texte: "Connais tes doubles par cœur, puis sers-t'en pour les presque-doubles : 6 + 7, c'est 6 + 6 + 1 = 13."
+          qui: zero
       - retiens: "1+1=2 · 2+2=4 · 3+3=6 · 4+4=8 · 5+5=10 · 6+6=12 · 7+7=14 · 8+8=16 · 9+9=18 · 10+10=20"
       - a_quoi_ca_sert: "Doubler une recette pour 8 personnes au lieu de 4, partager équitablement entre deux frères et sœurs, calculer le prix de deux places de cinéma…"
       - exemple:
@@ -373,8 +376,8 @@ lecons:
         correction: "De {{b}} à 10 : {{10-b}} ; de 10 à {{a}} : {{a-10}}. Total : {{a-b}}."
       - type: nombre
         vars: { a: "4..9", b: "10..18" }
-        enonce: "Néo a {{b}} billes, Mia en a {{a}}. Combien Néo a-t-il de billes de plus que Mia ?"
-        visuel: { type: barres, lignes: [{ nom: "Néo", parts: [{ v: "=b", label: "{{b}}" }] }, { nom: "Mia", parts: [{ v: "=a", label: "{{a}}" }] }], ecart: "?" }
+        enonce: "Néo a {{b}} billes, Lya en a {{a}}. Combien Néo a-t-il de billes de plus que Lya ?"
+        visuel: { type: barres, lignes: [{ nom: "Néo", parts: [{ v: "=b", label: "{{b}}" }] }, { nom: "Lya", parts: [{ v: "=a", label: "{{a}}" }] }], ecart: "?" }
         reponse: "b-a"
         correction: "On cherche l'écart : {{b}} − {{a}} = {{b-a}}."
       - type: qcm
@@ -528,7 +531,7 @@ lecons:
         correction: "100 − {{p}} = {{100-p}} € (en avançant : {{p}} → {{p+10-p%10}} → 100)."
       - type: nombre
         vars: { n: "2008..2020" }
-        enonce: "Mia est née en {{n}}. Quel âge aura-t-elle en 2030 ?"
+        enonce: "Lya est née en {{n}}. Quel âge aura-t-elle en 2030 ?"
         reponse: "2030-n"
         correction: "2030 − {{n}} = {{2030-n}} ans."
       - type: vf

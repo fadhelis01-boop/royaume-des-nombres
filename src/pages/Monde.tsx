@@ -53,7 +53,7 @@ export function Monde({ id }: { id: string }) {
       </div>
       {w.intro && (firstVisit ? <Dialogue lines={w.intro} k={`intro:${w.id}`} /> : (
         <details className="intro-again">
-          <summary>Revoir l'accueil de Mia, Néo et Zéro</summary>
+          <summary>Revoir l'accueil de Lya, Néo et Zéro</summary>
           <Dialogue lines={w.intro} k={`intro:${w.id}`} />
         </details>
       ))}

@@ -13,8 +13,8 @@ os.makedirs(OUT_D, exist_ok=True)
 
 session = new_session("isnet-anime")
 mascots = {
-    "Mia.jpg": "mia",
-    "Mia en réflexion.jpg": "mia-reflexion",
+    "Lya.jpg": "mia",
+    "Lya en réflexion.jpg": "mia-reflexion",
     "Fibo.jpg": "neo",
     "Zéro.jpg": "zero",
 }

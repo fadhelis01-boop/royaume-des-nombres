@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Galaxie des Savoirs</title>
+<style>
+:root{--bg:#fbf8f2;--paper:#fff;--ink:#22223a;--muted:#5d5d76;--line:#e6e0d4;--accent:#6b3fd4;--ok:#1f8a4c;--warn:#b86e00;--ko:#c0392b;--chip:#f1ecff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15151f;--paper:#1f1f2c;--ink:#ecebf5;--muted:#a9a8bf;--line:#33334a;--accent:#b49bff;--ok:#5fd394;--warn:#f0b35a;--ko:#ff8a7a;--chip:#2c2944}}
+:root[data-theme="dark"]{--bg:#15151f;--paper:#1f1f2c;--ink:#ecebf5;--muted:#a9a8bf;--line:#33334a;--accent:#b49bff;--ok:#5fd394;--warn:#f0b35a;--ko:#ff8a7a;--chip:#2c2944}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 80px}
+h1{font-size:1.9rem;line-height:1.2;margin:.2em 0}
+h2{font-size:1.35rem;margin:2.2em 0 .6em;padding-top:.6em;border-top:2px solid var(--line)}
+h3{font-size:1.08rem;margin:1.4em 0 .4em}
+p,li{max-width:76ch}
+.lead{color:var(--muted);font-size:1.05rem}
+nav.toc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:18px 0}
+nav.toc ol{margin:0;padding-left:1.2em;columns:2;column-gap:28px}
+@media (max-width:640px){nav.toc ol{columns:1}}
+a{color:var(--accent)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.score{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.score b{font-size:1.5rem;color:var(--accent)}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--accent);margin-right:4px}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.ko{color:var(--ko)}
+.fixed::before{content:"✔ ";color:var(--ok);font-weight:700}
+.todo::before{content:"→ ";color:var(--warn);font-weight:700}
+.tbl{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top;font-size:.92rem}
+th{background:var(--chip)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.prio{font-weight:800}
+.p0{color:var(--ko)}.p1{color:var(--warn)}.p2{color:var(--muted)}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<p class="tag">Audit · 8 octobre 2026 · version 2.1</p>
+<h1>La Galaxie des Savoirs : audit complet</h1>
+<p class="lead">Huit regards sur l'appli : l'enfant de 8 ans, les professeurs de chaque matière, le spécialiste de l'éducation, le créateur de jeux vidéo, l'ingénieur UX/UI, puis les angles morts. Chaque constat repose sur une mesure dans le contenu réel (527 leçons, 1 805 exercices, environ 308 000 questions tirées) ou sur un parcours fait dans l'appli avec un profil de test. Ce qui a déjà été corrigé dans cette version est marqué ✔.</p>
+
+<nav class="toc"><ol>
+<li><a href="#synthese">Synthèse et notes</a></li>
+<li><a href="#lya">Mia devient Lya : y a-t-il un problème de sens ?</a></li>
+<li><a href="#enfant">Le regard de l'enfant de 8 ans</a></li>
+<li><a href="#profs">Le regard des professeurs, matière par matière</a></li>
+<li><a href="#astuces">Trucs, astuces et « À quoi ça sert ? »</a></li>
+<li><a href="#pedago">Le regard du spécialiste de l'éducation</a></li>
+<li><a href="#jeu">Le regard du créateur de jeux vidéo</a></li>
+<li><a href="#ux">Le regard de l'ingénieur UX/UI</a></li>
+<li><a href="#angles">Les angles morts de la demande</a></li>
+<li><a href="#visuels">Les visuels terminés</a></li>
+<li><a href="#plan">Plan d'action priorisé</a></li>
+</ol></nav>
+
+<h2 id="synthese">1. Synthèse et notes</h2>
+<div class="grid">
+<div class="card score"><span>Enfant de 8 ans</span><b>7/10</b></div>
+<div class="card score"><span>Validité scientifique</span><b>8/10</b></div>
+<div class="card score"><span>Approche pédagogique</span><b>8/10</b></div>
+<div class="card score"><span>Aspect éducoludique</span><b>7/10</b></div>
+<div class="card score"><span>UX/UI et accessibilité</span><b>7/10</b></div>
+<div class="card score"><span>Couverture des matières</span><b>8/10</b></div>
+</div>
+<p><b>En une phrase :</b> la base est très solide (contenus contrôlés automatiquement, progression du CP au supérieur, maîtrise à 80 %, révisions espacées, audio partout, univers narratif cohérent). La grande faiblesse était l'écart entre les maths, très riches, et les six nouvelles planètes, plus « manuel scolaire ». Cet écart est en grande partie comblé dans cette version.</p>
+<div class="card">
+<b>Corrigé pendant cet audit</b>
+<ul>
+<li class="fixed">Une astuce mnémotechnique dans chaque leçon : 440 ajoutées, contre 73 leçons sur 527 avant.</li>
+<li class="fixed">Un « À quoi ça sert ? » dans chaque leçon : 276 ajoutés (français, sciences, arts). Avant : 9 % en musique et dans Terre & Univers, 12 % en biologie.</li>
+<li class="fixed">Les mascottes ouvrent désormais chaque leçon de sciences et d'arts par une petite scène (214 dialogues ajoutés). Avant : 0 % en musique, 3 % en biologie et en dessin.</li>
+<li class="fixed">172 exercices « vrai ou faux » tiraient une affirmation au hasard mais gardaient une explication fixe, parfois sur une autre affirmation. Cette explication est désormais présentée comme « 💡 À retenir » ; une correction erronée (le « sable ») a été réécrite.</li>
+<li class="fixed">Accessibilité : contour visible au clavier, boutons d'au moins 44 px pour les petits doigts, boutons de compagnon nommés pour les lecteurs d'écran.</li>
+<li class="fixed">Visuels : 19 décors des îles de français, 6 poses de Gribouille, 6 Muses qui parlent désormais elles-mêmes dans l'histoire, les badges manquants.</li>
+<li class="fixed">Quatre erreurs factuelles relevées et corrigées dans les ajouts (échelle Soleil-étoile, Lune « menteuse », continents, sonde de la NASA).</li>
+</ul>
+</div>
+
+<h2 id="lya">2. Mia devient Lya : y a-t-il un problème de sens ?</h2>
+<p><b>Non, aucun problème de sens. Le changement est même plutôt positif.</b></p>
+<ul>
+<li><b>Grammaire :</b> les deux prénoms sont féminins et commencent par une consonne. Aucun accord, aucune élision ne change (« de Lya », « l'Herbier de Lya »).</li>
+<li><b>Sens :</b> « Lya » évoque « lier » et « lien ». Cela colle bien à son rôle de guide qui relie les planètes entre elles. Le « π » de son nom et le symbole sur son sweat restent cohérents.</li>
+<li><b>Prononciation :</b> les voix françaises lisent « Lya » comme « Lia ». Seul point d'attention : à l'oral, « Lya a… » peut ressembler à « il y a… ». C'est sans conséquence dans les dialogues, mais à éviter dans les dictées.</li>
+<li><b>Ce qui n'a pas changé :</b> l'identifiant interne reste <code>mia</code> (noms des fichiers d'images, progression déjà enregistrée), pour ne rien casser. Le monde « L'Herbier de Lya » garde l'adresse interne <code>bio-herbier-de-mia</code>, que l'enfant ne voit pas.</li>
+<li><b>À reprendre hors de l'appli :</b> les trois bibles PDF/Markdown de Téléchargements et le cahier des charges graphiste déjà publié parlent encore de Mia (le fichier local du cahier, lui, est à jour).</li>
+</ul>
+
+<h2 id="enfant">3. Le regard de l'enfant de 8 ans</h2>
+<p><small>Parcours réel : création du profil « Testaudit » (8 ans, Lya), Galaxie, planète Chimie, leçon « Solide, liquide ou gaz ? », exercice de tri avec une erreur volontaire, histoire du français.</small></p>
+<h3>Ce que j'adore</h3>
+<ul>
+<li>Choisir mon compagnon, puis voir Zéro dire des bêtises : « L'air, ce n'est rien ! ». Ça me fait rire et je comprends tout de suite le problème.</li>
+<li>Les planètes rondes avec leurs dessins, les gemmes, la boutique pour habiller mon personnage, la cabane.</li>
+<li>Quand je me trompe, Néo me dit « Un seul mot est dans la mauvaise boîte ! » sans me donner la réponse : j'ai envie de réessayer.</li>
+<li>Le bouton 🔊 : je n'ai pas besoin de tout lire.</li>
+<li>Les expériences à faire pour de vrai, le dessin avec le doigt, le piano.</li>
+</ul>
+<h3>Ce qui me gêne</h3>
+<ul>
+<li class="todo">« 0/199 leçons » sous les maths : ça fait peur, j'ai l'impression que je n'y arriverai jamais.</li>
+<li class="todo">Sur l'accueil de la planète, il y a sept grosses cases (Continuer, Échauffement, Aventure, Défi, Labo, Mon coin, Révisions) : je ne sais pas où cliquer.</li>
+<li class="todo">J'ai cliqué sur « Continuer l'aventure » et je suis arrivé direct dans une leçon : j'ai raté l'histoire du début (le bandeau « Une nouvelle aventure commence » existe, mais on peut l'ignorer).</li>
+<li class="fixed">Avant, dans les sciences et les arts, il n'y avait presque jamais Lya, Néo ou Zéro : c'était du texte, comme un livre d'école. Désormais, chaque leçon commence par eux.</li>
+<li class="todo">Il y a encore beaucoup de texte à lire dans certaines leçons pour les plus grands (CM, collège).</li>
+</ul>
+
+<h2 id="profs">4. Le regard des professeurs, matière par matière</h2>
+<p>Mesures faites sur le contenu compilé, avant les ajouts de cette version (sauf mention contraire).</p>
+<div class="tbl"><table>
+<tr><th>Planète</th><th class="n">Leçons</th><th class="n">Dialogue des mascottes (avant → après)</th><th class="n">Leçons avec un visuel</th><th class="n">Questions dans la leçon</th><th class="n">QCM + vrai/faux</th></tr>
+<tr><td>Maths</td><td class="n">199</td><td class="n">100 % → 100 %</td><td class="n">54 %</td><td class="n">2,4</td><td class="n">21 %</td></tr>
+<tr><td>Français</td><td class="n">108</td><td class="n">92 % → 100 %</td><td class="n ko">0 %</td><td class="n">1,3</td><td class="n">46 %</td></tr>
+<tr><td>Chimie</td><td class="n">42</td><td class="n">17 % → 100 %</td><td class="n">36 %</td><td class="n">1,2</td><td class="n">62 %</td></tr>
+<tr><td>Physique</td><td class="n">41</td><td class="n">10 % → 100 %</td><td class="n warn">17 %</td><td class="n">1,3</td><td class="n">50 %</td></tr>
+<tr><td>Biologie</td><td class="n">40</td><td class="n">3 % → 100 %</td><td class="n warn">15 %</td><td class="n">0,9</td><td class="n">65 %</td></tr>
+<tr><td>Terre & Univers</td><td class="n">32</td><td class="n">6 % → 100 %</td><td class="n ko">9 %</td><td class="n">0,9</td><td class="n">63 %</td></tr>
+<tr><td>Musique</td><td class="n">34</td><td class="n">0 % → 100 %</td><td class="n">50 %</td><td class="n">1,4</td><td class="n">65 %</td></tr>
+<tr><td>Dessin</td><td class="n">31</td><td class="n">3 % → 100 %</td><td class="n">58 %</td><td class="n">0,4</td><td class="n">73 %</td></tr>
+</table></div>
+
+<h3>Validité</h3>
+<ul>
+<li><span class="ok">Points forts :</span> chaque exercice est tiré et corrigé automatiquement à chaque build (environ 308 000 questions, zéro erreur). Les définitions du Grand Livre sont sourcées, et les sources de l'assistant sont limitées à des sites de référence (CNRTL, Académie française, Inserm, Pasteur, CNES, IPCC, IUPAC…). Les niveaux sont repérés du CP au supérieur.</li>
+<li class="fixed">Le défaut le plus fréquent était les explications fixes sur des exercices à variantes. Elles sont désormais présentées comme des rappels.</li>
+<li class="todo">L'idéal pédagogique reste une explication propre à chaque affirmation. C'est à écrire pour les 172 exercices « vrai ou faux » concernés, en priorité les 60 des niveaux CP à CM.</li>
+<li class="todo">Seuls 49 exercices sur 1 805 ont un indice, et 46 une explication ciblée de l'erreur. Les maths en ont un peu ; les sciences et les arts, aucun.</li>
+<li class="todo">Les intitulés de niveau ne sont pas homogènes d'une planète à l'autre : « Éveil (CE1) », « 7 ans et + », « Explorateur (CE2 – CM1) ». Il faudrait une seule échelle, alignée sur les cycles.</li>
+<li class="todo">Les programmes officiels de maths et de français du cycle 1 au cycle 3 ont été réécrits récemment. Il faut vérifier l'alignement sur Éduscol, compétence par compétence, avant de présenter l'appli à des écoles.</li>
+</ul>
+
+<h3>Par matière</h3>
+<div class="grid">
+<div class="card"><b>Maths</b><p>La planète la plus aboutie : manipulations, schémas en barres, Pólya, méthodes de calcul mental, erreurs ciblées, formes développée et factorisée. <span class="warn">À ajouter :</span> plus d'indices progressifs dans les problèmes à étapes.</p></div>
+<div class="card"><b>Français</b><p>Très bon socle : conjugaison générée par un moteur testé (296 formes), dictées, homophones avec des tests de remplacement, dictionnaire. <span class="ko">Manque :</span> aucun visuel dans les 108 leçons (images de mots, schémas de phrase, frises des temps), et peu de production écrite libre.</p></div>
+<div class="card"><b>Physique-chimie</b><p>Démarche scientifique et sécurité exemplaires : code couleur vert, orange ou rouge, prédiction avant d'observer. <span class="warn">À ajouter :</span> des simulations (circuit, balance, état de la matière), qui valent mieux que du texte ; plus de calculs guidés au collège.</p></div>
+<div class="card"><b>Biologie</b><p>Contenu juste et bien gradué jusqu'à CRISPR et au microbiote ; le thème de la puberté est abordé avec tact. <span class="ko">Manque :</span> des schémas légendés interactifs (cellule, cœur, digestion) : 85 % des leçons n'ont aucun visuel.</p></div>
+<div class="card"><b>Terre & Univers</b><p>Bonnes idées fausses traitées (saisons, Lune, météo et climat). <span class="ko">Manque :</span> des visuels animés (rotation, phases de la Lune, plaques), c'est la planète la moins illustrée (9 %).</p></div>
+<div class="card"><b>Musique</b><p>Portée, clavier et sons joués, Oreille d'or, studio. <span class="warn">Limite :</span> l'enfant n'est jamais écouté (chant ou rythme au micro). Il ne peut pas encore vérifier sa propre justesse.</p></div>
+<div class="card"><b>Dessin</b><p>Pas à pas avec tracé-guide, galerie, gestion de la copie « d'après ». <span class="warn">Limite :</span> 0,4 question par leçon ; l'évaluation repose surtout sur des QCM, alors que la réussite se juge sur le dessin lui-même (auto-évaluation guidée à ajouter).</p></div>
+</div>
+
+<h3>Accessibilité et compréhension</h3>
+<ul>
+<li><span class="ok">Points forts :</span> lecture audio de chaque étape avec reprise, mode non-lecteur, police OpenDyslexic, taille du texte de 85 à 150 %, mode sombre, réduction des animations.</li>
+<li class="todo">Pour les plus jeunes, les textes de CE2 et CM sont parfois longs (listes à puces denses). À découper en écrans plus courts avec une question entre chaque.</li>
+<li class="todo">Le vocabulaire savant arrive parfois avant l'intuition. La bonne pratique est déjà suivie en maths (exemple → règle) : à étendre aux sciences.</li>
+</ul>
+
+<h2 id="astuces">5. Trucs, astuces et « À quoi ça sert ? »</h2>
+<p><b>Vos deux questions appellent une réponse honnête : avant cet audit, c'était « oui en maths, rarement ailleurs ». C'est désormais « oui partout ».</b></p>
+<div class="tbl"><table>
+<tr><th>Planète</th><th class="n">Astuce (avant → après)</th><th class="n">« À quoi ça sert ? » (avant → après)</th></tr>
+<tr><td>Maths</td><td class="n">50 → 185 / 199*</td><td class="n">199 → 199 / 199</td></tr>
+<tr><td>Français</td><td class="n">23 → 108 / 108</td><td class="n">12 → 108 / 108</td></tr>
+<tr><td>Chimie</td><td class="n">0 → 42 / 42</td><td class="n">15 → 42 / 42</td></tr>
+<tr><td>Physique</td><td class="n">0 → 41 / 41</td><td class="n">9 → 41 / 41</td></tr>
+<tr><td>Biologie</td><td class="n">0 → 40 / 40</td><td class="n">5 → 40 / 40</td></tr>
+<tr><td>Terre & Univers</td><td class="n">0 → 32 / 32</td><td class="n">3 → 32 / 32</td></tr>
+<tr><td>Musique</td><td class="n">0 → 34 / 34</td><td class="n">3 → 34 / 34</td></tr>
+<tr><td>Dessin</td><td class="n">0 → 31 / 31</td><td class="n">5 → 31 / 31</td></tr>
+</table></div>
+<p><small>* Les 14 leçons restantes sont celles de l'École des Astuces, qui sont elles-mêmes entièrement des astuces.</small></p>
+<h3>Exemples ajoutés</h3>
+<ul>
+<li><b>Conjugaison :</b> « Le futur, c'est l'infinitif + le verbe avoir : je chanter-ai, tu chanter-as… Tu entends avoir caché dedans ! »</li>
+<li><b>Homophones :</b> « a / à → remplace par avait » ; « ou / où : l'accent de où ressemble à une flèche qui montre l'endroit ».</li>
+<li><b>Grammaire :</b> « Les conjonctions de coordination : Mais où est donc Ornicar ? » ; « La négation est un sandwich : ne… pas, et le verbe au milieu ».</li>
+<li><b>Maths :</b> « Les amis de mes ennemis sont mes ennemis » pour la règle des signes ; « Gauss : 50 paires de 101 » ; « Δ comme Décide combien ».</li>
+<li><b>Sciences :</b> « Le triangle du feu » ; « Mon Vieux Tu M'as Jeté Sur Une Navette » pour l'ordre des planètes ; « EXOthermique = la chaleur sort (EXIT) ».</li>
+<li><b>Arts :</b> « Mi, Sol, Si, Ré, Fa » pour les lignes de la portée ; « Les yeux sont au milieu de la tête » ; « Rond = gentil, carré = solide, triangle = méchant ».</li>
+<li><b>Poser un problème :</b> les 4 étapes de Pólya, le schéma en barres, « remplace les grands nombres par des petits pour voir quelle opération faire », « barre les informations inutiles ».</li>
+</ul>
+<p>Le « À quoi ça sert ? » est placé juste après la scène d'ouverture (la motivation avant la notion), et l'astuce juste avant le « Je retiens » (le moyen de mémoriser au moment de fixer la règle). Exemple : <i>« Les homophones sont les fautes les plus fréquentes, même chez les adultes. Les maîtriser, c'est déjà écrire beaucoup mieux que la moyenne. »</i></p>
+
+<h2 id="pedago">6. Le regard du spécialiste de l'éducation</h2>
+<p><b>Oui, l'enfant est globalement placé dans de bonnes conditions pour apprendre.</b> L'appli applique plusieurs résultats solides des sciences cognitives :</p>
+<ul>
+<li><span class="ok">Récupération active :</span> des questions au cœur de la leçon, puis un défi.</li>
+<li><span class="ok">Répétition espacée :</span> révisions en boîtes de Leitner.</li>
+<li><span class="ok">Maîtrise avant de passer à la suite :</span> 80 %.</li>
+<li><span class="ok">Droit à l'erreur :</span> réessayer avant de voir la correction.</li>
+<li><span class="ok">Double codage :</span> texte, audio et visuel.</li>
+<li><span class="ok">Prédiction avant l'expérience :</span> le principe POE, prédire, observer, expliquer.</li>
+<li><span class="ok">Diagnostic d'entrée</span> et <span class="ok">séances courtes</span> avec une pause suggérée vers 15 minutes.</li>
+</ul>
+<h3>Ce qui manque encore</h3>
+<ul>
+<li class="todo"><b>Reconnaître ou produire :</b> en sciences et en arts, 60 à 70 % des exercices sont des QCM ou des vrai/faux. Ils entraînent la reconnaissance plus que le rappel. Ajouter des réponses à produire (un mot, un nombre, ranger dans l'ordre, légender un schéma).</li>
+<li class="todo"><b>Indices progressifs :</b> au deuxième échec, donner un indice plutôt que la réponse (seuls 3 % des exercices en ont un).</li>
+<li class="todo"><b>Entrelacement :</b> mélanger des questions d'anciennes leçons dans les défis (les révisions existent, mais à part).</li>
+<li class="todo"><b>Explication par l'enfant :</b> l'étape « explique » (effet tuteur) n'existe que dans 5 leçons de maths. C'est l'un des leviers les plus puissants.</li>
+<li class="todo"><b>Métacognition :</b> un « Je suis sûr / pas sûr » avant de valider aiderait l'enfant à calibrer sa confiance.</li>
+<li class="todo"><b>Motivation :</b> les gemmes sont une récompense extérieure. Il faut les relier à l'effort et aux progrès (déjà fait en partie), jamais au temps passé, et garder la fierté de « Monde sauvé » au centre.</li>
+</ul>
+
+<h2 id="jeu">7. Le regard du créateur de jeux vidéo</h2>
+<p><b>La boucle de jeu est bonne :</b> leçon → défi → gemmes → boutique et cabane. On y ajoute un fil rouge (sauver chaque monde du Grand Neutre), des combats de gardiens à chaque fin de monde, et une méta-progression à l'échelle de la Galaxie (badges multi-planètes, 8 planètes à colorer). L'antagoniste commun, gris et triste plutôt que terrifiant, est un bon choix pour cet âge.</p>
+<h3>Faiblesses de game design</h3>
+<ul>
+<li class="todo"><b>Jeux mal répartis :</b> 10 jeux pour les maths, 3 pour le français, et un seul quiz générique (« Quiz éclair ») partagé par toutes les sciences.
+<ul>
+<li>Chimie : un mélangeur de potions où l'on prédit la couleur.</li>
+<li>Biologie : construire une chaîne alimentaire contre la montre.</li>
+<li>Terre & Univers : relier les étoiles en constellations, faire tourner la Terre pour faire nuit.</li>
+<li>Physique : construire un circuit qui allume la lampe.</li>
+<li>Dessin : un jeu de silhouettes à deviner.</li>
+</ul></li>
+<li class="todo"><b>Rythme de récompense :</b> une leçon dure environ 6 minutes, mais le premier « grand moment » (le gardien) n'arrive qu'après toutes les leçons d'un monde. Un mini-événement à mi-monde, comme un habitant sauvé, garderait l'élan.</li>
+<li class="todo"><b>Collection :</b> les 42 habitants illustrés pourraient devenir un album à compléter (un par monde sauvé). La collection est un moteur puissant à 8 ans.</li>
+<li class="todo"><b>Quêtes du jour :</b> le « Défi du jour » existe ; des quêtes variées (« fais une expérience », « dessine », « révise 3 cartes ») pousseraient vers des planètes moins visitées.</li>
+<li><span class="ok">Bon point :</span> pas de classement entre enfants, pas de publicité, pas d'achat réel, pas de série qui culpabilise. C'est adapté à cet âge.</li>
+</ul>
+
+<h2 id="ux">8. Le regard de l'ingénieur UX/UI</h2>
+<h3>Agencement</h3>
+<ul>
+<li><span class="ok">Points forts :</span>
+<ul>
+<li>une barre de navigation basse de 6 entrées, stable ;</li>
+<li>un bandeau de planète qui rappelle où l'on est ;</li>
+<li>une leçon découpée en étapes avec une barre de progression cliquable (étapes nommées pour les lecteurs d'écran) ;</li>
+<li>« Précédent », « Relire » et « Passer » toujours au même endroit.</li>
+</ul></li>
+<li class="todo">Le tableau de bord de planète propose 7 actions de même poids visuel. Mieux vaut une action principale (« Continuer ») et regrouper le reste sous « Plus d'activités ».</li>
+<li class="todo">Les compteurs « 0/199 leçons » gagneraient à afficher la progression du cycle en cours (« 0/11 mondes Graines »).</li>
+</ul>
+<h3>Accessibilité (mesurée)</h3>
+<ul>
+<li class="fixed">Aucun contour de focus au clavier : un contour violet visible est ajouté sur tout élément actif.</li>
+<li class="fixed">Les boutons de tri mesuraient 40 px de haut : ils passent à 44 px minimum (recommandation Apple et WCAG 2.5.5).</li>
+<li class="fixed">Les trois boutons de compagnon n'avaient pas de nom pour les lecteurs d'écran : c'est corrigé, avec en plus l'état « sélectionné ».</li>
+<li><span class="ok">Déjà présent :</span> langue déclarée (<code>lang="fr"</code>), annonces vocales (<code>aria-live</code>), mode sombre, réduction des animations, police dyslexie, émojis non lus par la synthèse vocale.</li>
+<li class="todo">À faire : un audit de contraste couleur par couleur (les pastilles colorées et le texte gris clair sur fond crème sont à vérifier), et un test réel avec VoiceOver et TalkBack.</li>
+</ul>
+<h3>Immersion</h3>
+<ul>
+<li><span class="ok">Points forts :</span>
+<ul>
+<li>93 décors illustrés (un par monde) et 8 médaillons de planètes ;</li>
+<li>mascottes animées selon leur humeur ;</li>
+<li>voix différentes par personnage ;</li>
+<li>musique et sons d'interface.</li>
+</ul></li>
+<li class="fixed">Les leçons de sciences et d'arts commencent désormais toutes par une scène avec les mascottes.</li>
+<li class="todo">Le décor du monde apparaît sur la carte, mais peu dans la leçon elle-même. Un fond discret du décor en tête de leçon renforcerait le sentiment d'« être sur la planète ».</li>
+</ul>
+
+<h2 id="angles">9. Les angles morts de la demande</h2>
+<p>Des sujets que la demande n'abordait pas, mais qu'un audit complet doit couvrir.</p>
+<div class="tbl"><table>
+<tr><th>Sujet</th><th>État</th><th>Recommandation</th></tr>
+<tr><td><b>Données des enfants (RGPD)</b></td><td class="ok">Tout reste sur l'appareil (IndexedDB) : aucun compte, aucun serveur, et un simple surnom suffit.</td><td>Le dire explicitement dans une page « Confidentialité » destinée aux parents. Ne jamais ajouter d'outil de statistiques sans consentement parental.</td></tr>
+<tr><td><b>Assistant IA</b></td><td class="warn">Optionnel, avec la clé du parent, sources limitées, règle de sécurité pour les expériences. <b>Jamais testé avec une vraie clé.</b></td><td>Le tester avant de le mettre en avant, ajouter une limite de questions par jour, et garder l'accès derrière le code parent.</td></tr>
+<tr><td><b>Sauvegarde et multi-appareils</b></td><td class="warn">Sauvegarde manuelle (fichier) ; pas de synchronisation entre la tablette et le téléphone.</td><td>Proposer un rappel de sauvegarde mensuel, et à terme un transfert par QR code entre appareils, sans serveur.</td></tr>
+<tr><td><b>Sécurité des expériences</b></td><td class="ok">Niveaux vert, orange et rouge ; rouge = adulte obligatoire.</td><td>Ajouter un récapitulatif imprimable « matériel et sécurité » pour les parents.</td></tr>
+<tr><td><b>Temps d'écran</b></td><td class="ok">Clôture douce vers 15 minutes (ce n'est pas une limite).</td><td>Un réglage parental de durée maximale par jour, et des activités « hors écran » (les expériences et les dessins sur papier s'y prêtent).</td></tr>
+<tr><td><b>Suivi par les parents et les enseignants</b></td><td class="warn">Espace parents avec suivi ; pas de mode classe.</td><td>Un bilan par compétence imprimable (« ce que mon enfant sait faire »), puis éventuellement un mode enseignant.</td></tr>
+<tr><td><b>Programmes officiels</b></td><td class="warn">Niveaux indiqués, sans alignement compétence par compétence.</td><td>Faire une table de correspondance avec Éduscol (nouveaux programmes de maths et de français des cycles 1 à 3).</td></tr>
+<tr><td><b>Inclusion</b></td><td class="ok">Prénoms variés, figures scientifiques féminines et de toutes les cultures dans les histoires des Muses.</td><td>Vérifier l'équilibre filles/garçons dans les énoncés, et ajouter des sous-titres pour les sons (musique) pour les enfants sourds ou malentendants.</td></tr>
+<tr><td><b>Droits des images</b></td><td class="warn">Visuels générés en local par IA ; quelques décors s'inspirent d'œuvres du domaine public (la Grande Vague, Lascaux).</td><td>Le mentionner dans les mentions légales, et ne pas copier d'œuvre protégée.</td></tr>
+<tr><td><b>Tests avec de vrais enfants</b></td><td class="ko">Aucun pour l'instant.</td><td>Faire jouer 3 à 5 enfants de 7 à 10 ans pendant 20 minutes en observant sans aider. C'est la seule vraie validation de l'UX.</td></tr>
+<tr><td><b>Performance et hors connexion</b></td><td class="ok">PWA utilisable hors connexion, environ 26 Mo en tout, dont 20 Mo d'images.</td><td>Charger les images d'une planète seulement quand on y entre, pour accélérer le premier lancement sur un vieux téléphone.</td></tr>
+<tr><td><b>Maintenance du contenu</b></td><td class="ok">Fichiers YAML, ajout de planètes sans recoder, contrôle automatique à chaque build.</td><td>Ajouter au contrôle automatique la règle « une astuce, un À quoi ça sert, une scène par leçon », pour ne plus jamais régresser.</td></tr>
+</table></div>
+
+<h2 id="visuels">10. Les visuels terminés</h2>
+<ul>
+<li class="fixed"><b>19 décors des îles de français</b> (Grimoire, Île des Sons, Forêt des Noms… jusqu'à l'Académie des Lettres) : toute la Galaxie a désormais un décor illustré par monde, soit 93 sur 93.</li>
+<li class="fixed"><b>Gribouille en 6 humeurs</b> (neutre, joie, triste, fier, touché, croque). Le générateur d'images ne savait pas garder sa forme de tache d'encre d'une pose à l'autre. La solution : le corps est peint par l'IA à partir de la silhouette exacte du dessin de l'appli, et les expressions sont dessinées par-dessus. Le personnage est donc identique sur toutes les poses.</li>
+<li class="fixed"><b>6 Muses illustrées :</b>
+<ul>
+<li>Dame Acidia, grenouille chimiste à lunettes ;</li>
+<li>Maître Gravis, vieux sage barbu ;</li>
+<li>l'Ancienne Sève, esprit-arbre ;</li>
+<li>Uranie, chouette étoilée à la lunette ;</li>
+<li>Madame Résonance, oiseau chanteur ;</li>
+<li>la Muse de l'Atelier.</li>
+</ul>
+Elles deviennent de vrais personnages qui prennent la parole dans les histoires, avec leur voix et leur portrait.</li>
+<li class="fixed"><b>17 badges manquants</b> (savant, artiste, oreille d'or, compositeur, galaxie, mots, duel…) sur la médaille commune : les 52 badges sont illustrés. <b>Le monocle</b> de la boutique aussi.</li>
+<li class="todo">Encore sans illustration : les titres (non affichés en image dans l'appli) et la Muse de l'Archipel des Mots en français.</li>
+</ul>
+
+<h2 id="plan">11. Plan d'action priorisé</h2>
+<div class="tbl"><table>
+<tr><th>Priorité</th><th>Action</th><th>Effort</th></tr>
+<tr><td class="prio p0">P0</td><td>Tester l'appli avec 3 à 5 vrais enfants (observation silencieuse de 20 minutes)</td><td>1 après-midi</td></tr>
+<tr><td class="prio p0">P0</td><td>Tester l'assistant IA avec une vraie clé avant de le proposer</td><td>1 heure</td></tr>
+<tr><td class="prio p1">P1</td><td>Explications propres à chaque affirmation dans les 172 exercices « vrai ou faux » (d'abord le CP-CM)</td><td>2 jours</td></tr>
+<tr><td class="prio p1">P1</td><td>Indices progressifs au deuxième échec, et plus de réponses à produire en sciences et en arts</td><td>3 jours</td></tr>
+<tr><td class="prio p1">P1</td><td>Visuels pour le français et Terre & Univers (schémas de phrase, frises, rotation, phases de la Lune)</td><td>3 jours</td></tr>
+<tr><td class="prio p1">P1</td><td>Simplifier l'accueil de planète (1 action principale) et la progression par cycle</td><td>½ journée</td></tr>
+<tr><td class="prio p1">P1</td><td>Un jeu propre à chaque planète de sciences et d'arts</td><td>1 jour par jeu</td></tr>
+<tr><td class="prio p2">P2</td><td>Alignement Éduscol compétence par compétence ; bilan imprimable pour les parents</td><td>2 jours</td></tr>
+<tr><td class="prio p2">P2</td><td>Album des habitants, quêtes du jour, mini-événement à mi-monde</td><td>2 jours</td></tr>
+<tr><td class="prio p2">P2</td><td>Micro : vérifier un rythme frappé ou une note chantée</td><td>2 jours</td></tr>
+<tr><td class="prio p2">P2</td><td>Contrôle de build « astuce + À quoi ça sert + scène » obligatoire ; audit de contraste</td><td>½ journée</td></tr>
+</table></div>
+<p><small>Audit réalisé sur le code et le contenu de la version 2.1 ; parcours en navigateur sur tablette (768 × 1024) avec un profil de test supprimé ensuite.</small></p>
+</main>
+</body>
+</html>

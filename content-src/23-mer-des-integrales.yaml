@@ -42,6 +42,9 @@ lecons:
           enonce: "$\\lim\\limits_{x \\to +\\infty} \\dfrac{ {{a}}x^2 + {{b}} }{ {{c}}x^2 + {{d}} } = ?$ (fraction ou décimal)"
           reponse: "a/c"
           correction: "On garde les termes dominants : $\\frac{ {{a}}x^2 }{ {{c}}x^2 } = {{frac(a,c)}}$"
+      - astuce:
+          texte: "En l'infini, pour un polynôme ou un quotient de polynômes, seuls les termes de plus haut degré comptent : ce sont les chefs."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "1..9", c: "1..9", b: "-9..9", d: "1..9" }
@@ -147,6 +150,9 @@ lecons:
           enonce: "$\\displaystyle\\int_0^{ {{b}} } 2x\\,dx = ?$"
           reponse: "b*b"
           correction: "$[x^2]_0^{ {{b}} } = {{b*b}}$ (c'est l'aire d'un triangle de base {{b}} et de hauteur {{2*b}})."
+      - astuce:
+          texte: "L'intégrale d'une fonction positive, c'est l'aire sous sa courbe. Quand la courbe passe sous l'axe, cette aire compte en négatif."
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: "0..2", b: "3..5" }
@@ -188,6 +194,9 @@ lecons:
           enonce: "Valeur moyenne de $f(x) = 2x$ sur $[0 ; {{b}}]$ ?"
           reponse: "b"
           correction: "$\\frac{1}{ {{b}} }\\int_0^{ {{b}} } 2x\\,dx = \\frac{ {{b*b}} }{ {{b}} } = {{b}}$"
+      - astuce:
+          texte: "Valeur moyenne = intégrale ÷ longueur de l'intervalle : c'est la hauteur du rectangle qui aurait la même aire que sous la courbe."
+          qui: mia
     exercices:
       - type: nombre
         vars: { b: [3, 6, 9] }
@@ -231,6 +240,9 @@ lecons:
           reponse: "{{y0}}exp({{a}}t)"
           variables: [t]
           correction: "$y(t) = {{y0}}e^{ {{a}}t }$"
+      - astuce:
+          texte: "y' = ay a pour solutions y = C e^(ax) : quand la vitesse de changement est proportionnelle à la quantité, c'est exponentiel."
+          qui: neo
     exercices:
       - type: expression
         vars: { a: "1..5", y0: "2..9" }

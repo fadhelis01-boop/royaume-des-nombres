@@ -20,6 +20,10 @@ lecons:
     objectif: Je prévois si une réaction est spontanée avec ΔG = ΔH − TΔS.
     mots: [enthalpie, entropie, enthalpie libre, spontané]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi certaines réactions se font toutes seules et d'autres non ?"
+          - mia: "Deux grandeurs décident : l'énergie et le désordre. Voici comment les combiner."
+      - a_quoi_ca_sert: "Ces grandeurs permettent de prévoir si une réaction peut se faire toute seule : c'est essentiel pour concevoir des batteries, des moteurs ou des procédés industriels."
       - texte: |
           - **ΔH** (variation d'**enthalpie**) : chaleur échangée à pression constante. ΔH < 0 : exothermique ; ΔH > 0 : endothermique.
           - **ΔS** (variation d'**entropie**) : mesure du « désordre », plus précisément du nombre de façons d'arranger l'énergie et la matière. Un gaz qui se forme fait en général augmenter S.
@@ -29,6 +33,9 @@ lecons:
           titre: La glace fond-elle à 25 °C ?
           enonce: "Fusion de la glace : ΔH ≈ +6,0 kJ/mol, ΔS ≈ +0,022 kJ/(mol·K). À T = 298 K :"
           etapes: ["ΔG = 6,0 − 298 × 0,022 ≈ 6,0 − 6,56 ≈ −0,56 kJ/mol", "ΔG < 0 : la fusion est spontanée à 25 °C (et à 273 K, ΔG ≈ 0 : c'est l'équilibre de fusion)."]
+      - astuce:
+          texte: "ΔG négatif = la réaction est spontanée (ça descend tout seul). ΔG positif = il faut lui fournir de l'énergie (ça monte)."
+          qui: zero
       - retiens: "ΔG = ΔH − TΔS (T en K). ΔG < 0 : spontané. Spontané ≠ rapide."
     exercices:
       - type: nombre
@@ -54,11 +61,18 @@ lecons:
     objectif: J'écris la configuration électronique des premiers éléments.
     mots: [orbitale, sous-couche, configuration électronique, quantique]
     etapes:
+      - dialogue:
+          - zero: "Les électrons tournent autour du noyau comme des planètes ?"
+          - neo: "C'est une image simplifiée ! En réalité, on parle de zones de présence : les orbitales."
+      - a_quoi_ca_sert: "La configuration électronique explique pourquoi les éléments se comportent comme ils le font et la forme du tableau périodique."
       - texte: |
           En mécanique quantique, un électron n'a pas de trajectoire : il est décrit par une **orbitale**, une zone où il a de grandes chances de se trouver. Les orbitales se regroupent en **sous-couches** : s (2 électrons max), p (6), d (10), f (14).
           On les remplit dans l'ordre d'énergie croissante (règle de Klechkowski) : 1s, 2s, 2p, 3s, 3p, 4s, 3d…
           Exemples : H : 1s¹ ; C : 1s² 2s² 2p² ; O : 1s² 2s² 2p⁴ ; Na : 1s² 2s² 2p⁶ 3s¹.
           Les électrons de la **dernière couche** (électrons de valence) expliquent la réactivité : Na perd facilement son électron 3s¹ (→ Na⁺).
+      - astuce:
+          texte: "On remplit les sous-couches dans l'ordre 1s, 2s, 2p, 3s, 3p, 4s, 3d… comme on remplit un immeuble en commençant par les étages du bas."
+          qui: mia
       - retiens: "s : 2, p : 6, d : 10 électrons au maximum. Ordre : 1s 2s 2p 3s 3p 4s 3d. Les électrons de valence gouvernent la réactivité."
     exercices:
       - type: nombre
@@ -82,11 +96,18 @@ lecons:
     objectif: Je sais à quoi servent les spectroscopies.
     mots: [spectroscopie, absorbance, infrarouge, RMN]
     etapes:
+      - dialogue:
+          - zero: "Comment on sait de quoi sont faites les étoiles, sans y aller ?"
+          - mia: "En analysant leur lumière ! C'est la spectroscopie."
+      - a_quoi_ca_sert: "La spectroscopie permet d'identifier une molécule sans la toucher : elle sert aux enquêtes de police, au contrôle des médicaments et à l'analyse des étoiles."
       - texte: |
           Les molécules **absorbent** certaines radiations : en mesurant lesquelles, on identifie et on dose les substances.
           - **UV-visible** : la couleur d'une solution est la **complémentaire** de la couleur absorbée (une solution qui absorbe le rouge paraît bleu-vert). Loi de Beer-Lambert : l'absorbance est proportionnelle à la concentration ($A = k \times C$) → dosage.
           - **Infrarouge (IR)** : chaque liaison (O–H, C=O…) vibre à des fréquences caractéristiques → on reconnaît les groupes caractéristiques.
           - **RMN** : les noyaux d'hydrogène, placés dans un champ magnétique, révèlent leur environnement → on reconstruit la molécule (c'est le même principe physique que l'IRM à l'hôpital).
+      - astuce:
+          texte: "Chaque molécule a son « empreinte digitale » de lumière : l'infrarouge révèle les groupes chimiques, la RMN révèle la position des hydrogènes."
+          qui: neo
       - retiens: "UV-visible : couleur et dosage (A proportionnelle à C). IR : liaisons et groupes. RMN : environnement des atomes d'hydrogène."
     exercices:
       - type: nombre
@@ -111,12 +132,19 @@ lecons:
     objectif: Je lis une flèche courbe et je distingue nucléophile et électrophile.
     mots: [mécanisme, nucléophile, électrophile, flèche courbe]
     etapes:
+      - dialogue:
+          - zero: "Que se passe-t-il vraiment pendant une réaction, à l'échelle des électrons ?"
+          - neo: "Des doublets d'électrons qui se déplacent ! Les chimistes dessinent ça avec des flèches courbes."
+      - a_quoi_ca_sert: "Comprendre les mécanismes permet d'inventer de nouvelles réactions, et donc de nouveaux médicaments et matériaux."
       - texte: |
           Une équation dit « qui donne quoi » ; un **mécanisme** raconte **comment**, étape par étape.
           - Un site **nucléophile** est riche en électrons (doublet libre, charge −) : il « aime les noyaux » (les charges +).
           - Un site **électrophile** est pauvre en électrons (charge + ou partielle δ+).
           Une **flèche courbe** part toujours d'un **doublet d'électrons** (du nucléophile) et va vers l'électrophile : elle montre le déplacement des électrons, jamais celui des atomes.
           Exemple : l'ion hydroxyde HO⁻ (nucléophile) attaque le carbone δ+ lié au chlore dans CH₃Cl (électrophile) → CH₃OH + Cl⁻.
+      - astuce:
+          texte: "La flèche courbe part toujours d'un doublet d'électrons (riche) et va vers un site pauvre en électrons. Le nucléophile aime les noyaux, l'électrophile aime les électrons."
+          qui: zero
       - retiens: "Nucléophile = riche en électrons ; électrophile = pauvre. La flèche courbe va du doublet vers le site électrophile."
     exercices:
       - type: qcm
@@ -140,6 +168,9 @@ lecons:
     objectif: J'évalue une synthèse avec l'économie d'atomes.
     mots: [chimie verte, économie d'atomes, solvant, développement durable]
     etapes:
+      - dialogue:
+          - zero: "La chimie, ça pollue forcément ?"
+          - mia: "Pas si on la conçoit bien ! La chimie verte cherche à ne produire aucun déchet."
       - texte: |
           La **chimie verte** (12 principes énoncés par Paul Anastas et John Warner en 1998) cherche à concevoir des procédés plus sûrs et plus propres :
           - **prévenir** les déchets plutôt que les traiter ;
@@ -148,6 +179,9 @@ lecons:
           - préférer des **solvants** sûrs (eau, éthanol) ou s'en passer ;
           - utiliser des **matières premières renouvelables** et économiser l'énergie.
           $$\text{économie d'atomes} = \frac{M(\text{produit voulu})}{\sum M(\text{réactifs})} \times 100\ \%$$
+      - astuce:
+          texte: "La meilleure chimie est celle qui ne produit pas de déchets : on vise une économie d'atomes proche de 100 % (tous les atomes des réactifs finissent dans le produit)."
+          qui: mia
       - retiens: "Chimie verte : moins de déchets, plus d'atomes utiles, catalyseurs, solvants sûrs, ressources renouvelables, moins d'énergie."
       - a_quoi_ca_sert: "Fabriquer des médicaments avec moins de déchets toxiques, des plastiques biosourcés, des procédés industriels moins gourmands en énergie."
     exercices:

@@ -21,10 +21,17 @@ lecons:
     objectif: J'identifie les formes d'énergie et les conversions dans une chaîne énergétique.
     mots: [énergie, conversion, conservation, rendement]
     etapes:
+      - dialogue:
+          - zero: "L'énergie, c'est ce que j'ai après mon goûter ?"
+          - mia: "Aussi ! Mais elle prend plein de formes : chaleur, mouvement, lumière… et elle se transforme."
+      - a_quoi_ca_sert: "Comprendre les conversions d'énergie aide à choisir des appareils économes et à comprendre les centrales électriques."
       - texte: |
           Formes d'énergie : **cinétique** (mouvement), **potentielle** (position en hauteur, ressort tendu), **thermique**, **chimique** (aliments, carburants, piles), **électrique**, **lumineuse** (rayonnante), **nucléaire**.
           Un convertisseur transforme une forme en une autre : une lampe convertit l'énergie électrique en lumière… et en chaleur (perdue).
           **Conservation** : l'énergie totale se conserve. **Rendement** = énergie utile / énergie reçue (toujours < 1). Une LED a un bien meilleur rendement qu'une ampoule à filament.
+      - astuce:
+          texte: "L'énergie ne se crée pas, elle se transforme. Dessine toujours la chaîne : réservoir → convertisseur → énergie utile + pertes (souvent de la chaleur)."
+          qui: mia
       - retiens: "L'énergie se conserve et se transforme. Rendement = utile / reçue, toujours inférieur à 100 %."
     exercices:
       - type: qcm
@@ -50,6 +57,10 @@ lecons:
     objectif: Je calcule Ec = ½mv² et Ep = mgh.
     mots: [énergie cinétique, énergie potentielle, énergie mécanique]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi les montagnes russes accélèrent dans les descentes ?"
+          - neo: "L'énergie de hauteur se transforme en énergie de vitesse. Calculons-les !"
+      - a_quoi_ca_sert: "Ces énergies expliquent les montagnes russes, les barrages hydroélectriques et pourquoi un choc à 90 km/h est bien plus grave qu'à 50 km/h."
       - texte: |
           - **Énergie cinétique** : $E_c = \dfrac{1}{2} m v^2$ (J, avec m en kg, v en m/s). Doubler la vitesse **quadruple** l'énergie : c'est pourquoi les chocs à grande vitesse sont si graves.
           - **Énergie potentielle de pesanteur** : $E_p = m g h$ (h en m, g = 9,8 N/kg).
@@ -58,6 +69,9 @@ lecons:
           titre: Une voiture en ville
           enonce: "Une voiture de 1 000 kg roule à 50 km/h ≈ 13,9 m/s."
           etapes: ["$E_c = 0{,}5 \\times 1000 \\times 13{,}9^2 \\approx 96\\,600$ J", "À 100 km/h, l'énergie est 4 fois plus grande ≈ 386 000 J : il faut 4 fois plus de distance de freinage."]
+      - astuce:
+          texte: "Dans Ec = ½mv², la vitesse est au carré : rouler 2 fois plus vite donne 4 fois plus d'énergie au moment d'un choc."
+          qui: zero
       - retiens: "$E_c = \\frac12 m v^2$ ; $E_p = mgh$ ; $E_m = E_c + E_p$ conservée sans frottement. Vitesse × 2 ⇒ Ec × 4."
     exercices:
       - type: nombre
@@ -84,6 +98,10 @@ lecons:
     objectif: J'utilise F = m × a.
     mots: [accélération, force résultante, Newton]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi c'est plus dur de pousser un caddie plein qu'un caddie vide ?"
+          - mia: "Plus la masse est grande, plus il faut de force pour accélérer. C'est F = m × a !"
+      - a_quoi_ca_sert: "F = m × a sert à calculer la poussée d'une fusée, le freinage d'une voiture ou la force d'un coup de pied dans un ballon."
       - texte: |
           L'**accélération** a (en m/s²) mesure la variation de vitesse par seconde.
           **2ᵉ loi de Newton** : $\vec F = m \vec a$ — la somme des forces est égale à la masse fois l'accélération. Une force donnée accélère **moins** un objet **plus lourd**.
@@ -91,6 +109,9 @@ lecons:
           titre: Pousser un chariot
           enonce: "On exerce une force résultante de 30 N sur un chariot de 15 kg."
           etapes: ["$a = F / m = 30 / 15 = 2$ m/s²", "Sa vitesse augmente de 2 m/s chaque seconde."]
+      - astuce:
+          texte: "Plus c'est lourd, plus il faut de force pour accélérer pareil : pousser un caddie vide ou plein, tu sens la différence."
+          qui: neo
       - retiens: "$F = m \\times a$ (N = kg × m/s²). Même force, objet plus lourd ⇒ moins d'accélération."
     exercices:
       - type: nombre
@@ -117,10 +138,17 @@ lecons:
     objectif: Je calcule la vitesse et la hauteur de chute sans frottement.
     mots: [chute libre, accélération de la pesanteur]
     etapes:
+      - dialogue:
+          - zero: "Une plume et un marteau, qui tombe en premier ?"
+          - neo: "Sur Terre, le marteau, à cause de l'air. Sur la Lune… surprise !"
+      - a_quoi_ca_sert: "La chute libre sert à calculer la trajectoire d'un plongeur, d'un parachutiste avant ouverture ou d'un objet lâché d'un drone."
       - texte: |
           En **chute libre** (seul le poids agit, pas de frottement de l'air), tous les objets ont la **même accélération** g ≈ 9,8 m/s², quelle que soit leur masse.
           Lâché sans vitesse : $v = g\,t$ et la distance parcourue $h = \dfrac{1}{2} g t^2$.
           En 1971, l'astronaute David Scott a lâché un marteau et une plume sur la Lune (sans air) : ils sont arrivés ensemble.
+      - astuce:
+          texte: "Sans frottement, tous les objets tombent de la même façon, quelle que soit leur masse. Sur la Lune, un marteau et une plume tombent ensemble (l'expérience a été faite par Apollo 15) !"
+          qui: mia
       - retiens: "Chute libre : même accélération g pour tous. $v = gt$, $h = \\frac12 g t^2$ (départ sans vitesse)."
     exercices:
       - type: nombre
@@ -148,10 +176,17 @@ lecons:
     objectif: J'utilise la loi de la gravitation de Newton.
     mots: [gravitation, attraction, orbite, constante de gravitation]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi la Lune ne tombe pas sur la Terre ?"
+          - mia: "Elle tombe… mais elle va si vite de côté qu'elle tourne autour ! Newton l'a compris."
+      - a_quoi_ca_sert: "La gravitation explique les marées, les orbites des satellites et la trajectoire des sondes spatiales."
       - texte: |
           Newton a compris que la force qui fait tomber la pomme est **la même** que celle qui retient la Lune autour de la Terre : la **gravitation**. Deux corps de masses $m_A$ et $m_B$, séparés par une distance d, s'attirent :
           $$F = G\,\frac{m_A\, m_B}{d^2}$$ avec $G \approx 6{,}67 \times 10^{-11}$ N·m²/kg².
           Si la distance **double**, la force est **divisée par 4**. Un satellite en orbite « tombe » en permanence autour de la Terre, mais va assez vite de côté pour ne jamais la toucher.
+      - astuce:
+          texte: "Masses plus grandes = attraction plus forte. Distance doublée = attraction divisée par 4 (car la distance est au carré)."
+          qui: zero
       - retiens: "$F = G m_A m_B / d^2$. Distance × 2 ⇒ force ÷ 4. La même force fait tomber la pomme et tourner la Lune."
     exercices:
       - type: nombre

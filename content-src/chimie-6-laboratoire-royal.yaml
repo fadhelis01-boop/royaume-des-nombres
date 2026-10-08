@@ -20,12 +20,18 @@ lecons:
     objectif: Je connais les facteurs qui accélèrent une réaction.
     mots: [cinétique, facteur cinétique, catalyseur]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi les aliments se gardent plus longtemps au frigo ?"
+          - neo: "Le froid ralentit les réactions chimiques. Étudions leur vitesse."
       - texte: |
           La **cinétique** étudie la vitesse des réactions. Une réaction est plus rapide quand :
           - la **température** augmente (les particules s'agitent et se rencontrent plus souvent, avec plus d'énergie) ;
           - la **concentration** des réactifs augmente (plus de rencontres) ;
           - la **surface de contact** augmente (poudre plutôt que bloc) ;
           - un **catalyseur** est présent : il accélère la réaction **sans être consommé** (les **enzymes** sont les catalyseurs du vivant ; le pot catalytique des voitures en contient).
+      - astuce:
+          texte: "Pour accélérer une réaction : plus chaud, plus concentré, plus divisé (en poudre), ou avec un catalyseur. C'est pour ça qu'on garde les aliments au frigo : le froid ralentit tout."
+          qui: mia
       - retiens: "Température, concentration, surface de contact et catalyseur accélèrent une réaction. Un catalyseur n'est pas consommé."
       - a_quoi_ca_sert: "Le réfrigérateur ralentit les réactions qui abîment les aliments ; la cocotte-minute les accélère ; l'industrie utilise des catalyseurs pour économiser de l'énergie."
     exercices:
@@ -51,9 +57,16 @@ lecons:
     objectif: Je sais qu'une réaction peut être limitée et atteindre un équilibre.
     mots: [équilibre, réaction totale, Le Chatelier]
     etapes:
+      - dialogue:
+          - zero: "Une réaction finit toujours par tout consommer, non ?"
+          - mia: "Pas toujours ! Certaines s'arrêtent à un équilibre."
+      - a_quoi_ca_sert: "Beaucoup de réactions de l'industrie et du corps humain s'arrêtent à un équilibre : savoir le déplacer permet de produire plus (engrais, médicaments)."
       - texte: |
           Certaines réactions sont **totales** (un réactif disparaît complètement). D'autres s'arrêtent avant : la réaction directe et la réaction inverse se produisent **en même temps, à la même vitesse**. On écrit ⇌. C'est un **équilibre dynamique** : à l'échelle microscopique, ça réagit toujours, mais les quantités ne bougent plus.
           **Principe de Le Chatelier** (qualitatif) : si on perturbe un équilibre, il **se déplace pour s'opposer** en partie à la perturbation (on ajoute un réactif → il en consomme ; on retire un produit → il en refabrique).
+      - astuce:
+          texte: "Le principe de Le Chatelier : un équilibre fait toujours le contraire de ce qu'on lui impose. Tu ajoutes un réactif ? Il le consomme."
+          qui: neo
       - retiens: "Équilibre ⇌ : réactions directe et inverse à la même vitesse. Perturbé, il se déplace pour s'opposer à la perturbation."
     exercices:
       - type: qcm
@@ -77,12 +90,19 @@ lecons:
     objectif: Je calcule un pH et j'utilise la notion de pKa.
     mots: [ion oxonium, logarithme, couple acide-base, pKa]
     etapes:
+      - dialogue:
+          - zero: "Le pH de mon sang doit rester à 7,4. Pourquoi c'est si important ?"
+          - neo: "Parce que le corps est très sensible à l'acidité ! Calculons des pH."
+      - a_quoi_ca_sert: "Le pH du sang, des piscines, des sols agricoles ou des aliments doit être contrôlé : ces calculs servent tous les jours dans les laboratoires."
       - texte: |
           En solution aqueuse, l'acidité est liée aux ions **oxonium H₃O⁺**. Par définition :
           $$pH = -\log [H_3O^+]$$ (concentration en mol/L).
           Si $[H_3O^+] = 10^{-3}$ mol/L, alors pH = 3. Quand le pH baisse de 1, la concentration en H₃O⁺ est **multipliée par 10**.
           Un **acide** cède un ion H⁺, une **base** en capte un : ils forment un **couple** (CH₃COOH / CH₃COO⁻).
           Chaque couple a un **pKa**. Si **pH < pKa**, c'est la forme **acide** qui prédomine ; si **pH > pKa**, c'est la forme **basique**.
+      - astuce:
+          texte: "Si le pH est inférieur au pKa, c'est la forme acide qui domine ; s'il est supérieur, c'est la forme basique. Le pKa est la frontière."
+          qui: zero
       - retiens: "$pH = -\\log [H_3O^+]$. pH − 1 → 10 fois plus de H₃O⁺. pH < pKa : forme acide majoritaire ; pH > pKa : forme basique."
     exercices:
       - type: nombre
@@ -106,6 +126,10 @@ lecons:
     objectif: J'exploite l'équivalence d'un titrage.
     mots: [titrage, équivalence, burette, indicateur coloré]
     etapes:
+      - dialogue:
+          - zero: "Comment savoir combien il y a de vitamine C dans mon jus d'orange ?"
+          - mia: "Avec un dosage ! Une goutte de trop, et la couleur change."
+      - a_quoi_ca_sert: "Les dosages servent à vérifier la qualité de l'eau, la quantité de vitamine C d'un jus ou la teneur en alcool d'une boisson."
       - texte: |
           **Titrer**, c'est déterminer la concentration inconnue d'une espèce en la faisant réagir avec une solution de concentration connue, versée avec une **burette**.
           À l'**équivalence**, les réactifs ont été introduits **dans les proportions de l'équation** : on le repère avec un **indicateur coloré** qui change de couleur, ou par un saut de pH.
@@ -114,6 +138,9 @@ lecons:
           titre: Titrer du vinaigre (dilué)
           enonce: "10 mL de vinaigre dilué sont titrés par de la soude à 0,10 mol/L ; l'équivalence est atteinte pour 12 mL versés."
           etapes: ["$C_A \\times 10 = 0{,}10 \\times 12$", "$C_A = 0{,}12$ mol/L"]
+      - astuce:
+          texte: "À l'équivalence, les réactifs ont été introduits dans les proportions de l'équation : ni l'un ni l'autre n'est en excès."
+          qui: mia
       - retiens: "À l'équivalence, les réactifs sont dans les proportions stœchiométriques. Réaction 1:1 : $C_A V_A = C_B V_{B,eq}$."
     exercices:
       - type: nombre
@@ -138,6 +165,9 @@ lecons:
     objectif: Je reconnais les principaux groupes caractéristiques et je nomme les alcanes simples.
     mots: [chimie organique, alcane, groupe caractéristique, nomenclature]
     etapes:
+      - dialogue:
+          - zero: "C'est quoi la chimie organique ? La chimie des légumes bio ?"
+          - neo: "C'est la chimie du carbone ! On la trouve dans le vivant, les plastiques et les médicaments."
       - texte: |
           La **chimie organique** est la chimie des composés du **carbone** (avec H, O, N…). Le carbone forme **4 liaisons** : il construit des chaînes et des cycles.
           **Alcanes** (seulement C et H, liaisons simples) : méthane CH₄, éthane C₂H₆, propane C₃H₈, butane C₄H₁₀, pentane, hexane… (préfixes : méth = 1 C, éth = 2, prop = 3, but = 4, pent = 5, hex = 6).
@@ -150,6 +180,9 @@ lecons:
           | C=O dans la chaîne | cétone | propanone (acétone) |
           | –COO– | ester | parfums, arômes de fruits |
           | –NH₂ | amine | méthylamine |
+      - astuce:
+          texte: "Pour nommer les alcanes : Met-, Et-, Prop-, But- (1 à 4 carbones). Retiens : « Mon Éléphant Préfère Bouger »."
+          qui: neo
       - retiens: "Le carbone fait 4 liaisons. Préfixes : méth 1, éth 2, prop 3, but 4. –OH alcool, –COOH acide, –COO– ester, –NH₂ amine."
       - a_quoi_ca_sert: "Médicaments (l'aspirine est un ester et un acide), arômes, carburants, plastiques, colorants : presque toute l'industrie chimique est organique."
     exercices:

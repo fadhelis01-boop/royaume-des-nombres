@@ -133,6 +133,14 @@ function main() {
   const plIds = new Set(manifest.planetes.map((p) => p.id));
   for (const w of loaded) if (!plIds.has(w.matiere)) errors.push(`${w.id} : planète (matière) inconnue « ${w.matiere} » — à déclarer dans _planetes.yaml`);
   for (const p of manifest.planetes) if (!loaded.some((w) => w.matiere === p.id)) warns.push(`planète ${p.id} : aucun monde pour l'instant`);
+  // Charte de chaque leçon (audit 2.1) : une scène des mascottes, un « À quoi ça sert ? » et une astuce.
+  // Les mondes du cycle « astuces » sont eux-mêmes des recueils d'astuces : on n'y exige pas l'étape astuce.
+  for (const w of loaded)
+    for (const L of w.lecons ?? []) {
+      const k = new Set(L.etapes.map((e) => e.kind));
+      const manque = [!k.has("dialogue") && "scène des mascottes", !k.has("a_quoi_ca_sert") && !k.has("vraie_vie") && "« À quoi ça sert ? »", w.cycle !== "astuces" && !k.has("astuce") && "astuce"].filter(Boolean);
+      if (manque.length) warns.push(`${w.id}/${L.id} : il manque ${manque.join(", ")}`);
+    }
   // ---- Dictionnaire du français : content-src/_dico_*.yaml → public/content/dictionnaire.json (chargé à la demande)
   const NAT = { n: "nom", v: "verbe", a: "adjectif", adv: "adverbe", p: "préposition", c: "conjonction", pr: "pronom", d: "déterminant", i: "interjection", loc: "locution" };
   const dico = [];

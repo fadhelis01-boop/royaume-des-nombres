@@ -46,7 +46,7 @@ export function Diplome({ worldId }: { worldId: string }) {
         </div>
         <div className="diplome-foot">
           <span>Le {date}</span>
-          <span>Mia π · Néo Fibo · Zéro</span>
+          <span>Lya π · Néo Fibo · Zéro</span>
         </div>
       </div>
       <p className="center small muted no-print">Montre ton diplôme à un adulte : explique-lui ce que tu as appris dans ce monde !</p>

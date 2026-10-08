@@ -4,7 +4,10 @@ import { Md } from "./Md";
 import { activeChild } from "../lib/store";
 import { visuel } from "../lib/img";
 
-export const NAMES: Record<Who, string> = { mia: "Mia π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi", gribouille: "Gribouille", neutre: "Le Grand Neutre" };
+export const NAMES: Record<Who, string> = { mia: "Lya π", neo: "Néo Fibo", zero: "Zéro", narrateur: "Le Livre", nuage: "Le Grignoteur", ixe: "Ixe", enfant: "Toi", gribouille: "Gribouille", neutre: "Le Grand Neutre", acidia: "Dame Acidia", gravis: "Maître Gravis", seve: "L'Ancienne Sève", uranie: "Uranie", resonance: "Madame Résonance", pinceau: "La Muse de l'Atelier" };
+
+/** Les Muses des planètes (une illustration chacune). */
+const MUSES: Partial<Record<Who, string>> = { acidia: "muse-chimie", gravis: "muse-physique", seve: "muse-biologie", uranie: "muse-univers", resonance: "muse-musique", pinceau: "muse-dessin" };
 
 export function mascotSrc(who: Who, humeur?: string) {
   const pose = visuel("mascottes", humeur ? `${who}-${humeur}` : undefined) ?? visuel("mascottes", `${who}-neutre`);
@@ -137,16 +140,19 @@ export function Mascot({ who, humeur, size = 72, talking = false, className = ""
     );
   else if ((me === "nuage" || me === "ixe") && persoSrc(me, humeur))
     body = <img src={persoSrc(me, humeur)} alt={NAMES[who]} className={`mascot mascot-${me}`} style={{ width: size, height: size }} draggable={false} />;
-  else if (me === "gribouille" && visuel("persos", `gribouille-${humeur ?? "neutre"}`))
-    body = <img src={visuel("persos", `gribouille-${humeur ?? "neutre"}`)} alt={NAMES[who]} className="mascot mascot-gribouille" style={{ width: size, height: size }} draggable={false} />;
+  else if (MUSES[me] && visuel("persos", MUSES[me]!))
+    body = <img src={visuel("persos", MUSES[me]!)} alt={NAMES[who]} className="mascot mascot-muse" style={{ width: size, height: size }} draggable={false} />;
+  else if (MUSES[me]) body = <span className="mascot mascot-narrateur" style={{ width: size, height: size, fontSize: size * 0.6 }}>🌟</span>;
+  else if (me === "gribouille" && visuel("persos", "gribouille-neutre"))
+    body = <img src={visuel("persos", `gribouille-${humeur ?? "neutre"}`) ?? visuel("persos", "gribouille-neutre")} alt={NAMES[who]} className="mascot mascot-gribouille" style={{ width: size, height: size }} draggable={false} />;
   else if (me === "gribouille") body = <Gribouille size={size} humeur={humeur} />;
-  else if (me === "neutre" && visuel("persos", `neutre-${humeur ?? "neutre"}`))
-    body = <img src={visuel("persos", `neutre-${humeur ?? "neutre"}`)} alt={NAMES[who]} className="mascot mascot-neutre" style={{ width: size, height: size }} draggable={false} />;
+  else if (me === "neutre" && visuel("persos", "neutre-neutre"))
+    body = <img src={visuel("persos", `neutre-${humeur ?? "neutre"}`) ?? visuel("persos", "neutre-neutre")} alt={NAMES[who]} className="mascot mascot-neutre" style={{ width: size, height: size }} draggable={false} />;
   else if (me === "neutre") body = <Neutre size={size} humeur={humeur} />;
   else if (me === "nuage") body = <Nuage size={size} humeur={humeur} />;
   else if (me === "ixe") body = <Ixe size={size} />;
   else body = <img src={mascotSrc(me, humeur)} alt={NAMES[who]} className={`mascot mascot-${me}`} style={{ width: size, height: size }} draggable={false} />;
-  // Réactions animées : joie (saut + étincelles), surprise, réflexion (formes qui flottent, comme sur la fiche de Mia)…
+  // Réactions animées : joie (saut + étincelles), surprise, réflexion (formes qui flottent, comme sur la fiche de Lya)…
   const deco = humeur ? REACTIONS[humeur] : "";
   return (
     <span className={`mascot-wrap mood-${humeur ?? "none"} ${talking ? "talking" : ""} ${className}`} style={{ width: size, height: size }} aria-label={NAMES[who]} role="img">
@@ -210,7 +216,7 @@ export function Bubble({ who, text, humeur, k, side = "left", size = 76 }: { who
 export function Dialogue({ lines, k, autoplay = false }: { lines: Line[]; k: string; autoplay?: boolean }) {
   const t = useTts();
   const playing = t.playing && t.key === k;
-  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left", gribouille: "right", neutre: "right" };
+  const sides: Record<Who, "left" | "right"> = { mia: "left", neo: "right", zero: "left", narrateur: "left", nuage: "right", ixe: "right", enfant: "left", gribouille: "right", neutre: "right", acidia: "right", gravis: "right", seve: "right", uranie: "right", resonance: "right", pinceau: "right" };
   void autoplay;
   return (
     <div className="dialogue">

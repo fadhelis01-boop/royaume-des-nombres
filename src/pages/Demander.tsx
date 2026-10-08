@@ -84,13 +84,13 @@ export function Demander() {
 
   return (
     <div className="page demander">
-      <h1>❓ Demande à Mia</h1>
+      <h1>❓ Demande à Lya</h1>
       {!turns.length && (
         <>
           <Bubble who="mia" humeur="reflexion" text={`Pose-moi n'importe quelle question de maths, ${child.name} ! Je te réponds avec des explications simples… et je te dis où j'ai trouvé l'information.`} />
           {!ai && (
             <p className="small muted card">
-              ℹ️ Pour l'instant, Mia répond avec les leçons et le Grand Livre du Royaume. Pour des réponses complètes et sourcées sur internet, un adulte peut activer l'assistant dans l'Espace parents 🔒.
+              ℹ️ Pour l'instant, Lya répond avec les leçons et le Grand Livre du Royaume. Pour des réponses complètes et sourcées sur internet, un adulte peut activer l'assistant dans l'Espace parents 🔒.
             </p>
           )}
           <div className="suggest">

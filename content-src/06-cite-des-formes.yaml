@@ -50,6 +50,9 @@ lecons:
           enonce: "Combien de côtés a un {{f_0}} ?"
           choix: ["{{f_1}}", "{{f_1+1}}", "{{f_1-1}}", "{{f_1*2}}"]
           correction: "Un {{f_0}} a {{f_1}} côtés."
+      - astuce:
+          texte: "Compte les côtés avec ton doigt en faisant le tour : 3 côtés = triangle, 4 = quadrilatère. Les sommets, ce sont les coins pointus."
+          qui: zero
     exercices:
       - type: nombre
         vars: { f: [["triangle", 3], ["carré", 4], ["rectangle", 4], ["pentagone", 5], ["hexagone", 6], ["octogone", 8]] }
@@ -175,7 +178,7 @@ lecons:
         correction: "Toute droite qui passe par le centre est un axe de symétrie du cercle."
       - type: qcm
         enonce: "Quel mot reste identique dans un miroir posé verticalement à côté ?"
-        choix: ["TOT", "ZÉRO", "NÉO", "MIA"]
+        choix: ["TOT", "ZÉRO", "NÉO", "LYA"]
         correction: "T, O et T sont symétriques par un axe vertical, et le mot TOT se lit pareil à l'envers : il est identique dans le miroir."
 
   - id: perimetre
@@ -209,6 +212,9 @@ lecons:
           reponse: "2*(L+l)"
           unite: cm
           correction: "{{L}} + {{l}} + {{L}} + {{l}} = {{2*(L+l)}} cm."
+      - astuce:
+          texte: "Périmètre = le tour de la figure, comme une fourmi qui marche sur le bord. On additionne des longueurs, on obtient des cm."
+          qui: mia
     exercices:
       - type: nombre
         vars: { L: "4..9", l: "2..3" }
@@ -286,6 +292,9 @@ lecons:
           visuel: { type: grille, lignes: "=l", colonnes: "=c", emoji: "🟧" }
           reponse: "l*c"
           correction: "{{l}} × {{c}} = {{l*c}} carreaux."
+      - astuce:
+          texte: "Aire = la surface à l'intérieur, comme le carrelage d'une pièce. Pour un rectangle : longueur × largeur, et l'unité est au carré (cm²)."
+          qui: neo
     exercices:
       - type: nombre
         vars: { L: "4..9", l: "2..3" }
@@ -358,6 +367,9 @@ lecons:
           enonce: "Combien de faces a un dé (un cube) ?"
           reponse: "6"
           correction: "Un cube a 6 faces carrées (et un dé porte les nombres de 1 à 6)."
+      - astuce:
+          texte: "Un solide qui roule a une face courbe (sphère, cylindre, cône) ; un solide qui ne roule pas n'a que des faces plates (cube, pavé, pyramide)."
+          qui: zero
     exercices:
       - type: nombre
         vars: { q: [["faces", "un cube", 6], ["arêtes", "un cube", 12], ["sommets", "un cube", 8], ["faces", "une pyramide à base carrée", 5], ["sommets", "une pyramide à base carrée", 5], ["arêtes", "une pyramide à base carrée", 8]] }
@@ -407,6 +419,9 @@ lecons:
           reponse: "2*r"
           unite: cm
           correction: "Diamètre = 2 × {{r}} = {{2*r}} cm."
+      - astuce:
+          texte: "Le diamètre traverse tout le cercle en passant par le centre : il vaut 2 rayons. « DIAmètre = DEUX rayons »."
+          qui: mia
     exercices:
       - type: nombre
         vars: { r: "2..20" }

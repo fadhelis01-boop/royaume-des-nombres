@@ -42,6 +42,9 @@ lecons:
           visuel: { type: motif, elements: ["{{m_0}}", "{{m_1}}", "{{m_0}}", "{{m_1}}", "{{m_0}}", "?"] }
           choix: ["{{m_1}}", "{{m_0}}", "🐹"]
           correction: "Le motif « {{m_0}} {{m_1}} » se répète."
+      - astuce:
+          texte: "Entoure le plus petit morceau qui se répète (le motif). Ensuite, il suffit de le recopier."
+          qui: mia
     exercices:
       - type: qcm
         vars: { m: [["🔺", "🟦", "🟦"], ["🍓", "🍓", "🍋"], ["🌞", "🌧️", "❄️"]] }
@@ -91,6 +94,9 @@ lecons:
           enonce: "Continue la suite : {{a}} ; {{a+r}} ; {{a+2*r}} ; {{a+3*r}} ; ?"
           reponse: "a+4*r"
           correction: "On ajoute {{r}} à chaque fois : {{a+3*r}} + {{r}} = {{a+4*r}}."
+      - astuce:
+          texte: "Écris l'écart entre chaque nombre au-dessus des flèches : + 3, + 3, + 3 ? Ou × 2, × 2 ? La règle apparaît."
+          qui: neo
     exercices:
       - type: sauts
         vars: { a: "1..6", r: [2, 3, 4, 5] }
@@ -156,6 +162,9 @@ lecons:
           enonce: "Dans la suite 1, 1, 2, 3, 5, 8…, quel nombre vient après {{fib(n-1)}} et {{fib(n)}} ?"
           reponse: "fib(n+1)"
           correction: "{{fib(n-1)}} + {{fib(n)}} = {{fib(n+1)}}."
+      - astuce:
+          texte: "Dans la suite de Fibonacci, chaque nombre est la somme des deux précédents : 1, 1, 2, 3, 5, 8, 13… Regarde les spirales d'une pomme de pin !"
+          qui: zero
     exercices:
       - type: nombre
         vars: { n: "5..14" }
@@ -180,8 +189,8 @@ lecons:
     mots: [logique, déduire]
     etapes:
       - dialogue:
-          - mia: "Trois amis : Mia, Néo, Zéro. L'un aime les maths, l'un la musique, l'un le sport. Mia n'aime pas le sport. Néo aime la musique."
-          - neo: "Donc… Néo, musique. Mia ne fait pas de sport, et la musique est prise : Mia, les maths !"
+          - mia: "Trois amis : Lya, Néo, Zéro. L'un aime les maths, l'un la musique, l'un le sport. Lya n'aime pas le sport. Néo aime la musique."
+          - neo: "Donc… Néo, musique. Lya ne fait pas de sport, et la musique est prise : Lya, les maths !"
           - zero: "Et il ne reste que le sport pour moi ! …Je déteste le sport."
       - texte: |
           **Méthode du tableau** : je fais un tableau avec les personnes et les possibilités, puis :
@@ -191,26 +200,29 @@ lecons:
           type: tableau
           lignes:
             - ["", "maths", "musique", "sport"]
-            - ["Mia", "✓", "✗", "✗"]
+            - ["Lya", "✓", "✗", "✗"]
             - ["Néo", "✗", "✓", "✗"]
             - ["Zéro", "✗", "✗", "✓"]
       - texte: |
-          **Si… alors…** : « S'il pleut, alors Mia prend son parapluie. » Si Mia n'a pas de parapluie, on peut en déduire… qu'il ne pleut pas !
+          **Si… alors…** : « S'il pleut, alors Lya prend son parapluie. » Si Lya n'a pas de parapluie, on peut en déduire… qu'il ne pleut pas !
       - a_quoi_ca_sert: "Les détectives, les médecins (diagnostic), les programmeurs (conditions « si… alors »), les jeux comme le Sudoku… Le raisonnement logique est le cœur des mathématiques."
       - question:
           type: qcm
           enonce: "Trois boîtes : une rouge, une bleue, une verte. Le trésor n'est pas dans la rouge. Il n'est pas dans la bleue. Où est-il ?"
           choix: ["dans la verte", "dans la rouge", "dans la bleue", "on ne peut pas savoir"]
           correction: "On élimine la rouge et la bleue : il ne reste que la verte."
+      - astuce:
+          texte: "Fais un tableau avec des croix et des ronds : chaque indice te permet de cocher ou d'éliminer une case. Quand il ne reste qu'une possibilité, c'est la bonne."
+          qui: mia
     exercices:
       - type: qcm
-        enonce: "Tous les chats du Royaume aiment les maths. Mia est une chatte du Royaume. Donc…"
-        choix: ["Mia aime les maths", "Mia n'aime pas les maths", "on ne peut pas savoir", "tous les renards aiment les maths"]
-        correction: "Si TOUS les chats du Royaume aiment les maths, Mia (qui en est une) les aime aussi."
+        enonce: "Tous les chats du Royaume aiment les maths. Lya est une chatte du Royaume. Donc…"
+        choix: ["Lya aime les maths", "Lya n'aime pas les maths", "on ne peut pas savoir", "tous les renards aiment les maths"]
+        correction: "Si TOUS les chats du Royaume aiment les maths, Lya (qui en est une) les aime aussi."
       - type: qcm
-        enonce: "Néo est plus grand que Zéro. Mia est plus grande que Néo. Qui est le plus petit ?"
-        choix: ["Zéro", "Néo", "Mia", "on ne peut pas savoir"]
-        correction: "Mia > Néo > Zéro : Zéro est le plus petit."
+        enonce: "Néo est plus grand que Zéro. Lya est plus grande que Néo. Qui est le plus petit ?"
+        choix: ["Zéro", "Néo", "Lya", "on ne peut pas savoir"]
+        correction: "Lya > Néo > Zéro : Zéro est le plus petit."
       - type: qcm
         enonce: "Tous les oiseaux ont des plumes. Ce poisson n'a pas de plumes. Que peut-on dire ?"
         choix: ["Ce poisson n'est pas un oiseau", "Ce poisson est un oiseau", "Les poissons ont des plumes", "On ne peut rien dire"]
@@ -258,6 +270,9 @@ lecons:
             - { avant: "colonne", reponse: "1+c" }
             - { avant: "ligne", reponse: "1+d" }
           correction: "Colonne 1 + {{c}} = {{1+c}}, ligne 1 + {{d}} = {{1+d}}."
+      - astuce:
+          texte: "Pour lire une case, on lit d'abord la lettre (la colonne), puis le chiffre (la ligne) : « On entre dans l'immeuble, puis on monte l'escalier »."
+          qui: neo
     exercices:
       - type: champs
         vars: { x: "0..3", y: "0..3", c: "1..5", d: "1..4" }
@@ -304,6 +319,9 @@ lecons:
           enonce: "Quel est le nombre carré de côté {{n}} ?"
           reponse: "n*n"
           correction: "{{n}} × {{n}} = {{n*n}}."
+      - astuce:
+          texte: "Les carrés : 1, 4, 9, 16… (des points en carré). Les triangulaires : 1, 3, 6, 10… (des quilles de bowling). Dessine-les pour les retrouver."
+          qui: zero
     exercices:
       - type: nombre
         vars: { n: "2..12" }

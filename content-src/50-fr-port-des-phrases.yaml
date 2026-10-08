@@ -24,16 +24,20 @@ lecons:
       - dialogue:
           - mia: "Un mot a une carte d'identité fixe : « chien » est un nom. C'est sa nature, son costume."
           - neo: "Mais dans la phrase, il peut changer de métier : sujet dans « Le chien court », complément dans « Je caresse le chien »."
+      - a_quoi_ca_sert: "Nature et fonction, c'est la base de toute la grammaire du collège : savoir ce qu'est un mot et le rôle qu'il joue permet de bien l'accorder."
       - texte: |
           - La **nature** (ou classe grammaticale) ne change jamais : *nom, verbe, adjectif, déterminant, pronom, adverbe, préposition, conjonction*.
           - La **fonction** dépend de la place et du rôle dans la phrase : *sujet, complément d'objet, complément circonstanciel, attribut, épithète…*
 
           *Le **chien** aboie* : « chien » = nom (nature), **sujet** (fonction).
           *Léa appelle le **chien*** : « chien » = nom (nature), **complément d'objet** (fonction).
+      - astuce:
+          texte: "La nature, c'est qui tu es (élève, enfant) ; la fonction, c'est le rôle que tu joues (gardien de but dans un match). Un même mot peut changer de rôle."
+          qui: mia
       - retiens: "**Nature** = le costume (fixe). **Fonction** = le métier dans la phrase (change selon la place)."
     exercices:
       - type: qcm
-        vars: { t: [["Le chat dort.", "chat", "sujet", "complément", "verbe"], ["Mia mange une pomme.", "pomme", "complément", "sujet", "attribut"], ["La pomme est rouge.", "pomme", "sujet", "complément", "attribut"], ["Je regarde le ciel.", "ciel", "complément", "sujet", "verbe"]] }
+        vars: { t: [["Le chat dort.", "chat", "sujet", "complément", "verbe"], ["Lya mange une pomme.", "pomme", "complément", "sujet", "attribut"], ["La pomme est rouge.", "pomme", "sujet", "complément", "attribut"], ["Je regarde le ciel.", "ciel", "complément", "sujet", "verbe"]] }
         enonce: "« {{t_0}} » — Quelle est la FONCTION du mot « {{t_1}} » ?"
         choix: ["{{t_2}}", "{{t_3}}", "{{t_4}}"]
         correction: "« {{t_1}} » est un nom (nature) ; ici sa fonction est : {{t_2}}."
@@ -57,15 +61,19 @@ lecons:
       - dialogue:
           - neo: "Le complément d'objet complète le verbe. Sans lui, la phrase est souvent incomplète : « Je mange… quoi ? »"
           - mia: "S'il est collé au verbe, c'est un COD. S'il y a un petit mot (à, de) entre les deux, c'est un COI."
+      - a_quoi_ca_sert: "Trouver le COD est indispensable pour accorder le participe passé avec avoir : c'est une règle clé du collège."
       - texte: |
           - **COD** (complément d'objet **direct**) : sujet + verbe + **qui ? / quoi ?** — *Léa mange **une pomme**.* (Léa mange quoi ?)
           - **COI** (complément d'objet **indirect**) : sujet + verbe + **à qui ? à quoi ? de qui ? de quoi ?** — *Il parle **à son ami**.* (il parle à qui ?)
 
           On ne peut **ni supprimer ni déplacer** le complément d'objet sans changer le sens.
+      - astuce:
+          texte: "Pose la question après le verbe : « Il mange quoi ? » → COD. « Il parle à qui ? de quoi ? » → COI, car il y a un petit mot (à, de) entre les deux."
+          qui: neo
       - retiens: "**COD** : verbe + qui/quoi (sans préposition). **COI** : verbe + à/de + qui/quoi."
     exercices:
       - type: surligner
-        vars: { t: ["Mia lit [un roman].", "Le chat attrape [la souris].", "Nous regardons [les étoiles].", "Tom écrit [une lettre] à sa grand-mère.", "J'ai perdu [mes clés]."] }
+        vars: { t: ["Lya lit [un roman].", "Le chat attrape [la souris].", "Nous regardons [les étoiles].", "Tom écrit [une lettre] à sa grand-mère.", "J'ai perdu [mes clés]."] }
         enonce: "Touche le COD (le verbe + qui ? quoi ?)."
         phrase: "{{t}}"
         correction: "Le COD répond à « qui ? » ou « quoi ? » juste après le verbe."
@@ -89,6 +97,7 @@ lecons:
       - dialogue:
           - zero: "« Ce matin, dans la cuisine, je mange tranquillement. » J'ai trop de détails ?"
           - neo: "Non, ce sont des compléments circonstanciels : ils donnent les circonstances. Et on peut les enlever ou les déplacer !"
+      - a_quoi_ca_sert: "Les compléments circonstanciels donnent le décor : où, quand, comment. Ils rendent tes récits plus précis et plus vivants."
       - texte: |
           Les **compléments circonstanciels** (CC) précisent les **circonstances** de l'action :
           - **lieu** (où ?) : *dans la cuisine*
@@ -97,6 +106,9 @@ lecons:
           - aussi : **cause** (pourquoi ?), **but** (pour quoi faire ?), **moyen** (avec quoi ?)
 
           Test : on peut souvent les **supprimer** ou les **déplacer** : *Je mange tranquillement ce matin.*
+      - astuce:
+          texte: "Le test du déménagement : si tu peux déplacer ou supprimer le groupe sans casser la phrase, c'est un complément circonstanciel."
+          qui: zero
       - retiens: "CC = où ? quand ? comment ? pourquoi ? On peut les **déplacer** ou les **supprimer**."
     exercices:
       - type: classer
@@ -126,6 +138,7 @@ lecons:
       - dialogue:
           - mia: "« Le ciel est bleu. » « Bleu » n'est pas un objet qu'on manipule : il dit comment est le ciel. C'est un attribut."
           - neo: "Il vient après un verbe d'état : être, paraître, sembler, devenir, demeurer, rester, avoir l'air. Je retiens : PDSDRAE !"
+      - a_quoi_ca_sert: "L'attribut décrit le sujet. Le reconnaître permet de bien l'accorder : « Elles sont contentes »."
       - texte: |
           L'**attribut du sujet** donne une **qualité** au sujet, à travers un **verbe d'état** :
           **être, paraître, sembler, devenir, demeurer, rester, avoir l'air**.
@@ -136,6 +149,9 @@ lecons:
       - attention:
           texte: "Ne confonds pas avec le COD : « Il **mange** une pomme » (action) / « Il **est** un bon élève » (état : « un bon élève » est attribut)."
           qui: neo
+      - astuce:
+          texte: "Les verbes d'état se retiennent avec une phrase : « Être, paraître, sembler, devenir, demeurer, rester, avoir l'air, passer pour »."
+          qui: mia
       - retiens: "Verbe d'**état** + **attribut** qui **s'accorde avec le sujet** : elles sont content**es**."
     exercices:
       - type: mot
@@ -163,11 +179,15 @@ lecons:
       - dialogue:
           - zero: "« Un gâteau ». C'est un peu triste. « Un énorme gâteau au chocolat de ma grand-mère » ! J'ai faim. 😳"
           - mia: "Tu viens d'enrichir le nom avec des expansions : un adjectif épithète et des compléments du nom."
+      - a_quoi_ca_sert: "Enrichir un nom, c'est donner des détails : « un chien » devient « un petit chien de berger aux yeux bleus ». Tes descriptions deviennent plus précises."
       - texte: |
           On peut enrichir un nom avec des **expansions** :
           - l'**adjectif épithète**, collé au nom : *un **énorme** gâteau*, *une robe **rouge*** ;
           - le **complément du nom**, introduit par une préposition (de, à, en…) : *un gâteau **au chocolat***, *la maison **de ma grand-mère***, *une tasse **en porcelaine*** ;
           - la **proposition relative** (qui, que…) : *le gâteau **que j'adore***.
+      - astuce:
+          texte: "Pour enrichir un nom, pose-lui des questions : comment est-il ? (adjectif) De quoi ? À qui ? (complément du nom) Qui fait quoi ? (relative)"
+          qui: neo
       - retiens: "Enrichir un nom : **adjectif épithète**, **complément du nom** (de, à, en + nom), **relative** (qui, que)."
     exercices:
       - type: classer
@@ -195,6 +215,7 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Je vois Léa. Je dis bonjour à Léa. » Répétition ! « Je vois Léa. Je lui dis bonjour. »"
+      - a_quoi_ca_sert: "Les pronoms compléments évitent de répéter et rendent le français fluide : « Tu as vu le film ? Oui, je l'ai vu. »"
       - texte: |
           - COD : **le, la, l', les** — *Je mange la pomme → Je **la** mange.*
           - COI (à quelqu'un) : **lui** (singulier), **leur** (pluriel) — *Je parle à Tom → Je **lui** parle.*
@@ -203,6 +224,9 @@ lecons:
       - attention:
           texte: "**leur** pronom (devant un verbe) ne prend **jamais de s** : *je **leur** parle*. Mais *leurs* déterminant devant un nom pluriel : *leurs livres*."
           qui: neo
+      - astuce:
+          texte: "Le, la, les remplacent un COD ; lui, leur remplacent un COI avec « à ». « Je donne le livre à Paul » → « Je le lui donne »."
+          qui: zero
       - retiens: "COD → le/la/les ; à quelqu'un → lui/leur ; de quelque chose → en ; à un lieu → y."
     exercices:
       - type: qcm

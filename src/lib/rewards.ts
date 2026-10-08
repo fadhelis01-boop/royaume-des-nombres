@@ -68,7 +68,7 @@ export const BADGES: Badge[] = [
   { id: "tetu", emoji: "🐢", titre: "Jamais abandonner", desc: "Recommencer un défi pour l'améliorer.", test: (c) => Object.values(c.progress).some((p) => p.attempts >= 2) },
   { id: "cent-questions", emoji: "🎯", titre: "100 réponses justes", desc: "100 bonnes réponses.", test: (c) => cnt(c, "ok") >= 100 },
   { id: "mille-questions", emoji: "🏆", titre: "1 000 réponses justes", desc: "MILLE ! 😳 (dixit Zéro)", test: (c) => cnt(c, "ok") >= 1000 },
-  { id: "curieux", emoji: "❓", titre: "Curiosité", desc: "Poser 5 questions dans « Demande à Mia ».", test: (c) => cnt(c, "ask") >= 5 },
+  { id: "curieux", emoji: "❓", titre: "Curiosité", desc: "Poser 5 questions dans « Demande à Lya ».", test: (c) => cnt(c, "ask") >= 5 },
   { id: "tables", emoji: "✖️", titre: "As des tables", desc: "Connaître toutes les tables de 2 à 9.", test: (c) => tablesMastered(c) >= 64 },
   { id: "eclair", emoji: "⚡", titre: "Éclair", desc: "20 points au Calcul éclair.", test: (c) => (c.games["eclair"] ?? 0) >= 20 },
   { id: "compte-bon", emoji: "🧮", titre: "Le compte est bon", desc: "Résoudre 5 « Compte est bon ».", test: (c) => cnt(c, "compte") >= 5 },

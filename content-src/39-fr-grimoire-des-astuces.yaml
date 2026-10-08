@@ -23,6 +23,7 @@ lecons:
       - dialogue:
           - zero: "J'ai écrit mon texte. Je le relis… Tout est parfait ! …Je l'ai relu en deux secondes."
           - neo: "Un détective ne cherche pas tout en même temps. Il fait plusieurs passages, avec une seule question à chaque fois."
+      - a_quoi_ca_sert: "Un texte bien relu se lit sans effort : ta maîtresse, un copain ou plus tard un patron comprend tout de suite ce que tu veux dire."
       - texte: |
           **Les 4 passages du détective** :
           1. 🔠 **Majuscules et points** : chaque phrase commence par une majuscule et finit par un point ?
@@ -59,6 +60,7 @@ lecons:
       - dialogue:
           - mia: "Pour retenir un mot, je le prends en photo… dans ma tête !"
           - neo: "Et je l'épelle, je le cache, je l'écris, je vérifie. Cinq étapes, et le mot est à moi pour toujours."
+      - a_quoi_ca_sert: "Chaque mot bien mémorisé, c'est un mot que tu n'auras plus jamais à chercher : tu écris plus vite et sans stress."
       - texte: |
           **La méthode en 5 étapes** :
           1. 👀 **J'observe** le mot et je repère sa difficulté (lettre muette, double consonne, accent).
@@ -94,6 +96,7 @@ lecons:
     etapes:
       - dialogue:
           - neo: "Voici mon Miroir du Temps complet. Un seul tableau pour tous les jumeaux !"
+      - a_quoi_ca_sert: "Les homophones sont les fautes les plus fréquentes, même chez les adultes. Les maîtriser, c'est déjà écrire beaucoup mieux que la moyenne."
       - texte: |
           | si je peux dire… | j'écris | sinon |
           |---|---|---|
@@ -105,6 +108,9 @@ lecons:
           | me (je me lave) | **se / s'est** | ce / c'est |
           | mes | **ses** | ces |
           | l'avait | **l'a** | la / là |
+      - astuce:
+          texte: "Une seule question magique : « Par quoi puis-je le remplacer ? » a → avait, est → était, sont → étaient, ont → avaient, ces → ce, se → me."
+          qui: neo
       - retiens: "Je **remplace** le mot douteux : si la phrase reste juste, j'ai trouvé le bon homophone."
     exercices:
       - type: qcm
@@ -132,10 +138,14 @@ lecons:
       - dialogue:
           - zero: "Les lettres muettes, c'est comme moi quand je dors : on ne m'entend pas, mais je suis là ! 😴"
           - mia: "Pour les réveiller, on cherche le féminin ou un mot de la famille : grand → grande, grandir."
+      - a_quoi_ca_sert: "Les lettres muettes ne s'entendent pas, mais elles se voient : sans elles, « un chat gris » deviendrait « un cha gri » !"
       - texte: |
           - Au **féminin** : petit → peti**t**e, gris → gri**s**e, blanc → blan**ch**e.
           - Dans la **famille** : galop → galo**p**er, sirop → siro**p**eux, rang → ran**g**er.
           - Si rien ne marche… le dictionnaire !
+      - astuce:
+          texte: "Mets le mot au féminin ou cherche un cousin : petit → petite, chant → chanter, lait → laitier. La lettre cachée se réveille !"
+          qui: mia
       - retiens: "Lettre muette en fin de mot ? Je cherche le **féminin** ou un **mot de la famille**."
     exercices:
       - type: mot

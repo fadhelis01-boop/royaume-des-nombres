@@ -21,6 +21,10 @@ lecons:
     objectif: Je dessine une maison en assemblant des formes.
     mots: [carré, triangle, rectangle, assembler]
     etapes:
+      - dialogue:
+          - zero: "Une maison, c'est trop compliqué à dessiner !"
+          - neo: "Un carré, un triangle… on construit étape par étape."
+      - a_quoi_ca_sert: "Décomposer un dessin en étapes, c'est la méthode qui permet de dessiner n'importe quoi, même ce qui paraît difficile."
       - dessin:
           titre: La maison
           etapes:
@@ -38,6 +42,9 @@ lecons:
             - consigne: "Colorie ta maison et dessine un jardin autour !"
               couche: couleur
               trace: ""
+      - astuce:
+          texte: "Du plus grand au plus petit : d'abord les grandes formes (carré + triangle), puis la porte et les fenêtres, et les détails en dernier."
+          qui: neo
       - retiens: "Maison = carré (murs) + triangle (toit) + rectangles (porte, fenêtres)."
     exercices:
       - type: qcm
@@ -61,6 +68,10 @@ lecons:
     objectif: Je dessine une forme symétrique avec un axe.
     mots: [symétrie, axe de symétrie, miroir]
     etapes:
+      - dialogue:
+          - zero: "Les deux ailes de mon papillon ne sont pas pareilles !"
+          - mia: "Utilisons un axe de symétrie, comme un miroir au milieu."
+      - a_quoi_ca_sert: "La symétrie est partout dans la nature (papillons, feuilles, visages) et dans l'architecture : elle donne une impression d'équilibre."
       - texte: |
           Un papillon est **symétrique** : si on le plie en deux le long de son corps, les deux moitiés se superposent. Le pli s'appelle l'**axe de symétrie**.
           Dans cet exercice, le **mode miroir** est activé : dessine la moitié **gauche**, la droite apparaît toute seule !
@@ -89,6 +100,9 @@ lecons:
             - "Replie, appuie bien, puis ouvre."
           observation: "Un motif parfaitement symétrique apparaît, comme des ailes de papillon."
           explication: "La peinture s'est imprimée de l'autre côté du pli : chaque tache a son reflet à la même distance de l'axe."
+      - astuce:
+          texte: "Plie ta feuille en deux : ce qui est d'un côté du pli doit être exactement le reflet de l'autre côté, comme dans un miroir."
+          qui: zero
       - retiens: "Symétrie : les deux moitiés se superposent quand on plie le long de l'axe."
     exercices:
       - type: classer
@@ -113,11 +127,18 @@ lecons:
     objectif: Je fabrique les couleurs secondaires et je les place sur le cercle.
     mots: [couleur secondaire, cercle chromatique, couleurs chaudes, couleurs froides]
     etapes:
+      - dialogue:
+          - zero: "J'ai mélangé du jaune et du bleu… et c'est devenu vert ! Magique !"
+          - neo: "Tu as fabriqué une couleur secondaire ! Découvrons les autres."
+      - a_quoi_ca_sert: "Savoir mélanger les couleurs évite d'acheter tous les tubes de peinture et permet d'obtenir exactement la nuance voulue."
       - texte: |
           En mélangeant deux primaires à parts égales, on obtient une **couleur secondaire** :
           - rouge + jaune = **orange** ; jaune + bleu = **vert** ; bleu + rouge = **violet**.
           Sur le **cercle chromatique**, chaque secondaire se place **entre** ses deux primaires.
           **Couleurs chaudes** (rouge, orange, jaune : le feu, le soleil) et **couleurs froides** (bleu, vert, violet : l'eau, la nuit).
+      - astuce:
+          texte: "Rouge + jaune = orange, jaune + bleu = vert, bleu + rouge = violet. Commence toujours par la couleur claire, puis ajoute la foncée petit à petit."
+          qui: mia
       - retiens: "Orange = rouge + jaune ; vert = jaune + bleu ; violet = bleu + rouge. Chaudes : rouge, orange, jaune. Froides : bleu, vert, violet."
     exercices:
       - type: qcm
@@ -142,6 +163,10 @@ lecons:
     objectif: Je dessine un arbre du tronc au feuillage.
     mots: [tronc, branche, feuillage]
     etapes:
+      - dialogue:
+          - zero: "Mes arbres ressemblent à des sucettes."
+          - mia: "Observons un vrai arbre : le tronc, les branches, le feuillage."
+      - a_quoi_ca_sert: "Dessiner un arbre entraîne à observer la nature et à représenter des formes irrégulières, ce qui sert pour tous les paysages."
       - dessin:
           titre: L'arbre
           etapes:
@@ -158,6 +183,9 @@ lecons:
             - consigne: "Colorie : un vert clair au soleil, un vert plus foncé à l'ombre !"
               couche: couleur
               trace: ""
+      - astuce:
+          texte: "Les branches deviennent de plus en plus fines en s'éloignant du tronc, comme les rivières qui se divisent en ruisseaux."
+          qui: neo
       - retiens: "Arbre : tronc (plus large en bas), branches, masse de feuillage, puis détails et ombres."
     exercices:
       - type: ordre
@@ -181,6 +209,10 @@ lecons:
     objectif: Je construis un animal avec des cercles, ovales et triangles.
     mots: [construction, ovale, repère, croix de construction]
     etapes:
+      - dialogue:
+          - zero: "Je veux dessiner un chat qui ne ressemble pas à une patate !"
+          - neo: "Cercle, ovale, triangles : tu vas voir, il va presque miauler !"
+      - a_quoi_ca_sert: "Construire un animal avec des formes simples permet ensuite de dessiner n'importe quel animal, réel ou imaginaire."
       - dessin:
           titre: Le chat
           etapes:
@@ -202,6 +234,9 @@ lecons:
             - consigne: "Repasse le contour, gomme la croix, colorie ton chat !"
               couche: couleur
               trace: ""
+      - astuce:
+          texte: "Un cercle pour la tête, un ovale pour le corps, deux triangles pour les oreilles. Les moustaches et la queue viennent en dernier."
+          qui: zero
       - retiens: "Un objet complexe = assemblage de formes simples. On construit léger, on repasse le contour, on gomme les constructions."
     exercices:
       - type: qcm
@@ -225,6 +260,9 @@ lecons:
     objectif: J'observe et je dessine une feuille avec ses nervures.
     mots: [nervure, observation, symétrie]
     etapes:
+      - dialogue:
+          - zero: "Une feuille, c'est juste un ovale vert."
+          - mia: "Regarde de plus près : il y a une nervure au milieu et plein de petites nervures !"
       - dessin:
           titre: La feuille
           miroir: true
@@ -239,6 +277,9 @@ lecons:
           titre: Compare avec une vraie feuille
           texte: "Ramasse une feuille tombée et pose-la à côté de ton dessin. Qu'est-ce qui est différent ? (Indice : dans la nature, la symétrie n'est jamais parfaite.) Les nervures sont les « tuyaux » qui transportent l'eau et les sucres."
           materiel: une feuille d'arbre
+      - astuce:
+          texte: "Commence par la nervure du milieu (l'axe), puis dessine un côté, puis l'autre en miroir. Les petites nervures partent de l'axe comme des arêtes de poisson."
+          qui: mia
       - retiens: "Feuille : nervure centrale (axe), contour, nervures secondaires. Les nervures transportent l'eau et la sève."
     exercices:
       - type: qcm

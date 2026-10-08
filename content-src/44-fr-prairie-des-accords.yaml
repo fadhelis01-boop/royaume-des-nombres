@@ -24,6 +24,7 @@ lecons:
       - dialogue:
           - zero: "« Un hamster. » C'est bien. « Un PETIT hamster TOUT DOUX ». C'est mieux, non ?"
           - mia: "Petit et doux sont des adjectifs : ils colorient le nom, ils disent comment il est."
+      - a_quoi_ca_sert: "Les adjectifs donnent des couleurs à ce que tu racontes : grâce à eux, ton lecteur voit vraiment le grand château sombre."
       - texte: |
           L'**adjectif qualificatif** donne une **précision sur le nom** : sa taille, sa couleur, son caractère…
           *un chat **noir**, une **grande** maison, des enfants **joyeux***.
@@ -35,7 +36,7 @@ lecons:
       - retiens: "L'adjectif **précise le nom**. On peut ajouter « **très** » devant."
     exercices:
       - type: surligner
-        vars: { t: ["Un [petit] chat [noir] dort.", "La [vieille] maison est [abandonnée].", "Mia porte une robe [violette].", "Les [grands] arbres sont [verts].", "J'ai lu un livre [passionnant].", "Un [gros] chien [méchant] aboie."] }
+        vars: { t: ["Un [petit] chat [noir] dort.", "La [vieille] maison est [abandonnée].", "Lya porte une robe [violette].", "Les [grands] arbres sont [verts].", "J'ai lu un livre [passionnant].", "Un [gros] chien [méchant] aboie."] }
         enonce: "Touche les adjectifs."
         phrase: "{{t}}"
         correction: "On peut mettre « très » devant chaque adjectif."
@@ -60,6 +61,7 @@ lecons:
           - neo: "Un chat noir, une chatte noir… E ! Une chatte noir**e**. L'adjectif s'habille comme son nom."
           - zero: "Et beau ? Une chatte beaue ? 😳"
           - mia: "Ah non ! Une **belle** chatte. Certains adjectifs se transforment complètement."
+      - a_quoi_ca_sert: "Bien accorder au féminin, c'est respecter la personne ou la chose dont on parle : « une amie contente », « une robe verte »."
       - texte: |
           En général, on **ajoute un e** : petit → petit**e**, noir → noir**e**, joli → joli**e**.
           Si l'adjectif finit déjà par **e**, il ne change pas : rouge → rouge, facile → facile.
@@ -70,6 +72,9 @@ lecons:
           - **-f → -ve** : vif → vi**ve**, neuf → neu**ve**
           - **-el, -en, -on → on double** : cruel → cru**elle**, ancien → anci**enne**, bon → b**onne**
           - les spéciaux : beau → **belle**, nouveau → **nouvelle**, vieux → **vieille**, blanc → **blanche**, doux → **douce**, long → **longue**, gentil → **gentille**
+      - astuce:
+          texte: "Le plus souvent, ajoute un e : petit → petite. Attention aux familles spéciales : -eux → -euse, -er → -ère, -f → -ve (neuf → neuve)."
+          qui: mia
       - retiens: "Féminin = **+ e** en général. Attention aux familles **-ère, -euse, -ve, -elle/-enne/-onne** et aux spéciaux (belle, vieille, blanche…)."
     exercices:
       - type: mot
@@ -98,6 +103,7 @@ lecons:
       - dialogue:
           - mia: "Quand le nom est au pluriel, l'adjectif prend aussi la marque du pluriel. Ils marchent ensemble !"
           - zero: "Des chats noirs. Des chattes noires. E ET S ! Double récompense ! 🤯"
+      - a_quoi_ca_sert: "L'accord au pluriel montre qu'il y a plusieurs choses, même si on ne l'entend pas. Le lecteur sait ainsi exactement de quoi tu parles."
       - texte: |
           En général, on **ajoute un s** : des chats noir**s**, des fleurs joli**es**.
           - **-eau → -eaux** : beau → beau**x**, nouveau → nouveau**x**
@@ -105,6 +111,9 @@ lecons:
           - **-s, -x** ne changent pas : gris → gris, heureux → heureux
 
           Au **féminin pluriel**, on ajoute **e + s** : des robes vert**es**, des filles heureu**ses**.
+      - astuce:
+          texte: "Le nom est le chef de la bande : s'il prend un s, tous ceux qui l'accompagnent prennent un s aussi. Des petits chats noirs."
+          qui: zero
       - retiens: "Accord en **nombre** : + **s** (ou -x, -aux). Féminin pluriel : **-es**."
     exercices:
       - type: mot
@@ -132,6 +141,7 @@ lecons:
       - dialogue:
           - mia: "Regarde les fils de lumière : le déterminant, le nom et l'adjectif sont attachés. Si l'un change, tous changent."
           - neo: "C'est le nom qui commande : il donne son genre et son nombre à tout le groupe."
+      - a_quoi_ca_sert: "La chaîne d'accord est l'une des règles qu'on vérifie le plus en dictée et dans les examens : la maîtriser, c'est gagner beaucoup de points."
       - texte: |
           Le **groupe nominal** (GN) réunit un **déterminant**, un **nom** et parfois un ou plusieurs **adjectifs**.
           Le **nom est le chef** : il transmet son **genre** et son **nombre** à tout le groupe.
@@ -149,7 +159,7 @@ lecons:
         reponse: ["{{det('indefini', pluriel(t_0), t_1, 2)}} {{accord(t_2, t_1, 2)}}", "{{pluriel(t_0)}} {{accord(t_2, t_1, 2)}}"]
         correction: "{{det('indefini', pluriel(t_0), t_1, 2)}} {{accord(t_2, t_1, 2)}}"
       - type: surligner
-        vars: { t: ["[Les petites souris grises] dorment.", "Mia a [des yeux verts].", "[Les grands arbres] perdent leurs feuilles.", "J'aime [les belles histoires].", "[Des oiseaux bleus] chantent."] }
+        vars: { t: ["[Les petites souris grises] dorment.", "Lya a [des yeux verts].", "[Les grands arbres] perdent leurs feuilles.", "J'aime [les belles histoires].", "[Des oiseaux bleus] chantent."] }
         enonce: "Touche tout le groupe nominal accordé au pluriel."
         phrase: "{{t}}"
         niveau: 2
@@ -168,6 +178,7 @@ lecons:
       - dialogue:
           - zero: "« Les enfants de ma voisine joue. » Le verbe est à côté de « voisine », alors il est au singulier, non ?"
           - neo: "Piège ! Qui est-ce qui joue ? Les enfants ! Le verbe s'accorde avec le sujet, pas avec le mot d'à côté."
+      - a_quoi_ca_sert: "Un verbe mal accordé se repère tout de suite. Bien l'accorder, c'est montrer qu'on sait qui fait l'action."
       - texte: |
           Le verbe s'accorde **toujours avec son sujet**, même si :
           - le sujet est **loin** du verbe : *Les enfants de ma voisine jou**ent**.*
@@ -175,6 +186,9 @@ lecons:
           - il y a **deux sujets** : *Léa et Tom chant**ent**.* (= ils)
       - attention:
           texte: "Pose toujours la question « Qui est-ce qui … ? » avant d'écrire la terminaison."
+          qui: neo
+      - astuce:
+          texte: "Le sujet est loin ou caché ? Remplace-le par il ou ils : « Les fleurs du jardin de ma voisine (= elles) poussent »."
           qui: neo
       - retiens: "**Qui est-ce qui** + verbe ? → le sujet → l'accord. Deux sujets singuliers = un sujet **pluriel**."
     exercices:
@@ -191,7 +205,7 @@ lecons:
         niveau: 2
         correction: "{{t_0}} {{conj(v, 'present', t_1)}}"
       - type: dictee
-        vars: { m: ["Les enfants de ma voisine jouent dehors.", "Dans le ciel volent les oiseaux.", "Le chien des voisins aboie souvent.", "Mia et Néo regardent les étoiles."] }
+        vars: { m: ["Les enfants de ma voisine jouent dehors.", "Dans le ciel volent les oiseaux.", "Le chien des voisins aboie souvent.", "Lya et Néo regardent les étoiles."] }
         enonce: "Écoute et écris : cherche bien le sujet de chaque verbe !"
         dictee: "{{m}}"
         correction: "{{m}}"
@@ -205,10 +219,14 @@ lecons:
       - dialogue:
           - mia: "« Un beau arbre » ? Ça accroche l'oreille ! On dit « un bel arbre »."
           - neo: "Et les couleurs : des yeux **marron**, sans s ! Car marron, c'est d'abord le nom d'un fruit."
+      - a_quoi_ca_sert: "Ces adjectifs reviennent souvent dans les descriptions : un bel arbre, des chevaux amicaux, des robes orange. Les connaître rend ton écriture élégante."
       - texte: |
           - Devant un nom masculin qui commence par une **voyelle** : beau → **bel**, nouveau → **nouvel**, vieux → **vieil** : *un **bel** arbre, un **vieil** homme*.
           - Les adjectifs de couleur qui viennent d'un **nom** (marron, orange, citron, émeraude…) restent **invariables** : *des chaussettes **orange***. Exceptions : **rose**, mauve, fauve qui s'accordent.
           - Deux couleurs ensemble restent invariables : *des yeux **bleu clair***.
+      - astuce:
+          texte: "Devant une voyelle, beau devient bel pour que ça sonne bien : un bel oiseau. Et une couleur qui est aussi un fruit ou une fleur ne s'accorde pas : des yeux marron."
+          qui: mia
       - retiens: "**bel, nouvel, vieil** devant une voyelle. Couleur = nom d'une chose (marron, orange) → **invariable** (sauf rose)."
     exercices:
       - type: qcm

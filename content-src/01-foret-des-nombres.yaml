@@ -36,6 +36,9 @@ lecons:
           type: blocs
           nombre: 34
         legende: "3 paquets de 10 et 4 tout seuls : 34 noisettes."
+      - astuce:
+          texte: "Fais des paquets de 10 : il est bien plus facile de compter 4 paquets et 3 restants (43) que 43 objets un par un."
+          qui: mia
       - retiens: "**10 unités = 1 dizaine.** Pour compter vite : je compte les dizaines (10, 20, 30…), puis j'ajoute les unités."
       - a_quoi_ca_sert: "Les caissiers comptent les pièces par piles de 10, les maîtresses comptent les élèves par rangées, les fermiers rangent les œufs par boîtes. Faire des paquets, c'est le secret pour compter beaucoup sans se tromper !"
       - exemple:
@@ -302,6 +305,9 @@ lecons:
           pas: 1
           cible: "n"
           tolerance: 0.5
+      - astuce:
+          texte: "Sur une droite graduée, regarde d'abord combien vaut un petit pas : compte les graduations entre deux nombres écrits."
+          qui: neo
     exercices:
       - type: sauts
         vars: { a: "0..40", b: "45..95" }

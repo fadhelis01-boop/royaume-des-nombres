@@ -20,6 +20,10 @@ lecons:
     objectif: Je situe les grandes périodes de l'art et quelques œuvres.
     mots: [art pariétal, Renaissance, impressionnisme, cubisme, art contemporain]
     etapes:
+      - dialogue:
+          - zero: "Les hommes préhistoriques dessinaient déjà ?"
+          - mia: "Oui, il y a plus de 30 000 ans ! Faisons le tour de l'histoire de l'art."
+      - a_quoi_ca_sert: "Connaître l'histoire de l'art aide à comprendre les œuvres dans les musées, les références dans les films et à trouver des idées pour ses propres créations."
       - texte: |
           | Période | Repères |
           |---|---|
@@ -32,6 +36,9 @@ lecons:
           | **Cubisme** (début XXᵉ) | Picasso, Braque : l'objet vu sous plusieurs angles à la fois |
           | Art moderne et contemporain | Matisse, Frida Kahlo, Kandinsky (abstraction), Warhol (pop art), le street art… |
           Partout dans le monde : estampes japonaises (Hokusai, *La Grande Vague*), calligraphie, art des peuples d'Afrique et d'Océanie (qui a inspiré Picasso), peintures aborigènes…
+      - astuce:
+          texte: "Une frise simple : Préhistoire (Lascaux) → Antiquité → Moyen Âge → Renaissance (Léonard de Vinci) → Impressionnisme (Monet) → art moderne (Picasso) → art contemporain."
+          qui: mia
       - retiens: "Lascaux, Renaissance (perspective, Léonard), baroque (lumière), impressionnisme (Monet), cubisme (Picasso), abstraction, pop art… et toutes les cultures du monde."
     exercices:
       - type: ordre
@@ -55,6 +62,10 @@ lecons:
     objectif: Je choisis des harmonies de couleurs pour exprimer une émotion.
     mots: [harmonie, camaïeu, palette, atmosphère]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi certaines images me rendent joyeux et d'autres tristes ?"
+          - neo: "Les couleurs parlent à nos émotions. Choisissons-les avec soin !"
+      - a_quoi_ca_sert: "Les couleurs transmettent des émotions : les réalisateurs de films et de jeux choisissent chaque palette pour te faire ressentir quelque chose."
       - texte: |
           Les couleurs créent une **atmosphère** :
           - couleurs **chaudes** et saturées : énergie, joie, chaleur, colère ;
@@ -62,6 +73,9 @@ lecons:
           - couleurs **désaturées** (grisées) : nostalgie, brouillard, souvenir.
           Harmonies : **camaïeu** (nuances d'une seule couleur, très calme), **analogues** (couleurs voisines sur le cercle), **complémentaires** (contraste fort).
           Picasso a eu une **période bleue** (tristesse) puis une **période rose** (plus douce) : la couleur raconte aussi l'artiste.
+      - astuce:
+          texte: "Couleurs chaudes (rouge, orange, jaune) = énergie, joie, colère. Couleurs froides (bleu, vert, violet) = calme, tristesse, mystère."
+          qui: neo
       - retiens: "Chaud = énergie, froid = calme ou tristesse, désaturé = souvenir. Camaïeu, analogues, complémentaires."
     exercices:
       - type: qcm
@@ -85,9 +99,16 @@ lecons:
     objectif: J'utilise une lumière contrastée pour créer une ambiance.
     mots: [clair-obscur, contre-jour, source de lumière, ambiance]
     etapes:
+      - dialogue:
+          - zero: "Ce tableau est tout noir, sauf un visage tout éclairé. C'est mystérieux !"
+          - mia: "C'est le clair-obscur : la lumière qui crée le drame."
+      - a_quoi_ca_sert: "Le clair-obscur crée du mystère et du drame : on le retrouve chez Caravage, Rembrandt, et dans les films et jeux vidéo d'ambiance."
       - texte: |
           Le **clair-obscur** (Caravage, Rembrandt, Georges de La Tour) : une source de lumière unique et forte (une bougie, une fenêtre) éclaire une partie de la scène, le reste plonge dans l'ombre. Effet : **dramatique**, mystérieux, on sait tout de suite où regarder.
           Autres éclairages : **contre-jour** (la lumière derrière le sujet : silhouette lumineuse), lumière **diffuse** d'un ciel nuageux (ombres douces), lumière **par en dessous** (effet inquiétant, comme une lampe de poche sous le menton).
+      - astuce:
+          texte: "Une seule source de lumière forte, beaucoup d'ombre : le contraste attire l'œil exactement là où tu veux."
+          qui: zero
       - retiens: "Clair-obscur : une seule source forte, grands contrastes, effet dramatique. Contre-jour, diffus, par en dessous : chaque lumière crée son ambiance."
     exercices:
       - type: qcm
@@ -112,6 +133,10 @@ lecons:
     objectif: J'utilise les formes et la silhouette pour exprimer le caractère d'un personnage.
     mots: [silhouette, design, caractère, feuille de modèle]
     etapes:
+      - dialogue:
+          - zero: "Comment on reconnaît un méchant au premier coup d'œil ?"
+          - neo: "Grâce aux formes et à la silhouette ! C'est le travail du designer de personnages."
+      - a_quoi_ca_sert: "Le design de personnage est un vrai métier, dans l'animation, la BD et le jeu vidéo : un bon personnage se reconnaît rien qu'à sa silhouette."
       - texte: |
           Les créateurs de dessins animés et de jeux vidéo utilisent le **langage des formes** :
           - formes **rondes** : gentil, doux, rassurant (comme Zéro !) ;
@@ -131,6 +156,9 @@ lecons:
             - consigne: "Lequel a l'air gentil ? Lequel a l'air rusé ? Colorie-les pour renforcer leur caractère."
               couche: couleur
               trace: ""
+      - astuce:
+          texte: "Rond = gentil et doux, carré = solide et fiable, triangle = dynamique ou méchant. Teste ta silhouette tout en noir : la reconnaît-on ?"
+          qui: mia
       - retiens: "Rond = gentil, carré = solide, triangle = dynamique ou rusé. Une silhouette doit suffire à reconnaître le personnage."
     exercices:
       - type: qcm
@@ -154,6 +182,9 @@ lecons:
     objectif: Je découpe une histoire en images et je cultive mon style.
     mots: [storyboard, plan, cadrage, style]
     etapes:
+      - dialogue:
+          - zero: "Je veux raconter une histoire en images, comme dans un film !"
+          - mia: "Faisons un storyboard ! Et en dessinant beaucoup, tu trouveras ton style."
       - texte: |
           Un **storyboard** est la BD de préparation d'un film ou d'un dessin animé : une case par **plan**, avec le **cadrage** (plan large, gros plan…), les mouvements de caméra (flèches) et les dialogues.
           Exemple d'histoire en 4 cases : 1. plan large du décor ; 2. le héros arrive (plan moyen) ; 3. il découvre quelque chose (gros plan sur son visage étonné) ; 4. ce qu'il voit (plan large surprenant).
@@ -162,6 +193,9 @@ lecons:
           titre: Ton storyboard
           texte: "Invente une histoire en 4 cases où Zéro découvre un trésor. Varie les plans (large, moyen, gros plan). Range ensuite ton dessin dans ta galerie, avec un titre."
           materiel: une feuille partagée en 4 cases
+      - astuce:
+          texte: "Ton style vient de tout ce que tu as aimé et copié, mélangé à ta façon. Dessine beaucoup, et il apparaîtra tout seul."
+          qui: neo
       - retiens: "Storyboard = une case par plan, avec cadrage et mouvements. Le style se construit par la pratique et la curiosité."
     exercices:
       - type: ordre

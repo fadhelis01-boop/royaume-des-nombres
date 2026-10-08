@@ -31,6 +31,9 @@ lecons:
           4. **R**ésultat : je note ce que j'observe, avec des mesures.
           5. **I**nterprétation : mon hypothèse est-elle confirmée ou non ?
           6. **C**onclusion : je réponds à la question… et souvent j'en trouve une nouvelle !
+      - astuce:
+          texte: "Retiens OHERIC avec une phrase : « Observer, Hypothèse, Expérience, Résultat, Interprétation, Conclusion ». Ou plus simple : je me demande, je devine, je teste, je conclus."
+          qui: neo
       - retiens: "**OHERIC** : Observer, Hypothèse, Expérience, Résultat, Interprétation, Conclusion. Dans une expérience, on ne change **qu'un seul facteur** à la fois."
       - a_quoi_ca_sert: "Les médecins testent un médicament, les cuisiniers améliorent une recette, les ingénieurs testent un pont : tous utilisent cette méthode."
     exercices:
@@ -63,6 +66,7 @@ lecons:
       - dialogue:
           - zero: "Je mélange tous les produits de la salle de bain pour faire une super potion !"
           - neo: "STOP ! Mélanger des produits ménagers peut dégager des gaz dangereux. On va apprendre les règles d'or."
+      - a_quoi_ca_sert: "Les règles du labo sont les mêmes à la maison : produits ménagers, bouilloire, plaque de cuisson… Bien les connaître évite des accidents graves."
       - texte: |
           **Les 6 règles d'or du laboratoire**
           1. Je fais une expérience **seulement avec un adulte** quand c'est indiqué.
@@ -76,6 +80,9 @@ lecons:
       - attention:
           texte: "Les produits de la maison ne sont pas des jouets : eau de Javel, déboucheur, produits pour le lave-vaisselle peuvent brûler ou empoisonner. On ne les touche jamais sans un adulte."
           qui: neo
+      - astuce:
+          texte: "Lunettes sur le nez, cheveux attachés, on ne goûte rien, on ne sent pas au-dessus du flacon : on rabat l'odeur vers soi avec la main."
+          qui: mia
       - retiens: "On ne goûte pas, on ne mélange pas les produits ménagers, on lit les pictogrammes, on se lave les mains."
     exercices:
       - type: qcm
@@ -100,6 +107,9 @@ lecons:
     objectif: Je choisis le bon instrument et la bonne unité, et je lis une mesure.
     mots: [masse, volume, gramme, litre, millilitre, thermomètre]
     etapes:
+      - dialogue:
+          - zero: "J'ai mis « un peu » d'eau et « beaucoup » de sucre."
+          - neo: "Un savant mesure précisément ! Choisissons le bon instrument."
       - texte: |
           | Je mesure… | Instrument | Unités |
           |---|---|---|
@@ -109,6 +119,9 @@ lecons:
           | une **durée** | chronomètre | seconde (s), minute (min) |
 
           Dans une éprouvette, on lit le volume **les yeux à la hauteur du liquide**, en bas de la courbe (le *ménisque*).
+      - astuce:
+          texte: "Pour lire un volume dans une éprouvette, mets tes yeux à la hauteur du liquide et lis le bas de la courbe (le ménisque)."
+          qui: zero
       - retiens: "Masse → balance (g, kg). Volume → éprouvette (mL, L). Température → thermomètre (°C). 1 L = 1 000 mL ; 1 kg = 1 000 g."
       - vraie_vie:
           titre: Défi dans la cuisine
@@ -136,6 +149,10 @@ lecons:
     objectif: Je range mes mesures dans un tableau et je fais un schéma légendé.
     mots: [tableau, schéma, légende, titre]
     etapes:
+      - dialogue:
+          - zero: "J'ai fait l'expérience hier… mais j'ai oublié les résultats."
+          - mia: "D'où l'importance de tout noter ! Apprenons à faire un tableau et un schéma."
+      - a_quoi_ca_sert: "Un scientifique qui ne note rien oublie tout. Un bon tableau de mesures permet de comparer, de refaire l'expérience et de convaincre les autres."
       - texte: |
           Un bon savant **note tout**, tout de suite. Deux outils :
           - le **tableau de résultats** : une colonne pour ce que je change, une colonne pour ce que je mesure ;
@@ -148,6 +165,9 @@ lecons:
             - ["tiède (30 °C)", "1 min 30 s"]
             - ["chaude (50 °C)", "40 s"]
         legende: "Un tableau de résultats : on voit tout de suite que plus l'eau est chaude, plus le sucre se dissout vite."
+      - astuce:
+          texte: "Un schéma scientifique : au crayon, à la règle, sans couleur inutile, avec un titre et des légendes reliées par des traits horizontaux."
+          qui: neo
       - retiens: "Tableau : ce que je change → ce que je mesure. Schéma : titre, traits simples, légendes avec des flèches."
     exercices:
       - type: qcm

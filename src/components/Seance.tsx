@@ -37,7 +37,7 @@ export function Recap() {
       }
     }
     if (id === prologueId(mat)) {
-      text = `${planeteDe(manifest, mat)?.prologue.appel.replace(/ Écoute l'histoire\.$/, "") ?? ""} Mia, Néo et Zéro comptent sur toi !`;
+      text = `${planeteDe(manifest, mat)?.prologue.appel.replace(/ Écoute l'histoire\.$/, "") ?? ""} Lya, Néo et Zéro comptent sur toi !`;
       break;
     }
   }

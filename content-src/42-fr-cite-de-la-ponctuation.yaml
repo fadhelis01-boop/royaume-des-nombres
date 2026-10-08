@@ -31,6 +31,9 @@ lecons:
           - se termine par un **point** ( . ? ! ).
 
           *Le chat mange une souris.* ✔ — *mange chat le souris une* ✘
+      - astuce:
+          texte: "Une phrase, c'est comme un train : une majuscule pour la locomotive, un point pour le dernier wagon, et des mots rangés dans l'ordre pour que ça roule."
+          qui: zero
       - retiens: "Une phrase = **majuscule** au début + **sens** + **point** à la fin."
       - a_quoi_ca_sert: "Sans majuscule ni point, on ne sait pas où commence et où finit une idée. Le lecteur s'essouffle !"
     exercices:
@@ -40,7 +43,7 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} {{t_1}} {{t_2}} {{t_3}}"
       - type: qcm
-        vars: { t: [["Le soleil brille.", "le soleil brille", "Le soleil brille"], ["Mia dessine un chat.", "mia dessine un chat.", "Mia dessine un chat"], ["Nous allons à la plage.", "nous allons à la plage", "Nous allons à la plage"], ["Il fait beau aujourd'hui.", "il fait beau aujourd'hui.", "Il fait beau aujourd'hui"]] }
+        vars: { t: [["Le soleil brille.", "le soleil brille", "Le soleil brille"], ["Lya dessine un chat.", "mia dessine un chat.", "Lya dessine un chat"], ["Nous allons à la plage.", "nous allons à la plage", "Nous allons à la plage"], ["Il fait beau aujourd'hui.", "il fait beau aujourd'hui.", "Il fait beau aujourd'hui"]] }
         enonce: "Quelle phrase est bien écrite ?"
         choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
         explications: ["", "Il manque quelque chose au début ou à la fin : majuscule et point !", "Il manque le point à la fin."]
@@ -51,7 +54,7 @@ lecons:
         reponse: "t_1"
         correction: "Une phrase a un sens, une majuscule et un point."
       - type: dictee
-        vars: { m: ["Le chat dort.", "Mia lit un livre.", "Il fait beau.", "Zéro mange une graine.", "Le lapin saute.", "Nous jouons au ballon."] }
+        vars: { m: ["Le chat dort.", "Lya lit un livre.", "Il fait beau.", "Zéro mange une graine.", "Le lapin saute.", "Nous jouons au ballon."] }
         enonce: "Écoute et écris la phrase, avec la majuscule et le point."
         dictee: "{{m}}"
         correction: "{{m}}"
@@ -64,6 +67,7 @@ lecons:
       - dialogue:
           - mia: "Il pleut. — Il pleut ? — Il pleut ! — Ne sortez pas !"
           - zero: "Quatre phrases, quatre humeurs. La troisième est très surprise. Comme moi."
+      - a_quoi_ca_sert: "Le type de phrase dit ce que tu veux faire : raconter, demander, donner un ordre ou montrer une émotion. À l'oral, la voix change ; à l'écrit, c'est le point."
       - texte: |
           - **Déclarative** : elle raconte, elle informe. Elle finit par un **point** : *Il pleut.*
           - **Interrogative** : elle pose une question. **Point d'interrogation** : *Il pleut ?*
@@ -100,6 +104,7 @@ lecons:
       - dialogue:
           - zero: "J'aime les épinards. …Non. Je n'aime PAS les épinards."
           - neo: "Bravo, Zéro : tu viens de faire une phrase négative. La négation entoure le verbe, comme deux tranches de pain."
+      - a_quoi_ca_sert: "La négation sert à dire non, à refuser, à corriger : « Je ne veux pas », « Ce n'est pas vrai ». C'est l'une des phrases les plus utilisées."
       - texte: |
           Pour dire le contraire, on entoure le **verbe** avec **ne … pas** :
           *Je chante.* → *Je **ne** chante **pas**.*
@@ -108,6 +113,9 @@ lecons:
       - attention:
           texte: "Devant une voyelle, **ne** devient **n'** : *Il aime* → *Il **n'**aime **pas**.* Et à l'écrit, on n'oublie **jamais** le « ne », même si on ne le dit pas toujours à l'oral."
           qui: neo
+      - astuce:
+          texte: "La négation, c'est un sandwich : « ne » avant le verbe, « pas » après, et le verbe au milieu comme la garniture. Il ne mange pas."
+          qui: mia
       - retiens: "Négation = **ne** (ou **n'**) **devant** le verbe + **pas / plus / jamais / rien** **après**."
     exercices:
       - type: mot
@@ -136,11 +144,15 @@ lecons:
       - dialogue:
           - zero: "J'ai acheté des graines des noix des noisettes des pommes et des carottes. *souffle* Je n'ai plus d'air."
           - mia: "Il te manque des virgules ! Elles te laissent respirer entre chaque mot de ta liste."
+      - a_quoi_ca_sert: "La virgule permet de respirer et d'éviter les malentendus : « On mange, les enfants ! » n'a pas du tout le même sens que « On mange les enfants ! »"
       - texte: |
           La **virgule** marque une **petite pause**. On l'utilise surtout pour séparer les éléments d'une **liste** (une énumération) :
           *J'ai acheté des graines**,** des noix**,** des noisettes **et** des carottes.*
       - attention:
           texte: "Pas de virgule devant le dernier « et » d'une liste : *du pain, du lait **et** du beurre*."
+          qui: neo
+      - astuce:
+          texte: "Dans une liste, une virgule entre chaque élément… sauf avant le dernier, où c'est « et » qui la remplace."
           qui: neo
       - retiens: "Dans une liste, une **virgule** entre chaque élément, sauf devant le dernier **et**."
     exercices:
@@ -150,13 +162,13 @@ lecons:
         choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
         correction: "{{t_0}}"
       - type: dictee
-        vars: { m: ["J'aime le pain, le lait et le miel.", "Il a un chat, un chien et un lapin.", "Mia prend un crayon, une gomme et une règle."] }
+        vars: { m: ["J'aime le pain, le lait et le miel.", "Il a un chat, un chien et un lapin.", "Lya prend un crayon, une gomme et une règle."] }
         enonce: "Écoute bien : n'oublie pas les virgules !"
         dictee: "{{m}}"
         niveau: 2
         correction: "{{m}}"
       - type: nombre
-        vars: { t: [["un lion, un tigre, un ours et un loup", 2], ["du pain, du beurre et du sel", 1], ["rouge, jaune, vert, bleu et violet", 3], ["Mia, Néo et Zéro", 1]] }
+        vars: { t: [["un lion, un tigre, un ours et un loup", 2], ["du pain, du beurre et du sel", 1], ["rouge, jaune, vert, bleu et violet", 3], ["Lya, Néo et Zéro", 1]] }
         enonce: "Combien de virgules dans : « {{t_0}} » ?"
         reponse: "t_1"
         correction: "Pas de virgule devant le dernier « et »."
@@ -169,13 +181,17 @@ lecons:
       - dialogue:
           - mia: "Quand les personnages parlent dans une histoire, il faut des signes spéciaux pour le montrer."
           - neo: "Les deux-points annoncent : quelqu'un va parler. Les guillemets ouvrent et ferment la parole. Le tiret montre qu'on change de personne."
+      - a_quoi_ca_sert: "Les dialogues donnent vie aux histoires : on entend les personnages parler. Tu en trouveras dans tous les romans et les BD."
       - texte: |
           *Zéro demanda **:** **«** As-tu vu mes graines ? **»***
-          *Mia répondit **:** **«** Non. **»***
+          *Lya répondit **:** **«** Non. **»***
 
           Dans un long dialogue :
           *— As-tu vu mes graines ? demanda Zéro.*
-          *— Non, répondit Mia.*
+          *— Non, répondit Lya.*
+      - astuce:
+          texte: "Le tiret, c'est un micro : à chaque fois qu'il apparaît, quelqu'un d'autre prend la parole."
+          qui: zero
       - retiens: "**:** annonce la parole ; **« »** l'entourent ; **—** montre qu'un nouveau personnage parle."
     exercices:
       - type: qcm
@@ -184,7 +200,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} : {{t_1}}."
       - type: qcm
-        vars: { t: [["Mia", "« Viens jouer ! » cria Mia à Zéro.", "Zéro"], ["Néo", "Néo dit à Mia : « J'ai trouvé la clé. »", "Mia"], ["Zéro", "« J'ai faim », soupira Zéro.", "Néo"], ["la maîtresse", "La maîtresse annonça : « Sortez vos cahiers. »", "les élèves"]] }
+        vars: { t: [["Lya", "« Viens jouer ! » cria Lya à Zéro.", "Zéro"], ["Néo", "Néo dit à Lya : « J'ai trouvé la clé. »", "Lya"], ["Zéro", "« J'ai faim », soupira Zéro.", "Néo"], ["la maîtresse", "La maîtresse annonça : « Sortez vos cahiers. »", "les élèves"]] }
         enonce: "« {{t_1}} » — Qui parle ?"
         choix: ["{{t_0}}", "{{t_2}}"]
         correction: "C'est {{t_0}} qui parle."

@@ -1,6 +1,6 @@
 /* ==========================================================
    La Galaxie des Savoirs — feuille de style
-   Couleurs des personnages : Mia (violet, turquoise), Néo (orange, bleu nuit),
+   Couleurs des personnages : Lya (violet, turquoise), Néo (orange, bleu nuit),
    Zéro (blanc, orange). Formes rondes, gros boutons, contrastes AA.
    ========================================================== */
 :root {
@@ -2926,3 +2926,13 @@ select {
 .oeuvre figcaption span { display: flex; gap: 6px; }
 .games.compact .game-card small { display: none; }
 .planete-bar .pb-emoji img { display: block; border-radius: 50%; box-shadow: 0 0 0 3px color-mix(in srgb, var(--pc) 35%, transparent); }
+
+/* Navigation au clavier : un contour bien visible sur l'élément actif (sans gêner le toucher ni la souris). */
+:where(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid #7c4dff;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+/* Cibles tactiles d'au moins 44 px pour les petits doigts (recommandation Apple / WCAG 2.5.5). */
+.classer-btns button, .speak-btn.small, .btn-small, .btn.small { min-height: 44px; }
+.classer-btns button { min-width: 44px; }

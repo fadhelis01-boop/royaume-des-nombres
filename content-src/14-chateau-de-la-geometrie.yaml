@@ -42,6 +42,9 @@ lecons:
           reponse: "180-a-b"
           unite: °
           correction: "180 − {{a}} − {{b}} = {{180-a-b}}°."
+      - astuce:
+          texte: "Repères d'angles : un coin de feuille fait 90°, un demi-tour fait 180°. Avant de mesurer, devine si l'angle est aigu (< 90°) ou obtus (> 90°)."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "20..100", b: "20..70" }
@@ -106,6 +109,9 @@ lecons:
           enonce: "Un quadrilatère a 4 côtés égaux et 4 angles droits. C'est…"
           choix: ["un carré", "un losange (non carré)", "un rectangle (non carré)", "un trapèze"]
           correction: "4 côtés égaux (losange) + 4 angles droits (rectangle) = carré."
+      - astuce:
+          texte: "Un carré est un rectangle ET un losange : il a toutes les propriétés des deux. Range les quadrilatères comme une famille."
+          qui: zero
     exercices:
       - type: qcm
         enonce: "Un quadrilatère dont les diagonales se coupent en leur milieu et sont perpendiculaires est…"
@@ -161,6 +167,9 @@ lecons:
           reponse: "b*h/2"
           unite: cm²
           correction: "{{b}} × {{h}} ÷ 2 = {{nb(b*h/2)}} cm²."
+      - astuce:
+          texte: "Périmètre du cercle = 2 × π × r (« deux pierres »), aire du disque = π × r² (« pierre carrée »)."
+          qui: mia
     exercices:
       - type: nombre
         vars: { b: "3..20", h: "2..15" }
@@ -226,6 +235,9 @@ lecons:
           reponse: "L*l*h"
           unite: cm³
           correction: "{{L}} × {{l}} × {{h}} = {{L*l*h}} cm³."
+      - astuce:
+          texte: "Prisme et cylindre : aire de la base × hauteur. Pyramide et cône : pareil, mais divisé par 3, car un cône remplit exactement un tiers du cylindre."
+          qui: neo
     exercices:
       - type: nombre
         vars: { c: "2..12" }
@@ -293,6 +305,9 @@ lecons:
           reponse: "t_2"
           unite: cm
           correction: "$\\sqrt{ {{t_0}}^2 + {{t_1}}^2 } = \\sqrt{ {{t_0^2+t_1^2}} } = {{t_2}}$ cm."
+      - astuce:
+          texte: "Repère d'abord l'hypoténuse : c'est le plus grand côté, face à l'angle droit. C'est toujours lui qui est tout seul dans l'égalité : hyp² = a² + b²."
+          qui: zero
     exercices:
       - type: nombre
         vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13]] }
@@ -361,6 +376,9 @@ lecons:
           enonce: "Un triangle a des côtés de {{t_0}}, {{t_1}} et {{t_2}} cm. Est-il rectangle ?"
           reponse: "t_3 == 1"
           correction: "{{t_2}}² = {{t_2^2}} et {{t_0}}² + {{t_1}}² = {{t_0^2+t_1^2}} : {{si(t_3==1,'égaux, donc rectangle.','différents, donc pas rectangle.')}}"
+      - astuce:
+          texte: "Calcule séparément le carré du plus grand côté et la somme des carrés des deux autres. Égaux → rectangle. Différents → pas rectangle."
+          qui: mia
     exercices:
       - type: vf
         vars: { a: "3..12", b: "3..12", c: "5..17" }
@@ -458,6 +476,9 @@ lecons:
           tolerance: 0.051
           unite: cm
           correction: "adjacent = hypoténuse × cos({{a}}°) = {{h}} × {{nb(round(cosd(a),4))}} ≈ {{nb(round(h*cosd(a),1))}} cm."
+      - astuce:
+          texte: "SOH-CAH-TOA, ou en français « CAH-SOH-TOA » : Cos = Adjacent / Hypoténuse, Sin = Opposé / Hypoténuse, Tan = Opposé / Adjacent."
+          qui: neo
     exercices:
       - type: nombre
         vars: { h: [5, 8, 10, 12, 20], a: [20, 30, 35, 45, 55, 70] }
@@ -511,6 +532,9 @@ lecons:
           enonce: "On agrandit une figure avec un rapport {{k}}. Par combien son AIRE est-elle multipliée ?"
           reponse: "k*k"
           correction: "Les aires sont multipliées par k² = {{k*k}}."
+      - astuce:
+          texte: "Symétrie = miroir ; translation = glissement ; rotation = on tourne autour d'un point ; homothétie = agrandissement ou réduction, comme un zoom."
+          qui: zero
     exercices:
       - type: nombre
         vars: { k: [2, 3, 4] }

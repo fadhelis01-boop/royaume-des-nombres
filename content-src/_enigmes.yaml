@@ -1,4 +1,4 @@
-# Énigmes de Mia (et énigme du jour). niveau : 1 = Graines, 2 = Explorateurs, 3 = Maîtres.
+# Énigmes de Lya (et énigme du jour). niveau : 1 = Graines, 2 = Explorateurs, 3 = Maîtres.
 # reponse : un nombre ou un mot (la comparaison ignore majuscules et accents).
 
 - id: chaussettes
@@ -26,11 +26,11 @@
 
 - id: freres
   niveau: 1
-  titre: La famille de Mia
-  texte: "Mia a 3 frères. Chacun de ses frères a 1 sœur. Combien d'enfants y a-t-il dans la famille ?"
+  titre: La famille de Lya
+  texte: "Lya a 3 frères. Chacun de ses frères a 1 sœur. Combien d'enfants y a-t-il dans la famille ?"
   reponse: 4
   indice: "La sœur des frères… c'est qui ?"
-  solution: "La sœur de chaque frère, c'est Mia elle-même ! Il y a 3 frères + Mia = **4** enfants."
+  solution: "La sœur de chaque frère, c'est Lya elle-même ! Il y a 3 frères + Lya = **4** enfants."
 
 - id: gateau
   niveau: 1
@@ -77,7 +77,7 @@
 
 - id: age-capitaine
   niveau: 2
-  titre: Les âges de Mia et Néo
+  titre: Les âges de Lya et Néo
   texte: "Aujourd'hui, Néo a 3 fois l'âge de Zéro. Dans 4 ans, Néo aura le double de l'âge de Zéro. Quel âge a Zéro aujourd'hui ?"
   reponse: 4
   indice: "Appelle z l'âge de Zéro : 3z + 4 = 2(z + 4)."

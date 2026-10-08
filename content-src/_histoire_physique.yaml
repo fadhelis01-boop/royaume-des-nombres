@@ -23,7 +23,8 @@ arcs:
     final: ph-sentier-des-mesures
     fin:
       - narrateur: "Le dirigeable du Capitaine Poulie reprend de l'altitude, sa lampe allumée. Le Mythe du Poids s'est fissuré : une plume froissée et une feuille l'ont battu."
-      - narrateur: "Dans les nuages apparaît Maître Gravis, la Muse des Cimes : « Galilée a fait rouler des billes sur des plans inclinés pour comprendre la chute, au lieu de croire ce que tout le monde disait. Et toi, quelle idée reçue aimerais-tu tester ? »"
+      - narrateur: "Dans les nuages apparaît Maître Gravis, la Muse des Cimes."
+      - gravis: "Galilée a fait rouler des billes sur des plans inclinés pour comprendre la chute, au lieu de croire ce que tout le monde disait. Et toi, quelle idée reçue aimerais-tu tester ?"
       - neo: "Là-haut, sur le Pic, le Titan Inertie bloque encore tout."
 
   - id: physique-arc-2
@@ -32,7 +33,7 @@ arcs:
     final: ph-gorge-des-ondes
     fin:
       - narrateur: "Le Titan Inertie se met à glisser, doucement, puis s'éloigne en ligne droite… exactement comme Newton l'avait prévu."
-      - narrateur: "Maître Gravis sourit : « Émilie du Châtelet a traduit Newton en français et l'a enrichi : sans elle, beaucoup ne l'auraient jamais compris. Ibn al-Haytham, mille ans plus tôt, expliquait déjà la lumière par l'expérience. La physique est une conversation à travers les siècles. »"
+      - gravis: "Émilie du Châtelet a traduit Newton en français et l'a enrichi : sans elle, beaucoup ne l'auraient jamais compris. Ibn al-Haytham, mille ans plus tôt, expliquait déjà la lumière par l'expérience. La physique est une conversation à travers les siècles."
       - mia: "Mais au sommet, le Grand Neutre éteint les champs et les ondes eux-mêmes…"
 
   - id: physique-arc-3

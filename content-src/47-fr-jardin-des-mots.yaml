@@ -30,6 +30,9 @@ lecons:
 
           En haut de chaque page, deux **mots-repères** donnent le premier et le dernier mot de la page.
           Pour chaque mot, on trouve : sa **nature** (n. m., v., adj.), sa **définition**, souvent un **exemple**.
+      - astuce:
+          texte: "Chante l'alphabet dans ta tête et coupe le dictionnaire en trois : A à G au début, H à P au milieu, Q à Z à la fin."
+          qui: zero
       - retiens: "Je compare les lettres **une par une**. Les **mots-repères** me disent si mon mot est sur la page."
       - vraie_vie:
           titre: Défi dans la vraie vie
@@ -61,6 +64,7 @@ lecons:
       - dialogue:
           - mia: "Dent, dentiste, dentifrice, dentaire, édenté : regarde, ils ont tous « dent » dedans. C'est une famille !"
           - zero: "Hamster, hamsterie, hamsteriste… Non ? Bon."
+      - a_quoi_ca_sert: "Connaître la famille d'un mot aide à comprendre des mots nouveaux et à écrire sans faute : dent, dentiste, dentifrice gardent le même début."
       - texte: |
           Une **famille de mots** regroupe des mots formés à partir d'un même **radical** (une racine) et qui ont un **sens** commun.
 
@@ -100,6 +104,7 @@ lecons:
       - dialogue:
           - neo: "Faire, DÉfaire, REfaire. Le début du mot change le sens : c'est un préfixe."
           - mia: "Et à la fin : jardin, jardinIER, maison, maisonNETTE. Ça, c'est un suffixe !"
+      - a_quoi_ca_sert: "Avec un préfixe ou un suffixe, tu peux deviner le sens de milliers de mots que tu n'as jamais vus : im-possible, re-faire, jardin-ier."
       - texte: |
           Le **préfixe** se place **avant** le radical :
           - **re-** : à nouveau (*re*faire) — **dé- / dés-** : le contraire (*dé*faire, *dés*obéir)
@@ -113,6 +118,9 @@ lecons:
       - attention:
           texte: "Devant **m, b, p**, « in- » devient **im-** : *im*possible, *im*buvable. Devant **l** : *il*lisible. Devant **r** : *ir*réel."
           qui: neo
+      - astuce:
+          texte: "Le préfixe est devant comme une casquette (re-, dé-, in-) ; le suffixe est derrière comme une traîne (-eur, -ment, -able)."
+          qui: mia
       - retiens: "**Préfixe** = avant (re-, dé-, in-, pré-). **Suffixe** = après (-eur, -ette, -ment)."
     exercices:
       - type: mot
@@ -140,6 +148,7 @@ lecons:
       - dialogue:
           - zero: "Content, joyeux, heureux, ravi… Tous ces mots disent la même chose : JE SUIS CONTENT ! 😳"
           - mia: "Ce sont des synonymes. Et triste, c'est leur contraire !"
+      - a_quoi_ca_sert: "Les synonymes évitent de répéter toujours les mêmes mots ; les contraires aident à expliquer et à comparer."
       - texte: |
           - Les **synonymes** ont (presque) le **même sens** : *content = joyeux*, *maison = habitation*, *commencer = débuter*.
           - Les **contraires** (ou **antonymes**) ont un sens **opposé** : *grand ≠ petit*, *ouvrir ≠ fermer*, *avant ≠ après*.
@@ -172,14 +181,18 @@ lecons:
     mots: [sens propre, sens figuré, expression]
     etapes:
       - dialogue:
-          - zero: "Mia m'a dit que j'avais « un cœur d'or ». J'ai cherché partout : mon cœur n'est pas en or. 😳"
+          - zero: "Lya m'a dit que j'avais « un cœur d'or ». J'ai cherché partout : mon cœur n'est pas en or. 😳"
           - mia: "C'est le sens figuré, Zéro ! Ça veut dire que tu es très gentil."
+      - a_quoi_ca_sert: "Les expressions imagées sont partout : « avoir un chat dans la gorge », « coûter les yeux de la tête ». Les comprendre évite de prendre tout au pied de la lettre !"
       - texte: |
           - **Sens propre** : le sens premier, concret. *Le chat a **mordu** le coussin.*
           - **Sens figuré** : une image. *Elle a **mordu** à l'hameçon* = elle s'est fait avoir.
 
           Quelques **expressions** : *avoir un cœur d'or* (être très gentil), *poser un lapin* (ne pas venir à un rendez-vous),
           *coûter les yeux de la tête* (coûter très cher), *avoir la tête dans les nuages* (rêvasser).
+      - astuce:
+          texte: "Imagine la phrase pour de vrai : si la scène est impossible ou absurde (un chat dans la gorge !), c'est le sens figuré."
+          qui: zero
       - retiens: "**Propre** = sens concret. **Figuré** = sens imagé. Les expressions se comprennent **en entier**, pas mot à mot."
     exercices:
       - type: qcm
@@ -208,11 +221,15 @@ lecons:
       - dialogue:
           - neo: "Vague, sable, coquillage, maillot, parasol : tous ces mots parlent de la plage. C'est un champ lexical."
           - zero: "Et « verre », « vert », « ver », « vers » ? Quatre mots, un seul son ! 🤯"
+      - a_quoi_ca_sert: "Les mots d'un même thème donnent une ambiance à un texte. Les homonymes, eux, sont à l'origine de nombreux jeux de mots et devinettes."
       - texte: |
           Le **champ lexical** est l'ensemble des mots qui se rapportent à un même **thème** : l'école → *cartable, leçon, maîtresse, récréation*.
 
           Les **homonymes** se prononcent pareil mais ont un **sens différent** (et souvent une orthographe différente) :
           *un **verre** d'eau, la couleur **vert**e, un **ver** de terre, aller **vers** la mer* ; *la **mer**, ma **mère**, le **maire***.
+      - astuce:
+          texte: "Pour trouver un champ lexical, demande-toi : de quoi parle ce texte ? Puis surligne tous les mots qui vont avec (la mer : vague, sable, bateau…)."
+          qui: neo
       - retiens: "**Champ lexical** = mots d'un même thème. **Homonymes** = même son, sens différent : le **sens** dit comment écrire."
     exercices:
       - type: qcm

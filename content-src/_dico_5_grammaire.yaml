@@ -8,7 +8,7 @@
 - { m: préposition, n: n, g: f, d: "Mot invariable qui relie un mot à son complément (à, de, dans, pour, avec, sur…).", e: "Le livre est sur la table.", l: 2, t: grammaire }
 - { m: conjonction, n: n, g: f, d: "Mot invariable qui relie des mots ou des propositions (mais, ou, et, donc, or, ni, car ; que, quand, si…).", e: "Je voulais venir, mais il pleuvait.", l: 2, t: grammaire }
 - { m: interjection, n: n, g: f, d: "Mot qui exprime une émotion, un cri (Oh ! Aïe ! Hélas !).", e: "« Aïe ! » est une interjection.", l: 2, t: grammaire }
-- { m: sujet, n: n, g: m, d: "Mot ou groupe qui fait l'action du verbe ou dont on dit quelque chose ; on le trouve avec « qui est-ce qui ? ».", e: "« Mia » est le sujet de « Mia chante ».", t: grammaire }
+- { m: sujet, n: n, g: m, d: "Mot ou groupe qui fait l'action du verbe ou dont on dit quelque chose ; on le trouve avec « qui est-ce qui ? ».", e: "« Lya » est le sujet de « Lya chante ».", t: grammaire }
 - { m: complément, n: n, g: m, d: "Mot ou groupe qui complète le sens d'un autre mot (COD, COI, complément circonstanciel, du nom…).", e: "« une pomme » est le complément de « mange ».", f: [compléter], t: grammaire }
 - { m: COD, n: n, g: m, d: "Complément d'objet direct : il complète le verbe sans préposition ; on le trouve avec « quoi ? » ou « qui ? » après le verbe.", e: "Léa mange une pomme (mange quoi ? une pomme).", l: 2, t: grammaire }
 - { m: COI, n: n, g: m, d: "Complément d'objet indirect : il complète le verbe avec une préposition (à, de).", e: "Il parle à sa sœur.", l: 2, t: grammaire }

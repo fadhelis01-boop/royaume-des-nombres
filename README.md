@@ -1,7 +1,7 @@
 # 🌌 La Galaxie des Savoirs
 
 Application d'apprentissage pour les enfants **de 7 ans jusqu'au niveau avancé**, en 8 planètes : **maths, français, chimie, physique, biologie, Terre & Univers, musique et dessin**. Elle est guidée par trois mascottes :
-**Mia π** (la chatte qui imagine), **Néo Fibo** (le renard qui vérifie) et **Zéro** (le hamster qui fait rire).
+**Lya π** (la chatte qui imagine), **Néo Fibo** (le renard qui vérifie) et **Zéro** (le hamster qui fait rire).
 
 Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, installable comme une application, **hors connexion**.
 
@@ -10,7 +10,7 @@ Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, install
 - **Huit planètes en trois familles**, choisies dans l'écran « Galaxie » ; chaque enfant garde sa progression partout :
   - **Les fondamentaux** : 🔢 le Royaume des Nombres (maths), 📚 l'Archipel des Mots (français).
   - **Les sciences** : 🧪 le Marais d'Acidia (chimie), ⚙️ les Cimes de la Gravité (physique et électricité), 🌿 la Canopée des Biomes (biologie), 🔭 l'Observatoire des Étoiles (Terre, climat, astronomie).
-  - **Les arts** : 🎵 la Cité des Résonances (musique), ✏️ l'Atelier de Mia (dessin).
+  - **Les arts** : 🎵 la Cité des Résonances (musique), ✏️ l'Atelier de Lya (dessin).
 - **Chaque planète** a ses mondes du niveau 0 (7 ans) au niveau supérieur, un monde « méthode », une histoire avec ses gardiens et ses Muses (d'après la bible « L'Alchimie des Mondes »), un échauffement, un quiz éclair et un test de niveau.
 - **Sciences** : démarche OHERIC, expériences réelles classées par niveau de sécurité (🟢 seul, 🟠 avec un adulte, 🔴 à regarder seulement), pari avant l'expérience, explication après ; visuels atome, graphiques, tableaux.
 - **Arts** : dessin pas à pas avec guide à suivre au doigt ou au stylet (miroir, gomme, couleurs, galerie) ; musique avec sons à écouter dans les exercices, portée et clavier interactifs, studio (piano pentatonique, boîte à rythmes) et jeu de l'Oreille d'or.
@@ -20,7 +20,7 @@ Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, install
 
 - **Une histoire à suivre** : le Grignoteur de Nombres éteint les cristaux du Royaume. Chaque monde est un chapitre (scène en bande dessinée à l'arrivée), chaque **Défi du Gardien** réussi rallume un cristal, débloque la suite et un **diplôme à imprimer**. Trois livres, de la Forêt au Temple de la Logique, à relire dans le Livre de l'aventure.
 - **30 mondes, 199 leçons** : du **Nid des Nombres** (GS – CP, compter en touchant) et des nombres jusqu'à 1 000 (CE1) aux intégrales, nombres complexes, matrices et logique (supérieur), plus l'**École des Astuces** (méthode, pensée mathématique, calcul mental, réussir un contrôle).
-- **Cours écrits ET audio** : chaque étape est lue par la voix de Mia, Néo, Zéro ou du narrateur ; mode « écoute continue » ; **reprise là où on s'est arrêté** ou depuis le début.
+- **Cours écrits ET audio** : chaque étape est lue par la voix de Lya, Néo, Zéro ou du narrateur ; mode « écoute continue » ; **reprise là où on s'est arrêté** ou depuis le début.
 - **Exercices infinis** : 1 090 générateurs paramétrés (nombres tirés au sort), corrigés automatiquement, avec indice, correction expliquée, seconde chance et **explication ciblée des erreurs classiques**. 16 types de réponses : nombre, fraction, QCM, vrai/faux, comparer, ranger, droite graduée, expression algébrique (vérifiée par équivalence : « développée », « factorisée »…), plusieurs cases, mot, et **6 manipulations** (blocs base 10, partage, sauts de grenouille, colorier une fraction, régler une horloge, payer).
 - **Cours actifs** : une question toutes les deux étapes, moments « Explique à Néo », défis dans la vraie vie. Une leçon se valide à 80 % ; les défis s'adaptent après deux erreurs.
 - **Visuels dessinés** : blocs base 10, tableau de numération, droite graduée avec sauts, **modèle en barres (méthode de Singapour)**, fractions, horloge, monnaie, figures, solides, balance, arbres de probabilités, graphiques de fonctions, diagrammes.
@@ -30,7 +30,7 @@ Fonctionne sur **ordinateur, tablette et téléphone (iPhone compris)**, install
 - **Récompenses** : points, niveaux et titres, étoiles, 33 badges (dont la persévérance), album d'autocollants, séries de jours, célébrations.
 - **Révisions espacées** (1, 3, 7, 16, 35 jours), pratique entrelacée, « retravailler mes erreurs ».
 - **Test de positionnement** adaptatif pour commencer au bon niveau.
-- **Demande à Mia** : questions libres (au clavier ou au micro). Hors ligne : réponses tirées des leçons et du **Grand Livre** (95 définitions sourcées). Avec une clé d'API Claude ajoutée par un parent : réponses adaptées à l'âge, **sourcées** (recherche limitée à des sites de référence : Eduscol, Lumni, Khan Academy, Wikipédia, Bibmath…).
+- **Demande à Lya** : questions libres (au clavier ou au micro). Hors ligne : réponses tirées des leçons et du **Grand Livre** (95 définitions sourcées). Avec une clé d'API Claude ajoutée par un parent : réponses adaptées à l'âge, **sourcées** (recherche limitée à des sites de référence : Eduscol, Lumni, Khan Academy, Wikipédia, Bibmath…).
 - **Espace parents** (code PIN) : suivi détaillé (temps, réussite, points à consolider, erreurs, **leçons quittées en cours de route, durée des séances**), mode « je ne lis pas encore », plusieurs enfants, voix des personnages, taille du texte, mode dyslexie (police OpenDyslexic), musique douce, limite de temps d'écran, déblocage, sauvegarde / transfert, guide pédagogique, **import de nouveaux domaines**.
 
 ## Illustrations

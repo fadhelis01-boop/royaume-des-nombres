@@ -48,6 +48,9 @@ lecons:
           reponse: "exp({{a+b}}x)"
           variables: [x]
           correction: "$e^{ {{a}}x + {{b}}x } = e^{ {{a+b}}x }$"
+      - astuce:
+          texte: "exp transforme les sommes en produits : e^(a + b) = e^a × e^b. Et e⁰ = 1, comme toute puissance zéro."
+          qui: mia
     exercices:
       - type: expression
         vars: { a: "2..9", b: "1..6" }
@@ -108,6 +111,9 @@ lecons:
           reponse: "round(ln(k), 2)"
           tolerance: 0.011
           correction: "$x = \\ln {{k}} \\approx {{nb(round(ln(k),2))}}$"
+      - astuce:
+          texte: "ln défait ce que fait exp : ln(e^x) = x. Et il transforme les produits en sommes : ln(ab) = ln a + ln b."
+          qui: neo
     exercices:
       - type: nombre
         vars: { n: "2..9" }
@@ -156,6 +162,9 @@ lecons:
           reponse: "70/t"
           unite: ans
           correction: "70 ÷ {{t}} = {{nb(70/t)}} ans environ."
+      - astuce:
+          texte: "La règle de 70 : avec une croissance de r % par an, la quantité double en environ 70 / r ans. À 7 % par an, elle double en 10 ans."
+          qui: zero
     exercices:
       - type: nombre
         vars: { n: "1..4" }
@@ -199,6 +208,9 @@ lecons:
           enonce: "$\\log(10^{ {{n}} }) = ?$"
           reponse: "n"
           correction: "{{n}}"
+      - astuce:
+          texte: "Sur une échelle logarithmique, chaque graduation multiplie par 10 : un séisme de magnitude 6 libère environ 32 fois plus d'énergie qu'un séisme de magnitude 5."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "4..6", d: "1..3" }

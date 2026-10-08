@@ -59,7 +59,7 @@
 - { m: se souvenir, n: v, d: "Avoir quelque chose en mémoire.", e: "Je me souviens de mes vacances.", s: [se rappeler], a: [oublier], f: [souvenir], t: verbes }
 - { m: oublier, n: v, d: "Ne plus se souvenir ; laisser par erreur.", e: "J'ai oublié mon cahier.", a: [se souvenir], f: [oubli], t: verbes }
 - { m: protéger, n: v, d: "Mettre à l'abri d'un danger.", e: "Le parapluie protège de la pluie.", s: [défendre, abriter], f: [protection, protecteur], t: verbes }
-- { m: expliquer, n: v, d: "Faire comprendre.", e: "Mia explique la règle.", f: [explication, inexplicable], t: verbes }
+- { m: expliquer, n: v, d: "Faire comprendre.", e: "Lya explique la règle.", f: [explication, inexplicable], t: verbes }
 - { m: conjuguer, n: v, d: "Écrire ou dire un verbe à ses différentes formes (personnes, temps, modes).", e: "Conjugue « finir » au présent.", f: [conjugaison], l: 2, t: grammaire }
 - { m: accorder, n: v, d: "Mettre un mot en accord avec un autre (genre, nombre) ; donner.", e: "Accorde l'adjectif avec le nom.", f: [accord], t: grammaire }
 - { m: hésiter, n: v, d: "Ne pas savoir quoi décider.", e: "Il hésite entre le rouge et le bleu.", f: [hésitation], t: verbes }

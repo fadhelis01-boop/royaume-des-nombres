@@ -50,6 +50,9 @@ lecons:
           enonce: "$f(x) = x^2$. Taux de variation entre {{a}} et {{a+h}} ?"
           reponse: "2*a+h"
           correction: "$\\frac{ {{(a+h)^2}} - {{a*a}} }{ {{h}} } = {{2*a+h}}$"
+      - astuce:
+          texte: "Le nombre dérivé, c'est la pente de la courbe en un point : la vitesse au moment précis où on regarde, comme l'aiguille du compteur de vitesse."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "-3..5", h: [1, 2, 3] }
@@ -96,6 +99,9 @@ lecons:
           reponse: "{{n}}x^{{n-1}}"
           variables: [x]
           correction: "$f'(x) = {{n}}x^{ {{n-1}} }$"
+      - astuce:
+          texte: "(xⁿ)' = n xⁿ⁻¹ : l'exposant descend devant et on lui enlève 1. Et (eˣ)' = eˣ : l'exponentielle est sa propre dérivée."
+          qui: neo
     exercices:
       - type: expression
         vars: { n: "2..9" }
@@ -137,6 +143,9 @@ lecons:
           reponse: "{{2*a}}x+({{b}})"
           variables: [x]
           correction: "$f'(x) = {{2*a}}x + ({{nb(b)}})$"
+      - astuce:
+          texte: "(uv)' = u'v + uv' : on dérive l'un en gardant l'autre, puis l'inverse. Et (u/v)' = (u'v − uv') / v² : le moins est au milieu, le carré en bas."
+          qui: zero
     exercices:
       - type: expression
         vars: { a: "1..6", b: "-9..9", c: "-9..9", d: "-9..9" }
@@ -185,6 +194,9 @@ lecons:
           enonce: "$f(x) = {{a}}x^2 + ({{nb(-2*a*s)}})x + ({{nb(c)}})$. En quelle valeur $f'(x) = 0$ ?"
           reponse: "s"
           correction: "$f'(x) = {{2*a}}x + ({{nb(-2*a*s)}}) = 0 \\iff x = {{nb(s)}}$ (c'est le minimum)."
+      - astuce:
+          texte: "f' > 0 : f monte ; f' < 0 : f descend. Un extremum est là où f' change de signe, pas seulement là où elle s'annule."
+          qui: mia
     exercices:
       - type: liste
         vars: { r: "1..4" }
@@ -230,6 +242,9 @@ lecons:
           reponse: "{{2*a}}x-{{a*a}}"
           variables: [x]
           correction: "$y = {{2*a}}(x - {{a}}) + {{a*a}} = {{2*a}}x - {{a*a}}$"
+      - astuce:
+          texte: "y = f'(a)(x − a) + f(a) : il te faut deux nombres, la pente f'(a) et le point f(a). Calcule-les d'abord, puis remplace."
+          qui: neo
     exercices:
       - type: expression
         vars: { a: "-4..4" }
@@ -270,6 +285,9 @@ lecons:
           reponse: "{{n*a}}({{a}}x+{{b}})^{{n-1}}"
           variables: [x]
           correction: "$f'(x) = {{n}} \\times {{a}} \\times ({{a}}x + {{b}})^{ {{n-1}} } = {{n*a}}({{a}}x + {{b}})^{ {{n-1}} }$"
+      - astuce:
+          texte: "Pour une fonction « emboîtée », dérive l'extérieur puis multiplie par la dérivée de l'intérieur : (e^u)' = u' e^u."
+          qui: zero
     exercices:
       - type: expression
         vars: { a: "2..6", b: "-5..5", n: "2..6" }

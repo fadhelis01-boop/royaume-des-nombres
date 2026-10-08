@@ -22,10 +22,14 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Elle est toute petite » mais « elle est tout étonnée » ? Il y a un algorithme, je le sens !"
+      - a_quoi_ca_sert: "« Tout » est l'un des mots les plus employés et l'un des plus piégeux : le maîtriser fait la différence dans les dictées et les copies."
       - texte: |
           - **Déterminant ou pronom** : *tout* s'accorde → *tout le pain, toute la nuit, tous les jours, toutes les filles* ; *Ils sont tous venus.*
           - **Adverbe** (= *tout à fait, entièrement*, devant un adjectif) : **invariable**… → *Ils sont tout émus. Elles sont tout étonnées.*
           - … **sauf** devant un adjectif **féminin** qui commence par une **consonne** ou un **h aspiré** : on l'accorde pour l'oreille → *Elle est **toute** petite. Elles sont **toutes** honteuses.*
+      - astuce:
+          texte: "Devant un adjectif, « tout » veut dire « tout à fait » et reste invariable… sauf devant un adjectif féminin commençant par une consonne : « toute petite »."
+          qui: neo
       - retiens: "Adverbe *tout* = invariable, sauf devant un adjectif **féminin** commençant par **consonne** ou **h aspiré**."
     exercices:
       - type: mot
@@ -50,6 +54,10 @@ lecons:
     objectif: Je distingue même adjectif / adverbe, quelque / quel que.
     mots: [même, quelque, quel que]
     etapes:
+      - dialogue:
+          - zero: "« Quelque soit » ou « quel que soit » ? Je mets les deux au hasard…"
+          - mia: "Il y a une astuce sûre pour ne plus jamais hésiter. Voyons-la."
+      - a_quoi_ca_sert: "Ces mots sont des pièges classiques des concours et des dictées. Les maîtriser, c'est montrer une orthographe sûre."
       - texte: |
           **Même**
           - **adjectif** (= *identique*, ou après un pronom) : variable → *les **mêmes** goûts, eux-**mêmes**, elles-**mêmes**.*
@@ -59,6 +67,9 @@ lecons:
           - **quelque(s)** + nom = *un peu de, plusieurs* : *quelques amis, quelque temps.*
           - **quelque** + nombre = *environ* : invariable → *quelque deux cents personnes.*
           - **quel que** + verbe *être* au subjonctif : en deux mots, *quel* s'accorde avec le sujet → ***Quelle que** soit ta décision… **Quels que** soient tes choix…*
+      - astuce:
+          texte: "« Quel que » est suivi d'un verbe (souvent être) : « quelles que soient tes raisons ». « Quelque » est suivi d'un nom ou d'un adjectif."
+          qui: zero
       - retiens: "**Quel que soit** : en deux mots, et *quel* s'accorde avec le nom qui suit le verbe."
     exercices:
       - type: mot
@@ -83,6 +94,10 @@ lecons:
     objectif: J'accorde demi, nu et les couleurs, simples ou composées.
     mots: [demi, nu, couleur, adjectif composé]
     etapes:
+      - dialogue:
+          - zero: "Une demi-heure, une heure et demie… pourquoi un e d'un côté et pas de l'autre ?"
+          - neo: "Tout dépend de la place de « demi » ! Et les couleurs ont leurs propres règles."
+      - a_quoi_ca_sert: "Ces règles servent dès qu'on décrit : l'heure (midi et demie), les vêtements, les couleurs."
       - texte: |
           **Demi, nu**
           - **avant** le nom, avec un trait d'union : **invariable** → *une **demi**-heure, **nu**-pieds.*
@@ -92,6 +107,9 @@ lecons:
           - adjectif de couleur simple : **s'accorde** → *des robes **vertes**.*
           - nom employé comme couleur (marron, orange, cerise, olive…) : **invariable** → *des yeux **marron**.* Exceptions qui s'accordent : *rose, mauve, fauve, pourpre, écarlate* → *des rubans **roses***.
           - couleur **composée** : **invariable** → *des yeux **bleu clair**, des robes **bleu-vert**.*
+      - astuce:
+          texte: "Demi et nu placés devant le nom ne s'accordent pas et prennent un trait d'union : une demi-heure, nu-pieds. Derrière, ils s'accordent : une heure et demie."
+          qui: mia
       - retiens: "Couleur = adjectif simple ? On accorde. Nom ou mot composé ? Invariable (sauf rose, mauve, fauve, pourpre, écarlate)."
     exercices:
       - type: mot
@@ -119,6 +137,7 @@ lecons:
     etapes:
       - dialogue:
           - mia: "« Elle s'est lavée » mais « elle s'est lavé les mains » ? Pose la question : elle a lavé QUOI ?"
+      - a_quoi_ca_sert: "C'est la règle d'orthographe la plus difficile du français : la maîtriser, c'est atteindre un très bon niveau d'écriture."
       - texte: |
           1. Verbes **essentiellement pronominaux** (qui n'existent qu'avec *se* : s'enfuir, se souvenir, s'évanouir…) : accord avec le **sujet** → *Elles se sont **enfuies**.*
           2. Les autres : on remplace *être* par *avoir* et on cherche le **COD** :
@@ -126,6 +145,9 @@ lecons:
              - le COD est **après** → pas d'accord : *Elle s'est **lavé** les mains.*
              - *se* est **COI** (parler **à**, sourire **à**, plaire **à**, succéder **à**, ressembler **à**, téléphoner **à**…) → invariable : *Ils se sont **parlé**. Elles se sont **souri**.*
           3. **fait + infinitif** : toujours invariable → *Elle s'est **fait** couper les cheveux.* (Depuis 1990, *laissé + infinitif* aussi : *Elle s'est **laissé** surprendre.*)
+      - astuce:
+          texte: "Remplace « être » par « avoir » : « Elles se sont lavé les mains » → « elles ont lavé quoi ? les mains » (COD après) → pas d'accord."
+          qui: neo
       - retiens: "Pronominal : remplace *être* par *avoir*, cherche le COD. Avant → accord ; après ou absent → invariable."
     exercices:
       - type: mot
@@ -150,6 +172,10 @@ lecons:
     objectif: Je mets les noms composés au pluriel et je connais les rectifications de 1990.
     mots: [nom composé, rectifications de 1990]
     etapes:
+      - dialogue:
+          - zero: "Des porte-monnaies ou des porte-monnaie ? Des grand-mères ou des grands-mères ?"
+          - mia: "Une règle simple marche presque à tous les coups. Et la réforme de 1990 a tout simplifié."
+      - a_quoi_ca_sert: "Les noms composés sont nombreux (des porte-monnaie, des grands-mères). Les règles de 1990 simplifient beaucoup de cas."
       - texte: |
           On met au pluriel les **noms** et les **adjectifs**, jamais les **verbes**, **adverbes** ou **prépositions** :
           - nom + nom : *des choux-**fleurs**, des wagons-restaurants* — sauf si le 2ᵉ est un complément : *des timbres-poste* (de la poste) ;
@@ -158,6 +184,9 @@ lecons:
           - avec préposition : *des arcs-en-ciel, des pommes de terre*.
 
           **Rectifications de 1990** (facultatives, les deux graphies sont correctes) : *nénufar, ognon, évènement, chaine, il ruissèle, vingt-et-un, des après-midis, un compte-goutte / des compte-gouttes*.
+      - astuce:
+          texte: "Seuls les noms et les adjectifs peuvent prendre la marque du pluriel ; les verbes, les adverbes et les prépositions restent invariables."
+          qui: zero
       - retiens: "Seuls les **noms** et les **adjectifs** prennent la marque du pluriel. Les graphies de 1990 sont admises, jamais obligatoires."
     exercices:
       - type: mot
@@ -185,6 +214,10 @@ lecons:
       - dialogue:
           - neo: "Ma méthode de relecture : une passe pour les accords dans le groupe nominal, une passe pour les verbes, une passe pour les participes."
           - zero: "Trois passes… comme trois boucliers ! 🛡️"
+      - a_quoi_ca_sert: "La dictée entraîne à appliquer toutes les règles en même temps, comme dans la vraie vie quand tu écris un texte."
+      - astuce:
+          texte: "Relis trois fois : une fois pour le sens, une fois pour les accords (flèche du nom vers ses amis), une fois pour les verbes."
+          qui: mia
       - retiens: "Relis **trois fois** : accords du nom, accords du verbe, participes passés."
     exercices:
       - type: dictee

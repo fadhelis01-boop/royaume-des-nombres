@@ -24,6 +24,7 @@ lecons:
       - dialogue:
           - mia: "« Le prince ouvrit la porte, entra et vit la princesse. » C'est le temps des contes : le passé simple."
           - neo: "Trois familles de terminaisons : -a (chanter), -i (finir, prendre), -u (courir, lire), plus le cas des -in (venir, tenir)."
+      - a_quoi_ca_sert: "Le passé simple est le temps des contes et des romans : « Il était une fois… il partit… ». Le connaître permet de lire et d'écrire de vraies histoires."
       - texte: |
           | | 1er groupe (chanter) | -i (finir, prendre) | -u (courir) | venir |
           |---|---|---|---|---|
@@ -36,6 +37,9 @@ lecons:
       - attention:
           texte: "À la 3e personne du singulier du 1er groupe, **pas de t** : *il chant**a***. Et l'accent circonflexe aux 1re et 2e personnes du pluriel : *nous chant**â**mes, vous fin**î**tes*."
           qui: neo
+      - astuce:
+          texte: "Trois familles de terminaisons : -a (il chanta), -it (il finit, il prit), -ut (il voulut). Le 1ᵉʳ groupe garde toujours le a."
+          qui: mia
       - retiens: "Passé simple : **-ai, -as, -a, -âmes, -âtes, -èrent** (1er groupe) ; **-is/-us/-ins…** pour les autres."
     exercices:
       - type: mot
@@ -62,6 +66,7 @@ lecons:
     etapes:
       - dialogue:
           - neo: "Chaque temps simple a son jumeau composé : on conjugue l'auxiliaire à ce temps, et on ajoute le participe passé."
+      - a_quoi_ca_sert: "Les temps composés expriment qu'une action est terminée avant une autre : « Quand j'aurai fini, je sortirai »."
       - texte: |
           | temps simple de l'auxiliaire | temps composé | exemple |
           |---|---|---|
@@ -73,6 +78,9 @@ lecons:
 
           Le **plus-que-parfait** raconte une action **antérieure** à une autre action passée : *Quand il arriva, le train **était parti**.*
           Le **futur antérieur** : une action future **terminée avant** une autre : *Quand tu **auras fini**, nous partirons.*
+      - astuce:
+          texte: "Un temps composé, c'est un duo : l'auxiliaire au temps simple + le participe passé. Conjugue l'auxiliaire et le reste suit."
+          qui: neo
       - retiens: "Temps composé = **auxiliaire** (au temps simple correspondant) + **participe passé** (accordé avec être)."
     exercices:
       - type: mot
@@ -101,6 +109,7 @@ lecons:
       - dialogue:
           - zero: "Si j'étais un éléphant, je mangerais des tonnes de graines. Avec un S ! Parce que c'est un rêve. 😳"
           - mia: "Le conditionnel exprime ce qui dépend d'une condition, un souhait, une politesse : « Je voudrais un verre d'eau »."
+      - a_quoi_ca_sert: "Le conditionnel sert à rêver, à imaginer, à être poli : « Je voudrais… », « Si j'étais un oiseau, je volerais »."
       - texte: |
           **Radical du futur + terminaisons de l'imparfait** : *je chanter**ais**, tu finir**ais**, il prendr**ait**, nous ser**ions**, vous aur**iez**, ils ir**aient***.
 
@@ -138,6 +147,7 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Range ta chambre ! » « Allons-y ! » « Écoutez bien ! » L'impératif n'a que trois personnes et pas de sujet."
+      - a_quoi_ca_sert: "L'impératif sert à donner des ordres, des conseils, des consignes : les recettes, les règles de jeu et les modes d'emploi en sont remplis."
       - texte: |
           L'**impératif présent** n'a que **3 personnes** : 2e du singulier, 1re et 2e du pluriel, **sans pronom sujet**.
           - *chante, chantons, chantez* — *finis, finissons, finissez* — *prends, prenons, prenez*
@@ -146,6 +156,9 @@ lecons:
       - attention:
           texte: "Le s revient devant **en** et **y** pour la prononciation : *Manges-en ! Vas-y !*"
           qui: neo
+      - astuce:
+          texte: "À l'impératif, pas de sujet et pas de s pour les verbes en -er à la 2ᵉ personne : « Mange ! » (sauf devant en et y : « Manges-en ! »)."
+          qui: zero
       - retiens: "Impératif : **3 personnes, pas de sujet**. Verbes en -er : **pas de s** à « tu » (chante !)."
     exercices:
       - type: mot
@@ -173,12 +186,16 @@ lecons:
       - dialogue:
           - mia: "Le subjonctif, c'est le mode du souhait, du doute, de l'obligation : « Il faut que tu viennes. »"
           - zero: "Il faut que je mange. Il faut que je dorme. Il faut que je… re-mange. 😳"
+      - a_quoi_ca_sert: "Le subjonctif exprime un souhait, une obligation, un doute : « Il faut que tu viennes », « Je veux que tu sois là »."
       - texte: |
           On l'emploie après **il faut que, je veux que, je souhaite que, bien que, pour que, avant que**…
           Radical : celui de « ils » au présent (*ils chant-ent, ils finiss-ent, ils prenn-ent*) + **-e, -es, -e, -ions, -iez, -ent**.
 
           *Il faut que je chant**e**, que tu finiss**es**, qu'il prenn**e**, que nous fass**ions**, que vous soy**ez**, qu'ils ai**ent***.
           Irréguliers : être (*que je sois*), avoir (*que j'aie*), aller (*que j'aille*), faire (*que je fasse*), pouvoir (*que je puisse*), savoir (*que je sache*), vouloir (*que je veuille*).
+      - astuce:
+          texte: "Pour reconnaître le subjonctif, mets « il faut que » devant : il faut que je fasse, que tu ailles, qu'il soit."
+          qui: mia
       - retiens: "Subjonctif = **que** + radical de **ils** + **e, es, e, ions, iez, ent**. À connaître : sois, aie, aille, fasse, puisse, sache."
     exercices:
       - type: mot
@@ -207,6 +224,7 @@ lecons:
       - dialogue:
           - mia: "Dans un récit, l'imparfait peint le décor : « Il faisait nuit, la pluie tombait. »"
           - neo: "Et le passé simple fait avancer l'histoire : « Soudain, la porte s'ouvrit. » Le décor, puis l'action !"
+      - a_quoi_ca_sert: "Choisir le bon temps, c'est guider ton lecteur : il sait ce qui est le décor et ce qui fait avancer l'histoire."
       - texte: |
           - **Imparfait** : le **décor**, les descriptions, les **habitudes**, ce qui **dure** : *Le château **était** sombre. Chaque soir, le roi **lisait**.*
           - **Passé simple** : les **actions** principales, **soudaines**, qui se succèdent : *Un cri **retentit**. Le roi **se leva** et **courut** vers la fenêtre.*

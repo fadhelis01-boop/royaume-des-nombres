@@ -24,6 +24,7 @@ lecons:
       - dialogue:
           - zero: "Comment je trouve le verbe ? Il porte un chapeau spécial ?"
           - neo: "Mieux : il change quand on change de moment. « Aujourd'hui je saute, hier j'ai sauté, demain je sauterai. »"
+      - a_quoi_ca_sert: "Le verbe est le cœur de la phrase : il dit ce qui se passe. Sans verbe, pas d'action, pas d'histoire !"
       - texte: |
           Le **verbe** dit ce que fait le sujet (une **action** : courir, manger) ou comment il est (un **état** : être, sembler).
 
@@ -37,7 +38,7 @@ lecons:
       - retiens: "Le verbe **change avec le temps** (hier, demain) et se met **entre ne… et pas**."
     exercices:
       - type: surligner
-        vars: { t: ["Le chat [mange] sa pâtée.", "Mia [dessine] une étoile.", "Les enfants [jouent] dans la cour.", "Mon père [lit] le journal.", "Les oiseaux [chantent] au printemps.", "Nous [regardons] un film.", "Le vent [souffle] très fort.", "Tu [écris] une lettre."] }
+        vars: { t: ["Le chat [mange] sa pâtée.", "Lya [dessine] une étoile.", "Les enfants [jouent] dans la cour.", "Mon père [lit] le journal.", "Les oiseaux [chantent] au printemps.", "Nous [regardons] un film.", "Le vent [souffle] très fort.", "Tu [écris] une lettre."] }
         enonce: "Touche le verbe de la phrase."
         phrase: "{{t}}"
         correction: "Le verbe change quand on dit « hier » ou « demain »."
@@ -61,6 +62,7 @@ lecons:
       - dialogue:
           - mia: "Quand un verbe se repose, il reprend son nom de famille : son infinitif. « Il chante » vient de « chanter »."
           - neo: "Astuce : dis « il faut… » devant. Il faut chanter, il faut finir, il faut prendre."
+      - a_quoi_ca_sert: "L'infinitif est le nom de famille du verbe : c'est sous cette forme qu'on le cherche dans le dictionnaire et qu'on apprend à le conjuguer."
       - texte: |
           L'**infinitif** est le « nom » du verbe, celui qu'on trouve dans le dictionnaire : **chanter, finir, prendre**.
 
@@ -100,16 +102,20 @@ lecons:
       - dialogue:
           - neo: "Pour trouver le sujet, je pose la question magique : « Qui est-ce qui » + verbe ?"
           - zero: "« Qui est-ce qui mange ? » … MOI ! Zéro ! Je suis le sujet !"
+      - a_quoi_ca_sert: "Trouver le sujet, c'est savoir qui fait l'action, et donc bien accorder le verbe : « les enfants jouent », pas « jouent » tout seul."
       - texte: |
           Le **sujet** dit **qui** fait l'action. Je le trouve avec la question **« Qui est-ce qui … ? »** (ou « Qu'est-ce qui … ? »).
 
           *Les enfants jouent.* → Qui est-ce qui joue ? → **les enfants** : c'est le sujet.
 
           Le sujet peut être un **nom** (*le chat*), un **groupe** (*le petit chat noir*), un **pronom** (*il*), un **nom propre** (*Léa*).
+      - astuce:
+          texte: "Pose la question « Qui est-ce qui… ? » devant le verbe, ou encadre avec « C'est… qui » : « C'est le chat qui dort. » Le sujet est piégé !"
+          qui: neo
       - retiens: "**Qui est-ce qui** + verbe ? La réponse est le **sujet**. Il commande l'accord du verbe."
     exercices:
       - type: surligner
-        vars: { t: ["[Le chien] aboie fort.", "[Mia] lit une histoire.", "[Les élèves] écoutent la maîtresse.", "[Mon petit frère] dort encore.", "Dans le ciel, [les nuages] passent.", "[Nous] partons demain.", "[La pluie] tombe sur le toit."] }
+        vars: { t: ["[Le chien] aboie fort.", "[Lya] lit une histoire.", "[Les élèves] écoutent la maîtresse.", "[Mon petit frère] dort encore.", "Dans le ciel, [les nuages] passent.", "[Nous] partons demain.", "[La pluie] tombe sur le toit."] }
         enonce: "Touche le sujet (qui est-ce qui… ?)."
         phrase: "{{t}}"
         correction: "Pose la question « Qui est-ce qui » + verbe."
@@ -133,8 +139,9 @@ lecons:
     mots: [pronom]
     etapes:
       - dialogue:
-          - mia: "« Mia mange. Mia lit. Mia dort. » C'est lourd ! On dit plutôt : « Elle mange. Elle lit. Elle dort. »"
+          - mia: "« Lya mange. Lya lit. Lya dort. » C'est lourd ! On dit plutôt : « Elle mange. Elle lit. Elle dort. »"
           - neo: "« Elle » est un pronom : il remplace le nom pour éviter les répétitions."
+      - a_quoi_ca_sert: "Les pronoms évitent de répéter sans arrêt les mêmes noms : « Léo prend son vélo. Il part. » au lieu de « Léo… Léo… Léo… »."
       - texte: |
           | | singulier | pluriel |
           |---|---|---|
@@ -146,10 +153,13 @@ lecons:
       - attention:
           texte: "Un groupe mélangé (garçons et filles) se remplace par **ils**."
           qui: neo
+      - astuce:
+          texte: "Je, tu, il/elle/on, nous, vous, ils/elles : récite-les comme une comptine, toujours dans le même ordre, et la conjugaison suivra."
+          qui: mia
       - retiens: "Masculin → **il / ils** ; féminin → **elle / elles** ; moi + quelqu'un → **nous** ; toi + quelqu'un → **vous**."
     exercices:
       - type: qcm
-        vars: { t: [["Le chien", "il", "elle", "ils"], ["La poule", "elle", "il", "elles"], ["Les garçons", "ils", "il", "elles"], ["Les filles", "elles", "ils", "elle"], ["Tom et Léa", "ils", "elles", "nous"], ["Papa et moi", "nous", "vous", "ils"], ["Ta sœur et toi", "vous", "nous", "elles"], ["Mia", "elle", "il", "nous"]] }
+        vars: { t: [["Le chien", "il", "elle", "ils"], ["La poule", "elle", "il", "elles"], ["Les garçons", "ils", "il", "elles"], ["Les filles", "elles", "ils", "elle"], ["Tom et Léa", "ils", "elles", "nous"], ["Papa et moi", "nous", "vous", "ils"], ["Ta sœur et toi", "vous", "nous", "elles"], ["Lya", "elle", "il", "nous"]] }
         enonce: "Par quel pronom remplacer « {{t_0}} » ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} → {{t_1}}."
@@ -160,7 +170,7 @@ lecons:
         niveau: 2
         correction: "{{t_1}}"
       - type: qcm
-        vars: { t: [["Mia et moi", "nous", "vous", "ils"], ["Toi et Néo", "vous", "nous", "ils"], ["Léa et Lucie", "elles", "ils", "nous"], ["Tom et Léa", "ils", "elles", "vous"], ["Ma mère et moi", "nous", "elles", "vous"], ["Ton frère et toi", "vous", "ils", "nous"]] }
+        vars: { t: [["Lya et moi", "nous", "vous", "ils"], ["Toi et Néo", "vous", "nous", "ils"], ["Léa et Lucie", "elles", "ils", "nous"], ["Tom et Léa", "ils", "elles", "vous"], ["Ma mère et moi", "nous", "elles", "vous"], ["Ton frère et toi", "vous", "ils", "nous"]] }
         enonce: "Quel pronom remplace « {{t_0}} » ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}} — avec « moi », c'est nous ; avec « toi », c'est vous ; un seul garçon dans le groupe, c'est ils."
@@ -220,6 +230,7 @@ lecons:
       - dialogue:
           - mia: "Ces quatre verbes sont partout ! Et ils n'en font qu'à leur tête : il faut les apprendre par cœur."
           - zero: "Je suis, tu es, il est… On dirait une chanson. Une chanson très bizarre."
+      - a_quoi_ca_sert: "Être, avoir et aller sont les verbes les plus utilisés du français : ils servent dans presque toutes les phrases et pour fabriquer d'autres temps."
       - texte: |
           | | être | avoir | aller | faire |
           |---|---|---|---|---|
@@ -232,6 +243,9 @@ lecons:
       - attention:
           texte: "On dit « vous **faites** » et jamais « vous faisez » !"
           qui: neo
+      - astuce:
+          texte: "Pour « avoir », retiens la chanson : j'ai, tu as, il a, nous avons, vous avez, ils ont. Et « ils ont » ne s'écrit jamais « ils on »."
+          qui: zero
       - retiens: "Je **suis**, j'**ai**, je **vais**, je **fais**… À réciter comme une chanson."
     exercices:
       - type: mot

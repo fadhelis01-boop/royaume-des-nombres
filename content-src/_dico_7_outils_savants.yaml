@@ -1,5 +1,5 @@
 # Dictionnaire — mots-outils, mots du monde (ville, métiers, temps) et mots savants.
-- { m: et, n: c, d: "Conjonction qui ajoute, relie deux éléments. Ne pas confondre avec « est » (verbe être).", e: "Mia et Néo jouent.", t: outils }
+- { m: et, n: c, d: "Conjonction qui ajoute, relie deux éléments. Ne pas confondre avec « est » (verbe être).", e: "Lya et Néo jouent.", t: outils }
 - { m: mais, n: c, d: "Conjonction qui marque une opposition.", e: "Il est petit mais costaud.", s: [cependant, pourtant], t: outils }
 - { m: ou, n: c, d: "Conjonction qui marque un choix (= ou bien). Ne pas confondre avec « où » (le lieu).", e: "Tu veux du thé ou du lait ?", t: outils }
 - { m: où, n: pr, d: "Mot qui indique le lieu ou le moment.", e: "Où vas-tu ? La ville où je suis né.", t: outils }

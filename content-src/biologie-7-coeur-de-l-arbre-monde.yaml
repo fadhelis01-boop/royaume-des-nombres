@@ -20,10 +20,17 @@ lecons:
     objectif: J'explique pourquoi des cellules ayant le même ADN sont différentes.
     mots: [expression des gènes, régulation, différenciation, épigénétique]
     etapes:
+      - dialogue:
+          - zero: "Toutes mes cellules ont le même ADN… alors pourquoi mon œil n'est pas un muscle ?"
+          - neo: "Excellente question ! Chaque cellule n'utilise qu'une partie des gènes."
+      - a_quoi_ca_sert: "La régulation des gènes explique comment une même cellule-œuf donne un œil, un neurone ou un muscle, et ouvre la voie à de nouvelles thérapies."
       - texte: |
           Presque toutes tes cellules ont **le même ADN**. Pourtant un neurone et une cellule de peau sont très différents : chaque type de cellule n'**exprime** qu'une partie de ses gènes. C'est la **régulation de l'expression des gènes**.
           Des protéines régulatrices **allument** ou **éteignent** les gènes selon le tissu, le moment de la vie ou l'environnement. Au cours du développement, les cellules se **différencient** ainsi.
           L'**épigénétique** étudie des marques chimiques sur l'ADN et ses protéines d'emballage qui modifient l'expression des gènes **sans changer la séquence** ; certaines sont influencées par l'environnement.
+      - astuce:
+          texte: "Toutes tes cellules ont le même livre de recettes, mais chacune n'ouvre que certaines pages : c'est l'expression des gènes."
+          qui: neo
       - retiens: "Même ADN, gènes exprimés différents. La régulation allume ou éteint les gènes ; l'épigénétique modifie l'expression sans changer la séquence."
     exercices:
       - type: qcm
@@ -47,11 +54,18 @@ lecons:
     objectif: Je connais les outils modernes de la génétique et leurs enjeux éthiques.
     mots: [génome, séquençage, CRISPR-Cas9, thérapie génique, bioéthique]
     etapes:
+      - dialogue:
+          - zero: "On peut modifier un gène comme on corrige une faute d'orthographe ?"
+          - mia: "Oui, avec un outil appelé CRISPR. C'est puissant… et ça pose de vraies questions."
+      - a_quoi_ca_sert: "CRISPR permet de corriger des gènes : des maladies génétiques commencent à être soignées grâce à ces outils, ce qui pose aussi des questions éthiques."
       - texte: |
           - Le **génome humain** (environ 3 milliards de paires de bases) a été séquencé pour la première fois en 2003 (Projet Génome humain) ; aujourd'hui, séquencer un génome coûte bien moins cher et prend quelques jours.
           - **CRISPR-Cas9** est un outil qui permet de **couper l'ADN à un endroit précis** pour le modifier. Il vient d'un système de défense des bactéries contre les virus. **Emmanuelle Charpentier** et **Jennifer Doudna** ont reçu le prix Nobel de chimie 2020 pour cette découverte.
           - Applications : recherche, agriculture, premières **thérapies géniques** (par exemple pour certaines maladies du sang).
           - **Éthique** : modifier l'ADN d'embryons humains (transmis à la descendance) est interdit dans de nombreux pays ; la **bioéthique** réfléchit aux limites (sécurité, consentement, inégalités, « bébés à la carte »).
+      - astuce:
+          texte: "CRISPR, c'est des ciseaux guidés : un ARN guide trouve l'endroit exact dans l'ADN, et la protéine Cas9 coupe."
+          qui: zero
       - retiens: "Génome séquencé (2003). CRISPR-Cas9 coupe l'ADN avec précision (Nobel 2020 : Charpentier et Doudna). Grandes promesses, grandes questions éthiques."
     exercices:
       - type: qcm
@@ -75,10 +89,17 @@ lecons:
     objectif: J'explique le rôle du microbiote dans la santé.
     mots: [microbiote, symbiose, antibiotique, dysbiose]
     etapes:
+      - dialogue:
+          - zero: "Il y a vraiment des milliards de bactéries dans mon ventre ?"
+          - neo: "Oui, et elles t'aident beaucoup ! C'est ton microbiote."
+      - a_quoi_ca_sert: "Le microbiote influence la digestion, l'immunité et peut-être l'humeur : prendre soin de lui, c'est prendre soin de sa santé."
       - texte: |
           Notre intestin abrite des milliers de milliards de micro-organismes (bactéries surtout) : le **microbiote intestinal**. C'est une **symbiose** : nous leur offrons un habitat et de la nourriture ; ils nous aident à **digérer** les fibres, produisent certaines **vitamines** (K, B) et **éduquent notre système immunitaire**.
           Un déséquilibre (**dysbiose**) est associé à diverses maladies ; les **antibiotiques**, utiles contre les infections, perturbent aussi le microbiote : à n'utiliser que sur prescription.
           Une alimentation variée, riche en **fibres** (légumes, fruits, céréales complètes, légumineuses), favorise un microbiote diversifié.
+      - astuce:
+          texte: "Ton intestin abrite autant de bactéries que ton corps compte de cellules. Les fibres (légumes, fruits, céréales complètes) sont leur nourriture préférée."
+          qui: mia
       - retiens: "Microbiote = symbiose : digestion des fibres, vitamines, immunité. Fibres et variété le nourrissent ; les antibiotiques le perturbent."
     exercices:
       - type: qcm
@@ -103,10 +124,17 @@ lecons:
     objectif: Je modélise simplement la croissance d'une population.
     mots: [population, croissance exponentielle, capacité de charge, proies-prédateurs]
     etapes:
+      - dialogue:
+          - zero: "Si les lapins font plein de bébés, ils vont remplir toute la Terre ?"
+          - mia: "Non, la nourriture et la place finissent par manquer. On peut modéliser tout ça !"
+      - a_quoi_ca_sert: "Ces modèles servent à gérer la pêche, à protéger les espèces menacées et à prévoir la propagation des épidémies."
       - texte: |
           - Sans limite, une population **double** à intervalles réguliers : croissance **exponentielle** (une bactérie qui se divise toutes les 20 min donne plus d'un milliard de bactéries en 10 h).
           - En réalité, les ressources sont limitées : la population se stabilise autour de la **capacité de charge** du milieu (courbe en S, « logistique »).
           - **Proies et prédateurs** : quand les proies abondent, les prédateurs se multiplient ; puis les proies diminuent, et les prédateurs aussi… d'où des **cycles** décalés (célèbre exemple : lièvres et lynx du Canada).
+      - astuce:
+          texte: "Une population grandit d'abord très vite (exponentielle), puis ralentit quand la nourriture ou la place manque : la courbe prend une forme de S."
+          qui: neo
       - retiens: "Sans limite : croissance exponentielle (doublements). Avec ressources limitées : stabilisation (capacité de charge). Proies-prédateurs : cycles décalés."
     exercices:
       - type: nombre

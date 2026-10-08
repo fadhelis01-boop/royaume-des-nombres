@@ -19,6 +19,10 @@ lecons:
     objectif: J'organise mon entraînement musical.
     mots: [entraînement, régularité, tempo, métronome]
     etapes:
+      - dialogue:
+          - zero: "J'ai joué du piano trois heures dimanche, et lundi j'avais tout oublié !"
+          - mia: "Dix minutes chaque jour, c'est bien plus efficace. Organisons ton entraînement."
+      - a_quoi_ca_sert: "Bien s'entraîner sert pour la musique, mais aussi pour le sport, les langues ou les maths : peu mais souvent vaut mieux que beaucoup une fois."
       - texte: |
           Les méthodes des musiciens (qui marchent aussi pour tout apprendre) :
           1. **Un peu chaque jour** plutôt que beaucoup une fois par semaine (10 à 20 minutes, c'est déjà très bien).
@@ -26,6 +30,9 @@ lecons:
           3. **Lentement d'abord**, sans erreur, puis on accélère petit à petit avec un **métronome**.
           4. **Répéter juste** : une erreur répétée s'apprend aussi ! On ralentit dès qu'on se trompe.
           5. **S'écouter** (ou s'enregistrer) pour repérer ce qu'on peut améliorer.
+      - astuce:
+          texte: "Dix minutes chaque jour valent mieux qu'une heure le dimanche. Travaille d'abord lentement et juste : la vitesse viendra toute seule."
+          qui: mia
       - retiens: "Un peu chaque jour, découper, lentement puis plus vite, répéter juste, s'écouter."
     exercices:
       - type: qcm
@@ -49,6 +56,10 @@ lecons:
     objectif: Je compte les temps et je frappe un rythme régulier.
     mots: [pulsation, temps, battement]
     etapes:
+      - dialogue:
+          - zero: "Je tape dans mes mains, mais je vais de plus en plus vite…"
+          - neo: "Il te faut un rythme régulier ! On compte ensemble : 1, 2, 3, 4."
+      - a_quoi_ca_sert: "Garder un rythme régulier permet de jouer avec d'autres, de danser et même de mieux lire à voix haute."
       - texte: |
           La **pulsation** est le battement régulier de la musique, comme un cœur : c'est ce que tu frappes du pied.
           On compte les **temps** à voix haute : « **1, 2, 3, 4** ». Pour les moitiés de temps : « **1 et 2 et 3 et 4 et** ».
@@ -57,6 +68,9 @@ lecons:
           type: son
           sons: [{ etiquette: "Pulsation à 60", rythme: "X.x.x.x.", tempo: 60 }, { etiquette: "Pulsation à 120", rythme: "X.x.x.x.", tempo: 120 }]
         legende: "Écoute la même pulsation lente puis rapide. Frappe dans tes mains avec elle !"
+      - astuce:
+          texte: "Compte à voix haute « 1, 2, 3, 4 » en tapant du pied sur le 1. Le pied garde le temps, les mains font le rythme."
+          qui: zero
       - retiens: "Pulsation = battement régulier. On compte « 1 et 2 et… ». Tempo en BPM : 60 BPM = 1 battement par seconde."
     exercices:
       - type: nombre
@@ -81,6 +95,10 @@ lecons:
     objectif: J'utilise des astuces pour retenir une mélodie.
     mots: [mémoriser, phrase musicale, répétition]
     etapes:
+      - dialogue:
+          - zero: "J'ai entendu une chanson trop bien, mais je ne m'en souviens plus !"
+          - mia: "Il existe des astuces pour retenir une mélodie. Je te les montre."
+      - a_quoi_ca_sert: "Retenir une mélodie sert à chanter, à jouer d'oreille et aide aussi la mémoire en général : on retient mieux une leçon chantée !"
       - texte: |
           - Écoute le morceau plusieurs fois **avant** de le jouer.
           - **Chante-le** (même doucement) : ce qu'on chante, on le retient.
@@ -91,6 +109,9 @@ lecons:
           type: son
           sons: [{ etiquette: "Phrase 1", notes: "Do4 Do4 Do4 Ré4 Mi4:2 Ré4:2", tempo: 100 }, { etiquette: "Phrase 2", notes: "Do4 Mi4 Ré4 Ré4 Do4:4", tempo: 100 }]
         legende: "« Au clair de la lune » (chanson traditionnelle) : deux phrases à mémoriser l'une après l'autre."
+      - astuce:
+          texte: "Découpe la mélodie en petits morceaux, chante-les avec des « la la », puis recolle les morceaux. Une phrase musicale à la fois."
+          qui: neo
       - retiens: "Écouter, chanter, repérer les répétitions, apprendre phrase par phrase, dormir dessus."
     exercices:
       - type: qcm
@@ -115,11 +136,18 @@ lecons:
     objectif: Je connais les gestes pour protéger mon audition et ma voix.
     mots: [décibel, audition, bouchons d'oreille, voix]
     etapes:
+      - dialogue:
+          - zero: "J'écoute ma musique à fond, c'est meilleur !"
+          - neo: "Tes oreilles ne se réparent pas, Zéro ! Voyons comment les protéger."
+      - a_quoi_ca_sert: "Tes oreilles doivent te servir toute la vie : une audition abîmée par le bruit ne se répare pas."
       - texte: |
           **Les oreilles** : au-delà de **85 dB** pendant longtemps, l'oreille interne s'abîme, et c'est **définitif**. Signes d'alerte : sifflements, oreilles « cotonneuses » après un concert.
           - Garde le volume des écouteurs **en dessous de la moitié** et fais des pauses.
           - Au concert, éloigne-toi des enceintes et mets des **bouchons d'oreille**.
           **La voix** : on ne force pas en criant ; on boit de l'eau ; on s'échauffe en douceur (sirènes « ouuu » du grave à l'aigu, bourdonnements « mmm »).
+      - astuce:
+          texte: "La règle 60/60 pour les écouteurs : pas plus de 60 % du volume, pas plus de 60 minutes d'affilée. Et des bouchons d'oreilles en concert."
+          qui: mia
       - retiens: "Au-delà de 85 dB longtemps : danger définitif. Volume modéré, pauses, bouchons au concert. La voix ne se force pas : s'échauffer et boire."
     exercices:
       - type: classer

@@ -87,7 +87,12 @@ lecons:
       - …
 ```
 
-Personnages des dialogues : `mia`, `neo`, `zero`, `narrateur`, `nuage` (le Grignoteur), `ixe`, `gribouille`, `neutre` (le Grand Neutre), `enfant` (l'avatar de l'enfant) ; humeur facultative : `-joie`, `-surprise`, `-reflexion`, `-triste`, `-fier` (ex. `zero-surprise`).
+**Charte de chaque leçon** (vérifiée au build, simple avertissement) : une scène des mascottes (`dialogue`) en ouverture, un `a_quoi_ca_sert` (la motivation, juste après la scène) et une `astuce` (un moyen de retenir, juste avant `retiens`). Les mondes du cycle `astuces` sont dispensés de l'étape `astuce`.
+
+Les Muses peuvent parler dans les histoires : `acidia` (chimie), `gravis` (physique), `seve` (biologie), `uranie` (Terre & Univers), `resonance` (musique), `pinceau` (dessin).
+
+
+Personnages des dialogues : `mia` (Lya π : l'identifiant interne est resté `mia`), `neo`, `zero`, `narrateur`, `nuage` (le Grignoteur), `ixe`, `gribouille`, `neutre` (le Grand Neutre), `enfant` (l'avatar de l'enfant) ; humeur facultative : `-joie`, `-surprise`, `-reflexion`, `-triste`, `-fier` (ex. `zero-surprise`).
 
 Des questions « À toi de jouer » sont **insérées automatiquement** toutes les deux étapes du cours (les exercices les plus faciles d'abord). Pour l'éviter : `auto_questions: false` dans la leçon.
 

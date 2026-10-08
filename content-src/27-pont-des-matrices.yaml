@@ -34,6 +34,9 @@ lecons:
           enonce: "$A = \\begin{pmatrix} {{a}} & {{b}} \\\\ {{c}} & {{d}} \\end{pmatrix}$. Que vaut $a_{21}$ ?"
           reponse: "c"
           correction: "Ligne 2, colonne 1 : {{c}}."
+      - astuce:
+          texte: "Une matrice « n × p » a n lignes et p colonnes. Retiens « Lignes puis Colonnes », comme lire un livre : d'abord la ligne, puis la position dans la ligne."
+          qui: neo
     exercices:
       - type: champs
         vars: { a: "-5..9", b: "-5..9", c: "-5..9", d: "-5..9", e: "-5..9", f: "-5..9", g: "-5..9", h: "-5..9" }
@@ -78,6 +81,9 @@ lecons:
           enonce: "Coefficient en haut à gauche de $\\begin{pmatrix} {{nb(a)}} & {{nb(b)}} \\\\ 1 & 2 \\end{pmatrix}\\begin{pmatrix} {{nb(e)}} & 0 \\\\ {{nb(g)}} & 1 \\end{pmatrix}$ ?"
           reponse: "a*e + b*g"
           correction: "${{nb(a)}} \\times ({{nb(e)}}) + {{nb(b)}} \\times ({{nb(g)}}) = {{nb(a*e+b*g)}}$"
+      - astuce:
+          texte: "Ligne × colonne : chaque coefficient du produit est la rencontre d'une ligne de la 1ʳᵉ matrice avec une colonne de la 2ᵉ. Et AB ≠ BA en général !"
+          qui: zero
     exercices:
       - type: champs
         vars: { a: "-3..3", b: "-3..3", c: "-3..3", d: "-3..3", e: "-3..3", f: "-3..3", g: "-3..3", h: "-3..3" }
@@ -120,6 +126,9 @@ lecons:
           enonce: "$\\det\\begin{pmatrix} {{nb(a)}} & {{nb(b)}} \\\\ {{nb(c)}} & {{nb(d)}} \\end{pmatrix} = ?$"
           reponse: "a*d - b*c"
           correction: "${{nb(a)}} \\times ({{nb(d)}}) - {{nb(b)}} \\times ({{nb(c)}}) = {{nb(a*d-b*c)}}$"
+      - astuce:
+          texte: "Déterminant d'une matrice 2 × 2 : ad − bc. S'il vaut 0, la matrice n'a pas d'inverse et le système n'a pas de solution unique."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "-6..6", b: "-6..6", c: "-6..6", d: "-6..6" }
@@ -165,6 +174,9 @@ lecons:
           enonce: "Beau temps → beau temps : {{nb(p)}} ; pluie → beau temps : {{nb(q)}}. Aujourd'hui il fait beau. Probabilité qu'il fasse beau dans 2 jours ?"
           reponse: "p*p + (1-p)*q"
           correction: "$ {{nb(p)}} \\times {{nb(p)}} + {{nb(1-p)}} \\times {{nb(q)}} = {{nb(p*p+(1-p)*q)}}$"
+      - astuce:
+          texte: "Dans une matrice de transition, chaque ligne additionne des probabilités : leur somme doit toujours faire 1."
+          qui: neo
     exercices:
       - type: nombre
         vars: { p: [0.6, 0.8], q: [0.2, 0.4] }

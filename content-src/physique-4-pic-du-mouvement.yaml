@@ -21,12 +21,16 @@ lecons:
     mots: [référentiel, trajectoire, mouvement, repos]
     etapes:
       - dialogue:
-          - zero: "Dans le train, je suis immobile sur mon siège. Mais Mia, sur le quai, dit que je file à 200 km/h ! Qui a raison ?"
+          - zero: "Dans le train, je suis immobile sur mon siège. Mais Lya, sur le quai, dit que je file à 200 km/h ! Qui a raison ?"
           - neo: "Vous avez raison tous les deux : tout dépend de ce qu'on prend comme repère, le **référentiel**."
+      - a_quoi_ca_sert: "Le référentiel explique pourquoi, dans un train, tu as l'impression que c'est le paysage qui bouge. Il est indispensable pour les GPS et les fusées."
       - texte: |
           Un objet est **en mouvement** ou **au repos** **par rapport à** un objet de référence, le **référentiel**.
           La **trajectoire** est le chemin suivi : **rectiligne** (droite), **circulaire** (cercle), **curviligne** (courbe quelconque).
           Le mouvement est **uniforme** si la vitesse est constante, **accéléré** si elle augmente, **ralenti** si elle diminue.
+      - astuce:
+          texte: "Avant de dire « ça bouge », demande-toi : « par rapport à quoi ? ». Assis dans le bus, tu es immobile par rapport au bus mais tu bouges par rapport à la route."
+          qui: zero
       - retiens: "Mouvement et repos dépendent du référentiel. Trajectoire rectiligne, circulaire ou curviligne. Uniforme, accéléré ou ralenti."
     exercices:
       - type: qcm
@@ -51,9 +55,16 @@ lecons:
     objectif: J'utilise v = d / t avec les bonnes unités.
     mots: [vitesse moyenne, distance, durée]
     etapes:
+      - dialogue:
+          - zero: "J'ai couru 100 m en 20 secondes. Je suis rapide ?"
+          - mia: "Calculons ta vitesse et comparons-la à d'autres !"
+      - a_quoi_ca_sert: "Calculer une vitesse sert pour un voyage, un entraînement sportif ou pour comprendre les panneaux de limitation."
       - texte: |
           $$v = \frac{d}{t}$$ (vitesse moyenne = distance ÷ durée). Si d en m et t en s → v en m/s ; si d en km et t en h → v en km/h.
           On en déduit $d = v \times t$ et $t = d / v$.
+      - astuce:
+          texte: "v = d / t : vitesse = distance divisée par le temps. Dans « km/h », le « / » te rappelle déjà la division : des km divisés par des heures !"
+          qui: neo
       - retiens: "$v = d/t$, $d = v \\times t$, $t = d/v$. Vérifie que les unités vont ensemble !"
     exercices:
       - type: nombre
@@ -82,6 +93,10 @@ lecons:
     objectif: Je décris une force par ses 4 caractéristiques.
     mots: [force, newton, vecteur, dynamomètre]
     etapes:
+      - dialogue:
+          - zero: "Une force, ça se dessine ?"
+          - neo: "Oui, avec une flèche ! Elle a un point de départ, une direction, un sens et une longueur."
+      - a_quoi_ca_sert: "Représenter les forces permet aux ingénieurs de construire des ponts, des grues et des immeubles qui ne s'écroulent pas."
       - texte: |
           Une force est une **action** d'un objet sur un autre. On la représente par une **flèche** (un vecteur) qui précise :
           1. le **point d'application** (où elle agit) ;
@@ -89,6 +104,9 @@ lecons:
           3. le **sens** (vers le haut, vers la droite…) ;
           4. la **valeur** (l'intensité), en **newtons** (N), mesurée avec un **dynamomètre**.
           Forces de **contact** (la main qui pousse, le frottement, la réaction du sol) et forces **à distance** (le poids, la force magnétique, la force électrique).
+      - astuce:
+          texte: "Une force a 4 caractéristiques, retiens « PDSV » : Point d'application, Direction, Sens, Valeur."
+          qui: mia
       - retiens: "Une force : point d'application, direction, sens, valeur (en N). Contact ou à distance."
     exercices:
       - type: classer
@@ -113,11 +131,18 @@ lecons:
     objectif: Je calcule un poids avec P = m × g.
     mots: [masse, poids, intensité de pesanteur]
     etapes:
+      - dialogue:
+          - zero: "Sur la Lune, je serais plus léger ?"
+          - mia: "Ton poids serait 6 fois plus petit, mais ta masse resterait la même. Je t'explique la différence."
+      - a_quoi_ca_sert: "Sur la Lune, un astronaute garde sa masse mais pèse 6 fois moins : savoir distinguer les deux est essentiel pour les voyages spatiaux."
       - texte: |
           - La **masse** m (en **kg**) est la quantité de matière : elle est **la même partout**, sur Terre comme sur la Lune.
           - Le **poids** P (en **N**) est la force d'attraction de la planète : il **dépend de l'endroit**.
           $$P = m \times g$$ avec g ≈ **9,8 N/kg** sur Terre, ≈ **1,6 N/kg** sur la Lune, ≈ 3,7 N/kg sur Mars.
           Sur la Lune, un astronaute garde sa masse mais pèse environ **6 fois moins** : il bondit !
+      - astuce:
+          texte: "La masse (kg) ne change jamais, c'est la quantité de matière. Le poids (N) dépend de la planète : P = m × g, avec g ≈ 10 N/kg sur Terre."
+          qui: zero
       - retiens: "Masse (kg) : la même partout. Poids (N) : P = m × g. g ≈ 9,8 N/kg sur Terre, 1,6 N/kg sur la Lune."
     exercices:
       - type: nombre
@@ -145,12 +170,18 @@ lecons:
     objectif: J'énonce le principe d'inertie et le principe des actions réciproques.
     mots: [inertie, action, réaction, Newton]
     etapes:
+      - dialogue:
+          - zero: "Si je lance une balle dans l'espace, elle s'arrête quand ?"
+          - neo: "Jamais, s'il n'y a rien pour la freiner ! C'est la première loi de Newton."
       - histoire:
           titre: Galilée et Newton
           texte: "Pendant des siècles, on a cru qu'un objet s'arrête « naturellement » si on cesse de le pousser. **Galilée** (vers 1600) comprend que c'est le **frottement** qui l'arrête. **Isaac Newton** publie en 1687 ses lois du mouvement. **Émilie du Châtelet** traduit son grand ouvrage en français au XVIIIᵉ siècle, en l'enrichissant de commentaires : sa traduction est encore utilisée."
       - texte: |
           **Principe d'inertie** (1ʳᵉ loi) : si les forces qui agissent sur un objet **se compensent** (ou s'il n'y en a aucune), il reste **immobile** ou continue en **ligne droite à vitesse constante**. Un palet sur la glace glisse longtemps parce qu'il y a très peu de frottement.
           **Actions réciproques** (3ᵉ loi) : si A exerce une force sur B, alors B exerce sur A une force de **même valeur**, même direction, **sens opposé**. Tu pousses le mur, le mur te pousse. La fusée pousse les gaz vers le bas, les gaz poussent la fusée vers le haut.
+      - astuce:
+          texte: "Inertie : « un objet garde son mouvement si rien ne le pousse ». Actions réciproques : « si tu pousses un mur, le mur te pousse aussi »."
+          qui: neo
       - retiens: "Forces compensées : repos ou mouvement rectiligne uniforme. A agit sur B ⇒ B agit sur A, même valeur, sens opposé."
       - a_quoi_ca_sert: "La ceinture de sécurité (sans elle, ton corps continue tout droit quand la voiture freine), les fusées, la nage (tu pousses l'eau vers l'arrière)."
     exercices:
@@ -176,10 +207,17 @@ lecons:
     objectif: J'utilise ρ = m / V et je comprends la pression.
     mots: [masse volumique, densité, pression, pascal]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi je m'enfonce dans la neige, mais pas avec des raquettes ?"
+          - mia: "Une question de pression ! La force est répartie sur une plus grande surface."
+      - a_quoi_ca_sert: "La masse volumique explique pourquoi l'huile flotte sur l'eau ; la pression explique pourquoi un couteau aiguisé coupe et pourquoi les raquettes empêchent de s'enfoncer dans la neige."
       - texte: |
           **Masse volumique** : $\rho = \dfrac{m}{V}$ (kg/m³ ou g/cm³). Eau : **1 g/cm³** (1 000 kg/m³) ; huile ≈ 0,92 ; fer ≈ 7,9 ; or ≈ 19,3 ; liège ≈ 0,2.
           Un objet plein **flotte** sur l'eau si sa masse volumique est **plus petite** que celle de l'eau.
           **Pression** : force répartie sur une surface, $p = \dfrac{F}{S}$ (en **pascals**, Pa). Même force sur une petite surface = forte pression : le couteau aiguisé coupe, les raquettes à neige empêchent de s'enfoncer.
+      - astuce:
+          texte: "Pression = force / surface. Petite surface = grande pression (talon aiguille). Grande surface = petite pression (raquette à neige)."
+          qui: mia
       - retiens: "$\\rho = m/V$ ; eau = 1 g/cm³ ; flotte si ρ < 1 g/cm³. $p = F/S$ : petite surface → grande pression."
     exercices:
       - type: nombre

@@ -207,7 +207,7 @@ export function Tables({ initialOp = "x" }: { initialOp?: Op }) {
           </button>
         ))}
       </div>
-      <h2>Les trucs de Mia</h2>
+      <h2>Les trucs de Lya</h2>
       <ul className="trucs">
         {Object.entries(TRUCS).map(([t, s]) => (
           <li key={t}>

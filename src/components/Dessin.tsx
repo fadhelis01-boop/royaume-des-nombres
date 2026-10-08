@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "re
 import { dbGet, dbSet } from "../lib/db";
 import { activeChild } from "../lib/store";
 
-// Outil de dessin de l'Atelier de Mia (bible §32) : une toile tactile (doigt, souris, stylet
+// Outil de dessin de l'Atelier de Lya (bible §32) : une toile tactile (doigt, souris, stylet
 // avec pression), des guides en pointillés étape par étape, annuler, gomme, couleurs,
 // symétrie miroir. Le trait n'est jamais « noté » : on vérifie seulement, avec tolérance,
 // que l'enfant a suivi le guide, et on l'encourage.

@@ -20,6 +20,9 @@ lecons:
     objectif: Je sais qu'une force peut mettre en mouvement, arrêter ou déformer un objet.
     mots: [force, pousser, tirer, déformer]
     etapes:
+      - dialogue:
+          - zero: "Je pousse ma roue, elle tourne. Je l'arrête, elle s'arrête. Je suis trop fort !"
+          - neo: "Tu exerces des forces ! Une force peut mettre en mouvement, arrêter ou déformer."
       - texte: |
           Quand on **pousse** ou qu'on **tire** un objet, on exerce une **force**. Une force peut :
           - **mettre en mouvement** (je pousse la balançoire) ;
@@ -27,6 +30,9 @@ lecons:
           - **changer la direction** (je frappe la balle de tennis) ;
           - **déformer** (j'écrase la pâte à modeler, je tends un élastique).
           Plus la force est grande, plus l'effet est grand.
+      - astuce:
+          texte: "Une force est une action qui peut faire trois choses : mettre en mouvement, arrêter ou déformer. Pense à un ballon : tu le lances, tu l'attrapes, tu l'écrases."
+          qui: mia
       - retiens: "Une force pousse ou tire. Elle peut mettre en mouvement, arrêter, changer la direction ou déformer."
       - vraie_vie:
           titre: Défi à la maison
@@ -57,6 +63,7 @@ lecons:
       - dialogue:
           - narrateur: "Le Mythe du Poids gronde : « Les objets lourds tombent PLUS VITE ! »"
           - mia: "Faisons l'expérience avec deux feuilles de papier identiques."
+      - a_quoi_ca_sert: "Comprendre la chute des objets aide à comprendre pourquoi on doit attacher sa ceinture, pourquoi on tombe d'un vélo et comment les planètes tournent."
       - experience:
           titre: La feuille froissée
           securite: vert
@@ -69,6 +76,9 @@ lecons:
             - "Tiens-les à la même hauteur et lâche-les exactement en même temps."
           observation: "La boule tombe bien plus vite que la feuille à plat, qui flotte et zigzague."
           explication: "Les deux feuilles ont le même poids ! Ce qui freine la feuille plate, c'est l'**air** qu'elle doit pousser. Sans air (sur la Lune, ou dans un tube vide d'air), une plume et un marteau tombent exactement en même temps : un astronaute l'a fait en 1971. Le Mythe du Poids est battu !"
+      - astuce:
+          texte: "Lâche une feuille et une balle : la balle arrive en premier à cause de l'air. Froisse la feuille en boule : elles tombent presque ensemble !"
+          qui: zero
       - retiens: "La Terre attire tous les objets vers le bas. Ce qui ralentit la chute, c'est l'air, pas la légèreté."
     exercices:
       - type: vf
@@ -93,6 +103,9 @@ lecons:
     objectif: Je sais ce qu'un aimant attire et je découvre ses deux pôles.
     mots: [aimant, pôle, attirer, repousser, fer]
     etapes:
+      - dialogue:
+          - zero: "Mon aimant colle au frigo mais pas à la porte en bois !"
+          - neo: "Les aimants attirent certains métaux seulement. Testons !"
       - texte: |
           Un **aimant** attire les objets en **fer** (et quelques autres métaux comme le nickel), même à distance, à travers le papier ou l'eau.
           Il n'attire **pas** le bois, le plastique, le verre, l'aluminium, le cuivre, ni la plupart des pièces en or ou en argent.
@@ -109,6 +122,9 @@ lecons:
             - "Pose un trombone sur la feuille et déplace l'aimant SOUS la feuille."
           observation: "Le trombone est attiré (et suit l'aimant même à travers le papier) ; la gomme non ; certains métaux oui, d'autres non."
           explication: "Seuls les métaux comme le fer, l'acier ou le nickel sont attirés. L'aluminium d'une canette ou le cuivre ne le sont pas : tous les métaux ne sont pas magnétiques."
+      - astuce:
+          texte: "Les pôles, c'est comme des amis et des jumeaux grincheux : nord et sud s'attirent, nord et nord se repoussent."
+          qui: neo
       - retiens: "Un aimant attire le fer, pas tous les métaux. Pôles différents s'attirent, pôles identiques se repoussent."
       - a_quoi_ca_sert: "Fermer la porte du réfrigérateur, trier les déchets métalliques, la boussole, les haut-parleurs, les trains à sustentation magnétique."
     exercices:
@@ -155,6 +171,9 @@ lecons:
             - "Avance puis recule le jouet vers la lampe et regarde son ombre."
           observation: "Plus le jouet est près de la lampe, plus son ombre est grande (et plus floue) ; plus il est près du mur, plus elle est petite et nette."
           explication: "Près de la lampe, l'objet bloque une plus grande partie des rayons qui partent en éventail : la zone sans lumière sur le mur est plus grande."
+      - astuce:
+          texte: "L'ombre est toujours du côté opposé à la lumière. Lumière basse (le soir) = ombre longue ; lumière haute (midi) = ombre courte."
+          qui: mia
       - retiens: "La lumière va en ligne droite. Un objet opaque arrête la lumière : derrière lui, l'ombre, du côté opposé à la source."
       - a_quoi_ca_sert: "Le parasol, l'ombre d'un arbre en été, les cadrans solaires qui donnent l'heure, le théâtre d'ombres."
     exercices:
@@ -180,10 +199,17 @@ lecons:
     objectif: Je lis une température sur un thermomètre.
     mots: [température, thermomètre, degré Celsius]
     etapes:
+      - dialogue:
+          - zero: "L'eau du bain est chaude ou tiède ? Je n'arrive pas à décider."
+          - neo: "Un thermomètre te le dira précisément ! Apprenons à le lire."
+      - a_quoi_ca_sert: "Lire un thermomètre sert pour savoir comment s'habiller, vérifier si on a de la fièvre ou cuisiner sans brûler un gâteau."
       - texte: |
           Notre peau peut se tromper : après un bain chaud, l'eau tiède paraît froide ! Pour mesurer précisément, on utilise un **thermomètre**. L'unité est le **degré Celsius** (°C).
           Repères : l'eau gèle à **0 °C** ; une journée agréable : 20 °C ; notre corps : environ **37 °C** ; l'eau bout à **100 °C**.
           Au-dessous de 0, on écrit un signe moins : **−5 °C** (cinq degrés sous zéro).
+      - astuce:
+          texte: "Lis le haut du liquide coloré, les yeux bien en face. 0 °C : l'eau gèle. 37 °C : ton corps. 100 °C : l'eau bout."
+          qui: zero
       - retiens: "Le thermomètre mesure la température en °C. Glace 0 °C, corps 37 °C, eau bouillante 100 °C."
     exercices:
       - type: nombre
@@ -209,6 +235,10 @@ lecons:
     objectif: Je sais qu'un son est produit par une vibration.
     mots: [son, vibration, aigu, grave]
     etapes:
+      - dialogue:
+          - zero: "Comment ma voix sort de ma bouche ?"
+          - mia: "Pose ta main sur ta gorge et parle : tu sens ? Tout son vient d'une vibration."
+      - a_quoi_ca_sert: "Sans vibration, pas de son : c'est grâce à ça que fonctionnent ta voix, les instruments de musique et les haut-parleurs."
       - texte: |
           Tout **son** naît d'une **vibration** : la peau du tambour, la corde de guitare, tes cordes vocales tremblent très vite. Cette vibration se propage dans l'air jusqu'à tes oreilles.
           Pose la main sur ta gorge et chante « aaaa » : tu sens la vibration !
@@ -229,6 +259,9 @@ lecons:
           type: son
           sons: [{ etiquette: "Son grave", freq: 150 }, { etiquette: "Son aigu", freq: 900 }]
         legende: "Écoute : le son grave vibre 150 fois par seconde, le son aigu 900 fois par seconde."
+      - astuce:
+          texte: "Pose ta main sur ta gorge et chante : tu sens la vibration. Tout son vient de quelque chose qui tremble."
+          qui: neo
       - retiens: "Un son est une vibration. Vibration rapide = son aigu ; vibration lente = son grave."
     exercices:
       - type: qcm

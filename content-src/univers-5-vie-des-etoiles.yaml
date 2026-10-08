@@ -20,9 +20,16 @@ lecons:
     objectif: J'explique la fusion nucléaire et le lien couleur-température.
     mots: [fusion nucléaire, hydrogène, hélium, température de surface]
     etapes:
+      - dialogue:
+          - zero: "Le Soleil, c'est un énorme feu de bois ?"
+          - mia: "Non, c'est bien plus fort : de la fusion nucléaire !"
+      - a_quoi_ca_sert: "La fusion nucléaire fait briller le Soleil ; la reproduire sur Terre pourrait un jour fournir une énergie presque inépuisable."
       - texte: |
           Une **étoile** est une énorme boule de gaz très chaud. En son cœur (environ **15 millions de °C** pour le Soleil), les noyaux d'**hydrogène** fusionnent en **hélium** : c'est la **fusion nucléaire**. Une petite partie de la masse se transforme en énergie ($E = mc^2$) : le Soleil « perd » environ 4 millions de tonnes de masse par seconde !
           La **couleur** d'une étoile indique sa **température de surface** : **bleue** = très chaude (plus de 20 000 °C), **blanche**, **jaune** (le Soleil, environ 5 500 °C), **rouge** = plus froide (environ 3 000 °C).
+      - astuce:
+          texte: "Couleur des étoiles : bleu = très chaud, jaune = moyen (comme le Soleil), rouge = plus froid. C'est l'inverse des robinets !"
+          qui: mia
       - retiens: "Étoile = fusion de l'hydrogène en hélium dans le cœur. Couleur ↔ température : bleu (très chaud) → rouge (moins chaud). Soleil : jaune, ≈ 5 500 °C en surface."
     exercices:
       - type: ordre
@@ -46,6 +53,10 @@ lecons:
     objectif: Je décris le destin d'une étoile selon sa masse.
     mots: [nébuleuse, géante rouge, naine blanche, supernova, étoile à neutrons, trou noir]
     etapes:
+      - dialogue:
+          - zero: "Les étoiles peuvent mourir ? Même le Soleil ?"
+          - neo: "Oui, mais dans très longtemps : environ 5 milliards d'années. Chaque étoile a son destin."
+      - a_quoi_ca_sert: "Les atomes de ton corps (le carbone, l'oxygène, le fer) ont été fabriqués dans des étoiles : tu es fait de poussière d'étoiles."
       - texte: |
           1. Une étoile **naît** dans une **nébuleuse** (un nuage de gaz et de poussières) qui s'effondre sous son propre poids.
           2. Elle passe l'essentiel de sa vie à fusionner de l'hydrogène (le Soleil a environ **4,6 milliards d'années** et en a encore à peu près autant devant lui).
@@ -53,6 +64,9 @@ lecons:
           - une étoile comme le Soleil gonfle en **géante rouge**, puis devient une **naine blanche** qui refroidit lentement ;
           - une étoile **très massive** explose en **supernova** et laisse une **étoile à neutrons** ou un **trou noir**.
           Les supernovas dispersent les éléments fabriqués dans les étoiles (carbone, oxygène, fer…) : les atomes de notre corps ont été forgés dans des étoiles.
+      - astuce:
+          texte: "Plus une étoile est massive, plus elle vit vite et meurt de façon spectaculaire (supernova). Les petites étoiles finissent tranquillement en naines blanches."
+          qui: neo
       - retiens: "Nébuleuse → étoile → (Soleil) géante rouge → naine blanche ; (très massive) supernova → étoile à neutrons ou trou noir. Nos atomes viennent des étoiles."
     exercices:
       - type: ordre
@@ -76,11 +90,18 @@ lecons:
     objectif: Je situe notre galaxie et je connais l'histoire de l'Univers.
     mots: [galaxie, Voie lactée, expansion, Big Bang]
     etapes:
+      - dialogue:
+          - zero: "L'Univers a toujours existé ?"
+          - mia: "Les scientifiques pensent qu'il a une histoire de 13,8 milliards d'années. Remontons le temps !"
+      - a_quoi_ca_sert: "Comprendre l'histoire de l'Univers, c'est répondre à l'une des plus vieilles questions humaines : d'où venons-nous ?"
       - texte: |
           - Une **galaxie** est un immense ensemble d'étoiles, de gaz et de poussières. La nôtre, la **Voie lactée**, contient **100 à 400 milliards d'étoiles** ; elle a la forme d'un disque spiral d'environ **100 000 années-lumière** de diamètre. Le Soleil est à l'écart du centre.
           - Il existe des **centaines de milliards** de galaxies. La plus grande voisine de la nôtre, **Andromède**, est à environ 2,5 millions d'années-lumière.
           - Dans les années 1920, **Edwin Hubble** (et **Georges Lemaître**) montrent que les galaxies **s'éloignent** les unes des autres : l'Univers est en **expansion**.
           - En remontant le temps, l'Univers était très chaud et très dense : c'est le **Big Bang**, il y a environ **13,8 milliards d'années**. Ce n'est pas une explosion « dans » l'espace : c'est l'espace lui-même qui se dilate.
+      - astuce:
+          texte: "L'Univers a environ 13,8 milliards d'années. Si toute son histoire tenait en une année, l'humanité serait apparue le 31 décembre, dans les dernières minutes."
+          qui: zero
       - retiens: "Voie lactée : 100 à 400 milliards d'étoiles, 100 000 al. Des centaines de milliards de galaxies. Univers en expansion, Big Bang il y a ≈ 13,8 milliards d'années."
     exercices:
       - type: qcm
@@ -104,6 +125,10 @@ lecons:
     objectif: Je connais les exoplanètes et j'utilise la 3ᵉ loi de Kepler.
     mots: [exoplanète, transit, loi de Kepler, période, demi-grand axe]
     etapes:
+      - dialogue:
+          - zero: "Il existe d'autres Terres autour d'autres étoiles ?"
+          - neo: "On a déjà trouvé des milliers d'exoplanètes ! Partons à leur recherche."
+      - a_quoi_ca_sert: "Chercher des exoplanètes, c'est chercher s'il existe d'autres mondes habitables. Plus de 5 000 ont déjà été découvertes."
       - texte: |
           - Une **exoplanète** tourne autour d'une autre étoile que le Soleil. La première autour d'une étoile semblable au Soleil (51 Pegasi b) a été découverte en **1995** par **Michel Mayor** et **Didier Queloz** (prix Nobel 2019). On en connaît aujourd'hui **plus de 5 000**. On les détecte souvent par **transit** : la planète passe devant son étoile et fait baisser légèrement sa lumière.
           - **Lois de Kepler** (début du XVIIᵉ siècle) : les planètes décrivent des **ellipses** dont le Soleil occupe un foyer ; elles vont plus vite près du Soleil ; et **3ᵉ loi** : $\dfrac{T^2}{a^3}$ est la même pour toutes les planètes (T : période de révolution, a : demi-grand axe). En années et en UA, pour le Système solaire : $T^2 = a^3$.
@@ -111,6 +136,9 @@ lecons:
           titre: L'année de Jupiter
           enonce: "Jupiter est à environ 5,2 UA du Soleil. Combien dure son année ?"
           etapes: ["$T^2 = a^3 = 5{,}2^3 \\approx 140{,}6$", "$T \\approx \\sqrt{140{,}6} \\approx 11{,}9$ ans"]
+      - astuce:
+          texte: "3ᵉ loi de Kepler : T² / a³ est le même pour toutes les planètes d'une même étoile. Plus une planète est loin, plus son année est longue."
+          qui: mia
       - retiens: "Exoplanètes : plus de 5 000 connues, découvertes depuis 1995 (Mayor et Queloz). Kepler : ellipses ; $T^2 = a^3$ (années, UA)."
     exercices:
       - type: nombre

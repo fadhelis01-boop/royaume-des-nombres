@@ -20,11 +20,18 @@ lecons:
     objectif: Je décris une cellule animale et une cellule végétale.
     mots: [cellule, membrane, cytoplasme, noyau, paroi, chloroplaste]
     etapes:
+      - dialogue:
+          - zero: "De quoi je suis fait, à l'intérieur de l'intérieur ?"
+          - neo: "De milliards de cellules, les briques du vivant. Allons en visiter une !"
+      - a_quoi_ca_sert: "Toutes les maladies, tous les médicaments et toute la génétique se comprennent à l'échelle de la cellule."
       - texte: |
           Tous les êtres vivants sont faits de **cellules** (une seule pour une bactérie, des milliers de milliards pour nous).
           Une cellule **animale** a : une **membrane** (l'enveloppe), du **cytoplasme** (l'intérieur), un **noyau** (qui contient l'ADN, le « mode d'emploi »).
           Une cellule **végétale** a en plus : une **paroi** rigide, des **chloroplastes** (verts, pour la photosynthèse) et une grande **vacuole**.
           Une cellule se divise en deux pour en faire de nouvelles : c'est ainsi qu'on grandit et qu'on cicatrise.
+      - astuce:
+          texte: "La cellule végétale a 3 choses en plus : une paroi (mur rigide), des chloroplastes (panneaux solaires verts) et une grande vacuole (réservoir d'eau)."
+          qui: zero
       - retiens: "Cellule = membrane + cytoplasme + noyau. Végétale : en plus paroi, chloroplastes, vacuole. On grandit par division des cellules."
     exercices:
       - type: classer
@@ -49,12 +56,19 @@ lecons:
     objectif: Je décris la circulation sanguine.
     mots: [cœur, artère, veine, capillaire, globule rouge]
     etapes:
+      - dialogue:
+          - zero: "Boum-boum, boum-boum… Mon cœur ne s'arrête jamais ?"
+          - mia: "Jamais ! C'est une pompe qui envoie le sang dans tout ton corps, jour et nuit."
+      - a_quoi_ca_sert: "Comprendre le cœur aide à comprendre pourquoi le sport et une bonne alimentation sont bons pour la santé, et comment faire les gestes qui sauvent."
       - texte: |
           Le **cœur** est un muscle creux à **4 cavités** qui pompe le sang sans arrêt (environ 70 battements par minute au repos chez l'adulte).
           - Les **artères** emmènent le sang du cœur vers les organes ; les **veines** le ramènent au cœur ; les minuscules **capillaires** sont entre les deux.
           - Il y a **deux circulations** : cœur → poumons → cœur (le sang se charge en oxygène) ; cœur → organes → cœur (il distribue oxygène et nutriments, récupère le CO₂).
           - Les **globules rouges** transportent l'oxygène ; les **globules blancs** défendent le corps ; les **plaquettes** font coaguler le sang.
           ⚠️ Le sang des veines n'est **pas bleu** : il est rouge foncé. Les veines paraissent bleues à travers la peau à cause de la façon dont la lumière la traverse.
+      - astuce:
+          texte: "Le cœur, c'est deux pompes côte à côte : celle de droite envoie le sang aux poumons, celle de gauche l'envoie dans tout le corps."
+          qui: mia
       - retiens: "Cœur = pompe à 4 cavités. Artères (du cœur), veines (vers le cœur), capillaires. Globules rouges : oxygène. Le sang n'est jamais bleu."
     exercices:
       - type: qcm
@@ -78,12 +92,19 @@ lecons:
     objectif: Je comprends le trajet d'un message nerveux.
     mots: [cerveau, nerf, neurone, réflexe, organe des sens]
     etapes:
+      - dialogue:
+          - zero: "Comment ma main sait qu'elle doit lâcher une casserole chaude ?"
+          - neo: "Un message électrique file dans tes nerfs à toute vitesse. Suivons-le !"
+      - a_quoi_ca_sert: "Le système nerveux explique les réflexes, l'apprentissage et pourquoi l'alcool ou la fatigue rendent la conduite dangereuse."
       - texte: |
           Un message nerveux suit ce chemin : **organe des sens** (il capte) → **nerf** → **cerveau** (il analyse et décide) → **nerf** → **muscle** (il agit).
           Le cerveau contient environ **86 milliards de neurones** reliés entre eux.
           Un **réflexe** (retirer la main d'une plaque chaude) est très rapide car il passe par la **moelle épinière** sans attendre le cerveau.
           Le cerveau a besoin de **sommeil** pour ranger les souvenirs : dormir aide vraiment à apprendre !
           ⚠️ Alcool, drogues et écrans tard le soir perturbent le cerveau et le sommeil.
+      - astuce:
+          texte: "Le trajet d'un message : organe des sens → nerf sensitif → cerveau → nerf moteur → muscle. Récepteur, messager, chef, messager, exécutant."
+          qui: neo
       - retiens: "Sens → nerf → cerveau → nerf → muscle. Réflexe : par la moelle épinière, très rapide. Le sommeil aide à mémoriser."
     exercices:
       - type: ordre
@@ -107,6 +128,10 @@ lecons:
     objectif: Je compose un repas équilibré.
     mots: [équilibre alimentaire, groupe d'aliments, énergie, sommeil]
     etapes:
+      - dialogue:
+          - zero: "Mon repas idéal : des frites, des bonbons et une glace !"
+          - mia: "Miam… mais ton corps a besoin de bien plus que ça pour grandir. Composons une assiette équilibrée."
+      - a_quoi_ca_sert: "Bien manger aide à grandir, à se concentrer à l'école et à rester en bonne santé toute sa vie."
       - texte: |
           Les grands **groupes d'aliments** :
           - **fruits et légumes** (vitamines, fibres) : à chaque repas ;
@@ -115,6 +140,9 @@ lecons:
           - **viandes, poissons, œufs, légumes secs** (protéines pour construire les muscles) ;
           - **matières grasses** et **produits sucrés** : en petite quantité.
           Boire de l'**eau**. Bouger au moins **1 heure par jour** quand on est enfant. Dormir **9 à 12 h** par nuit entre 6 et 12 ans.
+      - astuce:
+          texte: "Une assiette équilibrée : la moitié de légumes, un quart de féculents, un quart de protéines, et de l'eau pour boire. Les sucreries, c'est pour le plaisir de temps en temps."
+          qui: zero
       - retiens: "Un repas équilibré : légumes/fruits + féculents + protéines + laitage, peu de gras et de sucre, de l'eau. Bouger et bien dormir."
     exercices:
       - type: classer
@@ -139,10 +167,17 @@ lecons:
     objectif: Je connais les grandes étapes de la reproduction humaine et de la puberté.
     mots: [puberté, ovule, spermatozoïde, fécondation, embryon, fœtus]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi les grands changent autant quand ils deviennent ados ?"
+          - neo: "C'est la puberté : le corps se transforme, chacun à son rythme. C'est normal et naturel."
+      - a_quoi_ca_sert: "Comprendre la puberté aide à vivre sereinement les changements de son corps et à respecter ceux des autres."
       - texte: |
           La **puberté** (souvent entre 9 et 15 ans, chacun à son rythme) transforme le corps d'enfant en corps capable d'avoir des enfants. Elle est commandée par des **hormones**. Chez tous : poussée de croissance, poils, changements d'humeur. Les filles ont leurs **règles** ; la voix des garçons mue.
           La **reproduction** : une cellule de la mère (l'**ovule**) et une cellule du père (le **spermatozoïde**) s'unissent : c'est la **fécondation**. La cellule-œuf se divise et devient un **embryon**, puis un **fœtus** qui grandit dans l'**utérus** pendant environ **9 mois**.
           Le corps de chacun lui appartient : personne n'a le droit de le toucher sans son accord. En cas de question ou de souci, on en parle à un adulte de confiance.
+      - astuce:
+          texte: "Les changements de la puberté sont normaux et arrivent à des âges différents pour chacun : il n'y a pas de bon ou de mauvais moment."
+          qui: mia
       - retiens: "Puberté entre 9 et 15 ans environ, commandée par les hormones. Ovule + spermatozoïde → fécondation → embryon → fœtus, 9 mois de grossesse."
     exercices:
       - type: ordre

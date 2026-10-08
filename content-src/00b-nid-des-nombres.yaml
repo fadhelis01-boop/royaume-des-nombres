@@ -28,6 +28,9 @@ lecons:
           groupes: [5]
           emoji: "🌰"
         legende: "1, 2, 3, 4, 5 : le dernier nombre dit, c'est le nombre de graines. Il y en a 5."
+      - astuce:
+          texte: "Pousse chaque objet de côté quand tu le comptes : comme ça, tu ne le comptes jamais deux fois."
+          qui: zero
       - retiens: "Je touche chaque objet **une seule fois**. Le **dernier nombre** que je dis, c'est **combien il y en a**."
       - a_quoi_ca_sert: "Compter tes jouets, les bougies d'un gâteau d'anniversaire, les marches d'un escalier…"
       - vraie_vie:
@@ -125,6 +128,9 @@ lecons:
           etiquettes: tout
           point: { v: 12, label: "12" }
         legende: "Juste avant 12 : 11. Juste après 12 : 13."
+      - astuce:
+          texte: "Juste après, c'est + 1 (un pas en avant). Juste avant, c'est − 1 (un pas en arrière). Tes doigts peuvent faire les pas !"
+          qui: mia
       - retiens: "Le nombre **d'après**, c'est **1 de plus**. Le nombre **d'avant**, c'est **1 de moins**."
       - a_quoi_ca_sert: "Savoir quel âge tu auras à ton prochain anniversaire, compter les jours avant les vacances, monter l'escalier marche par marche…"
       - question:
@@ -182,14 +188,17 @@ lecons:
             - nom: Zéro
               parts: [{ v: 4, label: "4" }]
           ecart: "2 de plus"
+      - astuce:
+          texte: "Aligne les deux collections face à face, un objet en face d'un autre : la ligne qui dépasse en a le plus."
+          qui: neo
       - retiens: "Pour comparer, je mets les objets **face à face, un pour un**. Celui qui en a encore en a **plus**."
       - a_quoi_ca_sert: "Savoir qui a gagné au jeu, s'il y a assez de chaises pour tout le monde, assez de parts de gâteau…"
       - question:
           type: qcm
           vars: { a: "2..9", b: "2..9" }
           si: "a != b"
-          enonce: "Mia a {{a}} billes et Néo a {{b}} billes. Qui en a le plus ?"
-          choix: ["{{si(a>b,'Mia','Néo')}}", "{{si(a>b,'Néo','Mia')}}", "Ils en ont autant"]
+          enonce: "Lya a {{a}} billes et Néo a {{b}} billes. Qui en a le plus ?"
+          choix: ["{{si(a>b,'Lya','Néo')}}", "{{si(a>b,'Néo','Lya')}}", "Ils en ont autant"]
           ordre_fixe: true
           correction: "{{max(a,b)}} est plus grand que {{min(a,b)}}."
     exercices:
@@ -238,6 +247,9 @@ lecons:
           reponse: "5-a"
           correction: "{{a}} + {{5-a}} = 5."
       - a_quoi_ca_sert: "Ces couples sont les briques de TOUS les calculs. Les connaître par cœur, c'est calculer à la vitesse de l'éclair !"
+      - astuce:
+          texte: "Les amoureux de 10 : 1 et 9, 2 et 8, 3 et 7, 4 et 6, 5 et 5. Montre-les avec tes deux mains : les doigts levés et les doigts baissés font toujours 10."
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: "0..10" }

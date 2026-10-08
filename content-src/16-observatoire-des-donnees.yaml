@@ -49,6 +49,9 @@ lecons:
           visuel: { type: diagramme, titre: "Livres lus", barres: [{ label: "CE2", v: "=a" }, { label: "CM1", v: "=b" }, { label: "CM2", v: "=c" }] }
           reponse: "a+b+c"
           correction: "{{a}} + {{b}} + {{c}} = {{a+b+c}} livres."
+      - astuce:
+          texte: "Avant de lire un graphique, lis son titre, ses axes et leurs unités : un graphique sans unité peut faire dire n'importe quoi."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "5..40", b: "5..40", c: "5..40", d: "5..40" }
@@ -91,6 +94,9 @@ lecons:
           enonce: "Notes : {{a}}, {{b}} et {{c}}. Moyenne ?"
           reponse: "(a+b+c)/3"
           correction: "({{a}} + {{b}} + {{c}}) ÷ 3 = {{a+b+c}} ÷ 3 = {{(a+b+c)/3}}."
+      - astuce:
+          texte: "La moyenne, c'est ce que chacun aurait si on partageait tout équitablement : on additionne tout, puis on divise par le nombre de valeurs."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "5..20", b: "5..20", c: "5..20", d: "5..20" }
@@ -101,7 +107,7 @@ lecons:
       - type: nombre
         vars: { m: "10..15", a: "8..16", b: "8..16" }
         si: "3*m - a - b >= 0 && 3*m - a - b <= 20"
-        enonce: "Mia a eu {{a}} et {{b}}. Quelle note doit-elle avoir au 3ᵉ contrôle pour avoir {{m}} de moyenne ?"
+        enonce: "Lya a eu {{a}} et {{b}}. Quelle note doit-elle avoir au 3ᵉ contrôle pour avoir {{m}} de moyenne ?"
         reponse: "3*m - a - b"
         indice: "Pour une moyenne de {{m}} sur 3 notes, le total doit faire 3 × {{m}}."
         correction: "Total nécessaire : {{3*m}} ; {{3*m}} − {{a}} − {{b}} = {{3*m-a-b}}."
@@ -141,6 +147,9 @@ lecons:
           reponse: "kieme(3,a,b,c,d,e)"
           indice: "Range d'abord les valeurs dans l'ordre : la médiane est la 3ᵉ."
           correction: "Rangée : {{tri(a,b,c,d,e)}}. La 3ᵉ valeur : {{kieme(3,a,b,c,d,e)}}."
+      - astuce:
+          texte: "Pour la médiane, range d'abord les valeurs dans l'ordre ! C'est celle du milieu, qui coupe la série en deux moitiés égales."
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: "1..30", b: "1..30", c: "1..30", d: "1..30", e: "1..30", f: "1..30", g: "1..30" }
@@ -189,6 +198,9 @@ lecons:
           reponse: "r/(r+b)"
           forme: fraction
           correction: "{{r}} favorables sur {{r+b}} : $\\frac{ {{r}} }{ {{r+b}} } = {{frac(r,r+b)}}$"
+      - astuce:
+          texte: "Probabilité = cas favorables ÷ cas possibles. Elle est toujours entre 0 (impossible) et 1 (certain)."
+          qui: mia
     exercices:
       - type: nombre
         vars: { r: "1..8", b: "1..8", v: "1..8" }
@@ -249,6 +261,9 @@ lecons:
           reponse: "1/4"
           forme: fraction
           correction: "$\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$"
+      - astuce:
+          texte: "Dans un arbre : on multiplie le long d'un chemin, on additionne entre les chemins. Et les probabilités qui partent d'un même nœud font toujours 1."
+          qui: neo
     exercices:
       - type: nombre
         enonce: "On lance deux dés. Probabilité d'avoir un double 6 ?"
@@ -298,6 +313,9 @@ lecons:
           reponse: "e/t*100"
           unite: "%"
           correction: "{{e}} ÷ {{t}} = {{nb(e/t)}}, soit {{nb(e/t*100)}} %."
+      - astuce:
+          texte: "Q1 : au moins un quart des valeurs sont en dessous ; Q3 : au moins trois quarts. Pense à un gâteau rangé du plus petit au plus grand morceau, coupé en 4."
+          qui: zero
     exercices:
       - type: nombre
         vars: { e: "5..45", t: [50, 100, 200] }

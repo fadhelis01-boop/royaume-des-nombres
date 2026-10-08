@@ -20,6 +20,10 @@ lecons:
     objectif: Je repère les tons et demi-tons sur un clavier.
     mots: [ton, demi-ton, dièse, bémol, altération]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi il y a des touches noires sur le piano ?"
+          - neo: "Pour les demi-tons ! Ce sont les petits pas de la musique."
+      - a_quoi_ca_sert: "Les tons et demi-tons sont la règle qui fabrique toutes les gammes : les comprendre, c'est comprendre comment la musique est construite."
       - texte: |
           Sur un clavier, l'écart entre **deux touches voisines** (blanche ou noire) est un **demi-ton**. Deux demi-tons font un **ton**.
           Entre **mi-fa** et **si-do**, il n'y a pas de touche noire : ce sont des **demi-tons** naturels. Entre les autres notes blanches voisines, il y a un **ton**.
@@ -30,6 +34,9 @@ lecons:
           a: Do5
           notes: "Mi4 Fa4 Si4 Do5"
         legende: "Mi-fa et si-do : des demi-tons naturels (pas de touche noire entre eux)."
+      - astuce:
+          texte: "Entre deux touches voisines (blanche ou noire), c'est un demi-ton. Seuls mi-fa et si-do sont collées sans touche noire entre elles."
+          qui: mia
       - retiens: "Demi-ton = touches voisines ; ton = 2 demi-tons. Mi-fa et si-do sont des demi-tons. ♯ monte, ♭ descend d'un demi-ton."
     exercices:
       - type: qcm
@@ -53,6 +60,10 @@ lecons:
     objectif: Je connais la structure de la gamme majeure.
     mots: [gamme majeure, tonique, degré]
     etapes:
+      - dialogue:
+          - zero: "Do, ré, mi, fa, sol, la, si, do : c'est une échelle !"
+          - mia: "Une échelle avec des marches de tailles différentes : c'est la gamme majeure."
+      - a_quoi_ca_sert: "La gamme majeure est à la base de la plupart des chansons que tu connais, des comptines à la pop."
       - texte: |
           Une **gamme majeure** suit toujours le même schéma d'écarts : **ton, ton, demi-ton, ton, ton, ton, demi-ton** (T T ½ T T T ½).
           La gamme de **do majeur** n'utilise que les touches blanches : do ré mi **fa** sol la si **do** (les demi-tons tombent entre mi-fa et si-do).
@@ -60,6 +71,9 @@ lecons:
       - visuel:
           type: son
           sons: [{ etiquette: "Do majeur", notes: "Do4 Ré4 Mi4 Fa4 Sol4 La4 Si4 Do5:2", tempo: 110 }, { etiquette: "Sol majeur (avec fa♯)", notes: "Sol4 La4 Si4 Do5 Ré5 Mi5 Fa#5 Sol5:2", tempo: 110 }]
+      - astuce:
+          texte: "La formule de la gamme majeure : ton, ton, demi-ton, ton, ton, ton, demi-ton. Sur le piano, c'est toutes les touches blanches de do à do."
+          qui: neo
       - retiens: "Gamme majeure : T T ½ T T T ½. Do majeur : touches blanches. Sol majeur : fa♯. Fa majeur : si♭."
     exercices:
       - type: qcm
@@ -83,6 +97,10 @@ lecons:
     objectif: Je reconnais quelques intervalles et les accords majeurs et mineurs.
     mots: [intervalle, tierce, quinte, octave, accord, majeur, mineur]
     etapes:
+      - dialogue:
+          - zero: "Quand je joue trois notes en même temps, c'est joli… ou pas."
+          - neo: "Ça dépend lesquelles ! Découvrons les accords majeurs et mineurs."
+      - a_quoi_ca_sert: "Les accords accompagnent les chansons à la guitare ou au piano ; les reconnaître permet de jouer avec les autres."
       - texte: |
           Un **intervalle** est l'écart entre deux notes. On le nomme en comptant les notes, **en incluant les deux** : do-mi = **tierce** (do, ré, mi = 3), do-sol = **quinte** (5), do-do = **octave** (8).
           Un **accord** est un ensemble de notes jouées **ensemble**. L'accord parfait superpose deux tierces :
@@ -92,6 +110,9 @@ lecons:
           type: son
           sons: [{ etiquette: "Accord de do majeur", notes: "[Do4 Mi4 Sol4]:3" }, { etiquette: "Accord de do mineur", notes: "[Do4 Mib4 Sol4]:3" }]
         legende: "Écoute : le majeur paraît lumineux, le mineur plus sombre ou mélancolique."
+      - astuce:
+          texte: "Majeur = joyeux et lumineux, mineur = triste ou mystérieux. Astuce d'oreille : « Joyeux anniversaire » commence par des intervalles que tu connais déjà."
+          qui: zero
       - retiens: "Intervalle : on compte les deux notes (do-mi = tierce, do-sol = quinte). Accord majeur : do-mi-sol ; mineur : do-mi♭-sol."
     exercices:
       - type: qcm
@@ -116,6 +137,10 @@ lecons:
     objectif: Je lis une indication de mesure et les nuances d'une partition.
     mots: [mesure, barre de mesure, chiffrage, crescendo, decrescendo]
     etapes:
+      - dialogue:
+          - zero: "Il y a des chiffres et des lettres sur ma partition. Ça sert à quoi ?"
+          - mia: "Ce sont les instructions : combien de temps, à quelle vitesse, avec quelle force."
+      - a_quoi_ca_sert: "Ces indications sont le mode d'emploi de la partition : elles disent comment jouer, pas seulement quoi jouer."
       - texte: |
           La musique est découpée en **mesures** par des **barres de mesure**. Le **chiffrage** en début de partition indique combien de temps par mesure :
           - **2/4** : 2 temps (marche) ; **3/4** : 3 temps (valse : UN-deux-trois) ; **4/4** : 4 temps (le plus courant).
@@ -125,6 +150,9 @@ lecons:
           type: son
           sons: [{ etiquette: "Une valse (3 temps)", rythme: "X.x.x.X.x.x.X.x.x.", tempo: 120 }, { etiquette: "Une marche (2 temps)", rythme: "X.x.X.x.X.x.X.x.", tempo: 110 }]
         legende: "Écoute où tombe la frappe forte : tous les 3 temps (valse) ou tous les 2 temps (marche)."
+      - astuce:
+          texte: "Dans « 4/4 », le chiffre du haut dit combien de temps dans la mesure. 3/4 = la valse (UN-deux-trois), 4/4 = la plupart des chansons pop."
+          qui: mia
       - retiens: "2/4, 3/4 (valse), 4/4. Premier temps accentué. pp, p, mf, f, ff ; crescendo = de plus en plus fort."
     exercices:
       - type: qcm

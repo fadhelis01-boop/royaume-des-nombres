@@ -40,6 +40,9 @@ lecons:
           lignes: 4
           colonnes: 3
         legende: "Un tableau de points : 4 rangées de 3. Tourne la tête : 3 rangées de 4 ! Donc 4 × 3 = 3 × 4."
+      - astuce:
+          texte: "4 × 3, lis-le « 4 fois 3 » : 4 sacs de 3 billes. Et 4 × 3 = 3 × 4 : tu peux toujours choisir l'ordre le plus facile !"
+          qui: mia
       - retiens: "**a × b = b × a** : on peut multiplier dans n'importe quel ordre. Et $n \\times 1 = n$, $n \\times 0 = 0$."
       - a_quoi_ca_sert: "Le prix de 5 baguettes à 1 €, le nombre de roues de 6 voitures, le nombre de carreaux d'une tablette de chocolat… dès que des groupes sont tous pareils, on multiplie."
       - question:
@@ -302,6 +305,9 @@ lecons:
           enonce: "$ {{n}} \\times {{nb(k)}} = ?$"
           reponse: "n*k"
           correction: "{{n}} × {{nb(k)}} = {{nb(n*k)}}."
+      - astuce:
+          texte: "Multiplier par 10, c'est faire glisser chaque chiffre d'un rang vers la gauche : 23 → 230. Pour un entier, ça revient à écrire un zéro à la fin."
+          qui: neo
     exercices:
       - type: nombre
         vars: { n: "2..999", k: [10, 100, 1000] }

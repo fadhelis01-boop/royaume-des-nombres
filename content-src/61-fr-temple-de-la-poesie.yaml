@@ -23,6 +23,7 @@ lecons:
       - dialogue:
           - zero: "« Maître Corbeau, sur un arbre perché » : je compte… Maî-tre-Cor-beau… Le e de « maître », il compte ou pas ? 😳"
           - neo: "En poésie, le e muet se prononce devant une consonne : Maî-**tre**-Cor-beau ! Mais il tombe devant une voyelle et en fin de vers."
+      - a_quoi_ca_sert: "Compter les syllabes permet de comprendre le rythme d'un poème et d'écrire soi-même des vers qui sonnent bien."
       - texte: |
           Règles pour compter les syllabes d'un **vers** :
           - le **e muet** se prononce (et compte) **devant une consonne** : *Maî-**tre** Cor-beau* ;
@@ -31,6 +32,9 @@ lecons:
           - **Diérèse** : on sépare deux voyelles qui se prononcent d'habitude ensemble (*li-on* au lieu de *lion*) — **synérèse** : l'inverse.
 
           *Maî / tre / Cor / beau, / sur / un / ar / bre / per / ché* → **10 syllabes**.
+      - astuce:
+          texte: "Le e muet compte s'il est suivi d'une consonne (« u-ne-ro-se »), mais pas devant une voyelle ni en fin de vers. Tape chaque syllabe sur la table."
+          qui: mia
       - retiens: "**e muet** : compte devant consonne, tombe devant voyelle et en fin de vers."
     exercices:
       - type: nombre
@@ -56,6 +60,7 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Les rimes, c'est la répétition d'un son à la fin des vers. Et elles peuvent danser de trois façons !"
+      - a_quoi_ca_sert: "Les rimes rendent un texte facile à retenir : c'est pour ça que les comptines, les chansons et les slogans riment."
       - texte: |
           **Disposition** :
           - **plates** (ou suivies) : **AABB**
@@ -66,6 +71,9 @@ lecons:
           - **pauvre** : 1 son commun (*ami / joli*) ;
           - **suffisante** : 2 sons (*cheval / val*) ;
           - **riche** : 3 sons ou plus (*étoile / toile* → t-oi-l).
+      - astuce:
+          texte: "AABB = plates (deux par deux), ABAB = croisées (elles se croisent), ABBA = embrassées (B au milieu, entouré par A comme dans des bras)."
+          qui: neo
       - retiens: "**AABB** plates, **ABAB** croisées, **ABBA** embrassées. Plus il y a de sons communs, plus la rime est **riche**."
     exercices:
       - type: qcm
@@ -89,10 +97,17 @@ lecons:
     objectif: Je reconnais les strophes, la césure de l'alexandrin et la forme du sonnet.
     mots: [strophe, quatrain, tercet, sonnet, césure, hémistiche]
     etapes:
+      - dialogue:
+          - zero: "Un poème, c'est juste des phrases coupées en morceaux ?"
+          - neo: "Non, c'est une architecture ! Vers, strophes, et même une forme célèbre : le sonnet."
+      - a_quoi_ca_sert: "Connaître les formes poétiques aide à lire les grands poètes et à écrire ses propres poèmes."
       - texte: |
           - Une **strophe** est un groupe de vers : **distique** (2), **tercet** (3), **quatrain** (4), **quintil** (5), **sizain** (6).
           - L'**alexandrin** (12 syllabes) est souvent coupé en deux **hémistiches** de 6 par la **césure** : *Demain, dès l'aube, à l'heure // où blanchit la campagne.*
           - Le **sonnet** : **14 vers**, deux **quatrains** puis deux **tercets**, souvent en alexandrins ; le dernier vers (la « chute ») frappe l'esprit.
+      - astuce:
+          texte: "Le sonnet, c'est 14 vers : deux quatrains puis deux tercets. 4 + 4 + 3 + 3 = 14."
+          qui: zero
       - retiens: "Sonnet = **4 + 4 + 3 + 3** vers. Alexandrin = **6 // 6** autour de la césure."
     exercices:
       - type: nombre
@@ -116,6 +131,7 @@ lecons:
     objectif: Je comprends un poème, son émotion et sa chute.
     mots: [poème, chute, lyrisme]
     etapes:
+      - a_quoi_ca_sert: "Lire un grand poème, c'est découvrir comment les mots peuvent dire une émotion très forte avec très peu de phrases."
       - texte: |
           **Demain, dès l'aube…** — Victor Hugo, *Les Contemplations* (1856)
 
@@ -136,6 +152,9 @@ lecons:
       - dialogue:
           - mia: "Victor Hugo a écrit ce poème pour sa fille Léopoldine, morte quatre ans plus tôt. On croit d'abord à un rendez-vous… et le dernier vers nous apprend la vérité."
           - neo: "C'est la chute : le mot « tombe » change tout le sens du poème."
+      - astuce:
+          texte: "Lis le poème deux fois : une fois pour l'histoire, une fois pour l'émotion. Puis relis la fin : la chute change souvent tout."
+          qui: mia
       - retiens: "Un poème **lyrique** exprime les sentiments du poète. La **chute** est la fin qui surprend et éclaire tout le texte."
     exercices:
       - type: qcm

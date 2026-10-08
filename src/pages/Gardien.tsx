@@ -331,7 +331,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
           </div>
           <div className="powers" role="group" aria-label="pouvoirs des compagnons, un seul usage chacun">
             {(["mia", "neo", "zero"] as Who[]).map((who) => (
-              <button key={who} className={`power ${used[who] ? "used" : ""}`} disabled={used[who]} onClick={() => power(who)} title={who === "mia" ? "Mia dessine un indice" : who === "neo" ? "Néo : coup de queue ou bouclier" : "Zéro double les gemmes"}>
+              <button key={who} className={`power ${used[who] ? "used" : ""}`} disabled={used[who]} onClick={() => power(who)} title={who === "mia" ? "Lya dessine un indice" : who === "neo" ? "Néo : coup de queue ou bouclier" : "Zéro double les gemmes"}>
                 <Mascot who={who} size={40} />
                 <span>{who === "mia" ? "Indice" : who === "neo" ? (isChoice && q.type !== "vf" ? "Élimine" : "Bouclier") : "×2 💎"}</span>
               </button>

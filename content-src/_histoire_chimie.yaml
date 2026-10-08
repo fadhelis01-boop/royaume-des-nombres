@@ -36,7 +36,7 @@ arcs:
     final: ch-tour-de-la-mole
     fin:
       - narrateur: "La Tour de la Mole s'illumine. Des milliards de milliards d'atomes, bien comptés, scintillent dans le laboratoire."
-      - narrateur: "Dame Acidia raconte : « Mendeleïev a rangé les éléments et laissé des cases vides pour ceux qu'on ne connaissait pas encore. Marie Curie en a découvert deux, le polonium et le radium. Quelle case aurais-tu voulu remplir ? »"
+      - acidia: "Mendeleïev a rangé les éléments et laissé des cases vides pour ceux qu'on ne connaissait pas encore. Marie Curie en a découvert deux, le polonium et le radium. Quelle case aurais-tu voulu remplir ?"
       - zero: "Moi, la case du Zéronium. Un élément très rare. Très mignon."
       - mia: "Écoutez… quelque chose ronge les tours du Laboratoire Royal."
 

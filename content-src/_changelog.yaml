@@ -1,3 +1,12 @@
+- version: "2.1.0"
+  date: "2026-10-08"
+  notes:
+    - "Mia s'appelle désormais Lya ! Même personnage, même π sur le sweat, nouveau prénom."
+    - "Chaque leçon de chaque planète a maintenant son astuce pour retenir la règle et son « À quoi ça sert ? » (plus de 700 ajouts)."
+    - "Lya, Néo et Zéro ouvrent désormais toutes les leçons de sciences, de musique et de dessin par une petite scène."
+    - "Les Muses des planètes ont leur portrait et prennent la parole dans les histoires. Gribouille a ses vraies illustrations."
+    - "Toutes les îles de l'Archipel des Mots ont leur décor illustré, et les derniers badges ont leur médaille."
+    - "Plus facile à utiliser au clavier et au doigt : contour visible sur le bouton actif, boutons plus grands."
 - version: "2.0.0"
   date: "2026-10-08"
   notes:
@@ -23,7 +32,7 @@
   notes:
     - "La carte du Royaume : un vrai chemin du Nid jusqu'au Temple. Chaque cristal rallumé redonne ses couleurs au lieu, et ton personnage t'attend là où tu en es."
     - "Gemmes et boutique : chaque bonne réponse rapporte des gemmes (plus en série). On les dépense pour habiller son personnage (chapeaux, lunettes, compagnons) et décorer sa cabane. Rien ne s'achète avec de l'argent."
-    - "Le Défi du Gardien devient un combat : le Grignoteur esquive, encaisse et croque des gemmes ; Mia, Néo et Zéro ont chacun un pouvoir (indice, coup de queue ou bouclier, gemmes doublées)."
+    - "Le Défi du Gardien devient un combat : le Grignoteur esquive, encaisse et croque des gemmes ; Lya, Néo et Zéro ont chacun un pouvoir (indice, coup de queue ou bouclier, gemmes doublées)."
     - "Combos, gerbes d'étoiles, sons de victoire propres à chaque monde ; le Grignoteur ou Ixe surgissent parfois en pleine leçon."
     - "Quatre nouveaux jeux : la Défense du Royaume (tables et additions), le Pont des Fractions, la Course de la Grenouille et le Duel en famille sur le même écran."
     - "Des choix dans l'histoire, un « Précédemment dans le Royaume » à chaque retour, une pause proposée vers 15 minutes."
@@ -43,6 +52,6 @@
   date: "2026-10-08"
   notes:
     - "Première version : 29 mondes, de la Forêt des Nombres (7 ans) au Temple de la Logique (supérieur), plus l'École des Astuces."
-    - "Exercices générés à l'infini et corrigés automatiquement, cours écrits et lus à voix haute par Mia, Néo et Zéro."
+    - "Exercices générés à l'infini et corrigés automatiquement, cours écrits et lus à voix haute par Lya, Néo et Zéro."
     - "Jeux (Calcul éclair, Tour des Tables, Le compte est bon, Vise juste, énigmes), défi du jour, révisions espacées, badges et album."
     - "Espace parents : suivi, temps d'écran, voix, assistant IA sourcé, ajout de domaines sans programmer, sauvegarde."

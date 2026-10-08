@@ -46,6 +46,9 @@ lecons:
           visuel: { type: fraction, n: 1, d: "=d", forme: disque }
           choix: ["{{si(d==2,'une moitié',si(d==3,'un tiers','un quart'))}}", "{{si(d==2,'un tiers','une moitié')}}", "{{si(d==4,'un tiers','un quart')}}"]
           correction: "Le disque est partagé en {{d}} parts égales."
+      - astuce:
+          texte: "Le chiffre du bas (dénominateur) dit en combien de parts égales on coupe ; celui du haut (numérateur) dit combien on en prend."
+          qui: neo
     exercices:
       - type: colorier
         vars: { d: [2, 3, 4] }
@@ -187,6 +190,9 @@ lecons:
           cible: "n/d"
           cible_affiche: "$\\frac{ {{n}} }{ {{d}} }$"
           tolerance: 0.06
+      - astuce:
+          texte: "Pour placer 5/3, coupe chaque unité en 3 et compte 5 petits pas depuis 0. Si le haut est plus grand que le bas, tu dépasses 1."
+          qui: zero
     exercices:
       - type: droite
         vars: { d: [2, 3, 4, 5], n: "1..9" }
@@ -288,7 +294,7 @@ lecons:
     mots: [comparer]
     etapes:
       - dialogue:
-          - neo: "Qui a mangé le plus : Mia 2/3 de sa tarte, ou moi 3/4 de la mienne ?"
+          - neo: "Qui a mangé le plus : Lya 2/3 de sa tarte, ou moi 3/4 de la mienne ?"
           - mia: "Les parts ne sont pas pareilles… Et si on recoupait les deux tartes en 12 ?"
       - texte: |
           - **Même dénominateur** : on compare les numérateurs. $\frac{3}{7} < \frac{5}{7}$.
@@ -384,6 +390,9 @@ lecons:
           reponse: "(a+b)/d"
           forme: fraction
           correction: "On garde les {{d}}ᵉ : {{a}} + {{b}} = {{a+b}}, donc {{a+b}}/{{d}}."
+      - astuce:
+          texte: "On n'additionne que des parts de même taille : mets d'abord au même dénominateur, puis additionne seulement les numérateurs."
+          qui: mia
     exercices:
       - type: qcm
         vars: { a: "1..3", b: "1..3", d: [5, 7, 9] }
@@ -461,6 +470,9 @@ lecons:
           enonce: "Combien font $\\frac{ {{a}} }{ {{b}} }$ de {{b*q}} ?"
           reponse: "a*q"
           correction: "{{b*q}} ÷ {{b}} = {{q}}, puis × {{a}} = {{a*q}}."
+      - astuce:
+          texte: "3/4 de 20 : divise d'abord par le bas (20 ÷ 4 = 5), puis multiplie par le haut (5 × 3 = 15). « Je partage, puis je prends »."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "1..5", b: [3, 4, 5, 6, 8, 10], q: "2..12" }

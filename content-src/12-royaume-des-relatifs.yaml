@@ -53,6 +53,9 @@ lecons:
           pas: 1
           cible: "n"
           tolerance: 0.5
+      - astuce:
+          texte: "Pense au thermomètre : sous zéro, plus le nombre « a l'air grand », plus il fait froid. −10 °C est plus froid que −2 °C."
+          qui: neo
     exercices:
       - type: droite
         vars: { n: "-9..9" }
@@ -113,6 +116,9 @@ lecons:
           gauche: "a"
           droite: "b"
           correction: "Entre deux négatifs, le plus grand est le plus proche de 0."
+      - astuce:
+          texte: "Sur la droite graduée, le plus grand est toujours celui le plus à droite. −2 est à droite de −7, donc −2 > −7."
+          qui: zero
     exercices:
       - type: comparer
         vars: { a: "-30..30", b: "-30..30" }
@@ -281,6 +287,9 @@ lecons:
           **Règle des signes** (multiplication ET division) :
           - deux nombres de **même signe** → résultat **positif** ;
           - deux nombres de **signes contraires** → résultat **négatif**.
+      - astuce:
+          texte: "Les amis de mes amis sont mes amis (+ × + = +), les ennemis de mes ennemis sont mes amis (− × − = +), les amis de mes ennemis sont mes ennemis (+ × − = −)."
+          qui: mia
       - retiens: "$(+) \\times (+) = (+)$ · $(-) \\times (-) = (+)$ · $(+) \\times (-) = (-)$ · $(-) \\times (+) = (-)$. Avec plusieurs facteurs : un nombre **pair** de signes − donne +, un nombre **impair** donne −."
       - a_quoi_ca_sert: "La physique (forces et vitesses dans un sens ou dans l'autre), l'économie (pertes répétées), les calculs d'algèbre que tu feras partout plus tard…"
       - question:
@@ -342,6 +351,9 @@ lecons:
           enonce: "${{a}} + {{b}} \\times {{c}} = ?$"
           reponse: "a+b*c"
           correction: "{{b}} × {{c}} = {{b*c}} d'abord, puis {{a}} + {{b*c}} = {{a+b*c}}."
+      - astuce:
+          texte: "D'abord les parenthèses, ensuite × et ÷, enfin + et −. Retiens : « Parenthèses, Puis Produits, Plus tard les sommes »."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "2..9", b: "2..9", c: "2..9" }

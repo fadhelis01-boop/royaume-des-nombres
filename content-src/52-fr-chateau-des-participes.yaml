@@ -24,6 +24,7 @@ lecons:
       - dialogue:
           - zero: "« Je vais mangé » ou « je vais manger » ? Je les entends pareil ! 😳"
           - neo: "Remplace par un verbe du 3e groupe : « je vais vendre » ✔, « je vais vendu » ✘. Donc c'est l'infinitif : manger !"
+      - a_quoi_ca_sert: "La confusion -é / -er est la faute la plus fréquente des adultes. L'astuce de remplacement règle le problème à coup sûr."
       - texte: |
           Les verbes en -er se terminent par le même son au participe (**-é**) et à l'infinitif (**-er**).
           **Test** : je remplace par **vendre / vendu** (ou mordre / mordu, prendre / pris).
@@ -31,6 +32,9 @@ lecons:
           - *Il va mang__ → il va **vendre*** → infinitif : **manger**.
 
           Après une **préposition** (à, de, pour, sans) et après un **autre verbe conjugué**, c'est presque toujours l'**infinitif**.
+      - astuce:
+          texte: "Remplace par « vendu » ou « vendre » (ou « mordu / mordre ») : on entend tout de suite la différence. « Il a mangé » → « il a vendu »."
+          qui: neo
       - retiens: "**vendu** marche → **-é** ; **vendre** marche → **-er**."
     exercices:
       - type: qcm
@@ -59,12 +63,16 @@ lecons:
       - dialogue:
           - mia: "L'Aimant doré tire un fil du sujet vers le participe. Elles sont part**ies**. Le gâteau a été mang**é** par Zéro."
           - zero: "Pourquoi je suis toujours celui qui mange dans les exemples ? 😳"
+      - a_quoi_ca_sert: "Avec être, le participe s'accorde comme un adjectif. C'est simple et très fréquent : « Elles sont parties »."
       - texte: |
           Avec **être**, le participe passé **s'accorde avec le sujet** (genre et nombre) :
           *Elle est arrivé**e**. Ils sont venu**s**. Les fleurs sont fané**es**.*
 
           À la **voix passive** (être + participe passé + par…), même règle :
           *La souris est attrapé**e** par le chat. Les maisons ont été construit**es** l'an dernier.*
+      - astuce:
+          texte: "Avec être, le participe passé est un perroquet : il répète le genre et le nombre du sujet."
+          qui: zero
       - retiens: "**Être** → le participe s'**accorde avec le sujet**, comme un adjectif."
     exercices:
       - type: mot
@@ -92,6 +100,7 @@ lecons:
       - dialogue:
           - neo: "« Elle a mangé les pommes. » Le COD « les pommes » est APRÈS : le Glouton bloque l'accord. Pas d'accord !"
           - mia: "Mais « Les pommes qu'elle a mangées » : le COD (que = les pommes) est AVANT la cage. Le fil passe : E-S !"
+      - a_quoi_ca_sert: "Cette règle est l'une des plus connues de l'orthographe française : elle tombe dans presque toutes les dictées et tous les examens."
       - texte: |
           Avec **avoir**, le participe passé **ne s'accorde jamais avec le sujet**.
           Il s'accorde avec le **COD** seulement si le COD est placé **avant** le verbe :
@@ -128,9 +137,13 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Sans auxiliaire, le participe se comporte comme un adjectif : « une porte fermée », « des enfants fatigués »."
+      - a_quoi_ca_sert: "Les participes employés seuls apparaissent dans toutes les descriptions : « une porte fermée », « des feuilles tombées »."
       - texte: |
           Employé **seul** (sans être ni avoir), le participe passé s'accorde comme un **adjectif** avec le nom auquel il se rapporte :
           *une fenêtre **ouverte**, des gâteaux **cuits**, **Fatiguées**, les filles s'endormirent.*
+      - astuce:
+          texte: "Seul, le participe passé se comporte comme un adjectif : il s'accorde avec le nom qu'il accompagne."
+          qui: mia
       - retiens: "Participe **seul** = **adjectif** : il s'accorde avec le nom."
     exercices:
       - type: mot
@@ -158,12 +171,16 @@ lecons:
       - dialogue:
           - zero: "Je chanté ? Je chantai ? Je chantais ? Je chanter ? Je chantez ? CINQ possibilités ! 🤯"
           - neo: "Chaque terminaison a son temps. On identifie le temps et la personne, et le mystère disparaît."
+      - a_quoi_ca_sert: "Ces terminaisons se prononcent presque pareil. Bien les choisir montre que tu sais à quel temps et à quelle personne tu écris."
       - texte: |
           - **-er** : infinitif (*il va chant**er***) — test : vendre
           - **-é** : participe passé (*j'ai chant**é***) — test : vendu
           - **-ez** : 2e personne du pluriel (*vous chant**ez***)
           - **-ai** : passé simple ou futur avec « je » (*je chant**ai**, je chanter**ai***)
           - **-ais / -ait** : imparfait ou conditionnel (*je chant**ais**, il chant**ait***)
+      - astuce:
+          texte: "Change de personne : avec « nous », on entend la différence. Je mangeais → nous mangions (imparfait) ; j'ai mangé → nous avons mangé."
+          qui: neo
       - retiens: "Je repère le **temps** et la **personne** : vendre → -er, vendu → -é, vous → -ez, imparfait → -ais/-ait."
     exercices:
       - type: qcm

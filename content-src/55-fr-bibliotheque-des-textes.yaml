@@ -23,6 +23,7 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Jean de La Fontaine a écrit ses fables il y a plus de 350 ans. Des animaux qui parlent… pour faire réfléchir les humains !"
+      - a_quoi_ca_sert: "Les fables apprennent à se méfier des flatteurs et à réfléchir. Leurs morales sont toujours utiles aujourd'hui !"
       - texte: |
           **Le Corbeau et le Renard** — Jean de La Fontaine (1668)
 
@@ -46,6 +47,9 @@ lecons:
           Jura, mais un peu tard, qu'on ne l'y prendrait plus.
       - texte: |
           **Petit lexique** : *alléché* = attiré ; *ramage* = le chant des oiseaux ; *le Phénix* = un oiseau magique, le plus beau de tous ; *flatteur* = celui qui fait des compliments pour obtenir quelque chose ; *aux dépens de* = en profitant de.
+      - astuce:
+          texte: "Pour trouver la morale, demande-toi : qu'est-ce que le personnage a appris à ses dépens ? C'est souvent la leçon pour nous."
+          qui: mia
       - retiens: "Une **fable** est un récit court, souvent avec des animaux, qui donne une **leçon** : la **morale**."
     exercices:
       - type: qcm
@@ -70,6 +74,7 @@ lecons:
     objectif: Je comprends l'implicite (ce que le texte laisse deviner sans le dire).
     mots: [implicite, inférence]
     etapes:
+      - a_quoi_ca_sert: "Comprendre l'implicite, c'est lire entre les lignes : indispensable pour saisir l'humour, l'ironie et les sous-entendus."
       - texte: |
           **La Cigale et la Fourmi** — Jean de La Fontaine (1668)
 
@@ -98,6 +103,9 @@ lecons:
       - dialogue:
           - neo: "La fable ne dit jamais « la fourmi refuse ». Pourtant on le comprend ! C'est de l'implicite."
           - mia: "« Dansez maintenant » veut dire : « débrouillez-vous, je ne vous donnerai rien ». Il faut lire entre les lignes."
+      - astuce:
+          texte: "Pour trouver l'implicite, demande-toi : qu'est-ce que l'auteur me fait comprendre sans le dire ? Cherche les indices comme un détective."
+          qui: neo
       - retiens: "**L'implicite** : ce que le texte fait **comprendre sans le dire**. Je cherche des **indices** et je **déduis**."
     exercices:
       - type: qcm
@@ -124,15 +132,19 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Léa ferma son parapluie et secoua ses bottes. » Il pleuvait ! Ce n'est pas écrit… mais les indices le disent."
+      - a_quoi_ca_sert: "Faire des inférences, c'est ce que font les détectives, les médecins et les scientifiques : déduire à partir d'indices."
       - texte: |
           Pour **déduire** :
           1. Je repère les **indices** (mots, actions, lieux, émotions).
           2. Je me demande ce qu'ils **font comprendre**.
           3. Je vérifie que ma déduction **ne contredit** rien dans le texte.
+      - astuce:
+          texte: "Indice + ce que je sais = ce que je devine. « Il secoue son parapluie » + je sais qu'on le secoue quand il est mouillé = il pleut."
+          qui: zero
       - retiens: "Indices + ce que je sais = **déduction**. Je justifie toujours avec un mot du texte."
     exercices:
       - type: qcm
-        vars: { t: [["Léa ferma son parapluie et secoua ses bottes.", "Il pleuvait dehors.", "Il faisait très chaud.", "Léa revenait de la plage."], ["Tom bâilla, frotta ses yeux et éteignit la lumière.", "Tom allait dormir.", "Tom se réveillait.", "Tom était en colère."], ["Mia souffla les huit bougies sous les applaudissements.", "C'était son anniversaire : elle a huit ans.", "Il y avait une panne de courant.", "Mia était à l'école."], ["Le chien remuait la queue en voyant son maître rentrer.", "Le chien était content.", "Le chien avait peur.", "Le chien dormait."], ["La boulangerie avait encore son rideau baissé et la rue était vide.", "Il était très tôt le matin.", "C'était midi.", "La boulangerie vendait beaucoup."]] }
+        vars: { t: [["Léa ferma son parapluie et secoua ses bottes.", "Il pleuvait dehors.", "Il faisait très chaud.", "Léa revenait de la plage."], ["Tom bâilla, frotta ses yeux et éteignit la lumière.", "Tom allait dormir.", "Tom se réveillait.", "Tom était en colère."], ["Lya souffla les huit bougies sous les applaudissements.", "C'était son anniversaire : elle a huit ans.", "Il y avait une panne de courant.", "Lya était à l'école."], ["Le chien remuait la queue en voyant son maître rentrer.", "Le chien était content.", "Le chien avait peur.", "Le chien dormait."], ["La boulangerie avait encore son rideau baissé et la rue était vide.", "Il était très tôt le matin.", "C'était midi.", "La boulangerie vendait beaucoup."]] }
         enonce: "« {{t_0}} » — Que peut-on déduire ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
@@ -142,7 +154,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: qcm
-        vars: { t: [["Tom bâilla, posa son livre et éteignit la lampe.", "Il allait dormir.", "Il partait à l'école.", "Il commençait ses devoirs."], ["Mia souffla les huit bougies sous les applaudissements.", "C'était son anniversaire : elle a huit ans.", "C'était Noël.", "Elle avait froid."], ["Le sol était tout blanc et les enfants mettaient leurs gants.", "Il avait neigé.", "C'était l'été.", "Il y avait du sable."], ["Néo regardait sa montre toutes les minutes en tapant du pied.", "Il était impatient.", "Il était endormi.", "Il était très calme."]] }
+        vars: { t: [["Tom bâilla, posa son livre et éteignit la lampe.", "Il allait dormir.", "Il partait à l'école.", "Il commençait ses devoirs."], ["Lya souffla les huit bougies sous les applaudissements.", "C'était son anniversaire : elle a huit ans.", "C'était Noël.", "Elle avait froid."], ["Le sol était tout blanc et les enfants mettaient leurs gants.", "Il avait neigé.", "C'était l'été.", "Il y avait du sable."], ["Néo regardait sa montre toutes les minutes en tapant du pied.", "Il était impatient.", "Il était endormi.", "Il était très calme."]] }
         enonce: "Lis bien les indices : « {{t_0}} » Que peut-on deviner ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
@@ -155,6 +167,7 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Un conte raconte, une recette explique, une publicité veut convaincre, un poème joue avec les mots…"
+      - a_quoi_ca_sert: "Reconnaître le type d'un texte aide à le lire de la bonne façon : on ne lit pas une recette comme un poème !"
       - texte: |
           - **Narratif** : raconte une histoire (conte, roman, récit).
           - **Descriptif** : fait voir (portrait, paysage).
@@ -162,6 +175,9 @@ lecons:
           - **Argumentatif** : veut convaincre (débat, publicité, lettre de réclamation).
           - **Poétique** : joue avec les sons et les images (vers, rimes).
           - **Théâtral** : des dialogues entre personnages, avec des didascalies (indications de jeu).
+      - astuce:
+          texte: "Demande-toi quel est le but du texte : raconter (narratif), décrire, expliquer, convaincre (argumentatif), émouvoir (poétique), être joué (théâtral)."
+          qui: mia
       - retiens: "Je me demande : ce texte veut-il **raconter, décrire, expliquer, convaincre, émouvoir** ou être **joué** ?"
     exercices:
       - type: qcm
@@ -189,6 +205,7 @@ lecons:
     etapes:
       - dialogue:
           - zero: "Il était une fois un hamster qui trouva une graine magique… C'est un conte ! J'en suis le héros. 😳"
+      - a_quoi_ca_sert: "Les contes existent dans toutes les cultures depuis des milliers d'années : ils transmettent des valeurs et font rêver."
       - texte: |
           Le **conte** : une formule d'ouverture (*Il était une fois*), un lieu et une époque **imprécis**, du **merveilleux** (fées, objets magiques, animaux qui parlent), une **fin heureuse** le plus souvent.
 
@@ -196,6 +213,9 @@ lecons:
           - le **héros** (celui qui part à l'aventure),
           - l'**opposant** (celui qui l'en empêche : sorcière, loup, ogre),
           - l'**adjuvant** (celui qui l'aide : fée, animal ami, objet magique).
+      - astuce:
+          texte: "Un conte commence souvent par « Il était une fois », a un héros, un méchant, des épreuves souvent par trois, et une fin heureuse."
+          qui: neo
       - retiens: "Conte = **Il était une fois**, **merveilleux**, **fin heureuse**. Rôles : **héros, opposant, adjuvant**."
     exercices:
       - type: qcm
@@ -221,12 +241,19 @@ lecons:
     objectif: Je trouve une information précise dans un texte documentaire.
     mots: [documentaire, information]
     etapes:
+      - dialogue:
+          - zero: "Je dois faire un exposé sur les manchots, mais le livre est énorme !"
+          - neo: "Pas besoin de tout lire : un documentaire se lit avec des indices. Je te montre."
+      - a_quoi_ca_sert: "Savoir trouver une information dans un documentaire est indispensable pour faire un exposé, un devoir ou simplement comprendre le monde."
       - texte: |
           **Les abeilles**
 
           Une ruche peut abriter jusqu'à 50 000 abeilles. On y trouve une seule **reine**, qui pond les œufs, des **ouvrières**, qui récoltent le nectar et fabriquent le miel, et des **faux bourdons**, les mâles.
           Une ouvrière vit environ six semaines en été. Pour produire un kilogramme de miel, les abeilles doivent butiner plusieurs millions de fleurs.
           Les abeilles communiquent par une danse : elle indique aux autres la direction et la distance des fleurs.
+      - astuce:
+          texte: "Ne lis pas tout ! Regarde d'abord le titre, les intertitres, les images et leurs légendes : ils te disent où chercher."
+          qui: zero
       - retiens: "Dans un documentaire, je **repère les mots-clés** de la question, puis je **cherche** la phrase qui y répond."
     exercices:
       - type: qcm

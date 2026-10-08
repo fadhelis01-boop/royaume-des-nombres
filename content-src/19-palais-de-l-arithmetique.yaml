@@ -38,6 +38,9 @@ lecons:
           enonce: "Vrai ou faux : {{n}} est un nombre premier."
           reponse: "estpremier(n)"
           correction: "{{si(estpremier(n), texte(n) + ' n’a que deux diviseurs : 1 et ' + texte(n) + '.', 'Diviseurs de ' + texte(n) + ' : ' + diviseurs(n) + '.')}}"
+      - astuce:
+          texte: "Pour savoir si n est premier, teste les divisions par 2, 3, 5, 7… seulement jusqu'à √n. Au-delà, c'est inutile."
+          qui: neo
     exercices:
       - type: vf
         vars: { n: "20..199" }
@@ -92,6 +95,9 @@ lecons:
           enonce: "${{2^a*3^b*5^c}} = 2^{?} \\times 3^{ {{b}} } \\times 5^{ {{c}} }$"
           reponse: "a"
           correction: "${{2^a*3^b*5^c}} = 2^{ {{a}} } \\times 3^{ {{b}} } \\times 5^{ {{c}} }$"
+      - astuce:
+          texte: "Divise par le plus petit nombre premier possible, encore et encore : 60 → 2 → 30 → 2 → 15 → 3 → 5. Donc 60 = 2² × 3 × 5."
+          qui: zero
     exercices:
       - type: champs
         vars: { a: "1..5", b: "0..3", c: "0..2" }
@@ -186,6 +192,9 @@ lecons:
           enonce: "Reste de {{a}} modulo {{n}} ?"
           reponse: "a % n"
           correction: "{{a}} = {{n}} × {{ent(a/n)}} + {{a%n}}, donc ${{a}} \\equiv {{a%n}} \\pmod{ {{n}} }$."
+      - astuce:
+          texte: "Modulo, c'est l'horloge : 15 h, c'est 3 h sur un cadran, donc 15 ≡ 3 (mod 12). On ne garde que le reste."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "50..999", n: [4, 6, 7, 9, 12, 13] }
@@ -235,6 +244,9 @@ lecons:
           enonce: "Écris en base 10 le nombre binaire ${{binaire(n)}}_2$."
           reponse: "n"
           correction: "${{binaire(n)}}_2 = {{n}}$"
+      - astuce:
+          texte: "En binaire, les rangs valent 1, 2, 4, 8, 16, 32… Pour écrire 13 : 8 + 4 + 1, donc 1101."
+          qui: neo
     exercices:
       - type: nombre
         vars: { n: "8..63" }
@@ -277,6 +289,9 @@ lecons:
           enonce: "Avec un décalage de {{k}}, en quel rang (0 à 25) devient la lettre de rang {{x}} ?"
           reponse: "(x + k) % 26"
           correction: "({{x}} + {{k}}) mod 26 = {{(x+k)%26}}."
+      - astuce:
+          texte: "Le code de César décale chaque lettre : pour déchiffrer, décale dans l'autre sens. RSA repose sur une idée simple : multiplier deux grands nombres premiers est facile, retrouver ces nombres à partir du produit est très difficile."
+          qui: zero
     exercices:
       - type: nombre
         vars: { x: "15..25", k: "3..13" }

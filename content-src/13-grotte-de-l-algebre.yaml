@@ -47,6 +47,9 @@ lecons:
           reponse: "3x+7"
           variables: [x]
           correction: "$3x + 7$"
+      - astuce:
+          texte: "Une lettre, c'est une boîte qui cache un nombre. « Le double d'un nombre plus 3 » → 2 × x + 3, qu'on écrit 2x + 3."
+          qui: zero
     exercices:
       - type: expression
         vars: { k: "2..9", b: "1..12" }
@@ -98,6 +101,9 @@ lecons:
           enonce: "Calcule ${{a}}x + {{nb(b)}}$ pour $x = {{nb(x)}}$."
           reponse: "a*x+b"
           correction: "${{a}} \\times ({{nb(x)}}) + ({{nb(b)}}) = {{nb(a*x+b)}}$"
+      - astuce:
+          texte: "Remplace la lettre par sa valeur entre parenthèses : si x = −2, alors 3x² devient 3 × (−2)² = 12. Les parenthèses évitent les erreurs de signe."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "2..9", b: "-9..9", x: "-5..6" }
@@ -151,6 +157,9 @@ lecons:
           variables: [x]
           forme: reduite
           correction: "$({{a}} + {{b}})x + ({{c}} + {{d}}) = {{a+b}}x + {{c+d}}$"
+      - astuce:
+          texte: "On ne regroupe que les termes de la même famille : les x avec les x, les x² avec les x², les nombres seuls ensemble. 3 pommes + 2 pommes, pas 3 pommes + 2 poires."
+          qui: neo
     exercices:
       - type: expression
         vars: { a: "2..12", b: "2..12" }
@@ -211,6 +220,9 @@ lecons:
           variables: [x]
           forme: developpee
           correction: "${{k}} \\times x + {{k}} \\times {{a}} = {{k}}x + {{k*a}}$"
+      - astuce:
+          texte: "Développer (a + b)(c + d) : chaque terme de la 1ʳᵉ parenthèse serre la main de chaque terme de la 2ᵉ. 4 poignées de main = 4 produits."
+          qui: zero
     exercices:
       - type: expression
         vars: { k: "2..9", a: "2..9", b: "1..9" }
@@ -378,6 +390,9 @@ lecons:
           enonce: "Résous : ${{a}}x + ({{nb(b)}}) = {{nb(a*x+b)}}$"
           reponse: "x"
           correction: "${{a}}x = {{nb(a*x+b)}} - ({{nb(b)}}) = {{nb(a*x)}}$, donc $x = {{nb(x)}}$."
+      - astuce:
+          texte: "Une équation est une balance : ce que tu fais d'un côté, fais-le de l'autre. Et vérifie ta solution en la remplaçant dans l'équation de départ."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "2..9", x: "1..9", b: "1..15" }
@@ -417,7 +432,7 @@ lecons:
     mots: [mise en équation]
     etapes:
       - dialogue:
-          - neo: "Mia a 3 ans de plus que moi. À nous deux, nous avons 27 ans. Quel est mon âge ?"
+          - neo: "Lya a 3 ans de plus que moi. À nous deux, nous avons 27 ans. Quel est mon âge ?"
           - mia: "J'appelle x ton âge. Le mien : x + 3. Ensemble : x + (x + 3) = 27."
           - neo: "Donc 2x + 3 = 27, 2x = 24, x = 12. J'ai 12 ans… en âge de renard."
       - texte: |
@@ -434,14 +449,14 @@ lecons:
       - question:
           type: expression
           vars: { e: "2..9" }
-          enonce: "Mia a {{e}} ans de plus que Néo. Si $x$ est l'âge de Néo, écris la somme de leurs âges."
+          enonce: "Lya a {{e}} ans de plus que Néo. Si $x$ est l'âge de Néo, écris la somme de leurs âges."
           reponse: "x+(x+{{e}})"
           variables: [x]
           correction: "$x + (x + {{e}}) = 2x + {{e}}$"
     exercices:
       - type: nombre
         vars: { x: "8..20", e: "2..9" }
-        enonce: "Mia a {{e}} ans de plus que Néo. Ensemble, ils ont {{2*x+e}} ans. Quel est l'âge de Néo ?"
+        enonce: "Lya a {{e}} ans de plus que Néo. Ensemble, ils ont {{2*x+e}} ans. Quel est l'âge de Néo ?"
         reponse: "x"
         unite: ans
         correction: "$x + (x + {{e}}) = {{2*x+e}}$, donc $2x = {{2*x}}$ et $x = {{x}}$."
@@ -501,6 +516,9 @@ lecons:
           enonce: "${{a}}x + {{b}} < {{a*s+b}}$. Quel est le plus grand ENTIER solution ?"
           reponse: "s-1"
           correction: "${{a}}x < {{a*s}}$ donc $x < {{s}}$ : le plus grand entier est {{s-1}}."
+      - astuce:
+          texte: "Une inéquation se résout comme une équation, sauf une règle : si tu multiplies ou divises par un nombre négatif, le sens du signe s'inverse."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "2..6", b: "1..9", s: "2..9" }
@@ -551,6 +569,9 @@ lecons:
           variables: [x]
           forme: developpee
           correction: "$x^2 + 2 \\times {{a}} \\times x + {{a}}^2 = x^2 + {{2*a}}x + {{a*a}}$"
+      - astuce:
+          texte: "(a + b)² n'est PAS a² + b² : n'oublie pas le double produit 2ab. Vérifie avec des nombres : (1 + 2)² = 9, et 1² + 2² = 5 seulement."
+          qui: zero
     exercices:
       - type: expression
         vars: { a: "1..9" }
@@ -608,6 +629,9 @@ lecons:
             - { avant: "x =", reponse: "x" }
             - { avant: "y =", reponse: "y" }
           correction: "En additionnant : $2x = {{2*x}}$, $x = {{x}}$ ; puis $y = {{x+y}} - {{x}} = {{y}}$."
+      - astuce:
+          texte: "Si une inconnue est déjà seule (y = …), remplace-la (substitution). Sinon, multiplie pour avoir les mêmes coefficients et soustrais les équations (combinaison)."
+          qui: mia
     exercices:
       - type: champs
         vars: { x: "-5..9", y: "-5..9", a: "2..4" }

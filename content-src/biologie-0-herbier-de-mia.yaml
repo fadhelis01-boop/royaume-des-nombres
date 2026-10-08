@@ -1,6 +1,6 @@
 id: bio-herbier-de-mia
 matiere: biologie
-titre: L'Herbier de Mia
+titre: L'Herbier de Lya
 sous_titre: Observer, décrire, classer, faire un schéma, utiliser loupe et microscope
 emoji: 🔍
 couleur: "#3a8a2a"
@@ -20,6 +20,9 @@ lecons:
     objectif: Je décris un être vivant avec précision.
     mots: [observer, décrire, critère]
     etapes:
+      - dialogue:
+          - zero: "J'ai vu un insecte. Il était… petit. Voilà, c'est tout."
+          - mia: "Petit comment ? Combien de pattes ? Quelles couleurs ? Un scientifique observe avec ses yeux de détective !"
       - texte: |
           Pour bien observer un être vivant :
           1. Je regarde **l'ensemble** puis les **détails** (avec une loupe si besoin).
@@ -27,6 +30,9 @@ lecons:
           3. Je **compare** avec ce que je connais (plus grand que, de la forme de…).
           4. J'utilise mes **sens**… mais jamais le goût, et je ne touche pas les animaux ou plantes inconnus.
           5. Je **note** et je **dessine** ce que je vois, pas ce que j'imagine.
+      - astuce:
+          texte: "Pour bien observer, utilise tes questions de détective : quelle taille ? quelle forme ? quelle couleur ? combien de pattes, de feuilles, de pétales ? Et dessine ce que tu vois, pas ce que tu crois savoir."
+          qui: mia
       - retiens: "Observer : l'ensemble, les détails, compter, comparer, noter et dessiner ce que je vois vraiment."
       - vraie_vie:
           titre: Défi de l'observateur
@@ -54,9 +60,16 @@ lecons:
     objectif: Je classe des êtres vivants selon ce qu'ils possèdent.
     mots: [classer, critère, caractère]
     etapes:
+      - dialogue:
+          - zero: "La chauve-souris vole, donc c'est un oiseau !"
+          - neo: "Elle a des poils et allaite ses petits : c'est un mammifère. On classe selon ce qu'on A, pas selon ce qu'on FAIT."
+      - a_quoi_ca_sert: "Classer le vivant permet de s'y retrouver parmi des millions d'espèces et de comprendre qui est cousin de qui."
       - texte: |
           Les scientifiques classent les êtres vivants selon ce qu'ils **ont** (des **caractères** : plumes, poils, nageoires, 6 pattes, 4 membres, squelette interne…), et **pas** selon ce qu'ils **font** ou **où ils vivent**.
           Exemple : la baleine vit dans l'eau comme un poisson, mais elle a des **poils** (quelques-uns) et allaite ses petits : c'est un **mammifère**, comme nous. La chauve-souris vole mais c'est aussi un mammifère.
+      - astuce:
+          texte: "On classe selon ce que les êtres vivants ONT (des plumes, des poils, un squelette), jamais selon ce qu'ils FONT (voler, nager) ni où ils vivent."
+          qui: neo
       - retiens: "On classe selon ce que les êtres vivants ONT (poils, plumes, écailles…), pas selon ce qu'ils font ni où ils vivent."
     exercices:
       - type: qcm
@@ -81,6 +94,10 @@ lecons:
     objectif: Je réalise un schéma scientifique propre.
     mots: [schéma, légende, titre, échelle]
     etapes:
+      - dialogue:
+          - zero: "J'ai dessiné une fleur avec 12 couleurs et des paillettes !"
+          - mia: "Très joli ! Mais pour un schéma scientifique, on veut surtout que ce soit clair et bien légendé."
+      - a_quoi_ca_sert: "Un schéma clair fait comprendre en un coup d'œil ce qu'un long texte expliquerait : les médecins et les chercheurs en font tout le temps."
       - texte: |
           Un **schéma** n'est pas un dessin artistique : il doit être **clair** et **exact**.
           - un **titre** (« Schéma d'une fleur de tulipe ») ;
@@ -100,6 +117,9 @@ lecons:
               trace: "M50 78 C38 70 32 76 50 82 M50 68 C62 60 68 66 50 72"
             - consigne: "Trace les traits de légende à la règle vers la droite (pétale, cœur, tige, feuille) : ils ne se croisent pas."
               trace: "M68 46 L88 30 M56 50 L88 42 M50 88 L88 88 M58 66 L88 70"
+      - astuce:
+          texte: "Au crayon de papier, traits de légende à la règle, bien horizontaux, qui ne se croisent jamais, et un titre qui dit ce qu'on voit."
+          qui: zero
       - retiens: "Schéma = titre + traits simples + légendes horizontales reliées à la règle, sans croisement."
     exercices:
       - type: qcm
@@ -123,6 +143,10 @@ lecons:
     objectif: Je sais utiliser une loupe et je connais les parties du microscope.
     mots: [loupe, microscope, grossissement, lame, objectif]
     etapes:
+      - dialogue:
+          - zero: "Il y a des bêtes dans une goutte d'eau de mare ? Je ne vois rien !"
+          - neo: "Avec un microscope, tu verras tout un zoo minuscule. Suis-moi !"
+      - a_quoi_ca_sert: "Le microscope a permis de découvrir les microbes et les cellules. Sans lui, pas de vaccins ni d'antibiotiques."
       - texte: |
           - La **loupe** grossit 2 à 10 fois : parfaite pour les insectes, les fleurs, les cristaux de sel.
           - Le **microscope** grossit 40 à 1 000 fois : il permet de voir les **cellules**. On place l'échantillon, très fin, sur une **lame** de verre, éclairée par-dessous. On regarde dans l'**oculaire** ; l'**objectif** est près de la lame. Grossissement total = oculaire × objectif (10 × 40 = 400).
@@ -130,6 +154,9 @@ lecons:
       - histoire:
           titre: Les premiers microscopes
           texte: "En 1665, **Robert Hooke** observe du liège au microscope et voit de petites cases qu'il appelle « cellules ». Peu après, le drapier néerlandais **Antoni van Leeuwenhoek**, avec des microscopes qu'il fabrique lui-même, est le premier à observer des bactéries et des spermatozoïdes."
+      - astuce:
+          texte: "Au microscope, commence toujours par le plus petit grossissement, puis augmente. Et ne descends jamais l'objectif vers la lame en regardant dans l'oculaire."
+          qui: neo
       - retiens: "Loupe : × 2 à × 10. Microscope : × 40 à × 1 000, grossissement = oculaire × objectif. Toujours commencer par le plus faible grossissement."
     exercices:
       - type: nombre

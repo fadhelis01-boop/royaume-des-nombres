@@ -87,7 +87,7 @@ export function Enigmes() {
       <button className="back" onClick={() => go("/jeux")}>
         ← Jeux
       </button>
-      <h1>🧩 Les énigmes de Mia</h1>
+      <h1>🧩 Les énigmes de Lya</h1>
       <Bubble who="mia" text="Une énigme, ça ne se résout pas en calculant vite : ça se résout en RÉFLÉCHISSANT. Dessine, essaie, cherche… et si on essayait autrement ?" />
       <div className="tabs">
         {([1, 2, 3] as const).map((n) => (

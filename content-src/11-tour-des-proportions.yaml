@@ -50,6 +50,9 @@ lecons:
           enonce: "Ce tableau est-il proportionnel ? 1 → {{k}} ; 2 → {{2*k}} ; 5 → {{5*k + t}}"
           reponse: "t == 0"
           correction: "{{si(t==0,'Oui : on multiplie toujours par ' + texte(k) + '.', 'Non : 5 × ' + texte(k) + ' = ' + texte(5*k) + ', pas ' + texte(5*k+1) + '.')}}"
+      - astuce:
+          texte: "Test rapide : si on double l'un, l'autre double-t-il aussi ? Et 0 donne-t-il 0 ? Si oui, c'est proportionnel."
+          qui: mia
     exercices:
       - type: nombre
         vars: { k: "2..12", a: "2..9" }
@@ -274,6 +277,9 @@ lecons:
           reponse: "v*t"
           unite: km
           correction: "{{v}} × {{t}} = {{v*t}} km."
+      - astuce:
+          texte: "Le triangle d, v, t : d en haut, v et t en bas. Cache ce que tu cherches : d = v × t, v = d ÷ t, t = d ÷ v."
+          qui: neo
     exercices:
       - type: nombre
         vars: { v: [40, 50, 60, 80, 90, 100, 120], t: "2..6" }
@@ -329,6 +335,9 @@ lecons:
             - { avant: "première part :", reponse: "a*u" }
             - { avant: "deuxième part :", reponse: "b*u" }
           correction: "{{a+b}} parts ; 1 part = {{u}} ; {{a*u}} et {{b*u}}."
+      - astuce:
+          texte: "Un ratio 2 : 3, c'est 5 parts en tout. Divise le total par 5, puis donne 2 parts à l'un et 3 à l'autre."
+          qui: zero
     exercices:
       - type: champs
         vars: { a: [1, 2, 3, 4], b: [2, 3, 5, 7], u: "2..12" }
@@ -376,6 +385,9 @@ lecons:
           reponse: "p*(1+t/100)"
           unite: €
           correction: "{{p}} × {{nb(1+t/100)}} = {{nb(p*(1+t/100))}} €."
+      - astuce:
+          texte: "Augmenter de 20 %, c'est multiplier par 1,2 ; baisser de 20 %, c'est multiplier par 0,8. Et + 20 % puis − 20 % ne ramène pas au départ !"
+          qui: mia
     exercices:
       - type: nombre
         vars: { t: [5, 10, 20, 25, 30, 40, 50] }

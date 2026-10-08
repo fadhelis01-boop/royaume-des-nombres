@@ -20,11 +20,18 @@ lecons:
     objectif: Je m'oriente avec le Soleil et la boussole.
     mots: [nord, sud, est, ouest, boussole]
     etapes:
+      - dialogue:
+          - zero: "Je suis perdu dans le jardin ! Où est le nord ?"
+          - neo: "Regarde où se lève le Soleil, et sors ta boussole. Je t'apprends à t'orienter."
+      - a_quoi_ca_sert: "Savoir s'orienter sert en randonnée, pour lire une carte, et pour ne jamais se perdre même sans téléphone."
       - texte: |
           Les quatre **points cardinaux** : **Nord**, **Est**, **Sud**, **Ouest** (dans le sens des aiguilles d'une montre : « **N**e **E**ssaie **S**urtout pas d'**O**ublier »).
           - Le Soleil se **lève à l'est** et se **couche à l'ouest** (environ). En France, à midi, il est au **sud**.
           - L'aiguille aimantée d'une **boussole** indique le **nord** (le nord magnétique, proche du nord géographique).
           - La nuit, dans l'hémisphère Nord, l'**étoile Polaire** indique le nord.
+      - astuce:
+          texte: "Le Soleil se lève à l'Est et se couche à l'Ouest. Dans l'ordre des aiguilles d'une montre : Nord, Est, Sud, Ouest — « Ne Effraie Surtout pas les Oiseaux »."
+          qui: zero
       - retiens: "N, E, S, O dans le sens des aiguilles. Soleil : lever à l'est, coucher à l'ouest, au sud à midi (en France). La boussole montre le nord."
     exercices:
       - type: qcm
@@ -48,6 +55,10 @@ lecons:
     objectif: Je compare les grandes distances de l'Univers.
     mots: [kilomètre, unité astronomique, année-lumière, échelle]
     etapes:
+      - dialogue:
+          - zero: "La Lune, c'est loin ? Plus loin que l'école ?"
+          - mia: "Un peu plus loin, oui ! Les distances de l'Univers sont gigantesques. Comparons-les."
+      - a_quoi_ca_sert: "Comparer les distances aide à imaginer l'immensité de l'Univers et à comprendre pourquoi les voyages spatiaux sont si longs."
       - texte: |
           | Distance | Valeur approximative |
           |---|---|
@@ -58,6 +69,9 @@ lecons:
           | Soleil → étoile la plus proche (Proxima du Centaure) | 4,2 **années-lumière** |
           | Taille de notre galaxie (Voie lactée) | environ 100 000 années-lumière |
           Une **année-lumière** est la distance parcourue par la lumière en un an (≈ 9 500 milliards de km).
+      - astuce:
+          texte: "Si le Soleil était un ballon de foot à Paris, la Terre serait un grain de poivre à 25 mètres, et l'étoile la plus proche serait… à New York !"
+          qui: neo
       - retiens: "Terre-Lune ≈ 384 000 km ; Terre-Soleil ≈ 150 millions de km (1 UA) ; étoile la plus proche ≈ 4,2 années-lumière."
     exercices:
       - type: ordre
@@ -82,6 +96,9 @@ lecons:
     objectif: Je reconnais quelques constellations et je distingue étoile et planète.
     mots: [constellation, étoile, planète, Grande Ourse, étoile Polaire]
     etapes:
+      - dialogue:
+          - zero: "Toutes les lumières du ciel sont des étoiles ?"
+          - neo: "Pas toutes ! Certaines sont des planètes. Apprenons à les reconnaître."
       - texte: |
           - Une **constellation** est un dessin imaginaire qui relie des étoiles (la **Grande Ourse** et sa « casserole », **Orion** et ses trois étoiles alignées, **Cassiopée** en W). Les étoiles d'une constellation peuvent être très éloignées les unes des autres.
           - En prolongeant de 5 fois le bord de la casserole de la Grande Ourse, on trouve l'**étoile Polaire**, qui indique le nord.
@@ -90,6 +107,9 @@ lecons:
       - vraie_vie:
           titre: Défi de la nuit étoilée
           texte: "Par une nuit claire, loin des lumières, avec un adulte, cherche la casserole de la Grande Ourse puis l'étoile Polaire. Repère un point très brillant qui ne scintille pas : c'est peut-être Vénus ou Jupiter !"
+      - astuce:
+          texte: "Une étoile scintille, une planète brille d'une lumière fixe. Pour trouver l'étoile Polaire, prolonge 5 fois le bord de la casserole de la Grande Ourse."
+          qui: mia
       - retiens: "Constellation = dessin d'étoiles. Grande Ourse → étoile Polaire (nord). Étoile : sa propre lumière ; planète : lumière du Soleil renvoyée."
     exercices:
       - type: qcm
@@ -114,6 +134,10 @@ lecons:
     objectif: Je connais les règles de sécurité pour observer le ciel.
     mots: [sécurité, éclipse, lunettes spéciales]
     etapes:
+      - dialogue:
+          - zero: "Je vais regarder le Soleil avec mes jumelles !"
+          - mia: "STOP, Zéro ! Ça peut abîmer tes yeux pour toujours. Voici les règles pour observer sans danger."
+      - a_quoi_ca_sert: "Ces règles protègent tes yeux pour toute la vie : un seul regard au Soleil dans un instrument peut rendre aveugle."
       - attention:
           texte: "Ne regarde JAMAIS le Soleil directement, ni à l'œil nu, ni avec des lunettes de soleil, des jumelles ou un télescope : tu peux perdre la vue définitivement, sans même avoir mal sur le moment."
           qui: neo
@@ -131,6 +155,9 @@ lecons:
             - "Regarde le second carton (jamais le Soleil !)."
           observation: "Un petit disque lumineux apparaît sur le second carton : c'est une image du Soleil."
           explication: "La lumière voyage en ligne droite : en passant par le petit trou, elle forme une image renversée du Soleil. Pendant une éclipse partielle, on y voit le Soleil « croqué »."
+      - astuce:
+          texte: "Règle d'or : on ne regarde JAMAIS le Soleil, ni à l'œil nu, ni avec des lunettes de soleil, ni avec des jumelles. Seulement avec des lunettes spéciales éclipse vérifiées."
+          qui: zero
       - retiens: "Jamais le Soleil en direct. Éclipse : lunettes certifiées ou image projetée. Lune et étoiles : sans danger."
     exercices:
       - type: vf

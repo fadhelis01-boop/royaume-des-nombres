@@ -21,6 +21,10 @@ lecons:
     objectif: Je conjugue le passé simple à toutes les personnes et je reconnais le subjonctif imparfait.
     mots: [passé simple, subjonctif imparfait, subjonctif plus-que-parfait]
     etapes:
+      - dialogue:
+          - zero: "« Qu'il fût » ? C'est quoi ce temps bizarre avec un accent ?"
+          - neo: "Le subjonctif imparfait ! Rare aujourd'hui, mais tu le croiseras dans les classiques."
+      - a_quoi_ca_sert: "Ces temps se rencontrent dans les grands romans et les textes anciens : les reconnaître permet de lire les classiques sans se perdre."
       - texte: |
           **Passé simple** — quatre familles de terminaisons :
           - en **-a** (verbes en -er) : *je chantai, il chanta, nous chantâmes, ils chantèrent* ;
@@ -31,6 +35,9 @@ lecons:
           **Subjonctif imparfait** : on part du passé simple (2ᵉ pers. du sing.) et on ajoute *-se, -ses, -^t, -sions, -siez, -sent* → *que je chantasse, qu'il chantât, qu'il fût, qu'il eût, qu'il vînt*.
           On le rencontre dans la littérature classique, surtout à la 3ᵉ personne : *Il fallait qu'il **partît**.*
           **Subjonctif plus-que-parfait** : *qu'il **eût** chanté, qu'il **fût** venu* — il sert aussi de « conditionnel passé 2ᵉ forme » : *On **eût dit** un roi.*
+      - astuce:
+          texte: "Le subjonctif imparfait se fabrique à partir du passé simple : il chanta → qu'il chantât ; il fit → qu'il fît."
+          qui: neo
       - retiens: "Passé simple : -a, -i, -u, -in. Subjonctif imparfait = passé simple + -sse (qu'il chantât, qu'il fût)."
     exercices:
       - type: mot
@@ -56,11 +63,18 @@ lecons:
     objectif: Je donne la fonction précise de groupes plus rares.
     mots: [attribut du COD, apposition, complément d'agent, complément du nom, complément de l'adjectif]
     etapes:
+      - dialogue:
+          - zero: "« On l'a élu président » : président, c'est un COD ?"
+          - mia: "Presque ! C'est un attribut du COD. Allons au bout de l'analyse."
+      - a_quoi_ca_sert: "L'analyse précise permet de comprendre les phrases les plus complexes et de bien les accorder."
       - texte: |
           - **Attribut du COD** : qualité donnée au COD par le verbe (*trouver, juger, élire, nommer, rendre…*) → *Je trouve ce film **passionnant**. On l'a élu **président**.*
           - **Complément d'agent** : qui fait l'action dans une phrase passive → *La souris est mangée **par le chat**.*
           - **Apposition** : groupe détaché par une virgule qui désigne la même réalité que le nom → ***Poète engagé**, Hugo s'exila.*
           - **Complément du nom** : *la maison **de mon oncle*** ; **complément de l'adjectif** : *fier **de son fils***.
+      - astuce:
+          texte: "Pour identifier une fonction, pose toujours les trois questions : qui ? quoi ? à qui/de quoi ? puis vérifie si le groupe se déplace."
+          qui: zero
       - retiens: "Pour l'attribut du COD, le verbe *être* est caché : *je trouve ce film passionnant* = *je trouve que ce film **est** passionnant*."
     exercices:
       - type: qcm
@@ -74,7 +88,7 @@ lecons:
         phrase: "{{t}}"
         correction: "Le complément d'agent fait l'action : on peut retourner la phrase à la voix active."
       - type: surligner
-        vars: { t: ["Je trouve cette histoire [émouvante].", "Le jury a déclaré Mia [gagnante].", "Ils ont nommé Néo [capitaine].", "Cette nouvelle rend Zéro [heureux]."] }
+        vars: { t: ["Je trouve cette histoire [émouvante].", "Le jury a déclaré Lya [gagnante].", "Ils ont nommé Néo [capitaine].", "Cette nouvelle rend Zéro [heureux]."] }
         enonce: "Touche l'attribut du COD."
         phrase: "{{t}}"
         niveau: 2
@@ -87,6 +101,7 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Hippopotame » = hippo (cheval) + potamos (fleuve) : un cheval de fleuve ! Les mots sont des puzzles."
+      - a_quoi_ca_sert: "Les racines grecques et latines permettent de deviner le sens de milliers de mots savants, notamment en sciences et en médecine."
       - texte: |
           | Racine grecque | sens | | Racine latine | sens |
           |---|---|---|---|---|
@@ -99,6 +114,9 @@ lecons:
           | -logie | étude, discours | | magn- | grand |
           | philo | qui aime | | ambul- | marcher |
           | poly | plusieurs | | -fuge | qui fait fuir |
+      - astuce:
+          texte: "Retiens quelques racines-clés : bio = vie, géo = terre, graphie = écrire, phone = son, logie = étude. Hydrophobe = qui a peur de l'eau !"
+          qui: mia
       - retiens: "Décompose le mot savant en racines : leur sens additionné donne le sens du mot."
     exercices:
       - type: qcm
@@ -127,6 +145,7 @@ lecons:
       - dialogue:
           - zero: "Éminent, imminent… c'est le même mot avec une faute, non ? 😅"
           - mia: "Non ! Ce sont des **paronymes** : presque la même forme, un sens très différent."
+      - a_quoi_ca_sert: "Confondre deux paronymes peut changer totalement le sens : « infecter » et « infester », « éminent » et « imminent »."
       - texte: |
           - **éminent** (remarquable) / **imminent** (qui va arriver)
           - **effraction** (entrée par force) / **infraction** (faute contre la loi)
@@ -135,6 +154,9 @@ lecons:
           - **conjecture** (supposition) / **conjoncture** (situation)
           - **acception** (sens d'un mot) / **acceptation** (fait d'accepter)
           - **évoquer** (rappeler) / **invoquer** (appeler à l'aide, citer à l'appui)
+      - astuce:
+          texte: "Associe chaque paronyme à une image : imminent → « immédiat » (ça va arriver), éminent → « élevé » (une personne importante)."
+          qui: neo
       - retiens: "Un doute ? Pense au sens précis et cherche le mot dans le dictionnaire."
     exercices:
       - type: qcm
@@ -158,6 +180,10 @@ lecons:
     objectif: Je construis et j'analyse une argumentation.
     mots: [thèse, argument, exemple, concession, connecteur logique]
     etapes:
+      - dialogue:
+          - zero: "Je veux convaincre mes parents d'avoir une plus grande cage !"
+          - neo: "Alors il te faut une thèse, des arguments et des exemples. Construisons ton plaidoyer !"
+      - a_quoi_ca_sert: "Argumenter sert toute la vie : convaincre tes parents, défendre une idée, écrire une lettre de motivation, débattre."
       - texte: |
           - La **thèse** est l'opinion défendue : *Il faut lire chaque jour.*
           - L'**argument** est la raison qui la soutient : *car la lecture enrichit le vocabulaire.*
@@ -165,6 +191,9 @@ lecons:
           - La **concession** reconnaît une part de vérité à l'adversaire avant de le contredire : ***Certes**, lire prend du temps, **mais** c'est un voyage.*
 
           **Connecteurs logiques** — cause : *car, parce que, puisque, en effet* ; conséquence : *donc, c'est pourquoi, par conséquent, si bien que* ; opposition : *mais, pourtant, cependant, néanmoins* ; addition : *de plus, en outre*.
+      - astuce:
+          texte: "Thèse + argument + exemple : je dis ce que je pense, je dis pourquoi, je le prouve par un exemple concret."
+          qui: zero
       - retiens: "Thèse → argument → exemple. Les connecteurs logiques montrent le chemin de la pensée."
     exercices:
       - type: classer
@@ -193,10 +222,14 @@ lecons:
       - dialogue:
           - neo: "Une dissertation, c'est un algorithme : analyser le sujet, poser un problème, le résoudre en étapes."
           - mia: "Et un commentaire, c'est montrer COMMENT un texte produit ses effets, avec des citations précises."
+      - a_quoi_ca_sert: "Le commentaire et la dissertation sont au cœur des examens. Une bonne méthode permet de ne pas se perdre et de gagner du temps."
       - texte: |
           **Dissertation** : 1. analyser les mots du sujet → 2. formuler une **problématique** (une vraie question) → 3. chercher des arguments et des exemples → 4. faire un **plan** (souvent en 2 ou 3 parties : thèse / antithèse / synthèse, ou plan thématique) → 5. rédiger l'**introduction** (amorce, sujet, problématique, annonce du plan) → 6. développer → 7. **conclure** (bilan + ouverture).
 
           **Commentaire** : on ne raconte pas le texte, on l'**analyse** ; chaque idée s'appuie sur une **citation** et un **procédé** (figure, temps, champ lexical…) et son **effet**.
+      - astuce:
+          texte: "Garde toujours 10 minutes pour te relire. Et commence par lire le sujet trois fois en soulignant chaque mot important."
+          qui: mia
       - retiens: "Commentaire : **idée + citation + procédé + effet**. Dissertation : **problématique + plan + exemples**."
     exercices:
       - type: ordre

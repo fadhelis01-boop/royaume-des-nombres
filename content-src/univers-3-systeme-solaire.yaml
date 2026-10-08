@@ -20,12 +20,19 @@ lecons:
     objectif: Je range les planètes dans l'ordre et je connais leurs caractéristiques.
     mots: [planète, planète rocheuse, planète géante, orbite]
     etapes:
+      - dialogue:
+          - zero: "Combien il y a de planètes autour du Soleil ?"
+          - mia: "Huit ! Partons en voyage de la plus proche à la plus lointaine."
+      - a_quoi_ca_sert: "Connaître les planètes aide à suivre les missions spatiales et à comprendre pourquoi la Terre est si particulière."
       - texte: |
           Autour du **Soleil** tournent **8 planètes**, dans l'ordre : **Mercure, Vénus, Terre, Mars, Jupiter, Saturne, Uranus, Neptune**.
           Moyen mnémotechnique : « **M**e **V**oici **T**oute **M**ouillée, **J**'ai **S**uivi **U**n **N**uage. »
           - Les 4 premières sont **rocheuses** (petites, avec un sol solide).
           - Les 4 dernières sont **géantes** (surtout du gaz ou des glaces, pas de sol où se poser) ; elles ont toutes des anneaux, Saturne a les plus spectaculaires.
           **Jupiter** est la plus grosse (plus de 1 000 Terres pourraient y tenir en volume). **Vénus** est la plus chaude (environ 460 °C, à cause de son effet de serre énorme). Pluton est classée depuis 2006 comme **planète naine**.
+      - astuce:
+          texte: "L'ordre depuis le Soleil : « Mon Vieux Tu M'as Jeté Sur Une Navette » : Mercure, Vénus, Terre, Mars, Jupiter, Saturne, Uranus, Neptune."
+          qui: zero
       - retiens: "Mercure, Vénus, Terre, Mars (rocheuses) ; Jupiter, Saturne, Uranus, Neptune (géantes). Jupiter la plus grosse, Vénus la plus chaude."
     exercices:
       - type: ordre
@@ -50,12 +57,19 @@ lecons:
     objectif: Je distingue la rotation (le jour) et la révolution (l'année).
     mots: [rotation, révolution, année bissextile]
     etapes:
+      - dialogue:
+          - zero: "La Terre tourne sur elle-même ET autour du Soleil ? J'ai le tournis !"
+          - neo: "Deux mouvements : un qui fait les jours, un qui fait les années."
+      - a_quoi_ca_sert: "La rotation donne les jours, la révolution donne les années : c'est la base de tous nos calendriers."
       - texte: |
           La Terre fait deux mouvements à la fois :
           - la **rotation** : elle tourne **sur elle-même** en **24 heures** → le jour et la nuit ;
           - la **révolution** : elle tourne **autour du Soleil** en **365 jours et environ 6 heures** → une année.
           Les 6 heures en trop s'accumulent : tous les 4 ans, on ajoute un **29 février** (année **bissextile**, 366 jours).
           La Terre file sur son orbite à environ **30 km par seconde** !
+      - astuce:
+          texte: "Rotation = toupie (sur elle-même, 24 h). Révolution = manège (autour du Soleil, 365 jours et 6 heures, d'où les années bissextiles)."
+          qui: mia
       - retiens: "Rotation sur elle-même : 24 h (jour/nuit). Révolution autour du Soleil : 365 j 1/4 (année). Année bissextile tous les 4 ans."
     exercices:
       - type: qcm
@@ -83,11 +97,15 @@ lecons:
       - dialogue:
           - zero: "C'est facile : en été, la Terre est plus près du Soleil, donc il fait plus chaud !"
           - neo: "Raté ! La Terre est même au plus près du Soleil… début janvier, en plein hiver chez nous. Et quand c'est l'été en France, c'est l'hiver en Australie, à la même distance du Soleil."
+      - a_quoi_ca_sert: "Comprendre les saisons évite une erreur très répandue : ce n'est pas la distance au Soleil qui fait l'été, c'est l'inclinaison de la Terre."
       - texte: |
           L'**axe** de rotation de la Terre est **incliné** d'environ **23,4°** et garde toujours la même direction pendant que la Terre tourne autour du Soleil.
           - Quand l'hémisphère Nord **penche vers le Soleil** (juin) : le Soleil monte **haut**, ses rayons arrivent presque à la verticale et chauffent plus, les jours sont **longs** → **été**.
           - Six mois plus tard, il **penche à l'opposé** (décembre) : Soleil bas, rayons rasants, jours courts → **hiver**.
           **Solstices** (21 juin, 21 décembre) : jour le plus long / le plus court. **Équinoxes** (vers le 20 mars et le 22 septembre) : jour et nuit de même durée partout.
+      - astuce:
+          texte: "Preuve que ce n'est pas la distance : quand c'est l'été en France, c'est l'hiver en Australie, alors qu'on est à la même distance du Soleil !"
+          qui: neo
       - retiens: "Saisons = axe incliné de 23,4° (pas la distance au Soleil !). Soleil haut et jours longs en été, bas et courts en hiver."
     exercices:
       - type: qcm
@@ -111,11 +129,18 @@ lecons:
     objectif: J'explique les phases de la Lune et les éclipses.
     mots: [phase, éclipse de Soleil, éclipse de Lune, alignement]
     etapes:
+      - dialogue:
+          - zero: "En pleine journée, le Soleil a disparu ! C'est la fin du monde ?"
+          - neo: "Non, c'est une éclipse : la Lune passe devant le Soleil. Je t'explique."
+      - a_quoi_ca_sert: "Prévoir les éclipses a fasciné toutes les civilisations ; aujourd'hui, on les calcule des siècles à l'avance."
       - texte: |
           La Lune tourne autour de la Terre en environ un mois. Une moitié de la Lune est **toujours** éclairée par le Soleil ; selon sa position, nous voyons une **portion plus ou moins grande** de cette moitié éclairée : ce sont les **phases**.
           - **Éclipse de Soleil** : la **Lune passe entre le Soleil et la Terre** et cache le Soleil (ça n'arrive qu'à la **nouvelle lune**).
           - **Éclipse de Lune** : la **Terre passe entre le Soleil et la Lune** ; la Lune est dans l'ombre de la Terre et prend une couleur rouge-orangé (à la **pleine lune**).
           Il n'y a pas d'éclipse chaque mois, car l'orbite de la Lune est légèrement inclinée.
+      - astuce:
+          texte: "Éclipse de Soleil : la Lune passe DEVANT le Soleil. Éclipse de Lune : la Lune passe DANS l'ombre de la Terre. Ordre : Soleil – Lune – Terre ou Soleil – Terre – Lune."
+          qui: zero
       - retiens: "Phases : on voit plus ou moins la moitié éclairée. Éclipse de Soleil : Lune entre Soleil et Terre (nouvelle lune). Éclipse de Lune : Terre entre Soleil et Lune (pleine lune)."
     exercices:
       - type: qcm
@@ -139,11 +164,18 @@ lecons:
     objectif: Je relie la gravitation au mouvement des astres et aux marées.
     mots: [gravitation, orbite, marée]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi la mer monte et descend sur la plage ?"
+          - mia: "C'est la Lune qui tire sur les océans ! On appelle ça les marées."
+      - a_quoi_ca_sert: "Les marées rythment la pêche, la navigation et produisent de l'électricité dans l'usine marémotrice de la Rance, en Bretagne."
       - texte: |
           Tous les objets qui ont une masse s'**attirent** : c'est la **gravitation**. Plus ils sont massifs et proches, plus l'attraction est forte.
           - C'est elle qui maintient la Lune autour de la Terre, et les planètes autour du Soleil (qui contient 99,8 % de la masse du Système solaire).
           - La Lune (et, un peu moins, le Soleil) attire l'eau des océans : le niveau de la mer monte et descend environ **deux fois par jour** : ce sont les **marées**.
           - Les marées sont les plus fortes (**vives-eaux**) quand le Soleil, la Terre et la Lune sont **alignés** (nouvelle et pleine lune).
+      - astuce:
+          texte: "La Lune tire sur les océans : il y a environ deux marées hautes par jour, car l'eau se soulève du côté de la Lune ET du côté opposé."
+          qui: mia
       - retiens: "La gravitation tient les astres en orbite. Les marées viennent surtout de l'attraction de la Lune : deux marées hautes par jour environ."
     exercices:
       - type: qcm

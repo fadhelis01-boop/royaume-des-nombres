@@ -49,6 +49,9 @@ lecons:
           enonce: "Remets les étapes du détective dans l'ordre."
           items: ["Comprendre", "Chercher (faire un schéma)", "Calculer", "Vérifier"]
           correction: "Comprendre → Chercher → Calculer → Vérifier."
+      - astuce:
+          texte: "Avant de calculer, raconte le problème avec tes mots à quelqu'un (ou à Zéro !). Si tu sais le raconter, tu l'as compris."
+          qui: mia
     exercices:
       - type: ordre
         enonce: "Remets les étapes dans l'ordre."
@@ -117,7 +120,7 @@ lecons:
         correction: "Les deux parties forment le tout : {{a}} + {{b}} = {{a+b}} kg."
       - type: nombre
         vars: { t: "200..900", a: "50..190" }
-        enonce: "Un livre a {{t}} pages. Mia en a lu {{a}}. Combien lui en reste-t-il ?"
+        enonce: "Un livre a {{t}} pages. Lya en a lu {{a}}. Combien lui en reste-t-il ?"
         visuel: { type: barres, lignes: [{ parts: [{ v: "=a", label: "lu : {{a}}" }, { v: "=t-a", label: "?", vide: true }] }], total: "{{t}} pages" }
         reponse: "t-a"
         correction: "{{t}} − {{a}} = {{t-a}} pages."
@@ -163,8 +166,8 @@ lecons:
       - question:
           type: nombre
           vars: { a: "20..60", e: "5..25" }
-          enonce: "Mia a {{e}} € de moins que Néo. Néo a {{a+e}} €. Combien a Mia ?"
-          visuel: { type: barres, lignes: [{ nom: "Néo", parts: [{ v: "=a", label: "?" }, { v: "=e", label: "{{e}}" }] }, { nom: "Mia", parts: [{ v: "=a", label: "?" }] }], total: "{{a+e}} €" }
+          enonce: "Lya a {{e}} € de moins que Néo. Néo a {{a+e}} €. Combien a Lya ?"
+          visuel: { type: barres, lignes: [{ nom: "Néo", parts: [{ v: "=a", label: "?" }, { v: "=e", label: "{{e}}" }] }, { nom: "Lya", parts: [{ v: "=a", label: "?" }] }], total: "{{a+e}} €" }
           reponse: "a"
           unite: €
           correction: "{{a+e}} − {{e}} = {{a}} €."
@@ -175,6 +178,9 @@ lecons:
             - { texte: "Je dessine deux barres : celle de Sami est plus courte de 5, donc 20 − 5", ok: true, retour: "Parfait : le dessin t'a donné la bonne opération, même avec le mot « plus » !" }
             - { texte: "Il y a « plus », donc je fais 20 + 5", ok: false, retour: "C'est le piège ! Sami en a MOINS qu'Inès. Dessine les barres pour le voir." }
             - { texte: "Je pars de 20 et je recule de 5", ok: true, retour: "Oui ! Reculer de 5, c'est faire 20 − 5 = 15." }
+      - astuce:
+          texte: "Dessine deux barres l'une sous l'autre : la plus longue pour celui qui en a le plus. La différence se voit tout de suite au bout."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "20..80", e: "5..30" }
@@ -207,15 +213,15 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Néo a 3 fois plus de billes que moi. À nous deux, on en a 48. Combien chacun ?"
-          - neo: "Une petite barre pour Mia… et 3 petites barres pour moi. 4 petites barres en tout !"
+          - neo: "Une petite barre pour Lya… et 3 petites barres pour moi. 4 petites barres en tout !"
       - visuel:
           type: barres
           lignes:
-            - nom: Mia
+            - nom: Lya
               parts: [{ v: 1, label: "?" }]
             - nom: Néo
               parts: [{ v: 1, label: "?" }, { v: 1, label: "?" }, { v: 1, label: "?" }]
-        legende: "4 barres-unités = 48, donc 1 barre-unité = 48 ÷ 4 = 12. Mia : 12, Néo : 36."
+        legende: "4 barres-unités = 48, donc 1 barre-unité = 48 ÷ 4 = 12. Lya : 12, Néo : 36."
       - texte: |
           **La barre-unité** : quand une quantité est « 3 fois plus » qu'une autre, on dessine des **barres de même taille**.
           1. Je compte les barres-unités en tout.
@@ -228,11 +234,11 @@ lecons:
       - question:
           type: champs
           vars: { u: "5..15", k: "2..4" }
-          enonce: "Néo a {{k}} fois plus de billes que Mia. Ensemble ils en ont {{u*(k+1)}}."
+          enonce: "Néo a {{k}} fois plus de billes que Lya. Ensemble ils en ont {{u*(k+1)}}."
           champs:
-            - { avant: "Mia a", reponse: "u", apres: "billes" }
+            - { avant: "Lya a", reponse: "u", apres: "billes" }
             - { avant: "Néo a", reponse: "k*u", apres: "billes" }
-          correction: "{{k+1}} barres-unités = {{u*(k+1)}} → 1 barre = {{u}}. Mia : {{u}}, Néo : {{k*u}}."
+          correction: "{{k+1}} barres-unités = {{u*(k+1)}} → 1 barre = {{u}}. Lya : {{u}}, Néo : {{k*u}}."
     exercices:
       - type: nombre
         vars: { u: "4..20", k: "2..5" }
@@ -249,7 +255,7 @@ lecons:
         correction: "{{k+1}} unités = {{u*(k+1)}} kg ; 1 unité = {{u}} kg."
       - type: nombre
         vars: { u: "5..15", k: "2..5" }
-        enonce: "Le sac de Néo pèse {{k}} fois plus que celui de Mia. Il pèse {{k*u}} kg. Combien pèse celui de Mia ?"
+        enonce: "Le sac de Néo pèse {{k}} fois plus que celui de Lya. Il pèse {{k*u}} kg. Combien pèse celui de Lya ?"
         reponse: "u"
         unite: kg
         correction: "{{k*u}} ÷ {{k}} = {{u}} kg."
@@ -293,6 +299,9 @@ lecons:
           titre: Défi dans la vraie vie
           texte: "Au supermarché (ou avec un prospectus), choisis 3 articles. Estime le total de tête, puis calcule-le vraiment. Combien rendra-t-on sur un billet de 20 € ?"
           materiel: "un prospectus ou un ticket de caisse"
+      - astuce:
+          texte: "Écris la question intermédiaire avant chaque calcul : « Combien coûtent les 3 cahiers ? » puis « Combien me reste-t-il ? »."
+          qui: zero
     exercices:
       - type: nombre
         vars: { e: "20..30", p: "4..9", c: "100..250" }
@@ -347,6 +356,9 @@ lecons:
           reponse: "{{n}}*{{p}}+{{r}}"
           calcul: true
           correction: "${{n}} \\times {{p}} + {{r}} = {{n*p+r}}$"
+      - astuce:
+          texte: "Remplace les grands nombres par des petits pour voir quelle opération faire, puis refais le même calcul avec les vrais nombres."
+          qui: mia
     exercices:
       - type: expression
         vars: { n: "3..8", p: "4..9", r: "1..5" }
@@ -395,13 +407,16 @@ lecons:
           - **a ÷ b** : on partage en b parts égales, ou on fait des paquets de b.
 
           Une bonne histoire de problème a : **des personnages, une situation, des nombres… et une QUESTION**.
-      - a_quoi_ca_sert: "Inventer des problèmes prouve qu'on a vraiment compris les opérations. C'est aussi ce que font les professeurs, les créateurs de jeux… et Mia quand elle s'ennuie !"
+      - a_quoi_ca_sert: "Inventer des problèmes prouve qu'on a vraiment compris les opérations. C'est aussi ce que font les professeurs, les créateurs de jeux… et Lya quand elle s'ennuie !"
       - question:
           type: qcm
           vars: { a: "3..7", b: "4..9" }
           enonce: "Quelle histoire correspond au calcul ${{a}} \\times {{b}}$ ?"
           choix: ["{{a}} enfants ont chacun {{b}} billes. Combien de billes en tout ?", "{{a}} enfants et {{b}} adultes vont au parc. Combien de personnes ?", "J'ai {{b}} billes, j'en perds {{a}}. Combien en reste-t-il ?", "{{b}} billes partagées entre {{a}} enfants. Combien chacun ?"]
           correction: "{{a}} groupes égaux de {{b}} : c'est une multiplication."
+      - astuce:
+          texte: "Pour inventer un problème, choisis d'abord le sens : + = on ajoute, − = on enlève ou on compare, × = plusieurs fois la même chose, ÷ = on partage."
+          qui: neo
     exercices:
       - type: qcm
         vars: { a: "20..50", b: "5..15" }
@@ -448,6 +463,9 @@ lecons:
           enonce: "« Sur un bateau, il y a {{m}} moutons et {{c}} chèvres. Quel est l'âge du capitaine ? »"
           choix: ["On ne peut pas savoir", "{{m+c}} ans", "{{m-c}} ans", "{{m*c}} ans"]
           correction: "Les animaux ne disent rien sur l'âge du capitaine : il manque une information !"
+      - astuce:
+          texte: "Barre au crayon les informations inutiles, et méfie-toi des mots-pièges : « de plus » ne veut pas toujours dire qu'il faut additionner !"
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: "4..9", p: "3..7", age: "8..12", t: "2..5" }

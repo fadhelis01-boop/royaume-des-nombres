@@ -13,7 +13,7 @@
 - { m: courage, n: n, g: m, d: "Force qui permet d'affronter le danger ou la difficulté.", e: "Il a eu le courage de dire la vérité.", s: [bravoure, audace], a: [lâcheté, peur], f: [courageux, encourager, décourager], x: "de cœur", t: caractère }
 - { m: courageux, n: a, d: "Qui a du courage. Féminin : courageuse.", e: "Un chevalier courageux.", s: [brave, vaillant, audacieux], a: [lâche, peureux], t: caractère }
 - { m: timide, n: a, d: "Qui manque d'assurance et n'ose pas parler ou agir devant les autres.", e: "Ce garçon timide rougit.", s: [réservé], a: [audacieux, effronté], f: [timidité], t: caractère }
-- { m: curieux, n: a, d: "Qui veut savoir, apprendre, découvrir ; parfois indiscret. Féminin : curieuse.", e: "Mia est curieuse de tout.", f: [curiosité], t: caractère }
+- { m: curieux, n: a, d: "Qui veut savoir, apprendre, découvrir ; parfois indiscret. Féminin : curieuse.", e: "Lya est curieuse de tout.", f: [curiosité], t: caractère }
 - { m: généreux, n: a, d: "Qui donne volontiers. Féminin : généreuse.", e: "Elle est généreuse avec ses amis.", s: [bon], a: [avare, égoïste], f: [générosité], t: caractère }
 - { m: avare, n: a, d: "Qui aime garder son argent et déteste dépenser.", e: "Harpagon est avare.", a: [généreux, prodigue], f: [avarice], l: 2, t: caractère }
 - { m: rusé, n: a, d: "Qui sait tromper par des moyens habiles.", e: "Le renard est rusé.", s: [malin, habile], a: [naïf], f: [ruse], t: caractère }

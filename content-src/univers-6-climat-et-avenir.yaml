@@ -20,10 +20,17 @@ lecons:
     objectif: J'explique l'équilibre entre l'énergie reçue et l'énergie renvoyée.
     mots: [bilan radiatif, albédo, rayonnement infrarouge]
     etapes:
+      - dialogue:
+          - zero: "Comment la Terre garde-t-elle la bonne température ?"
+          - mia: "Elle reçoit de l'énergie du Soleil et en renvoie. Tout est une question d'équilibre."
+      - a_quoi_ca_sert: "Le bilan radiatif explique pourquoi la température de la Terre change quand on modifie l'atmosphère : c'est le cœur de la science du climat."
       - texte: |
           La Terre **reçoit** l'énergie du Soleil (surtout de la lumière visible). Elle en **réfléchit** environ **30 %** directement vers l'espace (nuages, glaces, déserts : c'est l'**albédo**) ; le reste chauffe le sol, les océans et l'air.
           Pour garder une température stable, la Terre doit **renvoyer** autant d'énergie qu'elle en absorbe, sous forme d'**infrarouges**. Les gaz à effet de serre en retiennent une partie : si on en ajoute, il faut que la surface se réchauffe pour rétablir l'équilibre.
           **Rétroaction** : quand la banquise fond, la mer sombre (albédo faible) absorbe plus d'énergie… ce qui accélère le réchauffement.
+      - astuce:
+          texte: "Pense à une baignoire : l'énergie du Soleil est le robinet, l'énergie renvoyée est la bonde. Si la bonde est un peu bouchée (gaz à effet de serre), le niveau monte."
+          qui: neo
       - retiens: "Énergie reçue = énergie renvoyée à l'équilibre. Albédo ≈ 30 %. Plus de gaz à effet de serre → la surface se réchauffe. Fonte des glaces = rétroaction qui amplifie."
     exercices:
       - type: qcm
@@ -47,11 +54,18 @@ lecons:
     objectif: Je décris les réservoirs et les échanges de carbone.
     mots: [cycle du carbone, puits de carbone, réservoir, combustion]
     etapes:
+      - dialogue:
+          - zero: "Le carbone, c'est le noir du charbon ?"
+          - neo: "Il est partout : dans l'air, les arbres, les océans… et même dans toi ! Suivons son voyage."
+      - a_quoi_ca_sert: "Le cycle du carbone montre où va le CO₂ que nous émettons : une partie dans l'océan, une partie dans les plantes, et le reste s'accumule dans l'air."
       - texte: |
           Le carbone circule entre plusieurs **réservoirs** : l'**atmosphère** (CO₂), les **êtres vivants** (forêts, sols), les **océans** (CO₂ dissous, coquilles) et les **roches** (calcaire, charbon, pétrole, gaz).
           - La **photosynthèse** prend du CO₂ à l'air ; la **respiration** et la **décomposition** en rendent.
           - Les **combustibles fossiles** ont stocké du carbone pendant des **millions d'années** ; nous le relâchons en **quelques décennies**.
           - Les **puits de carbone** (océans, forêts) absorbent environ **la moitié** de nos émissions ; l'autre moitié s'accumule dans l'atmosphère. Le CO₂ dissous **acidifie** les océans.
+      - astuce:
+          texte: "Les grands réservoirs de carbone : roches, océans, sols, êtres vivants, atmosphère. Brûler du pétrole fait passer très vite du carbone des roches vers l'air."
+          qui: zero
       - retiens: "Réservoirs : air, vivant, océans, roches. Les fossiles libèrent en décennies un carbone stocké en millions d'années. Océans et forêts absorbent environ la moitié de nos émissions."
     exercices:
       - type: classer
@@ -76,10 +90,17 @@ lecons:
     objectif: Je connais les principales conséquences observées et projetées.
     mots: [GIEC, niveau des mers, événements extrêmes, scénario]
     etapes:
+      - dialogue:
+          - zero: "Un ou deux degrés de plus, ce n'est pas grave, non ?"
+          - mia: "À l'échelle de la planète, c'est énorme. Regardons ce que les scientifiques observent."
+      - a_quoi_ca_sert: "Connaître les conséquences du réchauffement aide à se préparer et à comprendre pourquoi agir vite est important."
       - texte: |
           Le **GIEC** (Groupe d'experts intergouvernemental sur l'évolution du climat) rassemble les connaissances scientifiques publiées. Ses rapports concluent que le réchauffement actuel est dû **sans équivoque** aux activités humaines.
           Conséquences **déjà observées** : réchauffement d'environ **1,2 °C**, hausse du niveau moyen des mers d'environ **20 cm depuis 1900**, recul des glaciers, canicules plus fréquentes et plus intenses, pluies extrêmes, acidification des océans, déplacement d'espèces.
           Pour le futur, tout dépend des **scénarios** d'émissions : chaque tonne de CO₂ évitée limite le réchauffement.
+      - astuce:
+          texte: "Retiens les grandes conséquences : chaleur plus intense, montée du niveau de la mer, glaciers qui fondent, océans plus acides, pluies extrêmes plus fréquentes."
+          qui: mia
       - retiens: "GIEC : réchauffement d'origine humaine, sans équivoque. Déjà : ≈ +1,2 °C, mers +20 cm depuis 1900, extrêmes plus fréquents. Le futur dépend de nos émissions."
     exercices:
       - type: qcm
@@ -104,12 +125,19 @@ lecons:
     objectif: J'estime des ordres de grandeur d'émissions et je compare des choix.
     mots: [empreinte carbone, CO₂ équivalent, tonne, sobriété]
     etapes:
+      - dialogue:
+          - zero: "Mon empreinte carbone, c'est la trace de mes pattes ?"
+          - neo: "Presque ! C'est la trace que nos activités laissent sur le climat. Mesurons-la."
+      - a_quoi_ca_sert: "Estimer son empreinte carbone aide à repérer les choix qui comptent vraiment, au lieu de se focaliser sur des détails."
       - texte: |
           L'**empreinte carbone** mesure les gaz à effet de serre émis par nos activités, en **tonnes de CO₂ équivalent** (t CO₂e) par an.
           - En France, elle est d'environ **9 tonnes par habitant et par an** (en comptant les produits importés).
           - Pour respecter l'Accord de Paris, il faudrait viser environ **2 tonnes** vers 2050.
           Les gros postes : **transports** (voiture, avion), **logement** (chauffage), **alimentation** (surtout la viande de bœuf), **biens achetés** (appareils, vêtements).
           Ordres de grandeur : un aller-retour Paris–New York en avion ≈ 1 à 2 t CO₂e par passager ; 1 kg de bœuf ≈ 30 kg CO₂e ; 1 kg de légumes de saison ≈ moins de 1 kg CO₂e.
+      - astuce:
+          texte: "Les gros postes d'une empreinte : transports, alimentation (surtout la viande rouge), logement (chauffage) et achats. Commence par les gros."
+          qui: neo
       - retiens: "Empreinte française ≈ 9 t CO₂e par personne et par an ; objectif ≈ 2 t. Gros postes : transports, logement, alimentation, achats."
     exercices:
       - type: nombre
@@ -135,11 +163,18 @@ lecons:
     objectif: Je distingue atténuation et adaptation et je connais des leviers d'action.
     mots: [atténuation, adaptation, sobriété, efficacité, développement durable]
     etapes:
+      - dialogue:
+          - zero: "Je suis un petit hamster. Je ne peux rien faire pour le climat…"
+          - mia: "Chacun peut agir, et ensemble ça compte beaucoup. Voyons comment."
+      - a_quoi_ca_sert: "Agir sur le climat concerne chacun : les choix individuels, mais aussi les entreprises, les villes et les États."
       - texte: |
           - **Atténuer** : réduire les émissions (énergies bas-carbone, isolation, transports en commun et vélo, moins de gaspillage, alimentation plus végétale, protéger les forêts).
           - **S'adapter** : se préparer aux changements déjà inévitables (végétaliser les villes contre les canicules, protéger les côtes, économiser l'eau, adapter l'agriculture).
           Les leviers sont **individuels** (nos choix) **et collectifs** (lois, entreprises, investissements, coopération internationale) : les deux sont nécessaires.
           Le **développement durable** cherche à répondre aux besoins d'aujourd'hui sans compromettre ceux des générations futures (dimensions environnementale, sociale et économique).
+      - astuce:
+          texte: "Atténuer = réduire la cause (émettre moins). S'adapter = se protéger des effets (végétaliser les villes, protéger les côtes). Il faut les deux."
+          qui: zero
       - retiens: "Atténuer = réduire les émissions ; s'adapter = se protéger des effets inévitables. Leviers individuels ET collectifs."
     exercices:
       - type: classer

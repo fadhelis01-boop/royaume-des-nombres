@@ -35,6 +35,9 @@ lecons:
           enonce: "Un menu : {{a}} entrées, {{b}} plats et {{c}} desserts. Combien de menus différents ?"
           reponse: "a*b*c"
           correction: "${{a}} \\times {{b}} \\times {{c}} = {{a*b*c}}$"
+      - astuce:
+          texte: "Principe multiplicatif : 3 hauts et 4 bas font 3 × 4 = 12 tenues. Dessine un arbre si tu hésites."
+          qui: zero
     exercices:
       - type: nombre
         vars: { n: "3..7" }
@@ -90,6 +93,9 @@ lecons:
           enonce: "Calcule $\\binom{ {{n}} }{ {{k}} }$."
           reponse: "comb(n,k)"
           correction: "$\\frac{ {{n}}! }{ {{k}}!\\,{{n-k}}! } = {{comb(n,k)}}$"
+      - astuce:
+          texte: "L'ordre compte ? Arrangement (podium). L'ordre ne compte pas ? Combinaison (équipe). Choisir 2 parmi 5 donne 10 équipes."
+          qui: mia
     exercices:
       - type: nombre
         vars: { n: "5..12", k: [2, 3, 4] }
@@ -139,6 +145,9 @@ lecons:
           enonce: "$P(A) = {{nb(pa)}}$ et $P_A(B) = {{nb(pb)}}$. Calcule $P(A \\cap B)$."
           reponse: "pa*pb"
           correction: "${{nb(pa)}} \\times {{nb(pb)}} = {{nb(pa*pb)}}$"
+      - astuce:
+          texte: "P(A sachant B) : on se place dans le monde où B s'est produit, et on regarde la part de A dans ce monde-là."
+          qui: neo
     exercices:
       - type: nombre
         vars: { pa: [0.1, 0.2, 0.3, 0.4], pb: [0.5, 0.7, 0.9] }
@@ -183,6 +192,9 @@ lecons:
           enonce: "$P(A) = {{nb(pa)}}$, $P_A(B) = {{nb(b1)}}$, $P_{\\bar A}(B) = {{nb(b2)}}$. Calcule $P(B)$."
           reponse: "pa*b1 + (1-pa)*b2"
           correction: "${{nb(pa)}} \\times {{nb(b1)}} + {{nb(1-pa)}} \\times {{nb(b2)}} = {{nb(pa*b1+(1-pa)*b2)}}$"
+      - astuce:
+          texte: "Ne confonds pas P(malade sachant test positif) et P(test positif sachant malade) : un test fiable à 99 % peut donner beaucoup de faux positifs si la maladie est rare."
+          qui: zero
     exercices:
       - type: nombre
         vars: { pa: [0.2, 0.4, 0.5, 0.6], b1: [0.5, 0.7, 0.9], b2: [0.1, 0.3] }
@@ -226,6 +238,9 @@ lecons:
           enonce: "On paie {{m}} € pour lancer un dé ; on reçoit {{g}} € si on fait 6. Espérance du gain net (fraction ou décimal) ?"
           reponse: "g/6 - m"
           correction: "$E = \\frac{ {{g}} }{6} - {{m}} = {{nb(g/6-m,2)}}$ €"
+      - astuce:
+          texte: "L'espérance, c'est le gain moyen si l'on jouait un très grand nombre de fois. Un jeu est équitable si l'espérance est nulle."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "1..9", b: "1..9", c: "1..9" }
@@ -263,6 +278,9 @@ lecons:
           enonce: "$X$ suit $\\mathcal{B}({{n}} ; {{nb(p)}})$. Espérance $E(X)$ ?"
           reponse: "n*p"
           correction: "$np = {{n}} \\times {{nb(p)}} = {{nb(n*p)}}$"
+      - astuce:
+          texte: "Loi binomiale = n épreuves identiques et indépendantes, avec seulement succès ou échec. Si une de ces conditions manque, ce n'est pas binomial."
+          qui: neo
     exercices:
       - type: nombre
         vars: { n: [3, 4], k: [1, 2] }
@@ -311,6 +329,9 @@ lecons:
           enonce: "On lance un dé 60 000 fois. Combien de 6 environ ?"
           choix: ["environ 10 000", "exactement 10 000", "environ 6 000", "environ 30 000"]
           correction: "Fréquence ≈ 1/6, donc environ 60 000 / 6 = 10 000 (mais rarement exactement)."
+      - astuce:
+          texte: "Plus on lance de fois, plus la fréquence se rapproche de la probabilité. Mais une pièce n'a pas de mémoire : après 5 piles, face n'est pas plus probable."
+          qui: zero
     exercices:
       - type: nombre
         vars: { n: [600, 1200, 6000] }

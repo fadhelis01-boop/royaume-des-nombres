@@ -20,6 +20,10 @@ lecons:
     objectif: Je décris la structure d'un atome.
     mots: [atome, noyau, proton, neutron, électron, numéro atomique]
     etapes:
+      - dialogue:
+          - zero: "Si je coupe un caillou en deux, puis encore en deux, et encore… j'arrive où ?"
+          - neo: "Aux atomes ! Les briques de toute la matière."
+      - a_quoi_ca_sert: "Tout ce qui existe est fait d'atomes : toi, l'air, ton crayon, les étoiles. Comprendre l'atome, c'est comprendre de quoi le monde est fait."
       - texte: |
           Un **atome** est minuscule (environ un dix-milliardième de mètre). Il contient :
           - un **noyau** très petit au centre, fait de **protons** (charge positive +) et de **neutrons** (neutres) ;
@@ -34,6 +38,9 @@ lecons:
       - attention:
           texte: "Ce dessin est un **modèle** pour comprendre : en réalité les électrons ne tournent pas sur des cercles comme des planètes, et le noyau est des dizaines de milliers de fois plus petit que l'atome."
           qui: neo
+      - astuce:
+          texte: "L'atome, c'est un tout petit système solaire : le noyau (protons + neutrons) au centre, les électrons qui tournent autour. Et il est surtout fait de vide !"
+          qui: mia
       - retiens: "Atome = noyau (protons + neutrons) + électrons. Neutre : autant d'électrons que de protons. Z = nombre de protons."
     exercices:
       - type: nombre
@@ -57,6 +64,10 @@ lecons:
     objectif: Je connais les symboles des éléments courants.
     mots: [élément, symbole, Mendeleïev]
     etapes:
+      - dialogue:
+          - zero: "C'est quoi « H₂O » ? Un code secret ?"
+          - mia: "Presque ! C'est l'écriture des chimistes. H, c'est l'hydrogène ; O, l'oxygène."
+      - a_quoi_ca_sert: "Les symboles des éléments sont une langue internationale : un chimiste japonais et un chimiste français écrivent tous les deux H₂O."
       - texte: |
           Chaque élément a un **symbole** : une majuscule, parfois suivie d'une minuscule.
           | Élément | Symbole | Élément | Symbole |
@@ -70,6 +81,9 @@ lecons:
       - histoire:
           titre: Le tableau périodique
           texte: "En 1869, le chimiste russe **Dmitri Mendeleïev** range les éléments connus par masse croissante, en colonnes de propriétés semblables. Il laisse des cases vides et prédit des éléments encore inconnus, découverts quelques années plus tard (le gallium, le germanium). Aujourd'hui on range les éléments par **numéro atomique** : le tableau en compte 118."
+      - astuce:
+          texte: "Le symbole commence toujours par une majuscule, parfois suivie d'une minuscule : C (carbone), Ca (calcium), Cu (cuivre, du latin cuprum)."
+          qui: neo
       - retiens: "Symbole = majuscule (+ minuscule). H, C, N, O, Na, Cl, Fe, Cu, Au, Ca. Le tableau périodique range les 118 éléments par numéro atomique."
     exercices:
       - type: mot
@@ -93,6 +107,10 @@ lecons:
     objectif: Je lis une formule chimique et je compte les atomes.
     mots: [molécule, formule, indice]
     etapes:
+      - dialogue:
+          - zero: "Combien d'atomes dans une goutte d'eau ?"
+          - neo: "Beaucoup trop pour les compter ! Mais une formule dit exactement de quoi est faite chaque molécule."
+      - a_quoi_ca_sert: "Une formule chimique dit exactement de quoi est faite une molécule : c'est ce qu'on lit sur les médicaments, les aliments et les produits."
       - texte: |
           Une **molécule** est un assemblage d'atomes liés entre eux. On l'écrit avec une **formule** : les symboles des atomes, et en **indice** le nombre de chaque atome (1 ne s'écrit pas).
           - **H₂O** (eau) : 2 atomes d'hydrogène + 1 atome d'oxygène = 3 atomes.
@@ -100,6 +118,9 @@ lecons:
           - **O₂** (dioxygène) : 2 oxygènes.
           - **CH₄** (méthane) : 1 carbone + 4 hydrogènes.
           - **C₆H₁₂O₆** (glucose) : 6 C, 12 H, 6 O = 24 atomes.
+      - astuce:
+          texte: "Le petit chiffre en bas compte l'atome qui est juste devant : H₂O = 2 H et 1 O. Pas de chiffre = 1."
+          qui: zero
       - retiens: "Dans une formule, l'indice en bas à droite compte les atomes de l'élément juste avant. H₂O : 2 H et 1 O."
     exercices:
       - type: nombre
@@ -123,6 +144,10 @@ lecons:
     objectif: J'équilibre une équation chimique simple.
     mots: [équation, coefficient, équilibrer]
     etapes:
+      - dialogue:
+          - zero: "En brûlant, la bougie disparaît. Les atomes sont détruits ?"
+          - mia: "Non : ils se réorganisent ! Une équation chimique montre comment."
+      - a_quoi_ca_sert: "Une équation équilibrée permet de prévoir les quantités : combien de carburant brûle, combien de gaz se forme, combien de produit fabriquer."
       - texte: |
           Une **équation chimique** résume une réaction : **réactifs → produits**. Comme les atomes ne disparaissent pas (Lavoisier !), il doit y avoir **le même nombre de chaque atome des deux côtés**.
           On ajuste avec des **coefficients** devant les formules (on ne change jamais les indices !).
@@ -130,6 +155,9 @@ lecons:
           - H₂ + O₂ → H₂O : à gauche 2 O, à droite 1 O ✗
           - H₂ + O₂ → **2** H₂O : 2 O de chaque côté, mais 4 H à droite ✗
           - **2** H₂ + O₂ → **2** H₂O : 4 H et 2 O de chaque côté ✓
+      - astuce:
+          texte: "Équilibrer, c'est compter : autant de chaque atome à gauche et à droite. On change seulement les grands nombres devant, jamais les petits."
+          qui: mia
       - retiens: "On équilibre avec des coefficients devant les formules, jamais en changeant les indices. Même nombre de chaque atome des deux côtés."
     exercices:
       - type: champs
@@ -159,6 +187,9 @@ lecons:
     objectif: Je situe une solution sur l'échelle de pH.
     mots: [pH, acide, basique, neutre]
     etapes:
+      - dialogue:
+          - zero: "Le citron pique la langue et le savon glisse. Pourquoi ?"
+          - neo: "L'un est acide, l'autre basique ! On les range sur une échelle : le pH."
       - texte: |
           Le **pH** mesure l'acidité d'une solution, sur une échelle de **0 à 14** :
           - **pH < 7** : solution **acide** (jus de citron ≈ 2, vinaigre ≈ 3, soda ≈ 3) ;
@@ -166,6 +197,9 @@ lecons:
           - **pH > 7** : solution **basique** (eau de mer ≈ 8, bicarbonate ≈ 8 à 9, savon ≈ 10, eau de Javel ≈ 11 à 12).
           Plus le pH est loin de 7, plus la solution est acide ou basique… et plus elle peut être **corrosive** (pH très bas ou très haut : danger pour la peau et les yeux).
           On mesure le pH avec du **papier pH** (il change de couleur) ou un **pH-mètre**.
+      - astuce:
+          texte: "pH 7 = neutre. Moins de 7 = acide (citron, vinaigre). Plus de 7 = basique (savon, javel). Plus on s'éloigne de 7, plus c'est fort et dangereux."
+          qui: neo
       - retiens: "pH < 7 acide, = 7 neutre, > 7 basique. Loin de 7 = plus corrosif."
       - a_quoi_ca_sert: "Le pH de la piscine (autour de 7,2 à 7,6), le pH de la peau (légèrement acide, vers 5,5), l'acidité des océans qui augmente avec le CO₂…"
     exercices:
@@ -190,6 +224,10 @@ lecons:
     objectif: Je sais qu'un ion est un atome qui a gagné ou perdu des électrons.
     mots: [ion, cation, anion]
     etapes:
+      - dialogue:
+          - zero: "Sur ma bouteille d'eau, c'est écrit « Ca²⁺ ». C'est quoi ?"
+          - mia: "Un ion calcium ! Un atome qui a perdu deux électrons."
+      - a_quoi_ca_sert: "Les ions sont partout : dans l'eau minérale (lis l'étiquette !), dans les piles, dans tes nerfs qui transmettent les messages."
       - texte: |
           Un **ion** est un atome (ou un groupe d'atomes) qui a **gagné ou perdu des électrons** : il n'est plus neutre.
           - Il a **perdu** des électrons → plus de charges + que de − → ion **positif** (cation) : Na⁺, Cu²⁺, Fe³⁺.
@@ -201,6 +239,9 @@ lecons:
           z: 11
           charge: 1
         legende: "L'ion sodium Na⁺ : 11 protons mais seulement 10 électrons. Charge : +1."
+      - astuce:
+          texte: "Un atome qui perd des électrons devient positif (+), car les électrons sont négatifs. Perdre du négatif rend positif, comme enlever une dette !"
+          qui: zero
       - retiens: "Ion positif = électrons perdus. Ion négatif = électrons gagnés. Sel = Na⁺ + Cl⁻. Acide : H⁺ ; base : OH⁻."
     exercices:
       - type: qcm

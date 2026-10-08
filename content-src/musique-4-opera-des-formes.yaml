@@ -21,6 +21,10 @@ lecons:
     objectif: Je reconnais une tonalité à son armure.
     mots: [tonalité, armure, relatif mineur, cycle des quintes]
     etapes:
+      - dialogue:
+          - zero: "Il y a plein de dièses au début de la ligne. Pourquoi ?"
+          - neo: "C'est l'armure : elle indique la tonalité du morceau."
+      - a_quoi_ca_sert: "L'armure indique la tonalité d'un morceau : elle permet de lire la partition sans être surpris par des dièses partout."
       - texte: |
           L'**armure** est la liste des dièses ou bémols placés au début de chaque ligne de la partition. Elle indique la **tonalité** :
           | Armure | Majeur | Relatif mineur |
@@ -32,6 +36,9 @@ lecons:
           | 2 bémols | si♭ majeur | sol mineur |
           Chaque tonalité majeure a un **relatif mineur** avec la même armure, qui commence **une tierce mineure plus bas** (do majeur → la mineur).
           Le **cycle des quintes** : en montant de quinte en quinte (do, sol, ré, la…), on ajoute un dièse à chaque fois.
+      - astuce:
+          texte: "L'ordre des dièses : « Fa, Do, Sol, Ré, La, Mi, Si ». Les bémols, c'est l'inverse : « Si, Mi, La, Ré, Sol, Do, Fa »."
+          qui: neo
       - retiens: "Armure → tonalité. Rien : do majeur / la mineur. 1♯ : sol / mi mineur. 1♭ : fa / ré mineur. Relatif mineur = tierce mineure en dessous."
     exercices:
       - type: qcm
@@ -55,6 +62,10 @@ lecons:
     objectif: Je reconnais les accords principaux d'une tonalité.
     mots: [degré, tonique, sous-dominante, dominante, cadence]
     etapes:
+      - dialogue:
+          - zero: "Je veux accompagner une chanson, mais je ne connais pas d'accords."
+          - mia: "Avec trois accords seulement, tu peux en accompagner des centaines !"
+      - a_quoi_ca_sert: "Avec seulement trois accords (I, IV, V), on peut accompagner des milliers de chansons, du blues au rock."
       - texte: |
           Dans une gamme, on numérote les notes en chiffres romains : **degrés**. Sur chaque degré, on peut construire un accord.
           Les trois accords les plus importants :
@@ -67,6 +78,9 @@ lecons:
           notes: "[Do4 Mi4 Sol4]:2 [Fa4 La4 Do5]:2 [Sol4 Si4 Ré5]:2 [Do4 Mi4 Sol4]:4"
           tempo: 90
           etiquette: "Écouter I – IV – V – I en do majeur"
+      - astuce:
+          texte: "En do majeur : I = do, IV = fa, V = sol. Compte les notes de la gamme : la 1ʳᵉ, la 4ᵉ et la 5ᵉ."
+          qui: zero
       - retiens: "I tonique (repos), IV sous-dominante, V dominante (tension). V → I = cadence parfaite. En do : do, fa, sol."
     exercices:
       - type: qcm
@@ -91,12 +105,19 @@ lecons:
     objectif: Je reconnais la structure d'un morceau.
     mots: [forme, couplet, refrain, ABA, rondo, thème, variation]
     etapes:
+      - dialogue:
+          - zero: "Dans ma chanson préférée, le refrain revient tout le temps !"
+          - neo: "C'est sa forme ! Les morceaux ont une structure, comme les histoires."
+      - a_quoi_ca_sert: "Reconnaître la forme d'un morceau aide à le mémoriser et à écrire ses propres chansons."
       - texte: |
           Un morceau est construit comme une histoire, avec des parties qu'on nomme par des lettres :
           - **couplet / refrain** : le refrain revient (même texte, même musique), les couplets changent (chansons) ;
           - **ABA** : une partie, une partie contrastée, puis le retour de la première ;
           - **rondo** : A B A C A… le thème A revient comme un refrain ;
           - **thème et variations** : un thème, puis plusieurs versions transformées (Mozart, *Ah ! vous dirai-je, maman*).
+      - astuce:
+          texte: "Donne des lettres aux parties : la même mélodie qui revient = même lettre. Couplet-refrain-couplet-refrain = ABAB. Rondo = ABACA."
+          qui: mia
       - retiens: "Couplet/refrain, ABA, rondo (ABACA), thème et variations. On repère ce qui revient."
     exercices:
       - type: qcm
@@ -121,6 +142,10 @@ lecons:
     objectif: Je connais les familles et la disposition de l'orchestre.
     mots: [orchestre, chef d'orchestre, cordes, bois, cuivres, percussions]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi les violons sont devant et les tambours tout au fond ?"
+          - mia: "Chaque place a sa raison ! Visitons l'orchestre."
+      - a_quoi_ca_sert: "Connaître l'orchestre aide à écouter un concert, un film ou un jeu vidéo et à reconnaître les instruments."
       - texte: |
           Un **orchestre symphonique** réunit souvent 60 à 100 musiciens, dirigés par le **chef d'orchestre** :
           - **cordes** (les plus nombreuses, devant) : violons, altos, violoncelles, contrebasses ;
@@ -128,6 +153,9 @@ lecons:
           - **cuivres** : cors, trompettes, trombones, tuba (on fait vibrer les lèvres dans une embouchure) ;
           - **percussions** (au fond) : timbales, grosse caisse, cymbales, triangle…
           Plus un instrument est **grand**, plus il joue **grave** (contrebasse contre violon, tuba contre trompette).
+      - astuce:
+          texte: "Les plus aigus et les plus nombreux devant (violons), les plus forts au fond (cuivres, percussions). Sinon, on n'entendrait plus que les trompettes !"
+          qui: neo
       - retiens: "Cordes (devant, nombreuses), bois, cuivres, percussions (au fond). Plus grand = plus grave."
     exercices:
       - type: classer
@@ -152,6 +180,10 @@ lecons:
     objectif: Je situe les grandes périodes et quelques compositeurs.
     mots: [baroque, classique, romantique, jazz, période]
     etapes:
+      - dialogue:
+          - zero: "Bach, Mozart et les Beatles, ils jouaient ensemble ?"
+          - neo: "Non, à des siècles d'écart ! Voyageons dans l'histoire de la musique."
+      - a_quoi_ca_sert: "Situer les époques aide à comprendre pourquoi Bach, Mozart et les Beatles sonnent si différemment."
       - texte: |
           | Période | Dates (environ) | Compositeurs |
           |---|---|---|
@@ -162,6 +194,9 @@ lecons:
           | **Romantique** | 1820 – 1900 | Chopin, Schubert, Clara et Robert Schumann, Verdi |
           | XXᵉ – XXIᵉ siècle | depuis 1900 | Debussy, Ravel, Stravinsky ; le **jazz** (Louis Armstrong, Duke Ellington), le rock, le rap, les musiques électroniques |
           Et partout dans le monde, des traditions très riches : raga indien, gamelan indonésien, polyrythmies d'Afrique de l'Ouest, musique arabo-andalouse…
+      - astuce:
+          texte: "Les grandes périodes dans l'ordre : Moyen Âge, Renaissance, Baroque (Bach), Classique (Mozart), Romantique (Chopin), XXᵉ siècle et musiques actuelles."
+          qui: zero
       - retiens: "Baroque (Bach, Vivaldi), classique (Mozart), romantique (Chopin), XXᵉ (Debussy, jazz…). Chaque culture a sa musique."
     exercices:
       - type: ordre

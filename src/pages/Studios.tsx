@@ -182,7 +182,7 @@ export function StudioDessin() {
       </div>
       {pasApas.length > 0 && (
         <>
-          <h2>✏️ Dessiner pas à pas avec Mia</h2>
+          <h2>✏️ Dessiner pas à pas avec Lya</h2>
           <div className="fam-grid">
             {pasApas.map(({ w, l }) => (
               <button key={w.id + l.id} className="fam-card" onClick={() => go(`/lecon/${w.id}/${l.id}`)}>

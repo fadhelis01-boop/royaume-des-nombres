@@ -61,7 +61,7 @@
 - { m: manteau, n: n, g: m, d: "Vêtement chaud que l'on met par-dessus les autres.", e: "Il fait froid, prends ton manteau.", t: maison }
 - { m: chaussure, n: n, g: f, d: "Ce que l'on met aux pieds pour marcher dehors.", e: "Lace tes chaussures.", f: [chausser, chaussette], t: maison }
 - { m: voisin, n: n, g: m, d: "Personne qui habite tout près.", e: "Notre voisin a un chien.", f: [voisinage, avoisiner], t: maison }
-- { m: ami, n: n, g: m, d: "Personne que l'on aime bien et avec qui on partage des moments.", e: "Mia est mon amie.", s: [copain, camarade], a: [ennemi], f: [amitié, amical], t: famille }
+- { m: ami, n: n, g: m, d: "Personne que l'on aime bien et avec qui on partage des moments.", e: "Lya est mon amie.", s: [copain, camarade], a: [ennemi], f: [amitié, amical], t: famille }
 - { m: anniversaire, n: n, g: m, d: "Jour où l'on fête la date de sa naissance.", e: "Pour mon anniversaire, j'ai eu un vélo.", t: famille }
 - { m: cadeau, n: n, g: m, d: "Objet que l'on offre pour faire plaisir.", e: "Ce cadeau est pour toi.", s: [présent], t: famille }
 - { m: santé, n: n, g: f, d: "État de quelqu'un qui n'est pas malade.", e: "Le sport est bon pour la santé.", f: [sain], a: [maladie], t: corps }

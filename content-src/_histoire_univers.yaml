@@ -23,7 +23,8 @@ arcs:
     final: uni-jardin-de-la-terre
     fin:
       - narrateur: "Le voile se déchire : le Soleil se couche enfin, et pour la première fois depuis longtemps, une nuit étoilée tombe sur l'Observatoire."
-      - narrateur: "Une silhouette scintillante apparaît sur la coupole : Uranie, la Muse du ciel. « Il y a deux mille ans, Ératosthène a mesuré le tour de la Terre avec un bâton et des ombres. Toi, qu'aimerais-tu mesurer ? »"
+      - narrateur: "Une silhouette scintillante apparaît sur la coupole : Uranie, la Muse du ciel."
+      - uranie: "Il y a deux mille ans, Ératosthène a mesuré le tour de la Terre avec un bâton et des ombres. Toi, qu'aimerais-tu mesurer ?"
       - neo: "Mais plus loin, dans le Système solaire, le Brouillard Gris brouille encore les orbites…"
   - id: univers-arc-2
     titre: "Livre II — Le Brouillard des orbites"
@@ -31,7 +32,7 @@ arcs:
     final: uni-planete-vivante
     fin:
       - narrateur: "Les planètes reprennent leur ronde, les volcans et les océans retrouvent leurs couleurs sur le grand globe de l'Observatoire."
-      - narrateur: "Uranie raconte : « Wegener avait raison trop tôt : on s'est moqué de sa dérive des continents pendant cinquante ans. La science change d'avis… quand les preuves l'exigent. »"
+      - uranie: "Wegener avait raison trop tôt : on s'est moqué de sa dérive des continents pendant cinquante ans. La science change d'avis… quand les preuves l'exigent."
       - mia: "Il reste le plus grand défi : les étoiles elles-mêmes, et l'avenir de notre climat."
   - id: univers-arc-3
     titre: "Livre III — Rallumer le ciel"

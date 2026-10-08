@@ -20,10 +20,17 @@ lecons:
     objectif: Je compare les tailles des parties d'un objet pour le dessiner juste.
     mots: [proportion, unité de mesure, crayon-mesure]
     etapes:
+      - dialogue:
+          - zero: "Mon bonhomme a une tête énorme et des petits bras."
+          - neo: "C'est une question de proportions ! Mesurons avec le crayon."
+      - a_quoi_ca_sert: "Les bonnes proportions rendent un dessin crédible : une tête trop grande, et le personnage a l'air d'un bébé."
       - texte: |
           Les **proportions**, ce sont les tailles des parties **les unes par rapport aux autres**. Un chat aux oreilles géantes, c'est drôle… mais faux !
           **La méthode du crayon-mesure** : bras tendu, un œil fermé, tu mesures une partie de l'objet (par exemple la hauteur de la tête) avec ton crayon, puis tu comptes combien de fois elle entre dans le reste. Cette partie devient ton **unité**.
           Un adulte mesure environ **7 à 8 têtes** de haut ; un enfant de 6 ans environ **6 têtes**.
+      - astuce:
+          texte: "Tends ton bras, crayon vertical, ferme un œil : mesure une partie avec ton pouce sur le crayon, puis compare avec les autres. C'est la méthode des peintres."
+          qui: neo
       - retiens: "Proportions = tailles relatives. Choisir une unité (ex. la tête) et compter combien de fois elle entre dans le reste."
     exercices:
       - type: nombre
@@ -48,6 +55,10 @@ lecons:
     objectif: Je dessine un cube et je place les ombres selon la lumière.
     mots: [cube, arête, face éclairée, ombre propre, ombre portée]
     etapes:
+      - dialogue:
+          - zero: "Mon cube a l'air tout plat."
+          - mia: "Ajoutons de la lumière et des ombres : il va sortir de la feuille !"
+      - a_quoi_ca_sert: "Comprendre la lumière sur un cube permet ensuite d'éclairer n'importe quel objet : une maison, un visage, une voiture."
       - dessin:
           titre: Le cube éclairé
           etapes:
@@ -71,6 +82,9 @@ lecons:
           - La **face éclairée** (tournée vers la lumière) est la plus **claire**.
           - L'**ombre propre** : la partie de l'objet qui ne reçoit pas la lumière.
           - L'**ombre portée** : l'ombre que l'objet projette sur le sol, **à l'opposé** de la lumière (comme en physique !).
+      - astuce:
+          texte: "Trois faces, trois valeurs : la plus claire face à la lumière, une moyenne, la plus foncée à l'opposé. L'ombre portée part toujours à l'opposé de la lumière."
+          qui: zero
       - retiens: "Face éclairée (claire), face intermédiaire, ombre propre (foncée), ombre portée sur le sol, à l'opposé de la source."
     exercices:
       - type: qcm
@@ -94,6 +108,10 @@ lecons:
     objectif: Je dessine un cylindre et une sphère avec leur modelé.
     mots: [cylindre, sphère, ellipse, modelé, reflet]
     etapes:
+      - dialogue:
+          - zero: "Une balle, c'est juste un rond, non ?"
+          - neo: "Avec les bonnes ombres, ton rond devient une vraie boule !"
+      - a_quoi_ca_sert: "Le cylindre et la sphère sont dans tout : verres, troncs, bras, têtes, fruits. Les maîtriser, c'est dessiner la moitié du monde."
       - dessin:
           titre: La sphère éclairée
           etapes:
@@ -113,6 +131,9 @@ lecons:
       - texte: |
           **Cylindre** : deux **ellipses** (le cercle du haut et celui du bas vus en biais) reliées par deux traits verticaux. Le bas de l'ellipse du fond est caché.
           **Sphère** : un cercle, un point de lumière, un passage progressif vers l'ombre (le **modelé**), un léger **reflet** dans l'ombre (la lumière renvoyée par le sol) et l'ombre portée.
+      - astuce:
+          texte: "Sur une sphère : la lumière (point clair), la pénombre, l'ombre propre, le reflet léger au bord, puis l'ombre portée sur le sol."
+          qui: mia
       - retiens: "Sphère : point lumineux, dégradé, reflet, ombre portée. Cylindre : deux ellipses + deux verticales."
     exercices:
       - type: qcm
@@ -137,6 +158,9 @@ lecons:
     objectif: Je réalise une échelle de valeurs et je l'utilise.
     mots: [valeur, dégradé, contraste, hachures]
     etapes:
+      - dialogue:
+          - zero: "J'ai colorié tout pareil, ça manque de relief."
+          - mia: "Il te faut des valeurs : du très clair au très foncé."
       - texte: |
           La **valeur**, c'est le degré de clair ou de foncé, indépendamment de la couleur. Une **échelle de valeurs** va du blanc au noir en 5 à 9 cases.
           Pour foncer : appuyer plus, prendre une mine plus tendre, ou superposer des **hachures** (traits parallèles), puis des **hachures croisées**.
@@ -145,6 +169,9 @@ lecons:
           titre: Mon échelle de valeurs
           texte: "Dessine 5 cases côte à côte. Laisse la 1ʳᵉ blanche, puis fonce chaque case un peu plus que la précédente jusqu'au noir. Essaie une échelle au crayon, puis une en hachures."
           materiel: crayons HB et 2B, une feuille
+      - astuce:
+          texte: "Plisse les yeux en regardant ton modèle : les détails disparaissent et tu vois mieux les zones claires et foncées."
+          qui: neo
       - retiens: "Valeur = clair/foncé. Foncer : appuyer, mine tendre, hachures, hachures croisées. Le contraste attire le regard."
     exercices:
       - type: ordre
@@ -168,11 +195,18 @@ lecons:
     objectif: J'utilise les couleurs complémentaires pour créer du contraste.
     mots: [complémentaire, cercle chromatique, contraste]
     etapes:
+      - dialogue:
+          - zero: "Comment faire pour que mon dessin attire l'œil ?"
+          - neo: "Avec des couleurs complémentaires : côte à côte, elles se font briller !"
+      - a_quoi_ca_sert: "Les couleurs complémentaires sont utilisées dans les affiches, les logos et les films pour attirer l'œil."
       - texte: |
           Sur le cercle chromatique, deux couleurs **opposées** sont **complémentaires** :
           - **rouge ↔ vert**, **bleu ↔ orange**, **jaune ↔ violet**.
           Côte à côte, elles se renforcent : contraste maximal (les publicités et les drapeaux l'utilisent). Mélangées, elles se « neutralisent » en gris-brun.
           Astuce de peintre : pour assombrir une couleur sans noir, on ajoute un peu de sa complémentaire.
+      - astuce:
+          texte: "Chaque primaire a sa complémentaire en face sur le cercle : rouge ↔ vert, bleu ↔ orange, jaune ↔ violet. Côte à côte, elles se font briller."
+          qui: zero
       - retiens: "Rouge-vert, bleu-orange, jaune-violet. Côte à côte : contraste. Mélangées : gris-brun."
     exercices:
       - type: qcm
@@ -196,6 +230,9 @@ lecons:
     objectif: Je représente différentes matières avec des traits adaptés.
     mots: [texture, frottage, matière]
     etapes:
+      - dialogue:
+          - zero: "Mon chien en peluche et mon caillou ont l'air faits de la même matière."
+          - mia: "Chaque matière a sa texture ! Apprenons à les dessiner."
       - texte: |
           La **texture**, c'est l'aspect de la surface : lisse, rugueuse, poilue, écailleuse, granuleuse…
           - **Fourrure** : petits traits courts dans le sens des poils.
@@ -207,6 +244,9 @@ lecons:
           titre: La chasse aux textures
           texte: "Avec une feuille fine et un crayon couché, fais le frottage de 5 surfaces : une pièce, une feuille d'arbre, l'écorce, un mur, une semelle. Devine ensuite laquelle est laquelle !"
           materiel: papier fin, crayon gras ou craie grasse
+      - astuce:
+          texte: "Bois = lignes ondulées ; pierre = taches et petits points ; fourrure = traits courts dans le sens des poils ; métal = forts contrastes et reflets."
+          qui: mia
       - retiens: "Texture = aspect de la surface. Traits courts (fourrure), lignes ondulées (bois), points (pierre), reflets (métal). Frottage : Max Ernst."
     exercices:
       - type: qcm

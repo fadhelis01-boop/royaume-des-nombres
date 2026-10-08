@@ -20,6 +20,10 @@ lecons:
     objectif: Je décris la structure interne de la Terre.
     mots: [croûte, manteau, noyau, lithosphère]
     etapes:
+      - dialogue:
+          - zero: "Si je creuse un trou très profond, j'arrive où ?"
+          - neo: "Dans des roches de plus en plus chaudes ! Explorons l'intérieur de la Terre."
+      - a_quoi_ca_sert: "La structure interne de la Terre explique les volcans, les séismes et le champ magnétique qui nous protège des rayons du Soleil."
       - texte: |
           De l'extérieur vers le centre (rayon ≈ 6 370 km) :
           - la **croûte** : fine (environ 7 km sous les océans, 30 à 70 km sous les continents) ;
@@ -27,6 +31,9 @@ lecons:
           - le **noyau** : surtout du **fer** et du nickel, **liquide** à l'extérieur, **solide** au centre (graine), où la température dépasse 5 000 °C.
           La croûte et le haut du manteau forment la **lithosphère**, découpée en **plaques**.
           On connaît cette structure grâce aux **ondes sismiques** des séismes, qui changent de vitesse selon les couches traversées.
+      - astuce:
+          texte: "La Terre, c'est une pêche : la peau fine est la croûte, la chair est le manteau, le noyau est… le noyau !"
+          qui: neo
       - retiens: "Croûte (fine), manteau (épais, solide mais déformable), noyau de fer (liquide puis solide au centre). Connu grâce aux ondes sismiques."
     exercices:
       - type: ordre
@@ -50,6 +57,10 @@ lecons:
     objectif: J'explique les séismes, les volcans et les montagnes par le mouvement des plaques.
     mots: [plaque, dérive des continents, subduction, dorsale]
     etapes:
+      - dialogue:
+          - zero: "Les continents bougent ? Mais je ne sens rien !"
+          - mia: "Ils bougent de quelques centimètres par an. Assez pour faire des montagnes !"
+      - a_quoi_ca_sert: "La tectonique explique où se produisent les séismes et les volcans, et permet de construire des bâtiments adaptés dans les zones à risque."
       - histoire:
           titre: Alfred Wegener
           texte: "En 1912, **Alfred Wegener** remarque que les côtes de l'Amérique du Sud et de l'Afrique s'emboîtent comme un puzzle, et qu'on y trouve les mêmes fossiles. Il propose la **dérive des continents**. On se moque de lui… jusqu'aux années 1960, quand l'étude des fonds océaniques confirme l'idée : c'est la **tectonique des plaques**."
@@ -58,6 +69,9 @@ lecons:
           - Elles **s'écartent** aux **dorsales** (au milieu des océans) : du magma remonte et crée un nouveau plancher océanique.
           - Elles **se rapprochent** : une plaque plonge sous l'autre (**subduction**, avec des volcans explosifs) ou deux continents se heurtent et forment des **montagnes** (l'Himalaya grandit encore !).
           Séismes et volcans se concentrent surtout aux **frontières des plaques**.
+      - astuce:
+          texte: "Les plaques bougent à peu près à la vitesse de pousse de tes ongles : quelques centimètres par an. Assez pour ouvrir un océan en quelques millions d'années."
+          qui: zero
       - retiens: "Plaques mobiles (quelques cm/an). Écartement aux dorsales, rapprochement (subduction, montagnes). Séismes et volcans aux frontières."
     exercices:
       - type: qcm
@@ -82,11 +96,18 @@ lecons:
     objectif: Je distingue la météo et le climat.
     mots: [atmosphère, troposphère, couche d'ozone, météo, climat]
     etapes:
+      - dialogue:
+          - zero: "Il fait froid aujourd'hui, donc le climat ne se réchauffe pas !"
+          - neo: "Attention : la météo, c'est un jour ; le climat, c'est sur trente ans."
+      - a_quoi_ca_sert: "Ne pas confondre météo et climat évite bien des erreurs : un hiver froid ne contredit pas le réchauffement climatique."
       - texte: |
           L'**atmosphère** est la couche de gaz qui entoure la Terre. Les nuages et la météo se passent dans la couche basse, la **troposphère** (jusqu'à 10-15 km). Plus haut, la **couche d'ozone** (dans la stratosphère) filtre une grande partie des **UV** dangereux du Soleil.
           - La **météo** : le temps qu'il fait **à un endroit, un jour donné** (« demain, pluie à Lyon »).
           - Le **climat** : les conditions **moyennes** sur une longue période (au moins **30 ans**) dans une région (« climat océanique : doux et humide »).
           Un hiver froid ne contredit pas le réchauffement climatique : il faut regarder les moyennes sur des décennies.
+      - astuce:
+          texte: "La météo, c'est ton humeur du jour ; le climat, c'est ton caractère sur 30 ans."
+          qui: mia
       - retiens: "Météo = temps d'un jour, d'un lieu. Climat = moyennes sur 30 ans ou plus. L'ozone filtre les UV."
     exercices:
       - type: classer
@@ -111,11 +132,18 @@ lecons:
     objectif: J'explique l'effet de serre naturel et son renforcement par les activités humaines.
     mots: [effet de serre, gaz à effet de serre, dioxyde de carbone, méthane, réchauffement climatique]
     etapes:
+      - dialogue:
+          - zero: "L'effet de serre, c'est forcément mauvais ?"
+          - mia: "Sans lui, la Terre serait gelée ! Le problème, c'est quand on le renforce."
+      - a_quoi_ca_sert: "Comprendre l'effet de serre est indispensable pour comprendre le changement climatique et les choix de société qui nous attendent."
       - texte: |
           Le Soleil chauffe le sol ; le sol renvoie de la chaleur (des rayons infrarouges). Certains gaz de l'atmosphère — vapeur d'eau, **dioxyde de carbone (CO₂)**, **méthane**… — retiennent une partie de cette chaleur, comme la vitre d'une serre : c'est l'**effet de serre**.
           - **Naturel**, il est indispensable : sans lui, la température moyenne de la Terre serait d'environ **−18 °C** au lieu de **+15 °C**.
           - Depuis le XIXᵉ siècle, en brûlant du charbon, du pétrole et du gaz, et en déboisant, les humains ont fait passer le CO₂ de l'air d'environ **280 ppm** à **plus de 420 ppm** : l'effet de serre se **renforce** et la Terre s'est déjà réchauffée d'environ **1,2 °C** en moyenne.
           Conséquences : canicules plus fréquentes, glaciers qui fondent, montée du niveau des mers, sécheresses et pluies extrêmes.
+      - astuce:
+          texte: "Sans effet de serre naturel, la Terre serait à −18 °C en moyenne. Le problème, ce n'est pas l'effet de serre, c'est son renforcement par nos émissions."
+          qui: neo
       - retiens: "Effet de serre naturel : +15 °C au lieu de −18 °C. Les humains le renforcent (CO₂ 280 → plus de 420 ppm) : réchauffement d'environ 1,2 °C."
     exercices:
       - type: qcm
@@ -139,10 +167,17 @@ lecons:
     objectif: Je distingue énergies renouvelables et non renouvelables.
     mots: [énergie fossile, énergie renouvelable, nucléaire, transition énergétique]
     etapes:
+      - dialogue:
+          - zero: "L'électricité de ma lampe, elle vient d'où ?"
+          - neo: "De centrales qui utilisent différentes énergies. Certaines sont renouvelables, d'autres non."
+      - a_quoi_ca_sert: "Le choix de nos énergies influence le climat, la pollution et le prix de l'électricité : ce sont des décisions que tu prendras toi aussi comme citoyen."
       - texte: |
           - **Non renouvelables** : charbon, pétrole, gaz (**fossiles**, formés en millions d'années, émettent du CO₂ en brûlant) ; l'uranium des centrales **nucléaires** (stock limité ; peu de CO₂, mais des déchets radioactifs à gérer très longtemps).
           - **Renouvelables** : **solaire**, **éolien** (vent), **hydraulique** (barrages), **biomasse** (bois), **géothermie** (chaleur du sol). Elles se reconstituent en permanence, mais certaines sont **intermittentes** (pas de soleil la nuit, pas de vent par temps calme).
           La **transition énergétique** combine économies d'énergie, efficacité (isolation, LED) et énergies peu émettrices.
+      - astuce:
+          texte: "Renouvelable = la nature la recharge vite (soleil, vent, eau). Non renouvelable = il a fallu des millions d'années pour la former (pétrole, charbon, gaz, uranium)."
+          qui: zero
       - retiens: "Fossiles (charbon, pétrole, gaz) : limitées et émettrices de CO₂. Renouvelables : solaire, éolien, hydraulique, biomasse, géothermie. L'énergie la plus propre est celle qu'on ne consomme pas."
     exercices:
       - type: classer

@@ -21,9 +21,15 @@ lecons:
     objectif: Je reconnais un circuit en série et un circuit avec des dérivations.
     mots: [série, dérivation, boucle, nœud]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi, quand une ampoule de la guirlande grille, toutes s'éteignent ?"
+          - mia: "Parce qu'elles sont branchées en série ! Il existe une autre façon de brancher."
       - texte: |
           - **En série** : tous les éléments sont dans **une seule boucle**, l'un après l'autre. Si une lampe grille, le circuit est ouvert : **tout s'éteint** (les vieilles guirlandes de Noël !). Plus on ajoute de lampes, moins elles brillent.
           - **En dérivation** (ou parallèle) : le circuit a **plusieurs boucles** qui se séparent à des **nœuds**. Chaque lampe a sa propre boucle : si l'une grille, **les autres restent allumées**. C'est ainsi qu'est câblée une maison.
+      - astuce:
+          texte: "En série, une seule route : si une lampe grille, tout s'éteint (comme une vieille guirlande). En dérivation, plusieurs routes : les autres restent allumées (comme dans la maison)."
+          qui: neo
       - retiens: "Série : une seule boucle, tout s'éteint si un élément est coupé. Dérivation : plusieurs boucles indépendantes."
       - a_quoi_ca_sert: "Dans ta maison, toutes les prises et les lampes sont en dérivation : éteindre la lumière du salon n'éteint pas le réfrigérateur."
     exercices:
@@ -49,6 +55,10 @@ lecons:
     objectif: Je sais ce que mesurent un voltmètre et un ampèremètre, et comment les brancher.
     mots: [tension, volt, voltmètre, intensité, ampère, ampèremètre]
     etapes:
+      - dialogue:
+          - zero: "La tension, c'est quand je suis stressé ?"
+          - neo: "En électricité, c'est autre chose ! Découvrons la tension et l'intensité."
+      - a_quoi_ca_sert: "Ces mesures servent aux électriciens, aux réparateurs et à toi pour choisir une pile ou un chargeur adapté."
       - texte: |
           Avec l'image de l'eau dans des tuyaux :
           - la **tension** U (en **volts**, V) est comme la **pression** que fournit la pompe (la pile). On la mesure avec un **voltmètre** branché **en dérivation** (aux bornes de l'élément).
@@ -56,6 +66,9 @@ lecons:
           Lois à retenir :
           - **en série**, l'intensité est **la même partout** ;
           - **en dérivation**, l'intensité dans la branche principale est **la somme** des intensités des branches.
+      - astuce:
+          texte: "Le voltmètre se branche en parallèle (à côté, comme un témoin), l'ampèremètre en série (dans le chemin, comme un compteur de passage)."
+          qui: mia
       - retiens: "U en volts (voltmètre en dérivation) ; I en ampères (ampèremètre en série). Série : même I partout. Dérivation : I principale = somme des I des branches."
     exercices:
       - type: qcm
@@ -82,6 +95,10 @@ lecons:
     objectif: J'utilise la relation U = R × I.
     mots: [résistance, ohm, loi d'Ohm]
     etapes:
+      - dialogue:
+          - zero: "Si j'augmente la tension, le courant augmente aussi ?"
+          - mia: "Oui, et une loi célèbre dit exactement de combien : la loi d'Ohm."
+      - a_quoi_ca_sert: "La loi d'Ohm permet de choisir les bons composants pour qu'un appareil électrique fonctionne sans griller."
       - texte: |
           Une **résistance** freine le courant (comme un tuyau étroit freine l'eau). Elle se mesure en **ohms** (Ω).
           **Loi d'Ohm** (pour un conducteur ohmique) : $U = R \times I$ (U en V, R en Ω, I en A).
@@ -90,6 +107,9 @@ lecons:
           titre: Calculer une intensité
           enonce: "Une résistance de 100 Ω est soumise à une tension de 6 V. Quelle est l'intensité ?"
           etapes: ["$I = U / R = 6 / 100$", "$I = 0{,}06$ A, soit 60 mA."]
+      - astuce:
+          texte: "Le triangle magique : U en haut, R et I en bas. Cache la grandeur cherchée : U = R × I, R = U / I, I = U / R."
+          qui: zero
       - retiens: "$U = R \\times I$ ; $I = U / R$ ; $R = U / I$. Ω, V, A."
     exercices:
       - type: nombre
@@ -119,6 +139,9 @@ lecons:
     objectif: Je calcule une puissance, une énergie et le coût d'une consommation.
     mots: [puissance, watt, énergie, kilowattheure]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi la facture d'électricité est si chère en hiver ?"
+          - neo: "Les radiateurs sont très puissants et restent allumés longtemps. Calculons !"
       - texte: |
           - La **puissance** P (en **watts**, W) dit à quel rythme un appareil consomme de l'énergie : $P = U \times I$. Une ampoule LED : 8 W ; un four : 2 500 W.
           - L'**énergie** consommée dépend aussi de la **durée** : $E = P \times t$. En joules (J) si P en W et t en s ; en **kilowattheures** (kWh) si P en kW et t en h — c'est l'unité de la facture.
@@ -127,6 +150,9 @@ lecons:
           titre: Combien coûte un radiateur ?
           enonce: "Un radiateur de 2 kW fonctionne 5 h. Le kWh coûte environ 0,25 €."
           etapes: ["$E = P \\times t = 2 \\times 5 = 10$ kWh", "Coût ≈ 10 × 0,25 = 2,50 €"]
+      - astuce:
+          texte: "Énergie = puissance × durée. Un radiateur de 1 000 W allumé 1 heure consomme 1 kWh : c'est ce que tu paies sur la facture."
+          qui: neo
       - retiens: "$P = U \\times I$ (W). $E = P \\times t$ (kWh si kW × h). Éteindre ce qui ne sert pas = moins d'énergie et moins de dépense."
       - a_quoi_ca_sert: "Comprendre sa facture, choisir des appareils économes (étiquette énergie), éteindre les veilles."
     exercices:
@@ -153,6 +179,10 @@ lecons:
     objectif: Je connais les dangers de l'électricité et les protections.
     mots: [court-circuit, fusible, disjoncteur, prise de terre, électrisation]
     etapes:
+      - dialogue:
+          - zero: "Je peux mettre un trombone dans la prise pour voir ce qui se passe ?"
+          - mia: "NON, JAMAIS ! L'électricité de la maison peut tuer. Voici les règles."
+      - a_quoi_ca_sert: "Les règles de sécurité électrique sauvent des vies : chaque année, des accidents domestiques graves sont dus à l'électricité."
       - texte: |
           - Le **court-circuit** : le courant passe par un chemin sans résistance (deux fils qui se touchent). L'intensité devient énorme, les fils chauffent : **risque d'incendie**.
           - Le **fusible** et le **disjoncteur** coupent le courant si l'intensité devient trop grande.
@@ -161,6 +191,9 @@ lecons:
       - attention:
           texte: "Règles d'or : on ne met jamais d'objet dans une prise, on ne touche pas un appareil électrique avec les mains mouillées, on ne s'approche jamais d'un câble tombé au sol ni d'une ligne à haute tension, on ne grimpe pas sur un pylône."
           qui: neo
+      - astuce:
+          texte: "Jamais d'eau près d'une prise, jamais d'objet métallique dans une prise, et on débranche en tirant la fiche, pas le fil."
+          qui: mia
       - retiens: "Court-circuit = danger d'incendie. Fusible et disjoncteur protègent l'installation, le différentiel protège les personnes. Eau + électricité = danger."
     exercices:
       - type: vf

@@ -23,10 +23,14 @@ lecons:
       - dialogue:
           - zero: "« Zéro est rond comme un ballon. » C'est méchant ou c'est une figure de style ? 😳"
           - mia: "C'est une comparaison : il y a un outil, « comme ». Sans outil, « Zéro est un ballon », ce serait une métaphore !"
+      - a_quoi_ca_sert: "Les images rendent un texte plus fort et plus beau. Les publicitaires, les chanteurs et les poètes les utilisent sans arrêt."
       - texte: |
           - **Comparaison** : rapproche deux éléments avec un **outil** (comme, tel, pareil à, ressembler à) : *Ses yeux brillent **comme** des étoiles.*
           - **Métaphore** : rapproche **sans outil** : *Ses yeux **sont** des étoiles.* (métaphore filée si elle se prolonge)
           - **Personnification** : donne des traits **humains** à une chose ou un animal : *Le vent **hurle** sa colère.*
+      - astuce:
+          texte: "Comparaison = il y a un outil (comme, tel, pareil à). Métaphore = pas d'outil, on dit directement « ses yeux sont des étoiles »."
+          qui: mia
       - retiens: "**Comparaison** = avec un outil (comme…). **Métaphore** = sans outil. **Personnification** = la chose agit comme un humain."
     exercices:
       - type: qcm
@@ -55,10 +59,14 @@ lecons:
       - dialogue:
           - zero: "Je meurs de faim ! Je t'ai dit un million de fois ! 🤯"
           - neo: "Deux hyperboles, Zéro : tu exagères. À l'inverse, « Ce n'est pas mauvais » pour dire « c'est délicieux », c'est une litote."
+      - a_quoi_ca_sert: "Exagérer ou atténuer sert à convaincre, à faire rire ou à être poli. Ces figures sont partout dans la vie de tous les jours."
       - texte: |
           - **Hyperbole** : **exagération** pour frapper : *Je meurs de faim. Je te l'ai dit mille fois.*
           - **Litote** : dire **moins** pour faire entendre **plus** : *Ce n'est pas mauvais* (= c'est très bon). *Va, je ne te hais point* (= je t'aime, Corneille).
           - **Euphémisme** : **adoucir** une réalité dure : *Il nous a quittés* (= il est mort).
+      - astuce:
+          texte: "Hyperbole = on gonfle (« Je meurs de faim ») ; litote = on dit moins pour dire plus (« Ce n'est pas mauvais ! »)."
+          qui: neo
       - retiens: "**Hyperbole** = exagérer ; **litote** = dire moins pour dire plus ; **euphémisme** = adoucir."
     exercices:
       - type: qcm
@@ -84,12 +92,16 @@ lecons:
     etapes:
       - dialogue:
           - mia: "« Cette obscure clarté qui tombe des étoiles » (Corneille) : obscure et clarté, deux contraires collés ! C'est un oxymore."
+      - a_quoi_ca_sert: "Ces figures créent des effets de surprise et de rythme : on les retrouve dans les slogans, les discours et les chansons."
       - texte: |
           - **Antithèse** : oppose deux idées dans une phrase : *Je vis, je meurs ; je me brûle et me noie* (Louise Labé).
           - **Oxymore** : unit deux mots **contraires** côte à côte : *cette obscure clarté*, *un silence assourdissant*.
           - **Anaphore** : **répétition** d'un mot en début de vers ou de phrase : ***Paris*** *outragé !* ***Paris*** *brisé !* ***Paris*** *martyrisé !*
           - **Gradation** : termes de plus en plus forts : *Va, cours, vole, et nous venge* (Corneille).
           - **Chiasme** : structure croisée A B / B A : *Il faut manger pour vivre et non vivre pour manger* (Molière).
+      - astuce:
+          texte: "Antithèse = deux mots qui s'opposent (« le jour et la nuit ») ; oxymore = deux contraires collés ensemble (« une obscure clarté »)."
+          qui: zero
       - retiens: "Opposition : **antithèse** (deux idées), **oxymore** (deux mots collés). Construction : **anaphore** (répétition), **gradation** (crescendo), **chiasme** (croisement)."
     exercices:
       - type: qcm
@@ -118,9 +130,13 @@ lecons:
       - dialogue:
           - zero: "« Pour qui sont ces serpents qui sifflent sur vos têtes ? » Sssss… J'ai peur ! 😳"
           - neo: "C'est voulu : Racine répète le son « s » pour qu'on entende les serpents. C'est une allitération."
+      - a_quoi_ca_sert: "Les jeux de sons rendent un texte musical et facile à retenir : on les entend dans les comptines, les virelangues et les slogans."
       - texte: |
           - **Allitération** : répétition d'un même son **consonne** : *Pour qui **s**ont **c**es **s**erpents qui **s**iffl**ent** **s**ur vos têtes ?* (Racine) → le sifflement.
           - **Assonance** : répétition d'un même son **voyelle** : *Tout m'afflige et me nuit et conspire à me nuire* (Racine) → le son « i », aigu, la plainte.
+      - astuce:
+          texte: "Allitération = consonne répétée (« Pour qui sont ces serpents qui sifflent sur vos têtes ? ») ; assonance = voyelle répétée."
+          qui: mia
       - retiens: "**Allitération** = consonne répétée ; **assonance** = voyelle répétée. Elles créent une **musique** qui renforce le sens."
     exercices:
       - type: qcm
@@ -145,6 +161,10 @@ lecons:
     objectif: Je reconnais l'effet qu'un texte cherche à produire : faire rire, émouvoir, effrayer, émerveiller…
     mots: [registre, tonalité, comique, tragique, lyrique, épique, fantastique]
     etapes:
+      - dialogue:
+          - zero: "Cette histoire m'a fait rire, et celle-là m'a fait pleurer."
+          - mia: "C'est voulu ! Chaque texte a un registre : l'effet qu'il veut produire sur toi."
+      - a_quoi_ca_sert: "Reconnaître le registre, c'est comprendre l'effet qu'un texte veut produire sur toi : rire, peur, émotion…"
       - texte: |
           Le **registre** est l'**effet** produit sur le lecteur :
           - **comique** : faire rire (quiproquos, exagérations) ;
@@ -155,6 +175,9 @@ lecons:
           - **fantastique** : faire hésiter entre explication rationnelle et surnaturelle ;
           - **satirique** : se moquer pour critiquer ;
           - **polémique** : attaquer violemment une idée.
+      - astuce:
+          texte: "Demande-toi : qu'est-ce que je ressens en lisant ? Rire → comique ; larmes → pathétique ; peur → fantastique ou tragique."
+          qui: neo
       - retiens: "Je me demande quelle **émotion** le texte veut me faire ressentir : rire, pitié, peur, admiration, émerveillement…"
     exercices:
       - type: qcm
@@ -182,6 +205,7 @@ lecons:
       - dialogue:
           - zero: "« Wesh, ça roule ? » au directeur de l'école… Mauvaise idée ? 😳"
           - mia: "Mauvaise idée ! On adapte sa façon de parler à la situation : familier avec les copains, courant en classe, soutenu à l'écrit officiel."
+      - a_quoi_ca_sert: "Adapter sa façon de parler, c'est savoir se faire comprendre et respecter partout : avec ses copains, en classe ou en entretien."
       - texte: |
           | familier | courant | soutenu |
           |---|---|---|
@@ -189,6 +213,9 @@ lecons:
           | bosser | travailler | œuvrer |
           | j'ai la trouille | j'ai peur | je suis effrayé, je redoute |
           | ouais | oui | certes, assurément |
+      - astuce:
+          texte: "Pense à la tenue : jogging pour le familier, jean pour le courant, costume pour le soutenu. On s'habille selon l'occasion, on parle selon la situation."
+          qui: zero
       - retiens: "**Familier** (amis), **courant** (tous les jours), **soutenu** (écrit, officiel, littéraire). On **adapte** à la situation."
     exercices:
       - type: classer

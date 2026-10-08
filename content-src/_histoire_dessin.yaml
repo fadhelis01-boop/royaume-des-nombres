@@ -1,9 +1,9 @@
-# L'histoire de la planète Dessin : l'Atelier de Mia.
+# L'histoire de la planète Dessin : l'Atelier de Lya.
 prologue:
-  - narrateur: "Sur la planète Dessin, l'Atelier de Mia débordait de couleurs : les murs étaient couverts de dessins, les pinceaux dansaient tout seuls, les crayons poussaient comme des arbres."
+  - narrateur: "Sur la planète Dessin, l'Atelier de Lya débordait de couleurs : les murs étaient couverts de dessins, les pinceaux dansaient tout seuls, les crayons poussaient comme des arbres."
   - narrateur: "La Gomme Grise, envoyée par le Grand Neutre, est passée pendant la nuit. Au matin, tous les tableaux étaient blancs. Plus un trait, plus une couleur."
   - mia-triste: "Mes dessins… tous effacés."
-  - zero: "Mia, ne pleure pas ! On va tout redessiner. Enfin… toi. Moi je ne sais pas dessiner."
+  - zero: "Lya, ne pleure pas ! On va tout redessiner. Enfin… toi. Moi je ne sais pas dessiner."
   - mia: "Tout le monde peut apprendre à dessiner, Zéro. Toi aussi. Et toi aussi, Éveilleur."
   - neo: "Chaque dessin que tu feras rendra ses couleurs à un tableau de l'Atelier."
 prologue_choix:
@@ -24,7 +24,8 @@ arcs:
     final: de-jardin-des-formes
     fin:
       - narrateur: "Les premiers tableaux retrouvent leurs traits : une maison, un arbre, un papillon, un chat. La Gomme Grise, toute usée, roule sous une armoire."
-      - narrateur: "Un vieux pinceau s'anime et parle : c'est la Muse de l'Atelier. « Il y a plus de 30 000 ans, quelqu'un a dessiné des chevaux sur les murs d'une grotte, avec du charbon et de la terre. Toi aussi, tu fais partie de cette longue histoire. Que dessineras-tu demain ? »"
+      - narrateur: "Un vieux pinceau s'anime et parle : c'est la Muse de l'Atelier."
+      - pinceau: "Il y a plus de 30 000 ans, quelqu'un a dessiné des chevaux sur les murs d'une grotte, avec du charbon et de la terre. Toi aussi, tu fais partie de cette longue histoire. Que dessineras-tu demain ?"
       - mia: "Mais dans la Salle des Volumes, tout est encore aplati…"
   - id: dessin-arc-2
     titre: "Livre II — Le Brouillard Plat"
@@ -32,7 +33,7 @@ arcs:
     final: de-galerie-des-perspectives
     fin:
       - narrateur: "Les couloirs de la Galerie retrouvent leur profondeur, les objets leurs ombres, les visages leurs proportions."
-      - narrateur: "La Muse raconte : « Brunelleschi a trouvé les lois de la perspective ; Caravage a peint avec la lumière ; Hokusai a dessiné toute sa vie, jusqu'à 89 ans, en disant qu'il apprenait encore. »"
+      - pinceau: "Brunelleschi a trouvé les lois de la perspective ; Caravage a peint avec la lumière ; Hokusai a dessiné toute sa vie, jusqu'à 89 ans, en disant qu'il apprenait encore."
       - zero: "Même à 89 ans ? Alors j'ai le temps de devenir bon !"
   - id: dessin-arc-3
     titre: "Livre III — Le Musée retrouvé"

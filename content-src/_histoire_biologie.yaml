@@ -10,7 +10,7 @@ prologue_choix:
   qui: mia
   question: "On commence par quoi ?"
   options:
-    - texte: "Par l'Herbier de Mia : apprendre à observer"
+    - texte: "Par l'Herbier de Lya : apprendre à observer"
       suite:
         - mia-joie: "Mon herbier ! Avec une loupe, un carnet et de la patience, on voit des merveilles."
     - texte: "Directement dans la Clairière du Vivant"
@@ -26,7 +26,8 @@ arcs:
     fin:
       - narrateur: "Les chenilles deviennent papillons, les têtards perdent leur queue, et les premières branches basses de l'Arbre-Monde reverdissent."
       - narrateur: "Mousse le lichen sourit, lentement : « Merci… Je… suis… content… »"
-      - narrateur: "Une voix ancienne sort du tronc : c'est l'Ancienne Sève, la Muse de la Canopée. « Il y a longtemps, Hooke et Leeuwenhoek ont regardé le vivant au microscope et découvert un monde invisible. Et toi, qu'aimerais-tu observer de tout près ? »"
+      - narrateur: "Une voix ancienne sort du tronc : c'est l'Ancienne Sève, la Muse de la Canopée."
+      - seve: "Il y a longtemps, Hooke et Leeuwenhoek ont regardé le vivant au microscope et découvert un monde invisible. Et toi, qu'aimerais-tu observer de tout près ?"
       - neo: "Mais plus haut dans l'arbre, quelque chose brouille les messages des cellules…"
   - id: biologie-arc-2
     titre: "Livre II — Le Virus Glitch"
@@ -34,7 +35,7 @@ arcs:
     final: bio-tour-de-l-adn
     fin:
       - narrateur: "Repéré par des anticorps parfaitement fabriqués, le Virus Glitch se fige, se désassemble… et disparaît."
-      - narrateur: "L'Ancienne Sève raconte : « Darwin a passé vingt ans à vérifier son idée avant de la publier. Rosalind Franklin a photographié l'ADN avec des rayons X. La science avance avec patience. »"
+      - seve: "Darwin a passé vingt ans à vérifier son idée avant de la publier. Rosalind Franklin a photographié l'ADN avec des rayons X. La science avance avec patience."
       - mia: "Mais au cœur de l'arbre, le Grand Neutre essaie d'effacer la diversité elle-même."
   - id: biologie-arc-3
     titre: "Livre III — Le Cœur de l'Arbre-Monde"

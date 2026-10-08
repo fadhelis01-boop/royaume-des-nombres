@@ -52,7 +52,7 @@ export function preprocess(src) {
 
 
 // ---------- Normalisation ----------
-const WHO = { mia: "mia", neo: "neo", "néo": "neo", zero: "zero", "zéro": "zero", narrateur: "narrateur", nuage: "nuage", grignoteur: "nuage", ixe: "ixe", enfant: "enfant", toi: "enfant", gribouille: "gribouille", neutre: "neutre", "grand-neutre": "neutre" };
+const WHO = { mia: "mia", neo: "neo", "néo": "neo", zero: "zero", "zéro": "zero", narrateur: "narrateur", nuage: "nuage", grignoteur: "nuage", ixe: "ixe", enfant: "enfant", toi: "enfant", gribouille: "gribouille", neutre: "neutre", "grand-neutre": "neutre", acidia: "acidia", gravis: "gravis", seve: "seve", uranie: "uranie", resonance: "resonance", "résonance": "resonance", pinceau: "pinceau" };
 const HUMEURS = ["reflexion", "joie", "surprise", "triste", "fier"];
 export function lines(list, where) {
   if (!Array.isArray(list)) {
@@ -106,6 +106,11 @@ export function exercise(ex, where) {
   if (!ex.enonce) errors.push(`${where} : énoncé manquant`);
   if (ex.type === "qcm" && (ex.choix ?? []).length < 2) errors.push(`${where} : au moins 2 choix`);
   if (ex.type === "ordre" && (ex.items ?? []).length < 2) errors.push(`${where} : au moins 2 éléments à ranger`);
+  // Une correction fixe sur un exercice à variantes tirées au hasard peut parler d'une autre variante
+  // que celle affichée : on la présente comme un rappel général, pas comme l'explication de la question.
+  const variantes = Object.values(ex.vars ?? {}).some((v) => Array.isArray(v) && v.length > 1);
+  if ((ex.type === "vf" || ex.type === "classer") && variantes && typeof ex.correction === "string" && !/\{\{/.test(ex.correction) && !/^💡/.test(ex.correction))
+    return { ...ex, correction: "💡 À retenir : " + ex.correction };
   return ex;
 }
 

@@ -28,6 +28,9 @@ lecons:
           - **solide** 🧊 : il garde sa forme tout seul (une pierre, un glaçon, une cuillère) ;
           - **liquide** 💧 : il coule et prend la forme du récipient, mais sa surface reste plate et horizontale (l'eau, le lait, l'huile) ;
           - **gaz** 💨 : il est souvent invisible, il occupe **tout** l'espace disponible (l'air, la vapeur d'eau, les bulles de la limonade).
+      - astuce:
+          texte: "Solide : il garde sa forme. Liquide : il prend la forme du récipient. Gaz : il prend toute la place qu'on lui donne."
+          qui: mia
       - retiens: "Solide : garde sa forme. Liquide : coule, surface plate. Gaz : invisible souvent, occupe tout l'espace."
       - a_quoi_ca_sert: "Savoir l'état d'une matière, c'est savoir comment la transporter : un sac pour le sable, une bouteille pour le jus, une bonbonne fermée pour le gaz."
     exercices:
@@ -36,7 +39,7 @@ lecons:
         enonce: "Range chaque matière : solide, liquide ou gaz ?"
         categories: [solide, liquide, gaz]
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 0], ["{{t_4}}", 1], ["{{t_5}}", 2]]
-        correction: "Le sable est fait de minuscules grains solides : chaque grain garde sa forme, même si le tas coule."
+        correction: "Solide : garde sa forme (même le sable, fait de minuscules grains). Liquide : coule et prend la forme du récipient. Gaz : occupe tout l'espace."
       - type: qcm
         vars: { t: [["Je garde ma forme, même posé sur la table.", "solide", "liquide", "gaz"], ["Je prends la forme du verre et je coule.", "liquide", "solide", "gaz"], ["Je remplis toute la pièce et on ne me voit pas.", "gaz", "liquide", "solide"]] }
         enonce: "Devinette : « {{t_0}} » Qui suis-je ?"
@@ -53,6 +56,10 @@ lecons:
     objectif: Je sais que l'eau peut changer d'état quand on la chauffe ou la refroidit.
     mots: [fondre, geler, fusion, solidification]
     etapes:
+      - dialogue:
+          - zero: "Mon glaçon a disparu ! Quelqu'un l'a volé !"
+          - mia: "Personne ne l'a volé : il a fondu ! L'eau a juste changé d'état."
+      - a_quoi_ca_sert: "Les glaçons, la neige, la confiture qui fond, le beurre qui ramollit : les changements d'état sont partout dans la cuisine et la nature."
       - texte: |
           L'eau peut être **solide** (glace), **liquide** (eau) ou **gaz** (vapeur d'eau). C'est toujours de l'eau !
           - Quand on **chauffe** la glace, elle **fond** : elle devient liquide (à 0 °C).
@@ -70,6 +77,9 @@ lecons:
             - "Regarde toutes les 5 minutes et note quel glaçon a le plus fondu."
           observation: "Le glaçon salé fond le plus vite ; celui dans le chiffon fond le plus lentement."
           explication: "Le sel fait fondre la glace à une température plus basse que 0 °C : c'est pour ça qu'on sale les routes en hiver. Le chiffon, lui, isole le glaçon de l'air de la pièce, plus chaud : la chaleur arrive plus lentement."
+      - astuce:
+          texte: "Chaleur = les choses fondent (la glace devient eau). Froid = les choses gèlent (l'eau devient glace). C'est la même eau, elle change juste de costume."
+          qui: zero
       - retiens: "Chauffer la glace → elle fond (liquide). Refroidir l'eau → elle gèle (solide). L'eau pure gèle et fond à 0 °C."
     exercices:
       - type: qcm
@@ -94,6 +104,10 @@ lecons:
     objectif: Je distingue un mélange où on ne voit plus qu'un seul liquide et un mélange où on voit plusieurs parties.
     mots: [mélange, homogène, hétérogène]
     etapes:
+      - dialogue:
+          - zero: "J'ai mis de l'huile dans l'eau, et elles ne veulent pas être amies."
+          - neo: "Certains mélanges se voient, d'autres non. Apprenons à les reconnaître."
+      - a_quoi_ca_sert: "Savoir si un mélange est homogène ou non aide à cuisiner, à faire une peinture ou à comprendre pourquoi l'huile et l'eau ne se mélangent pas."
       - texte: |
           Quand on mélange deux matières :
           - parfois on **ne voit plus qu'une seule chose** (eau + sirop) : c'est un mélange **homogène** ;
@@ -110,6 +124,9 @@ lecons:
             - "Verre 2 : eau + une cuillère d'huile. Mélange fort, puis attends une minute."
           observation: "Le sirop se mélange complètement : un seul liquide coloré. L'huile, elle, forme des gouttes qui remontent et finissent en couche au-dessus de l'eau."
           explication: "L'huile ne se mélange pas à l'eau, et elle est moins dense (plus « légère » à volume égal) : elle flotte. C'est pour ça que la vinaigrette se sépare et qu'on la secoue avant de servir !"
+      - astuce:
+          texte: "Regarde à travers : si tu vois une seule chose partout (eau + sirop), c'est homogène. Si tu vois des parties différentes (eau + huile), c'est hétérogène."
+          qui: neo
       - retiens: "Homogène : on ne voit qu'une seule partie. Hétérogène : on voit plusieurs parties. L'huile ne se mélange pas à l'eau et flotte dessus."
     exercices:
       - type: classer
@@ -141,6 +158,9 @@ lecons:
           Le sucre et le sel **se dissolvent** dans l'eau : ils se cassent en morceaux si petits qu'on ne les voit plus. On dit qu'ils sont **solubles**. Le mélange obtenu s'appelle une **solution**.
           Le sable, le poivre ou les cailloux ne se dissolvent pas : ils sont **insolubles**.
           ⚖️ Preuve que rien ne disparaît : si on pèse l'eau et le sucre avant, puis la solution après, la **masse est la même** !
+      - astuce:
+          texte: "Le sucre dissous n'a pas disparu : goûte l'eau, elle est sucrée ! Il s'est caché en morceaux trop petits pour être vus."
+          qui: mia
       - retiens: "Dissoudre, ce n'est pas disparaître : la matière est toujours là, en morceaux invisibles. La masse ne change pas."
       - a_quoi_ca_sert: "Le chocolat chaud, le sirop, l'eau de mer (du sel dissous), le café… et même l'eau du robinet qui contient des sels minéraux dissous."
     exercices:
@@ -171,6 +191,7 @@ lecons:
           - zero: "Les objets lourds coulent, les objets légers flottent. Facile !"
           - mia: "Alors pourquoi un énorme bateau en acier flotte, et un petit caillou coule ?"
           - neo: "Ce qui compte, ce n'est pas le poids tout seul, mais le poids **par rapport à la place** que l'objet prend dans l'eau."
+      - a_quoi_ca_sert: "C'est grâce à cela que les bateaux flottent, même en acier, et que les gilets de sauvetage nous sauvent."
       - experience:
           titre: Prédire puis tester
           securite: vert
@@ -184,6 +205,9 @@ lecons:
             - "Écrase la pâte à modeler en forme de petit bateau creux et repose-la."
           observation: "Le bouchon et la pomme flottent, la clé coule. La boule de pâte coule… mais le bateau en pâte flotte !"
           explication: "En forme de bateau, la pâte pousse beaucoup plus d'eau : l'eau la soutient plus fort. C'est pour ça que les gros bateaux en acier, creux et remplis d'air, flottent."
+      - astuce:
+          texte: "Avant de tester, fais toujours ta prédiction à voix haute : « je pense que ça va flotter parce que… ». Se tromper fait partie de l'expérience !"
+          qui: zero
       - retiens: "Ce n'est pas le poids seul qui compte : la forme et la matière aussi. Un objet creux qui pousse beaucoup d'eau peut flotter."
     exercices:
       - type: classer
@@ -211,6 +235,7 @@ lecons:
       - dialogue:
           - narrateur: "Dame Bulle, la gardienne grise de la Mare, flotte au-dessus de l'eau : « L'air, ce n'est RIEN ! »"
           - neo: "Alors prouvons-lui le contraire."
+      - a_quoi_ca_sert: "L'air ne se voit pas mais il pousse les voiles, gonfle les ballons et nous permet de respirer. Le comprendre aide à comprendre le vent et la météo."
       - experience:
           titre: Le verre qui ne se mouille pas
           securite: vert
@@ -224,6 +249,9 @@ lecons:
             - "Ressors-le bien droit et touche le mouchoir."
           observation: "Le mouchoir est resté sec ! L'eau n'est pas entrée jusqu'en haut du verre."
           explication: "Le verre n'était pas vide : il était plein d'air. L'air a pris la place et a empêché l'eau d'entrer. L'air est bien de la matière : il occupe de la place (et il a même une masse : un ballon gonflé pèse un tout petit peu plus qu'un ballon vide)."
+      - astuce:
+          texte: "Pour prouver que l'air existe, enfonce un verre retourné dans l'eau : l'eau ne monte pas, car l'air prend déjà la place !"
+          qui: neo
       - retiens: "L'air est un gaz : c'est de la matière. Il occupe de la place et il a une masse."
     exercices:
       - type: vf

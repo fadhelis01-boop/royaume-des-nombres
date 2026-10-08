@@ -49,7 +49,7 @@ export function ExercisePlayer({
   continueLabel?: string;
   /** choix retirés par un pouvoir (coup de queue de Néo) */
   removed?: number[];
-  /** indice donné par un pouvoir (dessin de Mia) */
+  /** indice donné par un pouvoir (dessin de Lya) */
   powerHint?: string;
   /** petite mise en scène : l'habitant du monde qui pose la question */
   lead?: Lead;

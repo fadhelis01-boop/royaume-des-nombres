@@ -23,12 +23,16 @@ lecons:
       - dialogue:
           - neo: "Un verbe conjugué = une proposition. « Le chat dort. » : une proposition, phrase simple."
           - mia: "« Le chat dort pendant que la souris danse. » : deux verbes conjugués, deux propositions. Phrase complexe !"
+      - a_quoi_ca_sert: "Repérer les propositions, c'est comprendre comment sont construites les longues phrases des textes difficiles."
       - texte: |
           - **Phrase simple** : **un seul** verbe conjugué → une seule proposition.
           - **Phrase complexe** : **plusieurs** verbes conjugués → plusieurs propositions.
 
           *[Il pleut] [et le vent souffle].* → 2 propositions.
           Attention : un **infinitif** ou un **participe** seul ne forme pas une proposition à lui seul ici.
+      - astuce:
+          texte: "Une proposition = un verbe conjugué. Compte les verbes conjugués et tu connais le nombre de propositions."
+          qui: zero
       - retiens: "Je **compte les verbes conjugués** : autant de verbes conjugués, autant de **propositions**."
     exercices:
       - type: nombre
@@ -56,11 +60,15 @@ lecons:
       - dialogue:
           - zero: "Mais où est donc Ornicar ? …C'est qui, Ornicar ? 😳"
           - mia: "C'est la phrase magique pour retenir les conjonctions de coordination : mais, ou, et, donc, or, ni, car !"
+      - a_quoi_ca_sert: "Relier des idées avec les bons mots rend un texte logique et agréable à lire."
       - texte: |
           - **Juxtaposition** : propositions reliées par une **ponctuation** (virgule, point-virgule, deux-points) : *Il pleut, je reste.*
           - **Coordination** : reliées par une **conjonction de coordination** : **mais, ou, et, donc, or, ni, car** (*Mais où est donc Ornicar ?*) : *Il pleut **donc** je reste.*
 
           Chaque conjonction a un sens : **mais** (opposition), **car** (cause), **donc** (conséquence), **ou** (choix), **et** (ajout), **ni** (négation), **or** (argument).
+      - astuce:
+          texte: "Les conjonctions de coordination tiennent dans une phrase : « Mais où est donc Ornicar ? » (mais, ou, et, donc, or, ni, car)."
+          qui: mia
       - retiens: "**Mais où est donc Ornicar** : mais, ou, et, donc, or, ni, car. Chacune a un **sens**."
     exercices:
       - type: qcm
@@ -87,12 +95,16 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Le livre. Je lis le livre. » → « Le livre que je lis ». Le pronom relatif « que » remplace « le livre » et relie les deux îles."
+      - a_quoi_ca_sert: "Les relatives permettent d'apporter des précisions sans faire deux phrases : « Le livre que tu m'as prêté est génial »."
       - texte: |
           La **proposition relative** complète un nom (son **antécédent**) et commence par un **pronom relatif** :
           - **qui** = sujet : *le chien **qui** aboie* (le chien aboie)
           - **que** = COD : *le livre **que** je lis* (je lis le livre)
           - **dont** = complément introduit par **de** : *l'ami **dont** je parle* (je parle de l'ami)
           - **où** = lieu ou temps : *la ville **où** je vis*, *le jour **où** il est né*
+      - astuce:
+          texte: "Qui remplace un sujet, que un COD, dont un complément avec « de », où un lieu ou un temps. Teste en refaisant deux phrases."
+          qui: neo
       - retiens: "**qui** sujet, **que** COD, **dont** = de…, **où** = lieu/temps. L'**antécédent** est le nom remplacé."
     exercices:
       - type: qcm
@@ -121,6 +133,7 @@ lecons:
       - dialogue:
           - mia: "« Je sais que tu viendras » : la subordonnée « que tu viendras » est COD du verbe savoir."
           - neo: "« Je viendrai quand tu voudras » : la subordonnée dit QUAND. C'est une circonstancielle de temps."
+      - a_quoi_ca_sert: "Les subordonnées expriment des liens logiques (cause, but, condition) : elles sont indispensables pour argumenter et expliquer."
       - texte: |
           - **Complétive** (introduite par **que**), souvent COD : *Je pense **qu'il a raison**.*
           - **Circonstancielles** : elles jouent le rôle d'un complément circonstanciel :
@@ -130,6 +143,9 @@ lecons:
             - **condition** : si
             - **conséquence** : si bien que, de sorte que
             - **opposition / concession** : bien que, alors que, même si
+      - astuce:
+          texte: "Demande-toi quelle question répond la subordonnée : pourquoi ? (cause), dans quel but ? (but), à quelle condition ? (condition), quand ? (temps)."
+          qui: zero
       - retiens: "**que** + complétive (COD) ; **quand / parce que / pour que / si…** → circonstancielle (temps, cause, but, condition…)."
     exercices:
       - type: qcm
@@ -157,8 +173,9 @@ lecons:
     mots: [discours direct, discours indirect, concordance des temps]
     etapes:
       - dialogue:
-          - neo: "Discours direct : Mia dit : « Je suis contente. » Discours indirect : Mia dit qu'elle est contente."
+          - neo: "Discours direct : Lya dit : « Je suis contente. » Discours indirect : Lya dit qu'elle est contente."
           - mia: "Les guillemets disparaissent, les pronoms changent, et si le verbe introducteur est au passé, les temps reculent !"
+      - a_quoi_ca_sert: "Rapporter les paroles de quelqu'un, on le fait tous les jours : « Il m'a dit qu'il viendrait »."
       - texte: |
           - **Direct** : les paroles sont citées entre **guillemets** : *Il dit : « Je viendrai demain. »*
           - **Indirect** : les paroles sont intégrées dans une **subordonnée** : *Il dit **qu'il viendra** le lendemain.*
@@ -166,6 +183,9 @@ lecons:
           Si le verbe introducteur est au **passé**, les temps changent (concordance) :
           présent → **imparfait** ; futur → **conditionnel** ; passé composé → **plus-que-parfait** ; *demain* → *le lendemain*, *hier* → *la veille*.
           *Il a dit : « Je suis fatigué. »* → *Il a dit **qu'il était** fatigué.*
+      - astuce:
+          texte: "Au discours indirect, mets-toi à la place du narrateur : « je » devient « il », « ici » devient « là », « demain » devient « le lendemain »."
+          qui: mia
       - retiens: "Indirect = **que** + changements de **pronoms**, de **temps** (si passé) et d'**indicateurs** (demain → le lendemain)."
     exercices:
       - type: mot

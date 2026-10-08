@@ -20,12 +20,18 @@ lecons:
     objectif: J'écoute attentivement les sons qui m'entourent.
     mots: [son, silence, écouter, bruit]
     etapes:
+      - dialogue:
+          - zero: "Chut ! Il n'y a aucun bruit ici."
+          - mia: "Écoute bien : un oiseau, le vent, ton cœur… Il y a toujours des sons."
       - texte: |
           Ferme les yeux une minute et **écoute** : même dans le « silence », on entend plein de petits sons (le frigo, un oiseau, une voiture, ta respiration).
           Un **son** peut être **long** ou **court**, **proche** ou **lointain**. La musique joue avec les sons… et avec les **silences**, aussi importants que les notes.
       - vraie_vie:
           titre: La minute d'écoute
           texte: "Assieds-toi, ferme les yeux pendant une minute, puis dessine ou écris tous les sons que tu as entendus. Lesquels étaient proches ? lointains ? longs ? courts ?"
+      - astuce:
+          texte: "Ferme les yeux pendant une minute et compte tous les sons que tu entends : tu seras surpris d'en trouver autant !"
+          qui: neo
       - retiens: "Écouter, c'est remarquer tous les sons, même les tout petits. Le silence fait aussi partie de la musique."
     exercices:
       - type: qcm
@@ -51,10 +57,17 @@ lecons:
     objectif: Je distingue un son fort d'un son doux.
     mots: [fort, doux, intensité, nuance]
     etapes:
+      - dialogue:
+          - zero: "BOUM ! J'ai tapé sur le tambour de toutes mes forces !"
+          - neo: "Très fort ! Maintenant, essaie tout doucement. En musique, on joue avec les nuances."
+      - a_quoi_ca_sert: "Jouer fort ou doux donne de l'émotion à la musique : une berceuse se chante doucement, une marche se joue fort."
       - texte: |
           Un son peut être **fort** (comme un tambour frappé très fort) ou **doux** (comme un chuchotement). C'est l'**intensité**.
           En musique, on dit **forte** (f) pour fort et **piano** (p) pour doux : ce sont des **nuances**.
           ⚠️ Fort ne veut pas dire aigu ! Une grosse note grave peut être très forte, une petite note aiguë très douce.
+      - astuce:
+          texte: "En musique, fort se dit « forte » (f) et doux se dit « piano » (p). Le piano s'appelle comme ça parce qu'il sait jouer doux ET fort !"
+          qui: zero
       - retiens: "Fort (forte, f) ou doux (piano, p) : c'est l'intensité. Ne pas confondre avec aigu/grave."
     exercices:
       - type: qcm
@@ -80,6 +93,10 @@ lecons:
     objectif: Je distingue un son aigu d'un son grave.
     mots: [aigu, grave, hauteur]
     etapes:
+      - dialogue:
+          - zero: "Ma voix fait « hiii » et celle de l'ours fait « hooo »."
+          - mia: "La tienne est aiguë, celle de l'ours est grave ! Écoutons la différence."
+      - a_quoi_ca_sert: "Distinguer l'aigu et le grave aide à chanter juste, à reconnaître les voix et les instruments."
       - texte: |
           Un son **aigu** est « haut » et fin (un sifflet, un petit oiseau, une souris). Un son **grave** est « bas » et profond (un gros tambour, un lion qui rugit, une contrebasse).
           C'est la **hauteur** du son. Sur un piano, les notes graves sont à **gauche**, les notes aiguës à **droite**.
@@ -89,6 +106,9 @@ lecons:
           a: Si5
           notes: "Do3 Do5"
         legende: "Touche les touches du clavier : à gauche les graves, à droite les aigus."
+      - astuce:
+          texte: "Aigu, c'est petit et léger comme un oiseau qui chante ; grave, c'est gros et lourd comme un ours qui grogne. Sur le piano : à droite l'aigu, à gauche le grave."
+          qui: mia
       - retiens: "Aigu : haut et fin. Grave : bas et profond. Piano : graves à gauche, aigus à droite."
     exercices:
       - type: qcm
@@ -114,6 +134,10 @@ lecons:
     objectif: Je frappe la pulsation d'une musique.
     mots: [pulsation, régulier, battement]
     etapes:
+      - dialogue:
+          - zero: "Quand j'écoute de la musique, mon pied tape tout seul !"
+          - neo: "Il suit la pulsation : le cœur qui bat dans la musique."
+      - a_quoi_ca_sert: "La pulsation, c'est le cœur de la musique : elle permet de danser, de marcher en rythme et de jouer ensemble."
       - texte: |
           Dans presque toutes les musiques, il y a un battement **régulier**, comme ton cœur ou le tic-tac d'une horloge : la **pulsation**. C'est ce qui donne envie de taper du pied ou de marcher en rythme.
           Le **rythme**, lui, ce sont les sons longs et courts que l'on joue **par-dessus** la pulsation.
@@ -121,6 +145,9 @@ lecons:
           type: son
           sons: [{ etiquette: "La pulsation (régulière)", rythme: "X.x.x.x.X.x.x.x.", tempo: 90 }, { etiquette: "Un rythme par-dessus", rythme: "X.xxx.x.X.xx.xx.", tempo: 90 }]
         legende: "Écoute d'abord la pulsation et frappe avec elle, puis écoute un rythme."
+      - astuce:
+          texte: "La pulsation, c'est comme un cœur qui bat : régulière, toujours là, même quand la mélodie s'arrête. Marche dessus !"
+          qui: neo
       - retiens: "Pulsation = battement régulier (comme le cœur). Rythme = sons longs et courts joués par-dessus."
     exercices:
       - type: qcm
@@ -146,9 +173,16 @@ lecons:
     objectif: Je distingue une musique lente d'une musique rapide.
     mots: [tempo, lent, rapide]
     etapes:
+      - dialogue:
+          - zero: "Cette musique me donne envie de courir, et celle-là de dormir."
+          - mia: "C'est le tempo : lent ou rapide, il change toute l'ambiance."
+      - a_quoi_ca_sert: "Le tempo change complètement l'ambiance : la même chanson jouée lentement peut devenir triste, et rapide, joyeuse."
       - texte: |
           La vitesse d'une musique s'appelle le **tempo**. Une **berceuse** est **lente** (pour s'endormir), une **marche** est modérée, une **danse** peut être très **rapide**.
           Les musiciens utilisent des mots italiens : **adagio** (lent), **moderato** (modéré), **allegro** (rapide), **presto** (très rapide).
+      - astuce:
+          texte: "Pense à des animaux : un tempo lent, c'est un escargot (lento, adagio) ; un tempo rapide, c'est un guépard (allegro, presto)."
+          qui: zero
       - retiens: "Tempo = vitesse. Adagio (lent), moderato, allegro (rapide), presto (très rapide)."
     exercices:
       - type: qcm
@@ -173,12 +207,19 @@ lecons:
     objectif: Je range les instruments dans leurs familles.
     mots: [cordes, vents, percussions, claviers, voix]
     etapes:
+      - dialogue:
+          - zero: "Un violon, une trompette, un tambour… il y en a trop, je m'y perds !"
+          - neo: "On les range en familles, selon la façon dont ils produisent le son."
+      - a_quoi_ca_sert: "Connaître les familles d'instruments aide à les reconnaître dans une musique et à choisir celui qu'on aimerait apprendre."
       - texte: |
           - **Cordes** : on frotte (violon, violoncelle, contrebasse), on pince (guitare, harpe) ou on frappe les cordes.
           - **Vents** : on souffle (flûte, clarinette, saxophone, trompette, trombone).
           - **Percussions** : on frappe ou on secoue (tambour, batterie, xylophone, maracas, triangle).
           - **Claviers** : piano, orgue, synthétiseur.
           - Et le plus ancien de tous les instruments : la **voix** !
+      - astuce:
+          texte: "Demande-toi comment le son est produit : on souffle (vents), on frotte ou pince une corde (cordes), on frappe (percussions)."
+          qui: mia
       - retiens: "Cordes (frotter, pincer), vents (souffler), percussions (frapper, secouer), claviers, et la voix."
     exercices:
       - type: classer

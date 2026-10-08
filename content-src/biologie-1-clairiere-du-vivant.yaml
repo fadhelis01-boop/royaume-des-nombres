@@ -22,6 +22,7 @@ lecons:
       - dialogue:
           - zero: "Une voiture bouge, elle boit de l'essence… elle est vivante !"
           - mia: "Elle bouge, mais elle ne naît pas, ne grandit pas, n'a pas de bébés. Un être vivant fait tout ça."
+      - a_quoi_ca_sert: "Savoir ce qui est vivant aide à prendre soin des plantes et des animaux, et à comprendre pourquoi un robot n'est pas un être vivant."
       - texte: |
           Un **être vivant** :
           - **naît** (ou germe), **grandit**, **se nourrit**, **respire**,
@@ -29,6 +30,9 @@ lecons:
           - **meurt**.
           Les **plantes** sont vivantes même si elles ne bougent pas beaucoup ! Une pierre, l'eau, une voiture, un robot ne sont **pas vivants**.
           Une bûche ou une feuille morte viennent d'un être vivant, mais **ne sont plus vivantes**.
+      - astuce:
+          texte: "Pose 3 questions : est-ce qu'il naît ? est-ce qu'il grandit en se nourrissant ? est-ce qu'il a des petits ou des graines ? Trois oui = vivant."
+          qui: zero
       - retiens: "Vivant = naît, grandit, se nourrit, respire, se reproduit, meurt. Les plantes sont vivantes."
     exercices:
       - type: classer
@@ -53,6 +57,10 @@ lecons:
     objectif: J'associe chaque sens à son organe.
     mots: [vue, ouïe, odorat, goût, toucher, organe]
     etapes:
+      - dialogue:
+          - zero: "Je sens une odeur de gâteau… mon nez est un super-héros !"
+          - mia: "Ton nez, tes yeux, tes oreilles, ta langue et ta peau : tu as cinq super-pouvoirs !"
+      - a_quoi_ca_sert: "Nos sens nous protègent : on sent l'odeur de brûlé, on entend une voiture arriver, on goûte qu'un aliment est avarié."
       - texte: |
           | Sens | Organe | Il me permet de… |
           |---|---|---|
@@ -64,6 +72,9 @@ lecons:
           Les sens envoient des messages au **cerveau**, qui les comprend.
       - attention:
           texte: "On ne goûte jamais une baie, un champignon ou un liquide inconnu : certains sont très toxiques."
+          qui: mia
+      - astuce:
+          texte: "Montre-les sur ton visage de haut en bas : les yeux (vue), le nez (odorat), la bouche (goût), les oreilles sur les côtés (ouïe), et la peau partout (toucher)."
           qui: mia
       - retiens: "Vue (yeux), ouïe (oreilles), odorat (nez), goût (langue), toucher (peau). Le cerveau interprète les messages."
     exercices:
@@ -89,6 +100,9 @@ lecons:
     objectif: Je nomme les parties d'une plante et leur rôle.
     mots: [racine, tige, feuille, fleur, fruit, graine]
     etapes:
+      - dialogue:
+          - zero: "Les plantes mangent de la terre, non ?"
+          - neo: "Pas du tout ! Elles fabriquent leur propre nourriture. Allons voir chaque partie de la plante."
       - texte: |
           - Les **racines** tiennent la plante dans le sol et puisent l'**eau** et les sels minéraux.
           - La **tige** porte la plante et transporte l'eau jusqu'aux feuilles.
@@ -108,6 +122,9 @@ lecons:
               trace: "M50 55 C38 46 30 54 50 60 M50 46 C62 37 70 45 50 51"
             - consigne: "Dessine la fleur en haut : un cœur et des pétales."
               trace: "M50 30 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 M50 25 C44 14 56 14 50 25 M55 30 C66 24 66 36 55 30 M45 30 C34 24 34 36 45 30"
+      - astuce:
+          texte: "Une plante, c'est comme une maison : les racines sont la cave qui puise l'eau, la tige est l'escalier, les feuilles sont la cuisine qui fabrique la nourriture."
+          qui: neo
       - retiens: "Racines (eau), tige (transport), feuilles (nourriture grâce à la lumière), fleur → fruit → graines."
       - a_quoi_ca_sert: "Les légumes que l'on mange sont différentes parties de plantes : carotte (racine), poireau (feuilles), brocoli (fleurs), tomate (fruit), petit pois (graine)."
     exercices:
@@ -132,6 +149,10 @@ lecons:
     objectif: Je range des animaux dans les grandes familles.
     mots: [mammifère, oiseau, poisson, insecte, reptile, amphibien]
     etapes:
+      - dialogue:
+          - zero: "Le dauphin vit dans l'eau, donc c'est un poisson !"
+          - mia: "Il respire de l'air et allaite ses petits : c'est un mammifère, comme toi et moi !"
+      - a_quoi_ca_sert: "Ranger les animaux en familles aide à comprendre leurs besoins : un poisson et un mammifère ne se soignent pas de la même façon."
       - texte: |
           - **Mammifères** : des **poils**, les mamans **allaitent** (chien, vache, humain, baleine).
           - **Oiseaux** : des **plumes**, un **bec**, pondent des œufs (pigeon, pingouin, poule).
@@ -139,6 +160,9 @@ lecons:
           - **Insectes** : **6 pattes**, souvent des ailes (abeille, fourmi, papillon).
           - **Reptiles** : des **écailles** sèches, pondent sur terre (lézard, serpent, tortue).
           - **Amphibiens** : peau **nue et humide**, vivent dans l'eau puis sur terre (grenouille, salamandre).
+      - astuce:
+          texte: "Regarde la peau : poils = mammifère, plumes = oiseau, écailles sèches = reptile, écailles et nageoires = poisson, peau nue et humide = amphibien."
+          qui: zero
       - retiens: "Poils → mammifère ; plumes → oiseau ; nageoires + branchies → poisson ; 6 pattes → insecte ; écailles sèches → reptile ; peau nue humide → amphibien."
     exercices:
       - type: qcm
@@ -163,6 +187,10 @@ lecons:
     objectif: Je connais les besoins des êtres vivants.
     mots: [besoin, eau, air, nourriture, lumière]
     etapes:
+      - dialogue:
+          - zero: "Pour vivre, il me faut des graines de tournesol. C'est tout."
+          - neo: "Et de l'eau, de l'air, un abri… Tous les êtres vivants ont des besoins. Lesquels ?"
+      - a_quoi_ca_sert: "Connaître les besoins des êtres vivants, c'est savoir s'occuper d'un animal, d'un potager ou de soi-même."
       - texte: |
           Tous les êtres vivants ont besoin d'**eau**, d'**air** (pour respirer) et de **nourriture**.
           - Les **animaux** mangent d'autres êtres vivants (plantes ou animaux).
@@ -181,6 +209,9 @@ lecons:
             - "Observe-les tous les 3 jours pendant deux semaines (et note !)."
           observation: "La plante du placard pâlit, jaunit et pousse en longueur, toute faible ; l'autre reste verte."
           explication: "Sans lumière, la plante ne peut plus fabriquer sa nourriture. Elle utilise ses réserves et s'étire pour chercher la lumière. (Remets-la vite à la fenêtre !)"
+      - astuce:
+          texte: "Les 4 besoins de base : eau, nourriture, air, et un abri à la bonne température. Les plantes, elles, ont aussi besoin de lumière."
+          qui: mia
       - retiens: "Tous les vivants ont besoin d'eau, d'air, de nourriture. Les plantes fabriquent leur nourriture avec la lumière."
     exercices:
       - type: qcm
@@ -205,6 +236,10 @@ lecons:
     objectif: Je fais germer une graine et je suis sa croissance.
     mots: [germer, germination, graine, pousse]
     etapes:
+      - dialogue:
+          - zero: "J'ai planté une graine hier. Toujours rien. Elle est cassée ?"
+          - mia: "Patience ! Il lui faut de l'eau, de l'air et de la chaleur. Faisons une expérience."
+      - a_quoi_ca_sert: "Faire germer une graine, c'est le début de tout jardin et de toute notre nourriture : blé, riz, haricots… tout commence par une graine."
       - texte: |
           Une graine contient un **minuscule bébé plante** et des **réserves** de nourriture. Pour **germer**, elle a besoin d'**eau**, d'**air** et d'une **température douce** — pas de lumière au début ! (la lumière devient indispensable une fois les feuilles sorties).
       - experience:
@@ -217,6 +252,9 @@ lecons:
             - "Observe et dessine la graine tous les deux jours pendant deux semaines."
           observation: "Après quelques jours, une petite racine sort de la graine, puis une tige qui monte et deux premières feuilles."
           explication: "Grâce à l'eau et à la chaleur, la graine se réveille : elle utilise ses réserves pour faire sa racine et sa tige. Ensuite, ses feuilles prennent le relais avec la lumière."
+      - astuce:
+          texte: "Une graine a besoin d'eau, d'air et de chaleur pour germer, mais pas forcément de lumière : elle a déjà sa réserve de nourriture à l'intérieur."
+          qui: neo
       - retiens: "Pour germer, une graine a besoin d'eau, d'air et de chaleur. D'abord la racine, puis la tige et les feuilles."
     exercices:
       - type: ordre

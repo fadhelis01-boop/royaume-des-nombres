@@ -45,6 +45,9 @@ lecons:
           enonce: "Simplifie $\\overrightarrow{AB} + \\overrightarrow{BC} + \\overrightarrow{CD}$."
           choix: ["$\\overrightarrow{AD}$", "$\\overrightarrow{DA}$", "$\\overrightarrow{AC}$", "$\\vec 0$"]
           correction: "Chasles, deux fois : $\\overrightarrow{AD}$."
+      - astuce:
+          texte: "Chasles, c'est comme un trajet : de A à B, puis de B à C, revient à aller de A à C. Les lettres du milieu s'enchaînent (AB + BC = AC)."
+          qui: mia
     exercices:
       - type: qcm
         enonce: "$\\overrightarrow{AB} + \\overrightarrow{BA} = ?$"
@@ -81,6 +84,9 @@ lecons:
             - { avant: "(", reponse: "xb-xa", apres: ";" }
             - { reponse: "yb-ya", apres: ")" }
           correction: "$({{nb(xb)}} - ({{nb(xa)}}) \\;;\\; {{nb(yb)}} - ({{nb(ya)}})) = ({{nb(xb-xa)}} ; {{nb(yb-ya)}})$"
+      - astuce:
+          texte: "Coordonnées de AB : arrivée moins départ, (x_B − x_A ; y_B − y_A). « Là où je vais moins là d'où je viens »."
+          qui: neo
     exercices:
       - type: nombre
         vars: { t: [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 6, 10]] }
@@ -127,6 +133,9 @@ lecons:
           enonce: "$\\vec u({{nb(a)}} ; {{nb(b)}}) \\cdot \\vec v({{nb(c)}} ; {{nb(d)}}) = ?$"
           reponse: "a*c+b*d"
           correction: "${{nb(a)}} \\times ({{nb(c)}}) + {{nb(b)}} \\times ({{nb(d)}}) = {{nb(a*c+b*d)}}$"
+      - astuce:
+          texte: "Produit scalaire nul = vecteurs orthogonaux. C'est l'outil le plus rapide pour prouver un angle droit."
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: "-6..6", b: "-6..6", c: "-6..6", d: "-6..6" }
@@ -165,6 +174,9 @@ lecons:
           enonce: "Pente de la droite passant par A({{nb(xa)}} ; {{nb(m*xa+p)}}) et B({{nb(xa+dx)}} ; {{nb(m*(xa+dx)+p)}}) ?"
           reponse: "m"
           correction: "$\\frac{ {{nb(m*(xa+dx)+p)}} - ({{nb(m*xa+p)}}) }{ {{dx}} } = {{nb(m)}}$"
+      - astuce:
+          texte: "Pente = (y_B − y_A) / (x_B − x_A) : « de combien je monte quand j'avance ». Puis remplace un point pour trouver b."
+          qui: mia
     exercices:
       - type: expression
         vars: { xa: "-3..2", m: "-3..4", p: "-6..6", dx: "1..3" }
@@ -216,6 +228,9 @@ lecons:
             - { reponse: "b", apres: ")" }
             - { avant: "r =", reponse: "r" }
           correction: "Centre $({{nb(a)}} ; {{nb(b)}})$, rayon $\\sqrt{ {{r*r}} } = {{r}}$."
+      - astuce:
+          texte: "(x − a)² + (y − b)² = r² : le centre est (a ; b) et le rayon est r, pas r². Attention aux signes, comme pour la forme canonique."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "-5..5", b: "-5..5", r: "1..9" }
@@ -260,6 +275,9 @@ lecons:
           enonce: "Longueur de la diagonale d'un pavé de {{t_0}} × {{t_1}} × {{t_2}} ?"
           reponse: "t_3"
           correction: "$\\sqrt{ {{t_0}}^2 + {{t_1}}^2 + {{t_2}}^2 } = \\sqrt{ {{t_0^2+t_1^2+t_2^2}} } = {{t_3}}$"
+      - astuce:
+          texte: "Dans l'espace, la distance se calcule comme Pythagore avec une coordonnée de plus : √((Δx)² + (Δy)² + (Δz)²)."
+          qui: zero
     exercices:
       - type: nombre
         vars: { c: "2..9" }

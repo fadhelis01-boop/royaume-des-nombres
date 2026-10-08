@@ -20,12 +20,18 @@ lecons:
     objectif: J'explique les trois états avec le modèle des particules.
     mots: [particule, molécule, modèle]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi on peut traverser l'eau avec la main, mais pas un mur ?"
+          - mia: "Imaginons que tout est fait de toutes petites billes, les particules."
       - texte: |
           La matière est faite de **particules** minuscules (des molécules), bien trop petites pour être vues, même au microscope ordinaire. Ce **modèle** explique les trois états :
           - **solide** : particules **collées, rangées**, qui vibrent sur place → forme propre ;
           - **liquide** : particules **collées mais désordonnées**, qui glissent les unes sur les autres → il coule ;
           - **gaz** : particules **très éloignées**, qui bougent vite dans tous les sens → il occupe tout l'espace et se comprime.
           Quand on chauffe, les particules s'agitent plus : c'est pour ça que la matière change d'état.
+      - astuce:
+          texte: "Imagine une cour d'école : solide = élèves rangés en rang serré ; liquide = élèves qui se faufilent les uns contre les autres ; gaz = récréation, tout le monde court partout."
+          qui: neo
       - retiens: "Solide : serrées et rangées. Liquide : serrées et désordonnées. Gaz : éloignées et très agitées. Chauffer = agiter les particules."
       - a_quoi_ca_sert: "On peut comprimer l'air dans un pneu (les particules d'un gaz sont éloignées) mais pas l'eau : c'est le principe des freins hydrauliques."
     exercices:
@@ -50,12 +56,19 @@ lecons:
     objectif: Je sais que la masse se conserve lors d'une transformation.
     mots: [conservation, masse, Lavoisier]
     etapes:
+      - dialogue:
+          - zero: "Mon sucre a disparu dans l'eau, donc le verre est plus léger !"
+          - neo: "Faux ! Pesons avant et après : rien ne se perd."
+      - a_quoi_ca_sert: "Lavoisier l'a dit : « Rien ne se perd, rien ne se crée, tout se transforme. » C'est vrai pour la cuisine, le recyclage et toute la chimie."
       - histoire:
           titre: Un peu d'histoire
           texte: "Au XVIIIᵉ siècle, le chimiste français **Antoine Lavoisier** pèse avec une grande précision tout ce qui entre et sort de ses expériences, en récipient fermé. Il montre que la masse totale ne change pas. On résume son idée par : « Rien ne se perd, rien ne se crée, tout se transforme. » Son épouse, **Marie-Anne Paulze Lavoisier**, l'aidait, dessinait les appareils et traduisait des textes scientifiques."
       - texte: |
           Lors d'une transformation (dissolution, changement d'état, réaction chimique), **la masse totale se conserve** — à condition de tout peser, y compris les gaz (donc en récipient fermé).
           Exemple : 100 g de glace donnent **100 g** d'eau liquide. Le volume, lui, peut changer (la glace prend un peu plus de place que l'eau).
+      - astuce:
+          texte: "Pèse avant, pèse après (récipient fermé) : la balance affiche la même chose. Si elle baisse, c'est qu'un gaz s'est échappé."
+          qui: zero
       - retiens: "La masse totale se conserve toujours (récipient fermé). Le volume peut changer, la masse non."
     exercices:
       - type: nombre
@@ -81,6 +94,9 @@ lecons:
     objectif: Je distingue un simple changement d'aspect d'une vraie réaction chimique.
     mots: [réaction chimique, réactif, produit]
     etapes:
+      - dialogue:
+          - zero: "Quand je fais cuire un œuf, est-ce que c'est encore de l'œuf cru caché ?"
+          - mia: "Non : la cuisson a fabriqué de nouvelles substances. C'est une transformation chimique !"
       - texte: |
           - **Transformation physique** : la matière change d'état, de forme ou se mélange, mais **reste la même substance** (le glaçon fond : c'est toujours de l'eau ; le sucre se dissout : c'est toujours du sucre).
           - **Transformation chimique** (une **réaction**) : des substances disparaissent (les **réactifs**) et de **nouvelles** apparaissent (les **produits**). Indices : un gaz se dégage, la couleur change, de la chaleur ou de la lumière apparaît, une odeur nouvelle…
@@ -97,6 +113,9 @@ lecons:
             - "Fixe le ballon sur le goulot sans faire tomber la poudre, puis redresse-le pour la verser dedans."
           observation: "Ça mousse et le ballon se gonfle tout seul."
           explication: "Le vinaigre (acide) et le bicarbonate (base) réagissent : il se forme un **nouveau gaz**, le dioxyde de carbone (CO₂), qui gonfle le ballon. C'est une transformation **chimique**."
+      - astuce:
+          texte: "Les indices d'une vraie réaction chimique : un gaz apparaît (bulles), la couleur change, de la chaleur ou de la lumière se dégage, un nouveau solide se forme."
+          qui: mia
       - retiens: "Physique : même substance, aspect différent. Chimique : de nouvelles substances apparaissent (gaz, couleur, chaleur…)."
       - a_quoi_ca_sert: "La levure qui fait gonfler le gâteau, la rouille sur un vélo, la cuisson d'un œuf, une bougie qui brûle : ce sont des réactions chimiques."
     exercices:
@@ -122,6 +141,10 @@ lecons:
     objectif: Je connais la composition de l'air.
     mots: [azote, oxygène, dioxyde de carbone, atmosphère]
     etapes:
+      - dialogue:
+          - zero: "L'air, c'est de l'oxygène et c'est tout, non ?"
+          - neo: "Pas du tout ! Il y a surtout un autre gaz. Devine lequel."
+      - a_quoi_ca_sert: "Connaître l'air, c'est comprendre pourquoi on respire, pourquoi le feu a besoin d'air et comment la pollution l'abîme."
       - texte: |
           L'air est un **mélange de gaz** :
           - environ **78 %** de **diazote** (on dit souvent « azote ») ;
@@ -133,6 +156,9 @@ lecons:
           max: 100
           barres: [{ v: 78, label: "diazote" }, { v: 21, label: "dioxygène" }, { v: 1, label: "autres" }]
         legende: "La composition de l'air sec, en pourcentage du volume."
+      - astuce:
+          texte: "Dans l'air : environ 4/5 de diazote et 1/5 de dioxygène. Pense à une pizza coupée en 5 parts : 4 parts de diazote, 1 part de dioxygène."
+          qui: neo
       - retiens: "Air ≈ 78 % diazote + 21 % dioxygène + 1 % autres gaz."
     exercices:
       - type: qcm
@@ -159,6 +185,10 @@ lecons:
     objectif: Je sais ce qu'il faut pour qu'un feu brûle, et comment l'éteindre.
     mots: [combustion, combustible, comburant, triangle du feu]
     etapes:
+      - dialogue:
+          - zero: "Comment on éteint un feu ? Avec de l'eau, toujours ?"
+          - mia: "Surtout pas sur de l'huile qui brûle ! Comprenons d'abord ce qu'il faut à un feu."
+      - a_quoi_ca_sert: "Savoir ce qu'il faut pour un feu, c'est savoir comment l'éteindre : c'est ce que font les pompiers et c'est ce qui peut sauver une vie."
       - texte: |
           Une **combustion** est une réaction chimique qui dégage de la chaleur et souvent de la lumière (une flamme). Il faut **trois choses** — le **triangle du feu** :
           1. un **combustible** (ce qui brûle : bois, papier, gaz, cire) ;
@@ -175,6 +205,9 @@ lecons:
           etapes: []
           observation: "Quand on pose un verre retourné sur une bougie allumée, la flamme faiblit puis s'éteint au bout de quelques secondes."
           explication: "Sous le verre, la bougie consomme le dioxygène disponible et en manque bientôt : sans comburant, la combustion s'arrête. C'est le principe de la couverture anti-feu : étouffer."
+      - astuce:
+          texte: "Le triangle du feu : combustible + comburant (dioxygène) + chaleur. Enlève un côté du triangle et le feu s'éteint."
+          qui: zero
       - retiens: "Triangle du feu : combustible + comburant (dioxygène) + énergie. On éteint en retirant un des trois."
     exercices:
       - type: qcm

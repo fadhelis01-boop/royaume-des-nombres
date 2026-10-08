@@ -24,10 +24,14 @@ lecons:
       - dialogue:
           - mia: "Écoute : « Je mangeais », « je mange », « je mangerai ». Le même verbe, trois moments."
           - neo: "Les mots du temps aident aussi : hier, autrefois → passé ; maintenant → présent ; demain, bientôt → futur."
+      - a_quoi_ca_sert: "Les temps permettent de raconter dans l'ordre : ce qui s'est passé, ce qui se passe, ce qui va arriver. Sans eux, toutes les histoires seraient mélangées."
       - texte: |
           - **Passé** : ce qui est déjà arrivé. *Hier, j'**ai joué**. Autrefois, on **écrivait** à la plume.*
           - **Présent** : ce qui se passe maintenant. *Aujourd'hui, je **joue**.*
           - **Futur** : ce qui va arriver. *Demain, je **jouerai**.*
+      - astuce:
+          texte: "Cherche le mot-indice : hier → passé, aujourd'hui/maintenant → présent, demain → futur."
+          qui: zero
       - retiens: "Le **temps du verbe** dit **quand** l'action se passe : passé, présent ou futur."
     exercices:
       - type: classer
@@ -37,7 +41,7 @@ lecons:
         mots: [["{{conjp(v,'imparfait',p)}}", 0], ["{{conjp(v,'present',p)}}", 1], ["{{conjp(v,'futur',p)}}", 2], ["{{conjp(v,'passe_compose',p)}}", 0]]
         correction: "Imparfait et passé composé → passé ; présent → maintenant ; futur → demain."
       - type: qcm
-        vars: { t: [["Demain, nous irons au zoo.", futur, présent, passé], ["Hier, il a plu toute la journée.", passé, présent, futur], ["En ce moment, Mia dessine.", présent, passé, futur], ["Autrefois, les gens s'éclairaient à la bougie.", passé, futur, présent], ["L'année prochaine, j'aurai neuf ans.", futur, passé, présent]] }
+        vars: { t: [["Demain, nous irons au zoo.", futur, présent, passé], ["Hier, il a plu toute la journée.", passé, présent, futur], ["En ce moment, Lya dessine.", présent, passé, futur], ["Autrefois, les gens s'éclairaient à la bougie.", passé, futur, présent], ["L'année prochaine, j'aurai neuf ans.", futur, passé, présent]] }
         enonce: "« {{t_0}} » — À quel moment ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
@@ -55,6 +59,7 @@ lecons:
       - dialogue:
           - neo: "Finir : je finis, tu finis, il finit, nous finISSons… Le 2e groupe a son ISS au pluriel."
           - zero: "Et prendre ? Je prends, tu prends, il prend… avec un D ! Pas de T. Il est têtu, ce verbe."
+      - a_quoi_ca_sert: "Le présent est le temps que l'on utilise le plus : pour parler de soi, des vérités générales et de ce qui se passe maintenant."
       - texte: |
           **2e groupe** (finir) : je fin**is**, tu fin**is**, il fin**it**, nous fin**issons**, vous fin**issez**, ils fin**issent**.
 
@@ -62,6 +67,9 @@ lecons:
           mais certains verbes changent leur radical : *venir → je viens, nous venons, ils viennent* ; *pouvoir → je peux, ils peuvent*.
 
           Les verbes en **-dre** gardent leur **d** : je pren**ds**, il pren**d**, je ren**ds**, il ren**d**.
+      - astuce:
+          texte: "Les verbes en -ir comme finir prennent « -iss- » avec nous, vous, ils : nous finissons, ils finissent. C'est leur carte d'identité du 2ᵉ groupe."
+          qui: neo
       - retiens: "2e groupe : **is, is, it, issons, issez, issent**. 3e groupe : souvent **s, s, t** (ou **ds, ds, d** pour -dre)."
     exercices:
       - type: mot
@@ -98,6 +106,9 @@ lecons:
       - attention:
           texte: "Les verbes en -cer et -ger : je commen**ç**ais, je man**ge**ais (pour garder le son), mais nous commencions, nous mangions."
           qui: neo
+      - astuce:
+          texte: "À l'imparfait, les terminaisons sont les mêmes pour TOUS les verbes : -ais, -ais, -ait, -ions, -iez, -aient. Une seule chanson à retenir !"
+          qui: mia
       - retiens: "Imparfait = radical de **nous** + **ais, ais, ait, ions, iez, aient**. Pour tous les verbes !"
       - a_quoi_ca_sert: "Raconter ce qui durait ou se répétait dans le passé : « Quand j'étais petit, je jouais tous les jours au parc. »"
     exercices:
@@ -126,6 +137,7 @@ lecons:
       - dialogue:
           - neo: "Le futur, c'est facile : je prends l'infinitif, et j'ajoute AI, AS, A, ONS, EZ, ONT. Ce sont les terminaisons du verbe avoir !"
           - zero: "Je mangerai. Tu mangeras. Il mangera. On mangera TOUS. 😳"
+      - a_quoi_ca_sert: "Le futur sert à faire des projets, des promesses, des prévisions : « Demain, il fera beau », « Je serai astronaute »."
       - texte: |
           **Infinitif + -ai, -as, -a, -ons, -ez, -ont** : *je chanter**ai**, tu finir**as**, il prendr**a*** (le **e** final de -re tombe).
 
@@ -135,6 +147,9 @@ lecons:
       - attention:
           texte: "Ne confonds pas « je chanterai » (futur) et « je chanterais » (conditionnel) : au futur, pas de s avec « je »."
           qui: mia
+      - astuce:
+          texte: "Le futur, c'est l'infinitif + le verbe avoir : je chanter-ai, tu chanter-as, il chanter-a, nous chanter-(av)ons… Tu entends « avoir » caché dedans !"
+          qui: neo
       - retiens: "Futur = **infinitif + ai, as, a, ons, ez, ont** ; radicaux spéciaux : ser-, aur-, ir-, fer-, viendr-, verr-, pourr-…"
     exercices:
       - type: mot
@@ -162,6 +177,7 @@ lecons:
       - dialogue:
           - mia: "Le passé composé est fait de deux morceaux : un auxiliaire (avoir ou être) au présent, et le participe passé."
           - neo: "J'**ai** mang**é**. Tu **as** fin**i**. Il **a** pr**is**. Deux pièces de puzzle !"
+      - a_quoi_ca_sert: "Le passé composé est le temps le plus utilisé pour raconter ce qu'on a fait : « J'ai mangé », « Nous avons gagné »."
       - texte: |
           **avoir au présent + participe passé** :
           *j'ai chanté, tu as fini, il a pris, nous avons fait, vous avez vu, ils ont dit*.
@@ -186,7 +202,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "j'ai {{t_1}} (au féminin : {{pp(t_0, 'f')}})"
       - type: surligner
-        vars: { t: ["Hier, Mia [a mangé] une pomme.", "Nous [avons fini] nos devoirs.", "Les enfants [ont pris] le train.", "Tu [as vu] ce film ?", "Hier, j'[ai écrit] une lettre."] }
+        vars: { t: ["Hier, Lya [a mangé] une pomme.", "Nous [avons fini] nos devoirs.", "Les enfants [ont pris] le train.", "Tu [as vu] ce film ?", "Hier, j'[ai écrit] une lettre."] }
         enonce: "Touche le verbe au passé composé (auxiliaire + participe)."
         phrase: "{{t}}"
         correction: "Le passé composé = avoir au présent + participe passé."
@@ -200,6 +216,7 @@ lecons:
       - dialogue:
           - neo: "Certains verbes prennent ÊTRE : aller, venir, partir, arriver, tomber, naître, mourir…"
           - mia: "Et avec être, le participe passé s'accorde avec le sujet, comme un adjectif ! Elle est partie. Ils sont partis."
+      - a_quoi_ca_sert: "Pour raconter tes sorties et tes voyages, tu en as besoin : « Je suis allé », « Elle est partie », « Nous sommes arrivés »."
       - texte: |
           **être au présent + participe passé accordé avec le sujet** :
           *il est parti, elle est parti**e**, ils sont parti**s**, elles sont parti**es***.

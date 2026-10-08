@@ -4,7 +4,7 @@ import { getState } from "./store";
 import { MODELS } from "./ai-config";
 
 // ---------------------------------------------------------------------
-// « Demande à Mia » : questions libres de l'enfant, réponses claires,
+// « Demande à Lya » : questions libres de l'enfant, réponses claires,
 // rigoureuses et SOURCÉES. Appel direct à l'API Claude depuis l'appareil
 // avec la clé saisie par un parent dans l'Espace parents (stockée sur
 // l'appareil uniquement). Recherche web limitée à des sources de
@@ -38,7 +38,7 @@ function client() {
 }
 
 export function teacherSystem(age: number) {
-  return `Tu es Mia π, une petite chatte mascotte très curieuse, et tu réponds dans l'application « La Galaxie des Savoirs » (maths, français, chimie, physique, biologie, Terre et Univers, musique, dessin) avec la rigueur d'un professeur expérimenté de la matière concernée et la bienveillance d'un spécialiste des sciences de l'éducation. Tes amis sont Néo Fibo (un renard qui adore vérifier) et Zéro (un hamster rigolo).
+  return `Tu es Lya π, une petite chatte mascotte très curieuse, et tu réponds dans l'application « La Galaxie des Savoirs » (maths, français, chimie, physique, biologie, Terre et Univers, musique, dessin) avec la rigueur d'un professeur expérimenté de la matière concernée et la bienveillance d'un spécialiste des sciences de l'éducation. Tes amis sont Néo Fibo (un renard qui adore vérifier) et Zéro (un hamster rigolo).
 
 L'élève qui te parle a ${age} ans${age >= 18 ? " ou plus" : ""}. Adapte TOUT à cet âge : vocabulaire, longueur, exemples.
 
@@ -135,8 +135,8 @@ export async function askClaude(o: {
       });
       stream.on("streamEvent", (ev: BetaRawMessageStreamEvent) => {
         if (ev.type !== "content_block_start") return;
-        if (ev.content_block.type === "server_tool_use") o.onStatus?.("Mia cherche dans ses livres de référence…");
-        if (ev.content_block.type === "text") o.onStatus?.("Mia écrit sa réponse…");
+        if (ev.content_block.type === "server_tool_use") o.onStatus?.("Lya cherche dans ses livres de référence…");
+        if (ev.content_block.type === "text") o.onStatus?.("Lya écrit sa réponse…");
       });
       final = await stream.finalMessage();
     } catch (e) {
@@ -163,7 +163,7 @@ export async function askClaude(o: {
     }
     break;
   }
-  if (stop === "refusal") throw new AiError("Mia ne peut pas répondre à cette question. Essaie de la poser autrement, avec des mots de maths !");
+  if (stop === "refusal") throw new AiError("Lya ne peut pas répondre à cette question. Essaie de la poser autrement, avec des mots de maths !");
   if (!sources.length) for (const [url, title] of consulted) sources.push({ url, title });
   return { text: text.trim(), sources, cost };
 }
@@ -171,9 +171,9 @@ export async function askClaude(o: {
 function translateError(e: unknown): Error {
   if (e instanceof Anthropic.AuthenticationError) return new AiError("La clé de l'assistant est refusée. Un adulte doit la vérifier dans l'Espace parents.");
   if (e instanceof Anthropic.PermissionDeniedError) return new AiError("Accès refusé par le service (droits du compte).");
-  if (e instanceof Anthropic.RateLimitError) return new AiError("Mia est un peu débordée (trop de questions ou crédit épuisé). Réessaie dans une minute.");
+  if (e instanceof Anthropic.RateLimitError) return new AiError("Lya est un peu débordée (trop de questions ou crédit épuisé). Réessaie dans une minute.");
   if (e instanceof Anthropic.BadRequestError) return new AiError("Question refusée par le service : " + e.message);
-  if (e instanceof Anthropic.APIConnectionError) return new AiError("Pas de connexion internet : Mia répond seulement avec les leçons de l'application.");
+  if (e instanceof Anthropic.APIConnectionError) return new AiError("Pas de connexion internet : Lya répond seulement avec les leçons de l'application.");
   if (e instanceof Anthropic.APIUserAbortError) return new AiError("Arrêté.");
   if (e instanceof Anthropic.APIError) return new AiError("Erreur du service : " + e.message);
   return e instanceof Error ? e : new Error(String(e));

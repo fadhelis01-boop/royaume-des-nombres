@@ -20,6 +20,10 @@ lecons:
     objectif: Je construis des accords de septième et je reconnais le II-V-I.
     mots: [accord de septième, II-V-I, septième de dominante, accord enrichi]
     etapes:
+      - dialogue:
+          - zero: "Le jazz sonne différemment. Il y a un secret ?"
+          - neo: "Des accords enrichis et un enchaînement célèbre : le II-V-I !"
+      - a_quoi_ca_sert: "Les accords de septième et le II-V-I sont la base du jazz, mais aussi de beaucoup de chansons pop et de musiques de film."
       - texte: |
           On ajoute une 4ᵉ note à l'accord parfait : la **septième**.
           - **Do7M** (septième majeure) : do-mi-sol-**si** — doux, rêveur ;
@@ -31,6 +35,9 @@ lecons:
           notes: "[Ré4 Fa4 La4 Do5]:2 [Sol3 Si3 Ré4 Fa4]:2 [Do4 Mi4 Sol4 Si4]:4"
           tempo: 80
           etiquette: "Écouter II – V – I en do majeur"
+      - astuce:
+          texte: "Le II-V-I en do : Rém7 → Sol7 → Domaj7. C'est l'enchaînement le plus fréquent du jazz : apprends-le dans toutes les tonalités."
+          qui: zero
       - retiens: "Accord de 7ᵉ = accord parfait + septième. Do7 (si♭) est une dominante qui veut résoudre. Jazz : II – V – I (Rém7 – Sol7 – Do7M)."
     exercices:
       - type: qcm
@@ -54,12 +61,19 @@ lecons:
     objectif: J'utilise l'échelle des décibels et je connais quelques phénomènes de perception.
     mots: [décibel, logarithme, intensité, sonie, masquage]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi le bruit de la craie sur le tableau est si horrible ?"
+          - mia: "C'est une question de perception : la psychoacoustique étudie comment on entend."
+      - a_quoi_ca_sert: "La psychoacoustique explique pourquoi certains sons nous gênent et sert à concevoir les casques, les salles et la compression audio."
       - texte: |
           L'oreille perçoit des intensités immenses (du chuchotement au réacteur d'avion : un facteur de mille milliards). On utilise donc une échelle **logarithmique**, le **décibel** :
           - **+10 dB** = intensité acoustique **× 10** (et un son perçu environ **deux fois plus fort**) ;
           - **+3 dB** ≈ intensité **× 2** (deux instruments identiques au lieu d'un).
           **Masquage** : un son fort peut rendre inaudible un son plus faible de fréquence voisine (le MP3 en profite pour supprimer ce qu'on n'entendrait pas).
           Notre sensibilité dépend de la fréquence : l'oreille est la plus sensible vers **2 000 – 5 000 Hz** (la zone de la voix et des cris).
+      - astuce:
+          texte: "Ajouter 3 dB, c'est doubler la puissance ; ajouter 10 dB, c'est un son perçu environ deux fois plus fort."
+          qui: mia
       - retiens: "Décibel = échelle logarithmique. +10 dB : intensité × 10 (≈ deux fois plus fort perçu) ; +3 dB : × 2. Masquage ; sensibilité maximale vers 2 à 5 kHz."
     exercices:
       - type: nombre
@@ -83,6 +97,10 @@ lecons:
     objectif: J'explique la réverbération et le rôle des matériaux.
     mots: [réverbération, écho, absorption, temps de réverbération]
     etapes:
+      - dialogue:
+          - zero: "Ma voix résonne dans l'église, mais pas dans ma chambre !"
+          - neo: "Les murs, les matériaux et le volume changent tout : c'est l'acoustique."
+      - a_quoi_ca_sert: "L'acoustique rend une salle de concert magnifique ou une cantine insupportable : architectes et ingénieurs du son l'utilisent tous les jours."
       - texte: |
           Dans une salle, le son arrive directement… puis par des milliers de **réflexions** sur les murs : c'est la **réverbération**. Le **temps de réverbération** est le temps que met le son pour diminuer de 60 dB après l'arrêt de la source.
           - Une église en pierre : plusieurs secondes (idéal pour l'orgue, difficile pour la parole) ;
@@ -90,6 +108,9 @@ lecons:
           - une salle de concert : souvent autour de 2 secondes.
           Les matériaux **durs et lisses** (pierre, verre, carrelage) réfléchissent ; les matériaux **mous et poreux** (rideaux, moquette, mousses, public !) **absorbent**.
           Un **écho** est une réflexion assez tardive (plus de 0,1 s environ) pour être entendue séparément.
+      - astuce:
+          texte: "Surfaces dures et lisses = réverbération longue (église). Surfaces molles et irrégulières = son sec (studio, chambre avec rideaux et tapis)."
+          qui: neo
       - retiens: "Réverbération = réflexions multiples. Matériaux durs réfléchissent, mous absorbent. Parole : réverbération courte ; orgue : longue."
     exercices:
       - type: classer
@@ -116,12 +137,19 @@ lecons:
     objectif: J'explique l'échantillonnage et la quantification.
     mots: [échantillonnage, fréquence d'échantillonnage, Nyquist, quantification, bit]
     etapes:
+      - dialogue:
+          - zero: "Comment une chanson rentre dans mon téléphone ?"
+          - mia: "On la découpe en milliers de petits morceaux de nombres chaque seconde !"
+      - a_quoi_ca_sert: "L'échantillonnage est le principe de toute musique numérique : streaming, téléphones, jeux vidéo, applications de musique."
       - texte: |
           Pour numériser un son, on mesure la tension du micro à intervalles réguliers : c'est l'**échantillonnage**.
           - La **fréquence d'échantillonnage** du CD est **44 100 Hz** (44 100 mesures par seconde).
           - **Théorème de Nyquist-Shannon** : on peut reproduire des fréquences jusqu'à la **moitié** de la fréquence d'échantillonnage (22 050 Hz pour le CD, au-delà de la limite de l'oreille humaine, ~20 000 Hz).
           - Chaque mesure est codée sur un nombre de **bits** (16 bits pour le CD : 65 536 niveaux possibles) : c'est la **quantification**.
           Débit d'un CD stéréo : 44 100 × 16 × 2 ≈ **1,4 million de bits par seconde**.
+      - astuce:
+          texte: "Théorème de Nyquist-Shannon : pour enregistrer un son, il faut échantillonner au moins 2 fois plus vite que sa fréquence la plus haute. D'où les 44 100 Hz du CD."
+          qui: zero
       - retiens: "Échantillonnage (CD : 44,1 kHz), Nyquist : fréquence max = moitié de la fréquence d'échantillonnage. Quantification : 16 bits = 65 536 niveaux."
     exercices:
       - type: nombre
@@ -146,6 +174,9 @@ lecons:
     objectif: Je connais les étapes d'une composition et les règles du droit d'auteur et de l'IA.
     mots: [motif, développement, arrangement, droit d'auteur, domaine public, intelligence artificielle]
     etapes:
+      - dialogue:
+          - zero: "J'ai composé une mélodie ! Elle est à moi ?"
+          - neo: "Oui, et le droit d'auteur la protège. Voyons comment composer et protéger ses œuvres."
       - texte: |
           **Composer** : partir d'un **motif** (quelques notes, un rythme), le **développer** (répéter, transposer, varier, inverser), choisir une **forme** (couplet-refrain, ABA…), puis **arranger** (qui joue quoi : instruments, accompagnement, nuances).
           **Droits** : une œuvre est protégée par le **droit d'auteur** (en France, jusqu'à 70 ans après la mort de l'auteur) ; ensuite, elle entre dans le **domaine public** (Mozart, Bach : libres d'utilisation). Reprendre ou échantillonner une œuvre protégée nécessite une **autorisation**.
@@ -153,6 +184,9 @@ lecons:
       - vraie_vie:
           titre: Ton premier morceau
           texte: "Dans le studio de musique, invente un motif de 4 notes en pentatonique. Joue-le 2 fois (partie A), invente une partie B différente, puis rejoue A. Tu as composé une forme ABA ! Ajoute une boucle de rythme avec la boîte à rythmes de Zéro."
+      - astuce:
+          texte: "Garde toujours une trace datée de tes compositions (fichiers, partitions, dépôt) : c'est ta preuve que tu en es l'auteur."
+          qui: mia
       - retiens: "Motif → développement → forme → arrangement. Droit d'auteur jusqu'à 70 ans après la mort de l'auteur, puis domaine public. IA : transparence et respect des créateurs."
     exercices:
       - type: ordre

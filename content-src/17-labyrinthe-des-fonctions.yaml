@@ -43,6 +43,9 @@ lecons:
           enonce: "$f(x) = {{a}}x + ({{nb(b)}})$. Calcule $f({{nb(x)}})$."
           reponse: "a*x+b"
           correction: "$f({{nb(x)}}) = {{a}} \\times ({{nb(x)}}) + ({{nb(b)}}) = {{nb(a*x+b)}}$"
+      - astuce:
+          texte: "Une fonction est une machine : on met un nombre x à l'entrée, elle donne un seul nombre f(x) à la sortie."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "2..9", b: "-9..9", x: "-5..8" }
@@ -94,6 +97,9 @@ lecons:
           visuel: { type: graphe, xmin: -4, xmax: 4, ymin: -8, ymax: 12, pas_x: 1, pas_y: 2, fonctions: [{ f: "{{a}}*x+({{b}})", nom: "f" }], points: [{ x: "=x", y: "=a*x+b" }] }
           reponse: "a*x+b"
           correction: "Le point de la droite d'abscisse {{nb(x)}} a pour ordonnée {{nb(a*x+b)}}."
+      - astuce:
+          texte: "Image : je pars de l'axe horizontal (x), je monte jusqu'à la courbe, je lis sur l'axe vertical. Antécédent : je fais le chemin inverse."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "1..3", b: "-3..3", x: "-3..3" }
@@ -143,6 +149,9 @@ lecons:
           enonce: "$f$ est linéaire et $f({{x}}) = {{nb(a*x)}}$. Quel est son coefficient $a$ ?"
           reponse: "a"
           correction: "$a = \\frac{ {{nb(a*x)}} }{ {{x}} } = {{nb(a)}}$"
+      - astuce:
+          texte: "Linéaire = proportionnel : une droite qui passe par l'origine. Si tu doubles x, f(x) double."
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: "-6..8", x: "2..9" }
@@ -201,6 +210,9 @@ lecons:
             - { avant: "a =", reponse: "a" }
             - { avant: "b =", reponse: "b" }
           correction: "$f(x) = {{nb(a)}}x + ({{nb(b)}})$ : la droite coupe l'axe vertical en {{nb(b)}} et monte de {{nb(a)}} quand x avance de 1."
+      - astuce:
+          texte: "Dans f(x) = ax + b : b est le point de départ sur l'axe vertical, a est la pente (de combien on monte quand on avance de 1)."
+          qui: mia
     exercices:
       - type: nombre
         vars: { x1: "-3..2", x2: "3..6", a: "-4..5", b: "-6..6" }
@@ -264,6 +276,9 @@ lecons:
           enonce: "Tarif A : {{p}} € par séance. Tarif B : {{a}} € d'abonnement + {{q}} € par séance. Pour combien de séances les tarifs sont-ils égaux ?"
           reponse: "a/(p-q)"
           correction: "${{p}}x = {{q}}x + {{a}} \\Rightarrow {{p-q}}x = {{a}} \\Rightarrow x = {{a/(p-q)}}$ séances."
+      - astuce:
+          texte: "Pour comparer deux tarifs, trace les deux droites : le point où elles se croisent est le moment où les deux tarifs sont égaux."
+          qui: neo
     exercices:
       - type: nombre
         vars: { p: [4, 5, 6, 8, 10], a: [12, 20, 24, 30, 40, 60], q: [1, 2, 3] }

@@ -21,6 +21,10 @@ lecons:
     objectif: Je connais le nom des notes et je les trouve sur un clavier.
     mots: [note, gamme, octave, clavier]
     etapes:
+      - dialogue:
+          - zero: "Do, ré, mi… et après ?"
+          - mia: "Fa, sol, la, si ! Sept notes, et avec elles on joue toutes les mélodies."
+      - a_quoi_ca_sert: "Les notes sont l'alphabet de la musique : avec seulement 7 noms, on peut écrire toutes les mélodies du monde."
       - texte: |
           Il y a **7 noms de notes** : **do, ré, mi, fa, sol, la, si**… puis on recommence au **do** suivant, plus aigu : c'est une **octave**.
           Sur un clavier, le **do** est la touche blanche juste à gauche d'un **groupe de 2 touches noires**. Les touches noires forment des groupes de 2 et de 3 : c'est le repère !
@@ -35,6 +39,9 @@ lecons:
           type: son
           notes: "Do4 Ré4 Mi4 Fa4 Sol4 La4 Si4 Do5:2"
           etiquette: "Écouter la gamme de do"
+      - astuce:
+          texte: "Do, ré, mi, fa, sol, la, si… et ça recommence. Sur le clavier, le do est juste à gauche du groupe de deux touches noires."
+          qui: neo
       - retiens: "Do, ré, mi, fa, sol, la, si, (do). Le do est à gauche du groupe de 2 touches noires. Do = C, ré = D, mi = E, fa = F, sol = G, la = A, si = B."
     exercices:
       - type: mot
@@ -58,6 +65,10 @@ lecons:
     objectif: Je lis les notes sur la portée en clé de sol.
     mots: [portée, ligne, interligne, clé de sol]
     etapes:
+      - dialogue:
+          - zero: "Ces cinq lignes avec des petits ronds, c'est un code secret ?"
+          - neo: "C'est une portée ! Apprenons à lire les notes."
+      - a_quoi_ca_sert: "Lire la portée permet de jouer n'importe quelle partition, même un morceau que tu n'as jamais entendu."
       - texte: |
           On écrit les notes sur une **portée** : **5 lignes** et 4 **interlignes**. Plus la note est **haute** sur la portée, plus elle est **aiguë**.
           La **clé de sol** s'enroule autour de la **2ᵉ ligne** (en partant du bas) : la note sur cette ligne est un **sol**.
@@ -67,6 +78,9 @@ lecons:
           notes: "Do4 Ré4 Mi4 Fa4 Sol4 La4 Si4 Do5"
           durees: "noire noire noire noire noire noire noire noire"
         legende: "La gamme de do, du do grave (sur sa petite ligne) au do aigu."
+      - astuce:
+          texte: "Les notes sur les lignes en clé de sol, de bas en haut : mi, sol, si, ré, fa. Retiens « Mi Sol Si Ré Fa » comme une formule magique."
+          qui: zero
       - retiens: "Portée = 5 lignes. Plus haut = plus aigu. Clé de sol : le sol est sur la 2ᵉ ligne ; mi 1ʳᵉ ligne, si 3ᵉ, ré 4ᵉ, fa 5ᵉ."
     exercices:
       - type: qcm
@@ -92,6 +106,10 @@ lecons:
     objectif: Je connais la durée des figures de notes.
     mots: [ronde, blanche, noire, croche, temps]
     etapes:
+      - dialogue:
+          - zero: "Comment savoir combien de temps tenir une note ?"
+          - mia: "Sa forme te le dit : ronde, blanche, noire, croche…"
+      - a_quoi_ca_sert: "Les durées disent combien de temps tenir chaque note : sans elles, une mélodie serait méconnaissable."
       - texte: |
           La **forme** de la note indique sa **durée** (avec la **noire** = 1 temps) :
           | Figure | Aspect | Durée |
@@ -109,6 +127,9 @@ lecons:
       - visuel:
           type: son
           sons: [{ etiquette: "Une ronde", notes: "Sol4:4", tempo: 90 }, { etiquette: "Deux blanches", notes: "Sol4:2 Sol4:2", tempo: 90 }, { etiquette: "Quatre noires", notes: "Sol4 Sol4 Sol4 Sol4", tempo: 90 }, { etiquette: "Huit croches", notes: "Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5 Sol4:0.5", tempo: 90 }]
+      - astuce:
+          texte: "Chaque figure vaut la moitié de la précédente : ronde (4 temps), blanche (2), noire (1), croche (½). Comme une pizza qu'on coupe en deux à chaque fois."
+          qui: mia
       - retiens: "Ronde 4, blanche 2, noire 1, croche ½ temps. 1 ronde = 2 blanches = 4 noires = 8 croches."
     exercices:
       - type: nombre
@@ -134,6 +155,10 @@ lecons:
     objectif: Je connais les figures de silence.
     mots: [pause, demi-pause, soupir, demi-soupir]
     etapes:
+      - dialogue:
+          - zero: "En musique, on a le droit de ne rien jouer ?"
+          - neo: "Bien sûr ! Les silences font partie de la musique, et ils s'écrivent aussi."
+      - a_quoi_ca_sert: "Les silences font partie de la musique autant que les notes : ils donnent la respiration et le suspense."
       - texte: |
           En musique, le silence se **compte** aussi ! Chaque figure de note a son silence de même durée :
           - **pause** = 4 temps (comme la ronde) ;
@@ -146,6 +171,9 @@ lecons:
           notes: "Do4 Mi4 _ Sol4 _ _ Do5:2"
           tempo: 90
           etiquette: "Écoute : des notes et des silences"
+      - astuce:
+          texte: "La pause pend sous la ligne comme un chapeau accroché (lourde, 4 temps) ; la demi-pause est posée dessus comme un chapeau sur la tête (2 temps)."
+          qui: neo
       - retiens: "Pause 4, demi-pause 2, soupir 1, demi-soupir ½ temps. Le silence se compte."
     exercices:
       - type: qcm
@@ -170,6 +198,9 @@ lecons:
     objectif: J'improvise avec 5 notes.
     mots: [pentatonique, improviser]
     etapes:
+      - dialogue:
+          - zero: "Je joue n'importe quoi et ça sonne faux…"
+          - mia: "Essaie avec seulement cinq notes : tout sonnera joli ! C'est la gamme pentatonique."
       - texte: |
           La gamme **pentatonique** n'utilise que **5 notes** : **do, ré, mi, sol, la** (on enlève fa et si). Elle est utilisée partout dans le monde (chansons traditionnelles, blues, musiques d'Asie et d'Afrique).
           Magie : toutes ses notes « vont bien ensemble » : on peut **improviser** sans jamais sonner faux !
@@ -183,6 +214,9 @@ lecons:
       - vraie_vie:
           titre: Improvise dans le studio
           texte: "Va dans le studio de musique (Salle de jeux), laisse le mode pentatonique activé et invente une petite mélodie de 8 notes. Rejoue-la trois fois de suite : tu as composé !"
+      - astuce:
+          texte: "Joue seulement sur les touches noires du piano : c'est une gamme pentatonique ! Tout ce que tu joues sonnera bien ensemble."
+          qui: zero
       - retiens: "Pentatonique = 5 notes : do, ré, mi, sol, la. Idéale pour improviser."
     exercices:
       - type: nombre

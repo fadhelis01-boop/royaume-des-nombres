@@ -20,10 +20,17 @@ lecons:
     objectif: Je décris le cycle de vie d'un papillon, d'une grenouille et d'une poule.
     mots: [cycle de vie, métamorphose, larve, chenille, chrysalide, têtard]
     etapes:
+      - dialogue:
+          - zero: "Une chenille et un papillon, ce sont deux animaux différents ?"
+          - neo: "C'est le même ! Il change complètement de forme pendant sa vie. On appelle ça une métamorphose."
+      - a_quoi_ca_sert: "Connaître les cycles de vie aide à protéger les animaux au bon moment : on ne nettoie pas une mare au printemps, quand les têtards y grandissent."
       - texte: |
           - **Papillon** : œuf → **chenille** (la larve, qui mange beaucoup) → **chrysalide** → papillon adulte. Ce grand changement s'appelle la **métamorphose**.
           - **Grenouille** : œufs dans l'eau → **têtard** (respire avec des branchies, a une queue) → têtard avec pattes → grenouille adulte (respire avec des poumons et par la peau).
           - **Poule** : œuf → poussin (qui ressemble déjà à l'adulte) → poule. Pas de métamorphose.
+      - astuce:
+          texte: "Papillon : œuf → chenille → chrysalide → papillon. Retiens « Œuf, Chenille, Chrysalide, Papillon » comme une comptine : « On Change Comme Papillon »."
+          qui: zero
       - retiens: "Papillon : œuf, chenille, chrysalide, papillon. Grenouille : œuf, têtard, grenouille. Métamorphose = grande transformation."
     exercices:
       - type: ordre
@@ -48,9 +55,16 @@ lecons:
     objectif: J'associe un être vivant à son milieu de vie et à ses adaptations.
     mots: [habitat, milieu de vie, adaptation]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi l'ours polaire n'habite pas dans le désert ?"
+          - mia: "Parce que son corps est fait pour le froid ! Chaque animal est adapté à son milieu."
+      - a_quoi_ca_sert: "Comprendre les habitats aide à protéger les animaux : quand on détruit leur milieu, ils disparaissent."
       - texte: |
           Chaque être vivant vit dans un **milieu** adapté : la **mare**, la **forêt**, le **désert**, la **banquise**, l'**océan**…
           Il possède des **adaptations** : le chameau stocke des graisses dans ses bosses et supporte longtemps le manque d'eau ; l'ours polaire a une épaisse couche de graisse et de fourrure ; le poisson a des branchies ; le cactus a des épines au lieu de feuilles pour perdre moins d'eau.
+      - astuce:
+          texte: "Chaque adaptation répond à un problème du milieu : fourrure épaisse contre le froid, grandes oreilles contre la chaleur, palmes pour nager."
+          qui: mia
       - retiens: "Chaque être vivant a un habitat et des adaptations qui l'aident à y survivre."
     exercices:
       - type: qcm
@@ -74,12 +88,19 @@ lecons:
     objectif: Je construis une chaîne alimentaire.
     mots: [chaîne alimentaire, producteur, herbivore, carnivore, omnivore]
     etapes:
+      - dialogue:
+          - zero: "Qui mange qui dans la forêt ? J'espère que personne ne mange les hamsters…"
+          - neo: "Hmm… le renard, peut-être. Construisons la chaîne de qui mange qui."
+      - a_quoi_ca_sert: "Les chaînes alimentaires montrent que tout est lié : si une espèce disparaît, toutes celles qui en dépendent sont menacées."
       - texte: |
           Une **chaîne alimentaire** montre qui mange qui. La flèche veut dire « **est mangé par** » :
           **herbe → lapin → renard**.
           - Au début, toujours un **producteur** : une **plante** (elle fabrique sa nourriture avec la lumière).
           - **Herbivores** : mangent des plantes (lapin, vache). **Carnivores** : mangent des animaux (renard, lion). **Omnivores** : mangent les deux (ours, humain, sanglier).
           Les **décomposeurs** (vers de terre, champignons, bactéries) recyclent les êtres morts en sels minéraux pour les plantes.
+      - astuce:
+          texte: "La flèche veut dire « est mangé par » : elle va du mangé vers le mangeur, comme l'énergie qui passe de l'un à l'autre. Herbe → lapin → renard."
+          qui: neo
       - retiens: "La flèche = « est mangé par ». Une chaîne commence par une plante. Herbivore, carnivore, omnivore. Les décomposeurs recyclent."
     exercices:
       - type: ordre
@@ -104,6 +125,9 @@ lecons:
     objectif: Je sais comment le squelette et les muscles permettent de bouger.
     mots: [squelette, os, articulation, muscle, tendon]
     etapes:
+      - dialogue:
+          - zero: "Comment je fais pour plier mon bras ? C'est magique ?"
+          - mia: "Ce sont tes os et tes muscles qui travaillent en équipe. Regarde !"
       - texte: |
           Notre **squelette** (206 os chez l'adulte) **soutient** le corps et **protège** les organes (le crâne protège le cerveau, les côtes protègent le cœur et les poumons).
           Les os se rejoignent aux **articulations** (genou, coude, épaule) qui permettent de plier.
@@ -111,6 +135,9 @@ lecons:
       - vraie_vie:
           titre: Sens tes muscles
           texte: "Pose ta main sur le haut de ton bras et plie le coude : tu sens le biceps gonfler et durcir. Déplie le bras : c'est le muscle de l'arrière (triceps) qui travaille."
+      - astuce:
+          texte: "Les muscles ne savent que tirer, jamais pousser : c'est pour ça qu'ils travaillent en équipe. Le biceps plie le bras, le triceps le déplie."
+          qui: zero
       - retiens: "206 os, articulations pour plier, muscles qui se contractent et tirent sur les os par les tendons."
     exercices:
       - type: qcm
@@ -134,6 +161,10 @@ lecons:
     objectif: Je connais les types de dents et comment en prendre soin.
     mots: [incisive, canine, molaire, dent de lait, carie]
     etapes:
+      - dialogue:
+          - zero: "Mes dents sont mes meilleures amies pour croquer les noisettes !"
+          - neo: "Alors prends-en soin ! Chaque dent a un rôle : couper, déchirer ou broyer."
+      - a_quoi_ca_sert: "Prendre soin de ses dents évite les caries, les douleurs et les visites difficiles chez le dentiste : tes dents définitives doivent durer toute ta vie."
       - texte: |
           - Les **incisives** (devant, plates et coupantes) **coupent**.
           - Les **canines** (pointues) **déchirent**.
@@ -141,6 +172,9 @@ lecons:
           Un enfant a **20 dents de lait**, remplacées peu à peu par **32 dents définitives** chez l'adulte (avec les dents de sagesse).
           Le sucre nourrit des bactéries qui fabriquent de l'acide : il attaque l'émail et provoque des **caries**. On se brosse les dents **2 fois par jour, 2 minutes**.
           Les animaux ont des dents adaptées à leur régime : le lion a de grandes canines, la vache de larges molaires pour broyer l'herbe.
+      - astuce:
+          texte: "2 fois par jour, 2 minutes, avec du dentifrice fluoré. Et les incisives coupent, les canines déchirent, les molaires broient."
+          qui: mia
       - retiens: "Incisives coupent, canines déchirent, molaires broient. 20 dents de lait, 32 dents d'adulte. Brossage 2 fois 2 minutes."
     exercices:
       - type: qcm
@@ -164,6 +198,10 @@ lecons:
     objectif: Je comprends pourquoi on se lave les mains.
     mots: [microbe, bactérie, virus, hygiène, savon]
     etapes:
+      - dialogue:
+          - zero: "Mes mains sont propres : je ne vois aucune saleté !"
+          - mia: "Les microbes sont invisibles, Zéro ! C'est pour ça que le savon est si important."
+      - a_quoi_ca_sert: "Se laver les mains au bon moment évite de nombreuses maladies : c'est l'un des gestes de santé les plus efficaces au monde."
       - texte: |
           Les **microbes** (bactéries, virus, champignons microscopiques) sont invisibles à l'œil nu. La plupart sont **inoffensifs** ou même **utiles** (ceux de notre intestin, ceux qui font le yaourt) ; certains rendent **malades**.
           Ils passent de main en main, puis à la bouche et au nez. Le **savon** décroche la graisse sur laquelle ils s'accrochent : l'eau les emporte.
@@ -181,6 +219,9 @@ lecons:
             - "Mets du savon sur ton doigt et trempe-le à nouveau au centre."
           observation: "Avec le savon, le poivre fuit d'un coup vers les bords de l'assiette."
           explication: "Le savon casse la « peau » de l'eau (la tension superficielle) et repousse le poivre. En vrai, le savon agit surtout en décrochant les microbes de la peau pour que l'eau les rince : c'est pour ça qu'il faut frotter 30 secondes et rincer."
+      - astuce:
+          texte: "Lave-toi les mains le temps de chanter deux fois « Joyeux anniversaire » (environ 30 secondes), sans oublier les pouces et entre les doigts."
+          qui: neo
       - retiens: "Microbes invisibles : la plupart sont utiles, certains rendent malades. Savon + frotter 30 s + rincer."
     exercices:
       - type: vf

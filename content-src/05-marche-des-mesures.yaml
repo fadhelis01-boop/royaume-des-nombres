@@ -22,7 +22,7 @@ lecons:
     etapes:
       - dialogue:
           - zero: "J'ai mesuré la table avec mes pattes : elle fait 30 pattes de Zéro !"
-          - mia: "Mais mes pattes à moi sont plus grandes… je trouve 20 pattes de Mia !"
+          - mia: "Mais mes pattes à moi sont plus grandes… je trouve 20 pattes de Lya !"
           - neo: "C'est pour ça que le monde entier utilise la même unité : le MÈTRE."
       - texte: |
           | Unité | Abréviation | Pour mesurer… |
@@ -59,6 +59,9 @@ lecons:
           titre: Défi dans la vraie vie
           texte: "Avec une règle ou un mètre ruban, mesure ta main, ton cahier et ton lit. Commence bien au 0 ! Range-les du plus court au plus long."
           materiel: "une règle ou un mètre ruban"
+      - astuce:
+          texte: "Des repères dans ta main : 1 mm, l'épaisseur d'une carte bancaire ; 1 cm, la largeur de l'ongle du petit doigt ; 1 m, un grand pas d'adulte ; 1 km, environ 15 minutes de marche."
+          qui: zero
     exercices:
       - type: nombre
         vars: { m: "2..9" }
@@ -135,6 +138,9 @@ lecons:
           titre: Défi dans la vraie vie
           texte: "Avec une balance de cuisine, pèse une pomme, un livre et ta trousse. Devine d'abord, puis vérifie : qui est le plus lourd ?"
           materiel: "une balance de cuisine"
+      - astuce:
+          texte: "Repères : 1 g, un trombone ; 1 kg, un paquet de sucre ou une bouteille d'eau de 1 L ; 1 t, une petite voiture."
+          qui: mia
     exercices:
       - type: nombre
         vars: { k: "2..9" }
@@ -380,6 +386,9 @@ lecons:
           reponse: "m+d-60"
           unite: min
           correction: "{{heure(h,m)}} + {{60-m}} min = {{h+1}} h ; il reste {{m+d-60}} min : {{heure(h+1,m+d-60)}}."
+      - astuce:
+          texte: "Pour calculer une durée, avance par bonds jusqu'à l'heure ronde puis jusqu'à l'arrivée : de 9 h 40 à 11 h 15 → 20 min + 1 h + 15 min = 1 h 35 min."
+          qui: neo
     exercices:
       - type: nombre
         vars: { h: "8..18", m1: [0, 15, 30, 45], d: "alea(4,34)*5" }
@@ -435,7 +444,7 @@ lecons:
           3. Je lis le nombre jusqu'à la colonne cm : **325 cm**.
       - retiens: "kilo = 1 000 · hecto = 100 · déca = 10 · déci = un dixième · centi = un centième · milli = un millième"
       - astuce:
-          texte: "Petit moyen mnémotechnique : « Kilo Hecto Déca, Unité, Déci Centi Milli » → « Kiki Hérisson Danse Une Danse Comme Mia » !"
+          texte: "Petit moyen mnémotechnique : « Kilo Hecto Déca, Unité, Déci Centi Milli » → « Kiki Hérisson Danse Une Danse Comme Lya » !"
           qui: zero
       - a_quoi_ca_sert: "Lire une étiquette (75 cL = 0,75 L), comparer des prix au kilo, suivre une carte de randonnée en km…"
       - question:

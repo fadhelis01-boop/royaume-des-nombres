@@ -38,7 +38,7 @@ lecons:
       - a_quoi_ca_sert: "Sans noms, on ne pourrait parler de rien ni de personne ! Et la majuscule montre tout de suite qu'on parle de quelqu'un de précis."
     exercices:
       - type: classer
-        vars: { t: [[chat, Léa, table, Paris], [maison, Médor, fleur, Lyon], [ballon, Tom, forêt, Marseille], [gâteau, Mia, rivière, France], [école, Zéro, crayon, Nice]] }
+        vars: { t: [[chat, Léa, table, Paris], [maison, Médor, fleur, Lyon], [ballon, Tom, forêt, Marseille], [gâteau, Lya, rivière, France], [école, Zéro, crayon, Nice]] }
         enonce: "Nom commun ou nom propre ?"
         categories: ["nom commun", "nom propre"]
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
@@ -68,6 +68,7 @@ lecons:
       - dialogue:
           - zero: "« La soleil », « un table »… ça sonne bizarre, non ?"
           - mia: "Les oiseaux déterminants se sont trompés d'arbre ! Chaque nom a son oiseau."
+      - a_quoi_ca_sert: "Le déterminant annonce le nom et donne des indices : masculin ou féminin, un ou plusieurs, connu ou pas."
       - texte: |
           Le **déterminant** est un petit mot placé **devant le nom**. Il nous dit si le nom est **masculin ou féminin**, **singulier ou pluriel**.
 
@@ -78,6 +79,9 @@ lecons:
       - attention:
           texte: "Devant une voyelle (ou un h muet), **le** et **la** deviennent **l'** : l'arbre, l'école, l'hôpital. On n'écrit jamais « la école »."
           qui: neo
+      - astuce:
+          texte: "Pour trouver le nom, cherche le petit mot devant : le, la, les, un, une, des, mon, ce… Le nom n'est jamais loin derrière."
+          qui: zero
       - retiens: "**un, le** → masculin ; **une, la** → féminin ; **des, les** → pluriel ; **l'** devant une voyelle."
       - question:
           type: qcm
@@ -118,12 +122,16 @@ lecons:
           - mia: "Chaque nom a un genre : masculin ou féminin. « Un » ou « une », c'est le test magique !"
           - zero: "« Un hamster ». Masculin. « Une… hamsterette » ? 😳"
           - neo: "Pas toujours ! Pour certains animaux, le féminin est un tout autre mot."
+      - a_quoi_ca_sert: "Savoir si un nom est masculin ou féminin, c'est bien accorder tout ce qui l'entoure : « une belle maison », « un beau jardin »."
       - texte: |
           - **Masculin** : on peut dire **un** ou **le** : un livre, le soleil.
           - **Féminin** : on peut dire **une** ou **la** : une table, la lune.
 
           Souvent, on forme le féminin en ajoutant un **e** : un ami → une ami**e**, un marchand → une marchand**e**.
           Mais parfois le mot change : un lion → une lio**nne**, un boulanger → une boulang**ère**, un coq → une **poule**.
+      - astuce:
+          texte: "Mets « un » ou « une » devant le mot : celui qui sonne juste te donne le genre. Un livre, une table."
+          qui: mia
       - retiens: "Pour trouver le genre d'un nom, je mets **un** ou **une** devant. Le féminin prend souvent un **e**."
     exercices:
       - type: classer
@@ -160,6 +168,9 @@ lecons:
       - attention:
           texte: "Les mots qui finissent déjà par **s, x ou z** ne changent pas : une souris → des souris ; un nez → des nez ; une noix → des noix."
           qui: neo
+      - astuce:
+          texte: "Un seul, rien ; plusieurs, un s. Le s du pluriel est muet mais il est là, comme un petit serpent qui se cache au bout du mot."
+          qui: zero
       - retiens: "**Plusieurs** → j'ajoute un **s** muet. Le déterminant m'aide : **les, des, mes**… annoncent le pluriel."
       - vraie_vie:
           titre: Défi dans la vraie vie
@@ -191,6 +202,7 @@ lecons:
       - dialogue:
           - zero: "Un gâteau, des gâteaus ! …Non ? 😳"
           - mia: "Des gâteau**x** ! Les mots en -eau mettent un x au pluriel. Comme une petite croix de trésor."
+      - a_quoi_ca_sert: "Ces pluriels en x reviennent tout le temps : des gâteaux, des cheveux, des jeux, des bateaux… Les connaître évite beaucoup de fautes."
       - texte: |
           - Les noms en **-eau, -au, -eu** prennent un **x** : un bateau → des bateau**x**, un tuyau → des tuyau**x**, un jeu → des jeu**x**.
           - Les noms en **-al** deviennent **-aux** : un cheval → des chev**aux**, un journal → des journ**aux**.
@@ -228,10 +240,14 @@ lecons:
       - dialogue:
           - mia: "Chaque mot porte un costume : c'est sa nature. Le nom, le verbe, l'adjectif… On les reconnaît à leur costume."
           - neo: "Et chacun a son test : un/une pour le nom, hier/demain pour le verbe, très pour l'adjectif."
+      - a_quoi_ca_sert: "Connaître la nature d'un mot, c'est comprendre comment il se comporte : un verbe se conjugue, un nom a un genre, un adjectif s'accorde."
       - texte: |
           - Le **nom** : on peut mettre **un/une** devant (*un chat, une idée*).
           - Le **verbe** : on peut le conjuguer, dire **hier… / demain…** (*il court, il courra*).
           - L'**adjectif** : il dit **comment est** le nom ; on peut mettre **très** devant (*très grand, très rouge*).
+      - astuce:
+          texte: "Les tests rapides : je peux mettre « le » ou « un » devant ? C'est un nom. Je peux dire « hier, je… » ? C'est un verbe. Je peux ajouter « très » ? Souvent un adjectif."
+          qui: neo
       - retiens: "Tests magiques : **un/une** → nom ; **hier/demain** → verbe ; **très** → adjectif."
     exercices:
       - type: classer

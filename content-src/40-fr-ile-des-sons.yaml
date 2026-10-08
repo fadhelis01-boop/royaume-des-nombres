@@ -158,6 +158,9 @@ lecons:
       - attention:
           texte: "« ph » se prononce comme un **f** : é-lé-**ph**ant. Et « au » et « eau » se prononcent « o »."
           qui: neo
+      - astuce:
+          texte: "Quand deux lettres se tiennent la main (o + u = ou, a + n = an), elles ne font plus qu'un seul son : on les entoure ensemble."
+          qui: zero
       - retiens: "Quand deux lettres font **un seul son**, je les lis **ensemble** : o + u = **ou**, c + h = **ch**."
       - vraie_vie:
           titre: Défi dans la vraie vie
@@ -188,6 +191,7 @@ lecons:
       - dialogue:
           - mia: "Le E porte des chapeaux ! Et chaque chapeau change sa voix."
           - zero: "Moi je n'ai pas de chapeau. Mais j'ai des oreilles orange. C'est presque pareil."
+      - a_quoi_ca_sert: "Un accent peut changer tout le sens : « ou » (ou bien) et « où » (le lieu), « a » et « à », « du » et « dû ». Il aide aussi à bien lire à voix haute."
       - texte: |
           - **é** (accent **aigu**, il monte vers la droite) se prononce **é** : été, école, bébé.
           - **è** (accent **grave**, il descend) se prononce **è** : père, mère, élève.
@@ -226,6 +230,7 @@ lecons:
       - dialogue:
           - neo: "Lire, ce n'est pas seulement faire du bruit avec sa bouche. C'est comprendre ce qui se passe."
           - zero: "Moi je lis : « Le hamster mange une graine. » Et je comprends : j'ai faim."
+      - a_quoi_ca_sert: "Lire, ça sert partout : un panneau, une recette, un message, les règles d'un jeu… Comprendre une phrase, c'est devenir libre de tout lire."
       - texte: |
           Pour bien comprendre une phrase, je me demande :
           - **Qui ?** (de qui parle-t-on)
@@ -235,6 +240,9 @@ lecons:
           titre: On lit ensemble
           enonce: "« Le petit chat noir dort sur le lit. »"
           etapes: ["Qui ? le petit chat noir.", "Fait quoi ? il dort.", "Où ? sur le lit."]
+      - astuce:
+          texte: "Après une phrase, ferme les yeux et fais le film dans ta tête : qui ? fait quoi ? où ? Si le film est clair, tu as compris."
+          qui: neo
       - retiens: "Après avoir lu, je me demande : **qui ? fait quoi ? où ?** Si je ne sais pas répondre, je relis."
     exercices:
       - type: qcm
@@ -248,7 +256,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}."
       - type: vf
-        vars: { t: [["Le chat noir dort sur le lit.", "Le chat est blanc.", false], ["Léa mange une pomme rouge.", "La pomme est rouge.", true], ["Le lapin saute dans le jardin.", "Le lapin est dans la cuisine.", false], ["Il pleut, alors Tom prend son parapluie.", "Il fait beau.", false], ["Mia a trois ballons bleus.", "Mia a des ballons.", true]] }
+        vars: { t: [["Le chat noir dort sur le lit.", "Le chat est blanc.", false], ["Léa mange une pomme rouge.", "La pomme est rouge.", true], ["Le lapin saute dans le jardin.", "Le lapin est dans la cuisine.", false], ["Il pleut, alors Tom prend son parapluie.", "Il fait beau.", false], ["Lya a trois ballons bleus.", "Lya a des ballons.", true]] }
         enonce: "« {{t_0}} » — Vrai ou faux : {{t_1}}"
         reponse: "t_2"
         correction: "Relis bien la phrase : tout est écrit dedans."

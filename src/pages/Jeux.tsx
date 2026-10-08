@@ -29,7 +29,7 @@ function catalogue(child: Child, manifest: Manifest | null): Jeu[] {
     { id: "tables", emoji: "✖️", titre: "La Tour des Tables", desc: `Les tables de multiplication par cœur (${tablesMastered(child)}/64).` },
     { id: "compte", emoji: "🧮", titre: "Le compte est bon", desc: "Atteins le nombre cible avec + − × ÷.", best: child.counters["compte"], bestLabel: "réussis" },
     { id: "vise", emoji: "🎯", titre: "Vise juste", desc: "Place les nombres sur la droite, au plus près !", best: child.games["vise"] },
-    { id: "enigmes", emoji: "🧩", titre: "Énigmes de Mia", desc: `Des casse-têtes pour réfléchir (${child.enigmes.length}/${manifest?.enigmes.length ?? 0} résolues).` },
+    { id: "enigmes", emoji: "🧩", titre: "Énigmes de Lya", desc: `Des casse-têtes pour réfléchir (${child.enigmes.length}/${manifest?.enigmes.length ?? 0} résolues).` },
     { id: "conjugaison", emoji: "⚡", titre: "Conjugaison éclair", desc: "Un maximum de verbes conjugués en 60 secondes !", best: child.games["conj"] },
     { id: "mystere", emoji: "🔍", titre: "Mot mystère", desc: "Devine le mot grâce à sa définition… avant que toutes les lettres apparaissent.", best: child.games["mystere"], bestLabel: "pts" },
     { id: "flash", emoji: "📸", titre: "Dictée flash", desc: "Une phrase apparaît, puis disparaît : écris-la de mémoire !", best: child.games["flash"], bestLabel: "phrases" },

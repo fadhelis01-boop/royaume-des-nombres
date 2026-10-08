@@ -4,7 +4,7 @@ import type { Who } from "./types";
 
 // Voix des personnages, par la synthèse vocale de l'appareil (Web Speech API :
 // iPhone/iPad, Android, Windows, Mac — hors connexion avec les voix installées).
-// Chaque personnage a sa « musicalité » : Mia claire et pétillante, Néo chaleureux
+// Chaque personnage a sa « musicalité » : Lya claire et pétillante, Néo chaleureux
 // et énergique, Zéro rond et un peu nasillard.
 
 export interface Seg {
@@ -20,6 +20,12 @@ const PERSONA: Record<Who, { pitch: number; rate: number }> = {
   nuage: { pitch: 0.85, rate: 0.9 },
   gribouille: { pitch: 0.7, rate: 0.95 },
   neutre: { pitch: 0.55, rate: 0.85 },
+  acidia: { pitch: 1.15, rate: 0.98 },
+  gravis: { pitch: 0.75, rate: 0.88 },
+  seve: { pitch: 0.9, rate: 0.82 },
+  uranie: { pitch: 1.25, rate: 0.95 },
+  resonance: { pitch: 1.3, rate: 1.0 },
+  pinceau: { pitch: 1.1, rate: 1.02 },
   ixe: { pitch: 1.2, rate: 1.12 },
   enfant: { pitch: 1.4, rate: 1.0 },
 };
@@ -208,6 +214,12 @@ export function previewVoice(who: Who, name: string) {
     nuage: "Miam… un sept. Euh… pardon.",
     gribouille: "Splotch ! J'ai mangé tous tes accents ! Hé hé.",
     neutre: "Tout… gris… tout… pareil…",
+    acidia: "Observe, mesure, puis conclus, jeune savant.",
+    gravis: "Galilée, lui aussi, a commencé par une bille.",
+    seve: "Le vivant prend son temps… écoute-le.",
+    uranie: "Lève les yeux : le ciel raconte une histoire.",
+    resonance: "Écoute… chaque son a une couleur.",
+    pinceau: "Que dessineras-tu demain ?",
     ixe: "Je peux être n'importe quel nombre !",
     enfant: "C'est moi !",
   };

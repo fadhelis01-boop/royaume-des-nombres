@@ -23,7 +23,8 @@ arcs:
     final: mu-rue-des-notes
     fin:
       - narrateur: "Un tambour résonne, puis une flûte, puis toute la Fanfare reprend vie et défile dans la Rue des Notes."
-      - narrateur: "Sur la place, une statue s'anime : Madame Résonance, la Muse de la Cité. « Pythagore a découvert qu'une corde coupée en deux sonne à l'octave. Les nombres et la musique sont amis depuis toujours. Et toi, quelle mélodie aimerais-tu inventer ? »"
+      - narrateur: "Sur la place, une statue s'anime : Madame Résonance, la Muse de la Cité."
+      - resonance: "Pythagore a découvert qu'une corde coupée en deux sonne à l'octave. Les nombres et la musique sont amis depuis toujours. Et toi, quelle mélodie aimerais-tu inventer ?"
       - neo: "Mais au Théâtre, le Titan de Discorde désaccorde encore tout…"
   - id: musique-arc-2
     titre: "Livre II — Le Titan de Discorde"
@@ -31,7 +32,7 @@ arcs:
     final: mu-opera-des-formes
     fin:
       - narrateur: "Une cadence parfaite résonne : V… I. Le Titan de Discorde s'apaise, s'assoit au premier rang et écoute l'orchestre, ému."
-      - narrateur: "Madame Résonance raconte : « Hildegarde de Bingen composait au Moyen Âge ; Clara Schumann était l'une des plus grandes pianistes de son siècle ; Duke Ellington a fait du jazz un art d'orchestre. La musique appartient à tous. »"
+      - resonance: "Hildegarde de Bingen composait au Moyen Âge ; Clara Schumann était l'une des plus grandes pianistes de son siècle ; Duke Ellington a fait du jazz un art d'orchestre. La musique appartient à tous."
       - mia: "Il reste la Tour des Harmoniques et le Studio : c'est là que le Grand Neutre se cache."
   - id: musique-arc-3
     titre: "Livre III — La Cité retrouvée"

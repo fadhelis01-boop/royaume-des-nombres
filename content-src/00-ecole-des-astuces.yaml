@@ -259,7 +259,7 @@ lecons:
         correction: "({{a*x-b}} + {{b}}) ÷ {{a}} = {{x}}."
       - type: champs
         vars: { h: "8..10", m: [0, 15, 30], t: "20..50", p: [5, 10, 15] }
-        enonce: "L'école commence à {{heure(h,m)}}. Le trajet dure {{t}} min et Mia met {{p}} min à se préparer. À quelle heure doit-elle commencer à se préparer ?"
+        enonce: "L'école commence à {{heure(h,m)}}. Le trajet dure {{t}} min et Lya met {{p}} min à se préparer. À quelle heure doit-elle commencer à se préparer ?"
         champs:
           - { reponse: "ent((h*60+m-t-p)/60)", apres: "h" }
           - { reponse: "(h*60+m-t-p) % 60", apres: "min" }

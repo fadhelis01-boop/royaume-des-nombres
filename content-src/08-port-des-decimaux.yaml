@@ -110,6 +110,9 @@ lecons:
           pas: 0.1
           cible: "n/10"
           tolerance: 0.05
+      - astuce:
+          texte: "La partie avant la virgule te dit entre quels entiers tu es ; le chiffre des dixièmes te dit dans quelle petite case."
+          qui: zero
     exercices:
       - type: droite
         vars: { n: "1..19" }
@@ -170,6 +173,9 @@ lecons:
           gauche: "a + b/10"
           droite: "a + c/100"
           correction: "Ajoute un zéro : {{nb(a)}},{{b}}0 et {{nb(a + c/100)}}. On compare les centièmes : {{b*10}} et {{c}}."
+      - astuce:
+          texte: "Ajoute des zéros pour avoir autant de chiffres après la virgule : 2,5 et 2,45 deviennent 2,50 et 2,45. Maintenant c'est facile : 2,50 > 2,45."
+          qui: mia
     exercices:
       - type: qcm
         vars: { a: "1..8", b: "1..9", c: "10..99" }
@@ -350,6 +356,9 @@ lecons:
           enonce: "${{q}} \\div {{n}} = ?$"
           reponse: "q/n"
           correction: "{{q}} ÷ {{n}} = {{nb(q/n)}}."
+      - astuce:
+          texte: "Diviser par 10, c'est déplacer la virgule d'un rang vers la gauche : 45,6 ÷ 10 = 4,56. Autant de rangs que de zéros."
+          qui: neo
     exercices:
       - type: nombre
         vars: { a: "11..999", k: [10, 100, 1000] }
@@ -400,6 +409,9 @@ lecons:
           enonce: "Arrondis {{nb(x/1000, 3)}} au dixième."
           reponse: "round(x/1000, 1)"
           correction: "{{nb(x/1000,3)}} ≈ {{nb(round(x/1000,1))}}."
+      - astuce:
+          texte: "Regarde le chiffre juste après celui que tu gardes : 5 ou plus, tu arrondis au-dessus ; moins de 5, tu arrondis au-dessous."
+          qui: zero
     exercices:
       - type: nombre
         vars: { x: "1001..9999" }

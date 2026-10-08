@@ -1,7 +1,7 @@
 // Types du contenu (produit par scripts/build-content.mjs à partir de content-src/*.yaml)
 // et de la progression des enfants.
 
-export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant" | "gribouille" | "neutre";
+export type Who = "mia" | "neo" | "zero" | "narrateur" | "nuage" | "ixe" | "enfant" | "gribouille" | "neutre" | "acidia" | "gravis" | "seve" | "uranie" | "resonance" | "pinceau";
 export interface Line {
   who: Who;
   text: string;

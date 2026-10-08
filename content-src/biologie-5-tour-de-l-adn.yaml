@@ -20,6 +20,10 @@ lecons:
     objectif: Je situe l'ADN, les chromosomes et les gènes.
     mots: [ADN, chromosome, gène, caryotype]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi j'ai les mêmes oreilles que mon papa hamster ?"
+          - mia: "Grâce à l'ADN : un livre de recettes que tu as reçu de tes parents."
+      - a_quoi_ca_sert: "L'ADN sert à identifier les personnes (enquêtes de police, tests de paternité), à comprendre les maladies génétiques et à soigner."
       - texte: |
           Dans le noyau de chaque cellule, l'**ADN** est une très longue molécule en **double hélice**, écrite avec 4 « lettres » (bases) : **A, T, G, C** (A s'associe à T, G à C).
           L'ADN est enroulé en **chromosomes**. L'être humain en a **46**, soit **23 paires** : dans chaque paire, un chromosome vient de la mère, l'autre du père. La 23ᵉ paire détermine le sexe (XX ou XY, avec des exceptions rares).
@@ -27,6 +31,9 @@ lecons:
       - histoire:
           titre: La double hélice
           texte: "En 1952, **Rosalind Franklin** obtient grâce aux rayons X une image de l'ADN (le « cliché 51 ») qui révèle sa forme en hélice. En 1953, **James Watson** et **Francis Crick** publient le modèle de la double hélice, en s'appuyant sur ses données. Franklin est morte en 1958 ; son rôle essentiel n'a été pleinement reconnu que bien plus tard."
+      - astuce:
+          texte: "Pense à une bibliothèque : le noyau est la bibliothèque, chaque chromosome un livre, chaque gène une recette, et l'ADN les lettres de toutes les recettes."
+          qui: neo
       - retiens: "ADN (A-T, G-C) → enroulé en chromosomes (46 = 23 paires chez l'humain) → les gènes sont des portions d'ADN."
     exercices:
       - type: nombre
@@ -50,6 +57,10 @@ lecons:
     objectif: Je prévois des proportions avec un échiquier de croisement.
     mots: [allèle, dominant, récessif, génotype, phénotype]
     etapes:
+      - dialogue:
+          - zero: "Si mes parents ont les yeux marron, j'aurai forcément les yeux marron ?"
+          - neo: "Pas forcément ! Un moine nommé Mendel a découvert les règles du jeu avec des petits pois."
+      - a_quoi_ca_sert: "Les lois de Mendel expliquent pourquoi tu ressembles à tes parents sans être identique, et permettent de prévoir certaines maladies héréditaires."
       - histoire:
           titre: Le moine et les petits pois
           texte: "Vers 1865, **Gregor Mendel**, moine à Brno, croise des milliers de plants de pois et compte les caractères de leurs descendants. Il découvre des lois statistiques de l'hérédité, longtemps ignorées puis redécouvertes en 1900."
@@ -63,6 +74,9 @@ lecons:
           | **A** | AA | Aa |
           | **a** | Aa | aa |
           → **3 chances sur 4** de montrer le caractère dominant, **1 sur 4** de montrer le récessif.
+      - astuce:
+          texte: "Dans l'échiquier de croisement, place les gamètes d'un parent en ligne et ceux de l'autre en colonne, puis remplis chaque case comme une table de multiplication."
+          qui: zero
       - retiens: "Deux allèles par gène. Dominant (A) s'exprime seul ; récessif (a) seulement en double (aa). Aa × Aa → 3/4 dominant, 1/4 récessif."
     exercices:
       - type: qcm
@@ -86,6 +100,9 @@ lecons:
     objectif: J'explique le mécanisme de la sélection naturelle.
     mots: [évolution, mutation, sélection naturelle, ancêtre commun, fossile]
     etapes:
+      - dialogue:
+          - zero: "Les girafes ont un long cou parce qu'elles l'ont étiré ?"
+          - mia: "C'est ce qu'on croyait autrefois. Darwin a trouvé une meilleure explication : la sélection naturelle."
       - texte: |
           En 1859, **Charles Darwin** (et **Alfred Russel Wallace**, indépendamment) expliquent l'évolution des espèces :
           1. Les individus d'une espèce sont **tous un peu différents** (en partie à cause de **mutations** de l'ADN, qui arrivent au hasard).
@@ -93,6 +110,9 @@ lecons:
           3. Ils transmettent leurs caractères : au fil des générations, ces caractères deviennent fréquents. C'est la **sélection naturelle**.
           Toutes les espèces actuelles descendent d'**ancêtres communs**. L'humain n'est pas le descendant du chimpanzé : ils ont un **ancêtre commun** qui vivait il y a environ 6 à 7 millions d'années.
           Les **fossiles** et la comparaison de l'ADN des espèces confirment l'évolution.
+      - astuce:
+          texte: "La sélection naturelle en 3 mots : variation, sélection, transmission. Les individus diffèrent, les mieux adaptés ont plus de descendants, et ils transmettent leurs caractères."
+          qui: mia
       - retiens: "Variations (mutations au hasard) + tri par le milieu (sélection naturelle) + transmission = évolution. Ancêtres communs, pas « l'homme descend du singe actuel »."
       - a_quoi_ca_sert: "Comprendre pourquoi certaines bactéries deviennent résistantes aux antibiotiques (il faut suivre le traitement jusqu'au bout) ou pourquoi le vaccin contre la grippe change chaque année."
     exercices:
@@ -117,6 +137,10 @@ lecons:
     objectif: J'explique comment le corps se défend et comment agit un vaccin.
     mots: [immunité, anticorps, lymphocyte, vaccin, mémoire immunitaire]
     etapes:
+      - dialogue:
+          - zero: "Comment mon corps se défend contre les microbes ?"
+          - neo: "Avec une véritable armée ! Et le vaccin, c'est son entraînement."
+      - a_quoi_ca_sert: "Les vaccins ont fait disparaître la variole et protègent chaque année des millions de personnes. Comprendre comment ils marchent aide à faire des choix éclairés."
       - texte: |
           Le corps se défend contre les **microbes** :
           1. **Barrières** : peau, mucus, larmes.
@@ -124,6 +148,9 @@ lecons:
           3. **Réaction spécifique** : des **lymphocytes** fabriquent des **anticorps** adaptés à CE microbe précis. Ensuite, des lymphocytes « **mémoire** » restent : à la prochaine rencontre, la réponse est très rapide.
           Un **vaccin** présente au corps un microbe inactivé ou un morceau de microbe (ou les instructions pour en fabriquer un morceau) : le corps crée sa mémoire **sans tomber malade**. Les vaccins ont fait disparaître la variole de la planète (1980).
           ⚠️ Les **antibiotiques** tuent les bactéries mais sont **inefficaces contre les virus** (rhume, grippe).
+      - astuce:
+          texte: "Le vaccin est un entraînement : il montre au corps une fausse alerte sans danger. Le jour de la vraie attaque, les défenses reconnaissent l'ennemi et réagissent vite."
+          qui: neo
       - retiens: "Barrières, réaction rapide, puis anticorps spécifiques et mémoire. Vaccin = entraîner la mémoire sans être malade. Antibiotiques : contre les bactéries, pas les virus."
     exercices:
       - type: qcm

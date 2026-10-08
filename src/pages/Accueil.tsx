@@ -20,7 +20,7 @@ export function Accueil() {
           <p className="lead">Maths, français, sciences, musique et dessin : apprends en t'amusant, de 7 ans jusqu'au niveau des grands !</p>
         </div>
         <Bubble who="neo" text="Salut ! Je suis Néo Fibo. Un problème ? Défi accepté !" />
-        <Bubble who="mia" text="Moi c'est Mia π. Et si on essayait autrement ? Viens, on va explorer la Galaxie ensemble : chaque planète est un savoir !" side="right" />
+        <Bubble who="mia" text="Moi c'est Lya π. Et si on essayait autrement ? Viens, on va explorer la Galaxie ensemble : chaque planète est un savoir !" side="right" />
         <Bubble who="zero" text="Et moi… Zéro. Je ne vaux rien. Mais derrière un 1, je vaux DIX ! 😳" />
         <div className="center">
           <button className="btn btn-primary btn-xl" onClick={() => go("/nouveau")}>
@@ -90,7 +90,7 @@ export function NouvelEnfant() {
       <Bubble who="zero" text="Choisis ton compagnon d'aventure ! (Moi, de préférence.)" />
       <div className="avatar-picker">
         {(["mia", "neo", "zero"] as const).map((a) => (
-          <button key={a} className={`avatar-opt ${avatar === a ? "sel" : ""}`} onClick={() => setAvatar(a)}>
+          <button key={a} className={`avatar-opt ${avatar === a ? "sel" : ""}`} onClick={() => setAvatar(a)} aria-label={NAMES[a]} aria-pressed={avatar === a}>
             <Mascot who={a} size={92} />
             <span>{NAMES[a]}</span>
           </button>

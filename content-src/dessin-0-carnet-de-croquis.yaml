@@ -19,13 +19,20 @@ lecons:
     objectif: Je sais que le dessin s'apprend par l'observation et l'entraînement.
     mots: [observer, croquis, entraînement]
     etapes:
+      - dialogue:
+          - zero: "Moi, je ne sais pas dessiner. Je fais des patates."
+          - mia: "Tout le monde peut apprendre ! Le dessin, c'est de l'observation et de l'entraînement."
+      - a_quoi_ca_sert: "Le dessin sert à communiquer une idée, à observer, à se détendre. Les architectes, les scientifiques, les ingénieurs et les créateurs de jeux vidéo dessinent tous."
       - texte: |
           Dessiner, c'est d'abord **bien regarder**. Les dessinateurs passent plus de temps à **observer** qu'à tracer.
-          Les secrets de Mia :
+          Les secrets de Lya :
           1. **Décomposer** : tout objet compliqué est un assemblage de **formes simples** (cercles, ovales, carrés, triangles).
           2. **Commencer léger** : on trace d'abord des traits de construction très légers, qu'on effacera.
           3. **Un petit croquis chaque jour** (5 minutes suffisent) vaut mieux qu'un grand dessin par mois.
           4. **On ne juge pas** : un dessin n'est pas « moche », c'est une étape. On compare seulement avec ses dessins d'avant.
+      - astuce:
+          texte: "Dessine un peu chaque jour et garde tous tes dessins, même ceux que tu trouves ratés : dans trois mois, tu verras tes progrès."
+          qui: neo
       - retiens: "Observer, décomposer en formes simples, commencer léger, un petit croquis chaque jour, comparer avec soi-même."
     exercices:
       - type: qcm
@@ -50,12 +57,19 @@ lecons:
     objectif: Je choisis le bon outil selon ce que je veux faire.
     mots: [mine, HB, 2B, gomme, estompe, crayon de couleur]
     etapes:
+      - dialogue:
+          - zero: "Un crayon, c'est un crayon, non ?"
+          - neo: "Pas du tout ! Il y en a des durs, des tendres, des secs, des gras… Choisissons le bon."
+      - a_quoi_ca_sert: "Choisir le bon outil rend le dessin plus facile : on ne dessine pas un détail fin avec un gros feutre."
       - texte: |
           - Les **crayons à papier** ont des mines plus ou moins dures : **H** (dure, trait clair et fin), **HB** (moyenne, pour écrire et esquisser), **B, 2B, 4B…** (tendres, traits plus noirs, pour les ombres).
           - La **gomme** sert aussi à dessiner (pour faire des lumières dans les ombres) ; la **gomme mie de pain** s'utilise en tapotant.
           - L'**estompe** (ou un mouchoir) adoucit les ombres.
           - **Crayons de couleur**, **feutres**, **aquarelle**, **gouache** : chacun a son effet (transparent ou couvrant).
           - Sur tablette, on retrouve les mêmes outils en numérique.
+      - astuce:
+          texte: "Sur un crayon : H = dur et clair (pour les traits légers de construction), B = tendre et foncé (pour les ombres). HB est au milieu."
+          qui: zero
       - retiens: "H = dur et clair, HB = moyen, B/2B = tendre et foncé. Gomme, estompe, couleurs : chaque outil a son effet."
     exercices:
       - type: qcm
@@ -79,6 +93,10 @@ lecons:
     objectif: Je compare mes dessins dans le temps pour voir mes progrès.
     mots: [galerie, progrès, date]
     etapes:
+      - dialogue:
+          - zero: "J'ai l'impression de ne pas progresser…"
+          - mia: "Compare avec ton dessin d'il y a un mois. Tu vas être surpris !"
+      - a_quoi_ca_sert: "Voir ses progrès donne envie de continuer : c'est vrai en dessin, en musique, en sport et à l'école."
       - texte: |
           Garde **tous** tes dessins, avec la **date**. Dans quelques semaines, redessine le même sujet et compare la version 1 et la version 5 : tu verras tes progrès !
           Dans l'application, ta **galerie** garde tes dessins (Studio de dessin → « Ranger dans ma galerie »).
@@ -96,6 +114,9 @@ lecons:
             - consigne: "Ajoute le nez et la bouche, puis tes cheveux comme tu les portes."
               couche: détails
               trace: "M48 62 L52 62 M42 70 Q50 75 58 70"
+      - astuce:
+          texte: "Date chaque dessin. Une fois par mois, redessine le même objet et compare avec l'ancien."
+          qui: mia
       - retiens: "Garder et dater ses dessins ; redessiner le même sujet plus tard pour mesurer ses progrès."
     exercices:
       - type: qcm
@@ -119,10 +140,17 @@ lecons:
     objectif: Je sais que copier un artiste est une façon d'apprendre (en le disant).
     mots: [copie, inspiration, plagiat, musée]
     etapes:
+      - dialogue:
+          - zero: "Copier un dessin, c'est tricher ?"
+          - neo: "Pas si tu le dis ! Les grands artistes ont tous appris en copiant les maîtres."
+      - a_quoi_ca_sert: "Tous les grands artistes ont commencé par copier les maîtres : c'est une façon d'apprendre leurs secrets."
       - texte: |
           Pendant des siècles, les apprentis peintres ont appris en **copiant** les œuvres de leurs maîtres. Dans les musées, on voit encore des élèves copier des tableaux.
           Copier pour **apprendre**, c'est très bien… à condition de **dire** qu'on s'est inspiré de quelqu'un. Présenter le dessin d'un autre comme le sien, c'est du **plagiat**.
           Le mieux : s'inspirer de **plusieurs** artistes, puis mélanger avec ses propres idées : c'est comme ça qu'on trouve **son style**.
+      - astuce:
+          texte: "Quand tu copies une œuvre, écris toujours « d'après » et le nom de l'artiste : copier pour apprendre, oui ; faire passer pour sien, jamais."
+          qui: neo
       - retiens: "Copier pour apprendre : oui, en citant l'artiste. Présenter le travail d'un autre comme le sien : plagiat. Plusieurs inspirations → son propre style."
     exercices:
       - type: vf

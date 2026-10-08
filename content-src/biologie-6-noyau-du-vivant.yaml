@@ -20,10 +20,17 @@ lecons:
     objectif: J'explique comment l'ADN est copié avant la division cellulaire.
     mots: [réplication, semi-conservative, ADN polymérase, mutation]
     etapes:
+      - dialogue:
+          - zero: "Quand une cellule se divise en deux, comment elle copie son ADN ?"
+          - mia: "Comme une fermeture éclair qui s'ouvre, et chaque côté sert de modèle pour en fabriquer un nouveau."
+      - a_quoi_ca_sert: "Chaque jour, ton corps fabrique des milliards de nouvelles cellules ; une erreur de copie peut causer une maladie. La réplication est au cœur de la médecine du cancer."
       - texte: |
           Avant qu'une cellule se divise, son ADN est **copié** : c'est la **réplication**. Les deux brins de la double hélice se séparent ; chacun sert de **modèle** pour fabriquer un brin complémentaire (A en face de T, G en face de C), grâce à une enzyme, l'**ADN polymérase**.
           Chaque nouvelle molécule contient **un brin ancien et un brin neuf** : la réplication est **semi-conservative** (démontré par Meselson et Stahl en 1958).
           Rarement, une erreur de copie non réparée crée une **mutation**.
+      - astuce:
+          texte: "Les bases vont par couples : A avec T, G avec C. Retiens « Agent Tigre et Gros Chat » : chaque brin sert de modèle pour fabriquer l'autre."
+          qui: zero
       - retiens: "Réplication : chaque brin sert de modèle (A-T, G-C). Semi-conservative : un brin ancien + un brin neuf. Erreurs rares = mutations."
     exercices:
       - type: mot
@@ -47,11 +54,18 @@ lecons:
     objectif: Je transcris une séquence d'ADN en ARN messager.
     mots: [transcription, ARN messager, uracile]
     etapes:
+      - dialogue:
+          - zero: "L'ADN reste enfermé dans le noyau. Alors comment la cellule lit ses recettes ?"
+          - neo: "Elle fait une photocopie : l'ARN messager, qui peut sortir du noyau."
+      - a_quoi_ca_sert: "La transcription est la première étape pour fabriquer les protéines. Les vaccins à ARN messager s'appuient directement sur ce mécanisme."
       - texte: |
           L'ADN reste dans le noyau. Pour utiliser un gène, la cellule en fait une **copie de travail** : l'**ARN messager** (ARNm), qui sort du noyau. C'est la **transcription**.
           L'ARN utilise la base **U (uracile)** à la place de T. On lit le brin d'ADN **matrice** et on écrit la base complémentaire :
           **A → U**, **T → A**, **G → C**, **C → G**.
           Exemple : brin matrice TACGGA → ARNm **AUGCCU**.
+      - astuce:
+          texte: "Dans l'ARN, le T est remplacé par U : A s'associe avec U. L'ARN messager est une photocopie d'une seule recette, que l'on peut emporter hors du noyau."
+          qui: mia
       - retiens: "Transcription : ADN (noyau) → ARNm. Correspondances : A→U, T→A, G→C, C→G (l'ARN a U à la place de T)."
     exercices:
       - type: mot
@@ -75,11 +89,18 @@ lecons:
     objectif: Je lis des codons et je comprends la fabrication d'une protéine.
     mots: [traduction, codon, acide aminé, ribosome, protéine]
     etapes:
+      - dialogue:
+          - zero: "Comment une recette écrite avec des lettres devient une protéine ?"
+          - mia: "On lit trois lettres à la fois : chaque mot de trois lettres désigne une brique."
+      - a_quoi_ca_sert: "La traduction transforme le message génétique en protéines : enzymes, anticorps, hormones… tout ce qui fait fonctionner ton corps."
       - texte: |
           Dans le cytoplasme, des **ribosomes** lisent l'ARNm **trois bases par trois bases** : chaque triplet est un **codon**. Chaque codon correspond à un **acide aminé** ; les acides aminés s'enchaînent pour former une **protéine**.
           - 4 bases → 4³ = **64 codons** possibles pour **20 acides aminés** : le code est **redondant** (plusieurs codons pour un même acide aminé).
           - **AUG** = codon de **départ** (méthionine). **UAA, UAG, UGA** = codons **stop**.
           - Le code génétique est **quasi universel** : le même chez la bactérie, le chêne et l'humain — une preuve de notre origine commune.
+      - astuce:
+          texte: "Lis l'ARN 3 lettres par 3 lettres : chaque codon correspond à un acide aminé. AUG pour démarrer, et UAA, UAG ou UGA pour s'arrêter."
+          qui: neo
       - retiens: "Traduction (ribosomes) : codons de 3 bases → acides aminés → protéine. 64 codons, 20 acides aminés. AUG départ ; UAA, UAG, UGA stop."
     exercices:
       - type: nombre
@@ -103,10 +124,17 @@ lecons:
     objectif: Je décris le fonctionnement d'une enzyme.
     mots: [enzyme, substrat, site actif, spécificité]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi mon pain devient sucré si je le mâche longtemps ?"
+          - neo: "Une enzyme de ta salive découpe l'amidon en sucre. Les enzymes sont de petites machines !"
+      - a_quoi_ca_sert: "Les enzymes digèrent les aliments, servent dans les lessives et dans la fabrication des médicaments et des fromages."
       - texte: |
           Les **enzymes** sont des **protéines** qui **accélèrent** les réactions chimiques du vivant (ce sont des catalyseurs). Chaque enzyme a un **site actif** dont la forme correspond à un **substrat** précis : c'est la **spécificité** (comme une clé et une serrure).
           Elles fonctionnent dans des conditions précises : une température trop élevée (la fièvre très forte, la cuisson) ou un pH inadapté **déforme** l'enzyme qui ne marche plus.
           Exemples : l'**amylase** de la salive coupe l'amidon en sucres ; la **lactase** coupe le lactose du lait.
+      - astuce:
+          texte: "L'enzyme et son substrat, c'est une clé et une serrure : chaque enzyme n'agit que sur une molécule précise, et la chaleur excessive déforme la serrure."
+          qui: zero
       - retiens: "Enzyme = protéine catalyseur, spécifique de son substrat (clé/serrure). Sensible à la température et au pH."
     exercices:
       - type: qcm
@@ -130,6 +158,10 @@ lecons:
     objectif: Je compare communication nerveuse et hormonale, avec l'exemple de la glycémie.
     mots: [neurone, synapse, neurotransmetteur, hormone, insuline, glycémie, homéostasie]
     etapes:
+      - dialogue:
+          - zero: "Après un gros goûter, où va tout ce sucre ?"
+          - mia: "Ton corps le régule grâce à une hormone, l'insuline. Voyons comment."
+      - a_quoi_ca_sert: "Comprendre la régulation de la glycémie, c'est comprendre le diabète, une maladie qui touche des millions de personnes."
       - texte: |
           **Communication nerveuse** : un **neurone** transmet un message électrique le long de son axone ; à la **synapse**, il libère des **neurotransmetteurs** qui activent la cellule suivante. Très **rapide**, très **ciblé**.
           **Communication hormonale** : une glande libère une **hormone** dans le **sang** ; elle agit sur les cellules qui ont le bon **récepteur**. Plus **lente**, plus **durable**.
@@ -137,6 +169,9 @@ lecons:
           - trop de sucre → le pancréas libère de l'**insuline** → le sucre est stocké → la glycémie baisse ;
           - pas assez → le **glucagon** libère les réserves → elle remonte.
           Dans le **diabète**, cette régulation fonctionne mal.
+      - astuce:
+          texte: "Insuline = elle fait baisser le sucre dans le sang (elle range le sucre dans les cellules). Glucagon = elle le fait remonter."
+          qui: mia
       - retiens: "Nerveux : rapide, synapses, neurotransmetteurs. Hormonal : par le sang, plus lent. Glycémie ≈ 1 g/L, régulée par l'insuline (baisse) et le glucagon (hausse)."
     exercices:
       - type: qcm

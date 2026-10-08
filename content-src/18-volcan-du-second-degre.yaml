@@ -42,6 +42,9 @@ lecons:
           enonce: "Abscisse du sommet de la parabole $y = {{nb(a)}}x^2 + ({{nb(-2*a*s)}})x + ({{nb(c)}})$ ?"
           reponse: "s"
           correction: "$\\alpha = -\\frac{b}{2a} = -\\frac{ {{nb(-2*a*s)}} }{ {{nb(2*a)}} } = {{nb(s)}}$"
+      - astuce:
+          texte: "a > 0 : la parabole sourit (☺, ouverte vers le haut). a < 0 : elle fait la moue (ouverte vers le bas)."
+          qui: zero
     exercices:
       - type: nombre
         vars: { a: [1, 2, 3, -1, -2, -3], s: "-5..5", c: "-9..9" }
@@ -83,6 +86,9 @@ lecons:
             - { avant: "α =", reponse: "p" }
             - { avant: "β =", reponse: "q" }
           correction: "$(x - {{p}})^2 = x^2 - {{2*p}}x + {{p*p}}$, donc $f(x) = (x - {{p}})^2 + ({{nb(q)}})$."
+      - astuce:
+          texte: "Dans a(x − α)² + β, le sommet est (α ; β). Attention au signe : (x − 3)² donne α = 3, et (x + 3)² donne α = −3."
+          qui: mia
     exercices:
       - type: champs
         vars: { p: "-6..6", q: "-9..9" }
@@ -133,6 +139,9 @@ lecons:
           enonce: "Calcule le discriminant de ${{nb(a)}}x^2 + ({{nb(b)}})x + ({{nb(c)}})$."
           reponse: "b*b - 4*a*c"
           correction: "$\\Delta = ({{nb(b)}})^2 - 4 \\times ({{nb(a)}}) \\times ({{nb(c)}}) = {{nb(b*b-4*a*c)}}$"
+      - astuce:
+          texte: "Δ = b² − 4ac. Δ > 0 : deux solutions ; Δ = 0 : une seule ; Δ < 0 : aucune solution réelle. Δ comme « Décide combien »."
+          qui: neo
     exercices:
       - type: liste
         vars: { r: "-6..6", s: "-6..6" }
@@ -192,6 +201,9 @@ lecons:
           enonce: "Solutions de $x^2 + ({{nb(-(r+s))}})x + ({{nb(r*s)}}) < 0$ ?"
           choix: ["$]{{nb(r)}} ; {{nb(s)}}[$", "$]-\\infty ; {{nb(r)}}[ \\cup ]{{nb(s)}} ; +\\infty[$", "$[{{nb(r)}} ; {{nb(s)}}]$", "aucune solution"]
           correction: "Racines {{nb(r)}} et {{nb(s)}}, a > 0 : négatif strictement entre les racines."
+      - astuce:
+          texte: "Le trinôme est du signe de a partout, SAUF entre les racines. « Signe de a à l'extérieur des racines »."
+          qui: zero
     exercices:
       - type: qcm
         vars: { r: "-6..0", s: "1..6" }
@@ -230,6 +242,9 @@ lecons:
           reponse: "(p/4)^2"
           unite: m²
           correction: "Côtés $x$ et ${{p/2}} - x$ ; aire $-x^2 + {{p/2}}x$ maximale en $x = {{p/4}}$ : ${{p/4}}^2 = {{(p/4)^2}}$ m² (un carré)."
+      - astuce:
+          texte: "Le maximum ou le minimum d'un trinôme est atteint au sommet, en x = −b / (2a). Pas besoin de tester toutes les valeurs !"
+          qui: mia
     exercices:
       - type: nombre
         vars: { v: [10, 20, 30] }

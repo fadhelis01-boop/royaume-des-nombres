@@ -20,6 +20,10 @@ lecons:
     objectif: J'explique pourquoi deux instruments jouant la même note sonnent différemment.
     mots: [fréquence fondamentale, harmonique, timbre, octave]
     etapes:
+      - dialogue:
+          - zero: "Une flûte et un violon jouent la même note, mais je les reconnais. Comment ?"
+          - mia: "Grâce au timbre ! Chaque son cache des harmoniques différentes."
+      - a_quoi_ca_sert: "Le timbre explique pourquoi on reconnaît la voix d'un ami au téléphone et pourquoi une flûte ne sonne pas comme un violon."
       - texte: |
           Un son musical n'est presque jamais une fréquence unique. Une corde vibre à la fois à sa **fréquence fondamentale** f et à des multiples : 2f, 3f, 4f… ce sont les **harmoniques**.
           La **hauteur** perçue est celle de la fondamentale ; le **mélange** des harmoniques (lesquels sont forts ou faibles) fait le **timbre** : c'est pour ça qu'une flûte et un violon jouant le même la (440 Hz) ne sonnent pas pareil.
@@ -28,6 +32,9 @@ lecons:
           type: son
           sons: [{ etiquette: "La 440 Hz, son pur", freq: 440, timbre: pur }, { etiquette: "La 440 Hz, façon flûte", notes: "La4:3", timbre: flute }, { etiquette: "La 440 Hz, façon violon", notes: "La4:3", timbre: violon }]
         legende: "Même hauteur, timbres différents : seuls les harmoniques changent."
+      - astuce:
+          texte: "Le timbre, c'est la recette secrète des harmoniques : même note de base, mais pas les mêmes ingrédients en plus."
+          qui: mia
       - retiens: "Harmoniques : 2f, 3f, 4f… Le timbre = la recette des harmoniques. Octave × 2, quinte × 3/2, quarte × 4/3."
     exercices:
       - type: nombre
@@ -54,10 +61,17 @@ lecons:
     objectif: Je calcule la fréquence d'une note dans le tempérament égal.
     mots: [tempérament égal, demi-ton, diapason, La 440]
     etapes:
+      - dialogue:
+          - zero: "Quelle est la fréquence de chaque touche du piano ?"
+          - neo: "Elles se calculent avec une règle mathématique très élégante !"
+      - a_quoi_ca_sert: "Le tempérament égal permet de jouer dans toutes les tonalités sur le même piano : c'est l'accord de presque tous les instruments modernes."
       - texte: |
           Pour pouvoir jouer dans toutes les tonalités, on divise l'octave en **12 demi-tons égaux** : chaque demi-ton multiplie la fréquence par $\sqrt[12]{2} \approx 1{,}0595$.
           Référence : le **La4 = 440 Hz** (le diapason). Formule (n = numéro MIDI, La4 = 69) : $$f = 440 \times 2^{\frac{n-69}{12}}$$
           Compromis : les quintes du tempérament égal (× 1,4983) sont très légèrement plus petites que la quinte « pure » 3/2 (× 1,5).
+      - astuce:
+          texte: "Monter d'un demi-ton = multiplier la fréquence par la racine 12ᵉ de 2 (≈ 1,0595). Douze demi-tons = une octave = fréquence doublée."
+          qui: neo
       - retiens: "12 demi-tons égaux ; un demi-ton = × $2^{1/12}$ ≈ 1,0595. La4 = 440 Hz. $f = 440 \\times 2^{(n-69)/12}$."
     exercices:
       - type: nombre
@@ -83,6 +97,10 @@ lecons:
     objectif: Je reconnais quelques modes et les principales cadences.
     mots: [mode, dorien, mixolydien, cadence parfaite, demi-cadence, cadence plagale, cadence rompue]
     etapes:
+      - dialogue:
+          - zero: "Comment la musique sait qu'elle est finie ?"
+          - mia: "Grâce aux cadences, la ponctuation de la musique !"
+      - a_quoi_ca_sert: "Les modes donnent des couleurs différentes à la musique (musiques de film, folk, jazz) ; les cadences sont la ponctuation des phrases musicales."
       - texte: |
           **Modes** : on joue les notes blanches du clavier en partant d'une autre note que do :
           - de **ré** à ré : mode **dorien** (couleur mineure avec une sixte majeure : musique celtique, jazz modal) ;
@@ -93,6 +111,9 @@ lecons:
           - **demi-cadence** : se termine sur V (question en suspens) ;
           - **plagale** : IV → I (le « Amen » des cantiques) ;
           - **rompue** : V → VI (surprise : on attendait I).
+      - astuce:
+          texte: "Cadence parfaite (V → I) = un point final. Demi-cadence (sur V) = une virgule ou un point d'interrogation."
+          qui: zero
       - retiens: "Dorien (ré), mixolydien (sol), éolien (la) = notes blanches depuis une autre tonique. Cadences : parfaite V-I, demi (sur V), plagale IV-I, rompue V-VI."
     exercices:
       - type: qcm
@@ -117,12 +138,19 @@ lecons:
     objectif: Je connais les grandes étapes de la forme sonate et de la fugue.
     mots: [forme sonate, exposition, développement, réexposition, fugue, sujet, contrepoint]
     etapes:
+      - dialogue:
+          - zero: "Une symphonie dure 40 minutes ! Comment ne pas s'y perdre ?"
+          - neo: "En connaissant son plan : la forme sonate, la fugue…"
+      - a_quoi_ca_sert: "La forme sonate et la fugue structurent une grande partie de la musique classique : les connaître aide à écouter une symphonie sans s'y perdre."
       - texte: |
           **Forme sonate** (1ᵉʳ mouvement de beaucoup de symphonies et sonates classiques) :
           1. **Exposition** : un premier thème dans la tonalité principale, un second thème dans une autre tonalité ;
           2. **Développement** : les thèmes sont transformés, morcelés, passent par d'autres tonalités (tension) ;
           3. **Réexposition** : les thèmes reviennent, cette fois tous deux dans la tonalité principale (résolution).
           **Fugue** (sommet du **contrepoint**, Bach) : un **sujet** est exposé par une voix, puis imité par les autres voix (la **réponse**, souvent à la quinte) ; les voix s'entremêlent de manière indépendante.
+      - astuce:
+          texte: "Forme sonate : exposition (présenter les thèmes), développement (les transformer), réexposition (les retrouver). Comme une histoire en trois actes."
+          qui: mia
       - retiens: "Sonate : exposition (2 thèmes), développement (tension), réexposition (retour au ton principal). Fugue : un sujet imité par toutes les voix."
     exercices:
       - type: ordre
@@ -146,6 +174,10 @@ lecons:
     objectif: Je comprends la synthèse additive et l'idée de la décomposition de Fourier.
     mots: [synthèse additive, spectre, Fourier, filtre]
     etapes:
+      - dialogue:
+          - zero: "Comment un ordinateur fabrique le son d'un piano ?"
+          - mia: "En additionnant des sons tout simples ! C'est la synthèse additive."
+      - a_quoi_ca_sert: "La décomposition de Fourier est derrière le MP3, les égaliseurs, la reconnaissance de musique et l'imagerie médicale."
       - texte: |
           Le mathématicien **Joseph Fourier** (1822) a montré qu'un signal périodique peut s'écrire comme une **somme de sinusoïdes** (fondamentale + harmoniques). Le **spectre** d'un son montre l'intensité de chaque fréquence.
           - **Synthèse additive** : on construit un son en additionnant des sinusoïdes (c'est ce que fait le moteur de cette application pour imiter une flûte ou un orgue).
@@ -159,6 +191,9 @@ lecons:
           ymax: 2
           fonctions: [{ f: "sin(x)", label: "son pur" }, { f: "sin(x)+sin(2*x)/2", label: "avec un harmonique" }]
         legende: "Une sinusoïde pure (son pur), puis la même avec un 2ᵉ harmonique ajouté : la forme change, donc le timbre aussi."
+      - astuce:
+          texte: "Fourier en une phrase : tout son, même compliqué, est une somme de sons purs (sinusoïdes). Le spectre est la liste des ingrédients."
+          qui: neo
       - retiens: "Fourier : tout son périodique = somme de sinusoïdes. Additive : on additionne ; soustractive : on filtre. Le spectre montre les fréquences présentes."
     exercices:
       - type: qcm

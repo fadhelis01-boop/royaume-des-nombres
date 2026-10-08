@@ -36,6 +36,9 @@ lecons:
           enonce: "$u_n = {{a}}n^2 + ({{nb(b)}})$. Calcule $u_{ {{n}} }$."
           reponse: "a*n*n + b"
           correction: "$u_{ {{n}} } = {{a}} \\times {{n*n}} + ({{nb(b)}}) = {{nb(a*n*n+b)}}$"
+      - astuce:
+          texte: "Explicite : je calcule directement uₙ à partir de n. Par récurrence : j'ai besoin du terme d'avant, comme les marches d'un escalier."
+          qui: mia
     exercices:
       - type: nombre
         vars: { a: "2..9", b: "-9..9", n: "3..20" }
@@ -73,6 +76,9 @@ lecons:
           enonce: "Suite arithmétique : $u_0 = {{nb(u0)}}$, raison $r = {{nb(r)}}$. Calcule $u_{ {{n}} }$."
           reponse: "u0 + n*r"
           correction: "$u_{ {{n}} } = {{nb(u0)}} + {{n}} \\times ({{nb(r)}}) = {{nb(u0+n*r)}}$"
+      - astuce:
+          texte: "Arithmétique = on ajoute toujours la même chose (+ r). Pour vérifier, calcule uₙ₊₁ − uₙ : si c'est toujours pareil, c'est gagné."
+          qui: neo
     exercices:
       - type: nombre
         vars: { u0: "-10..30", r: "-6..12", n: "10..50" }
@@ -125,6 +131,9 @@ lecons:
           enonce: "$u_0 = {{u0}}$, raison $q = {{q}}$. Calcule $u_{ {{n}} }$."
           reponse: "u0 * q^n"
           correction: "${{u0}} \\times {{q}}^{ {{n}} } = {{nb(u0*q^n)}}$"
+      - astuce:
+          texte: "Géométrique = on multiplie toujours par la même chose (× q). C'est le modèle des intérêts composés et des populations qui grandissent."
+          qui: zero
     exercices:
       - type: nombre
         vars: { u0: [1, 2, 3, 4, 5], q: [2, 3, -2], n: "3..9" }
@@ -173,6 +182,9 @@ lecons:
           enonce: "$1 + 2 + \\cdots + {{nb(n)}} = ?$"
           reponse: "n*(n+1)/2"
           correction: "$\\frac{ {{n}} \\times {{n+1}} }{2} = {{nb(n*(n+1)/2)}}$"
+      - astuce:
+          texte: "Astuce de Gauss : 1 + 2 + … + 100, associe le premier et le dernier (1 + 100), le deuxième et l'avant-dernier (2 + 99)… 50 paires de 101 = 5 050."
+          qui: mia
     exercices:
       - type: nombre
         vars: { n: "10..60" }
@@ -221,6 +233,9 @@ lecons:
           choix: ["{{si(q<1,'0','+∞')}}", "{{si(q<1,'+∞','0')}}", "1"]
           ordre_fixe: false
           correction: "{{si(q<1,'0 < q < 1 : la suite tend vers 0.','q > 1 : la suite tend vers +∞.')}}"
+      - astuce:
+          texte: "Une suite géométrique tend vers 0 si |q| < 1, explose si q > 1. Pense à des intérêts : 1,01ⁿ finit par devenir énorme."
+          qui: neo
     exercices:
       - type: qcm
         vars: { f: [["\\frac{1}{n}", "0"], ["n^2", "+∞"], ["\\frac{3n+1}{n}", "3"], ["0{,}5^n", "0"], ["2 - \\frac{1}{n^2}", "2"], ["\\sqrt{n}", "+∞"]] }
@@ -264,6 +279,9 @@ lecons:
           enonce: "Remets dans l'ordre les étapes d'une récurrence."
           items: ["Initialisation : vérifier P(n₀)", "Hérédité : supposer P(n), démontrer P(n+1)", "Conclusion : P(n) vraie pour tout n ≥ n₀"]
           correction: "Initialisation, hérédité, conclusion."
+      - astuce:
+          texte: "La récurrence, ce sont des dominos : il faut que le premier tombe (initialisation) et que chaque domino fasse tomber le suivant (hérédité)."
+          qui: zero
     exercices:
       - type: nombre
         vars: { n: "3..12" }

@@ -20,6 +20,10 @@ lecons:
     objectif: Je sais que le son a besoin d'un milieu et je calcule une distance avec sa vitesse.
     mots: [propagation, milieu matériel, vide, écho]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi j'entends le tonnerre après avoir vu l'éclair ?"
+          - neo: "Parce que le son est bien plus lent que la lumière. On peut même calculer la distance de l'orage !"
+      - a_quoi_ca_sert: "Le son qui voyage explique l'écho, le décalage entre l'éclair et le tonnerre et le fonctionnement des sonars des bateaux."
       - texte: |
           Le son est une vibration qui se transmet de proche en proche dans la matière : il a besoin d'un **milieu matériel** (air, eau, solide). Il **ne se propage pas dans le vide** : dans l'espace, une explosion serait silencieuse !
           Vitesse du son : environ **340 m/s** dans l'air, **1 500 m/s** dans l'eau, plus de **5 000 m/s** dans l'acier.
@@ -28,6 +32,9 @@ lecons:
           titre: À quelle distance est l'orage ?
           enonce: "Tu vois l'éclair, puis tu entends le tonnerre 6 secondes plus tard."
           etapes: ["La lumière arrive presque instantanément ; le son met 6 s.", "$d = v \\times t = 340 \\times 6 = 2\\,040$ m", "L'orage est à environ 2 km (astuce : nombre de secondes ÷ 3 ≈ distance en km)."]
+      - astuce:
+          texte: "Pour savoir à quelle distance est l'orage : compte les secondes entre l'éclair et le tonnerre, divise par 3 : tu obtiens les kilomètres."
+          qui: zero
       - retiens: "Le son a besoin de matière (pas de son dans le vide). Air ≈ 340 m/s, eau ≈ 1 500 m/s. $d = v \\times t$."
     exercices:
       - type: nombre
@@ -53,6 +60,10 @@ lecons:
     objectif: Je relie la fréquence à la hauteur et je protège mes oreilles.
     mots: [fréquence, hertz, ultrason, décibel]
     etapes:
+      - dialogue:
+          - zero: "Le sifflet est aigu et le tambour grave. C'est quoi la différence ?"
+          - mia: "La fréquence ! Et le volume se mesure en décibels."
+      - a_quoi_ca_sert: "Protéger ses oreilles sert toute la vie : une audition abîmée ne se répare pas."
       - texte: |
           - La **fréquence** f (en **hertz**, Hz) = nombre de vibrations par seconde. Elle donne la **hauteur** : plus f est grande, plus le son est **aigu**. L'oreille humaine entend de **20 Hz à 20 000 Hz** environ. Au-delà : **ultrasons** (chauves-souris, échographie) ; en dessous : **infrasons**.
           - L'**intensité** (le volume) se mesure en **décibels** (dB). Conversation ≈ 60 dB ; rue animée ≈ 80 dB ; concert ≈ 105 dB. À partir de **85 dB** de façon prolongée, l'oreille s'abîme ; **120 dB** fait mal. Les dégâts sont **définitifs**.
@@ -60,6 +71,9 @@ lecons:
           type: son
           sons: [{ etiquette: "100 Hz", freq: 100 }, { etiquette: "440 Hz (le La)", freq: 440 }, { etiquette: "2 000 Hz", freq: 2000 }]
         legende: "Trois fréquences : du grave à l'aigu."
+      - astuce:
+          texte: "Haute fréquence = son aigu (sifflet), basse fréquence = son grave (tambour). Au-delà de 85 dB, on limite la durée d'écoute."
+          qui: neo
       - retiens: "Fréquence (Hz) → hauteur. Audible : 20 à 20 000 Hz. Intensité en dB : danger dès 85 dB longtemps."
     exercices:
       - type: qcm
@@ -85,11 +99,18 @@ lecons:
     objectif: Je connais la vitesse de la lumière et l'année-lumière.
     mots: [vitesse de la lumière, année-lumière, propagation rectiligne]
     etapes:
+      - dialogue:
+          - zero: "La lumière du Soleil arrive tout de suite ?"
+          - neo: "Elle met environ 8 minutes ! Et pourtant, c'est ce qui va le plus vite dans l'Univers."
+      - a_quoi_ca_sert: "La vitesse de la lumière sert au GPS, aux fibres optiques d'Internet et à mesurer la distance des étoiles."
       - texte: |
           La lumière n'a **pas besoin de matière** : elle traverse le vide de l'espace. Elle va à environ **300 000 km/s** (3 × 10⁸ m/s), la plus grande vitesse possible.
           - La lumière du Soleil met environ **8 minutes** pour arriver sur Terre.
           - Une **année-lumière** est une **distance** (pas une durée !) : la distance parcourue par la lumière en un an, environ **9 500 milliards de km**.
           Quand tu regardes une étoile, tu vois la lumière qu'elle a envoyée il y a longtemps : tu regardes dans le passé.
+      - astuce:
+          texte: "La lumière fait 7 fois le tour de la Terre en une seconde. Et une année-lumière est une distance, pas une durée !"
+          qui: mia
       - retiens: "Lumière : ≈ 300 000 km/s, même dans le vide. L'année-lumière est une distance (≈ 9,5 × 10¹² km)."
     exercices:
       - type: qcm
@@ -114,6 +135,10 @@ lecons:
     objectif: J'explique la décomposition de la lumière blanche et la synthèse des couleurs.
     mots: [spectre, prisme, synthèse additive, synthèse soustractive]
     etapes:
+      - dialogue:
+          - zero: "Un arc-en-ciel, c'est de la lumière ?"
+          - mia: "Oui ! La lumière blanche contient toutes les couleurs. Décomposons-la."
+      - a_quoi_ca_sert: "La synthèse des couleurs explique les écrans (rouge, vert, bleu) et l'imprimerie (cyan, magenta, jaune)."
       - texte: |
           La lumière **blanche** est un mélange de toutes les couleurs. Un **prisme** (ou des gouttes de pluie : l'arc-en-ciel !) la **décompose** : rouge, orange, jaune, vert, bleu, indigo, violet. C'est le **spectre**.
           - **Synthèse additive** (lumières, écrans) : rouge + vert + bleu = **blanc** ; rouge + vert = **jaune**.
@@ -122,6 +147,9 @@ lecons:
       - histoire:
           titre: Ibn al-Haytham et Newton
           texte: "Vers l'an 1000, le savant **Ibn al-Haytham**, au Caire, montre par des expériences que la lumière vient des objets jusqu'à l'œil (et non l'inverse) : son Traité d'optique fonde la méthode expérimentale. En 1666, **Isaac Newton** décompose la lumière blanche avec un prisme, puis la recompose avec un second prisme."
+      - astuce:
+          texte: "Écrans : RVB, la lumière qui s'ajoute (tout ensemble = blanc). Peinture et imprimante : CMJ, les pigments qui absorbent (tout ensemble = presque noir)."
+          qui: zero
       - retiens: "Lumière blanche = toutes les couleurs. Lumières : R + V + B = blanc. Peintures : on absorbe des couleurs. Un objet rouge renvoie le rouge."
     exercices:
       - type: qcm
@@ -145,12 +173,19 @@ lecons:
     objectif: Je comprends le rôle d'une lentille convergente.
     mots: [réfraction, lentille convergente, foyer, image]
     etapes:
+      - dialogue:
+          - zero: "Comment une loupe fait grossir les choses ?"
+          - neo: "Elle dévie la lumière ! Et ton œil contient lui aussi une lentille."
+      - a_quoi_ca_sert: "Les lentilles sont dans les lunettes, les appareils photo, les microscopes et dans ton œil : sans elles, tout serait flou."
       - texte: |
           Quand la lumière passe de l'air à l'eau ou au verre, elle **change de direction** : c'est la **réfraction** (la paille semble « cassée » dans le verre d'eau).
           Une **lentille convergente** (plus épaisse au centre) fait converger les rayons parallèles en un point : le **foyer**. Utilisations : **loupe**, appareil photo, projecteur, et… ton **œil** (le cristallin est une lentille qui forme l'image sur la rétine).
           Myopie : l'image se forme avant la rétine → lunettes à lentilles **divergentes**. Hypermétropie : après → lentilles **convergentes**.
       - attention:
           texte: "Ne regarde JAMAIS le Soleil, ni à l'œil nu ni avec une loupe, des jumelles ou un télescope : la lentille concentre la lumière et peut brûler la rétine pour toujours."
+          qui: neo
+      - astuce:
+          texte: "Une lentille convergente est plus épaisse au centre : elle rassemble les rayons, comme une loupe qui concentre le soleil."
           qui: neo
       - retiens: "Réfraction : la lumière dévie en changeant de milieu. Lentille convergente → foyer. L'œil a une lentille, le cristallin."
     exercices:

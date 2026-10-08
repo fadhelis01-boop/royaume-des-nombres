@@ -80,7 +80,7 @@ export function Inventer() {
         </button>
         {aiConfigured() && (
           <button className="btn btn-soft" disabled={text.trim().length < 10 || busy} onClick={askReview}>
-            {busy ? "Mia lit…" : "🐱 Demander l'avis de Mia"}
+            {busy ? "Lya lit…" : "🐱 Demander l'avis de Lya"}
           </button>
         )}
         <button

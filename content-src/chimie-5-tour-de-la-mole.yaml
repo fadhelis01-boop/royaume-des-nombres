@@ -20,6 +20,10 @@ lecons:
     objectif: J'utilise la constante d'Avogadro.
     mots: [mole, quantité de matière, constante d'Avogadro]
     etapes:
+      - dialogue:
+          - zero: "Combien de grains de sucre dans une cuillère ?"
+          - neo: "Des milliers. Et des atomes, des milliards de milliards ! Les chimistes les comptent par paquets."
+      - a_quoi_ca_sert: "Les atomes sont trop petits pour être comptés un par un. La mole permet de les compter par paquets géants, comme on compte les œufs par douzaines."
       - texte: |
           Comme on compte les œufs par **douzaines**, les chimistes comptent les entités (atomes, molécules, ions) par **moles**.
           Une **mole** contient exactement $N_A = 6{,}022 \times 10^{23}$ entités : c'est la **constante d'Avogadro**.
@@ -28,6 +32,9 @@ lecons:
           titre: Combien de molécules ?
           enonce: "Combien de molécules dans 2 mol d'eau ?"
           etapes: ["$N = n \\times N_A = 2 \\times 6{,}022 \\times 10^{23}$", "$N \\approx 1{,}2 \\times 10^{24}$ molécules"]
+      - astuce:
+          texte: "Une mole, c'est 6,02 × 10²³ entités : un paquet si énorme qu'une mole de grains de sable recouvrirait toute la France sur environ un kilomètre d'épaisseur."
+          qui: mia
       - retiens: "1 mol = $6{,}022 \\times 10^{23}$ entités. $n = N / N_A$ et $N = n \\times N_A$."
     exercices:
       - type: nombre
@@ -52,12 +59,19 @@ lecons:
     objectif: Je calcule une masse molaire et une quantité de matière.
     mots: [masse molaire, g/mol]
     etapes:
+      - dialogue:
+          - zero: "Comment savoir combien de molécules il y a dans 18 g d'eau ?"
+          - mia: "Grâce à la masse molaire ! C'est le pont entre la balance et les molécules."
+      - a_quoi_ca_sert: "La masse molaire permet de passer de la balance (grammes) au nombre de molécules : c'est la base de toute préparation en pharmacie et en industrie."
       - texte: |
           La **masse molaire** $M$ (en g/mol) est la masse d'une mole. Pour une molécule, on **additionne** les masses molaires des atomes :
           H = 1 ; C = 12 ; N = 14 ; O = 16 ; Na = 23 ; Cl = 35,5 g/mol.
           - $M(H_2O) = 2 \times 1 + 16 = 18$ g/mol
           - $M(CO_2) = 12 + 2 \times 16 = 44$ g/mol
           Relation essentielle : $n = \dfrac{m}{M}$ (n en mol, m en g, M en g/mol).
+      - astuce:
+          texte: "n = m / M : la quantité (n) se trouve en divisant la masse (m) par la masse molaire (M). Pense à « nombre = masse sur masse d'un paquet »."
+          qui: neo
       - retiens: "$n = m / M$. La masse molaire d'une molécule = somme des masses molaires de ses atomes."
     exercices:
       - type: nombre
@@ -84,6 +98,9 @@ lecons:
     objectif: Je calcule une concentration et je prépare une dilution.
     mots: [soluté, solvant, concentration, dilution]
     etapes:
+      - dialogue:
+          - zero: "Mon sirop est trop fort ! J'ajoute de l'eau ?"
+          - neo: "Oui, tu dilues ! Et on peut calculer exactement combien d'eau ajouter."
       - texte: |
           Dans une **solution**, le **soluté** (ce qu'on dissout) est mélangé au **solvant** (souvent l'eau).
           - **Concentration en masse** : $C_m = \dfrac{m}{V}$ (g/L).
@@ -93,6 +110,9 @@ lecons:
           titre: Préparer un sirop
           enonce: "On dilue 20 mL de sirop pur dans de l'eau pour obtenir 200 mL de boisson. Quel est le facteur de dilution ?"
           etapes: ["$F = V_2 / V_1 = 200 / 20$", "$F = 10$ : la boisson est 10 fois moins concentrée que le sirop."]
+      - astuce:
+          texte: "Diluer, c'est ajouter de l'eau sans ajouter de soluté : la quantité de soluté ne change pas. C₁ × V₁ = C₂ × V₂."
+          qui: zero
       - retiens: "$C_m = m/V$ ; $C = n/V$. Dilution : $C_1 V_1 = C_2 V_2$, la quantité de soluté se conserve."
       - a_quoi_ca_sert: "Doser un sirop, préparer un médicament pour enfant, une solution pour les lentilles, l'eau d'un aquarium…"
     exercices:
@@ -119,6 +139,10 @@ lecons:
     objectif: J'utilise une équation pour prévoir les quantités.
     mots: [stœchiométrie, réactif limitant, avancement]
     etapes:
+      - dialogue:
+          - zero: "Pour faire de l'eau, je mélange n'importe quelle quantité d'hydrogène et d'oxygène ?"
+          - mia: "Non, il y a des proportions précises, comme dans une recette."
+      - a_quoi_ca_sert: "La stœchiométrie dit combien de chaque ingrédient il faut, comme une recette : c'est ce qui permet de fabriquer médicaments et matériaux sans gaspillage."
       - texte: |
           Les coefficients d'une équation donnent les **proportions** dans lesquelles les espèces réagissent.
           $2\,H_2 + O_2 \to 2\,H_2O$ : 2 mol de dihydrogène réagissent avec 1 mol de dioxygène et donnent 2 mol d'eau.
@@ -127,6 +151,9 @@ lecons:
           titre: Qui s'épuise le premier ?
           enonce: "On fait réagir 4 mol de H₂ avec 3 mol de O₂ (2 H₂ + O₂ → 2 H₂O)."
           etapes: ["4 mol de H₂ ont besoin de 4 / 2 = 2 mol de O₂.", "On a 3 mol de O₂ : il y en a assez. H₂ est le réactif limitant.", "On obtient 4 mol d'eau ; il reste 1 mol de O₂ en excès."]
+      - astuce:
+          texte: "Pense à une recette de crêpes : si tu as 2 œufs pour 4 crêpes, tu ne peux pas faire 10 crêpes sans plus d'œufs. Le réactif qui manque en premier est le « limitant »."
+          qui: mia
       - retiens: "Les coefficients donnent les proportions. Le réactif limitant est celui qui s'épuise en premier."
     exercices:
       - type: nombre
@@ -152,9 +179,16 @@ lecons:
     objectif: Je distingue réaction exothermique et endothermique.
     mots: [exothermique, endothermique, énergie]
     etapes:
+      - dialogue:
+          - zero: "Ma chaufferette chauffe toute seule quand je la plie ! Comment ?"
+          - neo: "Une réaction chimique qui libère de la chaleur : elle est exothermique."
+      - a_quoi_ca_sert: "Les chaufferettes de ski (exothermique) et les poches de froid instantané (endothermique) utilisent ces réactions."
       - texte: |
           - Une réaction **exothermique** **libère** de l'énergie (chaleur) : combustion, chaufferette chimique, ciment qui prend, respiration cellulaire.
           - Une réaction **endothermique** **absorbe** de l'énergie : le milieu se refroidit (poche de froid instantané pour le sport, cuisson qui demande d'apporter de la chaleur, photosynthèse qui utilise la lumière).
+      - astuce:
+          texte: "EXOthermique = la chaleur sort (EXIT). ENDOthermique = la chaleur entre (ENtre DEDANS)."
+          qui: neo
       - retiens: "Exo = énergie qui sort (ça chauffe). Endo = énergie qui entre (ça refroidit le milieu ou il faut chauffer)."
     exercices:
       - type: classer
@@ -179,6 +213,9 @@ lecons:
     objectif: Je comprends qu'une pile fonctionne grâce à un échange d'électrons.
     mots: [oxydation, réduction, oxydant, réducteur, pile]
     etapes:
+      - dialogue:
+          - zero: "Comment une pile fabrique de l'électricité ?"
+          - mia: "Grâce à un échange d'électrons entre deux substances. On peut même en faire une avec un citron !"
       - texte: |
           Une réaction d'**oxydoréduction** est un **échange d'électrons** :
           - le **réducteur** **perd** des électrons : il est **oxydé** ;
@@ -194,6 +231,9 @@ lecons:
             - "Relie-les au multimètre (ou à la LED ; il faut souvent 3 ou 4 citrons en série pour l'allumer)."
           observation: "Le multimètre indique une petite tension, autour de 0,9 V par citron."
           explication: "Le zinc est oxydé (il perd des électrons), les électrons traversent le fil jusqu'au cuivre où une réduction a lieu. Le jus de citron, acide et plein d'ions, ferme le circuit. C'est le principe de toutes les piles."
+      - astuce:
+          texte: "Retiens « l'oxydant gagne, le réducteur perd » : le réducteur perd des électrons (il est oxydé), l'oxydant les gagne (il est réduit)."
+          qui: zero
       - retiens: "Oxydation = perte d'électrons ; réduction = gain. Une pile produit un courant en forçant les électrons à passer par un fil."
       - a_quoi_ca_sert: "Piles et batteries (téléphone, voiture électrique), protection contre la rouille (zinguer l'acier), métallurgie…"
     exercices:

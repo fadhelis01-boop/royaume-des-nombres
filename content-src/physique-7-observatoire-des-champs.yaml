@@ -20,11 +20,18 @@ lecons:
     objectif: Je connais les lois de base de l'électromagnétisme et l'induction.
     mots: [champ, loi de Coulomb, électroaimant, induction]
     etapes:
+      - dialogue:
+          - zero: "Comment une dynamo de vélo fabrique de l'électricité ?"
+          - neo: "Un aimant qui bouge près d'un fil crée un courant : c'est l'induction !"
+      - a_quoi_ca_sert: "L'électromagnétisme fait tourner les moteurs, produit l'électricité des centrales et permet la recharge sans fil des téléphones."
       - texte: |
           Un **champ** décrit une influence qui existe en chaque point de l'espace.
           - **Électrique** : deux charges s'attirent (signes opposés) ou se repoussent (même signe). Loi de Coulomb : $F = k \dfrac{|q_A q_B|}{d^2}$ ($k \approx 9 \times 10^9$ N·m²/C²).
           - **Magnétique** : créé par les aimants… et par le **courant électrique** (expérience d'Ørsted, 1820) : une bobine parcourue par un courant devient un **électroaimant**.
           - **Induction** (Faraday, 1831) : un aimant qui **bouge** près d'une bobine y fait apparaître une tension. C'est le principe de l'**alternateur** : presque toute l'électricité du monde est produite ainsi (centrales, éoliennes, barrages).
+      - astuce:
+          texte: "L'induction en une phrase : un aimant qui bouge près d'une bobine crée un courant. C'est le principe de la dynamo de vélo."
+          qui: neo
       - retiens: "Coulomb : $F \\propto q_A q_B / d^2$. Un courant crée un champ magnétique ; un champ magnétique qui varie crée une tension (induction → alternateurs)."
     exercices:
       - type: qcm
@@ -48,12 +55,19 @@ lecons:
     objectif: J'utilise λ = v / f et je comprends les interférences.
     mots: [onde, longueur d'onde, période, interférences, diffraction]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi les bulles de savon ont des couleurs ?"
+          - mia: "La lumière se réfléchit deux fois et les ondes se mélangent : ce sont des interférences."
+      - a_quoi_ca_sert: "Les interférences expliquent les couleurs des bulles de savon et servent dans les casques à réduction de bruit."
       - texte: |
           Une **onde** transporte de l'énergie **sans transporter de matière** (le bouchon monte et descend sans avancer).
           - **Période** T (s), **fréquence** f = 1/T (Hz), **longueur d'onde** λ (m) : distance entre deux crêtes.
           - Relation : $\lambda = \dfrac{v}{f}$.
           - **Diffraction** : une onde s'étale en passant par une petite ouverture.
           - **Interférences** : deux ondes qui se superposent s'**additionnent** (crêtes avec crêtes) ou s'**annulent** (crêtes avec creux). C'est le principe du casque à **réduction de bruit**, et la preuve (Young, 1801) que la lumière est une onde.
+      - astuce:
+          texte: "λ = v / f : longueur d'onde = vitesse / fréquence. Deux ondes en phase s'ajoutent, deux ondes en opposition s'annulent."
+          qui: mia
       - retiens: "$\\lambda = v / f$ ; $f = 1/T$. Une onde transporte de l'énergie, pas de matière. Interférences : renforcement ou annulation."
     exercices:
       - type: nombre
@@ -81,11 +95,18 @@ lecons:
     objectif: Je distingue chaleur et température et je connais les deux principes.
     mots: [kelvin, énergie interne, premier principe, second principe]
     etapes:
+      - dialogue:
+          - zero: "Chaleur et température, c'est pareil ?"
+          - neo: "Non ! Et c'est une des grandes idées de la physique. Je t'explique."
+      - a_quoi_ca_sert: "La thermodynamique explique les moteurs, les frigos, les pompes à chaleur et pourquoi aucune machine n'a un rendement de 100 %."
       - texte: |
           - La **température** mesure l'agitation des particules. Échelle absolue : le **kelvin** (K) : $T(K) = \theta(°C) + 273{,}15$. Le **zéro absolu** (0 K = −273,15 °C) est inaccessible.
           - La **chaleur** (transfert thermique, Q) est de l'énergie qui passe **spontanément du corps chaud au corps froid**.
           - **1er principe** : l'énergie se conserve : $\Delta U = W + Q$ (variation d'énergie interne = travail reçu + chaleur reçue).
           - **2nd principe** (qualitatif) : dans un système isolé, l'**entropie** ne peut qu'augmenter ; un moteur thermique ne peut **jamais** convertir toute la chaleur en travail.
+      - astuce:
+          texte: "Température = agitation des particules ; chaleur = énergie qui passe du chaud vers le froid, jamais l'inverse tout seul."
+          qui: zero
       - retiens: "T(K) = θ(°C) + 273,15. La chaleur va du chaud vers le froid. ΔU = W + Q. Aucun moteur thermique n'a un rendement de 100 %."
     exercices:
       - type: nombre
@@ -111,6 +132,10 @@ lecons:
     objectif: Je comprends les idées clés de la relativité d'Einstein.
     mots: [relativité, vitesse de la lumière, dilatation du temps, E = mc²]
     etapes:
+      - dialogue:
+          - zero: "Le temps passe à la même vitesse pour tout le monde, non ?"
+          - mia: "Einstein a montré que non ! Et ton GPS en tient compte chaque jour."
+      - a_quoi_ca_sert: "Sans la relativité, le GPS de ton téléphone se tromperait de plusieurs kilomètres chaque jour."
       - texte: |
           En 1905, **Albert Einstein** part de deux idées : les lois de la physique sont les mêmes pour tous les observateurs en mouvement uniforme, et la **vitesse de la lumière dans le vide (c)** est **la même pour tous**.
           Conséquences, vérifiées par l'expérience :
@@ -118,6 +143,9 @@ lecons:
           - rien ne peut dépasser c ;
           - **équivalence masse-énergie** : $E = m c^2$ (au cœur du Soleil et des centrales nucléaires, un peu de masse devient énergie).
           Le **GPS** doit corriger ces effets (et ceux de la relativité générale) : sans corrections, il dériverait de plusieurs kilomètres par jour.
+      - astuce:
+          texte: "Rien ne va plus vite que la lumière, et le temps passe plus lentement pour ce qui va très vite. Les horloges des satellites GPS doivent être corrigées."
+          qui: neo
       - retiens: "c est la même pour tous et infranchissable. Temps dilaté par $\\gamma$. $E = mc^2$. Le GPS en tient compte."
     exercices:
       - type: nombre
@@ -141,11 +169,18 @@ lecons:
     objectif: J'utilise E = h·f et je connais les idées de base de la physique quantique.
     mots: [photon, quantum, constante de Planck, niveaux d'énergie, dualité]
     etapes:
+      - dialogue:
+          - zero: "La lumière, c'est une onde ou des petites billes ?"
+          - neo: "Les deux à la fois ! Bienvenue dans le monde étrange de la physique quantique."
+      - a_quoi_ca_sert: "La physique quantique est derrière les lasers, les LED, les panneaux solaires, l'IRM et les ordinateurs quantiques."
       - texte: |
           - En 1900, **Max Planck** puis **Einstein** (1905, effet photoélectrique) montrent que la lumière échange son énergie par **paquets** : les **photons**. Énergie d'un photon : $E = h f$ ($h \approx 6{,}63 \times 10^{-34}$ J·s). Le bleu (f plus grande) transporte plus d'énergie par photon que le rouge ; les UV encore plus (d'où les coups de soleil).
           - Les électrons d'un atome n'ont que certains **niveaux d'énergie** permis : en passant d'un niveau à un autre, ils émettent ou absorbent un photon d'énergie précise → chaque élément a son **spectre** (on identifie ainsi la composition des étoiles !).
           - **Dualité onde-corpuscule** : lumière et électrons se comportent tantôt comme des ondes, tantôt comme des particules.
           Applications : lasers, LED, panneaux solaires, transistors (donc tous les ordinateurs), IRM.
+      - astuce:
+          texte: "E = h × f : plus la fréquence de la lumière est grande, plus chaque photon transporte d'énergie. C'est pour ça que les UV (haute fréquence) brûlent la peau."
+          qui: mia
       - retiens: "Photon : $E = hf$. Énergie des atomes quantifiée → spectres de raies. Dualité onde-corpuscule. Lasers, LED, transistors en découlent."
     exercices:
       - type: qcm

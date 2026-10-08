@@ -20,6 +20,10 @@ lecons:
     objectif: Je dessine une rue ou un couloir avec un point de fuite.
     mots: [ligne d'horizon, point de fuite, fuyantes]
     etapes:
+      - dialogue:
+          - zero: "Comment dessiner une rue qui part au loin ?"
+          - neo: "Avec un point de fuite : toutes les lignes filent vers lui !"
+      - a_quoi_ca_sert: "La perspective sert aux architectes, aux décorateurs, aux auteurs de BD et aux créateurs de jeux vidéo pour donner de la profondeur."
       - texte: |
           Les lignes parallèles qui s'éloignent de nous (rails, bords de route) semblent se rejoindre en un point : le **point de fuite**, placé sur la **ligne d'horizon** (à la hauteur de nos yeux). Ces lignes s'appellent les **fuyantes**.
           Les objets **rapetissent** en s'éloignant. Les lignes verticales restent verticales ; les lignes face à nous restent horizontales.
@@ -42,6 +46,9 @@ lecons:
             - consigne: "Ajoute des poteaux de plus en plus petits le long de la route."
               couche: détails
               trace: "M78 80 L78 66 M68 68 L68 59 M61 60 L61 54"
+      - astuce:
+          texte: "Toutes les lignes qui s'éloignent de toi filent vers le même point sur la ligne d'horizon, comme des rails de train."
+          qui: neo
       - retiens: "Ligne d'horizon = hauteur des yeux. Les fuyantes convergent vers le point de fuite. Les objets rapetissent au loin."
     exercices:
       - type: qcm
@@ -65,6 +72,10 @@ lecons:
     objectif: Je dessine un bâtiment vu par un angle.
     mots: [deux points de fuite, arête verticale, angle]
     etapes:
+      - dialogue:
+          - zero: "Je veux dessiner une maison vue par le coin !"
+          - mia: "Il te faudra deux points de fuite. Je te montre."
+      - a_quoi_ca_sert: "La perspective à deux points permet de dessiner un bâtiment vu de son coin, la vue la plus naturelle et la plus dynamique."
       - texte: |
           Quand on voit un bâtiment **par son angle**, ses deux faces s'éloignent dans deux directions : il faut **deux points de fuite**, tous deux sur la ligne d'horizon, souvent loin à gauche et à droite.
           On commence par l'**arête verticale la plus proche**, puis on relie ses extrémités aux deux points de fuite.
@@ -83,6 +94,9 @@ lecons:
             - consigne: "Ferme les deux faces avec deux arêtes verticales plus courtes."
               couche: proportions
               trace: "M25 35.6 L25 55.6 M75 35.6 L75 55.6"
+      - astuce:
+          texte: "Place tes deux points de fuite loin l'un de l'autre, même en dehors de la feuille : sinon le bâtiment paraît déformé."
+          qui: zero
       - retiens: "Deux points de fuite sur l'horizon ; on part de l'arête la plus proche ; verticales toujours verticales."
     exercices:
       - type: qcm
@@ -107,6 +121,10 @@ lecons:
     objectif: Je place correctement les yeux, le nez, la bouche et les oreilles.
     mots: [proportions, ligne des yeux, axe, oreille]
     etapes:
+      - dialogue:
+          - zero: "Les yeux sont tout en haut de la tête, non ?"
+          - neo: "Non, au milieu ! C'est l'erreur la plus fréquente. Voici les bonnes proportions."
+      - a_quoi_ca_sert: "Bien placer les éléments du visage est la base du portrait, de la BD et du dessin de personnages."
       - dessin:
           titre: Le visage de face
           etapes:
@@ -125,6 +143,9 @@ lecons:
             - consigne: "Les oreilles vont du niveau des yeux au niveau du nez."
               couche: détails
               trace: "M28 50 C24 52 24 60 29 62 M72 50 C76 52 76 60 71 62"
+      - astuce:
+          texte: "Les yeux sont au milieu de la tête (pas en haut !). Entre les deux yeux, il y a la largeur d'un œil."
+          qui: mia
       - retiens: "Yeux à mi-hauteur de la tête ; un œil d'écart entre les yeux ; nez à mi-chemin yeux-menton ; oreilles des yeux au nez."
     exercices:
       - type: qcm
@@ -148,11 +169,18 @@ lecons:
     objectif: Je dessine un personnage en mouvement avec une ligne d'action et un bonhomme fil de fer.
     mots: [ligne d'action, bonhomme fil de fer, articulation, canon]
     etapes:
+      - dialogue:
+          - zero: "Mes personnages ont l'air raides comme des bâtons."
+          - mia: "Donne-leur une ligne d'action, et ils vont bouger !"
+      - a_quoi_ca_sert: "La ligne d'action donne de l'énergie aux personnages : c'est le secret des dessinateurs de mangas et de dessins animés."
       - texte: |
           1. **Ligne d'action** : une seule courbe qui résume le mouvement (un personnage qui court, qui saute, qui se penche).
           2. **Bonhomme fil de fer** : des traits pour les os, des petits ronds pour les **articulations** (épaules, coudes, hanches, genoux).
           3. On « habille » ensuite avec des **volumes** : cylindres pour les membres, ovales pour le torse.
           Repères : un adulte mesure environ 7,5 têtes ; les bras tendus le long du corps arrivent à mi-cuisse ; les coudes au niveau de la taille.
+      - astuce:
+          texte: "Commence par une seule courbe qui résume tout le mouvement (la ligne d'action), puis accroche le bonhomme fil de fer dessus."
+          qui: neo
       - retiens: "Ligne d'action → fil de fer avec articulations → volumes. Adulte ≈ 7,5 têtes ; coudes à la taille."
     exercices:
       - type: ordre
@@ -176,6 +204,10 @@ lecons:
     objectif: J'organise une image et je raconte une histoire en cases.
     mots: [règle des tiers, plan, case, bulle, cadrage]
     etapes:
+      - dialogue:
+          - zero: "Je veux faire une BD ! Par quoi je commence ?"
+          - neo: "Par l'organisation des images : où placer les personnages et comment enchaîner les cases."
+      - a_quoi_ca_sert: "Bien composer une image guide le regard du lecteur : c'est ce que font les photographes, les affichistes et les auteurs de BD."
       - texte: |
           **Composition** : la **règle des tiers** divise l'image en 3 × 3 ; on place le sujet principal sur une ligne ou un croisement plutôt qu'au centre, pour une image plus vivante.
           **Bande dessinée** :
@@ -194,6 +226,9 @@ lecons:
               trace: "M66 33 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0"
             - consigne: "Trace la ligne de l'horizon sur la ligne du bas."
               trace: "M5 66 L95 66"
+      - astuce:
+          texte: "La règle des tiers : partage ton image en 3 × 3 et place l'élément important sur une des intersections, pas au centre."
+          qui: zero
       - retiens: "Règle des tiers : sujet sur les lignes ou croisements. BD : cases de gauche à droite, plans (ensemble, moyen, gros plan), bulles."
     exercices:
       - type: qcm
@@ -207,7 +242,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: classer
-        vars: { t: [["BOUM", "« Bonjour, Mia ! »", "SPLASH", "« J'ai une idée ! »"]] }
+        vars: { t: [["BOUM", "« Bonjour, Lya ! »", "SPLASH", "« J'ai une idée ! »"]] }
         enonce: "Onomatopée ou parole dans une bulle ?"
         categories: [onomatopée, parole]
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]

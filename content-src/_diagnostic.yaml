@@ -42,7 +42,7 @@
   question: { type: nombre, vars: { a: "11..49", b: "11..29" }, enonce: "${{nb(a/10)}} \\times {{nb(b/10)}}$", reponse: "a*b/100" }
 
 - monde: atelier-des-problemes
-  question: { type: champs, vars: { u: "5..15", k: "2..4" }, enonce: "Néo a {{k}} fois plus de billes que Mia. Ensemble ils en ont {{u*(k+1)}}.", champs: [{ avant: "Mia :", reponse: "u" }, { avant: "Néo :", reponse: "k*u" }] }
+  question: { type: champs, vars: { u: "5..15", k: "2..4" }, enonce: "Néo a {{k}} fois plus de billes que Lya. Ensemble ils en ont {{u*(k+1)}}.", champs: [{ avant: "Lya :", reponse: "u" }, { avant: "Néo :", reponse: "k*u" }] }
 - monde: atelier-des-problemes
   question: { type: nombre, vars: { e: "20..30", p: "4..9", c: "100..250" }, enonce: "{{e}} élèves vont au cinéma. La place coûte {{p}} € et le bus {{c}} €. Coût total en € ?", reponse: "e*p+c" }
 
@@ -161,7 +161,7 @@
 - monde: fr-prairie-des-accords
   question: { type: qcm, vars: { t: [["une fille", "heureuse", "heureux", "heureuze"], ["des robes", "vertes", "verts", "verte"], ["un", "bel arbre", "beau arbre", "belle arbre"]] }, enonce: "Complète : {{t_0}} …", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
 - monde: fr-prairie-des-accords
-  question: { type: qcm, vars: { t: [["Les enfants de ma voisine …", "jouent", "joue", "joues"], ["Le chien des voisins …", "aboie", "aboient", "aboies"], ["Mia et Néo …", "chantent", "chante", "chantes"]] }, enonce: "{{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
+  question: { type: qcm, vars: { t: [["Les enfants de ma voisine …", "jouent", "joue", "joues"], ["Le chien des voisins …", "aboie", "aboient", "aboies"], ["Lya et Néo …", "chantent", "chante", "chantes"]] }, enonce: "{{t_0}}", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
 - monde: fr-montagnes-du-temps
   question: { type: qcm, vars: { t: [["être", "je serai", "je serais", "j'êterai"], ["aller", "j'irai", "j'allerai", "j'irais"], ["faire", "je ferai", "je fairai", "je ferais"]] }, enonce: "Futur simple de « {{t_0}} » avec je :", choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"] }
 - monde: fr-montagnes-du-temps

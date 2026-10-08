@@ -20,6 +20,9 @@ lecons:
     objectif: Je sépare un mélange avec un tamis ou un filtre.
     mots: [tamis, filtre, filtration, filtrat]
     etapes:
+      - dialogue:
+          - zero: "J'ai renversé du sable dans mes graines. Je vais devoir les trier une par une ?"
+          - neo: "Pas besoin ! Un tamis fera le travail en deux secondes."
       - texte: |
           - Le **tamis** (une passoire) garde les gros morceaux et laisse passer les petits : on sépare le gravier du sable.
           - Le **filtre** (papier filtre, filtre à café, coton) a des trous minuscules : il retient même le sable fin et laisse passer l'eau. L'eau qui ressort s'appelle le **filtrat**.
@@ -34,6 +37,9 @@ lecons:
             - "Compare l'eau avant et après."
           observation: "L'eau qui coule est bien plus claire ; la terre reste dans le filtre."
           explication: "Les grains de terre sont plus gros que les trous du filtre : ils sont retenus. Attention : cette eau n'est pas potable, elle peut encore contenir des microbes invisibles. Ne la bois pas !"
+      - astuce:
+          texte: "Le tamis garde les gros morceaux, le filtre garde même les tout petits. Plus les trous sont petits, plus on sépare finement."
+          qui: zero
       - retiens: "Tamis : sépare les gros des petits morceaux. Filtre : retient les grains solides, laisse passer le liquide. Une eau filtrée n'est pas forcément potable."
       - a_quoi_ca_sert: "Les stations de traitement filtrent l'eau sur du sable ; la cafetière filtre le café ; l'aspirateur filtre la poussière."
     exercices:
@@ -58,6 +64,9 @@ lecons:
     objectif: Je sépare par décantation et par évaporation.
     mots: [décantation, évaporation, cristaux]
     etapes:
+      - dialogue:
+          - zero: "Comment on récupère le sel de l'eau de mer ?"
+          - mia: "Les sauniers le font depuis des siècles, grâce au soleil et au vent. Je t'explique."
       - texte: |
           - **Décanter** : on laisse reposer un mélange. Les grains les plus lourds tombent au fond, le liquide devient plus clair au-dessus. On peut ensuite verser doucement le dessus.
           - **Évaporer** : on laisse l'eau partir dans l'air (au soleil, ou en chauffant). Ce qui était dissous **reste** : le sel réapparaît sous forme de **cristaux**.
@@ -74,6 +83,9 @@ lecons:
             - "Observe chaque jour."
           observation: "L'eau disparaît peu à peu, et de petits cristaux blancs apparaissent : c'est le sel."
           explication: "L'eau s'est évaporée (elle est partie dans l'air sous forme de vapeur), mais le sel ne s'évapore pas : il reste. C'est exactement ce qui se passe dans les marais salants !"
+      - astuce:
+          texte: "Décanter = attendre que le lourd tombe au fond. Évaporer = chauffer pour que l'eau parte et que le sel reste. Ce sont les deux méthodes des marais salants."
+          qui: mia
       - retiens: "Décanter : laisser reposer, le solide tombe au fond. Évaporer : l'eau s'en va, ce qui était dissous reste."
       - a_quoi_ca_sert: "Les marais salants de Guérande récoltent le sel de mer par évaporation au soleil et au vent."
     exercices:
@@ -99,6 +111,10 @@ lecons:
     objectif: Je nomme les changements d'état de l'eau.
     mots: [fusion, solidification, vaporisation, condensation, ébullition]
     etapes:
+      - dialogue:
+          - zero: "Pourquoi il y a de la buée sur la fenêtre quand je souffle dessus ?"
+          - neo: "La vapeur de ton souffle redevient liquide au contact du froid. C'est un changement d'état !"
+      - a_quoi_ca_sert: "Les changements d'état expliquent la pluie, la buée sur les vitres, le linge qui sèche ou la glace qui fond dans ton verre."
       - texte: |
           | Changement | De… vers… | Exemple |
           |---|---|---|
@@ -110,6 +126,9 @@ lecons:
           L'eau pure **fond à 0 °C** et **bout à 100 °C** (au niveau de la mer). Pendant qu'elle bout, sa température **reste à 100 °C**.
       - attention:
           texte: "Zéro croit que l'eau qui bout depuis longtemps devient « super chaude ». Non : tant qu'il reste de l'eau liquide, elle reste à 100 °C (à pression normale). Par contre la vapeur brûle : on ne met jamais la main au-dessus d'une casserole qui bout !"
+          qui: neo
+      - astuce:
+          texte: "Les noms vont par paires : fusion / solidification, vaporisation / liquéfaction. Fusion = fondre, comme la fondue au fromage."
           qui: neo
       - retiens: "Fusion (S→L), solidification (L→S), vaporisation (L→G), condensation (G→L). Eau : 0 °C et 100 °C."
     exercices:
@@ -151,6 +170,9 @@ lecons:
             - "Ajoute : verre 1 rien, verre 2 citron, verre 3 vinaigre, verre 4 bicarbonate."
           observation: "Avec le citron et le vinaigre, le jus devient rose-rouge ; avec le bicarbonate, il devient vert-bleu ; seul, il reste violet."
           explication: "Le citron et le vinaigre sont **acides** : l'indicateur devient rouge-rose. Le bicarbonate est une **base** : l'indicateur devient vert-bleu. L'eau pure est **neutre**. Ne goûte pas : au labo, on ne goûte jamais."
+      - astuce:
+          texte: "Le jus de chou rouge est un détective de couleur : rose = acide, violet = neutre, vert ou jaune = basique."
+          qui: zero
       - retiens: "Un indicateur change de couleur selon l'acidité. Citron, vinaigre : acides. Bicarbonate, savon : basiques. Eau pure : neutre."
       - a_quoi_ca_sert: "Les jardiniers mesurent l'acidité du sol (les hortensias changent de couleur !), les piscinistes surveillent l'eau des piscines."
     exercices:
@@ -176,6 +198,10 @@ lecons:
     objectif: J'explique le voyage de l'eau avec les changements d'état.
     mots: [cycle, évaporation, condensation, précipitations]
     etapes:
+      - dialogue:
+          - zero: "La pluie, elle vient d'où ? Quelqu'un arrose le ciel ?"
+          - neo: "C'est la même eau qui voyage depuis toujours ! Suivons une goutte."
+      - a_quoi_ca_sert: "Le cycle de l'eau explique d'où vient l'eau du robinet, pourquoi il pleut et pourquoi il faut protéger les rivières."
       - texte: |
           L'eau de la Terre voyage sans cesse :
           1. Le soleil chauffe les océans, les lacs : l'eau **s'évapore** (liquide → gaz).
@@ -192,6 +218,9 @@ lecons:
             - "Observe le dessous du film pendant 10 minutes."
           observation: "De la buée puis des gouttes apparaissent sous le film, et finissent par retomber, comme de la pluie."
           explication: "L'eau chaude s'évapore, la vapeur se condense au contact du film refroidi par les glaçons, et les gouttes retombent : c'est le cycle de l'eau en miniature."
+      - astuce:
+          texte: "L'eau fait une ronde : elle s'évapore (monte), se condense (nuage), tombe (pluie), ruisselle (rivière) et recommence. C'est toujours la même eau depuis des millions d'années !"
+          qui: mia
       - retiens: "Évaporation → condensation (nuages) → précipitations → ruissellement → et ça recommence. L'eau sur Terre est toujours la même, elle circule."
     exercices:
       - type: ordre

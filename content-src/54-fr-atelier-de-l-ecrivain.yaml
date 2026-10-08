@@ -64,11 +64,15 @@ lecons:
       - dialogue:
           - neo: "« Le renard voit le corbeau. Le renard parle au corbeau. Le renard… » On se lasse !"
           - mia: "« Le renard voit le corbeau. Il lui parle. Le rusé animal… » Pronoms, synonymes, périphrases : trois outils."
+      - a_quoi_ca_sert: "Un texte sans répétitions est plus agréable à lire et montre que tu as du vocabulaire."
       - texte: |
           Pour ne pas répéter un nom, on utilise une **reprise** :
           - un **pronom** : *le renard* → **il**, *le corbeau* → **lui** ;
           - un **synonyme** ou un mot plus général : *le renard* → **l'animal** ;
           - une **périphrase** (une expression qui décrit) : *le renard* → **le rusé personnage**, **le voleur de fromage**.
+      - astuce:
+          texte: "Pour éviter de répéter un nom, trois outils : un pronom (il), un synonyme (le félin), une périphrase (l'animal aux moustaches)."
+          qui: neo
       - retiens: "Reprise = **pronom**, **synonyme**, **périphrase**. Le lecteur doit toujours savoir de qui on parle."
     exercices:
       - type: qcm
@@ -95,9 +99,13 @@ lecons:
       - dialogue:
           - zero: "« Je me lève. Je mange. Je m'habille. Je pars. » On dirait une liste de courses. 😳"
           - mia: "Avec des connecteurs : « D'abord, je me lève. Ensuite, je mange. Puis je m'habille. Enfin, je pars. » C'est un vrai récit !"
+      - a_quoi_ca_sert: "Les connecteurs sont les panneaux de direction d'un texte : ils disent au lecteur dans quel ordre et pourquoi les choses arrivent."
       - texte: |
           - **Temps** : d'abord, ensuite, puis, après, soudain, tout à coup, enfin, finalement, pendant ce temps.
           - **Logique** : car, parce que (cause) — donc, c'est pourquoi (conséquence) — mais, pourtant, cependant (opposition) — de plus, en outre (ajout).
+      - astuce:
+          texte: "Prépare ta trousse à connecteurs : d'abord, ensuite, puis, enfin (le temps) ; car, donc, mais, pourtant (la logique)."
+          qui: zero
       - retiens: "Les connecteurs **relient** les idées : **d'abord, ensuite, enfin** (temps) ; **car, donc, mais** (logique)."
     exercices:
       - type: ordre
@@ -131,13 +139,16 @@ lecons:
           3. **Péripéties** : les aventures pour résoudre le problème. *Alors…, ensuite…*
           4. **Dénouement** : le problème est résolu (ou pas). *Finalement…*
           5. **Situation finale** : le nouvel équilibre. *Depuis ce jour…*
+      - astuce:
+          texte: "Retiens les 5 étapes avec ta main : le pouce pour la situation initiale, puis l'élément perturbateur, les péripéties, la résolution, la situation finale."
+          qui: mia
       - retiens: "**Situation initiale → élément perturbateur → péripéties → dénouement → situation finale.**"
       - vraie_vie:
           titre: Défi d'écriture
           texte: "Invente une histoire de Zéro le hamster en cinq phrases, une par étape du schéma narratif. Raconte-la à quelqu'un de ta famille !"
     exercices:
       - type: ordre
-        vars: { t: [["Il était une fois un petit lapin qui vivait heureux.", "Un jour, un renard s'approcha du terrier.", "Le lapin courut prévenir ses amis.", "Ensemble, ils chassèrent le renard.", "Depuis, le lapin vit en sécurité."], ["Zéro dormait tranquillement dans sa cage.", "Soudain, la porte s'ouvrit toute seule.", "Il explora la maison et se perdit.", "Mia le retrouva sous le canapé.", "Depuis, Zéro ferme toujours sa porte."], ["Dans un petit port vivait une vieille pêcheuse.", "Un matin, son bateau disparut.", "Elle le chercha partout avec l'aide des mouettes.", "Elle le retrouva enfin, échoué sur une île.", "Depuis, elle l'attache toujours solidement."]] }
+        vars: { t: [["Il était une fois un petit lapin qui vivait heureux.", "Un jour, un renard s'approcha du terrier.", "Le lapin courut prévenir ses amis.", "Ensemble, ils chassèrent le renard.", "Depuis, le lapin vit en sécurité."], ["Zéro dormait tranquillement dans sa cage.", "Soudain, la porte s'ouvrit toute seule.", "Il explora la maison et se perdit.", "Lya le retrouva sous le canapé.", "Depuis, Zéro ferme toujours sa porte."], ["Dans un petit port vivait une vieille pêcheuse.", "Un matin, son bateau disparut.", "Elle le chercha partout avec l'aide des mouettes.", "Elle le retrouva enfin, échoué sur une île.", "Depuis, elle l'attache toujours solidement."]] }
         enonce: "Remets les étapes de l'histoire dans l'ordre."
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
         correction: "Situation initiale, élément perturbateur, péripéties, dénouement, situation finale."
@@ -160,11 +171,15 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Pour décrire Néo : un renard orange aux yeux bleu électrique — c'est le physique. Courageux et un peu fanfaron — c'est le moral."
+      - a_quoi_ca_sert: "Bien décrire un personnage, c'est permettre au lecteur de l'imaginer et de s'y attacher. C'est la base de toute bonne histoire."
       - texte: |
           - **Portrait physique** : l'apparence (taille, visage, cheveux, vêtements, démarche).
           - **Portrait moral** : le caractère, les qualités, les défauts, les goûts.
 
           On organise la description : du **général au détail**, ou **de haut en bas**, et on utilise des **adjectifs précis** et des **comparaisons** (*des yeux bleus **comme** l'océan*).
+      - astuce:
+          texte: "Décris comme une caméra : de haut en bas pour le physique, puis entre dans sa tête pour le caractère."
+          qui: neo
       - retiens: "Portrait **physique** (apparence) + portrait **moral** (caractère). Ordre logique, adjectifs précis, comparaisons."
     exercices:
       - type: classer
@@ -179,7 +194,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: surligner
-        vars: { t: ["C'était un grand garçon [courageux] et [généreux].", "La reine, [orgueilleuse], portait une robe rouge.", "Ce petit homme roux était très [timide].", "Mia est [curieuse] et elle a les yeux verts."] }
+        vars: { t: ["C'était un grand garçon [courageux] et [généreux].", "La reine, [orgueilleuse], portait une robe rouge.", "Ce petit homme roux était très [timide].", "Lya est [curieuse] et elle a les yeux verts."] }
         enonce: "Touche les mots du portrait moral (le caractère)."
         phrase: "{{t}}"
         correction: "Le portrait moral décrit le caractère ; le portrait physique, l'apparence."
@@ -193,6 +208,7 @@ lecons:
       - dialogue:
           - gribouille: "Je veux écrire à mon ami le Nuage. Comment on commence ?"
           - mia: "Le lieu et la date, une formule d'appel, le message, une formule de fin, la signature. Et on adapte au destinataire !"
+      - a_quoi_ca_sert: "Écrire une lettre ou un courriel sert toute la vie : remercier, demander, réclamer, postuler à un emploi."
       - texte: |
           Une lettre contient :
           1. le **lieu** et la **date** (en haut à droite) ;
@@ -200,6 +216,9 @@ lecons:
           3. le **corps** du message, en paragraphes ;
           4. une **formule de fin** : *À bientôt !* (ami) — *Je vous prie d'agréer mes salutations distinguées.* (officiel) ;
           5. la **signature**.
+      - astuce:
+          texte: "Pense à « qui ? » : un ami → « Salut », « Bises » ; un adulte que tu ne connais pas → « Madame, Monsieur », « Je vous prie d'agréer… »."
+          qui: zero
       - retiens: "Date, **formule d'appel**, message, **formule de fin**, signature — et un **ton adapté** au destinataire."
     exercices:
       - type: qcm

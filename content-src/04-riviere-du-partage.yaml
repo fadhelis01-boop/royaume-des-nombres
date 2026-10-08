@@ -35,6 +35,9 @@ lecons:
           Le résultat s'appelle le **quotient**.
 
           Pour trouver 12 ÷ 3, je cherche dans les tables : **3 × ? = 12** → 3 × 4 = 12. Donc 12 ÷ 3 = 4.
+      - astuce:
+          texte: "Pour partager, distribue un par un comme aux cartes, ou cherche dans la table : 24 ÷ 4, c'est « 4 fois combien font 24 ? »."
+          qui: zero
       - retiens: "La division est l'opération **inverse** de la multiplication : si $3 \\times 4 = 12$, alors $12 \\div 3 = 4$ et $12 \\div 4 = 3$."
       - a_quoi_ca_sert: "Partager des bonbons entre amis, répartir des élèves en équipes, savoir combien chacun doit payer au restaurant…"
       - question:
@@ -163,6 +166,9 @@ lecons:
             - { avant: "Chacun reçoit", reponse: "q", apres: "billes" }
             - { avant: "Il en reste", reponse: "r", apres: "" }
           correction: "{{d}} × {{q}} = {{d*q}}, et {{d*q+r}} − {{d*q}} = {{r}}."
+      - astuce:
+          texte: "Le reste est toujours plus petit que le diviseur, sinon on aurait pu faire un paquet de plus. Et lis bien la question : faut-il un bus de plus pour les élèves restants ?"
+          qui: mia
     exercices:
       - type: nombre
         vars: { p: [4, 5], n: "17..39" }
@@ -238,6 +244,9 @@ lecons:
             - { avant: "q =", reponse: "q" }
             - { avant: "r =", reponse: "r" }
           correction: "{{b*q+r}} = {{b}} × {{q}} + {{r}}."
+      - astuce:
+          texte: "Vérifie toujours ta division : diviseur × quotient + reste doit redonner le dividende."
+          qui: neo
     exercices:
       - type: champs
         vars: { b: "3..12", q: "3..15", r: "0..11" }

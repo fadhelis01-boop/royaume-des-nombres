@@ -24,6 +24,7 @@ lecons:
       - dialogue:
           - neo: "« Léa a un vélo » : je remplace par « avait » → « Léa avait un vélo ». Ça marche : c'est le verbe avoir, sans accent."
           - zero: "« Je vais avait la plage » ? …Ça ne marche pas. Donc c'est « à », avec accent !"
+      - a_quoi_ca_sert: "« a » et « à » sont parmi les fautes les plus fréquentes du français. Une seule astuce bien appliquée, et c'est réglé pour toujours."
       - texte: |
           - **a** (sans accent) = le verbe **avoir** → on peut le remplacer par **avait** : *Il **a** faim → il **avait** faim.*
           - **à** (avec accent) = un petit mot de **lien** (préposition) → on ne peut **pas** dire « avait » : *Je vais **à** l'école.*
@@ -33,7 +34,7 @@ lecons:
       - retiens: "**a** = avait ; **à** = tout le reste (à l'école, à vélo, à midi)."
     exercices:
       - type: qcm
-        vars: { t: [["Tom … un chien.", a], ["Je vais … la piscine.", à], ["Elle … dix ans.", a], ["Nous partons … midi.", à], ["Il … froid.", a], ["Mia joue … la marelle.", à], ["Ma sœur … perdu sa clé.", a], ["Il habite … Paris.", à]] }
+        vars: { t: [["Tom … un chien.", a], ["Je vais … la piscine.", à], ["Elle … dix ans.", a], ["Nous partons … midi.", à], ["Il … froid.", a], ["Lya joue … la marelle.", à], ["Ma sœur … perdu sa clé.", a], ["Il habite … Paris.", à]] }
         enonce: "Complète : {{t_0}}"
         choix: ["{{t_1}}", "{{si(t_1=='a','à','a')}}"]
         explications: ["", "Essaie de remplacer par « avait » : si ça marche, c'est « a » sans accent ; sinon c'est « à »."]
@@ -44,7 +45,7 @@ lecons:
         dictee: "{{m}}"
         correction: "{{m}}"
       - type: surligner
-        vars: { t: ["Léa [a] mal à la tête.", "Tom [a] écrit à sa grand-mère.", "Il [a] une boîte à outils.", "À midi, Mia [a] faim."] }
+        vars: { t: ["Léa [a] mal à la tête.", "Tom [a] écrit à sa grand-mère.", "Il [a] une boîte à outils.", "À midi, Lya [a] faim."] }
         enonce: "Touche le « a » du verbe avoir."
         phrase: "{{t}}"
         correction: "On peut le remplacer par « avait »."
@@ -58,24 +59,28 @@ lecons:
       - dialogue:
           - neo: "« Le ciel est bleu » → « le ciel était bleu ». Ça marche : c'est le verbe être."
           - zero: "« Du pain était du beurre » ? Bizarre ! Donc c'est « et » : du pain ET du beurre."
+      - a_quoi_ca_sert: "« est » et « et » se ressemblent à l'oreille mais pas du tout dans le sens. Les distinguer rend tes phrases claires."
       - texte: |
           - **est** = le verbe **être** → on peut dire **était** : *Le chat **est** noir → le chat **était** noir.*
           - **et** = pour **ajouter**, on peut dire **et puis** : *un chat **et** un chien → un chat **et puis** un chien.*
+      - astuce:
+          texte: "Remplace par « était » : si ça marche, c'est le verbe « est ». Sinon, c'est « et » qui veut dire « et puis »."
+          qui: zero
       - retiens: "**est** = était ; **et** = et puis."
     exercices:
       - type: qcm
-        vars: { t: [["Le soleil … chaud.", est], ["J'ai un crayon … une gomme.", et], ["Mia … ma meilleure amie.", est], ["Il chante … il danse.", et], ["Cette pomme … rouge … sucrée.", "est … et"], ["Paul … Léa jouent.", et]] }
+        vars: { t: [["Le soleil … chaud.", est], ["J'ai un crayon … une gomme.", et], ["Lya … ma meilleure amie.", est], ["Il chante … il danse.", et], ["Cette pomme … rouge … sucrée.", "est … et"], ["Paul … Léa jouent.", et]] }
         enonce: "Complète : {{t_0}}"
         choix: ["{{t_1}}", "{{si(t_1=='est','et',si(t_1=='et','est','et … est'))}}"]
         explications: ["", "Remplace par « était » : si ça marche, c'est « est » ; sinon c'est « et » (et puis)."]
         correction: "{{t_1}}"
       - type: dictee
-        vars: { m: ["Le chat est noir et blanc.", "Mia est grande et forte.", "Il est midi et j'ai faim."] }
+        vars: { m: ["Le chat est noir et blanc.", "Lya est grande et forte.", "Il est midi et j'ai faim."] }
         enonce: "Écoute et écris la phrase."
         dictee: "{{m}}"
         correction: "{{m}}"
       - type: surligner
-        vars: { t: ["Le chat [est] noir et blanc.", "Il [est] midi et j'ai faim.", "Mia [est] grande et forte.", "Le ciel [est] gris et il pleut."] }
+        vars: { t: ["Le chat [est] noir et blanc.", "Il [est] midi et j'ai faim.", "Lya [est] grande et forte.", "Le ciel [est] gris et il pleut."] }
         enonce: "Touche « est », le verbe être."
         phrase: "{{t}}"
         correction: "On peut le remplacer par « était »."
@@ -89,9 +94,13 @@ lecons:
       - dialogue:
           - neo: "« Ils sont contents » → « ils étaient contents » : c'est le verbe être au pluriel."
           - mia: "« Son chat » → « mon chat » : c'est un déterminant, il dit à qui est la chose."
+      - a_quoi_ca_sert: "Écrire « son » ou « sont » au bon endroit montre au lecteur que tu sais si tu parles d'un possesseur ou d'un verbe."
       - texte: |
           - **sont** = verbe **être** (pluriel) → on peut dire **étaient** : *Les enfants **sont** là.*
           - **son** = déterminant (à lui, à elle) → on peut dire **mon** : ***son** vélo → **mon** vélo.*
+      - astuce:
+          texte: "Remplace par « étaient » : si ça marche, écris « sont ». Si tu peux dire « mon » ou « ton », écris « son »."
+          qui: mia
       - retiens: "**sont** = étaient ; **son** = mon."
     exercices:
       - type: qcm
@@ -120,9 +129,13 @@ lecons:
       - dialogue:
           - neo: "« Ils ont faim » → « ils avaient faim » : c'est le verbe avoir."
           - zero: "« On mange » → « il mange » : c'est un pronom ! On = quelqu'un, ou nous."
+      - a_quoi_ca_sert: "« on » et « ont » s'entendent pareil. Savoir les distinguer évite une faute que les correcteurs repèrent immédiatement."
       - texte: |
           - **ont** = verbe **avoir** (pluriel) → on peut dire **avaient** : *Ils **ont** un chat.*
           - **on** = pronom sujet → on peut dire **il** : ***On** joue → **il** joue.*
+      - astuce:
+          texte: "Remplace par « avaient » : si ça marche, c'est « ont ». Si tu peux mettre « il », c'est « on »."
+          qui: neo
       - retiens: "**ont** = avaient ; **on** = il."
     exercices:
       - type: qcm
@@ -151,9 +164,13 @@ lecons:
       - dialogue:
           - mia: "« Tu veux du jus ou de l'eau ? » → « ou bien de l'eau » : c'est un choix, pas d'accent."
           - neo: "« Où vas-tu ? » : on demande un lieu. L'accent grave est là pour indiquer l'endroit !"
+      - a_quoi_ca_sert: "Un accent qui change tout : « Tu viens ou tu restes ? » et « Où vas-tu ? ». Sans lui, on ne sait plus si tu proposes un choix ou si tu demandes un lieu."
       - texte: |
           - **ou** = **ou bien** (un choix) : *Pomme **ou** poire ?*
           - **où** = le **lieu** (ou le moment) : ***Où** habites-tu ? La ville **où** je suis né.*
+      - astuce:
+          texte: "Remplace par « ou bien » : si ça marche, pas d'accent. L'accent de « où » ressemble à une flèche qui montre l'endroit."
+          qui: zero
       - retiens: "**ou** = ou bien ; **où** = l'endroit."
     exercices:
       - type: qcm
@@ -182,6 +199,7 @@ lecons:
       - dialogue:
           - neo: "Le S de « se » veut dire « soi-même » : il se lave = il lave lui-même. Pareil pour s'est."
           - mia: "Et « ses » = les siens (à lui) ; « ces » = ceux-là, qu'on montre du doigt."
+      - a_quoi_ca_sert: "Ces petits mots reviennent dans presque chaque phrase. Les maîtriser, c'est éliminer une grosse source de fautes."
       - texte: |
           - **se** : devant un **verbe**, veut dire « soi-même » : *Il **se** lave.* (je **me** lave)
           - **ce** : devant un **nom** (ce chat-là) ou dans « ce que », « c'est » : ***ce** livre*.
@@ -189,6 +207,9 @@ lecons:
           - **ces** = ceux-là (on les montre) → on peut dire **ces …-là** : ***Ces** fleurs sont belles.*
           - **s'est** = verbe pronominal au passé composé : *Il **s'est** levé.* (je **me suis** levé)
           - **c'est** = cela est : ***C'est** beau.*
+      - astuce:
+          texte: "« se » va avec un verbe : remplace par « me » (il se lave → je me lave). « ses » = les siens, « ces » = ceux-là que je montre du doigt."
+          qui: mia
       - retiens: "**se/s'est** → soi-même (je me…) ; **ses** → mes ; **ces** → ces…-là ; **ce/c'est** → cela."
     exercices:
       - type: qcm
@@ -219,10 +240,14 @@ lecons:
       - dialogue:
           - zero: "La, là, l'a… Ils sont trois ! Des triplés ! 😳"
           - neo: "Même méthode : « là » = ici, là-bas ; « l'a » = l'avait ; sinon c'est « la »."
+      - a_quoi_ca_sert: "La, l'a et là se prononcent pareil. Choisir le bon montre que tu as compris le sens de ta phrase."
       - texte: |
           - **là** = un **endroit** → on peut dire **ici** ou **là-bas** : *Pose-le **là**.*
           - **l'a** = « le » ou « la » + **a** (avoir) → on peut dire **l'avait** : *Il **l'a** vu.*
           - **la** = déterminant (*la table*) ou pronom (*je **la** vois*).
+      - astuce:
+          texte: "« l'a » → remplace par « l'avait ». « là » → remplace par « ici » (l'accent, c'est un doigt qui montre l'endroit). Sinon, c'est « la »."
+          qui: neo
       - retiens: "**là** = ici ; **l'a** = l'avait ; **la** = le reste."
     exercices:
       - type: qcm

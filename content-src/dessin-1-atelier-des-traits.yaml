@@ -19,9 +19,13 @@ lecons:
     objectif: Je trace différents types de traits avec contrôle.
     mots: [trait, droit, courbe, zigzag, spirale]
     etapes:
+      - dialogue:
+          - zero: "Mes traits tremblent tout le temps !"
+          - mia: "Ça s'entraîne ! Commençons par des traits droits, puis des courbes."
+      - a_quoi_ca_sert: "Bien contrôler ses traits aide à dessiner, mais aussi à bien écrire : c'est le même geste de la main."
       - texte: |
           Tout dessin est fait de **traits**. Il en existe de toutes sortes : **droits**, **courbes**, en **zigzag**, en **spirale**, **pointillés**…
-          Astuce de Mia : regarde **le point d'arrivée** pendant que tu traces, pas la pointe du crayon. Ton trait sera plus sûr !
+          Astuce de Lya : regarde **le point d'arrivée** pendant que tu traces, pas la pointe du crayon. Ton trait sera plus sûr !
       - dessin:
           titre: Le parcours des traits
           etapes:
@@ -33,6 +37,9 @@ lecons:
               trace: "M15 66 L25 56 L35 66 L45 56 L55 66 L65 56 L75 66 L85 56"
             - consigne: "Trace une vague qui monte et qui descend."
               trace: "M15 86 C25 76 35 76 45 86 C55 96 65 96 75 86 C80 81 83 81 85 82"
+      - astuce:
+          texte: "Pour un trait droit, ne regarde pas ton crayon : regarde le point d'arrivée. Et trace d'un seul geste, pas en petits bouts."
+          qui: zero
       - retiens: "Droit, courbe, zigzag, vague, spirale… Regarde là où tu veux arriver."
     exercices:
       - type: qcm
@@ -57,6 +64,10 @@ lecons:
     objectif: Je dessine un cercle, un carré, un triangle, un rectangle et un ovale.
     mots: [cercle, carré, triangle, rectangle, ovale]
     etapes:
+      - dialogue:
+          - zero: "Comment on dessine un chat ? C'est trop dur !"
+          - neo: "On commence par des formes simples : un cercle, un triangle… Ce sont des formes magiques !"
+      - a_quoi_ca_sert: "Tous les dessins, même les plus compliqués, commencent par des formes simples : cercles, carrés, triangles."
       - texte: |
           Avec **5 formes magiques**, on peut dessiner presque tout : le **cercle**, l'**ovale**, le **carré**, le **rectangle** et le **triangle**.
           Une maison = un carré + un triangle. Un chat = des cercles, des ovales et des triangles. Un bonhomme de neige = trois cercles !
@@ -73,6 +84,9 @@ lecons:
               trace: "M55 55 L88 55 L88 75 L55 75 Z"
             - consigne: "Dessine un ovale, un cercle étiré."
               trace: "M50 90 m-20 0 a20 7 0 1 0 40 0 a20 7 0 1 0 -40 0"
+      - astuce:
+          texte: "Pour un beau cercle, fais tourner tout ton bras depuis l'épaule, pas seulement le poignet, et repasse plusieurs fois légèrement."
+          qui: mia
       - retiens: "Cercle, ovale, carré, rectangle, triangle : les 5 formes magiques qui construisent tous les dessins."
     exercices:
       - type: qcm
@@ -96,6 +110,10 @@ lecons:
     objectif: Je connais les couleurs primaires de la peinture.
     mots: [couleur primaire, rouge, jaune, bleu, mélange]
     etapes:
+      - dialogue:
+          - zero: "J'ai seulement trois tubes de peinture. Je ne pourrai pas faire de vert !"
+          - mia: "Si ! Avec le rouge, le jaune et le bleu, on fabrique presque toutes les couleurs."
+      - a_quoi_ca_sert: "Avec seulement trois couleurs primaires, on peut fabriquer presque toutes les autres : c'est le secret des peintres."
       - texte: |
           En peinture, les trois **couleurs primaires** sont le **rouge**, le **jaune** et le **bleu** (les imprimeurs utilisent plus précisément le magenta, le jaune et le cyan). On ne peut pas les obtenir en mélangeant d'autres couleurs… mais **en les mélangeant**, on fabrique presque toutes les autres !
           Le **blanc** éclaircit une couleur, le **noir** l'assombrit.
@@ -112,6 +130,9 @@ lecons:
             - "Rince le pinceau et essaie rouge + jaune, puis rouge + bleu."
           observation: "Jaune + bleu donne du vert, rouge + jaune de l'orange, rouge + bleu du violet."
           explication: "Ce sont les couleurs secondaires. Chaque pigment absorbe une partie de la lumière : en les mélangeant, on combine ce qu'ils absorbent (c'est la synthèse soustractive)."
+      - astuce:
+          texte: "Les trois primaires de la peinture : rouge, jaune, bleu. Elles ne peuvent pas être fabriquées à partir d'autres couleurs."
+          qui: neo
       - retiens: "Primaires (peinture) : rouge, jaune, bleu. On ne peut pas les fabriquer, mais elles fabriquent les autres."
     exercices:
       - type: classer
@@ -139,6 +160,7 @@ lecons:
       - dialogue:
           - zero: "Un robot ! Je veux dessiner un robot qui me ressemble !"
           - mia: "Facile : un cercle pour la tête, un rectangle pour le corps, des traits pour les bras et les jambes."
+      - a_quoi_ca_sert: "Construire avec des formes est la technique des dessinateurs de BD et de dessins animés pour dessiner vite et toujours pareil."
       - dessin:
           titre: Le petit robot
           etapes:
@@ -157,6 +179,9 @@ lecons:
             - consigne: "Colorie ton robot avec tes couleurs préférées !"
               couche: couleur
               trace: ""
+      - astuce:
+          texte: "Une tête ronde, un corps ovale, des bras et des jambes en bâtons : tu as ton personnage ! Ajoute les détails seulement à la fin."
+          qui: zero
       - retiens: "Un personnage = des formes simples assemblées : cercle, rectangle, traits. Puis les détails et la couleur."
     exercices:
       - type: ordre
@@ -180,6 +205,9 @@ lecons:
     objectif: Je dessine le contour d'un objet réel en l'observant.
     mots: [contour, observation, modèle]
     etapes:
+      - dialogue:
+          - zero: "Je dessine ma tasse de mémoire, mais elle est bizarre."
+          - mia: "Regarde-la vraiment pendant que tu dessines. Observer, c'est la moitié du dessin."
       - texte: |
           Le **dessin d'observation** : on dessine **ce qu'on voit**, pas ce qu'on croit savoir.
           1. Pose un objet simple devant toi (une tasse, une pomme, une chaussure).
@@ -201,6 +229,9 @@ lecons:
               trace: "M33 75 Q50 83 67 75"
             - consigne: "Ajoute l'anse sur le côté."
               trace: "M69 40 C84 40 84 62 68 62"
+      - astuce:
+          texte: "Regarde l'objet beaucoup plus que ta feuille : tes yeux suivent le bord de l'objet, et ton crayon suit tes yeux."
+          qui: mia
       - retiens: "Dessin d'observation : regarder longtemps, trouver la forme générale, suivre le contour, regarder l'objet plus que la feuille."
     exercices:
       - type: qcm
