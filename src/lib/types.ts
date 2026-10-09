@@ -334,4 +334,7 @@ export interface Settings {
   sonsVisibles?: boolean; // chaque son est aussi dessiné (enfants sourds ou malentendants)
   lastBackup: number; // date de la dernière sauvegarde téléchargée (ms), 0 = jamais
   theme: "clair" | "sombre" | "auto";
+  /** habillage : auto (selon l'âge), enchantée (petits), épurée (plus grands), calme (sans animation) */
+  ambiance?: "auto" | "enchantee" | "epuree" | "calme";
+
 }

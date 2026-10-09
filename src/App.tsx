@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useRoute, go } from "./lib/router";
 import { useStore, useChild, setState, tickMinute, minutesToday } from "./lib/store";
 import { useContent } from "./lib/content";
@@ -7,6 +7,8 @@ import { levelOf } from "./lib/rewards";
 import { stopSpeaking } from "./lib/tts";
 import { setMusicKey, startMusic, stopMusic } from "./lib/music";
 import { Mascot } from "./components/Mascot";
+import { Ambiance } from "./components/Ambiance";
+import { couleursRendues, planeteAffichee, styleEffectif } from "./lib/ambiance";
 import { Confetti } from "./components/Confetti";
 import { Accueil, NouvelEnfant } from "./pages/Accueil";
 import { Carte } from "./pages/Carte";
@@ -98,6 +100,41 @@ export default function App() {
     document.addEventListener("visibilitychange", vis);
     return () => document.removeEventListener("visibilitychange", vis);
   }, [settings.music, child?.id, route.parts[1]]);
+
+  // Habillage : planète affichée, style d'ambiance, part des couleurs rendues (le gris du Grand Neutre recule).
+  const planete = planeteAffichee(route.parts, child, content.worlds);
+  const ambiance = styleEffectif(settings, child);
+  const couleurs = couleursRendues(child, content.worlds, planete);
+  const couleurPlanete = content.manifest?.planetes?.find((x) => x.id === planete)?.couleur;
+  useEffect(() => {
+    const r = document.documentElement;
+    r.dataset.planete = planete;
+    r.dataset.ambiance = ambiance;
+    r.style.setProperty("--couleurs", couleurs.toFixed(3));
+    // ciel illustré de la Galaxie (chemin relatif au document : fonctionne aussi sous GitHub Pages)
+    r.style.setProperty("--ciel", "url(img/fonds/ciel.webp)");
+
+    if (couleurPlanete) r.style.setProperty("--pl", couleurPlanete);
+    else r.style.removeProperty("--pl");
+  }, [planete, ambiance, couleurs, couleurPlanete]);
+  // Le moment où des couleurs reviennent (leçon réussie) : une vague arc-en-ciel sur la planète.
+  const [vague, setVague] = useState(0);
+  const avant = useRef<{ planete: string; c: number } | null>(null);
+  useEffect(() => {
+    const a = avant.current;
+    avant.current = { planete, c: couleurs };
+    if (a && a.planete === planete && couleurs > a.c + 1e-6 && ambiance !== "calme") {
+      setVague(Date.now());
+      const t = window.setTimeout(() => setVague(0), 2600);
+      return () => clearTimeout(t);
+    }
+  }, [couleurs, planete, ambiance]);
+  useEffect(() => {
+    const vis = () => (document.documentElement.dataset.cache
+ = document.visibilityState === "hidden" ? "1" : "");
+    document.addEventListener("visibilitychange", vis);
+    return () => document.removeEventListener("visibilitychange", vis);
+  }, []);
 
   // Changement de page : on arrête la voix et on remonte en haut.
   useEffect(() => {
@@ -235,6 +272,10 @@ export default function App() {
 
   return (
     <div className={`app ${immersive ? "immersive" : ""}`}>
+      <Ambiance planete={planete} style={ambiance} />
+      {vague > 0 && <div key={vague} className="vague-couleurs" aria-hidden />}
+
+
       {pwa.updateReady && (
         <div className="update-banner">
           ✨ Une nouvelle version du Royaume est prête !

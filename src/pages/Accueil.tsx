@@ -17,7 +17,7 @@ export function Accueil() {
             <Mascot who="neo" size={130} talking />
           </div>
           <h1>La Galaxie des Savoirs</h1>
-          <p className="lead">Maths, français, sciences, musique et dessin : apprends en t'amusant, de 7 ans jusqu'au niveau des grands !</p>
+          <p className="lead">Maths, français, anglais, sciences, musique et dessin : apprends en t'amusant, de 7 ans jusqu'au niveau des grands !</p>
         </div>
         <Bubble who="neo" text="Salut ! Je suis Néo Fibo. Un problème ? Défi accepté !" />
         <Bubble who="mia" text="Moi c'est Lya π. Et si on essayait autrement ? Viens, on va explorer la Galaxie ensemble : chaque planète est un savoir !" side="right" />

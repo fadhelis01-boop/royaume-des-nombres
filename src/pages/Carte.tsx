@@ -7,6 +7,8 @@ import { CarteRoyaume } from "../components/CarteRoyaume";
 import { Recap } from "../components/Seance";
 import { Quetes } from "../components/Quetes";
 import { SurpriseDuJour } from "../components/SurpriseDuJour";
+import { JaugeCouleurs } from "../components/JaugeCouleurs";
+
 import type { World } from "../lib/types";
 import { visuel } from "../lib/img";
 
@@ -65,6 +67,7 @@ export function Carte() {
         <span className="pb-go">🌌 Changer de planète</span>
       </button>
       <Recap />
+      {planete && <JaugeCouleurs planete={planete.id} />}
       <Bubble who={child.avatar} text={nouvelle ? `Bienvenue sur ${(planete?.titre ?? "").replace(/^(Le|La|Les|L')/, (m) => m.toLowerCase())} ! Avant tout, écoute l'histoire : elle explique ce qui arrive à cette planète.` : greet} />
 
       {/* Une seule action principale (audit 2.1) ; le reste est rangé sous « Plus d'activités ». */}

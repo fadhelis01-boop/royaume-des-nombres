@@ -234,3 +234,10 @@ Un exercice défectueux est refusé avec un message précis.
 - `_jeux.yaml` : les familles du Calcul éclair (exercices de type `nombre`).
 - `_diagnostic.yaml` : le test de positionnement (2 questions par monde).
 - `_changelog.yaml` : le journal des nouveautés (la 1ʳᵉ entrée donne le numéro de version).
+
+## 7. Habillage (2.5)
+
+- Chaque planète a son ciel et ses motifs d'ambiance : `src/components/Ambiance.tsx` (motifs) et `src/styles/ambiance.css` (couleurs, `[data-planete="<id>"]`). Une nouvelle planète sans entrée garde le ciel par défaut ; sa couleur (`couleur` dans `_planetes.yaml`) colore boutons, titres et marque-pages.
+- Le gris du Grand Neutre suit la progression : variable CSS `--couleurs` (0 à 1 = part des leçons réussies de la planète) et `--sat` (saturation des décors et des motifs).
+- Styles : `data-ambiance="enchantee | epuree | calme"` sur `<html>` (réglage parents « Ambiance visuelle », automatique selon l'âge, toujours « calme » si l'appareil demande moins d'animations).
+- Illustrations : médaillon de planète `public/img/planetes/<id>.webp` (disque 256 px), décor de monde `public/img/decors/<id>.webp` (1400 px de large), ciel de la Galaxie `public/img/fonds/ciel.webp`. Pipeline : `C:\IA\workflows\rdn\` (ComfyUI, `habillage.py`).

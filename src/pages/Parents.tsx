@@ -505,6 +505,16 @@ function Reglages() {
             <option value="sombre">Sombre</option>
           </select>
         </label>
+        <label>
+          Ambiance visuelle :{" "}
+          <select value={s.ambiance ?? "auto"} onChange={(e) => updateSettings({ ambiance: e.target.value as NonNullable<typeof s.ambiance> })}>
+            <option value="auto">Automatique (enchantée jusqu'à 11 ans, épurée ensuite)</option>
+            <option value="enchantee">Enchantée : décors vivants, mascottes animées</option>
+            <option value="epuree">Épurée : plus sobre, pour les plus grands</option>
+            <option value="calme">Calme : aucune animation</option>
+          </select>
+        </label>
+
       </section>
       <section className="card">
         <h3>⏱ Temps d'écran</h3>

@@ -6,6 +6,7 @@ import "@fontsource/andika/700.css";
 import "@fontsource/opendyslexic/400.css";
 import "katex/dist/katex.min.css";
 import "./styles/app.css";
+import "./styles/ambiance.css";
 import App from "./App";
 import { loadState, onPersist } from "./lib/store";
 import { apresEnregistrement, reprendreSynchro } from "./lib/sauvegarde";

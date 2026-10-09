@@ -45,7 +45,7 @@ export function StoryScene({
   }, [k]);
   return (
     <div className="story" style={{ "--wc": couleur ?? "var(--c-violet)" } as React.CSSProperties}>
-      <div className="story-head" style={decor ? { backgroundImage: `url(${decor})` } : undefined}>
+      <div className={`story-head ${decor ? "avec-decor" : ""}`} style={decor ? ({ "--decor": `url(${decor})` } as React.CSSProperties) : undefined}>
         <div className="story-head-in">
           <span className="story-book">📖</span>
           {titre && <h2>{titre}</h2>}

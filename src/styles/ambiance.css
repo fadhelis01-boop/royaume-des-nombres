@@ -1,0 +1,331 @@
+/* ==========================================================
+   Habillage 2.5 : « la Galaxie des Savoirs, un livre d'aventure »
+   - un ciel et une vie ambiante par planète (data-planete sur <html>)
+   - le gris du Grand Neutre recule quand l'enfant apprend (--couleurs : 0 → 1)
+   - trois styles : enchantée (petits), épurée (plus grands), calme (sans animation)
+   Règles : le texte reste toujours sur un fond uni (contraste), les animations ne
+   touchent que transform/opacity, aucune ne clignote vite (pas plus d'1 cycle/s).
+   ========================================================== */
+
+:root {
+  --couleurs: 0.5;
+  --pl: #7c4dff;
+  /* couleur de planète assombrie : lisible en texte blanc (boutons) et en titre */
+  --pl-fonce: color-mix(in srgb, var(--pl) 68%, #1a1030);
+  --pl-clair: color-mix(in srgb, var(--pl) 14%, var(--paper));
+  --sat: calc(0.3 + 0.7 * var(--couleurs));
+  --fond-haut: #fff8ec;
+  --fond-bas: #fff1d9;
+  --amb: #7c4dff;
+}
+
+/* ---------- Ciels de chaque planète (clair) ---------- */
+:root[data-planete="maths"] { --fond-haut: #fff6e0; --fond-bas: #f3e8ff; --amb: #8a5cf6; }
+:root[data-planete="francais"] { --fond-haut: #fdf0f5; --fond-bas: #e7eeff; --amb: #2b4aa8; }
+:root[data-planete="chimie"] { --fond-haut: #e9fbf4; --fond-bas: #f6eaff; --amb: #13a08f; }
+:root[data-planete="physique"] { --fond-haut: #fff4e3; --fond-bas: #e8f1ff; --amb: #e07a12; }
+:root[data-planete="biologie"] { --fond-haut: #f0fae6; --fond-bas: #fff6dd; --amb: #3f8f3a; }
+:root[data-planete="univers"] { --fond-haut: #eaf0ff; --fond-bas: #d9dcff; --amb: #4b55c9; }
+:root[data-planete="musique"] { --fond-haut: #fff2e6; --fond-bas: #ffe9f1; --amb: #d0601a; }
+:root[data-planete="dessin"] { --fond-haut: #fffaf0; --fond-bas: #f0f6ff; --amb: #c43c7a; }
+:root[data-planete="anglais"] { --fond-haut: #eaf6ff; --fond-bas: #fff3e6; --amb: #1e6fb8; }
+:root[data-planete="neutre"] { --fond-haut: #fbf9f4; --fond-bas: #f3f0e8; }
+
+body {
+  background-color: var(--fond-haut);
+  background-image: linear-gradient(180deg, var(--fond-haut) 0%, var(--fond-bas) 100%);
+  background-attachment: fixed;
+}
+
+/* ---------- Ciels (sombre) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]) { --fond-haut: #17132a; --fond-bas: #221a40; }
+  :root:not([data-theme="clair"])[data-planete="francais"] { --fond-bas: #14224a; }
+  :root:not([data-theme="clair"])[data-planete="chimie"] { --fond-bas: #0f3330; }
+  :root:not([data-theme="clair"])[data-planete="biologie"] { --fond-bas: #15301a; }
+  :root:not([data-theme="clair"])[data-planete="univers"] { --fond-bas: #0d1440; }
+  :root:not([data-theme="clair"])[data-planete="musique"] { --fond-bas: #3a1a14; }
+  :root:not([data-theme="clair"])[data-planete="anglais"] { --fond-bas: #0f2a44; }
+  :root:not([data-theme="clair"]) { --pl-fonce: color-mix(in srgb, var(--pl) 55%, #ffffff); }
+}
+:root[data-theme="sombre"] { --fond-haut: #17132a; --fond-bas: #221a40; --pl-fonce: color-mix(in srgb, var(--pl) 55%, #ffffff); }
+
+/* ---------- La Galaxie : toujours la nuit étoilée ---------- */
+:root[data-planete="galaxie"] {
+  --fond-haut: #120e2e;
+  --fond-bas: #2a1b5c;
+}
+:root[data-planete="galaxie"] body {
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(255, 92, 138, 0.22), transparent 45%),
+    radial-gradient(ellipse at 85% 35%, rgba(20, 184, 166, 0.2), transparent 45%),
+    radial-gradient(ellipse at 50% 90%, rgba(124, 77, 255, 0.35), transparent 55%),
+    linear-gradient(180deg, rgba(18, 14, 46, 0.62), rgba(18, 14, 46, 0.4)),
+    var(--ciel, none),
+    linear-gradient(180deg, var(--fond-haut), var(--fond-bas));
+  background-size: auto, auto, auto, auto, cover, auto;
+  background-position: center;
+  color-scheme: dark;
+}
+:root[data-planete="galaxie"] .page.galaxie > h1,
+:root[data-planete="galaxie"] .famille-titre,
+:root[data-planete="galaxie"] .famille-titre small {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+:root[data-planete="galaxie"] .famille-titre small { color: #d9d2ff; }
+:root[data-planete="galaxie"] .planete-card {
+  background: rgba(24, 18, 58, 0.88);
+  color: #fff;
+  border-color: color-mix(in srgb, var(--pc) 70%, #fff);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 26px color-mix(in srgb, var(--pc) 35%, transparent);
+}
+:root[data-planete="galaxie"] .planete-card small,
+:root[data-planete="galaxie"] .planete-card .pc-prog { color: #e4defc; }
+:root[data-planete="galaxie"] .planete-card .pc-matiere { color: color-mix(in srgb, var(--pc) 45%, #fff); }
+:root[data-planete="galaxie"] .planete-card.on { background: rgba(40, 28, 92, 0.92); }
+:root[data-planete="galaxie"] .topbar { background: rgba(18, 14, 46, 0.86); color: #fff; border-color: rgba(255, 255, 255, 0.12); }
+:root[data-planete="galaxie"] .topbar .tb-name,
+:root[data-planete="galaxie"] .topbar .tb-stat { color: #fff; }
+/* l'accueil (avant le profil) est lui aussi dans la Galaxie : le texte garde un fond de page */
+:root[data-planete="galaxie"] .page.accueil { background: rgba(255, 248, 236, 0.94); border-radius: 28px; padding: 16px; margin-top: 10px; color: #2b2140; }
+:root[data-planete="galaxie"][data-theme="sombre"] .page.accueil { background: rgba(38, 32, 70, 0.95); color: #f3efff; }
+@media (prefers-color-scheme: dark) {
+  :root[data-planete="galaxie"]:not([data-theme="clair"]) .page.accueil { background: rgba(38, 32, 70, 0.95); color: #f3efff; }
+}
+
+/* les planètes flottent, entourées d'une orbite */
+.pc-astre { position: relative; }
+.pc-astre::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 2px dashed color-mix(in srgb, var(--pc) 60%, #fff);
+  opacity: 0.7;
+}
+:root[data-ambiance="enchantee"] .pc-astre { animation: planete-flotte 6s ease-in-out infinite; }
+:root[data-ambiance="enchantee"] .pc-astre::after { animation: orbite 24s linear infinite; }
+:root[data-ambiance="enchantee"] .planete-card:nth-child(2n) .pc-astre { animation-delay: -2s; }
+:root[data-ambiance="enchantee"] .planete-card:nth-child(3n) .pc-astre { animation-delay: -4s; }
+.planete-card.on .pc-astre { box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.15), 0 0 0 6px color-mix(in srgb, var(--pc) 35%, transparent), 0 0 30px color-mix(in srgb, var(--pc) 70%, transparent); }
+@keyframes planete-flotte { 50% { transform: translateY(-6px) rotate(3deg); } }
+@keyframes orbite { to { transform: rotate(360deg); } }
+
+/* ---------- Calque d'ambiance ---------- */
+.ambiance {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* au-dessus du fond du body, sous tout le contenu */
+  pointer-events: none;
+  overflow: hidden;
+  color: var(--amb);
+}
+.amb-el {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  opacity: 0.32;
+  filter: saturate(var(--sat));
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.amb-el svg { width: 100%; height: 100%; overflow: visible; }
+.amb-glyphe { font: 700 1em/1 var(--title); color: var(--amb); }
+:root[data-planete="maths"] .amb-glyphe { color: #c08a12; }
+:root[data-planete="maths"] .amb-el:nth-child(2n) .amb-glyphe { color: #8a5cf6; }
+:root[data-planete="galaxie"] .amb-el { opacity: 0.85; filter: none; }
+
+.amb-flotte .amb-el { animation-name: amb-flotte; }
+.amb-monte .amb-el { top: auto !important; bottom: -12%; animation-name: amb-monte; animation-timing-function: linear; }
+.amb-tombe .amb-el { top: -12% !important; animation-name: amb-tombe; animation-timing-function: linear; }
+.amb-scintille .amb-el { animation-name: amb-scintille; }
+@keyframes amb-flotte {
+  0%, 100% { transform: translate(0, 0) rotate(-8deg); }
+  50% { transform: translate(var(--derive), -28px) rotate(10deg); }
+}
+@keyframes amb-monte {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 0.35; }
+  50% { transform: translate(var(--derive), -60vh); }
+  90% { opacity: 0.3; }
+  100% { transform: translate(0, -120vh); opacity: 0; }
+}
+@keyframes amb-tombe {
+  0% { transform: translate(0, 0) rotate(0); opacity: 0; }
+  10% { opacity: 0.4; }
+  50% { transform: translate(var(--derive), 60vh) rotate(160deg); }
+  90% { opacity: 0.35; }
+  100% { transform: translate(0, 125vh) rotate(320deg); opacity: 0; }
+}
+@keyframes amb-scintille {
+  0%, 100% { transform: scale(0.75) rotate(0); opacity: 0.25; }
+  50% { transform: scale(1.1) rotate(25deg); opacity: 0.9; }
+}
+:root:not([data-planete="galaxie"]) .amb-scintille .amb-el { opacity: 0.45; }
+
+/* le brouillard du Grand Neutre : il s'efface quand les couleurs reviennent */
+.brouillard { position: absolute; inset: 0; opacity: calc((1 - var(--couleurs)) * 0.75); transition: opacity 1.5s; }
+.brouillard i {
+  position: absolute;
+  width: 70vmax;
+  height: 40vmax;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(150, 146, 160, 0.38), rgba(150, 146, 160, 0));
+}
+.brouillard i:nth-child(1) { left: -25vmax; bottom: -18vmax; }
+.brouillard i:nth-child(2) { right: -30vmax; top: 20vh; }
+.brouillard i:nth-child(3) { left: 20vw; bottom: -26vmax; }
+:root[data-ambiance="enchantee"] .brouillard i { animation: brume 40s ease-in-out infinite alternate; }
+:root[data-ambiance="enchantee"] .brouillard i:nth-child(2) { animation-duration: 55s; }
+@keyframes brume { to { transform: translateX(8vw) scale(1.1); } }
+
+/* plus grands : moins d'éléments, plus discrets ; calme : immobiles */
+:root[data-ambiance="epuree"] .amb-el { opacity: 0.18; }
+:root[data-ambiance="calme"] .amb-el,
+:root[data-ambiance="calme"] .brouillard i { animation: none !important; }
+:root[data-ambiance="calme"] .amb-monte .amb-el,
+:root[data-ambiance="calme"] .amb-tombe .amb-el { top: auto !important; bottom: auto; }
+:root[data-ambiance="calme"] .amb-el { opacity: 0.16; }
+:root[data-cache="1"] .ambiance * { animation-play-state: paused !important; }
+@media (max-width: 520px) { .ambiance .amb-el:nth-child(n + 13) { display: none; } }
+
+/* ---------- Pages : le livre d'aventure ---------- */
+.page > h1:first-child,
+.page > h1 {
+  color: var(--pl-fonce);
+}
+:root[data-planete="galaxie"] .page > h1 { color: #fff; }
+:root[data-ambiance="enchantee"] .page > h1:not(.lecon-title)::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 10px;
+  margin-top: 4px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10'%3E%3Cpath d='M2 6 Q 17 0 32 6 T 62 6 T 92 6 T 118 5' fill='none' stroke='%23ffcf33' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
+}
+
+/* cartes : une page de carnet, bordée à la couleur de la planète */
+.card {
+  border-color: color-mix(in srgb, var(--pl) 22%, var(--line));
+}
+:root[data-ambiance="enchantee"] .card { border-radius: 24px 20px 26px 18px / 20px 26px 18px 24px; }
+
+/* la page de leçon : un carnet avec un marque-page */
+.step-card { position: relative; border-color: color-mix(in srgb, var(--pl) 30%, var(--line)); }
+.step-card::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 22px;
+  width: 18px;
+  height: 34px;
+  background: var(--pl);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+:root[data-ambiance="enchantee"] .step-card { outline: 2px dashed color-mix(in srgb, var(--pl) 22%, transparent); outline-offset: -9px; }
+
+/* bandeau du monde : le décor reprend ses couleurs avec la progression */
+.lecon-title.avec-decor { background: #2b2140; isolation: isolate; }
+.lecon-title.avec-decor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--decor) center / cover no-repeat;
+  filter: saturate(var(--sat));
+  transition: filter 1.2s;
+}
+.lecon-title.avec-decor::before { z-index: 0; }
+.lecon-title.avec-decor > span { z-index: 1; }
+:root[data-ambiance="enchantee"] .lecon-title.avec-decor::after { animation: ken-burns 30s ease-in-out infinite alternate; }
+@keyframes ken-burns { to { transform: scale(1.12) translate(-2%, 1%); } }
+
+/* boutons : à la couleur de la planète, avec un « clic » qui s'enfonce */
+.btn-primary {
+  background: var(--pl-fonce);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--pl-fonce) 60%, #000);
+}
+:root[data-theme="sombre"] .btn-primary,
+:root[data-planete="neutre"] .btn-primary { background: var(--c-violet-d); box-shadow: 0 4px 0 #3b1a9c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]) .btn-primary { background: var(--c-violet-d); box-shadow: 0 4px 0 #3b1a9c; }
+}
+.btn:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+/* barre du bas : la pastille active prend la couleur de la planète et sautille */
+.bottomnav { background: color-mix(in srgb, var(--paper) 92%, var(--pl)); }
+.bottomnav button.active { background: var(--pl-clair); color: var(--pl-fonce); }
+:root[data-ambiance="enchantee"] .bottomnav button.active .bn-icon { animation: hop 0.5s ease-out; }
+@keyframes hop { 40% { transform: translateY(-6px) scale(1.15); } }
+
+/* les mascottes respirent (doucement, chacune à son rythme) */
+:root[data-ambiance="enchantee"] .mascot:not(.talking) { animation: respire 4.5s ease-in-out infinite; transform-origin: 50% 100%; }
+:root[data-ambiance="enchantee"] .bubble:nth-of-type(2n) .mascot:not(.talking) { animation-delay: -1.5s; animation-duration: 5.2s; }
+:root[data-ambiance="enchantee"] .bubble:nth-of-type(3n) .mascot:not(.talking) { animation-delay: -3s; }
+@keyframes respire { 50% { transform: translateY(-2px) scaleY(1.03) scaleX(0.985); } }
+
+/* entrée des pages : un petit glissement (déjà présent), plus marqué en mode enchanté */
+:root[data-ambiance="enchantee"] .page { animation: page-entre 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2); }
+@keyframes page-entre { from { opacity: 0; transform: translateY(14px) scale(0.99); } }
+
+/* ---------- La jauge des couleurs (Carte) ---------- */
+.jauge-couleurs { display: flex; align-items: center; gap: 12px; padding: 10px 14px; margin: 10px 0; border-radius: 20px; background: var(--paper); border: 2px solid color-mix(in srgb, var(--pl) 25%, var(--line)); box-shadow: var(--shadow); }
+.jauge-couleurs .neutre-img { width: 56px; height: 56px; flex: none; opacity: calc(1 - var(--couleurs) * 0.85); transform: scale(calc(1 - var(--couleurs) * 0.35)); transition: opacity 1s, transform 1s; }
+.jauge-couleurs .jc-txt { flex: 1; min-width: 0; }
+.jauge-couleurs .jc-barre { position: relative; height: 14px; border-radius: 99px; background: linear-gradient(90deg, #b9b5c4, #d8d5df); overflow: hidden; margin-top: 4px; }
+.jauge-couleurs .jc-barre i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: linear-gradient(90deg, #ff5c8a, #ff8a1f, #ffcf33, #3fa34d, #14b8a6, #2f6fdf, #7c4dff); }
+:root[data-ambiance="enchantee"] .jauge-couleurs .jc-barre i::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%); animation: reflet 3s ease-in-out infinite; }
+@keyframes reflet { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+
+/* ---------- Le combat du Gardien : un peu de dramatique ---------- */
+:root[data-ambiance="enchantee"] .page.gardien,
+.gardien-page { position: relative; }
+
+/* ---------- Impression : pas de décor ---------- */
+@media print {
+  .ambiance { display: none !important; }
+  body { background: #fff !important; }
+}
+
+/* écran de chargement : sous le ciel étoilé, le texte passe en clair */
+:root[data-planete="galaxie"] .splash p { color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+:root[data-planete="galaxie"] .bottomnav { background: rgba(18, 14, 46, 0.92); border-top-color: rgba(255, 255, 255, 0.12); }
+:root[data-planete="galaxie"] .bottomnav button { color: #cfc8f5; }
+:root[data-planete="galaxie"] .bottomnav button.active { background: rgba(124, 77, 255, 0.35); color: #fff; }
+
+/* une leçon réussie rend des couleurs : une vague arc-en-ciel part du centre (une seule fois, 2,5 s) */
+.vague-couleurs {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  z-index: 60;
+  pointer-events: none;
+  background: conic-gradient(#ff5c8a, #ff8a1f, #ffcf33, #3fa34d, #14b8a6, #2f6fdf, #7c4dff, #ff5c8a);
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 60%, #000 70%, transparent 72%);
+  mask: radial-gradient(circle, transparent 58%, #000 60%, #000 70%, transparent 72%);
+  animation: vague 2.4s ease-out forwards;
+}
+@keyframes vague {
+  0% { transform: scale(0.2); opacity: 0.9; }
+  100% { transform: scale(40); opacity: 0; }
+}
+.amb-flotte .amb-el { opacity: 0.38; }
+
+/* couverture de chapitre : le décor du monde est gris tant que la planète n'a pas retrouvé ses couleurs */
+.story-head.avec-decor { position: relative; isolation: isolate; background: #2b2140; }
+.story-head.avec-decor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--decor) center / cover no-repeat;
+  filter: saturate(var(--sat));
+  transition: filter 1.2s;
+}

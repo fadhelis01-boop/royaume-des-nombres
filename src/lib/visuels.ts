@@ -274,6 +274,7 @@ export const VISUELS: Record<string, string[]> = {
   "neutre-triste"
  ],
  "planetes": [
+  "anglais",
   "biologie",
   "chimie",
   "dessin",

@@ -219,6 +219,8 @@ export function HorsConnexion() {
     const urls = [
       ...Object.entries(VISUELS).flatMap(([cat, ids]) => ids.map((id) => `img/${cat}/${id}.webp`)),
       ...worlds.map((w) => w.decor).filter((d): d is string => !!d),
+      "img/fonds/ciel.webp",
+
     ];
     let n = 0;
     for (const u of [...new Set(urls)]) {
