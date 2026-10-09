@@ -1,0 +1,18 @@
+# Domaines de chaque planète : le test de niveau et le parcours personnalisé travaillent domaine par domaine.
+# Une planète absente de ce fichier forme un seul domaine (tous ses mondes, hors « astuces »).
+# Chaque monde d'une planète listée doit appartenir à un domaine (sinon avertissement au build).
+maths:
+  - { id: nombres, titre: "Les nombres", emoji: "🔢", mondes: [nid-des-nombres, foret-des-nombres, port-des-decimaux, royaume-des-relatifs, tour-des-puissances, palais-de-l-arithmetique] }
+  - { id: calcul, titre: "Le calcul", emoji: "➕", mondes: [prairie-des-additions, montagne-des-multiplications, riviere-du-partage] }
+  - { id: fractions, titre: "Fractions et proportions", emoji: "🍕", mondes: [village-des-fractions, tour-des-proportions] }
+  - { id: problemes, titre: "Problèmes et logique", emoji: "🧩", mondes: [atelier-des-problemes, jardin-de-fibonacci, temple-de-la-logique] }
+  - { id: geometrie, titre: "La géométrie", emoji: "📐", mondes: [cite-des-formes, chateau-de-la-geometrie, archipel-des-vecteurs] }
+  - { id: mesures, titre: "Les mesures", emoji: "📏", mondes: [marche-des-mesures] }
+  - { id: donnees, titre: "Données et hasard", emoji: "📊", mondes: [observatoire-des-donnees, fete-foraine-des-probabilites] }
+  - { id: algebre, titre: "Algèbre et fonctions", emoji: "🔤", mondes: [grotte-de-l-algebre, labyrinthe-des-fonctions, volcan-du-second-degre, jardin-des-suites, vallee-des-derivees, monts-exponentiels, mer-des-integrales, ile-des-complexes, pont-des-matrices] }
+francais:
+  - { id: lecture, titre: "Lire et comprendre", emoji: "📖", mondes: [fr-ile-des-sons, fr-bibliotheque-des-textes, fr-temple-de-la-poesie, fr-observatoire-du-style] }
+  - { id: grammaire, titre: "La grammaire", emoji: "🧱", mondes: [fr-foret-des-noms, fr-cite-de-la-ponctuation, fr-port-des-phrases, fr-archipel-des-propositions] }
+  - { id: conjugaison, titre: "La conjugaison", emoji: "⏳", mondes: [fr-vallee-des-verbes, fr-montagnes-du-temps, fr-tour-des-conjugaisons] }
+  - { id: orthographe, titre: "L'orthographe", emoji: "✍️", mondes: [fr-prairie-des-accords, fr-marais-des-homophones, fr-chateau-des-participes, fr-palais-de-l-orthographe] }
+  - { id: vocabulaire, titre: "Vocabulaire et écriture", emoji: "🌳", mondes: [fr-jardin-des-mots, fr-atelier-de-l-ecrivain, fr-academie-des-lettres] }

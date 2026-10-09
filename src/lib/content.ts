@@ -154,7 +154,16 @@ export function objetLabel(p: Planete | undefined, n: number) {
 
 /** Prochaine leçon conseillée : la première non terminée d'un monde débloqué (du royaume choisi). */
 export function nextLesson(c: Child | null, s: Settings, mat: Matiere = matiereDe(c)) {
+  // un parcours personnalisé existe (carte des talents) : on suit ses étapes
+  const etape = c?.parcours?.[mat]?.etapes.find((e) => !c.progress[e.key]?.done);
+  if (etape) {
+    const [wid, lid] = etape.key.split("/");
+    const w = st.worlds.find((x) => x.id === wid);
+    const idx = w?.lecons.findIndex((l) => l.id === lid) ?? -1;
+    if (w && idx >= 0) return { world: w, lesson: w.lecons[idx], idx, parcours: true };
+  }
   for (const w of st.worlds) {
+
     if (w.matiere !== mat) continue;
     if (w.cycle === "astuces" || !worldUnlocked(c, w, st.worlds, s)) continue;
     const idx = w.lecons.findIndex((l) => !c?.progress[lessonKey(w, l.id)]?.done);

@@ -4,6 +4,9 @@ import { useState } from "react";
 import { lessonKey, planeteDe, useContent } from "../lib/content";
 import { getState, updateSettings, useStore } from "../lib/store";
 import type { Child, World } from "../lib/types";
+import { domainesDe } from "../lib/parcours";
+import { CarteTalents } from "../components/CarteTalents";
+
 
 export function Confidentialite() {
   return (
@@ -94,7 +97,9 @@ export function Bilans({ children }: { children: Child[] }) {
             );
           })}
           {!Object.keys(child.progress).length && <p>Aucune leçon commencée pour l'instant.</p>}
+          <BilanParcours child={child} />
           <BilanFluence child={child} />
+
           <BilanAutrement child={child} />
         </section>
       )}
@@ -428,5 +433,44 @@ function VueGroupe({ children, worlds }: { children: Child[]; worlds: World[] })
         </table>
       </div>
     </section>
+  );
+}
+
+/** Niveaux par domaine (carte des talents) et avancement du parcours personnalisé, planète par planète. */
+function BilanParcours({ child }: { child: Child }) {
+  const { worlds, manifest } = useContent();
+  const entrees = Object.entries(child.parcours ?? {});
+  if (!entrees.length) return null;
+  return (
+    <div className="bilan-planete">
+      <h3>🗺️ Niveaux par domaine et parcours personnalisé</h3>
+      <p className="small">Niveaux estimés par la « carte des talents » (test adaptatif : 3 questions par domaine, qui montent après une réussite et descendent après une erreur), puis mis à jour à chaque « point ». Le trait marque le niveau habituel pour l'âge.</p>
+      {entrees.map(([mat, p]) => {
+        const doms = domainesDe(mat, worlds, manifest?.domaines?.[mat]);
+        const faites = p.etapes.filter((e) => child.progress[e.key]?.done).length;
+        return (
+          <div key={mat} className="stack">
+            <h4>
+              {planeteDe(manifest, mat)?.emoji} {planeteDe(manifest, mat)?.matiere} · évalué le {new Date(p.at).toLocaleDateString("fr-FR")} · parcours : {faites} / {p.etapes.length} étapes
+            </h4>
+            <CarteTalents doms={doms} niveaux={p.niveaux} age={child.age} compact />
+            <ul className="small">
+              {p.etapes
+                .filter((e) => !child.progress[e.key]?.done)
+                .slice(0, 5)
+                .map((e) => {
+                  const [wid, lid] = e.key.split("/");
+                  const w = worlds.find((x) => x.id === wid);
+                  return (
+                    <li key={e.key}>
+                      {w?.lecons.find((l) => l.id === lid)?.objectif} <small className="muted">({doms.find((d) => d.id === e.dom)?.titre})</small>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
   );
 }

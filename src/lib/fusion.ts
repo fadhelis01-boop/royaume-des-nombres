@@ -8,7 +8,7 @@ type Obj = Record<string, unknown>;
 const isObj = (x: unknown): x is Obj => !!x && typeof x === "object" && !Array.isArray(x);
 
 /** Champs pris en entier dans la version la plus récente (choix, pas des avancées). */
-const RECENT = new Set(["name", "avatar", "age", "equipped", "cabane", "lecteur", "matiere", "daily", "quetes", "diag", "derniere"]);
+const RECENT = new Set(["name", "avatar", "age", "equipped", "cabane", "lecteur", "matiere", "daily", "quetes", "diag", "derniere", "parcours", "surprise"]);
 /** Listes d'événements datés : réunies, dédoublonnées, les plus récents d'abord, avec une limite. */
 const JOURNAUX: Record<string, { cle: (e: Obj) => string; temps: (e: Obj) => number; max: number }> = {
   mistakes: { cle: (e) => `${e.at}|${e.q}`, temps: (e) => Number(e.at), max: 60 },

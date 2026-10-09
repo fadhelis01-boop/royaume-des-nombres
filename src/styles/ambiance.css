@@ -560,3 +560,44 @@ body {
    extérieur, posé par-dessus, masquait les planètes de l'anneau intérieur) */
 .anneau, .coeur { pointer-events: none; }
 .orb-planete { pointer-events: auto; }
+
+/* ==========================================================
+   Carte des talents et parcours personnalisé (2.7)
+   ========================================================== */
+.talents-iles { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 12px 0; }
+.talents-iles .ile { padding: 6px 12px; border-radius: 99px; background: var(--paper); border: 2px solid color-mix(in srgb, var(--pl) 30%, var(--line)); font-weight: 600; }
+.talents-iles.mini { flex: 1; margin: 0; gap: 4px; }
+.talents-iles.mini .ile { padding: 2px 6px; font-size: 1.1rem; opacity: 0.45; filter: grayscale(1); border-width: 2px; }
+.talents-iles.mini .ile.faite { opacity: 1; filter: none; border-color: var(--ok); }
+.talents-iles.mini .ile.en-cours { opacity: 1; filter: none; border-color: var(--pl); transform: scale(1.15); }
+
+.talents { display: grid; gap: 10px; margin: 12px 0; }
+.talent { display: grid; grid-template-columns: minmax(130px, 1fr) 2fr; gap: 4px 12px; align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 10px 12px; }
+.talent .t-nom { font-weight: 700; }
+.talent .t-barre { position: relative; height: 14px; border-radius: 99px; background: var(--grid); overflow: visible; }
+.talent .t-barre i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: linear-gradient(90deg, var(--c-turquoise), var(--pl)); }
+.talent.avance .t-barre i { background: linear-gradient(90deg, var(--c-turquoise), #ffcf33); }
+.talent.defi .t-barre i { background: linear-gradient(90deg, #ffb84a, var(--c-orange)); }
+.talent .t-barre b { position: absolute; top: -5px; bottom: -5px; width: 3px; margin-left: -1.5px; border-radius: 2px; background: var(--ink); opacity: 0.55; }
+.talent .t-niv { grid-column: 2; font-size: 0.9rem; }
+.talents.compact .talent { padding: 6px 10px; }
+@media (max-width: 480px) { .talent { grid-template-columns: 1fr; } .talent .t-niv { grid-column: 1; } }
+
+.quete-talents { cursor: default; }
+.quete-talents .row { margin-top: 8px; gap: 8px; }
+.quete-talents .qt-go { background: #fff; color: var(--pl-fonce); font-weight: 800; }
+
+.parcours-semaine { display: grid; gap: 6px; }
+.parcours-go { width: 100%; margin: 10px 0; }
+.chemin { list-style: none; padding: 0 0 0 6px; margin: 14px 0; position: relative; }
+.chemin::before { content: ""; position: absolute; left: 27px; top: 10px; bottom: 10px; border-left: 4px dashed color-mix(in srgb, var(--pl) 45%, var(--line)); }
+.etape { position: relative; margin: 8px 0; }
+.etape-btn { display: flex; align-items: center; gap: 12px; width: 100%; padding: 6px 10px 6px 0; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; border-radius: 16px; }
+.etape-btn:hover, .etape-btn:focus-visible { background: var(--pl-clair); }
+.etape-pastille { position: relative; z-index: 1; flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--paper); border: 3px solid color-mix(in srgb, var(--pl) 45%, var(--line)); font: 700 1rem var(--title); color: var(--muted); }
+.etape.faite .etape-pastille { background: var(--ok); border-color: var(--ok); color: #fff; }
+.etape.courante .etape-pastille { background: var(--pl-fonce); border-color: var(--pl-fonce); color: #fff; box-shadow: 0 0 0 6px var(--pl-clair); }
+:root[data-ambiance="enchantee"] .etape.courante .etape-pastille { animation: respire 2.2s ease-in-out infinite; }
+.etape-txt { display: flex; flex-direction: column; }
+.etape-txt small { color: var(--muted); }
+.etape.faite .etape-txt strong { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--ok) 60%, transparent); }

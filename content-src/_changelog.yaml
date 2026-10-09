@@ -1,3 +1,10 @@
+- version: "2.7.0"
+  date: "2026-10-09"
+  notes:
+    - "La carte des talents : après l'histoire de chaque planète, quelques questions par domaine (nombres, calcul, fractions, problèmes, géométrie, mesures… ou lecture, grammaire, conjugaison, orthographe, vocabulaire) qui montent quand tu réussis et descendent si c'est trop dur. On part du niveau de ton âge."
+    - "Mon parcours : l'appli prépare ensuite tes étapes, en commençant par ce qui te fera le plus progresser, en alternant les domaines, avec un objectif de la semaine. Le bouton principal de la carte suit ton parcours."
+    - "Faire le point : quelques questions pour mettre ton parcours à jour (conseillé tous les 15 jours ou quand le parcours est fini)."
+    - "Pour les parents : niveaux par domaine et avancement du parcours dans le bilan."
 - version: "2.6.1"
   date: "2026-10-09"
   notes:

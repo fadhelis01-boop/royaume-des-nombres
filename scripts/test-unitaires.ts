@@ -4,7 +4,9 @@
 import { fusionnerEnfant, fusionnerProfils } from "../src/lib/fusion";
 import { check, idees, instantiate } from "../src/lib/gen";
 import { planDefi } from "../src/lib/plan";
-import type { Child, ExSpec } from "../src/lib/types";
+import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
+import { classeDeLAge, construireParcours, departEscalier, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+
 
 let ok = 0;
 const ko: string[] = [];
@@ -81,6 +83,40 @@ for (let t = 0; t < 20; t++) {
   if (t === 19) ok++;
 }
 eq("plan : que des QCM s'il n'y a rien d'autre", planDefi([q(1), q(2), q(3)], 6).length, 6);
+
+// ---------- Carte des talents et parcours ----------
+eq("tranche CE1 – CM2", tranche("CE1 – CM2"), [2, 5]);
+eq("tranche GS – CP", tranche("GS – CP"), [0, 1]);
+eq("tranche 1ʳᵉ – Terminale", tranche("1ʳᵉ – Terminale"), [11, 12]);
+eq("tranche Terminale (maths expertes) – supérieur", tranche("Terminale (maths expertes) – supérieur"), [12, 13]);
+eq("tranche 5ᵉ – lycée", tranche("5ᵉ – lycée"), [7, 11]);
+eq("tranche Tous niveaux", tranche("Tous niveaux"), null);
+eq("classe de l'âge 8 ans = CE2", classeDeLAge(8), 3);
+const lec = (id: string): Lesson => ({ id, titre: id, objectif: "", duree: 5, etapes: [], nb_defi: 6, exercices: [{ type: "nombre", enonce: "q", reponse: "1" }] });
+const monde = (id: string, niveau: string, n: number, ordre: number) => ({ id, titre: id, emoji: "", couleur: "", cycle: "graines", age: "", niveau, ordre, prerequis: [], version: "1", matiere: "maths", lecons: Array.from({ length: n }, (_, i) => lec(`${id}-${i}`)) }) as unknown as World;
+const W2 = [monde("a", "CP – CE2", 3, 1), monde("b", "CE2 – CM2", 3, 2), monde("g", "CE1 – CM1", 4, 3)];
+eq("niveau d'une leçon interpolé", [niveauLecon(W2[0], 0), niveauLecon(W2[0], 1), niveauLecon(W2[0], 2)], [1, 2, 3]);
+const D2 = domainesDe("maths", W2, [{ id: "calc", titre: "Calcul", mondes: ["a", "b"] }, { id: "geo", titre: "Géo", mondes: ["g"] }]);
+eq("domaines : leçons rangées par niveau", D2[0].lecons.map((l) => l.niveau), [1, 2, 3, 3, 4, 5]);
+let e8 = departEscalier(D2[0], 8);
+eq("escalier : départ au niveau de l'âge", e8.cible, 3);
+e8 = pas(e8, D2[0], 3, true);
+e8 = pas(e8, D2[0], 4, true);
+e8 = pas(e8, D2[0], 5, false);
+eq("escalier : estimation = plus haut réussi sous le premier échec", estimation(e8, D2[0]), 4);
+let ef = departEscalier(D2[0], 8);
+ef = pas(ef, D2[0], 3, false);
+ef = pas(ef, D2[0], 2, false);
+ef = pas(ef, D2[0], 1, true);
+eq("escalier : en difficulté, on redescend jusqu'à la réussite", estimation(ef, D2[0]), 1);
+const plan = construireParcours(D2, { calc: 1, geo: 2 }, 8, () => false);
+eq("parcours : le domaine le plus en retard passe d'abord", plan[0].dom, "calc");
+eq("parcours : un domaine au maximum ne propose plus rien", construireParcours(D2, { calc: 1, geo: 4 }, 8, () => false).some((x) => x.dom === "geo"), false);
+eq("parcours : une consolidation pour le domaine en retard", plan[0].raison, "consolider");
+eq("parcours : les deux domaines sont entremêlés", plan.slice(0, 3).map((x) => x.dom).includes("geo"), true);
+eq("parcours : rien sous le niveau sauf la consolidation", plan.filter((x) => x.dom === "calc" && x.raison !== "consolider").every((x) => Number(x.key.split("-")[1]) >= 0), true);
+eq("parcours : les leçons déjà réussies sont retirées", construireParcours(D2, { calc: 1, geo: 4 }, 8, (k) => k === "a/a-1").some((x) => x.key === "a/a-1"), false);
+eq("mondes ouverts : acquis + parcours", mondesAOuvrir(D2, { calc: 3, geo: 2 }, []).sort(), ["a", "b", "g"]);
 
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {

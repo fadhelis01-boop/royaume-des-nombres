@@ -44,6 +44,8 @@ function main() {
     changelog: opt("_changelog.yaml", []),
     // lecture chronométrée (fluence) : textes gradués CP → CM
     fluence: opt("_fluence.yaml", []),
+    // domaines de chaque planète (test de niveau et parcours personnalisé)
+    domaines: opt("_domaines.yaml", {}),
   };
   let lessons = 0;
   const worldIds = new Set();
@@ -154,6 +156,19 @@ function main() {
     }
   }
   const plIds = new Set(manifest.planetes.map((p) => p.id));
+  for (const [pl, doms] of Object.entries(manifest.domaines)) {
+    if (!plIds.has(pl)) errors.push(`_domaines : planète inconnue ${pl}`);
+    const vus = new Set();
+    for (const d of doms ?? []) {
+      if (!d.id || !d.titre || !Array.isArray(d.mondes)) errors.push(`_domaines ${pl} : domaine incomplet ${d.id ?? "?"}`);
+      for (const m of d.mondes ?? []) {
+        if (!worldIds.has(m)) errors.push(`_domaines ${pl}/${d.id} : monde inconnu ${m}`);
+        vus.add(m);
+      }
+    }
+    for (const w of loaded) if (w.matiere === pl && w.cycle !== "astuces" && !vus.has(w.id)) warns.push(`_domaines ${pl} : le monde ${w.id} n'est dans aucun domaine`);
+  }
+
   for (const w of loaded) if (!plIds.has(w.matiere)) errors.push(`${w.id} : planète (matière) inconnue « ${w.matiere} » — à déclarer dans _planetes.yaml`);
   for (const p of manifest.planetes) if (!loaded.some((w) => w.matiere === p.id)) warns.push(`planète ${p.id} : aucun monde pour l'instant`);
   // Charte de chaque leçon (audit 2.1) : une scène des mascottes, un « À quoi ça sert ? » et une astuce.

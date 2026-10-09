@@ -31,6 +31,7 @@ const Fluence = lazy(() => import("./pages/Fluence").then((m) => ({ default: m.F
 const GrandLivre = lazy(() => import("./pages/GrandLivre").then((m) => ({ default: m.GrandLivre })));
 const Tresors = lazy(() => import("./pages/Tresors").then((m) => ({ default: m.Tresors })));
 const Diagnostic = lazy(() => import("./pages/Diagnostic").then((m) => ({ default: m.Diagnostic })));
+const ParcoursPage = lazy(() => import("./pages/Parcours").then((m) => ({ default: m.ParcoursPage })));
 const Inventer = lazy(() => import("./pages/Inventer").then((m) => ({ default: m.Inventer })));
 const Parents = lazy(() => import("./pages/Parents").then((m) => ({ default: m.Parents })));
 const Aide = lazy(() => import("./pages/Aide").then((m) => ({ default: m.Aide })));
@@ -267,8 +268,12 @@ export default function App() {
         page = <Boutique tab={p[1]} />;
         break;
       case "diagnostic":
-        page = <Diagnostic />;
+        page = <Diagnostic key={route.query.get("mode") ?? "test"} />;
         break;
+      case "parcours":
+        page = <ParcoursPage />;
+        break;
+
       case "inventer":
         page = <Inventer />;
         break;

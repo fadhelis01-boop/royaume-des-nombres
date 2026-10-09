@@ -204,6 +204,23 @@ export interface Manifest {
   dicoCount?: number;
   /** textes de lecture chronométrée (fluence) */
   fluence?: TexteFluence[];
+  /** domaines de chaque planète (test de niveau, parcours) ; planète absente = un seul domaine */
+  domaines?: Record<string, { id: string; titre: string; emoji?: string; mondes: string[] }[]>;
+}
+
+/** Une étape du parcours personnalisé. */
+export interface EtapeParcours {
+  key: string; // monde/leçon
+  dom: string; // domaine
+  raison: "renforcer" | "nouveau" | "consolider";
+}
+/** Le parcours d'une planète : niveaux estimés par domaine (échelle des classes, CP = 1) et étapes prévues. */
+export interface Parcours {
+  at: number;
+  niveaux: Record<string, number>;
+  etapes: EtapeParcours[];
+  /** domaines non testés (hors âge) */
+  nonTestes?: string[];
 }
 
 export interface TexteFluence {
@@ -306,7 +323,10 @@ export interface Child {
   recordsJeux: Record<string, number>; // niveaux atteints dans les mini-jeux
   matiere: Matiere; // royaume affiché sur la carte
   carnet: string[]; // mots découverts (dictionnaire) : la collection de l'enfant
+  /** parcours personnalisé par planète (test de niveau → étapes) */
+  parcours?: Record<string, Parcours>;
   /** surprise du jour (coffre, comète, visiteur…) */
+
   surprise?: { day: string; base: number; ouvert: boolean; recompense?: string };
   /** dernière modification (ms) : sert à fusionner deux appareils */
 

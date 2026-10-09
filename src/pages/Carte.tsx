@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { go } from "../lib/router";
 import { CYCLES, lessonKey, matiereDe, nextLesson, objetLabel, planeteDe, prologueId, useContent, worldProgress, worldUnlocked } from "../lib/content";
-import { dayKey, dueCards, useChild, useStore } from "../lib/store";
+import { dayKey, dueCards, updateChild, useChild, useStore } from "../lib/store";
+import { pointConseille } from "../lib/parcours";
 import { Bubble, Mascot } from "../components/Mascot";
 import { CarteRoyaume } from "../components/CarteRoyaume";
 import { Recap } from "../components/Seance";
@@ -39,6 +40,12 @@ export function Carte() {
   const greet = greeting(child.name, child.streak);
   // première visite sur cette planète : on commence obligatoirement par l'histoire
   const nouvelle = !!planete && !child.story?.[prologueId(mat)];
+  // après le prologue : la carte des talents (test de niveau par domaine), sauf si l'enfant l'a remise à plus tard
+  const parcours = child.parcours?.[mat];
+  const proposerTest = !nouvelle && !parcours && !child.counters[`diag:${mat}`] && !child.counters[`diag-plus-tard:${mat}`];
+  const faitK = (k: string) => !!child.progress[k]?.done;
+  const etapesFaites = parcours ? parcours.etapes.filter((e) => faitK(e.key)).length : 0;
+  const pointConseilleIci = pointConseille(parcours, faitK);
 
   const crystals = (child.crystals ?? []).filter((id) => worlds.some((w) => w.id === id));
   const [vue, setVue] = useState<"carte" | "liste">(() => {
@@ -80,6 +87,22 @@ export function Carte() {
               <small>{planete.prologue.appel}</small>
             </span>
           </button>
+        ) : proposerTest ? (
+          <div className="quick-card primary quete-talents">
+            <span className="qc-emoji">🧭</span>
+            <span>
+              <strong>Première quête : la carte des talents</strong>
+              <small>Quelques questions pour préparer TON parcours</small>
+              <span className="row">
+                <button className="btn btn-xl qt-go" onClick={() => go("/diagnostic")}>
+                  C'est parti !
+                </button>
+                <button className="btn btn-ghost small" onClick={() => updateChild((c) => void (c.counters[`diag-plus-tard:${mat}`] = 1))}>
+                  Plus tard
+                </button>
+              </span>
+            </span>
+          </div>
         ) : resume ? (
           <button className="quick-card primary" onClick={() => go(`/lecon/${resume.w.id}/${resume.l.id}`)}>
             <span className="qc-emoji">▶️</span>
@@ -92,15 +115,24 @@ export function Carte() {
           </button>
         ) : next ? (
           <button className="quick-card primary" onClick={() => go(`/lecon/${next.world.id}/${next.lesson.id}`)}>
-            <span className="qc-emoji">🚀</span>
+            <span className="qc-emoji">{parcours && "parcours" in next ? "🗺️" : "🚀"}</span>
             <span>
-              <strong>Continuer l'aventure</strong>
+              <strong>{parcours && "parcours" in next ? `Mon parcours · étape ${etapesFaites + 1} sur ${parcours.etapes.length}` : "Continuer l'aventure"}</strong>
               <small>
                 {next.world.emoji} {next.lesson.titre}
               </small>
             </span>
           </button>
         ) : null}
+        {parcours && (
+          <button className="quick-card" onClick={() => go(pointConseilleIci ? "/diagnostic?mode=point" : "/parcours")}>
+            <span className="qc-emoji">{pointConseilleIci ? "🔄" : "🗺️"}</span>
+            <span>
+              <strong>{pointConseilleIci ? "Faire le point" : "Mon parcours"}</strong>
+              <small>{pointConseilleIci ? "Quelques questions pour mettre ton parcours à jour" : `${etapesFaites} / ${parcours.etapes.length} étapes réussies`}</small>
+            </span>
+          </button>
+        )}
         {!dailyDone && (
           <button className="quick-card" onClick={() => go("/defi-du-jour")}>
             <span className="qc-emoji">🎁</span>
@@ -221,9 +253,10 @@ export function Carte() {
             ·{" "}
           </span>
         ))}
-        <button className="link" onClick={() => go("/diagnostic")}>
-          🧭 Test de niveau
+        <button className="link" onClick={() => go(parcours ? "/parcours" : "/diagnostic")}>
+          {parcours ? "🗺️ Mon parcours" : "🧭 Carte des talents"}
         </button>
+
       </div>
     </div>
   );
