@@ -1,3 +1,7 @@
+- version: "2.6.1"
+  date: "2026-10-09"
+  notes:
+    - "Correctif de l'accueil : les planètes du cercle intérieur réagissent maintenant toutes quand on les touche."
 - version: "2.6.0"
   date: "2026-10-09"
   notes:

@@ -556,3 +556,7 @@ body {
   opacity: calc((1 - var(--allume)) * 0.92);
   transition: opacity 1.2s;
 }
+/* les anneaux sont transparents au toucher : seules les planètes le captent (sinon l'anneau
+   extérieur, posé par-dessus, masquait les planètes de l'anneau intérieur) */
+.anneau, .coeur { pointer-events: none; }
+.orb-planete { pointer-events: auto; }
