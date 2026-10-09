@@ -1,7 +1,8 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useRoute, go } from "./lib/router";
 import { useStore, useChild, setState, tickMinute, minutesToday } from "./lib/store";
-import { useContent } from "./lib/content";
+import { gardienDe, useContent } from "./lib/content";
+
 import { usePwa, applyUpdate } from "./lib/pwa";
 import { levelOf } from "./lib/rewards";
 import { stopSpeaking } from "./lib/tts";
@@ -106,17 +107,33 @@ export default function App() {
   const ambiance = styleEffectif(settings, child);
   const couleurs = couleursRendues(child, content.worlds, planete);
   const couleurPlanete = content.manifest?.planetes?.find((x) => x.id === planete)?.couleur;
+  // scènes : combat du Gardien (selon l'adversaire de la planète), histoires, diplôme
+  const mondeScene = route.parts[0] === "gardien" ? content.worlds.find((w) => w.id === route.parts[1]) : undefined;
+  const scene = mondeScene ? `gardien-${gardienDe(content.manifest, mondeScene).sprite}` : route.parts[0] === "aventure" || route.parts[0] === "diplome" ? route.parts[0] : "";
+  useEffect(() => {
+    const r = document.documentElement;
+    r.dataset.scene = scene.split("-")[0];
+    r.dataset.adversaire = scene.startsWith("gardien-") ? scene.slice(8) : "";
+    // décor peint de l'arène (un par adversaire)
+    if (scene.startsWith("gardien-")) r.style.setProperty("--fond-scene", `url(img/fonds/${scene === "gardien-gribouille" ? "gardien-tache" : scene}.webp)`);
+
+    else r.style.removeProperty("--fond-scene");
+
+  }, [scene]);
   useEffect(() => {
     const r = document.documentElement;
     r.dataset.planete = planete;
     r.dataset.ambiance = ambiance;
     r.style.setProperty("--couleurs", couleurs.toFixed(3));
     // ciel illustré de la Galaxie (chemin relatif au document : fonctionne aussi sous GitHub Pages)
-    r.style.setProperty("--ciel", "url(img/fonds/ciel.webp)");
+    // avant le premier profil : la grande galaxie de l'accueil (portrait sur téléphone)
+    r.style.setProperty("--ciel", child ? "url(img/fonds/ciel.webp)" : "url(img/fonds/accueil.webp)");
+    r.style.setProperty("--ciel-portrait", child ? "url(img/fonds/ciel.webp)" : "url(img/fonds/accueil-portrait.webp)");
+
 
     if (couleurPlanete) r.style.setProperty("--pl", couleurPlanete);
     else r.style.removeProperty("--pl");
-  }, [planete, ambiance, couleurs, couleurPlanete]);
+  }, [planete, ambiance, couleurs, couleurPlanete, !!child]);
   // Le moment où des couleurs reviennent (leçon réussie) : une vague arc-en-ciel sur la planète.
   const [vague, setVague] = useState(0);
   const avant = useRef<{ planete: string; c: number } | null>(null);
@@ -199,13 +216,13 @@ export default function App() {
         page = <NouvelEnfant />;
         break;
       case "monde":
-        page = <Monde id={p[1]} />;
+        page = <Monde key={p[1]} id={p[1]} />;
         break;
       case "lecon":
-        page = <LeconPage worldId={p[1]} lessonId={p[2]} restart={route.query.get("debut") === "1"} />;
+        page = <LeconPage key={`${p[1]}/${p[2]}`} worldId={p[1]} lessonId={p[2]} restart={route.query.get("debut") === "1"} />;
         break;
       case "defi":
-        page = <DefiPage worldId={p[1]} lessonId={p[2]} />;
+        page = <DefiPage key={`${p[1]}/${p[2]}`} worldId={p[1]} lessonId={p[2]} />;
         break;
       case "revisions":
         page = <Revisions />;
@@ -220,7 +237,7 @@ export default function App() {
         page = <Aventure part={p[1]} />;
         break;
       case "gardien":
-        page = <Gardien worldId={p[1]} />;
+        page = <Gardien key={p[1]} worldId={p[1]} />;
         break;
       case "diplome":
         page = <Diplome worldId={p[1]} />;
@@ -272,7 +289,7 @@ export default function App() {
 
   return (
     <div className={`app ${immersive ? "immersive" : ""}`}>
-      <Ambiance planete={planete} style={ambiance} />
+      <Ambiance planete={planete} style={ambiance} scene={scene || undefined} />
       {vague > 0 && <div key={vague} className="vague-couleurs" aria-hidden />}
 
 

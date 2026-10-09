@@ -27,7 +27,9 @@ export function gardienOuvert(w: World) {
 
 function plan(w: World, n = N): Instance[] {
   const picks = w.lecons.map((l) => {
-    const r = rankSpecs(l.exercices);
+    // combat rapide : pas de rédaction (rappel libre) ni de dictée longue face au Gardien
+    const r = rankSpecs(l.exercices.filter((e) => e.type !== "libre" && e.type !== "dictee"));
+
     return r.slice(Math.floor(r.length / 2)); // la moitié la plus exigeante de chaque leçon
   });
   const out: Instance[] = [];

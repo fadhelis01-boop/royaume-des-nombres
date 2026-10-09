@@ -1,3 +1,10 @@
+- version: "2.6.0"
+  date: "2026-10-09"
+  notes:
+    - "Nouvel accueil : la Galaxie est grise… Touche les planètes pour leur rendre leurs couleurs ! Le ciel se colore, le Grand Neutre rapetisse, puis Lya, Néo et Zéro arrivent sur une comète."
+    - "Combats contre les Gardiens : un décor peint pour chaque adversaire (l'orage du Grignoteur, la brume d'Ixe, la bibliothèque du Grand Oubli, la mer d'encre de Gribouille, le pays gris du Grand Neutre), une arène qui brille et un éclat de lumière à chaque coup."
+    - "Rayons dorés pour les étoiles de fin de défi, le cristal gagné et le diplôme ; la veillée à la bougie pour le Livre de l'aventure."
+    - "Correctif : passer d'un Gardien à un autre recommence bien un nouveau combat. Le Gardien ne demande plus de rédaction (rappel libre) en plein combat."
 - version: "2.5.0"
   date: "2026-10-09"
   notes:

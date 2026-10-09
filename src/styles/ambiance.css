@@ -329,3 +329,230 @@ body {
   filter: saturate(var(--sat));
   transition: filter 1.2s;
 }
+
+/* ==========================================================
+   Scènes (2.6) : combat du Gardien, histoires, diplôme, étoiles de fin de défi
+   ========================================================== */
+
+/* ---------- Combat du Gardien : un décor par adversaire ---------- */
+:root[data-scene="gardien"] { --scene-teinte: #2a1b5c; --aura: #b48cff; color-scheme: dark; }
+:root[data-scene="gardien"][data-adversaire="nuage"] { --scene-teinte: #3a2464; --aura: #b48cff; }
+:root[data-scene="gardien"][data-adversaire="ixe"] { --scene-teinte: #0f3b3e; --aura: #5ff0d8; }
+:root[data-scene="gardien"][data-adversaire="oubli"] { --scene-teinte: #3a2a14; --aura: #ffd28a; }
+:root[data-scene="gardien"][data-adversaire="gribouille"],
+:root[data-scene="gardien"][data-adversaire="tache"] { --scene-teinte: #0c1a3a; --aura: #6fa8ff; }
+:root[data-scene="gardien"][data-adversaire="neutre"] { --scene-teinte: #3a3a44; --aura: #e4e1ee; }
+:root[data-scene="gardien"] body {
+  background-image:
+    radial-gradient(ellipse at 50% 35%, color-mix(in srgb, var(--aura) 18%, transparent), transparent 60%),
+    linear-gradient(180deg, rgba(10, 8, 24, 0.5), rgba(10, 8, 24, 0.78)),
+    var(--fond-scene, none),
+    linear-gradient(180deg, var(--scene-teinte), #0d0a1c);
+  background-size: auto, auto, cover, auto;
+  background-position: center;
+  background-attachment: fixed;
+}
+:root[data-scene="gardien"] .amb-el { opacity: 0.5; filter: none; }
+:root[data-scene="gardien"] .amb-glyphe { color: var(--aura); font-style: italic; }
+/* les textes posés directement sur le décor passent en clair */
+:root[data-scene="gardien"] .page > h1,
+:root[data-scene="gardien"] .page > h2,
+:root[data-scene="gardien"] .page > p,
+:root[data-scene="gardien"] .page > .small,
+:root[data-scene="gardien"] .crystal-meter { color: #f3efff; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); }
+:root[data-scene="gardien"] .page > p.muted { color: #d9d2ff; }
+/* l'arène brille à la couleur de l'adversaire */
+:root[data-scene="gardien"] .arena {
+  box-shadow: inset 0 -60px 60px -20px rgba(20, 12, 40, 0.6), 0 0 0 3px color-mix(in srgb, var(--aura) 55%, transparent), 0 0 32px color-mix(in srgb, var(--aura) 40%, transparent);
+}
+:root[data-scene="gardien"][data-ambiance="enchantee"] .arena { animation: aura 3.2s ease-in-out infinite; }
+@keyframes aura {
+  50% { box-shadow: inset 0 -60px 60px -20px rgba(20, 12, 40, 0.6), 0 0 0 3px color-mix(in srgb, var(--aura) 80%, transparent), 0 0 48px color-mix(in srgb, var(--aura) 60%, transparent); }
+}
+:root[data-scene="gardien"] .foe { position: relative; filter: drop-shadow(0 0 14px color-mix(in srgb, var(--aura) 70%, transparent)); }
+/* touché ! un éclat de lumière (une seule fois, pas de clignotement) */
+.foe-hit::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0, color-mix(in srgb, var(--aura, #ffd54a) 70%, transparent) 30%, transparent 66%);
+  animation: eclat 0.7s ease-out forwards;
+}
+@keyframes eclat { from { transform: scale(0.3); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+/* la jauge de cristaux s'allume comme des gemmes */
+:root[data-scene="gardien"] .crystal-meter span.lit { filter: drop-shadow(0 0 6px #7cf); }
+
+/* ---------- Rayons de victoire (cristal, diplôme, étoiles du défi) ---------- */
+.crystal-win,
+.defi-end .big-stars,
+.diplome { position: relative; isolation: isolate; }
+.crystal-win::before,
+.defi-end .big-stars::before,
+.diplome::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255, 213, 74, 0.32) 0 10deg, transparent 10deg 22deg);
+  -webkit-mask: radial-gradient(circle, #000 20%, transparent 68%);
+  mask: radial-gradient(circle, #000 20%, transparent 68%);
+}
+.diplome::before { width: 900px; height: 900px; margin: -450px 0 0 -450px; }
+:root[data-ambiance="enchantee"] .crystal-win::before,
+:root[data-ambiance="enchantee"] .defi-end .big-stars::before,
+:root[data-ambiance="enchantee"] .diplome::before { animation: rayons 22s linear infinite; }
+@keyframes rayons { to { transform: rotate(360deg); } }
+.defi-end { overflow-x: clip; }
+
+/* ---------- Diplôme : une salle dorée ---------- */
+:root[data-scene="diplome"] body { background-image: radial-gradient(circle at 50% 28%, #fff9e0, #ffe39a 55%, #f2b64e); }
+:root[data-scene="diplome"] .amb-el { opacity: 0.8; filter: none; }
+@media (prefers-color-scheme: dark) {
+  :root[data-scene="diplome"]:not([data-theme="clair"]) body { background-image: radial-gradient(circle at 50% 28%, #5a4512, #2b2140 70%); }
+}
+:root[data-theme="sombre"][data-scene="diplome"] body { background-image: radial-gradient(circle at 50% 28%, #5a4512, #2b2140 70%); }
+
+/* ---------- Histoires : la veillée, à la lueur d'une bougie ---------- */
+:root[data-scene="aventure"] body {
+  background-image: radial-gradient(circle at 50% 20%, rgba(255, 196, 110, 0.35), transparent 55%), linear-gradient(180deg, #2b1d3d, #17112a);
+  color-scheme: dark;
+}
+:root[data-scene="aventure"] .amb-el { opacity: 0.55; filter: none; }
+:root[data-scene="aventure"] .page > h1,
+:root[data-scene="aventure"] .page > h2,
+:root[data-scene="aventure"] .page > p { color: #fff3dc; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); }
+:root[data-scene="aventure"] .topbar { background: rgba(23, 17, 42, 0.9); color: #fff; }
+:root[data-scene="aventure"] .topbar .tb-name,
+:root[data-scene="aventure"] .topbar .tb-stat { color: #fff; }
+:root[data-scene="aventure"] .bottomnav { background: rgba(23, 17, 42, 0.94); }
+:root[data-scene="aventure"] .bottomnav button { color: #e8dcc6; }
+
+/* ==========================================================
+   Accueil spectacle (2.6) : rallumer les planètes de la Galaxie
+   ========================================================== */
+:root[data-planete="galaxie"] body { background-position: center; }
+@media (orientation: portrait) {
+  :root[data-planete="galaxie"] body {
+    background-image:
+      radial-gradient(ellipse at 15% 20%, rgba(255, 92, 138, 0.18), transparent 45%),
+      radial-gradient(ellipse at 85% 35%, rgba(20, 184, 166, 0.16), transparent 45%),
+      radial-gradient(ellipse at 50% 90%, rgba(124, 77, 255, 0.3), transparent 55%),
+      linear-gradient(180deg, rgba(18, 14, 46, 0.55), rgba(18, 14, 46, 0.35)),
+      var(--ciel-portrait, var(--ciel, none)),
+      linear-gradient(180deg, var(--fond-haut), var(--fond-bas));
+  }
+}
+.page.accueil-spectacle { padding-top: 0; }
+.spectacle { position: relative; text-align: center; color: #fff; padding: 6px 0 28px; overflow-x: clip; }
+
+/* le titre : chaque lettre rebondit, puis s'illumine d'arc-en-ciel quand les planètes se rallument */
+.spec-titre {
+  font: 700 clamp(2rem, 8.5vw, 3.6rem) / 1.05 var(--title);
+  margin: 8px 0 6px;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, #c9c4d6 calc((1 - var(--allume)) * 100%), #fff);
+  text-shadow: 0 3px 0 rgba(43, 33, 64, 0.55), 0 0 calc(var(--allume) * 28px) rgba(255, 213, 74, 0.9);
+}
+.spec-titre .lettre { display: inline-block; white-space: pre; animation: lettre 0.7s cubic-bezier(0.3, 1.6, 0.5, 1) both; }
+.spectacle.toutes .spec-titre .lettre { background: linear-gradient(90deg, #ff5c8a, #ff8a1f, #ffcf33, #3fa34d, #14b8a6, #2f6fdf, #b48cff); background-size: 900% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 3px 0 rgba(43, 33, 64, 0.55)); animation: lettre 0.7s cubic-bezier(0.3, 1.6, 0.5, 1) both, arc 6s linear infinite; }
+.spectacle.toutes .spec-titre .lettre:nth-child(n) { background-position-x: calc(var(--i, 0) * 1%); }
+@keyframes lettre { from { opacity: 0; transform: translateY(-40px) scale(0.4) rotate(-12deg); } }
+@keyframes arc { to { background-position-x: 900%; } }
+.spec-accroche { max-width: 34ch; margin: 0 auto 6px; font-size: 1.1rem; line-height: 1.45; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); min-height: 3em; }
+
+/* les orbites : deux anneaux qui tournent en sens contraire, les planètes restent droites */
+.orbites { --taille: min(calc(100vw - 110px), 500px); position: relative; width: var(--taille); height: var(--taille); margin: 46px auto 30px; }
+.anneau { position: absolute; border-radius: 50%; border: 1.5px dashed rgba(255, 255, 255, 0.28); }
+.anneau-1 { inset: 21%; --r: calc(var(--taille) * 0.29); --tour: 70s; }
+.anneau-2 { inset: 3%; --r: calc(var(--taille) * 0.47); --tour: 110s; --sens: reverse; }
+.orb-place { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform: rotate(var(--a)) translateX(var(--r)) rotate(calc(-1 * var(--a))); }
+.orb-planete {
+  position: absolute;
+  left: -36px;
+  top: -36px;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border-radius: 50%;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  filter: grayscale(1) brightness(0.75) contrast(0.9);
+  transition: filter 0.9s, transform 0.3s;
+}
+.anneau-1 .orb-planete { left: -32px; top: -32px; width: 64px; height: 64px; }
+.orb-planete img, .orb-emoji { width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center; font-size: 2.2rem; background: radial-gradient(circle at 35% 30%, #fff8, transparent 45%), var(--pc); }
+.orb-planete::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.5); opacity: 0.6; }
+.orb-planete:not(.allumee)::after { animation: invite 2.4s ease-in-out infinite; }
+.orb-planete:hover, .orb-planete:focus-visible { transform: scale(1.12); }
+.orb-planete:focus-visible { outline: 3px solid #ffcf33; outline-offset: 6px; }
+.orb-planete.allumee { filter: none; animation: allume 0.7s cubic-bezier(0.3, 1.6, 0.5, 1); box-shadow: 0 0 26px color-mix(in srgb, var(--pc) 80%, transparent); }
+.orb-planete.allumee::after { border-color: color-mix(in srgb, var(--pc) 60%, #fff); }
+@keyframes invite { 50% { transform: scale(1.18); opacity: 0.1; } }
+@keyframes allume { 0% { transform: scale(0.7); } 60% { transform: scale(1.3) rotate(10deg); } }
+:root[data-ambiance="enchantee"] .anneau,
+:root[data-ambiance="epuree"] .anneau { animation: orbite var(--tour) linear infinite var(--sens, normal); }
+:root[data-ambiance="enchantee"] .anneau .orb-planete,
+:root[data-ambiance="epuree"] .anneau .orb-planete { animation: contre var(--tour) linear infinite var(--sens, normal); }
+:root[data-ambiance="enchantee"] .anneau .orb-planete.allumee { animation: allume 0.7s cubic-bezier(0.3, 1.6, 0.5, 1), contre var(--tour) linear infinite var(--sens, normal); }
+@keyframes contre { to { rotate: -360deg; } }
+
+/* au cœur : le Grand Neutre, qui rapetisse à chaque planète rallumée ; la lumière grandit */
+.coeur { position: absolute; inset: 37%; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle, rgba(255, 236, 170, calc(0.15 + var(--allume) * 0.85)), rgba(255, 180, 90, calc(var(--allume) * 0.5)) 45%, transparent 70%); }
+.coeur-neutre { width: 100%; height: 100%; object-fit: contain; opacity: calc(1 - var(--allume) * 0.9); transform: scale(calc(1.15 - var(--allume) * 0.85)); transition: transform 1s, opacity 1s; }
+:root[data-ambiance="enchantee"] .coeur-neutre { animation: respire 4s ease-in-out infinite; }
+.vague-couleurs.locale { position: absolute; z-index: 2; }
+
+.spec-nom { min-height: 3.2em; margin: 6px auto 0; max-width: 36ch; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75); }
+.spec-nom small { color: #e4defc; }
+
+/* la comète des mascottes */
+.comete { margin: 8px auto 4px; max-width: 520px; text-align: left; color: var(--ink); }
+.comete-trio { position: relative; display: flex; justify-content: center; align-items: flex-end; gap: 4px; }
+.comete-trio::before { content: ""; position: absolute; left: -40vw; right: 60%; top: 45%; height: 16px; border-radius: 99px; background: linear-gradient(90deg, transparent, rgba(255, 213, 74, 0.7), #fff); filter: blur(2px); }
+:root[data-ambiance="enchantee"] .comete-trio { animation: comete 1.1s cubic-bezier(0.2, 0.9, 0.3, 1.1) both; }
+:root[data-ambiance="enchantee"] .comete-trio::before { animation: trainee 1.6s ease-out forwards; }
+@keyframes comete { from { transform: translate(-80vw, -60px) rotate(-14deg); opacity: 0; } }
+@keyframes trainee { 70% { opacity: 1; } to { opacity: 0; } }
+
+/* le grand bouton : il s'illumine quand l'enfant a joué */
+.spec-go { margin-top: 10px; font-size: 1.35rem; padding: 16px 30px; background: linear-gradient(135deg, #7c4dff, #ff5c8a); box-shadow: 0 5px 0 #4b2aa8, 0 0 0 0 rgba(255, 213, 74, 0.7); }
+.spec-go.pret { transform: scale(1.06); }
+:root[data-ambiance="enchantee"] .spec-go.pret { animation: appel 1.8s ease-in-out infinite; }
+@keyframes appel { 50% { box-shadow: 0 5px 0 #4b2aa8, 0 0 0 14px rgba(255, 213, 74, 0); } 0% { box-shadow: 0 5px 0 #4b2aa8, 0 0 0 0 rgba(255, 213, 74, 0.7); } }
+
+/* pour les parents */
+.spec-promesses { list-style: none; padding: 12px 14px; margin: 22px auto 0; max-width: 520px; text-align: left; border-radius: 18px; background: rgba(18, 14, 46, 0.78); color: #ece8ff; font-size: 0.92rem; display: grid; gap: 6px; }
+
+@media (max-width: 420px) {
+  .orb-planete { left: -30px; top: -30px; width: 60px; height: 60px; }
+  .anneau-1 .orb-planete { left: -27px; top: -27px; width: 54px; height: 54px; }
+}
+/* titres centrés : le ruban se centre aussi */
+.page.center > h1::after, .center > h1::after, .defi-end > h1::after { margin-left: auto; margin-right: auto; }
+:root[data-scene="gardien"] .topbar { background: rgba(14, 10, 32, 0.88); color: #fff; border-color: rgba(255, 255, 255, 0.12); }
+:root[data-scene="gardien"] .topbar .tb-name, :root[data-scene="gardien"] .topbar .tb-stat { color: #fff; }
+/* le Livre de l'aventure : les titres de livres posés sur la veillée passent en clair */
+:root[data-scene="aventure"] .arc > h2,
+:root[data-scene="aventure"] .arc > h2 small,
+:root[data-scene="aventure"] .arc > p { color: #fff3dc; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); }
+/* le ciel de l'accueil est gris au départ (le Grand Neutre) et se colore à chaque planète rallumée */
+.spectacle::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: #808080;
+  mix-blend-mode: saturation;
+  opacity: calc((1 - var(--allume)) * 0.92);
+  transition: opacity 1.2s;
+}

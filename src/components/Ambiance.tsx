@@ -80,14 +80,44 @@ export const MOTIFS: Record<string, Motif> = {
   galaxie: { mouvement: "scintille", forme: (i) => (i % 5 === 4 ? <PetitePlanete c={PEINTURE[i % PEINTURE.length]} /> : <Etoile c={ETOILES[i % ETOILES.length]} />) },
 };
 
+const Nuage = ({ c }: { c: string }) => (
+  <svg viewBox="0 0 64 40" aria-hidden>
+    <path d="M14 34 A10 10 0 0 1 12 14 A13 13 0 0 1 36 8 A11 11 0 0 1 54 18 A9 9 0 0 1 52 34 Z" fill={c} fillOpacity="0.8" />
+  </svg>
+);
+const Page = () => (
+  <svg viewBox="0 0 32 40" aria-hidden>
+    <path d="M3 3 H22 L29 10 V37 H3 Z" fill="#fbf7ea" stroke="#b9a77a" strokeWidth="1.5" />
+    <path d="M8 15 H24 M8 21 H24 M8 27 H18" stroke="#c9bb94" strokeWidth="1.5" />
+  </svg>
+);
+const Brume = () => (
+  <svg viewBox="0 0 60 60" aria-hidden>
+    <circle cx="30" cy="30" r="28" fill="#9d99ab" fillOpacity="0.45" />
+  </svg>
+);
+const OR = ["#ffd54a", "#ffe9a0", "#ffb84a", "#fff3c4"];
+
+/** Scènes particulières : le combat du Gardien (selon l'adversaire), les histoires, le diplôme. */
+export const SCENES: Record<string, Motif> = {
+  "gardien-nuage": { mouvement: "flotte", forme: (i) => <Nuage c={i % 2 ? "#6b5a8e" : "#4a3d66"} /> },
+  "gardien-ixe": { mouvement: "flotte", forme: glyphe(["x", "?", "y", "x²", "?", "n"]) },
+  "gardien-oubli": { mouvement: "monte", forme: () => <Page /> },
+  "gardien-gribouille": { mouvement: "tombe", forme: () => <Goutte /> },
+  "gardien-tache": { mouvement: "tombe", forme: () => <Goutte /> },
+  "gardien-neutre": { mouvement: "flotte", forme: () => <Brume /> },
+  aventure: { mouvement: "scintille", forme: (i) => <Etoile c={OR[i % OR.length]} /> },
+  diplome: { mouvement: "scintille", forme: (i) => <Etoile c={OR[i % OR.length]} /> },
+};
+
 const NOMBRE: Record<StyleAmbiance, number> = { enchantee: 16, epuree: 7, calme: 6 };
 
-export const Ambiance = memo(function Ambiance({ planete, style }: { planete: string; style: StyleAmbiance }) {
-  const m = MOTIFS[planete];
-  const n = m ? (planete === "galaxie" ? NOMBRE[style] + 10 : NOMBRE[style]) : 0;
+export const Ambiance = memo(function Ambiance({ planete, style, scene }: { planete: string; style: StyleAmbiance; scene?: string }) {
+  const m = (scene && SCENES[scene]) || MOTIFS[planete];
+  const n = m ? (planete === "galaxie" && !scene ? NOMBRE[style] + 10 : NOMBRE[style]) : 0;
   return (
     <div className={`ambiance amb-${m?.mouvement ?? "aucun"}`} aria-hidden>
-      {planete !== "galaxie" && planete !== "neutre" && (
+      {planete !== "galaxie" && planete !== "neutre" && !scene && (
         <div className="brouillard">
           <i />
           <i />
@@ -99,7 +129,7 @@ export const Ambiance = memo(function Ambiance({ planete, style }: { planete: st
           const x = hasard(i, 1);
           const y = hasard(i, 2);
           const t = hasard(i, 3);
-          const taille = planete === "galaxie" ? 8 + t * 16 : 18 + t * 26;
+          const taille = scene === "gardien-neutre" ? 60 + t * 90 : planete === "galaxie" && !scene ? 8 + t * 16 : 18 + t * 26;
           const style2 = {
             left: `${(x * 96).toFixed(1)}%`,
             top: `${(y * 92).toFixed(1)}%`,
