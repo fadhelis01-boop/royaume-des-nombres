@@ -15,7 +15,7 @@ export type VisSpec = { type: string; [k: string]: unknown };
 
 export interface ExSpec {
   id?: string;
-  type: "nombre" | "qcm" | "vf" | "comparer" | "liste" | "expression" | "ordre" | "droite" | "texte" | "champs" | "blocs" | "partage" | "sauts" | "colorier" | "horloge" | "payer" | "mot" | "dictee" | "surligner" | "classer";
+  type: "nombre" | "qcm" | "vf" | "comparer" | "liste" | "expression" | "ordre" | "droite" | "texte" | "champs" | "blocs" | "partage" | "sauts" | "colorier" | "horloge" | "payer" | "mot" | "dictee" | "surligner" | "classer" | "relier" | "libre";
   vars?: Record<string, unknown>;
   si?: string;
   enonce: string;
@@ -67,7 +67,16 @@ export interface ExSpec {
   /** classer : les catégories et les mots [mot, n° de catégorie] */
   categories?: string[];
   mots?: [string, number | string][];
+  /** relier : les paires [gauche, droite] à associer */
+  paires?: [string, string][];
+  /** libre (rappel libre) : les idées attendues, chacune avec ses variantes acceptées */
+  cles?: string[][];
+  /** libre : la réponse modèle montrée après coup */
+  modele?: string;
+  /** libre : nombre d'idées à retrouver pour réussir (par défaut, la moitié) */
+  min_cles?: number;
 }
+
 
 export type Step =
   | { kind: "dialogue"; lines: Line[] }
@@ -297,7 +306,15 @@ export interface Child {
   recordsJeux: Record<string, number>; // niveaux atteints dans les mini-jeux
   matiere: Matiere; // royaume affiché sur la carte
   carnet: string[]; // mots découverts (dictionnaire) : la collection de l'enfant
+  /** surprise du jour (coffre, comète, visiteur…) */
+  surprise?: { day: string; base: number; ouvert: boolean; recompense?: string };
+  /** dernière modification (ms) : sert à fusionner deux appareils */
+
+  majAt?: number;
+  /** dernière activité, pour « Reprendre là où je m'étais arrêté » */
+  derniere?: { route: string; label: string; at: number };
 }
+
 
 export interface Settings {
   pin: string;

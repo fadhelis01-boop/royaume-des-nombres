@@ -13,6 +13,7 @@ import { Droite, Visuel } from "./Visuel";
 import { Manip } from "./Manip";
 import { Icone } from "./Icone";
 import { AccentBar, Classer, DicteeControles, DicteeCorrection, Surligner } from "./FrExercices";
+import { RappelLibre, Relier } from "./Production";
 import type { Lead } from "../lib/habillage";
 
 const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
@@ -78,6 +79,7 @@ export function ExercisePlayer({
   const [manipVals, setManipVals] = useState<number[] | null>(null);
   const [sel, setSel] = useState<number[]>([]); // surligner
   const [cls, setCls] = useState<(number | null)[]>(() => (inst.type === "classer" ? (inst.items ?? []).map(() => null) : [])); // classer
+  const [rel, setRel] = useState<(number | null)[]>(() => (inst.type === "relier" ? (inst.items ?? []).map(() => null) : [])); // relier
   const isFrText = inst.type === "mot" || inst.type === "dictee";
   const isManip = MANIP.includes(inst.type);
   const [phase, setPhase] = useState<Phase>("answer");
@@ -130,6 +132,8 @@ export function ExercisePlayer({
         return sel.length ? { kind: "state", values: sel } : null;
       case "classer":
         return cls.every((c) => c !== null) ? { kind: "state", values: cls as number[] } : null;
+      case "relier":
+        return rel.every((c) => c !== null) ? { kind: "state", values: rel as number[] } : null;
       default:
         return text.trim() ? { kind: "text", value: text } : null;
     }
@@ -179,6 +183,8 @@ export function ExercisePlayer({
       setMessage({ who, text: t + calib, humeur: "joie" });
       if (metacog && sur !== null) bump(sur ? "meta-sur-ok" : "meta-doute-ok");
       if (isManip) bump("manip");
+      if (["libre", "relier", "classer", "mot", "dictee"].includes(inst.type)) bump("production-ok");
+
       const juice = rewardCorrect({ firstTry: n === 1, scored, anchor: rootRef.current?.querySelector(".ex-actions, .keypad") });
       if (!juice.spoke) say(who, t);
       setOkFinal(true);
@@ -205,8 +211,13 @@ export function ExercisePlayer({
     }
     recordAnswer({ key: statKey, ok: false, firstTry: false, hint, q: inst.enonce, given, expected: inst.expectedText, isZero });
     onVerdict?.({ ok: false, firstTry: false, hint });
-    const t = v.why
+    const t = inst.type === "libre"
+      ? `${v.almost ?? "Pas encore assez d'idées."} Regarde les idées importantes et compare avec ce que tu as écrit : c'est comme ça qu'on retient pour longtemps !`
+      : inst.type === "relier"
+        ? `${v.almost ?? "Quelques paires sont à corriger."} Regarde les bonnes réponses sous les cases rouges.`
+        : v.why
       ? `${v.why} La bonne réponse : ${inst.expectedText}.`
+
       : v.almost
         ? `${v.almost} La réponse attendue : ${inst.expectedText}.`
         : `La bonne réponse était : ${inst.expectedText}. Ce n'est pas grave, on apprend en se trompant !`;
@@ -229,7 +240,7 @@ export function ExercisePlayer({
     setPoint(null);
     setOrder([]);
     setSel([]);
-    if (inst.type !== "champs" && inst.type !== "dictee") setText("");
+    if (inst.type !== "champs" && inst.type !== "dictee" && inst.type !== "libre") setText("");
     if (!isTouch) setTimeout(() => inputRef.current?.focus(), 30);
   };
 
@@ -364,6 +375,8 @@ export function ExercisePlayer({
       )}
       {isFrText && phase === "answer" && <AccentBar inputId={`fr-${inst.seed}`} value={text} onChange={setText} />}
       {inst.type === "surligner" && <Surligner words={inst.words!} selected={sel} onChange={setSel} reveal={phase === "done" ? inst.targets : undefined} disabled={phase !== "answer"} />}
+      {inst.type === "relier" && <Relier inst={inst} values={rel} onChange={setRel} reveal={phase === "done"} disabled={phase !== "answer"} />}
+      {inst.type === "libre" && <RappelLibre inst={inst} text={text} onChange={setText} done={phase === "done"} disabled={phase !== "answer"} />}
       {inst.type === "classer" && <Classer items={inst.items!} categories={inst.categories!} values={cls} onChange={setCls} reveal={phase === "done" ? inst.itemCats : undefined} disabled={phase !== "answer"} />}
 
       {inst.type === "droite" && (
@@ -463,7 +476,8 @@ export function ExercisePlayer({
         <div className={`feedback ${phase === "done" ? (okFinal ? "ok" : "ko") : "retry"}`} aria-live="polite">
           <Bubble who={message.who} text={message.text} size={64} humeur={message.humeur} />
           {phase === "done" && !okFinal && inst.type === "dictee" && <DicteeCorrection attendu={inst.dictee!} donne={text} />}
-          {phase === "done" && !okFinal && verdict && (
+          {phase === "done" && !okFinal && verdict && inst.type !== "libre" && (
+
             <div className="correction">
               <div className="correction-title">✏️ La bonne réponse</div>
               <Md text={inst.expectedText + (inst.unite && !inst.expectedText.endsWith(inst.unite) ? " " + inst.unite : "")} className="correction-answer" />

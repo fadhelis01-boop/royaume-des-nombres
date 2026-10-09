@@ -1,0 +1,277 @@
+id: en-ile-des-premiers-mots
+matiere: anglais
+titre: L'Île des Premiers Mots
+sous_titre: Saluer, se présenter, les couleurs, les nombres, les animaux, la famille, la classe
+emoji: 👋
+couleur: "#1e6fb8"
+cycle: graines
+age: 6-9 ans
+niveau: CP – CE2
+ordre: 701
+version: 1.0.0
+intro:
+  - narrateur: "Sur l'Île des Premiers Mots, le brouillard a avalé toutes les paroles. Les habitants se font des signes, sans un mot."
+  - mia: "En anglais, on apprend d'abord avec ses oreilles : écoute chaque mot, puis répète-le à voix haute."
+  - zero: "Je répète tout ! Même deux fois ! Hello, hello !"
+
+lecons:
+  - id: hello
+    titre: Hello! Dire bonjour et se présenter
+    objectif: Je sais saluer, dire au revoir, dire comment je m'appelle et demander comment ça va.
+    mots: [hello, goodbye, name, bonjour]
+    autrement:
+      texte: "Imagine que tu arrives dans une nouvelle école à Londres. Tu fais un grand sourire, tu fais coucou de la main et tu dis « Hello! ». Puis tu poses ta main sur ton cœur : « My name is… » et ton prénom. Le geste aide ta mémoire."
+      visuel: { type: parole, langue: en-GB, mots: [{ texte: "Hello!", sens: "Bonjour !", emoji: "👋" }, { texte: "My name is Lya.", sens: "Je m'appelle Lya.", emoji: "🙋" }] }
+    etapes:
+      - dialogue:
+          - neo: "Un habitant de l'île me fait signe. Je lui dis bonjour… mais comment, en anglais ?"
+          - mia: "« Hello! » Et pour dire au revoir : « Goodbye! » Écoute bien comment ça se prononce."
+          - zero: "Hello ! Goodbye ! Hello ! Goodbye ! …Je ne sais plus si j'arrive ou si je pars."
+      - a_quoi_ca_sert: "L'anglais est parlé dans le monde entier : en voyage, dans les jeux vidéo, les chansons, les films. Dire bonjour et se présenter, c'est le premier pas pour se faire des amis partout."
+      - texte: |
+          Pour **saluer** en anglais :
+
+          - **Hello!** ou **Hi!** = Bonjour ! / Salut !
+          - **Goodbye!** ou **Bye!** = Au revoir !
+          - **Good morning!** = Bonjour (le matin) · **Good night!** = Bonne nuit !
+
+          Pour **se présenter** : **What's your name?** (Comment t'appelles-tu ?) → **My name is…** (Je m'appelle…)
+
+          Pour demander **comment ça va** : **How are you?** → **I'm fine, thank you!** (Je vais bien, merci !)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Hello!", sens: "Bonjour", emoji: "👋" }, { texte: "Goodbye!", sens: "Au revoir", emoji: "🖐️" }, { texte: "What's your name?", sens: "Comment t'appelles-tu ?", emoji: "❓" }, { texte: "My name is Néo.", sens: "Je m'appelle Néo.", emoji: "🙋" }, { texte: "How are you?", sens: "Comment vas-tu ?", emoji: "🙂" }, { texte: "I'm fine, thank you!", sens: "Je vais bien, merci !", emoji: "👍" }] }
+        legende: "Touche chaque bouton pour écouter, puis répète à voix haute. (Deux touches rapides : plus lentement.)"
+      - astuce: { texte: "Répète chaque mot à voix haute, trois fois, en faisant le geste : coucou pour Hello, main qui s'éloigne pour Goodbye. La bouche et les mains aident la mémoire.", qui: mia }
+      - retiens: "**Hello** = bonjour, **Goodbye** = au revoir, **My name is…** = je m'appelle…, **How are you?** = comment vas-tu ?, **thank you** = merci."
+    exercices:
+      - type: qcm
+        vars: { t: [["Hello!", "Bonjour !", "Au revoir !", "Merci !"], ["Goodbye!", "Au revoir !", "Bonjour !", "Bonne nuit !"], ["Thank you!", "Merci !", "S'il te plaît !", "Bonjour !"], ["Good night!", "Bonne nuit !", "Bonjour !", "Comment vas-tu ?"], ["How are you?", "Comment vas-tu ?", "Comment t'appelles-tu ?", "Quel âge as-tu ?"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute (touche le bouton). Que veut dire ce que tu entends ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Tu as entendu « {{t_0}} » : {{t_1}}"
+      - type: relier
+        enonce: "🔗 Relie chaque mot anglais à sa traduction."
+        paires: [["Hello!", "Bonjour !"], ["Goodbye!", "Au revoir !"], ["Thank you!", "Merci !"], ["Good night!", "Bonne nuit !"]]
+        correction: "Hello = bonjour, Goodbye = au revoir, Thank you = merci, Good night = bonne nuit."
+      - type: qcm
+        enonce: "Un enfant te demande « What's your name? ». Que réponds-tu ?"
+        choix: ["My name is Zéro.", "I'm fine, thank you.", "Goodbye!", "I'm eight."]
+        correction: "« What's your name? » = comment t'appelles-tu ? On répond « My name is… »."
+      - type: mot
+        enonce: "Écris en anglais le mot qui veut dire « bonjour » (5 lettres)."
+        reponse: ["hello"]
+        correction: "Bonjour se dit **hello**."
+
+  - id: colours
+    titre: Colours - les couleurs
+    objectif: Je reconnais et je dis dix couleurs en anglais.
+    mots: [red, blue, green, yellow, couleur]
+    autrement:
+      texte: "Fais une chasse aux couleurs dans ta chambre : pointe un objet et dis sa couleur en anglais. « Red! » pour ton pull rouge, « Blue! » pour le ciel. Les mots s'accrochent mieux à des choses vraies."
+      visuel: { type: parole, langue: en-GB, mots: [{ texte: "red", sens: "rouge", emoji: "🔴" }, { texte: "blue", sens: "bleu", emoji: "🔵" }, { texte: "green", sens: "vert", emoji: "🟢" }] }
+    etapes:
+      - dialogue:
+          - zero: "Le brouillard est tout gris… Où sont passées les couleurs ?"
+          - neo: "Elles reviennent quand on dit leur nom en anglais ! Essaie : « Red! »"
+          - mia: "Regarde, la fleur redevient rouge. Continuons avec toutes les couleurs !"
+      - a_quoi_ca_sert: "Décrire un dessin, choisir un maillot, jouer à un jeu en anglais (« the red team ») : les couleurs sont partout."
+      - texte: |
+          - **red** 🔴 rouge · **blue** 🔵 bleu · **green** 🟢 vert · **yellow** 🟡 jaune · **orange** 🟠 orange
+          - **pink** (rose) · **purple** 🟣 violet · **black** ⚫ noir · **white** ⚪ blanc · **brown** 🟤 marron
+
+          En anglais, la couleur se place **avant** le nom : **a red car** = une voiture rouge.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "red", sens: "rouge", emoji: "🔴" }, { texte: "blue", sens: "bleu", emoji: "🔵" }, { texte: "green", sens: "vert", emoji: "🟢" }, { texte: "yellow", sens: "jaune", emoji: "🟡" }, { texte: "orange", sens: "orange", emoji: "🟠" }, { texte: "purple", sens: "violet", emoji: "🟣" }, { texte: "black", sens: "noir", emoji: "⚫" }, { texte: "white", sens: "blanc", emoji: "⚪" }, { texte: "brown", sens: "marron", emoji: "🟤" }] }
+        legende: "Écoute et répète chaque couleur."
+      - attention: "**a red car** : en anglais, la couleur vient **avant** le nom (en français, on dit « une voiture rouge »)."
+      - astuce: { texte: "Certains mots se ressemblent : orange = orange, et « purple » ressemble à « pourpre ». Cherche les mots cousins !", qui: neo }
+      - retiens: "**red** rouge, **blue** bleu, **green** vert, **yellow** jaune, **black** noir, **white** blanc. La couleur se place **avant** le nom : **a red car**."
+    exercices:
+      - type: qcm
+        vars: { t: [["red", "rouge", "bleu", "vert"], ["blue", "bleu", "rouge", "jaune"], ["green", "vert", "gris", "bleu"], ["yellow", "jaune", "vert", "blanc"], ["black", "noir", "blanc", "marron"], ["white", "blanc", "noir", "rose"], ["purple", "violet", "rose", "rouge"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. De quelle couleur s'agit-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: relier
+        enonce: "🔗 Relie chaque couleur à son nom anglais."
+        paires: [["🔴", "red"], ["🔵", "blue"], ["🟢", "green"], ["🟡", "yellow"], ["⚫", "black"]]
+        correction: "🔴 red, 🔵 blue, 🟢 green, 🟡 yellow, ⚫ black."
+      - type: mot
+        vars: { t: [["rouge", "red"], ["bleu", "blue"], ["vert", "green"], ["noir", "black"], ["blanc", "white"]] }
+        enonce: "Écris en anglais : **{{t_0}}**"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} = **{{t_1}}**."
+      - type: qcm
+        enonce: "Comment dit-on « un chat noir » en anglais ?"
+        choix: ["a black cat", "a cat black", "black a cat", "a cat is black a"]
+        correction: "En anglais, la couleur se place avant le nom : **a black cat**."
+
+  - id: numbers
+    titre: Numbers - compter jusqu'à 12
+    objectif: Je compte de 1 à 12 en anglais et je dis mon âge.
+    mots: [one, two, three, number, nombre]
+    autrement:
+      texte: "Compte en anglais en montant un escalier : une marche, « one », deux marches, « two »… Ou compte tes doigts en les levant un par un. Ton corps retient le rythme des nombres."
+      visuel: { type: parole, langue: en-GB, mots: [{ texte: "one, two, three, four, five", sens: "1, 2, 3, 4, 5", emoji: "🖐️" }] }
+    etapes:
+      - dialogue:
+          - neo: "Les habitants comptent leurs poissons… mais sans mots, ils se trompent tout le temps !"
+          - mia: "Apprenons-leur : one, two, three ! Ce sont les mêmes nombres, avec d'autres noms."
+          - zero: "Et zéro ? Moi aussi j'ai un nom en anglais ?"
+          - mia-joie: "Oui : « zero » ! Presque pareil."
+      - a_quoi_ca_sert: "Donner son âge, compter les points d'un jeu, lire un numéro de maison ou l'heure en anglais : les nombres servent tout le temps."
+      - texte: |
+          **1** one · **2** two · **3** three · **4** four · **5** five · **6** six
+          **7** seven · **8** eight · **9** nine · **10** ten · **11** eleven · **12** twelve
+
+          Pour dire ton âge : **How old are you?** (Quel âge as-tu ?) → **I'm eight.** (J'ai huit ans.)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "one", sens: "1" }, { texte: "two", sens: "2" }, { texte: "three", sens: "3" }, { texte: "four", sens: "4" }, { texte: "five", sens: "5" }, { texte: "six", sens: "6" }, { texte: "seven", sens: "7" }, { texte: "eight", sens: "8" }, { texte: "nine", sens: "9" }, { texte: "ten", sens: "10" }, { texte: "eleven", sens: "11" }, { texte: "twelve", sens: "12" }] }
+        legende: "Écoute, puis compte à voix haute avec tes doigts."
+      - attention: "Pour dire son âge, on utilise « I'm » (je suis) : **I'm eight**, littéralement « je suis huit ». On ne dit pas « I have eight »."
+      - astuce: { texte: "Chante les nombres sur l'air d'une comptine : one, two, three, four, five… Une mélodie se retient beaucoup mieux qu'une liste.", qui: zero }
+      - retiens: "**one** 1, **two** 2, **three** 3… **ten** 10. Pour dire son âge : **I'm eight** (j'ai huit ans)."
+    exercices:
+      - type: nombre
+        vars: { t: [["one", 1], ["two", 2], ["three", 3], ["four", 4], ["five", 5], ["six", 6], ["seven", 7], ["eight", 8], ["nine", 9], ["ten", 10], ["eleven", 11], ["twelve", 12]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute le nombre, puis écris-le en chiffres."
+        reponse: "t_1"
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: mot
+        vars: { t: [[3, "three"], [5, "five"], [8, "eight"], [10, "ten"], [2, "two"], [7, "seven"]] }
+        enonce: "Écris en anglais le nombre **{{t_0}}**."
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} = **{{t_1}}**."
+      - type: relier
+        enonce: "🔗 Relie chaque nombre à son nom anglais."
+        paires: [["1", "one"], ["2", "two"], ["3", "three"], ["8", "eight"], ["12", "twelve"]]
+        correction: "1 one, 2 two, 3 three, 8 eight, 12 twelve."
+      - type: qcm
+        enonce: "Comment dit-on « J'ai neuf ans » en anglais ?"
+        choix: ["I'm nine.", "I have nine.", "My name is nine.", "I'm fine."]
+        correction: "Pour l'âge, on dit « I'm » + le nombre : **I'm nine**."
+
+  - id: animals
+    titre: Animals - les animaux
+    objectif: Je reconnais et je nomme dix animaux en anglais.
+    mots: [cat, dog, bird, animal]
+    autrement:
+      texte: "Joue au zoo : imite un animal et dis son nom en anglais en même temps. Miaou + « cat! », ouaf + « dog! ». Le cri de l'animal devient un crochet pour le mot."
+      visuel: { type: parole, langue: en-GB, mots: [{ texte: "cat", sens: "chat", emoji: "🐱" }, { texte: "dog", sens: "chien", emoji: "🐶" }] }
+    etapes:
+      - dialogue:
+          - zero: "Un animal tout gris s'approche… C'est un « chat » ?"
+          - neo: "En anglais, on dit « cat ». Et dès qu'on dit son nom, il retrouve ses couleurs !"
+          - mia: "Allez, libérons tous les animaux de l'île."
+      - a_quoi_ca_sert: "Les animaux sont partout dans les livres, les chansons et les dessins animés en anglais. Les connaître, c'est déjà comprendre beaucoup d'histoires."
+      - texte: |
+          - **cat** 🐱 chat · **dog** 🐶 chien · **bird** 🐦 oiseau · **fish** 🐟 poisson · **rabbit** 🐰 lapin
+          - **horse** 🐴 cheval · **cow** 🐮 vache · **pig** 🐷 cochon · **duck** 🦆 canard · **mouse** 🐭 souris
+
+          Pour en parler : **I have a dog.** (J'ai un chien.) · **I like cats.** (J'aime les chats.)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "cat", sens: "chat", emoji: "🐱" }, { texte: "dog", sens: "chien", emoji: "🐶" }, { texte: "bird", sens: "oiseau", emoji: "🐦" }, { texte: "fish", sens: "poisson", emoji: "🐟" }, { texte: "rabbit", sens: "lapin", emoji: "🐰" }, { texte: "horse", sens: "cheval", emoji: "🐴" }, { texte: "cow", sens: "vache", emoji: "🐮" }, { texte: "pig", sens: "cochon", emoji: "🐷" }, { texte: "duck", sens: "canard", emoji: "🦆" }, { texte: "mouse", sens: "souris", emoji: "🐭" }] }
+        legende: "Écoute chaque animal et imite-le en répétant son nom."
+      - astuce: { texte: "Fais des paires « cri + mot » : miaou-cat, ouaf-dog, coin-coin-duck. Ton cerveau retient mieux ce qui est drôle et bruyant !", qui: zero }
+      - retiens: "**cat** chat, **dog** chien, **bird** oiseau, **fish** poisson, **rabbit** lapin. **I have a dog** = j'ai un chien."
+    exercices:
+      - type: qcm
+        vars: { t: [["cat", "🐱 chat", "🐶 chien", "🐭 souris"], ["dog", "🐶 chien", "🐱 chat", "🐴 cheval"], ["bird", "🐦 oiseau", "🐟 poisson", "🦆 canard"], ["fish", "🐟 poisson", "🐦 oiseau", "🐷 cochon"], ["rabbit", "🐰 lapin", "🐭 souris", "🐮 vache"], ["horse", "🐴 cheval", "🐮 vache", "🐶 chien"], ["duck", "🦆 canard", "🐦 oiseau", "🐟 poisson"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Quel animal est-ce ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: relier
+        enonce: "🔗 Relie chaque animal à son nom anglais."
+        paires: [["🐱", "cat"], ["🐶", "dog"], ["🐦", "bird"], ["🐟", "fish"], ["🐷", "pig"]]
+        correction: "🐱 cat, 🐶 dog, 🐦 bird, 🐟 fish, 🐷 pig."
+      - type: mot
+        vars: { t: [["chat", "cat"], ["chien", "dog"], ["poisson", "fish"], ["cochon", "pig"], ["vache", "cow"]] }
+        enonce: "Écris en anglais : **{{t_0}}**"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} = **{{t_1}}**."
+      - type: qcm
+        enonce: "Comment dit-on « J'ai un lapin » ?"
+        choix: ["I have a rabbit.", "I'm a rabbit.", "My name is rabbit.", "I like a rabbit have."]
+        correction: "« J'ai » = **I have** : I have a rabbit."
+
+  - id: family
+    titre: My family - la famille
+    objectif: Je présente les membres de ma famille en anglais.
+    mots: [mum, dad, sister, brother, famille]
+    autrement:
+      texte: "Prends une photo de famille (ou dessine-la) et présente chaque personne comme un guide : « This is my mum. This is my brother. » Montre du doigt en parlant : le mot se colle au visage."
+      visuel: { type: parole, langue: en-GB, mots: [{ texte: "This is my mum.", sens: "Voici ma maman.", emoji: "👩" }, { texte: "This is my dad.", sens: "Voici mon papa.", emoji: "👨" }] }
+    etapes:
+      - dialogue:
+          - mia: "Un habitant nous montre une photo de sa famille, mais il ne sait plus dire qui est qui."
+          - neo: "Aidons-le : « This is my mum », « This is my dad »… Je présente, tu répètes ?"
+          - zero: "This is my… hamster ! Ah non, ça c'est moi."
+      - a_quoi_ca_sert: "Parler de soi et de sa famille est l'une des premières choses qu'on fait avec un correspondant, un nouvel ami étranger ou en voyage."
+      - texte: |
+          - **mum** maman · **dad** papa · **sister** sœur · **brother** frère · **baby** bébé
+          - **grandma** grand-mère · **grandpa** grand-père
+
+          Pour présenter : **This is my sister.** (Voici ma sœur.) · **I have two brothers.** (J'ai deux frères.)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "mum", sens: "maman", emoji: "👩" }, { texte: "dad", sens: "papa", emoji: "👨" }, { texte: "sister", sens: "sœur", emoji: "👧" }, { texte: "brother", sens: "frère", emoji: "👦" }, { texte: "grandma", sens: "grand-mère", emoji: "👵" }, { texte: "grandpa", sens: "grand-père", emoji: "👴" }, { texte: "baby", sens: "bébé", emoji: "👶" }] }
+        legende: "Écoute et montre la bonne personne sur une photo de famille."
+      - astuce: { texte: "« My » sert pour tout le monde : my mum, my dad, my sister. En anglais, pas de « mon / ma / mes » à choisir !", qui: neo }
+      - retiens: "**mum** maman, **dad** papa, **sister** sœur, **brother** frère. Pour présenter : **This is my** sister."
+    exercices:
+      - type: qcm
+        vars: { t: [["sister", "sœur", "frère", "maman"], ["brother", "frère", "sœur", "papa"], ["mum", "maman", "papa", "grand-mère"], ["dad", "papa", "maman", "grand-père"], ["grandma", "grand-mère", "grand-père", "sœur"], ["baby", "bébé", "frère", "papa"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Qui est-ce ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: relier
+        enonce: "🔗 Relie chaque mot à sa traduction."
+        paires: [["mum", "maman"], ["dad", "papa"], ["sister", "sœur"], ["brother", "frère"]]
+        correction: "mum maman, dad papa, sister sœur, brother frère."
+      - type: qcm
+        enonce: "Comment dit-on « Voici mon frère » ?"
+        choix: ["This is my brother.", "This is my sister.", "My name is brother.", "I'm brother."]
+        correction: "« Voici mon… » = **This is my…** : This is my brother."
+      - type: mot
+        vars: { t: [["sœur", "sister", "sister"], ["frère", "brother", "brother"], ["papa", "dad", "daddy"], ["maman", "mum", "mom"]] }
+        enonce: "Écris en anglais : **{{t_0}}**"
+        reponse: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}} = **{{t_1}}**."
+
+  - id: classroom
+    titre: In the classroom - les consignes de la classe
+    objectif: Je comprends et je fais les consignes de la classe en anglais.
+    mots: [stand up, sit down, listen, classe]
+    autrement:
+      texte: "Joue à « Jacques a dit » en anglais avec quelqu'un : « Stand up! » tu te lèves, « Sit down! » tu t'assieds, « Touch your nose! » tu touches ton nez. Ton corps comprend avant ta tête !"
+      visuel: { type: parole, langue: en-GB, mots: [{ texte: "Stand up!", sens: "Lève-toi !", emoji: "🧍" }, { texte: "Sit down!", sens: "Assieds-toi !", emoji: "💺" }] }
+    etapes:
+      - dialogue:
+          - neo: "À l'école de l'île, la maîtresse parle anglais ! Elle dit « Stand up! » et tout le monde se lève."
+          - zero: "Moi je suis resté assis… j'ai raté quelque chose ?"
+          - mia: "Apprenons les consignes : il suffit de faire le geste en écoutant."
+      - a_quoi_ca_sert: "En cours d'anglais, au collège ou dans un jeu, on reçoit des consignes en anglais. Les comprendre permet de participer sans traduire."
+      - texte: |
+          - **Stand up!** Lève-toi ! · **Sit down!** Assieds-toi !
+          - **Listen!** Écoute ! · **Look!** Regarde ! · **Repeat!** Répète !
+          - **Open your book!** Ouvre ton livre ! · **Close your book!** Ferme ton livre !
+          - **Raise your hand!** Lève la main ! · **Be quiet!** Silence !
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Stand up!", sens: "Lève-toi !", emoji: "🧍" }, { texte: "Sit down!", sens: "Assieds-toi !", emoji: "💺" }, { texte: "Listen!", sens: "Écoute !", emoji: "👂" }, { texte: "Look!", sens: "Regarde !", emoji: "👀" }, { texte: "Repeat!", sens: "Répète !", emoji: "🔁" }, { texte: "Open your book!", sens: "Ouvre ton livre !", emoji: "📖" }, { texte: "Raise your hand!", sens: "Lève la main !", emoji: "✋" }] }
+        legende: "Écoute chaque consigne et fais le geste en même temps."
+      - vraie_vie: { titre: "Jeu : Simon says", texte: "Avec quelqu'un de ta famille, jouez à « Simon says » (Jacques a dit) avec les consignes en anglais. Celui qui fait le geste sans « Simon says » a un gage !", materiel: "un partenaire de jeu" }
+      - astuce: { texte: "Pour chaque consigne, fais le geste en même temps que tu l'entends : c'est la méthode des gestes, utilisée dans les écoles du monde entier.", qui: mia }
+      - retiens: "**Stand up** = lève-toi, **Sit down** = assieds-toi, **Listen** = écoute, **Look** = regarde, **Open your book** = ouvre ton livre."
+    exercices:
+      - type: qcm
+        vars: { t: [["Stand up!", "Je me lève.", "Je m'assieds.", "Je lève la main."], ["Sit down!", "Je m'assieds.", "Je me lève.", "J'ouvre mon livre."], ["Listen!", "J'écoute.", "Je regarde.", "Je me tais."], ["Look!", "Je regarde.", "J'écoute.", "Je répète."], ["Raise your hand!", "Je lève la main.", "Je ferme mon livre.", "Je m'assieds."], ["Open your book!", "J'ouvre mon livre.", "Je ferme mon livre.", "Je me lève."]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute la consigne. Que fais-tu ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » → {{t_1}}"
+      - type: relier
+        enonce: "🔗 Relie chaque consigne à son geste."
+        paires: [["Stand up!", "🧍 se lever"], ["Sit down!", "💺 s'asseoir"], ["Listen!", "👂 écouter"], ["Look!", "👀 regarder"], ["Raise your hand!", "✋ lever la main"]]
+        correction: "Stand up se lever, Sit down s'asseoir, Listen écouter, Look regarder, Raise your hand lever la main."
+      - type: ordre
+        enonce: "Remets la consigne dans l'ordre : « Ouvre ton livre ! »"
+        items: ["Open", "your", "book!"]
+        correction: "Open your book!"

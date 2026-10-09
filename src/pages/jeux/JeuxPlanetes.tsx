@@ -18,7 +18,7 @@ const melange = <T,>(a: T[]): T[] => {
   return b;
 };
 
-function enregistrer(id: string, score: number, mieux: "haut" | "bas" = "haut") {
+export function enregistrer(id: string, score: number, mieux: "haut" | "bas" = "haut") {
   updateChild((c) => {
     const prev = c.games[id];
     c.games[id] = prev === undefined ? score : mieux === "haut" ? Math.max(prev, score) : Math.min(prev, score);
@@ -28,7 +28,7 @@ function enregistrer(id: string, score: number, mieux: "haut" | "bas" = "haut") 
 }
 
 /** Coque commune : titre, consigne, manche, fin de partie. */
-function Coque({ titre, emoji, qui, consigne, children }: { titre: string; emoji: string; qui: Who; consigne: string; children: React.ReactNode }) {
+export function Coque({ titre, emoji, qui, consigne, children }: { titre: string; emoji: string; qui: Who; consigne: string; children: React.ReactNode }) {
   return (
     <div className="page jeu-planete">
       <div className="lecon-top">
@@ -45,7 +45,7 @@ function Coque({ titre, emoji, qui, consigne, children }: { titre: string; emoji
   );
 }
 
-function Fin({ score, total, record, unite = "points", onRejouer, lecon }: { score: number; total?: number; record?: number; unite?: string; onRejouer: () => void; lecon: string }) {
+export function Fin({ score, total, record, unite = "points", onRejouer, lecon }: { score: number; total?: number; record?: number; unite?: string; onRejouer: () => void; lecon: string }) {
   return (
     <div className="center stack jeu-fin">
       <div className="big-score">

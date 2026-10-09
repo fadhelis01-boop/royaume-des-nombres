@@ -1,0 +1,24 @@
+# L'histoire de la planète Anglais : l'Archipel de l'Écho (premier monde, 2.4).
+prologue:
+  - narrateur: "Au bord de la Galaxie flotte un archipel où l'on parle une autre langue : l'anglais. Ses habitants chantaient, comptaient, racontaient… et leurs mots arrivaient jusqu'aux autres planètes."
+  - narrateur: "Le Grand Neutre a soufflé un brouillard gris : les mots anglais se sont perdus en route. Il ne reste qu'un écho : « Hel… lo… »"
+  - zero-surprise: "« Hello » ? Ça veut dire quoi ? C'est le nom d'un hamster ?"
+  - mia: "Ça veut dire « bonjour » ! Une nouvelle langue, c'est une nouvelle façon de dire le monde. Écoute bien, répète à voix haute : ta bouche apprend aussi."
+  - neo: "Chaque mot que tu retrouves fait reculer le brouillard. Let's go !"
+arcs:
+  - id: anglais-arc-1
+    titre: "Livre I — Les premiers mots"
+    sous_titre: "Se présenter, les couleurs, compter, les animaux, la famille, la classe"
+    final: en-ile-des-premiers-mots
+    fin:
+      - narrateur: "Le brouillard se déchire. Sur la plage, les habitants de l'Archipel crient : « Thank you! »"
+      - mia-joie: "Tu sais saluer, compter, dire les couleurs et parler de ta famille. Bravo ! D'autres îles t'attendent bientôt."
+chapitres:
+  en-ile-des-premiers-mots:
+    titre: "L'Île des Premiers Mots"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Sur l'Île des Premiers Mots, la cloche de l'Écho ne sonne plus. Les habitants n'osent plus parler."
+      - mia: "Écoute, répète, joue : c'est comme ça qu'on apprend une langue, même tout petit."
+    apres:
+      - narrateur: "Ding, dong ! La cloche de l'Écho sonne et tous les habitants se disent « Hello! » en riant."

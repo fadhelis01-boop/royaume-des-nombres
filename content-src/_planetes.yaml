@@ -3,7 +3,7 @@
 # (et, si on veut, une histoire `histoire: _histoire_<id>.yaml`). Voir docs/FORMAT-CONTENU.md.
 #
 # Champs :
-#   id, famille (fondamentaux | sciences | arts), titre (nom de la planète), matiere (nom court),
+#   id, famille (fondamentaux | sciences | arts | langues), titre (nom de la planète), matiere (nom court),
 #   emoji, couleur, accroche (une phrase pour la galaxie),
 #   histoire (fichier) + prologue { id, titre, appel },
 #   objet { emoji, un, des, fait } : ce que rapporte chaque Défi du Gardien (« 💎 3 cristaux rallumés »),
@@ -17,6 +17,8 @@ familles:
   fondamentaux: { titre: "Les fondamentaux", emoji: "📐", accroche: "Compter, lire, écrire : les clés de tout le reste." }
   sciences: { titre: "Les sciences", emoji: "🔬", accroche: "Comprendre la matière, la vie, les forces et le ciel." }
   arts: { titre: "Les arts", emoji: "🎨", accroche: "Écouter, jouer, dessiner, créer." }
+  langues: { titre: "Les langues", emoji: "🗣️", accroche: "Parler avec le monde entier." }
+
 
 planetes:
   - id: maths
@@ -34,7 +36,7 @@ planetes:
     liens:
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
       - { texte: "✍️ Inventer un problème", vers: "/inventer" }
-    jeux: [defense, pont, course, duel, eclair, additions, tables, compte, vise, enigmes]
+    jeux: [balance, bus, ami, defense, pont, course, duel, eclair, additions, tables, compte, vise, enigmes]
     gardiens:
       graines:
         sprite: nuage
@@ -81,7 +83,7 @@ planetes:
       - { texte: "⏱️ Lecture chronométrée", vers: "/fluence" }
 
       - { texte: "🎮 Jeux de mots", vers: "/jeux" }
-    jeux: [conjugaison, mystere, flash]
+    jeux: [fabrique, ami, conjugaison, mystere, flash]
     gardiens:
       graines:
         sprite: gribouille
@@ -377,4 +379,30 @@ planetes:
         cri: "Toutes pareilles… toutes grises…"
         aie: ["Un style ! Le tien !", "Cette composition… me dépasse.", "Les couleurs reviennent !"]
         nargue: ["Encore une image grise…", "Pareil, pareil…"]
+        jeton: "🌫️"
+
+  - id: anglais
+    famille: langues
+    titre: L'Archipel de l'Écho
+    matiere: Anglais
+    emoji: "🌍"
+    couleur: "#1e6fb8"
+    accroche: "Hello! Écouter, répéter, jouer avec une nouvelle langue."
+    histoire: _histoire_anglais.yaml
+    prologue: { id: prologue-anglais, titre: "Prologue — Le brouillard des mots", appel: "Les mots anglais se sont perdus dans le brouillard… Écoute l'histoire." }
+    objet: { emoji: "🔔", un: "cloche de l'Écho", des: "cloches de l'Écho" }
+    echauffement: "2 minutes de mots anglais"
+    astuces: "Écouter, répéter, retenir"
+    liens:
+      - { texte: "🎮 Les jeux", vers: "/jeux" }
+    jeux: [ami, eclair-sciences]
+    gardiens:
+      graines:
+        sprite: neutre
+        nom: Le Brouillard des Mots
+        qui: narrateur
+        ouverture: "Le brouillard du Grand Neutre cache dix mots anglais. Chaque bonne réponse en fait réapparaître un."
+        cri: "Shhh… plus un mot… plus un son…"
+        aie: ["Hello ?! Un mot m'échappe !", "Ce mot… brille trop !", "Thank you… non, je ne voulais pas dire ça !"]
+        nargue: ["Brouillard, brouillard…", "Ce mot reste perdu…"]
         jeton: "🌫️"

@@ -1,3 +1,14 @@
+- version: "2.4.0"
+  date: "2026-10-09"
+  notes:
+    - "Ta progression ne se perd plus : enregistrement immédiat, copie de secours chaque jour, code de transfert pour changer d'appareil, et synchronisation automatique par fichier sur ordinateur. Si tu as joué sur deux appareils, tout est fusionné."
+    - "« Continuer là où tu t'étais arrêté » sur la Galaxie : un bouton te ramène à la leçon en cours, à la bonne étape."
+    - "Trois jeux où la notion EST le jeu : la Balance des Mystères (les équations), le Bus de la Dizaine (passer la dizaine) et la Fabrique de Phrases (accorder le verbe)."
+    - "Une surprise chaque jour : coffre mystère, comète, visiteur avec une énigme… avec des récompenses qui changent."
+    - "Défi entre amis : les mêmes 8 questions pour toi et un ami, même sur un autre appareil, grâce à un petit code."
+    - "Moins de QCM : de nouveaux exercices où il faut relier, ranger et écrire ce qu'on a retenu (même au micro). Chaque défi contient au moins un exercice de production."
+    - "Nouvelle planète : l'Archipel de l'Écho, pour apprendre ses premiers mots d'anglais en écoutant et en répétant."
+    - "Pour les parents : vue d'ensemble de tous les profils, et tests automatiques supplémentaires."
 - version: "2.3.0"
   date: "2026-10-09"
   notes:

@@ -6,6 +6,7 @@ import { Bubble, Mascot } from "../components/Mascot";
 import { CarteRoyaume } from "../components/CarteRoyaume";
 import { Recap } from "../components/Seance";
 import { Quetes } from "../components/Quetes";
+import { SurpriseDuJour } from "../components/SurpriseDuJour";
 import type { World } from "../lib/types";
 import { visuel } from "../lib/img";
 
@@ -116,7 +117,9 @@ export function Carte() {
           </button>
         )}
       </div>
+      <SurpriseDuJour />
       <Quetes />
+
       <details className="plus-activites">
         <summary>➕ Plus d'activités</summary>
         <div className="quick">

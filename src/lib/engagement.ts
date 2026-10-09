@@ -101,3 +101,72 @@ export function verifierMiMonde(c: Child, w: World) {
   addGems(5);
   toast(h ? `Mi-parcours ! ${h.nom} est libéré du gris et rejoint ton album (+5 💎)` : "Mi-parcours du monde ! (+5 💎)", "🎉");
 }
+
+// ---------- Surprise du jour (2.4) ----------
+// Un petit événement différent chaque jour (coffre, comète, visiteur…) avec une récompense qui varie.
+// Aucune pression : rien n'est perdu si l'enfant ne vient pas, la surprise est seulement un bonus.
+export interface Surprise {
+  id: string;
+  emoji: string;
+  titre: string;
+  texte: string;
+  compteur?: string;
+  n?: number;
+  vers?: string;
+  enigme?: boolean;
+}
+export const SURPRISES: Surprise[] = [
+  { id: "coffre", emoji: "🎁", titre: "Le coffre mystère", texte: "Un coffre est apparu ! Il s'ouvrira après 5 bonnes réponses.", compteur: "ok", n: 5 },
+  { id: "plume", emoji: "✒️", titre: "Le coffre des écrivains", texte: "Ce coffre s'ouvre quand tu réussis un exercice où il faut écrire, relier ou ranger.", compteur: "production-ok", n: 1 },
+  { id: "comete", emoji: "☄️", titre: "La comète", texte: "Une comète traverse la Galaxie ! Joue à un jeu pour attraper sa poussière d'étoile.", compteur: "jeux", n: 1, vers: "/jeux" },
+  { id: "visiteur", emoji: "🦉", titre: "Le visiteur mystère", texte: "Une chouette savante s'est posée sur ta cabane. Elle a une énigme pour toi.", enigme: true },
+  { id: "cle", emoji: "🗝️", titre: "La clé du souvenir", texte: "Une clé brille au fond de tes révisions : fais une séance pour l'attraper.", compteur: "revision", n: 1, vers: "/revisions" },
+  { id: "aide", emoji: "🤝", titre: "Le coffre de l'entraide", texte: "Il s'ouvre quand tu expliques ton raisonnement à un personnage.", compteur: "explique", n: 1 },
+];
+export function surpriseDuJour(c: Child): Surprise {
+  return SURPRISES[hash("surprise" + dayKey() + c.id) % SURPRISES.length];
+}
+/** Avancement de la surprise du jour. */
+export function etatSurprise(c: Child) {
+  const s = surpriseDuJour(c);
+  const st = c.surprise?.day === dayKey() ? c.surprise : null;
+  const fait = st && s.compteur ? Math.max(0, (c.counters[s.compteur] ?? 0) - (st.base ?? 0)) : 0;
+  return { s, st, fait: Math.min(fait, s.n ?? 1), pret: !!st && !st.ouvert && !s.enigme && fait >= (s.n ?? 1) };
+}
+/** À l'affichage : pose le point de départ du jour. */
+export function initSurprise(c: Child) {
+  const s = surpriseDuJour(c);
+  if (c.surprise?.day === dayKey()) return;
+  updateChild((x) => {
+    x.surprise = { day: dayKey(), base: s.compteur ? x.counters[s.compteur] ?? 0 : 0, ouvert: false };
+  });
+}
+/** Ouvre la surprise : une récompense tirée au sort (gemmes, habitant pour l'album, objet de la boutique). */
+export async function ouvrirSurprise(c: Child): Promise<string> {
+  const { ITEMS } = await import("./shop");
+  const r = Math.random();
+  const manquants = HABITANTS_ALBUM.filter((h) => !(c.album ?? []).includes(h.id));
+  const objets = ITEMS.filter((i) => i.prix <= 30 && !c.owned.includes(i.id));
+  let texte: string;
+  if (r < 0.25 && manquants.length) {
+    const h = manquants[Math.floor(Math.random() * manquants.length)];
+    updateChild((x) => {
+      x.album = [...(x.album ?? []), h.id];
+    });
+    texte = `${h.nom} sort du coffre et rejoint ton album !`;
+  } else if (r < 0.4 && objets.length) {
+    const o = objets[Math.floor(Math.random() * objets.length)];
+    updateChild((x) => {
+      x.owned = [...x.owned, o.id];
+    });
+    texte = `${o.emoji} ${o.nom} pour ton personnage ! (à équiper dans la boutique)`;
+  } else {
+    const g = [5, 8, 10, 12, 15, 20][Math.floor(Math.random() * 6)];
+    addGems(g);
+    texte = `${g} gemmes 💎 !`;
+  }
+  updateChild((x) => {
+    x.surprise = { ...(x.surprise ?? { day: dayKey(), base: 0 }), ouvert: true, recompense: texte };
+  });
+  return texte;
+}

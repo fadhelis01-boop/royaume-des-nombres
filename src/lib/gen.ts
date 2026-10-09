@@ -77,6 +77,10 @@ export interface Instance {
   m?: number;
   pieces?: number[];
   emoji?: string;
+  /** libre : idées attendues (variantes) et nombre à retrouver */
+  cles?: string[][];
+  minCles?: number;
+  modele?: string;
 }
 
 // ---------- Gabarits « {{ expression }} » ----------
@@ -292,6 +296,30 @@ function build(spec: ExSpec, vars: Record<string, Value>, rng: Rng, seed: number
       });
       base.expectedText = grp.join(", ");
       base.clavier = "aucun";
+      return base;
+    }
+    case "relier": {
+      // la colonne de gauche garde son ordre, celle de droite est mélangée ; itemCats[i] = bonne case à droite
+      const ps = (spec.paires ?? []).map(([g, d]) => [fill(String(g), vars, rng), fill(String(d), vars, rng)] as [string, string]);
+      if (new Set(ps.map((p) => p[1])).size !== ps.length || new Set(ps.map((p) => p[0])).size !== ps.length) return null;
+      const ordre = ps.map((_, i) => i);
+      for (let i = ordre.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        [ordre[i], ordre[j]] = [ordre[j], ordre[i]];
+      }
+      base.items = ps.map((p) => p[0]);
+      base.texts = ordre.map((i) => ps[i][1]);
+      base.itemCats = ps.map((_, i) => ordre.indexOf(i));
+      base.expectedText = ps.map((p) => `${p[0]} → ${p[1]}`).join(" · ");
+      base.clavier = "aucun";
+      return base;
+    }
+    case "libre": {
+      base.cles = (spec.cles ?? []).map((g) => (Array.isArray(g) ? g : [g]).map((m) => fill(String(m), vars, rng)));
+      base.minCles = Math.min(base.cles.length, spec.min_cles ?? Math.max(1, Math.ceil(base.cles.length / 2)));
+      base.modele = fill(String(spec.modele ?? ""), vars, rng);
+      base.expectedText = base.modele;
+      base.clavier = "texte";
       return base;
     }
     case "classer": {
@@ -536,8 +564,21 @@ function checkRaw(inst: Instance, ans: Answer): Verdict {
       const bons = sel.filter((x) => t.includes(x)).length;
       return { ok: false, almost: bons && bons < t.length && sel.length <= t.length ? `Tu en as trouvé ${bons} sur ${t.length}. Il en manque !` : undefined };
     }
+    case "relier": {
+      if (ans.kind !== "state") return { ok: false };
+      const faux = inst.itemCats!.filter((c, i) => ans.values[i] !== c).length;
+      if (!faux) return { ok: true };
+      return { ok: false, almost: faux === 1 ? "Presque : une seule paire est à corriger !" : undefined };
+    }
+    case "libre": {
+      if (ans.kind !== "text") return { ok: false };
+      const trouves = idees(inst, ans.value);
+      if (trouves.length >= inst.minCles!) return { ok: true };
+      return { ok: false, almost: trouves.length ? `Tu as retrouvé ${trouves.length} idée${trouves.length > 1 ? "s" : ""} sur ${inst.minCles} attendue${inst.minCles! > 1 ? "s" : ""}. Compare avec le modèle !` : undefined };
+    }
     case "classer": {
       if (ans.kind !== "state") return { ok: false };
+
       const ok = ans.values.length === inst.itemCats!.length && ans.values.every((c, i) => c === inst.itemCats![i]);
       if (ok) return { ok };
       const faux = ans.values.filter((c, i) => c !== inst.itemCats![i]).length;
@@ -628,3 +669,26 @@ function checkRaw(inst: Instance, ans: Answer): Verdict {
 
 /** Graine aléatoire (différente à chaque question). */
 export const newSeed = () => (Math.random() * 2 ** 31) >>> 0;
+
+// ---------- Rappel libre : retrouver les idées dans un texte écrit (ou dicté) par l'enfant ----------
+const sansAccent = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, " ");
+/** Racine tolérante : les 5 premières lettres d'un mot long (pluriels, conjugaisons, petites fautes de fin). */
+const racine = (m: string) => (m.length > 6 ? m.slice(0, 5) : m);
+/** Les idées attendues retrouvées dans la réponse (indices des groupes). */
+export function idees(inst: Instance, texte: string): number[] {
+  const mots = sansAccent(texte).split(/[^a-z0-9]+/).filter(Boolean);
+  const t = " " + mots.join(" ") + " ";
+  return (inst.cles ?? [])
+    .map((g, i) => ({ i, ok: g.some((v) => {
+      const cle = sansAccent(v).split(/[^a-z0-9]+/).filter(Boolean);
+      if (!cle.length) return false;
+      // un mot tronqué (« conde ») ne compte pas : il faut au moins 6 lettres, ou le mot entier
+      const proche = (m: string, c: string) => m === c || (c.length > 3 && m.length >= Math.min(c.length, 6) && m.startsWith(racine(c))) || (c.length >= 5 && m.includes(c));
+      if (cle.length > 1) return t.includes(" " + cle.join(" ") + " ") || cle.every((c) => mots.some((m) => proche(m, c)));
+      return mots.some((m) => proche(m, cle[0]));
+
+
+    }) }))
+    .filter((x) => x.ok)
+    .map((x) => x.i);
+}

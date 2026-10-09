@@ -35,7 +35,7 @@ const PCT = (a: number, b: number) => (b ? Math.round((100 * a) / b) : 0);
 export function Bilans({ children }: { children: Child[] }) {
   const { worlds, manifest } = useContent();
   const [id, setId] = useState(children[0]?.id ?? "");
-  const [vue, setVue] = useState<"bilan" | "securite" | "programmes">("bilan");
+  const [vue, setVue] = useState<"bilan" | "groupe" | "securite" | "programmes">("bilan");
   const child = children.find((c) => c.id === id);
   const parPlanete = new Map<string, World[]>();
   for (const w of worlds) parPlanete.set(w.matiere, [...(parPlanete.get(w.matiere) ?? []), w]);
@@ -43,6 +43,7 @@ export function Bilans({ children }: { children: Child[] }) {
     <div className="stack bilans">
       <div className="tabs no-print" role="tablist">
         <button role="tab" aria-selected={vue === "bilan"} className={`tab ${vue === "bilan" ? "active" : ""}`} onClick={() => setVue("bilan")}>📋 Ce que mon enfant sait faire</button>
+        {children.length > 1 && <button role="tab" aria-selected={vue === "groupe"} className={`tab ${vue === "groupe" ? "active" : ""}`} onClick={() => setVue("groupe")}>👥 Vue d'ensemble</button>}
         <button role="tab" aria-selected={vue === "securite"} className={`tab ${vue === "securite" ? "active" : ""}`} onClick={() => setVue("securite")}>🧪 Fiche sécurité des expériences</button>
         <button role="tab" aria-selected={vue === "programmes"} className={`tab ${vue === "programmes" ? "active" : ""}`} onClick={() => setVue("programmes")}>🏫 Correspondance avec les programmes</button>
       </div>
@@ -98,7 +99,9 @@ export function Bilans({ children }: { children: Child[] }) {
         </section>
       )}
 
+      {vue === "groupe" && <VueGroupe children={children} worlds={worlds} />}
       {vue === "securite" && (
+
         <section className="card imprimable">
           <h2>Fiche sécurité des expériences</h2>
           <p className="small">🟢 l'enfant peut la faire seul · 🟠 avec un adulte · 🔴 à regarder seulement (démonstration par un adulte ou vidéo). Règles communes : lunettes si indiqué, on ne goûte jamais, on range et on se lave les mains.</p>
@@ -368,4 +371,59 @@ export function exporterCsv(children: Child[], worlds: World[]) {
   a.download = `galaxie-des-savoirs-suivi-${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+}
+
+/** Vue d'ensemble de tous les profils (famille, petit groupe, classe) : un enfant par ligne. */
+function VueGroupe({ children, worlds }: { children: Child[]; worlds: World[] }) {
+  const semaine = (c: Child) => {
+    let min = 0;
+    for (let i = 0; i < 7; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+      min += c.days[k]?.min ?? 0;
+    }
+    return Math.round(min);
+  };
+  const derniere = (c: Child) => Math.max(0, ...Object.values(c.progress).map((p) => p.lastAt || 0));
+  const acquises = (c: Child) => worlds.reduce((n, w) => n + w.lecons.filter((l) => c.progress[lessonKey(w, l.id)]?.done).length, 0);
+  const resistent = (c: Child) => Object.keys(c.counters).filter((k) => k.startsWith("autrement:")).length;
+  const reussite = (c: Child) => {
+    const ok = c.counters.ok ?? 0;
+    const ko = c.counters.ko ?? 0;
+    return ok + ko ? Math.round((100 * ok) / (ok + ko)) : 0;
+  };
+  return (
+    <section className="card imprimable">
+      <h2>Vue d'ensemble · {new Date().toLocaleDateString("fr-FR")}</h2>
+      <p className="small">Une ligne par profil. Pour le détail d'un enfant, revenez à l'onglet « Ce que mon enfant sait faire » ; pour un tableur, utilisez le bouton « Tableau de suivi (CSV) ».</p>
+      <div className="table-scroll">
+        <table className="table-print">
+          <thead>
+            <tr><th>Enfant</th><th>Âge</th><th>Compétences acquises</th><th>Réussite</th><th>Minutes (7 j)</th><th>Série</th><th>Révisions dues</th><th>Notions qui résistent</th><th>Fluence</th><th>Dernière activité</th></tr>
+          </thead>
+          <tbody>
+            {children.map((c) => {
+              const d = derniere(c);
+              const dues = Object.values(c.srs).filter((x) => x.due <= Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000)).length;
+              return (
+                <tr key={c.id}>
+                  <td>{c.name}</td>
+                  <td>{c.age}</td>
+                  <td>{acquises(c)}</td>
+                  <td>{reussite(c)} %</td>
+                  <td>{semaine(c)}</td>
+                  <td>{c.streak} j</td>
+                  <td>{dues}</td>
+                  <td>{resistent(c)}</td>
+                  <td>{c.fluence?.[0] ? `${c.fluence[0].mclm} mots/min` : "—"}</td>
+                  <td>{d ? new Date(d).toLocaleDateString("fr-FR") : "—"}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
 }

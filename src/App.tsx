@@ -59,6 +59,11 @@ const JeuCircuit = JP("JeuCircuit");
 const JeuPlanetes = JP("JeuPlanetes");
 const JeuSilhouettes = JP("JeuSilhouettes");
 const JeuRythme = JP("JeuRythme");
+const JM = (n: "JeuBalance" | "JeuBus" | "JeuFabrique") => lazy(() => import("./pages/jeux/JeuxMecaniques").then((m) => ({ default: m[n] })));
+const JeuBalance = JM("JeuBalance");
+const JeuBus = JM("JeuBus");
+const JeuFabrique = JM("JeuFabrique");
+const DefiAmi = lazy(() => import("./pages/jeux/DefiAmi").then((m) => ({ default: m.DefiAmi })));
 
 const NAV = [
   { path: "/galaxie", icon: "🌌", label: "Galaxie" },
@@ -170,7 +175,9 @@ export default function App() {
         break;
       case "jeux":
         page =
-          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : p[1] === "conjugaison" ? <ConjugaisonEclair /> : p[1] === "mystere" ? <MotMystere /> : p[1] === "flash" ? <DicteeFlash /> : p[1] === "eclair-sciences" ? <QuizEclair /> : p[1] === "oreille" ? <OreilleDor /> : p[1] === "studio-musique" ? <StudioMusique /> : p[1] === "studio-dessin" ? <StudioDessin /> : p[1] === "potions" ? <JeuPotions /> : p[1] === "chaine" ? <JeuChaine /> : p[1] === "circuit" ? <JeuCircuit /> : p[1] === "planetes" ? <JeuPlanetes /> : p[1] === "silhouettes" ? <JeuSilhouettes /> : p[1] === "rythme" ? <JeuRythme /> : <Jeux />;
+          p[1] === "eclair" ? <CalculEclair /> : p[1] === "compte" ? <CompteEstBon /> : p[1] === "vise" ? <ViseJuste /> : p[1] === "tables" ? <Tables /> : p[1] === "additions" ? <Tables initialOp="+" /> : p[1] === "enigmes" ? <Enigmes /> : p[1] === "defense" ? <DefenseTables /> : p[1] === "pont" ? <PontFractions /> : p[1] === "course" ? <CourseGrenouille /> : p[1] === "duel" ? <Duel /> : p[1] === "conjugaison" ? <ConjugaisonEclair /> : p[1] === "mystere" ? <MotMystere /> : p[1] === "flash" ? <DicteeFlash /> : p[1] === "eclair-sciences" ? <QuizEclair /> : p[1] === "oreille" ? <OreilleDor /> : p[1] === "studio-musique" ? <StudioMusique /> : p[1] === "studio-dessin" ? <StudioDessin /> : p[1] === "potions" ? <JeuPotions /> : p[1] === "chaine" ? <JeuChaine /> : p[1] === "circuit" ? <JeuCircuit /> : p[1] === "planetes" ? <JeuPlanetes /> : p[1] === "silhouettes" ? <JeuSilhouettes /> : p[1] === "rythme" ? <JeuRythme /> : p[1] === "balance" ? <JeuBalance /> : p[1] === "bus" ? <JeuBus /> : p[1] === "fabrique" ? <JeuFabrique /> : p[1] === "ami" ? <DefiAmi /> :
+
+ <Jeux />;
         break;
       case "aventure":
         page = <Aventure part={p[1]} />;

@@ -3,6 +3,7 @@ import { CYCLES, lessonKey, matiereDe, objetLabel, useContent } from "../lib/con
 import { setMatiere, useChild } from "../lib/store";
 import { visuel } from "../lib/img";
 import { Bubble } from "../components/Mascot";
+import { Continuer } from "../components/Continuer";
 import type { Planete, World } from "../lib/types";
 
 // La Galaxie des Savoirs : toutes les matières, rangées en trois familles.
@@ -21,6 +22,8 @@ export function Galaxie() {
   return (
     <div className="page galaxie">
       <h1>🌌 La Galaxie des Savoirs</h1>
+      <Continuer />
+
       <Bubble
         who="neo"
         text={`${child.name}, chaque planète est une matière. Le Grand Neutre essaie de toutes les rendre grises… Choisis où partir : tu peux changer quand tu veux, ta progression est gardée partout.`}

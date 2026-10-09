@@ -95,6 +95,8 @@ lecons:
 - `couches` : `couches: [{nom, detail, emoji, couleur, epaisseur}]`, `forme: cercle` (concentrique) ou pile (par défaut).
 - `cycle` : `etapes: [{emoji, label}]`, `centre`.
 - `schema` : `emoji` ou `image`, `titre`, `legendes: [{label, detail}]`.
+- `parole` (2.4) : mots prononcés dans une autre langue avec la voix de l'appareil. `{ type: parole, langue: en-GB, mots: [{ texte: "Hello!", sens: "Bonjour", emoji: "👋" }], cache: false }` ; `cache: true` n'affiche que le bouton (exercices d'écoute).
+
 
 Générés automatiquement au build (rien à écrire) : un indice par exercice (l'astuce de la leçon), un texte à trous tiré du « Je retiens » (hors maths), une étape « Explique à Zéro », et le découpage des textes longs dans les mondes « graines ».
 
@@ -148,6 +150,11 @@ Chaque exercice peut contenir des **variables tirées au sort** et des **gabarit
 | `dictee` | `dictee` (la phrase) | écoute (vitesse normale ou lente, ponctuation dite) puis écrit ; correction mot à mot |
 | `surligner` | `phrase` avec les cibles entre crochets : `"Le [chat] dort sur [le tapis]."` | touche les mots demandés (une cible peut compter plusieurs mots) |
 | `classer` | `categories: [nom, verbe]`, `mots: [[chat, 0], [courir, 1]]` (l'indice peut être un gabarit) | range chaque mot dans sa catégorie |
+| `relier` | `paires: [[gauche, droite], …]` (au moins 3, gabarits permis) | relie chaque élément à sa réponse |
+| `libre` | `cles: [[idée, variante…], …]`, `modele` (réponse modèle), `min_cles` (par défaut la moitié) | écrit ou dicte ce qu'il a retenu ; on retrouve les idées attendues (accents, pluriels et fins de mots tolérés), puis il compare avec le modèle |
+
+**Exercices dérivés automatiquement (2.4)** : un QCM à variantes (une ligne de `vars` = une question) donne aussi un exercice `relier` ; un vrai/faux à variantes donne un `classer` « vrai / faux » ; le « Je retiens » donne un rappel libre (`libre`) à partir des mots en gras et des mots-clés de la leçon. Pour l'éviter sur une leçon : `derives: false`. Le défi contient au plus la moitié de questions à choix quand d'autres formats existent, et au moins un exercice de production.
+
 
 **Erreurs fréquentes** : un exercice `nombre` peut lister `erreurs: [{ valeur: "a+b-10", message: "Tu as oublié la retenue…" }]` ; un `qcm` peut donner `explications: ["", "message pour le 2ᵉ choix", …]` (dans l'ordre de `choix`). L'enfant reçoit alors une explication ciblée au lieu d'un simple « faux ».
 

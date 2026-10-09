@@ -4,6 +4,8 @@ import type { VisSpec } from "../lib/types";
 import { Md } from "./Md";
 import { AtomeVis, ClavierVis, PorteeVis, SonVis } from "./VisuelsSavoirs";
 import { AstresVis, CouchesVis, CycleVis, FriseVis, PhraseVis, SchemaVis } from "./VisuelsPlus";
+import { ParoleVis } from "./ParoleVis";
+
 
 // Tous les visuels sont dessinés à partir de données (aucune image à fabriquer) :
 // un nouveau monde peut ainsi illustrer ses leçons sans une ligne de code.
@@ -123,6 +125,8 @@ function renderVis(v: Any): ReactNode {
       return <CycleVis v={v} />;
     case "schema":
       return <SchemaVis v={v} />;
+    case "parole":
+      return <ParoleVis v={v} />;
   }
   throw new Error(`type « ${s(v.type)} » inconnu`);
 }

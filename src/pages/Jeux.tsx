@@ -23,7 +23,13 @@ function catalogue(child: Child, manifest: Manifest | null): Jeu[] {
     { id: "defense", emoji: "🏰", titre: "La Défense du Royaume", desc: "Des Grignoteurs foncent sur le château : réponds vite et juste !", best: child.recordsJeux?.defense, bestLabel: "vague" },
     { id: "pont", emoji: "🌉", titre: "Le Pont des Fractions", desc: "Comble le ravin exactement avec des planches de ½, ⅓, ¼…", best: child.recordsJeux?.pont, bestLabel: "ponts" },
     { id: "course", emoji: "🐸", titre: "La Course de la Grenouille", desc: "Atteins la cible en sautant malin, plus vite que le Grignoteur.", best: child.counters["courseGagnee"], bestLabel: "victoires" },
+    { id: "ami", emoji: "📨", titre: "Défi entre amis", desc: "Les mêmes 8 questions pour toi et un ami, même sur un autre appareil : qui fera mieux ?", best: child.counters["defi-ami-releve"], bestLabel: "relevés" },
     { id: "duel", emoji: "🤝", titre: "Duel en famille", desc: "À deux sur le même écran, chacun à son niveau !" },
+
+    { id: "balance", emoji: "⚖️", titre: "La Balance des Mystères", desc: "Trouve le poids des boîtes mystère sans jamais déséquilibrer la balance.", best: child.games["balance"], bestLabel: "pts" },
+    { id: "bus", emoji: "🚌", titre: "Le Bus de la Dizaine", desc: "Remplis le bus jusqu'à 10, puis compte tout le monde.", best: child.games["bus"], bestLabel: "/8" },
+    { id: "fabrique", emoji: "🏭", titre: "La Fabrique de Phrases", desc: "La machine de Gribouille n'imprime que des verbes bien accordés !", best: child.games["fabrique"], bestLabel: "/9" },
+
     { id: "eclair", emoji: "⚡", titre: "Calcul éclair", desc: "Un maximum de calculs en 60 secondes !", best: child.games["eclair"] },
     { id: "additions", emoji: "➕", titre: "La Tour des Additions", desc: `Toutes les additions jusqu'à 10 + 10 par cœur (${additionsMastered(child)}/100).` },
     { id: "tables", emoji: "✖️", titre: "La Tour des Tables", desc: `Les tables de multiplication par cœur (${tablesMastered(child)}/64).` },

@@ -7,14 +7,18 @@ import "@fontsource/opendyslexic/400.css";
 import "katex/dist/katex.min.css";
 import "./styles/app.css";
 import App from "./App";
-import { loadState } from "./lib/store";
+import { loadState, onPersist } from "./lib/store";
+import { apresEnregistrement, reprendreSynchro } from "./lib/sauvegarde";
 import { loadContent } from "./lib/content";
 import { requestPersistence } from "./lib/db";
 import { registerServiceWorker } from "./lib/pwa";
 
 createRoot(document.getElementById("root")!).render(<App />);
 
-void loadState();
+// sauvegardes automatiques (instantané du jour, fichier synchronisé), puis reprise de la synchro
+onPersist(apresEnregistrement);
+void loadState().then(reprendreSynchro);
+
 void loadContent();
 void requestPersistence();
 registerServiceWorker();

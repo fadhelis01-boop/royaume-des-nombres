@@ -110,13 +110,28 @@ export function useStore<T>(sel: (s: State) => T): T {
   );
 }
 
+const apresEnregistrer = new Set<() => void>();
+/** Abonnement après chaque enregistrement (instantanés, fichier synchronisé : voir sauvegarde.ts). */
+export const onPersist = (f: () => void) => apresEnregistrer.add(f);
+function ecrire() {
+  void dbSet("settings", state.settings);
+  void dbSet("children", state.children);
+  void dbSet("activeId", state.activeId);
+  apresEnregistrer.forEach((f) => f());
+}
 function persist() {
   clearTimeout(saveTimer);
-  saveTimer = window.setTimeout(() => {
-    void dbSet("settings", state.settings);
-    void dbSet("children", state.children);
-    void dbSet("activeId", state.activeId);
-  }, 250);
+  saveTimer = window.setTimeout(ecrire, 250);
+}
+/** Écrit tout de suite (onglet fermé, appli mise en arrière-plan) : rien ne se perd. */
+export function flushState() {
+  if (!state.ready) return;
+  clearTimeout(saveTimer);
+  ecrire();
+}
+if (typeof window !== "undefined") {
+  window.addEventListener("pagehide", flushState);
+  document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flushState());
 }
 
 export function setState(patch: Partial<State>, save = true) {
@@ -164,7 +179,9 @@ export function updateChild(fn: (c: Child) => Child | void, id = state.activeId)
   const children = state.children.map((c) => {
     if (c.id !== id) return c;
     const copy = structuredClone(c);
-    return fn(copy) ?? copy;
+    const out = fn(copy) ?? copy;
+    out.majAt = Date.now(); // pour la fusion entre appareils
+    return out;
   });
   setState({ children });
 }
@@ -345,16 +362,18 @@ export function dueCards(c: Child | null) {
 
 // ---------- Sauvegarde / restauration (Espace parents) ----------
 export function exportBackup(): string {
-  return JSON.stringify({ app: "royaume-des-nombres", version: 1, at: new Date().toISOString(), settings: { ...state.settings, apiKey: "" }, children: state.children }, null, 1);
+  return JSON.stringify({ app: "royaume-des-nombres", version: 2, at: new Date().toISOString(), settings: { ...state.settings, apiKey: "" }, children: state.children }, null, 1);
 }
-export function importBackup(json: string): number {
+/** Importe un fichier de sauvegarde en FUSIONNANT avec les profils présents (on ne perd aucune avancée). */
+export async function importBackup(json: string): Promise<string> {
   const data = JSON.parse(json);
   if (data.app !== "royaume-des-nombres" || !Array.isArray(data.children)) throw new Error("Ce fichier n'est pas une sauvegarde de la Galaxie des Savoirs (ni de l'ancien Royaume des Nombres).");
-  const byId = new Map(state.children.map((c) => [c.id, c]));
-  for (const c of data.children as Child[]) byId.set(c.id, { ...newChild(c.name, c.avatar, c.age), ...c });
-  setState({ children: [...byId.values()], settings: { ...state.settings, ...data.settings, apiKey: state.settings.apiKey, pin: state.settings.pin || data.settings?.pin || "" } });
-  return data.children.length;
+  data.children = (data.children as Child[]).map((c) => ({ ...newChild(c.name, c.avatar, c.age), ...c }));
+  const { importerDonnees } = await import("./sauvegarde");
+  const r = importerDonnees(data);
+  return `${r.fusionnes} profil(s) fusionné(s) avec la progression déjà présente, ${r.ajoutes} ajouté(s).`;
 }
+
 
 // ---------- Aventure ----------
 export function markStory(id: string) {

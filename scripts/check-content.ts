@@ -60,7 +60,12 @@ function idealAnswer(inst: Instance): Answer {
     case "surligner":
       return { kind: "state", values: inst.targets! };
     case "classer":
+    case "relier":
       return { kind: "state", values: inst.itemCats! };
+    case "libre":
+      // le modèle doit contenir assez d'idées attendues : sinon, les clés sont mal choisies
+      return { kind: "text", value: inst.modele! };
+
     case "nombre": {
       if (inst.spec.forme === "fraction" || inst.spec.forme === "irreductible") {
         const { n, d } = toFraction(inst.value!);

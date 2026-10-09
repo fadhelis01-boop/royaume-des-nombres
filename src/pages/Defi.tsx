@@ -1,3 +1,5 @@
+import { planDefi, rankSpecs } from "../lib/plan";
+export { planDefi, rankSpecs };
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
 import { findLesson, lessonUnlocked } from "../lib/content";
@@ -11,24 +13,6 @@ import type { ExSpec } from "../lib/types";
 import { leadFor } from "../lib/habillage";
 
 /** Classe les exercices du plus simple au plus difficile (niveau, puis ordre d'écriture). */
-export function rankSpecs(specs: ExSpec[]): ExSpec[] {
-  return specs
-    .map((e, i) => ({ e, r: (e.niveau ?? 2) * 100 + i }))
-    .sort((x, y) => x.r - y.r)
-    .map((x) => x.e);
-}
-
-/** Plan du défi : chaque type d'exercice au moins une fois, du plus simple au plus difficile. */
-export function planDefi(specs: ExSpec[], n: number): ExSpec[] {
-  const ranked = rankSpecs(specs);
-  const plan: { e: ExSpec; r: number }[] = ranked.slice(0, n).map((e, r) => ({ e, r }));
-  while (plan.length < n && ranked.length) {
-    const r = Math.floor(Math.random() * ranked.length);
-    plan.push({ e: ranked[r], r });
-  }
-  return plan.sort((x, y) => x.r - y.r).map((x) => x.e);
-}
-
 function draw(spec: ExSpec): Instance | null {
   try {
     return instantiate(spec, newSeed());

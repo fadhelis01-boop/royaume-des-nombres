@@ -92,6 +92,9 @@ const EX_TYPES = {
   dictee: ["dictee"],
   surligner: ["phrase"],
   classer: ["categories", "mots"],
+  // production (2.4) : relier des paires, rappel libre écrit ou dicté
+  relier: ["paires"],
+  libre: ["cles", "modele"],
 };
 export const MANIP_TYPES = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
 export function exercise(ex, where) {
@@ -106,6 +109,9 @@ export function exercise(ex, where) {
   if (!ex.enonce) errors.push(`${where} : énoncé manquant`);
   if (ex.type === "qcm" && (ex.choix ?? []).length < 2) errors.push(`${where} : au moins 2 choix`);
   if (ex.type === "ordre" && (ex.items ?? []).length < 2) errors.push(`${where} : au moins 2 éléments à ranger`);
+  if (ex.type === "relier" && (!Array.isArray(ex.paires) || ex.paires.length < 3)) errors.push(`${where} : au moins 3 paires à relier`);
+  if (ex.type === "libre" && (!Array.isArray(ex.cles) || !ex.cles.length)) errors.push(`${where} : au moins une idée attendue (cles)`);
+
   // Une correction fixe sur un exercice à variantes tirées au hasard peut parler d'une autre variante
   // que celle affichée : on la présente comme un rappel général, pas comme l'explication de la question.
   const variantes = Object.values(ex.vars ?? {}).some((v) => Array.isArray(v) && v.length > 1);
@@ -268,6 +274,86 @@ function couperTexte(s) {
   return [{ ...s, texte: a }, { kind: "texte", texte: b }];
 }
 
+// ---------- Exercices de production dérivés automatiquement (2.4) ----------
+// Pour réduire la part des QCM : ils obligent à retrouver ou à construire la réponse.
+const lignesVar = (ex) => {
+  const ks = Object.keys(ex.vars ?? {});
+  if (ks.length !== 1) return null;
+  const rows = ex.vars[ks[0]];
+  return Array.isArray(rows) && rows.length >= 4 && rows.every((r) => Array.isArray(r) && r.length === rows[0].length) ? { k: ks[0], rows } : null;
+};
+/** « t_2 » pour la variable t → 2 (la colonne de la ligne tirée) ; -1 sinon. */
+const colonne = (ref, k) => {
+  const r = ref.trim();
+  return r.startsWith(k + "_") && /^[0-9]+$/.test(r.slice(k.length + 1)) ? Number(r.slice(k.length + 1)) : -1;
+};
+const courtTexte = (x, max = 70) => (typeof x === "string" || typeof x === "number") && String(x).length <= max && !/\{\{|\n/.test(String(x));
+/** QCM à variantes (une ligne = une question) → « relie chaque question à sa réponse ». */
+function relierDepuisQcm(ex) {
+  if (ex?.type !== "qcm" || !Array.isArray(ex.choix)) return null;
+  const v = lignesVar(ex);
+  if (!v) return null;
+  const c0 = String(ex.choix[0]);
+  const k = c0.startsWith("{{") && c0.endsWith("}}") ? colonne(c0.slice(2, -2), v.k) : -1;
+  const refs = [...String(ex.enonce).matchAll(/\{\{([^}]+)\}\}/g)].map((m) => m[1]);
+  const j = refs.length === 1 ? colonne(refs[0], v.k) : -1;
+  if (k < 0 || j < 0) return null;
+  const paires = v.rows.slice(0, 6).map((r) => [String(r[j]), String(r[k])]);
+  if (!paires.every(([a, b]) => courtTexte(a) && courtTexte(b))) return null;
+  if (new Set(paires.map((p) => p[0])).size !== paires.length || new Set(paires.map((p) => p[1])).size !== paires.length) return null;
+  return {
+    type: "relier",
+    enonce: `🔗 Relie chaque élément à sa réponse.\n\n*La question : ${String(ex.enonce).replace(/\{\{[^}]+\}\}/, "…")}*`,
+    paires,
+    niveau: 2,
+    correction: paires.map(([a, b]) => `${a} → **${b}**`).join(" · "),
+  };
+}
+/** Vrai/faux à variantes → « range chaque affirmation : vraie ou fausse ». */
+function classerDepuisVf(ex) {
+  if (ex?.type !== "vf") return null;
+  const v = lignesVar(ex);
+  if (!v) return null;
+  const b = colonne(String(ex.reponse ?? ""), v.k);
+  const refs = [...String(ex.enonce).matchAll(/\{\{([^}]+)\}\}/g)].map((m) => m[1]);
+  const j = refs.length === 1 ? colonne(refs[0], v.k) : -1;
+  if (b < 0 || j < 0) return null;
+  const rows = v.rows.slice(0, 6);
+  if (!rows.every((r) => typeof r[b] === "boolean" && courtTexte(r[j], 160))) return null;
+  if (!rows.some((r) => r[b]) || !rows.some((r) => !r[b])) return null;
+  const expl = rows[0].findIndex((x, i) => i !== j && i !== b && typeof x === "string");
+  return {
+    type: "classer",
+    enonce: "⚖️ Range chaque affirmation : est-elle vraie ou fausse ?",
+    categories: ["Vrai", "Faux"],
+    mots: rows.map((r) => [String(r[j]), r[b] ? 0 : 1]),
+    niveau: 2,
+    correction: expl >= 0 ? rows.map((r) => `- ${r[expl]}`).join("\n") : "Relis la leçon pour chaque affirmation fausse.",
+  };
+}
+/** Rappel libre tiré du « Je retiens » : l'enfant écrit (ou dit) ce qu'il a retenu, sans regarder. */
+function libreDepuisRetiens(texte, titre, mots = []) {
+  if (typeof texte !== "string" || /\{\{/.test(texte)) return null;
+  const vus = new Set();
+  const plat = texte.replace(/\*\*/g, "").toLowerCase();
+  // les mots en gras d'abord, puis les mots-clés de la leçon présents dans la phrase à retenir
+  const candidats = [...[...texte.matchAll(/\*\*([^*$]+)\*\*/g)].map((m) => m[1]), ...(Array.isArray(mots) ? mots.map(String).filter((m) => plat.includes(m.toLowerCase())) : [])];
+  const cles = candidats
+    .map((m) => m.trim().replace(/[.,;:!?]+$/, ""))
+    .filter((m) => /[A-Za-zÀ-ÿ]{3}/.test(m) && m.length <= 40 && !vus.has(m.toLowerCase()) && vus.add(m.toLowerCase()))
+    .slice(0, 5);
+  if (cles.length < 2) return null;
+  return {
+    type: "libre",
+    enonce: `✍️ Sans regarder la leçon, écris en une ou deux phrases ce que tu as retenu sur « ${titre} ». Tu peux aussi le dire au micro.`,
+    cles: cles.map((c) => [c]),
+    modele: texte,
+    min_cles: Math.max(1, Math.ceil(cles.length / 2)),
+    niveau: 3,
+    correction: "Écrire ce qu'on a retenu, sans regarder, est la meilleure façon de s'en souvenir longtemps.",
+  };
+}
+
 /** Exercice « texte à trous » tiré du « Je retiens » : un mot en gras est caché, l'enfant l'écrit. */
 const MOTS_OUTILS = new Set(["le", "la", "les", "un", "une", "des", "et", "ou", "de", "du", "à", "au", "aux", "en", "est", "sont", "pas", "ne", "plus", "très"]);
 function clozeFromRetiens(texte, mots = []) {
@@ -363,6 +449,17 @@ export function normalizeWorld(w, file) {
     // (réponse à produire, pas à reconnaître). Hors maths, où les réponses sont déjà produites.
     const trou = (w.matiere ?? "maths") !== "maths" ? clozeFromRetiens(raw.find((s) => s.kind === "retiens")?.texte, l.mots) : null;
     if (trou) exercices.push(trou);
+    // variété : des exercices de production dérivés des QCM, des vrai/faux et du « Je retiens »
+    if (l.derives !== false) {
+      for (const ex of [...exercices]) {
+        const d = relierDepuisQcm(ex) ?? classerDepuisVf(ex);
+        if (d) exercices.push(d);
+      }
+      const lib = libreDepuisRetiens(raw.find((s) => s.kind === "retiens")?.texte, l.titre, l.mots);
+
+      if (lib) exercices.push(lib);
+    }
+
     if (!exercices.length) errors.push(`${lw} : aucun exercice — chaque leçon doit avoir des exercices pratiques`);
     if (!etapes.length) errors.push(`${lw} : aucune étape de cours`);
     const words = JSON.stringify(etapes).split(/\s+/).length;

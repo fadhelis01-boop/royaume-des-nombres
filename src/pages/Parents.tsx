@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { go } from "../lib/router";
-import { exportBackup, importBackup, removeChild, setState, updateChild, updateSettings, useStore, dayKey, minutesToday, newChild, applyChildMode } from "../lib/store";
+import { removeChild, setState, updateChild, updateSettings, useStore, dayKey, minutesToday, newChild, applyChildMode } from "../lib/store";
 import { importWorldFile, refreshContent, removeImportedWorld, useContent, worldProgress } from "../lib/content";
 import { checkForAppUpdate, isIos, isStandalone, promptInstall, usePwa } from "../lib/pwa";
 import { frenchVoices, previewVoice, ttsSupported } from "../lib/tts";
@@ -8,7 +8,8 @@ import { MODELS } from "../lib/ai-config";
 import { levelOf } from "../lib/rewards";
 import { Mascot, NAMES } from "../components/Mascot";
 import type { Child, Who } from "../lib/types";
-import { AssistantPlus, Bilans, Confidentialite, HorsConnexion, marquerSauvegarde, RappelAgenda, RappelSauvegarde } from "./ParentsPlus";
+import { AssistantPlus, Bilans, Confidentialite, RappelSauvegarde } from "./ParentsPlus";
+import { SauvegardePage } from "./SauvegardePage";
 
 const TABS = [
   { id: "suivi", label: "📊 Suivi" },
@@ -43,7 +44,7 @@ export function Parents({ tab }: { tab?: string }) {
       {t === "reglages" && <Reglages />}
       {t === "assistant" && <AssistantCfg />}
       {t === "contenu" && <Contenus />}
-      {t === "sauvegarde" && <Sauvegarde />}
+      {t === "sauvegarde" && <SauvegardePage />}
       {t === "guide" && <Guide />}
       {t === "bilans" && <BilansPage />}
       {t === "confidentialite" && <Confidentialite />}
@@ -694,73 +695,6 @@ function Contenus() {
         </table>
       </section>
     </div>
-  );
-}
-
-// ---------- Sauvegarde ----------
-function Sauvegarde() {
-  const [msg, setMsg] = useState("");
-  const download = () => {
-    const blob = new Blob([exportBackup()], { type: "application/json" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `galaxie-des-savoirs-sauvegarde-${dayKey()}.json`;
-    a.click();
-    URL.revokeObjectURL(a.href);
-    marquerSauvegarde();
-  };
-  // partage direct (tablette, téléphone) : e-mail, messagerie, cloud…
-  const fichier = () => new File([exportBackup()], `galaxie-des-savoirs-sauvegarde-${dayKey()}.json`, { type: "application/json" });
-  const peutPartager = typeof navigator !== "undefined" && !!navigator.canShare && (() => { try { return navigator.canShare({ files: [fichier()] }); } catch { return false; } })();
-  const partager = async () => {
-    try {
-      await navigator.share({ files: [fichier()], title: "Sauvegarde de la Galaxie des Savoirs" });
-      marquerSauvegarde();
-    } catch {
-      /* partage annulé */
-    }
-  };
-  return (
-    <div className="stack">
-      <section className="card">
-        <h3>💾 Sauvegarder la progression</h3>
-        <p className="small">Toute la progression est stockée sur cet appareil. Téléchargez une sauvegarde pour la conserver, ou pour la transférer sur une tablette, un autre ordinateur ou un iPhone.</p>
-        <button className="btn btn-primary" onClick={download}>
-          ⬇ Télécharger la sauvegarde
-        </button>
-        {peutPartager && (
-          <button className="btn btn-soft" onClick={partager}>
-            📤 Envoyer la sauvegarde (e-mail, messagerie…)
-          </button>
-        )}
-      </section>
-      <section className="card">
-        <h3>📥 Restaurer / transférer</h3>
-        <p className="small">Choisissez un fichier de sauvegarde : les profils qu'il contient sont ajoutés (ou remplacent ceux qui portent le même identifiant).</p>
-        <label className="btn btn-soft file-btn">
-          📂 Choisir un fichier de sauvegarde
-          <input
-            type="file"
-            accept=".json,application/json"
-            hidden
-            onChange={async (e) => {
-              const f = e.target.files?.[0];
-              if (!f) return;
-              try {
-                const n = importBackup(await f.text());
-                setMsg(`✅ ${n} profil(s) restauré(s).`);
-              } catch (err) {
-                setMsg("❌ " + (err as Error).message);
-              }
-            }}
-          />
-        </label>
-        {msg && <p>{msg}</p>}
-      </section>
-      <HorsConnexion />
-      <RappelAgenda />
-    </div>
-
   );
 }
 
