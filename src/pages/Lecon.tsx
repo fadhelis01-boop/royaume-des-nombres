@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
 import { findLesson, lessonKey } from "../lib/content";
 import { saveStep, useChild, getState, bump, addXp, addGems, updateChild, recordAbandon } from "../lib/store";
@@ -11,6 +11,10 @@ import { Md } from "../components/Md";
 import { Visuel } from "../components/Visuel";
 import { ExercisePlayer } from "../components/ExercisePlayer";
 import type { Step, Who, World } from "../lib/types";
+
+const Autrement = lazy(() => import("../components/Autrement").then((m) => ({ default: m.Autrement })));
+/** écrans de cours où l'enfant peut dire « je n'ai pas compris » */
+const COURS: Step["kind"][] = ["texte", "visuel", "retiens", "exemple", "astuce", "attention"];
 
 /** Ce que la voix lit pour une étape. */
 export function stepSegments(s: Step): Seg[] {
@@ -52,6 +56,7 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
   const saved = child.progress[key]?.step ?? 0;
   const [i, setI] = useState(() => (restart || !found ? 0 : Math.min(saved, found.lesson.etapes.length - 1)));
   const [continuous, setContinuous] = useState(false);
+  const [autre, setAutre] = useState(false);
   const [answered, setAnswered] = useState<Record<number, boolean>>({});
   const tts = useTts();
 
@@ -143,7 +148,20 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
         <StepView step={step} k={`step:${key}:${i}`} onAnswered={() => setAnswered((a) => ({ ...a, [i]: true }))} statKey={lessonKey(found.world, lesson.id)} cycle={found.world.cycle} />
       </div>
 
+      {COURS.includes(step.kind) && (
+        <p className="center">
+          <button className="btn btn-ghost small autrement-btn" onClick={() => setAutre(true)}>
+            🤔 Je n'ai pas compris : explique autrement
+          </button>
+        </p>
+      )}
+      {autre && (
+        <Suspense fallback={null}>
+          <Autrement statKey={key} onClose={() => setAutre(false)} />
+        </Suspense>
+      )}
       <div className="lecon-nav">
+
         <button className="btn btn-soft" disabled={i === 0} onClick={() => setI(i - 1)} aria-label="Précédent">
           ←<span className="btn-txt"> Précédent</span>
         </button>

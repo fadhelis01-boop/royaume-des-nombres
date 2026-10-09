@@ -303,6 +303,20 @@ function clozeFromRetiens(texte, mots = []) {
     niveau: 3,
   };
 }
+// « Explique-moi autrement » : une image de la vie (texte) et/ou un schéma propre à la leçon.
+function autrement(a, where) {
+  if (typeof a === "string") return { texte: a };
+  const out = {};
+  if (a.texte) out.texte = String(a.texte);
+  if (a.visuel) {
+    const v = step({ visuel: a.visuel }, `${where} autrement`);
+    if (v) out.visuel = v.visuel;
+  }
+  if (a.legende) out.legende = String(a.legende);
+  if (a.qui) out.qui = lines([{ [a.qui]: "." }], `${where} autrement`)[0]?.who;
+  if (!out.texte && !out.visuel) errors.push(`${where} : « autrement » demande un texte ou un visuel`);
+  return out;
+}
 export function normalizeWorld(w, file) {
   const where = file;
   for (const k of ["id", "titre", "emoji", "couleur", "cycle", "age", "niveau", "ordre"]) if (w[k] === undefined) errors.push(`${where} : champ « ${k} » manquant`);
@@ -362,6 +376,7 @@ export function normalizeWorld(w, file) {
       // assez de questions pour qu'une réussite ne soit pas due au hasard
       nb_defi: l.nb_defi ?? Math.min(10, Math.max(6, exercices.length + 1)),
       mots: l.mots,
+      ...(l.autrement ? { autrement: autrement(l.autrement, lw) } : {}),
     });
   }
   if (!out.lecons.length) errors.push(`${where} : aucune leçon`);

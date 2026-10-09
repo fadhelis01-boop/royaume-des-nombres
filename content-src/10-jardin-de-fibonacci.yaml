@@ -294,6 +294,193 @@ lecons:
         reponse: "a+b"
         correction: "{{a}} pas → et {{b}} pas ↑ : {{a+b}} pas."
 
+  - id: instructions-repetees
+    titre: Programmer - séquences d'instructions et boucles
+    objectif: J'exécute et j'écris une suite d'instructions, et j'utilise « répéter » pour raccourcir un programme.
+    mots: [algorithme, instruction, boucle, répéter, programme]
+    autrement:
+      texte: "Une recette de cuisine est un programme : des instructions dans un ordre précis. « Répète 3 fois : casse un œuf » est plus court que d'écrire trois fois la même ligne. Un ordinateur, c'est un cuisinier très obéissant mais sans imagination : il fait exactement ce qui est écrit."
+      visuel: { type: frise, points: [{ emoji: "🔁", label: "Répéter 4 fois", sous: "le bloc ci-dessous" }, { emoji: "⬆️", label: "Avancer de 3" }, { emoji: "↪️", label: "Tourner à droite" }, { emoji: "⬛", label: "Résultat", sous: "un carré !" }] }
+    etapes:
+      - dialogue:
+          - zero: "J'ai écrit un programme pour que le robot dessine un carré : avance, tourne, avance, tourne, avance, tourne, avance, tourne. C'est long !"
+          - neo: "Tu répètes 4 fois la même chose ! Écris plutôt : « répéter 4 fois : avancer, tourner ». C'est une boucle."
+          - mia: "Et si tu te trompes, tu n'as qu'une seule ligne à corriger !"
+      - a_quoi_ca_sert: "Les jeux vidéo, les robots aspirateurs, les feux de circulation, les machines à laver : tous suivent des programmes faits d'instructions et de boucles écrits par des humains. Au collège, tu programmeras avec Scratch."
+      - texte: |
+          - Un **algorithme** est une **suite d'instructions** dans un **ordre précis**, pour atteindre un but.
+          - On l'**exécute à la main** pour le vérifier : on suit chaque instruction **dans l'ordre**, sans rien inventer.
+          - Une **boucle** (« **répéter n fois** ») exécute plusieurs fois le **même bloc** d'instructions : le programme est plus court et plus facile à corriger.
+          - Exemple : « répéter 4 fois : avancer de 5, tourner de 90° à droite » trace un **carré** de côté 5.
+      - visuel: { type: tableau, lignes: [["sans boucle", "avec boucle"], ["avancer 5 ; tourner ; avancer 5 ; tourner ; avancer 5 ; tourner ; avancer 5 ; tourner", "répéter 4 fois : avancer 5 ; tourner"]] }
+        legende: "Les deux programmes font la même chose. Le second est bien plus court."
+      - attention: "L'ordre compte : « avancer puis tourner » ne donne pas le même chemin que « tourner puis avancer »."
+      - astuce: { texte: "Pour exécuter un programme à la main, fais-le avec ton corps ou avec ton doigt sur un quadrillage, une instruction à la fois, en la disant à voix haute.", qui: neo }
+      - retiens: "Un **algorithme** = des **instructions dans l'ordre**. Une **boucle** « répéter n fois » refait le même bloc **n** fois. Répéter 4 fois (avancer, tourner d'un quart de tour) dessine un **carré**."
+    exercices:
+      - type: nombre
+        vars: { n: "2..9", p: "2..6" }
+        enonce: "Un robot exécute : « répéter {{n}} fois : avancer de {{p}} cases ». De combien de cases a-t-il avancé en tout ?"
+        reponse: "n*p"
+        correction: "{{n}} fois {{p}} cases : {{n}} × {{p}} = {{n*p}} cases."
+      - type: qcm
+        enonce: "Quelle figure dessine le programme « répéter 4 fois : avancer de 5, tourner d'un quart de tour à droite » ?"
+        choix: ["un carré", "un triangle", "un rectangle non carré", "une ligne droite"]
+        correction: "4 côtés égaux de 5 et 4 angles droits : un carré."
+      - type: qcm
+        enonce: "Quelle figure dessine « répéter 3 fois : avancer de 4, tourner d'un tiers de tour » ?"
+        choix: ["un triangle équilatéral", "un carré", "un hexagone", "un cercle"]
+        niveau: 2
+        correction: "3 côtés égaux et 3 virages identiques : un triangle équilatéral."
+      - type: nombre
+        vars: { d: "2..8", n: "2..5" }
+        enonce: "Le compteur vaut {{d}}. Le programme dit : « répéter {{n}} fois : ajouter 3 au compteur ». Que vaut le compteur à la fin ?"
+        reponse: "d+3*n"
+        niveau: 2
+        correction: "On ajoute 3, {{n}} fois : {{d}} + {{n}} × 3 = {{d+3*n}}."
+      - type: ordre
+        enonce: "Remets dans l'ordre le programme pour te brosser les dents."
+        items: ["Prendre la brosse à dents", "Mettre du dentifrice", "Répéter 3 minutes : brosser", "Rincer la bouche", "Ranger la brosse"]
+        correction: "On ne peut pas brosser avant d'avoir mis le dentifrice : l'ordre compte !"
+      - type: nombre
+        vars: { x: "1..6", y: "1..6", a: "1..4", b: "1..4" }
+        enonce: "Un pion part de la case (colonne {{x}}, ligne {{y}}). Il exécute : « répéter {{a}} fois : aller à droite » puis « répéter {{b}} fois : monter ». Dans quelle colonne arrive-t-il ?"
+        reponse: "x+a"
+        niveau: 2
+        correction: "Seuls les déplacements à droite changent la colonne : {{x}} + {{a}} = {{x+a}}."
+
+  - id: egalites-a-trous
+    titre: Le nombre caché - égalités à trous
+    objectif: Je trouve le nombre manquant dans une égalité (… + 7 = 15 ; 4 × … = 28) et je le représente par un symbole ou une lettre.
+    mots: [égalité, nombre manquant, inconnue, pré-algèbre]
+    autrement:
+      texte: "Une égalité, c'est une balance en équilibre : ce qui est à gauche pèse autant que ce qui est à droite. Dans « ? + 7 = 15 », un sac mystère et 7 kg pèsent autant que 15 kg. Enlève 7 kg de chaque côté : le sac pèse 8 kg."
+      visuel: { type: balance, gauche: ["?", "7"], droite: ["15"] }
+      legende: "Le sac mystère + 7 = 15 : il pèse 15 − 7 = 8."
+    etapes:
+      - dialogue:
+          - neo: "Énigme ! J'ai pensé à un nombre, j'ai ajouté 7, et j'ai trouvé 15. Quel était mon nombre ?"
+          - zero: "Euh… 22 ? J'ai ajouté 15 et 7 !"
+          - mia: "Attention, Zéro : Néo a AJOUTÉ 7 pour arriver à 15. Pour revenir en arrière, on fait l'inverse : on enlève 7. Son nombre, c'est 8 !"
+      - a_quoi_ca_sert: "Savoir combien il te manque pour acheter un jeu, combien de pages il reste à lire, ou combien de paquets acheter : ce sont des égalités à trous. C'est aussi la porte d'entrée de l'algèbre du collège."
+      - texte: |
+          Dans une **égalité**, ce qui est à gauche du signe **=** a **la même valeur** que ce qui est à droite.
+
+          Pour trouver le **nombre caché** (on peut l'écrire **…**, **?**, **□** ou une lettre comme **n**), on utilise l'**opération inverse** :
+
+          - **n + 7 = 15** → n = 15 − 7 = **8** (le contraire d'ajouter, c'est enlever) ;
+          - **n − 4 = 9** → n = 9 + 4 = **13** ;
+          - **4 × n = 28** → n = 28 ÷ 4 = **7** (le contraire de multiplier, c'est diviser) ;
+          - **n ÷ 3 = 6** → n = 6 × 3 = **18**.
+
+          On **vérifie** toujours en remplaçant : 8 + 7 = 15 ✔.
+      - visuel: { type: barres, lignes: [{ parts: [{ v: 8, label: "n = ?", vide: true }, { v: 7, label: "7" }] }], total: "15" }
+        legende: "La barre de 15 est faite de n et de 7 : n = 15 − 7."
+      - attention: "Le signe **=** ne veut pas dire « le résultat arrive » : il veut dire « a la même valeur que ». 15 = n + 7 est aussi une égalité correcte."
+      - astuce: { texte: "Fais le chemin à l'envers : si on a ajouté, j'enlève ; si on a multiplié, je divise. Puis je vérifie en remettant mon nombre dans l'égalité.", qui: mia }
+      - retiens: "Pour trouver le nombre caché, on utilise l'**opération inverse** (+ ↔ −, × ↔ ÷), puis on **vérifie** en remplaçant."
+    exercices:
+      - type: nombre
+        vars: { n: "2..40", a: "2..30" }
+        enonce: "Trouve le nombre caché : $\\square + {{a}} = {{n+a}}$"
+        reponse: "n"
+        correction: "□ = {{n+a}} − {{a}} = {{n}}. Vérification : {{n}} + {{a}} = {{n+a}} ✔"
+        erreurs: [{ valeur: "2*a+n", message: "Tu as ajouté au lieu d'enlever. Pour défaire « + {{a}} », on fait « − {{a}} »." }]
+      - type: nombre
+        vars: { n: "10..60", a: "2..9" }
+        si: "n > a"
+        enonce: "Trouve n : $n - {{a}} = {{n-a}}$"
+        reponse: "n"
+        correction: "n = {{n-a}} + {{a}} = {{n}}."
+      - type: nombre
+        vars: { n: "2..10", a: "2..9" }
+        enonce: "Trouve le nombre caché : ${{a}} \\times \\square = {{a*n}}$"
+        reponse: "n"
+        correction: "□ = {{a*n}} ÷ {{a}} = {{n}}, car {{a}} × {{n}} = {{a*n}}."
+      - type: nombre
+        vars: { q: "2..10", a: "2..9" }
+        enonce: "Trouve n : $n \\div {{a}} = {{q}}$"
+        reponse: "a*q"
+        niveau: 2
+        correction: "Pour défaire « ÷ {{a}} », on multiplie : n = {{q}} × {{a}} = {{a*q}}."
+      - type: nombre
+        vars: { n: "3..20", a: "2..15", b: "2..15" }
+        enonce: "Trouve le nombre caché : ${{a}} + \\square = {{b}} + {{n+a-b}}$"
+        si: "n + a - b > 0"
+        reponse: "n"
+        niveau: 3
+        correction: "À droite : {{b}} + {{n+a-b}} = {{n+a}}. Donc {{a}} + □ = {{n+a}}, et □ = {{n}}."
+      - type: nombre
+        vars: { p: "3..12", n: "2..6" }
+        enonce: "{{prenom()}} achète {{n}} cahiers identiques et paie {{n*p}} €. On note c le prix d'un cahier : ${{n}} \\times c = {{n*p}}$. Combien coûte un cahier ?"
+        reponse: "p"
+        unite: €
+        niveau: 2
+        correction: "c = {{n*p}} ÷ {{n}} = {{p}} €."
+
+  - id: programmes-de-calcul
+    titre: Les programmes de calcul
+    objectif: J'exécute un programme de calcul, je le remonte à l'envers et j'invente le mien.
+    mots: [programme de calcul, étape, inverse, machine]
+    autrement:
+      texte: "Un programme de calcul, c'est une machine à nombres avec plusieurs tapis roulants : le nombre entre, passe dans la machine « × 3 », puis dans la machine « + 4 », et ressort transformé. Pour retrouver le nombre de départ, on fait marcher les tapis à l'envers : « − 4 » puis « ÷ 3 »."
+      visuel: { type: frise, points: [{ emoji: "🔢", label: "5", sous: "départ" }, { emoji: "⚙️", label: "× 3", sous: "→ 15" }, { emoji: "⚙️", label: "+ 4", sous: "→ 19" }, { emoji: "🎯", label: "19", sous: "résultat" }] }
+      legende: "À l'envers : 19 − 4 = 15, puis 15 ÷ 3 = 5."
+    etapes:
+      - dialogue:
+          - mia: "Tour de magie ! Pense à un nombre. Multiplie-le par 2. Ajoute 10. Divise par 2. Enlève ton nombre de départ. Tu trouves… 5 !"
+          - zero: "Comment tu as deviné ?!"
+          - neo: "Ce n'est pas de la magie, c'est un programme de calcul. On va comprendre pourquoi il donne toujours 5."
+      - a_quoi_ca_sert: "Une calculatrice, un tableur, une recette qu'on double, le prix avec une réduction puis la livraison : ce sont des programmes de calcul. Au collège, on les écrira avec des lettres, c'est l'algèbre."
+      - texte: |
+          Un **programme de calcul** est une suite d'**étapes** à faire **dans l'ordre**, à partir d'un nombre de départ.
+
+          Exemple : *Choisis un nombre ; multiplie-le par 3 ; ajoute 4.*
+
+          - Avec **5** : 5 × 3 = 15, puis 15 + 4 = **19**.
+          - On peut l'écrire en une ligne avec des parenthèses : (5 × 3) + 4 = 19.
+          - **À l'envers** : si le résultat est 19, on défait les étapes **en partant de la fin** avec l'**opération inverse** : 19 − 4 = 15, puis 15 ÷ 3 = **5**.
+      - visuel: { type: tableau, lignes: [["nombre de départ", "× 3", "+ 4"], ["5", "15", "19"], ["2", "6", "10"], ["10", "30", "34"]] }
+        legende: "Le même programme appliqué à plusieurs nombres."
+      - attention: "On ne change pas l'ordre des étapes : « × 3 puis + 4 » ne donne pas le même résultat que « + 4 puis × 3 » (5 → 19 contre 5 → 27)."
+      - astuce: { texte: "Écris chaque étape sur une ligne avec une flèche : 5 → 15 → 19. Pour remonter, lis les flèches de droite à gauche en inversant chaque opération.", qui: neo }
+      - retiens: "On exécute un programme de calcul **dans l'ordre**. Pour retrouver le nombre de départ, on part de la **fin** et on applique les **opérations inverses**."
+    exercices:
+      - type: nombre
+        vars: { x: "2..12", a: "2..5", b: "1..9" }
+        enonce: "Choisis {{x}}. Multiplie-le par {{a}}. Ajoute {{b}}. Quel résultat obtiens-tu ?"
+        reponse: "a*x+b"
+        correction: "{{x}} × {{a}} = {{a*x}}, puis {{a*x}} + {{b}} = {{a*x+b}}."
+        erreurs: [{ valeur: "a*(x+b)", message: "Tu as ajouté avant de multiplier. Respecte l'ordre des étapes : d'abord × {{a}}, ensuite + {{b}}." }]
+      - type: nombre
+        vars: { x: "2..12", a: "2..9", b: "2..5" }
+        enonce: "Choisis {{x}}. Ajoute {{a}}. Multiplie le résultat par {{b}}. Quel résultat obtiens-tu ?"
+        reponse: "(x+a)*b"
+        correction: "{{x}} + {{a}} = {{x+a}}, puis {{x+a}} × {{b}} = {{(x+a)*b}}."
+      - type: nombre
+        vars: { x: "2..12", a: "2..5", b: "1..9" }
+        enonce: "Un programme dit : « multiplie par {{a}}, puis ajoute {{b}} ». On a obtenu {{a*x+b}}. Quel était le nombre de départ ?"
+        reponse: "x"
+        niveau: 2
+        correction: "À l'envers : {{a*x+b}} − {{b}} = {{a*x}}, puis {{a*x}} ÷ {{a}} = {{x}}."
+      - type: nombre
+        vars: { x: "1..20" }
+        enonce: "Programme de Lya : « Choisis un nombre, multiplie-le par 2, ajoute 10, divise par 2, enlève le nombre de départ. » Que trouves-tu en partant de {{x}} ?"
+        reponse: "5"
+        niveau: 2
+        correction: "{{x}} × 2 = {{2*x}} ; + 10 = {{2*x+10}} ; ÷ 2 = {{x+5}} ; − {{x}} = 5. On trouve toujours 5 !"
+      - type: qcm
+        vars: { a: "2..5", b: "1..9" }
+        enonce: "Quelle écriture en une ligne correspond à « choisis 7, multiplie par {{a}}, puis ajoute {{b}} » ?"
+        choix: ["$7 \\times {{a}} + {{b}}$", "$7 \\times ({{a}} + {{b}})$", "$7 + {{a}} \\times {{b}}$", "$(7 + {{b}}) \\times {{a}}$"]
+        correction: "On multiplie d'abord, puis on ajoute : 7 × {{a}} + {{b}} (la multiplication est prioritaire)."
+      - type: nombre
+        vars: { a: "2..5", b: "1..9", x: "2..10" }
+        enonce: "Remplis le tableau du programme « × {{a}} puis + {{b}} ». Avec {{x}} au départ, quel nombre écris-tu dans la dernière case ?"
+        visuel: { type: tableau, lignes: [["départ", "× {{a}}", "+ {{b}}"], ["{{x}}", "?", "?"]] }
+        reponse: "a*x+b"
+        correction: "{{x}} → {{a*x}} → {{a*x+b}}."
+
   - id: nombres-figures
     titre: Les nombres carrés et triangulaires
     objectif: Je découvre les nombres carrés et triangulaires en dessinant des points.

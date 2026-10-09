@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { check, prettyExpr, readNumber, type Answer, type Instance, type Verdict } from "../lib/gen";
 import { ENCOURAGE, pick, PRAISE } from "../lib/rewards";
 import { sfx } from "../lib/sound";
@@ -16,6 +16,8 @@ import { AccentBar, Classer, DicteeControles, DicteeCorrection, Surligner } from
 import type { Lead } from "../lib/habillage";
 
 const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
+// chargé à la demande : le panneau « Explique-moi autrement » n'alourdit pas le premier écran
+const Autrement = lazy(() => import("./Autrement").then((m) => ({ default: m.Autrement })));
 /** Types « à choix » : réussir au 2ᵉ essai ne rapporte rien (sinon cliquer au hasard paierait). */
 const CHOICE = ["qcm", "vf", "comparer"];
 
@@ -41,6 +43,7 @@ export function ExercisePlayer({
   lead,
   onVerdict,
   metacog,
+  autrement = true,
 }: {
   inst: Instance;
   statKey: string;
@@ -58,6 +61,8 @@ export function ExercisePlayer({
   onVerdict?: (r: ExResult) => void;
   /** « Je suis sûr / pas sûr » avant de valider : l'enfant apprend à juger sa propre confiance */
   metacog?: boolean;
+  /** bouton « Explique-moi autrement » après une erreur (désactivé pendant le test de positionnement) */
+  autrement?: boolean;
 }) {
   const isChoice = CHOICE.includes(inst.type);
   // Vrai/faux : un 2ᵉ essai serait gagné d'avance, donc un seul essai.
@@ -82,6 +87,8 @@ export function ExercisePlayer({
   const [message, setMessage] = useState<{ who: Who; text: string; humeur?: string } | null>(null);
   const [okFinal, setOkFinal] = useState(false);
   const [sur, setSur] = useState<boolean | null>(null);
+  const [autre, setAutre] = useState(false);
+  const peutAutrement = autrement && statKey !== "autrement";
   const inputRef = useRef<HTMLInputElement>(null);
   const k = `ex:${inst.seed}`;
   const isTouch = useMemo(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches, []);
@@ -469,6 +476,11 @@ export function ExercisePlayer({
               <Md text={inst.correction} />
             </details>
           )}
+          {peutAutrement && !okFinal && (
+            <button type="button" className="btn btn-soft autrement-btn" onClick={() => setAutre(true)}>
+              🤔 Je ne comprends pas : explique-moi autrement
+            </button>
+          )}
           <div className="ex-actions">
             {phase === "retry" && (
               <button type="button" className="btn btn-primary" onClick={retry} autoFocus aria-label="Réessayer">
@@ -483,6 +495,12 @@ export function ExercisePlayer({
           </div>
         </div>
       )}
+      {autre && (
+        <Suspense fallback={null}>
+          <Autrement statKey={statKey} inst={inst} onClose={() => setAutre(false)} />
+        </Suspense>
+      )}
     </div>
   );
 }
+

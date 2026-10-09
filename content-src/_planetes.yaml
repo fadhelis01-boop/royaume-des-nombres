@@ -78,6 +78,8 @@ planetes:
     astuces: "Bien relire, retenir l'orthographe"
     liens:
       - { texte: "📖 Le dictionnaire", vers: "/dico" }
+      - { texte: "⏱️ Lecture chronométrée", vers: "/fluence" }
+
       - { texte: "🎮 Jeux de mots", vers: "/jeux" }
     jeux: [conjugaison, mystere, flash]
     gardiens:

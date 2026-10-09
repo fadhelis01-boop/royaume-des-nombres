@@ -329,6 +329,73 @@ lecons:
         unite: €
         correction: "Un paquet de bonbons : {{p}} + {{k}} = {{p+k}} € ; {{n}} × {{p+k}} = {{n*(p+k)}} €."
 
+  - id: combien-de-facons
+    titre: Combien de façons ? Combiner et dénombrer
+    objectif: Je compte toutes les façons d'associer des choix (tenues, menus, codes) sans en oublier.
+    mots: [dénombrer, combinaisons, produit, arbre, tableau]
+    autrement:
+      texte: "Pour habiller une poupée avec 3 t-shirts et 2 pantalons, prends le 1ᵉʳ t-shirt et essaie-le avec chaque pantalon, puis le 2ᵉ t-shirt, puis le 3ᵉ. 3 t-shirts, chacun avec 2 pantalons : 3 × 2 = 6 tenues. Un tableau te garantit que tu n'en oublies aucune."
+      visuel: { type: tableau, lignes: [["", "👖 bleu", "👖 noir"], ["👕 rouge", "✔", "✔"], ["👕 vert", "✔", "✔"], ["👕 jaune", "✔", "✔"]] }
+      legende: "3 lignes × 2 colonnes = 6 cases = 6 tenues."
+    etapes:
+      - dialogue:
+          - zero: "J'ai 3 chapeaux et 2 écharpes. Je peux m'habiller de 5 façons, c'est ça ? 3 + 2 ?"
+          - neo: "Essayons : chapeau rouge avec écharpe bleue, chapeau rouge avec écharpe verte… chaque chapeau va avec CHAQUE écharpe."
+          - mia: "Alors ce n'est pas 3 + 2 : c'est 3 fois 2. Tu as 6 tenues, Zéro !"
+      - a_quoi_ca_sert: "Choisir un menu (entrée, plat, dessert), créer un code de cadenas, organiser un tournoi où chacun joue contre chacun : il faut compter toutes les possibilités sans en oublier ni en compter deux fois."
+      - texte: |
+          Quand on associe **un choix de chaque sorte** (un haut ET un bas), on compte les possibilités de façon **organisée** :
+
+          - avec un **tableau à double entrée** : une ligne par choix de la 1ʳᵉ sorte, une colonne par choix de la 2ᵉ ; chaque case est une possibilité ;
+          - avec un **arbre** : chaque branche se divise en autant de branches qu'il y a de choix suivants.
+
+          Le nombre de possibilités est le **produit** : 3 hauts × 2 bas = **6** tenues. Avec 3 sortes (entrée, plat, dessert), on multiplie les trois nombres.
+      - visuel:
+          type: arbre
+          branches:
+            - { label: "🎩 rouge", enfants: [{ label: "🧣 bleue" }, { label: "🧣 verte" }] }
+            - { label: "🎩 noir", enfants: [{ label: "🧣 bleue" }, { label: "🧣 verte" }] }
+            - { label: "🎩 vert", enfants: [{ label: "🧣 bleue" }, { label: "🧣 verte" }] }
+        legende: "3 chapeaux, chacun avec 2 écharpes : 6 bouts de branches, 6 tenues."
+      - attention: "Ce n'est pas une addition ! Chaque choix de la 1ʳᵉ sorte se combine avec **tous** les choix de la 2ᵉ."
+      - astuce: { texte: "Avant de calculer, dessine un tableau ou un arbre : c'est la seule façon d'être sûr de n'en oublier aucune.", qui: neo }
+      - retiens: "Pour associer un choix de chaque sorte, on **multiplie** les nombres de choix : 3 × 2 = 6. Un **tableau** ou un **arbre** permet de toutes les voir."
+    exercices:
+      - type: nombre
+        vars: { a: "2..6", b: "2..5" }
+        enonce: "{{prenom()}} a {{a}} t-shirts et {{b}} pantalons. Combien de tenues différentes (un t-shirt et un pantalon) peut-on composer ?"
+        reponse: "a*b"
+        correction: "Chaque t-shirt va avec chaque pantalon : {{a}} × {{b}} = {{a*b}} tenues."
+        erreurs: [{ valeur: "a+b", message: "Tu as additionné. Mais chaque t-shirt peut aller avec CHAQUE pantalon : fais un tableau pour voir !" }]
+      - type: nombre
+        vars: { e: "2..4", p: "2..4", d: "2..3" }
+        enonce: "À la cantine, il y a {{e}} entrées, {{p}} plats et {{d}} desserts. Combien de menus différents (une entrée, un plat, un dessert) ?"
+        reponse: "e*p*d"
+        niveau: 2
+        correction: "{{e}} × {{p}} × {{d}} = {{e*p*d}} menus."
+      - type: nombre
+        vars: { n: [3, 4, 5, 6] }
+        enonce: "Un cadenas a 2 molettes, chacune avec les chiffres de 1 à {{n}}. Combien de codes différents existe-t-il ?"
+        reponse: "n*n"
+        niveau: 2
+        correction: "{{n}} chiffres pour la 1ʳᵉ molette × {{n}} pour la 2ᵉ = {{n*n}} codes."
+      - type: nombre
+        vars: { n: [3, 4, 5, 6] }
+        enonce: "{{n}} amis se serrent la main : chacun serre la main de chacun des autres une seule fois. Combien de poignées de main ?"
+        reponse: "n*(n-1)/2"
+        niveau: 3
+        correction: "Chacun serre {{n-1}} mains : {{n}} × {{n-1}} = {{n*(n-1)}}, mais chaque poignée est comptée deux fois (A-B et B-A) : {{n*(n-1)/2}}."
+      - type: qcm
+        enonce: "3 glaces (vanille, fraise, chocolat) et 2 cornets (classique, chocolat). Quelle méthode permet de compter toutes les combinaisons sans en oublier ?"
+        choix: ["Faire un tableau ou un arbre", "Additionner 3 + 2", "Compter au hasard dans sa tête", "Choisir la glace préférée"]
+        correction: "Un tableau (3 lignes × 2 colonnes) ou un arbre montre les 6 combinaisons."
+      - type: nombre
+        vars: { a: "6..15", b: "2..4" }
+        enonce: "Pour transporter {{a*b+1}} élèves, on a des minibus de {{a}} places. Quel est le plus petit nombre de minibus nécessaire ?"
+        reponse: "b+1"
+        niveau: 3
+        correction: "{{b}} minibus transportent {{a*b}} élèves ; il reste 1 élève : il faut un minibus de plus, donc {{b+1}}."
+
   - id: probleme-vers-calcul
     titre: Du problème au calcul - écrire l'expression
     objectif: J'écris en une seule ligne le calcul qui résout un problème.

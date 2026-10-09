@@ -1,3 +1,10 @@
+- version: "2.3.0"
+  date: "2026-10-09"
+  notes:
+    - "« Je ne comprends pas : explique-moi autrement » : après une erreur ou pendant le cours, l'enfant choisit une autre porte d'entrée : un dessin, une image de la vie, un exemple résolu pas à pas, la manipulation, le cours relu lentement, l'assistant ou un adulte. 168 leçons ont leur propre analogie et leur schéma."
+    - "Contenu vérifié objectif par objectif avec les programmes officiels de maths (cycles 2 et 3) : 13 nouvelles leçons, dont les nombres ordinaux, les nombres en lettres, les tableaux et diagrammes, combien de façons, les patrons du cube, les droites perpendiculaires et parallèles, la médiatrice et la bissectrice, les égalités à trous, les programmes de calcul, les boucles d'instructions et le diagramme circulaire."
+    - "En français : comprendre ce que je lis, écrire ma phrase, et la lecture chronométrée (fluence) avec les repères officiels de fin de CP, CE1 et CE2."
+    - "Pour les parents : la fluence et les notions qui résistent dans le bilan, un tableau de suivi de tous les profils (CSV), un rappel régulier à ajouter à son agenda, et la grille de correspondance avec les programmes."
 - version: "2.2.0"
   date: "2026-10-09"
   notes:

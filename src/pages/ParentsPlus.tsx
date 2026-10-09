@@ -55,6 +55,8 @@ export function Bilans({ children }: { children: Child[] }) {
           </select>
         )}
         <button className="btn btn-primary" onClick={() => window.print()}>🖨️ Imprimer</button>
+        <button className="btn btn-soft" onClick={() => exporterCsv(children, worlds)} title="Tous les profils, une ligne par leçon commencée : à ouvrir dans un tableur">📊 Tableau de suivi (CSV)</button>
+
       </div>
 
       {vue === "bilan" && child && (
@@ -91,6 +93,8 @@ export function Bilans({ children }: { children: Child[] }) {
             );
           })}
           {!Object.keys(child.progress).length && <p>Aucune leçon commencée pour l'instant.</p>}
+          <BilanFluence child={child} />
+          <BilanAutrement child={child} />
         </section>
       )}
 
@@ -124,8 +128,10 @@ export function Bilans({ children }: { children: Child[] }) {
         <section className="card imprimable">
           <h2>Correspondance avec les classes</h2>
           <p className="small">
-            Chaque monde indique les classes qu'il couvre. Cette table sert de repère ; elle ne remplace pas les programmes officiels (eduscol.education.fr), qui ont été réécrits pour les cycles 1 à 3 en mathématiques et en français : vérifiez la compétence précise avant de vous en servir avec un enseignant.
+            Chaque monde indique les classes qu'il couvre. En version 2.3, le contenu de mathématiques (cycles 2 et 3) et de français (CP, CE1) a été confronté objectif par objectif aux programmes officiels publiés en 2024 et 2025 :{" "}
+            <a href="./alignement-programmes.html" target="_blank" rel="noopener">voir la grille de correspondance détaillée</a>. Cette table reste un repère : elle ne remplace pas les programmes officiels (eduscol.education.fr).
           </p>
+
           {[...parPlanete.entries()].map(([mat, ws]) => (
             <div key={mat}>
               <h3>{planeteDe(manifest, mat)?.emoji} {planeteDe(manifest, mat)?.matiere}</h3>
@@ -231,4 +237,135 @@ export function HorsConnexion() {
       {etat && <p aria-live="polite">{etat}</p>}
     </section>
   );
+}
+
+/** Lectures chronométrées : les derniers résultats et la progression (mots correctement lus par minute). */
+function BilanFluence({ child }: { child: Child }) {
+  const essais = child.fluence ?? [];
+  if (!essais.length) return null;
+  const premier = essais[essais.length - 1];
+  const dernier = essais[0];
+  return (
+    <div className="bilan-planete">
+      <h3>⏱️ Lecture à voix haute (fluence)</h3>
+      <p className="small">
+        {essais.length} lecture{essais.length > 1 ? "s" : ""} chronométrée{essais.length > 1 ? "s" : ""}. Première : {premier.mclm} mots/min ; dernière : {dernier.mclm} mots/min
+        {essais.length > 1 ? ` (${dernier.mclm - premier.mclm >= 0 ? "+" : ""}${dernier.mclm - premier.mclm})` : ""}. Repères de fin d'année (Éduscol) : CP 30 sans préparation et 50 après préparation, CE1 70, CE2 90.
+      </p>
+      <ul>
+        {essais.slice(0, 6).map((e) => (
+          <li key={e.at}>
+            {new Date(e.at).toLocaleDateString("fr-FR")} · {e.niveau} · <strong>{e.mclm} mots/min</strong> ({e.lus} mots, {e.erreurs} erreur{e.erreurs > 1 ? "s" : ""}, {e.prepare ? "texte préparé" : "texte découvert"})
+            {e.prosodie?.length ? ` · lecture expressive : ${e.prosodie.length}/3` : ""}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** Les notions où l'enfant a demandé « Explique-moi autrement », et les façons qui l'ont aidé. */
+function BilanAutrement({ child }: { child: Child }) {
+  const { worlds } = useContent();
+  const notions = Object.entries(child.counters)
+    .filter(([k]) => k.startsWith("autrement:"))
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([k, n]) => {
+      const [wid, lid] = k.slice("autrement:".length).split("/");
+      const w = worlds.find((x) => x.id === wid);
+      return { k, n, titre: w?.lecons.find((l) => l.id === lid)?.titre ?? lid, monde: w?.titre ?? wid };
+    });
+  if (!notions.length) return null;
+  const FACONS: Record<string, string> = { dessin: "un dessin", image: "une image de la vie", exemple: "un exemple pas à pas", manip: "la manipulation", cours: "le cours relu lentement" };
+  const aides = Object.keys(FACONS)
+    .map((f) => ({ f, oui: child.counters[`autrement-aide-${f}`] ?? 0 }))
+    .filter((x) => x.oui > 0)
+    .sort((a, b) => b.oui - a.oui);
+  return (
+    <div className="bilan-planete">
+      <h3>🤔 Notions où {child.name} a demandé une autre explication</h3>
+      <ul>
+        {notions.map((x) => (
+          <li key={x.k}>
+            {x.titre} <small className="muted">({x.monde} · {x.n} fois)</small>
+          </li>
+        ))}
+      </ul>
+      {aides.length > 0 && <p className="small">Ce qui l'aide le plus : {aides.map((a) => `${FACONS[a.f]} (${a.oui})`).join(", ")}. C'est une bonne piste pour l'aider à la maison.</p>}
+    </div>
+  );
+}
+
+/** Rappel quotidien sans serveur ni notification : un événement répété ajouté à l'agenda de la famille (.ics). */
+export function RappelAgenda() {
+  const [heure, setHeure] = useState("17:30");
+  const [jours, setJours] = useState<string[]>(["MO", "TU", "TH", "FR"]);
+  const J: [string, string][] = [["MO", "lun"], ["TU", "mar"], ["WE", "mer"], ["TH", "jeu"], ["FR", "ven"], ["SA", "sam"], ["SU", "dim"]];
+  const telecharger = () => {
+    const [h, m] = heure.split(":").map(Number);
+    const pad = (n: number) => String(n).padStart(2, "0");
+    // heure locale « flottante » : le rappel suit le fuseau de l'agenda qui l'importe
+    const local = (d: Date) => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
+    const d0 = new Date();
+    d0.setHours(h, m, 0, 0);
+    const debut = local(d0);
+    const fin = local(new Date(d0.getTime() + 15 * 60000));
+
+    const url = location.href.split("#")[0];
+    const ics = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Galaxie des Savoirs//FR", "BEGIN:VEVENT",
+      `UID:galaxie-${Date.now()}@galaxie-des-savoirs`, `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15)}Z`,
+      `DTSTART:${debut}`, `DTEND:${fin}`, `RRULE:FREQ=WEEKLY;BYDAY=${jours.join(",")}`,
+      "SUMMARY:🚀 15 minutes dans la Galaxie des Savoirs", `DESCRIPTION:Une petite séance régulière vaut mieux qu'une longue de temps en temps. ${url}`,
+      "BEGIN:VALARM", "TRIGGER:PT0M", "ACTION:DISPLAY", "DESCRIPTION:C'est l'heure de la Galaxie !", "END:VALARM",
+      "END:VEVENT", "END:VCALENDAR",
+    ].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
+    a.download = "rappel-galaxie-des-savoirs.ics";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  };
+  return (
+    <section className="card stack">
+      <h3>⏰ Un rappel régulier dans votre agenda</h3>
+      <p className="small">Apprendre un peu, souvent, est ce qui fonctionne le mieux. Ce fichier ajoute à votre agenda (téléphone, tablette ou ordinateur) un rappel répété : aucune notification n'est envoyée par l'application, et rien ne quitte l'appareil.</p>
+      <div className="row">
+        <label>
+          Heure <input type="time" value={heure} onChange={(e) => setHeure(e.target.value || "17:30")} />
+        </label>
+        <div className="chips" role="group" aria-label="Jours">
+          {J.map(([k, l]) => (
+            <button key={k} className={`chip ${jours.includes(k) ? "sel" : ""}`} aria-pressed={jours.includes(k)} onClick={() => setJours((x) => (x.includes(k) ? x.filter((y) => y !== k) : [...x, k]))}>
+              {l}
+            </button>
+          ))}
+        </div>
+      </div>
+      <button className="btn btn-primary" disabled={!jours.length} onClick={telecharger}>
+        📅 Ajouter le rappel à mon agenda
+      </button>
+    </section>
+  );
+}
+
+/** Tableau de suivi de tous les profils (famille ou petit groupe) : un fichier CSV lisible dans un tableur. */
+export function exporterCsv(children: Child[], worlds: World[]) {
+  const esc = (s: string | number) => `"${String(s).replace(/"/g, '""')}"`;
+  const lignes = [["Enfant", "Planète", "Monde", "Classes", "Leçon", "Compétence", "Acquise", "Étoiles", "Meilleur score (%)", "Demandes d'autre explication"].map(esc).join(";")];
+  for (const c of children)
+    for (const w of worlds)
+      for (const l of w.lecons) {
+        const k = lessonKey(w, l.id);
+        const p = c.progress[k];
+        const aut = c.counters[`autrement:${k}`] ?? 0;
+        if (!p && !aut) continue;
+        lignes.push([c.name, w.matiere, w.titre, w.niveau, l.titre, l.objectif, p?.done ? "oui" : "non", p?.stars ?? 0, Math.round((p?.best ?? 0) * 100), aut].map(esc).join(";"));
+      }
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob(["﻿" + lignes.join("\r\n")], { type: "text/csv;charset=utf-8" }));
+  a.download = `galaxie-des-savoirs-suivi-${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 }

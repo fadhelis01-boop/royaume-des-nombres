@@ -201,6 +201,58 @@ lecons:
         correction: "On place chaque chiffre à sa place, et Zéro garde les places vides : {{n}}."
 
   # ------------------------------------------------------------------
+  - id: nombres-en-lettres
+    titre: Écrire les nombres en lettres
+    objectif: J'écris en lettres les nombres jusqu'à mille, avec les bons traits d'union.
+    mots: [lettres, écrire, orthographe, nombre]
+    autrement:
+      texte: "Les nombres en lettres se construisent comme des Lego : on a une petite boîte de mots (un, deux… seize, vingt, trente… cent, mille) et on les assemble. 74, c'est soixante + quatorze : soixante-quatorze. Avec l'orthographe de 1990, on relie toutes les briques par des traits d'union."
+      visuel: { type: tableau, lignes: [["nombre", "les briques", "en lettres"], ["21", "vingt + et + un", "vingt-et-un"], ["74", "soixante + quatorze", "soixante-quatorze"], ["90", "quatre + vingt + dix", "quatre-vingt-dix"], ["300", "trois + cents", "trois-cents"]] }
+      legende: "Chaque nombre se construit avec les briques de base."
+    etapes:
+      - dialogue:
+          - neo: "Je dois écrire un chèque de 80 € pour le marchand… En lettres ! « Huitante » ?"
+          - mia: "Ça, c'est en Suisse ! En France, on dit quatre-vingts : quatre fois vingt."
+          - zero: "Et moi, « zéro », c'est facile : quatre lettres, pas de piège !"
+      - a_quoi_ca_sert: "Écrire un chèque, remplir un formulaire, lire un livre où les nombres sont en lettres, faire une dictée : savoir écrire les nombres en lettres, c'est indispensable."
+      - texte: |
+          Pour écrire un nombre en lettres, on assemble des **mots de base** :
+
+          - de **un** à **seize** : un, deux, trois… dix, onze, douze, treize, quatorze, quinze, seize ;
+          - les dizaines : **vingt, trente, quarante, cinquante, soixante** ; ensuite soixante-dix (60 + 10), quatre-vingts (4 × 20), quatre-vingt-dix (4 × 20 + 10) ;
+          - **cent** et **mille**.
+
+          Depuis l'orthographe rectifiée de **1990**, on met des **traits d'union entre tous les mots** : vingt-et-un, deux-cent-trois. L'ancienne règle (traits d'union seulement sous cent, sauf autour de « et ») reste acceptée.
+      - attention: "**Vingt** et **cent** prennent un **s** quand ils sont multipliés et terminent le nombre : quatre-vingts, trois-cents. Mais quatre-vingt-deux, trois-cent-cinq (pas de s, ils ne terminent pas). **Mille** ne prend jamais de s : deux-mille."
+      - astuce: { texte: "Dis le nombre à voix haute en tapant dans tes mains à chaque mot : chaque tape est un mot, et entre deux tapes on met un trait d'union.", qui: mia }
+      - retiens: "On assemble les mots de base avec des **traits d'union**. **Vingt** et **cent** prennent un **s** quand ils sont multipliés et en fin de nombre ; **mille** est invariable."
+    exercices:
+      - type: mot
+        vars: { t: [[17, "dix-sept", "dix-sept"], [21, "vingt-et-un", "vingt et un"], [35, "trente-cinq", "trente-cinq"], [48, "quarante-huit", "quarante-huit"], [56, "cinquante-six", "cinquante-six"], [61, "soixante-et-un", "soixante et un"], [72, "soixante-douze", "soixante-douze"], [80, "quatre-vingts", "quatre-vingts"], [91, "quatre-vingt-onze", "quatre-vingt-onze"], [99, "quatre-vingt-dix-neuf", "quatre-vingt-dix-neuf"]] }
+        enonce: "Écris en lettres : **{{t_0}}**"
+        reponse: ["{{t_1}}", "{{t_2}}"]
+        correction: "{{t_0}} s'écrit **{{t_1}}**."
+      - type: mot
+        vars: { t: [[100, "cent", "cent"], [200, "deux-cents", "deux cents"], [205, "deux-cent-cinq", "deux cent cinq"], [300, "trois-cents", "trois cents"], [480, "quatre-cent-quatre-vingts", "quatre cent quatre-vingts"], [600, "six-cents", "six cents"], [1000, "mille", "mille"]] }
+        enonce: "Écris en lettres : **{{t_0}}**"
+        reponse: ["{{t_1}}", "{{t_2}}"]
+        niveau: 2
+        correction: "{{t_0}} s'écrit **{{t_1}}** (ou {{t_2}} avec l'ancienne règle)."
+      - type: nombre
+        vars: { n: "20..999" }
+        enonce: "Écris en chiffres : **{{lettres(n)}}**"
+        reponse: "n"
+        correction: "{{lettres(n)}} = {{n}}."
+      - type: qcm
+        vars: { t: [["quatre-vingts", "quatre-vingt", "quatres-vingts", "quatre-vingtx"], ["trois-cents", "trois-cent", "troix-cents", "trois-cens"], ["deux-mille", "deux-milles", "deux-mils", "deux-mile"], ["quatre-vingt-trois", "quatre-vingts-trois", "quatres-vingt-trois", "quatre-vingt-troi"]] }
+        enonce: "Quelle écriture est correcte ?"
+        choix: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "La bonne écriture : **{{t_0}}**. Vingt et cent prennent un s seulement s'ils sont multipliés et terminent le nombre ; mille est invariable."
+      - type: vf
+        enonce: "Vrai ou faux : on écrit « deux-milles »."
+        reponse: false
+        correction: "Faux : **mille** ne prend jamais de s. On écrit deux-mille."
+
   - id: comparer-ranger
     titre: Comparer et ranger les nombres
     objectif: Je sais comparer deux nombres avec <, > ou = et ranger des nombres.
@@ -273,6 +325,69 @@ lecons:
         correction: "{{a}} a 3 chiffres et {{b}} en a seulement 2 : {{a}} est plus grand."
 
   # ------------------------------------------------------------------
+  - id: ordinaux
+    titre: Premier, deuxième, troisième… les nombres ordinaux
+    objectif: Je dis et j'écris le rang d'un objet dans une file ou une liste (1ᵉʳ, 2ᵉ, 10ᵉ…).
+    mots: [ordinal, rang, premier, dernier]
+    autrement:
+      texte: "Dans la file de la cantine, le 1ᵉʳ est devant tout le monde. Si tu es 5ᵉ, il y a 4 enfants devant toi. Ton rang, c'est le nombre d'enfants devant toi, plus toi !"
+      visuel: { type: motif, elements: ["🧒 1ᵉʳ", "👧 2ᵉ", "🧒 3ᵉ", "👦 4ᵉ", "**🙋 5ᵉ**"] }
+      legende: "Devant le 5ᵉ, il y a 4 enfants."
+    etapes:
+      - dialogue:
+          - zero: "J'ai gagné la course ! On m'a donné le numéro 1… c'est bien ?"
+          - mia: "Si tu es arrivé le premier, oui ! Un nombre peut dire « combien », mais aussi « à quelle place » : c'est un nombre ordinal."
+          - neo: "Combien de coureurs ? 6. À quelle place est Zéro ? 1ᵉʳ. Ce n'est pas la même question !"
+      - a_quoi_ca_sert: "Les places d'une course, les étages d'un immeuble, les jours du mois (le 1ᵉʳ mai), les chapitres d'un livre, les rangs d'un cinéma : partout, on dit à quelle place on est."
+      - texte: |
+          Un **nombre ordinal** dit le **rang**, c'est-à-dire la place, dans une file ou une liste rangée dans un ordre.
+
+          - On dit **premier** (1ᵉʳ, ou 1ʳᵉ au féminin), puis **deuxième** (2ᵉ), **troisième** (3ᵉ)… on ajoute **-ième** au nombre : cinq → cinq**uième**, neuf → neu**vième**, vingt-et-un → vingt-et-un**ième**.
+          - Le rang dépend du **sens** : on compte à partir du début de la file (la tête).
+          - Devant le **5ᵉ**, il y a **4** éléments : le rang, c'est le nombre d'éléments devant, **plus un**.
+      - visuel: { type: motif, elements: ["🏁", "🐹 1ᵉʳ", "🐰 2ᵉ", "🦊 3ᵉ", "🐻 4ᵉ", "🐸 5ᵉ"] }
+        legende: "La file part du drapeau : le hamster est 1ᵉʳ, la grenouille 5ᵉ."
+      - attention: "On écrit 1ᵉʳ (premier), 1ʳᵉ (première), 2ᵉ, 3ᵉ… et pas « 2ème »."
+      - astuce: { texte: "Pour savoir combien il y a de monde devant toi, enlève 1 à ton rang : 8ᵉ → 7 devant toi.", qui: neo }
+      - retiens: "Un nombre ordinal donne un **rang** : 1ᵉʳ, 2ᵉ, 3ᵉ… Devant le **n**ᵉ, il y a **n − 1** éléments."
+    exercices:
+      - type: nombre
+        vars: { n: "3..20" }
+        enonce: "Dans la file de la cantine, Lya est {{n}}ᵉ. Combien d'enfants sont devant elle ?"
+        reponse: "n-1"
+        correction: "Devant la {{n}}ᵉ, il y a {{n}} − 1 = {{n-1}} enfants."
+        erreurs: [{ valeur: "n", message: "Le rang compte aussi Lya elle-même ! Les enfants DEVANT elle sont un de moins." }]
+      - type: nombre
+        vars: { n: "2..25" }
+        enonce: "{{n}} enfants sont devant Néo dans la file. À quel rang est Néo ? (écris seulement le nombre)"
+        reponse: "n+1"
+        correction: "{{n}} devant lui, puis lui : il est {{n+1}}ᵉ."
+      - type: qcm
+        vars: { r: [["troisième", "🍇", "🍓", "🍌"], ["premier", "🍎", "🍌", "🍒"], ["cinquième", "🍒", "🍓", "🍎"], ["quatrième", "🍓", "🍇", "🍒"], ["deuxième", "🍌", "🍎", "🍇"]] }
+        enonce: "Voici une file de fruits, de gauche à droite : 🍎 🍌 🍇 🍓 🍒. Quel fruit est le {{r_0}} ?"
+        choix: ["{{r_1}}", "{{r_2}}", "{{r_3}}"]
+        correction: "En partant de la gauche : 🍎 1ᵉʳ, 🍌 2ᵉ, 🍇 3ᵉ, 🍓 4ᵉ, 🍒 5ᵉ."
+      - type: qcm
+        vars: { r: [[2, "B", "C", "A"], [5, "E", "F", "D"], [7, "G", "H", "F"], [10, "J", "K", "I"], [13, "M", "N", "L"]] }
+        enonce: "Dans l'alphabet, quelle est la {{r_0}}ᵉ lettre ?"
+        choix: ["{{r_1}}", "{{r_2}}", "{{r_3}}"]
+        correction: "A, B, C… la {{r_0}}ᵉ lettre est **{{r_1}}**."
+      - type: mot
+        vars: { r: [["5ᵉ", "cinquième"], ["9ᵉ", "neuvième"], ["4ᵉ", "quatrième"], ["1ᵉʳ", "premier"], ["20ᵉ", "vingtième"], ["11ᵉ", "onzième"], ["3ᵉ", "troisième"]] }
+        enonce: "Écris en lettres : **{{r_0}}**"
+        reponse: "{{r_1}}"
+        correction: "{{r_0}} se dit **{{r_1}}**."
+      - type: qcm
+        vars: { j: [["jeudi", 4, 3, 5], ["mardi", 2, 1, 3], ["samedi", 6, 5, 7], ["vendredi", 5, 4, 6]] }
+        enonce: "La semaine commence lundi (1ᵉʳ jour). Quel est le rang de {{j_0}} ?"
+        choix: ["{{j_1}}ᵉ", "{{j_2}}ᵉ", "{{j_3}}ᵉ"]
+        correction: "Lundi 1ᵉʳ, mardi 2ᵉ, mercredi 3ᵉ, jeudi 4ᵉ, vendredi 5ᵉ, samedi 6ᵉ, dimanche 7ᵉ."
+      - type: vf
+        vars: { n: "5..30" }
+        enonce: "Vrai ou faux : le {{n}}ᵉ coureur a {{n}} coureurs devant lui."
+        reponse: false
+        correction: "Faux : devant le {{n}}ᵉ, il y a {{n-1}} coureurs."
+
   - id: droite-numerique
     titre: La droite des nombres
     objectif: Je sais placer un nombre sur une droite graduée et trouver ses voisins.
@@ -358,6 +473,65 @@ lecons:
         correction: "Le nombre d'avant est {{n-1}}, celui d'après est {{n+1}}."
 
   # ------------------------------------------------------------------
+  - id: tableaux-diagrammes
+    titre: Ranger des informations - tableaux et diagrammes
+    objectif: Je lis et je remplis un tableau (même à double entrée) et un diagramme en barres.
+    mots: [tableau, diagramme, données, double entrée]
+    autrement:
+      texte: "Un tableau à double entrée, c'est comme la bataille navale : pour trouver une case, on suit une ligne avec un doigt et une colonne avec l'autre doigt. Là où les deux doigts se rencontrent, c'est la réponse."
+      visuel: { type: tableau, lignes: [["", "🍎 pomme", "🍌 banane"], ["Lya", "3", "1"], ["Néo", "2", "4"]] }
+      legende: "Ligne « Néo », colonne « banane » : les doigts se rencontrent sur 4."
+    etapes:
+      - dialogue:
+          - neo: "J'ai demandé à toute la classe son fruit préféré… et j'ai tout noté sur un papier en vrac. Je n'y comprends plus rien !"
+          - mia: "Il faut ranger tes informations ! Un tableau ou un diagramme, et on voit tout d'un seul coup d'œil."
+          - zero: "Moi je range tout dans ma joue. Mais c'est moins pratique pour lire."
+      - a_quoi_ca_sert: "Les horaires de bus, l'emploi du temps de la classe, les résultats d'un match, la météo de la semaine : ce sont des tableaux et des diagrammes. Ils rangent beaucoup d'informations en peu de place."
+      - texte: |
+          - Un **tableau** range des informations en **lignes** (→) et en **colonnes** (↓). La première ligne et la première colonne disent **de quoi on parle**.
+          - Dans un **tableau à double entrée**, une case se trouve au croisement d'**une ligne** et d'**une colonne**.
+          - Un **diagramme en barres** dessine chaque nombre par une barre : plus la barre est **haute**, plus le nombre est **grand**.
+      - visuel: { type: diagramme, titre: "Fruits préférés de la classe", barres: [{ label: "pomme", v: 7 }, { label: "banane", v: 4 }, { label: "fraise", v: 9 }, { label: "kiwi", v: 2 }] }
+        legende: "La barre la plus haute : la fraise, choisie par 9 élèves."
+      - astuce: { texte: "Pour lire une case, pose un doigt sur le nom de la ligne et un doigt sur le nom de la colonne, puis fais-les glisser jusqu'à ce qu'ils se rencontrent.", qui: mia }
+      - retiens: "Dans un tableau, une case = **une ligne** + **une colonne**. Dans un diagramme en barres, la barre la **plus haute** montre le **plus grand** nombre."
+    exercices:
+      - type: nombre
+        vars: { a: "2..9", b: "2..9", c: "2..9", d: "2..9" }
+        visuel: { type: tableau, lignes: [["", "🍎 pommes", "🍌 bananes"], ["Lya", "=a", "=b"], ["Néo", "=c", "=d"]] }
+        enonce: "Combien de bananes a Néo ?"
+        reponse: "d"
+        correction: "Ligne « Néo », colonne « bananes » : {{d}}."
+      - type: nombre
+        vars: { a: "2..9", b: "2..9", c: "2..9", d: "2..9" }
+        visuel: { type: tableau, lignes: [["", "🍎 pommes", "🍌 bananes"], ["Lya", "=a", "=b"], ["Néo", "=c", "=d"]] }
+        enonce: "Combien de fruits a Lya en tout ?"
+        reponse: "a+b"
+        niveau: 2
+        correction: "Lya : {{a}} pommes + {{b}} bananes = {{a+b}} fruits."
+      - type: nombre
+        vars: { a: "3..12", b: "3..12", c: "3..12" }
+        si: "a != b && b != c && a != c"
+        visuel: { type: diagramme, titre: "Animaux préférés", barres: [{ label: "chat", v: "=a" }, { label: "chien", v: "=b" }, { label: "lapin", v: "=c" }] }
+        enonce: "Combien d'élèves préfèrent le chien ?"
+        reponse: "b"
+        correction: "La barre « chien » monte jusqu'à {{b}}."
+      - type: qcm
+        vars: { a: "3..12", b: "3..12", c: "3..12" }
+        si: "a > b && a > c && b != c"
+        visuel: { type: diagramme, titre: "Couleurs préférées", barres: [{ label: "bleu", v: "=b" }, { label: "rouge", v: "=a" }, { label: "vert", v: "=c" }] }
+        enonce: "Quelle couleur a été choisie le plus souvent ?"
+        choix: ["rouge", "bleu", "vert"]
+        correction: "La barre la plus haute est celle du rouge ({{a}})."
+      - type: nombre
+        vars: { a: "4..12", b: "2..9" }
+        si: "a > b"
+        visuel: { type: diagramme, titre: "Livres lus ce mois-ci", barres: [{ label: "Tom", v: "=a" }, { label: "Ana", v: "=b" }] }
+        enonce: "Combien de livres Tom a-t-il lus de plus qu'Ana ?"
+        reponse: "a-b"
+        niveau: 2
+        correction: "{{a}} − {{b}} = {{a-b}} livres de plus."
+
   - id: pair-impair
     titre: Pair, impair et compter de 2 en 2, de 5 en 5
     objectif: Je reconnais les nombres pairs et impairs et je sais compter par bonds.

@@ -391,6 +391,65 @@ lecons:
         choix: ["cône", "cylindre", "pyramide", "sphère"]
         correction: "Une pointe et une base ronde : un cône."
 
+  - id: patrons
+    titre: Les patrons - déplier un cube et un pavé
+    objectif: Je reconnais et je construis un patron de cube, et je sais qu'un pavé a 6 faces rectangulaires.
+    mots: [patron, cube, pavé, face, arête]
+    autrement:
+      texte: "Prends une boîte de céréales vide et découpe-la le long de quelques arêtes, sans séparer les morceaux : elle s'aplatit sur la table. Cette forme à plat, c'est le patron de la boîte. Replie-la : la boîte revient !"
+      visuel: { type: schema, emoji: "📦", titre: "Déplier une boîte", legendes: [{ label: "6 faces", detail: "toujours 6 morceaux, reliés entre eux" }, { label: "on coupe des arêtes", detail: "pas toutes : les faces restent attachées" }, { label: "on replie", detail: "chaque face retrouve sa place" }] }
+    etapes:
+      - dialogue:
+          - mia: "Pour l'anniversaire de Zéro, je veux fabriquer une boîte-cadeau en carton. Mais comment dessiner une boîte sur une feuille plate ?"
+          - neo: "On dessine son patron : la boîte dépliée à plat. Ensuite on découpe et on plie."
+          - zero: "Une boîte-cadeau ? Pour moi ? Je peux dormir dedans ?"
+      - a_quoi_ca_sert: "Les emballages (boîtes de céréales, de chaussures, de pizza) sont fabriqués à partir de patrons découpés dans du carton à plat, puis pliés. Les architectes et les ingénieurs font pareil avec des maquettes."
+      - texte: |
+          Le **patron** d'un solide, c'est une figure **plate, d'un seul morceau**, qu'on peut **plier** pour fabriquer le solide, sans que les faces se chevauchent.
+
+          - Un **cube** a **6 faces carrées** identiques : son patron est formé de **6 carrés**.
+          - Un **pavé droit** a **6 faces rectangulaires** (les faces opposées sont identiques).
+          - Il existe **11** patrons différents du cube. Mais attention : **6 carrés** ne forment pas toujours un patron ! Une ligne de 6 carrés, par exemple, ne se referme pas.
+      - visuel:
+          type: figure
+          points: { A: [1, 0], B: [2, 0], C: [2, 2], D: [3, 2], E: [3, 3], F: [2, 3], G: [2, 4], H: [1, 4], I: [1, 3], J: [0, 3], K: [0, 2], L: [1, 2], M: [1, 1], N: [2, 1] }
+          polygones: [[A, B, C, D, E, F, G, H, I, J, K, L]]
+          segments: [[M, N, "", true], [L, C, "", true], [I, F, "", true], [L, I, "", true], [C, F, "", true]]
+          noms: false
+        legende: "La croix : un patron du cube. Les pointillés sont les plis."
+      - attention: "Sur un patron de cube, deux faces qui se retrouvent **face à face** une fois le cube plié ne se touchent jamais sur le patron."
+      - astuce: { texte: "Pour vérifier un patron, choisis une face qui sera le « fond », puis imagine que tu relèves les autres faces une par une, comme les murs d'une maison. S'il y a deux murs au même endroit, ce n'est pas un patron.", qui: mia }
+      - vraie_vie: { titre: "Défi dans la vraie vie", texte: "Déplie une petite boîte en carton (boîte de dentifrice, de thé…) en coupant le moins d'arêtes possible. Compte ses faces et colorie les faces opposées de la même couleur.", materiel: "une petite boîte vide, des ciseaux, des crayons" }
+      - retiens: "Un **patron** est le solide **déplié à plat**, d'un seul morceau. Le patron d'un **cube** a **6 carrés** ; celui d'un **pavé** a **6 rectangles**, identiques deux à deux."
+    exercices:
+      - type: nombre
+        enonce: "Combien de carrés faut-il pour faire un patron de cube ?"
+        reponse: "6"
+        correction: "Un cube a 6 faces carrées : son patron a 6 carrés."
+      - type: vf
+        enonce: "Vrai ou faux : 6 carrés alignés sur une seule ligne forment un patron de cube."
+        reponse: false
+        correction: "Faux : en pliant une ligne de 6 carrés, les faces se superposent et la boîte ne se ferme pas."
+      - type: vf
+        enonce: "Vrai ou faux : la croix formée de 4 carrés en colonne et d'un carré de chaque côté du 2ᵉ est un patron de cube."
+        reponse: true
+        correction: "Vrai : la colonne fait le tour du cube, et les deux carrés des côtés ferment les bouts."
+      - type: qcm
+        enonce: "Quelles faces a le patron d'un pavé droit (une boîte à chaussures) ?"
+        choix: ["6 rectangles, identiques deux à deux", "6 carrés identiques", "4 triangles", "2 disques et un rectangle"]
+        correction: "Un pavé droit a 6 faces rectangulaires ; les faces opposées sont identiques."
+      - type: qcm
+        enonce: "Quel solide obtient-on en pliant un patron fait de 2 disques et d'un rectangle ?"
+        choix: ["un cylindre", "un cube", "une pyramide", "un cône"]
+        correction: "Le rectangle s'enroule pour faire le tour, les deux disques ferment le haut et le bas : c'est un cylindre."
+      - type: nombre
+        vars: { c: [2, 3, 4, 5] }
+        enonce: "Un cube a des arêtes de {{c}} cm. Quelle est l'aire totale de son patron, en cm² ?"
+        reponse: "6*c*c"
+        unite: cm²
+        niveau: 3
+        correction: "6 faces de {{c}} × {{c}} = {{c*c}} cm² : 6 × {{c*c}} = {{6*c*c}} cm²."
+
   - id: cercle
     titre: Le cercle, son centre et son rayon
     objectif: Je connais le centre, le rayon et le diamètre d'un cercle.
@@ -445,3 +504,55 @@ lecons:
         reponse: "r"
         unite: cm
         correction: "On écarte le compas du rayon : {{r}} cm."
+
+  - id: perpendiculaires-paralleles
+    titre: Droites perpendiculaires et droites parallèles
+    objectif: Je reconnais des droites perpendiculaires (angle droit) et parallèles (toujours le même écart), et je les vérifie avec l'équerre.
+    mots: [perpendiculaire, parallèle, équerre, droite]
+    autrement:
+      texte: "Les rails d'un train sont parallèles : ils gardent toujours le même écart, sinon le train déraillerait, et ils ne se croisent jamais. Le bord d'une table et le pied de la table sont perpendiculaires : ils se rencontrent en faisant un coin parfaitement carré."
+      visuel: { type: schema, emoji: "🛤️", titre: "Rails et coin de table", legendes: [{ label: "parallèles", detail: "comme des rails : même écart, ne se croisent jamais" }, { label: "perpendiculaires", detail: "comme un coin de feuille : se coupent en angle droit" }] }
+    etapes:
+      - dialogue:
+          - neo: "Regardez cette page de cahier : des lignes qui ne se touchent jamais… et une marge qui les coupe toutes."
+          - mia: "Les lignes du cahier sont parallèles entre elles. Et la marge est perpendiculaire à chaque ligne : elle les coupe en faisant un angle droit."
+          - zero: "Et mes moustaches ? Elles sont parallèles ? …Bon, plutôt en bataille."
+      - a_quoi_ca_sert: "Les maçons posent des murs perpendiculaires au sol pour qu'ils ne tombent pas, les rails et les lignes d'une route sont parallèles, les étagères aussi. Sans ces deux idées, aucune maison ne tiendrait droite."
+      - texte: |
+          - Deux droites **perpendiculaires** se **coupent en formant un angle droit**. On le vérifie avec l'**équerre** et on le code par un petit carré.
+          - Deux droites **parallèles** ne se coupent **jamais** : l'**écart** entre elles est **toujours le même**.
+          - Propriété utile : si deux droites sont **perpendiculaires à une même droite**, alors elles sont **parallèles** entre elles (comme les barreaux d'une échelle).
+      - visuel:
+          type: figure
+          points: { A: [0, 1], B: [6, 1], C: [0, 3], D: [6, 3], E: [2, 0], F: [2, 4], H: [2, 1], K: [2, 3] }
+          segments: [[A, B], [C, D], [E, F]]
+          angles_droits: [[B, H, F], [D, K, F]]
+          noms: false
+        legende: "Les deux droites horizontales sont parallèles ; la droite verticale est perpendiculaire aux deux."
+      - attention: "Deux droites qui ne se coupent pas **sur le dessin** peuvent quand même se couper plus loin : prolonge-les ou mesure l'écart à deux endroits avant de dire qu'elles sont parallèles."
+      - astuce: { texte: "Pour l'angle droit, pose l'équerre bien à plat, un côté de l'angle droit sur une droite : si l'autre droite suit exactement l'autre côté, c'est perpendiculaire.", qui: neo }
+      - vraie_vie: { titre: "Chasse aux droites", texte: "Dans ta maison, trouve 3 exemples de droites parallèles (lignes du carrelage, étagères…) et 3 exemples de droites perpendiculaires (coin de porte, de fenêtre…). Vérifie les angles droits avec le coin d'une feuille.", materiel: "une feuille de papier (son coin sert d'équerre)" }
+      - retiens: "**Perpendiculaires** : elles se coupent en faisant un **angle droit** (vérifié à l'équerre). **Parallèles** : elles ne se coupent **jamais**, l'écart est toujours le même. Deux droites perpendiculaires à une même troisième sont parallèles."
+    exercices:
+      - type: qcm
+        enonce: "Deux droites se coupent en formant un angle droit. Elles sont…"
+        choix: ["perpendiculaires", "parallèles", "égales", "symétriques"]
+        correction: "Se couper en angle droit, c'est la définition de « perpendiculaires »."
+      - type: qcm
+        enonce: "Deux droites gardent toujours le même écart et ne se coupent jamais. Elles sont…"
+        choix: ["parallèles", "perpendiculaires", "sécantes", "verticales"]
+        correction: "C'est la définition de « parallèles »."
+      - type: qcm
+        enonce: "Quel instrument utilise-t-on pour vérifier que deux droites sont perpendiculaires ?"
+        choix: ["l'équerre", "le compas", "le rapporteur seulement", "la gomme"]
+        correction: "L'équerre a un angle droit : on le pose sur le coin formé par les deux droites."
+      - type: vf
+        vars: { t: [["Les deux bords opposés d'une feuille rectangulaire sont parallèles.", true, "Vrai : ils gardent toujours le même écart."], ["Deux bords qui se touchent dans un coin d'une feuille rectangulaire sont parallèles.", false, "Faux : ils se coupent en angle droit, ils sont perpendiculaires."], ["Les rails d'un train sont parallèles.", true, "Vrai : l'écart reste le même tout le long."], ["Deux droites perpendiculaires à une même droite sont parallèles.", true, "Vrai : c'est comme les barreaux d'une échelle, tous perpendiculaires aux montants."], ["Deux droites parallèles finissent par se croiser si on les prolonge assez loin.", false, "Faux : des parallèles ne se coupent jamais."]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "{{t_2}}"
+      - type: qcm
+        enonce: "Dans un rectangle, les côtés opposés sont…"
+        choix: ["parallèles", "perpendiculaires", "de longueurs différentes", "sécants"]
+        correction: "Les côtés opposés d'un rectangle sont parallèles (et de même longueur) ; deux côtés qui se suivent sont perpendiculaires."
+

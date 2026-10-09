@@ -8,6 +8,10 @@
 //   content-src/_diagnostic.yaml   test de positionnement
 //   content-src/_jeux.yaml         familles de questions des jeux (Calcul éclair…)
 //   content-src/_changelog.yaml    journal des mises à jour
+//   content-src/_autrement*.yaml   « Explique-moi autrement » : image de la vie + schéma par leçon
+//   content-src/_fluence.yaml      textes de lecture chronométrée (fluence)
+
+
 //
 // AJOUTER UN DOMAINE SANS RECODER : déposer un nouveau fichier YAML dans
 // content-src/ (voir docs/FORMAT-CONTENU.md), puis `npm run deploy`.
@@ -38,11 +42,16 @@ function main() {
     diagnostic: [],
     jeux: {},
     changelog: opt("_changelog.yaml", []),
+    // lecture chronométrée (fluence) : textes gradués CP → CM
+    fluence: opt("_fluence.yaml", []),
   };
   let lessons = 0;
   const worldIds = new Set();
   const files = readdirSync(SRC).filter((f) => f.endsWith(".yaml") && !f.startsWith("_")).sort();
   const loaded = [];
+  // « Explique-moi autrement » rédigé à part : _autrement*.yaml, clés « monde/leçon »
+  const autre = Object.assign({}, ...readdirSync(SRC).filter((f) => /^_autrement.*\.ya?ml$/.test(f)).sort().map((f) => load(f) ?? {}));
+  const autreVus = new Set();
   for (const f of files) {
     let w;
     try {
@@ -51,12 +60,20 @@ function main() {
       errors.push(`${f} : YAML invalide — ${e.message.split("\n").slice(0, 3).join(" ")}`);
       continue;
     }
+    for (const l of w?.lecons ?? []) {
+      const a = autre[`${w.id}/${l.id}`];
+      if (a) {
+        autreVus.add(`${w.id}/${l.id}`);
+        l.autrement ??= a;
+      }
+    }
     const nw = normalizeWorld(w, f);
     if (worldIds.has(nw.id)) errors.push(`${f} : monde en double ${nw.id}`);
     worldIds.add(nw.id);
     loaded.push(nw);
     lessons += nw.lecons.length;
   }
+  for (const k of Object.keys(autre)) if (!autreVus.has(k)) errors.push(`_autrement : leçon inconnue ${k}`);
   for (const w of loaded) {
     for (const p of w.prerequis) if (!worldIds.has(p)) errors.push(`${w.id} : prérequis inconnu ${p}`);
     // un décor illustré déposé dans public/img/decors/<id>.webp est utilisé sans rien écrire dans le YAML
@@ -70,6 +87,12 @@ function main() {
   }
   for (const [id, j] of Object.entries(opt("_jeux.yaml", {}))) {
     manifest.jeux[id] = { titre: j.titre, niveau: j.niveau, exercices: (j.exercices ?? []).map((e, i) => exercise(e, `jeu ${id} ${i + 1}`)) };
+  }
+  const NIV_FLUENCE = ["CP", "CE1", "CE2", "CM"];
+  for (const [i, t] of manifest.fluence.entries()) {
+    for (const k of ["id", "niveau", "titre", "texte"]) if (!t[k]) errors.push(`fluence ${t.id ?? i + 1} : champ « ${k} » manquant`);
+    if (!NIV_FLUENCE.includes(t.niveau)) errors.push(`fluence ${t.id} : niveau inconnu « ${t.niveau} » (${NIV_FLUENCE.join(", ")})`);
+    t.texte = String(t.texte).trim().replace(/\s+/g, " ");
   }
   for (const [i, e] of manifest.enigmes.entries()) {
     for (const k of ["id", "niveau", "titre", "texte", "reponse", "solution"]) if (e[k] === undefined) errors.push(`énigme ${e.id ?? i + 1} : champ « ${k} » manquant`);

@@ -421,8 +421,23 @@ lecons:
         reponse: "24*j"
         unite: h
         correction: "{{j}} × 24 = {{24*j}} heures."
+      - type: nombre
+        vars: { m: "2..9" }
+        enonce: "Une minute dure 60 secondes. Combien de secondes dans {{m}} minutes ?"
+        reponse: "60*m"
+        unite: s
+        correction: "{{m}} × 60 = {{60*m}} secondes."
+      - type: champs
+        vars: { m: "1..5", s: "5..55" }
+        enonce: "Le chronomètre affiche {{60*m+s}} secondes. Écris-le en minutes et secondes."
+        champs:
+          - { reponse: "m", apres: "min" }
+          - { reponse: "s", apres: "s" }
+        niveau: 2
+        correction: "{{60*m+s}} s = {{m}} × 60 s + {{s}} s = {{m}} min {{s}} s."
 
   - id: conversions
+
     titre: Le grand tableau des conversions
     objectif: Je convertis des mesures grâce au tableau des unités.
     mots: [conversion]

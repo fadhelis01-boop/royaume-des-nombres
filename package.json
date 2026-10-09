@@ -10,6 +10,7 @@
     "test:fr": "rolldown scripts/test-francais.ts --platform node --format esm -o .tmp/test-fr.mjs && node .tmp/test-fr.mjs",
     "content:check": "rolldown scripts/check-content.ts --platform node --format esm -o .tmp/check.mjs --log-level warn && node .tmp/check.mjs",
     "typecheck": "tsc --noEmit",
+    "test": "npm run test:fr && npm run content && npm run content:check && tsc --noEmit",
     "build": "npm run content && npm run content:check && tsc --noEmit && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && node scripts/deploy.mjs"

@@ -30,7 +30,17 @@ const SUGGESTIONS = [
 
 export function Demander() {
   const child = useChild()!;
-  const [q, setQ] = useState("");
+  // question préparée par « Explique-moi autrement » (l'enfant peut la modifier avant d'envoyer)
+  const [q, setQ] = useState(() => {
+    try {
+      const v = sessionStorage.getItem("demander:q") ?? "";
+      sessionStorage.removeItem("demander:q");
+      return v;
+    } catch {
+      return "";
+    }
+  });
+
   const [turns, setTurns] = useState<Turn[]>([]);
   const [busy, setBusy] = useState(false);
   const abort = useRef<AbortController | null>(null);

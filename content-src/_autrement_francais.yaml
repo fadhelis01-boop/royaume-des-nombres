@@ -1,0 +1,217 @@
+# « Explique-moi autrement » — français (même format que _autrement_maths.yaml).
+
+# ---------- Île des Sons ----------
+fr-ile-des-sons/voyelles-consonnes:
+  texte: "Les voyelles (a, e, i, o, u, y) sont les lettres qui « chantent » toutes seules : tu peux les tenir longtemps, aaaaa. Les consonnes ont besoin d'une voyelle pour chanter : « b » tout seul ne fait presque pas de bruit, mais « ba », oui !"
+  visuel: { type: schema, emoji: "🎤", titre: "Les lettres qui chantent", legendes: [{ label: "a e i o u y", detail: "les voyelles : elles chantent seules" }, { label: "b c d f g…", detail: "les consonnes : elles chantent avec une voyelle (ba, co, di…)" }] }
+fr-ile-des-sons/alphabet:
+  texte: "L'alphabet, c'est le rang d'une file d'attente : chaque lettre a sa place fixe. Le dictionnaire range les mots dans cet ordre, comme on range des élèves par ordre alphabétique pour l'appel."
+  visuel: { type: motif, elements: ["A", "B", "C", "D", "E", "F", "G", "?"] }
+  legende: "Après G vient H."
+fr-ile-des-sons/syllabes:
+  texte: "Une syllabe, c'est un coup de tambour quand tu dis le mot. Tape dans tes mains : « pa-pil-lon » = 3 tapes, 3 syllabes. Tu peux aussi poser ta main sous ton menton : il descend une fois par syllabe."
+  visuel: { type: motif, elements: ["👏 pa", "👏 pil", "👏 lon"] }
+  legende: "papillon : 3 syllabes."
+fr-ile-des-sons/sons-complexes:
+  texte: "Certaines lettres font équipe pour faire un seul son, comme deux amis qui chantent ensemble une seule note : « o » + « u » = [ou], « a » + « n » = [an], « c » + « h » = [ch]. Quand tu lis, cherche d'abord les équipes."
+  visuel: { type: schema, emoji: "🤝", titre: "Les lettres en équipe", legendes: [{ label: "ou", detail: "loup, roue" }, { label: "on", detail: "mouton, bonbon" }, { label: "ch", detail: "chat, cheval" }, { label: "oi", detail: "roi, étoile" }] }
+fr-ile-des-sons/accents:
+  texte: "L'accent est un petit chapeau qui change la voix du « e ». Sans chapeau, il est souvent discret (le). Avec l'accent aigu, il sourit : é (été). Avec l'accent grave, il ouvre grand la bouche : è (mère)."
+  visuel: { type: tableau, lignes: [["lettre", "se dit", "exemple"], ["é", "[é]", "bébé"], ["è", "[è]", "mère"], ["ê", "[è]", "fête"]] }
+fr-ile-des-sons/lire-des-phrases:
+  texte: "Lire une phrase, c'est comme marcher sur des pierres dans une rivière : un mot après l'autre, sans sauter. Le point est la rive : là, on respire. Suis la phrase avec ton doigt, puis relis-la plus vite pour en comprendre le sens."
+  visuel: { type: frise, points: [{ emoji: "👉", label: "Je suis avec le doigt" }, { emoji: "🔊", label: "Je dis chaque mot" }, { emoji: "🔁", label: "Je relis d'une traite" }, { emoji: "💭", label: "Je raconte ce que j'ai compris" }] }
+
+# ---------- Forêt des Noms ----------
+fr-foret-des-noms/le-nom:
+  texte: "Un nom, c'est une étiquette que tu pourrais coller sur une chose, un animal, une personne ou une idée. Le test : peux-tu mettre « un », « une » ou « le » devant ? « une table », « le courage » : ce sont des noms."
+  visuel: { type: phrase, groupes: [{ mots: "Le", role: determinant }, { mots: "chat", role: nom, etiquette: "nom" }, { mots: "mange", role: verbe }, { mots: "une", role: determinant }, { mots: "souris", role: nom, etiquette: "nom" }] }
+fr-foret-des-noms/determinants:
+  texte: "Le déterminant est le petit garde du corps qui marche devant le nom. Il donne des indices : « le » (masculin, un seul), « la » (féminin, un seul), « les » (plusieurs)."
+  visuel: { type: phrase, groupes: [{ mots: "les", role: determinant, etiquette: "garde du corps" }, { mots: "chats", role: nom }] }
+fr-foret-des-noms/genre:
+  texte: "Pour trouver le genre d'un nom, fais-le précéder de « un » ou « une » : « un arbre » (masculin), « une fleur » (féminin). Ton oreille sait souvent déjà la réponse !"
+  visuel: { type: tableau, lignes: [["un… (masculin)", "une… (féminin)"], ["un arbre", "une fleur"], ["un livre", "une table"]] }
+fr-foret-des-noms/pluriel-s:
+  texte: "Le « s » du pluriel est une lettre silencieuse : on ne l'entend pas, mais il dit à tes yeux « attention, ils sont plusieurs ! ». Le déterminant (les, des, mes) est l'indice qui t'avertit d'ajouter le s."
+  visuel: { type: phrase, groupes: [{ mots: "les", role: determinant, etiquette: "plusieurs" }, { mots: "chiens", role: nom, etiquette: "+ s" }] }
+fr-foret-des-noms/pluriel-x:
+  texte: "Quelques mots préfèrent le « x » au « s », comme des enfants qui ont un costume différent : les mots en -eau (des gâteaux), en -eu (des jeux) et sept mots en -ou (bijou, caillou, chou, genou, hibou, joujou, pou)."
+  visuel: { type: tableau, lignes: [["un…", "des…"], ["gâteau", "gâteaux"], ["jeu", "jeux"], ["hibou", "hiboux"], ["cheval", "chevaux"]] }
+fr-foret-des-noms/nature-des-mots:
+  texte: "La nature d'un mot, c'est son métier : le nom désigne, le verbe dit l'action, l'adjectif décrit, le déterminant annonce le nom. Comme dans une équipe de foot, chacun a son rôle."
+  visuel: { type: phrase, groupes: [{ mots: "Le", role: determinant }, { mots: "petit", role: adjectif }, { mots: "chat", role: nom }, { mots: "dort", role: verbe }] }
+
+# ---------- Cité de la Ponctuation ----------
+fr-cite-de-la-ponctuation/la-phrase:
+  texte: "Une phrase, c'est un wagon de train complet : elle commence par une locomotive (la majuscule), transporte une idée qui a du sens, et se termine par un butoir (le point)."
+  visuel: { type: frise, points: [{ emoji: "🚂", label: "Majuscule" }, { emoji: "🚃", label: "Des mots qui ont du sens" }, { emoji: "🛑", label: "Point . ! ?" }] }
+fr-cite-de-la-ponctuation/types-de-phrases:
+  texte: "Écoute la musique de ta voix : quand tu racontes, ta voix descend (point). Quand tu demandes, elle monte à la fin (point d'interrogation). Quand tu t'étonnes ou cries, elle s'envole (point d'exclamation)."
+  visuel: { type: tableau, lignes: [["la voix…", "le signe", "exemple"], ["descend", ".", "Il pleut."], ["monte", "?", "Il pleut ?"], ["s'envole", "!", "Il pleut !"]] }
+fr-cite-de-la-ponctuation/forme-negative:
+  texte: "La négation, c'est un sandwich : le verbe est le jambon, et il est pris entre deux tranches de pain, « ne » avant et « pas » après. « Je ne mange pas. » N'oublie pas la première tranche à l'écrit !"
+  visuel: { type: phrase, groupes: [{ mots: "Je", role: pronom }, { mots: "ne", role: adverbe, etiquette: "pain" }, { mots: "mange", role: verbe, etiquette: "jambon" }, { mots: "pas", role: adverbe, etiquette: "pain" }] }
+fr-cite-de-la-ponctuation/la-virgule:
+  texte: "La virgule, c'est une petite pause pour respirer, plus courte que le point. Dans une liste de courses, elle sépare les articles : « des pommes, du pain, du lait et des œufs ». Le dernier est relié par « et »."
+  visuel: { type: motif, elements: ["🍎", ",", "🍞", ",", "🥛", "et", "🥚"] }
+fr-cite-de-la-ponctuation/le-dialogue:
+  texte: "Un dialogue écrit, c'est une bande dessinée sans bulles : les guillemets ouvrent la conversation, chaque tiret montre qu'une nouvelle personne prend la parole, comme une nouvelle bulle."
+  visuel: { type: schema, emoji: "💬", titre: "Le dialogue", legendes: [{ label: "« … »", detail: "on ouvre et on ferme la conversation" }, { label: "—", detail: "une autre personne parle" }, { label: "dit-il, répondit-elle", detail: "qui parle" }] }
+
+# ---------- Vallée des Verbes ----------
+fr-vallee-des-verbes/le-verbe:
+  texte: "Le verbe est le mot qui change quand on change de moment : « aujourd'hui je mange, hier je mangeais, demain je mangerai ». Le mot qui bouge avec le temps, c'est le verbe."
+  visuel: { type: tableau, lignes: [["hier", "aujourd'hui", "demain"], ["je mangeais", "je mange", "je mangerai"]] }
+  legende: "Seul le verbe a changé : c'est le test du verbe."
+fr-vallee-des-verbes/infinitif:
+  texte: "L'infinitif, c'est le nom de famille du verbe, celui qu'on trouve dans le dictionnaire. Pour le trouver, dis « il faut… » : « il mange » → il faut manger. « Ils finissent » → il faut finir."
+  visuel: { type: schema, emoji: "🏷️", titre: "Le nom de famille du verbe", legendes: [{ label: "il chante", detail: "il faut chanter" }, { label: "nous finissons", detail: "il faut finir" }, { label: "tu prends", detail: "il faut prendre" }] }
+fr-vallee-des-verbes/le-sujet:
+  texte: "Le sujet, c'est celui qui fait l'action, le « chef » du verbe. Pose la question « Qui est-ce qui… ? » : « Qui est-ce qui mange ? » → le chat. Le verbe obéit toujours à son chef."
+  visuel: { type: phrase, groupes: [{ mots: "Le chat", role: sujet, etiquette: "qui est-ce qui ?" }, { mots: "mange", role: verbe }, { mots: "la souris", role: cod }] }
+fr-vallee-des-verbes/pronoms:
+  texte: "Un pronom, c'est un remplaçant, comme au foot : « Léa joue » → « Elle joue ». Il évite de répéter le nom, mais il doit remplacer quelqu'un dont on a déjà parlé."
+  visuel: { type: tableau, lignes: [["je", "tu", "il / elle / on"], ["nous", "vous", "ils / elles"]] }
+fr-vallee-des-verbes/present-premier-groupe:
+  texte: "Les verbes en -er au présent, c'est une chanson toujours sur le même air : e, es, e, ons, ez, ent. À l'oral, je chante, tu chantes, il chante sonnent pareil : c'est l'écrit qui montre la différence."
+  visuel: { type: tableau, lignes: [["je chant**e**", "nous chant**ons**"], ["tu chant**es**", "vous chant**ez**"], ["il chant**e**", "ils chant**ent**"]] }
+fr-vallee-des-verbes/etre-avoir-aller:
+  texte: "Être, avoir et aller sont des verbes « rebelles » : ils ne suivent aucune règle, alors on les apprend par cœur comme une comptine. Récite-les en tapant le rythme : je suis, tu es, il est…"
+  visuel: { type: tableau, lignes: [["être", "avoir", "aller"], ["je suis", "j'ai", "je vais"], ["tu es", "tu as", "tu vas"], ["il est", "il a", "il va"], ["nous sommes", "nous avons", "nous allons"], ["vous êtes", "vous avez", "vous allez"], ["ils sont", "ils ont", "ils vont"]] }
+
+# ---------- Prairie des Accords ----------
+fr-prairie-des-accords/l-adjectif:
+  texte: "L'adjectif, c'est le mot qui « habille » le nom : il dit comment il est. « Un chat » → « un gros chat noir ». Le test : tu peux l'enlever, la phrase reste correcte mais moins précise."
+  visuel: { type: phrase, groupes: [{ mots: "un", role: determinant }, { mots: "gros", role: adjectif, etiquette: "comment ?" }, { mots: "chat", role: nom }, { mots: "noir", role: adjectif, etiquette: "comment ?" }] }
+fr-prairie-des-accords/accord-genre:
+  texte: "L'adjectif est un caméléon : il prend la couleur (le genre) du nom qu'il accompagne. Avec un nom féminin, il met souvent un « e » : un chat noir, une chatte noire."
+  visuel: { type: tableau, lignes: [["masculin", "féminin"], ["un chat noir", "une chatte noire"], ["un grand arbre", "une grande maison"]] }
+fr-prairie-des-accords/accord-nombre:
+  texte: "Si le nom est au pluriel, l'adjectif aussi, comme des jumeaux habillés pareil : des chats noirs. On cherche toujours le nom chef du groupe, puis on habille tout le monde comme lui."
+  visuel: { type: phrase, groupes: [{ mots: "des", role: determinant, etiquette: "pluriel" }, { mots: "chats", role: nom, etiquette: "+ s" }, { mots: "noirs", role: adjectif, etiquette: "+ s" }] }
+fr-prairie-des-accords/chaine-d-accord:
+  texte: "La chaîne d'accord, c'est une cordée de montagne : le nom est le premier de cordée, et tous ceux qui sont attachés à lui (déterminant, adjectifs) prennent les mêmes marques. Trace des flèches du nom vers chacun d'eux."
+  visuel: { type: phrase, groupes: [{ mots: "les", role: determinant }, { mots: "petites", role: adjectif }, { mots: "souris", role: nom, etiquette: "chef : fém. plur." }, { mots: "grises", role: adjectif }] }
+fr-prairie-des-accords/accord-sujet-verbe:
+  texte: "Le verbe obéit à son sujet comme un chien à son maître. Si le sujet est au pluriel (ils, les enfants), le verbe prend -nt. Cherche le sujet avec « Qui est-ce qui ? », même s'il est loin du verbe."
+  visuel: { type: phrase, groupes: [{ mots: "Les enfants", role: sujet, etiquette: "pluriel" }, { mots: "jouent", role: verbe, etiquette: "+ nt" }, { mots: "dans la cour", role: ccl }] }
+fr-prairie-des-accords/adjectifs-particuliers:
+  texte: "Certains adjectifs changent de costume au féminin, comme des acteurs : beau → belle, vieux → vieille, blanc → blanche, heureux → heureuse. Dis le féminin à voix haute : ton oreille entend souvent la différence."
+  visuel: { type: tableau, lignes: [["masculin", "féminin"], ["beau", "belle"], ["heureux", "heureuse"], ["actif", "active"], ["blanc", "blanche"]] }
+
+# ---------- Montagnes du Temps ----------
+fr-montagnes-du-temps/passe-present-futur:
+  texte: "Imagine une frise accrochée au mur : derrière toi, ce qui est fini (le passé), là où tu es, maintenant (le présent), devant toi ce qui n'est pas encore arrivé (le futur). Les mots « hier », « aujourd'hui », « demain » sont tes panneaux."
+  visuel: { type: frise, points: [{ emoji: "⏪", label: "Hier", sous: "passé : je jouais" }, { emoji: "📍", label: "Maintenant", sous: "présent : je joue" }, { emoji: "⏩", label: "Demain", sous: "futur : je jouerai" }], marque: 1 }
+fr-montagnes-du-temps/present-tous-groupes:
+  texte: "Au présent, les verbes du 2ᵉ groupe (finir) ajoutent « -iss » quand on est plusieurs : nous finissons. Les verbes du 3ᵉ groupe (prendre, voir…) sont des originaux : leurs terminaisons sont souvent -s, -s, -t."
+  visuel: { type: tableau, lignes: [["finir", "prendre"], ["je finis", "je prends"], ["nous finissons", "nous prenons"], ["ils finissent", "ils prennent"]] }
+fr-montagnes-du-temps/imparfait:
+  texte: "L'imparfait, c'est le temps du décor dans un film : « il faisait nuit, le vent soufflait… ». Ses terminaisons sont toujours les mêmes, pour tous les verbes : -ais, -ais, -ait, -ions, -iez, -aient. Facile à reconnaître !"
+  visuel: { type: tableau, lignes: [["je jou**ais**", "nous jou**ions**"], ["tu jou**ais**", "vous jou**iez**"], ["il jou**ait**", "ils jou**aient**"]] }
+fr-montagnes-du-temps/futur:
+  texte: "Le futur, c'est l'infinitif + le verbe avoir caché à la fin : je chanter-ai, tu chanter-as, il chanter-a, nous chanter-ons… On entend souvent le « r » de l'infinitif : « je jouerai »."
+  visuel: { type: tableau, lignes: [["infinitif", "+ terminaison", "futur"], ["jouer", "-ai", "je jouerai"], ["finir", "-ons", "nous finirons"]] }
+fr-montagnes-du-temps/passe-compose-avoir:
+  texte: "Le passé composé est un verbe en deux morceaux, comme un train à deux wagons : l'auxiliaire (avoir conjugué au présent) + le participe passé. « J'ai mangé » : j'ai + mangé."
+  visuel: { type: phrase, groupes: [{ mots: "J'", role: sujet }, { mots: "ai", role: verbe, etiquette: "avoir" }, { mots: "mangé", role: verbe, etiquette: "participe" }] }
+fr-montagnes-du-temps/passe-compose-etre:
+  texte: "Quelques verbes de mouvement préfèrent l'auxiliaire être (aller, venir, partir, arriver, tomber…). Avec être, le participe passé s'accorde avec le sujet, comme un adjectif : elle est partie, ils sont partis."
+  visuel: { type: phrase, groupes: [{ mots: "Elles", role: sujet, etiquette: "fém. plur." }, { mots: "sont", role: verbe, etiquette: "être" }, { mots: "parties", role: verbe, etiquette: "+ es" }] }
+
+# ---------- Marais des Homophones ----------
+fr-marais-des-homophones/a-ou-a:
+  texte: "Fais le test du remplaçant : si tu peux dire « avait » à la place, c'est « a » (le verbe avoir), sans accent. Sinon c'est « à », avec l'accent. « Il a un vélo » → il avait un vélo ✔. « Il va à l'école » → il va avait l'école ✘ donc « à »."
+  visuel: { type: tableau, lignes: [["phrase", "je remplace par « avait »", "j'écris"], ["Il … faim.", "Il avait faim ✔", "a"], ["Je vais … Paris.", "Je vais avait Paris ✘", "à"]] }
+fr-marais-des-homophones/et-ou-est:
+  texte: "Remplace par « était » : si ça marche, c'est « est » (le verbe être). Remplace par « et puis » : si ça marche, c'est « et » (qui relie). « Le ciel est bleu » → était bleu ✔."
+  visuel: { type: tableau, lignes: [["je remplace par…", "j'écris"], ["était", "est"], ["et puis", "et"]] }
+fr-marais-des-homophones/son-ou-sont:
+  texte: "« Sont », c'est le verbe être : remplace-le par « étaient ». « Son », c'est un possessif comme « mon » : remplace-le par « mon ». « Ils sont partis » → ils étaient partis ✔. « Son chien » → mon chien ✔."
+  visuel: { type: tableau, lignes: [["je remplace par…", "j'écris"], ["étaient", "sont"], ["mon", "son"]] }
+fr-marais-des-homophones/on-ou-ont:
+  texte: "« Ont », c'est le verbe avoir : remplace par « avaient ». « On », c'est un pronom comme « il » : remplace par « il ». « Ils ont faim » → ils avaient faim ✔. « On joue » → il joue ✔."
+  visuel: { type: tableau, lignes: [["je remplace par…", "j'écris"], ["avaient", "ont"], ["il", "on"]] }
+fr-marais-des-homophones/ou-ou:
+  texte: "« Ou » sans accent veut dire « ou bien » (un choix) : du thé ou bien du lait. « Où » avec accent parle d'un lieu : où vas-tu ? L'accent est comme une petite flèche qui montre un endroit."
+  visuel: { type: tableau, lignes: [["je remplace par « ou bien »", "j'écris"], ["ça marche", "ou"], ["ça ne marche pas (c'est un lieu)", "où"]] }
+fr-marais-des-homophones/ce-se-ces-ses:
+  texte: "Pose-toi deux questions de détective. Plusieurs ? « ces » (ces chats-là) ou « ses » (les siens). Un seul ? « ce » montre (ce chat) ; « se » est collé à un verbe (il se lave)."
+  visuel: { type: tableau, lignes: [["mot", "test", "exemple"], ["ce", "ce…-là", "ce chien"], ["se", "devant un verbe (me, te)", "il se lave"], ["ces", "ces…-là", "ces chiens"], ["ses", "les siens", "ses chiens"]] }
+fr-marais-des-homophones/la-l-a-la:
+  texte: "« Là » avec accent = un lieu (remplace par « ici »). « La » = devant un nom féminin ou pour remplacer un nom (la balle, je la prends). « L'a » = le verbe avoir caché (remplace par « l'avait »)."
+  visuel: { type: tableau, lignes: [["je remplace par…", "j'écris"], ["ici", "là"], ["l'avait", "l'a"], ["une / elle", "la"]] }
+
+# ---------- Jardin des Mots ----------
+fr-jardin-des-mots/chercher-dans-le-dictionnaire:
+  texte: "Chercher dans le dictionnaire, c'est jouer à « plus chaud, plus froid » : ouvre au milieu, regarde le mot en haut de la page, puis va plus loin ou revient en arrière selon l'ordre alphabétique. Pour départager, regarde la 2ᵉ lettre, puis la 3ᵉ."
+  visuel: { type: frise, points: [{ emoji: "📖", label: "1ʳᵉ lettre", sous: "c" }, { emoji: "🔍", label: "2ᵉ lettre", sous: "ch" }, { emoji: "🎯", label: "3ᵉ lettre", sous: "cha → chat" }] }
+fr-jardin-des-mots/familles-de-mots:
+  texte: "Une famille de mots, c'est un arbre : le radical est le tronc, et chaque mot est une branche qui pousse dessus. Dent → dentiste, dentifrice, édenté. Connaître la famille aide à écrire : le « t » muet de dent s'entend dans dentiste !"
+  visuel: { type: schema, emoji: "🌳", titre: "La famille de « dent »", legendes: [{ label: "dent", detail: "le tronc (radical)" }, { label: "dentiste, dentaire", detail: "des branches" }, { label: "édenté", detail: "une branche avec un préfixe" }] }
+fr-jardin-des-mots/prefixes-suffixes:
+  texte: "Les préfixes et suffixes sont des briques de Lego qu'on accroche au mot : devant (préfixe : re-faire, im-possible) ou derrière (suffixe : jardin-ier, lent-ement). Chaque brique apporte un sens."
+  visuel: { type: tableau, lignes: [["préfixe", "radical", "suffixe"], ["re-", "faire", ""], ["dé-", "coll", "-age"], ["", "jardin", "-ier"]] }
+fr-jardin-des-mots/synonymes-contraires:
+  texte: "Un synonyme, c'est un jumeau de sens : content / joyeux. Un contraire, c'est l'opposé, comme sur une balançoire à bascule : chaud / froid. Test : remplace le mot dans la phrase et vois si le sens reste ou s'inverse."
+  visuel: { type: tableau, lignes: [["mot", "synonyme", "contraire"], ["grand", "immense", "petit"], ["rapide", "vif", "lent"]] }
+fr-jardin-des-mots/sens-propre-figure:
+  texte: "Au sens propre, le mot dit exactement ce qu'il montre : « J'ai froid aux mains ». Au sens figuré, il fait une image : « Il a un cœur de pierre » (il n'a pas vraiment un caillou dans la poitrine !). Demande-toi : est-ce que je peux le dessiner tel quel ?"
+  visuel: { type: tableau, lignes: [["phrase", "sens"], ["Le chat a de longues pattes.", "propre"], ["J'ai pris mes jambes à mon cou.", "figuré"]] }
+fr-jardin-des-mots/champ-lexical-homonymes:
+  texte: "Un champ lexical, c'est un sac à dos rempli de mots du même thème : pour la mer, vague, sable, bateau, marée… Des homonymes, ce sont deux mots qui se prononcent pareil mais n'ont rien à voir : le ver de terre, le verre d'eau, la couleur vert."
+  visuel: { type: schema, emoji: "🎒", titre: "Le sac de la mer", legendes: [{ label: "vague, marée, sable", detail: "même thème : un champ lexical" }] }
+
+# ---------- Bibliothèque des Textes (débuts) ----------
+fr-bibliotheque-des-textes/inferences:
+  texte: "Faire une inférence, c'est être détective : le texte ne dit pas tout, mais il laisse des indices. « Léa ouvre son parapluie en sortant. » Le texte ne dit pas qu'il pleut… mais tu peux le deviner !"
+  visuel: { type: schema, emoji: "🔍", titre: "Je lis entre les lignes", legendes: [{ label: "ce que dit le texte", detail: "elle ouvre son parapluie" }, { label: "ce que je sais", detail: "un parapluie sert quand il pleut" }, { label: "ce que je devine", detail: "il pleut" }] }
+fr-bibliotheque-des-textes/types-de-textes:
+  texte: "Chaque texte a un métier : le récit raconte une histoire, le texte documentaire explique le monde, la recette (texte prescriptif) dit quoi faire, la poésie joue avec les mots. Demande-toi : qu'est-ce que ce texte veut que je fasse ?"
+  visuel: { type: tableau, lignes: [["texte", "il veut…", "exemple"], ["récit", "me raconter", "un conte"], ["documentaire", "m'apprendre", "un article sur les loups"], ["prescriptif", "me faire faire", "une recette"]] }
+fr-bibliotheque-des-textes/le-conte:
+  texte: "Un conte suit toujours le même chemin, comme une course d'obstacles : au début tout va bien, puis un problème arrive, le héros vit des aventures, il résout le problème, et tout finit bien (ou pas !)."
+  visuel: { type: frise, points: [{ emoji: "🏡", label: "Il était une fois" }, { emoji: "⚡", label: "Un jour…", sous: "le problème" }, { emoji: "🗡️", label: "Les aventures" }, { emoji: "🔑", label: "La solution" }, { emoji: "🌈", label: "La fin" }] }
+fr-bibliotheque-des-textes/texte-documentaire:
+  texte: "Un texte documentaire, c'est une boîte à outils bien rangée : le titre dit le sujet, les intertitres sont les tiroirs, les images et les légendes aident à comprendre. Commence par regarder les tiroirs avant de lire."
+  visuel: { type: schema, emoji: "🗂️", titre: "La boîte à outils du documentaire", legendes: [{ label: "titre", detail: "le sujet" }, { label: "intertitres", detail: "les tiroirs" }, { label: "image + légende", detail: "pour voir" }] }
+
+# ---------- Atelier de l'Écrivain (débuts) ----------
+fr-atelier-de-l-ecrivain/enrichir-une-phrase:
+  texte: "Enrichir une phrase, c'est décorer un sapin : la phrase de base est le sapin nu (« Le chat dort. »), et tu ajoutes des boules qui répondent à : comment ? où ? quand ? « Le gros chat roux dort sur le canapé depuis ce matin. »"
+  visuel: { type: phrase, groupes: [{ mots: "Le gros chat roux", role: sujet }, { mots: "dort", role: verbe }, { mots: "sur le canapé", role: ccl, etiquette: "où ?" }, { mots: "depuis ce matin", role: cct, etiquette: "quand ?" }] }
+fr-atelier-de-l-ecrivain/eviter-les-repetitions:
+  texte: "Répéter le même mot, c'est comme manger le même plat à chaque repas. Varie : utilise un pronom (il, elle), un synonyme (le félin, l'animal), ou un groupe qui décrit (le petit voleur de croquettes)."
+  visuel: { type: tableau, lignes: [["au lieu de répéter…", "j'écris"], ["le chat", "il"], ["le chat", "l'animal"], ["le chat", "le petit voleur"]] }
+fr-atelier-de-l-ecrivain/connecteurs:
+  texte: "Les connecteurs sont les ponts entre tes phrases : « d'abord », « ensuite », « puis », « enfin » pour l'ordre ; « mais » pour un obstacle ; « donc » pour une conséquence. Sans ponts, le lecteur tombe dans la rivière !"
+  visuel: { type: frise, points: [{ emoji: "1️⃣", label: "D'abord" }, { emoji: "2️⃣", label: "Ensuite" }, { emoji: "3️⃣", label: "Puis" }, { emoji: "🏁", label: "Enfin" }] }
+fr-atelier-de-l-ecrivain/schema-narratif:
+  texte: "Toute histoire est une montagne : on part d'une situation calme (la plaine), un élément perturbateur fait monter la tension, les péripéties sont l'escalade, le sommet est le moment décisif, puis on redescend vers la situation finale."
+  visuel: { type: frise, points: [{ emoji: "🏞️", label: "Situation initiale" }, { emoji: "⚡", label: "Élément perturbateur" }, { emoji: "🧗", label: "Péripéties" }, { emoji: "🏔️", label: "Résolution" }, { emoji: "🌅", label: "Situation finale" }] }
+
+# ---------- Port des Phrases (débuts) ----------
+fr-port-des-phrases/nature-et-fonction:
+  texte: "La nature d'un mot, c'est ce qu'il EST (comme ton métier : boulanger). Sa fonction, c'est ce qu'il FAIT dans la phrase (comme ton rôle dans une pièce de théâtre : le héros). « Chat » est toujours un nom, mais il peut être sujet ou complément."
+  visuel: { type: tableau, lignes: [["phrase", "« chat » : nature", "« chat » : fonction"], ["Le chat dort.", "nom", "sujet"], ["Je vois le chat.", "nom", "COD"]] }
+fr-port-des-phrases/cod-coi:
+  texte: "Le COD répond à « quoi ? » ou « qui ? » juste après le verbe, sans petit mot entre les deux : « Je mange quoi ? une pomme ». Le COI a besoin d'un petit pont (à, de) : « Je parle à qui ? à mon ami »."
+  visuel: { type: phrase, groupes: [{ mots: "Je", role: sujet }, { mots: "parle", role: verbe }, { mots: "à mon ami", role: coi, etiquette: "à qui ?" }] }
+fr-port-des-phrases/complements-circonstanciels:
+  texte: "Les compléments circonstanciels sont des bagages qu'on peut déplacer ou enlever : la phrase reste correcte. Ils répondent à où ? quand ? comment ? « Ce matin, je cours dans le parc. » → « Je cours. » marche toujours."
+  visuel: { type: phrase, groupes: [{ mots: "Ce matin", role: cct, etiquette: "quand ?" }, { mots: "je", role: sujet }, { mots: "cours", role: verbe }, { mots: "dans le parc", role: ccl, etiquette: "où ?" }] }
+fr-port-des-phrases/attribut-du-sujet:
+  texte: "Le verbe être est un signe « = » : « Le ciel est bleu » veut dire « ciel = bleu ». Ce qui est après le « = » donne une qualité au sujet : c'est l'attribut. Les verbes paraître, sembler, devenir, rester font pareil."
+  visuel: { type: phrase, groupes: [{ mots: "Le ciel", role: sujet }, { mots: "est", role: verbe, etiquette: "=" }, { mots: "bleu", role: attribut }] }
+
+# ---------- Château des Participes (débuts) ----------
+fr-chateau-des-participes/e-ou-er:
+  texte: "Remplace le verbe par « vendre » ou « mordre » : si tu dis « vendu », écris -é ; si tu dis « vendre », écris -er. « Il a mangé » → il a vendu → é. « Il va manger » → il va vendre → er."
+  visuel: { type: tableau, lignes: [["je remplace par…", "j'écris"], ["vendu / mordu", "-é (participe passé)"], ["vendre / mordre", "-er (infinitif)"]] }
+fr-chateau-des-participes/accord-avec-etre:
+  texte: "Avec être, le participe passé se comporte comme un adjectif : il s'accorde avec le sujet. « Elle est partie », comme « elle est petite ». Demande-toi : qui est parti ? Elle → féminin → -e."
+  visuel: { type: phrase, groupes: [{ mots: "Les filles", role: sujet, etiquette: "fém. plur." }, { mots: "sont", role: verbe }, { mots: "arrivées", role: verbe, etiquette: "+ es" }] }
+fr-chateau-des-participes/accord-avec-avoir:
+  texte: "Avec avoir, le participe passé est têtu : il ne s'accorde pas avec le sujet. Il ne s'accorde qu'avec un COD placé AVANT lui (« les pommes que j'ai mangées »), parce qu'au moment d'écrire, on sait déjà de quoi on parle."
+  visuel: { type: phrase, groupes: [{ mots: "Les pommes", role: cod, etiquette: "COD placé avant" }, { mots: "que", role: pronom }, { mots: "j'ai", role: verbe }, { mots: "mangées", role: verbe, etiquette: "+ es" }] }

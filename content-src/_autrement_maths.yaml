@@ -1,0 +1,445 @@
+# « Explique-moi autrement » — maths.
+# Pour chaque leçon (clé « monde/leçon ») : une autre porte d'entrée que le cours.
+#   texte   : une image de la vie (analogie concrète), dite par `qui` (zero par défaut)
+#   visuel  : un schéma différent de celui du cours (facultatif) + legende
+# Le panneau propose aussi, sans rien écrire : les dessins du cours, un exemple résolu
+# tiré du même modèle que la question ratée, une manipulation, le cours relu lentement,
+# l'assistant et une fiche pour l'adulte.
+
+# ---------- Nid des Nombres ----------
+nid-des-nombres/compter-un-par-un:
+  texte: "Imagine que tu ranges tes jouets dans une boîte : chaque fois qu'un jouet entre dans la boîte, tu dis UN nombre. Pas deux nombres pour un jouet, pas de jouet oublié. Le dernier nombre que tu dis, c'est combien il y a de jouets dans la boîte."
+  visuel: { type: objets, groupes: [6], emoji: "🧸" }
+  legende: "Touche chaque nounours en disant un nombre : 1, 2, 3, 4, 5, 6. Le dernier dit « combien »."
+nid-des-nombres/reconnaitre-d-un-coup:
+  texte: "Sur un dé, tu ne comptes pas les points du 5 : tu reconnais son dessin, comme tu reconnais le visage d'un ami sans compter ses yeux. Les doigts, c'est pareil : une main entière, c'est toujours 5."
+  visuel: { type: motif, elements: ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"] }
+  legende: "Chaque nombre a son dessin. Apprends-les comme des visages."
+nid-des-nombres/avant-apres:
+  texte: "Pense à un escalier : chaque marche a un numéro. Monter d'une marche, c'est le nombre d'après (+1). Descendre d'une marche, c'est le nombre d'avant (−1)."
+  visuel: { type: droite, min: 0, max: 10, pas: 1, sauts: [{ de: 5, a: 6, label: "après" }, { de: 5, a: 4, label: "avant" }] }
+  legende: "Juste après 5, il y a 6. Juste avant 5, il y a 4."
+nid-des-nombres/plus-moins:
+  texte: "Mets les objets deux par deux, comme des danseurs qui se donnent la main. Si quelqu'un reste tout seul, son groupe a PLUS d'objets. Si tout le monde a un partenaire, il y en a AUTANT."
+  visuel: { type: objets, groupes: [5, 3], emojis: ["🍓", "🍌"] }
+  legende: "5 fraises, 3 bananes : 2 fraises restent sans partenaire, donc il y a plus de fraises."
+nid-des-nombres/decomposer-5-10:
+  texte: "Une maison de 10 a dix chambres. Si 7 chambres ont la lumière allumée, combien sont éteintes ? Il en manque 3 pour arriver à 10 : 7 et 3 sont des amis de 10."
+  visuel: { type: objets, groupes: [7, 3], emojis: ["🟡", "⚪"] }
+  legende: "7 boules jaunes + 3 blanches = 10 cases remplies."
+nid-des-nombres/premieres-additions:
+  texte: "Additionner, c'est verser deux paniers dans un grand panier. Tu n'as pas besoin de tout recompter : tu pars du plus grand nombre et tu continues avec tes doigts."
+  visuel: { type: objets, groupes: [4, 2], emoji: "🍎", signe: "+" }
+  legende: "4 pommes et encore 2 : je dis 4… puis 5, 6. Il y en a 6."
+
+# ---------- Forêt des Nombres ----------
+foret-des-nombres/compter-par-dix:
+  texte: "Un fleuriste ne compte pas les fleurs une par une : il fait des bouquets de 10. Trois bouquets et 4 fleurs seules, c'est 34 fleurs. Le chiffre de gauche dit combien de bouquets, celui de droite combien de fleurs seules."
+  visuel: { type: blocs, nombre: 34 }
+  legende: "3 barres de dix et 4 petits cubes : 34."
+foret-des-nombres/centaines:
+  texte: "C'est comme des cartons de déménagement : 10 cubes font une barre, 10 barres font une plaque (100). Chaque chiffre a sa place, comme chaque personne a sa chaise : centaines, dizaines, unités."
+  visuel: { type: abaque, nombre: 245 }
+  legende: "245 : 2 centaines, 4 dizaines, 5 unités. Chaque chiffre est assis sur sa chaise."
+foret-des-nombres/comparer-ranger:
+  texte: "Pour savoir qui est le plus grand, on regarde d'abord combien de chiffres : un nombre à 3 chiffres bat toujours un nombre à 2 chiffres, comme un adulte est plus grand qu'un bébé. À égalité, on compare chiffre par chiffre en partant de la gauche, comme des coureurs à l'arrivée."
+  visuel: { type: tableau, lignes: [["", "centaines", "dizaines", "unités"], ["452", "4", "5", "2"], ["437", "4", "3", "7"]] }
+  legende: "Même nombre de centaines (4). Dizaines : 5 contre 3, donc 452 > 437."
+foret-des-nombres/droite-numerique:
+  texte: "La droite des nombres, c'est une route avec des bornes kilométriques. Les petits nombres sont au début de la route, les grands plus loin. Placer un nombre, c'est dire à quelle borne on s'est arrêté."
+  visuel: { type: droite, min: 0, max: 100, pas: 10, etiquettes: [0, 50, 100], marques: [70] }
+  legende: "70 est entre 50 et 100, plus près de 100 : c'est la 7ᵉ grande graduation."
+foret-des-nombres/pair-impair:
+  texte: "Un nombre est pair si on peut faire des paires de chaussettes sans qu'il en reste une toute seule. 8 chaussettes = 4 paires : pair. 7 chaussettes : une chaussette orpheline, impair."
+  visuel: { type: objets, groupes: [2, 2, 2, 1], emoji: "🧦" }
+  legende: "7 chaussettes : 3 paires et une toute seule, donc 7 est impair."
+foret-des-nombres/grands-nombres:
+  texte: "Un grand nombre se lit par paquets de trois chiffres, comme on lit un numéro de téléphone par morceaux. 2 450 000 : « deux millions », « quatre cent cinquante mille », puis rien. L'espace entre les paquets t'aide à respirer."
+  visuel: { type: abaque, nombre: 2450000, classes: true }
+  legende: "Chaque classe (millions, mille, unités) se lit comme un petit nombre de 3 chiffres."
+
+# ---------- Prairie des Additions ----------
+prairie-des-additions/additionner-reunir:
+  texte: "Tu as des billes dans la poche gauche et dans la poche droite. Tu les vides toutes sur la table : c'est une addition. L'ordre des poches ne change rien au total."
+  visuel: { type: barres, lignes: [{ parts: [{ v: 5, label: "5" }, { v: 3, label: "3" }] }], total: "? billes" }
+  legende: "Les deux morceaux mis bout à bout forment le tout : 5 + 3 = 8."
+prairie-des-additions/amis-de-10:
+  texte: "Pense à une boîte d'œufs de 10 places. S'il y a 6 œufs, il reste 4 trous. 6 et 4 sont des amis : ensemble, ils remplissent la boîte."
+  visuel: { type: objets, groupes: [6, 4], emojis: ["🥚", "⭕"] }
+  legende: "6 œufs + 4 places vides = une boîte de 10."
+prairie-des-additions/doubles:
+  texte: "Un double, c'est ce que tu vois dans un miroir : 4 doigts et 4 doigts dans le miroir, 8. Pour 4 + 5, c'est un « presque-double » : 4 + 4 = 8, plus un de plus, 9."
+  visuel: { type: objets, groupes: [4, 5], emoji: "🖐️" }
+  legende: "4 + 5, c'est le double de 4, plus 1."
+prairie-des-additions/passer-la-dizaine:
+  texte: "Imagine un bus de 10 places. 8 enfants sont assis, 5 arrivent. D'abord 2 enfants remplissent le bus (10), puis les 3 autres montent dans le bus suivant : 13."
+  visuel: { type: droite, min: 0, max: 20, pas: 1, etiquettes: [0, 10, 20], sauts: [{ de: 8, a: 10, label: "+2" }, { de: 10, a: 13, label: "+3" }] }
+  legende: "8 + 5 : un saut jusqu'à 10, puis le reste. 8 + 2 + 3 = 13."
+prairie-des-additions/soustraire:
+  texte: "Soustraire, c'est soit manger des bonbons (on enlève), soit mesurer la différence de taille entre deux tours de Lego. Pour 12 − 9, c'est plus rapide de compter de 9 jusqu'à 12 : il manque 3 marches."
+  visuel: { type: droite, min: 0, max: 15, pas: 1, etiquettes: [0, 5, 10, 15], sauts: [{ de: 9, a: 12, label: "écart 3" }] }
+  legende: "12 − 9 = 3 : l'écart entre 9 et 12 sur la droite."
+prairie-des-additions/addition-posee:
+  texte: "Dans l'addition posée, chaque colonne est une tirelire qui ne peut garder que 9 pièces. Si elle en reçoit 10 ou plus, elle échange 10 pièces contre un billet qu'elle donne à la colonne de gauche : c'est la retenue."
+  visuel: { type: abaque, nombre: 47, vide: false }
+  legende: "7 + 5 = 12 unités : on garde 2, et 10 unités deviennent 1 dizaine qui part à gauche."
+prairie-des-additions/soustraction-posee:
+  texte: "Si une colonne n'a pas assez d'unités pour en enlever, elle va « casser » une dizaine chez sa voisine de gauche, comme on fait de la monnaie : un billet de 10 devient 10 pièces de 1."
+  visuel: { type: blocs, nombre: 42 }
+  legende: "42 − 7 : on ne peut pas enlever 7 de 2. On casse une barre : 3 dizaines et 12 unités. 12 − 7 = 5, donc 35."
+prairie-des-additions/calcul-mental-astuces:
+  texte: "Calculer de tête, c'est comme prendre un raccourci dans un parc : au lieu de marcher droit dans la boue, tu passes par le chemin rond (les dizaines). 38 + 25 = 38 + 2 + 23 = 40 + 23 = 63."
+  visuel: { type: droite, min: 30, max: 70, pas: 1, etiquettes: [30, 40, 50, 60, 70], sauts: [{ de: 38, a: 40, label: "+2" }, { de: 40, a: 63, label: "+23" }] }
+  legende: "On passe par le nombre rond 40."
+
+# ---------- Montagne des Multiplications ----------
+montagne-des-multiplications/groupes-egaux:
+  texte: "4 × 3, c'est 4 boîtes de 3 gâteaux. Tu pourrais faire 3 + 3 + 3 + 3, mais la multiplication est un raccourci : elle dit combien de boîtes et combien dans chaque boîte."
+  visuel: { type: objets, par_groupe: 3, nb_groupes: 4, emoji: "🧁" }
+  legende: "4 groupes de 3 : 3 + 3 + 3 + 3 = 4 × 3 = 12."
+montagne-des-multiplications/tables-2-5-10:
+  texte: "La table de 5, ce sont les doigts : 1 main = 5, 2 mains = 10, 3 mains = 15. La table de 10, ce sont des billets de 10 €. La table de 2, ce sont des paires de chaussures."
+  visuel: { type: objets, par_groupe: 5, nb_groupes: 3, emoji: "🖐️" }
+  legende: "3 mains de 5 doigts : 5, 10, 15."
+montagne-des-multiplications/tables-3-4:
+  texte: "La table de 4, c'est le double du double : 4 × 7 = 7 + 7 (14), puis encore le double (28). Un tricycle a 3 roues : 6 tricycles, ça fait 6 × 3 = 18 roues."
+  visuel: { type: grille, lignes: 4, colonnes: 7 }
+  legende: "4 lignes de 7 carreaux : 28 carreaux. Le double de 14."
+montagne-des-multiplications/tables-6-9:
+  texte: "Pour 9 × 7, imagine que tu achètes 7 objets à 10 € et qu'on te rend 1 € pour chacun : 70 − 7 = 63. Pour 6 × 8, prends 5 × 8 = 40 et ajoute encore 8 : 48."
+  visuel: { type: grille, lignes: 6, colonnes: 8 }
+  legende: "6 × 8 : 5 lignes de 8 (40) et une ligne de plus (8) = 48."
+montagne-des-multiplications/fois-10-100:
+  texte: "Multiplier par 10, c'est changer chaque pièce de 1 € en billet de 10 € : chaque chiffre monte d'une chaise vers la gauche, et un 0 vient garder la chaise des unités."
+  visuel: { type: tableau, lignes: [["", "milliers", "centaines", "dizaines", "unités"], ["35", "", "", "3", "5"], ["35 × 10", "", "3", "5", "0"], ["35 × 100", "3", "5", "0", "0"]] }
+  legende: "Les chiffres glissent vers la gauche ; les zéros gardent les places vides."
+montagne-des-multiplications/multiplication-posee:
+  texte: "Pour 23 × 4, tu as 4 sacs contenant chacun 2 billets de 10 et 3 pièces de 1. Tu comptes d'abord les pièces (4 × 3 = 12), puis les billets (4 × 2 dizaines = 8 dizaines). Total : 80 + 12 = 92."
+  visuel: { type: grille, lignes: 4, colonnes: 23 }
+  legende: "4 × 23 = 4 × 20 + 4 × 3 = 80 + 12 = 92."
+montagne-des-multiplications/proprietes-multiplication:
+  texte: "Une tablette de chocolat de 3 rangées de 5 carrés a autant de carrés si tu la tournes : 5 rangées de 3. C'est pour ça que 3 × 5 = 5 × 3. Et 0 × n'importe quoi : zéro boîte, zéro gâteau."
+  visuel: { type: grille, lignes: 3, colonnes: 5, emoji: "🍫" }
+  legende: "Tourne la tablette : 3 × 5 = 5 × 3 = 15 carrés."
+
+# ---------- Rivière du Partage ----------
+riviere-du-partage/partager:
+  texte: "Partager équitablement, c'est distribuer des cartes : une pour toi, une pour toi, une pour toi… et on recommence jusqu'à ce qu'il n'y en ait plus. Chacun a le même nombre."
+  visuel: { type: objets, par_groupe: 4, nb_groupes: 3, emoji: "🃏" }
+  legende: "12 cartes pour 3 joueurs : 4 cartes chacun. 12 ÷ 3 = 4."
+riviere-du-partage/combien-de-fois:
+  texte: "Tu as 20 œufs et des boîtes de 6. Combien de boîtes peux-tu remplir ? Tu remplis une boîte (6), deux boîtes (12), trois boîtes (18)… la 4ᵉ ne sera pas pleine. 3 boîtes."
+  visuel: { type: droite, min: 0, max: 24, pas: 1, etiquettes: [0, 6, 12, 18, 24], sauts: [{ de: 0, a: 6, label: "1" }, { de: 6, a: 12, label: "2" }, { de: 12, a: 18, label: "3" }] }
+  legende: "Des sauts de 6 jusqu'à 20 : on en fait 3 en entier."
+riviere-du-partage/le-reste:
+  texte: "17 élèves, des voitures de 5 places. 3 voitures pleines (15 élèves), et il reste 2 élèves sur le trottoir : c'est le reste. Le reste est toujours plus petit que la taille d'une voiture, sinon on aurait rempli une voiture de plus."
+  visuel: { type: objets, groupes: [5, 5, 5, 2], emoji: "🧒" }
+  legende: "17 = 3 × 5 + 2. Le reste, 2, est plus petit que 5."
+riviere-du-partage/division-euclidienne:
+  texte: "La division euclidienne, c'est une phrase à trous qui marche toujours : grand nombre = (nombre de paquets × taille du paquet) + ce qui reste. 47 = 6 × 7 + 5."
+  visuel: { type: barres, lignes: [{ parts: [{ v: 7, label: "7" }, { v: 7, label: "7" }, { v: 7, label: "7" }, { v: 7, label: "7" }, { v: 7, label: "7" }, { v: 7, label: "7" }, { v: 5, label: "reste 5" }] }], total: "47" }
+  legende: "47 = 6 paquets de 7 + 5."
+riviere-du-partage/division-posee:
+  texte: "La division posée, c'est partager un trésor de billets : d'abord les gros billets (centaines), puis tu fais la monnaie avec ce qui reste et tu partages les billets moyens (dizaines), puis les pièces."
+  visuel: { type: blocs, nombre: 84 }
+  legende: "84 ÷ 4 : 8 dizaines → 2 dizaines chacun ; 4 unités → 1 chacun. 21."
+riviere-du-partage/multiples-diviseurs:
+  texte: "Les multiples de 5, ce sont les marches où atterrit un kangourou qui saute de 5 en 5 : 5, 10, 15, 20… Un nombre qui finit par 0 ou 5 est sur son chemin. Les multiples de 2 : tous les nombres pairs."
+  visuel: { type: droite, min: 0, max: 30, pas: 1, etiquettes: [0, 10, 20, 30], marques: [5, 10, 15, 20, 25, 30] }
+  legende: "Les points d'arrivée du kangourou de 5 : ils finissent tous par 0 ou 5."
+
+# ---------- Marché des Mesures ----------
+marche-des-mesures/longueurs:
+  texte: "Ton corps est une règle : un doigt fait à peu près 1 cm de large, un grand pas d'adulte environ 1 m. Un kilomètre, c'est environ 15 minutes de marche, ou mille grands pas."
+  visuel: { type: tableau, lignes: [["unité", "à peu près"], ["1 cm", "la largeur d'un doigt"], ["1 m", "un grand pas d'adulte"], ["1 km", "15 minutes de marche"]] }
+  legende: "Des longueurs de référence à garder dans ta tête."
+marche-des-mesures/masses:
+  texte: "Un paquet de sucre ou une bouteille d'un litre d'eau pèse 1 kg. Un trombone pèse environ 1 g. Il faut 1 000 trombones pour faire un paquet de sucre !"
+  visuel: { type: balance, gauche: ["1 kg"], droite: ["500 g", "500 g"] }
+  legende: "1 kg = 1 000 g : la balance est en équilibre."
+marche-des-mesures/contenances:
+  texte: "1 L, c'est une grande bouteille d'eau. Un verre contient environ 20 cL, une cuillère à soupe 1 cL. Il faut 5 verres pour vider la bouteille."
+  visuel: { type: objets, groupes: [5], emoji: "🥛" }
+  legende: "5 verres de 20 cL = 100 cL = 1 L."
+marche-des-mesures/monnaie:
+  texte: "Pour rendre la monnaie, fais comme les commerçants : pars du prix et ajoute des pièces jusqu'à arriver à la somme donnée. Prix 7 €, on donne 10 € : 7… 8, 9, 10 → on rend 3 €."
+  visuel: { type: monnaie, valeurs: [2, 1] }
+  legende: "De 7 € à 10 € : il manque 3 € (une pièce de 2 € et une de 1 €)."
+marche-des-mesures/lire-l-heure:
+  texte: "La petite aiguille est paresseuse : elle avance lentement et montre les heures. La grande aiguille est pressée : elle fait tout le tour en une heure et montre les minutes. Chaque chiffre de l'horloge vaut 5 minutes pour la grande aiguille."
+  visuel: { type: horloge, h: 3, m: 15 }
+  legende: "Petite aiguille sur 3, grande aiguille sur 3 (3 × 5 = 15 minutes) : 3 h 15."
+marche-des-mesures/durees:
+  texte: "Pour calculer une durée, fais des sauts comme sur une frise : d'abord jusqu'à l'heure pile, puis les heures entières, puis les minutes qui restent. De 9 h 40 à 11 h 15 : 20 min, puis 1 h, puis 15 min, soit 1 h 35."
+  visuel: { type: droite, min: 9, max: 12, pas: 0.25, etiquettes: [9, 10, 11, 12], sauts: [{ de: 9.67, a: 10, label: "20 min" }, { de: 10, a: 11, label: "1 h" }, { de: 11, a: 11.25, label: "15 min" }] }
+  legende: "On passe par l'heure pile, comme on passe par la dizaine en calcul."
+marche-des-mesures/conversions:
+  texte: "Le tableau des conversions, c'est un immeuble : chaque étage est 10 fois plus grand que celui du dessous. Passer des mètres aux centimètres, c'est descendre 2 étages : le nombre devient 100 fois plus grand (il faut plus de petites unités pour la même longueur)."
+  visuel: { type: tableau, lignes: [["km", "hm", "dam", "m", "dm", "cm", "mm"], ["", "", "", "3", "0", "0", ""]] }
+  legende: "3 m = 30 dm = 300 cm : on écrit le 3 sous « m » et on complète avec des zéros jusqu'à l'unité voulue."
+
+# ---------- Cité des Formes ----------
+cite-des-formes/reconnaitre-formes:
+  texte: "Une figure se reconnaît à sa « carte d'identité » : combien de côtés, sont-ils égaux, y a-t-il des coins carrés ? Un carré, c'est un rectangle qui a en plus ses 4 côtés égaux : c'est un rectangle « parfait »."
+  visuel: { type: tableau, lignes: [["figure", "côtés", "angles droits"], ["triangle", "3", "0 ou 1"], ["rectangle", "4", "4"], ["carré", "4 égaux", "4"], ["losange", "4 égaux", "pas forcément"]] }
+  legende: "La carte d'identité des figures."
+cite-des-formes/angles-droits:
+  texte: "Un angle droit, c'est le coin d'une feuille de papier. Plie une feuille en quatre : le coin obtenu est un gabarit d'angle droit que tu peux poser sur n'importe quelle figure pour vérifier."
+  visuel: { type: figure, forme: rectangle }
+  legende: "Les 4 coins d'un rectangle sont des angles droits, comme les coins d'une feuille."
+cite-des-formes/symetrie:
+  texte: "Fais une tache de peinture sur une feuille, plie-la en deux, puis ouvre : tu obtiens un papillon parfaitement symétrique. Le pli, c'est l'axe de symétrie."
+  visuel: { type: schema, emoji: "🦋", titre: "Le papillon de peinture", legendes: [{ label: "le pli", detail: "l'axe de symétrie" }, { label: "chaque point", detail: "a son jumeau à la même distance de l'axe, de l'autre côté" }] }
+cite-des-formes/perimetre:
+  texte: "Le périmètre, c'est la longueur de la clôture autour d'un jardin. Imagine une fourmi qui fait le tour de la figure : la distance qu'elle parcourt, c'est le périmètre."
+  visuel: { type: figure, forme: rectangle, longueur: 5, largeur: 3 }
+  legende: "La fourmi marche 5 + 3 + 5 + 3 = 16."
+cite-des-formes/aire:
+  texte: "L'aire, c'est la quantité de carrelage qu'il faut pour couvrir le sol, pas la longueur de la clôture. On compte combien de petits carreaux tiennent à l'intérieur."
+  visuel: { type: grille, lignes: 3, colonnes: 5, emoji: "🟦" }
+  legende: "3 rangées de 5 carreaux : 15 carreaux, soit une aire de 15 unités."
+cite-des-formes/solides:
+  texte: "Une figure plate, on peut la dessiner sur une feuille ; un solide, on peut le prendre dans la main. Un dé est un cube, une boîte à chaussures un pavé, une boîte de conserve un cylindre, un cornet de glace un cône."
+  visuel: { type: solide, forme: pave }
+  legende: "Un pavé : 6 faces rectangulaires, 8 sommets, 12 arêtes. Comme une boîte à chaussures."
+cite-des-formes/cercle:
+  texte: "Attache une ficelle à un piquet et fais le tour en la gardant tendue : tu traces un cercle. Le piquet, c'est le centre ; la ficelle, c'est le rayon. C'est exactement ce que fait un compas."
+  visuel: { type: figure, forme: cercle }
+  legende: "Tous les points du cercle sont à la même distance du centre : le rayon."
+
+# ---------- Village des Fractions ----------
+village-des-fractions/parts-egales:
+  texte: "Une pizza coupée en 4 parts ÉGALES : chaque part est un quart. Si les parts ne sont pas égales, ce ne sont pas des quarts, même s'il y en a 4 ! C'est comme un partage injuste."
+  visuel: { type: fraction, n: 1, d: 4, forme: disque }
+  legende: "Une part sur 4 parts égales : un quart, 1/4."
+village-des-fractions/ecrire-fraction:
+  texte: "Dans une fraction, le nombre du bas dit en combien de parts on a coupé le gâteau (le dénominateur, comme le « nom » des parts : des tiers, des quarts). Le nombre du haut dit combien de parts on prend."
+  visuel: { type: fraction, n: 3, d: 5, forme: barre }
+  legende: "3/5 : la barre est coupée en 5 parts égales, on en colorie 3."
+village-des-fractions/fractions-droite:
+  texte: "Sur une règle, entre 0 et 1 cm il y a des petits traits : chaque millimètre est une fraction de centimètre. Une fraction est un nombre qui a sa place sur la règle, comme 1 ou 2."
+  visuel: { type: droite, min: 0, max: 2, pas: 0.25, etiquettes: [0, 1, 2], fractions: 4, marques: [0.75] }
+  legende: "3/4 est entre 0 et 1, à 3 petits pas de 0 quand on coupe l'unité en 4."
+village-des-fractions/fractions-egales:
+  texte: "Coupe une pizza en 2 : prends une moitié. Coupe chaque moitié en 2 : ta moitié est devenue 2 quarts. Tu as la même quantité de pizza, mais en parts plus petites : 1/2 = 2/4."
+  visuel: { type: fraction, n: 2, d: 4, forme: disque }
+  legende: "2/4 de pizza, c'est exactement une moitié."
+village-des-fractions/comparer-fractions:
+  texte: "Plus on coupe un gâteau en beaucoup de parts, plus les parts sont petites. Un tiers d'un gâteau est plus gros qu'un huitième. Si les parts ont la même taille (même dénominateur), celui qui en a le plus a le plus de gâteau."
+  visuel: { type: fraction, n: 1, d: 3, forme: barre }
+  legende: "1/3 : une grosse part. 1/8 serait bien plus fine."
+village-des-fractions/additionner-fractions:
+  texte: "Ajouter 2 quarts et 1 quart, c'est comme ajouter 2 pommes et 1 pomme : on obtient 3 quarts. Le « quart » est l'unité, il ne change pas. On n'additionne jamais les dénominateurs !"
+  visuel: { type: fraction, n: 3, d: 4, forme: rectangle }
+  legende: "2/4 + 1/4 = 3/4 : 3 parts de la même taille."
+village-des-fractions/fraction-d-une-quantite:
+  texte: "Les 3/4 de 20 bonbons : d'abord on partage les 20 bonbons en 4 tas égaux (5 par tas), puis on prend 3 tas : 15 bonbons. Diviser par le bas, multiplier par le haut."
+  visuel: { type: objets, par_groupe: 5, nb_groupes: 4, emoji: "🍬", barres: 5 }
+  legende: "4 tas de 5 ; on en garde 3 : 15 bonbons."
+village-des-fractions/multiplier-fractions:
+  texte: "La moitié d'un tiers de tablette : tu prends un tiers, puis tu le coupes en deux. Le morceau obtenu est 1/6 de la tablette. « De » veut dire « fois » : 1/2 de 1/3 = 1/2 × 1/3 = 1/6."
+  visuel: { type: fraction, n: 1, d: 6, forme: rectangle }
+  legende: "La moitié d'un tiers : un sixième."
+
+# ---------- Port des Décimaux ----------
+port-des-decimaux/dixiemes-centiemes:
+  texte: "Les décimaux, c'est l'argent : 1 € = 10 pièces de 10 centimes = 100 pièces de 1 centime. 3,45 € = 3 euros, 4 pièces de 10 centimes et 5 pièces de 1 centime."
+  visuel: { type: abaque, nombre: 3.45, decimales: 2 }
+  legende: "3,45 : 3 unités, 4 dixièmes, 5 centièmes."
+port-des-decimaux/placer-decimaux:
+  texte: "Sur une règle graduée en centimètres, 2,7 cm, c'est 2 cm et 7 millimètres : on dépasse le 2 de 7 petits traits. Entre deux nombres entiers, il y a tout un monde de décimaux."
+  visuel: { type: droite, min: 2, max: 3, pas: 0.1, etiquettes: [2, 2.5, 3], marques: [2.7] }
+  legende: "2,7 : 7 dixièmes après 2."
+port-des-decimaux/comparer-decimaux:
+  texte: "Qui est le plus riche : 2,5 € ou 2,35 € ? 2,5 €, c'est 2 € et 50 centimes ; 2,35 €, c'est 2 € et 35 centimes. 2,5 est plus grand, même s'il a moins de chiffres ! Ajoute un zéro pour comparer : 2,50 contre 2,35."
+  visuel: { type: tableau, lignes: [["", "unités", "dixièmes", "centièmes"], ["2,5", "2", "5", "0"], ["2,35", "2", "3", "5"]] }
+  legende: "Même partie entière ; dixièmes : 5 contre 3. Donc 2,5 > 2,35."
+port-des-decimaux/additionner-decimaux:
+  texte: "Comme pour l'argent, on additionne les euros avec les euros et les centimes avec les centimes. C'est pour ça qu'on aligne les virgules : chaque chiffre reste sous son « type de pièce »."
+  visuel: { type: tableau, lignes: [["", "unités", ",", "dixièmes", "centièmes"], ["", "4", ",", "5", "0"], ["+", "1", ",", "2", "5"], ["=", "5", ",", "7", "5"]] }
+  legende: "4,5 + 1,25 = 5,75 : virgule sous virgule."
+port-des-decimaux/multiplier-decimaux:
+  texte: "3 cahiers à 1,20 € : c'est 3 fois 1 € et 3 fois 20 centimes, donc 3 € + 60 centimes = 3,60 €. Pour un décimal × décimal, calcule sans les virgules, puis remets autant de chiffres après la virgule qu'il y en avait au total."
+  visuel: { type: monnaie, valeurs: [1, 0.2, 1, 0.2, 1, 0.2] }
+  legende: "3 × 1,20 € = 3,60 €."
+port-des-decimaux/diviser-decimaux:
+  texte: "Partager 7,50 € entre 3 amis : d'abord les euros (7 ÷ 3 = 2 chacun, il reste 1 €), puis on change l'euro restant en pièces de 10 centimes (10 + 5 = 15 pièces) : 5 pièces chacun. Chacun a 2,50 €."
+  visuel: { type: monnaie, valeurs: [2, 0.5] }
+  legende: "7,50 € ÷ 3 = 2,50 € pour chacun."
+port-des-decimaux/arrondir-estimer:
+  texte: "Arrondir, c'est dire à quel panneau de ville tu es le plus proche. Si tu es à 6,7 km, tu es plus près du panneau 7 que du panneau 6. Pile au milieu (6,5), on va au panneau suivant."
+  visuel: { type: droite, min: 6, max: 7, pas: 0.1, etiquettes: [6, 6.5, 7], marques: [6.7] }
+  legende: "6,7 est plus près de 7 : arrondi à l'unité, 7."
+
+# ---------- Atelier des Problèmes ----------
+atelier-des-problemes/quatre-etapes:
+  texte: "Un problème, c'est une enquête de détective : 1) je lis et je raconte l'histoire avec mes mots, 2) je cherche ce qu'on me demande, 3) je fais un dessin ou un schéma, 4) je calcule puis je vérifie que ma réponse a du sens dans l'histoire."
+  visuel: { type: cycle, etapes: [{ emoji: "📖", label: "Je comprends" }, { emoji: "🎯", label: "Je cherche la question" }, { emoji: "✏️", label: "Je schématise" }, { emoji: "🧮", label: "Je calcule et je vérifie" }], centre: "🕵️" }
+atelier-des-problemes/barres-parties-tout:
+  texte: "Un problème parties-tout, c'est une tablette de chocolat cassée en morceaux. Si on connaît tous les morceaux, on additionne pour avoir la tablette entière. Si on connaît la tablette et un morceau, on soustrait pour trouver le morceau manquant."
+  visuel: { type: barres, lignes: [{ parts: [{ v: 45, label: "45" }, { v: 35, label: "?", vide: true }] }], total: "80" }
+  legende: "Tout = 80, une partie = 45. La partie manquante : 80 − 45 = 35."
+atelier-des-problemes/barres-comparaison:
+  texte: "Pour comparer, aligne deux tours de Lego côte à côte. La différence, c'est le morceau qui dépasse de la plus grande. « De plus que » ou « de moins que » : c'est toujours ce morceau qui dépasse."
+  visuel: { type: barres, lignes: [{ nom: "Léo", parts: [{ v: 12, label: "12" }] }, { nom: "Ana", parts: [{ v: 12, label: "12" }, { v: 5, label: "5 de plus" }] }] }
+  legende: "Ana a 5 de plus que Léo : 12 + 5 = 17."
+atelier-des-problemes/barres-multiplication:
+  texte: "« 3 fois plus », c'est photocopier la barre de départ 3 fois et les mettre bout à bout. Pour retrouver une part quand on connaît le total, on coupe la grande barre en parts égales."
+  visuel: { type: barres, lignes: [{ nom: "Tom", parts: [{ v: 8, label: "8" }] }, { nom: "Zoé", parts: [{ v: 8, label: "8" }, { v: 8, label: "8" }, { v: 8, label: "8" }] }] }
+  legende: "Zoé a 3 fois plus que Tom : 3 × 8 = 24."
+atelier-des-problemes/problemes-etapes:
+  texte: "Un problème à plusieurs étapes, c'est une recette de cuisine : tu ne peux pas cuire le gâteau avant d'avoir fait la pâte. Cherche d'abord la « question cachée » qu'il faut résoudre en premier."
+  visuel: { type: frise, points: [{ emoji: "🔎", label: "Question cachée", sous: "ce qu'il faut savoir d'abord" }, { emoji: "🧮", label: "1ᵉʳ calcul" }, { emoji: "🧮", label: "2ᵉ calcul" }, { emoji: "✅", label: "Réponse", sous: "avec une phrase" }] }
+atelier-des-problemes/probleme-vers-calcul:
+  texte: "Traduire un problème en calcul, c'est comme traduire une phrase en anglais : « ensemble », « en tout » se traduisent souvent par +, « chacun », « par » par × ou ÷. Mais attention, vérifie toujours avec le dessin : les mots peuvent mentir !"
+  visuel: { type: tableau, lignes: [["je lis…", "je pense à…"], ["en tout, ensemble", "+ ou ×"], ["il en reste, de moins", "−"], ["chacun, par paquets", "× ou ÷"]] }
+  legende: "Des indices, pas des règles : le schéma décide."
+atelier-des-problemes/calcul-vers-probleme:
+  texte: "Inventer une histoire pour 24 ÷ 4, c'est comme inventer une blague à partir d'une chute : 24 objets, 4 personnes ou 4 par paquet. Raconte-la à quelqu'un : s'il trouve 6, ton histoire est bonne !"
+  visuel: { type: objets, par_groupe: 6, nb_groupes: 4, emoji: "🍪" }
+  legende: "24 cookies partagés entre 4 amis : 6 chacun."
+atelier-des-problemes/pieges-enonces:
+  texte: "Certains énoncés sont des pièges comme les tours de magie : ils mettent en avant un mot (« de plus ») pour te faire faire le mauvais calcul. Le bon réflexe : faire le dessin avant de choisir l'opération."
+  visuel: { type: barres, lignes: [{ nom: "Lou", parts: [{ v: 15, label: "15" }] }, { nom: "Max", parts: [{ v: 15, label: "?" , vide: true }, { v: 4, label: "4" }] }] }
+  legende: "« Lou a 4 billes de MOINS que Max. Lou en a 15. » Max en a donc 15 + 4 = 19, pas 11 !"
+
+# ---------- Jardin de Fibonacci ----------
+jardin-de-fibonacci/motifs:
+  texte: "Un motif, c'est comme le refrain d'une chanson : il revient toujours dans le même ordre. Trouve le morceau qui se répète (le « refrain »), et tu sauras ce qui vient après."
+  visuel: { type: motif, elements: ["🔴", "🔵", "🔵", "🔴", "🔵", "🔵", "🔴", "?"] }
+  legende: "Le refrain est 🔴🔵🔵 : après 🔴 vient 🔵."
+jardin-de-fibonacci/suites-qui-grandissent:
+  texte: "Une suite qui grandit, c'est un escalier : regarde de combien on monte à chaque marche. Si on monte toujours de 3, la marche suivante est 3 de plus."
+  visuel: { type: tableau, lignes: [["terme", "2", "5", "8", "11", "?"], ["écart", "", "+3", "+3", "+3", "+3"]] }
+  legende: "On ajoute 3 à chaque fois : 14."
+jardin-de-fibonacci/fibonacci:
+  texte: "Dans la suite de Fibonacci, chaque nombre est la somme des deux précédents, comme une famille de lapins où les petits naissent des deux générations d'avant : 1, 1, 2, 3, 5, 8, 13…"
+  visuel: { type: frise, points: [{ emoji: "🐇", label: "1" }, { emoji: "🐇", label: "1" }, { emoji: "🐇", label: "2", sous: "1+1" }, { emoji: "🐇", label: "3", sous: "1+2" }, { emoji: "🐇", label: "5", sous: "2+3" }, { emoji: "🐇", label: "8", sous: "3+5" }] }
+jardin-de-fibonacci/logique:
+  texte: "Raisonner comme un détective, c'est éliminer les suspects impossibles. Fais un tableau avec des ✔ et des ✘ : chaque indice permet de barrer des cases jusqu'à ce qu'il ne reste qu'une possibilité."
+  visuel: { type: tableau, lignes: [["", "chat", "chien", "lapin"], ["Lya", "✘", "✔", "✘"], ["Néo", "✔", "✘", "✘"], ["Zéro", "✘", "✘", "✔"]] }
+  legende: "Un ✔ par ligne et par colonne : le tableau du détective."
+jardin-de-fibonacci/coder-reperer:
+  texte: "Coder un chemin, c'est donner des ordres à un robot qui ne réfléchit pas : il fait EXACTEMENT ce que tu dis. Mets-toi à sa place, et suis tes propres flèches avec le doigt pour vérifier."
+  visuel: { type: motif, elements: ["➡️", "➡️", "⬆️", "⬆️", "➡️", "🏁"] }
+  legende: "2 cases à droite, 2 en haut, 1 à droite : arrivée !"
+jardin-de-fibonacci/nombres-figures:
+  texte: "Les nombres carrés, on peut les ranger en carré parfait, comme des soldats en rangs : 1, 4, 9, 16. Les nombres triangulaires, on les range en triangle, comme les quilles de bowling : 1, 3, 6, 10."
+  visuel: { type: grille, lignes: 4, colonnes: 4, emoji: "🟨" }
+  legende: "16 = 4 × 4 : un nombre carré."
+
+# ---------- Tour des Proportions ----------
+tour-des-proportions/situations-proportionnelles:
+  texte: "C'est proportionnel si « deux fois plus de ceci donne deux fois plus de cela ». 2 baguettes coûtent 2 fois plus cher qu'une seule : proportionnel. Mais ton âge et ta taille ne le sont pas : à 20 ans tu ne mesures pas le double de tes 10 ans."
+  visuel: { type: tableau, lignes: [["baguettes", "1", "2", "3", "5"], ["prix (€)", "1,20", "2,40", "3,60", "6"]] }
+  legende: "On multiplie toujours par 1,20 : c'est proportionnel."
+tour-des-proportions/quatrieme-proportionnelle:
+  texte: "Passer par l'unité, c'est demander « combien pour UN ? ». 4 croissants coûtent 6 € ; un croissant coûte 6 ÷ 4 = 1,50 € ; donc 7 croissants coûtent 7 × 1,50 = 10,50 €."
+  visuel: { type: tableau, lignes: [["croissants", "4", "1", "7"], ["prix (€)", "6", "1,50", "10,50"]] }
+  legende: "÷ 4 pour arriver à 1, puis × 7."
+tour-des-proportions/pourcentages:
+  texte: "Un pourcentage, c'est une fraction d'un paquet de 100. 25 % d'un gâteau, c'est 25 parts sur 100, donc un quart. 10 %, c'est diviser par 10 ; 50 %, c'est la moitié."
+  visuel: { type: grille, lignes: 10, colonnes: 10, emoji: "▫️" }
+  legende: "100 petits carrés : 25 % = 25 carrés = un quart de la grille."
+tour-des-proportions/echelles:
+  texte: "Une carte, c'est une photo réduite du monde. Une échelle 1/100 000 veut dire : 1 cm sur la carte = 100 000 cm (1 km) en vrai. C'est comme une maquette de voiture, en beaucoup plus petit."
+  visuel: { type: tableau, lignes: [["sur la carte", "1 cm", "3 cm", "7,5 cm"], ["en vrai", "1 km", "3 km", "7,5 km"]] }
+  legende: "Échelle 1/100 000 : 1 cm pour 1 km."
+tour-des-proportions/vitesses:
+  texte: "Une vitesse de 60 km/h veut dire qu'en 1 heure, on parcourt 60 km. En une demi-heure, la moitié : 30 km. En 2 heures, le double : 120 km. La vitesse, c'est un tableau de proportionnalité entre le temps et la distance."
+  visuel: { type: tableau, lignes: [["temps", "30 min", "1 h", "2 h"], ["distance", "30 km", "60 km", "120 km"]] }
+tour-des-proportions/ratios-partages:
+  texte: "Un ratio 2 : 3, c'est une recette : pour 2 verres de sirop, 3 verres d'eau. Ensemble, ça fait 5 verres. Pour partager 30 € dans le ratio 2 : 3, on fait 5 parts égales de 6 € : 2 parts (12 €) et 3 parts (18 €)."
+  visuel: { type: barres, lignes: [{ nom: "A", parts: [{ v: 6, label: "6" }, { v: 6, label: "6" }] }, { nom: "B", parts: [{ v: 6, label: "6" }, { v: 6, label: "6" }, { v: 6, label: "6" }] }], total: "30 €" }
+tour-des-proportions/evolutions:
+  texte: "Une hausse de 20 %, c'est garder tout le prix (100 %) et en ajouter 20 % : on paie 120 %, donc × 1,20. Une baisse de 20 %, on ne paie plus que 80 % : × 0,80."
+  visuel: { type: barres, lignes: [{ nom: "avant", parts: [{ v: 100, label: "100 %" }] }, { nom: "après +20 %", parts: [{ v: 100, label: "100 %" }, { v: 20, label: "20 %" }] }] }
+
+# ---------- Observatoire des Données ----------
+observatoire-des-donnees/lire-graphiques:
+  texte: "Un diagramme en barres, c'est une rangée de tours : la plus haute tour montre la catégorie la plus nombreuse. Pour lire une valeur, pose une règle horizontale en haut de la tour et regarde le nombre sur l'axe."
+  visuel: { type: diagramme, titre: "Fruits préférés", barres: [{ label: "pomme", v: 8 }, { label: "banane", v: 5 }, { label: "fraise", v: 11 }] }
+  legende: "La fraise gagne : 11 élèves."
+observatoire-des-donnees/moyenne:
+  texte: "La moyenne, c'est ce que chacun aurait si on mettait tout en commun puis qu'on partageait équitablement. Trois amis ont 2, 5 et 8 bonbons : 15 en tout, partagés en 3, ça fait 5 chacun."
+  visuel: { type: objets, groupes: [2, 5, 8], emoji: "🍬" }
+  legende: "On met tout en commun (15), on partage en 3 : moyenne 5."
+observatoire-des-donnees/mediane-etendue:
+  texte: "Range les élèves du plus petit au plus grand : celui qui est pile au milieu de la file a la taille médiane. L'étendue, c'est l'écart entre le plus grand et le plus petit de la file."
+  visuel: { type: motif, elements: ["3", "5", "**7**", "9", "15"] }
+  legende: "Médiane : 7 (au milieu). Étendue : 15 − 3 = 12."
+observatoire-des-donnees/hasard-probabilite:
+  texte: "Dans un sac, 3 billes rouges et 1 bleue. Tire sans regarder : tu as 3 chances sur 4 d'avoir une rouge. Ce n'est pas parce qu'il y a 2 couleurs qu'on a une chance sur deux !"
+  visuel: { type: objets, groupes: [3, 1], emojis: ["🔴", "🔵"] }
+  legende: "Probabilité de tirer une rouge : 3/4. Une bleue : 1/4."
+
+# ---------- Royaume des Relatifs ----------
+royaume-des-relatifs/nombres-negatifs:
+  texte: "Un thermomètre en hiver : sous 0 °C, il fait −3 °C, −5 °C… Un ascenseur aussi : le rez-de-chaussée est 0, le parking est au −1, −2. Les nombres négatifs sont les étages sous la terre."
+  visuel: { type: droite, min: -5, max: 5, pas: 1, etiquettes: [-5, 0, 5], marques: [-3] }
+  legende: "−3 : 3 pas à gauche de 0."
+royaume-des-relatifs/comparer-relatifs:
+  texte: "−8 °C ou −2 °C : où fait-il le plus froid ? À −8 °C ! Donc −8 est plus petit que −2. Sur la droite, le plus petit est toujours le plus à gauche."
+  visuel: { type: droite, min: -10, max: 2, pas: 1, etiquettes: [-10, -5, 0], marques: [-8, -2] }
+  legende: "−8 est à gauche de −2 : −8 < −2."
+royaume-des-relatifs/repere:
+  texte: "Un repère, c'est la bataille navale : on donne d'abord la colonne (x, l'abscisse, on avance), puis la ligne (y, l'ordonnée, on monte). « On marche avant de prendre l'ascenseur. »"
+  visuel: { type: graphe, xmin: -4, xmax: 4, ymin: -4, ymax: 4, points: [{ x: 3, y: 2, label: "A(3 ; 2)" }] }
+  legende: "A(3 ; 2) : 3 pas vers la droite, puis 2 vers le haut."
+royaume-des-relatifs/additionner-relatifs:
+  texte: "Pense à ton argent : +5 c'est 5 € gagnés, −8 c'est 8 € de dette. Gagner 5 € et devoir 8 € : il te reste une dette de 3 €. Donc 5 + (−8) = −3."
+  visuel: { type: droite, min: -5, max: 6, pas: 1, etiquettes: [-5, 0, 5], sauts: [{ de: 0, a: 5, label: "+5" }, { de: 5, a: -3, label: "−8" }] }
+  legende: "On avance de 5, puis on recule de 8 : on arrive à −3."
+royaume-des-relatifs/multiplier-relatifs:
+  texte: "Les amis de mes amis sont mes amis (+ × + = +). Les ennemis de mes ennemis sont mes amis (− × − = +). Les ennemis de mes amis sont mes ennemis (− × + = −)."
+  visuel: { type: tableau, lignes: [["×", "+", "−"], ["+", "+", "−"], ["−", "−", "+"]] }
+  legende: "La règle des signes en un coup d'œil."
+royaume-des-relatifs/priorites:
+  texte: "Les priorités, c'est comme s'habiller : les chaussettes (parenthèses) avant les chaussures. Puis les multiplications et divisions, comme on met le pull avant le manteau, et en dernier les additions et soustractions."
+  visuel: { type: frise, points: [{ emoji: "🧦", label: "( )", sous: "d'abord" }, { emoji: "👕", label: "× ÷", sous: "ensuite" }, { emoji: "🧥", label: "+ −", sous: "à la fin" }] }
+
+# ---------- Grotte de l'Algèbre ----------
+grotte-de-l-algebre/lettre-nombre:
+  texte: "Une lettre, c'est une boîte fermée avec un nombre caché dedans. « x + 3 », c'est « la boîte plus 3 ». Tant qu'on ne sait pas ce qu'il y a dans la boîte, on garde la lettre."
+  visuel: { type: balance, gauche: ["x", "3"], droite: ["10"] }
+  legende: "La boîte x et 3 kg pèsent autant que 10 kg : la boîte pèse 7."
+grotte-de-l-algebre/calculer-expression:
+  texte: "Calculer une expression pour x = 4, c'est ouvrir la boîte : partout où il y a x, tu remplaces par 4. Attention : 3x veut dire 3 × x, donc 3 × 4 = 12, pas 34 !"
+  visuel: { type: tableau, lignes: [["expression", "3x + 1"], ["on remplace x par 4", "3 × 4 + 1"], ["résultat", "13"]] }
+grotte-de-l-algebre/reduire:
+  texte: "Réduire, c'est ranger sa chambre par familles : les x avec les x, les nombres avec les nombres. 3 pommes + 2 bananes + 4 pommes = 7 pommes + 2 bananes. On ne peut pas ajouter des pommes et des bananes."
+  visuel: { type: objets, groupes: [3, 4, 2], emojis: ["🍎", "🍎", "🍌"] }
+  legende: "3x + 4x + 2 = 7x + 2."
+grotte-de-l-algebre/developper:
+  texte: "Développer 3(x + 2), c'est distribuer des cadeaux : le 3 donne quelque chose à chaque invité de la parenthèse. 3 × x et 3 × 2. Personne n'est oublié : 3x + 6."
+  visuel: { type: grille, lignes: 3, colonnes: 7 }
+  legende: "Un rectangle de 3 sur (x + 2) : une partie 3 × x, une partie 3 × 2."
+grotte-de-l-algebre/factoriser:
+  texte: "Factoriser, c'est l'inverse de distribuer : on cherche ce que tous les termes ont en commun, comme mettre en facteur le même ingrédient de plusieurs recettes. 6x + 9 = 3 × 2x + 3 × 3 = 3(2x + 3)."
+  visuel: { type: tableau, lignes: [["terme", "6x", "9"], ["= 3 × …", "2x", "3"]] }
+  legende: "Le facteur commun 3 sort devant la parenthèse."
+grotte-de-l-algebre/equations-balance:
+  texte: "Une équation, c'est une balance en équilibre. Pour garder l'équilibre, tout ce que tu fais d'un côté, tu le fais de l'autre : enlever 3 à gauche, enlever 3 à droite."
+  visuel: { type: balance, gauche: ["x", "x", "3"], droite: ["11"] }
+  legende: "2x + 3 = 11 → on enlève 3 de chaque côté : 2x = 8, donc x = 4."
+grotte-de-l-algebre/equations-etapes:
+  texte: "Résoudre une équation, c'est déballer un cadeau emballé plusieurs fois : on enlève les emballages dans l'ordre inverse où on les a mis. Le dernier « + 5 » se défait en premier, puis le « × 3 »."
+  visuel: { type: frise, points: [{ emoji: "🎁", label: "3x + 5 = 20" }, { emoji: "✂️", label: "3x = 15", sous: "− 5 des deux côtés" }, { emoji: "✂️", label: "x = 5", sous: "÷ 3 des deux côtés" }] }
+grotte-de-l-algebre/mettre-en-equation:
+  texte: "Mettre en équation, c'est écrire la phrase du problème en langue « maths ». Choisis d'abord ce que représente x (avec une phrase !), puis traduis chaque morceau : « le double de x » → 2x, « augmenté de 5 » → + 5."
+  visuel: { type: tableau, lignes: [["en français", "en maths"], ["un nombre", "x"], ["son triple", "3x"], ["diminué de 4", "3x − 4"], ["vaut 11", "3x − 4 = 11"]] }
+
+# ---------- Château de la Géométrie (début) ----------
+chateau-de-la-geometrie/angles:
+  texte: "Déchire les trois coins d'un triangle en papier et colle-les côte à côte : ils forment toujours une ligne droite, un angle plat de 180°. C'est vrai pour tous les triangles !"
+  visuel: { type: schema, emoji: "📐", titre: "Les trois coins déchirés", legendes: [{ label: "coin 1 + coin 2 + coin 3", detail: "= une ligne droite = 180°" }] }
+chateau-de-la-geometrie/pythagore:
+  texte: "Sur chaque côté d'un triangle rectangle, construis un carré en carrelage. Les carreaux des deux petits carrés suffisent exactement à paver le grand carré : 9 + 16 = 25 pour le triangle 3-4-5."
+  visuel: { type: figure, forme: triangle-rectangle }
+  legende: "3² + 4² = 9 + 16 = 25 = 5²."
+chateau-de-la-geometrie/aires-perimetres:
+  texte: "Un triangle, c'est la moitié d'un rectangle coupé en diagonale : son aire est base × hauteur, divisé par 2. Un parallélogramme, c'est un rectangle dont on a déplacé un morceau : même aire, base × hauteur."
+  visuel: { type: figure, forme: rectangle }
+chateau-de-la-geometrie/volumes:
+  texte: "Le volume, c'est combien de petits cubes de sucre il faut pour remplir la boîte. Un étage de 4 × 3 = 12 sucres, et 5 étages : 60 sucres. Longueur × largeur × hauteur."
+  visuel: { type: solide, forme: pave }

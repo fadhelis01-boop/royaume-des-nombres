@@ -173,7 +173,27 @@ Notes : noms français (`Do Ré Mi Fa Sol La Si`, `#` dièse, `b` bémol) ou ang
 
 Dans un visuel, une valeur `"=expression"` est calculée (`nombre: "=a*10+b"`), une valeur texte peut contenir des `{{ … }}`.
 
+## 4 bis. « Explique-moi autrement » et lecture chronométrée (2.3)
+
+Quand un enfant ne comprend pas, le panneau « Explique-moi autrement » lui propose une autre porte d'entrée. Il fonctionne sans rien écrire (dessins du cours, exemple résolu tiré du même modèle que la question ratée, manipulation, cours relu, assistant, fiche pour l'adulte), mais chaque leçon peut ajouter sa propre **image de la vie** et son **schéma** :
+
+```yaml
+  - id: ma-lecon
+    autrement:
+      texte: "Une analogie concrète, tirée de la vie de l'enfant…"
+      visuel: { type: balance, gauche: ["?", "7"], droite: ["15"] }   # tout visuel de la section 4
+      legende: "…"
+      qui: zero          # le personnage qui raconte (zero par défaut)
+```
+
+Ces textes peuvent aussi être rédigés à part dans `content-src/_autrement_*.yaml`, avec des clés `monde/leçon` (une clé inconnue bloque le build).
+
+Les textes de **lecture chronométrée** sont dans `content-src/_fluence.yaml` (`id`, `niveau` : CP, CE1, CE2 ou CM, `titre`, `texte`). Prévoir au moins 150 mots pour les niveaux CE2 et CM.
+
+La grille de correspondance avec les programmes officiels (`public/alignement-programmes.html`) se régénère avec `py scripts/alignement/alignement.py` après `npm run content`.
+
 ## 5. Contrôle qualité automatique
+
 
 `npm run build` (et l'import dans l'application) **tire chaque exercice des dizaines ou centaines de fois** et vérifie que :
 la bonne réponse est acceptée, aucun calcul ne donne NaN/undefined, toutes les formules LaTeX se compilent, les visuels sont connus.

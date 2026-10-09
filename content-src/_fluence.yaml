@@ -1,0 +1,45 @@
+# Textes de lecture chronométrée (fluence) — textes originaux.
+# Repères officiels (livrets d'accompagnement de français, Éduscol, BO du 31 octobre 2024) :
+#   fin de CP : 30 mots par minute sans préparation, 50 après préparation
+#   fin de CE1 : 70 mots par minute ; fin de CE2 : 90 mots par minute.
+# niveau : CP | CE1 | CE2 | CM (au CM, le repère n'est pas fixé par ces livrets : on vise surtout la prosodie)
+- id: cp-lune
+  niveau: CP
+  titre: Zéro et la lune
+  texte: |
+    Le soir, Zéro regarde la lune. Elle est ronde et toute blanche. « Elle a l'air d'un fromage », dit Zéro. Il a faim. Il monte sur le toit. Il tend la patte, mais la lune est trop loin. Lya rit. « La lune n'est pas un fromage, petit Zéro ! » Zéro fait la moue. Puis il voit une part de gâteau sur la table. « Tant pis pour la lune ! » Il mange le gâteau et il va dormir.
+- id: cp-pluie
+  niveau: CP
+  titre: Une goutte de pluie
+  texte: |
+    Il pleut sur le jardin. Une petite goutte tombe sur une feuille. Elle glisse, glisse, et tombe dans une flaque. Un gros ver sort de la terre. Il a soif. Il boit la petite goutte. Puis le soleil revient. La flaque devient toute petite. Les fleurs se lèvent. Un oiseau chante sur la branche. Le jardin est tout propre et tout brillant. Demain, il pleuvra peut-être encore.
+- id: ce1-marche
+  niveau: CE1
+  titre: Au marché des mesures
+  texte: |
+    Ce matin, Néo accompagne sa grand-mère au marché. Il fait beau et les étals sont remplis de couleurs. Il y a des tomates rouges, des courgettes vertes et des citrons jaunes. La marchande pèse les pommes sur sa balance. « Un kilo et demi, cela fait trois euros », annonce-t-elle. Néo sort son porte-monnaie. Il compte ses pièces avec soin : deux euros, puis encore un euro. Il tend l'argent fièrement. La marchande lui sourit et lui offre une fraise. Plus loin, un musicien joue de l'accordéon. Des enfants dansent autour de lui. Néo voudrait rester toute la journée. Mais sa grand-mère a déjà rempli son panier. « À la maison, nous ferons une tarte aux pommes », promet-elle. Néo saute de joie et porte le panier jusqu'à la voiture.
+- id: ce1-cabane
+  niveau: CE1
+  titre: La cabane dans l'arbre
+  texte: |
+    Au fond du jardin, il y a un grand chêne. Lya et son frère ont décidé d'y construire une cabane. Papa a apporté des planches, des clous et un marteau. D'abord, ils posent un plancher solide entre deux grosses branches. Ensuite, ils fabriquent trois murs et un petit toit. Lya peint la porte en bleu. Son frère accroche une corde pour monter plus vite. Le soir, la cabane est terminée. Les deux enfants s'installent dedans avec une lampe de poche et un paquet de biscuits. Dehors, la nuit tombe doucement. Ils entendent une chouette au loin. « C'est notre château », murmure Lya. Ils restent là longtemps, à écouter les bruits de la nuit, jusqu'à ce que maman les appelle pour dîner.
+- id: ce2-tempete
+  niveau: CE2
+  titre: La tempête sur l'Archipel
+  texte: |
+    Ce jour-là, le ciel de l'Archipel des Mots devint soudain tout noir. Un vent violent se leva et fit claquer les voiles des bateaux. Les habitants rentrèrent en courant et fermèrent leurs volets. Seul Gribouille resta sur la plage, les bras croisés. « Une tempête ? Même pas peur ! » cria-t-il. Mais une énorme vague arriva et l'éclaboussa de la tête aux pieds. Toute l'encre de son corps se mit à couler. Gribouille poussa un cri et courut se réfugier dans la bibliothèque. Lya l'enroula dans une couverture et lui prépara une tasse de chocolat chaud. Pendant ce temps, la pluie tambourinait sur les vitres. Peu à peu, le vent se calma. Quand le soleil revint, un magnifique arc-en-ciel apparut au-dessus de la mer. Gribouille, encore tout tremblant, murmura : « Bon… j'avais peut-être un tout petit peu peur. » Lya sourit : avoir peur, ce n'est pas grave. L'important, c'est de savoir se mettre à l'abri.
+- id: ce2-abeilles
+  niveau: CE2
+  titre: Le peuple des abeilles
+  texte: |
+    Dans une ruche, des milliers d'abeilles vivent ensemble, et chacune a un travail précis. La reine est la plus grande : elle pond tous les œufs, parfois plus de mille par jour. Les ouvrières, elles, font tout le reste. Les plus jeunes nettoient les alvéoles et nourrissent les larves. Plus tard, elles fabriquent la cire et construisent les rayons. Les plus âgées partent butiner. Elles volent de fleur en fleur pour récolter le nectar et le pollen. De retour à la ruche, elles dansent ! Cette danse indique aux autres abeilles dans quelle direction se trouvent les fleurs et à quelle distance. Grâce au nectar, les abeilles produisent le miel, qui leur sert de réserve pour l'hiver. En butinant, elles transportent aussi le pollen d'une fleur à l'autre : c'est ainsi que les fruits peuvent pousser. Sans les abeilles, il y aurait beaucoup moins de pommes, de cerises et de fraises dans nos assiettes.
+- id: cm-phare
+  niveau: CM
+  titre: Le gardien du phare
+  texte: |
+    Sur un rocher battu par les vagues, à plusieurs kilomètres de la côte, se dressait un vieux phare. Pendant quarante ans, Joseph en avait été le gardien. Chaque soir, il grimpait les deux cent douze marches de l'escalier en colimaçon pour allumer la grande lampe. Sa lumière tournait toute la nuit et prévenait les marins du danger : ici, les rochers sont tranchants comme des couteaux. Joseph connaissait chaque bateau qui passait au large. Il les reconnaissait à leur silhouette, à la couleur de leurs feux, et même au bruit de leur moteur quand le vent soufflait dans sa direction. Un hiver, une terrible tempête éclata. La pluie fouettait les vitres et la mer rugissait comme un animal en colère. Soudain, la lumière s'éteignit : un court-circuit ! Au loin, Joseph aperçut les feux d'un chalutier qui se dirigeait droit vers les récifs. Sans hésiter, il saisit une lanterne, gravit les marches quatre à quatre et l'agita de toutes ses forces au sommet de la tour. Le capitaine vit le signal et changea de cap juste à temps. Le lendemain, tout le village vint remercier le vieux gardien. Joseph haussa les épaules : « Je n'ai fait que mon travail. »
+- id: cm-volcans
+  niveau: CM
+  titre: Les volcans, fenêtres sur le centre de la Terre
+  texte: |
+    Sous nos pieds, à plusieurs dizaines de kilomètres de profondeur, la température est si élevée que certaines roches fondent. Elles forment le magma, une sorte de pâte brûlante, plus légère que les roches qui l'entourent. Comme une bulle d'air dans l'eau, le magma a tendance à remonter. Il s'accumule parfois dans une poche, appelée chambre magmatique. Lorsque la pression devient trop forte, il s'échappe par des fissures jusqu'à la surface : c'est une éruption. On distingue deux grandes familles de volcans. Les volcans effusifs, comme ceux de l'île de La Réunion, laissent couler des rivières de lave fluide qui avancent lentement. Les volcans explosifs, eux, projettent dans le ciel des cendres, des gaz et des blocs de roche. Leurs éruptions sont beaucoup plus dangereuses. Aujourd'hui, les volcanologues surveillent les volcans actifs grâce à des instruments très précis : ils mesurent les petits tremblements de terre, le gonflement du sol et les gaz qui s'échappent. Ces signes permettent souvent de prévoir une éruption et d'évacuer les habitants à temps. Pourtant, malgré le danger, beaucoup de gens vivent près des volcans, car les cendres rendent la terre très fertile.

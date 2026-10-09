@@ -60,6 +60,57 @@ lecons:
         dictee: "{{m}}"
         correction: "{{m}}"
 
+  - id: ecrire-une-phrase
+    titre: J'écris ma phrase
+    objectif: J'écris une phrase correcte - les mots dans le bon ordre, une majuscule au début et un point à la fin.
+    mots: [écrire, phrase, ordre des mots, majuscule]
+    autrement:
+      texte: "Une phrase, c'est un train : la locomotive (qui ?), le wagon de l'action (fait quoi ?), puis les autres wagons (quoi ? où ?). Si les wagons sont dans le désordre, le train ne roule pas : « mange chat le souris la » ne veut rien dire, « Le chat mange la souris. » oui !"
+      visuel: { type: phrase, groupes: [{ mots: "Le chat", role: sujet, etiquette: "qui ?" }, { mots: "mange", role: verbe, etiquette: "fait quoi ?" }, { mots: "la souris", role: cod, etiquette: "quoi ?" }, { mots: ".", role: ponctuation }] }
+    etapes:
+      - dialogue:
+          - gribouille: "Moi aussi je sais écrire ! Regardez : « jardin le dans joue chien le »."
+          - mia: "Tous les mots sont là, Gribouille… mais ils sont mélangés ! On ne comprend rien."
+          - neo: "On va remettre les wagons dans l'ordre : qui ? fait quoi ? où ? « Le chien joue dans le jardin. »"
+      - a_quoi_ca_sert: "Écrire une carte d'anniversaire, un message à un ami, une liste, la réponse à une question en classe : pour que l'autre te comprenne, ta phrase doit être bien construite."
+      - texte: |
+          Pour écrire une phrase :
+
+          1. Je **dis ma phrase dans ma tête** avant de l'écrire.
+          2. Je compte les mots sur mes doigts.
+          3. J'écris le **premier mot avec une majuscule**.
+          4. Je laisse un **espace** entre les mots.
+          5. Je termine par un **point** (ou ? ou !).
+          6. Je **relis** : est-ce que ma phrase veut dire quelque chose ?
+      - astuce: { texte: "Dis ta phrase à voix haute en touchant un doigt par mot : tu sauras combien de mots écrire, et tu n'en oublieras pas.", qui: mia }
+      - vraie_vie: { titre: "Défi dans la vraie vie", texte: "Écris sur un papier une phrase pour quelqu'un de ta famille (« Je t'aime maman. », « Merci pour le gâteau. »). Vérifie la majuscule et le point, puis donne-lui !", materiel: "un papier et un crayon" }
+      - retiens: "Une phrase a des mots **dans un ordre qui a du sens**, commence par une **majuscule** et finit par un **point**. Je la dis dans ma tête avant de l'écrire, et je **relis**."
+    exercices:
+      - type: ordre
+        vars: { p: [["Le", "chien", "joue", "dans", "le jardin."], ["Ma", "sœur", "lit", "un", "livre."], ["Les", "oiseaux", "chantent", "dans", "l'arbre."], ["Papa", "prépare", "une", "bonne", "soupe."], ["Nous", "allons", "à", "la", "piscine."]] }
+        enonce: "Remets les mots dans l'ordre pour faire une phrase."
+        items: ["{{p_0}}", "{{p_1}}", "{{p_2}}", "{{p_3}}", "{{p_4}}"]
+        correction: "{{p_0}} {{p_1}} {{p_2}} {{p_3}} {{p_4}}"
+      - type: qcm
+        enonce: "Quelle phrase est bien écrite ?"
+        choix: ["Le chat dort sur le lit.", "le chat dort sur le lit.", "Le chat dort sur le lit", "Le chat sur dort le lit."]
+        correction: "Une majuscule au début, un point à la fin, et les mots dans le bon ordre."
+      - type: qcm
+        vars: { p: [["Le soleil brille.", "soleil Le brille.", "Le brille soleil."], ["Tom mange une pomme.", "Tom une pomme mange.", "Mange Tom pomme une."], ["Il pleut dehors.", "Dehors il pleut", "pleut Il dehors."]] }
+        enonce: "Laquelle est une vraie phrase ?"
+        choix: ["{{p_0}}", "{{p_1}}", "{{p_2}}"]
+        correction: "« {{p_0}} » : les mots ont du sens dans cet ordre, avec une majuscule et un point."
+      - type: mot
+        vars: { p: [["chat", "Le … dort.", "Le chat dort."], ["pomme", "Je mange une … rouge.", "Je mange une pomme rouge."], ["école", "Je vais à l'… à pied.", "Je vais à l'école à pied."]] }
+        enonce: "Complète la phrase avec le mot qui manque : « {{p_1}} » (indice : {{p_0}})"
+        reponse: "{{p_0}}"
+        correction: "{{p_2}}"
+      - type: nombre
+        vars: { p: [["Le chien aboie.", 3], ["Lya lit un livre.", 4], ["Les enfants jouent dans la cour.", 6], ["Je mange une glace à la fraise.", 7]] }
+        enonce: "Combien de mots y a-t-il dans la phrase : « {{p_0}} » ?"
+        reponse: "p_1"
+        correction: "« {{p_0}} » : {{p_1}} mots."
+
   - id: types-de-phrases
     titre: "Raconter, demander, s'écrier, ordonner"
     objectif: Je reconnais les quatre types de phrases et je choisis le bon point.

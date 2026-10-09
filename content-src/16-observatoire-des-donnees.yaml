@@ -72,6 +72,62 @@ lecons:
         choix: ["son titre et ses axes", "sa couleur", "la plus grande barre", "le nombre de barres"]
         correction: "Le titre et les axes disent ce qu'on mesure et dans quelle unité."
 
+  - id: diagramme-circulaire
+    titre: Le diagramme circulaire (le camembert)
+    objectif: Je lis un diagramme circulaire en reconnaissant la moitié, le quart, le tiers… du disque.
+    mots: [diagramme circulaire, camembert, secteur, proportion]
+    autrement:
+      texte: "Un diagramme circulaire, c'est une pizza partagée selon les votes. Si la moitié de la classe préfère le foot, le foot prend la moitié de la pizza. Plus une part est grosse, plus il y a de monde dedans. Le tout, la pizza entière, c'est toute la classe."
+      visuel: { type: fraction, n: 1, d: 4, forme: disque }
+      legende: "Une part d'un quart de pizza : un quart de la classe."
+    etapes:
+      - dialogue:
+          - neo: "Au journal de l'école, ils ont dessiné un camembert pour montrer les sports préférés. Mais il n'y a pas de nombres dessus !"
+          - mia: "Pas besoin : regarde la taille des parts. La part du foot fait la moitié du disque, donc la moitié des élèves préfèrent le foot."
+          - zero: "Un camembert ? Avec du fromage ? Je peux en avoir une part ?"
+      - a_quoi_ca_sert: "Dans les journaux, à la télé ou dans les livres de géographie, les diagrammes circulaires montrent comment un tout se partage : le budget d'une famille, les énergies d'un pays, les résultats d'une élection."
+      - texte: |
+          Un **diagramme circulaire** représente un **tout** (le disque entier = 100 %) partagé en **parts** (des secteurs).
+
+          - Une part qui fait **la moitié** du disque représente **la moitié** du total (50 %).
+          - **Un quart** du disque → un quart du total (25 %) ; **trois quarts** → 75 %.
+          - Pour trouver un nombre, on prend la **fraction** du total : la moitié de 28 élèves = 14 élèves.
+      - visuel: { type: fraction, n: 1, d: 2, forme: disque }
+        legende: "La moitié du disque : la moitié des élèves, 50 %."
+      - attention: "Un diagramme circulaire montre des **proportions**, pas des nombres : pour connaître le nombre d'élèves, il faut connaître le **total**."
+      - astuce: { texte: "Repère d'abord les parts faciles : la moitié (un demi-disque), le quart (un coin carré au centre), les trois quarts. Elles servent de repères pour estimer les autres.", qui: mia }
+      - retiens: "Le disque entier représente le **total** (100 %). Une part de **la moitié** = 50 %, **un quart** = 25 %, **trois quarts** = 75 %. Nombre = **fraction × total**."
+    exercices:
+      - type: nombre
+        vars: { t: [12, 16, 20, 24, 28, 32, 40] }
+        visuel: { type: fraction, n: 1, d: 2, forme: disque }
+        enonce: "Dans une classe de {{t}} élèves, la part colorée représente ceux qui préfèrent le foot. Combien d'élèves préfèrent le foot ?"
+        reponse: "t/2"
+        correction: "La part fait la moitié du disque : {{t}} ÷ 2 = {{t/2}} élèves."
+      - type: nombre
+        vars: { t: [12, 16, 20, 24, 28, 32, 40] }
+        visuel: { type: fraction, n: 1, d: 4, forme: disque }
+        enonce: "Sur {{t}} élèves, la part colorée représente ceux qui viennent à vélo. Combien sont-ils ?"
+        reponse: "t/4"
+        correction: "Un quart du disque : {{t}} ÷ 4 = {{t/4}} élèves."
+      - type: nombre
+        vars: { t: [12, 16, 20, 24, 28, 40] }
+        visuel: { type: fraction, n: 3, d: 4, forme: disque }
+        enonce: "Sur {{t}} élèves, la part colorée représente ceux qui mangent à la cantine. Combien sont-ils ?"
+        reponse: "3*t/4"
+        niveau: 2
+        correction: "Trois quarts : {{t}} ÷ 4 = {{t/4}}, puis × 3 = {{3*t/4}} élèves."
+      - type: qcm
+        visuel: { type: fraction, n: 1, d: 4, forme: disque }
+        enonce: "Quel pourcentage du total représente la part colorée ?"
+        choix: ["25 %", "50 %", "75 %", "4 %"]
+        correction: "Un quart du disque = 25 % (100 ÷ 4)."
+      - type: vf
+        vars: { t: [["Une part qui fait la moitié du disque représente 50 % du total.", true, "Vrai : le disque entier, c'est 100 %."], ["Un diagramme circulaire suffit pour connaître le nombre exact d'élèves, même sans le total.", false, "Faux : il montre des proportions ; il faut le total pour trouver des nombres."], ["Toutes les parts d'un diagramme circulaire forment ensemble 100 %.", true, "Vrai : le disque entier représente le tout."]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "{{t_2}}"
+
   - id: moyenne
     titre: La moyenne
     objectif: Je calcule une moyenne et je comprends ce qu'elle signifie.

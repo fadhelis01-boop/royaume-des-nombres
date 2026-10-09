@@ -24,6 +24,7 @@ const ViseJuste = lazy(() => import("./pages/jeux/ViseJuste").then((m) => ({ def
 const Tables = lazy(() => import("./pages/jeux/Tables").then((m) => ({ default: m.Tables })));
 const Enigmes = lazy(() => import("./pages/jeux/Enigmes").then((m) => ({ default: m.Enigmes })));
 const Demander = lazy(() => import("./pages/Demander").then((m) => ({ default: m.Demander })));
+const Fluence = lazy(() => import("./pages/Fluence").then((m) => ({ default: m.Fluence })));
 const GrandLivre = lazy(() => import("./pages/GrandLivre").then((m) => ({ default: m.GrandLivre })));
 const Tresors = lazy(() => import("./pages/Tresors").then((m) => ({ default: m.Tresors })));
 const Diagnostic = lazy(() => import("./pages/Diagnostic").then((m) => ({ default: m.Diagnostic })));
@@ -189,6 +190,9 @@ export default function App() {
       case "demander":
         page = <Demander />;
         break;
+      case "fluence":
+        page = <Fluence />;
+        break;
       case "livre":
         page = <GrandLivre />;
         break;
@@ -219,7 +223,8 @@ export default function App() {
 
   const lvl = child ? levelOf(child.xp) : null;
   const overLimit = !!child && settings.dailyLimit > 0 && minutesToday(child) >= settings.dailyLimit && !isParents && !parentUnlocked;
-  const immersive = p[0] === "lecon" || p[0] === "defi" || (p[0] === "jeux" && !!p[1]) || p[0] === "diagnostic" || p[0] === "defi-du-jour" || p[0] === "gardien" || p[0] === "echauffement" || p[1] === "prologue";
+  const immersive = p[0] === "lecon" || p[0] === "defi" || (p[0] === "jeux" && !!p[1]) || p[0] === "diagnostic" || p[0] === "defi-du-jour" || p[0] === "gardien" || p[0] === "echauffement" || p[0] === "fluence" ||
+ p[1] === "prologue";
 
   return (
     <div className={`app ${immersive ? "immersive" : ""}`}>

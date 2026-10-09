@@ -261,3 +261,58 @@ lecons:
         enonce: "« {{t_0}} » — Vrai ou faux : {{t_1}}"
         reponse: "t_2"
         correction: "{{t_3}}"
+
+  - id: comprendre-ce-que-je-lis
+    titre: Comprendre ce que je lis
+    objectif: Après avoir lu un petit texte, je sais dire qui, quoi, où et quand, et je le raconte avec mes mots.
+    mots: [comprendre, lire, texte, qui, où]
+    autrement:
+      texte: "Lire, c'est faire un film dans ta tête. Après chaque phrase, demande-toi : qu'est-ce que je vois dans mon film ? Qui est là ? Où sont-ils ? Que font-ils ? Si ton film est flou, relis la phrase."
+      visuel: { type: schema, emoji: "🎬", titre: "Le film dans ma tête", legendes: [{ label: "Qui ?", detail: "les personnages" }, { label: "Où ? Quand ?", detail: "le décor" }, { label: "Quoi ?", detail: "ce qui se passe" }, { label: "Pourquoi ?", detail: "ce que je devine" }] }
+    etapes:
+      - dialogue:
+          - zero: "J'ai lu toute l'histoire à voix haute, sans me tromper ! …Mais je ne sais plus de quoi ça parlait."
+          - mia: "Lire, ce n'est pas seulement dire les mots : c'est comprendre l'histoire. On va apprendre à se poser les bonnes questions."
+          - neo: "Qui ? Quoi ? Où ? Quand ? Avec ces quatre clés, aucune histoire ne t'échappe !"
+      - a_quoi_ca_sert: "Comprendre une consigne à l'école, une recette, un message, l'histoire d'un livre que tu aimes : lire sert à comprendre. Un bon lecteur vérifie toujours qu'il a compris."
+      - texte: |
+          Pour bien comprendre un texte :
+
+          1. Je lis **une phrase à la fois** et je fais **un film dans ma tête**.
+          2. Je me pose les **questions clés** : **Qui ?** (les personnages) **Où ?** **Quand ?** **Quoi ?** (ce qui se passe).
+          3. Si je ne comprends plus, je **relis** la phrase, plus lentement.
+          4. À la fin, je **raconte** l'histoire avec mes mots, sans regarder le texte.
+      - texte: |
+          *Le petit lapin*
+
+          Ce matin, Pipo le lapin a faim. Il sort de son terrier et court jusqu'au jardin de la fermière. Là, il voit une grosse carotte orange. Il la tire, la tire… et tombe sur les fesses ! Le chien de la ferme aboie. Pipo s'enfuit avec sa carotte.
+      - astuce: { texte: "Après chaque petit morceau du texte, arrête-toi et dis dans ta tête ce qui vient de se passer, en une seule phrase.", qui: mia }
+      - retiens: "Pour **comprendre** un texte, je fais un **film dans ma tête** et je me demande **qui**, **où**, **quand** et **quoi**. Si je ne comprends plus, je **relis**."
+    exercices:
+      - type: qcm
+        enonce: "Lis : *Ce matin, Pipo le lapin a faim. Il sort de son terrier et court jusqu'au jardin de la fermière. Là, il voit une grosse carotte orange. Il la tire, la tire… et tombe sur les fesses ! Le chien de la ferme aboie. Pipo s'enfuit avec sa carotte.*\n\nQui est le personnage principal ?"
+        choix: ["un lapin", "un chien", "la fermière", "une carotte"]
+        correction: "« Pipo le lapin a faim » : c'est lui le personnage principal."
+      - type: qcm
+        enonce: "Lis : *Ce matin, Pipo le lapin a faim. Il sort de son terrier et court jusqu'au jardin de la fermière. Là, il voit une grosse carotte orange. Il la tire, la tire… et tombe sur les fesses ! Le chien de la ferme aboie. Pipo s'enfuit avec sa carotte.*\n\nOù va le lapin ?"
+        choix: ["au jardin de la fermière", "à l'école", "dans la forêt", "chez le chien"]
+        correction: "« Il court jusqu'au jardin de la fermière. »"
+      - type: qcm
+        enonce: "Lis : *Ce matin, Pipo le lapin a faim. Il sort de son terrier et court jusqu'au jardin de la fermière. Là, il voit une grosse carotte orange. Il la tire, la tire… et tombe sur les fesses ! Le chien de la ferme aboie. Pipo s'enfuit avec sa carotte.*\n\nPourquoi le lapin tombe-t-il sur les fesses ?"
+        choix: ["parce qu'il tire très fort sur la carotte", "parce que le chien le pousse", "parce qu'il glisse sur l'herbe mouillée", "parce qu'il est fatigué"]
+        correction: "Il tire, il tire… la carotte sort d'un coup et il tombe : il faut le deviner, le texte ne le dit pas avec ces mots-là."
+      - type: qcm
+        enonce: "Lis : *Ce matin, Pipo le lapin a faim. Il sort de son terrier et court jusqu'au jardin de la fermière. Là, il voit une grosse carotte orange. Il la tire, la tire… et tombe sur les fesses ! Le chien de la ferme aboie. Pipo s'enfuit avec sa carotte.*\n\nQuand se passe l'histoire ?"
+        choix: ["le matin", "le soir", "la nuit", "on ne sait pas"]
+        correction: "« Ce matin, Pipo le lapin a faim. »"
+      - type: qcm
+        vars: { t: [["Léa met son manteau, ses bottes, et prend son parapluie.", "Il pleut.", "Il fait très chaud.", "C'est la nuit."], ["Tom souffle les bougies, tout le monde chante et applaudit.", "C'est son anniversaire.", "Il est malade.", "Il va à l'école."], ["Le chat s'étire, bâille, puis se roule en boule sur le coussin.", "Le chat va dormir.", "Le chat a faim.", "Le chat veut jouer dehors."]] }
+        enonce: "Lis : « {{t_0}} » Qu'est-ce qu'on peut deviner ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        niveau: 2
+        correction: "Les indices du texte permettent de deviner : {{t_1}}"
+      - type: ordre
+        enonce: "Remets l'histoire de Pipo dans l'ordre."
+        items: ["Pipo a faim.", "Il court jusqu'au jardin.", "Il tire la carotte.", "Il tombe sur les fesses.", "Le chien aboie et Pipo s'enfuit."]
+        correction: "Faim → jardin → carotte → chute → fuite."
+

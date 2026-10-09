@@ -109,6 +109,7 @@ export function Diagnostic() {
         key={q.seed}
         inst={q}
         statKey="diagnostic"
+        autrement={false}
         maxTries={1}
         onResult={(r) => {
           const s = score + (r.ok ? 1 : 0);

@@ -96,7 +96,10 @@ export interface Lesson {
   exercices: ExSpec[];
   nb_defi: number;
   mots?: string[];
+  /** « Explique-moi autrement » : une image de la vie et un schéma propres à la leçon (facultatif). */
+  autrement?: { texte?: string; visuel?: VisSpec; legende?: string; qui?: Who };
 }
+
 
 export interface World {
   id: string;
@@ -190,7 +193,31 @@ export interface Manifest {
   planetes: Planete[];
   familles: Famille[];
   dicoCount?: number;
+  /** textes de lecture chronométrée (fluence) */
+  fluence?: TexteFluence[];
 }
+
+export interface TexteFluence {
+  id: string;
+  niveau: "CP" | "CE1" | "CE2" | "CM";
+  titre: string;
+  texte: string;
+}
+/** une lecture chronométrée : mots correctement lus par minute (MCLM) */
+export interface EssaiFluence {
+  at: number;
+  texte: string;
+  niveau: string;
+  prepare: boolean;
+  /** mots lus (jusqu'au dernier mot atteint) */
+  lus: number;
+  erreurs: number;
+  secondes: number;
+  mclm: number;
+  /** auto-évaluation de la lecture à voix haute (points respectés, ton, groupes de mots) */
+  prosodie?: number[];
+}
+
 
 export interface Choix {
   qui: Who;
@@ -242,6 +269,9 @@ export interface Child {
   badges: string[];
   progress: Record<string, LessonProgress>;
   srs: Record<string, SrsCard>;
+  /** lectures chronométrées (fluence), les plus récentes d'abord */
+  fluence?: EssaiFluence[];
+
   skills: Record<string, { ok: number; ko: number }>; // par leçon
   mistakes: { key: string; q: string; given: string; expected: string; at: number }[];
   games: Record<string, number>; // meilleurs scores

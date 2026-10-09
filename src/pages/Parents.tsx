@@ -8,7 +8,7 @@ import { MODELS } from "../lib/ai-config";
 import { levelOf } from "../lib/rewards";
 import { Mascot, NAMES } from "../components/Mascot";
 import type { Child, Who } from "../lib/types";
-import { AssistantPlus, Bilans, Confidentialite, HorsConnexion, marquerSauvegarde, RappelSauvegarde } from "./ParentsPlus";
+import { AssistantPlus, Bilans, Confidentialite, HorsConnexion, marquerSauvegarde, RappelAgenda, RappelSauvegarde } from "./ParentsPlus";
 
 const TABS = [
   { id: "suivi", label: "📊 Suivi" },
@@ -758,7 +758,9 @@ function Sauvegarde() {
         {msg && <p>{msg}</p>}
       </section>
       <HorsConnexion />
+      <RappelAgenda />
     </div>
+
   );
 }
 

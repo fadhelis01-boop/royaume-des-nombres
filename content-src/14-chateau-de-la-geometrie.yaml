@@ -76,6 +76,64 @@ lecons:
         unite: °
         correction: "180 ÷ 3 = 60°."
 
+  - id: mediatrice-bissectrice
+    titre: Milieu, médiatrice, bissectrice et cercle circonscrit
+    objectif: Je connais et j'utilise le milieu d'un segment, la médiatrice (à égale distance de deux points) et la bissectrice (qui coupe un angle en deux).
+    mots: [milieu, médiatrice, bissectrice, cercle circonscrit, distance]
+    autrement:
+      texte: "Deux amis habitent en A et en B et veulent construire une cabane exactement à la même distance de chez eux. Toutes les places possibles forment une droite : la médiatrice de [AB]. Elle passe par le milieu du chemin et le coupe en angle droit. La bissectrice, elle, c'est le pli qui coupe une part de pizza (un angle) en deux parts égales."
+      visuel: { type: schema, emoji: "🏕️", titre: "La cabane équitable", legendes: [{ label: "médiatrice de [AB]", detail: "tous les points à égale distance de A et de B" }, { label: "elle passe par le milieu", detail: "et elle est perpendiculaire à [AB]" }, { label: "bissectrice", detail: "le pli qui partage un angle en deux angles égaux" }] }
+    etapes:
+      - dialogue:
+          - neo: "Lya habite en A, moi en B. On veut un point de rendez-vous juste, à égale distance de nos deux maisons. Où le placer ?"
+          - mia: "Au milieu du chemin, c'est une solution… mais il y en a une infinité d'autres ! Elles sont toutes sur une même droite : la médiatrice."
+          - zero: "Et si on est trois ? Je veux venir aussi !"
+          - mia: "Alors on cherche le point où se croisent les médiatrices. C'est le centre du cercle qui passe par nos trois maisons !"
+      - a_quoi_ca_sert: "Placer une antenne ou une caserne de pompiers à égale distance de plusieurs villages, trouver le centre d'une assiette cassée en archéologie, plier une feuille en deux parfaitement : la médiatrice et la bissectrice servent partout."
+      - texte: |
+          - Le **milieu** I de [AB] est le point de [AB] tel que **IA = IB**.
+          - La **médiatrice** de [AB] est la droite **perpendiculaire** à [AB] qui passe par son **milieu**.
+          - **Propriété caractéristique** : un point est sur la médiatrice de [AB] **si et seulement si** il est **à égale distance** de A et de B.
+          - Les trois médiatrices d'un triangle se coupent en un même point O, **centre du cercle circonscrit** (le cercle qui passe par les trois sommets).
+          - La **bissectrice** d'un angle est la demi-droite qui le partage en **deux angles égaux**.
+      - visuel:
+          type: figure
+          points: { A: [0, 0], B: [6, 0], I: [3, 0], M: [3, 4], N: [3, -2] }
+          segments: [[A, B], [M, N, "", true], [M, A, "", true], [M, B, "", true]]
+          angles_droits: [[B, I, M]]
+        legende: "La médiatrice de [AB] (en pointillés) passe par le milieu I, à angle droit. M est dessus : MA = MB."
+      - attention: "La médiatrice est une **droite** perpendiculaire passant par le **milieu** : une perpendiculaire qui ne passe pas par le milieu n'est pas la médiatrice."
+      - astuce: { texte: "Médiatrice : « média » = milieu. Bissectrice : « bi » = deux, elle coupe l'angle en deux. Au compas, une médiatrice se trace avec deux arcs de même rayon, un de chaque côté.", qui: mia }
+      - retiens: "**Médiatrice** de [AB] : perpendiculaire à [AB] en son milieu ; ses points sont **à égale distance de A et B**. Les 3 médiatrices d'un triangle se coupent au **centre du cercle circonscrit**. **Bissectrice** : partage un angle en **deux angles égaux**."
+    exercices:
+      - type: nombre
+        vars: { l: "4..30" }
+        enonce: "I est le milieu de [AB], et AB = {{2*l}} cm. Combien mesure AI ?"
+        reponse: "l"
+        unite: cm
+        correction: "Le milieu partage le segment en deux longueurs égales : {{2*l}} ÷ 2 = {{l}} cm."
+      - type: nombre
+        vars: { d: "3..15" }
+        enonce: "M est sur la médiatrice de [AB] et MA = {{d}} cm. Combien mesure MB ?"
+        reponse: "d"
+        unite: cm
+        correction: "Tout point de la médiatrice est à égale distance de A et de B : MB = MA = {{d}} cm."
+      - type: nombre
+        vars: { a: [40, 50, 60, 70, 80, 90, 100, 120, 130, 140] }
+        enonce: "On trace la bissectrice d'un angle de {{a}}°. Combien mesure chacun des deux angles obtenus ?"
+        reponse: "a/2"
+        unite: "°"
+        correction: "La bissectrice partage l'angle en deux angles égaux : {{a}} ÷ 2 = {{a/2}}°."
+      - type: qcm
+        enonce: "Le point où se coupent les trois médiatrices d'un triangle est…"
+        choix: ["le centre du cercle qui passe par les trois sommets", "le milieu du plus grand côté", "toujours à l'intérieur du triangle", "un sommet du triangle"]
+        correction: "C'est le centre du cercle circonscrit : il est à égale distance des trois sommets (il peut être à l'extérieur si le triangle a un angle obtus)."
+      - type: vf
+        vars: { t: [["La médiatrice d'un segment passe par son milieu.", true, "Vrai : c'est la perpendiculaire au segment en son milieu."], ["Toute droite perpendiculaire à [AB] est sa médiatrice.", false, "Faux : il faut aussi qu'elle passe par le milieu de [AB]."], ["Si PA = PB, alors P est sur la médiatrice de [AB].", true, "Vrai : c'est la propriété caractéristique de la médiatrice."], ["La bissectrice d'un angle droit forme deux angles de 45°.", true, "Vrai : 90 ÷ 2 = 45."]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "{{t_2}}"
+
   - id: figures-particulieres
     titre: Triangles et quadrilatères particuliers
     objectif: Je connais les propriétés des triangles et quadrilatères particuliers.

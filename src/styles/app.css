@@ -3084,3 +3084,33 @@ select {
 .sd-pas { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line); }
 .sd-pas.on { background: var(--c-violet); border-color: var(--c-violet); }
 .sd-pas.fort { width: 20px; height: 20px; }
+
+/* ---------- « Explique-moi autrement » (2.3) ---------- */
+.autrement-btn { margin-top: 8px; }
+.autrement-fond { position: fixed; inset: 0; z-index: 60; background: color-mix(in srgb, var(--ink) 45%, transparent); display: flex; align-items: flex-end; justify-content: center; padding: 12px; overflow-y: auto; }
+.autrement { position: relative; background: var(--paper); color: var(--ink); border-radius: var(--radius) var(--radius) 0 0; box-shadow: var(--shadow); width: min(720px, 100%); max-height: 92vh; overflow-y: auto; padding: 18px 16px 22px; animation: monte 0.25s ease-out; }
+@media (min-width: 700px) { .autrement-fond { align-items: center; } .autrement { border-radius: var(--radius); } }
+@keyframes monte { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+.autrement-x { position: absolute; top: 8px; right: 8px; }
+.autrement-choix { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 12px; }
+.autrement-carte { display: flex; flex-direction: column; align-items: center; gap: 6px; min-height: 96px; padding: 12px 8px; border: 2px solid var(--line); border-radius: 18px; background: var(--bg); color: var(--ink); font: 600 1rem var(--title); cursor: pointer; text-align: center; }
+.autrement-carte:hover, .autrement-carte:focus-visible { border-color: var(--c-violet); }
+.autrement-emoji { font-size: 2rem; line-height: 1; }
+.autrement-corps { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.autrement-bloc { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+.autrement-bloc.adulte ul { padding-left: 1.2em; margin: 6px 0; }
+.autrement-avis { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--line); }
+
+/* ---------- Lecture chronométrée (fluence, 2.3) ---------- */
+.fluence-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 12px 0; }
+.fluence-carte { display: flex; flex-direction: column; gap: 4px; text-align: left; cursor: pointer; border: 2px solid var(--line); }
+.fluence-carte:hover, .fluence-carte:focus-visible { border-color: var(--c-violet); }
+.fluence-histo { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.fluence-histo li { display: grid; grid-template-columns: auto 1fr auto auto; gap: 8px; align-items: baseline; }
+.fluence-chrono { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--paper); padding: 8px 12px; border-radius: 14px; box-shadow: var(--shadow); font: 700 1.6rem var(--title); }
+.fluence-consigne { text-align: center; font-size: 1.1rem; }
+.fluence-texte { font-size: calc(1.35rem * var(--font-scale)); line-height: 2.1; background: var(--paper); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+.fluence-mot { background: none; border: 0; padding: 2px 1px; margin: 0; font: inherit; color: var(--ink); border-radius: 6px; cursor: pointer; min-height: 0; }
+.fluence-mot.err { background: var(--ko-l); color: var(--ko); text-decoration: line-through; }
+.fluence-mot.apres { opacity: 0.35; }
+@media (max-width: 480px) { .fluence-histo li { grid-template-columns: 1fr auto; } }
