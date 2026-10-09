@@ -23,6 +23,8 @@ export const DEFAULT_SETTINGS: Settings = {
   reduceMotion: false,
   unlockAll: false,
   dailyLimit: 0,
+  aiDailyLimit: 15,
+  lastBackup: 0,
   theme: "auto",
 };
 
@@ -309,8 +311,13 @@ export function finishDefi(key: string, score: number) {
       c.srs[key] ??= { key, box: 1, due: dayNumber() + 1 };
     }
     c.stars += gained;
+    c.counters.defis = (c.counters.defis ?? 0) + 1;
     if (score >= 0.999) c.counters.perfect = (c.counters.perfect ?? 0) + 1;
   });
+  // mi-parcours d'un monde : un habitant est libéré (voir engagement.ts)
+  const w = worldsRef.find((x) => key.startsWith(x.id + "/"));
+  const c1 = activeChild();
+  if (w && c1 && score >= MASTERY - 1e-9) void import("./engagement").then((m) => m.verifierMiMonde(c1, w));
   let xp = gained * XP.star;
   if (score >= MASTERY - 1e-9 && !prev?.done) xp += XP.lessonDone;
   addGems(gained * 3 + (score >= MASTERY - 1e-9 && !prev?.done ? 5 : 0));

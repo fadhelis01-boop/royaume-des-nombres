@@ -30,6 +30,7 @@ lecons:
           *un chat **noir**, une **grande** maison, des enfants **joyeux***.
 
           Il peut être **avant** le nom (*un **petit** chat*) ou **après** (*un chat **noir***).
+      - visuel: {"type":"phrase","groupes":[{"mots":"un","role":"determinant"},{"mots":"grand","role":"adjectif"},{"mots":"château","role":"nom"},{"mots":"sombre","role":"adjectif"}]}
       - astuce:
           texte: "Test : on peut mettre « **très** » devant un adjectif : très noir, très grand. Pas devant un nom !"
           qui: neo
@@ -72,6 +73,7 @@ lecons:
           - **-f → -ve** : vif → vi**ve**, neuf → neu**ve**
           - **-el, -en, -on → on double** : cruel → cru**elle**, ancien → anci**enne**, bon → b**onne**
           - les spéciaux : beau → **belle**, nouveau → **nouvelle**, vieux → **vieille**, blanc → **blanche**, doux → **douce**, long → **longue**, gentil → **gentille**
+      - visuel: {"type":"phrase","legende":"Au féminin, l'adjectif prend souvent un e.","groupes":[{"mots":"une","role":"determinant","etiquette":"féminin"},{"mots":"amie","role":"nom"},{"mots":"contente","role":"adjectif","etiquette":"content + e"}]}
       - astuce:
           texte: "Le plus souvent, ajoute un e : petit → petite. Attention aux familles spéciales : -eux → -euse, -er → -ère, -f → -ve (neuf → neuve)."
           qui: mia
@@ -148,6 +150,7 @@ lecons:
 
           *un petit chat noir* → *de**s** petit**s** chat**s** noir**s***
           *une belle fleur rouge* → *de**s** belle**s** fleur**s** rouge**s***
+      - visuel: {"type":"phrase","legende":"Le nom donne l'ordre, les autres suivent : tous au pluriel.","groupes":[{"mots":"les","role":"determinant","etiquette":"pluriel"},{"mots":"petits","role":"adjectif","etiquette":"+ s"},{"mots":"chats","role":"nom","etiquette":"+ s (chef)"},{"mots":"noirs","role":"adjectif","etiquette":"+ s"}]}
       - astuce:
           texte: "Trace un fil (une flèche) du nom vers chaque mot qui l'accompagne : chaque mot touché par le fil doit s'accorder !"
           qui: mia
@@ -184,6 +187,7 @@ lecons:
           - le sujet est **loin** du verbe : *Les enfants de ma voisine jou**ent**.*
           - le sujet est **après** le verbe : *Dans la forêt vivent des loups.* → vivent (les loups vivent).
           - il y a **deux sujets** : *Léa et Tom chant**ent**.* (= ils)
+      - visuel: {"type":"phrase","legende":"Le sujet est loin du verbe : je le remplace par « elles ».","groupes":[{"mots":"Les fleurs du jardin de ma voisine","role":"sujet","etiquette":"sujet = elles"},{"mots":"poussent","role":"verbe","etiquette":"-ent"}]}
       - attention:
           texte: "Pose toujours la question « Qui est-ce qui … ? » avant d'écrire la terminaison."
           qui: neo

@@ -50,10 +50,10 @@ lecons:
         reponse: "t_1"
         correction: "{{t_1}} pattes."
       - type: vf
-        vars: { t: [["Une araignée est un insecte.", false], ["Les insectes ont 6 pattes.", true], ["La loupe aide à voir les détails.", true]] }
+        vars: { "t":[["Une araignée est un insecte.",false,"Faux : l'araignée a 8 pattes, c'est un arachnide."],["Les insectes ont 6 pattes.",true,"Vrai : 6 pattes, c'est le signe des insectes."],["La loupe aide à voir les détails.",true,"Vrai : la loupe grossit ce qu'on observe."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'araignée a 8 pattes : ce n'est pas un insecte, c'est un arachnide."
+        correction: "{{t_2}}"
 
   - id: classer-le-vivant
     titre: "Classer : ce que les êtres vivants ont"
@@ -84,10 +84,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Plumes = oiseaux ; poils = mammifères (même le dauphin et la baleine ont quelques poils à la naissance)."
       - type: vf
-        vars: { t: [["On classe les animaux selon l'endroit où ils vivent.", false], ["Tous les animaux qui volent sont des oiseaux.", false], ["Les mammifères allaitent leurs petits.", true]] }
+        vars: { "t":[["On classe les animaux selon l'endroit où ils vivent.",false,"Faux : on classe selon ce que les êtres vivants possèdent, pas selon leur milieu."],["Tous les animaux qui volent sont des oiseaux.",false,"Faux : la chauve-souris et le papillon volent mais ne sont pas des oiseaux."],["Les mammifères allaitent leurs petits.",true,"Vrai : c'est même ce qui donne leur nom aux mammifères (les mamelles)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On classe selon ce que les êtres vivants possèdent."
+        correction: "{{t_2}}"
 
   - id: schema-legende
     titre: "Faire un schéma légendé"
@@ -128,10 +128,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un schéma doit être le plus beau possible, comme une œuvre d'art.", false], ["Les légendes s'écrivent à l'horizontale.", true], ["Un schéma doit montrer ce qu'on observe vraiment.", true]] }
+        vars: { "t":[["Un schéma doit être le plus beau possible, comme une œuvre d'art.",false,"Faux : un schéma vise la clarté et l'exactitude, pas la beauté."],["Les légendes s'écrivent à l'horizontale.",true,"Vrai : des traits de légende horizontaux, à la règle."],["Un schéma doit montrer ce qu'on observe vraiment.",true,"Vrai : on dessine ce qu'on voit, pas ce qu'on imagine."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un schéma vise la clarté et l'exactitude, pas la beauté."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["Observer attentivement", "Tracer les formes au crayon", "Tracer les traits de légende à la règle", "Écrire les légendes", "Ajouter le titre"]] }
         enonce: "Remets les étapes d'un schéma dans l'ordre."
@@ -170,7 +170,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Au microscope, on commence par le plus fort grossissement.", false], ["Robert Hooke a donné leur nom aux cellules.", true], ["Leeuwenhoek a été le premier à observer des bactéries.", true]] }
+        vars: { "t":[["Au microscope, on commence par le plus fort grossissement.",false,"Faux : on commence par le plus faible grossissement pour trouver la zone."],["Robert Hooke a donné leur nom aux cellules.",true,"Vrai : en 1665, il a vu des « petites cellules » dans du liège."],["Leeuwenhoek a été le premier à observer des bactéries.",true,"Vrai : à la fin du XVIIe siècle, avec ses propres microscopes."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On commence par le plus faible grossissement pour trouver la zone à observer."
+        correction: "{{t_2}}"

@@ -98,10 +98,10 @@ lecons:
         niveau: 2
         correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
       - type: vf
-        vars: { t: [["lapin", "girafe", false], ["avion", "zèbre", true], ["mouton", "loup", false], ["cerise", "domino", true], ["orange", "pirate", true], ["vélo", "tigre", false]] }
+        vars: { "t":[["lapin","girafe",false,"Faux : g (girafe) vient avant l (lapin) dans l'alphabet."],["avion","zèbre",true,"Vrai : a (avion) vient bien avant z (zèbre)."],["mouton","loup",false,"Faux : l (loup) vient avant m (mouton)."],["cerise","domino",true,"Vrai : c (cerise) vient avant d (domino)."],["orange","pirate",true,"Vrai : o (orange) vient avant p (pirate)."],["vélo","tigre",false,"Faux : t (tigre) vient avant v (vélo)."]] }
         enonce: "Dans le dictionnaire, « {{t_0}} » vient avant « {{t_1}} »."
         reponse: "t_2"
-        correction: "On compare la première lettre de chaque mot."
+        correction: "{{t_3}}"
 
   - id: syllabes
     titre: Les syllabes, en tapant dans les mains
@@ -116,6 +116,7 @@ lecons:
 
           Pour les compter, on **tape dans ses mains** en disant le mot :
           **la-pin** 👏👏 (2) — **pa-pi-llon** 👏👏👏 (3) — **chat** 👏 (1).
+      - visuel: {"type":"phrase","legende":"Je tape une fois dans mes mains par syllabe : cho-co-lat = 3 syllabes.","groupes":[{"mots":"cho","role":"sujet","etiquette":"1"},{"mots":"co","role":"verbe","etiquette":"2"},{"mots":"lat","role":"cod","etiquette":"3"}]}
       - astuce:
           texte: "Mets ta main sous ton menton : à chaque syllabe, ton menton descend !"
           qui: mia
@@ -256,7 +257,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}."
       - type: vf
-        vars: { t: [["Le chat noir dort sur le lit.", "Le chat est blanc.", false], ["Léa mange une pomme rouge.", "La pomme est rouge.", true], ["Le lapin saute dans le jardin.", "Le lapin est dans la cuisine.", false], ["Il pleut, alors Tom prend son parapluie.", "Il fait beau.", false], ["Lya a trois ballons bleus.", "Lya a des ballons.", true]] }
+        vars: { "t":[["Le chat noir dort sur le lit.","Le chat est blanc.",false,"Faux : la phrase dit que le chat est noir."],["Léa mange une pomme rouge.","La pomme est rouge.",true,"Vrai : la phrase dit « une pomme rouge »."],["Le lapin saute dans le jardin.","Le lapin est dans la cuisine.",false,"Faux : le lapin saute dans le jardin, pas dans la cuisine."],["Il pleut, alors Tom prend son parapluie.","Il fait beau.",false,"Faux : il pleut, puisque Tom prend son parapluie."],["Lya a trois ballons bleus.","Lya a des ballons.",true,"Vrai : trois ballons bleus, ce sont bien des ballons."]] }
         enonce: "« {{t_0}} » — Vrai ou faux : {{t_1}}"
         reponse: "t_2"
-        correction: "Relis bien la phrase : tout est écrit dedans."
+        correction: "{{t_3}}"

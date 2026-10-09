@@ -28,6 +28,7 @@ lecons:
           La Terre **reçoit** l'énergie du Soleil (surtout de la lumière visible). Elle en **réfléchit** environ **30 %** directement vers l'espace (nuages, glaces, déserts : c'est l'**albédo**) ; le reste chauffe le sol, les océans et l'air.
           Pour garder une température stable, la Terre doit **renvoyer** autant d'énergie qu'elle en absorbe, sous forme d'**infrarouges**. Les gaz à effet de serre en retiennent une partie : si on en ajoute, il faut que la surface se réchauffe pour rétablir l'équilibre.
           **Rétroaction** : quand la banquise fond, la mer sombre (albédo faible) absorbe plus d'énergie… ce qui accélère le réchauffement.
+      - visuel: {"type":"schema","titre":"Le bilan d'énergie de la Terre","emoji":"🌍","legendes":[{"label":"Reçu","detail":"lumière du Soleil"},{"label":"Renvoyé","detail":"chaleur vers l'espace"},{"label":"Réfléchi","detail":"nuages, glaces (environ 30 %)"},{"label":"Équilibre","detail":"reçu = renvoyé → température stable"}]}
       - astuce:
           texte: "Pense à une baignoire : l'énergie du Soleil est le robinet, l'énergie renvoyée est la bonde. Si la bonde est un peu bouchée (gaz à effet de serre), le niveau monte."
           qui: neo
@@ -44,10 +45,10 @@ lecons:
         reponse: "e*0.7"
         correction: "70 % de {{e}} = {{e*0.7}}."
       - type: vf
-        vars: { t: [["À l'équilibre, la Terre renvoie autant d'énergie qu'elle en absorbe.", true], ["La Terre renvoie son énergie vers l'espace surtout sous forme d'infrarouges.", true], ["Les nuages n'ont aucun effet sur l'énergie reçue.", false]] }
+        vars: { "t":[["À l'équilibre, la Terre renvoie autant d'énergie qu'elle en absorbe.",true,"Vrai : sinon sa température changerait."],["La Terre renvoie son énergie vers l'espace surtout sous forme d'infrarouges.",true,"Vrai : un rayonnement invisible, la chaleur."],["Les nuages n'ont aucun effet sur l'énergie reçue.",false,"Faux : les nuages réfléchissent la lumière solaire (et retiennent des infrarouges)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les nuages réfléchissent la lumière solaire (et retiennent aussi des infrarouges)."
+        correction: "{{t_2}}"
 
   - id: cycle-du-carbone
     titre: "Le cycle du carbone"
@@ -63,6 +64,7 @@ lecons:
           - La **photosynthèse** prend du CO₂ à l'air ; la **respiration** et la **décomposition** en rendent.
           - Les **combustibles fossiles** ont stocké du carbone pendant des **millions d'années** ; nous le relâchons en **quelques décennies**.
           - Les **puits de carbone** (océans, forêts) absorbent environ **la moitié** de nos émissions ; l'autre moitié s'accumule dans l'atmosphère. Le CO₂ dissous **acidifie** les océans.
+      - visuel: {"type":"cycle","centre":"carbone","etapes":[{"emoji":"💨","label":"CO₂ de l'air"},{"emoji":"🌳","label":"les plantes l'absorbent"},{"emoji":"🐄","label":"les animaux mangent et respirent"},{"emoji":"🍂","label":"décomposition, sols"},{"emoji":"🌊","label":"les océans en dissolvent"}]}
       - astuce:
           texte: "Les grands réservoirs de carbone : roches, océans, sols, êtres vivants, atmosphère. Brûler du pétrole fait passer très vite du carbone des roches vers l'air."
           qui: zero
@@ -80,10 +82,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le carbone du charbon vient d'anciennes plantes.", true], ["Planter des arbres compense à lui seul toutes les émissions mondiales.", false], ["Les coquillages stockent du carbone dans le calcaire.", true]] }
+        vars: { "t":[["Le carbone du charbon vient d'anciennes plantes.",true,"Vrai : des forêts enfouies il y a des millions d'années."],["Planter des arbres compense à lui seul toutes les émissions mondiales.",false,"Faux : les forêts aident, mais il faut surtout réduire les émissions."],["Les coquillages stockent du carbone dans le calcaire.",true,"Vrai : le calcaire est un grand réservoir de carbone."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les forêts aident, mais ne suffisent pas : il faut surtout réduire les émissions."
+        correction: "{{t_2}}"
 
   - id: consequences
     titre: "Les conséquences du réchauffement"
@@ -115,10 +117,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Le Soleil n'est pas devenu plus brillant ; les marées ne dépendent pas du climat."
       - type: vf
-        vars: { t: [["Selon le GIEC, le réchauffement actuel est dû aux activités humaines.", true], ["Chaque tonne de CO₂ évitée compte.", true], ["Il est désormais trop tard pour agir sur le climat.", false]] }
+        vars: { "t":[["Selon le GIEC, le réchauffement actuel est dû aux activités humaines.",true,"Vrai : c'est la conclusion des rapports du GIEC."],["Chaque tonne de CO₂ évitée compte.",true,"Vrai : chaque dixième de degré évité réduit les risques."],["Il est désormais trop tard pour agir sur le climat.",false,"Faux : agir reste utile, chaque dixième de degré compte."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Chaque dixième de degré évité réduit les risques : agir reste utile."
+        correction: "{{t_2}}"
 
   - id: empreinte-carbone
     titre: "L'empreinte carbone"
@@ -189,7 +191,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Végétaliser une ville aide à lutter contre les canicules.", true], ["Seuls les gestes individuels comptent.", false], ["L'adaptation remplace la réduction des émissions.", false]] }
+        vars: { "t":[["Végétaliser une ville aide à lutter contre les canicules.",true,"Vrai : les arbres rafraîchissent l'air."],["Seuls les gestes individuels comptent.",false,"Faux : il faut à la fois des gestes individuels et collectifs."],["L'adaptation remplace la réduction des émissions.",false,"Faux : il faut à la fois atténuer et s'adapter."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Il faut à la fois atténuer et s'adapter, individuellement et collectivement."
+        correction: "{{t_2}}"

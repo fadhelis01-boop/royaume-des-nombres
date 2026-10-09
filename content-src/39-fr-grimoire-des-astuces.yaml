@@ -30,6 +30,7 @@ lecons:
           2. 🔗 **Accords dans le groupe nominal** : je trace un fil du nom vers ses déterminants et adjectifs.
           3. ⚙️ **Sujet → verbe** : je cherche le sujet de chaque verbe et je vérifie la terminaison.
           4. 🐸 **Homophones** : a/à, et/est, son/sont… je teste avec le Miroir du Temps.
+      - visuel: {"type":"frise","titre":"Relire en plusieurs passages","fleche":"un seul type d'erreur à chaque passage","points":[{"emoji":"📖","label":"le sens"},{"emoji":"🔠","label":"les majuscules et les points"},{"emoji":"🔗","label":"les accords"},{"emoji":"⏱️","label":"les verbes"},{"emoji":"👯","label":"les homophones"}]}
       - astuce:
           texte: "Relis à voix basse en pointant chaque mot avec ton doigt : ton œil ne saute plus de mots."
           qui: mia

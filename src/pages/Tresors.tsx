@@ -3,6 +3,8 @@ import { useChild } from "../lib/store";
 import { BADGES, levelOf, TITLES, xpForLevel } from "../lib/rewards";
 import { Bubble, Mascot } from "../components/Mascot";
 import { Icone } from "../components/Icone";
+import { HABITANTS_ALBUM } from "../lib/engagement";
+import { visuel } from "../lib/img";
 
 export function Tresors() {
   const child = useChild()!;
@@ -42,6 +44,21 @@ export function Tresors() {
               <span className="badge-emoji">{got ? <Icone cat="badges" id={b.id} emoji={b.emoji} size={56} /> : "❔"}</span>
               <strong>{b.titre}</strong>
               <small>{b.desc}</small>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2>🐾 Les habitants libérés ({(child.album ?? []).length}/{HABITANTS_ALBUM.length})</h2>
+      <p className="small muted">À la moitié de chaque monde, un habitant est libéré du gris et rejoint ton album.</p>
+      <div className="album habitants-album">
+        {HABITANTS_ALBUM.map((h) => {
+          const got = (child.album ?? []).includes(h.id);
+          const src = visuel("habitants", h.id);
+          return (
+            <div key={h.id} className={`sticker ${got ? "got" : ""}`}>
+              {src ? <img src={src} alt={got ? h.nom : "habitant encore gris"} width={64} height={64} className={got ? "" : "gris"} loading="lazy" /> : <span className="sticker-emoji">❔</span>}
+              <small>{got ? h.nom : "???"}</small>
             </div>
           );
         })}

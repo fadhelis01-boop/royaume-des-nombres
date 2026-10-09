@@ -32,6 +32,7 @@ lecons:
           1. Je change le temps : **hier… / demain…** → le verbe change (*il court → il courra*).
           2. J'entoure avec **ne … pas** : *il **ne** court **pas*** → « court » est le verbe.
           3. Je cherche **qui** fait l'action : la réponse est le sujet, et le verbe est juste après.
+      - visuel: {"type":"phrase","legende":"Le verbe dit ce qui se passe ; il change avec le temps (hier, il dormait).","groupes":[{"mots":"Le bébé","role":"sujet"},{"mots":"dort","role":"verbe"},{"mots":"dans son lit","role":"ccl"}]}
       - astuce:
           texte: "Le test du « ne… pas » est le plus rapide : le verbe est toujours pris en sandwich !"
           qui: mia
@@ -109,6 +110,7 @@ lecons:
           *Les enfants jouent.* → Qui est-ce qui joue ? → **les enfants** : c'est le sujet.
 
           Le sujet peut être un **nom** (*le chat*), un **groupe** (*le petit chat noir*), un **pronom** (*il*), un **nom propre** (*Léa*).
+      - visuel: {"type":"phrase","legende":"« C'est le chat de Léa qui… dort » : le sujet est encadré.","groupes":[{"mots":"Le chat de Léa","role":"sujet"},{"mots":"dort","role":"verbe"},{"mots":"au soleil","role":"ccl"}]}
       - astuce:
           texte: "Pose la question « Qui est-ce qui… ? » devant le verbe, ou encadre avec « C'est… qui » : « C'est le chat qui dort. » Le sujet est piégé !"
           qui: neo
@@ -150,6 +152,7 @@ lecons:
           | 3e personne (de qui on parle) | **il, elle, on** | **ils, elles** |
 
           *Le chat* → **il** ; *la souris* → **elle** ; *Léa et moi* → **nous** ; *les filles* → **elles** ; *Tom et Léa* → **ils**.
+      - visuel: {"type":"phrase","legende":"Le pronom remplace le groupe sujet.","groupes":[{"mots":"Léo et Lina","role":"sujet"},{"mots":"→","role":"liaison","etiquette":"remplacé par"},{"mots":"Ils","role":"pronom","etiquette":"pronom sujet"},{"mots":"jouent","role":"verbe"}]}
       - attention:
           texte: "Un groupe mélangé (garçons et filles) se remplace par **ils**."
           qui: neo

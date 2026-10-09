@@ -56,6 +56,7 @@ small{color:var(--muted)}
 <li><a href="#angles">Les angles morts de la demande</a></li>
 <li><a href="#visuels">Les visuels terminés</a></li>
 <li><a href="#plan">Plan d'action priorisé</a></li>
+<li><a href="#fait">Mise en œuvre (version 2.2)</a></li>
 </ol></nav>
 
 <h2 id="synthese">1. Synthèse et notes</h2>
@@ -301,6 +302,37 @@ Elles deviennent de vrais personnages qui prennent la parole dans les histoires,
 <tr><td class="prio p2">P2</td><td>Album des habitants, quêtes du jour, mini-événement à mi-monde</td><td>2 jours</td></tr>
 <tr><td class="prio p2">P2</td><td>Micro : vérifier un rythme frappé ou une note chantée</td><td>2 jours</td></tr>
 <tr><td class="prio p2">P2</td><td>Contrôle de build « astuce + À quoi ça sert + scène » obligatoire ; audit de contraste</td><td>½ journée</td></tr>
+</table></div>
+<h2 id="fait">12. Mise en œuvre de l'audit (version 2.2)</h2>
+<p>Toutes les recommandations réalisables dans l'application ont été mises en place, puis vérifiées dans le navigateur. Le contrôle automatique tire et corrige désormais environ 337 000 questions.</p>
+<div class="tbl"><table>
+<tr><th>Recommandation</th><th>Ce qui a été fait</th></tr>
+<tr><td>Explications par affirmation (vrai ou faux)</td><td class="fixed">171 exercices, 535 affirmations : chacune a son explication ; le script a vérifié que chaque explication commence par le bon verdict.</td></tr>
+<tr><td>Indices au premier échec</td><td class="fixed">95 % des exercices ont un indice (l'astuce de la leçon par défaut) ; il s'affiche automatiquement après une première erreur.</td></tr>
+<tr><td>Réponses à produire</td><td class="fixed">Un « complète ce que tu as retenu » est créé à partir du « Je retiens » (mot à écrire) dans 182 leçons hors maths.</td></tr>
+<tr><td>Entrelacement</td><td class="fixed">Chaque défi se termine par une question « souvenir » d'une leçon précédente (bonus, hors étoiles).</td></tr>
+<tr><td>Métacognition</td><td class="fixed">« 😎 Je suis sûr / 🤔 Pas sûr » avant de valider dans les défis, avec un retour adapté (sûr et faux, pas sûr et juste).</td></tr>
+<tr><td>Effet tuteur</td><td class="fixed">« Explique à Zéro » avant le « Je retiens » dans 336 leçons : choisir la phrase qui résume la leçon.</td></tr>
+<tr><td>Dessin : auto-évaluation</td><td class="fixed">Après chaque dessin pas à pas : critères à cocher (d'après les couches du dessin) et « Bof / Content / Très fier », sans note.</td></tr>
+<tr><td>Visuels en français et Terre &amp; Univers</td><td class="fixed">6 nouveaux types (frise, phrase analysée, astres, couches, cycle, schéma légendé) et 93 visuels : 45 en français, 38 en biologie et Terre &amp; Univers, 10 en physique-chimie.</td></tr>
+<tr><td>Un jeu par planète</td><td class="fixed">Potions de Dame Acidia (chimie), Allume la lampe (physique), Chaîne alimentaire (biologie), Grand tour du Soleil (univers), Devine la silhouette (dessin), Frappe et chante avec rythme et note chantée au micro (musique).</td></tr>
+<tr><td>Accueil de planète</td><td class="fixed">Une seule action principale ; l'histoire d'abord à la première visite ; le reste rangé sous « Plus d'activités ».</td></tr>
+<tr><td>Progression qui décourage</td><td class="fixed">« 0/199 leçons » remplacé par la progression de l'étape en cours (« 🌱 Les Graines : 0/11 mondes »).</td></tr>
+<tr><td>Décor dans la leçon</td><td class="fixed">Le titre de chaque leçon s'affiche sur un bandeau du décor de son monde.</td></tr>
+<tr><td>Échelle des niveaux</td><td class="fixed">Une seule échelle (les classes), pour toutes les planètes.</td></tr>
+<tr><td>Textes trop longs pour les petits</td><td class="fixed">Dans les mondes « Graines », un texte de plus de 550 caractères est coupé en deux écrans (3 restent, impossibles à couper proprement).</td></tr>
+<tr><td>Contrastes</td><td class="fixed">Mesurés page par page en mode clair et sombre ; corrigés : noms des personnages, noms de matière, gemmes, liens, onglet actif de la barre du bas en mode sombre (1,5:1 → conforme).</td></tr>
+<tr><td>Album, quêtes, mi-monde</td><td class="fixed">Album des 42 habitants ; 3 quêtes du jour (apprendre, explorer, bonne habitude, +5 💎 chacune) ; un habitant libéré à la moitié de chaque monde.</td></tr>
+<tr><td>Assistant IA</td><td class="fixed">Limite de questions par jour et par enfant (15 par défaut, réglable) et bouton « Tester la connexion ». <b>Le test avec votre clé reste à faire par vous.</b></td></tr>
+<tr><td>Sauvegarde</td><td class="fixed">Rappel dans l'espace parents si jamais faite ou plus d'un mois ; envoi direct par e-mail ou messagerie sur tablette et téléphone.</td></tr>
+<tr><td>Hors connexion</td><td class="fixed">Les images étaient déjà chargées à la demande (premier lancement léger) ; ajout d'un bouton « Préparer le hors connexion » pour tout télécharger avant un voyage.</td></tr>
+<tr><td>Temps d'écran</td><td>Existait déjà (limite quotidienne réglable dans les réglages parents).</td></tr>
+<tr><td>Bilans imprimables</td><td class="fixed">« Ce que mon enfant sait faire » (compétences acquises et en cours), fiche sécurité des 25 expériences, correspondance des 93 mondes avec les classes.</td></tr>
+<tr><td>Confidentialité et mentions</td><td class="fixed">Nouvel onglet parents : ce qui est gardé et où, micro, assistant, effacement, origine des illustrations.</td></tr>
+<tr><td>Malentendants</td><td class="fixed">Réglage « Sons visibles » : chaque son est aussi dessiné (hauteur et durée des notes, rythme, fréquence, volume).</td></tr>
+<tr><td>Inclusion des énoncés</td><td>Vérifié : 30 prénoms, 15 filles et 15 garçons, d'origines variées.</td></tr>
+<tr><td>Tests avec de vrais enfants</td><td>Protocole prêt à imprimer : <code>docs/protocole-test-enfants.html</code>. <b>À faire par vous</b> (3 à 5 enfants, 20 minutes chacun).</td></tr>
+<tr><td>Programmes officiels</td><td>La table de correspondance existe (onglet Bilans) ; <b>la vérification compétence par compétence sur Éduscol reste à faire</b>, idéalement avec un enseignant.</td></tr>
 </table></div>
 <p><small>Audit réalisé sur le code et le contenu de la version 2.1 ; parcours en navigateur sur tablette (768 × 1024) avec un profil de test supprimé ensuite.</small></p>
 </main>

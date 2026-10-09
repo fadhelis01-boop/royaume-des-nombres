@@ -104,6 +104,7 @@ lecons:
           3. le **sens** (vers le haut, vers la droite…) ;
           4. la **valeur** (l'intensité), en **newtons** (N), mesurée avec un **dynamomètre**.
           Forces de **contact** (la main qui pousse, le frottement, la réaction du sol) et forces **à distance** (le poids, la force magnétique, la force électrique).
+      - visuel: {"type":"schema","titre":"Les 4 caractéristiques d'une force","emoji":"➡️","legendes":[{"label":"point d'application","detail":"où elle agit"},{"label":"direction","detail":"la droite"},{"label":"sens","detail":"vers où"},{"label":"valeur","detail":"en newtons (N)"}]}
       - astuce:
           texte: "Une force a 4 caractéristiques, retiens « PDSV » : Point d'application, Direction, Sens, Valeur."
           qui: mia
@@ -121,10 +122,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une force se représente par une flèche.", true], ["Le poids est une force de contact.", false], ["Pour décrire une force, il suffit de donner sa valeur.", false]] }
+        vars: { "t":[["Une force se représente par une flèche.",true,"Vrai : la flèche montre la direction, le sens et la valeur."],["Le poids est une force de contact.",false,"Faux : le poids est une force à distance, la Terre attire sans toucher."],["Pour décrire une force, il suffit de donner sa valeur.",false,"Faux : il faut aussi le point d'application, la direction et le sens."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Il faut aussi le point d'application, la direction et le sens."
+        correction: "{{t_2}}"
 
   - id: poids-et-masse
     titre: "Poids et masse : ce n'est pas pareil !"
@@ -191,10 +192,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un objet en mouvement s'arrête toujours tout seul, même sans frottement.", false], ["Quand je pousse un mur, le mur me pousse avec une force de même valeur.", true], ["Si les forces se compensent, un objet peut être en mouvement rectiligne uniforme.", true]] }
+        vars: { "t":[["Un objet en mouvement s'arrête toujours tout seul, même sans frottement.",false,"Faux : sans frottement, un objet lancé continue indéfiniment : c'est l'inertie."],["Quand je pousse un mur, le mur me pousse avec une force de même valeur.",true,"Vrai : c'est le principe des actions réciproques."],["Si les forces se compensent, un objet peut être en mouvement rectiligne uniforme.",true,"Vrai : c'est le principe d'inertie."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Sans frottement, un objet lancé continue indéfiniment : c'est l'inertie."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { f: [50, 120, 300] }
         enonce: "Une patineuse pousse son partenaire avec une force de {{f}} N. Avec quelle force (en N) le partenaire pousse-t-il la patineuse ?"

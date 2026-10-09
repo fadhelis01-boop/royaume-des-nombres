@@ -122,10 +122,10 @@ lecons:
         unite: J
         correction: "ΔU = W + Q = {{W}} + ({{Q}}) = {{W+Q}} J."
       - type: vf
-        vars: { t: [["La chaleur passe spontanément d'un corps froid vers un corps chaud.", false], ["On peut atteindre une température de −300 °C.", false], ["Aucun moteur thermique ne transforme toute la chaleur en travail.", true]] }
+        vars: { "t":[["La chaleur passe spontanément d'un corps froid vers un corps chaud.",false,"Faux : la chaleur va spontanément du chaud vers le froid."],["On peut atteindre une température de −300 °C.",false,"Faux : −273,15 °C est le zéro absolu, on ne peut pas descendre plus bas."],["Aucun moteur thermique ne transforme toute la chaleur en travail.",true,"Vrai : une partie part toujours en chaleur perdue."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "−273,15 °C est le zéro absolu, on ne peut pas descendre plus bas ; la chaleur va spontanément du chaud vers le froid."
+        correction: "{{t_2}}"
 
   - id: relativite
     titre: "La relativité restreinte"
@@ -194,7 +194,7 @@ lecons:
         reponse: "k"
         correction: "E = h × f : proportionnelle, donc × {{k}}."
       - type: vf
-        vars: { t: [["L'énergie d'un atome peut prendre n'importe quelle valeur.", false], ["La lumière se comporte parfois comme une onde, parfois comme des particules.", true], ["Les UV donnent des coups de soleil car leurs photons transportent beaucoup d'énergie.", true]] }
+        vars: { "t":[["L'énergie d'un atome peut prendre n'importe quelle valeur.",false,"Faux : les niveaux d'énergie sont quantifiés, seules certaines valeurs sont permises."],["La lumière se comporte parfois comme une onde, parfois comme des particules.",true,"Vrai : c'est la dualité onde-particule."],["Les UV donnent des coups de soleil car leurs photons transportent beaucoup d'énergie.",true,"Vrai : E = h × f, et les UV ont une haute fréquence."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les niveaux d'énergie d'un atome sont quantifiés : seules certaines valeurs sont permises."
+        correction: "{{t_2}}"

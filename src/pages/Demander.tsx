@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { go } from "../lib/router";
 import { searchLocal, type Hit } from "../lib/search";
 import { aiConfigured } from "../lib/ai-config";
-import { bump, useChild } from "../lib/store";
+import { bump, dayKey, getState, useChild } from "../lib/store";
 import { dicteeSupported, startDictee } from "../lib/dictee";
 import { Bubble, Mascot, SpeakBtn } from "../components/Mascot";
 import { Md } from "../components/Md";
@@ -65,8 +65,17 @@ export function Demander() {
     }
     history.push({ role: "user", content: text });
     const upd = (p: Partial<Turn>) => setTurns((all) => all.map((x, i) => (i === idx ? { ...x, ...p } : x)));
+    // limite quotidienne fixée par les parents (Espace parents › Assistant)
+    const lim = getState().settings.aiDailyLimit ?? 15;
+    const cle = `ia:${dayKey()}`;
+    if (lim > 0 && (child.counters[cle] ?? 0) >= lim) {
+      upd({ error: `Lya a déjà répondu à ${lim} questions aujourd'hui : c'est la limite choisie par tes parents. Reviens demain, ou cherche dans le Grand Livre 📖 !`, status: "" });
+      setBusy(false);
+      return;
+    }
     try {
       const { askClaude, teacherSystem } = await import("../lib/ai");
+      bump(cle);
       const r = await askClaude({
         system: teacherSystem(child.age),
         messages: history,
@@ -87,10 +96,10 @@ export function Demander() {
       <h1>❓ Demande à Lya</h1>
       {!turns.length && (
         <>
-          <Bubble who="mia" humeur="reflexion" text={`Pose-moi n'importe quelle question de maths, ${child.name} ! Je te réponds avec des explications simples… et je te dis où j'ai trouvé l'information.`} />
+          <Bubble who="mia" humeur="reflexion" text={`Pose-moi n'importe quelle question, ${child.name} : maths, français, sciences, musique ou dessin ! Je te réponds avec des explications simples… et je te dis où j'ai trouvé l'information.`} />
           {!ai && (
             <p className="small muted card">
-              ℹ️ Pour l'instant, Lya répond avec les leçons et le Grand Livre du Royaume. Pour des réponses complètes et sourcées sur internet, un adulte peut activer l'assistant dans l'Espace parents 🔒.
+              ℹ️ Pour l'instant, Lya répond avec les leçons et le Grand Livre de la Galaxie. Pour des réponses complètes et sourcées sur internet, un adulte peut activer l'assistant dans l'Espace parents 🔒.
             </p>
           )}
           <div className="suggest">

@@ -31,6 +31,7 @@ lecons:
           4. **R**ésultat : je note ce que j'observe, avec des mesures.
           5. **I**nterprétation : mon hypothèse est-elle confirmée ou non ?
           6. **C**onclusion : je réponds à la question… et souvent j'en trouve une nouvelle !
+      - visuel: {"type":"frise","titre":"La démarche du savant","points":[{"emoji":"👀","label":"j'observe"},{"emoji":"❓","label":"je me pose une question"},{"emoji":"💭","label":"je fais une hypothèse"},{"emoji":"🧪","label":"j'expérimente"},{"emoji":"📊","label":"je regarde les résultats"},{"emoji":"✅","label":"je conclus"}]}
       - astuce:
           texte: "Retiens OHERIC avec une phrase : « Observer, Hypothèse, Expérience, Résultat, Interprétation, Conclusion ». Ou plus simple : je me demande, je devine, je teste, je conclus."
           qui: neo
@@ -53,10 +54,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_3}}", "tout changer en même temps"]
         correction: "On change seulement {{t_1}} ; on garde identiques {{t_2}}. C'est un test juste."
       - type: vf
-        vars: { t: [["Une expérience ratée ne sert à rien.", false], ["Si l'expérience contredit mon hypothèse, j'ai quand même appris quelque chose.", true], ["Pour comparer, il faut changer une seule chose à la fois.", true], ["Un vrai scientifique ne se trompe jamais.", false]] }
+        vars: { "t":[["Une expérience ratée ne sert à rien.",false,"Faux : une expérience qui ne marche pas apprend toujours quelque chose."],["Si l'expérience contredit mon hypothèse, j'ai quand même appris quelque chose.",true,"Vrai : une hypothèse réfutée est un vrai résultat."],["Pour comparer, il faut changer une seule chose à la fois.",true,"Vrai : sinon, on ne sait pas quelle chose a fait la différence."],["Un vrai scientifique ne se trompe jamais.",false,"Faux : les scientifiques se trompent souvent, c'est comme ça qu'on avance."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les scientifiques se trompent souvent : une hypothèse réfutée est un vrai résultat."
+        correction: "{{t_2}}"
 
   - id: securite-au-labo
     titre: "Les règles d'or de la sécurité"
@@ -91,10 +92,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Je peux goûter une expérience si elle est faite avec des aliments.", false], ["On peut mélanger de l'eau de Javel et du vinaigre pour mieux nettoyer.", false], ["Après une expérience, je me lave les mains.", true], ["Pour sentir un produit, on rabat l'odeur avec la main au lieu de mettre le nez dessus.", true], ["Les pictogrammes de danger sont dans un losange rouge.", true]] }
+        vars: { "t":[["Je peux goûter une expérience si elle est faite avec des aliments.",false,"Faux : au labo, on ne goûte jamais rien, même des aliments."],["On peut mélanger de l'eau de Javel et du vinaigre pour mieux nettoyer.",false,"Faux : ce mélange dégage un gaz toxique (du chlore). On ne mélange jamais les produits ménagers."],["Après une expérience, je me lave les mains.",true,"Vrai : on enlève les traces de produits."],["Pour sentir un produit, on rabat l'odeur avec la main au lieu de mettre le nez dessus.",true,"Vrai : on ne met jamais le nez au-dessus d'un flacon."],["Les pictogrammes de danger sont dans un losange rouge.",true,"Vrai : un losange à bord rouge avec un dessin noir."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Règles d'or : on ne goûte pas, on ne mélange pas les produits ménagers, on se lave les mains."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["porter des lunettes", "goûter la solution", "lire l'étiquette", "mélanger deux produits ménagers"], ["se laver les mains", "sentir le flacon de très près", "travailler avec un adulte", "courir dans le labo"], ["ranger le matériel", "mettre un produit dans une bouteille d'eau", "attacher ses cheveux longs", "jouer avec des allumettes"]] }
         enonce: "Bon geste ou geste dangereux ?"

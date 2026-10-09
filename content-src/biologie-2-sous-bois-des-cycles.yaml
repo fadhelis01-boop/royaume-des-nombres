@@ -28,6 +28,7 @@ lecons:
           - **Papillon** : œuf → **chenille** (la larve, qui mange beaucoup) → **chrysalide** → papillon adulte. Ce grand changement s'appelle la **métamorphose**.
           - **Grenouille** : œufs dans l'eau → **têtard** (respire avec des branchies, a une queue) → têtard avec pattes → grenouille adulte (respire avec des poumons et par la peau).
           - **Poule** : œuf → poussin (qui ressemble déjà à l'adulte) → poule. Pas de métamorphose.
+      - visuel: {"type":"cycle","centre":"métamorphose","etapes":[{"emoji":"🥚","label":"œuf"},{"emoji":"🐛","label":"chenille"},{"emoji":"🟤","label":"chrysalide"},{"emoji":"🦋","label":"papillon"}]}
       - astuce:
           texte: "Papillon : œuf → chenille → chrysalide → papillon. Retiens « Œuf, Chenille, Chrysalide, Papillon » comme une comptine : « On Change Comme Papillon »."
           qui: zero
@@ -78,10 +79,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les bosses du chameau sont pleines d'eau.", false], ["Une adaptation aide un être vivant à survivre dans son milieu.", true], ["Un poisson peut vivre longtemps hors de l'eau.", false]] }
+        vars: { "t":[["Les bosses du chameau sont pleines d'eau.",false,"Faux : les bosses contiennent de la graisse, une réserve d'énergie."],["Une adaptation aide un être vivant à survivre dans son milieu.",true,"Vrai : fourrure, palmes, grandes oreilles… chaque adaptation aide à survivre."],["Un poisson peut vivre longtemps hors de l'eau.",false,"Faux : ses branchies ne fonctionnent que dans l'eau."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les bosses contiennent de la graisse, une réserve d'énergie."
+        correction: "{{t_2}}"
 
   - id: chaines-alimentaires
     titre: "Qui mange qui ?"
@@ -98,6 +99,7 @@ lecons:
           - Au début, toujours un **producteur** : une **plante** (elle fabrique sa nourriture avec la lumière).
           - **Herbivores** : mangent des plantes (lapin, vache). **Carnivores** : mangent des animaux (renard, lion). **Omnivores** : mangent les deux (ours, humain, sanglier).
           Les **décomposeurs** (vers de terre, champignons, bactéries) recyclent les êtres morts en sels minéraux pour les plantes.
+      - visuel: {"type":"frise","titre":"Une chaîne alimentaire","fleche":"« est mangé par »","points":[{"emoji":"🌿","label":"herbe","sous":"producteur"},{"emoji":"🐇","label":"lapin","sous":"herbivore"},{"emoji":"🦊","label":"renard","sous":"carnivore"}]}
       - astuce:
           texte: "La flèche veut dire « est mangé par » : elle va du mangé vers le mangeur, comme l'énergie qui passe de l'un à l'autre. Herbe → lapin → renard."
           qui: neo
@@ -132,6 +134,7 @@ lecons:
           Notre **squelette** (206 os chez l'adulte) **soutient** le corps et **protège** les organes (le crâne protège le cerveau, les côtes protègent le cœur et les poumons).
           Les os se rejoignent aux **articulations** (genou, coude, épaule) qui permettent de plier.
           Les **muscles**, attachés aux os par des **tendons**, se **contractent** (raccourcissent) pour tirer sur les os : c'est ainsi qu'on bouge. Un muscle ne peut que tirer, jamais pousser : pour plier et déplier le bras, il faut deux muscles (biceps et triceps).
+      - visuel: {"type":"schema","titre":"Plier le bras","emoji":"💪","legendes":[{"label":"biceps","detail":"se contracte → le bras se plie"},{"label":"triceps","detail":"se contracte → le bras se déplie"},{"label":"os","detail":"leviers rigides"},{"label":"articulation","detail":"le coude"}]}
       - vraie_vie:
           titre: Sens tes muscles
           texte: "Pose ta main sur le haut de ton bras et plie le coude : tu sens le biceps gonfler et durcir. Déplie le bras : c'est le muscle de l'arrière (triceps) qui travaille."
@@ -151,10 +154,10 @@ lecons:
         reponse: "t_1"
         correction: "{{t_1}} os."
       - type: vf
-        vars: { t: [["Un muscle peut pousser sur un os.", false], ["Quand on plie le bras, le biceps se contracte.", true], ["Le squelette protège certains organes.", true]] }
+        vars: { "t":[["Un muscle peut pousser sur un os.",false,"Faux : un muscle ne fait que tirer, jamais pousser."],["Quand on plie le bras, le biceps se contracte.",true,"Vrai : le biceps se raccourcit et tire l'avant-bras."],["Le squelette protège certains organes.",true,"Vrai : le crâne protège le cerveau, les côtes protègent le cœur et les poumons."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un muscle ne fait que tirer ; il faut deux muscles qui travaillent à tour de rôle."
+        correction: "{{t_2}}"
 
   - id: les-dents
     titre: "Des dents pour chaque repas"
@@ -172,6 +175,7 @@ lecons:
           Un enfant a **20 dents de lait**, remplacées peu à peu par **32 dents définitives** chez l'adulte (avec les dents de sagesse).
           Le sucre nourrit des bactéries qui fabriquent de l'acide : il attaque l'émail et provoque des **caries**. On se brosse les dents **2 fois par jour, 2 minutes**.
           Les animaux ont des dents adaptées à leur régime : le lion a de grandes canines, la vache de larges molaires pour broyer l'herbe.
+      - visuel: {"type":"schema","titre":"Les types de dents","emoji":"😁","legendes":[{"label":"incisives","detail":"coupent"},{"label":"canines","detail":"déchirent"},{"label":"prémolaires","detail":"écrasent"},{"label":"molaires","detail":"broient"}]}
       - astuce:
           texte: "2 fois par jour, 2 minutes, avec du dentifrice fluoré. Et les incisives coupent, les canines déchirent, les molaires broient."
           qui: mia
@@ -206,6 +210,7 @@ lecons:
           Les **microbes** (bactéries, virus, champignons microscopiques) sont invisibles à l'œil nu. La plupart sont **inoffensifs** ou même **utiles** (ceux de notre intestin, ceux qui font le yaourt) ; certains rendent **malades**.
           Ils passent de main en main, puis à la bouche et au nez. Le **savon** décroche la graisse sur laquelle ils s'accrochent : l'eau les emporte.
           Il faut se laver les mains **30 secondes**, avant de manger, après les toilettes, après s'être mouché, en rentrant à la maison.
+      - visuel: {"type":"frise","titre":"Bien se laver les mains","points":[{"emoji":"💧","label":"mouiller"},{"emoji":"🧼","label":"savonner","sous":"paumes, dos, doigts, pouces, ongles"},{"emoji":"⏱️","label":"30 secondes"},{"emoji":"🚿","label":"rincer"},{"emoji":"🧻","label":"sécher"}]}
       - experience:
           titre: Le poivre qui s'enfuit
           securite: vert
@@ -225,10 +230,10 @@ lecons:
       - retiens: "Microbes invisibles : la plupart sont utiles, certains rendent malades. Savon + frotter 30 s + rincer."
     exercices:
       - type: vf
-        vars: { t: [["Tous les microbes sont dangereux.", false], ["On peut voir les microbes à l'œil nu.", false], ["Il faut se laver les mains avant de manger.", true], ["Le yaourt est fabriqué grâce à des bactéries.", true]] }
+        vars: { "t":[["Tous les microbes sont dangereux.",false,"Faux : la plupart sont inoffensifs ou même utiles."],["On peut voir les microbes à l'œil nu.",false,"Faux : ils sont trop petits, il faut un microscope."],["Il faut se laver les mains avant de manger.",true,"Vrai : on enlève les microbes qui pourraient nous rendre malades."],["Le yaourt est fabriqué grâce à des bactéries.",true,"Vrai : des bactéries transforment le lait en yaourt."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La plupart des microbes sont inoffensifs ou utiles, mais tous sont invisibles sans microscope."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["après être allé aux toilettes", "en regardant la télévision", "avant de manger", "en lisant un livre"], ["après s'être mouché", "en dormant", "en rentrant de l'école", "en chantant"]] }
         enonce: "Faut-il se laver les mains à ce moment-là ?"

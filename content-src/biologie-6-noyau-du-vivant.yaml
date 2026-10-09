@@ -44,10 +44,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une mutation est une modification de la séquence d'ADN.", true], ["Toutes les mutations sont dangereuses.", false], ["Après la réplication, chaque molécule d'ADN a deux brins neufs.", false]] }
+        vars: { "t":[["Une mutation est une modification de la séquence d'ADN.",true,"Vrai : un changement dans l'ordre des bases."],["Toutes les mutations sont dangereuses.",false,"Faux : beaucoup sont neutres, quelques-unes utiles, d'autres nuisibles."],["Après la réplication, chaque molécule d'ADN a deux brins neufs.",false,"Faux : chaque molécule garde un brin ancien et un brin neuf (réplication semi-conservative)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Beaucoup de mutations sont neutres ; quelques-unes sont utiles, d'autres nuisibles."
+        correction: "{{t_2}}"
 
   - id: transcription
     titre: "La transcription : de l'ADN à l'ARN messager"
@@ -79,10 +79,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["L'ARN messager contient la base T.", false], ["La transcription d'un A de l'ADN donne un U dans l'ARN.", true], ["L'ARNm sort du noyau.", true]] }
+        vars: { "t":[["L'ARN messager contient la base T.",false,"Faux : dans l'ARN, U remplace T."],["La transcription d'un A de l'ADN donne un U dans l'ARN.",true,"Vrai : A de l'ADN s'associe avec U dans l'ARN."],["L'ARNm sort du noyau.",true,"Vrai : il va jusqu'aux ribosomes, dans le cytoplasme."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Dans l'ARN, U remplace T."
+        correction: "{{t_2}}"
 
   - id: traduction
     titre: "La traduction : le code génétique"
@@ -114,10 +114,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le code génétique est presque le même chez tous les êtres vivants.", true], ["Un codon contient 2 bases.", false], ["Plusieurs codons peuvent coder le même acide aminé.", true]] }
+        vars: { "t":[["Le code génétique est presque le même chez tous les êtres vivants.",true,"Vrai : c'est un argument fort pour une origine commune du vivant."],["Un codon contient 2 bases.",false,"Faux : un codon contient 3 bases."],["Plusieurs codons peuvent coder le même acide aminé.",true,"Vrai : le code est redondant (64 codons pour 20 acides aminés)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un codon = 3 bases ; le code est redondant et quasi universel."
+        correction: "{{t_2}}"
 
   - id: enzymes
     titre: "Les enzymes"
@@ -143,10 +143,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les enzymes sont des protéines.", true], ["Une enzyme est consommée pendant la réaction.", false], ["Le pH peut empêcher une enzyme de fonctionner.", true]] }
+        vars: { "t":[["Les enzymes sont des protéines.",true,"Vrai : de longues chaînes d'acides aminés repliées."],["Une enzyme est consommée pendant la réaction.",false,"Faux : comme tout catalyseur, elle se retrouve intacte à la fin."],["Le pH peut empêcher une enzyme de fonctionner.",true,"Vrai : un pH trop différent déforme l'enzyme."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Comme tout catalyseur, l'enzyme est régénérée."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi mâcher longtemps un morceau de pain le rend-il un peu sucré ?", "l'amylase de la salive découpe l'amidon en sucres", "le pain contient du sucre en poudre", "la langue produit du sucre"]] }
         enonce: "{{t_0}}"

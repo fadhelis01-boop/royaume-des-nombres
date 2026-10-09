@@ -31,6 +31,7 @@ lecons:
 
           *Le **chien** aboie* : « chien » = nom (nature), **sujet** (fonction).
           *Léa appelle le **chien*** : « chien » = nom (nature), **complément d'objet** (fonction).
+      - visuel: {"type":"phrase","legende":"Le même nom « chat » change de fonction selon sa place.","groupes":[{"mots":"Le chat","role":"sujet","etiquette":"nom · fonction sujet"},{"mots":"regarde","role":"verbe"},{"mots":"le chien","role":"cod","etiquette":"nom · fonction COD"}]}
       - astuce:
           texte: "La nature, c'est qui tu es (élève, enfant) ; la fonction, c'est le rôle que tu joues (gardien de but dans un match). Un même mot peut changer de rôle."
           qui: mia
@@ -67,6 +68,7 @@ lecons:
           - **COI** (complément d'objet **indirect**) : sujet + verbe + **à qui ? à quoi ? de qui ? de quoi ?** — *Il parle **à son ami**.* (il parle à qui ?)
 
           On ne peut **ni supprimer ni déplacer** le complément d'objet sans changer le sens.
+      - visuel: {"type":"phrase","groupes":[{"mots":"Tom","role":"sujet"},{"mots":"donne","role":"verbe"},{"mots":"un livre","role":"cod","etiquette":"COD : quoi ?"},{"mots":"à sa sœur","role":"coi","etiquette":"COI : à qui ?"}]}
       - astuce:
           texte: "Pose la question après le verbe : « Il mange quoi ? » → COD. « Il parle à qui ? de quoi ? » → COI, car il y a un petit mot (à, de) entre les deux."
           qui: neo
@@ -106,6 +108,7 @@ lecons:
           - aussi : **cause** (pourquoi ?), **but** (pour quoi faire ?), **moyen** (avec quoi ?)
 
           Test : on peut souvent les **supprimer** ou les **déplacer** : *Je mange tranquillement ce matin.*
+      - visuel: {"type":"phrase","legende":"Les compléments circonstanciels se déplacent et se suppriment.","groupes":[{"mots":"Demain","role":"cct"},{"mots":"nous","role":"sujet"},{"mots":"irons","role":"verbe"},{"mots":"au parc","role":"ccl"},{"mots":"à vélo","role":"ccm"}]}
       - astuce:
           texte: "Le test du déménagement : si tu peux déplacer ou supprimer le groupe sans casser la phrase, c'est un complément circonstanciel."
           qui: zero
@@ -146,6 +149,7 @@ lecons:
           *Les fleurs **sont** belle**s**.* — *Léa **semble** fatigué**e**.* — *Ils **deviennent** grand**s**.*
 
           L'attribut **s'accorde avec le sujet** (genre et nombre).
+      - visuel: {"type":"phrase","groupes":[{"mots":"Ces fleurs","role":"sujet"},{"mots":"semblent","role":"verbe","etiquette":"verbe d'état"},{"mots":"fanées","role":"attribut","etiquette":"attribut (accordé)"}]}
       - attention:
           texte: "Ne confonds pas avec le COD : « Il **mange** une pomme » (action) / « Il **est** un bon élève » (état : « un bon élève » est attribut)."
           qui: neo
@@ -185,6 +189,7 @@ lecons:
           - l'**adjectif épithète**, collé au nom : *un **énorme** gâteau*, *une robe **rouge*** ;
           - le **complément du nom**, introduit par une préposition (de, à, en…) : *un gâteau **au chocolat***, *la maison **de ma grand-mère***, *une tasse **en porcelaine*** ;
           - la **proposition relative** (qui, que…) : *le gâteau **que j'adore***.
+      - visuel: {"type":"phrase","groupes":[{"mots":"un","role":"determinant"},{"mots":"petit","role":"epithete"},{"mots":"chien","role":"nom"},{"mots":"de berger","role":"complement-du-nom"},{"mots":"qui aboie","role":"subordonnee","etiquette":"relative"}]}
       - astuce:
           texte: "Pour enrichir un nom, pose-lui des questions : comment est-il ? (adjectif) De quoi ? À qui ? (complément du nom) Qui fait quoi ? (relative)"
           qui: neo
@@ -221,6 +226,7 @@ lecons:
           - COI (à quelqu'un) : **lui** (singulier), **leur** (pluriel) — *Je parle à Tom → Je **lui** parle.*
           - **en** remplace « de + chose » ou une quantité — *Je mange du pain → J'**en** mange.*
           - **y** remplace « à + chose » ou un lieu — *Je vais à Paris → J'**y** vais.*
+      - visuel: {"type":"phrase","legende":"« Je donne le livre à Paul » devient :","groupes":[{"mots":"Je","role":"sujet"},{"mots":"le","role":"pronom","etiquette":"= le livre (COD)"},{"mots":"lui","role":"pronom","etiquette":"= à Paul (COI)"},{"mots":"donne","role":"verbe"}]}
       - attention:
           texte: "**leur** pronom (devant un verbe) ne prend **jamais de s** : *je **leur** parle*. Mais *leurs* déterminant devant un nom pluriel : *leurs livres*."
           qui: neo

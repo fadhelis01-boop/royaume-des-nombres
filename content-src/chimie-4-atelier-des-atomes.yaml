@@ -54,10 +54,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un atome neutre a autant de protons que d'électrons.", true], ["On peut voir un atome avec une loupe.", false], ["Presque toute la masse de l'atome est dans le noyau.", true], ["Les électrons tournent sur des cercles exactement comme des planètes.", false]] }
+        vars: { "t":[["Un atome neutre a autant de protons que d'électrons.",true,"Vrai : les charges + et − se compensent."],["On peut voir un atome avec une loupe.",false,"Faux : il est des millions de fois trop petit."],["Presque toute la masse de l'atome est dans le noyau.",true,"Vrai : les électrons sont très légers."],["Les électrons tournent sur des cercles exactement comme des planètes.",false,"Faux : c'est un modèle simplifié ; on parle plutôt de zones de présence."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le dessin en cercles est un modèle simplifié ; la masse est concentrée dans le noyau."
+        correction: "{{t_2}}"
 
   - id: elements-et-symboles
     titre: "Les éléments et leurs symboles"
@@ -97,10 +97,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} : {{t_1}}"
       - type: vf
-        vars: { t: [["Un symbole chimique commence toujours par une majuscule.", true], ["Le tableau périodique range les éléments par numéro atomique.", true], ["Mendeleïev avait prédit des éléments encore inconnus.", true], ["Il existe des milliers d'éléments chimiques différents.", false]] }
+        vars: { "t":[["Un symbole chimique commence toujours par une majuscule.",true,"Vrai : suivie parfois d'une minuscule (Ca, Cu, Na)."],["Le tableau périodique range les éléments par numéro atomique.",true,"Vrai : le nombre de protons du noyau."],["Mendeleïev avait prédit des éléments encore inconnus.",true,"Vrai : il avait laissé des cases vides pour eux."],["Il existe des milliers d'éléments chimiques différents.",false,"Faux : on en connaît 118 ; ce sont leurs combinaisons qui forment des millions de substances."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On connaît 118 éléments ; ce sont leurs combinaisons qui forment des millions de substances."
+        correction: "{{t_2}}"
 
   - id: molecules-et-formules
     titre: "Molécules et formules chimiques"
@@ -177,10 +177,10 @@ lecons:
           - { reponse: "2", apres: "H₂O" }
         correction: "CH₄ + 2 O₂ → CO₂ + 2 H₂O : 1 C, 4 H et 4 O de chaque côté."
       - type: vf
-        vars: { t: [["Pour équilibrer, on peut changer H₂O en H₂O₂.", false], ["Dans une équation équilibrée, chaque atome est en même nombre des deux côtés.", true], ["Les coefficients se placent devant les formules.", true]] }
+        vars: { "t":[["Pour équilibrer, on peut changer H₂O en H₂O₂.",false,"Faux : changer un indice change la substance (H₂O₂ est l'eau oxygénée)."],["Dans une équation équilibrée, chaque atome est en même nombre des deux côtés.",true,"Vrai : rien ne se perd, rien ne se crée."],["Les coefficients se placent devant les formules.",true,"Vrai : ce sont les seuls nombres qu'on ajuste."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Changer un indice change la substance (H₂O₂ est l'eau oxygénée !) : on n'ajuste que les coefficients."
+        correction: "{{t_2}}"
 
   - id: le-ph
     titre: "L'échelle de pH"
@@ -214,10 +214,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "Du pH le plus petit au plus grand."
       - type: vf
-        vars: { t: [["Une solution de pH 1 est très acide et peut être corrosive.", true], ["Une solution basique a un pH inférieur à 7.", false], ["L'eau pure a un pH de 7.", true]] }
+        vars: { "t":[["Une solution de pH 1 est très acide et peut être corrosive.",true,"Vrai : plus on s'éloigne de 7, plus c'est fort."],["Une solution basique a un pH inférieur à 7.",false,"Faux : une solution basique a un pH supérieur à 7."],["L'eau pure a un pH de 7.",true,"Vrai : l'eau pure est neutre."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Basique : pH > 7."
+        correction: "{{t_2}}"
 
   - id: les-ions
     titre: "Les ions"
@@ -255,7 +255,7 @@ lecons:
         reponse: "t_1"
         correction: "On part de Z électrons, puis on enlève (charge +) ou on ajoute (charge −) : {{t_1}}."
       - type: vf
-        vars: { t: [["L'eau salée conduit le courant électrique grâce à ses ions.", true], ["Un ion négatif a perdu des électrons.", false], ["Les solutions acides contiennent beaucoup d'ions H⁺.", true]] }
+        vars: { "t":[["L'eau salée conduit le courant électrique grâce à ses ions.",true,"Vrai : les ions se déplacent et transportent le courant."],["Un ion négatif a perdu des électrons.",false,"Faux : un ion négatif a GAGNÉ des électrons."],["Les solutions acides contiennent beaucoup d'ions H⁺.",true,"Vrai : c'est ce qui les rend acides."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un ion négatif a GAGNÉ des électrons (ils sont négatifs)."
+        correction: "{{t_2}}"

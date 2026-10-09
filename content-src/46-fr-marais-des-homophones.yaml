@@ -28,6 +28,7 @@ lecons:
       - texte: |
           - **a** (sans accent) = le verbe **avoir** → on peut le remplacer par **avait** : *Il **a** faim → il **avait** faim.*
           - **à** (avec accent) = un petit mot de **lien** (préposition) → on ne peut **pas** dire « avait » : *Je vais **à** l'école.*
+      - visuel: {"type":"phrase","legende":"« a » se remplace par « avait » ; « à » non.","groupes":[{"mots":"Léa","role":"sujet"},{"mots":"a","role":"verbe","etiquette":"= avait"},{"mots":"un vélo","role":"cod"},{"mots":"à","role":"liaison","etiquette":"≠ avait"},{"mots":"la maison","role":"ccl"}]}
       - astuce:
           texte: "Le Miroir du Temps : si « avait » marche, c'est **a**. Sinon, c'est **à**, avec son accent comme une petite flèche."
           qui: neo

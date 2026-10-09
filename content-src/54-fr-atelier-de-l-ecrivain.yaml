@@ -103,6 +103,7 @@ lecons:
       - texte: |
           - **Temps** : d'abord, ensuite, puis, après, soudain, tout à coup, enfin, finalement, pendant ce temps.
           - **Logique** : car, parce que (cause) — donc, c'est pourquoi (conséquence) — mais, pourtant, cependant (opposition) — de plus, en outre (ajout).
+      - visuel: {"type":"frise","titre":"Les connecteurs de temps","points":[{"emoji":"1️⃣","label":"d'abord"},{"emoji":"2️⃣","label":"ensuite"},{"emoji":"3️⃣","label":"puis"},{"emoji":"🏁","label":"enfin"}]}
       - astuce:
           texte: "Prépare ta trousse à connecteurs : d'abord, ensuite, puis, enfin (le temps) ; car, donc, mais, pourtant (la logique)."
           qui: zero
@@ -139,6 +140,7 @@ lecons:
           3. **Péripéties** : les aventures pour résoudre le problème. *Alors…, ensuite…*
           4. **Dénouement** : le problème est résolu (ou pas). *Finalement…*
           5. **Situation finale** : le nouvel équilibre. *Depuis ce jour…*
+      - visuel: {"type":"frise","titre":"Les 5 étapes d'un récit","points":[{"emoji":"🏡","label":"situation initiale","sous":"Il était une fois…"},{"emoji":"⚡","label":"élément perturbateur","sous":"Soudain…"},{"emoji":"🧭","label":"péripéties","sous":"Alors…"},{"emoji":"🔑","label":"résolution","sous":"Finalement…"},{"emoji":"🌈","label":"situation finale","sous":"Depuis…"}]}
       - astuce:
           texte: "Retiens les 5 étapes avec ta main : le pouce pour la situation initiale, puis l'élément perturbateur, les péripéties, la résolution, la situation finale."
           qui: mia
@@ -216,6 +218,7 @@ lecons:
           3. le **corps** du message, en paragraphes ;
           4. une **formule de fin** : *À bientôt !* (ami) — *Je vous prie d'agréer mes salutations distinguées.* (officiel) ;
           5. la **signature**.
+      - visuel: {"type":"couches","legende":"Les éléments d'une lettre, de haut en bas.","couches":[{"emoji":"📍","nom":"Lieu et date","detail":"Paris, le 8 octobre"},{"emoji":"👋","nom":"Formule d'appel","detail":"Chère Mamie, / Madame,"},{"emoji":"✉️","nom":"Le message","detail":"des paragraphes","epaisseur":3},{"emoji":"💐","nom":"Formule de politesse","detail":"Je t'embrasse / Veuillez agréer…"},{"emoji":"✍️","nom":"Signature"}]}
       - astuce:
           texte: "Pense à « qui ? » : un ami → « Salut », « Bises » ; un adulte que tu ne connais pas → « Madame, Monsieur », « Je vous prie d'agréer… »."
           qui: zero

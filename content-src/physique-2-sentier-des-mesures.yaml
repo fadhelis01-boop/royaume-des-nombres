@@ -128,10 +128,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un enfant léger peut équilibrer un adulte s'il s'assoit plus loin du pivot.", true], ["Sur une bascule, seule la masse compte.", false], ["Une paire de ciseaux est un levier.", true]] }
+        vars: { "t":[["Un enfant léger peut équilibrer un adulte s'il s'assoit plus loin du pivot.",true,"Vrai : la distance au pivot compte autant que la masse."],["Sur une bascule, seule la masse compte.",false,"Faux : la distance au pivot compte aussi."],["Une paire de ciseaux est un levier.",true,"Vrai : deux leviers reliés par un pivot."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La distance au pivot compte autant que la masse."
+        correction: "{{t_2}}"
 
   - id: premier-circuit
     titre: "Mon premier circuit électrique"
@@ -146,6 +146,7 @@ lecons:
           Pour allumer une lampe, il faut une **boucle complète** sans coupure : **pile → fil → lampe → fil → pile**. C'est un **circuit fermé**.
           Si on coupe la boucle (fil débranché, **interrupteur ouvert**), le circuit est **ouvert** : la lampe s'éteint.
           Les **conducteurs** laissent passer le courant (métaux : cuivre, fer, aluminium ; mine de crayon). Les **isolants** l'arrêtent (plastique, bois sec, verre, caoutchouc).
+      - visuel: {"type":"cycle","centre":"circuit fermé","etapes":[{"emoji":"🔋","label":"pile"},{"emoji":"➖","label":"fil"},{"emoji":"🔘","label":"interrupteur fermé"},{"emoji":"💡","label":"lampe"}]}
       - attention:
           texte: "On fait les expériences UNIQUEMENT avec des piles (4,5 V maximum). JAMAIS avec les prises électriques de la maison (230 V) : le courant du secteur peut tuer."
           qui: neo
@@ -176,10 +177,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On peut faire des expériences avec les prises de la maison si on fait attention.", false], ["Pour qu'une lampe s'allume, le circuit doit former une boucle complète.", true], ["Les fils électriques sont entourés de plastique pour nous protéger.", true]] }
+        vars: { "t":[["On peut faire des expériences avec les prises de la maison si on fait attention.",false,"Faux : jamais d'expérience avec le secteur (230 V) : c'est mortel."],["Pour qu'une lampe s'allume, le circuit doit former une boucle complète.",true,"Vrai : un circuit fermé, sans trou."],["Les fils électriques sont entourés de plastique pour nous protéger.",true,"Vrai : le plastique est un isolant."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Jamais d'expérience avec le secteur (230 V) : c'est mortel."
+        correction: "{{t_2}}"
 
   - id: miroirs
     titre: "Miroir, miroir"
@@ -208,10 +209,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un miroir renvoie la lumière.", true], ["On peut viser les yeux de quelqu'un avec un rayon de soleil renvoyé.", false], ["Un catadioptre de vélo renvoie la lumière des phares vers la voiture.", true]] }
+        vars: { "t":[["Un miroir renvoie la lumière.",true,"Vrai : il la réfléchit."],["On peut viser les yeux de quelqu'un avec un rayon de soleil renvoyé.",false,"Faux : la lumière du Soleil renvoyée peut abîmer les yeux."],["Un catadioptre de vélo renvoie la lumière des phares vers la voiture.",true,"Vrai : c'est ce qui rend le vélo visible la nuit."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Ne jamais viser les yeux : la lumière du Soleil concentrée peut les abîmer."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi le mot AMBULANCE est-il écrit à l'envers à l'avant des ambulances ?", "pour que les conducteurs devant le lisent à l'endroit dans leur rétroviseur", "c'est une erreur d'impression", "pour faire joli"], ["Dans un miroir, je lève la main droite. Mon reflet lève la main qui est…", "en face de ma main droite", "en face de ma main gauche", "derrière moi"]] }
         enonce: "{{t_0}}"

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
 import { findLesson, lessonUnlocked } from "../lib/content";
-import { finishDefi, getState, recordAbandon, useChild } from "../lib/store";
+import { bump, finishDefi, getState, recordAbandon, useChild } from "../lib/store";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
 import { sfx } from "../lib/sound";
 import { ExercisePlayer, type ExResult } from "../components/ExercisePlayer";
@@ -49,6 +49,15 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
   const child = useChild()!;
   const [round, setRound] = useState(0);
   const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi) : []), [found?.lesson, round]);
+  // Question « souvenir » : une question d'une leçon précédente du monde, en bonus (entrelacement :
+  // mélanger l'ancien et le nouveau aide à retenir). Elle ne compte pas dans les étoiles.
+  const souvenir = useMemo(() => {
+    if (!found || found.idx === 0) return null;
+    const before = found.world.lecons.slice(0, found.idx).filter((l) => l.exercices.length);
+    const l = before[Math.floor(Math.random() * before.length)];
+    return l ? { spec: l.exercices[Math.floor(Math.random() * l.exercices.length)], titre: l.titre } : null;
+  }, [found?.lesson, round]);
+  const total = plan.length + (souvenir ? 1 : 0);
   const [idx, setIdx] = useState(0);
   // Les questions sont tirées au fur et à mesure : après deux erreurs de suite,
   // on propose une question plus simple pour reprendre confiance (difficulté adaptative).
@@ -73,6 +82,15 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
   const onResult = (r: ExResult) => {
     const all = [...results, r];
     setResults(all);
+    if (idx + 1 === plan.length && souvenir) {
+      const q = draw(souvenir.spec);
+      if (q) {
+        setQuestions((qs) => [...qs, q]);
+        setEased(false);
+        setIdx(idx + 1);
+        return;
+      }
+    }
     if (idx + 1 < plan.length) {
       const twoWrong = all.length >= 2 && !all[all.length - 1].ok && !all[all.length - 2].ok;
       const spec = twoWrong ? rankSpecs(lesson.exercices)[0] : plan[idx + 1];
@@ -81,7 +99,9 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
       if (q) setQuestions((qs) => [...qs, q]);
       setIdx(idx + 1);
     } else {
-      const score = all.reduce((t, x) => t + (x.ok ? (x.firstTry ? 1 : 0.5) : 0), 0) / all.length;
+      const scored = all.slice(0, plan.length);
+      if (all.length > plan.length) bump(all[plan.length].ok ? "souvenir-ok" : "souvenir-ko");
+      const score = scored.reduce((t, x) => t + (x.ok ? (x.firstTry ? 1 : 0.5) : 0), 0) / scored.length;
       const res = finishDefi(key, score);
       if (res.stars > 0) sfx.fanfare();
       setEnd({ stars: res.stars, score, newBest: res.newBest });
@@ -165,17 +185,18 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
           ✕
         </button>
         <div className="dots">
-          {plan.map((_, i) => (
+          {Array.from({ length: total }, (_, i) => (
             <span key={i} className={i < results.length ? (results[i].ok ? "ok" : "ko") : i === idx ? "cur" : ""} />
           ))}
         </div>
         <span className="small muted">
-          {idx + 1}/{plan.length}
+          {idx + 1}/{total}
         </span>
       </div>
       <h1 className="lecon-title small">⭐ Défi : {lesson.titre}</h1>
+      {idx >= plan.length && souvenir && <Bubble who="zero" text={`🧠 Question souvenir (bonus, elle ne compte pas) : tu te rappelles « ${souvenir.titre} » ?`} size={50} />}
       {eased && <Bubble who="neo" text="Tiens, une question un peu plus simple pour reprendre des forces. On remonte ensuite, d'accord ?" size={50} />}
-      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < plan.length ? "Question suivante" : "Voir mes étoiles"} />
+      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < total ? "Question suivante" : "Voir mes étoiles"} metacog />
     </div>
   );
 }

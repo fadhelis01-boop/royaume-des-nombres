@@ -28,6 +28,7 @@ lecons:
           Le son est une vibration qui se transmet de proche en proche dans la matière : il a besoin d'un **milieu matériel** (air, eau, solide). Il **ne se propage pas dans le vide** : dans l'espace, une explosion serait silencieuse !
           Vitesse du son : environ **340 m/s** dans l'air, **1 500 m/s** dans l'eau, plus de **5 000 m/s** dans l'acier.
           **L'écho** est un son renvoyé par une paroi. On s'en sert pour mesurer des distances (sonar des bateaux, chauves-souris).
+      - visuel: {"type":"frise","titre":"Vitesse du son selon le milieu","fleche":"plus rapide","points":[{"emoji":"🚀","label":"vide","sous":"pas de son !"},{"emoji":"💨","label":"air","sous":"340 m/s"},{"emoji":"💧","label":"eau","sous":"1 500 m/s"},{"emoji":"🔩","label":"acier","sous":"5 000 m/s"}]}
       - exemple:
           titre: À quelle distance est l'orage ?
           enonce: "Tu vois l'éclair, puis tu entends le tonnerre 6 secondes plus tard."
@@ -50,10 +51,10 @@ lecons:
         unite: m
         correction: "Le son fait l'aller ET le retour : d = 1 500 × {{t}} ÷ 2 = {{1500*t/2}} m."
       - type: vf
-        vars: { t: [["Dans l'espace, on n'entend pas les explosions.", true], ["Le son va plus vite dans l'air que dans l'eau.", false], ["Les chauves-souris s'orientent grâce à l'écho.", true]] }
+        vars: { "t":[["Dans l'espace, on n'entend pas les explosions.",true,"Vrai : le son a besoin d'un milieu, il n'y en a pas dans le vide."],["Le son va plus vite dans l'air que dans l'eau.",false,"Faux : le son va environ 4 fois plus vite dans l'eau que dans l'air."],["Les chauves-souris s'orientent grâce à l'écho.",true,"Vrai : elles écoutent le retour de leurs cris."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le son va environ 4 fois plus vite dans l'eau que dans l'air."
+        correction: "{{t_2}}"
 
   - id: frequence-et-decibels
     titre: "Hauteur et intensité : hertz et décibels"
@@ -125,10 +126,10 @@ lecons:
         unite: km
         correction: "300 000 × {{s}} = {{300000*s}} km."
       - type: vf
-        vars: { t: [["On voit l'éclair avant d'entendre le tonnerre parce que la lumière est bien plus rapide que le son.", true], ["Une étoile que l'on voit existe forcément encore aujourd'hui.", false], ["L'année-lumière mesure le temps.", false]] }
+        vars: { "t":[["On voit l'éclair avant d'entendre le tonnerre parce que la lumière est bien plus rapide que le son.",true,"Vrai : 300 000 km/s contre 340 m/s."],["Une étoile que l'on voit existe forcément encore aujourd'hui.",false,"Faux : on voit une lumière partie il y a longtemps, l'étoile a pu changer depuis."],["L'année-lumière mesure le temps.",false,"Faux : l'année-lumière est une distance, celle parcourue par la lumière en un an."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On voit la lumière partie il y a longtemps : l'étoile a pu changer depuis."
+        correction: "{{t_2}}"
 
   - id: couleurs
     titre: "Les couleurs de la lumière"
@@ -144,6 +145,7 @@ lecons:
           - **Synthèse additive** (lumières, écrans) : rouge + vert + bleu = **blanc** ; rouge + vert = **jaune**.
           - **Synthèse soustractive** (peintures, encres) : chaque pigment **absorbe** des couleurs. Cyan + magenta + jaune ≈ **noir** ; jaune + cyan = vert.
           Un objet nous paraît rouge parce qu'il **renvoie** le rouge et absorbe les autres couleurs.
+      - visuel: {"type":"frise","titre":"La lumière blanche décomposée","fleche":false,"points":[{"emoji":"🔴","label":"rouge","couleur":"#e53935"},{"emoji":"🟠","label":"orange","couleur":"#fb8c00"},{"emoji":"🟡","label":"jaune","couleur":"#fdd835"},{"emoji":"🟢","label":"vert","couleur":"#43a047"},{"emoji":"🔵","label":"bleu","couleur":"#1e88e5"},{"emoji":"🟣","label":"violet","couleur":"#8e24aa"}]}
       - histoire:
           titre: Ibn al-Haytham et Newton
           texte: "Vers l'an 1000, le savant **Ibn al-Haytham**, au Caire, montre par des expériences que la lumière vient des objets jusqu'à l'œil (et non l'inverse) : son Traité d'optique fonde la méthode expérimentale. En 1666, **Isaac Newton** décompose la lumière blanche avec un prisme, puis la recompose avec un second prisme."
@@ -195,10 +197,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On peut regarder le Soleil avec des jumelles si on fait vite.", false], ["Une loupe est une lentille convergente.", true], ["Une lentille convergente est plus épaisse au centre qu'au bord.", true]] }
+        vars: { "t":[["On peut regarder le Soleil avec des jumelles si on fait vite.",false,"Faux : jamais le Soleil à travers une lentille : brûlure définitive de la rétine."],["Une loupe est une lentille convergente.",true,"Vrai : elle rassemble les rayons."],["Une lentille convergente est plus épaisse au centre qu'au bord.",true,"Vrai : c'est ainsi qu'on la reconnaît au toucher."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Jamais le Soleil à travers une lentille : brûlure définitive de la rétine."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["une loupe", "la paille « cassée » dans l'eau", "le reflet dans une vitrine", "un rétroviseur"]] }
         enonce: "Réfraction (la lumière traverse et dévie) ou réflexion (la lumière rebondit) ?"

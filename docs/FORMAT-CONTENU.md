@@ -87,6 +87,17 @@ lecons:
       - …
 ```
 
+**Visuels pédagogiques ajoutés en 2.2** (`- visuel: {...}`) :
+
+- `frise` : `points: [{emoji, label, sous}]`, `titre`, `marque` (index mis en avant), `fleche` (texte ou `false`).
+- `phrase` : `groupes: [{mots, role, etiquette}]` ; rôles : sujet, verbe, cod, coi, cc, ccl, cct, ccm, attribut, determinant, nom, adjectif, pronom, adverbe, complement-du-nom, epithete, principale, subordonnee, liaison, ponctuation.
+- `astres` : `mode: phases | eclipse-soleil | eclipse-lune | saisons | jour-nuit | systeme`.
+- `couches` : `couches: [{nom, detail, emoji, couleur, epaisseur}]`, `forme: cercle` (concentrique) ou pile (par défaut).
+- `cycle` : `etapes: [{emoji, label}]`, `centre`.
+- `schema` : `emoji` ou `image`, `titre`, `legendes: [{label, detail}]`.
+
+Générés automatiquement au build (rien à écrire) : un indice par exercice (l'astuce de la leçon), un texte à trous tiré du « Je retiens » (hors maths), une étape « Explique à Zéro », et le découpage des textes longs dans les mondes « graines ».
+
 **Charte de chaque leçon** (vérifiée au build, simple avertissement) : une scène des mascottes (`dialogue`) en ouverture, un `a_quoi_ca_sert` (la motivation, juste après la scène) et une `astuce` (un moyen de retenir, juste avant `retiens`). Les mondes du cycle `astuces` sont dispensés de l'étape `astuce`.
 
 Les Muses peuvent parler dans les histoires : `acidia` (chimie), `gravis` (physique), `seve` (biologie), `uranie` (Terre & Univers), `resonance` (musique), `pinceau` (dessin).

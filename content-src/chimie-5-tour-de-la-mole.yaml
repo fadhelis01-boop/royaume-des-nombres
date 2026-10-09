@@ -49,10 +49,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une mole de plumes et une mole de plomb contiennent le même nombre d'atomes… s'il s'agit d'atomes.", true], ["Une mole de sucre et une mole de sel ont la même masse.", false], ["La mole sert à compter des entités trop petites pour être comptées une à une.", true]] }
+        vars: { "t":[["Une mole de plumes et une mole de plomb contiennent le même nombre d'atomes… s'il s'agit d'atomes.",true,"Vrai : une mole, c'est toujours 6,02 × 10²³ entités."],["Une mole de sucre et une mole de sel ont la même masse.",false,"Faux : même nombre d'entités, mais chaque entité a sa propre masse."],["La mole sert à compter des entités trop petites pour être comptées une à une.",true,"Vrai : on les compte par paquets géants."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Même nombre d'entités, mais pas la même masse : chaque entité a sa propre masse."
+        correction: "{{t_2}}"
 
   - id: masse-molaire
     titre: "La masse molaire"
@@ -198,10 +198,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Combustions et respiration libèrent de l'énergie ; photosynthèse et fusion en absorbent."
       - type: vf
-        vars: { t: [["Une combustion est exothermique.", true], ["Une poche de froid instantané repose sur un phénomène endothermique.", true], ["Une réaction exothermique refroidit toujours le milieu.", false]] }
+        vars: { "t":[["Une combustion est exothermique.",true,"Vrai : elle libère de la chaleur et de la lumière."],["Une poche de froid instantané repose sur un phénomène endothermique.",true,"Vrai : la dissolution absorbe de la chaleur, la poche refroidit."],["Une réaction exothermique refroidit toujours le milieu.",false,"Faux : une réaction exothermique libère de la chaleur, donc réchauffe le milieu."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Exothermique = libère de la chaleur, donc réchauffe le milieu."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi le béton chauffe-t-il en séchant ?", "la prise du ciment est exothermique", "le soleil le chauffe toujours", "il contient du feu"], ["D'où vient l'énergie qui permet aux plantes de faire la photosynthèse ?", "de la lumière du Soleil", "de la terre", "du vent"]] }
         enonce: "{{t_0}}"
@@ -243,10 +243,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}} (moyen mnémotechnique : « Oxydation = Perte » → OP)."
       - type: vf
-        vars: { t: [["La rouille est une oxydation du fer.", true], ["Une pile au citron peut alimenter un téléphone.", false], ["Dans une oxydoréduction, des électrons passent d'une espèce à une autre.", true]] }
+        vars: { "t":[["La rouille est une oxydation du fer.",true,"Vrai : le fer réagit avec le dioxygène et l'eau."],["Une pile au citron peut alimenter un téléphone.",false,"Faux : environ 0,9 V et un courant minuscule : une LED avec plusieurs citrons, pas plus."],["Dans une oxydoréduction, des électrons passent d'une espèce à une autre.",true,"Vrai : le réducteur en perd, l'oxydant en gagne."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Une pile au citron donne environ 0,9 V et un courant minuscule : de quoi allumer une LED avec plusieurs citrons, pas plus."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { n: [2, 3, 4, 5] }
         enonce: "Une pile citron donne environ 0,9 V. Quelle tension environ avec {{n}} citrons branchés en série ?"

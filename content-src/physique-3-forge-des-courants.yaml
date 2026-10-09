@@ -39,10 +39,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les appareils d'une maison sont branchés en dérivation.", true], ["Dans un circuit en série, il y a plusieurs boucles.", false], ["Un nœud est un point où le circuit se sépare en plusieurs branches.", true]] }
+        vars: { "t":[["Les appareils d'une maison sont branchés en dérivation.",true,"Vrai : chaque appareil fonctionne même si on éteint les autres."],["Dans un circuit en série, il y a plusieurs boucles.",false,"Faux : en série, il n'y a qu'une seule boucle."],["Un nœud est un point où le circuit se sépare en plusieurs branches.",true,"Vrai : c'est là que naissent les dérivations."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Série : une seule boucle ; dérivation : plusieurs boucles reliées par des nœuds."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["une guirlande ancienne où tout s'éteint si une ampoule grille", "les prises d'une maison", "une lampe de poche à 2 piles mises bout à bout", "les phares avant d'une voiture (l'un grille, l'autre reste allumé)"]] }
         enonce: "Série ou dérivation ?"
@@ -197,10 +197,10 @@ lecons:
       - retiens: "Court-circuit = danger d'incendie. Fusible et disjoncteur protègent l'installation, le différentiel protège les personnes. Eau + électricité = danger."
     exercices:
       - type: vf
-        vars: { t: [["On peut toucher un sèche-cheveux branché avec les mains mouillées si on fait vite.", false], ["Un disjoncteur coupe le courant en cas d'intensité trop forte.", true], ["Un court-circuit peut provoquer un incendie.", true], ["On peut récupérer un cerf-volant coincé dans une ligne électrique avec un bâton.", false]] }
+        vars: { "t":[["On peut toucher un sèche-cheveux branché avec les mains mouillées si on fait vite.",false,"Faux : l'eau conduit le courant, c'est très dangereux."],["Un disjoncteur coupe le courant en cas d'intensité trop forte.",true,"Vrai : il protège l'installation."],["Un court-circuit peut provoquer un incendie.",true,"Vrai : les fils chauffent énormément."],["On peut récupérer un cerf-volant coincé dans une ligne électrique avec un bâton.",false,"Faux : on n'approche jamais une ligne électrique, on appelle un adulte."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'électricité du secteur peut tuer : prudence absolue."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Qu'est-ce qu'un court-circuit ?", "un passage du courant sans résistance, qui fait chauffer les fils", "un circuit très court et sans danger", "une panne de pile"], ["Quel dispositif protège les personnes en cas de fuite de courant ?", "le disjoncteur différentiel", "l'interrupteur", "l'ampoule"], ["Pourquoi l'eau est-elle dangereuse près de l'électricité ?", "elle conduit le courant vers notre corps", "elle éteint l'électricité", "elle ne change rien"]] }
         enonce: "{{t_0}}"

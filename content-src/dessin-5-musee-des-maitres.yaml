@@ -52,10 +52,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} : {{t_1}}."
       - type: vf
-        vars: { t: [["Le mot « impressionnisme » vient d'un tableau de Monet.", true], ["Les peintures de Lascaux datent du Moyen Âge.", false], ["Les cubistes montrent un objet sous plusieurs angles à la fois.", true]] }
+        vars: { "t":[["Le mot « impressionnisme » vient d'un tableau de Monet.",true,"Vrai : « Impression, soleil levant » (1872)."],["Les peintures de Lascaux datent du Moyen Âge.",false,"Faux : elles datent de la préhistoire, il y a environ 17 000 à 18 000 ans."],["Les cubistes montrent un objet sous plusieurs angles à la fois.",true,"Vrai : Picasso et Braque montrent plusieurs points de vue à la fois."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Lascaux date de la préhistoire (environ 17 000 à 18 000 ans)."
+        correction: "{{t_2}}"
 
   - id: couleur-et-emotion
     titre: "Couleur et émotion"
@@ -89,10 +89,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les mêmes formes peintes avec d'autres couleurs peuvent changer l'émotion d'une image.", true], ["Les couleurs n'ont aucun effet sur le spectateur.", false]] }
+        vars: { "t":[["Les mêmes formes peintes avec d'autres couleurs peuvent changer l'émotion d'une image.",true,"Vrai : la couleur change l'ambiance."],["Les couleurs n'ont aucun effet sur le spectateur.",false,"Faux : la couleur est l'un des outils les plus puissants pour créer une émotion."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La couleur est l'un des outils les plus puissants pour créer une émotion."
+        correction: "{{t_2}}"
 
   - id: clair-obscur
     titre: "Lumière dramatique : le clair-obscur"
@@ -123,10 +123,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Une source unique et forte = contrastes ; ciel couvert, brouillard = lumière diffuse."
       - type: vf
-        vars: { t: [["Dans le clair-obscur, l'œil va d'abord vers la zone la plus éclairée.", true], ["Une lumière diffuse crée des ombres très nettes.", false]] }
+        vars: { "t":[["Dans le clair-obscur, l'œil va d'abord vers la zone la plus éclairée.",true,"Vrai : le contraste attire le regard."],["Une lumière diffuse crée des ombres très nettes.",false,"Faux : une lumière diffuse crée des ombres douces et floues."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Lumière diffuse = ombres douces et floues."
+        correction: "{{t_2}}"
 
   - id: design-de-personnage
     titre: "Créer un personnage"
@@ -172,10 +172,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Zéro, tout rond, paraît gentil grâce à ses formes.", true], ["La forme d'un personnage n'a aucun effet sur l'impression qu'il donne.", false]] }
+        vars: { "t":[["Zéro, tout rond, paraît gentil grâce à ses formes.",true,"Vrai : les formes rondes paraissent douces et gentilles."],["La forme d'un personnage n'a aucun effet sur l'impression qu'il donne.",false,"Faux : la forme d'un personnage dit beaucoup de son caractère."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le langage des formes est utilisé par tous les studios d'animation."
+        correction: "{{t_2}}"
 
   - id: storyboard-et-style
     titre: "Storyboard et style personnel"
@@ -209,7 +209,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un gros plan sert à montrer une émotion.", true], ["Tous les artistes doivent avoir le même style.", false]] }
+        vars: { "t":[["Un gros plan sert à montrer une émotion.",true,"Vrai : on voit bien le visage et ses expressions."],["Tous les artistes doivent avoir le même style.",false,"Faux : la diversité des styles fait la richesse de l'art."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La diversité des styles fait la richesse de l'art."
+        correction: "{{t_2}}"

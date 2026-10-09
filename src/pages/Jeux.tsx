@@ -36,6 +36,12 @@ function catalogue(child: Child, manifest: Manifest | null): Jeu[] {
     { id: "eclair-sciences", emoji: "⚡", titre: "Quiz éclair", desc: "10 questions sur ce que tu as appris sur cette planète.", best: child.games[`quiz:${matiereDe(child)}`], bestLabel: "/10" },
     { id: "oreille", emoji: "👂", titre: "L'Oreille d'or", desc: "Aigu ou grave, fort ou doux, majeur ou mineur : entraîne ton oreille.", best: child.games["oreille"], bestLabel: "/10" },
     { id: "studio-musique", emoji: "🎹", titre: "Le studio de musique", desc: "Un piano où rien ne sonne faux et la boîte à rythmes de Zéro.", vers: "/studio/musique" },
+    { id: "potions", emoji: "🧪", titre: "Les potions de Dame Acidia", desc: "Acide, neutre ou basique ? Devine la couleur du jus de chou rouge.", best: child.games["potions"], bestLabel: "/8" },
+    { id: "chaine", emoji: "🦊", titre: "La chaîne alimentaire", desc: "Qui mange qui ? Range les êtres vivants du mangé au mangeur.", best: child.games["chaine"], bestLabel: "chaînes" },
+    { id: "circuit", emoji: "💡", titre: "Allume la lampe", desc: "Répare les fils coupés et ferme le circuit.", best: child.games["circuit"], bestLabel: "s" },
+    { id: "planetes", emoji: "🌍", titre: "Le grand tour du Soleil", desc: "Range les 8 planètes dans l'ordre, le plus vite possible.", best: child.games["planetes"], bestLabel: "s" },
+    { id: "silhouettes", emoji: "👤", titre: "Devine la silhouette", desc: "Reconnais un objet rien qu'à son ombre, comme un dessinateur.", best: child.games["silhouettes"], bestLabel: "/8" },
+    { id: "rythme", emoji: "🥁", titre: "Frappe et chante", desc: "Reproduis un rythme, chante une note juste au micro.", best: child.games["rythme"], bestLabel: "frappes" },
     { id: "studio-dessin", emoji: "🖌️", titre: "Le studio de dessin", desc: "Dessine librement, en miroir, et range tes œuvres dans ta galerie.", vers: "/studio/dessin" },
   ];
 }

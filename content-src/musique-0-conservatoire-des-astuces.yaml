@@ -41,10 +41,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une erreur répétée plusieurs fois finit par s'apprendre.", true], ["Le métronome aide à garder un tempo régulier.", true], ["Il faut toujours commencer un morceau à la vitesse finale.", false]] }
+        vars: { "t":[["Une erreur répétée plusieurs fois finit par s'apprendre.",true,"Vrai : c'est pour ça qu'il faut corriger tout de suite."],["Le métronome aide à garder un tempo régulier.",true,"Vrai : il bat la pulsation régulièrement."],["Il faut toujours commencer un morceau à la vitesse finale.",false,"Faux : lentement et juste d'abord ; la vitesse vient ensuite."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Lentement et juste d'abord ; la vitesse vient ensuite."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["choisir un petit passage", "le jouer lentement sans erreur", "accélérer un peu avec le métronome", "le rejouer dans le morceau entier"]] }
         enonce: "Remets la méthode dans l'ordre."
@@ -85,10 +85,10 @@ lecons:
         choix: ["{{t_2}}", "{{si(t_2=='le son A est plus rapide','le son B est plus rapide','le son A est plus rapide')}}", "elles vont à la même vitesse"]
         correction: "{{t_2}}."
       - type: vf
-        vars: { t: [["60 battements par minute font un battement par seconde.", true], ["La pulsation change de vitesse à chaque mesure.", false], ["Compter « 1 et 2 et » aide à placer les demi-temps.", true]] }
+        vars: { "t":[["60 battements par minute font un battement par seconde.",true,"Vrai : 60 battements en 60 secondes."],["La pulsation change de vitesse à chaque mesure.",false,"Faux : la pulsation est régulière."],["Compter « 1 et 2 et » aide à placer les demi-temps.",true,"Vrai : chaque « et » tombe entre deux temps."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La pulsation est régulière : c'est le repère commun des musiciens."
+        correction: "{{t_2}}"
 
   - id: memoriser-une-melodie
     titre: "Mémoriser une mélodie"
@@ -126,10 +126,10 @@ lecons:
         choix: ["{{t_2}}", "{{si(t_2=='identiques','différents','identiques')}}"]
         correction: "{{t_2}} : écoute bien la dernière note."
       - type: vf
-        vars: { t: [["Le sommeil aide à retenir ce qu'on a appris.", true], ["Repérer les passages qui se répètent facilite la mémorisation.", true], ["Il faut connaître tout le morceau avant d'en jouer une seule phrase.", false]] }
+        vars: { "t":[["Le sommeil aide à retenir ce qu'on a appris.",true,"Vrai : le cerveau range les souvenirs pendant la nuit."],["Repérer les passages qui se répètent facilite la mémorisation.",true,"Vrai : on a moins à retenir."],["Il faut connaître tout le morceau avant d'en jouer une seule phrase.",false,"Faux : on apprend phrase par phrase."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On apprend phrase par phrase ; le sommeil consolide la mémoire."
+        correction: "{{t_2}}"
 
   - id: proteger-ses-oreilles
     titre: "Protéger ses oreilles et sa voix"
@@ -157,10 +157,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Volume modéré, pauses, bouchons ; on ne force pas sa voix."
       - type: vf
-        vars: { t: [["Des sifflements dans les oreilles après un concert sont un signal d'alerte.", true], ["Une oreille abîmée par le bruit guérit toujours.", false], ["Boire de l'eau aide la voix.", true]] }
+        vars: { "t":[["Des sifflements dans les oreilles après un concert sont un signal d'alerte.",true,"Vrai : les oreilles ont souffert, il faut les reposer."],["Une oreille abîmée par le bruit guérit toujours.",false,"Faux : les cellules de l'oreille interne détruites ne repoussent pas."],["Boire de l'eau aide la voix.",true,"Vrai : les cordes vocales aiment être hydratées."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les cellules ciliées de l'oreille interne détruites ne repoussent pas."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["À partir de quel niveau sonore, longtemps, l'oreille s'abîme-t-elle ?", "environ 85 dB", "environ 20 dB", "environ 200 dB"], ["Comment s'échauffer la voix ?", "faire des sirènes douces du grave à l'aigu", "crier très fort d'un coup", "chanter le plus aigu possible tout de suite"]] }
         enonce: "{{t_0}}"

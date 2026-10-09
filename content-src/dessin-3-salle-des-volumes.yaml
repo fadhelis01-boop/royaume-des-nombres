@@ -45,10 +45,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Pour bien dessiner, il faut comparer les tailles entre elles.", true], ["Un enfant a les mêmes proportions qu'un adulte.", false]] }
+        vars: { "t":[["Pour bien dessiner, il faut comparer les tailles entre elles.",true,"Vrai : c'est le secret des proportions justes."],["Un enfant a les mêmes proportions qu'un adulte.",false,"Faux : un enfant a une tête plus grande par rapport à son corps (5 à 6 têtes)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un enfant a une tête plus grande par rapport à son corps (environ 5 à 6 têtes)."
+        correction: "{{t_2}}"
 
   - id: cube-et-lumiere
     titre: "Un cube qui prend la lumière"
@@ -98,10 +98,10 @@ lecons:
         reponse: "t_1"
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["L'ombre portée est toujours du même côté que la lumière.", false], ["Trois valeurs (clair, moyen, foncé) suffisent pour donner du volume à un cube.", true]] }
+        vars: { "t":[["L'ombre portée est toujours du même côté que la lumière.",false,"Faux : l'ombre portée est à l'opposé de la lumière."],["Trois valeurs (clair, moyen, foncé) suffisent pour donner du volume à un cube.",true,"Vrai : une valeur par face visible."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'ombre portée est à l'opposé de la source de lumière."
+        correction: "{{t_2}}"
 
   - id: cylindre-et-sphere
     titre: "Cylindre et sphère"
@@ -148,10 +148,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Boule : sphère ; boîte, tuyau, bougie : cylindre."
       - type: vf
-        vars: { t: [["Le haut d'un cylindre vu de côté est dessiné comme une ellipse.", true], ["Sur une sphère, le point le plus clair est du côté de la lumière.", true], ["Une sphère se dessine avec des angles droits.", false]] }
+        vars: { "t":[["Le haut d'un cylindre vu de côté est dessiné comme une ellipse.",true,"Vrai : un cercle vu en biais."],["Sur une sphère, le point le plus clair est du côté de la lumière.",true,"Vrai : c'est le point de lumière."],["Une sphère se dessine avec des angles droits.",false,"Faux : une sphère n'a aucun angle, seulement des courbes et des dégradés."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Une sphère n'a aucun angle : seulement des courbes et des dégradés."
+        correction: "{{t_2}}"
 
   - id: valeurs
     titre: "Les valeurs : du blanc au noir"
@@ -185,10 +185,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les hachures croisées donnent une zone plus foncée que des hachures simples.", true], ["Un jaune et un bleu foncé ont la même valeur.", false]] }
+        vars: { "t":[["Les hachures croisées donnent une zone plus foncée que des hachures simples.",true,"Vrai : plus de traits, donc plus de foncé."],["Un jaune et un bleu foncé ont la même valeur.",false,"Faux : le jaune est une valeur claire, le bleu foncé une valeur sombre."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le jaune est une couleur de valeur claire, le bleu foncé une valeur sombre."
+        correction: "{{t_2}}"
 
   - id: complementaires
     titre: "Les couleurs complémentaires"
@@ -215,10 +215,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} ↔ {{t_1}}"
       - type: vf
-        vars: { t: [["Deux complémentaires côte à côte créent un fort contraste.", true], ["Mélanger deux complémentaires donne une couleur très vive.", false], ["Un peu de complémentaire permet d'assombrir une couleur.", true]] }
+        vars: { "t":[["Deux complémentaires côte à côte créent un fort contraste.",true,"Vrai : elles se font briller l'une l'autre."],["Mélanger deux complémentaires donne une couleur très vive.",false,"Faux : mélangées, elles donnent une teinte grise ou brune."],["Un peu de complémentaire permet d'assombrir une couleur.",true,"Vrai : c'est plus joli qu'ajouter du noir."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Mélangées, deux complémentaires donnent une teinte grise ou brune."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pour qu'une fleur rouge ressorte au maximum, je peins le fond en…", "vert", "rouge", "rose"], ["Pour faire ressortir une orange, je choisis un fond…", "bleu", "orange", "jaune"]] }
         enonce: "{{t_0}}"
@@ -261,7 +261,7 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Le toucher aide à imaginer la texture à dessiner."
       - type: vf
-        vars: { t: [["Le frottage permet de relever la texture d'une surface.", true], ["Toutes les matières se dessinent avec le même trait.", false]] }
+        vars: { "t":[["Le frottage permet de relever la texture d'une surface.",true,"Vrai : on frotte un crayon sur une feuille posée sur la surface."],["Toutes les matières se dessinent avec le même trait.",false,"Faux : chaque matière a sa façon d'être dessinée."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Chaque matière a sa façon d'être dessinée."
+        correction: "{{t_2}}"

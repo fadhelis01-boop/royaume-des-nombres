@@ -29,6 +29,7 @@ lecons:
           - Le Soleil se **lève à l'est** et se **couche à l'ouest** (environ). En France, à midi, il est au **sud**.
           - L'aiguille aimantée d'une **boussole** indique le **nord** (le nord magnétique, proche du nord géographique).
           - La nuit, dans l'hémisphère Nord, l'**étoile Polaire** indique le nord.
+      - visuel: {"type":"schema","titre":"La rose des vents","emoji":"🧭","legendes":[{"label":"Nord","detail":"en haut des cartes"},{"label":"Est","detail":"le Soleil se lève"},{"label":"Ouest","detail":"le Soleil se couche"},{"label":"Sud","detail":"le Soleil à midi (chez nous)"}]}
       - astuce:
           texte: "Le Soleil se lève à l'Est et se couche à l'Ouest. Dans l'ordre des aiguilles d'une montre : Nord, Est, Sud, Ouest — « Ne Effraie Surtout pas les Oiseaux »."
           qui: zero
@@ -69,6 +70,7 @@ lecons:
           | Soleil → étoile la plus proche (Proxima du Centaure) | 4,2 **années-lumière** |
           | Taille de notre galaxie (Voie lactée) | environ 100 000 années-lumière |
           Une **année-lumière** est la distance parcourue par la lumière en un an (≈ 9 500 milliards de km).
+      - visuel: {"type":"frise","titre":"De plus en plus loin","fleche":"la distance","points":[{"emoji":"🌍","label":"Terre"},{"emoji":"🌙","label":"Lune","sous":"384 000 km"},{"emoji":"☀️","label":"Soleil","sous":"150 millions de km"},{"emoji":"⭐","label":"étoile la plus proche","sous":"4,2 années-lumière"},{"emoji":"🌌","label":"galaxie d'Andromède","sous":"2,5 millions d'a.-l."}]}
       - astuce:
           texte: "Si le Soleil était un ballon de foot à Paris, la Terre serait un grain de poivre à 25 mètres, et l'étoile la plus proche serait… à New York !"
           qui: neo
@@ -118,10 +120,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les étoiles d'une même constellation sont toutes à la même distance de nous.", false], ["Une planète se déplace lentement parmi les étoiles au fil des nuits.", true], ["Le Soleil est une étoile.", true]] }
+        vars: { "t":[["Les étoiles d'une même constellation sont toutes à la même distance de nous.",false,"Faux : ses étoiles peuvent être très éloignées les unes des autres."],["Une planète se déplace lentement parmi les étoiles au fil des nuits.",true,"Vrai : « planète » veut dire « astre errant » en grec."],["Le Soleil est une étoile.",true,"Vrai : c'est l'étoile la plus proche de nous."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Une constellation est un alignement vu depuis la Terre : ses étoiles peuvent être très éloignées les unes des autres."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["le Soleil", "Mars", "l'étoile Polaire", "Jupiter"], ["Sirius", "Vénus", "Bételgeuse", "Saturne"]] }
         enonce: "Étoile ou planète ?"
@@ -161,10 +163,10 @@ lecons:
       - retiens: "Jamais le Soleil en direct. Éclipse : lunettes certifiées ou image projetée. Lune et étoiles : sans danger."
     exercices:
       - type: vf
-        vars: { t: [["On peut regarder le Soleil avec des lunettes de soleil ordinaires.", false], ["Regarder la Lune au télescope est sans danger.", true], ["Le soleil peut abîmer les yeux sans qu'on ait mal sur le moment.", true], ["On peut regarder le Soleil aux jumelles s'il y a des nuages.", false]] }
+        vars: { "t":[["On peut regarder le Soleil avec des lunettes de soleil ordinaires.",false,"Faux : il faut des lunettes spéciales éclipse vérifiées."],["Regarder la Lune au télescope est sans danger.",true,"Vrai : la Lune ne fait que renvoyer la lumière du Soleil."],["Le soleil peut abîmer les yeux sans qu'on ait mal sur le moment.",true,"Vrai : la rétine n'a pas de capteurs de douleur."],["On peut regarder le Soleil aux jumelles s'il y a des nuages.",false,"Faux : jamais le Soleil aux jumelles, même avec des nuages."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Jamais le Soleil directement : les dégâts sur la rétine sont définitifs."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Comment observer une éclipse de Soleil sans danger ?", "avec des lunettes éclipse certifiées ou une image projetée", "avec des lunettes de soleil", "en plissant les yeux"], ["Combien de temps laisser ses yeux s'habituer au noir ?", "environ 15 à 20 minutes", "1 seconde", "2 heures"], ["Où observe-t-on le mieux les étoiles ?", "loin des lumières de la ville", "sous un lampadaire", "en plein jour"]] }
         enonce: "{{t_0}}"

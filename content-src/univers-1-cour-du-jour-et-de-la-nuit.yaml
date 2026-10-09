@@ -28,6 +28,7 @@ lecons:
           La Terre tourne sur elle-même autour d'un **axe** (de l'ouest vers l'est) en **24 heures** : c'est la **rotation**.
           À chaque instant, la moitié de la Terre tournée vers le Soleil est **éclairée** (c'est le **jour**), l'autre moitié est dans l'ombre (c'est la **nuit**).
           Quand il fait jour en France, il fait nuit en Australie, de l'autre côté de la Terre.
+      - visuel: {"type":"astres","mode":"jour-nuit"}
       - experience:
           titre: La Terre et la lampe
           securite: vert
@@ -49,10 +50,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le Soleil tourne autour de la Terre en 24 heures.", false], ["La moitié de la Terre est toujours éclairée par le Soleil.", true], ["La nuit, le Soleil continue de briller de l'autre côté de la Terre.", true]] }
+        vars: { "t":[["Le Soleil tourne autour de la Terre en 24 heures.",false,"Faux : c'est la Terre qui tourne sur elle-même en 24 heures."],["La moitié de la Terre est toujours éclairée par le Soleil.",true,"Vrai : c'est la moitié tournée vers le Soleil."],["La nuit, le Soleil continue de briller de l'autre côté de la Terre.",true,"Vrai : le Soleil brille toujours, c'est nous qui tournons."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "C'est la Terre qui tourne sur elle-même ; le Soleil brille toujours."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { j: [2, 3, 7] }
         enonce: "Combien d'heures dans {{j}} jours ?"
@@ -75,6 +76,7 @@ lecons:
           - En **hiver**, les jours sont **courts**, le Soleil reste **bas**, il fait froid.
           - Dans l'**hémisphère Sud** (Australie, Argentine), c'est l'inverse : Noël tombe en été !
           (On comprendra le **pourquoi** des saisons dans le Système solaire.)
+      - visuel: {"type":"frise","titre":"Les saisons (hémisphère nord)","fleche":"l'année","points":[{"emoji":"🌱","label":"printemps","sous":"vers le 20 mars"},{"emoji":"☀️","label":"été","sous":"vers le 21 juin"},{"emoji":"🍂","label":"automne","sous":"vers le 22 sept."},{"emoji":"❄️","label":"hiver","sous":"vers le 21 déc."}]}
       - astuce:
           texte: "Ordre des saisons à partir du 21 mars : printemps, été, automne, hiver. Retiens les dates clés : vers le 21 de mars, juin, septembre et décembre."
           qui: mia
@@ -91,10 +93,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["En Australie, Noël tombe en été.", true], ["En hiver, le Soleil monte très haut dans le ciel.", false], ["L'été commence vers le 21 juin en France.", true]] }
+        vars: { "t":[["En Australie, Noël tombe en été.",true,"Vrai : dans l'hémisphère Sud, les saisons sont inversées."],["En hiver, le Soleil monte très haut dans le ciel.",false,"Faux : en hiver, le Soleil reste bas dans le ciel."],["L'été commence vers le 21 juin en France.",true,"Vrai : c'est le solstice d'été."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "En hiver, le Soleil reste bas ; dans l'hémisphère Sud, les saisons sont inversées."
+        correction: "{{t_2}}"
 
   - id: formes-de-la-lune
     titre: "Les formes de la Lune"
@@ -110,6 +112,7 @@ lecons:
           Selon sa position, on en voit une partie éclairée plus ou moins grande : ce sont les **phases** :
           **nouvelle lune** (invisible) → premier **croissant** → **premier quartier** (moitié) → **pleine lune** (disque entier) → **dernier quartier** → dernier croissant → nouvelle lune.
           Astuce (hémisphère Nord) : si la Lune a la forme d'un **p** (bosse à droite), elle grandit (« **p**remier ») ; si elle a la forme d'un **d** (bosse à gauche), elle décroît (« **d**ernier »).
+      - visuel: {"type":"astres","mode":"phases"}
       - astuce:
           texte: "Chez nous, quand la Lune a la forme d'un D, elle croît ; quand elle a la forme d'un C, elle décroît. Elle dit le contraire de ses lettres : la Lune est menteuse !"
           qui: zero
@@ -126,10 +129,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["La Lune change vraiment de forme.", false], ["À la nouvelle lune, on ne voit presque pas la Lune.", true], ["La Lune brille par elle-même.", false]] }
+        vars: { "t":[["La Lune change vraiment de forme.",false,"Faux : elle est toujours une boule, on voit seulement une partie de sa face éclairée."],["À la nouvelle lune, on ne voit presque pas la Lune.",true,"Vrai : sa face éclairée est tournée de l'autre côté."],["La Lune brille par elle-même.",false,"Faux : elle renvoie la lumière du Soleil."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La Lune est toujours une boule : on voit seulement une partie plus ou moins grande de sa face éclairée."
+        correction: "{{t_2}}"
 
   - id: la-meteo
     titre: "La météo"
@@ -143,6 +146,7 @@ lecons:
           La **météo** décrit le temps qu'il fait à un endroit et à un moment : température, nuages, pluie, vent.
           Instruments : **thermomètre** (température), **pluviomètre** (quantité de pluie, en mm), **girouette** (direction du vent), **anémomètre** (vitesse du vent), **baromètre** (pression de l'air).
           Les **météorologues** utilisent des stations, des satellites et des ordinateurs pour faire des **prévisions** (de plus en plus fiables, mais jamais certaines à 100 %).
+      - visuel: {"type":"schema","titre":"Les instruments de la météo","emoji":"🌦️","legendes":[{"label":"thermomètre","detail":"température"},{"label":"baromètre","detail":"pression de l'air"},{"label":"anémomètre","detail":"vitesse du vent"},{"label":"pluviomètre","detail":"quantité de pluie"}]}
       - vraie_vie:
           titre: Ma station météo
           texte: "Pendant une semaine, note chaque jour à la même heure : la température (thermomètre), l'état du ciel (☀️ ⛅ ☁️ 🌧️), le vent (fort, faible). Fais un tableau, puis un graphique des températures."
@@ -164,7 +168,7 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 1]]
         correction: "Pluie, neige, grêle : précipitations. Vent, brise, tempête : de l'air qui bouge."
       - type: vf
-        vars: { t: [["Une prévision météo est toujours exacte à 100 %.", false], ["Les satellites aident à prévoir la météo.", true], ["La pluie se mesure en millimètres.", true]] }
+        vars: { "t":[["Une prévision météo est toujours exacte à 100 %.",false,"Faux : les prévisions sont fiables, mais l'atmosphère reste en partie imprévisible."],["Les satellites aident à prévoir la météo.",true,"Vrai : ils observent les nuages depuis l'espace."],["La pluie se mesure en millimètres.",true,"Vrai : avec un pluviomètre."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les prévisions sont de plus en plus fiables, mais l'atmosphère reste en partie imprévisible."
+        correction: "{{t_2}}"

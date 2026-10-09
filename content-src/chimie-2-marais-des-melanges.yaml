@@ -49,10 +49,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une eau filtrée et claire est toujours bonne à boire.", false], ["Un filtre retient le sel dissous dans l'eau.", false], ["Le filtrat est le liquide qui traverse le filtre.", true]] }
+        vars: { "t":[["Une eau filtrée et claire est toujours bonne à boire.",false,"Faux : le filtre ne retient ni les microbes ni le sel dissous."],["Un filtre retient le sel dissous dans l'eau.",false,"Faux : le sel dissous passe à travers le filtre."],["Le filtrat est le liquide qui traverse le filtre.",true,"Vrai : ce qui reste dans le filtre s'appelle le résidu."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le filtre ne retient ni le sel dissous ni les microbes : clair ne veut pas dire potable."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["Placer le filtre dans l'entonnoir", "Poser l'entonnoir sur un verre propre", "Verser doucement le mélange", "Récupérer le filtrat"]] }
         enonce: "Remets les étapes de la filtration dans l'ordre."
@@ -95,10 +95,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Quand l'eau salée s'évapore, le sel s'évapore aussi.", false], ["Une eau boueuse laissée au repos devient plus claire en haut.", true], ["Les marais salants utilisent le soleil et le vent.", true]] }
+        vars: { "t":[["Quand l'eau salée s'évapore, le sel s'évapore aussi.",false,"Faux : seule l'eau s'évapore, le sel reste en cristaux."],["Une eau boueuse laissée au repos devient plus claire en haut.",true,"Vrai : la terre tombe au fond, c'est la décantation."],["Les marais salants utilisent le soleil et le vent.",true,"Vrai : ils évaporent l'eau de mer pour récolter le sel."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le sel ne s'évapore pas : il reste en cristaux."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["tamis", "évaporation", "filtre à café", "marais salant"], ["passoire", "laisser l'eau au soleil", "papier filtre", "faire chauffer l'eau salée"]] }
         enonce: "Cette technique garde-t-elle le solide en laissant passer le liquide, ou fait-elle partir l'eau ?"
@@ -124,6 +124,7 @@ lecons:
           | **condensation** | gaz → liquide | la buée sur le miroir de la salle de bain |
 
           L'eau pure **fond à 0 °C** et **bout à 100 °C** (au niveau de la mer). Pendant qu'elle bout, sa température **reste à 100 °C**.
+      - visuel: {"type":"cycle","centre":"l'eau","etapes":[{"emoji":"🧊","label":"solide → fusion"},{"emoji":"💧","label":"liquide → vaporisation"},{"emoji":"♨️","label":"gaz → liquéfaction"},{"emoji":"💧","label":"liquide → solidification"}]}
       - attention:
           texte: "Zéro croit que l'eau qui bout depuis longtemps devient « super chaude ». Non : tant qu'il reste de l'eau liquide, elle reste à 100 °C (à pression normale). Par contre la vapeur brûle : on ne met jamais la main au-dessus d'une casserole qui bout !"
           qui: neo
@@ -144,10 +145,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "On chauffe pour la fusion et la vaporisation ; on refroidit pour la solidification et la condensation."
       - type: vf
-        vars: { t: [["L'eau qui bout depuis 10 minutes est à 200 °C.", false], ["La buée est de la vapeur d'eau redevenue liquide.", true], ["Pendant l'ébullition, la température de l'eau reste à 100 °C (à pression normale).", true]] }
+        vars: { "t":[["L'eau qui bout depuis 10 minutes est à 200 °C.",false,"Faux : tant qu'elle bout, l'eau liquide reste à 100 °C."],["La buée est de la vapeur d'eau redevenue liquide.",true,"Vrai : c'est la liquéfaction (ou condensation) sur une surface froide."],["Pendant l'ébullition, la température de l'eau reste à 100 °C (à pression normale).",true,"Vrai : l'énergie sert à changer l'eau en vapeur."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Tant qu'elle bout, l'eau liquide reste à 100 °C (au niveau de la mer)."
+        correction: "{{t_2}}"
 
   - id: acide-ou-base
     titre: "Acide ou base ? Le chou magique"
@@ -188,10 +189,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un indicateur change de couleur selon que le liquide est acide ou basique.", true], ["On peut goûter les liquides de l'expérience pour vérifier.", false], ["L'eau pure est neutre.", true]] }
+        vars: { "t":[["Un indicateur change de couleur selon que le liquide est acide ou basique.",true,"Vrai : c'est son rôle, comme le jus de chou rouge."],["On peut goûter les liquides de l'expérience pour vérifier.",false,"Faux : au labo, on ne goûte jamais, on observe la couleur."],["L'eau pure est neutre.",true,"Vrai : son pH vaut 7."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Au labo, on ne goûte jamais : on observe la couleur de l'indicateur."
+        correction: "{{t_2}}"
 
   - id: cycle-de-l-eau
     titre: "Le cycle de l'eau"
@@ -208,6 +209,7 @@ lecons:
           2. En montant, la vapeur se refroidit : elle **se condense** en minuscules gouttes qui forment les **nuages**.
           3. Les gouttes grossissent et tombent : ce sont les **précipitations** (pluie, neige, grêle).
           4. L'eau ruisselle dans les rivières, s'infiltre dans le sol… et retourne à la mer. Et ça recommence !
+      - visuel: {"type":"cycle","centre":"l'eau voyage","etapes":[{"emoji":"🌊","label":"évaporation"},{"emoji":"☁️","label":"condensation (nuages)"},{"emoji":"🌧️","label":"précipitations"},{"emoji":"🏞️","label":"ruissellement"}]}
       - experience:
           titre: Un cycle de l'eau dans un bocal
           securite: orange
@@ -234,7 +236,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["L'eau que nous buvons a peut-être été bue par un dinosaure.", true], ["Les nuages sont faits de vapeur d'eau invisible.", false], ["Le cycle de l'eau s'arrête l'hiver.", false]] }
+        vars: { "t":[["L'eau que nous buvons a peut-être été bue par un dinosaure.",true,"Vrai : l'eau circule sur Terre depuis des milliards d'années."],["Les nuages sont faits de vapeur d'eau invisible.",false,"Faux : la vapeur est invisible ; les nuages sont faits de gouttelettes."],["Le cycle de l'eau s'arrête l'hiver.",false,"Faux : l'eau s'évapore et tombe aussi en hiver (neige, pluie)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La vapeur est invisible ; les nuages sont faits de gouttelettes. Et l'eau circule depuis des milliards d'années !"
+        correction: "{{t_2}}"

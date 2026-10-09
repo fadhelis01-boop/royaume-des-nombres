@@ -107,6 +107,7 @@ lecons:
           - *Elle a cueilli **des fleurs**.* → COD après → **pas d'accord**.
           - *Les fleurs **qu'**elle a cueilli**es** sont belles.* → COD (que = les fleurs) avant → accord.
           - *Ces fleurs, elle **les** a cueilli**es**.* → COD « les » avant → accord.
+      - visuel: {"type":"phrase","legende":"Le COD est placé AVANT avoir : le participe s'accorde avec lui.","groupes":[{"mots":"Les pommes","role":"cod","etiquette":"COD placé avant"},{"mots":"que j'","role":"liaison"},{"mots":"ai","role":"verbe","etiquette":"avoir"},{"mots":"cueillies","role":"attribut","etiquette":"accordé : -ies"}]}
       - astuce:
           texte: "Pose la question « a cueilli quoi ? » : si la réponse est déjà écrite AVANT le verbe, on accorde."
           qui: neo
@@ -125,10 +126,10 @@ lecons:
         niveau: 2
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les fleurs qu'il a cueillies sont fanées.", true], ["Elle a mangée sa soupe.", false], ["Les films que j'ai vus étaient drôles.", true], ["Mes sœurs ont dansées toute la nuit.", false]] }
+        vars: { "t":[["Les fleurs qu'il a cueillies sont fanées.",true,"Vrai : le COD « que » (les fleurs) est placé avant : cueillies s'accorde."],["Elle a mangée sa soupe.",false,"Faux : le COD « sa soupe » est après le verbe : on écrit « elle a mangé »."],["Les films que j'ai vus étaient drôles.",true,"Vrai : le COD « que » (les films) est placé avant : vus s'accorde."],["Mes sœurs ont dansées toute la nuit.",false,"Faux : avec avoir et sans COD placé avant, pas d'accord : « ont dansé »."]] }
         enonce: "L'accord est-il correct ? « {{t_0}} »"
         reponse: "t_1"
-        correction: "Avec avoir : accord seulement avec le COD placé avant."
+        correction: "{{t_2}}"
 
   - id: participe-seul
     titre: "Le participe passé employé seul"

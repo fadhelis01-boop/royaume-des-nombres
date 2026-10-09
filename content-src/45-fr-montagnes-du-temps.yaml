@@ -29,6 +29,7 @@ lecons:
           - **Passé** : ce qui est déjà arrivé. *Hier, j'**ai joué**. Autrefois, on **écrivait** à la plume.*
           - **Présent** : ce qui se passe maintenant. *Aujourd'hui, je **joue**.*
           - **Futur** : ce qui va arriver. *Demain, je **jouerai**.*
+      - visuel: {"type":"frise","marque":1,"points":[{"emoji":"⬅️","label":"passé","sous":"hier, il a joué"},{"emoji":"📍","label":"présent","sous":"aujourd'hui, il joue"},{"emoji":"➡️","label":"futur","sous":"demain, il jouera"}]}
       - astuce:
           texte: "Cherche le mot-indice : hier → passé, aujourd'hui/maintenant → présent, demain → futur."
           qui: zero
@@ -103,6 +104,7 @@ lecons:
 
           *je chantais, tu finissais, il prenait, nous allions, vous faisiez, ils voyaient*.
           Seule exception : **être** → j'**ét**ais, tu étais…
+      - visuel: {"type":"frise","titre":"Les mêmes terminaisons pour tous les verbes","fleche":false,"points":[{"emoji":"1","label":"je -ais"},{"emoji":"2","label":"tu -ais"},{"emoji":"3","label":"il -ait"},{"emoji":"4","label":"nous -ions"},{"emoji":"5","label":"vous -iez"},{"emoji":"6","label":"ils -aient"}]}
       - attention:
           texte: "Les verbes en -cer et -ger : je commen**ç**ais, je man**ge**ais (pour garder le son), mais nous commencions, nous mangions."
           qui: neo
@@ -186,6 +188,7 @@ lecons:
           - 1er groupe → **-é** : chanté, mangé
           - 2e groupe → **-i** : fini, grandi
           - 3e groupe → varié : **pris, fait, vu, dit, mis, lu, écrit, eu, été, pu, voulu**
+      - visuel: {"type":"phrase","legende":"Passé composé = auxiliaire au présent + participe passé.","groupes":[{"mots":"Nous","role":"sujet"},{"mots":"avons","role":"verbe","etiquette":"auxiliaire avoir"},{"mots":"gagné","role":"attribut","etiquette":"participe passé"},{"mots":"le match","role":"cod"}]}
       - astuce:
           texte: "Pour savoir si un participe finit par -i, -is ou -it, mets-le au féminin : pris → pri**se** (donc s), fait → fai**te** (donc t), fini → fini**e** (rien)."
           qui: neo
@@ -222,6 +225,7 @@ lecons:
           *il est parti, elle est parti**e**, ils sont parti**s**, elles sont parti**es***.
 
           Les verbes qui prennent **être** : *aller, venir, arriver, partir, entrer, sortir, monter, descendre, tomber, rester, naître, mourir, devenir, retourner*…
+      - visuel: {"type":"phrase","legende":"Avec être, le participe s'accorde avec le sujet.","groupes":[{"mots":"Elles","role":"sujet","etiquette":"féminin pluriel"},{"mots":"sont","role":"verbe","etiquette":"auxiliaire être"},{"mots":"parties","role":"attribut","etiquette":"participe + e + s"}]}
       - astuce:
           texte: "Imagine la **Maison d'Être** : on y **arrive**, on y **entre**, on **monte**, on **descend**, on **tombe**, on **sort**, on **part**… Ce sont les verbes d'être !"
           qui: mia

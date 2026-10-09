@@ -126,10 +126,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Dans une chanson, le refrain revient avec les mêmes paroles.", true], ["Dans un rondo, le thème A ne revient jamais.", false], ["« Ah ! vous dirai-je, maman » a inspiré des variations à Mozart.", true]] }
+        vars: { "t":[["Dans une chanson, le refrain revient avec les mêmes paroles.",true,"Vrai : les couplets changent, le refrain revient."],["Dans un rondo, le thème A ne revient jamais.",false,"Faux : dans un rondo, le thème A revient entre chaque nouvelle partie."],["« Ah ! vous dirai-je, maman » a inspiré des variations à Mozart.",true,"Vrai : ses 12 variations sur ce thème."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Dans un rondo, le thème A revient entre chaque nouvelle partie."
+        correction: "{{t_2}}"
       - type: qcm
         enonce: "Écoute : la première et la troisième partie sont-elles pareilles ?"
         vars: { t: [["Do4 Mi4 Sol4 Mi4 _ La4 Fa4 Ré4 Fa4 _ Do4 Mi4 Sol4 Mi4", "oui : c'est une forme ABA", "non : la troisième partie est nouvelle (ABC)"], ["Do4 Mi4 Sol4 Mi4 _ La4 Fa4 Ré4 Fa4 _ Si3 Ré4 Sol4 Si4", "non : la troisième partie est nouvelle (ABC)", "oui : c'est une forme ABA"]] }
@@ -170,10 +170,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "Violon, alto, violoncelle, contrebasse : du plus petit au plus grand."
       - type: vf
-        vars: { t: [["La flûte traversière fait partie des bois.", true], ["Les percussions sont placées devant le chef d'orchestre.", false], ["Le tuba joue plus grave que la trompette.", true]] }
+        vars: { "t":[["La flûte traversière fait partie des bois.",true,"Vrai : même en métal, elle fait partie de la famille des bois."],["Les percussions sont placées devant le chef d'orchestre.",false,"Faux : les percussions sont au fond, les cordes devant."],["Le tuba joue plus grave que la trompette.",true,"Vrai : plus l'instrument est grand, plus il est grave."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les cordes sont devant ; les percussions au fond de l'orchestre."
+        correction: "{{t_2}}"
 
   - id: histoire-de-la-musique
     titre: "Un voyage dans l'histoire de la musique"
@@ -210,7 +210,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} : {{t_1}}."
       - type: vf
-        vars: { t: [["Le jazz est né aux États-Unis au début du XXᵉ siècle.", true], ["Mozart a vécu après Chopin.", false], ["Le gamelan est une musique traditionnelle d'Indonésie.", true]] }
+        vars: { "t":[["Le jazz est né aux États-Unis au début du XXᵉ siècle.",true,"Vrai : à La Nouvelle-Orléans, vers 1900."],["Mozart a vécu après Chopin.",false,"Faux : Mozart (1756-1791) a vécu avant Chopin (1810-1849)."],["Le gamelan est une musique traditionnelle d'Indonésie.",true,"Vrai : un orchestre de gongs et de métallophones."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Mozart (1756-1791) a vécu avant Chopin (1810-1849)."
+        correction: "{{t_2}}"

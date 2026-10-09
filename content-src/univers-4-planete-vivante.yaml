@@ -31,6 +31,7 @@ lecons:
           - le **noyau** : surtout du **fer** et du nickel, **liquide** à l'extérieur, **solide** au centre (graine), où la température dépasse 5 000 °C.
           La croûte et le haut du manteau forment la **lithosphère**, découpée en **plaques**.
           On connaît cette structure grâce aux **ondes sismiques** des séismes, qui changent de vitesse selon les couches traversées.
+      - visuel: {"type":"couches","forme":"cercle","legende":"Coupe de la Terre, de la surface vers le centre.","couches":[{"nom":"Croûte","detail":"5 à 70 km","couleur":"#8d6e63"},{"nom":"Manteau","detail":"roches chaudes","couleur":"#e2574c"},{"nom":"Noyau externe","detail":"métal liquide","couleur":"#ff8a1f"},{"nom":"Noyau interne","detail":"métal solide","couleur":"#ffcf33"}]}
       - astuce:
           texte: "La Terre, c'est une pêche : la peau fine est la croûte, la chair est le manteau, le noyau est… le noyau !"
           qui: neo
@@ -47,10 +48,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le manteau terrestre est un océan de lave liquide.", false], ["Le centre de la Terre est solide.", true], ["Le forage le plus profond n'a atteint qu'environ 12 km.", true]] }
+        vars: { "t":[["Le manteau terrestre est un océan de lave liquide.",false,"Faux : le manteau est solide mais se déforme très lentement."],["Le centre de la Terre est solide.",true,"Vrai : le noyau interne est en fer solide, à cause de l'énorme pression."],["Le forage le plus profond n'a atteint qu'environ 12 km.",true,"Vrai : environ 12 km, en Russie, sur plus de 6 000 km de rayon."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le manteau est solide mais se déforme très lentement ; on n'a jamais foré au-delà d'environ 12 km."
+        correction: "{{t_2}}"
 
   - id: tectonique
     titre: "La tectonique des plaques"
@@ -86,10 +87,10 @@ lecons:
         unite: m
         correction: "{{v}} × {{a}} = {{v*a}} cm = {{v*a/100}} m."
       - type: vf
-        vars: { t: [["L'Amérique et l'Afrique ont été réunies autrefois.", true], ["Les montagnes ne bougent plus jamais.", false], ["Aux dorsales, un nouveau fond océanique se forme.", true]] }
+        vars: { "t":[["L'Amérique et l'Afrique ont été réunies autrefois.",true,"Vrai : elles faisaient partie de la Pangée."],["Les montagnes ne bougent plus jamais.",false,"Faux : les plaques bougent toujours, quelques centimètres par an."],["Aux dorsales, un nouveau fond océanique se forme.",true,"Vrai : le magma remonte et forme une nouvelle croûte."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les continents dérivent toujours : l'Atlantique s'élargit de quelques centimètres par an."
+        correction: "{{t_2}}"
 
   - id: atmosphere-meteo-climat
     titre: "Atmosphère, météo et climat"
@@ -105,6 +106,7 @@ lecons:
           - La **météo** : le temps qu'il fait **à un endroit, un jour donné** (« demain, pluie à Lyon »).
           - Le **climat** : les conditions **moyennes** sur une longue période (au moins **30 ans**) dans une région (« climat océanique : doux et humide »).
           Un hiver froid ne contredit pas le réchauffement climatique : il faut regarder les moyennes sur des décennies.
+      - visuel: {"type":"couches","legende":"Les couches de l'atmosphère, de haut en bas.","couches":[{"emoji":"🛰️","nom":"Thermosphère","detail":"satellites, aurores"},{"emoji":"☄️","nom":"Mésosphère","detail":"les étoiles filantes brûlent"},{"emoji":"🛡️","nom":"Stratosphère","detail":"couche d'ozone"},{"emoji":"☁️","nom":"Troposphère","detail":"météo, nuages, avions","epaisseur":2}]}
       - astuce:
           texte: "La météo, c'est ton humeur du jour ; le climat, c'est ton caractère sur 30 ans."
           qui: mia
@@ -122,10 +124,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un hiver très froid prouve que le climat ne se réchauffe pas.", false], ["Le climat décrit des conditions moyennes.", true], ["L'atmosphère nous protège d'une partie du rayonnement du Soleil.", true]] }
+        vars: { "t":[["Un hiver très froid prouve que le climat ne se réchauffe pas.",false,"Faux : le climat se juge sur des décennies, pas sur une saison."],["Le climat décrit des conditions moyennes.",true,"Vrai : sur 30 ans en général."],["L'atmosphère nous protège d'une partie du rayonnement du Soleil.",true,"Vrai : la couche d'ozone filtre une partie des UV."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le climat se juge sur des décennies, pas sur une saison."
+        correction: "{{t_2}}"
 
   - id: effet-de-serre
     titre: "L'effet de serre"
@@ -141,6 +143,7 @@ lecons:
           - **Naturel**, il est indispensable : sans lui, la température moyenne de la Terre serait d'environ **−18 °C** au lieu de **+15 °C**.
           - Depuis le XIXᵉ siècle, en brûlant du charbon, du pétrole et du gaz, et en déboisant, les humains ont fait passer le CO₂ de l'air d'environ **280 ppm** à **plus de 420 ppm** : l'effet de serre se **renforce** et la Terre s'est déjà réchauffée d'environ **1,2 °C** en moyenne.
           Conséquences : canicules plus fréquentes, glaciers qui fondent, montée du niveau des mers, sécheresses et pluies extrêmes.
+      - visuel: {"type":"cycle","centre":"effet de serre","etapes":[{"emoji":"☀️","label":"le Soleil chauffe le sol"},{"emoji":"🌡️","label":"le sol renvoie de la chaleur"},{"emoji":"🏭","label":"les gaz à effet de serre la retiennent"},{"emoji":"🌍","label":"la Terre se réchauffe"}]}
       - astuce:
           texte: "Sans effet de serre naturel, la Terre serait à −18 °C en moyenne. Le problème, ce n'est pas l'effet de serre, c'est son renforcement par nos émissions."
           qui: neo
@@ -152,10 +155,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["L'effet de serre est entièrement mauvais.", false], ["La quantité de CO₂ dans l'air a augmenté depuis 150 ans.", true], ["La fonte des glaciers fait partie des conséquences du réchauffement.", true]] }
+        vars: { "t":[["L'effet de serre est entièrement mauvais.",false,"Faux : l'effet de serre naturel permet la vie ; c'est son renforcement qui pose problème."],["La quantité de CO₂ dans l'air a augmenté depuis 150 ans.",true,"Vrai : à cause du charbon, du pétrole et du gaz brûlés."],["La fonte des glaciers fait partie des conséquences du réchauffement.",true,"Vrai : c'est l'une des conséquences les plus visibles."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'effet de serre naturel permet la vie ; c'est son renforcement par les humains qui pose problème."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["le Soleil chauffe le sol", "le sol émet de la chaleur (infrarouges)", "les gaz à effet de serre retiennent une partie de cette chaleur", "l'air près du sol se réchauffe"]] }
         enonce: "Remets les étapes de l'effet de serre dans l'ordre."
@@ -192,7 +195,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le pétrole s'est formé en quelques années.", false], ["Une centrale nucléaire émet très peu de CO₂ en fonctionnant.", true], ["Les panneaux solaires produisent aussi la nuit.", false]] }
+        vars: { "t":[["Le pétrole s'est formé en quelques années.",false,"Faux : il vient de restes d'êtres vivants transformés pendant des millions d'années."],["Une centrale nucléaire émet très peu de CO₂ en fonctionnant.",true,"Vrai : elle n'émet presque pas de CO₂ en fonctionnant."],["Les panneaux solaires produisent aussi la nuit.",false,"Faux : sans lumière, ils ne produisent pas."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le pétrole vient de restes d'êtres vivants transformés pendant des millions d'années."
+        correction: "{{t_2}}"

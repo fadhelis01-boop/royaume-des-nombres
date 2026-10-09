@@ -31,6 +31,7 @@ lecons:
 
           Le **nom propre** désigne **une seule** personne, un seul animal ou un seul lieu : *Léa, Médor, Paris, la Loire*.
           Il commence **toujours par une majuscule**.
+      - visuel: {"type":"phrase","groupes":[{"mots":"Le","role":"determinant"},{"mots":"chat","role":"nom","etiquette":"nom commun"},{"mots":"de","role":"liaison","etiquette":"petit mot"},{"mots":"Léo","role":"nom","etiquette":"nom propre (majuscule)"},{"mots":"dort","role":"verbe"}]}
       - astuce:
           texte: "Pour savoir si un mot est un nom, essaie de mettre « un » ou « une » devant : « une table » ✔, « un manger » ✘."
           qui: neo
@@ -76,6 +77,7 @@ lecons:
           |---|---|---|---|
           | on ne sait pas lequel | **un** chat | **une** souris | **des** chats |
           | on sait lequel | **le** chat | **la** souris | **les** chats |
+      - visuel: {"type":"phrase","legende":"Le déterminant annonce le nom : masculin ou féminin, un ou plusieurs.","groupes":[{"mots":"un","role":"determinant"},{"mots":"vélo","role":"nom"},{"mots":"·","role":"ponctuation","etiquette":" "},{"mots":"la","role":"determinant"},{"mots":"lune","role":"nom"},{"mots":"·","role":"ponctuation","etiquette":" "},{"mots":"l'","role":"determinant","etiquette":"devant une voyelle"},{"mots":"arbre","role":"nom"}]}
       - attention:
           texte: "Devant une voyelle (ou un h muet), **le** et **la** deviennent **l'** : l'arbre, l'école, l'hôpital. On n'écrit jamais « la école »."
           qui: neo
@@ -165,6 +167,7 @@ lecons:
           **Pluriel** = plusieurs : *des chat**s**, les fleur**s***.
 
           Au pluriel, on ajoute en général un **s** à la fin du nom. On ne l'entend pas, mais on l'écrit !
+      - visuel: {"type":"phrase","legende":"Plusieurs : le déterminant ET le nom changent (le s ne s'entend pas).","groupes":[{"mots":"les","role":"determinant","etiquette":"plusieurs"},{"mots":"chats","role":"nom","etiquette":"+ s"}]}
       - attention:
           texte: "Les mots qui finissent déjà par **s, x ou z** ne changent pas : une souris → des souris ; un nez → des nez ; une noix → des noix."
           qui: neo

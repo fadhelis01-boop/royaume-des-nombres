@@ -42,10 +42,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Les plantes, les animaux et les champignons sont vivants : ils naissent, grandissent, se nourrissent, se reproduisent."
       - type: vf
-        vars: { t: [["Une plante est vivante.", true], ["Un robot qui marche est vivant.", false], ["Un être vivant finit par mourir.", true], ["Le feu est vivant car il grandit.", false]] }
+        vars: { "t":[["Une plante est vivante.",true,"Vrai : elle naît, grandit, se nourrit, se reproduit et meurt."],["Un robot qui marche est vivant.",false,"Faux : il bouge, mais ne naît pas, ne grandit pas, n'a pas de petits."],["Un être vivant finit par mourir.",true,"Vrai : tous les êtres vivants finissent par mourir."],["Le feu est vivant car il grandit.",false,"Faux : le feu ne se nourrit pas, ne naît pas et n'a pas de petits."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le feu « grandit » mais ne se nourrit pas, ne naît pas et n'a pas de petits : il n'est pas vivant."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Qu'est-ce qu'un être vivant ne fait PAS forcément ?", "se déplacer", "se nourrir", "grandir"], ["Pourquoi un arbre est-il vivant ?", "il pousse, se nourrit et fait des graines", "il est grand", "il fait de l'ombre"]] }
         enonce: "{{t_0}}"
@@ -70,6 +70,7 @@ lecons:
           | le **goût** | la langue 👅 | goûter le sucré, le salé, l'acide, l'amer |
           | le **toucher** | la peau ✋ | sentir le chaud, le froid, le doux, le piquant |
           Les sens envoient des messages au **cerveau**, qui les comprend.
+      - visuel: {"type":"schema","titre":"Les cinq sens","emoji":"🧒","legendes":[{"label":"vue","detail":"les yeux"},{"label":"ouïe","detail":"les oreilles"},{"label":"odorat","detail":"le nez"},{"label":"goût","detail":"la langue"},{"label":"toucher","detail":"la peau"}]}
       - attention:
           texte: "On ne goûte jamais une baie, un champignon ou un liquide inconnu : certains sont très toxiques."
           qui: mia
@@ -90,10 +91,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
         correction: "La langue perçoit le sucré, le salé, l'acide, l'amer (et l'umami)."
       - type: vf
-        vars: { t: [["C'est le cerveau qui comprend ce que nos sens perçoivent.", true], ["On peut goûter une baie inconnue si elle est jolie.", false], ["La peau est l'organe du toucher.", true]] }
+        vars: { "t":[["C'est le cerveau qui comprend ce que nos sens perçoivent.",true,"Vrai : les sens envoient des messages, le cerveau les interprète."],["On peut goûter une baie inconnue si elle est jolie.",false,"Faux : jamais de baie inconnue, certaines sont mortelles."],["La peau est l'organe du toucher.",true,"Vrai : la peau sent le chaud, le froid, le doux, le piquant."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Jamais de baie inconnue : certaines sont mortelles."
+        correction: "{{t_2}}"
 
   - id: parties-de-la-plante
     titre: "Les parties d'une plante"
@@ -108,6 +109,7 @@ lecons:
           - La **tige** porte la plante et transporte l'eau jusqu'aux feuilles.
           - Les **feuilles** fabriquent la nourriture de la plante grâce à la **lumière**.
           - La **fleur** permet la reproduction : elle deviendra un **fruit** qui contient les **graines**.
+      - visuel: {"type":"schema","titre":"Les parties de la plante","emoji":"🌻","legendes":[{"label":"fleur","detail":"donne les graines"},{"label":"feuilles","detail":"fabriquent la nourriture"},{"label":"tige","detail":"transporte la sève"},{"label":"racines","detail":"puisent l'eau"}]}
       - dessin:
           titre: Une plante pas à pas
           etapes:
@@ -177,10 +179,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 2], ["{{t_3}}", 3]]
         correction: "Poils, plumes, 6 pattes, nageoires."
       - type: vf
-        vars: { t: [["Le dauphin est un poisson.", false], ["L'araignée est un insecte.", false], ["Les oiseaux ont des plumes.", true], ["La salamandre est un amphibien.", true]] }
+        vars: { "t":[["Le dauphin est un poisson.",false,"Faux : le dauphin respire de l'air et allaite : c'est un mammifère."],["L'araignée est un insecte.",false,"Faux : l'araignée a 8 pattes, c'est un arachnide."],["Les oiseaux ont des plumes.",true,"Vrai : les plumes sont le signe des oiseaux."],["La salamandre est un amphibien.",true,"Vrai : peau nue et humide, têtard dans l'eau : c'est un amphibien."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le dauphin est un mammifère ; l'araignée a 8 pattes (arachnide)."
+        correction: "{{t_2}}"
 
   - id: besoins-du-vivant
     titre: "De quoi ont-ils besoin ?"
@@ -220,10 +222,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les plantes mangent la terre.", false], ["Tous les êtres vivants ont besoin d'eau.", true], ["Un animal fabrique sa nourriture avec la lumière.", false]] }
+        vars: { "t":[["Les plantes mangent la terre.",false,"Faux : elles fabriquent leur nourriture avec la lumière, l'eau et l'air."],["Tous les êtres vivants ont besoin d'eau.",true,"Vrai : sans eau, aucun être vivant ne survit."],["Un animal fabrique sa nourriture avec la lumière.",false,"Faux : seules les plantes fabriquent leur nourriture avec la lumière."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les plantes fabriquent leur nourriture avec la lumière, l'eau, l'air (et des sels minéraux), pas en « mangeant » la terre."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["de la lumière pour fabriquer sa nourriture", "manger d'autres êtres vivants", "puiser de l'eau par les racines", "boire avec la bouche"]] }
         enonce: "Ce besoin est-il celui d'une plante ou d'un animal ?"
@@ -242,6 +244,7 @@ lecons:
       - a_quoi_ca_sert: "Faire germer une graine, c'est le début de tout jardin et de toute notre nourriture : blé, riz, haricots… tout commence par une graine."
       - texte: |
           Une graine contient un **minuscule bébé plante** et des **réserves** de nourriture. Pour **germer**, elle a besoin d'**eau**, d'**air** et d'une **température douce** — pas de lumière au début ! (la lumière devient indispensable une fois les feuilles sorties).
+      - visuel: {"type":"frise","titre":"De la graine à la plante","points":[{"emoji":"🌰","label":"graine"},{"emoji":"💧","label":"germination","sous":"eau + air + chaleur"},{"emoji":"🌱","label":"plantule"},{"emoji":"🌿","label":"plante"},{"emoji":"🌸","label":"fleur, puis graines"}]}
       - experience:
           titre: Le haricot dans le coton
           securite: vert
@@ -268,7 +271,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une graine peut germer sans terre, dans du coton humide.", true], ["Une graine noyée sous l'eau germe mieux.", false], ["Une graine contient des réserves de nourriture.", true]] }
+        vars: { "t":[["Une graine peut germer sans terre, dans du coton humide.",true,"Vrai : il lui faut de l'eau, de l'air et de la chaleur, pas forcément de la terre."],["Une graine noyée sous l'eau germe mieux.",false,"Faux : noyée, la graine manque d'air et peut pourrir."],["Une graine contient des réserves de nourriture.",true,"Vrai : ces réserves nourrissent la jeune plante au début."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Noyée, la graine manque d'air et peut pourrir."
+        correction: "{{t_2}}"

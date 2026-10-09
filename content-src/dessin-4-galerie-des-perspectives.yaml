@@ -57,10 +57,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["En perspective, les lignes verticales restent verticales.", true], ["Un arbre lointain doit être dessiné plus grand qu'un arbre proche de même taille.", false], ["Brunelleschi a étudié la perspective à Florence au XVᵉ siècle.", true]] }
+        vars: { "t":[["En perspective, les lignes verticales restent verticales.",true,"Vrai : en perspective à un point, elles restent verticales."],["Un arbre lointain doit être dessiné plus grand qu'un arbre proche de même taille.",false,"Faux : plus c'est loin, plus c'est petit."],["Brunelleschi a étudié la perspective à Florence au XVᵉ siècle.",true,"Vrai : il est considéré comme l'inventeur de la perspective."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Plus c'est loin, plus c'est petit."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["On regarde un paysage depuis le haut d'une tour. Où place-t-on l'horizon ?", "haut dans l'image", "très bas dans l'image", "il disparaît"], ["On est allongé dans l'herbe. Où place-t-on l'horizon ?", "très bas dans l'image", "très haut dans l'image", "au milieu exactement"]] }
         enonce: "{{t_0}}"
@@ -111,10 +111,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Vue de face/dans l'axe : 1 point ; vue de biais par un angle : 2 points."
       - type: vf
-        vars: { t: [["En perspective à 2 points, les arêtes verticales convergent aussi.", false], ["Les deux points de fuite sont à la même hauteur.", true]] }
+        vars: { "t":[["En perspective à 2 points, les arêtes verticales convergent aussi.",false,"Faux : à 2 points, les verticales restent verticales ; elles convergent à 3 points."],["Les deux points de fuite sont à la même hauteur.",true,"Vrai : sur la ligne d'horizon."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "À 2 points, les verticales restent verticales (c'est à 3 points qu'elles convergent)."
+        correction: "{{t_2}}"
 
   - id: le-visage
     titre: "Les proportions du visage"
@@ -154,10 +154,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les débutants placent souvent les yeux trop haut.", true], ["La bouche est au même niveau que les oreilles.", false]] }
+        vars: { "t":[["Les débutants placent souvent les yeux trop haut.",true,"Vrai : ils sont pourtant au milieu de la tête."],["La bouche est au même niveau que les oreilles.",false,"Faux : la bouche est sous le nez, plus bas que les oreilles."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La bouche est sous le nez, plus bas que les oreilles."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["l'ovale de la tête", "l'axe et la ligne des yeux", "les yeux", "le nez", "la bouche et les oreilles"]] }
         enonce: "Remets la construction du visage dans l'ordre."
@@ -194,10 +194,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Un personnage qui court a une ligne d'action penchée vers l'avant.", true], ["On dessine les plis des vêtements avant le squelette.", false]] }
+        vars: { "t":[["Un personnage qui court a une ligne d'action penchée vers l'avant.",true,"Vrai : le corps se penche dans la direction de la course."],["On dessine les plis des vêtements avant le squelette.",false,"Faux : on part toujours de la structure (squelette), les plis viennent après."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On part toujours de la structure (mouvement, squelette)."
+        correction: "{{t_2}}"
 
   - id: composition-et-bd
     titre: "Composition et bande dessinée"

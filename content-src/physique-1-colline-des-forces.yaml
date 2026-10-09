@@ -50,10 +50,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Pour déplacer un objet immobile, il faut exercer une force.", true], ["Une force ne peut pas déformer un objet.", false], ["Plus je pousse fort, plus l'objet part vite.", true]] }
+        vars: { "t":[["Pour déplacer un objet immobile, il faut exercer une force.",true,"Vrai : un objet immobile ne se met pas en mouvement tout seul."],["Une force ne peut pas déformer un objet.",false,"Faux : une force peut écraser, tordre, étirer un objet."],["Plus je pousse fort, plus l'objet part vite.",true,"Vrai : une force plus grande donne plus de vitesse."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Une force peut mettre en mouvement, arrêter, dévier ou déformer."
+        correction: "{{t_2}}"
 
   - id: ca-tombe
     titre: "Ça tombe !"
@@ -82,10 +82,10 @@ lecons:
       - retiens: "La Terre attire tous les objets vers le bas. Ce qui ralentit la chute, c'est l'air, pas la légèreté."
     exercices:
       - type: vf
-        vars: { t: [["Une feuille froissée tombe plus vite qu'une feuille à plat, alors qu'elles pèsent pareil.", true], ["Sans air, une plume et un marteau tombent en même temps.", true], ["Les objets tombent parce que l'air les pousse vers le bas.", false], ["Un parachute fonctionne grâce à l'air qui freine.", true]] }
+        vars: { "t":[["Une feuille froissée tombe plus vite qu'une feuille à plat, alors qu'elles pèsent pareil.",true,"Vrai : froissée, elle est moins freinée par l'air."],["Sans air, une plume et un marteau tombent en même temps.",true,"Vrai : c'est l'air qui freine la plume ; l'expérience a été faite sur la Lune."],["Les objets tombent parce que l'air les pousse vers le bas.",false,"Faux : c'est la Terre qui attire les objets ; l'air, lui, freine."],["Un parachute fonctionne grâce à l'air qui freine.",true,"Vrai : sa grande toile est freinée par l'air."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "C'est la Terre qui attire les objets ; l'air, lui, freine."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi la feuille à plat tombe-t-elle lentement ?", "l'air la freine", "elle est plus légère", "la Terre ne l'attire pas"], ["Qu'est-ce qui attire les objets vers le sol ?", "la Terre", "l'air", "le vent"], ["Sur la Lune, sans air, une plume et un marteau lâchés ensemble…", "arrivent en même temps", "la plume arrive après", "le marteau flotte"]] }
         enonce: "{{t_0}}"
@@ -140,10 +140,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "Pôles différents s'attirent, pôles identiques se repoussent."
       - type: vf
-        vars: { t: [["Un aimant attire tous les métaux.", false], ["Un aimant peut attirer un trombone à travers une feuille de papier.", true], ["L'aiguille d'une boussole est un petit aimant.", true]] }
+        vars: { "t":[["Un aimant attire tous les métaux.",false,"Faux : il attire le fer, l'acier, le nickel, mais pas l'aluminium ni le cuivre."],["Un aimant peut attirer un trombone à travers une feuille de papier.",true,"Vrai : la force magnétique traverse le papier."],["L'aiguille d'une boussole est un petit aimant.",true,"Vrai : elle s'oriente vers le nord."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'aluminium et le cuivre, par exemple, ne sont pas attirés."
+        correction: "{{t_2}}"
 
   - id: lumiere-et-ombres
     titre: "La lumière et les ombres"
@@ -189,10 +189,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "L'ombre est toujours du côté opposé à la source de lumière. {{t_1}}."
       - type: vf
-        vars: { t: [["La lumière voyage en ligne droite.", true], ["Une ombre est faite d'une matière noire.", false], ["Sans source de lumière, il n'y a pas d'ombre.", true]] }
+        vars: { "t":[["La lumière voyage en ligne droite.",true,"Vrai : c'est pour ça qu'un objet bloque la lumière et crée une ombre."],["Une ombre est faite d'une matière noire.",false,"Faux : une ombre est une zone où la lumière n'arrive pas."],["Sans source de lumière, il n'y a pas d'ombre.",true,"Vrai : il faut une lumière et un objet qui la bloque."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Une ombre n'est pas une matière : c'est une zone où la lumière n'arrive pas."
+        correction: "{{t_2}}"
 
   - id: chaud-froid
     titre: "Chaud, froid, tiède : le thermomètre"
@@ -276,7 +276,7 @@ lecons:
         choix: ["{{t_2}}", "{{si(t_2=='le son A','le son B','le son A')}}", "ils sont pareils"]
         correction: "Le plus aigu est celui qui vibre le plus vite : {{t_2}}."
       - type: vf
-        vars: { t: [["Quand je parle, mes cordes vocales vibrent.", true], ["Un son aigu est forcément fort.", false], ["Sans vibration, il n'y a pas de son.", true]] }
+        vars: { "t":[["Quand je parle, mes cordes vocales vibrent.",true,"Vrai : pose ta main sur ta gorge pour le sentir."],["Un son aigu est forcément fort.",false,"Faux : aigu/grave (la hauteur) et fort/doux (l'intensité), ce sont deux choses différentes."],["Sans vibration, il n'y a pas de son.",true,"Vrai : tout son vient de quelque chose qui vibre."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Aigu/grave (la hauteur) et fort/doux (l'intensité), ce sont deux choses différentes."
+        correction: "{{t_2}}"

@@ -250,6 +250,8 @@ export interface Child {
   enigmes: string[];
   validatedWorlds: string[]; // validés par le test de positionnement
   daily?: { day: string; done: boolean };
+  quetes?: { day: string; base: Record<string, number>; faites: string[] }; // quêtes du jour
+  album?: string[]; // habitants libérés (album à compléter)
   counters: Record<string, number>; // ok, ko, comeback, perfect, ask, compte, revision, zero, invente…
   inventions: { at: number; calcul: string; histoire: string }[];
   crystals: string[]; // mondes dont le cristal est rallumé (Défi du Gardien réussi)
@@ -281,5 +283,8 @@ export interface Settings {
   reduceMotion: boolean;
   unlockAll: boolean;
   dailyLimit: number; // minutes, 0 = pas de limite
+  aiDailyLimit: number; // questions à l'assistant IA par jour et par enfant, 0 = pas de limite
+  sonsVisibles?: boolean; // chaque son est aussi dessiné (enfants sourds ou malentendants)
+  lastBackup: number; // date de la dernière sauvegarde téléchargée (ms), 0 = jamais
   theme: "clair" | "sombre" | "auto";
 }

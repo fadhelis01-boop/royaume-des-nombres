@@ -219,6 +219,90 @@ function withQuestions(etapes, exercices) {
 }
 
 const CYCLES = ["graines", "explorateurs", "maitres", "astuces"];
+
+/**
+ * Effet tuteur (audit 2.1) : avant « Je retiens », l'enfant explique la leçon à Zéro en choisissant
+ * la bonne phrase parmi celle de la leçon et deux phrases d'autres leçons du même monde.
+ * Expliquer à quelqu'un est l'un des moyens les plus efficaces de retenir.
+ */
+function ajouterExplique(w) {
+  const ret = (l) => l.etapes.find((s) => s.kind === "retiens")?.texte;
+  const avec = w.lecons.filter((l) => ret(l));
+  if (avec.length < 3) return;
+  for (const [i, l] of avec.entries()) {
+    if (l.etapes.some((s) => s.kind === "explique")) continue;
+    const autres = avec.filter((x) => x !== l);
+    const d1 = autres[(i * 7 + 1) % autres.length], d2 = autres[(i * 7 + 2) % autres.length];
+    if (!d1 || !d2 || d1 === d2) continue;
+    const bon = { texte: ret(l), ok: true, retour: "Bravo ! Tu viens de l'expliquer comme un vrai prof. Expliquer, c'est la meilleure façon de retenir." };
+    const faux = (x) => ({ texte: ret(x), ok: false, retour: `Cette phrase est juste, mais elle vient de la leçon « ${x.titre} ». Ici, on apprend : ${l.objectif.charAt(0).toLowerCase() + l.objectif.slice(1)}` });
+    const choix = [faux(d1), faux(d2)];
+    choix.splice(i % 3, 0, bon);
+    const k = l.etapes.findIndex((s) => s.kind === "retiens");
+    l.etapes.splice(k, 0, { kind: "explique", texte: "Zéro n'a pas tout suivi… Quelle phrase lui expliques-tu pour résumer CETTE leçon ?", qui: "zero", choix, auto: true });
+  }
+}
+
+/** Coupe un texte de plus de 550 caractères à la limite de paragraphe (ou de puce) la plus proche du milieu, hors tableau. */
+function couperTexte(s) {
+  const t = s.texte;
+  if (t.length <= 550) return [s];
+  const lignes = t.split("\n");
+  let best = -1, ecart = Infinity, pos = 0;
+  lignes.forEach((l, i) => {
+    pos += l.length + 1;
+    const suiv = lignes[i + 1];
+    if (suiv === undefined) return;
+    const frontiere = l.trim() === "" || /^\s*[-•]\s/.test(suiv);
+    const tableau = /^\s*\|/.test(l) && /^\s*\|/.test(suiv);
+    if (!frontiere || tableau) return;
+    const d = Math.abs(pos - t.length / 2);
+    if (d < ecart && pos > 150 && t.length - pos > 150) {
+      ecart = d;
+      best = i;
+    }
+  });
+  if (best < 0) return [s];
+  const a = lignes.slice(0, best + 1).join("\n").trimEnd();
+  const b = lignes.slice(best + 1).join("\n").trimStart();
+  return [{ ...s, texte: a }, { kind: "texte", texte: b }];
+}
+
+/** Exercice « texte à trous » tiré du « Je retiens » : un mot en gras est caché, l'enfant l'écrit. */
+const MOTS_OUTILS = new Set(["le", "la", "les", "un", "une", "des", "et", "ou", "de", "du", "à", "au", "aux", "en", "est", "sont", "pas", "ne", "plus", "très"]);
+function clozeFromRetiens(texte, mots = []) {
+  if (typeof texte !== "string" || /\$|\{\{/.test(texte)) return null;
+  const plain = texte.replace(/\*\*/g, "");
+  const terms = [...texte.matchAll(/\*\*([^*]+)\*\*/g)].map((m) => m[1].trim());
+  // les mots-clés de la leçon présents tels quels dans la phrase à retenir
+  for (const m of (Array.isArray(mots) ? mots : []).map(String).filter((x) => /^[A-Za-zÀ-ÿœŒæ' -]{3,24}$/.test(x))) {
+    const re = new RegExp(`(^|[^A-Za-zÀ-ÿ])(${m})(?=[^A-Za-zÀ-ÿ]|$)`, "i");
+    const hit = plain.match(re);
+    if (hit) terms.push(hit[2]);
+  }
+  const seen = new Set();
+  const t = [];
+  for (const term of terms) {
+    if (!/^[A-Za-zÀ-ÿœŒæ' -]{3,24}$/.test(term) || term.split(/\s+/).length > 3 || MOTS_OUTILS.has(term.toLowerCase()) || seen.has(term.toLowerCase())) continue;
+    seen.add(term.toLowerCase());
+    // le mot ne doit pas rester visible ailleurs dans la phrase (sinon la réponse est donnée)
+    const idx = plain.indexOf(term);
+    if (idx < 0) continue;
+    const reste = plain.slice(0, idx) + plain.slice(idx + term.length);
+    if (reste.toLowerCase().includes(term.toLowerCase())) continue;
+    const phrase = plain.slice(0, idx) + "……" + plain.slice(idx + term.length);
+    t.push([phrase, term]);
+  }
+  if (t.length < 2) return null;
+  return {
+    type: "mot",
+    vars: { t },
+    enonce: "🧠 Complète ce que tu as retenu (écris le mot qui manque) :\n\n« {{t_0}} »",
+    reponse: "{{t_1}}",
+    correction: "Le mot qui manquait : **{{t_1}}**.",
+    niveau: 3,
+  };
+}
 export function normalizeWorld(w, file) {
   const where = file;
   for (const k of ["id", "titre", "emoji", "couleur", "cycle", "age", "niveau", "ordre"]) if (w[k] === undefined) errors.push(`${where} : champ « ${k} » manquant`);
@@ -234,7 +318,11 @@ export function normalizeWorld(w, file) {
     decor: w.decor,
     cycle: w.cycle,
     age: String(w.age),
-    niveau: String(w.niveau),
+    // une seule échelle de niveaux pour toutes les planètes : on garde les classes (« Explorateur (CE2 – CM1) » → « CE2 – CM1 »)
+    niveau: (() => {
+      const n = String(w.niveau).replace(/^[^(]*\((.*)\)\s*$/, "$1").trim();
+      return n.charAt(0).toUpperCase() + n.slice(1);
+    })(),
     ordre: w.ordre,
     prerequis: w.prerequis ?? [],
     intro: w.intro ? lines(w.intro, `${where} intro`) : undefined,
@@ -247,9 +335,20 @@ export function normalizeWorld(w, file) {
     if (!l.id || !l.titre || !l.objectif) errors.push(`${lw} : id, titre et objectif requis`);
     if (ids.has(l.id)) errors.push(`${lw} : identifiant de leçon en double`);
     ids.add(l.id);
-    const exercices = (l.exercices ?? []).map((e, i) => exercise(e, `${lw} exercice ${i + 1}`));
-    const raw = (l.etapes ?? []).map((s, i) => step(s, `${lw} étape ${i + 1}`)).filter(Boolean);
+    const raw0 = (l.etapes ?? []).map((s, i) => step(s, `${lw} étape ${i + 1}`)).filter(Boolean);
+    // Pour les plus jeunes (cycle « graines »), un texte trop long est coupé en deux écrans.
+    const raw = w.cycle === "graines" ? raw0.flatMap((s) => (s.kind === "texte" ? couperTexte(s) : [s])) : raw0;
+    // Indice par défaut : l'astuce de la leçon (sinon « Je retiens »), proposé au premier échec.
+    const tip = raw.find((s) => s.kind === "astuce")?.texte ?? raw.find((s) => s.kind === "retiens")?.texte;
+    const exercices = (l.exercices ?? []).map((e, i) => {
+      const ex = exercise(e, `${lw} exercice ${i + 1}`);
+      return ex && typeof ex === "object" && !ex.indice && tip && !/\{\{/.test(tip) ? { ...ex, indice: tip } : ex;
+    });
     const etapes = l.auto_questions === false ? raw : withQuestions(raw, exercices);
+    // Rappel actif : « complète ce que tu as retenu » à partir des mots en gras du « Je retiens »
+    // (réponse à produire, pas à reconnaître). Hors maths, où les réponses sont déjà produites.
+    const trou = (w.matiere ?? "maths") !== "maths" ? clozeFromRetiens(raw.find((s) => s.kind === "retiens")?.texte, l.mots) : null;
+    if (trou) exercices.push(trou);
     if (!exercices.length) errors.push(`${lw} : aucun exercice — chaque leçon doit avoir des exercices pratiques`);
     if (!etapes.length) errors.push(`${lw} : aucune étape de cours`);
     const words = JSON.stringify(etapes).split(/\s+/).length;
@@ -266,6 +365,7 @@ export function normalizeWorld(w, file) {
     });
   }
   if (!out.lecons.length) errors.push(`${where} : aucune leçon`);
+  ajouterExplique(out);
   return out;
 }
 

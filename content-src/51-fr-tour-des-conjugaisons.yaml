@@ -78,6 +78,7 @@ lecons:
 
           Le **plus-que-parfait** raconte une action **antérieure** à une autre action passée : *Quand il arriva, le train **était parti**.*
           Le **futur antérieur** : une action future **terminée avant** une autre : *Quand tu **auras fini**, nous partirons.*
+      - visuel: {"type":"phrase","legende":"Temps composé = auxiliaire conjugué + participe passé.","groupes":[{"mots":"Quand j'","role":"liaison","etiquette":" "},{"mots":"aurai","role":"verbe","etiquette":"avoir au futur"},{"mots":"fini","role":"attribut","etiquette":"participe"},{"mots":", je sortirai","role":"principale"}]}
       - astuce:
           texte: "Un temps composé, c'est un duo : l'auxiliaire au temps simple + le participe passé. Conjugue l'auxiliaire et le reste suit."
           qui: neo
@@ -228,6 +229,7 @@ lecons:
       - texte: |
           - **Imparfait** : le **décor**, les descriptions, les **habitudes**, ce qui **dure** : *Le château **était** sombre. Chaque soir, le roi **lisait**.*
           - **Passé simple** : les **actions** principales, **soudaines**, qui se succèdent : *Un cri **retentit**. Le roi **se leva** et **courut** vers la fenêtre.*
+      - visuel: {"type":"phrase","groupes":[{"mots":"Il pleuvait","role":"sujet","etiquette":"imparfait : le décor"},{"mots":"quand","role":"liaison"},{"mots":"le loup surgit","role":"verbe","etiquette":"passé simple : l'action"}]}
       - astuce:
           texte: "Imagine un film : l'imparfait, c'est le paysage en arrière-plan ; le passé simple, ce sont les personnages qui bougent."
           qui: mia

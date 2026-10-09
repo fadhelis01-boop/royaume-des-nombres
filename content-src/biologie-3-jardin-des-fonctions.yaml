@@ -30,6 +30,7 @@ lecons:
           Elle rejette du **dioxygène** (O₂) : c'est grâce aux plantes et aux algues que l'air contient de l'oxygène !
           Bilan : eau + dioxyde de carbone + lumière → sucres + dioxygène.
           Le bois d'un arbre vient donc surtout… de l'air !
+      - visuel: {"type":"schema","titre":"La photosynthèse","emoji":"🍃","legendes":[{"label":"lumière","detail":"l'énergie"},{"label":"sucre","detail":"fabriqué par la feuille"},{"label":"eau + CO₂","detail":"entrent"},{"label":"dioxygène","detail":"sort"}]}
       - astuce:
           texte: "La plante fait de la cuisine avec de la lumière : eau + dioxyde de carbone + lumière → sucre + dioxygène. Elle mange de l'air et de la lumière !"
           qui: zero
@@ -42,10 +43,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les plantes mangent la terre pour grandir.", false], ["La photosynthèse a besoin de lumière.", true], ["Sans photosynthèse, il n'y aurait presque pas d'oxygène dans l'air.", true]] }
+        vars: { "t":[["Les plantes mangent la terre pour grandir.",false,"Faux : leur matière vient surtout du CO₂ de l'air."],["La photosynthèse a besoin de lumière.",true,"Vrai : la lumière apporte l'énergie."],["Sans photosynthèse, il n'y aurait presque pas d'oxygène dans l'air.",true,"Vrai : presque tout le dioxygène de l'air vient de la photosynthèse."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le sol apporte l'eau et des sels minéraux, mais la matière vient surtout du CO₂ de l'air."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["la lumière", "le dioxygène", "l'eau", "les sucres", "le dioxyde de carbone"]] }
         enonce: "Dans la photosynthèse, est-ce ce que la plante utilise ou ce qu'elle produit ?"
@@ -77,10 +78,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les plantes respirent aussi.", true], ["On expire plus de dioxyde de carbone qu'on n'en inspire.", true], ["La respiration sert à produire de l'énergie.", true], ["Le poisson respire l'oxygène de l'air à la surface.", false]] }
+        vars: { "t":[["Les plantes respirent aussi.",true,"Vrai : jour et nuit, comme tous les êtres vivants."],["On expire plus de dioxyde de carbone qu'on n'en inspire.",true,"Vrai : le corps produit du CO₂ en fabriquant de l'énergie."],["La respiration sert à produire de l'énergie.",true,"Vrai : les cellules utilisent le dioxygène pour libérer l'énergie des aliments."],["Le poisson respire l'oxygène de l'air à la surface.",false,"Faux : il utilise le dioxygène dissous dans l'eau, grâce à ses branchies."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le poisson utilise l'oxygène dissous dans l'eau, grâce à ses branchies."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Où l'oxygène passe-t-il dans le sang ?", "dans les poumons", "dans l'estomac", "dans le cœur"], ["Quel gaz rejetons-nous en expirant ?", "du dioxyde de carbone (et de la vapeur d'eau)", "uniquement de l'oxygène", "de l'azote pur"]] }
         enonce: "{{t_0}}"
@@ -103,6 +104,7 @@ lecons:
           4. **Intestin grêle** (environ 6 à 7 m !) : les aliments sont découpés en **nutriments** minuscules qui passent dans le **sang**.
           5. **Gros intestin** : on récupère l'eau ; ce qui n'est pas digéré forme les selles.
           Le sang apporte les nutriments à toutes les cellules du corps.
+      - visuel: {"type":"frise","titre":"Le trajet des aliments","fleche":"le tube digestif","points":[{"emoji":"👄","label":"bouche"},{"emoji":"⬇️","label":"œsophage"},{"emoji":"🥣","label":"estomac"},{"emoji":"〰️","label":"intestin grêle","sous":"les nutriments passent dans le sang"},{"emoji":"🌀","label":"gros intestin"}]}
       - astuce:
           texte: "Le trajet dans l'ordre : Bouche, Œsophage, Estomac, Intestin grêle, Gros intestin. « Bob Est Encore Il Grandit »."
           qui: neo
@@ -119,10 +121,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les aliments passent par les poumons.", false], ["Les nutriments sont transportés par le sang.", true], ["La digestion commence dans la bouche.", true]] }
+        vars: { "t":[["Les aliments passent par les poumons.",false,"Faux : les aliments passent dans le tube digestif, l'air dans les poumons."],["Les nutriments sont transportés par le sang.",true,"Vrai : depuis l'intestin, les nutriments passent dans le sang."],["La digestion commence dans la bouche.",true,"Vrai : on mâche et la salive commence à digérer."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'air va aux poumons, les aliments vont dans le tube digestif."
+        correction: "{{t_2}}"
 
   - id: classification
     titre: "Classer en groupes emboîtés"
@@ -156,10 +158,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les ailes d'un oiseau sont des membres, comme nos bras.", true], ["Le serpent est un vertébré.", true], ["Les insectes ont une colonne vertébrale.", false]] }
+        vars: { "t":[["Les ailes d'un oiseau sont des membres, comme nos bras.",true,"Vrai : même organisation des os que nos bras."],["Le serpent est un vertébré.",true,"Vrai : il a une colonne vertébrale."],["Les insectes ont une colonne vertébrale.",false,"Faux : ils ont un squelette externe, pas de colonne vertébrale."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les insectes sont des arthropodes : squelette externe, pas de colonne vertébrale."
+        correction: "{{t_2}}"
 
   - id: ecosystemes
     titre: "Les écosystèmes"
@@ -174,6 +176,7 @@ lecons:
           Un **écosystème** = un milieu (mare, forêt, prairie) + tous les êtres vivants qui y vivent + leurs relations.
           Les chaînes alimentaires s'entremêlent en un **réseau alimentaire**. Si une espèce disparaît, les autres sont touchées : moins d'insectes pollinisateurs → moins de fruits → moins de nourriture pour les oiseaux…
           La **biodiversité** (la variété des espèces) rend les écosystèmes plus solides. L'humain la menace (pollution, destruction des milieux, espèces invasives) mais peut aussi la protéger (haies, mares, réserves).
+      - visuel: {"type":"cycle","centre":"écosystème","etapes":[{"emoji":"🌿","label":"producteurs"},{"emoji":"🐇","label":"consommateurs"},{"emoji":"🍄","label":"décomposeurs"},{"emoji":"⛰️","label":"sels minéraux du sol"}]}
       - astuce:
           texte: "Écosystème = un milieu + les êtres vivants qui y vivent + leurs relations. Retire une pièce et tout le reste bouge, comme un mobile suspendu."
           qui: mia
@@ -185,10 +188,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Dans un écosystème, les espèces sont reliées entre elles.", true], ["La disparition d'une seule espèce n'a jamais d'effet.", false], ["Une mare dans un jardin peut augmenter la biodiversité.", true]] }
+        vars: { "t":[["Dans un écosystème, les espèces sont reliées entre elles.",true,"Vrai : elles se mangent, s'abritent, se pollinisent…"],["La disparition d'une seule espèce n'a jamais d'effet.",false,"Faux : une disparition peut se répercuter sur tout le réseau."],["Une mare dans un jardin peut augmenter la biodiversité.",true,"Vrai : elle attire grenouilles, libellules, oiseaux…"]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Tout est lié : une disparition peut se répercuter sur tout le réseau."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["planter une haie", "déverser des produits chimiques dans une rivière", "laisser un coin d'herbes sauvages", "relâcher une tortue exotique dans un étang"]] }
         enonce: "Cette action protège-t-elle ou menace-t-elle la biodiversité ?"
@@ -233,10 +236,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["La levure est un être vivant.", true], ["Toutes les bactéries sont nuisibles.", false], ["Si l'eau est trop chaude, la levure meurt.", true]] }
+        vars: { "t":[["La levure est un être vivant.",true,"Vrai : c'est un champignon microscopique, elle se nourrit et se reproduit."],["Toutes les bactéries sont nuisibles.",false,"Faux : beaucoup sont utiles (yaourt, fromage, digestion)."],["Si l'eau est trop chaude, la levure meurt.",true,"Vrai : au-delà d'environ 50 °C, la levure meurt."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Beaucoup de bactéries sont utiles : yaourt, fromage, digestion."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["le pain", "la salade nature", "le yaourt", "la pomme crue"], ["le fromage", "le riz cuit", "la choucroute", "l'eau"]] }
         enonce: "Cet aliment est-il fabriqué grâce à des micro-organismes ?"

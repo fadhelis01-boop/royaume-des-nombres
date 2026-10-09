@@ -3,6 +3,7 @@ import { evaluate, fmtNum, fracStr, parse, toNumber, type Node } from "../lib/ex
 import type { VisSpec } from "../lib/types";
 import { Md } from "./Md";
 import { AtomeVis, ClavierVis, PorteeVis, SonVis } from "./VisuelsSavoirs";
+import { AstresVis, CouchesVis, CycleVis, FriseVis, PhraseVis, SchemaVis } from "./VisuelsPlus";
 
 // Tous les visuels sont dessinés à partir de données (aucune image à fabriquer) :
 // un nouveau monde peut ainsi illustrer ses leçons sans une ligne de code.
@@ -110,6 +111,18 @@ function renderVis(v: Any): ReactNode {
       return <ClavierVis v={v} />;
     case "atome":
       return <AtomeVis v={v} />;
+    case "frise":
+      return <FriseVis v={v} />;
+    case "phrase":
+      return <PhraseVis v={v} />;
+    case "astres":
+      return <AstresVis v={v} />;
+    case "couches":
+      return <CouchesVis v={v} />;
+    case "cycle":
+      return <CycleVis v={v} />;
+    case "schema":
+      return <SchemaVis v={v} />;
   }
   throw new Error(`type « ${s(v.type)} » inconnu`);
 }

@@ -147,10 +147,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}} = {{t_1}}"
       - type: vf
-        vars: { t: [["On peut obtenir du jaune en mélangeant d'autres couleurs de peinture.", false], ["Le blanc éclaircit une couleur.", true], ["Le vert est une couleur primaire en peinture.", false]] }
+        vars: { "t":[["On peut obtenir du jaune en mélangeant d'autres couleurs de peinture.",false,"Faux : le jaune est primaire, il ne se fabrique pas par mélange."],["Le blanc éclaircit une couleur.",true,"Vrai : on ajoute du blanc pour obtenir une teinte plus claire."],["Le vert est une couleur primaire en peinture.",false,"Faux : le vert est secondaire : jaune + bleu."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le jaune est primaire : il ne se fabrique pas par mélange."
+        correction: "{{t_2}}"
 
   - id: personnage-formes
     titre: "Mon premier personnage en formes"
@@ -195,10 +195,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On peut dessiner un personnage avec seulement des formes simples.", true], ["Il faut commencer par dessiner les cils.", false], ["Les dessins animés utilisent souvent des personnages faits de formes simples.", true]] }
+        vars: { "t":[["On peut dessiner un personnage avec seulement des formes simples.",true,"Vrai : cercles, ovales, rectangles suffisent."],["Il faut commencer par dessiner les cils.",false,"Faux : on commence par les grandes formes, les détails à la fin."],["Les dessins animés utilisent souvent des personnages faits de formes simples.",true,"Vrai : c'est plus simple à dessiner et à animer."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Grandes formes d'abord, détails ensuite."
+        correction: "{{t_2}}"
 
   - id: contour-d-objet
     titre: "Je dessine ce que je vois"
@@ -245,7 +245,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le haut d'un verre vu un peu de dessus est un ovale.", true], ["Pour dessiner d'après nature, il vaut mieux ne pas regarder l'objet.", false], ["On peut corriger un trait de construction léger.", true]] }
+        vars: { "t":[["Le haut d'un verre vu un peu de dessus est un ovale.",true,"Vrai : un cercle vu en biais devient un ovale."],["Pour dessiner d'après nature, il vaut mieux ne pas regarder l'objet.",false,"Faux : il faut regarder l'objet beaucoup plus que sa feuille."],["On peut corriger un trait de construction léger.",true,"Vrai : c'est pour ça qu'on les fait légers."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un cercle vu en biais devient un ovale : c'est la perspective."
+        correction: "{{t_2}}"

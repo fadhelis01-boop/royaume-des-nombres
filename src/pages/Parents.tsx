@@ -8,6 +8,7 @@ import { MODELS } from "../lib/ai-config";
 import { levelOf } from "../lib/rewards";
 import { Mascot, NAMES } from "../components/Mascot";
 import type { Child, Who } from "../lib/types";
+import { AssistantPlus, Bilans, Confidentialite, HorsConnexion, marquerSauvegarde, RappelSauvegarde } from "./ParentsPlus";
 
 const TABS = [
   { id: "suivi", label: "📊 Suivi" },
@@ -16,6 +17,8 @@ const TABS = [
   { id: "assistant", label: "🤖 Assistant" },
   { id: "contenu", label: "📦 Contenus" },
   { id: "sauvegarde", label: "💾 Sauvegarde" },
+  { id: "bilans", label: "🖨️ Bilans" },
+  { id: "confidentialite", label: "🔒 Confidentialité" },
   { id: "guide", label: "🎓 Guide" },
 ];
 
@@ -27,6 +30,7 @@ export function Parents({ tab }: { tab?: string }) {
   return (
     <div className="page parents">
       <h1>🔒 Espace parents</h1>
+      <RappelSauvegarde onGo={() => go("/parents/sauvegarde")} />
       <div className="tabs scroll">
         {TABS.map((x) => (
           <button key={x.id} className={`tab ${t === x.id ? "active" : ""}`} onClick={() => go(`/parents/${x.id}`)}>
@@ -41,6 +45,8 @@ export function Parents({ tab }: { tab?: string }) {
       {t === "contenu" && <Contenus />}
       {t === "sauvegarde" && <Sauvegarde />}
       {t === "guide" && <Guide />}
+      {t === "bilans" && <BilansPage />}
+      {t === "confidentialite" && <Confidentialite />}
       <div className="center" style={{ marginTop: 24 }}>
         <button
           className="btn btn-soft"
@@ -488,6 +494,7 @@ function Reglages() {
           <input type="range" min={0.85} max={1.5} step={0.05} value={s.fontScale} onChange={(e) => updateSettings({ fontScale: Number(e.target.value) })} />
         </label>
         <Toggle label="Mode lecture facilitée (dyslexie : police OpenDyslexic, espacement accru, lignes aérées)" v={s.dys} on={(v) => updateSettings({ dys: v })} />
+        <Toggle label="Sons visibles (enfants sourds ou malentendants) : chaque son est aussi dessiné (hauteur, durée, rythme, volume)" v={!!s.sonsVisibles} on={(v) => updateSettings({ sonsVisibles: v })} />
         <Toggle label="Réduire les animations" v={s.reduceMotion} on={(v) => updateSettings({ reduceMotion: v })} />
         <label>
           Thème :{" "}
@@ -593,6 +600,7 @@ function AssistantCfg() {
           Confidentialité : la clé reste sur cet appareil (elle n'est pas incluse dans les sauvegardes). Les questions sont envoyées uniquement à Anthropic pour obtenir la réponse ; aucune donnée personnelle de l'enfant n'est transmise (seulement son âge, pour adapter les explications). Lya est réglée pour rester sur les mathématiques et les sciences, ne jamais demander d'informations personnelles, et guider vers la réponse plutôt que la donner directement.
         </p>
       </section>
+      <AssistantPlus />
     </div>
   );
 }
@@ -696,9 +704,21 @@ function Sauvegarde() {
     const blob = new Blob([exportBackup()], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `royaume-des-nombres-sauvegarde-${dayKey()}.json`;
+    a.download = `galaxie-des-savoirs-sauvegarde-${dayKey()}.json`;
     a.click();
     URL.revokeObjectURL(a.href);
+    marquerSauvegarde();
+  };
+  // partage direct (tablette, téléphone) : e-mail, messagerie, cloud…
+  const fichier = () => new File([exportBackup()], `galaxie-des-savoirs-sauvegarde-${dayKey()}.json`, { type: "application/json" });
+  const peutPartager = typeof navigator !== "undefined" && !!navigator.canShare && (() => { try { return navigator.canShare({ files: [fichier()] }); } catch { return false; } })();
+  const partager = async () => {
+    try {
+      await navigator.share({ files: [fichier()], title: "Sauvegarde de la Galaxie des Savoirs" });
+      marquerSauvegarde();
+    } catch {
+      /* partage annulé */
+    }
   };
   return (
     <div className="stack">
@@ -708,6 +728,11 @@ function Sauvegarde() {
         <button className="btn btn-primary" onClick={download}>
           ⬇ Télécharger la sauvegarde
         </button>
+        {peutPartager && (
+          <button className="btn btn-soft" onClick={partager}>
+            📤 Envoyer la sauvegarde (e-mail, messagerie…)
+          </button>
+        )}
       </section>
       <section className="card">
         <h3>📥 Restaurer / transférer</h3>
@@ -732,6 +757,7 @@ function Sauvegarde() {
         </label>
         {msg && <p>{msg}</p>}
       </section>
+      <HorsConnexion />
     </div>
   );
 }
@@ -806,4 +832,9 @@ function Guide() {
       </p>
     </div>
   );
+}
+
+function BilansPage() {
+  const children = useStore((s) => s.children);
+  return <Bilans children={children} />;
 }

@@ -2936,3 +2936,151 @@ select {
 /* Cibles tactiles d'au moins 44 px pour les petits doigts (recommandation Apple / WCAG 2.5.5). */
 .classer-btns button, .speak-btn.small, .btn-small, .btn.small { min-height: 44px; }
 .classer-btns button { min-width: 44px; }
+.metacog { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 10px 0 0; }
+.metacog .chip { min-height: 44px; }
+.metacog .chip.sel { background: var(--accent, #7c4dff); color: #fff; }
+.autoeval { margin-top: 12px; padding: 10px 12px; border-radius: 14px; background: var(--paper); border: 2px dashed color-mix(in srgb, var(--accent, #7c4dff) 40%, transparent); }
+.autoeval ul { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 6px; }
+.autoeval label { display: flex; gap: 8px; align-items: center; min-height: 44px; cursor: pointer; }
+.autoeval input[type="checkbox"] { width: 24px; height: 24px; }
+.autoeval-humeur { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 6px 0; }
+.autoeval-humeur .chip { min-height: 44px; }
+.autoeval-humeur .chip.sel { background: var(--accent, #7c4dff); color: #fff; }
+/* Quêtes du jour, activités secondaires, album des habitants */
+.quetes { margin: 14px 0; padding: 10px 12px; border-radius: 16px; background: var(--paper); border: 2px solid color-mix(in srgb, var(--accent, #7c4dff) 25%, transparent); }
+.quetes-titre { font-size: 1.05rem; margin: 0 0 6px; }
+.quetes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.quete { width: 100%; display: flex; gap: 10px; align-items: center; text-align: left; min-height: 48px; padding: 6px 10px; border-radius: 12px; border: 0; background: color-mix(in srgb, var(--accent, #7c4dff) 8%, transparent); color: inherit; font: inherit; cursor: pointer; }
+.quete:disabled { cursor: default; }
+.quetes li.ok .quete { background: color-mix(in srgb, var(--ok, #2e9d5b) 15%, transparent); }
+.quete-emoji { font-size: 1.5rem; }
+.quete-txt { display: grid; }
+.quete-txt small { opacity: 0.75; }
+.plus-activites { margin: 8px 0 16px; }
+.plus-activites > summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; padding: 0 6px; }
+.habitants-album img.gris { filter: grayscale(1) brightness(0.6) opacity(0.5); }
+/* Le décor du monde, en bandeau discret au-dessus de la leçon : on « est » sur la planète */
+.lecon-title.avec-decor { position: relative; padding: 18px 14px; border-radius: 16px; overflow: hidden; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55); background: #333 var(--decor) center / cover no-repeat; }
+.lecon-title.avec-decor::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20, 16, 40, 0.65), rgba(20, 16, 40, 0.15)); }
+.lecon-title.avec-decor > span { position: relative; }
+/* Contraste (audit 2.1, WCAG AA 4,5:1) : les textes colorés sont mélangés à la couleur du texte,
+   donc plus foncés en mode clair et plus clairs en mode sombre. */
+.who-mia .bubble-name { color: color-mix(in srgb, var(--c-violet) 70%, var(--ink)); }
+.who-neo .bubble-name { color: color-mix(in srgb, var(--c-orange-d) 60%, var(--ink)); }
+.who-zero .bubble-name { color: color-mix(in srgb, var(--muted) 70%, var(--ink)); }
+.who-narrateur .bubble-name { color: color-mix(in srgb, var(--c-turquoise) 45%, var(--ink)); }
+.who-nuage .bubble-name { color: color-mix(in srgb, #5b5f73 70%, var(--ink)); }
+.who-ixe .bubble-name { color: color-mix(in srgb, #2e7d32 75%, var(--ink)); }
+.pc-txt .pc-matiere { color: color-mix(in srgb, var(--pc) 55%, var(--ink)); }
+.gems-big, .shop-price, .pot { color: color-mix(in srgb, var(--gem) 65%, var(--ink)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="clair"]) .bottomnav button.active { color: #fff; }
+}
+.link { color: color-mix(in srgb, var(--c-violet) 70%, var(--ink)); }
+/* ---------- Visuels de l'audit 2.1 : frise, phrase, astres, couches, cycle, schéma ---------- */
+.v-titre { font-weight: 700; text-align: center; margin-bottom: 6px; }
+.v-legende, .v-astres figcaption, .v-couches figcaption, .v-cycle figcaption, .v-schema figcaption { display: block; text-align: center; font-size: 0.9rem; color: var(--muted); margin-top: 6px; }
+.v-frise { margin: 8px 0; }
+.v-frise ol { list-style: none; margin: 0; padding: 0 0 4px; display: flex; gap: 6px; overflow-x: auto; position: relative; }
+.v-frise ol::before { content: ""; position: absolute; left: 12px; right: 12px; top: 22px; height: 4px; border-radius: 2px; background: var(--line); }
+.v-frise li { flex: 1 1 0; min-width: 84px; display: grid; justify-items: center; text-align: center; gap: 2px; position: relative; }
+.v-frise .f-point { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--c) 18%, var(--paper)); border: 3px solid var(--c); font-size: 1.1rem; position: relative; }
+.v-frise li.ici .f-point { box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 35%, transparent); }
+.v-frise li small { color: var(--muted); font-size: 0.8rem; }
+.f-fleche { text-align: right; color: var(--muted); font-size: 0.85rem; }
+.v-phrase { margin: 10px 0; }
+.p-ligne { display: flex; flex-wrap: wrap; gap: 10px 6px; justify-content: center; }
+.p-groupe { display: inline-grid; justify-items: center; }
+.p-mots { font-size: 1.2rem; padding: 2px 6px; border-bottom: 4px solid var(--c); border-radius: 4px; background: color-mix(in srgb, var(--c) 10%, transparent); }
+.p-role { font-size: 0.75rem; font-weight: 700; color: color-mix(in srgb, var(--c) 65%, var(--ink)); margin-top: 2px; }
+.v-astres svg, .v-cycle svg, .v-couches svg { width: 100%; max-width: 520px; display: block; margin: 0 auto; color: var(--ink); }
+.v-couches.pile { display: flex; flex-direction: column; min-height: 220px; max-width: 520px; margin: 8px auto; border-radius: 14px; overflow: hidden; border: 2px solid var(--line); }
+.c-couche { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; padding: 8px 12px; background: color-mix(in srgb, var(--c) 28%, var(--paper)); border-bottom: 1px solid color-mix(in srgb, var(--c) 50%, transparent); }
+.c-couche small { color: var(--muted); }
+.v-couches.pile figcaption { padding: 6px; }
+.v-schema { margin: 8px auto; max-width: 560px; }
+.sc-corps { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; }
+.sc-corps ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.sc-g li { text-align: right; border-right: 3px solid var(--c-violet); padding-right: 8px; }
+.sc-d li { border-left: 3px solid var(--c-orange); padding-left: 8px; }
+.sc-corps li small { display: block; color: var(--muted); font-size: 0.8rem; }
+.sc-centre span { font-size: 4.5rem; line-height: 1; }
+.sc-centre img { width: 120px; height: auto; }
+@media (max-width: 420px) { .sc-centre span { font-size: 3rem; } .sc-corps { gap: 4px; } }
+/* ---------- Visuels de l'audit 2.1 : frise, phrase, astres, couches, cycle, schéma ---------- */
+.v-titre { font-weight: 700; text-align: center; margin-bottom: 6px; }
+.v-legende, .v-astres figcaption, .v-couches figcaption, .v-cycle figcaption, .v-schema figcaption { display: block; text-align: center; font-size: 0.9rem; color: var(--muted); margin-top: 6px; }
+.v-frise { margin: 8px 0; }
+.v-frise ol { list-style: none; margin: 0; padding: 0 0 4px; display: flex; gap: 6px; overflow-x: auto; position: relative; }
+.v-frise ol::before { content: ""; position: absolute; left: 12px; right: 12px; top: 22px; height: 4px; border-radius: 2px; background: var(--line); }
+.v-frise li { flex: 1 1 0; min-width: 84px; display: grid; justify-items: center; text-align: center; gap: 2px; position: relative; }
+.v-frise .f-point { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--c) 18%, var(--paper)); border: 3px solid var(--c); font-size: 1.1rem; position: relative; }
+.v-frise li.ici .f-point { box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 35%, transparent); }
+.v-frise li small { color: var(--muted); font-size: 0.8rem; }
+.f-fleche { text-align: right; color: var(--muted); font-size: 0.85rem; }
+.v-phrase { margin: 10px 0; }
+.p-ligne { display: flex; flex-wrap: wrap; gap: 10px 6px; justify-content: center; }
+.p-groupe { display: inline-grid; justify-items: center; }
+.p-mots { font-size: 1.2rem; padding: 2px 6px; border-bottom: 4px solid var(--c); border-radius: 4px; background: color-mix(in srgb, var(--c) 10%, transparent); }
+.p-role { font-size: 0.75rem; font-weight: 700; color: color-mix(in srgb, var(--c) 65%, var(--ink)); margin-top: 2px; }
+.v-astres svg, .v-cycle svg, .v-couches svg { width: 100%; max-width: 520px; display: block; margin: 0 auto; color: var(--ink); }
+.v-couches.pile { display: flex; flex-direction: column; min-height: 220px; max-width: 520px; margin: 8px auto; border-radius: 14px; overflow: hidden; border: 2px solid var(--line); }
+.c-couche { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; padding: 8px 12px; background: color-mix(in srgb, var(--c) 28%, var(--paper)); border-bottom: 1px solid color-mix(in srgb, var(--c) 50%, transparent); }
+.c-couche small { color: var(--muted); }
+.v-couches.pile figcaption { padding: 6px; }
+.v-schema { margin: 8px auto; max-width: 560px; }
+.sc-corps { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; }
+.sc-corps ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.sc-g li { text-align: right; border-right: 3px solid var(--c-violet); padding-right: 8px; }
+.sc-d li { border-left: 3px solid var(--c-orange); padding-left: 8px; }
+.sc-corps li small { display: block; color: var(--muted); font-size: 0.8rem; }
+.sc-centre span { font-size: 4.5rem; line-height: 1; }
+.sc-centre img { width: 120px; height: auto; }
+@media (max-width: 420px) { .sc-centre span { font-size: 3rem; } .sc-corps { gap: 4px; } }
+/* ---------- Jeux des planètes (audit 2.1) ---------- */
+.jeu-planete .lecon-top { align-items: center; gap: 10px; }
+.jeu-fin .big-score { font-family: var(--title); font-size: 3rem; color: color-mix(in srgb, var(--c-violet) 70%, var(--ink)); }
+.jeu-fin .big-score small { font-size: 1rem; }
+.pastille { display: inline-block; width: 16px; height: 16px; border-radius: 50%; vertical-align: middle; margin-right: 4px; border: 1px solid rgba(0, 0, 0, 0.2); }
+.potion-scene { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 3rem; margin: 10px 0; flex-wrap: wrap; }
+.potion-plus { font-size: 0.9rem; color: var(--muted); }
+.potion-fiole { display: inline-grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; background: radial-gradient(circle at 50% 60%, var(--pc) 55%, transparent 56%); transition: background 0.6s; }
+.potion-nom { display: block; font-size: 1.3rem; margin-bottom: 8px; }
+.chaine-ligne { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 12px 0; }
+.chaine-case { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 4px 10px; border-radius: 12px; background: var(--paper); border: 2px dashed var(--line); font-weight: 700; }
+.chaine-fleche { color: var(--muted); }
+.chaine-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 10px 0; }
+.chip.big { min-height: 52px; font-size: 1.1rem; padding: 6px 14px; }
+.circuit-svg { width: 100%; max-width: 420px; color: var(--ink); touch-action: manipulation; }
+.planetes-rangees { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; margin: 10px 0; }
+.soleil-mini { font-size: 2rem; }
+.pl-mini { width: 22px; height: 22px; border-radius: 50%; display: inline-block; }
+.silhouette { font-size: 7rem; line-height: 1.2; filter: brightness(0); transition: filter 0.5s; user-select: none; }
+.silhouette.revele { filter: none; }
+.motif { display: flex; gap: 6px; justify-content: center; margin: 10px 0; }
+.m-pas { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; background: var(--paper); border: 2px solid var(--line); color: var(--muted); }
+.m-pas.temps { border-color: color-mix(in srgb, var(--c-violet) 40%, var(--line)); }
+.m-pas.on { color: var(--c-violet-d); background: var(--c-violet-l); font-weight: 700; }
+.tap-pad { width: 220px; height: 140px; font-size: 1.6rem; border-radius: 28px; background: var(--c-violet-l); }
+.tap-pad.actif { background: var(--c-orange); color: #fff; }
+.jauge-chant { width: 100%; max-width: 420px; }
+.jc-barre { position: relative; height: 26px; border-radius: 13px; background: linear-gradient(90deg, #e2574c, #ffcf33 40%, #2fae5a 50%, #ffcf33 60%, #e2574c); }
+.jc-cible { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 3px; background: var(--ink); }
+.jc-voix { position: absolute; top: 3px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); transition: left 0.1s; }
+/* Espace parents : rappel, bilans imprimables */
+.rappel { border-left: 5px solid var(--c-orange); }
+.table-print { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.table-print th, .table-print td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+.bilan-planete ul { margin: 4px 0 10px; padding-left: 0; list-style: none; }
+.bilan-planete li { margin: 2px 0; }
+@media print {
+  .no-print, .bottomnav, .topbar, header, nav, .tabs, .parents > h1, .rappel { display: none !important; }
+  .imprimable { box-shadow: none !important; border: 0 !important; }
+  body { background: #fff !important; color: #000 !important; }
+}
+/* Sons visibles (malentendants) */
+.son-item { display: inline-grid; justify-items: center; gap: 4px; }
+.son-dessin { width: 200px; max-width: 100%; height: 60px; color: var(--ink); display: flex; gap: 4px; align-items: center; justify-content: center; }
+.sd-pas { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line); }
+.sd-pas.on { background: var(--c-violet); border-color: var(--c-violet); }
+.sd-pas.fort { width: 20px; height: 20px; }

@@ -28,6 +28,7 @@ lecons:
           Dans le noyau de chaque cellule, l'**ADN** est une très longue molécule en **double hélice**, écrite avec 4 « lettres » (bases) : **A, T, G, C** (A s'associe à T, G à C).
           L'ADN est enroulé en **chromosomes**. L'être humain en a **46**, soit **23 paires** : dans chaque paire, un chromosome vient de la mère, l'autre du père. La 23ᵉ paire détermine le sexe (XX ou XY, avec des exceptions rares).
           Un **gène** est un morceau d'ADN qui porte une information (par exemple pour fabriquer une protéine qui intervient dans la couleur des yeux).
+      - visuel: {"type":"couches","legende":"Du plus grand au plus petit.","couches":[{"emoji":"🧫","nom":"Cellule"},{"emoji":"🟣","nom":"Noyau"},{"emoji":"🧬","nom":"Chromosome","detail":"46 chez l'humain"},{"emoji":"📄","nom":"Gène","detail":"une recette"},{"emoji":"🔤","nom":"ADN","detail":"les lettres A, T, G, C"}]}
       - histoire:
           titre: La double hélice
           texte: "En 1952, **Rosalind Franklin** obtient grâce aux rayons X une image de l'ADN (le « cliché 51 ») qui révèle sa forme en hélice. En 1953, **James Watson** et **Francis Crick** publient le modèle de la double hélice, en s'appuyant sur ses données. Franklin est morte en 1958 ; son rôle essentiel n'a été pleinement reconnu que bien plus tard."
@@ -122,10 +123,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "Variation, survie, reproduction, transmission."
       - type: vf
-        vars: { t: [["L'humain descend du chimpanzé actuel.", false], ["Les mutations de l'ADN arrivent au hasard.", true], ["Les fossiles sont des preuves de l'évolution.", true], ["Un individu change ses gènes pendant sa vie pour s'adapter.", false]] }
+        vars: { "t":[["L'humain descend du chimpanzé actuel.",false,"Faux : ils ont un ancêtre commun, ce sont des cousins."],["Les mutations de l'ADN arrivent au hasard.",true,"Vrai : elles ne sont pas « choisies »."],["Les fossiles sont des preuves de l'évolution.",true,"Vrai : ils montrent des espèces disparues et des formes intermédiaires."],["Un individu change ses gènes pendant sa vie pour s'adapter.",false,"Faux : ce sont les populations qui évoluent, sur des générations."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Humain et chimpanzé ont un ancêtre commun ; ce sont les populations qui évoluent, sur des générations."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi faut-il prendre un antibiotique jusqu'au bout ?", "pour ne pas laisser survivre les bactéries les plus résistantes", "pour finir la boîte", "pour avoir bon goût"], ["Quel scientifique a publié « L'Origine des espèces » en 1859 ?", "Charles Darwin", "Gregor Mendel", "Isaac Newton"]] }
         enonce: "{{t_0}}"
@@ -148,6 +149,7 @@ lecons:
           3. **Réaction spécifique** : des **lymphocytes** fabriquent des **anticorps** adaptés à CE microbe précis. Ensuite, des lymphocytes « **mémoire** » restent : à la prochaine rencontre, la réponse est très rapide.
           Un **vaccin** présente au corps un microbe inactivé ou un morceau de microbe (ou les instructions pour en fabriquer un morceau) : le corps crée sa mémoire **sans tomber malade**. Les vaccins ont fait disparaître la variole de la planète (1980).
           ⚠️ Les **antibiotiques** tuent les bactéries mais sont **inefficaces contre les virus** (rhume, grippe).
+      - visuel: {"type":"frise","titre":"Comment agit un vaccin","points":[{"emoji":"💉","label":"vaccin","sous":"une fausse alerte sans danger"},{"emoji":"🛡️","label":"le corps fabrique des anticorps"},{"emoji":"🧠","label":"il garde la mémoire"},{"emoji":"🦠","label":"vrai microbe","sous":"reconnu et vaincu vite"}]}
       - astuce:
           texte: "Le vaccin est un entraînement : il montre au corps une fausse alerte sans danger. Le jour de la vraie attaque, les défenses reconnaissent l'ennemi et réagissent vite."
           qui: neo
@@ -159,10 +161,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les antibiotiques soignent la grippe.", false], ["La variole a disparu grâce à la vaccination.", true], ["Après une infection, le corps garde souvent une mémoire du microbe.", true]] }
+        vars: { "t":[["Les antibiotiques soignent la grippe.",false,"Faux : la grippe est un virus ; les antibiotiques n'agissent que sur les bactéries."],["La variole a disparu grâce à la vaccination.",true,"Vrai : déclarée éradiquée en 1980."],["Après une infection, le corps garde souvent une mémoire du microbe.",true,"Vrai : c'est ce qu'on appelle l'immunité."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La grippe est un virus : les antibiotiques n'y peuvent rien."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["le microbe franchit la barrière de la peau", "des globules blancs avalent les microbes", "des lymphocytes fabriquent des anticorps", "des lymphocytes mémoire restent pour la prochaine fois"]] }
         enonce: "Remets la défense du corps dans l'ordre."

@@ -231,7 +231,7 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1], ["{{t_4}}", 0], ["{{t_5}}", 0]]
         correction: "Pentatonique de do : do, ré, mi, sol, la (sans fa ni si)."
       - type: vf
-        vars: { t: [["Les touches noires d'un piano forment une gamme pentatonique.", true], ["La gamme pentatonique a 7 notes.", false], ["On trouve des gammes pentatoniques dans des musiques du monde entier.", true]] }
+        vars: { "t":[["Les touches noires d'un piano forment une gamme pentatonique.",true,"Vrai : 5 touches noires par octave."],["La gamme pentatonique a 7 notes.",false,"Faux : elle a 5 notes (« penta » = 5 en grec)."],["On trouve des gammes pentatoniques dans des musiques du monde entier.",true,"Vrai : Chine, Afrique, blues, musiques celtiques…"]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Pentatonique : « penta » = 5 en grec."
+        correction: "{{t_2}}"

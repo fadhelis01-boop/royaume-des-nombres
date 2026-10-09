@@ -87,10 +87,10 @@ lecons:
         tolerance: 0.001
         correction: "2 puissance ({{d}}/12) ≈ {{dec(2^(d/12),3)}}."
       - type: vf
-        vars: { t: [["Le La de référence vaut 440 Hz.", true], ["Dans le tempérament égal, tous les demi-tons ont le même rapport de fréquences.", true], ["La quinte tempérée est exactement égale à 3/2.", false]] }
+        vars: { "t":[["Le La de référence vaut 440 Hz.",true,"Vrai : c'est la référence pour accorder les instruments."],["Dans le tempérament égal, tous les demi-tons ont le même rapport de fréquences.",true,"Vrai : la racine 12ᵉ de 2."],["La quinte tempérée est exactement égale à 3/2.",false,"Faux : elle vaut environ 1,4983, très légèrement moins que 3/2."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La quinte tempérée (≈ 1,4983) est très légèrement plus petite que 3/2 : c'est le compromis du tempérament égal."
+        correction: "{{t_2}}"
 
   - id: modes-et-cadences
     titre: "Modes et cadences"
@@ -164,10 +164,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Dans la réexposition, le second thème revient dans la tonalité principale.", true], ["Dans une fugue, une seule voix joue du début à la fin.", false], ["Le contrepoint superpose des mélodies indépendantes.", true]] }
+        vars: { "t":[["Dans la réexposition, le second thème revient dans la tonalité principale.",true,"Vrai : c'est la grande résolution de la forme sonate."],["Dans une fugue, une seule voix joue du début à la fin.",false,"Faux : la fugue est polyphonique, plusieurs voix indépendantes."],["Le contrepoint superpose des mélodies indépendantes.",true,"Vrai : c'est l'art de Bach."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La fugue est polyphonique : plusieurs voix indépendantes."
+        correction: "{{t_2}}"
 
   - id: synthese-et-fourier
     titre: "Synthèse sonore et Fourier"
@@ -208,7 +208,7 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Additive : on construit ; soustractive : on sculpte en filtrant."
       - type: vf
-        vars: { t: [["La compression MP3 utilise l'analyse fréquentielle des sons.", true], ["Un son pur ne contient qu'une seule fréquence.", true], ["Un son de violon est une sinusoïde pure.", false]] }
+        vars: { "t":[["La compression MP3 utilise l'analyse fréquentielle des sons.",true,"Vrai : elle supprime les fréquences qu'on n'entend presque pas."],["Un son pur ne contient qu'une seule fréquence.",true,"Vrai : c'est une sinusoïde."],["Un son de violon est une sinusoïde pure.",false,"Faux : le violon est riche en harmoniques, c'est ce qui fait son timbre."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le violon est riche en harmoniques : c'est ce qui fait son timbre."
+        correction: "{{t_2}}"

@@ -71,6 +71,7 @@ lecons:
           - **pauvre** : 1 son commun (*ami / joli*) ;
           - **suffisante** : 2 sons (*cheval / val*) ;
           - **riche** : 3 sons ou plus (*étoile / toile* → t-oi-l).
+      - visuel: {"type":"couches","legende":"Rimes croisées : A B A B.","couches":[{"nom":"… sur la lune (A)","couleur":"#7c4dff"},{"nom":"… dans le jardin (B)","couleur":"#ff8a1f"},{"nom":"… une à une (A)","couleur":"#7c4dff"},{"nom":"… au matin (B)","couleur":"#ff8a1f"}]}
       - astuce:
           texte: "AABB = plates (deux par deux), ABAB = croisées (elles se croisent), ABBA = embrassées (B au milieu, entouré par A comme dans des bras)."
           qui: neo
@@ -105,6 +106,7 @@ lecons:
           - Une **strophe** est un groupe de vers : **distique** (2), **tercet** (3), **quatrain** (4), **quintil** (5), **sizain** (6).
           - L'**alexandrin** (12 syllabes) est souvent coupé en deux **hémistiches** de 6 par la **césure** : *Demain, dès l'aube, à l'heure // où blanchit la campagne.*
           - Le **sonnet** : **14 vers**, deux **quatrains** puis deux **tercets**, souvent en alexandrins ; le dernier vers (la « chute ») frappe l'esprit.
+      - visuel: {"type":"couches","legende":"Le sonnet : 14 vers.","couches":[{"nom":"Quatrain","detail":"4 vers","epaisseur":4},{"nom":"Quatrain","detail":"4 vers","epaisseur":4},{"nom":"Tercet","detail":"3 vers","epaisseur":3},{"nom":"Tercet","detail":"3 vers","epaisseur":3}]}
       - astuce:
           texte: "Le sonnet, c'est 14 vers : deux quatrains puis deux tercets. 4 + 4 + 3 + 3 = 14."
           qui: zero
@@ -169,7 +171,7 @@ lecons:
         niveau: 2
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le poème est écrit à la première personne.", true], ["Le poète admire le paysage pendant sa marche.", false], ["Le poème est composé de trois quatrains.", true]] }
+        vars: { "t":[["Le poème est écrit à la première personne.",true,"Vrai : Hugo écrit « je partirai »."],["Le poète admire le paysage pendant sa marche.",false,"Faux : il marche « sans rien voir au dehors »."],["Le poème est composé de trois quatrains.",true,"Vrai : trois strophes de quatre vers."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Relis le poème : écrit au « je », le poète marche « sans rien voir au dehors », en trois strophes de quatre vers."
+        correction: "{{t_2}}"

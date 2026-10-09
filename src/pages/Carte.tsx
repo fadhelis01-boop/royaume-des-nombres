@@ -5,6 +5,7 @@ import { dayKey, dueCards, useChild, useStore } from "../lib/store";
 import { Bubble, Mascot } from "../components/Mascot";
 import { CarteRoyaume } from "../components/CarteRoyaume";
 import { Recap } from "../components/Seance";
+import { Quetes } from "../components/Quetes";
 import type { World } from "../lib/types";
 import { visuel } from "../lib/img";
 
@@ -33,6 +34,8 @@ export function Carte() {
   const due = dueCards(child).length;
   const dailyDone = child.daily?.day === dayKey() && child.daily.done;
   const greet = greeting(child.name, child.streak);
+  // première visite sur cette planète : on commence obligatoirement par l'histoire
+  const nouvelle = !!planete && !child.story?.[prologueId(mat)];
 
   const crystals = (child.crystals ?? []).filter((id) => worlds.some((w) => w.id === id));
   const [vue, setVue] = useState<"carte" | "liste">(() => {
@@ -60,20 +63,20 @@ export function Carte() {
         </span>
         <span className="pb-go">🌌 Changer de planète</span>
       </button>
-      {planete && !child.story?.[prologueId(mat)] && (
-        <button className="story-banner" onClick={() => go("/aventure/prologue")}>
-          <span className="story-banner-icon">📖</span>
-          <span>
-            <strong>Une nouvelle aventure commence !</strong>
-            <small>{planete.prologue.appel}</small>
-          </span>
-        </button>
-      )}
       <Recap />
-      <Bubble who={child.avatar} text={greet} />
+      <Bubble who={child.avatar} text={nouvelle ? `Bienvenue sur ${(planete?.titre ?? "").replace(/^(Le|La|Les|L')/, (m) => m.toLowerCase())} ! Avant tout, écoute l'histoire : elle explique ce qui arrive à cette planète.` : greet} />
 
+      {/* Une seule action principale (audit 2.1) ; le reste est rangé sous « Plus d'activités ». */}
       <div className="quick">
-        {resume ? (
+        {nouvelle && planete ? (
+          <button className="quick-card primary" onClick={() => go("/aventure/prologue")}>
+            <span className="qc-emoji">📖</span>
+            <span>
+              <strong>Commencer l'histoire</strong>
+              <small>{planete.prologue.appel}</small>
+            </span>
+          </button>
+        ) : resume ? (
           <button className="quick-card primary" onClick={() => go(`/lecon/${resume.w.id}/${resume.l.id}`)}>
             <span className="qc-emoji">▶️</span>
             <span>
@@ -94,60 +97,88 @@ export function Carte() {
             </span>
           </button>
         ) : null}
-        <button className="quick-card" onClick={() => go("/echauffement")}>
-          <span className="qc-emoji">🏃</span>
-          <span>
-            <strong>Échauffement</strong>
-            <small>{planete?.echauffement}</small>
-          </span>
-        </button>
-        <button className="quick-card" onClick={() => go("/aventure")}>
-          <span className="qc-emoji">📖</span>
-          <span>
-            <strong>L'aventure</strong>
-            <small>{objetLabel(planete, crystals.length)}</small>
-          </span>
-        </button>
-        <button className={`quick-card ${dailyDone ? "done" : ""}`} onClick={() => go("/defi-du-jour")}>
-          <span className="qc-emoji">{dailyDone ? "✅" : "🎁"}</span>
-          <span>
-            <strong>Défi du jour</strong>
-            <small>{dailyDone ? "Réussi ! Reviens demain" : "5 questions + 1 énigme"}</small>
-          </span>
-        </button>
-        {astuces && (
-          <button className="quick-card" onClick={() => go(`/monde/${astuces.id}`)}>
-            <span className="qc-emoji">{astuces.emoji}</span>
+        {!dailyDone && (
+          <button className="quick-card" onClick={() => go("/defi-du-jour")}>
+            <span className="qc-emoji">🎁</span>
             <span>
-              <strong>{astuces.titre}</strong>
-              <small>{planete?.astuces}</small>
+              <strong>Défi du jour</strong>
+              <small>5 questions + 1 énigme</small>
             </span>
           </button>
         )}
-        {fr && (
-          <button className="quick-card" onClick={() => go("/dico")}>
+        {due > 0 && (
+          <button className="quick-card" onClick={() => go("/revisions")}>
+            <span className="qc-emoji">🔁</span>
+            <span>
+              <strong>Révisions</strong>
+              <small>{`${due} leçon${due > 1 ? "s" : ""} à revoir`}</small>
+            </span>
+          </button>
+        )}
+      </div>
+      <Quetes />
+      <details className="plus-activites">
+        <summary>➕ Plus d'activités</summary>
+        <div className="quick">
+          <button className="quick-card" onClick={() => go("/echauffement")}>
+            <span className="qc-emoji">🏃</span>
+            <span>
+              <strong>Échauffement</strong>
+              <small>{planete?.echauffement}</small>
+            </span>
+          </button>
+          <button className="quick-card" onClick={() => go("/aventure")}>
             <span className="qc-emoji">📖</span>
             <span>
-              <strong>Le dictionnaire</strong>
-              <small>📒 {child.carnet?.length ?? 0} mots dans ton carnet · conjugueur</small>
+              <strong>L'aventure</strong>
+              <small>{objetLabel(planete, crystals.length)}</small>
             </span>
           </button>
-        )}
-        <button className="quick-card" onClick={() => go("/boutique")}>
-          <span className="qc-emoji">🛍️</span>
-          <span>
-            <strong>Mon coin</strong>
-            <small>💎 {child.gems ?? 0} gemmes · boutique et cabane</small>
-          </span>
-        </button>
-        <button className="quick-card" onClick={() => go("/revisions")}>
-          <span className="qc-emoji">🔁</span>
-          <span>
-            <strong>Révisions</strong>
-            <small>{due ? `${due} leçon${due > 1 ? "s" : ""} à revoir` : "Rien à revoir aujourd'hui"}</small>
-          </span>
-        </button>
-      </div>
+          {dailyDone && (
+            <button className="quick-card done" onClick={() => go("/defi-du-jour")}>
+              <span className="qc-emoji">✅</span>
+              <span>
+                <strong>Défi du jour</strong>
+                <small>Réussi ! Reviens demain</small>
+              </span>
+            </button>
+          )}
+          {astuces && (
+            <button className="quick-card" onClick={() => go(`/monde/${astuces.id}`)}>
+              <span className="qc-emoji">{astuces.emoji}</span>
+              <span>
+                <strong>{astuces.titre}</strong>
+                <small>{planete?.astuces}</small>
+              </span>
+            </button>
+          )}
+          {fr && (
+            <button className="quick-card" onClick={() => go("/dico")}>
+              <span className="qc-emoji">📖</span>
+              <span>
+                <strong>Le dictionnaire</strong>
+                <small>📒 {child.carnet?.length ?? 0} mots dans ton carnet · conjugueur</small>
+              </span>
+            </button>
+          )}
+          <button className="quick-card" onClick={() => go("/boutique")}>
+            <span className="qc-emoji">🛍️</span>
+            <span>
+              <strong>Mon coin</strong>
+              <small>💎 {child.gems ?? 0} gemmes · boutique et cabane</small>
+            </span>
+          </button>
+          {due === 0 && (
+            <button className="quick-card" onClick={() => go("/revisions")}>
+              <span className="qc-emoji">🔁</span>
+              <span>
+                <strong>Révisions</strong>
+                <small>Rien à revoir aujourd'hui</small>
+              </span>
+            </button>
+          )}
+        </div>
+      </details>
 
       <div className="tabs vue-tabs" role="tablist" aria-label="Affichage des mondes">
         <button role="tab" aria-selected={vue === "carte"} className={`tab ${vue === "carte" ? "active" : ""}`} onClick={() => choisirVue("carte")}>

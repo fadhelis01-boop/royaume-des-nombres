@@ -30,6 +30,7 @@ lecons:
 
           *[Il pleut] [et le vent souffle].* → 2 propositions.
           Attention : un **infinitif** ou un **participe** seul ne forme pas une proposition à lui seul ici.
+      - visuel: {"type":"phrase","legende":"Deux verbes conjugués = deux propositions.","groupes":[{"mots":"Il pleut","role":"principale","etiquette":"proposition 1"},{"mots":"mais","role":"liaison","etiquette":"conjonction"},{"mots":"nous sortons","role":"principale","etiquette":"proposition 2"}]}
       - astuce:
           texte: "Une proposition = un verbe conjugué. Compte les verbes conjugués et tu connais le nombre de propositions."
           qui: zero
@@ -66,6 +67,7 @@ lecons:
           - **Coordination** : reliées par une **conjonction de coordination** : **mais, ou, et, donc, or, ni, car** (*Mais où est donc Ornicar ?*) : *Il pleut **donc** je reste.*
 
           Chaque conjonction a un sens : **mais** (opposition), **car** (cause), **donc** (conséquence), **ou** (choix), **et** (ajout), **ni** (négation), **or** (argument).
+      - visuel: {"type":"phrase","groupes":[{"mots":"J'ai faim","role":"principale"},{"mots":"donc","role":"liaison","etiquette":"conjonction de coordination"},{"mots":"je mange","role":"principale"}]}
       - astuce:
           texte: "Les conjonctions de coordination tiennent dans une phrase : « Mais où est donc Ornicar ? » (mais, ou, et, donc, or, ni, car)."
           qui: mia
@@ -102,6 +104,7 @@ lecons:
           - **que** = COD : *le livre **que** je lis* (je lis le livre)
           - **dont** = complément introduit par **de** : *l'ami **dont** je parle* (je parle de l'ami)
           - **où** = lieu ou temps : *la ville **où** je vis*, *le jour **où** il est né*
+      - visuel: {"type":"phrase","groupes":[{"mots":"Le livre","role":"nom","etiquette":"antécédent"},{"mots":"que tu m'as prêté","role":"subordonnee","etiquette":"relative (que = COD)"},{"mots":"est génial","role":"principale"}]}
       - astuce:
           texte: "Qui remplace un sujet, que un COD, dont un complément avec « de », où un lieu ou un temps. Teste en refaisant deux phrases."
           qui: neo
@@ -143,6 +146,7 @@ lecons:
             - **condition** : si
             - **conséquence** : si bien que, de sorte que
             - **opposition / concession** : bien que, alors que, même si
+      - visuel: {"type":"phrase","groupes":[{"mots":"Je reste à la maison","role":"principale"},{"mots":"parce qu'il pleut","role":"subordonnee","etiquette":"subordonnée de cause"}]}
       - astuce:
           texte: "Demande-toi quelle question répond la subordonnée : pourquoi ? (cause), dans quel but ? (but), à quelle condition ? (condition), quand ? (temps)."
           qui: zero
@@ -183,6 +187,7 @@ lecons:
           Si le verbe introducteur est au **passé**, les temps changent (concordance) :
           présent → **imparfait** ; futur → **conditionnel** ; passé composé → **plus-que-parfait** ; *demain* → *le lendemain*, *hier* → *la veille*.
           *Il a dit : « Je suis fatigué. »* → *Il a dit **qu'il était** fatigué.*
+      - visuel: {"type":"phrase","legende":"Discours direct : « Je viendrai demain. » → indirect :","groupes":[{"mots":"Il a dit","role":"principale"},{"mots":"qu'il viendrait","role":"subordonnee","etiquette":"je → il, futur → conditionnel"},{"mots":"le lendemain","role":"cct","etiquette":"demain → le lendemain"}]}
       - astuce:
           texte: "Au discours indirect, mets-toi à la place du narrateur : « je » devient « il », « ici » devient « là », « demain » devient « le lendemain »."
           qui: mia

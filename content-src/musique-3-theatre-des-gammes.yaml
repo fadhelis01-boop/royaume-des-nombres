@@ -87,10 +87,10 @@ lecons:
         reponse: "t_1"
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Toutes les gammes majeures ont le même schéma de tons et demi-tons.", true], ["La gamme de do majeur contient un fa dièse.", false], ["La tonique est la note de départ de la gamme.", true]] }
+        vars: { "t":[["Toutes les gammes majeures ont le même schéma de tons et demi-tons.",true,"Vrai : ton, ton, demi-ton, ton, ton, ton, demi-ton."],["La gamme de do majeur contient un fa dièse.",false,"Faux : do majeur n'a que des notes naturelles (touches blanches)."],["La tonique est la note de départ de la gamme.",true,"Vrai : c'est la note qui donne son nom à la gamme."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Do majeur : uniquement des notes naturelles (touches blanches)."
+        correction: "{{t_2}}"
 
   - id: intervalles-et-accords
     titre: "Intervalles et accords"

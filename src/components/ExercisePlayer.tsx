@@ -40,6 +40,7 @@ export function ExercisePlayer({
   powerHint,
   lead,
   onVerdict,
+  metacog,
 }: {
   inst: Instance;
   statKey: string;
@@ -55,6 +56,8 @@ export function ExercisePlayer({
   lead?: Lead;
   /** appelé dès que la réponse est définitive (avant « Continuer ») : pour réagir tout de suite */
   onVerdict?: (r: ExResult) => void;
+  /** « Je suis sûr / pas sûr » avant de valider : l'enfant apprend à juger sa propre confiance */
+  metacog?: boolean;
 }) {
   const isChoice = CHOICE.includes(inst.type);
   // Vrai/faux : un 2ᵉ essai serait gagné d'avance, donc un seul essai.
@@ -78,6 +81,7 @@ export function ExercisePlayer({
   const [verdict, setVerdict] = useState<Verdict | null>(null);
   const [message, setMessage] = useState<{ who: Who; text: string; humeur?: string } | null>(null);
   const [okFinal, setOkFinal] = useState(false);
+  const [sur, setSur] = useState<boolean | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const k = `ex:${inst.seed}`;
   const isTouch = useMemo(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches, []);
@@ -164,7 +168,9 @@ export function ExercisePlayer({
       const who = pick(WHOS);
       const scored = n === 1 || !isChoice;
       const t = scored ? pick(PRAISE[who as "mia"]) : "Oui, c'est ça ! La prochaine fois, prends le temps de réfléchir avant de choisir : au hasard, ça ne rapporte rien.";
-      setMessage({ who, text: t, humeur: "joie" });
+      const calib = metacog && sur === false && n === 1 ? " Et tu n'étais pas sûr : tu peux te faire davantage confiance !" : "";
+      setMessage({ who, text: t + calib, humeur: "joie" });
+      if (metacog && sur !== null) bump(sur ? "meta-sur-ok" : "meta-doute-ok");
       if (isManip) bump("manip");
       const juice = rewardCorrect({ firstTry: n === 1, scored, anchor: rootRef.current?.querySelector(".ex-actions, .keypad") });
       if (!juice.spoke) say(who, t);
@@ -185,6 +191,8 @@ export function ExercisePlayer({
       const t = isZero ? "Zéro ? …C'était MA réponse ! 😄 Mais ici, ce n'est pas ça. Réessaie !" : v.why ? `${v.why} Réessaie !` : v.almost ?? pick(ENCOURAGE[who as "mia"]);
       setMessage({ who, text: t, humeur: "reflexion" });
       say(who, t);
+      // au premier échec, un coup de pouce plutôt que la réponse
+      if (inst.indice && !hint) setHint(true);
       setPhase("retry");
       return;
     }
@@ -195,8 +203,10 @@ export function ExercisePlayer({
       : v.almost
         ? `${v.almost} La réponse attendue : ${inst.expectedText}.`
         : `La bonne réponse était : ${inst.expectedText}. Ce n'est pas grave, on apprend en se trompant !`;
-    setMessage({ who: "mia", text: t, humeur: "reflexion" });
-    speak([{ who: "mia", text: t }, ...(inst.correction ? [{ who: "neo" as Who, text: inst.correction }] : [])], { key: k + ":fb" });
+    const calibKo = metacog && sur === true ? " Tu étais sûr de toi : c'est le moment de bien relire la règle, elle te piégera moins la prochaine fois." : "";
+    if (metacog && sur !== null) bump(sur ? "meta-sur-ko" : "meta-doute-ko");
+    setMessage({ who: "mia", text: t + calibKo, humeur: "reflexion" });
+    speak([{ who: "mia", text: t + calibKo }, ...(inst.correction ? [{ who: "neo" as Who, text: inst.correction }] : [])], { key: k + ":fb" });
     setPhase("done");
   };
 
@@ -407,6 +417,17 @@ export function ExercisePlayer({
 
       {usesKeypad && phase === "answer" && <Keypad mode={inst.clavier === "algebre" ? "algebre" : "nombre"} letters={inst.exprVars?.length ? inst.exprVars : ["x"]} extras={inst.clavier === "algebre" ? undefined : keypadExtras(inst.type, [inst.value ?? 0, ...(inst.values ?? []), ...(inst.champs ?? []).map((c) => c.value)])} onKey={onKey} onSubmit={() => submit()} canSubmit={canSubmit} />}
 
+      {metacog && phase === "answer" && tries === 0 && (
+        <div className="metacog" role="group" aria-label="Es-tu sûr de ta réponse ?">
+          <span className="small muted">Avant de valider :</span>
+          <button type="button" className={`chip ${sur === true ? "sel" : ""}`} aria-pressed={sur === true} onClick={() => setSur(true)}>
+            😎 Je suis sûr
+          </button>
+          <button type="button" className={`chip ${sur === false ? "sel" : ""}`} aria-pressed={sur === false} onClick={() => setSur(false)}>
+            🤔 Pas sûr
+          </button>
+        </div>
+      )}
       {/* ----- Actions ----- */}
       <div className="ex-actions">
         {phase === "answer" && inst.indice && !hint && (

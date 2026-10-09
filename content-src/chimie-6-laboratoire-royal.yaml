@@ -41,10 +41,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Chauffer accélère en général une réaction.", true], ["Un catalyseur est consommé pendant la réaction.", false], ["Diluer un réactif accélère la réaction.", false]] }
+        vars: { "t":[["Chauffer accélère en général une réaction.",true,"Vrai : les particules se rencontrent plus souvent et plus fort."],["Un catalyseur est consommé pendant la réaction.",false,"Faux : il est régénéré à la fin de la réaction."],["Diluer un réactif accélère la réaction.",false,"Faux : diluer diminue la concentration, donc ralentit."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Diluer diminue la concentration, donc ralentit ; le catalyseur est régénéré."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["chauffer", "refroidir", "réduire en poudre", "diluer"], ["ajouter un catalyseur", "mettre au réfrigérateur", "augmenter la concentration", "travailler avec un gros bloc"]] }
         enonce: "Cette action accélère-t-elle ou ralentit-elle la réaction ?"
@@ -75,10 +75,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}} : l'équilibre s'oppose à la perturbation."
       - type: vf
-        vars: { t: [["À l'équilibre, plus aucune réaction ne se produit.", false], ["Le symbole ⇌ indique une réaction qui peut se faire dans les deux sens.", true], ["Une réaction totale consomme entièrement le réactif limitant.", true]] }
+        vars: { "t":[["À l'équilibre, plus aucune réaction ne se produit.",false,"Faux : les deux réactions continuent, à la même vitesse : l'équilibre est dynamique."],["Le symbole ⇌ indique une réaction qui peut se faire dans les deux sens.",true,"Vrai : c'est le symbole d'un équilibre."],["Une réaction totale consomme entièrement le réactif limitant.",true,"Vrai : par définition d'une réaction totale."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'équilibre est dynamique : les deux réactions continuent, à la même vitesse."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Le procédé industriel qui fabrique l'ammoniac (procédé Haber-Bosch) retire l'ammoniac formé.", "pour déplacer l'équilibre vers la production d'ammoniac", "pour arrêter la réaction", "pour refroidir l'usine"]] }
         enonce: "{{t_0}} Pourquoi ?"
@@ -155,10 +155,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le titrage permet de trouver une concentration inconnue.", true], ["À l'équivalence d'un titrage acide fort / base forte, le pH vaut 7 (à 25 °C).", true], ["On peut faire un titrage sans connaître la concentration de la solution titrante.", false]] }
+        vars: { "t":[["Le titrage permet de trouver une concentration inconnue.",true,"Vrai : c'est son but."],["À l'équivalence d'un titrage acide fort / base forte, le pH vaut 7 (à 25 °C).",true,"Vrai : les ions H⁺ et OH⁻ se neutralisent exactement."],["On peut faire un titrage sans connaître la concentration de la solution titrante.",false,"Faux : il faut une solution titrante de concentration connue."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Il faut une solution titrante de concentration connue."
+        correction: "{{t_2}}"
 
   - id: chimie-organique
     titre: "La chimie du carbone"

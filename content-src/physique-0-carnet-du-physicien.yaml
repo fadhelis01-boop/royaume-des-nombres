@@ -53,10 +53,10 @@ lecons:
         reponse: "{{t_1}}"
         correction: "{{t_0}} : {{t_1}}"
       - type: vf
-        vars: { t: [["Le kilogramme est une unité de masse.", true], ["Le newton est une unité d'énergie.", false], ["Un résultat de physique doit toujours avoir une unité.", true]] }
+        vars: { "t":[["Le kilogramme est une unité de masse.",true,"Vrai : c'est l'unité de masse du système international."],["Le newton est une unité d'énergie.",false,"Faux : le newton mesure une force ; l'énergie se mesure en joules."],["Un résultat de physique doit toujours avoir une unité.",true,"Vrai : un nombre sans unité ne veut rien dire en physique."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le newton mesure une force ; l'énergie se mesure en joules."
+        correction: "{{t_2}}"
 
   - id: conversions
     titre: "Convertir sans se tromper"
@@ -126,10 +126,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["$3 \\times 10^8$ est plus grand que $9 \\times 10^7$.", true], ["$10^{-3}$ est un nombre négatif.", false], ["$2{,}5 \\times 10^3 = 2\\,500$.", true]] }
+        vars: { "t":[["$3 \\times 10^8$ est plus grand que $9 \\times 10^7$.",true,"Vrai : 3 × 10⁸ = 300 millions, plus que 90 millions."],["$10^{-3}$ est un nombre négatif.",false,"Faux : 10⁻³ = 0,001, c'est petit mais positif."],["$2{,}5 \\times 10^3 = 2\\,500$.",true,"Vrai : 2,5 × 1 000 = 2 500."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "$10^{-3} = 0{,}001$ : c'est petit, mais positif."
+        correction: "{{t_2}}"
 
   - id: methode-de-calcul
     titre: "Résoudre un exercice de physique en 6 étapes"

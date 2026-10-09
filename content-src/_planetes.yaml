@@ -123,7 +123,7 @@ planetes:
     astuces: "La méthode du savant et la sécurité au labo"
     liens:
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
-    jeux: [eclair-sciences]
+    jeux: [potions, eclair-sciences]
     gardiens:
       graines:
         sprite: neutre
@@ -167,7 +167,7 @@ planetes:
     astuces: "Mesurer, les unités et la méthode du physicien"
     liens:
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
-    jeux: [eclair-sciences]
+    jeux: [circuit, eclair-sciences]
     gardiens:
       graines:
         sprite: neutre
@@ -211,7 +211,7 @@ planetes:
     astuces: "Observer, classer et dessiner le vivant"
     liens:
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
-    jeux: [eclair-sciences]
+    jeux: [chaine, eclair-sciences]
     gardiens:
       graines:
         sprite: neutre
@@ -255,7 +255,7 @@ planetes:
     astuces: "Les échelles, les ordres de grandeur, observer le ciel"
     liens:
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
-    jeux: [eclair-sciences]
+    jeux: [planetes, eclair-sciences]
     gardiens:
       graines:
         sprite: neutre
@@ -301,7 +301,7 @@ planetes:
       - { texte: "🎹 Le studio de musique", vers: "/studio/musique" }
       - { texte: "👂 L'Oreille d'or", vers: "/jeux/oreille" }
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
-    jeux: [oreille, studio-musique, eclair-sciences]
+    jeux: [rythme, oreille, studio-musique, eclair-sciences]
     gardiens:
       graines:
         sprite: neutre
@@ -347,7 +347,7 @@ planetes:
       - { texte: "🖌️ Le studio de dessin", vers: "/studio/dessin" }
       - { texte: "🖼️ Ma galerie", vers: "/studio/dessin/galerie" }
       - { texte: "📖 Le Grand Livre", vers: "/livre" }
-    jeux: [studio-dessin, eclair-sciences]
+    jeux: [silhouettes, studio-dessin, eclair-sciences]
     gardiens:
       graines:
         sprite: neutre

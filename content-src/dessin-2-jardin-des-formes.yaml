@@ -58,10 +58,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}", "{{t_4}}"]
         correction: "Grandes formes, puis détails, puis couleur."
       - type: vf
-        vars: { t: [["On dessine la cheminée avant les murs.", false], ["Une maison simple se dessine avec des formes géométriques.", true]] }
+        vars: { "t":[["On dessine la cheminée avant les murs.",false,"Faux : on commence par les grandes formes (les murs, le toit)."],["Une maison simple se dessine avec des formes géométriques.",true,"Vrai : un carré et un triangle."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On commence par les grandes formes."
+        correction: "{{t_2}}"
 
   - id: symetrie-papillon
     titre: "La symétrie du papillon"
@@ -117,10 +117,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Dans la nature, la symétrie n'est jamais tout à fait parfaite.", true], ["Un carré a plusieurs axes de symétrie.", true], ["La lettre R est symétrique.", false]] }
+        vars: { "t":[["Dans la nature, la symétrie n'est jamais tout à fait parfaite.",true,"Vrai : la nature est presque symétrique, jamais parfaitement."],["Un carré a plusieurs axes de symétrie.",true,"Vrai : il en a 4."],["La lettre R est symétrique.",false,"Faux : la lettre R n'a aucun axe de symétrie."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Un carré a 4 axes ; la lettre R n'en a aucun."
+        correction: "{{t_2}}"
 
   - id: couleurs-secondaires
     titre: "Les couleurs secondaires et le cercle chromatique"
@@ -199,10 +199,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On dessine chaque feuille une par une avant le feuillage.", false], ["Les branches deviennent plus fines vers le bout.", true]] }
+        vars: { "t":[["On dessine chaque feuille une par une avant le feuillage.",false,"Faux : on dessine d'abord la masse du feuillage, puis quelques détails."],["Les branches deviennent plus fines vers le bout.",true,"Vrai : elles s'affinent en s'éloignant du tronc."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On dessine d'abord la masse du feuillage, puis quelques détails."
+        correction: "{{t_2}}"
 
   - id: chat-en-formes
     titre: "Un chat avec des formes"
@@ -250,10 +250,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les yeux du chat se placent sur la ligne horizontale de la croix.", true], ["On commence le chat par les moustaches.", false]] }
+        vars: { "t":[["Les yeux du chat se placent sur la ligne horizontale de la croix.",true,"Vrai : la croix sert de repère pour placer le visage."],["On commence le chat par les moustaches.",false,"Faux : on commence par les grandes formes, les moustaches à la fin."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On construit d'abord les grandes formes, les détails viennent après."
+        correction: "{{t_2}}"
 
   - id: feuille-symetrique
     titre: "Dessiner une feuille"
@@ -288,10 +288,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les deux moitiés d'une vraie feuille sont parfaitement identiques.", false], ["Dessiner d'après une vraie feuille aide à mieux l'observer.", true]] }
+        vars: { "t":[["Les deux moitiés d'une vraie feuille sont parfaitement identiques.",false,"Faux : la nature est presque symétrique, jamais parfaitement."],["Dessiner d'après une vraie feuille aide à mieux l'observer.",true,"Vrai : on découvre les nervures et les irrégularités."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La nature est presque symétrique, jamais parfaitement."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["la nervure centrale", "le contour", "les nervures secondaires", "la couleur"]] }
         enonce: "Remets les étapes de la feuille dans l'ordre."

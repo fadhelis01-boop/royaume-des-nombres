@@ -145,6 +145,7 @@ export function DessinPasAPas({ step, onAnswered }: { step: Extract<Step, { kind
       )}
       <Toile ref={toile} guides={guides} miroir={step.miroir} />
       {msg && !fini && <p className="center small">{msg}</p>}
+      {fini && <AutoEval titre={step.titre} couches={step.etapes.map((e) => e.couche).filter((c): c is string => !!c)} />}
       <div className="center st-dessin-btns">
         <button type="button" className="btn btn-ghost btn-small" onMouseDown={() => setModele(true)} onMouseUp={() => setModele(false)} onTouchStart={() => setModele(true)} onTouchEnd={() => setModele(false)}>
           👁️ Maintiens pour voir le modèle
@@ -167,6 +168,54 @@ export function DessinPasAPas({ step, onAnswered }: { step: Extract<Step, { kind
           </button>
         )}
       </div>
+    </div>
+  );
+}
+
+/** Auto-évaluation guidée après un dessin : on juge son travail sur des critères simples, sans note. */
+const CRITERES: Record<string, string> = {
+  construction: "Mes grandes formes de départ sont à la bonne place",
+  proportions: "Les tailles des parties vont bien ensemble",
+  details: "J'ai ajouté les détails à la fin",
+  valeurs: "On voit du clair et du foncé",
+  couleur: "Mes couleurs vont bien ensemble",
+};
+function AutoEval({ titre, couches }: { titre: string; couches: string[] }) {
+  const crit = [...new Set(couches)].map((c) => CRITERES[c]).filter(Boolean);
+  const liste = (crit.length ? crit : [CRITERES.construction, CRITERES.details]).concat("J'ai pris mon temps et observé le modèle");
+  const [coche, setCoche] = useState<boolean[]>(() => liste.map(() => false));
+  const [humeur, setHumeur] = useState<number | null>(null);
+  const n = coche.filter(Boolean).length;
+  return (
+    <div className="autoeval">
+      <div className="st-label">🔍 Je regarde mon dessin « {titre} »</div>
+      <ul>
+        {liste.map((c, i) => (
+          <li key={c}>
+            <label>
+              <input type="checkbox" checked={coche[i]} onChange={() => setCoche((x) => x.map((v, j) => (j === i ? !v : v)))} /> {c}
+            </label>
+          </li>
+        ))}
+      </ul>
+      <div className="autoeval-humeur" role="group" aria-label="Je suis content de mon dessin">
+        {["😐 Bof", "🙂 Content", "🤩 Très fier"].map((h, i) => (
+          <button key={h} type="button" className={`chip ${humeur === i ? "sel" : ""}`} aria-pressed={humeur === i} onClick={() => setHumeur(i)}>
+            {h}
+          </button>
+        ))}
+      </div>
+      {humeur !== null && (
+        <Bubble
+          who="mia"
+          humeur={n === liste.length ? "joie" : "reflexion"}
+          text={
+            n === liste.length
+              ? "Tu as coché tous les points : bravo, tu sais regarder ton travail comme un vrai artiste !"
+              : `Tu as coché ${n} point${n > 1 ? "s" : ""} sur ${liste.length}. Choisis-en un seul à améliorer la prochaine fois : c'est comme ça qu'on progresse.`
+          }
+        />
+      )}
     </div>
   );
 }

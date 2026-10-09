@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useStore } from "../lib/store";
 import { freqMidi, jouerFreq, jouerRythme, jouerSuite, midi, nomMidi, type Timbre } from "../lib/musique";
 
 // Visuels des nouvelles planètes, dessinés à partir de données (aucune image à produire) :
@@ -42,9 +43,11 @@ function jouer(x: Son) {
 export function SonVis({ v }: { v: Any }) {
   const sons: Son[] = Array.isArray(v.sons) ? (v.sons as Son[]) : [v as Son];
   const [actif, setActif] = useState<number | null>(null);
+  const visibles = useStore((st) => !!st.settings.sonsVisibles);
   return (
     <div className="son-vis">
       {sons.map((x, i) => (
+        <div key={i} className="son-item">
         <button
           key={i}
           type="button"
@@ -57,6 +60,8 @@ export function SonVis({ v }: { v: Any }) {
         >
           <span aria-hidden>{x.emoji ?? (actif === i ? "🔊" : "▶️")}</span> {x.etiquette ?? (sons.length > 1 ? `Son ${String.fromCharCode(65 + i)}` : "Écouter")}
         </button>
+        {visibles && <SonDessine x={x} />}
+        </div>
       ))}
     </div>
   );
@@ -217,4 +222,51 @@ export function AtomeVis({ v }: { v: Any }) {
       )}
     </svg>
   );
+}
+
+/** Le son en image : notes (hauteur et durée), rythme (points), fréquence et volume. */
+function SonDessine({ x }: { x: Son }) {
+  const vol = n(x.volume, 0.25);
+  if (x.rythme)
+    return (
+      <div className="son-dessin" aria-label={`rythme : ${[...s(x.rythme)].map((c) => (c === "." ? "silence" : c === "X" ? "fort" : "coup")).join(", ")}`}>
+        {[...s(x.rythme).replace(/\s/g, "")].map((c, k) => (
+          <span key={k} className={`sd-pas ${c === "." ? "" : "on"} ${c === "X" ? "fort" : ""}`} />
+        ))}
+      </div>
+    );
+  if (x.freq !== undefined) {
+    const f = n(x.freq, 440);
+    const ondes = Math.max(2, Math.min(24, Math.round(f / 60)));
+    const amp = 6 + vol * 40;
+    const d = Array.from({ length: ondes * 8 + 1 }, (_, k) => `${k === 0 ? "M" : "L"}${(k * 200) / (ondes * 8)} ${30 - amp * Math.sin((k * Math.PI) / 4)}`).join(" ");
+    return (
+      <svg className="son-dessin" viewBox="0 0 200 60" role="img" aria-label={`son de ${Math.round(f)} hertz, ${f > 500 ? "aigu" : f < 250 ? "grave" : "moyen"}, volume ${vol > 0.4 ? "fort" : vol < 0.15 ? "doux" : "moyen"}`}>
+        <path d={d} fill="none" stroke="currentColor" strokeWidth={2} />
+      </svg>
+    );
+  }
+  if (x.notes) {
+    // « do4:2 ré4 _ [do4 mi4] » : hauteur verticale, durée horizontale
+    const toks = s(x.notes).split(/\s+(?![^[]*\])/).filter(Boolean);
+    let t = 0;
+    const barres: { m: number; t: number; d: number }[] = [];
+    for (const tok of toks) {
+      const [corps, du] = tok.split(":");
+      const d = Number(du ?? 1) || 1;
+      if (corps !== "_") for (const nn of corps.replace(/[[\]]/g, "").split(/\s+/)) { const m = midi(nn); if (m !== null) barres.push({ m, t, d }); }
+      t += d;
+    }
+    if (!barres.length) return null;
+    const lo = Math.min(...barres.map((b) => b.m)), hi = Math.max(...barres.map((b) => b.m));
+    const H = 70, W = 200, pas = W / Math.max(1, t);
+    return (
+      <svg className="son-dessin" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`notes : ${barres.map((b) => nomMidi(b.m)).join(", ")} (plus haut = plus aigu, plus long = plus long)`}>
+        {barres.map((b, k) => (
+          <rect key={k} x={b.t * pas + 1} y={hi === lo ? H / 2 - 4 : 6 + ((hi - b.m) / (hi - lo)) * (H - 20)} width={Math.max(4, b.d * pas - 2)} height={8} rx={3} fill="var(--c-violet, #7c4dff)" opacity={0.4 + vol} />
+        ))}
+      </svg>
+    );
+  }
+  return null;
 }

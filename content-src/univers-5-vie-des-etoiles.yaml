@@ -43,10 +43,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le Soleil brûle comme un feu de bois.", false], ["Une étoile bleue est plus chaude qu'une étoile rouge.", true], ["Le Soleil perd de la masse en brillant.", true]] }
+        vars: { "t":[["Le Soleil brûle comme un feu de bois.",false,"Faux : ce n'est pas une combustion, c'est une fusion nucléaire."],["Une étoile bleue est plus chaude qu'une étoile rouge.",true,"Vrai : bleu = très chaud, rouge = plus froid."],["Le Soleil perd de la masse en brillant.",true,"Vrai : la fusion transforme un peu de masse en énergie."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Ce n'est pas une combustion (il n'y a pas d'oxygène pour brûler) : c'est une fusion nucléaire."
+        correction: "{{t_2}}"
 
   - id: vie-et-mort-des-etoiles
     titre: "La vie et la mort des étoiles"
@@ -64,6 +64,7 @@ lecons:
           - une étoile comme le Soleil gonfle en **géante rouge**, puis devient une **naine blanche** qui refroidit lentement ;
           - une étoile **très massive** explose en **supernova** et laisse une **étoile à neutrons** ou un **trou noir**.
           Les supernovas dispersent les éléments fabriqués dans les étoiles (carbone, oxygène, fer…) : les atomes de notre corps ont été forgés dans des étoiles.
+      - visuel: {"type":"frise","titre":"La vie d'une étoile comme le Soleil","points":[{"emoji":"🌫️","label":"nébuleuse"},{"emoji":"☀️","label":"étoile","sous":"environ 10 milliards d'années"},{"emoji":"🔴","label":"géante rouge"},{"emoji":"⚪","label":"naine blanche"}]}
       - astuce:
           texte: "Plus une étoile est massive, plus elle vit vite et meurt de façon spectaculaire (supernova). Les petites étoiles finissent tranquillement en naines blanches."
           qui: neo
@@ -80,10 +81,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le Soleil deviendra un trou noir.", false], ["Une étoile naît dans un nuage de gaz et de poussières.", true], ["Les étoiles très massives finissent en explosant.", true]] }
+        vars: { "t":[["Le Soleil deviendra un trou noir.",false,"Faux : le Soleil n'est pas assez massif ; il finira en naine blanche."],["Une étoile naît dans un nuage de gaz et de poussières.",true,"Vrai : la nébuleuse se contracte et s'allume."],["Les étoiles très massives finissent en explosant.",true,"Vrai : en supernova."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le Soleil n'est pas assez massif pour devenir un trou noir."
+        correction: "{{t_2}}"
 
   - id: galaxies-et-big-bang
     titre: "Galaxies et Big Bang"
@@ -99,6 +100,7 @@ lecons:
           - Il existe des **centaines de milliards** de galaxies. La plus grande voisine de la nôtre, **Andromède**, est à environ 2,5 millions d'années-lumière.
           - Dans les années 1920, **Edwin Hubble** (et **Georges Lemaître**) montrent que les galaxies **s'éloignent** les unes des autres : l'Univers est en **expansion**.
           - En remontant le temps, l'Univers était très chaud et très dense : c'est le **Big Bang**, il y a environ **13,8 milliards d'années**. Ce n'est pas une explosion « dans » l'espace : c'est l'espace lui-même qui se dilate.
+      - visuel: {"type":"frise","titre":"L'histoire de l'Univers","points":[{"emoji":"💥","label":"Big Bang","sous":"13,8 milliards d'années"},{"emoji":"⭐","label":"premières étoiles"},{"emoji":"🌌","label":"galaxies"},{"emoji":"☀️","label":"Soleil et Terre","sous":"4,6 milliards d'années"},{"emoji":"🧒","label":"toi !"}]}
       - astuce:
           texte: "L'Univers a environ 13,8 milliards d'années. Si toute son histoire tenait en une année, l'humanité serait apparue le 31 décembre, dans les dernières minutes."
           qui: zero
@@ -115,10 +117,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "Terre < Système solaire < Voie lactée < Univers observable."
       - type: vf
-        vars: { t: [["Le Big Bang est une explosion qui a eu lieu en un point de l'espace.", false], ["Le Système solaire est dans la Voie lactée.", true], ["Il existe des centaines de milliards de galaxies.", true]] }
+        vars: { "t":[["Le Big Bang est une explosion qui a eu lieu en un point de l'espace.",false,"Faux : c'est un état très chaud et dense de tout l'Univers, dont l'espace s'est dilaté."],["Le Système solaire est dans la Voie lactée.",true,"Vrai : notre galaxie, en forme de spirale."],["Il existe des centaines de milliards de galaxies.",true,"Vrai : chacune avec des milliards d'étoiles."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le Big Bang décrit un état très chaud et dense de tout l'Univers, dont l'espace s'est dilaté depuis."
+        correction: "{{t_2}}"
 
   - id: exoplanetes-et-kepler
     titre: "Exoplanètes et lois de Kepler"
@@ -154,7 +156,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On connaît aujourd'hui plus de 5 000 exoplanètes.", true], ["Une planète va plus vite quand elle est près de son étoile.", true], ["Plus une planète est loin du Soleil, plus son année est courte.", false]] }
+        vars: { "t":[["On connaît aujourd'hui plus de 5 000 exoplanètes.",true,"Vrai : et on en découvre chaque année."],["Une planète va plus vite quand elle est près de son étoile.",true,"Vrai : c'est la 2ᵉ loi de Kepler."],["Plus une planète est loin du Soleil, plus son année est courte.",false,"Faux : plus elle est loin, plus son année est longue."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Plus une planète est loin, plus son orbite est longue et lente : son année est plus longue."
+        correction: "{{t_2}}"

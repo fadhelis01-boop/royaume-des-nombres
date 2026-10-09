@@ -29,6 +29,7 @@ lecons:
           Une cellule **animale** a : une **membrane** (l'enveloppe), du **cytoplasme** (l'intérieur), un **noyau** (qui contient l'ADN, le « mode d'emploi »).
           Une cellule **végétale** a en plus : une **paroi** rigide, des **chloroplastes** (verts, pour la photosynthèse) et une grande **vacuole**.
           Une cellule se divise en deux pour en faire de nouvelles : c'est ainsi qu'on grandit et qu'on cicatrise.
+      - visuel: {"type":"schema","titre":"Une cellule végétale","emoji":"🟩","legendes":[{"label":"membrane","detail":"l'enveloppe"},{"label":"paroi","detail":"le mur rigide (végétal)"},{"label":"noyau","detail":"contient l'ADN"},{"label":"chloroplastes","detail":"photosynthèse (végétal)"},{"label":"cytoplasme","detail":"l'intérieur"},{"label":"vacuole","detail":"réservoir d'eau"}]}
       - astuce:
           texte: "La cellule végétale a 3 choses en plus : une paroi (mur rigide), des chloroplastes (panneaux solaires verts) et une grande vacuole (réservoir d'eau)."
           qui: zero
@@ -46,10 +47,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une bactérie est faite d'une seule cellule.", true], ["Les cellules animales ont une paroi rigide.", false], ["Toutes les cellules d'un être vivant viennent de la division d'une première cellule.", true]] }
+        vars: { "t":[["Une bactérie est faite d'une seule cellule.",true,"Vrai : c'est un être vivant unicellulaire."],["Les cellules animales ont une paroi rigide.",false,"Faux : la paroi rigide est propre aux cellules végétales (et aux champignons, aux bactéries)."],["Toutes les cellules d'un être vivant viennent de la division d'une première cellule.",true,"Vrai : à partir d'une cellule-œuf, par divisions successives."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La paroi est propre aux cellules végétales (et à celles des champignons et bactéries)."
+        correction: "{{t_2}}"
 
   - id: coeur-et-sang
     titre: "Le cœur et la circulation du sang"
@@ -66,6 +67,7 @@ lecons:
           - Il y a **deux circulations** : cœur → poumons → cœur (le sang se charge en oxygène) ; cœur → organes → cœur (il distribue oxygène et nutriments, récupère le CO₂).
           - Les **globules rouges** transportent l'oxygène ; les **globules blancs** défendent le corps ; les **plaquettes** font coaguler le sang.
           ⚠️ Le sang des veines n'est **pas bleu** : il est rouge foncé. Les veines paraissent bleues à travers la peau à cause de la façon dont la lumière la traverse.
+      - visuel: {"type":"cycle","centre":"le sang circule","etapes":[{"emoji":"❤️","label":"cœur droit"},{"emoji":"🌬️","label":"poumons : prend le dioxygène"},{"emoji":"❤️","label":"cœur gauche"},{"emoji":"🧍","label":"organes : donne le dioxygène"}]}
       - astuce:
           texte: "Le cœur, c'est deux pompes côte à côte : celle de droite envoie le sang aux poumons, celle de gauche l'envoie dans tout le corps."
           qui: mia
@@ -77,10 +79,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le sang des veines est bleu.", false], ["Le cœur est un muscle.", true], ["Les globules blancs nous défendent contre les microbes.", true]] }
+        vars: { "t":[["Le sang des veines est bleu.",false,"Faux : le sang est toujours rouge, plus foncé dans les veines."],["Le cœur est un muscle.",true,"Vrai : un muscle qui se contracte sans arrêt."],["Les globules blancs nous défendent contre les microbes.",true,"Vrai : ils détruisent les microbes."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le sang est toujours rouge (plus foncé dans les veines)."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { b: [60, 70, 80], m: [10, 60] }
         enonce: "Un cœur bat {{b}} fois par minute. Combien de battements en {{m}} minutes ?"
@@ -102,6 +104,7 @@ lecons:
           Un **réflexe** (retirer la main d'une plaque chaude) est très rapide car il passe par la **moelle épinière** sans attendre le cerveau.
           Le cerveau a besoin de **sommeil** pour ranger les souvenirs : dormir aide vraiment à apprendre !
           ⚠️ Alcool, drogues et écrans tard le soir perturbent le cerveau et le sommeil.
+      - visuel: {"type":"frise","titre":"Le trajet d'un message nerveux","points":[{"emoji":"✋","label":"récepteur","sous":"la peau sent la chaleur"},{"emoji":"⚡","label":"nerf sensitif"},{"emoji":"🧠","label":"cerveau ou moelle","sous":"décide"},{"emoji":"⚡","label":"nerf moteur"},{"emoji":"💪","label":"muscle","sous":"la main se retire"}]}
       - astuce:
           texte: "Le trajet d'un message : organe des sens → nerf sensitif → cerveau → nerf moteur → muscle. Récepteur, messager, chef, messager, exécutant."
           qui: neo
@@ -118,10 +121,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les écrans tard le soir peuvent retarder l'endormissement.", true], ["Le cerveau ne travaille pas pendant le sommeil.", false], ["Un réflexe est plus rapide qu'un mouvement réfléchi.", true]] }
+        vars: { "t":[["Les écrans tard le soir peuvent retarder l'endormissement.",true,"Vrai : leur lumière retarde l'arrivée du sommeil."],["Le cerveau ne travaille pas pendant le sommeil.",false,"Faux : il trie et consolide les souvenirs de la journée."],["Un réflexe est plus rapide qu'un mouvement réfléchi.",true,"Vrai : il ne passe pas par la décision du cerveau."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Pendant le sommeil, le cerveau trie et consolide les souvenirs de la journée."
+        correction: "{{t_2}}"
 
   - id: bien-manger
     titre: "Bien manger, bouger, dormir"
@@ -140,6 +143,7 @@ lecons:
           - **viandes, poissons, œufs, légumes secs** (protéines pour construire les muscles) ;
           - **matières grasses** et **produits sucrés** : en petite quantité.
           Boire de l'**eau**. Bouger au moins **1 heure par jour** quand on est enfant. Dormir **9 à 12 h** par nuit entre 6 et 12 ans.
+      - visuel: {"type":"couches","legende":"Une assiette équilibrée.","couches":[{"emoji":"🥦","nom":"Légumes et fruits","detail":"la moitié","couleur":"#3fa34d","epaisseur":4},{"emoji":"🍞","nom":"Féculents","detail":"un quart","couleur":"#d4a017","epaisseur":2},{"emoji":"🥚","nom":"Protéines","detail":"un quart","couleur":"#e2574c","epaisseur":2},{"emoji":"💧","nom":"Eau","detail":"la seule boisson indispensable","couleur":"#2f6fdf"}]}
       - astuce:
           texte: "Une assiette équilibrée : la moitié de légumes, un quart de féculents, un quart de protéines, et de l'eau pour boire. Les sucreries, c'est pour le plaisir de temps en temps."
           qui: zero
@@ -157,10 +161,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les produits laitiers apportent du calcium pour les os.", true], ["Les produits sucrés sont à manger en grande quantité.", false], ["Un enfant de 9 ans a besoin d'environ 9 à 12 heures de sommeil.", true]] }
+        vars: { "t":[["Les produits laitiers apportent du calcium pour les os.",true,"Vrai : le calcium aide à construire les os."],["Les produits sucrés sont à manger en grande quantité.",false,"Faux : le sucre est à manger avec modération."],["Un enfant de 9 ans a besoin d'environ 9 à 12 heures de sommeil.",true,"Vrai : le sommeil aide à grandir et à apprendre."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Sucre et gras : avec modération."
+        correction: "{{t_2}}"
 
   - id: grandir
     titre: "Grandir : puberté et reproduction"
@@ -191,7 +195,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Tous les enfants commencent leur puberté exactement au même âge.", false], ["Mon corps m'appartient : personne ne peut le toucher sans mon accord.", true], ["Pendant la puberté, on grandit beaucoup.", true]] }
+        vars: { "t":[["Tous les enfants commencent leur puberté exactement au même âge.",false,"Faux : chacun a son rythme, et c'est normal."],["Mon corps m'appartient : personne ne peut le toucher sans mon accord.",true,"Vrai : personne n'a le droit de te toucher sans ton accord."],["Pendant la puberté, on grandit beaucoup.",true,"Vrai : c'est la poussée de croissance."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Chacun a son rythme, et c'est normal. Ton corps t'appartient."
+        correction: "{{t_2}}"

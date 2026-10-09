@@ -39,10 +39,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Toutes les cellules d'un même individu expriment tous leurs gènes en même temps.", false], ["Des facteurs de l'environnement peuvent influencer l'expression de certains gènes.", true], ["Les globules rouges matures des mammifères n'ont pas de noyau.", true]] }
+        vars: { "t":[["Toutes les cellules d'un même individu expriment tous leurs gènes en même temps.",false,"Faux : chaque type de cellule n'exprime qu'une partie de ses gènes."],["Des facteurs de l'environnement peuvent influencer l'expression de certains gènes.",true,"Vrai : alimentation, stress, lumière peuvent jouer (épigénétique)."],["Les globules rouges matures des mammifères n'ont pas de noyau.",true,"Vrai : ils le perdent en mûrissant, ce qui laisse plus de place à l'hémoglobine."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Chaque type de cellule n'exprime qu'une partie de ses gènes (et les globules rouges des mammifères perdent leur noyau en mûrissant)."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Le génome humain contient environ…", "20 000 gènes codant des protéines", "200 gènes", "20 millions de gènes"]] }
         enonce: "{{t_0}}"
@@ -74,10 +74,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Modifier l'ADN d'embryons humains destinés à naître est interdit dans de nombreux pays.", true], ["Une thérapie génique peut viser à corriger l'effet d'un gène défectueux.", true], ["Les questions éthiques ne concernent pas les scientifiques.", false]] }
+        vars: { "t":[["Modifier l'ADN d'embryons humains destinés à naître est interdit dans de nombreux pays.",true,"Vrai : c'est encadré ou interdit par la loi dans de nombreux pays, dont la France."],["Une thérapie génique peut viser à corriger l'effet d'un gène défectueux.",true,"Vrai : c'est le principe de la thérapie génique."],["Les questions éthiques ne concernent pas les scientifiques.",false,"Faux : les scientifiques participent pleinement à la réflexion éthique."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les scientifiques participent pleinement à la réflexion éthique, avec toute la société."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { t: [["En quelle année le premier génome humain complet a-t-il été publié (Projet Génome humain) ?", 2003]] }
         enonce: "{{t_0}}"
@@ -108,10 +108,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Les antibiotiques peuvent perturber le microbiote.", true], ["Le microbiote est uniquement nuisible.", false], ["Le microbiote participe à l'éducation du système immunitaire.", true]] }
+        vars: { "t":[["Les antibiotiques peuvent perturber le microbiote.",true,"Vrai : ils tuent aussi des bactéries utiles."],["Le microbiote est uniquement nuisible.",false,"Faux : c'est un partenaire essentiel de notre santé."],["Le microbiote participe à l'éducation du système immunitaire.",true,"Vrai : il entraîne nos défenses à reconnaître ce qui est dangereux."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le microbiote est un partenaire essentiel de notre santé."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["lentilles", "soda", "pain complet", "bonbons"], ["brocoli", "biscuits industriels", "pomme avec la peau", "frites"]] }
         enonce: "Riche en fibres (bon pour le microbiote) ou pauvre en fibres ?"

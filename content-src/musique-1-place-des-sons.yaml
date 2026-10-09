@@ -47,10 +47,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 0], ["{{t_2}}", 1], ["{{t_3}}", 1]]
         correction: "Oiseaux, vent, pluie, ruisseau : sons naturels."
       - type: vf
-        vars: { t: [["Le silence fait partie de la musique.", true], ["Il n'y a jamais aucun son autour de nous.", false], ["Pour bien écouter, on peut fermer les yeux.", true]] }
+        vars: { "t":[["Le silence fait partie de la musique.",true,"Vrai : les silences aussi s'écrivent et se comptent."],["Il n'y a jamais aucun son autour de nous.",false,"Faux : même dans une pièce calme, on entend de petits sons."],["Pour bien écouter, on peut fermer les yeux.",true,"Vrai : on se concentre mieux sur ce qu'on entend."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Même dans une pièce calme, on entend de petits sons : il faut juste bien écouter."
+        correction: "{{t_2}}"
 
   - id: fort-et-doux
     titre: "Fort ou doux ?"
@@ -157,10 +157,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}"]
         correction: "{{t_1}}."
       - type: vf
-        vars: { t: [["Le tic-tac d'une horloge est régulier comme une pulsation.", true], ["La pulsation change de vitesse tout le temps.", false], ["On peut marcher au rythme de la pulsation.", true]] }
+        vars: { "t":[["Le tic-tac d'une horloge est régulier comme une pulsation.",true,"Vrai : tic, tac, tic, tac, toujours à la même vitesse."],["La pulsation change de vitesse tout le temps.",false,"Faux : la pulsation est régulière."],["On peut marcher au rythme de la pulsation.",true,"Vrai : un pas par battement."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La pulsation est régulière : c'est elle qu'on suit en dansant."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { t: [["X.x.x.x.", 4], ["X.x.x.x.x.x.", 6], ["X.x.", 2], ["X.x.x.x.X.x.x.x.", 8]] }
         enonce: "Écoute et compte : combien de frappes entends-tu ?"
@@ -234,7 +234,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le piano est un instrument à clavier.", true], ["La flûte est une percussion.", false], ["La harpe est un instrument à cordes pincées.", true]] }
+        vars: { "t":[["Le piano est un instrument à clavier.",true,"Vrai : on joue en appuyant sur des touches."],["La flûte est une percussion.",false,"Faux : la flûte est un instrument à vent : on souffle dedans."],["La harpe est un instrument à cordes pincées.",true,"Vrai : on pince ses cordes avec les doigts."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La flûte est un instrument à vent."
+        correction: "{{t_2}}"

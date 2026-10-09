@@ -41,10 +41,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On peut comprimer un gaz car ses particules sont éloignées.", true], ["Quand on chauffe, les particules s'agitent moins.", false], ["Les particules d'un solide sont immobiles et ne vibrent pas du tout.", false], ["Les molécules sont visibles avec une loupe.", false]] }
+        vars: { "t":[["On peut comprimer un gaz car ses particules sont éloignées.",true,"Vrai : il y a beaucoup d'espace entre ses particules."],["Quand on chauffe, les particules s'agitent moins.",false,"Faux : chauffer agite les particules davantage."],["Les particules d'un solide sont immobiles et ne vibrent pas du tout.",false,"Faux : même dans un solide, elles vibrent."],["Les molécules sont visibles avec une loupe.",false,"Faux : elles sont bien trop petites, même pour un microscope ordinaire."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Chauffer agite les particules ; même dans un solide, elles vibrent. Et elles sont bien trop petites pour une loupe."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["On peut enfoncer le piston d'une seringue bouchée remplie d'air.", "les particules d'air sont éloignées et peuvent se rapprocher", "l'air disparaît", "l'air devient liquide"], ["Une odeur de gâteau se répand dans toute la maison.", "les particules de gaz bougent en tous sens et se dispersent", "l'odeur est un solide", "le gâteau rétrécit"]] }
         enonce: "{{t_0}} Pourquoi ?"
@@ -131,10 +131,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Faire fondre du chocolat est une réaction chimique.", false], ["Cuire un œuf est une transformation chimique : on ne peut pas le « décuire ».", true], ["Dans une réaction chimique, la masse totale se conserve.", true]] }
+        vars: { "t":[["Faire fondre du chocolat est une réaction chimique.",false,"Faux : fondre est un changement d'état, le chocolat reste du chocolat."],["Cuire un œuf est une transformation chimique : on ne peut pas le « décuire ».",true,"Vrai : de nouvelles substances se sont formées."],["Dans une réaction chimique, la masse totale se conserve.",true,"Vrai : les atomes se réorganisent, aucun ne disparaît."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Fondre = physique ; cuire = chimique. La masse se conserve toujours."
+        correction: "{{t_2}}"
 
   - id: l-air-et-ses-gaz
     titre: "De quoi est fait l'air ?"
@@ -151,6 +151,7 @@ lecons:
           - environ **21 %** de **dioxygène** (« oxygène »), indispensable pour respirer et pour brûler ;
           - environ **1 %** d'autres gaz : surtout de l'argon, un peu de dioxyde de carbone (environ 0,04 %), de la vapeur d'eau…
           Nous inspirons de l'oxygène et rejetons du dioxyde de carbone ; les plantes, à la lumière, font l'inverse.
+      - visuel: {"type":"couches","legende":"La composition de l'air (en volume).","couches":[{"nom":"Diazote","detail":"environ 78 %","couleur":"#2f6fdf","epaisseur":8},{"nom":"Dioxygène","detail":"environ 21 %","couleur":"#3fa34d","epaisseur":2},{"nom":"Autres gaz","detail":"environ 1 % (argon, CO₂…)","couleur":"#9e9e9e","epaisseur":1}]}
       - visuel:
           type: diagramme
           max: 100
@@ -195,6 +196,7 @@ lecons:
           2. un **comburant** (le dioxygène de l'air) ;
           3. une **énergie d'activation** (une flamme, une étincelle, de la chaleur).
           Pour **éteindre** un feu, on enlève **un** des trois côtés : on retire le combustible, on étouffe (plus d'oxygène), ou on refroidit (avec de l'eau — **jamais sur de l'huile en feu ni sur un appareil électrique !**).
+      - visuel: {"type":"schema","titre":"Le triangle du feu","emoji":"🔥","legendes":[{"label":"combustible","detail":"bois, papier, gaz"},{"label":"comburant","detail":"le dioxygène de l'air"},{"label":"chaleur","detail":"une flamme, une étincelle"},{"label":"pour éteindre","detail":"on retire un des trois"}]}
       - attention:
           texte: "On ne joue jamais avec le feu. Une poêle d'huile qui s'enflamme : on coupe le feu et on couvre avec un couvercle (on étouffe). Jamais d'eau dessus : l'huile brûlante serait projetée partout."
           qui: neo
@@ -221,7 +223,7 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["On peut éteindre de l'huile en feu avec de l'eau.", false], ["Sans dioxygène, rien ne peut brûler (dans les conditions habituelles).", true], ["Une combustion est une réaction chimique.", true]] }
+        vars: { "t":[["On peut éteindre de l'huile en feu avec de l'eau.",false,"Faux : l'eau fait exploser l'huile brûlante ; on étouffe avec un couvercle."],["Sans dioxygène, rien ne peut brûler (dans les conditions habituelles).",true,"Vrai : le dioxygène est le comburant du triangle du feu."],["Une combustion est une réaction chimique.",true,"Vrai : de nouvelles substances se forment (CO₂, eau…)."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Jamais d'eau sur de l'huile en feu : on étouffe avec un couvercle."
+        correction: "{{t_2}}"

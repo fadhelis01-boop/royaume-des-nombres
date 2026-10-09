@@ -80,10 +80,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["L'hyperbole atténue la réalité.", false], ["L'euphémisme adoucit une réalité désagréable.", true], ["La litote dit moins pour faire entendre plus.", true]] }
+        vars: { "t":[["L'hyperbole atténue la réalité.",false,"Faux : l'hyperbole exagère, elle ne diminue pas."],["L'euphémisme adoucit une réalité désagréable.",true,"Vrai : « il nous a quittés » adoucit « il est mort »."],["La litote dit moins pour faire entendre plus.",true,"Vrai : « ce n'est pas mauvais » veut dire « c'est très bon »."]] }
         enonce: "{{t_0}}"
         reponse: "t_1"
-        correction: "Hyperbole = exagérer ; litote = dire moins ; euphémisme = adoucir."
+        correction: "{{t_2}}"
 
   - id: figures-d-opposition-et-de-construction
     titre: "Antithèse, oxymore, anaphore, gradation, chiasme"
@@ -151,10 +151,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1]]
         correction: "Allitération = consonne ; assonance = voyelle."
       - type: vf
-        vars: { t: [["L'allitération répète un son de voyelle.", false], ["L'assonance répète un son de voyelle.", true], ["Les sonorités peuvent imiter un bruit.", true]] }
+        vars: { "t":[["L'allitération répète un son de voyelle.",false,"Faux : l'allitération répète un son de consonne."],["L'assonance répète un son de voyelle.",true,"Vrai : l'assonance répète un son de voyelle."],["Les sonorités peuvent imiter un bruit.",true,"Vrai : « ces serpents qui sifflent » imite le sifflement."]] }
         enonce: "{{t_0}}"
         reponse: "t_1"
-        correction: "Allitération = consonnes ; assonance = voyelles."
+        correction: "{{t_2}}"
 
   - id: registres
     titre: "Les registres (ou tonalités)"
@@ -191,10 +191,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le registre pathétique cherche à émouvoir le lecteur.", true], ["Le registre épique grandit les exploits d'un héros.", true], ["Le registre lyrique sert surtout à faire rire.", false], ["Le registre fantastique fait hésiter entre réel et surnaturel.", true], ["Dans le registre tragique, le héros échappe facilement à son destin.", false]] }
+        vars: { "t":[["Le registre pathétique cherche à émouvoir le lecteur.",true,"Vrai : le pathétique cherche à émouvoir, à faire pleurer."],["Le registre épique grandit les exploits d'un héros.",true,"Vrai : l'épique raconte des exploits plus grands que nature."],["Le registre lyrique sert surtout à faire rire.",false,"Faux : le lyrique exprime des sentiments ; c'est le comique qui fait rire."],["Le registre fantastique fait hésiter entre réel et surnaturel.",true,"Vrai : on hésite entre une explication réelle et surnaturelle."],["Dans le registre tragique, le héros échappe facilement à son destin.",false,"Faux : le héros tragique ne peut pas échapper à son destin."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Comique : rire ; lyrique : sentiments ; épique : exploits ; tragique : destin ; pathétique : émotion ; fantastique : hésitation."
+        correction: "{{t_2}}"
 
 
   - id: niveaux-de-langue

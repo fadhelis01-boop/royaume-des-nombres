@@ -31,6 +31,7 @@ lecons:
           - se termine par un **point** ( . ? ! ).
 
           *Le chat mange une souris.* ✔ — *mange chat le souris une* ✘
+      - visuel: {"type":"phrase","legende":"Une phrase : une majuscule au début, un point à la fin, et elle a du sens.","groupes":[{"mots":"Le","role":"determinant","etiquette":"majuscule"},{"mots":"chien","role":"nom"},{"mots":"court","role":"verbe"},{"mots":"dans le jardin","role":"ccl"},{"mots":".","role":"ponctuation","etiquette":"point"}]}
       - astuce:
           texte: "Une phrase, c'est comme un train : une majuscule pour la locomotive, un point pour le dernier wagon, et des mots rangés dans l'ordre pour que ça roule."
           qui: zero
@@ -49,10 +50,10 @@ lecons:
         explications: ["", "Il manque quelque chose au début ou à la fin : majuscule et point !", "Il manque le point à la fin."]
         correction: "{{t_0}} : une majuscule au début et un point à la fin."
       - type: vf
-        vars: { t: [["Le lapin saute dans le pré.", true], ["Saute pré lapin le dans.", false], ["Mon frère a dix ans.", true], ["Ans frère dix mon a.", false], ["J'aime les fraises.", true], ["fraises les aime j'", false]] }
+        vars: { "t":[["Le lapin saute dans le pré.",true,"Vrai : elle a un sens, une majuscule et un point."],["Saute pré lapin le dans.",false,"Faux : les mots sont dans le désordre, la phrase n'a pas de sens."],["Mon frère a dix ans.",true,"Vrai : elle a un sens, une majuscule et un point."],["Ans frère dix mon a.",false,"Faux : les mots sont dans le désordre."],["J'aime les fraises.",true,"Vrai : elle a un sens, une majuscule et un point."],["fraises les aime j'",false,"Faux : mots dans le désordre, pas de majuscule ni de point."]] }
         enonce: "« {{t_0}} » est-ce une phrase correcte ?"
         reponse: "t_1"
-        correction: "Une phrase a un sens, une majuscule et un point."
+        correction: "{{t_2}}"
       - type: dictee
         vars: { m: ["Le chat dort.", "Lya lit un livre.", "Il fait beau.", "Zéro mange une graine.", "Le lapin saute.", "Nous jouons au ballon."] }
         enonce: "Écoute et écris la phrase, avec la majuscule et le point."
@@ -110,6 +111,7 @@ lecons:
           *Je chante.* → *Je **ne** chante **pas**.*
 
           D'autres négations : **ne … jamais**, **ne … plus**, **ne … rien**, **ne … personne**.
+      - visuel: {"type":"phrase","legende":"La négation encadre le verbe, comme un sandwich.","groupes":[{"mots":"Il","role":"sujet"},{"mots":"ne","role":"adverbe","etiquette":"négation"},{"mots":"mange","role":"verbe"},{"mots":"pas","role":"adverbe","etiquette":"négation"},{"mots":"de soupe","role":"cod"}]}
       - attention:
           texte: "Devant une voyelle, **ne** devient **n'** : *Il aime* → *Il **n'**aime **pas**.* Et à l'écrit, on n'oublie **jamais** le « ne », même si on ne le dit pas toujours à l'oral."
           qui: neo
@@ -205,8 +207,8 @@ lecons:
         choix: ["{{t_0}}", "{{t_2}}"]
         correction: "C'est {{t_0}} qui parle."
       - type: vf
-        vars: { t: [["« Bonjour ! » dit le loup.", true], ["Bonjour ! dit le loup", false], ["Le roi déclara : « La fête commence. »", true], ["Le roi déclara « La fête commence. »", false]] }
+        vars: { "t":[["« Bonjour ! » dit le loup.",true,"Vrai : la parole est entourée de guillemets."],["Bonjour ! dit le loup",false,"Faux : il manque les guillemets autour de « Bonjour ! » et le point final."],["Le roi déclara : « La fête commence. »",true,"Vrai : deux-points pour annoncer, guillemets pour entourer la parole."],["Le roi déclara « La fête commence. »",false,"Faux : il manque les deux-points avant les guillemets."]] }
         enonce: "La ponctuation du dialogue est-elle complète ? {{t_0}}"
         reponse: "t_1"
         niveau: 2
-        correction: "Deux-points pour annoncer, guillemets pour entourer la parole."
+        correction: "{{t_2}}"

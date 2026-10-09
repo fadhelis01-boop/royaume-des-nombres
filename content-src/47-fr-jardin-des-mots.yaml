@@ -45,11 +45,11 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_0}}, {{t_1}}, {{t_2}}, {{t_3}}."
       - type: vf
-        vars: { t: [["ballon", "balai — banane", true], ["citron", "cerise — chat", false], ["lapin", "lame — lampe", false], ["mouton", "moto — moustique", true], ["poisson", "poire — pomme", true], ["girafe", "gâteau — garçon", false]] }
+        vars: { "t":[["ballon","balai — banane",true,"Vrai : « ball » vient après « bala » et avant « bana »."],["citron","cerise — chat",false,"Faux : « ci » vient après « ch » : citron est sur une page plus loin."],["lapin","lame — lampe",false,"Faux : « lap » vient après « lam » : lapin est plus loin que « lampe »."],["mouton","moto — moustique",true,"Vrai : « mout » se range entre « moto » et « mous »."],["poisson","poire — pomme",true,"Vrai : « pois » se range entre « poir » et « pomm »."],["girafe","gâteau — garçon",false,"Faux : « gi » vient après « ga » : girafe est plus loin que « garçon »."]] }
         enonce: "Les mots-repères de la page sont « {{t_1}} ». Le mot « {{t_0}} » est-il sur cette page ?"
         reponse: "t_2"
         niveau: 2
-        correction: "On compare lettre par lettre avec les deux mots-repères."
+        correction: "{{t_3}}"
       - type: qcm
         vars: { t: [["n. f.", "nom féminin", "nom fruitier", "nombre final"], ["v.", "verbe", "voyelle", "vocabulaire"], ["adj.", "adjectif", "adverbe", "adresse"], ["n. m.", "nom masculin", "nom de mot", "nombre masculin"]] }
         enonce: "Dans le dictionnaire, que veut dire l'abréviation « {{t_0}} » ?"
@@ -70,6 +70,7 @@ lecons:
 
           *terre* : **terr**ain, **terr**estre, en**terr**er, **terr**ier, atterrir.
           *jardin* : **jardin**ier, **jardin**age, **jardin**er.
+      - visuel: {"type":"schema","titre":"La famille du mot « dent »","emoji":"🦷","legendes":[{"label":"dentiste","detail":"qui soigne les dents"},{"label":"dentifrice","detail":"pâte pour les dents"},{"label":"dentaire","detail":"des dents"},{"label":"édenté","detail":"sans dents"}]}
       - attention:
           texte: "Il faut que le **sens** soit commun : « lait » et « laid » se ressemblent mais ne sont pas de la même famille !"
           qui: neo
@@ -115,6 +116,7 @@ lecons:
           - **-eur / -euse / -ier** : celui qui fait (*chant*eur, *jardin*ier)
           - **-ette / -on** : petit (*maison*nette, *chat*on)
           - **-ment** : forme un adverbe (*douce*ment)
+      - visuel: {"type":"phrase","groupes":[{"mots":"re","role":"cod","etiquette":"préfixe : encore"},{"mots":"fais","role":"sujet","etiquette":"radical"},{"mots":"·","role":"ponctuation","etiquette":" "},{"mots":"jardin","role":"sujet","etiquette":"radical"},{"mots":"ier","role":"adverbe","etiquette":"suffixe : métier"}]}
       - attention:
           texte: "Devant **m, b, p**, « in- » devient **im-** : *im*possible, *im*buvable. Devant **l** : *il*lisible. Devant **r** : *ir*réel."
           qui: neo
@@ -208,10 +210,10 @@ lecons:
         niveau: 2
         correction: "Le sens figuré est une image : on ne brûle pas vraiment d'impatience !"
       - type: vf
-        vars: { t: [["« Il pleut des cordes » veut dire qu'il pleut très fort.", true], ["« Avoir le cafard » veut dire avoir un insecte chez soi.", false], ["« Être muet comme une carpe » veut dire ne rien dire.", true], ["« Casser les pieds » veut dire se blesser.", false]] }
+        vars: { "t":[["« Il pleut des cordes » veut dire qu'il pleut très fort.",true,"Vrai : c'est une image, il pleut très fort."],["« Avoir le cafard » veut dire avoir un insecte chez soi.",false,"Faux : « avoir le cafard », au sens figuré, veut dire être triste."],["« Être muet comme une carpe » veut dire ne rien dire.",true,"Vrai : la carpe ne fait pas de bruit, on ne dit rien."],["« Casser les pieds » veut dire se blesser.",false,"Faux : « casser les pieds » veut dire ennuyer quelqu'un."]] }
         enonce: "{{t_0}}"
         reponse: "t_1"
-        correction: "Les expressions ont un sens figuré."
+        correction: "{{t_2}}"
 
   - id: champ-lexical-homonymes
     titre: "Champ lexical et homonymes"

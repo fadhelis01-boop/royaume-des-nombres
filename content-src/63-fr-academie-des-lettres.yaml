@@ -114,6 +114,7 @@ lecons:
           | -logie | étude, discours | | magn- | grand |
           | philo | qui aime | | ambul- | marcher |
           | poly | plusieurs | | -fuge | qui fait fuir |
+      - visuel: {"type":"phrase","legende":"Hydrophobe = qui a peur de l'eau.","groupes":[{"mots":"hydro","role":"cod","etiquette":"eau (grec)"},{"mots":"phobe","role":"adverbe","etiquette":"qui a peur"}]}
       - astuce:
           texte: "Retiens quelques racines-clés : bio = vie, géo = terre, graphie = écrire, phone = son, logie = étude. Hydrophobe = qui a peur de l'eau !"
           qui: mia
@@ -191,6 +192,7 @@ lecons:
           - La **concession** reconnaît une part de vérité à l'adversaire avant de le contredire : ***Certes**, lire prend du temps, **mais** c'est un voyage.*
 
           **Connecteurs logiques** — cause : *car, parce que, puisque, en effet* ; conséquence : *donc, c'est pourquoi, par conséquent, si bien que* ; opposition : *mais, pourtant, cependant, néanmoins* ; addition : *de plus, en outre*.
+      - visuel: {"type":"couches","couches":[{"emoji":"🎯","nom":"Thèse","detail":"ce que je pense"},{"emoji":"💡","nom":"Argument","detail":"pourquoi"},{"emoji":"📌","nom":"Exemple","detail":"la preuve concrète"},{"emoji":"🔗","nom":"Connecteur","detail":"de plus, en effet, ainsi"},{"emoji":"✅","nom":"Conclusion"}]}
       - astuce:
           texte: "Thèse + argument + exemple : je dis ce que je pense, je dis pourquoi, je le prouve par un exemple concret."
           qui: zero
@@ -227,6 +229,7 @@ lecons:
           **Dissertation** : 1. analyser les mots du sujet → 2. formuler une **problématique** (une vraie question) → 3. chercher des arguments et des exemples → 4. faire un **plan** (souvent en 2 ou 3 parties : thèse / antithèse / synthèse, ou plan thématique) → 5. rédiger l'**introduction** (amorce, sujet, problématique, annonce du plan) → 6. développer → 7. **conclure** (bilan + ouverture).
 
           **Commentaire** : on ne raconte pas le texte, on l'**analyse** ; chaque idée s'appuie sur une **citation** et un **procédé** (figure, temps, champ lexical…) et son **effet**.
+      - visuel: {"type":"frise","titre":"Préparer une dissertation","points":[{"emoji":"🔎","label":"analyser le sujet"},{"emoji":"❓","label":"problématique"},{"emoji":"🗂️","label":"plan"},{"emoji":"✍️","label":"rédaction"},{"emoji":"🔁","label":"relecture","sous":"10 minutes"}]}
       - astuce:
           texte: "Garde toujours 10 minutes pour te relire. Et commence par lire le sujet trois fois en soulignant chaque mot important."
           qui: mia

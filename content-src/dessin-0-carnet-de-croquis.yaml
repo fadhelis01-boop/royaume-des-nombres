@@ -41,10 +41,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le dessin est un don : soit on l'a, soit on ne l'a pas.", false], ["Les traits de construction se font légèrement.", true], ["Dessiner 5 minutes par jour aide à progresser.", true]] }
+        vars: { "t":[["Le dessin est un don : soit on l'a, soit on ne l'a pas.",false,"Faux : le dessin s'apprend avec de l'entraînement, comme la lecture."],["Les traits de construction se font légèrement.",true,"Vrai : on peut les effacer ou les recouvrir facilement."],["Dessiner 5 minutes par jour aide à progresser.",true,"Vrai : un peu chaque jour vaut mieux que beaucoup une fois."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le dessin s'apprend avec de l'entraînement, comme la lecture."
+        correction: "{{t_2}}"
       - type: classer
         vars: { t: [["observer longtemps le modèle", "appuyer très fort dès le début", "faire un croquis chaque jour", "jeter son dessin parce qu'il n'est pas parfait"]] }
         enonce: "Bonne habitude ou mauvaise habitude ?"
@@ -83,10 +83,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "H, HB, 2B, 4B."
       - type: vf
-        vars: { t: [["Une gomme peut servir à créer des lumières dans un dessin.", true], ["Un crayon H fait des traits plus noirs qu'un crayon 2B.", false], ["La gouache est une peinture couvrante.", true]] }
+        vars: { "t":[["Une gomme peut servir à créer des lumières dans un dessin.",true,"Vrai : on « dessine » des reflets en gommant."],["Un crayon H fait des traits plus noirs qu'un crayon 2B.",false,"Faux : H est dur et clair ; 2B est tendre et plus noir."],["La gouache est une peinture couvrante.",true,"Vrai : elle cache ce qui est dessous."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "B = tendre (plus noir), H = dur (plus clair)."
+        correction: "{{t_2}}"
 
   - id: garder-ses-progres
     titre: "Garder ses progrès"
@@ -125,10 +125,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Sur un visage, les yeux sont souvent dessinés trop haut par les débutants.", true], ["Un dessin raté ne sert à rien.", false], ["Redessiner le même sujet permet de voir ses progrès.", true]] }
+        vars: { "t":[["Sur un visage, les yeux sont souvent dessinés trop haut par les débutants.",true,"Vrai : les yeux sont à mi-hauteur de la tête."],["Un dessin raté ne sert à rien.",false,"Faux : il montre ce qu'on peut améliorer et sert à mesurer ses progrès."],["Redessiner le même sujet permet de voir ses progrès.",true,"Vrai : on compare l'ancien et le nouveau."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les yeux sont à mi-hauteur de la tête : la moitié haute contient le front et les cheveux."
+        correction: "{{t_2}}"
       - type: ordre
         vars: { t: [["l'ovale de la tête", "la ligne des yeux à mi-hauteur", "les yeux", "le nez et la bouche", "les cheveux"]] }
         enonce: "Remets les étapes du visage dans l'ordre."
@@ -154,10 +154,10 @@ lecons:
       - retiens: "Copier pour apprendre : oui, en citant l'artiste. Présenter le travail d'un autre comme le sien : plagiat. Plusieurs inspirations → son propre style."
     exercices:
       - type: vf
-        vars: { t: [["Les apprentis peintres apprenaient en copiant leurs maîtres.", true], ["On peut signer de son nom le dessin d'un autre.", false], ["S'inspirer de plusieurs artistes aide à trouver son style.", true]] }
+        vars: { "t":[["Les apprentis peintres apprenaient en copiant leurs maîtres.",true,"Vrai : c'était la méthode des ateliers de la Renaissance."],["On peut signer de son nom le dessin d'un autre.",false,"Faux : on écrit toujours « d'après » et le nom de l'artiste."],["S'inspirer de plusieurs artistes aide à trouver son style.",true,"Vrai : on mélange ce qu'on aime chez chacun."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "On cite toujours l'artiste dont on s'inspire."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Qu'est-ce que le plagiat ?", "présenter le travail d'un autre comme le sien", "s'entraîner en copiant", "dessiner dans un musée"], ["Comment trouver son propre style ?", "s'inspirer de plusieurs artistes et y mêler ses idées", "copier toujours le même dessinateur", "ne jamais regarder d'autres dessins"]] }
         enonce: "{{t_0}}"

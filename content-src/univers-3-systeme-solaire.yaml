@@ -30,6 +30,7 @@ lecons:
           - Les 4 premières sont **rocheuses** (petites, avec un sol solide).
           - Les 4 dernières sont **géantes** (surtout du gaz ou des glaces, pas de sol où se poser) ; elles ont toutes des anneaux, Saturne a les plus spectaculaires.
           **Jupiter** est la plus grosse (plus de 1 000 Terres pourraient y tenir en volume). **Vénus** est la plus chaude (environ 460 °C, à cause de son effet de serre énorme). Pluton est classée depuis 2006 comme **planète naine**.
+      - visuel: {"type":"astres","mode":"systeme"}
       - astuce:
           texte: "L'ordre depuis le Soleil : « Mon Vieux Tu M'as Jeté Sur Une Navette » : Mercure, Vénus, Terre, Mars, Jupiter, Saturne, Uranus, Neptune."
           qui: zero
@@ -67,6 +68,7 @@ lecons:
           - la **révolution** : elle tourne **autour du Soleil** en **365 jours et environ 6 heures** → une année.
           Les 6 heures en trop s'accumulent : tous les 4 ans, on ajoute un **29 février** (année **bissextile**, 366 jours).
           La Terre file sur son orbite à environ **30 km par seconde** !
+      - visuel: {"type":"schema","titre":"Deux mouvements de la Terre","emoji":"🌍","legendes":[{"label":"Rotation","detail":"sur elle-même en 24 h → le jour et la nuit"},{"label":"Révolution","detail":"autour du Soleil en 365 j ¼ → l'année"}]}
       - astuce:
           texte: "Rotation = toupie (sur elle-même, 24 h). Révolution = manège (autour du Soleil, 365 jours et 6 heures, d'où les années bissextiles)."
           qui: mia
@@ -78,10 +80,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["2024 est une année bissextile.", true], ["2023 est une année bissextile.", false], ["La rotation de la Terre provoque l'alternance du jour et de la nuit.", true], ["La Terre est immobile dans l'espace.", false]] }
+        vars: { "t":[["2024 est une année bissextile.",true,"Vrai : 2024 est divisible par 4."],["2023 est une année bissextile.",false,"Faux : 2023 n'est pas divisible par 4."],["La rotation de la Terre provoque l'alternance du jour et de la nuit.",true,"Vrai : un tour sur elle-même en 24 heures."],["La Terre est immobile dans l'espace.",false,"Faux : elle tourne sur elle-même et autour du Soleil."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Une année est bissextile (en règle générale) si son numéro est divisible par 4."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { a: [2, 3, 4] }
         enonce: "Combien de jours y a-t-il en {{a}} années, dont exactement une bissextile ?"
@@ -103,6 +105,7 @@ lecons:
           - Quand l'hémisphère Nord **penche vers le Soleil** (juin) : le Soleil monte **haut**, ses rayons arrivent presque à la verticale et chauffent plus, les jours sont **longs** → **été**.
           - Six mois plus tard, il **penche à l'opposé** (décembre) : Soleil bas, rayons rasants, jours courts → **hiver**.
           **Solstices** (21 juin, 21 décembre) : jour le plus long / le plus court. **Équinoxes** (vers le 20 mars et le 22 septembre) : jour et nuit de même durée partout.
+      - visuel: {"type":"astres","mode":"saisons"}
       - astuce:
           texte: "Preuve que ce n'est pas la distance : quand c'est l'été en France, c'est l'hiver en Australie, alors qu'on est à la même distance du Soleil !"
           qui: neo
@@ -114,10 +117,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["En été, la Terre est beaucoup plus proche du Soleil qu'en hiver.", false], ["Aux équinoxes, le jour et la nuit durent environ 12 heures partout.", true], ["Quand c'est l'été en France, c'est l'hiver en Argentine.", true]] }
+        vars: { "t":[["En été, la Terre est beaucoup plus proche du Soleil qu'en hiver.",false,"Faux : la Terre est au plus près du Soleil début janvier, en plein hiver chez nous."],["Aux équinoxes, le jour et la nuit durent environ 12 heures partout.",true,"Vrai : « équinoxe » veut dire « nuit égale »."],["Quand c'est l'été en France, c'est l'hiver en Argentine.",true,"Vrai : l'Argentine est dans l'hémisphère Sud."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La Terre est au plus près du Soleil début janvier : la distance n'explique pas les saisons."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["vers le 21 juin", "solstice d'été (hémisphère Nord)", "équinoxe de printemps", "solstice d'hiver"], ["vers le 21 décembre", "solstice d'hiver (hémisphère Nord)", "solstice d'été", "équinoxe d'automne"], ["vers le 20 mars", "équinoxe de printemps", "solstice d'hiver", "solstice d'été"]] }
         enonce: "Quel événement {{t_0}} ?"
@@ -138,6 +141,7 @@ lecons:
           - **Éclipse de Soleil** : la **Lune passe entre le Soleil et la Terre** et cache le Soleil (ça n'arrive qu'à la **nouvelle lune**).
           - **Éclipse de Lune** : la **Terre passe entre le Soleil et la Lune** ; la Lune est dans l'ombre de la Terre et prend une couleur rouge-orangé (à la **pleine lune**).
           Il n'y a pas d'éclipse chaque mois, car l'orbite de la Lune est légèrement inclinée.
+      - visuel: {"type":"astres","mode":"eclipse-soleil"}
       - astuce:
           texte: "Éclipse de Soleil : la Lune passe DEVANT le Soleil. Éclipse de Lune : la Lune passe DANS l'ombre de la Terre. Ordre : Soleil – Lune – Terre ou Soleil – Terre – Lune."
           qui: zero
@@ -154,10 +158,10 @@ lecons:
         items: ["{{t_0}}", "{{t_1}}", "{{t_2}}"]
         correction: "{{t_0}}, {{t_1}}, {{t_2}}."
       - type: vf
-        vars: { t: [["Il y a une éclipse de Soleil chaque mois.", false], ["Une moitié de la Lune est toujours éclairée par le Soleil.", true], ["On peut regarder une éclipse de Lune à l'œil nu sans danger.", true]] }
+        vars: { "t":[["Il y a une éclipse de Soleil chaque mois.",false,"Faux : l'orbite de la Lune est inclinée, les alignements parfaits sont rares."],["Une moitié de la Lune est toujours éclairée par le Soleil.",true,"Vrai : celle tournée vers le Soleil."],["On peut regarder une éclipse de Lune à l'œil nu sans danger.",true,"Vrai : contrairement à une éclipse de Soleil."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'orbite de la Lune est inclinée : les alignements parfaits sont rares."
+        correction: "{{t_2}}"
 
   - id: gravitation-et-marees
     titre: "La gravitation et les marées"
@@ -184,10 +188,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le Soleil contient presque toute la masse du Système solaire.", true], ["Sans gravitation, les planètes partiraient en ligne droite.", true], ["Les marées sont provoquées par le vent.", false]] }
+        vars: { "t":[["Le Soleil contient presque toute la masse du Système solaire.",true,"Vrai : plus de 99 %."],["Sans gravitation, les planètes partiraient en ligne droite.",true,"Vrai : c'est la gravitation du Soleil qui courbe leur trajectoire."],["Les marées sont provoquées par le vent.",false,"Faux : les marées viennent de l'attraction de la Lune et du Soleil."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Les marées viennent de l'attraction de la Lune et du Soleil sur les océans."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { h: [6, 12] }
         enonce: "Entre une marée haute et la marée basse suivante, il s'écoule environ 6 h. Combien de marées hautes en {{h*2}} heures environ ?"

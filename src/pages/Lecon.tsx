@@ -132,8 +132,10 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
           {continuous ? "⏸" : "🎧"}
         </button>
       </div>
-      <h1 className="lecon-title">
-        {found.world.emoji} {lesson.titre}
+      <h1 className={`lecon-title ${found.world.decor ? "avec-decor" : ""}`} style={found.world.decor ? ({ "--decor": `url(${found.world.decor})` } as React.CSSProperties) : undefined}>
+        <span>
+          {found.world.emoji} {lesson.titre}
+        </span>
       </h1>
       {i === 0 && <p className="objectif">🎯 {lesson.objectif}</p>}
 

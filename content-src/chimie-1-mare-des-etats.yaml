@@ -46,10 +46,10 @@ lecons:
         choix: ["un {{t_1}}", "un {{t_2}}", "un {{t_3}}"]
         correction: "Un {{t_1}}."
       - type: vf
-        vars: { t: [["L'air est de la matière.", true], ["Le sable est un liquide parce qu'il coule.", false], ["Le miel est un liquide.", true], ["Un gaz garde toujours la même forme.", false]] }
+        vars: { "t":[["L'air est de la matière.",true,"Vrai : l'air prend de la place et a une masse."],["Le sable est un liquide parce qu'il coule.",false,"Faux : chaque grain de sable est solide et garde sa forme."],["Le miel est un liquide.",true,"Vrai : il coule et prend la forme du pot, même s'il est épais."],["Un gaz garde toujours la même forme.",false,"Faux : un gaz prend tout l'espace qu'on lui donne."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Le sable est fait de grains solides ; l'air est un gaz : c'est bien de la matière."
+        correction: "{{t_2}}"
 
   - id: fondre-et-geler
     titre: "Le glaçon qui fond"
@@ -88,10 +88,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["La glace, l'eau et la vapeur sont toutes de l'eau.", true], ["Quand un glaçon fond, l'eau disparaît.", false], ["On sale les routes en hiver pour faire fondre la glace.", true], ["L'eau pure gèle à 100 °C.", false]] }
+        vars: { "t":[["La glace, l'eau et la vapeur sont toutes de l'eau.",true,"Vrai : c'est la même eau dans trois états différents."],["Quand un glaçon fond, l'eau disparaît.",false,"Faux : la glace devient de l'eau liquide, rien ne disparaît."],["On sale les routes en hiver pour faire fondre la glace.",true,"Vrai : l'eau salée gèle à une température plus basse que 0 °C."],["L'eau pure gèle à 100 °C.",false,"Faux : elle gèle à 0 °C ; elle bout à 100 °C."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'eau pure gèle (et fond) à 0 °C ; elle bout à 100 °C."
+        correction: "{{t_2}}"
       - type: nombre
         vars: { t: [["fond (ou gèle)", 0], ["bout (au niveau de la mer)", 100]] }
         enonce: "À quelle température (en °C) l'eau pure {{t_0}} ?"
@@ -136,10 +136,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Si tu vois plusieurs parties, c'est hétérogène."
       - type: vf
-        vars: { t: [["L'huile flotte au-dessus de l'eau.", true], ["Une vinaigrette au repos reste parfaitement mélangée.", false], ["Dans un mélange homogène, on ne voit qu'une seule partie.", true]] }
+        vars: { "t":[["L'huile flotte au-dessus de l'eau.",true,"Vrai : l'huile ne se mélange pas à l'eau et reste au-dessus."],["Une vinaigrette au repos reste parfaitement mélangée.",false,"Faux : l'huile remonte, il faut secouer la vinaigrette."],["Dans un mélange homogène, on ne voit qu'une seule partie.",true,"Vrai : par exemple l'eau sucrée."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'huile ne se mélange pas à l'eau et flotte : on secoue la vinaigrette avant de la servir."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi secoue-t-on la vinaigrette avant de la servir ?", "parce que l'huile et le vinaigre se séparent au repos", "pour la refroidir", "pour qu'elle devienne solide"], ["Que voit-on dans un verre d'eau et d'huile au repos ?", "une couche d'huile au-dessus de l'eau", "un seul liquide", "l'huile au fond"]] }
         enonce: "{{t_0}}"
@@ -177,10 +177,10 @@ lecons:
         unite: g
         correction: "{{e}} + {{s}} = {{e+s}} g : en se dissolvant, le sucre ne disparaît pas, la masse se conserve."
       - type: vf
-        vars: { t: [["Quand le sucre se dissout, il disparaît pour toujours.", false], ["L'eau de mer contient du sel dissous.", true], ["Le sable est soluble dans l'eau.", false], ["Une solution peut être transparente même si elle contient quelque chose de dissous.", true]] }
+        vars: { "t":[["Quand le sucre se dissout, il disparaît pour toujours.",false,"Faux : il est toujours là, l'eau est sucrée."],["L'eau de mer contient du sel dissous.",true,"Vrai : c'est pour ça qu'elle est salée."],["Le sable est soluble dans l'eau.",false,"Faux : le sable ne se dissout pas, il tombe au fond."],["Une solution peut être transparente même si elle contient quelque chose de dissous.",true,"Vrai : l'eau salée ou sucrée reste transparente."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Dissoudre n'est pas disparaître : la matière est toujours là."
+        correction: "{{t_2}}"
 
   - id: flotter-couler
     titre: "Ça flotte ou ça coule ?"
@@ -217,10 +217,10 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Le glaçon flotte : la glace est un peu moins dense que l'eau liquide."
       - type: vf
-        vars: { t: [["Les objets lourds coulent toujours.", false], ["Un grand bateau en acier peut flotter.", true], ["La forme d'un objet peut changer s'il flotte ou s'il coule.", true], ["Un glaçon coule au fond du verre.", false]] }
+        vars: { "t":[["Les objets lourds coulent toujours.",false,"Faux : un gros bateau très lourd flotte."],["Un grand bateau en acier peut flotter.",true,"Vrai : sa coque creuse pousse beaucoup d'eau."],["La forme d'un objet peut changer s'il flotte ou s'il coule.",true,"Vrai : une boule de pâte à modeler coule, la même en forme de barque flotte."],["Un glaçon coule au fond du verre.",false,"Faux : un glaçon flotte, la glace est un peu moins dense que l'eau."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Ce n'est pas le poids seul : la forme compte (le bateau creux pousse beaucoup d'eau)."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi le bateau en pâte à modeler flotte-t-il alors que la boule coule ?", "sa forme creuse pousse plus d'eau", "il est devenu plus léger", "la pâte a changé de matière"], ["Que fait un scientifique AVANT de tester ?", "une prédiction", "une conclusion", "rien"]] }
         enonce: "{{t_0}}"
@@ -255,10 +255,10 @@ lecons:
       - retiens: "L'air est un gaz : c'est de la matière. Il occupe de la place et il a une masse."
     exercices:
       - type: vf
-        vars: { t: [["Un verre « vide » est en fait rempli d'air.", true], ["L'air ne pèse rien du tout.", false], ["Le vent, c'est de l'air qui bouge.", true], ["L'air peut empêcher l'eau d'entrer dans un verre retourné.", true]] }
+        vars: { "t":[["Un verre « vide » est en fait rempli d'air.",true,"Vrai : l'air occupe la place."],["L'air ne pèse rien du tout.",false,"Faux : l'air a une masse, environ 1 gramme par litre."],["Le vent, c'est de l'air qui bouge.",true,"Vrai : le vent, c'est de l'air en mouvement."],["L'air peut empêcher l'eau d'entrer dans un verre retourné.",true,"Vrai : l'air déjà présent prend la place et l'eau ne peut pas entrer."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'air est de la matière : il occupe de la place et a une masse."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["un ballon gonflé", "il contient de l'air, qui prend de la place", "il contient du vide", "il contient de l'eau"], ["une bouée", "l'air à l'intérieur la rend capable de flotter", "elle est en métal", "elle est vide de tout"], ["un pneu de vélo", "l'air comprimé dedans le rend dur", "il est rempli d'eau", "il est plein de sable"]] }
         enonce: "Que montre {{t_0}} ?"

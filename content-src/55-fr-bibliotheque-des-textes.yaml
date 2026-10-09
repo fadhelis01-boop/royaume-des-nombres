@@ -64,10 +64,10 @@ lecons:
         niveau: 2
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Le renard est sincère quand il dit que le corbeau est beau.", false], ["Le corbeau perd son fromage parce qu'il est vaniteux.", true], ["La fable se passe dans une ville.", false], ["Le corbeau promet de ne plus se faire avoir.", true]] }
+        vars: { "t":[["Le renard est sincère quand il dit que le corbeau est beau.",false,"Faux : le renard flatte le corbeau pour lui prendre son fromage."],["Le corbeau perd son fromage parce qu'il est vaniteux.",true,"Vrai : fier d'être complimenté, il ouvre le bec et lâche le fromage."],["La fable se passe dans une ville.",false,"Faux : la fable se passe dans la nature, le corbeau est sur un arbre."],["Le corbeau promet de ne plus se faire avoir.",true,"Vrai : il « jura, mais un peu tard, qu'on ne l'y prendrait plus »."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Relis la fable : la réponse y est (parfois entre les lignes)."
+        correction: "{{t_2}}"
 
   - id: la-cigale-et-la-fourmi
     titre: "La Cigale et la Fourmi : lire entre les lignes"
@@ -120,10 +120,10 @@ lecons:
         niveau: 2
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["La cigale a travaillé tout l'été.", false], ["La fourmi est prévoyante.", true], ["La cigale propose de rembourser.", true]] }
+        vars: { "t":[["La cigale a travaillé tout l'été.",false,"Faux : la cigale a chanté tout l'été."],["La fourmi est prévoyante.",true,"Vrai : la fourmi a fait des provisions pour l'hiver."],["La cigale propose de rembourser.",true,"Vrai : la cigale promet de payer « avant l'août, foi d'animal »."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Cherche les indices dans le texte."
+        correction: "{{t_2}}"
 
   - id: inferences
     titre: "Déduire grâce aux indices"
@@ -213,6 +213,7 @@ lecons:
           - le **héros** (celui qui part à l'aventure),
           - l'**opposant** (celui qui l'en empêche : sorcière, loup, ogre),
           - l'**adjuvant** (celui qui l'aide : fée, animal ami, objet magique).
+      - visuel: {"type":"frise","titre":"Le chemin du conte","points":[{"emoji":"📜","label":"Il était une fois"},{"emoji":"🧙","label":"le méchant ou le manque"},{"emoji":"⚔️","label":"les épreuves","sous":"souvent par trois"},{"emoji":"🧚","label":"l'aide magique"},{"emoji":"👑","label":"la fin heureuse"}]}
       - astuce:
           texte: "Un conte commence souvent par « Il était une fois », a un héros, un méchant, des épreuves souvent par trois, et une fin heureuse."
           qui: neo
@@ -251,6 +252,7 @@ lecons:
           Une ruche peut abriter jusqu'à 50 000 abeilles. On y trouve une seule **reine**, qui pond les œufs, des **ouvrières**, qui récoltent le nectar et fabriquent le miel, et des **faux bourdons**, les mâles.
           Une ouvrière vit environ six semaines en été. Pour produire un kilogramme de miel, les abeilles doivent butiner plusieurs millions de fleurs.
           Les abeilles communiquent par une danse : elle indique aux autres la direction et la distance des fleurs.
+      - visuel: {"type":"couches","legende":"Où chercher l'information, du plus rapide au plus détaillé.","couches":[{"emoji":"🏷️","nom":"Le titre","detail":"le sujet"},{"emoji":"📑","nom":"Les intertitres","detail":"les parties"},{"emoji":"🖼️","nom":"Images et légendes"},{"emoji":"📄","nom":"Le texte","detail":"les détails","epaisseur":2}]}
       - astuce:
           texte: "Ne lis pas tout ! Regarde d'abord le titre, les intertitres, les images et leurs légendes : ils te disent où chercher."
           qui: zero
@@ -266,7 +268,7 @@ lecons:
         reponse: "50000"
         correction: "Jusqu'à 50 000 abeilles."
       - type: vf
-        vars: { t: [["Les faux bourdons sont les mâles.", true], ["Il faut quelques fleurs seulement pour faire un kilo de miel.", false], ["La danse indique la direction des fleurs.", true]] }
+        vars: { "t":[["Les faux bourdons sont les mâles.",true,"Vrai : le texte présente les faux bourdons comme les mâles."],["Il faut quelques fleurs seulement pour faire un kilo de miel.",false,"Faux : il faut des milliers de fleurs pour un seul kilo de miel."],["La danse indique la direction des fleurs.",true,"Vrai : la danse des abeilles indique la direction des fleurs."]] }
         enonce: "Vrai ou faux, d'après le texte : {{t_0}}"
         reponse: "t_1"
-        correction: "Relis la phrase qui en parle."
+        correction: "{{t_2}}"

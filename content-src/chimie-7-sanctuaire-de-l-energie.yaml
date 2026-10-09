@@ -51,10 +51,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "Étudie le signe de ΔH − TΔS quand T varie : {{t_1}}."
       - type: vf
-        vars: { t: [["Une réaction spontanée est toujours rapide.", false], ["Dans ΔG = ΔH − TΔS, la température est en kelvins.", true], ["La formation d'un gaz augmente en général l'entropie.", true]] }
+        vars: { "t":[["Une réaction spontanée est toujours rapide.",false,"Faux : la thermodynamique dit si c'est possible, la cinétique dit à quelle vitesse."],["Dans ΔG = ΔH − TΔS, la température est en kelvins.",true,"Vrai : T s'exprime toujours en kelvins dans cette formule."],["La formation d'un gaz augmente en général l'entropie.",true,"Vrai : un gaz est plus désordonné qu'un solide ou un liquide."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La thermodynamique dit si c'est possible, la cinétique dit à quelle vitesse."
+        correction: "{{t_2}}"
 
   - id: orbitales
     titre: "Orbitales et configuration électronique"
@@ -86,10 +86,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["En mécanique quantique, l'électron suit une trajectoire circulaire précise.", false], ["Le sodium (3s¹) forme facilement l'ion Na⁺.", true], ["Le néon (1s² 2s² 2p⁶) a sa couche externe pleine, ce qui le rend très peu réactif.", true]] }
+        vars: { "t":[["En mécanique quantique, l'électron suit une trajectoire circulaire précise.",false,"Faux : l'orbitale est une zone de probabilité de présence, pas une trajectoire."],["Le sodium (3s¹) forme facilement l'ion Na⁺.",true,"Vrai : il perd facilement son électron 3s."],["Le néon (1s² 2s² 2p⁶) a sa couche externe pleine, ce qui le rend très peu réactif.",true,"Vrai : c'est un gaz noble."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "L'orbitale est une probabilité de présence, pas une trajectoire."
+        correction: "{{t_2}}"
 
   - id: spectroscopie
     titre: "La lumière qui analyse la matière"
@@ -153,10 +153,10 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
       - type: vf
-        vars: { t: [["Une flèche courbe représente le déplacement d'un doublet d'électrons.", true], ["La flèche courbe part de l'électrophile vers le nucléophile.", false], ["Un mécanisme décrit les étapes d'une réaction.", true]] }
+        vars: { "t":[["Une flèche courbe représente le déplacement d'un doublet d'électrons.",true,"Vrai : c'est la convention des chimistes."],["La flèche courbe part de l'électrophile vers le nucléophile.",false,"Faux : elle part du doublet (nucléophile) et va vers l'électrophile."],["Un mécanisme décrit les étapes d'une réaction.",true,"Vrai : c'est le chemin détaillé de la réaction."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La flèche part du doublet (nucléophile) et va vers l'électrophile."
+        correction: "{{t_2}}"
       - type: qcm
         vars: { t: [["Pourquoi le carbone lié au chlore est-il δ+ ?", "le chlore est plus électronégatif et attire les électrons de la liaison", "le carbone a perdu un proton", "le chlore est un métal"]] }
         enonce: "{{t_0}}"
@@ -200,7 +200,7 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Prévenir, catalyser, solvants sûrs, ressources renouvelables, sobriété énergétique."
       - type: vf
-        vars: { t: [["Une réaction d'addition (tous les atomes dans le produit) a une économie d'atomes de 100 %.", true], ["La chimie verte interdit toute industrie chimique.", false], ["Il vaut mieux éviter de produire un déchet que de devoir le traiter.", true]] }
+        vars: { "t":[["Une réaction d'addition (tous les atomes dans le produit) a une économie d'atomes de 100 %.",true,"Vrai : aucun atome n'est perdu en déchet."],["La chimie verte interdit toute industrie chimique.",false,"Faux : elle améliore les procédés, elle ne les interdit pas."],["Il vaut mieux éviter de produire un déchet que de devoir le traiter.",true,"Vrai : c'est le premier principe de la chimie verte."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "La chimie verte améliore les procédés, elle ne les interdit pas."
+        correction: "{{t_2}}"

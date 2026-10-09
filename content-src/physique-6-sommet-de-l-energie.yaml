@@ -29,6 +29,7 @@ lecons:
           Formes d'énergie : **cinétique** (mouvement), **potentielle** (position en hauteur, ressort tendu), **thermique**, **chimique** (aliments, carburants, piles), **électrique**, **lumineuse** (rayonnante), **nucléaire**.
           Un convertisseur transforme une forme en une autre : une lampe convertit l'énergie électrique en lumière… et en chaleur (perdue).
           **Conservation** : l'énergie totale se conserve. **Rendement** = énergie utile / énergie reçue (toujours < 1). Une LED a un bien meilleur rendement qu'une ampoule à filament.
+      - visuel: {"type":"frise","titre":"Une chaîne énergétique : le barrage","points":[{"emoji":"💧","label":"eau en hauteur","sous":"énergie de position"},{"emoji":"🌀","label":"turbine","sous":"énergie de mouvement"},{"emoji":"⚡","label":"alternateur","sous":"énergie électrique"},{"emoji":"💡","label":"lampe","sous":"lumière + chaleur perdue"}]}
       - astuce:
           texte: "L'énergie ne se crée pas, elle se transforme. Dessine toujours la chaîne : réservoir → convertisseur → énergie utile + pertes (souvent de la chaleur)."
           qui: mia
@@ -47,10 +48,10 @@ lecons:
         unite: "%"
         correction: "{{r*u/100}} / {{r}} × 100 = {{u}} %."
       - type: vf
-        vars: { t: [["Une machine peut avoir un rendement de 120 %.", false], ["L'énergie perdue par une lampe part surtout sous forme de chaleur.", true], ["L'énergie totale se conserve toujours.", true]] }
+        vars: { "t":[["Une machine peut avoir un rendement de 120 %.",false,"Faux : le rendement est toujours inférieur à 100 %."],["L'énergie perdue par une lampe part surtout sous forme de chaleur.",true,"Vrai : surtout pour les vieilles ampoules à filament."],["L'énergie totale se conserve toujours.",true,"Vrai : elle se transforme, mais ne se perd pas au total."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Rendement toujours inférieur à 100 % : une partie de l'énergie est dissipée (souvent en chaleur)."
+        correction: "{{t_2}}"
 
   - id: cinetique-potentielle
     titre: "Énergie cinétique et énergie potentielle"
@@ -128,10 +129,10 @@ lecons:
         unite: "m/s²"
         correction: "a = F / m = {{F}} / {{m}} = {{F/m}} m/s²."
       - type: vf
-        vars: { t: [["Avec la même force, un camion accélère moins qu'une voiture.", true], ["Une accélération de 0 m/s² signifie que l'objet est forcément immobile.", false], ["Le newton est égal à un kg·m/s².", true]] }
+        vars: { "t":[["Avec la même force, un camion accélère moins qu'une voiture.",true,"Vrai : sa masse est plus grande."],["Une accélération de 0 m/s² signifie que l'objet est forcément immobile.",false,"Faux : à vitesse constante, a = 0, et l'objet peut très bien se déplacer."],["Le newton est égal à un kg·m/s².",true,"Vrai : c'est ce que dit F = m × a."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "a = 0 : vitesse constante, l'objet peut très bien se déplacer (inertie)."
+        correction: "{{t_2}}"
 
   - id: chute-libre
     titre: "La chute libre"
@@ -200,7 +201,7 @@ lecons:
         reponse: "k"
         correction: "La force est proportionnelle à chaque masse : × {{k}}."
       - type: vf
-        vars: { t: [["Un satellite en orbite est en chute permanente autour de la Terre.", true], ["Il n'y a pas de gravitation dans la Station spatiale internationale.", false], ["La Terre attire la Lune et la Lune attire la Terre avec la même force.", true]] }
+        vars: { "t":[["Un satellite en orbite est en chute permanente autour de la Terre.",true,"Vrai : il tombe, mais va assez vite de côté pour ne jamais toucher le sol."],["Il n'y a pas de gravitation dans la Station spatiale internationale.",false,"Faux : elle y vaut environ 90 % de celle au sol ; les astronautes flottent parce qu'ils tombent avec la station."],["La Terre attire la Lune et la Lune attire la Terre avec la même force.",true,"Vrai : c'est le principe des actions réciproques."]] }
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
-        correction: "Dans l'ISS, la gravitation existe (≈ 90 % de celle au sol) : les astronautes flottent parce qu'ils tombent avec la station."
+        correction: "{{t_2}}"

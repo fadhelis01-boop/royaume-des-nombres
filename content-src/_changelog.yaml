@@ -1,3 +1,13 @@
+- version: "2.2.0"
+  date: "2026-10-09"
+  notes:
+    - "Six nouveaux jeux, un par planète : les potions de Dame Acidia, Allume la lampe, la chaîne alimentaire, le grand tour du Soleil, Devine la silhouette, et Frappe et chante (rythme et note chantée au micro)."
+    - "Quêtes du jour, album des habitants libérés, et un habitant sauvé à la moitié de chaque monde."
+    - "Dans les leçons : un indice après une erreur, des textes à trous pour se souvenir, « Explique à Zéro », une question souvenir dans chaque défi, et « Je suis sûr / pas sûr » avant de valider."
+    - "93 nouveaux schémas : phrases en couleurs, frises, phases de la Lune, saisons, intérieur de la Terre, cycles, schémas légendés."
+    - "Chaque « vrai ou faux » a maintenant sa propre explication."
+    - "Accueil de planète plus simple : l'histoire d'abord, puis une seule grande action."
+    - "Pour les parents : bilans à imprimer, fiche sécurité des expériences, confidentialité, limite de questions à l'assistant, rappel de sauvegarde, mode hors connexion complet, sons visibles pour les enfants malentendants."
 - version: "2.1.0"
   date: "2026-10-08"
   notes:

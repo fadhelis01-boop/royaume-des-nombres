@@ -1,5 +1,5 @@
 import { go } from "../lib/router";
-import { lessonKey, matiereDe, objetLabel, useContent } from "../lib/content";
+import { CYCLES, lessonKey, matiereDe, objetLabel, useContent } from "../lib/content";
 import { setMatiere, useChild } from "../lib/store";
 import { visuel } from "../lib/img";
 import { Bubble } from "../components/Mascot";
@@ -48,8 +48,13 @@ export function Galaxie() {
 
 function PlaneteCard({ p, ws, on, onPick }: { p: Planete; ws: World[]; on: boolean; onPick: () => void }) {
   const child = useChild()!;
-  const total = ws.reduce((n, w) => n + w.lecons.length, 0);
-  const faites = ws.reduce((n, w) => n + w.lecons.filter((l) => child.progress[lessonKey(w, l.id)]?.done).length, 0);
+  // Progression de l'étape en cours (Graines, Explorateurs, Maîtres) : « 0/199 leçons » décourage à 8 ans.
+  const parcours = ws.filter((w) => w.cycle !== "astuces").sort((a, b) => a.ordre - b.ordre);
+  const fait = (w: World) => w.lecons.every((l) => child.progress[lessonKey(w, l.id)]?.done);
+  const cycle = (parcours.find((w) => !fait(w)) ?? parcours[parcours.length - 1])?.cycle;
+  const etape = parcours.filter((w) => w.cycle === cycle);
+  const total = etape.length;
+  const faites = etape.filter(fait).length;
   const objets = (child.crystals ?? []).filter((id) => ws.some((w) => w.id === id)).length;
   const bientot = !ws.length;
   const img = visuel("planetes", p.id);
@@ -66,11 +71,11 @@ function PlaneteCard({ p, ws, on, onPick }: { p: Planete; ws: World[]; on: boole
           <span className="pc-prog">🚧 Bientôt</span>
         ) : (
           <>
-            <span className="pc-bar" role="meter" aria-valuemin={0} aria-valuemax={total} aria-valuenow={faites} aria-label={`${faites} leçons sur ${total}`}>
+            <span className="pc-bar" role="meter" aria-valuemin={0} aria-valuemax={total} aria-valuenow={faites} aria-label={`${faites} mondes sur ${total}`}>
               <i style={{ width: `${total ? (100 * faites) / total : 0}%` }} />
             </span>
             <span className="pc-prog">
-              {faites}/{total} leçons · {objetLabel(p, objets)}
+              {cycle ? `${CYCLES[cycle].emoji} ${CYCLES[cycle].titre} : ${faites}/${total} monde${total > 1 ? "s" : ""}` : ""} · {objetLabel(p, objets)}
             </span>
           </>
         )}
