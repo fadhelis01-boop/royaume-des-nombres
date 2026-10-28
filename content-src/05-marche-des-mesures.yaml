@@ -318,7 +318,7 @@ lecons:
       - question:
           type: qcm
           vars: { h: "1..11", m: [0, 15, 30, 45] }
-          enonce: "Quelle heure indique cette horloge (le matin) ?"
+          enonce: "Quelle heure est-il sur cette horloge (le matin) ?"
           visuel: { type: horloge, h: "=h", m: "=m" }
           choix: ["{{heure(h,m)}}", "{{heure(m/5,h*5)}}", "{{heure(h+1,m)}}", "{{heure(h,(m+30)%60)}}"]
           correction: "Petite aiguille : {{h}} h ; grande aiguille sur le {{si(m==0,12,m/5)}} : {{m}} min. Il est {{heure(h,m)}}."

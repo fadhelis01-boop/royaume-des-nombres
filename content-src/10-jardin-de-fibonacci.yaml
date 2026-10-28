@@ -471,7 +471,7 @@ lecons:
         correction: "{{x}} × 2 = {{2*x}} ; + 10 = {{2*x+10}} ; ÷ 2 = {{x+5}} ; − {{x}} = 5. On trouve toujours 5 !"
       - type: qcm
         vars: { a: "2..5", b: "1..9" }
-        enonce: "Quelle écriture en une ligne correspond à « choisis 7, multiplie par {{a}}, puis ajoute {{b}} » ?"
+        enonce: "Quel calcul en une ligne va avec « choisis 7, multiplie par {{a}}, puis ajoute {{b}} » ?"
         choix: ["$7 \\times {{a}} + {{b}}$", "$7 \\times ({{a}} + {{b}})$", "$7 + {{a}} \\times {{b}}$", "$(7 + {{b}}) \\times {{a}}$"]
         correction: "On multiplie d'abord, puis on ajoute : 7 × {{a}} + {{b}} (la multiplication est prioritaire)."
       - type: nombre

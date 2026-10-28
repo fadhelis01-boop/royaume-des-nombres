@@ -1,7 +1,8 @@
+import { CLASSES, classeDeLAge, nomClasse } from "../lib/parcours";
 import { useState } from "react";
 import { go } from "../lib/router";
 import { removeChild, setState, updateChild, updateSettings, useStore, dayKey, minutesToday, newChild, applyChildMode } from "../lib/store";
-import { importWorldFile, refreshContent, removeImportedWorld, useContent, worldProgress } from "../lib/content";
+import { importWorldFile, planeteDe, refreshContent, removeImportedWorld, useContent, worldProgress } from "../lib/content";
 import { checkForAppUpdate, isIos, isStandalone, promptInstall, usePwa } from "../lib/pwa";
 import { frenchVoices, previewVoice, ttsSupported } from "../lib/tts";
 import { MODELS } from "../lib/ai-config";
@@ -311,9 +312,42 @@ function Coince({ c, lessonTitle }: { c: Child; lessonTitle: (k: string) => stri
     .slice(0, 8);
   const ss = (c.sessions ?? []).slice(-10).reverse();
   const avg = ss.length ? Math.round(ss.reduce((t, x) => t + x.min, 0) / ss.length) : 0;
+  const { manifest } = useContent();
+  const nomIle = (mat: string, id: string) => manifest?.domaines?.[mat]?.find((d) => d.id === id)?.titre ?? id;
+  const cpt = (k: string) => c.counters[k] ?? 0;
+  const matsTest = [...new Set(Object.keys(c.counters).filter((k) => k.startsWith("diag-debut:")).map((k) => k.slice(11)))];
+  const arrets = Object.entries(c.counters)
+    .filter(([k]) => k.startsWith("diag-arret:"))
+    .map(([k, n]) => {
+      const [, mat, ile] = k.split(":");
+      return { mat, ile, n };
+    })
+    .sort((a, b) => b.n - a.n);
   return (
     <>
       <h3>Où ça coince</h3>
+      {matsTest.length > 0 && (
+        <div className="small">
+          <strong>Carte des talents (test de départ)</strong>
+          <ul>
+            {matsTest.map((m) => (
+              <li key={m}>
+                {planeteDe(manifest, m)?.titre ?? m} : commencée {cpt(`diag-debut:${m}`)} fois, terminée {cpt(`diag:${m}`)} fois, pauses {cpt(`diag-pause:${m}`)}, quittée sans pause {cpt(`diag-abandon:${m}`)} fois
+                {c.diagEnCours?.mat === m ? " — en pause, à reprendre" : ""}
+              </li>
+            ))}
+          </ul>
+          {arrets.length > 0 && (
+            <p>
+              Arrêts en pleine île : {arrets.slice(0, 5).map((a) => `${nomIle(a.mat, a.ile)} (${a.n})`).join(", ")}.
+            </p>
+          )}
+          {cpt("test-je-ne-sais-pas") > 0 && <p>« Je ne sais pas encore » : {cpt("test-je-ne-sais-pas")} fois. C'est normal et utile : cela évite de répondre au hasard.</p>}
+          {(cpt(`diag-abandon:${matsTest[0]}`) > 0 || arrets.length > 0) && (
+            <p className="muted">Un arrêt en pleine île signale souvent de la fatigue ou une consigne qui bloque. Reprenez la carte des talents ensemble, en lisant les questions avec votre enfant.</p>
+          )}
+        </div>
+      )}
       {ab.length ? (
         <>
           <ul>
@@ -392,6 +426,20 @@ function ProfileEdit({ c }: { c: Child }) {
         </select>
       </label>{" "}
       <label>
+        Classe :{" "}
+        <select
+          value={typeof c.classe === "number" ? String(c.classe) : ""}
+          onChange={(e) => updateChild((x) => void (e.target.value === "" ? delete x.classe : (x.classe = Number(e.target.value))), c.id)}
+        >
+          <option value="">déduite de l'âge ({nomClasse(classeDeLAge(c.age))})</option>
+          {CLASSES.slice(0, 13).map((n, i) => (
+            <option key={n} value={i}>
+              {n}
+            </option>
+          ))}
+        </select>
+      </label>{" "}
+      <label>
         Compagnon :{" "}
         <select value={c.avatar} onChange={(e) => updateChild((x) => void (x.avatar = e.target.value as Child["avatar"]), c.id)}>
           {(["mia", "neo", "zero"] as const).map((a) => (
@@ -411,6 +459,7 @@ function ProfileEdit({ c }: { c: Child }) {
           }}
         >
           <option value="oui">lit seul</option>
+          <option value="debutant">lit avec un peu d'aide (consignes toujours lues à voix haute)</option>
           <option value="non">ne lit pas encore (tout en voix et en pictogrammes)</option>
         </select>
       </label>
@@ -791,7 +840,14 @@ function Guide() {
           <strong>Un enfant de 8 ans tient environ 10 à 20 minutes</strong> d'attention soutenue. La limite de temps d'écran (Réglages) déclenche une pause automatique.
         </li>
         <li>
-          Si l'âge ne correspond pas à sa classe (enfant né en fin d'année, saut ou redoublement), ce n'est pas grave : le test s'ajuste au fil des réponses. Vous pouvez relancer « Faire le point » depuis son parcours.
+          Indiquez sa <strong>classe</strong> dans sa fiche (ci-dessus) si elle ne correspond pas à son âge (enfant né en fin d'année, saut ou redoublement) : le test et le parcours partent alors de sa classe. Après le tout premier test, « Faire le point » est proposé au bout de 7 jours pour affiner.
+        </li>
+        <li>
+          Pour observer ses premières séances comme un testeur, imprimez la{" "}
+          <a href="./protocole-test-enfants.html" target="_blank" rel="noopener">
+            fiche d'observation
+          </a>{" "}
+          (variante « premier quart d'heure »). L'onglet Suivi → « Où ça coince » indique aussi les pauses et les arrêts pendant la carte des talents.
         </li>
       </ul>
       <h3>📏 Correspondance avec l'école (France)</h3>

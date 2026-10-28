@@ -118,7 +118,7 @@ lecons:
     exercices:
       - type: nombre
         vars: { m: [20, 25, 30], d: [1, 2], k: [2] }
-        enonce: "Sur une bascule, un enfant de {{m*k}} kg est assis à {{d}} m du pivot. À quelle distance doit s'asseoir un enfant de {{m}} kg pour l'équilibre ?"
+        enonce: "Un enfant de {{m*k}} kg est à {{d}} m du pivot de la bascule. Un enfant de {{m}} kg veut équilibrer : à combien de mètres se met-il ?"
         reponse: "d*k"
         unite: m
         correction: "{{m*k}} × {{d}} = {{m}} × ? → ? = {{d*k}} m (le plus léger s'assoit plus loin)."

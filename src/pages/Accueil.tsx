@@ -5,6 +5,7 @@ import { levelOf } from "../lib/rewards";
 import { Bubble, Mascot, NAMES } from "../components/Mascot";
 import type { Child } from "../lib/types";
 import { AccueilSpectacle } from "../components/AccueilSpectacle";
+import { CLASSES, classeDeLAge } from "../lib/parcours";
 
 export function Accueil() {
   const children = useStore((s) => s.children);
@@ -53,9 +54,14 @@ export function NouvelEnfant() {
   const [name, setName] = useState("");
   const [age, setAge] = useState(7);
   const [avatar, setAvatar] = useState<Child["avatar"]>("mia");
+  // la classe : proposée d'après l'âge, modifiable (né en fin d'année, saut ou redoublement)
+  const [classe, setClasse] = useState<number | null | undefined>(undefined);
+  const classeAff = classe === undefined ? classeDeLAge(age) : classe;
   const ok = name.trim().length >= 1;
   const create = () => {
-    addChild(newChild(name.trim(), avatar, age));
+    const c = newChild(name.trim(), avatar, age);
+    if (age < 18 && classeAff !== null) c.classe = classeAff;
+    addChild(c);
     // L'enfant choisit d'abord sa planète dans la Galaxie ; la carte de la planète
     // propose ensuite son prologue (l'histoire avant tout test).
     go("/galaxie");
@@ -67,11 +73,29 @@ export function NouvelEnfant() {
       <Bubble who="neo" text="Quel âge as-tu ?" side="right" />
       <div className="age-picker">
         {[5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((a) => (
-          <button key={a} className={`chip ${age === a ? "sel" : ""}`} onClick={() => setAge(a)}>
+          <button key={a} className={`chip ${age === a ? "sel" : ""}`} onClick={() => { setAge(a); setClasse(undefined); }}>
             {a === 18 ? "18 +" : a}
           </button>
         ))}
       </div>
+      {age < 18 && (
+        <>
+          <Bubble who="mia" text="Et tu es dans quelle classe ? (Demande à un adulte si tu ne sais pas.)" />
+          <div className="age-picker" role="group" aria-label="Ta classe">
+            {CLASSES.slice(0, 13)
+              .map((n, i) => ({ n, i }))
+              .filter(({ i }) => Math.abs(i - classeDeLAge(age)) <= 2)
+              .map(({ n, i }) => (
+                <button key={n} className={`chip ${classeAff === i ? "sel" : ""}`} onClick={() => setClasse(i)}>
+                  {n}
+                </button>
+              ))}
+            <button className={`chip ${classeAff === null ? "sel" : ""}`} onClick={() => setClasse(null)}>
+              Je ne sais pas
+            </button>
+          </div>
+        </>
+      )}
       <Bubble who="zero" text="Choisis ton compagnon d'aventure ! (Moi, de préférence.)" />
       <div className="avatar-picker">
         {(["mia", "neo", "zero"] as const).map((a) => (

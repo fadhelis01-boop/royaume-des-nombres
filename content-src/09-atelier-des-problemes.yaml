@@ -69,7 +69,7 @@ lecons:
         correction: "Des personnes descendent : on cherche combien il en reste ({{a}} − {{b}} = {{a-b}})."
       - type: vf
         vars: { a: "10..30", b: "5..9" }
-        enonce: "Zéro calcule le prix de {{b}} cahiers à {{a}} € et trouve {{a+b}} €. Sa réponse est-elle vraisemblable ?"
+        enonce: "Zéro calcule le prix de {{b}} cahiers à {{a}} € et trouve {{a+b}} €. Sa réponse peut-elle être juste ?"
         reponse: false
         correction: "{{b}} cahiers à {{a}} € coûtent {{b}} × {{a}} = {{a*b}} €. Zéro a additionné au lieu de multiplier : l'étape « vérifier » l'aurait vu (c'est bien trop peu pour {{b}} cahiers) !"
 
@@ -126,7 +126,7 @@ lecons:
         correction: "{{t}} − {{a}} = {{t-a}} pages."
       - type: qcm
         vars: { t: "40..90", a: "10..30" }
-        enonce: "« Il y a {{t}} élèves dans la cour. {{a}} jouent au ballon, les autres à la corde. » Quel schéma correspond ?"
+        enonce: "« Il y a {{t}} élèves dans la cour. {{a}} jouent au ballon, les autres à la corde. » Quel dessin va avec cette histoire ?"
         choix: ["Une barre de {{t}} coupée en {{a}} et « ? »", "Deux barres de {{t}} et {{a}} posées bout à bout, avec « ? » au-dessus du total", "Une barre de {{a}} répétée {{t}} fois", "Une barre de {{t}} répétée {{a}} fois"]
         correction: "Le tout est connu ({{t}}) : on cherche une partie. {{t}} − {{a}} = {{t-a}}."
       - type: nombre
@@ -478,7 +478,7 @@ lecons:
       - question:
           type: qcm
           vars: { a: "3..7", b: "4..9" }
-          enonce: "Quelle histoire correspond au calcul ${{a}} \\times {{b}}$ ?"
+          enonce: "Quelle histoire va avec le calcul ${{a}} \\times {{b}}$ ?"
           choix: ["{{a}} enfants ont chacun {{b}} billes. Combien de billes en tout ?", "{{a}} enfants et {{b}} adultes vont au parc. Combien de personnes ?", "J'ai {{b}} billes, j'en perds {{a}}. Combien en reste-t-il ?", "{{b}} billes partagées entre {{a}} enfants. Combien chacun ?"]
           correction: "{{a}} groupes égaux de {{b}} : c'est une multiplication."
       - astuce:
@@ -487,22 +487,22 @@ lecons:
     exercices:
       - type: qcm
         vars: { a: "20..50", b: "5..15" }
-        enonce: "Quelle histoire correspond à ${{a}} - {{b}}$ ?"
+        enonce: "Quelle histoire va avec le calcul ${{a}} - {{b}}$ ?"
         choix: ["J'ai {{a}} €, j'achète un jouet à {{b}} €. Combien me reste-t-il ?", "J'ai {{a}} € et on m'offre {{b}} €. Combien ai-je ?", "{{a}} enfants ont chacun {{b}} €. Combien d'argent en tout ?", "{{a}} € pour {{b}} enfants. Combien chacun ?"]
         correction: "On enlève, on dépense : c'est une soustraction."
       - type: qcm
         vars: { b: "3..6", q: "4..9" }
-        enonce: "Quelle histoire correspond à ${{b*q}} \\div {{b}}$ ?"
+        enonce: "Quelle histoire va avec le calcul ${{b*q}} \\div {{b}}$ ?"
         choix: ["{{b*q}} bonbons partagés entre {{b}} amis. Combien chacun ?", "{{b*q}} bonbons et {{b}} sucettes. Combien de friandises ?", "{{b}} sachets de {{b*q}} bonbons. Combien de bonbons ?", "J'avais {{b*q}} bonbons, j'en mange {{b}}. Combien en reste-t-il ?"]
         correction: "Partager en parts égales : c'est une division."
       - type: qcm
         vars: { a: "10..30", b: "10..30" }
-        enonce: "Quelle histoire correspond à ${{a}} + {{b}}$ ?"
+        enonce: "Quelle histoire va avec le calcul ${{a}} + {{b}}$ ?"
         choix: ["Il y a {{a}} moutons et {{b}} chèvres dans le pré. Combien d'animaux ?", "{{a}} moutons, {{b}} s'en vont. Combien en reste-t-il ?", "{{a}} enclos de {{b}} moutons. Combien de moutons ?", "{{a}} moutons répartis dans {{b}} enclos."]
         correction: "On réunit deux groupes : c'est une addition."
       - type: qcm
         vars: { a: "3..8", b: "2..5", c: "2..9" }
-        enonce: "Quelle histoire correspond à ${{a}} \\times {{b}} + {{c}}$ ?"
+        enonce: "Quelle histoire va avec le calcul ${{a}} \\times {{b}} + {{c}}$ ?"
         choix: ["{{a}} boîtes de {{b}} œufs, et {{c}} œufs à part. Combien d'œufs ?", "{{a}} boîtes de {{b}} œufs, on en casse {{c}}. Combien d'œufs ?", "{{a}} + {{b}} + {{c}} œufs dans un panier.", "{{c}} boîtes de {{a}} + {{b}} œufs."]
         correction: "{{a}} groupes de {{b}} (multiplication), puis on ajoute {{c}}."
 

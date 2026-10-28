@@ -59,7 +59,7 @@ export function newChild(name: string, avatar: Child["avatar"], age: number): Ch
     owned: [],
     equipped: {},
     cabane: Array(9).fill(null),
-    lecteur: age <= 6 ? "non" : "oui",
+    lecteur: age <= 6 ? "non" : age <= 8 ? "debutant" : "oui",
     abandons: {},
     sessions: [],
     recordsJeux: {},

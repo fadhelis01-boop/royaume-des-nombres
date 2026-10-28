@@ -207,7 +207,7 @@ lecons:
       - type: champs
         vars: { d: [2, 3, 4, 5], k: "1..2", r: "1..4" }
         si: "r < d"
-        enonce: "Décompose : $\\frac{ {{k*d+r}} }{ {{d}} } = ? + \\frac{?}{ {{d}} }$"
+        enonce: "Sépare en un nombre entier plus une fraction : $\\frac{ {{k*d+r}} }{ {{d}} } = ? + \\frac{?}{ {{d}} }$"
         champs:
           - { reponse: "k", apres: "+" }
           - { reponse: "r", apres: "/ {{d}}" }

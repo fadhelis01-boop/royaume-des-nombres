@@ -1,15 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { go, useRoute } from "../lib/router";
 import { matiereDe, planeteDe, useContent } from "../lib/content";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
-import { addGems, getState, updateChild, useChild } from "../lib/store";
+import { addGems, bump, getState, updateChild, useChild } from "../lib/store";
 import { sfx } from "../lib/sound";
 import { speak, stopSpeaking } from "../lib/tts";
 import { ExercisePlayer } from "../components/ExercisePlayer";
 import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
 import {
-  construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
+  ageScolaire, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
   QUESTIONS_PAR_DOMAINE, type Domaine, type Escalier,
 } from "../lib/parcours";
 
@@ -44,12 +44,13 @@ export function Diagnostic() {
   const point = route.query.get("mode") === "point";
   const { manifest, worlds } = useContent();
   const child = useChild()!;
-  const jeune = child.age <= 9;
+  const age = ageScolaire(child);
+  const jeune = age <= 9;
   const mat = matiereDe(child);
   const planete = planeteDe(manifest, mat);
   const ancien = child.parcours?.[mat];
   const doms = useMemo(() => domainesDe(mat, worlds, manifest?.domaines?.[mat]), [mat, worlds, manifest]);
-  const tous = useMemo(() => (point && ancien ? doms.filter((d) => ancien.niveaux[d.id] !== undefined) : domainesATester(doms, child.age)), [doms, point, ancien, child.age]);
+  const tous = useMemo(() => (point && ancien ? doms.filter((d) => ancien.niveaux[d.id] !== undefined) : domainesATester(doms, age)), [doms, point, ancien, age]);
   // carte commencée puis mise en pause : on reprend à la première île pas encore visitée
   const [enCours] = useState(() => {
     const e = child.diagEnCours;
@@ -85,7 +86,7 @@ export function Diagnostic() {
   // l'écran d'accueil du test est lu à voix haute (lecture automatique activée par défaut)
   useEffect(() => {
     if (started || fini) return;
-    if (getState().settings.autoRead || child.lecteur === "non") speak([{ who: "neo", text: intro[0] }, ...(intro[1] ? [{ who: "mia" as const, text: intro[1] }] : [])], { key: "diag-intro" });
+    if (getState().settings.autoRead || (child.lecteur ?? "oui") !== "oui") speak([{ who: "neo", text: intro[0] }, ...(intro[1] ? [{ who: "mia" as const, text: intro[1] }] : [])], { key: "diag-intro" });
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [started, fini]);
@@ -93,7 +94,7 @@ export function Diagnostic() {
   const commencerDomaine = (i: number, acquis: Record<string, number>) => {
     const d = aTester[i];
     if (!d) return terminer(acquis);
-    const e = departEscalier(d, child.age, point ? ancien?.niveaux[d.id] : undefined);
+    const e = departEscalier(d, age, point ? ancien?.niveaux[d.id] : undefined);
     const t = tirer(d, e.cible);
     if (!t) return commencerDomaine(i + 1, acquis); // domaine sans question possible
     setEntracte(null);
@@ -102,10 +103,35 @@ export function Diagnostic() {
     setQ(t);
   };
 
-  const mettreEnPause = (acquis: Record<string, number>) => {
-    updateChild((c) => void (c.diagEnCours = { mat, niveaux: acquis, at: Date.now() }));
+  /** Pause : la progression est gardée ; on note pour les parents où l'enfant s'est arrêté. */
+  const mettreEnPause = (acquis: Record<string, number>, ileInterrompue?: string) => {
+    sortieGeree.current = true;
+    updateChild((c) => {
+      c.diagEnCours = { mat, niveaux: acquis, at: Date.now() };
+      c.counters[`diag-pause:${mat}`] = (c.counters[`diag-pause:${mat}`] ?? 0) + 1;
+      if (ileInterrompue) c.counters[`diag-arret:${mat}:${ileInterrompue}`] = (c.counters[`diag-arret:${mat}:${ileInterrompue}`] ?? 0) + 1;
+    });
     go("/");
   };
+
+  // L'enfant quitte le test sans passer par la pause (onglet du bas, retour…) : on garde ce qui est fait
+  // et on le note comme un abandon (visible dans l'Espace parents, « Où ça coince »).
+  const sortieGeree = useRef(false);
+  const etat = useRef({ started, fini, niveaux, ile: undefined as string | undefined });
+  etat.current = { started, fini, niveaux, ile: entracte ? undefined : aTester[di]?.id };
+  useEffect(
+    () => () => {
+      const e = etat.current;
+      if (!e.started || e.fini || sortieGeree.current || point) return;
+      updateChild((c) => {
+        c.counters[`diag-abandon:${mat}`] = (c.counters[`diag-abandon:${mat}`] ?? 0) + 1;
+        if (e.ile) c.counters[`diag-arret:${mat}:${e.ile}`] = (c.counters[`diag-arret:${mat}:${e.ile}`] ?? 0) + 1;
+        if (Object.keys(e.niveaux).length) c.diagEnCours = { mat, niveaux: e.niveaux, at: Date.now() };
+      });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
 
   const terminer = (acquis: Record<string, number>) => {
     // arrêté avant toute réponse : rien à enregistrer, on retrouve la carte
@@ -116,7 +142,7 @@ export function Diagnostic() {
     }
     const fait = (k: string) => !!child.progress[k]?.done;
     const niveauxFinaux = { ...(point ? ancien?.niveaux : {}), ...acquis };
-    const etapes = construireParcours(doms, niveauxFinaux, child.age, fait);
+    const etapes = construireParcours(doms, niveauxFinaux, age, fait);
     const ouvrir = mondesAOuvrir(doms, niveauxFinaux, etapes);
     const nonTestes = doms.filter((d) => niveauxFinaux[d.id] === undefined).map((d) => d.id);
     updateChild((c) => {
@@ -126,6 +152,7 @@ export function Diagnostic() {
       c.counters[`diag:${mat}`] = (c.counters[`diag:${mat}`] ?? 0) + 1;
       delete c.diagEnCours;
     });
+    sortieGeree.current = true;
     sfx.fanfare();
     setEntracte(null);
     setNiveaux(niveauxFinaux);
@@ -153,6 +180,7 @@ export function Diagnostic() {
             className="btn btn-primary btn-xl"
             onClick={() => {
               stopSpeaking();
+              if (!point) bump(`diag-debut:${mat}`);
               setStarted(true);
               commencerDomaine(0, niveaux);
             }}
@@ -170,7 +198,7 @@ export function Diagnostic() {
     return (
       <div className="page narrow">
         <h1 className="center">🗺️ Ta carte des talents</h1>
-        <CarteTalents doms={doms} niveaux={niveaux} age={child.age} />
+        <CarteTalents doms={doms} niveaux={niveaux} age={age} />
         <Bubble who="mia" humeur="joie" text="Bravo, tu as visité toutes les îles ! Avec ce que tu sais déjà, j'ai préparé ton parcours : on commence par des choses que tu vas réussir, puis on avance petit à petit." />
         <div className="center stack">
           <button className="btn btn-primary btn-xl" onClick={() => go("/parcours")}>
@@ -232,7 +260,7 @@ export function Diagnostic() {
             // le domaine en cours compte déjà, d'après les réponses données
             const acquis = esc.reponses.length ? { ...niveaux, [d.id]: estimation(esc, d) } : niveaux;
             if (point) terminer(acquis);
-            else if (Object.keys(acquis).length) mettreEnPause(acquis);
+            else if (Object.keys(acquis).length) mettreEnPause(acquis, d.id);
             else terminer(acquis);
           }}
           aria-label="Faire une pause"

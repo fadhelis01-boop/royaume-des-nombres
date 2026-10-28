@@ -3200,3 +3200,16 @@ select {
 .entracte-ile .stack {
   margin-top: 14px;
 }
+
+.droite-ajuste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 4px 0;
+}
+.droite-ajuste .btn {
+  min-width: 64px;
+  min-height: 48px;
+  font-size: 1.3rem;
+}

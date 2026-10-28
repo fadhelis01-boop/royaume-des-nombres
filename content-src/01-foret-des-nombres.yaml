@@ -159,7 +159,7 @@ lecons:
         correction: "{{c}} centaines, 0 dizaine, {{u}} unités : {{c*100+u}}."
       - type: champs
         vars: { n: "101..999" }
-        enonce: "Décompose {{n}}."
+        enonce: "Combien de centaines, de dizaines et d'unités dans {{n}} ?"
         visuel: { type: abaque, nombre: "=n", vide: true }
         champs:
           - { reponse: "chiffre(n,2)", apres: "centaines" }
@@ -389,7 +389,7 @@ lecons:
         correction: "Faux : devant le {{n}}ᵉ, il y a {{n-1}} coureurs."
 
   - id: droite-numerique
-    titre: La droite des nombres
+    titre: La ligne des nombres (la droite graduée)
     objectif: Je sais placer un nombre sur une droite graduée et trouver ses voisins.
     mots: [droite graduée, encadrer]
     etapes:
@@ -453,7 +453,7 @@ lecons:
       - type: champs
         vars: { n: "11..99" }
         si: "n % 10 != 0"
-        enonce: "Encadre {{n}} entre deux dizaines."
+        enonce: "{{n}} est entre deux dizaines. Lesquelles ?"
         champs:
           - { reponse: "ent(n/10)*10", apres: "<" }
           - { avant: "{{n}} <", reponse: "ent(n/10)*10+10" }
@@ -579,7 +579,7 @@ lecons:
         correction: "On regarde le chiffre des unités : {{n%10}}. Donc {{n}} est {{si(n%2==0,'pair','impair')}}."
       - type: nombre
         vars: { p: [2, 5, 10], k: "1..12" }
-        enonce: "Compte de {{p}} en {{p}} : {{p*k}}, {{p*k+p}}, {{p*k+2*p}}, … Quel est le nombre suivant ?"
+        enonce: "Compte de {{p}} en {{p}} : {{p*k}}, {{p*k+p}}, {{p*k+2*p}}, … Quel nombre vient ensuite ?"
         reponse: "p*k+3*p"
         correction: "On ajoute {{p}} : {{p*k+2*p}} + {{p}} = {{p*k+3*p}}."
       - type: nombre

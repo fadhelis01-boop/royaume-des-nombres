@@ -4,7 +4,7 @@ import { useState } from "react";
 import { lessonKey, planeteDe, useContent } from "../lib/content";
 import { getState, updateSettings, useStore } from "../lib/store";
 import type { Child, World } from "../lib/types";
-import { domainesDe } from "../lib/parcours";
+import { ageScolaire, domainesDe } from "../lib/parcours";
 import { CarteTalents } from "../components/CarteTalents";
 
 
@@ -453,7 +453,7 @@ function BilanParcours({ child }: { child: Child }) {
             <h4>
               {planeteDe(manifest, mat)?.emoji} {planeteDe(manifest, mat)?.matiere} · évalué le {new Date(p.at).toLocaleDateString("fr-FR")} · parcours : {faites} / {p.etapes.length} étapes
             </h4>
-            <CarteTalents doms={doms} niveaux={p.niveaux} age={child.age} compact />
+            <CarteTalents doms={doms} niveaux={p.niveaux} age={ageScolaire(child)} compact />
             <ul className="small">
               {p.etapes
                 .filter((e) => !child.progress[e.key]?.done)

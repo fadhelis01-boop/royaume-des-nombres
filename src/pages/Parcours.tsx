@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { go } from "../lib/router";
 import { matiereDe, planeteDe, useContent } from "../lib/content";
 import { useChild } from "../lib/store";
-import { domainesDe, pointConseille, prochaineEtape } from "../lib/parcours";
+import { ageScolaire, domainesDe, pointConseille, prochaineEtape } from "../lib/parcours";
 import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
 
@@ -43,7 +43,7 @@ export function ParcoursPage() {
   const faites = p.etapes.filter((e) => fait(e.key)).length;
   const objectif = child.age <= 10 ? 3 : 4;
   const cetteSemaine = p.etapes.filter((e) => fait(e.key) && (child.progress[e.key]?.lastAt ?? 0) >= lundi()).length;
-  const conseille = pointConseille(p, fait);
+  const conseille = pointConseille(p, fait, Date.now(), (child.counters[`diag:${matiereDe(child)}`] ?? 0) <= 1);
   const titre = (key: string) => {
     const [wid, lid] = key.split("/");
     const w = worlds.find((x) => x.id === wid);
@@ -112,7 +112,7 @@ export function ParcoursPage() {
       </ol>
 
       <h2>Ma carte des talents</h2>
-      <CarteTalents doms={doms} niveaux={p.niveaux} age={child.age} compact />
+      <CarteTalents doms={doms} niveaux={p.niveaux} age={ageScolaire(child)} compact />
       {!!p.nonTestes?.length && (
         <p className="small muted">
           Pas encore visités (ils viendront plus tard) : {p.nonTestes.map((id) => doms.find((d) => d.id === id)?.titre).filter(Boolean).join(", ")}.

@@ -11,6 +11,8 @@ import { instantiate, check, toFraction, type Instance, type Answer } from "../s
 import { enLettres, fmtNum, parse, isExpanded, isFactored, equivalent, evalStr, clean } from "../src/lib/expr";
 import type { ExSpec, Manifest, World, Step } from "../src/lib/types";
 import { VISUEL_TYPES } from "../src/lib/visuel-types";
+// @ts-expect-error module JS sans types
+import { problemesConsigne, pourLesPlusJeunes } from "./lisibilite.mjs";
 
 const errors: string[] = [];
 const warns: string[] = [];
@@ -226,6 +228,15 @@ for (const ref of manifest.worlds) {
     l.etapes.forEach((s, i) => checkStep(s, `${where} étape ${i + 1}`));
     l.exercices.forEach((e, i) => checkExercise(e, `${where} exercice ${i + 1}`));
     if (l.exercices.length < 3) warns.push(`${where} : seulement ${l.exercices.length} exercice(s)`);
+    // Lisibilité pour les 6-9 ans (audit « enfant de 8 ans ») : consigne courte, sans mot difficile non expliqué.
+    // Un mot difficile enseigné dans la leçon se déclare dans « mots: » de la leçon.
+    if (pourLesPlusJeunes(w)) {
+      const qs = [...l.exercices, ...l.etapes.flatMap((st) => (st.kind === "question" && !(st as { auto?: boolean }).auto ? [(st as { ex: ExSpec }).ex] : []))];
+      for (const q of qs) {
+        const p: string[] = q?.enonce ? problemesConsigne(q.enonce, l) : [];
+        if (p.length) errors.push(`${where} : consigne difficile pour un jeune lecteur (${p.join(", ")}) → « ${q.enonce.slice(0, 90)} » (raccourcir, ou déclarer le mot dans « mots: » de la leçon ; voir node scripts/lisibilite.mjs)`);
+      }
+    }
   }
 }
 manifest.diagnostic.forEach((d, i) => checkExercise(d.ex, `diagnostic ${i + 1}`, 40));

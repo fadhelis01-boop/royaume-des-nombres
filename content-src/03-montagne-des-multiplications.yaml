@@ -400,7 +400,7 @@ lecons:
         correction: "{{r}} × {{s}} = {{r*s}} sièges."
       - type: qcm
         vars: { a: "31..69", b: "21..39" }
-        enonce: "Sans calculer exactement, quel résultat est le plus vraisemblable pour $ {{a}} \\times {{b}}$ ?"
+        enonce: "Sans calculer exactement : quel résultat est le plus proche de $ {{a}} \\times {{b}}$ ?"
         choix: ["{{nb(a*b)}}", "{{nb(a*b*10)}}", "{{nb(a+b)}}", "{{nb(round(a*b/10))}}"]
         correction: "Environ {{round(a/10)*10}} × {{round(b/10)*10}} = {{nb(round(a/10)*10*round(b/10)*10)}} ; le bon résultat est {{nb(a*b)}}."
 

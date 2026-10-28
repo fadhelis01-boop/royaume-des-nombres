@@ -345,7 +345,7 @@ function libreDepuisRetiens(texte, titre, mots = []) {
   if (cles.length < 2) return null;
   return {
     type: "libre",
-    enonce: `✍️ Sans regarder la leçon, écris en une ou deux phrases ce que tu as retenu sur « ${titre} ». Tu peux aussi le dire au micro.`,
+    enonce: `✍️ Sans regarder : qu'as-tu retenu de « ${titre} » ? Écris-le, ou dis-le au micro.`,
     cles: cles.map((c) => [c]),
     modele: texte,
     min_cles: Math.max(1, Math.ceil(cles.length / 2)),
@@ -383,7 +383,7 @@ function clozeFromRetiens(texte, mots = []) {
   return {
     type: "mot",
     vars: { t },
-    enonce: "🧠 Complète ce que tu as retenu (écris le mot qui manque) :\n\n« {{t_0}} »",
+    enonce: "🧠 Écris le mot qui manque :\n\n« {{t_0}} »",
     reponse: "{{t_1}}",
     correction: "Le mot qui manquait : **{{t_1}}**.",
     niveau: 3,

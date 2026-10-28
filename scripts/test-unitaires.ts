@@ -5,7 +5,7 @@ import { fusionnerEnfant, fusionnerProfils } from "../src/lib/fusion";
 import { check, idees, instantiate } from "../src/lib/gen";
 import { planDefi } from "../src/lib/plan";
 import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
-import { classeDeLAge, construireParcours, departEscalier, niveauDuMoment, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+import { classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
 
 
 let ok = 0;
@@ -120,6 +120,9 @@ eq("parcours : une consolidation pour le domaine en retard", plan[0].raison, "co
 eq("parcours : les deux domaines sont entremêlés", plan.slice(0, 3).map((x) => x.dom).includes("geo"), true);
 eq("parcours : rien sous le niveau sauf la consolidation", plan.filter((x) => x.dom === "calc" && x.raison !== "consolider").every((x) => Number(x.key.split("-")[1]) >= 0), true);
 eq("parcours : les leçons déjà réussies sont retirées", construireParcours(D2, { calc: 1, geo: 4 }, 8, (k) => k === "a/a-1", 18, ETE).some((x) => x.key === "a/a-1"), false);
+const P0 = { at: 0, niveaux: {}, etapes: [{ key: "a/a-1", dom: "calc", raison: "nouveau" as const }], nonTestes: [] };
+eq("faire le point : 8 jours après le premier test", pointConseille(P0, () => false, 8 * 86400000, true), true);
+eq("faire le point : 8 jours après un test suivant, pas encore", pointConseille(P0, () => false, 8 * 86400000, false), false);
 eq("mondes ouverts : acquis + parcours", mondesAOuvrir(D2, { calc: 3, geo: 2 }, []).sort(), ["a", "b", "g"]);
 
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);

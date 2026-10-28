@@ -431,7 +431,7 @@ lecons:
         reponse: false
         correction: "Faux : en pliant une ligne de 6 carrés, les faces se superposent et la boîte ne se ferme pas."
       - type: vf
-        enonce: "Vrai ou faux : la croix formée de 4 carrés en colonne et d'un carré de chaque côté du 2ᵉ est un patron de cube."
+        enonce: "Une croix : 4 carrés en colonne, et 1 carré de chaque côté du 2ᵉ. Vrai ou faux : elle se plie en cube ?"
         reponse: true
         correction: "Vrai : la colonne fait le tour du cube, et les deux carrés des côtés ferment les bouts."
       - type: qcm

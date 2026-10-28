@@ -72,6 +72,19 @@ export function geste(inst: Instance): string | null {
       return null;
   }
 }
+/**
+ * Ligne des nombres : le « grain » auquel on aimante le point touché (le pas des traits, ou sa moitié,
+ * son cinquième… s'il faut viser entre deux traits). Au doigt, on touche à peu près, puis on ajuste
+ * avec ◀ ▶ : viser 9 entre les traits 8 et 10 n'est plus une affaire d'adresse.
+ */
+export function grainDroite(pas: number, cible: number, tolerance: number): number {
+  for (const div of [1, 2, 4, 5, 10]) {
+    const g = pas / div;
+    if (Math.abs(cible / g - Math.round(cible / g)) < 1e-6) return g;
+  }
+  return Math.max(tolerance, pas / 10);
+}
+
 /** Réponses neutres du test de positionnement : on ne corrige pas, on note où commencer. */
 const TEST_KO = [
   "Merci ! Celle-là, on l'apprendra ensemble dans ton parcours. 🌱",
@@ -147,7 +160,7 @@ export function ExercisePlayer({
   const isTouch = useMemo(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches, []);
   // jeunes enfants (ou mode « je ne lis pas encore ») : le geste attendu est affiché et lu
   const enfant = activeChild();
-  const jeune = (enfant?.age ?? 99) <= 9 || enfant?.lecteur === "non";
+  const jeune = (enfant?.age ?? 99) <= 9 || (enfant?.lecteur ?? "oui") !== "oui";
   const commentRepondre = jeune ? geste(inst) : null;
 
   const readable = useMemo(() => {
@@ -159,7 +172,7 @@ export function ExercisePlayer({
   }, [inst, commentRepondre]);
 
   useEffect(() => {
-    if (inst.type !== "dictee" && (autoRead ?? (getState().settings.autoRead || activeChild()?.lecteur === "non"))) speak([{ who: "narrateur", text: readable }], { key: k });
+    if (inst.type !== "dictee" && (autoRead ?? (getState().settings.autoRead || (activeChild()?.lecteur ?? "oui") !== "oui"))) speak([{ who: "narrateur", text: readable }], { key: k });
     if (!isTouch) inputRef.current?.focus();
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -218,6 +231,7 @@ export function ExercisePlayer({
 
   /** Test de positionnement : réponse fausse ou « je ne sais pas encore » → message neutre, sans correction. */
   const neutre = (given: string) => {
+    if (given === "je ne sais pas encore") bump("test-je-ne-sais-pas");
     recordAnswer({ key: statKey, ok: false, firstTry: false, hint, q: inst.enonce, given, expected: inst.expectedText, isZero: false });
     onVerdict?.({ ok: false, firstTry: false, hint });
     const t = pick(TEST_KO);
@@ -355,6 +369,13 @@ export function ExercisePlayer({
   });
 
   const disabled = phase !== "answer";
+  const grain = inst.type === "droite" ? grainDroite(inst.pas ?? 1, inst.value ?? 0, inst.tolerance ?? 0) : 1;
+  const aimante = (x: number) => {
+    const lo = inst.min ?? 0,
+      hi = inst.max ?? 10;
+    const v = Math.round(x / grain) * grain; // grille calée sur 0, comme la cible
+    return Math.min(hi, Math.max(lo, Math.round(v * 1e9) / 1e9));
+  };
   const canSubmit = !!answer() && phase === "answer";
   const usesKeypad = ["nombre", "liste", "expression", "champs"].includes(inst.type);
 
@@ -454,8 +475,19 @@ export function ExercisePlayer({
 
       {inst.type === "droite" && (
         <div className="droite-ex">
-          <Droite v={{ min: inst.min, max: inst.max, pas: inst.pas, etiquettes: (inst.visuel as Record<string, unknown> | undefined)?.etiquettes, fractions: (inst.visuel as Record<string, unknown> | undefined)?.fractions }} onPick={disabled ? undefined : (x) => setPoint(x)} picked={point} reveal={phase === "done" ? inst.value! : null} />
-          <p className="hint-small">👆 Touche la ligne des nombres à l'endroit de {inst.cibleAffiche}, puis « Valider ».</p>
+          <Droite v={{ min: inst.min, max: inst.max, pas: inst.pas, etiquettes: (inst.visuel as Record<string, unknown> | undefined)?.etiquettes, fractions: (inst.visuel as Record<string, unknown> | undefined)?.fractions }} onPick={disabled ? undefined : (x) => setPoint(aimante(x))} picked={point} reveal={phase === "done" ? inst.value! : null} />
+          {point !== null && phase === "answer" && (
+            <div className="droite-ajuste" role="group" aria-label="Ajuster le point">
+              <button type="button" className="btn btn-soft" aria-label="Déplacer le point vers la gauche" onClick={() => setPoint((p) => aimante((p ?? inst.min!) - grain))}>
+                ◀
+              </button>
+              <span className="small muted">ajuste le point</span>
+              <button type="button" className="btn btn-soft" aria-label="Déplacer le point vers la droite" onClick={() => setPoint((p) => aimante((p ?? inst.min!) + grain))}>
+                ▶
+              </button>
+            </div>
+          )}
+          <p className="hint-small">👆 Touche la ligne des nombres à l'endroit de {inst.cibleAffiche}{point !== null ? ", ajuste avec ◀ ▶" : ""}, puis « Valider ».</p>
         </div>
       )}
 

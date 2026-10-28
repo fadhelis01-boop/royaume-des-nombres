@@ -40,6 +40,10 @@ export function niveauLecon(w: World, idx: number): number | null {
   return n <= 1 ? t[0] : t[0] + ((t[1] - t[0]) * idx) / (n - 1);
 }
 
+/** « Âge scolaire » : l'âge qui correspond à la classe déclarée (un enfant né en décembre, qui a sauté
+ *  ou redoublé une classe est placé selon sa classe), sinon l'âge réel. */
+export const ageScolaire = (c: { age: number; classe?: number }) => (typeof c.classe === "number" ? c.classe + 5 : c.age);
+
 /** Classe attendue pour un âge (8 ans → CE2 = 3). */
 export const classeDeLAge = (age: number) => Math.max(0, Math.min(13, age - 5));
 
@@ -179,5 +183,9 @@ export function mondesAOuvrir(doms: Domaine[], niveaux: Record<string, number>, 
 /** La prochaine étape du parcours qui n'est pas encore réussie. */
 export const prochaineEtape = (p: Parcours | undefined, fait: (key: string) => boolean) => p?.etapes.find((e) => !fait(e.key));
 
-/** Faut-il refaire le point ? Parcours terminé, ou plus de 15 jours. */
-export const pointConseille = (p: Parcours | undefined, fait: (key: string) => boolean, now = Date.now()) => !!p && (p.etapes.every((e) => fait(e.key)) || now - p.at > 15 * 86400000);
+/**
+ * Faut-il refaire le point ? Parcours terminé, ou plus de 15 jours.
+ * Après le tout premier test (3 questions par domaine : estimation encore grossière), dès 7 jours.
+ */
+export const pointConseille = (p: Parcours | undefined, fait: (key: string) => boolean, now = Date.now(), premierTest = false) =>
+  !!p && (p.etapes.every((e) => fait(e.key)) || now - p.at > (premierTest ? 7 : 15) * 86400000);

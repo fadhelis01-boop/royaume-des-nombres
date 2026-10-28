@@ -317,7 +317,9 @@ export interface Child {
   owned: string[]; // objets de la boutique possédés
   equipped: Partial<Record<"chapeau" | "lunettes" | "cou" | "compagnon" | "cadre", string>>;
   cabane: (string | null)[]; // 9 emplacements de la cabane
-  lecteur: "oui" | "non"; // « non » : mode « je ne lis pas encore » (tout en voix et pictogrammes)
+  lecteur: "oui" | "debutant" | "non"; // « non » : je ne lis pas encore (tout en voix et pictogrammes) ; « debutant » : consignes toujours lues
+  /** classe à l'école (GS = 0, CP = 1 … Terminale = 12) ; absente = déduite de l'âge */
+  classe?: number;
   abandons: Record<string, number>; // leçons / défis quittés en cours de route (pour les parents)
   sessions: { day: string; start: number; min: number; q: number }[]; // séances récentes
   recordsJeux: Record<string, number>; // niveaux atteints dans les mini-jeux

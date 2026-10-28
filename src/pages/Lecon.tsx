@@ -73,7 +73,7 @@ export function LeconPage({ worldId, lessonId, restart }: { worldId: string; les
   useEffect(() => {
     if (!step) return;
     const segs = stepSegments(step);
-    const auto = continuous || getState().settings.autoRead || child.lecteur === "non";
+    const auto = continuous || getState().settings.autoRead || (child.lecteur ?? "oui") !== "oui";
     if (!auto || !segs.length) {
       if (continuous && step.kind === "question") setContinuous(false);
       return;

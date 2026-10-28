@@ -45,7 +45,7 @@ export function Carte() {
   const proposerTest = !nouvelle && !parcours && !child.counters[`diag:${mat}`] && !child.counters[`diag-plus-tard:${mat}`];
   const faitK = (k: string) => !!child.progress[k]?.done;
   const etapesFaites = parcours ? parcours.etapes.filter((e) => faitK(e.key)).length : 0;
-  const pointConseilleIci = pointConseille(parcours, faitK);
+  const pointConseilleIci = pointConseille(parcours, faitK, Date.now(), (child.counters[`diag:${mat}`] ?? 0) <= 1);
   const reprendreTest = proposerTest && child.diagEnCours?.mat === mat;
   // premiers pas (histoire puis carte des talents) : une seule chose à faire, rien d'autre à l'écran
   const premiersPas = nouvelle || proposerTest;

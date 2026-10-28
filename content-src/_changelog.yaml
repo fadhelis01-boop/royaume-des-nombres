@@ -1,3 +1,12 @@
+- version: "2.9.0"
+  date: "2026-10-28"
+  notes:
+    - "À la création du profil, on choisit sa classe : un enfant né en fin d'année, qui a sauté ou redoublé une classe, commence au bon endroit."
+    - "Nouveau mode de lecture « lit avec un peu d'aide » (par défaut à 7 et 8 ans) : les consignes sont toujours lues à voix haute."
+    - "Ligne des nombres : le point s'aimante aux graduations et s'ajuste avec deux grosses flèches ◀ ▶. Plus besoin de viser juste au doigt."
+    - "Consignes plus simples dans tous les mondes du CP au CM1 (sciences, français, anglais, arts compris), avec un contrôle automatique pour les prochaines."
+    - "Après le tout premier test, « Faire le point » est proposé au bout d'une semaine pour affiner le parcours."
+    - "Pour les parents : pauses, arrêts et « Je ne sais pas encore » pendant la carte des talents, dans « Où ça coince » ; fiche d'observation imprimable des premières séances."
 - version: "2.8.0"
   date: "2026-10-28"
   notes:

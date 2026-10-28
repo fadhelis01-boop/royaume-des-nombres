@@ -108,12 +108,23 @@ Au premier passage sur la planète, on voyait à la fois :
   - que faire quand l'âge ne correspond pas à la classe.
 - Le guide parent indiquait 60 % pour ouvrir la leçon suivante ; le seuil réel est de 80 %. C'est corrigé.
 
-## Angles morts de la demande, et ce qu'il reste à faire
+## Angles morts de la demande — traités en 2.9.0
 
-1. **L'âge ne dit pas la classe.** Un enfant né en décembre, ou qui a sauté ou redoublé une classe, est mal placé au départ. Le test s'ajuste en cours de route, mais demander « En quelle classe es-tu ? » à la création du profil serait plus juste. *Non fait.*
-2. **Savoir lire n'est pas binaire.** Le profil connaît « lit » ou « ne lit pas encore ». À 8 ans, on est souvent lecteur débutant. La lecture automatique compense, à condition qu'elle reste activée et que le son soit allumé, ce qui n'est pas acquis à l'école ou dans les transports. *À observer.*
-3. **Un test de 3 questions par domaine est bruité** : trois questions sur des notions différentes (placer un nombre, l'écrire en lettres, un rang). Le point de départ peut être faux d'un niveau. « Faire le point » (conseillé tous les 15 jours) corrige ensuite. *À surveiller avec de vrais enfants.*
-4. **Le vocabulaire des leçons** (et pas seulement du test) n'a été corrigé que là où le test le rencontre. Une passe complète sur les mondes « Graines » serait utile : environ 12 % de consignes de plus de 15 mots, et des mots comme dénominateur, encadre ou décompose. Le script d'audit peut servir de base à une alerte automatique dans `npm run build`. *Non fait.*
-5. **La précision au doigt** : sur téléphone, les traits de la ligne des nombres sont espacés d'environ 25 pixels, et viser entre deux traits est difficile à 8 ans. Agrandir la zone de toucher ou aimanter au trait le plus proche. *Non fait.*
-6. **L'émotion n'est pas mesurée.** Rien ne repère qu'un enfant abandonne (fermeture en plein test, longues hésitations). Le compteur `abandons` existe pour les leçons ; il faudrait l'étendre au test et le montrer aux parents. *Non fait.*
-7. **Tester avec des enfants.** Ce travail simule une enfant. Le protocole `docs/protocole-test-enfants.html` reste la vraie validation. Le refaire avec 3 ou 4 enfants de 7 à 9 ans, en observant surtout le premier quart d'heure.
+1. **L'âge ne dit pas la classe.** ✅ À la création du profil, l'enfant choisit sa classe : la classe déduite de l'âge est présélectionnée, avec les classes voisines et « Je ne sais pas ». Le parent peut la modifier dans la fiche de l'enfant. `ageScolaire(enfant)` remplace l'âge pour le test, le parcours et la carte des talents.
+2. **Savoir lire n'est pas binaire.** ✅ Troisième mode de lecture « lit avec un peu d'aide » (`lecteur: "debutant"`), activé par défaut de 7 à 8 ans. Les consignes et la ligne « comment répondre » sont alors toujours lues, même si la lecture automatique est coupée dans les réglages. *Limite : l'application ne peut pas savoir si le son de l'appareil est coupé.*
+3. **Un test de 3 questions par domaine est bruité.** ✅ Après le tout premier test, « Faire le point » est proposé au bout de 7 jours au lieu de 15. *Le test garde 3 questions par domaine : l'allonger ferait décrocher davantage.*
+4. **Le vocabulaire des leçons.** ✅ Passe complète sur les 1 084 consignes des mondes du CP au CM1, toutes planètes :
+   - 251 consignes signalées au départ ;
+   - les deux phrases générées automatiquement (rappel libre et mot manquant) sont raccourcies ;
+   - 16 consignes réécrites (« correspond », « vraisemblable », « indique », « encadre », « décompose », « suivant », problèmes trop longs).
+
+   Le contrôle fait maintenant partie de `npm run build` (`scripts/lisibilite.mjs`) : une nouvelle consigne trop longue, ou contenant un mot difficile qui n'est pas déclaré dans les `mots:` de la leçon, **bloque la publication**. Exemptés : les textes de lecture (« Lis : … ») et les petites histoires de problèmes, jusqu'à 28 mots. Liste détaillée : `node scripts/lisibilite.mjs`.
+5. **La précision au doigt.** ✅ Sur la ligne des nombres, le point touché s'aimante à la graduation (ou à la demi-graduation quand la cible tombe entre deux traits). Deux grosses flèches ◀ ▶ permettent ensuite de l'ajuster. Il suffit de toucher à peu près. La leçon s'appelle « La ligne des nombres (la droite graduée) ».
+6. **L'émotion n'est pas mesurée.** ✅ L'application note désormais :
+   - les tests commencés, terminés et mis en pause ;
+   - les sorties sans pause (onglet du bas, retour) ;
+   - les îles où l'enfant s'est arrêté en pleine question ;
+   - le nombre de « Je ne sais pas encore ».
+
+   Ces chiffres apparaissent dans l'Espace parents, onglet Suivi → « Où ça coince ». Quand l'enfant quitte le test sans passer par la pause, les îles déjà terminées sont quand même gardées.
+7. **Tester avec des enfants.** ✅ Le protocole (`docs/protocole-test-enfants.html`, aussi publié dans l'application et lié depuis le guide parents) a une variante « premier quart d'heure » pour les 7-9 ans. Elle contient une grille d'observation moment par moment et des seuils d'alerte. *Ce test reste à faire par vous : c'est la seule validation qu'aucune simulation ne remplace.*
