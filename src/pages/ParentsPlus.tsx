@@ -444,7 +444,7 @@ function BilanParcours({ child }: { child: Child }) {
   return (
     <div className="bilan-planete">
       <h3>🗺️ Niveaux par domaine et parcours personnalisé</h3>
-      <p className="small">Niveaux estimés par la « carte des talents » (test adaptatif : 3 questions par domaine, qui montent après une réussite et descendent après une erreur), puis mis à jour à chaque « point ». Le trait marque le niveau habituel pour l'âge.</p>
+      <p className="small">Niveaux estimés par la « carte des talents » (test adaptatif : 3 questions par domaine, 2 jusqu'à 8 ans, qui montent après une réussite et descendent après une erreur), puis mis à jour à chaque « point ». Le trait marque le niveau habituel pour l'âge.</p>
       {entrees.map(([mat, p]) => {
         const doms = domainesDe(mat, worlds, manifest?.domaines?.[mat]);
         const faites = p.etapes.filter((e) => child.progress[e.key]?.done).length;

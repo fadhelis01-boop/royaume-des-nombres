@@ -3,7 +3,7 @@
 // 1. Chaque leçon reçoit un niveau sur l'échelle des classes (GS = 0, CP = 1 … Terminale = 12,
 //    supérieur = 13), estimé à partir de la tranche de classes de son monde et de sa place dans le monde.
 // 2. Le test avance domaine par domaine en « escalier » : il part du niveau attendu pour l'âge,
-//    monte d'un cran après une réussite, descend après une erreur (3 questions par domaine).
+//    monte d'un cran après une réussite, descend après une erreur (3 questions par domaine, 2 jusqu'à 8 ans).
 // 3. Le parcours propose, domaine par domaine, les leçons juste au-dessus du niveau estimé,
 //    en commençant par les domaines à renforcer, en les entremêlant (on ne reste pas des semaines
 //    sur un seul thème : l'entrelacement aide à retenir).
@@ -120,6 +120,19 @@ export interface Escalier {
   reponses: { niveau: number; ok: boolean }[];
 }
 export const QUESTIONS_PAR_DOMAINE = 3;
+/** Jusqu'à 8 ans (âge scolaire), 2 questions par île : un test plus court, moins fatigant. */
+export const QUESTIONS_PAR_DOMAINE_JEUNE = 2;
+export const AGE_TEST_COURT = 8;
+/**
+ * Nombre de questions par île du test de niveau.
+ * « Faire le point » : 2. Planète à une seule île : 5 (sinon la mesure serait trop grossière).
+ * Sinon : 2 jusqu'à 8 ans, 3 au-delà.
+ */
+export function questionsParIle(age: number, nbDomaines: number, point = false): number {
+  if (point) return 2;
+  if (nbDomaines === 1) return 5;
+  return age <= AGE_TEST_COURT ? QUESTIONS_PAR_DOMAINE_JEUNE : QUESTIONS_PAR_DOMAINE;
+}
 export function departEscalier(d: Domaine, age: number, depuis?: number, quand?: Date): Escalier {
   const c = depuis ?? niveauDuMoment(age, quand);
   return { cible: Math.max(d.min, Math.min(d.max, c)), reponses: [] };
@@ -185,7 +198,7 @@ export const prochaineEtape = (p: Parcours | undefined, fait: (key: string) => b
 
 /**
  * Faut-il refaire le point ? Parcours terminé, ou plus de 15 jours.
- * Après le tout premier test (3 questions par domaine : estimation encore grossière), dès 7 jours.
+ * Après le tout premier test (2 ou 3 questions par domaine : estimation encore grossière), dès 7 jours.
  */
 export const pointConseille = (p: Parcours | undefined, fait: (key: string) => boolean, now = Date.now(), premierTest = false) =>
   !!p && (p.etapes.every((e) => fait(e.key)) || now - p.at > (premierTest ? 7 : 15) * 86400000);

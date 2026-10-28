@@ -10,7 +10,7 @@ import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
 import {
   ageScolaire, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
-  QUESTIONS_PAR_DOMAINE, type Domaine, type Escalier,
+  questionsParIle, type Domaine, type Escalier,
 } from "../lib/parcours";
 
 // « La carte des talents » : test de niveau domaine par domaine.
@@ -57,7 +57,7 @@ export function Diagnostic() {
     return !point && e && e.mat === mat && Date.now() - e.at < REPRISE_MAX_JOURS * 86400000 ? e.niveaux : undefined;
   });
   const aTester = useMemo(() => (enCours ? tous.filter((d) => enCours[d.id] === undefined) : tous), [tous, enCours]);
-  const nbQ = point ? 2 : doms.length === 1 ? 5 : QUESTIONS_PAR_DOMAINE;
+  const nbQ = questionsParIle(age, doms.length, point);
   const dejaVisitees = tous.length - aTester.length;
 
   const [started, setStarted] = useState(false);

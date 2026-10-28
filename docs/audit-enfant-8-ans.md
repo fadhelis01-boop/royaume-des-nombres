@@ -81,7 +81,7 @@ Au premier passage sur la planète, on voyait à la fois :
   - pause (tout est gardé, l'accueil propose « On reprend la carte des talents ? ») ;
   - dès 2 îles faites, « Voir ma carte avec les îles déjà visitées ».
 - La croix ✕ devient « faire une pause » : la progression est sauvegardée, au lieu de fabriquer un parcours à partir d'un test inachevé.
-- **Textes d'accueil plus courts pour les moins de 10 ans, lus à voix haute** : « 6 îles, 3 petites questions par île, pause possible ».
+- **Textes d'accueil plus courts pour les moins de 10 ans, lus à voix haute** : « 6 îles, 2 petites questions par île, pause possible ». Depuis la 2.9.1, le test passe à 2 questions par île jusqu'à 8 ans (12 questions en maths, 10 en français, au lieu de 18 et 15).
 
 ### Consignes
 
@@ -112,7 +112,7 @@ Au premier passage sur la planète, on voyait à la fois :
 
 1. **L'âge ne dit pas la classe.** ✅ À la création du profil, l'enfant choisit sa classe : la classe déduite de l'âge est présélectionnée, avec les classes voisines et « Je ne sais pas ». Le parent peut la modifier dans la fiche de l'enfant. `ageScolaire(enfant)` remplace l'âge pour le test, le parcours et la carte des talents.
 2. **Savoir lire n'est pas binaire.** ✅ Troisième mode de lecture « lit avec un peu d'aide » (`lecteur: "debutant"`), activé par défaut de 7 à 8 ans. Les consignes et la ligne « comment répondre » sont alors toujours lues, même si la lecture automatique est coupée dans les réglages. *Limite : l'application ne peut pas savoir si le son de l'appareil est coupé.*
-3. **Un test de 3 questions par domaine est bruité.** ✅ Après le tout premier test, « Faire le point » est proposé au bout de 7 jours au lieu de 15. *Le test garde 3 questions par domaine : l'allonger ferait décrocher davantage.*
+3. **Un test de 3 questions par domaine est bruité.** ✅ Après le tout premier test, « Faire le point » est proposé au bout de 7 jours au lieu de 15. *Depuis la 2.9.1, le test est même raccourci à 2 questions par île jusqu'à 8 ans, à la demande du propriétaire : la mesure est un peu plus grossière, et « Faire le point » à 7 jours la corrige.*
 4. **Le vocabulaire des leçons.** ✅ Passe complète sur les 1 084 consignes des mondes du CP au CM1, toutes planètes :
    - 251 consignes signalées au départ ;
    - les deux phrases générées automatiquement (rappel libre et mot manquant) sont raccourcies ;

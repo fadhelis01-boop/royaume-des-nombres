@@ -5,7 +5,7 @@ import { fusionnerEnfant, fusionnerProfils } from "../src/lib/fusion";
 import { check, idees, instantiate } from "../src/lib/gen";
 import { planDefi } from "../src/lib/plan";
 import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
-import { classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+import { classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
 
 
 let ok = 0;
@@ -123,6 +123,14 @@ eq("parcours : les leçons déjà réussies sont retirées", construireParcours(
 const P0 = { at: 0, niveaux: {}, etapes: [{ key: "a/a-1", dom: "calc", raison: "nouveau" as const }], nonTestes: [] };
 eq("faire le point : 8 jours après le premier test", pointConseille(P0, () => false, 8 * 86400000, true), true);
 eq("faire le point : 8 jours après un test suivant, pas encore", pointConseille(P0, () => false, 8 * 86400000, false), false);
+eq("test : 2 questions par île à 8 ans", questionsParIle(8, 6), 2);
+eq("test : 3 questions par île à 9 ans", questionsParIle(9, 6), 3);
+eq("test : 5 questions pour une planète à une île", questionsParIle(8, 1), 5);
+eq("faire le point : 2 questions", questionsParIle(12, 6, true), 2);
+let e2q = departEscalier(D2[0], 8, undefined, ETE);
+e2q = pas(e2q, D2[0], 3, true);
+e2q = pas(e2q, D2[0], 4, false);
+eq("escalier à 2 questions : réussite puis échec = niveau réussi", estimation(e2q, D2[0]), 3);
 eq("mondes ouverts : acquis + parcours", mondesAOuvrir(D2, { calc: 3, geo: 2 }, []).sort(), ["a", "b", "g"]);
 
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);

@@ -2,7 +2,7 @@
 // et dans les leçons de niveau CP–CE2. Mesures de lisibilité.
 import { readFileSync, readdirSync } from "node:fs";
 import { instantiate, newSeed } from "../src/lib/gen";
-import { departEscalier, domainesATester, domainesDe, exercicesTest, leconPour, pas, QUESTIONS_PAR_DOMAINE } from "../src/lib/parcours";
+import { departEscalier, domainesATester, domainesDe, exercicesTest, leconPour, pas, questionsParIle } from "../src/lib/parcours";
 import type { World } from "../src/lib/types";
 
 const manifest = JSON.parse(readFileSync("public/content/manifest.json", "utf8"));
@@ -11,7 +11,8 @@ const AGE = Number(process.argv[2] ?? 8);
 const doms = domainesDe("maths", worlds, manifest.domaines.maths);
 const aTester = domainesATester(doms, AGE);
 console.log("Domaines testés à", AGE, "ans :", aTester.map((d) => `${d.titre} [${d.min.toFixed(1)}–${d.max.toFixed(1)}]`).join(" | "));
-console.log("Nombre de questions :", aTester.length * QUESTIONS_PAR_DOMAINE);
+const NBQ = questionsParIle(AGE, doms.length);
+console.log("Nombre de questions :", aTester.length * NBQ);
 
 const strip = (s: string) => s.replace(/\$[^$]*\$/g, " X ").replace(/[*_`#>]/g, "").replace(/\s+/g, " ").trim();
 const words = (s: string) => strip(s).split(/[\s'’]+/).filter((w) => /[a-zà-ÿ]/i.test(w));
@@ -20,7 +21,7 @@ const seen = new Map<string, { n: number; lvl: number; dom: string; type: string
 for (let run = 0; run < 400; run++) {
   for (const d of aTester) {
     let e = departEscalier(d, AGE);
-    for (let q = 0; q < QUESTIONS_PAR_DOMAINE; q++) {
+    for (let q = 0; q < NBQ; q++) {
       const l = leconPour(d, e.cible);
       if (!l) break;
       const specs = exercicesTest(l.lesson);
