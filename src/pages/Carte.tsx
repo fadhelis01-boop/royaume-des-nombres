@@ -46,6 +46,9 @@ export function Carte() {
   const faitK = (k: string) => !!child.progress[k]?.done;
   const etapesFaites = parcours ? parcours.etapes.filter((e) => faitK(e.key)).length : 0;
   const pointConseilleIci = pointConseille(parcours, faitK);
+  const reprendreTest = proposerTest && child.diagEnCours?.mat === mat;
+  // premiers pas (histoire puis carte des talents) : une seule chose à faire, rien d'autre à l'écran
+  const premiersPas = nouvelle || proposerTest;
 
   const crystals = (child.crystals ?? []).filter((id) => worlds.some((w) => w.id === id));
   const [vue, setVue] = useState<"carte" | "liste">(() => {
@@ -91,8 +94,8 @@ export function Carte() {
           <div className="quick-card primary quete-talents">
             <span className="qc-emoji">🧭</span>
             <span>
-              <strong>Première quête : la carte des talents</strong>
-              <small>Quelques questions pour préparer TON parcours</small>
+              <strong>{reprendreTest ? "On reprend la carte des talents ?" : "Première quête : la carte des talents"}</strong>
+              <small>{reprendreTest ? "Tu avais fait une pause : on repart à l'île suivante" : "Quelques questions pour préparer TON parcours"}</small>
               <span className="row">
                 <button className="btn btn-xl qt-go" onClick={() => go("/diagnostic")}>
                   C'est parti !
@@ -133,7 +136,7 @@ export function Carte() {
             </span>
           </button>
         )}
-        {!dailyDone && (
+        {!dailyDone && !premiersPas && (
           <button className="quick-card" onClick={() => go("/defi-du-jour")}>
             <span className="qc-emoji">🎁</span>
             <span>
@@ -152,8 +155,8 @@ export function Carte() {
           </button>
         )}
       </div>
-      <SurpriseDuJour />
-      <Quetes />
+      {!premiersPas && <SurpriseDuJour />}
+      {!premiersPas && <Quetes />}
 
       <details className="plus-activites">
         <summary>➕ Plus d'activités</summary>

@@ -183,7 +183,7 @@ lecons:
           type: droite
           vars: { d: [2, 4], n: "1..7" }
           si: "n < 2*d && n % d != 0"
-          enonce: "Place $\\frac{ {{n}} }{ {{d}} }$ sur la droite."
+          enonce: "Place $\\frac{ {{n}} }{ {{d}} }$ sur la droite graduée."
           min: 0
           max: 2
           pas: "1/d"
@@ -197,7 +197,7 @@ lecons:
       - type: droite
         vars: { d: [2, 3, 4, 5], n: "1..9" }
         si: "n < 2*d && n % d != 0"
-        enonce: "Place $\\frac{ {{n}} }{ {{d}} }$ sur la droite."
+        enonce: "Place $\\frac{ {{n}} }{ {{d}} }$ sur la droite graduée."
         min: 0
         max: 2
         pas: "1/d"

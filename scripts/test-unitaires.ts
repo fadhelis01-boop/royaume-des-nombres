@@ -5,7 +5,7 @@ import { fusionnerEnfant, fusionnerProfils } from "../src/lib/fusion";
 import { check, idees, instantiate } from "../src/lib/gen";
 import { planDefi } from "../src/lib/plan";
 import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
-import { classeDeLAge, construireParcours, departEscalier, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+import { classeDeLAge, construireParcours, departEscalier, niveauDuMoment, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
 
 
 let ok = 0;
@@ -98,24 +98,28 @@ const W2 = [monde("a", "CP – CE2", 3, 1), monde("b", "CE2 – CM2", 3, 2), mon
 eq("niveau d'une leçon interpolé", [niveauLecon(W2[0], 0), niveauLecon(W2[0], 1), niveauLecon(W2[0], 2)], [1, 2, 3]);
 const D2 = domainesDe("maths", W2, [{ id: "calc", titre: "Calcul", mondes: ["a", "b"] }, { id: "geo", titre: "Géo", mondes: ["g"] }]);
 eq("domaines : leçons rangées par niveau", D2[0].lecons.map((l) => l.niveau), [1, 2, 3, 3, 4, 5]);
-let e8 = departEscalier(D2[0], 8);
+const ETE = new Date(2027, 6, 1); // classe finie : niveau attendu = classe de l'âge
+eq("niveau du moment : 8 ans en octobre = CE1 acquis (≈ 2,1)", Math.round(niveauDuMoment(8, new Date(2026, 9, 15)) * 10) / 10, 2.1);
+eq("niveau du moment : 8 ans en été = CE2 fini", niveauDuMoment(8, ETE), 3);
+eq("escalier : en octobre, départ sous la classe en cours", departEscalier(D2[0], 8, undefined, new Date(2026, 9, 15)).cible < 3, true);
+let e8 = departEscalier(D2[0], 8, undefined, ETE);
 eq("escalier : départ au niveau de l'âge", e8.cible, 3);
 e8 = pas(e8, D2[0], 3, true);
 e8 = pas(e8, D2[0], 4, true);
 e8 = pas(e8, D2[0], 5, false);
 eq("escalier : estimation = plus haut réussi sous le premier échec", estimation(e8, D2[0]), 4);
-let ef = departEscalier(D2[0], 8);
+let ef = departEscalier(D2[0], 8, undefined, ETE);
 ef = pas(ef, D2[0], 3, false);
 ef = pas(ef, D2[0], 2, false);
 ef = pas(ef, D2[0], 1, true);
 eq("escalier : en difficulté, on redescend jusqu'à la réussite", estimation(ef, D2[0]), 1);
-const plan = construireParcours(D2, { calc: 1, geo: 2 }, 8, () => false);
+const plan = construireParcours(D2, { calc: 1, geo: 2 }, 8, () => false, 18, ETE);
 eq("parcours : le domaine le plus en retard passe d'abord", plan[0].dom, "calc");
-eq("parcours : un domaine au maximum ne propose plus rien", construireParcours(D2, { calc: 1, geo: 4 }, 8, () => false).some((x) => x.dom === "geo"), false);
+eq("parcours : un domaine au maximum ne propose plus rien", construireParcours(D2, { calc: 1, geo: 4 }, 8, () => false, 18, ETE).some((x) => x.dom === "geo"), false);
 eq("parcours : une consolidation pour le domaine en retard", plan[0].raison, "consolider");
 eq("parcours : les deux domaines sont entremêlés", plan.slice(0, 3).map((x) => x.dom).includes("geo"), true);
 eq("parcours : rien sous le niveau sauf la consolidation", plan.filter((x) => x.dom === "calc" && x.raison !== "consolider").every((x) => Number(x.key.split("-")[1]) >= 0), true);
-eq("parcours : les leçons déjà réussies sont retirées", construireParcours(D2, { calc: 1, geo: 4 }, 8, (k) => k === "a/a-1").some((x) => x.key === "a/a-1"), false);
+eq("parcours : les leçons déjà réussies sont retirées", construireParcours(D2, { calc: 1, geo: 4 }, 8, (k) => k === "a/a-1", 18, ETE).some((x) => x.key === "a/a-1"), false);
 eq("mondes ouverts : acquis + parcours", mondesAOuvrir(D2, { calc: 3, geo: 2 }, []).sort(), ["a", "b", "g"]);
 
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);

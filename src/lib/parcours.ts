@@ -43,6 +43,18 @@ export function niveauLecon(w: World, idx: number): number | null {
 /** Classe attendue pour un âge (8 ans → CE2 = 3). */
 export const classeDeLAge = (age: number) => Math.max(0, Math.min(13, age - 5));
 
+/**
+ * Niveau habituellement ACQUIS à cet âge, à ce moment de l'année scolaire.
+ * En octobre, une enfant de 8 ans vient d'entrer en CE2 : elle maîtrise le CE1, pas encore le CE2.
+ * Septembre = début de la classe (classe − 1), juin ≈ classe presque finie, juillet-août = classe finie.
+ * (Audit « enfant de 8 ans » : partir du niveau de la classe en cours faisait échouer dès la 1ʳᵉ question.)
+ */
+export function niveauDuMoment(age: number, quand: Date = new Date()): number {
+  const m = quand.getMonth(); // 0 = janvier
+  const avance = m >= 8 ? (m - 8) / 10 : m <= 5 ? (m + 4) / 10 : 1;
+  return Math.max(0, Math.min(13, classeDeLAge(age) - 1 + avance));
+}
+
 export interface LeconNiv {
   key: string;
   world: World;
@@ -104,8 +116,8 @@ export interface Escalier {
   reponses: { niveau: number; ok: boolean }[];
 }
 export const QUESTIONS_PAR_DOMAINE = 3;
-export function departEscalier(d: Domaine, age: number, depuis?: number): Escalier {
-  const c = depuis ?? classeDeLAge(age);
+export function departEscalier(d: Domaine, age: number, depuis?: number, quand?: Date): Escalier {
+  const c = depuis ?? niveauDuMoment(age, quand);
   return { cible: Math.max(d.min, Math.min(d.max, c)), reponses: [] };
 }
 /** Après une réponse : on monte d'un cran si c'est juste, on descend si c'est faux (dans les bornes du domaine). */
@@ -129,8 +141,8 @@ export function estimation(e: Escalier, d: Domaine): number {
  * au-dessus), plus une leçon de consolidation pour les domaines sous le niveau de l'âge.
  * Les domaines les plus en retard passent en premier, puis on alterne.
  */
-export function construireParcours(doms: Domaine[], niveaux: Record<string, number>, age: number, fait: (key: string) => boolean, max = 18): EtapeParcours[] {
-  const attendu = classeDeLAge(age);
+export function construireParcours(doms: Domaine[], niveaux: Record<string, number>, age: number, fait: (key: string) => boolean, max = 18, quand?: Date): EtapeParcours[] {
+  const attendu = niveauDuMoment(age, quand);
   const listes = doms
     .filter((d) => niveaux[d.id] !== undefined)
     .map((d) => {

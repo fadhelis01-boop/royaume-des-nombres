@@ -121,9 +121,13 @@ export function worldUnlocked(c: Child | null, w: World, worlds: World[], s: Set
   });
 }
 
+export const ESSAIS_AVANT_OUVERTURE = 3;
 export function lessonUnlocked(c: Child | null, w: World, idx: number, s: Settings): boolean {
   if (idx === 0 || s.unlockAll || c?.validatedWorlds.includes(w.id)) return true;
-  return !!c?.progress[lessonKey(w, w.lecons[idx - 1].id)]?.done;
+  const p = c?.progress[lessonKey(w, w.lecons[idx - 1].id)];
+  // anti-décrochage : après 3 essais avec au moins une étoile, la suite s'ouvre quand même
+  // (la leçon reste « à consolider » : elle n'est pas marquée comme maîtrisée)
+  return !!p?.done || (!!p && p.attempts >= ESSAIS_AVANT_OUVERTURE && p.stars >= 1);
 }
 
 export function findLesson(worldId: string, lessonId: string) {

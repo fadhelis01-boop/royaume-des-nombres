@@ -211,7 +211,7 @@ lecons:
         reponse: "100/v"
         correction: "1 L = 100 cL ; 100 ÷ {{v}} = {{100/v}} verres."
       - type: qcm
-        enonce: "Quelle est la contenance d'une canette de soda ?"
+        enonce: "Combien de boisson y a-t-il dans une canette de soda ?"
         choix: ["33 cL", "33 L", "33 mL", "3 300 L"]
         correction: "Une canette contient 33 cL (un tiers de litre environ)."
       - type: nombre

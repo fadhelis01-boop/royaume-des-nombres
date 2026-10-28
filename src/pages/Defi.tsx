@@ -52,7 +52,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
     setQuestions(first ? [first] : []);
   }, [plan]);
   const [results, setResults] = useState<ExResult[]>([]);
-  const [end, setEnd] = useState<{ stars: number; score: number; newBest: boolean } | null>(null);
+  const [end, setEnd] = useState<{ stars: number; score: number; newBest: boolean; bonnes: number; total: number } | null>(null);
 
   if (!found)
     return (
@@ -88,7 +88,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
       const score = scored.reduce((t, x) => t + (x.ok ? (x.firstTry ? 1 : 0.5) : 0), 0) / scored.length;
       const res = finishDefi(key, score);
       if (res.stars > 0) sfx.fanfare();
-      setEnd({ stars: res.stars, score, newBest: res.newBest });
+      setEnd({ stars: res.stars, score, newBest: res.newBest, bonnes: scored.filter((x) => x.ok).length, total: scored.length });
     }
   };
 
@@ -103,8 +103,10 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
         : end.stars === 2
           ? "Deux étoiles, c'est super ! Tu peux viser la troisième quand tu veux."
           : end.stars === 1
-            ? "Une étoile : tu y es presque ! Pour ouvrir la leçon suivante, il faut 2 étoiles (8 bonnes réponses sur 10). Refais le défi : les questions changent à chaque fois !"
-            : "Pas encore d'étoile… Ce n'est pas grave : relis la leçon tranquillement et réessaie. Chaque essai fait grandir ton cerveau !";
+            ? nextOpen && next
+              ? "Une étoile : tu t'accroches, bravo ! Tu peux passer à la leçon suivante : on reviendra sur celle-ci plus tard, dans les révisions."
+              : "Une étoile : tu y es presque ! Pour ouvrir la leçon suivante, il faut 2 étoiles (environ 8 bonnes réponses sur 10). Refais le défi : les questions changent à chaque fois !"
+            : "Pas encore d'étoile… Ce n'est pas grave ! Revois la leçon avec moi (je te la lis), puis réessaie : les questions changent à chaque fois.";
     return (
       <div className="page defi-end center">
         {end.stars > 0 && !getState().settings.reduceMotion && <Confetti />}
@@ -115,10 +117,13 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
             </span>
           ))}
         </div>
-        <h1>{pct} % de réussite</h1>
+        <h1>
+          {end.bonnes} bonne{end.bonnes > 1 ? "s" : ""} réponse{end.bonnes > 1 ? "s" : ""} sur {end.total}
+        </h1>
+        {child.age >= 10 && <p className="muted">{pct} % de réussite</p>}
         <Bubble who={end.stars >= 2 ? "mia" : end.stars === 1 ? "neo" : "zero"} text={msg} />
         <div className="stack">
-          {end.stars >= 2 && next && nextOpen && (
+          {end.stars >= 1 && next && nextOpen && (
             <button className="btn btn-primary btn-xl" onClick={() => go(`/lecon/${world.id}/${next.id}`)}>
               Leçon suivante : {next.titre} →
             </button>
@@ -180,7 +185,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
       <h1 className="lecon-title small">⭐ Défi : {lesson.titre}</h1>
       {idx >= plan.length && souvenir && <Bubble who="zero" text={`🧠 Question souvenir (bonus, elle ne compte pas) : tu te rappelles « ${souvenir.titre} » ?`} size={50} />}
       {eased && <Bubble who="neo" text="Tiens, une question un peu plus simple pour reprendre des forces. On remonte ensuite, d'accord ?" size={50} />}
-      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < total ? "Question suivante" : "Voir mes étoiles"} metacog />
+      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < total ? "Question suivante" : "Voir mes étoiles"} metacog={child.age >= 10} />
     </div>
   );
 }

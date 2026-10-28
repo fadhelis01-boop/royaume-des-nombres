@@ -64,8 +64,8 @@ lecons:
         correction: "{{a}} + {{g}} = {{a+g}} ; {{a+g}} − {{d}} = {{a+g-d}} cartes."
       - type: qcm
         vars: { a: "20..60", b: "5..15" }
-        enonce: "« Un bus transporte {{a}} passagers. À l'arrêt, {{b}} personnes descendent. » Que cherche-t-on probablement ?"
-        choix: ["Le nombre de passagers restés dans le bus", "La couleur du bus", "L'heure d'arrivée", "Le nombre de roues"]
+        enonce: "Lis l'histoire : « Un bus transporte {{a}} passagers. À l'arrêt, {{b}} personnes descendent. » Quelle question va-t-on sûrement poser ?"
+        choix: ["Combien reste-t-il de passagers dans le bus ?", "De quelle couleur est le bus ?", "À quelle heure arrive le bus ?", "Combien le bus a-t-il de roues ?"]
         correction: "Des personnes descendent : on cherche combien il en reste ({{a}} − {{b}} = {{a-b}})."
       - type: vf
         vars: { a: "10..30", b: "5..9" }

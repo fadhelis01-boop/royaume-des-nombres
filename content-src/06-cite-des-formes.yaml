@@ -177,7 +177,7 @@ lecons:
         reponse: true
         correction: "Toute droite qui passe par le centre est un axe de symétrie du cercle."
       - type: qcm
-        enonce: "Quel mot reste identique dans un miroir posé verticalement à côté ?"
+        enonce: "On pose un miroir debout à côté du mot. Quel mot reste pareil dans le miroir ?"
         choix: ["TOT", "ZÉRO", "NÉO", "LYA"]
         correction: "T, O et T sont symétriques par un axe vertical, et le mot TOT se lit pareil à l'envers : il est identique dans le miroir."
 

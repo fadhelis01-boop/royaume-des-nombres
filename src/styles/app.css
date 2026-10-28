@@ -1646,6 +1646,17 @@ textarea.big-input {
 .feedback.ko {
   background: var(--c-jaune-l);
 }
+.feedback.neutre {
+  background: var(--bg2);
+}
+.ex-geste {
+  margin: 2px 0 8px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: var(--bg2);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
 .feedback.retry {
   background: var(--bg2);
 }
@@ -3174,3 +3185,18 @@ select {
 .parole-mot { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .parole-btn { font-size: 1.1rem; }
 .table-scroll { overflow-x: auto; }
+
+/* Carte des talents : pause entre deux îles (audit enfant 8 ans) */
+.entracte-ile .entracte-emoji {
+  font-size: 72px;
+  line-height: 1.1;
+  margin-top: 12px;
+}
+.entracte-ile .entracte-gain {
+  font-family: var(--title);
+  font-size: 1.4rem;
+  margin: 0 0 8px;
+}
+.entracte-ile .stack {
+  margin-top: 14px;
+}

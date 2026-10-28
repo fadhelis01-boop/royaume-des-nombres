@@ -727,7 +727,7 @@ function Guide() {
           <strong>Le modèle en barres</strong> : un dessin simple pour traduire n'importe quel problème en calcul. C'est le cœur de l'« Atelier des problèmes ».
         </li>
         <li>
-          <strong>La maîtrise avant d'avancer</strong> : une leçon s'ouvre quand la précédente est réussie (au moins 60 % au défi). Pas de trous dans les fondations.
+          <strong>La maîtrise avant d'avancer</strong> : une leçon s'ouvre quand la précédente est réussie (2 étoiles, soit environ 80 % au défi). Pour éviter qu'un enfant reste bloqué, la suite s'ouvre aussi après 3 essais avec au moins une étoile ; la leçon reste alors signalée « à consolider ».
         </li>
         <li>
           <strong>La pratique de récupération et la répétition espacée</strong> : retrouver une réponse de mémoire (plutôt que relire) et réviser au bon moment (1 j, 3 j, 7 j, 16 j, 35 j) ancrent durablement les connaissances.
@@ -766,6 +766,33 @@ function Guide() {
         <li>Regardez l'onglet Suivi : les « points à consolider » indiquent où aider.</li>
         <li>Les savoirs sont partout : faites calculer la monnaie, doubler une recette, observer la Lune, écouter une musique ensemble, dessiner une plante du jardin.</li>
         <li>Pour les expériences 🟠, restez à côté de votre enfant ; aucune expérience 🔴 ne doit être reproduite à la maison.</li>
+      </ul>
+      <h3>🧒 Les premières séances d'un enfant de 6 à 9 ans</h3>
+      <p>
+        À cet âge, un enfant décroche rarement à cause des maths : il décroche parce qu'il ne sait pas <strong>ce qu'on attend de lui à l'écran</strong>, parce que lire la consigne le fatigue, ou parce qu'il a l'impression d'échouer. L'application est réglée pour limiter ces trois pièges, mais votre présence au début change tout.
+      </p>
+      <ul>
+        <li>
+          <strong>Restez à côté pendant les 2 ou 3 premières séances</strong> (10 à 15 minutes). Ne répondez pas à sa place : demandez-lui « qu'est-ce qu'on te demande de faire ? ». S'il ne sait pas le dire, appuyez sur 🔊 et écoutez ensemble.
+        </li>
+        <li>
+          <strong>La lecture à voix haute est activée par défaut</strong> (Réglages → « Lire automatiquement »). Avant 10 ans, chaque question affiche aussi une ligne « comment répondre » (👆 touche…, ✏️ écris…), lue après la consigne. Pour un enfant qui ne lit pas encore, choisissez « je ne lis pas encore » dans sa fiche.
+        </li>
+        <li>
+          <strong>La carte des talents n'est pas un contrôle</strong>. Elle part de ce que l'on sait d'habitude à son âge <em>à ce moment de l'année</em> (en octobre, un enfant de 8 ans maîtrise le CE1, pas encore le CE2). Pendant ce test, aucune correction n'est affichée, un bouton « Je ne sais pas encore » évite de deviner, et une pause est proposée après chaque île : il peut s'arrêter et reprendre plus tard, rien n'est perdu. Environ la moitié des questions sont faites pour être difficiles : c'est ainsi qu'on trouve le bon point de départ. Dites-le-lui avant de commencer.
+        </li>
+        <li>
+          <strong>Arrêtez sur une réussite</strong>, jamais après une erreur : on garde l'envie de revenir le lendemain.
+        </li>
+        <li>
+          <strong>S'il dit « c'est trop dur »</strong>, c'est souvent la consigne qui bloque. Proposez « Explique-moi autrement » (après une erreur), ou faites la question avec de vrais objets (pâtes, Lego, pièces).
+        </li>
+        <li>
+          <strong>Un enfant de 8 ans tient environ 10 à 20 minutes</strong> d'attention soutenue. La limite de temps d'écran (Réglages) déclenche une pause automatique.
+        </li>
+        <li>
+          Si l'âge ne correspond pas à sa classe (enfant né en fin d'année, saut ou redoublement), ce n'est pas grave : le test s'ajuste au fil des réponses. Vous pouvez relancer « Faire le point » depuis son parcours.
+        </li>
       </ul>
       <h3>📏 Correspondance avec l'école (France)</h3>
       <ul>

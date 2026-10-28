@@ -325,6 +325,8 @@ export interface Child {
   carnet: string[]; // mots découverts (dictionnaire) : la collection de l'enfant
   /** parcours personnalisé par planète (test de niveau → étapes) */
   parcours?: Record<string, Parcours>;
+  /** carte des talents commencée puis mise en pause (on reprend à l'île suivante) */
+  diagEnCours?: { mat: Matiere; niveaux: Record<string, number>; at: number };
   /** surprise du jour (coffre, comète, visiteur…) */
 
   surprise?: { day: string; base: number; ouvert: boolean; recompense?: string };

@@ -74,7 +74,7 @@ lecons:
         correction: "{{a}} + {{b}} = {{a+b}}."
       - type: qcm
         vars: { a: "3..9", b: "2..9", animal: ["lapins", "hérissons", "écureuils", "oiseaux"] }
-        enonce: "Il y a {{a}} {{animal}} dans le pré. {{b}} autres arrivent. Quel calcul permet de savoir combien il y a de {{animal}} maintenant ?"
+        enonce: "Il y a {{a}} {{animal}} dans le pré. {{b}} autres arrivent. Quel calcul faut-il faire pour savoir combien ils sont maintenant ?"
         choix: ["{{a}} + {{b}}", "{{a}} − {{b}}", "{{a}} + {{a}}", "{{b}} − {{a}}"]
         si: "a != b"
         correction: "Des {{animal}} ARRIVENT : on réunit, c'est une addition : {{a}} + {{b}} = {{a+b}}."
@@ -306,7 +306,7 @@ lecons:
       - type: droite
         vars: { a: "6..9", b: "3..9" }
         si: "a + b > 10"
-        enonce: "Place le résultat de {{a}} + {{b}} sur la droite."
+        enonce: "Place le résultat de {{a}} + {{b}} sur la ligne des nombres."
         min: 0
         max: 20
         pas: 1
@@ -601,13 +601,15 @@ lecons:
         correction: "{{a}} − {{k+1}} + 1 = {{a-k}}."
       - type: nombre
         vars: { a: "11..49", b: "11..49" }
-        enonce: "Décompose pour calculer : $ {{a}} + {{b}}$"
+        enonce: "Calcule : $ {{a}} + {{b}}$"
         reponse: "a+b"
+        indice: "Astuce : ajoute d'abord les dizaines, puis les unités."
         correction: "({{ent(a/10)*10}} + {{ent(b/10)*10}}) + ({{a%10}} + {{b%10}}) = {{(ent(a/10)+ent(b/10))*10}} + {{a%10+b%10}} = {{a+b}}."
       - type: nombre
         vars: { a: "1..9", c: "2..9" }
-        enonce: "Trouve les amis de 10 : $ {{a}} + {{c}} + {{10-a}} = ?$"
+        enonce: "Calcule : $ {{a}} + {{c}} + {{10-a}}$"
         reponse: "10+c"
+        indice: "Astuce : cherche deux nombres qui font 10 ensemble (les amis de 10)."
         correction: "{{a}} + {{10-a}} = 10, puis 10 + {{c}} = {{10+c}}."
       - type: nombre
         vars: { a: "101..899", k: [99, 199] }

@@ -1,3 +1,12 @@
+- version: "2.8.0"
+  date: "2026-10-28"
+  notes:
+    - "La carte des talents devient plus douce pour les plus jeunes : elle part de ce que l'on sait d'habitude à ton âge à ce moment de l'année (en octobre, on vient d'entrer dans sa classe), pas de correction pendant le test, un bouton « Je ne sais pas encore », et une pause proposée après chaque île : on reprend plus tard là où on s'était arrêté."
+    - "Avant 10 ans, chaque question affiche et lit une petite ligne « comment répondre » (👆 touche…, ✏️ écris…)."
+    - "Consignes plus claires : « la ligne des nombres » au lieu de « la droite », et plusieurs questions reformulées avec des mots plus simples."
+    - "Fin de défi : « 7 bonnes réponses sur 10 » plutôt qu'un pourcentage. Après 3 essais avec au moins une étoile, la leçon suivante s'ouvre quand même (la leçon reste à consolider)."
+    - "Premiers pas : tant que l'histoire et la carte des talents ne sont pas faites, l'accueil ne montre qu'une seule chose à faire."
+    - "Pour les parents : un guide des premières séances avec un enfant de 6 à 9 ans."
 - version: "2.7.0"
   date: "2026-10-09"
   notes:

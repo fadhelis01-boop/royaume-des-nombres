@@ -136,12 +136,12 @@ export function starsFor(score: number): number {
 // Messages d'encouragement : variés, personnels, centrés sur l'effort.
 export const PRAISE = {
   mia: ["Bravo ! Tu as trouvé !", "Génial ! 😸", "Super, je te l'avais dit que tu y arriverais !", "Trop bien joué !", "Tu brilles comme une étoile !"],
-  neo: ["Défi réussi !", "Excellent, c'est vérifié !", "Bien joué, défi relevé !", "Parfait, on continue ?", "Ça marche vraiment !"],
+  neo: ["Défi réussi !", "Excellent, c'est vérifié !", "Bien joué, défi relevé !", "Parfait, on continue ?", "Bravo, c'est ça !"],
   zero: ["Wouah ! Même moi je n'aurais pas trouvé ! 😳", "C'est juste ! …Je le savais. C'est évident.", "INCROYABLE ! 🤯"],
 };
 export const ENCOURAGE = {
-  mia: ["Pas grave ! Et si on essayait autrement ?", "Presque ! Regarde bien l'indice.", "Une erreur, c'est ton cerveau qui grandit !"],
-  neo: ["Attends, vérifions ensemble !", "On recommence calmement : relis l'énoncé.", "Même les plus grands savants se trompent. Réessaie !"],
+  mia: ["Pas grave ! Et si on essayait autrement ?", "Pas encore ! Prends ton temps et réessaie.", "Une erreur, c'est ton cerveau qui grandit !"],
+  neo: ["Attends, vérifions ensemble !", "On recommence calmement : réécoute la question avec le haut-parleur 🔊.", "Même les plus grands savants se trompent. Réessaie !"],
   zero: ["Moi aussi je me trompe tout le temps ! On réessaie ?", "Hmm… ce n'est pas ça. Mais ce n'était pas zéro non plus ! 😄"],
 };
 export const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];

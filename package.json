@@ -14,7 +14,8 @@
     "test": "npm run test:unit && npm run test:fr && npm run content && npm run content:check && tsc --noEmit",
     "build": "npm run content && npm run content:check && tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && node scripts/deploy.mjs"
+    "deploy": "npm run build && node scripts/deploy.mjs",
+    "audit:consignes": "rolldown scripts/audit-consignes.ts --platform node --format esm -o .tmp/audit-consignes.mjs --log-level warn && node .tmp/audit-consignes.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.132.0",

@@ -379,7 +379,7 @@ lecons:
         correction: "{{r_0}} se dit **{{r_1}}**."
       - type: qcm
         vars: { j: [["jeudi", 4, 3, 5], ["mardi", 2, 1, 3], ["samedi", 6, 5, 7], ["vendredi", 5, 4, 6]] }
-        enonce: "La semaine commence lundi (1ᵉʳ jour). Quel est le rang de {{j_0}} ?"
+        enonce: "Lundi est le 1ᵉʳ jour de la semaine. À quelle place est {{j_0}} ?"
         choix: ["{{j_1}}ᵉ", "{{j_2}}ᵉ", "{{j_3}}ᵉ"]
         correction: "Lundi 1ᵉʳ, mardi 2ᵉ, mercredi 3ᵉ, jeudi 4ᵉ, vendredi 5ᵉ, samedi 6ᵉ, dimanche 7ᵉ."
       - type: vf
@@ -435,7 +435,7 @@ lecons:
         correction: "De {{a}} à {{b}}, il y a {{b-a}} : des sauts de 10 d'abord ({{ent((b-a)/10)}}), puis des sauts de 1 ({{(b-a)%10}})."
       - type: droite
         vars: { n: "1..19" }
-        enonce: "Place {{n}} sur la droite."
+        enonce: "Place {{n}} sur la ligne des nombres."
         min: 0
         max: 20
         pas: 1
@@ -444,7 +444,7 @@ lecons:
       - type: droite
         vars: { n: "5..95" }
         si: "n % 5 == 0"
-        enonce: "Place {{n}} sur la droite (les traits vont de 5 en 5)."
+        enonce: "Place {{n}} sur la ligne des nombres (les traits vont de 5 en 5)."
         min: 0
         max: 100
         pas: 5

@@ -32,6 +32,54 @@ type Phase = "answer" | "retry" | "done";
 
 const WHOS: Who[] = ["mia", "neo", "zero"];
 
+/**
+ * « Comment répondre » : le geste attendu, dit simplement (audit « enfant de 8 ans »).
+ * Un jeune enfant bloque souvent non sur la question, mais sur ce qu'il faut FAIRE à l'écran.
+ * Les types qui affichent déjà leur mode d'emploi (droite, partage, payer, relier) n'en ont pas besoin.
+ */
+export function geste(inst: Instance): string | null {
+  switch (inst.type) {
+    case "nombre":
+      return "✏️ Écris le nombre avec les touches, puis appuie sur ✔.";
+    case "liste":
+      return "✏️ Écris les nombres avec les touches, puis appuie sur ✔.";
+    case "champs":
+      return (inst.champs?.length ?? 0) > 1 ? "✏️ Remplis chaque case : touche une case, écris, puis appuie sur ✔." : "✏️ Écris dans la case, puis appuie sur ✔.";
+    case "qcm":
+      return "👆 Touche la bonne réponse, puis « Valider ».";
+    case "vf":
+      return "👆 Touche « vrai » ou « faux », puis « Valider ».";
+    case "comparer":
+      return "👆 Touche le bon signe pour remplir la case du milieu.";
+    case "ordre":
+      return "👆 Touche les étiquettes dans le bon ordre. Touche une case pleine pour l'enlever.";
+    case "blocs":
+      return "👆 Touche ＋ dans une colonne pour ajouter des blocs (− pour en enlever), puis « Valider ».";
+    case "sauts":
+      return "👆 Choisis les sauts de la grenouille, puis « Valider ».";
+    case "colorier":
+      return "👆 Touche les parts pour les colorier, puis « Valider ».";
+    case "horloge":
+      return "👆 Fais tourner les aiguilles, puis « Valider ».";
+    case "mot":
+    case "texte":
+      return "⌨️ Écris ta réponse avec le clavier, puis « Valider ».";
+    case "surligner":
+      return "👆 Touche les bons mots, puis « Valider ».";
+    case "classer":
+      return "👆 Pour chaque mot, touche la bonne colonne, puis « Valider ».";
+    default:
+      return null;
+  }
+}
+/** Réponses neutres du test de positionnement : on ne corrige pas, on note où commencer. */
+const TEST_KO = [
+  "Merci ! Celle-là, on l'apprendra ensemble dans ton parcours. 🌱",
+  "D'accord ! C'est noté : on s'en occupera plus tard.",
+  "Pas de souci ! C'est justement pour ça qu'on fait la carte : savoir quoi t'apprendre.",
+  "Très bien, on passe à la suite. Tu découvriras ça bientôt !",
+];
+
 export function ExercisePlayer({
   inst,
   statKey,
@@ -45,6 +93,7 @@ export function ExercisePlayer({
   onVerdict,
   metacog,
   autrement = true,
+  test = false,
 }: {
   inst: Instance;
   statKey: string;
@@ -64,6 +113,8 @@ export function ExercisePlayer({
   metacog?: boolean;
   /** bouton « Explique-moi autrement » après une erreur (désactivé pendant le test de positionnement) */
   autrement?: boolean;
+  /** test de positionnement : pas de correction, réponse neutre, bouton « Je ne sais pas encore » */
+  test?: boolean;
 }) {
   const isChoice = CHOICE.includes(inst.type);
   // Vrai/faux : un 2ᵉ essai serait gagné d'avance, donc un seul essai.
@@ -94,13 +145,18 @@ export function ExercisePlayer({
   const inputRef = useRef<HTMLInputElement>(null);
   const k = `ex:${inst.seed}`;
   const isTouch = useMemo(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches, []);
+  // jeunes enfants (ou mode « je ne lis pas encore ») : le geste attendu est affiché et lu
+  const enfant = activeChild();
+  const jeune = (enfant?.age ?? 99) <= 9 || enfant?.lecteur === "non";
+  const commentRepondre = jeune ? geste(inst) : null;
 
   const readable = useMemo(() => {
     let t = inst.enonce;
     if (inst.type === "comparer") t += ` ${inst.gauche} … ${inst.droite}`;
     if (inst.choix && (inst.type === "qcm" || inst.type === "vf")) t += " " + inst.choix.join(" ? ou : ") + " ?";
+    if (commentRepondre) t += " " + commentRepondre.replace(/^S+s/, "").replace("✔", "la coche verte");
     return t;
-  }, [inst]);
+  }, [inst, commentRepondre]);
 
   useEffect(() => {
     if (inst.type !== "dictee" && (autoRead ?? (getState().settings.autoRead || activeChild()?.lecteur === "non"))) speak([{ who: "narrateur", text: readable }], { key: k });
@@ -160,6 +216,17 @@ export function ExercisePlayer({
     }
   };
 
+  /** Test de positionnement : réponse fausse ou « je ne sais pas encore » → message neutre, sans correction. */
+  const neutre = (given: string) => {
+    recordAnswer({ key: statKey, ok: false, firstTry: false, hint, q: inst.enonce, given, expected: inst.expectedText, isZero: false });
+    onVerdict?.({ ok: false, firstTry: false, hint });
+    const t = pick(TEST_KO);
+    setMessage({ who: "mia", text: t, humeur: "joie" });
+    say("mia", t);
+
+    setPhase("done");
+  };
+
   const submit = (forced?: Answer) => {
     if (phase === "done") return;
     const a = forced ?? answer();
@@ -191,6 +258,11 @@ export function ExercisePlayer({
       setPhase("done");
       recordAnswer({ key: statKey, ok: true, firstTry: n === 1, hint, scored });
       onVerdict?.({ ok: true, firstTry: n === 1, hint });
+      return;
+    }
+    if (test) {
+      sfx.tap();
+      neutre(givenText());
       return;
     }
     sfx.oops();
@@ -287,7 +359,7 @@ export function ExercisePlayer({
   const usesKeypad = ["nombre", "liste", "expression", "champs"].includes(inst.type);
 
   return (
-    <div ref={rootRef} className={`exercise phase-${phase} ${phase === "done" ? (okFinal ? "is-ok" : "is-ko") : ""}`}>
+    <div ref={rootRef} className={`exercise phase-${phase} ${phase === "done" ? (okFinal ? "is-ok" : test ? "is-neutre" : "is-ko") : ""}`}>
       {lead && (
         <div className="ex-lead">
           <Icone cat="habitants" id={lead.id} emoji={lead.emoji} size={40} /> {lead.text}
@@ -297,6 +369,7 @@ export function ExercisePlayer({
         <SpeakBtn segs={[{ who: "narrateur", text: readable }]} k={k} small label="Écouter la consigne" />
         <Md text={inst.enonce} className="ex-enonce" />
       </div>
+      {commentRepondre && phase === "answer" && <p className="ex-geste">{commentRepondre}</p>}
       {inst.visuel && inst.type !== "droite" && <Visuel v={inst.visuel} />}
 
       {/* ----- Zone de réponse ----- */}
@@ -382,7 +455,7 @@ export function ExercisePlayer({
       {inst.type === "droite" && (
         <div className="droite-ex">
           <Droite v={{ min: inst.min, max: inst.max, pas: inst.pas, etiquettes: (inst.visuel as Record<string, unknown> | undefined)?.etiquettes, fractions: (inst.visuel as Record<string, unknown> | undefined)?.fractions }} onPick={disabled ? undefined : (x) => setPoint(x)} picked={point} reveal={phase === "done" ? inst.value! : null} />
-          <p className="hint-small">Touche la droite pour placer {inst.cibleAffiche}.</p>
+          <p className="hint-small">👆 Touche la ligne des nombres à l'endroit de {inst.cibleAffiche}, puis « Valider ».</p>
         </div>
       )}
 
@@ -450,6 +523,11 @@ export function ExercisePlayer({
       )}
       {/* ----- Actions ----- */}
       <div className="ex-actions">
+        {test && phase === "answer" && (
+          <button type="button" className="btn btn-ghost" onClick={() => neutre("je ne sais pas encore")}>
+            🤷 Je ne sais pas encore
+          </button>
+        )}
         {phase === "answer" && inst.indice && !hint && (
           <button type="button" className="btn btn-soft" onClick={showHint}>
             💡 Indice
@@ -473,10 +551,10 @@ export function ExercisePlayer({
       )}
 
       {message && (
-        <div className={`feedback ${phase === "done" ? (okFinal ? "ok" : "ko") : "retry"}`} aria-live="polite">
+        <div className={`feedback ${phase === "done" ? (okFinal ? "ok" : test ? "neutre" : "ko") : "retry"}`} aria-live="polite">
           <Bubble who={message.who} text={message.text} size={64} humeur={message.humeur} />
           {phase === "done" && !okFinal && inst.type === "dictee" && <DicteeCorrection attendu={inst.dictee!} donne={text} />}
-          {phase === "done" && !okFinal && verdict && inst.type !== "libre" && (
+          {phase === "done" && !okFinal && !test && verdict && inst.type !== "libre" && (
 
             <div className="correction">
               <div className="correction-title">✏️ La bonne réponse</div>
@@ -484,7 +562,7 @@ export function ExercisePlayer({
               {inst.correction && <Md text={inst.correction} />}
             </div>
           )}
-          {phase === "done" && okFinal && inst.correction && (
+          {phase === "done" && okFinal && !test && inst.correction && (
             <details className="correction-details">
               <summary>Voir l'explication</summary>
               <Md text={inst.correction} />

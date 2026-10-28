@@ -47,7 +47,7 @@ lecons:
           type: droite
           vars: { n: "-9..9" }
           si: "n != 0"
-          enonce: "Place {{nb(n)}} sur la droite."
+          enonce: "Place {{nb(n)}} sur la droite graduée."
           min: -10
           max: 10
           pas: 1
