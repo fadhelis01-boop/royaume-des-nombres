@@ -1,0 +1,102 @@
+/* Royaume des Nombres — service worker : hors connexion + mises à jour.
+   La constante VERSION est remplacée à chaque compilation : toute nouvelle version
+   publiée est ainsi détectée par les appareils. */
+const VERSION = "2026-10-28T11:35:46.460Z";
+const APP_CACHE = "royaume-app-" + VERSION;
+const CONTENT_CACHE = "royaume-content";
+const IMG_CACHE = "royaume-images";
+// liste injectée à la compilation (vite.config.ts) : tout le code, pages à la demande comprises
+const ASSETS = ["./assets/ai-BCvoACtA.js","./assets/ai-config-Cct6ETAE.js","./assets/Aide-BPoPXfJc.js","./assets/andika-latin-400-normal-BTFTIZb-.woff2","./assets/andika-latin-700-normal-Dk95f5lc.woff2","./assets/Autrement-BWPLsGvb.js","./assets/Aventure-CTw-PQrP.js","./assets/Boutique-CACISg07.js","./assets/CalculEclair-DiYFGqMA.js","./assets/CarteTalents-C6JwfylE.js","./assets/CompteEstBon-BQQ1tHMb.js","./assets/conjugaison-BCSGCqgD.js","./assets/content-CfbfaauW.js","./assets/CourseGrenouille-Bb6UzOZa.js","./assets/DefenseTables-BSxlzkvR.js","./assets/DefiAmi-Ba-XnWV-.js","./assets/DefiDuJour-vowaOp-b.js","./assets/Demander-DLYt2BUP.js","./assets/Diagnostic-957FmdNU.js","./assets/Dico-CyOw6SK9.js","./assets/Diplome-CJ0lov3t.js","./assets/Duel-D4T2QVuT.js","./assets/Enigmes-EOBECRZB.js","./assets/error-BTdmRKoB.js","./assets/expr-BWpGbrBC.js","./assets/Fluence-CD3yfY4U.js","./assets/fredoka-latin-500-normal-B0JifZgm.woff2","./assets/fredoka-latin-600-normal-C4zohCW5.woff2","./assets/Galaxie-8HwM2UzC.js","./assets/GrandLivre-Bj5Gr3Al.js","./assets/Icone-BqDoJmZ-.js","./assets/index-DkWaWynd.css","./assets/index-Do_Ty21y.js","./assets/Inventer-DfDzZPLD.js","./assets/Jeux-YUTPuVPQ.js","./assets/JeuxMecaniques-DPWQeN_x.js","./assets/JeuxMots-Oel2WQIY.js","./assets/JeuxPlanetes-sk_H47gl.js","./assets/juice-DzFYa91v.js","./assets/Keypad-Bn2wqajG.js","./assets/Mascot-CdUeqLwA.js","./assets/morpho-BSc1rrRh.js","./assets/musique-CKMNDqOv.js","./assets/node.browser-COwbNP56.js","./assets/node.browser-HQ5SKBOf.js","./assets/opendyslexic-latin-400-normal-nUhe5EwG.woff2","./assets/Parcours-C3SMwqNC.js","./assets/Parents-Bj5_zsMX.js","./assets/PontFractions-fwyxufLa.js","./assets/Revisions-DLIMOuo0.js","./assets/store-lGeGwQKf.js","./assets/Studios-CQTFRIym.js","./assets/Tables-EGYoSvHF.js","./assets/Tresors-AV_Lh5Rs.js","./assets/ViseJuste-NufnKJfg.js","./assets/Visuel-D5Ou9c77.js","./assets/visuels-DFABpf9H.js"];
+const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/apple-touch-icon.png", "./img/mascottes/mia.webp", "./img/mascottes/mia-reflexion.webp", "./img/mascottes/neo.webp", "./img/mascottes/zero.webp", "./content/manifest.json"];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(APP_CACHE);
+      await cache.addAll(CORE);
+      // Pré-cache des fichiers JS/CSS référencés par index.html
+      try {
+        const html = await (await fetch("./index.html", { cache: "reload" })).text();
+        const assets = [...html.matchAll(/(?:src|href)="(\.\/assets\/[^"]+)"/g)].map((m) => m[1]);
+        await cache.addAll([...new Set([...assets, ...ASSETS])]);
+        // Toutes les leçons, pour fonctionner hors connexion dès l'installation
+        const m = await (await fetch("./content/manifest.json", { cache: "reload" })).json();
+        const content = await caches.open(CONTENT_CACHE);
+        await content.addAll([...m.worlds.map((w) => "./content/" + w.file), "./content/dictionnaire.json"]);
+      } catch (e) {
+        /* hors ligne pendant l'installation */
+      }
+    })(),
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    (async () => {
+      for (const k of await caches.keys()) if (k.startsWith("royaume-app-") && k !== APP_CACHE) await caches.delete(k);
+      await self.clients.claim();
+    })(),
+  );
+});
+
+self.addEventListener("message", (e) => {
+  if (e.data === "skip-waiting") self.skipWaiting();
+});
+
+async function networkFirst(req, cacheName, fallbackUrl) {
+  const cache = await caches.open(cacheName);
+  try {
+    const res = await fetch(req);
+    if (res.ok) cache.put(fallbackUrl ?? req, res.clone());
+    return res;
+  } catch (e) {
+    return (await cache.match(fallbackUrl ?? req)) || (await caches.match(req)) || Response.error();
+  }
+}
+
+async function cacheFirst(req, cacheName) {
+  const hit = await caches.match(req);
+  if (hit) return hit;
+  const res = await fetch(req);
+  if (res.ok) (await caches.open(cacheName)).put(req, res.clone());
+  return res;
+}
+
+async function staleWhileRevalidate(req, cacheName) {
+  const cache = await caches.open(cacheName);
+  const hit = await cache.match(req, { ignoreSearch: false });
+  const net = fetch(req)
+    .then((res) => {
+      if (res.ok) cache.put(req, res.clone());
+      return res;
+    })
+    .catch(() => hit || Response.error());
+  return hit || net;
+}
+
+self.addEventListener("fetch", (event) => {
+  const req = event.request;
+  if (req.method !== "GET") return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return; // API Claude, sources : jamais mis en cache
+  if (url.pathname.includes("/img/")) {
+    event.respondWith(cacheFirst(req, IMG_CACHE));
+    return;
+  }
+
+  if (req.mode === "navigate") {
+    event.respondWith(networkFirst(req, APP_CACHE, "./index.html"));
+    return;
+  }
+  if (url.pathname.includes("/assets/")) {
+    event.respondWith(cacheFirst(req, APP_CACHE));
+    return;
+  }
+  if (url.pathname.includes("/content/")) {
+    // « Vérifier les mises à jour » demande explicitement la version réseau
+    if (req.cache === "no-cache" || req.cache === "reload") event.respondWith(networkFirst(req, CONTENT_CACHE));
+    else event.respondWith(staleWhileRevalidate(req, CONTENT_CACHE));
+    return;
+  }
+  event.respondWith(staleWhileRevalidate(req, APP_CACHE));
+});
