@@ -15,6 +15,7 @@
     "build": "npm run content && npm run content:check && tsc --noEmit && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && node scripts/deploy.mjs",
+    "audit:7ans": "rolldown scripts/audit-7ans.ts --platform node --format esm -o .tmp/audit-7ans.mjs --log-level warn && node .tmp/audit-7ans.mjs",
     "audit:consignes": "rolldown scripts/audit-consignes.ts --platform node --format esm -o .tmp/audit-consignes.mjs --log-level warn && node .tmp/audit-consignes.mjs"
   },
   "dependencies": {
