@@ -5,7 +5,7 @@ import { gardienDe, useContent } from "./lib/content";
 
 import { usePwa, applyUpdate } from "./lib/pwa";
 import { levelOf } from "./lib/rewards";
-import { stopSpeaking } from "./lib/tts";
+import { say, stopSpeaking } from "./lib/tts";
 import { setMusicKey, startMusic, stopMusic } from "./lib/music";
 import { Mascot } from "./components/Mascot";
 import { Ambiance } from "./components/Ambiance";
@@ -137,6 +137,13 @@ export default function App() {
   }, [planete, ambiance, couleurs, couleurPlanete, !!child]);
   // Le moment où des couleurs reviennent (leçon réussie) : une vague arc-en-ciel sur la planète.
   const [vague, setVague] = useState(0);
+  // légende de la barre du haut : toucher un compteur l'explique (à voix haute), utile aux plus jeunes
+  const [legende, setLegende] = useState<string | null>(null);
+  const expliquer = (t: string) => {
+    setLegende(t);
+    say("mia", t);
+    window.setTimeout(() => setLegende((x) => (x === t ? null : x)), 4000);
+  };
   const avant = useRef<{ planete: string; c: number } | null>(null);
   useEffect(() => {
     const a = avant.current;
@@ -324,12 +331,17 @@ export default function App() {
             <button className="tb-stat tb-gems" title="gemmes : ouvrir la boutique" onClick={() => go("/boutique")}>
               💎 {child.gems ?? 0}
             </button>
-            <span className="tb-stat" title="étoiles">
+            <button type="button" className="tb-stat" title="étoiles" onClick={() => expliquer(`Tu as ${child.stars} ${child.stars > 1 ? "étoiles" : "étoile"}. Tu en gagnes en réussissant les défis : jusqu'à 3 par leçon.`)}>
               ⭐ {child.stars}
-            </span>
-            <span className="tb-stat" title="jours d'affilée">
+            </button>
+            <button type="button" className="tb-stat" title="jours d'affilée" onClick={() => expliquer(child.streak > 1 ? `Ça fait ${child.streak} jours de suite que tu joues. Reviens demain pour continuer !` : "Reviens demain : chaque jour de suite compte ici.")}>
               📅 {child.streak}
-            </span>
+            </button>
+            {legende && (
+              <div className="tb-legende" role="status" onClick={() => setLegende(null)}>
+                {legende}
+              </div>
+            )}
             <ComboBadge />
           </>
         ) : (

@@ -60,7 +60,7 @@ lecons:
       - dialogue:
           - zero: "Je sens une odeur de gâteau… mon nez est un super-héros !"
           - mia: "Ton nez, tes yeux, tes oreilles, ta langue et ta peau : tu as cinq super-pouvoirs !"
-      - a_quoi_ca_sert: "Nos sens nous protègent : on sent l'odeur de brûlé, on entend une voiture arriver, on goûte qu'un aliment est avarié."
+      - a_quoi_ca_sert: "Tes sens te protègent. Ton nez sent la fumée, tes oreilles entendent la voiture qui arrive."
       - texte: |
           | Sens | Organe | Il me permet de… |
           |---|---|---|
@@ -128,7 +128,7 @@ lecons:
           texte: "Une plante, c'est comme une maison : les racines sont la cave qui puise l'eau, la tige est l'escalier, les feuilles sont la cuisine qui fabrique la nourriture."
           qui: neo
       - retiens: "Racines (eau), tige (transport), feuilles (nourriture grâce à la lumière), fleur → fruit → graines."
-      - a_quoi_ca_sert: "Les légumes que l'on mange sont différentes parties de plantes : carotte (racine), poireau (feuilles), brocoli (fleurs), tomate (fruit), petit pois (graine)."
+      - a_quoi_ca_sert: "Dans ton assiette, il y a des plantes ! La carotte est une racine, la salade des feuilles."
     exercices:
       - type: qcm
         vars: { t: [["la carotte", "une racine", "une feuille", "un fruit"], ["la salade", "des feuilles", "une racine", "des graines"], ["la tomate", "un fruit", "une tige", "une racine"], ["le petit pois", "une graine", "une feuille", "une racine"], ["l'asperge", "une tige", "un fruit", "une racine"], ["le chou-fleur", "des fleurs", "une racine", "une graine"]] }
@@ -241,7 +241,7 @@ lecons:
       - dialogue:
           - zero: "J'ai planté une graine hier. Toujours rien. Elle est cassée ?"
           - mia: "Patience ! Il lui faut de l'eau, de l'air et de la chaleur. Faisons une expérience."
-      - a_quoi_ca_sert: "Faire germer une graine, c'est le début de tout jardin et de toute notre nourriture : blé, riz, haricots… tout commence par une graine."
+      - a_quoi_ca_sert: "Avec une graine, tu peux faire pousser ton haricot. Ton pain vient aussi de graines de blé."
       - texte: |
           Une graine contient un **minuscule bébé plante** et des **réserves** de nourriture. Pour **germer**, elle a besoin d'**eau**, d'**air** et d'une **température douce** — pas de lumière au début ! (la lumière devient indispensable une fois les feuilles sorties).
       - visuel: {"type":"frise","titre":"De la graine à la plante","points":[{"emoji":"🌰","label":"graine"},{"emoji":"💧","label":"germination","sous":"eau + air + chaleur"},{"emoji":"🌱","label":"plantule"},{"emoji":"🌿","label":"plante"},{"emoji":"🌸","label":"fleur, puis graines"}]}

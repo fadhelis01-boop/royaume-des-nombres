@@ -103,7 +103,7 @@ lecons:
       - dialogue:
           - neo: "Pour trouver le sujet, je pose la question magique : « Qui est-ce qui » + verbe ?"
           - zero: "« Qui est-ce qui mange ? » … MOI ! Zéro ! Je suis le sujet !"
-      - a_quoi_ca_sert: "Trouver le sujet, c'est savoir qui fait l'action, et donc bien accorder le verbe : « les enfants jouent », pas « jouent » tout seul."
+      - a_quoi_ca_sert: "Le sujet, c'est celui qui fait l'action. « Les enfants jouent » : qui joue ? Les enfants !"
       - texte: |
           Le **sujet** dit **qui** fait l'action. Je le trouve avec la question **« Qui est-ce qui … ? »** (ou « Qu'est-ce qui … ? »).
 

@@ -5,10 +5,15 @@
 // npm run audit:7ans [-- --exemples]
 import fs from "fs";
 import { niveauLecon } from "../src/lib/parcours";
+import { planDefi } from "../src/lib/plan";
 import type { Lesson, World } from "../src/lib/types";
 
 const EXEMPLES = process.argv.includes("--exemples");
-const NIV_MAX = 2.5; // jusqu'au milieu du CE1 : ce qu'un enfant de 7 ans rencontre cette année
+// --age 7 (défaut) : jusqu'au milieu du CE1 ; --age 8 : jusqu'au milieu du CE2 (ce que l'enfant rencontre cette année)
+const iAge = process.argv.indexOf("--age");
+const AGE = iAge > 0 ? Number(process.argv[iAge + 1]) : 7;
+const NIV_MAX = AGE - 4.5;
+const TOUT = process.argv.includes("--tout");
 const worlds: World[] = fs.readdirSync("public/content/worlds").map((f) => JSON.parse(fs.readFileSync("public/content/worlds/" + f, "utf8")));
 
 // ---------- outils de texte ----------
@@ -114,7 +119,7 @@ for (const w of worlds) {
 
 // ---------- synthèse ----------
 const pct = (a: number, b: number) => `${b ? Math.round((100 * a) / b) : 0} %`;
-console.log(`Leçons d'un enfant de 7 ans (niveau ≤ ${NIV_MAX}, hors « astuces ») : ${lecons}`);
+console.log(`Leçons d'un enfant de ${AGE} ans (niveau ≤ ${NIV_MAX}, hors « astuces ») : ${lecons}`);
 const cats = [...new Set(mesures.map((m) => m.cat))].filter((c) => !c.startsWith("Consigne ·"));
 console.log("\nCatégorie | textes | mots moy. | plus long | phrase > 12 mots | mots difficiles | symboles");
 for (const c of cats) {
@@ -127,6 +132,31 @@ for (const c of cats) {
 const totalEx = Object.values(types).reduce((a, b) => a + b, 0);
 const ecrire = ["mot", "texte", "dictee", "libre"].reduce((a, t) => a + (types[t] ?? 0), 0);
 console.log(`\nTypes d'exercices (${totalEx}) : ${Object.entries(types).sort((a, b) => b[1] - a[1]).map(([t, n]) => `${t} ${pct(n, totalEx)}`).join(" · ")}`);
+
+// ---------- défis réellement tirés (après les corrections de l'audit « 7 ans ») ----------
+{
+  const ECRIT = new Set(["mot", "texte", "dictee", "libre"]);
+  const CHOIX = new Set(["qcm", "vf", "comparer"]);
+  let n = 0, avecLibre = 0, avecEcrit = 0, ecrit = 0, choix = 0, total = 0, domine = 0;
+  for (const w of worlds)
+    w.lecons.forEach((l, i) => {
+      const niv = niveauLecon(w, i);
+      if (niv === null || niv > NIV_MAX || w.cycle === "astuces" || !l.exercices.length) return;
+      for (let r = 0; r < 20; r++) {
+        const p = planDefi(l.exercices, l.nb_defi ?? 5, { jeune: AGE < 9 });
+        n++;
+        total += p.length;
+        if (p.some((e) => e.type === "libre" || e.rappel)) avecLibre++;
+        if (p.some((e) => ECRIT.has(e.type))) avecEcrit++;
+        ecrit += p.filter((e) => ECRIT.has(e.type)).length;
+        choix += p.filter((e) => CHOIX.has(e.type)).length;
+        const parType: Record<string, number> = {};
+        for (const e of p) parType[e.type] = (parType[e.type] ?? 0) + 1;
+        if (Math.max(...Object.values(parType)) > p.length / 2) domine++;
+      }
+    });
+  console.log(`Défis simulés (${n}) : avec rédaction ou « mot qui manque » ${pct(avecLibre, n)} · avec au moins une écriture ${pct(avecEcrit, n)} · questions d'écriture ${pct(ecrit, total)} · questions à choix ${pct(choix, total)} · dominés par un seul type ${pct(domine, n)}`);
+}
 console.log(`Exercices où il faut écrire des lettres (mot, texte, dictée, rappel libre) : ${ecrire} (${pct(ecrire, totalEx)}) dont rappel libre ${genere.libre}`);
 console.log(`Consignes générées : relier ${genere.relier} · vrai/faux à ranger ${genere.classer} · rappel libre ${genere.libre}`);
 console.log(`« À quoi ça sert ? » : manquant ${sertManquant.length}/${lecons} · cite des métiers d'adultes ${sertAdulte.length} · ne parle pas du monde de l'enfant ${sertSansEnfant.length}`);
@@ -136,7 +166,7 @@ for (const m of mesures) for (const d of m.difficiles) freq[d] = (freq[d] ?? 0) 
 console.log(`Mots difficiles les plus fréquents : ${Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 30).map(([w, n]) => `${w} (${n})`).join(", ")}`);
 
 if (EXEMPLES) {
-  const ex = (titre: string, l: string[]) => console.log(`\n--- ${titre} (${l.length}) ---\n` + l.slice(0, 15).join("\n"));
+  const ex = (titre: string, l: string[]) => console.log(`\n--- ${titre} (${l.length}) ---\n` + (TOUT ? l : l.slice(0, 15)).join("\n"));
   ex("À quoi ça sert : monde des adultes", sertAdulte);
   ex("À quoi ça sert : rien du monde de l'enfant", sertSansEnfant);
   ex("À quoi ça sert : manquant", sertManquant);

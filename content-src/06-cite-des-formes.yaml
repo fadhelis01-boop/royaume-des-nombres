@@ -98,7 +98,7 @@ lecons:
       - astuce:
           texte: "Fabrique ton équerre : plie une feuille en deux, puis encore en deux en faisant coïncider les bords du pli. Le coin obtenu est un angle droit parfait !"
           qui: mia
-      - a_quoi_ca_sert: "Les maçons vérifient que les murs sont bien droits, les menuisiers que les étagères ne penchent pas. Sans angle droit, les maisons s'écrouleraient !"
+      - a_quoi_ca_sert: "Le coin de ton cahier est un angle droit. Ta table et ta porte aussi : sinon tout pencherait !"
       - question:
           type: qcm
           enonce: "Les aiguilles d'une horloge à 3 h forment un angle…"
@@ -418,7 +418,7 @@ lecons:
           noms: false
         legende: "La croix : un patron du cube. Les pointillés sont les plis."
       - attention: "Sur un patron de cube, deux faces qui se retrouvent **face à face** une fois le cube plié ne se touchent jamais sur le patron."
-      - astuce: { texte: "Pour vérifier un patron, choisis une face qui sera le « fond », puis imagine que tu relèves les autres faces une par une, comme les murs d'une maison. S'il y a deux murs au même endroit, ce n'est pas un patron.", qui: mia }
+      - astuce: { texte: "Choisis une face pour le fond. Relève les autres une par une, comme les murs d'une maison. Deux murs au même endroit ? Ce n'est pas un patron.", qui: mia }
       - vraie_vie: { titre: "Défi dans la vraie vie", texte: "Déplie une petite boîte en carton (boîte de dentifrice, de thé…) en coupant le moins d'arêtes possible. Compte ses faces et colorie les faces opposées de la même couleur.", materiel: "une petite boîte vide, des ciseaux, des crayons" }
       - retiens: "Un **patron** est le solide **déplié à plat**, d'un seul morceau. Le patron d'un **cube** a **6 carrés** ; celui d'un **pavé** a **6 rectangles**, identiques deux à deux."
     exercices:

@@ -32,7 +32,7 @@ lecons:
           texte: "Solide : il garde sa forme. Liquide : il prend la forme du récipient. Gaz : il prend toute la place qu'on lui donne."
           qui: mia
       - retiens: "Solide : garde sa forme. Liquide : coule, surface plate. Gaz : invisible souvent, occupe tout l'espace."
-      - a_quoi_ca_sert: "Savoir l'état d'une matière, c'est savoir comment la transporter : un sac pour le sable, une bouteille pour le jus, une bonbonne fermée pour le gaz."
+      - a_quoi_ca_sert: "Ton jus va dans une bouteille, ton sable dans un seau. Chaque matière se range à sa façon."
     exercices:
       - type: classer
         vars: { t: [[caillou, lait, "air", glaçon, jus, vapeur], [cuillère, huile, "bulles de la limonade", bois, eau, "vent"], [sable, sirop, "fumée", clé, miel, "air d'un ballon"]] }
@@ -107,7 +107,7 @@ lecons:
       - dialogue:
           - zero: "J'ai mis de l'huile dans l'eau, et elles ne veulent pas être amies."
           - neo: "Certains mélanges se voient, d'autres non. Apprenons à les reconnaître."
-      - a_quoi_ca_sert: "Savoir si un mélange est homogène ou non aide à cuisiner, à faire une peinture ou à comprendre pourquoi l'huile et l'eau ne se mélangent pas."
+      - a_quoi_ca_sert: "Pour ta pâte à crêpes ou ta peinture, tu mélanges. Et tu sauras pourquoi l'huile reste sur l'eau."
       - texte: |
           Quand on mélange deux matières :
           - parfois on **ne voit plus qu'une seule chose** (eau + sirop) : c'est un mélange **homogène** ;
@@ -162,7 +162,7 @@ lecons:
           texte: "Le sucre dissous n'a pas disparu : goûte l'eau, elle est sucrée ! Il s'est caché en morceaux trop petits pour être vus."
           qui: mia
       - retiens: "Dissoudre, ce n'est pas disparaître : la matière est toujours là, en morceaux invisibles. La masse ne change pas."
-      - a_quoi_ca_sert: "Le chocolat chaud, le sirop, l'eau de mer (du sel dissous), le café… et même l'eau du robinet qui contient des sels minéraux dissous."
+      - a_quoi_ca_sert: "Dans ton chocolat chaud, le sucre fond. Tu ne le vois plus, mais tu le goûtes !"
     exercices:
       - type: classer
         vars: { t: [[sucre, sable, sel, poivre], ["sucre en poudre", cailloux, "sel fin", "huile"], ["café soluble", "perles de verre", "sirop", "riz"]] }
@@ -191,7 +191,7 @@ lecons:
           - zero: "Les objets lourds coulent, les objets légers flottent. Facile !"
           - mia: "Alors pourquoi un énorme bateau en acier flotte, et un petit caillou coule ?"
           - neo: "Ce qui compte, ce n'est pas le poids tout seul, mais le poids **par rapport à la place** que l'objet prend dans l'eau."
-      - a_quoi_ca_sert: "C'est grâce à cela que les bateaux flottent, même en acier, et que les gilets de sauvetage nous sauvent."
+      - a_quoi_ca_sert: "Dans ton bain, certains jouets flottent et d'autres coulent. Tu vas comprendre pourquoi."
       - experience:
           titre: Prédire puis tester
           securite: vert
@@ -235,7 +235,7 @@ lecons:
       - dialogue:
           - narrateur: "Dame Bulle, la gardienne grise de la Mare, flotte au-dessus de l'eau : « L'air, ce n'est RIEN ! »"
           - neo: "Alors prouvons-lui le contraire."
-      - a_quoi_ca_sert: "L'air ne se voit pas mais il pousse les voiles, gonfle les ballons et nous permet de respirer. Le comprendre aide à comprendre le vent et la météo."
+      - a_quoi_ca_sert: "Tu ne vois pas l'air, mais il gonfle ton ballon. Il fait aussi voler ton cerf-volant."
       - experience:
           titre: Le verre qui ne se mouille pas
           securite: vert

@@ -32,7 +32,7 @@ lecons:
       - astuce:
           texte: "Pour retenir les voyelles, chante-les : « A, E, I, O, U… et Y ! »"
           qui: mia
-      - a_quoi_ca_sert: "Les voyelles sont la colle des mots : il n'existe presque aucun mot sans voyelle !"
+      - a_quoi_ca_sert: "Ton prénom a forcément une voyelle. Sans voyelles, on ne pourrait presque rien dire !"
     exercices:
       - type: classer
         vars: { t: [[a, b, i, m, o, r], [e, s, u, l, y, t], [i, p, o, f, a, n], [u, c, e, d, o, v]] }
@@ -120,7 +120,7 @@ lecons:
       - astuce:
           texte: "Mets ta main sous ton menton : à chaque syllabe, ton menton descend !"
           qui: mia
-      - a_quoi_ca_sert: "Les syllabes aident à lire les longs mots morceau par morceau, et à les écrire sans oublier de lettres."
+      - a_quoi_ca_sert: "Pour lire un long mot, tu le coupes en morceaux : pa-pil-lon. C'est bien plus facile !"
       - retiens: "Une syllabe = un coup de voix. Je **tape dans mes mains** pour compter les syllabes d'un mot."
     exercices:
       - type: nombre
@@ -162,6 +162,7 @@ lecons:
       - astuce:
           texte: "Quand deux lettres se tiennent la main (o + u = ou, a + n = an), elles ne font plus qu'un seul son : on les entoure ensemble."
           qui: zero
+      - a_quoi_ca_sert: "« ou », « on », « an » : ces sons sont partout dans tes livres. Tu les connais, et tu lis plus vite !"
       - retiens: "Quand deux lettres font **un seul son**, je les lis **ensemble** : o + u = **ou**, c + h = **ch**."
       - vraie_vie:
           titre: Défi dans la vraie vie
@@ -192,7 +193,7 @@ lecons:
       - dialogue:
           - mia: "Le E porte des chapeaux ! Et chaque chapeau change sa voix."
           - zero: "Moi je n'ai pas de chapeau. Mais j'ai des oreilles orange. C'est presque pareil."
-      - a_quoi_ca_sert: "Un accent peut changer tout le sens : « ou » (ou bien) et « où » (le lieu), « a » et « à », « du » et « dû ». Il aide aussi à bien lire à voix haute."
+      - a_quoi_ca_sert: "Un accent change le mot : « ou » et « où », ce n'est pas pareil. Il t'aide aussi à bien lire."
       - texte: |
           - **é** (accent **aigu**, il monte vers la droite) se prononce **é** : été, école, bébé.
           - **è** (accent **grave**, il descend) se prononce **è** : père, mère, élève.

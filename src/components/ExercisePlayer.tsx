@@ -14,6 +14,8 @@ import { Manip } from "./Manip";
 import { Icone } from "./Icone";
 import { AccentBar, Classer, DicteeControles, DicteeCorrection, Surligner } from "./FrExercices";
 import { RappelLibre, Relier } from "./Production";
+import { dicteeSupported, startDictee } from "../lib/dictee";
+import { nombreDit } from "../lib/nombresDits";
 import type { Lead } from "../lib/habillage";
 
 const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
@@ -167,7 +169,7 @@ export function ExercisePlayer({
     let t = inst.enonce;
     if (inst.type === "comparer") t += ` ${inst.gauche} … ${inst.droite}`;
     if (inst.choix && (inst.type === "qcm" || inst.type === "vf")) t += " " + inst.choix.join(" ? ou : ") + " ?";
-    if (commentRepondre) t += " " + commentRepondre.replace(/^S+s/, "").replace("✔", "la coche verte");
+    if (commentRepondre) t += " " + commentRepondre.replace(/^\S+\s/, "").replace("✔", "la coche verte");
     return t;
   }, [inst, commentRepondre]);
 
@@ -225,7 +227,7 @@ export function ExercisePlayer({
       case "classer":
         return inst.items!.map((it, i) => `${it} → ${cls[i] !== null ? inst.categories![cls[i]!] : "?"}`).join(", ");
       default:
-        return isManip ? (manipVals ?? []).join(" · ") : text;
+        return isManip ? (inst.type === "blocs" ? String(manipVals?.[0] ?? "") : (manipVals ?? []).join(" · ")) : text;
     }
   };
 
@@ -307,9 +309,12 @@ export function ExercisePlayer({
       : v.almost
         ? `${v.almost} La réponse attendue : ${inst.expectedText}.`
         : `La bonne réponse était : ${inst.expectedText}. Ce n'est pas grave, on apprend en se trompant !`;
+    // la bonne réponse est déjà dans l'encadré : la bulle ne la répète pas (elle reste dite à voix haute)
+    const encadre = !test && inst.type !== "libre";
+    const bulle = !encadre || inst.type === "relier" ? t : v.why ? `${v.why} Regarde la bonne réponse 👇` : v.almost ? `${v.almost} Regarde la réponse attendue 👇` : "Ce n'est pas grave, on apprend en se trompant ! Regarde la bonne réponse 👇";
     const calibKo = metacog && sur === true ? " Tu étais sûr de toi : c'est le moment de bien relire la règle, elle te piégera moins la prochaine fois." : "";
     if (metacog && sur !== null) bump(sur ? "meta-sur-ko" : "meta-doute-ko");
-    setMessage({ who: "mia", text: t + calibKo, humeur: "reflexion" });
+    setMessage({ who: "mia", text: bulle + calibKo, humeur: "reflexion" });
     speak([{ who: "mia", text: t + calibKo }, ...(inst.correction ? [{ who: "neo" as Who, text: inst.correction }] : [])], { key: k + ":fb" });
     setPhase("done");
   };
@@ -540,6 +545,7 @@ export function ExercisePlayer({
       )}
       {inst.type === "nombre" && text && readNumber(text) === null && /[^\d\s,./−-]/.test(text) && <p className="hint-small">Écris seulement un nombre.</p>}
 
+      {inst.type === "nombre" && jeune && phase === "answer" && dicteeSupported() && <MicroNombre onNombre={(n) => setText(String(n).replace(".", ","))} />}
       {usesKeypad && phase === "answer" && <Keypad mode={inst.clavier === "algebre" ? "algebre" : "nombre"} letters={inst.exprVars?.length ? inst.exprVars : ["x"]} extras={inst.clavier === "algebre" ? undefined : keypadExtras(inst.type, [inst.value ?? 0, ...(inst.values ?? []), ...(inst.champs ?? []).map((c) => c.value)])} onKey={onKey} onSubmit={() => submit()} canSubmit={canSubmit} />}
 
       {metacog && phase === "answer" && tries === 0 && (
@@ -628,3 +634,49 @@ export function ExercisePlayer({
   );
 }
 
+
+/**
+ * « 🎤 Dis-le » : l'enfant dit le nombre, il s'écrit dans la case (il valide lui-même).
+ * Pour qui sait la réponse mais tape encore lentement (angle mort de l'audit « 7 ans »).
+ */
+function MicroNombre({ onNombre }: { onNombre: (n: number) => void }) {
+  const [ecoute, setEcoute] = useState(false);
+  const [aide, setAide] = useState<string | null>(null);
+  const stop = useRef<(() => void) | null>(null);
+  useEffect(() => () => stop.current?.(), []);
+  const lancer = () => {
+    if (ecoute) {
+      stop.current?.();
+      return;
+    }
+    stopSpeaking();
+    setAide(null);
+    setEcoute(true);
+    let vu = false;
+    stop.current = startDictee(
+      (t, final) => {
+        if (!final) return;
+        const n = nombreDit(t);
+        vu = true;
+        if (n === null) setAide(`J'ai entendu « ${t} ». Redis seulement le nombre.`);
+        else {
+          onNombre(n);
+          setAide(`J'ai entendu ${t}. Vérifie, puis appuie sur ✔.`);
+        }
+      },
+      (err) => {
+        setEcoute(false);
+        if (err) setAide(err);
+        else if (!vu) setAide("Je n'ai rien entendu. Touche 🎤 et parle bien fort.");
+      },
+    );
+  };
+  return (
+    <div className="micro-nombre">
+      <button type="button" className={`btn btn-soft ${ecoute ? "ecoute" : ""}`} onClick={lancer} aria-label={ecoute ? "J'écoute… touche pour arrêter" : "Dire la réponse au micro"}>
+        🎤 {ecoute ? "J'écoute…" : "Dis-le"}
+      </button>
+      {aide && <span className="small muted">{aide}</span>}
+    </div>
+  );
+}

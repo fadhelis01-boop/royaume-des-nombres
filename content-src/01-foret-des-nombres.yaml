@@ -65,14 +65,14 @@ lecons:
         vars: { n: "11..99" }
         enonce: "Construis le nombre {{n}} avec des barres de dix et des petits cubes."
         cible: "n"
-        correction: "{{n}} = {{ent(n/10)}} × 10 + {{n%10}} : {{ent(n/10)}} barres de dix et {{n%10}} petits cubes."
+        correction: "{{n}}, c'est {{ent(n/10)}} {{pluriel(ent(n/10),'dizaine','dizaines')}} ({{ent(n/10)*10}}) et {{n%10}} {{pluriel(n%10,'unité','unités')}} : {{ent(n/10)}} {{pluriel(ent(n/10),'barre','barres')}} de dix et {{n%10}} {{pluriel(n%10,'petit cube','petits cubes')}}."
       - type: nombre
         vars: { d: "1..9", u: "0..9" }
         enonce: "Combien y a-t-il de cubes ?"
         visuel: { type: blocs, nombre: "=d*10+u" }
         reponse: "d*10+u"
         indice: "Les barres valent 10. Compte de 10 en 10, puis ajoute les petits cubes."
-        correction: "{{d}} barres de 10 = {{d*10}}, plus {{u}} : {{d*10+u}}."
+        correction: "{{d}} {{pluriel(d,'barre','barres')}} de 10 = {{d*10}}, plus {{u}} : {{d*10+u}}."
       - type: nombre
         vars: { d: "2..9", u: "1..9" }
         enonce: "{{d}} paquets de 10 et {{u}} unités, cela fait combien ?"
@@ -85,7 +85,7 @@ lecons:
         champs:
           - { reponse: "ent(n/10)", apres: "dizaines" }
           - { reponse: "n % 10", apres: "unités" }
-        correction: "{{n}} = {{ent(n/10)}} × 10 + {{n%10}} : {{ent(n/10)}} barres de dix et {{n%10}} petits cubes."
+        correction: "{{n}}, c'est {{ent(n/10)}} {{pluriel(ent(n/10),'dizaine','dizaines')}} ({{ent(n/10)*10}}) et {{n%10}} {{pluriel(n%10,'unité','unités')}} : {{ent(n/10)}} {{pluriel(ent(n/10),'barre','barres')}} de dix et {{n%10}} {{pluriel(n%10,'petit cube','petits cubes')}}."
       - type: nombre
         vars: { d: "3..9" }
         enonce: "Combien d'unités y a-t-il dans {{d}} dizaines ?"
@@ -148,7 +148,7 @@ lecons:
         vars: { n: "101..599" }
         enonce: "Construis le nombre {{n}} avec les blocs."
         cible: "n"
-        correction: "{{n}} = {{chiffre(n,2)}} × 100 + {{chiffre(n,1)}} × 10 + {{chiffre(n,0)}}."
+        correction: "{{n}}, c'est {{chiffre(n,2)}} {{pluriel(chiffre(n,2),'centaine','centaines')}} ({{chiffre(n,2)*100}}), {{chiffre(n,1)}} {{pluriel(chiffre(n,1),'dizaine','dizaines')}} ({{chiffre(n,1)*10}}) et {{chiffre(n,0)}} {{pluriel(chiffre(n,0),'unité','unités')}} : {{chiffre(n,2)*100}} + {{chiffre(n,1)*10}} + {{chiffre(n,0)}}."
       - type: nombre
         vars: { c: "2..9", u: "2..9" }
         enonce: "Écris en chiffres : {{c}} centaines et {{u}} unités."
@@ -278,7 +278,7 @@ lecons:
           texte: "Le signe **<** est une bouche de crocodile affamé : elle s'ouvre toujours vers le plus grand nombre ! 3 < 8 se lit « 3 est plus petit que 8 »."
           qui: mia
       - retiens: "**<** veut dire « est plus petit que », **>** veut dire « est plus grand que », **=** veut dire « est égal à »."
-      - a_quoi_ca_sert: "Comparer les prix pour choisir le moins cher, savoir qui a gagné une partie, trouver la plus grande montagne… On compare des nombres tous les jours !"
+      - a_quoi_ca_sert: "Qui a le plus de billes ? Quel jouet coûte le moins cher ? Tu compares tous les jours !"
       - question:
           type: comparer
           vars: { a: "10..999", b: "10..999" }

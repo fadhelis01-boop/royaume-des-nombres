@@ -8,8 +8,9 @@ import { speak, stopSpeaking } from "../lib/tts";
 import { ExercisePlayer } from "../components/ExercisePlayer";
 import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
+import { VerifSon } from "../components/VerifSon";
 import {
-  ageScolaire, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
+  ageScolaire, nomIle, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
   questionsParIle, type Domaine, type Escalier,
 } from "../lib/parcours";
 
@@ -23,10 +24,10 @@ import {
 const GEMMES_PAR_ILE = 2; // l'effort est récompensé, pas la réussite
 const REPRISE_MAX_JOURS = 30;
 
-function tirer(d: Domaine, cible: number): { inst: Instance; niveau: number } | null {
-  const l = leconPour(d, cible);
+function tirer(d: Domaine, cible: number, age: number): { inst: Instance; niveau: number } | null {
+  const l = leconPour(d, cible, age);
   if (!l) return null;
-  const specs = exercicesTest(l.lesson);
+  const specs = exercicesTest(l.lesson, age);
   for (let t = 0; t < 8; t++) {
     try {
       return { inst: instantiate(specs[Math.floor(Math.random() * specs.length)], newSeed()), niveau: l.niveau };
@@ -95,7 +96,7 @@ export function Diagnostic() {
     const d = aTester[i];
     if (!d) return terminer(acquis);
     const e = departEscalier(d, age, point ? ancien?.niveaux[d.id] : undefined);
-    const t = tirer(d, e.cible);
+    const t = tirer(d, e.cible, age);
     if (!t) return commencerDomaine(i + 1, acquis); // domaine sans question possible
     setEntracte(null);
     setDi(i);
@@ -168,10 +169,11 @@ export function Diagnostic() {
         <div className="talents-iles" aria-label="Les domaines à visiter">
           {tous.map((d) => (
             <span key={d.id} className={`ile ${enCours?.[d.id] !== undefined ? "faite" : ""}`}>
-              {enCours?.[d.id] !== undefined ? "✅" : d.emoji} {d.titre}
+              {enCours?.[d.id] !== undefined ? "✅" : d.emoji} {nomIle(d, age)}
             </span>
           ))}
         </div>
+        {jeune && <VerifSon />}
         <p className="small muted center">
           {aTester.length * nbQ} petites questions{jeune && !point && aTester.length > 1 ? `, ${nbQ} par île, avec une pause possible entre deux îles` : ""} · {planete?.titre}
         </p>
@@ -222,18 +224,18 @@ export function Diagnostic() {
         <Bubble
           who={child.avatar}
           humeur="joie"
-          text={`Bravo, tu as fini l'île « ${entracte.ile.titre} » ! Encore ${iles(restantes)}. Tu continues, ou tu fais une pause ? Je garde tout en mémoire.`}
+          text={`Bravo, tu as fini l'île « ${nomIle(entracte.ile, age)} » ! Encore ${iles(restantes)}. Tu continues, ou tu fais une pause ? Je garde tout en mémoire.`}
         />
         <div className="talents-iles mini" aria-label={`${visitees} îles visitées sur ${tous.length}`}>
           {tous.map((x) => (
-            <span key={x.id} className={`ile ${entracte.acquis[x.id] !== undefined ? "faite" : x.id === suivante?.id ? "en-cours" : ""}`} title={x.titre}>
+            <span key={x.id} className={`ile ${entracte.acquis[x.id] !== undefined ? "faite" : x.id === suivante?.id ? "en-cours" : ""}`} title={nomIle(x, age)}>
               {entracte.acquis[x.id] !== undefined ? "✅" : x.emoji}
             </span>
           ))}
         </div>
         <div className="stack">
           <button className="btn btn-primary btn-xl" autoFocus onClick={() => commencerDomaine(entracte.suivante, entracte.acquis)}>
-            Île suivante : {suivante.emoji} {suivante.titre} ➜
+            Île suivante : {suivante.emoji} {nomIle(suivante, age)} ➜
           </button>
           <button className="btn btn-soft" onClick={() => mettreEnPause(entracte.acquis)}>
             ⏸️ Pause, je reviendrai plus tard
@@ -270,7 +272,7 @@ export function Diagnostic() {
         </button>
         <div className="talents-iles mini" aria-label={`île ${numIle} sur ${tous.length}`}>
           {tous.map((x) => (
-            <span key={x.id} className={`ile ${niveaux[x.id] !== undefined ? "faite" : x.id === d.id ? "en-cours" : ""}`} title={x.titre}>
+            <span key={x.id} className={`ile ${niveaux[x.id] !== undefined ? "faite" : x.id === d.id ? "en-cours" : ""}`} title={nomIle(x, age)}>
               {x.emoji}
             </span>
           ))}
@@ -278,7 +280,7 @@ export function Diagnostic() {
       </div>
       <p className="center small">
         <strong>
-          {d.emoji} {d.titre}
+          {d.emoji} {nomIle(d, age)}
         </strong>{" "}
         · île {numIle} sur {tous.length} · question {esc.reponses.length + 1} sur {nbQ}
       </p>
@@ -292,7 +294,7 @@ export function Diagnostic() {
         onResult={(r) => {
           const e2 = pas(esc, d, q.niveau, r.ok);
           if (e2.reponses.length < nbQ) {
-            const t = tirer(d, e2.cible);
+            const t = tirer(d, e2.cible, age);
             if (t) {
               setEsc(e2);
               setQ(t);

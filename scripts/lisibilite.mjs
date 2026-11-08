@@ -39,6 +39,25 @@ export function problemesConsigne(enonce, lecon) {
   return out;
 }
 
+/**
+ * Longueur des autres textes lus par les CP–CE1 (audit « 7 ans ») : un écran de cours, une astuce
+ * (qui sert aussi d'indice), un « À quoi ça sert ? », une correction. Au-delà, la publication est bloquée.
+ * Seuils « conseillés » plus bas, affichés par node scripts/lisibilite.mjs --textes.
+ */
+export const LIMITES_TEXTES = { texte: 45, astuce: 40, a_quoi_ca_sert: 40, correction: 40 };
+export const CONSEIL_TEXTES = { texte: 40, astuce: 30, a_quoi_ca_sert: 30, correction: 30 };
+const nbMotsTexte = (s) => nettoie(s).split(/[\s'’]+/).filter((w) => /[a-zà-ÿ0-9]/i.test(w)).length;
+/** Problème de longueur d'un texte de leçon (null si tout va bien). Tableaux et listes de corrections exemptés. */
+export function problemeTexte(kind, texte, limites = LIMITES_TEXTES) {
+  const max = limites[kind];
+  if (!max || typeof texte !== "string" || /\|/.test(texte)) return null;
+  if (kind === "correction" && /^\s*-\s|·|→/.test(texte)) return null;
+  const n = nbMotsTexte(texte);
+  return n > max ? `${n} mots (max ${max})` : null;
+}
+/** Mondes du CP et du CE1 : ceux d'un enfant de 6-7 ans. */
+export const pourLesTresJeunes = (w) => w.cycle === "graines" && /^(GS|CP|CE1)\b/.test(String(w.niveau ?? ""));
+
 /** Une leçon fait-elle partie des mondes des plus jeunes ? (niveau du monde commençant au CP, CE1 ou CE2) */
 export const pourLesPlusJeunes = (w) => w.cycle === "graines" && /^(GS|CP|CE1|CE2)\b/.test(String(w.niveau ?? ""));
 
@@ -65,4 +84,19 @@ if (process.argv[1] && process.argv[1].endsWith("lisibilite.mjs")) {
     }
   }
   console.log(`\n${pb} consignes à revoir sur ${n} (mondes des plus jeunes).`);
+  if (process.argv.includes("--textes")) {
+    let t = 0;
+    for (const f of readdirSync("public/content/worlds")) {
+      const w = JSON.parse(readFileSync("public/content/worlds/" + f, "utf8"));
+      if (!pourLesTresJeunes(w)) continue;
+      for (const l of w.lecons) {
+        const items = [...l.etapes.map((e) => [e.kind, e.texte]), ...l.exercices.map((e) => ["correction", e.correction])];
+        for (const [k, x] of items) {
+          const p = problemeTexte(k, x, CONSEIL_TEXTES);
+          if (p) { t++; console.log(`${w.id}/${l.id} [${k}] ${p} | ${nettoie(x).slice(0, 140)}`); }
+        }
+      }
+    }
+    console.log(`\n${t} textes plus longs que conseillé (CP – CE1).`);
+  }
 }

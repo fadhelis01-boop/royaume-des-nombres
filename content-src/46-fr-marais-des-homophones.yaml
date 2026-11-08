@@ -24,7 +24,7 @@ lecons:
       - dialogue:
           - neo: "« Léa a un vélo » : je remplace par « avait » → « Léa avait un vélo ». Ça marche : c'est le verbe avoir, sans accent."
           - zero: "« Je vais avait la plage » ? …Ça ne marche pas. Donc c'est « à », avec accent !"
-      - a_quoi_ca_sert: "« a » et « à » sont parmi les fautes les plus fréquentes du français. Une seule astuce bien appliquée, et c'est réglé pour toujours."
+      - a_quoi_ca_sert: "« a » ou « à » ? Avec une seule astuce, tu ne te tromperas plus dans tes phrases."
       - texte: |
           - **a** (sans accent) = le verbe **avoir** → on peut le remplacer par **avait** : *Il **a** faim → il **avait** faim.*
           - **à** (avec accent) = un petit mot de **lien** (préposition) → on ne peut **pas** dire « avait » : *Je vais **à** l'école.*

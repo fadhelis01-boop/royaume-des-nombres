@@ -1,6 +1,6 @@
 # Audit « enfant de 7 ans » : comprendre ce qu'on demande, les réponses, « À quoi ça sert ? »
 
-Date : 8 novembre 2026 · version auditée : 2.9.1 · aucune correction appliquée à ce stade
+Date : 8 novembre 2026 · version auditée : 2.9.1 · corrections livrées : 2.10.0 (9 novembre 2026, voir en fin de document)
 
 ## Méthode
 
@@ -183,3 +183,39 @@ Mesures de référence pour vérifier les corrections (`npm run audit:7ans`, `np
 - **Écriture** : rappel libre dans 68 % des défis ; 28 % d'exercices à écrire.
 - **Cours** : 47 mots par écran.
 - **Explications** : 26 % de corrections sans pourquoi ; 32 « À quoi ça sert ? » hors du monde de l'enfant et 7 manquants.
+
+## Corrections livrées (2.10.0)
+
+Les 9 corrections sont faites, ainsi que les angles morts 1, 3 (en partie), 4 et 5. Mesures refaites après coup avec les mêmes scripts.
+
+| Mesure | Avant (2.9.1) | Après (2.10.0) |
+|---|---|---|
+| Îles du test à 7 ans en novembre | 6 (12 questions) | 2 (4 questions) |
+| Niveau des questions du test | CP 23 % · CE1 57 % · CE2 20 % | CP 71 % · CE1 29 % · CE2 0 % |
+| Défis avec rédaction ou « mot qui manque » | 68 % | 0 % |
+| Défis avec au moins une écriture (mot, dictée…) | 73 % | 25 % |
+| Mots par écran de cours | 47 (max 100) | 29 (max 65, un tableau) |
+| « À quoi ça sert ? » manquants | 7 | 0 |
+| « À quoi ça sert ? » hors du monde de l'enfant | 32 | 3 |
+
+Ce qui a changé, correction par correction :
+
+1. **Test** : `domainesATester` ne garde que les îles commencées au moment de l'année (`niveauDuMoment` + 0,5), toujours au moins une. Avant 9 ans, `exercicesTest` exclut les mots à écrire et les exercices de niveau 3.
+2. **Écriture** : les exercices générés de rappel (« mot qui manque », « qu'as-tu retenu ») portent la marque `rappel`. `planDefi(…, { jeune })` les retire, comme la rédaction libre, et garantit à la place une production à relier, ranger ou manipuler. Même règle pour le défi du jour, la question souvenir et les Gardiens. « Jeune » veut dire : moins de 9 ans ou lecteur pas encore à l'aise.
+3. **Voix** (`toSpeech`) : émojis-objets nommés, au pluriel après « de » (« plus de 🍓 » → « plus de fraises »), répétitions comptées (🔴🔴🔴 → « 3 ronds rouges »), couleur non répétée (« 🔴 rouge »). Ordinaux (« 1ᵉʳ », « 15ᵉ »), « → » lu « donne », « 3 × ? = 12 » lu « 3 fois combien égale 12 ». Pour « < », on n'a pas retenu « vient avant » : les cas trouvés sont des signes cités seuls (« le signe **<** »), désormais lus « le signe « plus petit que » ».
+4. **Leçons** : plus de question juste avant un schéma ou un exemple ; écrans de plus de 40 mots coupés entre deux phrases dans les mondes « Graines » ; « À quoi ça sert ? » placé juste après la scène d'ouverture ; 3 questions au plus pendant une leçon de ces mondes (angle mort 4). Colonne des centaines masquée sous 100.
+5. **« Explique à Zéro »** : leurres pris dans les leçons voisines, coupés à la première phrase s'ils sont longs, sans lettres à la place des nombres (« le nᵉ ») ; les signes en gras sont mis entre guillemets.
+6. **Corrections** : retour ciblé aux blocs (`pourquoiBlocs` : inversion, ce qu'il faut ajouter ou enlever, 10 petits cubes à échanger) ; corrections de « compter par dix » et des centaines sans × et accordées ; la bulle ne répète plus la réponse affichée dans l'encadré ; l'indice par défaut prend « Je retiens » quand l'astuce cite d'autres nombres, ou annonce « l'exemple de la leçon (avec d'autres nombres) ».
+7. **« À quoi ça sert ? »** : 33 réécrits et 7 écrits, en une ou deux phrases avec « tu » et des objets de l'enfant.
+8. **Interface** : consignes générées « Relie chaque mot à sa réponse » et « Range chaque phrase dans Vrai ou dans Faux » ; noms d'îles simples avant 9 ans (champ `jeune` de `_domaines.yaml`) ; parcours « 🔁 à revoir » et « 🧱 encore un peu » ; jauge en 5 pots de couleur avant 10 ans ; titre « Passer la dizaine en sautant sur la ligne des nombres » ; toucher ⭐ ou 📅 l'explique à voix haute.
+9. **Contrôle du build** : dans les mondes du CP et du CE1, un écran de cours de plus de 45 mots, une astuce, un « À quoi ça sert ? » ou une correction de plus de 40 mots bloquent la publication. `node scripts/lisibilite.mjs --textes` liste ce qui dépasse les seuils conseillés (40 et 30 mots).
+
+Angles morts traités :
+
+- **L'oral** : bouton 🎤 « Dis-le » sur les questions de nombres (moins de 10 ans ou lecteur débutant). Le nombre dit s'écrit dans la case (« quatre-vingt-dix-sept » → 97, « ça fait douze » → 12), l'enfant vérifie et valide. Navigateurs avec reconnaissance vocale seulement (Chrome, Edge, Safari).
+- **Le son coupé** : « Tu m'entends ? » une seule fois avant la première carte des talents ; un « non » s'affiche dans l'Espace parents (« Où ça coince »).
+- **La fatigue** : 3 questions au plus pendant une leçon des mondes « Graines ».
+- **Signal à l'adulte** : seulement le son pour l'instant ; le reste passe par « Où ça coince ».
+- Restent ouverts : la difficulté des exercices selon le moment de l'année dans le parcours, et le test avec de vrais enfants.
+
+Corrigé en passant : les questions de lecture « Pipo le lapin » affichaient « \n\n » (le pré-traitement doublait l'antislash d'un retour à la ligne) ; la ligne « comment répondre » était lue avec son pictogramme à cause d'une expression mal échappée.

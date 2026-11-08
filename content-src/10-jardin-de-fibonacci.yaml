@@ -87,7 +87,7 @@ lecons:
           lignes:
             - ["terme", "3", "7", "11", "15", "?"]
             - ["écart", "", "+4", "+4", "+4", "+4"]
-      - a_quoi_ca_sert: "Les économies qui augmentent chaque semaine, les bactéries qui doublent, les places dans un amphithéâtre (chaque rang a 2 sièges de plus)…"
+      - a_quoi_ca_sert: "Ta tirelire grossit chaque semaine, ta plante grandit chaque jour. Tu peux deviner la suite !"
       - question:
           type: nombre
           vars: { a: "2..20", r: "2..9" }

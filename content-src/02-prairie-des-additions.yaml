@@ -227,7 +227,7 @@ lecons:
         correction: "Le double de {{a}} : {{2*a}} billes."
 
   - id: passer-la-dizaine
-    titre: Passer la dizaine en sautant sur la droite
+    titre: Passer la dizaine en sautant sur la ligne des nombres
     objectif: Je sais calculer 8 + 5 en passant par 10.
     mots: [dizaine]
     etapes:
@@ -421,7 +421,7 @@ lecons:
       - astuce:
           texte: "Avant de poser, estime : 47 + 38, c'est à peu près 50 + 40 = 90. Si tu trouves 75 ou 815, tu sauras qu'il y a une erreur !"
           qui: mia
-      - a_quoi_ca_sert: "Les caissiers, les comptables et même les ordinateurs additionnent exactement comme ça : colonne par colonne, avec des retenues. Ton cerveau fonctionne comme un processeur !"
+      - a_quoi_ca_sert: "Pour compter tes pièces ou tes cartes, tu poses l'addition. Colonne par colonne, tu ne te trompes plus."
       - question:
           type: nombre
           vars: { a: "15..69", b: "15..29" }

@@ -33,6 +33,7 @@ lecons:
       - astuce:
           texte: "Chante l'alphabet dans ta tête et coupe le dictionnaire en trois : A à G au début, H à P au milieu, Q à Z à la fin."
           qui: zero
+      - a_quoi_ca_sert: "Un mot inconnu dans ton livre ? Le dictionnaire te dit ce qu'il veut dire."
       - retiens: "Je compare les lettres **une par une**. Les **mots-repères** me disent si mon mot est sur la page."
       - vraie_vie:
           titre: Défi dans la vraie vie

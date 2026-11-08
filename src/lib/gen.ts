@@ -530,9 +530,32 @@ export function check(inst: Instance, ans: Answer): Verdict {
   return v;
 }
 
+
+const pl = (n: number, mot: string) => `${n} ${n > 1 ? mot.split(" ").map((m) => m + "s").join(" ") : mot}`;
+const etListe = (l: string[]) => (l.length > 1 ? `${l.slice(0, -1).join(", ")} et ${l[l.length - 1]}` : l[0] ?? "");
+/** Erreur aux blocs expliquée en mots d'enfant : ce qui a été posé, ce qu'il fallait. */
+export function pourquoiBlocs(c: number, d: number, u: number, cible: number): string {
+  const tc = Math.floor(cible / 100), td = Math.floor((cible % 100) / 10), tu = cible % 10;
+  const poses = [c ? pl(c, "centaine") : "", d ? pl(d, "barre") + " de 10" : "", u ? pl(u, "petit cube") : ""];
+  const pose = etListe(poses.filter(Boolean));
+  const total = c * 100 + d * 10 + u;
+  if (d === tu && u === td && c === tc && td !== tu) return `Tu as inversé : tu as mis ${pose}. Pour ${cible}, il faut ${pl(td, "barre")} de 10 et ${pl(tu, "petit cube")}.`;
+  if (u >= 10) return `Tu as ${pl(u, "petit cube")} : 10 petits cubes, c'est une barre de 10 ! Échange-les.`;
+  const manque = [];
+  if (c !== tc) manque.push(c < tc ? `ajoute ${pl(tc - c, "centaine")}` : `enlève ${pl(c - tc, "centaine")}`);
+  if (d !== td) manque.push(d < td ? `ajoute ${pl(td - d, "barre")}` : `enlève ${pl(d - td, "barre")}`);
+  if (u !== tu) manque.push(u < tu ? `ajoute ${pl(tu - u, "petit cube")}` : `enlève ${pl(u - tu, "petit cube")}`);
+  return `Tu as posé ${pose} : ça fait ${total}. Pour ${cible}, ${manque.join(" et ")}.`;
+}
+
 function checkRaw(inst: Instance, ans: Answer): Verdict {
   switch (inst.type) {
-    case "blocs":
+    case "blocs": {
+      if (ans.kind !== "state") return { ok: false };
+      const ok = Math.abs(ans.values[0] - inst.value!) < 1e-9;
+      if (ok || ans.values.length < 4) return { ok };
+      return { ok, why: pourquoiBlocs(ans.values[1], ans.values[2], ans.values[3], inst.value!) };
+    }
     case "sauts":
       return { ok: ans.kind === "state" && Math.abs(ans.values[0] - inst.value!) < 1e-9 };
     case "payer":

@@ -36,7 +36,7 @@ lecons:
           texte: "Une phrase, c'est comme un train : une majuscule pour la locomotive, un point pour le dernier wagon, et des mots rangés dans l'ordre pour que ça roule."
           qui: zero
       - retiens: "Une phrase = **majuscule** au début + **sens** + **point** à la fin."
-      - a_quoi_ca_sert: "Sans majuscule ni point, on ne sait pas où commence et où finit une idée. Le lecteur s'essouffle !"
+      - a_quoi_ca_sert: "Avec une majuscule et un point, ton lecteur sait où ta phrase commence et où elle finit."
     exercices:
       - type: ordre
         vars: { t: [[Le, chat, mange, une souris.], [Ma, sœur, lit, un livre.], [Les, oiseaux, chantent, le matin.], [Tom, joue, au, ballon.], [La, pluie, tombe, sur la ville.], [Mon, chien, aime, les os.]] }
@@ -156,7 +156,7 @@ lecons:
       - dialogue:
           - zero: "J'aime les épinards. …Non. Je n'aime PAS les épinards."
           - neo: "Bravo, Zéro : tu viens de faire une phrase négative. La négation entoure le verbe, comme deux tranches de pain."
-      - a_quoi_ca_sert: "La négation sert à dire non, à refuser, à corriger : « Je ne veux pas », « Ce n'est pas vrai ». C'est l'une des phrases les plus utilisées."
+      - a_quoi_ca_sert: "Tu dis non tous les jours : « Je ne veux pas dormir ! » C'est une phrase négative."
       - texte: |
           Pour dire le contraire, on entoure le **verbe** avec **ne … pas** :
           *Je chante.* → *Je **ne** chante **pas**.*

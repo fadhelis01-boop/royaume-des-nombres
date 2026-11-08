@@ -13,6 +13,7 @@ import { ExercisePlayer, type ExResult } from "../components/ExercisePlayer";
 import { Bubble, Mascot } from "../components/Mascot";
 import { StoryScene } from "../components/Story";
 import { rankSpecs } from "./Defi";
+import { jeuneLecteur } from "../lib/parcours";
 import type { FoeSprite, Line, Who, World } from "../lib/types";
 
 // Le Défi du Gardien : le « boss » de chaque monde. 10 questions qui mélangent
@@ -25,10 +26,10 @@ export function gardienOuvert(w: World) {
   return getState().settings.unlockAll || worldProgress(c, w).done === w.lecons.length;
 }
 
-function plan(w: World, n = N): Instance[] {
+function plan(w: World, n = N, jeune = false): Instance[] {
   const picks = w.lecons.map((l) => {
     // combat rapide : pas de rédaction (rappel libre) ni de dictée longue face au Gardien
-    const r = rankSpecs(l.exercices.filter((e) => e.type !== "libre" && e.type !== "dictee"));
+    const r = rankSpecs(l.exercices.filter((e) => e.type !== "libre" && e.type !== "dictee" && !(jeune && e.rappel)));
 
     return r.slice(Math.floor(r.length / 2)); // la moitié la plus exigeante de chaque leçon
   });
@@ -57,7 +58,7 @@ export function Gardien({ worldId }: { worldId: string }) {
   const ch = w ? histoireDe(manifest, w.matiere)?.chapitres[w.id] : undefined;
   const [phase, setPhase] = useState<"intro" | "jeu" | "fin" | "arc">("intro");
   const [round, setRound] = useState(0);
-  const qs = useMemo(() => (w ? plan(w) : []), [w, round]);
+  const qs = useMemo(() => (w && child ? plan(w, N, jeuneLecteur(child)) : []), [w, round]);
   const [score, setScore] = useState(0);
   if (!w) return <div className="page center">Monde introuvable.</div>;
   const arc = histoireDe(manifest, w.matiere)?.arcs.find((a) => a.final === w.id);
@@ -285,7 +286,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
     setHintTxt(undefined);
     if (!r.ok && shield) {
       setShield(false);
-      const extra = plan(w, 1);
+      const extra = plan(w, 1, (() => { const c = getState().children.find((x) => x.id === getState().activeId); return !!c && jeuneLecteur(c); })());
       if (extra.length) {
         setQs(qs.map((x, k) => (k === i ? extra[0] : x)));
         return;

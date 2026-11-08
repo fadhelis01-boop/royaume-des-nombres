@@ -23,7 +23,7 @@ lecons:
       - dialogue:
           - zero: "Le Soleil se lève, traverse le ciel et se couche : c'est donc lui qui tourne autour de nous !"
           - neo: "C'est ce qu'on croyait pendant longtemps. En fait, c'est la Terre qui **tourne sur elle-même**, comme une toupie, en 24 heures."
-      - a_quoi_ca_sert: "Le jour et la nuit expliquent pourquoi il fait nuit en Australie quand il fait jour en France, et pourquoi on change d'heure en voyage."
+      - a_quoi_ca_sert: "Quand tu vas dormir, des enfants se lèvent à l'autre bout du monde. Tu vas comprendre pourquoi."
       - texte: |
           La Terre tourne sur elle-même autour d'un **axe** (de l'ouest vers l'est) en **24 heures** : c'est la **rotation**.
           À chaque instant, la moitié de la Terre tournée vers le Soleil est **éclairée** (c'est le **jour**), l'autre moitié est dans l'ombre (c'est la **nuit**).
@@ -106,7 +106,7 @@ lecons:
       - dialogue:
           - zero: "La Lune a été mangée ? Hier elle était ronde !"
           - neo: "Elle n'a pas été mangée : on ne voit qu'une partie de sa face éclairée."
-      - a_quoi_ca_sert: "Les phases de la Lune servaient de calendrier à nos ancêtres et influencent encore aujourd'hui les marées."
+      - a_quoi_ca_sert: "Ce soir, regarde la Lune : elle change de forme. Tu sauras dire pourquoi."
       - texte: |
           La **Lune** ne produit pas de lumière : elle est éclairée par le **Soleil**. Elle tourne autour de la Terre en environ **29 jours et demi** (d'une pleine lune à la suivante).
           Selon sa position, on en voit une partie éclairée plus ou moins grande : ce sont les **phases** :
@@ -154,6 +154,7 @@ lecons:
       - astuce:
           texte: "Les instruments de la météo : thermomètre (température), baromètre (pression), anémomètre (vent), pluviomètre (pluie). Le nom dit ce qu'il mesure !"
           qui: neo
+      - a_quoi_ca_sert: "Pluie ou soleil ? Avec la météo, tu sais si tu prends ton manteau ou ton chapeau."
       - retiens: "Thermomètre (température), pluviomètre (pluie), girouette (direction du vent), anémomètre (vitesse du vent), baromètre (pression)."
     exercices:
       - type: qcm

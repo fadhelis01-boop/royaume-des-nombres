@@ -246,7 +246,7 @@ lecons:
           enonce: "{{a}} et combien font 5 ?"
           reponse: "5-a"
           correction: "{{a}} + {{5-a}} = 5."
-      - a_quoi_ca_sert: "Ces couples sont les briques de TOUS les calculs. Les connaître par cœur, c'est calculer à la vitesse de l'éclair !"
+      - a_quoi_ca_sert: "Les amis de 10 t'aident dans tous tes calculs. Quand tu les connais, tu calcules très vite !"
       - astuce:
           texte: "Les amoureux de 10 : 1 et 9, 2 et 8, 3 et 7, 4 et 6, 5 et 5. Montre-les avec tes deux mains : les doigts levés et les doigts baissés font toujours 10."
           qui: zero

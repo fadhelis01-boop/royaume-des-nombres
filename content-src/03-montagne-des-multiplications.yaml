@@ -44,7 +44,7 @@ lecons:
           texte: "4 × 3, lis-le « 4 fois 3 » : 4 sacs de 3 billes. Et 4 × 3 = 3 × 4 : tu peux toujours choisir l'ordre le plus facile !"
           qui: mia
       - retiens: "**a × b = b × a** : on peut multiplier dans n'importe quel ordre. Et $n \\times 1 = n$, $n \\times 0 = 0$."
-      - a_quoi_ca_sert: "Le prix de 5 baguettes à 1 €, le nombre de roues de 6 voitures, le nombre de carreaux d'une tablette de chocolat… dès que des groupes sont tous pareils, on multiplie."
+      - a_quoi_ca_sert: "Combien de roues sur 3 vélos ? Combien de carrés dans ta tablette de chocolat ? Tu comptes des groupes pareils."
       - question:
           type: nombre
           vars: { g: "2..5", n: "2..5" }

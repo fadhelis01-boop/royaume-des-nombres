@@ -2,11 +2,11 @@ import { useMemo } from "react";
 import { go } from "../lib/router";
 import { matiereDe, planeteDe, useContent } from "../lib/content";
 import { useChild } from "../lib/store";
-import { ageScolaire, domainesDe, pointConseille, prochaineEtape } from "../lib/parcours";
+import { ageScolaire, nomIle, domainesDe, pointConseille, prochaineEtape } from "../lib/parcours";
 import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
 
-const RAISON = { renforcer: "🛠️ à renforcer", nouveau: "🌟 nouveau", consolider: "🧱 pour consolider" } as const;
+const RAISON = { renforcer: "🔁 à revoir", nouveau: "🌟 nouveau", consolider: "🧱 encore un peu" } as const;
 
 /** Lundi de la semaine en cours (0 h). */
 function lundi() {
@@ -102,7 +102,7 @@ export function ParcoursPage() {
                 <span className="etape-txt">
                   <strong>{l.titre}</strong>
                   <small>
-                    {d?.emoji} {d?.titre} · {RAISON[e.raison]}
+                    {d?.emoji} {nomIle(d, ageScolaire(child))} · {RAISON[e.raison]}
                   </small>
                 </span>
               </button>

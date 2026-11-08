@@ -1,6 +1,6 @@
 # Audit « enfant de 8 ans » — clarté des consignes, premiers tests, pratique
 
-Date : 28 octobre 2026 · version auditée : 2.7.0 · corrections livrées : 2.8.0
+Date : 28 octobre 2026 · version auditée : 2.7.0 · corrections livrées : 2.8.0 · deuxième passage complet : `audit-enfant-8-ans-novembre.md`
 
 ## Méthode
 

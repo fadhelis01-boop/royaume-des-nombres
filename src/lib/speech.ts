@@ -1,6 +1,7 @@
 // Transforme un texte de cours (Markdown + formules LaTeX + symboles) en texte
 // prononçable par la synthèse vocale : « 3 × 4 = 12 » → « 3 fois 4 égale 12 »,
 // « $\frac{3}{4}$ » → « 3 quarts », « x² » → « x au carré »…
+import { enLettres } from "./expr";
 
 const DENOMS: Record<number, [string, string]> = {
   2: ["demi", "demis"],
@@ -24,8 +25,52 @@ function fracWords(n: string, d: string): string {
   return `${n} sur ${d}`;
 }
 
+
+// Émojis « objets » qui portent du sens dans une consigne (« Y a-t-il plus de 🍓 ou de 🍌 ? ») : on les nomme.
+// Les autres (✍️ 🧠 💡 🔗…) sont décoratifs et restent muets.
+const EMOJI_MOTS: Record<string, [string, string]> = {
+  "🍓": ["fraise", "fraises"], "🍎": ["pomme", "pommes"], "🍌": ["banane", "bananes"], "🍇": ["raisin", "raisins"],
+  "🍒": ["cerise", "cerises"], "🍋": ["citron", "citrons"], "🍪": ["gâteau", "gâteaux"], "🐟": ["poisson", "poissons"],
+  "🐶": ["chien", "chiens"], "🐱": ["chat", "chats"], "🐦": ["oiseau", "oiseaux"], "🐭": ["souris", "souris"],
+  "🐴": ["cheval", "chevaux"], "🦆": ["canard", "canards"], "🐷": ["cochon", "cochons"], "🐮": ["vache", "vaches"],
+  "🐰": ["lapin", "lapins"], "🐹": ["hamster", "hamsters"], "🐞": ["coccinelle", "coccinelles"], "⭐": ["étoile", "étoiles"],
+  "🌸": ["fleur", "fleurs"], "🚗": ["voiture", "voitures"], "🌳": ["arbre", "arbres"], "🌞": ["soleil", "soleils"],
+  "🌧": ["pluie", "pluies"], "❄": ["flocon", "flocons"], "🔺": ["triangle", "triangles"], "🟦": ["carré bleu", "carrés bleus"],
+  "🔴": ["rond rouge", "ronds rouges"], "🔵": ["rond bleu", "ronds bleus"], "🟢": ["rond vert", "ronds verts"],
+  "🟡": ["rond jaune", "ronds jaunes"], "⚫": ["rond noir", "ronds noirs"], "⚪": ["rond blanc", "ronds blancs"],
+  "🟣": ["rond violet", "ronds violets"], "🟤": ["rond marron", "ronds marron"],
+};
+const RE_EMOJI_MOTS = new RegExp(String.raw`(\bde |\bdes |\bd'|\bles )?((?:${Object.keys(EMOJI_MOTS).join("|")})️?)((?:\s*\2)*)`, "gu");
+function emojisEnMots(s: string): string {
+  return s.replace(RE_EMOJI_MOTS, (_m, avant: string | undefined, e: string, rep: string, off: number, all: string) => {
+    const [un, plus] = EMOJI_MOTS[e.replace(/️/g, "")];
+    const n = 1 + (rep ? [...rep.matchAll(new RegExp(e, "gu"))].length : 0);
+    // « 🔴 rouge » (liste de couleurs) : la couleur est déjà dite
+    const coul = un.split(" ")[1];
+    if (coul && all.slice(off + _m.length, off + _m.length + coul.length + 2).trim().startsWith(coul)) return avant ?? " ";
+    if (n > 1) return `${avant ?? " "}${n} ${plus} `;
+    return avant ? `${avant}${plus} ` : ` ${un} `;
+  });
+}
+
+// petits mots courants écrits en majuscules pour insister (les sigles comme BD, GN, ADN restent épelés)
+const PETITS_MOTS = new Set(["ET", "OU", "PAS", "QUE", "QUI", "CE", "QU", "ON", "UN", "UNE", "LE", "LA", "LES", "DE", "DES", "DU", "EN", "NE", "SI", "OUI", "NON", "TOUT", "DÉ", "IL", "ELLE"]);
+
+/** « 1ᵉʳ » → « premier », « 3ᵉ » → « troisième ». */
+function ordinal(n: number, fem: boolean): string {
+  if (n === 1) return fem ? "première" : "premier";
+  const w = enLettres(n).replace(/s$/, "");
+  if (/cinq$/.test(w)) return w + "uième";
+  if (/neuf$/.test(w)) return w.slice(0, -1) + "vième";
+  return w.replace(/e$/, "") + "ième";
+}
+
 function latexToSpeech(tex: string): string {
-  let s = tex;
+  // tableaux de légendes (« \begin{array}{l} \leftarrow \text{numérateur} \\ … \end{array} ») : on garde les mots
+  let s = tex
+    .replace(/\\begin\{[a-z*]+\}(\{[^}]*\})?|\\end\{[a-z*]+\}/g, " ")
+    .replace(/\\(?:long)?(?:left|right|leftright)arrow/gi, " ")
+    .replace(/\\\\/g, ", ");
   for (let i = 0; i < 4; i++) {
     s = s
       .replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, (_, a, b) => (/^\s*-?\d+\s*$/.test(a) && /^\s*\d+\s*$/.test(b) ? fracWords(a.trim(), b.trim()) : ` ${a} sur ${b} `))
@@ -79,12 +124,14 @@ function latexToSpeech(tex: string): string {
 }
 
 export function toSpeech(md: string): string {
-  let s = md
+  let s = emojisEnMots(md)
     // écriture inclusive éventuelle (contenus importés) : « fort·e » → « fort »
     .replace(/([A-Za-zÀ-ÿ])·[a-zà-ÿ]+(·[a-z]+)?/g, "$1")
     // formules
     .replace(/\$\$([\s\S]+?)\$\$/g, (_, t) => ` ${latexToSpeech(t)} `)
     .replace(/\$([^$]+?)\$/g, (_, t) => ` ${latexToSpeech(t)} `)
+    // un signe cité seul (« le signe **<** ») : on dit son nom
+    .replace(/(signe\s*)?\*\*([<>=])\*\*/g, (_m, sg, c) => `${sg ?? "le signe "}« ${c === "<" ? "plus petit que" : c === ">" ? "plus grand que" : "égal"} »`)
     // Markdown
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
@@ -92,6 +139,10 @@ export function toSpeech(md: string): string {
     .replace(/\|/g, ", ")
     .replace(/[*_`#>]+/g, "")
     .replace(/^\s*[-•]\s+/gm, "")
+    // le nombre cherché dans un calcul : « 3 × ? = 12 » → « 3 fois combien égale 12 »
+    .replace(/([=+×÷−-]\s*)\?|\?(\s*[=+×÷−-])/g, (_m, a, b) => (a ? `${a} combien ` : ` combien ${b}`))
+    // ordinaux
+    .replace(/(\d+)\s?(ʳᵉ|ᵉʳ|ᵉ|ème|e)(?![a-zà-ÿ])/g, (m, n, suf) => (suf === "e" && Number(n) !== 1 && !/ᵉ/.test(m) ? m : ` ${ordinal(Number(n), suf === "ʳᵉ")} `))
     // symboles
     .replace(/(\d)\s*×\s*(\d)/g, "$1 fois $2")
     .replace(/×/g, " fois ")
@@ -131,13 +182,16 @@ export function toSpeech(md: string): string {
     .replace(/(\d)\s?min\b/g, "$1 minutes")
     .replace(/(\d)\s?h\s?(\d\d)/g, "$1 heures $2")
     .replace(/(\d)\s?h\b/g, "$1 heures")
-    .replace(/→/g, ", puis ")
+    .replace(/\s*→\s*/g, " donne ")
     .replace(/…/g, "...")
     .replace(/\?\s*$/g, " ?")
     // les émojis ne se lisent pas
     .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}\u{2B50}\u{2B55}]/gu, "")
     .replace(/\s+/g, " ")
-    .trim();
+    .replace(/\s+([,.])/g, "$1")
+    .trim()
+    // mots écrits en MAJUSCULES pour insister (« CETTE leçon », « VÉRIFIER ») : certaines voix les épellent
+    .replace(/(?<![\p{L}\p{N}])\p{Lu}{2,}(?![\p{L}\p{N}])/gu, (m) => (m.length >= 4 || PETITS_MOTS.has(m) ? m.toLowerCase() : m));
   // « 1 000 » (espace fine) → lu comme un seul nombre
   s = s.replace(/(\d)[  ](?=\d{3})/g, "$1");
   return s;

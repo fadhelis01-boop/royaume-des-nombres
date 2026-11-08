@@ -12,7 +12,7 @@ import { enLettres, fmtNum, parse, isExpanded, isFactored, equivalent, evalStr, 
 import type { ExSpec, Manifest, World, Step } from "../src/lib/types";
 import { VISUEL_TYPES } from "../src/lib/visuel-types";
 // @ts-expect-error module JS sans types
-import { problemesConsigne, pourLesPlusJeunes } from "./lisibilite.mjs";
+import { problemesConsigne, pourLesPlusJeunes, pourLesTresJeunes, problemeTexte } from "./lisibilite.mjs";
 
 const errors: string[] = [];
 const warns: string[] = [];
@@ -235,6 +235,14 @@ for (const ref of manifest.worlds) {
       for (const q of qs) {
         const p: string[] = q?.enonce ? problemesConsigne(q.enonce, l) : [];
         if (p.length) errors.push(`${where} : consigne difficile pour un jeune lecteur (${p.join(", ")}) → « ${q.enonce.slice(0, 90)} » (raccourcir, ou déclarer le mot dans « mots: » de la leçon ; voir node scripts/lisibilite.mjs)`);
+      }
+    }
+    if (pourLesTresJeunes(w)) {
+      // textes lus par les CP–CE1 : écran de cours, astuce, « à quoi ça sert », correction
+      const items: [string, unknown][] = [...l.etapes.map((st) => [st.kind, (st as { texte?: unknown }).texte] as [string, unknown]), ...l.exercices.map((e) => ["correction", e.correction] as [string, unknown])];
+      for (const [k, x] of items) {
+        const p: string | null = problemeTexte(k, x);
+        if (p) errors.push(`${where} : ${k} trop long pour un enfant de CP–CE1 (${p}) → « ${String(x).slice(0, 80)} » (couper ou raccourcir ; voir node scripts/lisibilite.mjs --textes)`);
       }
     }
   }

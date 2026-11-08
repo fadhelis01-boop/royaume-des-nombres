@@ -7,6 +7,8 @@ import { instantiate, newSeed, type Instance } from "../lib/gen";
 import { ExercisePlayer } from "../components/ExercisePlayer";
 import { Bubble } from "../components/Mascot";
 import { EnigmeCard } from "./jeux/Enigmes";
+import { pourLecteurAgile } from "../lib/plan";
+import { jeuneLecteur } from "../lib/parcours";
 
 export function DefiDuJour() {
   const child = useChild()!;
@@ -28,7 +30,9 @@ export function DefiDuJour() {
       const lesson = worlds.find((x) => x.id === w)?.lecons.find((x) => x.id === l);
       if (!lesson) continue;
       try {
-        out.push({ key, inst: instantiate(lesson.exercices[Math.floor(Math.random() * lesson.exercices.length)], newSeed()) });
+        const tri = jeuneLecteur(child) ? lesson.exercices.filter((e) => !pourLecteurAgile(e)) : lesson.exercices;
+        const pool = tri.length ? tri : lesson.exercices;
+        out.push({ key, inst: instantiate(pool[Math.floor(Math.random() * pool.length)], newSeed()) });
       } catch {
         /* ignoré */
       }

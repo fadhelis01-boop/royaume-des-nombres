@@ -22,7 +22,7 @@ lecons:
       - dialogue:
           - zero: "Mes traits tremblent tout le temps !"
           - mia: "Ça s'entraîne ! Commençons par des traits droits, puis des courbes."
-      - a_quoi_ca_sert: "Bien contrôler ses traits aide à dessiner, mais aussi à bien écrire : c'est le même geste de la main."
+      - a_quoi_ca_sert: "Bien tenir ton crayon t'aide à dessiner. Et aussi à bien écrire à l'école !"
       - texte: |
           Tout dessin est fait de **traits**. Il en existe de toutes sortes : **droits**, **courbes**, en **zigzag**, en **spirale**, **pointillés**…
           Astuce de Lya : regarde **le point d'arrivée** pendant que tu traces, pas la pointe du crayon. Ton trait sera plus sûr !
@@ -67,7 +67,7 @@ lecons:
       - dialogue:
           - zero: "Comment on dessine un chat ? C'est trop dur !"
           - neo: "On commence par des formes simples : un cercle, un triangle… Ce sont des formes magiques !"
-      - a_quoi_ca_sert: "Tous les dessins, même les plus compliqués, commencent par des formes simples : cercles, carrés, triangles."
+      - a_quoi_ca_sert: "Ton plus beau dessin commence par des ronds, des carrés et des triangles."
       - texte: |
           Avec **5 formes magiques**, on peut dessiner presque tout : le **cercle**, l'**ovale**, le **carré**, le **rectangle** et le **triangle**.
           Une maison = un carré + un triangle. Un chat = des cercles, des ovales et des triangles. Un bonhomme de neige = trois cercles !
@@ -113,7 +113,7 @@ lecons:
       - dialogue:
           - zero: "J'ai seulement trois tubes de peinture. Je ne pourrai pas faire de vert !"
           - mia: "Si ! Avec le rouge, le jaune et le bleu, on fabrique presque toutes les couleurs."
-      - a_quoi_ca_sert: "Avec seulement trois couleurs primaires, on peut fabriquer presque toutes les autres : c'est le secret des peintres."
+      - a_quoi_ca_sert: "Avec trois pots de peinture, tu peux fabriquer presque toutes les couleurs. C'est magique !"
       - texte: |
           En peinture, les trois **couleurs primaires** sont le **rouge**, le **jaune** et le **bleu** (les imprimeurs utilisent plus précisément le magenta, le jaune et le cyan). On ne peut pas les obtenir en mélangeant d'autres couleurs… mais **en les mélangeant**, on fabrique presque toutes les autres !
           Le **blanc** éclaircit une couleur, le **noir** l'assombrit.
@@ -160,7 +160,7 @@ lecons:
       - dialogue:
           - zero: "Un robot ! Je veux dessiner un robot qui me ressemble !"
           - mia: "Facile : un cercle pour la tête, un rectangle pour le corps, des traits pour les bras et les jambes."
-      - a_quoi_ca_sert: "Construire avec des formes est la technique des dessinateurs de BD et de dessins animés pour dessiner vite et toujours pareil."
+      - a_quoi_ca_sert: "Tes héros de dessins animés sont faits de formes simples. Toi aussi, tu peux les dessiner !"
       - dessin:
           titre: Le petit robot
           etapes:
@@ -232,6 +232,7 @@ lecons:
       - astuce:
           texte: "Regarde l'objet beaucoup plus que ta feuille : tes yeux suivent le bord de l'objet, et ton crayon suit tes yeux."
           qui: mia
+      - a_quoi_ca_sert: "Pour dessiner ta tasse ou ton jouet, tu suis d'abord son bord. C'est le contour !"
       - retiens: "Dessin d'observation : regarder longtemps, trouver la forme générale, suivre le contour, regarder l'objet plus que la feuille."
     exercices:
       - type: qcm

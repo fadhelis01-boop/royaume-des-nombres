@@ -342,6 +342,7 @@ function Coince({ c, lessonTitle }: { c: Child; lessonTitle: (k: string) => stri
               Arrêts en pleine île : {arrets.slice(0, 5).map((a) => `${nomIle(a.mat, a.ile)} (${a.n})`).join(", ")}.
             </p>
           )}
+          {cpt("son-non") > 0 && cpt("son-ok") === 0 && <p>🔇 Votre enfant a indiqué ne pas entendre la voix de l'application. Vérifiez le volume de l'appareil : à cet âge, les consignes sont lues à voix haute.</p>}
           {cpt("test-je-ne-sais-pas") > 0 && <p>« Je ne sais pas encore » : {cpt("test-je-ne-sais-pas")} fois. C'est normal et utile : cela évite de répondre au hasard.</p>}
           {(cpt(`diag-abandon:${matsTest[0]}`) > 0 || arrets.length > 0) && (
             <p className="muted">Un arrêt en pleine île signale souvent de la fatigue ou une consigne qui bloque. Reprenez la carte des talents ensemble, en lisant les questions avec votre enfant.</p>

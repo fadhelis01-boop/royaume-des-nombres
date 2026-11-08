@@ -3213,3 +3213,14 @@ select {
   min-height: 48px;
   font-size: 1.3rem;
 }
+
+/* légende des compteurs de la barre du haut (audit « 7 ans ») */
+.topbar button.tb-stat { background: none; border: 0; font: inherit; color: inherit; padding: 4px 6px; cursor: pointer; border-radius: 10px; }
+.tb-legende { position: absolute; top: 100%; right: 8px; left: 8px; z-index: 50; margin-top: 4px; padding: 10px 14px; border-radius: 14px; background: var(--paper); color: var(--ink); box-shadow: 0 6px 20px rgba(0,0,0,.18); font-size: 1rem; line-height: 1.35; }
+@media (min-width: 640px) { .tb-legende { left: auto; max-width: 360px; } }
+.micro-nombre { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 6px 0; }
+.micro-nombre .ecoute { animation: micro-pulse 1s ease-in-out infinite; }
+@keyframes micro-pulse { 50% { transform: scale(1.06); box-shadow: 0 0 0 6px rgba(226, 87, 76, .18); } }
+@media (prefers-reduced-motion: reduce) { .micro-nombre .ecoute { animation: none; outline: 3px solid var(--ko); } }
+.verif-son { margin: 12px 0; padding: 10px; border: 2px dashed var(--line); border-radius: 18px; }
+.verif-son-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }

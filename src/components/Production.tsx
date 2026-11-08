@@ -25,8 +25,8 @@ export function Relier({ inst, values, onChange, reveal, disabled }: { inst: Ins
     setSel(suivant >= 0 ? suivant : null);
   };
   return (
-    <div className="relier" role="group" aria-label="Relie chaque élément à sa réponse">
-      <p className="hint-small">Touche un élément à gauche, puis sa réponse à droite.</p>
+    <div className="relier" role="group" aria-label="Relie chaque mot à sa réponse">
+      <p className="hint-small">Touche un mot à gauche, puis sa réponse à droite.</p>
       <div className="relier-cols">
         <div className="relier-col">
           {gauche.map((g, i) => {

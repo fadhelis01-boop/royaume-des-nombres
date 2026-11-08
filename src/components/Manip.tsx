@@ -12,7 +12,7 @@ type OnChange = (values: number[] | null) => void;
 export function Manip({ inst, onChange, disabled }: { inst: Instance; onChange: OnChange; disabled: boolean }) {
   switch (inst.type) {
     case "blocs":
-      return <BlocsBuilder onChange={onChange} disabled={disabled} />;
+      return <BlocsBuilder onChange={onChange} disabled={disabled} cible={inst.value ?? 0} />;
     case "partage":
       return <Partage total={inst.total!} parts={inst.parts!} emoji={inst.emoji ?? "🍎"} onChange={onChange} disabled={disabled} />;
     case "sauts":
@@ -42,16 +42,19 @@ function Stepper({ label, value, set, disabled, color }: { label: string; value:
   );
 }
 
-function BlocsBuilder({ onChange, disabled }: { onChange: OnChange; disabled: boolean }) {
+function BlocsBuilder({ onChange, disabled, cible }: { onChange: OnChange; disabled: boolean; cible: number }) {
+  // sous 100, la colonne des centaines ne sert à rien et trouble les plus jeunes
+  const avecCentaines = cible >= 100;
   const [c, setC] = useState(0);
   const [d, setD] = useState(0);
   const [u, setU] = useState(0);
   const total = c * 100 + d * 10 + u;
-  useEffect(() => onChange(total > 0 ? [total] : null), [total]);
+  // le détail (centaines, dizaines, unités) sert à expliquer une erreur précisément
+  useEffect(() => onChange(total > 0 ? [total, c, d, u] : null), [total, c, d, u]);
   return (
     <div className="manip manip-blocs">
       <div className="steppers">
-        <Stepper label="centaines" value={c} set={setC} disabled={disabled} color="var(--c-violet)" />
+        {avecCentaines && <Stepper label="centaines" value={c} set={setC} disabled={disabled} color="var(--c-violet)" />}
         <Stepper label="dizaines" value={d} set={setD} disabled={disabled} color="var(--c-orange)" />
         <Stepper label="unités" value={u} set={setU} disabled={disabled} color="var(--c-turquoise)" />
       </div>

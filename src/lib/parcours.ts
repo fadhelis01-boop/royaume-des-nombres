@@ -68,12 +68,14 @@ export interface LeconNiv {
 export interface Domaine {
   id: string;
   titre: string;
+  /** nom simple pour les moins de 9 ans (« Partager en parts » plutôt que « Fractions et proportions ») */
+  titreJeune?: string;
   emoji: string;
   lecons: LeconNiv[];
   min: number;
   max: number;
 }
-type DefDom = { id: string; titre: string; emoji?: string; mondes: string[] };
+type DefDom = { id: string; titre: string; jeune?: string; emoji?: string; mondes: string[] };
 
 /** Les domaines d'une planète, avec leurs leçons rangées par niveau. */
 export function domainesDe(planete: string, worlds: World[], defs?: DefDom[]): Domaine[] {
@@ -91,18 +93,34 @@ export function domainesDe(planete: string, worlds: World[], defs?: DefDom[]): D
         });
       }
       lecons.sort((a, b) => a.niveau - b.niveau || a.world.ordre - b.world.ordre);
-      return { id: d.id, titre: d.titre, emoji: d.emoji ?? "⭐", lecons, min: lecons[0]?.niveau ?? 0, max: lecons[lecons.length - 1]?.niveau ?? 0 };
+      return { id: d.id, titre: d.titre, titreJeune: d.jeune, emoji: d.emoji ?? "⭐", lecons, min: lecons[0]?.niveau ?? 0, max: lecons[lecons.length - 1]?.niveau ?? 0 };
     })
     .filter((d) => d.lecons.length);
 }
 
 /** Types d'exercice retenus pour le test : pas de hasard (vrai/faux, comparer), pas de rédaction ni de dictée. */
 const TYPES_TEST = new Set(["qcm", "nombre", "mot", "texte", "champs", "ordre", "relier", "classer", "expression", "liste", "droite", "blocs", "sauts", "partage", "colorier", "horloge", "payer", "surligner"]);
-export const exercicesTest = (l: Lesson): ExSpec[] => l.exercices.filter((e) => TYPES_TEST.has(e.type) && !(e.type === "qcm" && (e.choix?.length ?? 0) < 3));
+/** En dessous de cet âge (scolaire), on ménage l'enfant : exercices faciles, pas d'écriture de mots, pas de rédaction. */
+export const AGE_JEUNE = 9;
+/** Nom d'une île adapté à l'âge. */
+export const nomIle = (d: { titre: string; titreJeune?: string } | undefined, age: number) => (d ? (age < AGE_JEUNE && d.titreJeune ? d.titreJeune : d.titre) : "");
+/** Enfant à ménager dans les défis : moins de 9 ans (classe) ou lecteur pas encore à l'aise. */
+export const jeuneLecteur = (c: { age: number; classe?: number; lecteur?: string }) => ageScolaire(c) < AGE_JEUNE || (c.lecteur !== undefined && c.lecteur !== "oui");
+/**
+ * Exercices du test pour une leçon. Avant 9 ans (audit « 7 ans ») : pas de mot à écrire (l'orthographe
+ * mesurerait l'écriture, pas la notion) et seulement les exercices de niveau 1 ou 2 de la leçon
+ * (le niveau 3 d'une leçon de CE1 relève souvent du CE2 : millimètres, centilitres…).
+ */
+export function exercicesTest(l: Lesson, age?: number): ExSpec[] {
+  const base = l.exercices.filter((e) => TYPES_TEST.has(e.type) && !(e.type === "qcm" && (e.choix?.length ?? 0) < 3));
+  if (age === undefined || age >= AGE_JEUNE) return base;
+  const doux = base.filter((e) => e.type !== "mot" && e.type !== "texte" && (e.niveau ?? 2) <= 2);
+  return doux.length ? doux : base.filter((e) => e.type !== "mot" && e.type !== "texte");
+}
 
 /** La leçon du domaine la plus proche d'un niveau visé (de préférence juste en dessous), qui a des exercices de test. */
-export function leconPour(d: Domaine, cible: number): LeconNiv | null {
-  const ok = d.lecons.filter((l) => exercicesTest(l.lesson).length);
+export function leconPour(d: Domaine, cible: number, age?: number): LeconNiv | null {
+  const ok = d.lecons.filter((l) => exercicesTest(l.lesson, age).length);
   if (!ok.length) return null;
   return ok.reduce((best, l) => {
     const e = Math.abs(l.niveau - cible) + (l.niveau > cible ? 0.25 : 0);
@@ -111,8 +129,17 @@ export function leconPour(d: Domaine, cible: number): LeconNiv | null {
   });
 }
 
-/** Domaines à tester pour un âge : ceux qui ont déjà commencé à cette classe (les autres viendront plus tard). */
-export const domainesATester = (doms: Domaine[], age: number) => doms.filter((d) => d.min <= classeDeLAge(age));
+/**
+ * Domaines à tester : ceux qui ont vraiment commencé à ce moment de l'année (audit « 7 ans » : en novembre
+ * de CE1, seules les îles « nombres » et « calcul » sont entamées). Les autres viendront plus tard.
+ * Toujours au moins un domaine (celui qui commence le plus tôt).
+ */
+export function domainesATester(doms: Domaine[], age: number, quand?: Date): Domaine[] {
+  const seuil = niveauDuMoment(age, quand) + 0.5;
+  const ok = doms.filter((d) => d.min <= seuil);
+  if (ok.length || !doms.length) return ok;
+  return [doms.reduce((a, b) => (b.min < a.min ? b : a))];
+}
 
 /** État d'un domaine pendant le test (escalier). */
 export interface Escalier {

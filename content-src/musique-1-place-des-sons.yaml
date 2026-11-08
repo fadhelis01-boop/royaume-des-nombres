@@ -32,6 +32,7 @@ lecons:
       - astuce:
           texte: "Ferme les yeux pendant une minute et compte tous les sons que tu entends : tu seras surpris d'en trouver autant !"
           qui: neo
+      - a_quoi_ca_sert: "En musique, le silence compte aussi. Comme à « 1, 2, 3, soleil », tu t'arrêtes pile !"
       - retiens: "Écouter, c'est remarquer tous les sons, même les tout petits. Le silence fait aussi partie de la musique."
     exercices:
       - type: qcm
@@ -96,7 +97,7 @@ lecons:
       - dialogue:
           - zero: "Ma voix fait « hiii » et celle de l'ours fait « hooo »."
           - mia: "La tienne est aiguë, celle de l'ours est grave ! Écoutons la différence."
-      - a_quoi_ca_sert: "Distinguer l'aigu et le grave aide à chanter juste, à reconnaître les voix et les instruments."
+      - a_quoi_ca_sert: "Le petit oiseau chante aigu, le gros ours grogne grave. Ça t'aide à chanter juste !"
       - texte: |
           Un son **aigu** est « haut » et fin (un sifflet, un petit oiseau, une souris). Un son **grave** est « bas » et profond (un gros tambour, un lion qui rugit, une contrebasse).
           C'est la **hauteur** du son. Sur un piano, les notes graves sont à **gauche**, les notes aiguës à **droite**.

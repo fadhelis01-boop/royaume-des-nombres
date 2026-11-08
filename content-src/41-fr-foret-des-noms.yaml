@@ -36,7 +36,7 @@ lecons:
           texte: "Pour savoir si un mot est un nom, essaie de mettre « un » ou « une » devant : « une table » ✔, « un manger » ✘."
           qui: neo
       - retiens: "Nom **commun** : un chat, une ville. Nom **propre** : Minou, Paris, avec une **majuscule**."
-      - a_quoi_ca_sert: "Sans noms, on ne pourrait parler de rien ni de personne ! Et la majuscule montre tout de suite qu'on parle de quelqu'un de précis."
+      - a_quoi_ca_sert: "Les noms disent qui et quoi : ton chien, ta maîtresse, ton vélo. Sans eux, tu ne pourrais rien raconter !"
     exercices:
       - type: classer
         vars: { t: [[chat, Léa, table, Paris], [maison, Médor, fleur, Lyon], [ballon, Tom, forêt, Marseille], [gâteau, Lya, rivière, France], [école, Zéro, crayon, Nice]] }
@@ -69,7 +69,7 @@ lecons:
       - dialogue:
           - zero: "« La soleil », « un table »… ça sonne bizarre, non ?"
           - mia: "Les oiseaux déterminants se sont trompés d'arbre ! Chaque nom a son oiseau."
-      - a_quoi_ca_sert: "Le déterminant annonce le nom et donne des indices : masculin ou féminin, un ou plusieurs, connu ou pas."
+      - a_quoi_ca_sert: "Le petit mot devant le nom donne un indice. « Le chat » ou « les chats » : un ou plusieurs ?"
       - texte: |
           Le **déterminant** est un petit mot placé **devant le nom**. Il nous dit si le nom est **masculin ou féminin**, **singulier ou pluriel**.
 
@@ -174,6 +174,7 @@ lecons:
       - astuce:
           texte: "Un seul, rien ; plusieurs, un s. Le s du pluriel est muet mais il est là, comme un petit serpent qui se cache au bout du mot."
           qui: zero
+      - a_quoi_ca_sert: "Un chat, des chats : le s te dit qu'il y en a plusieurs. Il aide celui qui lit ta phrase."
       - retiens: "**Plusieurs** → j'ajoute un **s** muet. Le déterminant m'aide : **les, des, mes**… annoncent le pluriel."
       - vraie_vie:
           titre: Défi dans la vraie vie
@@ -243,7 +244,7 @@ lecons:
       - dialogue:
           - mia: "Chaque mot porte un costume : c'est sa nature. Le nom, le verbe, l'adjectif… On les reconnaît à leur costume."
           - neo: "Et chacun a son test : un/une pour le nom, hier/demain pour le verbe, très pour l'adjectif."
-      - a_quoi_ca_sert: "Connaître la nature d'un mot, c'est comprendre comment il se comporte : un verbe se conjugue, un nom a un genre, un adjectif s'accorde."
+      - a_quoi_ca_sert: "Quand tu sais si un mot est un nom ou un verbe, tu sais comment l'écrire dans ta phrase."
       - texte: |
           - Le **nom** : on peut mettre **un/une** devant (*un chat, une idée*).
           - Le **verbe** : on peut le conjuguer, dire **hier… / demain…** (*il court, il courra*).

@@ -42,6 +42,8 @@ export interface ExSpec {
   indice?: string;
   correction?: string;
   niveau?: 1 | 2 | 3;
+  /** Exercice de rappel généré (« mot qui manque », « qu'as-tu retenu ») : écrit de mémoire, réservé aux lecteurs à l'aise. */
+  rappel?: boolean;
   /** Erreurs fréquentes : si l'enfant répond `valeur`, on lui explique précisément son erreur. */
   erreurs?: { valeur: string; message: string }[];
   /** QCM : une explication par choix (alignée sur `choix`, la 1ʳᵉ = bonne réponse). */
@@ -205,7 +207,7 @@ export interface Manifest {
   /** textes de lecture chronométrée (fluence) */
   fluence?: TexteFluence[];
   /** domaines de chaque planète (test de niveau, parcours) ; planète absente = un seul domaine */
-  domaines?: Record<string, { id: string; titre: string; emoji?: string; mondes: string[] }[]>;
+  domaines?: Record<string, { id: string; titre: string; jeune?: string; emoji?: string; mondes: string[] }[]>;
 }
 
 /** Une étape du parcours personnalisé. */

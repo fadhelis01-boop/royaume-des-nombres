@@ -2,6 +2,9 @@ import { couleursRendues } from "../lib/ambiance";
 import { useContent } from "../lib/content";
 import { visuel } from "../lib/img";
 import { useChild } from "../lib/store";
+import { ageScolaire } from "../lib/parcours";
+
+const POTS = ["🟥", "🟧", "🟨", "🟩", "🟦"];
 
 /**
  * « Couleurs rendues » : l'histoire de la Galaxie en une image. Le Grand Neutre a tout rendu gris ;
@@ -25,10 +28,13 @@ export function JaugeCouleurs({ planete }: { planete: string }) {
             ? "Presque toutes les couleurs sont revenues : le Grand Neutre n'est plus qu'un petit nuage !"
             : "Toutes les couleurs sont revenues. Bravo, la planète brille !";
   return (
-    <div className="jauge-couleurs" role="group" aria-label={`Couleurs rendues à la planète : ${pct} %`}>
+    <div className="jauge-couleurs" role="group" aria-label={`Couleurs rendues à la planète : ${Math.round(c * 5)} pots sur 5`}>
       {img && pct < 100 && <img className="neutre-img" src={img} alt="Le Grand Neutre" width={56} height={56} />}
       <div className="jc-txt">
-        <strong>🎨 Couleurs rendues : {pct} %</strong>
+        {/* avant 10 ans, un pourcentage ne parle pas : 5 pots de couleur qui se remplissent */}
+        <strong>
+          🎨 Couleurs rendues : {child && ageScolaire(child) < 10 ? POTS.map((p, k) => (k < Math.round(c * 5) ? p : "⬜")).join("") : `${pct} %`}
+        </strong>
         <div className="jc-barre" aria-hidden>
           <i style={{ width: `${Math.max(pct, 2)}%` }} />
         </div>

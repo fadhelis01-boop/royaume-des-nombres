@@ -1,4 +1,4 @@
-import { niveauDuMoment, nomClasse, type Domaine } from "../lib/parcours";
+import { niveauDuMoment, nomClasse, nomIle, type Domaine } from "../lib/parcours";
 
 /**
  * La carte des talents : une barre par domaine, du début du domaine jusqu'au niveau estimé.
@@ -19,7 +19,7 @@ export function CarteTalents({ doms, niveaux, age, compact }: { doms: Domaine[];
         return (
           <div key={d.id} className={`talent ${ecart >= 1 ? "avance" : ecart > -0.75 ? "ok" : "defi"}`} role="listitem">
             <span className="t-nom">
-              {d.emoji} {d.titre}
+              {d.emoji} {nomIle(d, age)}
             </span>
             <span className="t-barre" aria-hidden>
               <i style={{ width: pct(n) }} />

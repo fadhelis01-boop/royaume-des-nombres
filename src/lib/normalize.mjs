@@ -32,7 +32,8 @@ export function preprocess(src) {
       }
       // chaînes "…" : « \frac » comme « \\frac » sont acceptés — un antislash seul
       // est doublé, une paire déjà échappée est laissée telle quelle (sauf \" ).
-      line = line.replace(/"((?:[^"\\]|\\.)*)"/g, (m, body) => '"' + body.replace(/\\\\|\\(?!")/g, (x) => (x.length === 2 ? x : "\\\\")) + '"');
+      // « \n » suivi d'autre chose qu'une minuscule est un retour à la ligne (\neq, \nu… restent des formules).
+      line = line.replace(/"((?:[^"\\]|\\.)*)"/g, (m, body) => '"' + body.replace(/\\\\|\\(?!"|n(?![a-z]))/g, (x) => (x.length === 2 ? x : "\\\\")) + '"');
       const kv = line.match(/^(\s*(?:- )?)([A-Za-zÀ-ÿ_][\w-]*)(:\s+)(.*)$/);
       if (kv) {
         const v = kv[4];
@@ -199,7 +200,7 @@ function step(s, where) {
 // automatiquement entre les étapes passives (désactivable : auto_questions: false).
 const PASSIVE = new Set(["dialogue", "texte", "visuel", "a_quoi_ca_sert", "astuce", "attention", "retiens", "exemple", "histoire"]);
 const TEACHING = new Set(["texte", "visuel", "exemple", "retiens"]);
-function withQuestions(etapes, exercices) {
+function withQuestions(etapes, exercices, max = Infinity) {
   if (!exercices.length) return etapes;
   const ranked = exercices
     .map((e, i) => ({ e, i, r: (e.niveau ?? 2) * 100 + i }))
@@ -215,7 +216,10 @@ function withQuestions(etapes, exercices) {
     if (PASSIVE.has(st.kind)) passive++;
     else passive = 0;
     const next = etapes[i + 1];
-    if (passive >= 2 && taught && next && PASSIVE.has(next.kind) && i < etapes.length - 1) {
+    // jamais entre un texte et le schéma ou l'exemple qui l'explique (audit « 7 ans » : on demandait
+    // de construire 69 avec des barres avant d'avoir montré ce qu'est une barre)
+    const explicationSuit = next && (next.kind === "visuel" || next.kind === "exemple");
+    if (passive >= 2 && taught && next && PASSIVE.has(next.kind) && !explicationSuit && q < max && i < etapes.length - 1) {
       out.push({ kind: "question", ex: ranked[q % ranked.length], auto: true });
       q++;
       passive = 0;
@@ -231,17 +235,34 @@ const CYCLES = ["graines", "explorateurs", "maitres", "astuces"];
  * la bonne phrase parmi celle de la leçon et deux phrases d'autres leçons du même monde.
  * Expliquer à quelqu'un est l'un des moyens les plus efficaces de retenir.
  */
+/** Une phrase de « Je retiens » montrable en bouton : signes cités entre guillemets, première phrase si c'est long. */
+function phraseExplique(t, jeune) {
+  let s = t.replace(/\*\*([<>=≤≥+−×÷])\*\*/g, "« $1 »");
+  if (jeune && nbMots(s) > 18) {
+    const m = s.match(/^(.+?[.!?](?:\*\*)?)\s+(?=[A-ZÀ-ÖÉÈ«*])/);
+    if (m && nbMots(m[1]) >= 5) s = m[1];
+  }
+  return s;
+}
+// lettres qui remplacent des nombres (« le nᵉ », « n − 1 ») : abstrait avant le collège
+const ABSTRAIT = /(^|[\s(])[a-z]\s*[−+×=<>]|[−+×=<>]\s*[a-z]([\s).,]|$)|\b[a-z]ᵉ/;
 function ajouterExplique(w) {
+  const jeune = w.cycle === "graines";
   const ret = (l) => l.etapes.find((s) => s.kind === "retiens")?.texte;
   const avec = w.lecons.filter((l) => ret(l));
   if (avec.length < 3) return;
   for (const [i, l] of avec.entries()) {
     if (l.etapes.some((s) => s.kind === "explique")) continue;
-    const autres = avec.filter((x) => x !== l);
-    const d1 = autres[(i * 7 + 1) % autres.length], d2 = autres[(i * 7 + 2) % autres.length];
-    if (!d1 || !d2 || d1 === d2) continue;
-    const bon = { texte: ret(l), ok: true, retour: "Bravo ! Tu viens de l'expliquer comme un vrai prof. Expliquer, c'est la meilleure façon de retenir." };
-    const faux = (x) => ({ texte: ret(x), ok: false, retour: `Cette phrase est juste, mais elle vient de la leçon « ${x.titre} ». Ici, on apprend : ${l.objectif.charAt(0).toLowerCase() + l.objectif.slice(1)}` });
+    // leurres : leçons voisines (même niveau), compréhensibles par l'enfant
+    const voisines = avec
+      .map((x, j) => ({ x, d: Math.abs(j - i) + (j > i ? 0.1 : 0) }))
+      .filter(({ x }) => x !== l && !(jeune && ABSTRAIT.test(ret(x).replace(/\*\*/g, ""))) && phraseExplique(ret(x), jeune) !== phraseExplique(ret(l), jeune))
+      .sort((a, b) => a.d - b.d)
+      .map(({ x }) => x);
+    const [d1, d2] = voisines;
+    if (!d1 || !d2) continue;
+    const bon = { texte: phraseExplique(ret(l), jeune), ok: true, retour: "Bravo ! Tu viens de l'expliquer comme un vrai prof. Expliquer, c'est la meilleure façon de retenir." };
+    const faux = (x) => ({ texte: phraseExplique(ret(x), jeune), ok: false, retour: `Cette phrase est juste, mais elle vient de la leçon « ${x.titre} ». Ici, on apprend : ${l.objectif.charAt(0).toLowerCase() + l.objectif.slice(1)}` });
     const choix = [faux(d1), faux(d2)];
     choix.splice(i % 3, 0, bon);
     const k = l.etapes.findIndex((s) => s.kind === "retiens");
@@ -249,29 +270,48 @@ function ajouterExplique(w) {
   }
 }
 
-/** Coupe un texte de plus de 550 caractères à la limite de paragraphe (ou de puce) la plus proche du milieu, hors tableau. */
-function couperTexte(s) {
+const NL = String.fromCharCode(10);
+const nbMots = (t) => t.replace(/\$[^$]*\$/g, " X ").split(/\s+/).filter((w) => /[A-Za-zÀ-ÿ0-9]/.test(w)).length;
+/**
+ * Coupe un texte de cours trop long en plusieurs écrans (audit « 7 ans » : au-delà de 40 mots,
+ * un enfant de CP–CE1 décroche). On coupe d'abord sur une ligne vide ou une liste, sinon entre deux phrases,
+ * au plus près du milieu, sans laisser de morceau trop court ni couper un tableau.
+ */
+function couperTexte(s, maxMots = 40) {
   const t = s.texte;
-  if (t.length <= 550) return [s];
-  const lignes = t.split("\n");
-  let best = -1, ecart = Infinity, pos = 0;
+  if (nbMots(t) <= maxMots) return [s];
+  const min = Math.min(12, Math.floor(nbMots(t) / 3));
+  // points de coupe possibles : [position, priorité]
+  const coupes = [];
+  const lignes = t.split(NL);
+  let pos = 0;
   lignes.forEach((l, i) => {
     pos += l.length + 1;
     const suiv = lignes[i + 1];
     if (suiv === undefined) return;
-    const frontiere = l.trim() === "" || /^\s*[-•]\s/.test(suiv);
-    const tableau = /^\s*\|/.test(l) && /^\s*\|/.test(suiv);
-    if (!frontiere || tableau) return;
-    const d = Math.abs(pos - t.length / 2);
-    if (d < ecart && pos > 150 && t.length - pos > 150) {
-      ecart = d;
-      best = i;
-    }
+    const tableau = /^\s*\|/.test(l) || /^\s*\|/.test(suiv);
+    if (tableau) return;
+    if (l.trim() === "" || /^\s*[-•]\s/.test(suiv)) coupes.push([pos, 0]);
+    else coupes.push([pos, 1]);
   });
-  if (best < 0) return [s];
-  const a = lignes.slice(0, best + 1).join("\n").trimEnd();
-  const b = lignes.slice(best + 1).join("\n").trimStart();
-  return [{ ...s, texte: a }, { kind: "texte", texte: b }];
+  for (const m of t.matchAll(/[.!?»]\s+(?=[A-ZÀ-ÖÉÈ«0-9*])/g)) {
+    const p = m.index + m[0].length;
+    const avant = t.slice(0, p);
+    // pas dans un tableau, ni dans une formule
+    if (avant.slice(avant.lastIndexOf(NL) + 1).includes("|") || (avant.match(/\$/g) ?? []).length % 2) continue;
+    coupes.push([p, 2]);
+  }
+  let best = null;
+  for (const [p, prio] of coupes) {
+    const a = nbMots(t.slice(0, p)), b = nbMots(t.slice(p));
+    if (a < min || b < min) continue;
+    const score = prio * 8 + Math.abs(a - b);
+    if (!best || score < best.score) best = { p, score };
+  }
+  if (!best) return [s];
+  const a = t.slice(0, best.p).trimEnd();
+  const b = t.slice(best.p).trimStart();
+  return [...couperTexte({ ...s, texte: a }, maxMots), ...couperTexte({ kind: "texte", texte: b }, maxMots)];
 }
 
 // ---------- Exercices de production dérivés automatiquement (2.4) ----------
@@ -303,7 +343,7 @@ function relierDepuisQcm(ex) {
   if (new Set(paires.map((p) => p[0])).size !== paires.length || new Set(paires.map((p) => p[1])).size !== paires.length) return null;
   return {
     type: "relier",
-    enonce: `🔗 Relie chaque élément à sa réponse.\n\n*La question : ${String(ex.enonce).replace(/\{\{[^}]+\}\}/, "…")}*`,
+    enonce: `🔗 Relie chaque mot à sa réponse.\n\n*La question : ${String(ex.enonce).replace(/\{\{[^}]+\}\}/, "…")}*`,
     paires,
     niveau: 2,
     correction: paires.map(([a, b]) => `${a} → **${b}**`).join(" · "),
@@ -324,11 +364,11 @@ function classerDepuisVf(ex) {
   const expl = rows[0].findIndex((x, i) => i !== j && i !== b && typeof x === "string");
   return {
     type: "classer",
-    enonce: "⚖️ Range chaque affirmation : est-elle vraie ou fausse ?",
+    enonce: "⚖️ Range chaque phrase dans Vrai ou dans Faux.",
     categories: ["Vrai", "Faux"],
     mots: rows.map((r) => [String(r[j]), r[b] ? 0 : 1]),
     niveau: 2,
-    correction: expl >= 0 ? rows.map((r) => `- ${r[expl]}`).join("\n") : "Relis la leçon pour chaque affirmation fausse.",
+    correction: expl >= 0 ? rows.map((r) => `- ${r[expl]}`).join("\n") : "Relis la leçon pour chaque phrase fausse.",
   };
 }
 /** Rappel libre tiré du « Je retiens » : l'enfant écrit (ou dit) ce qu'il a retenu, sans regarder. */
@@ -350,6 +390,7 @@ function libreDepuisRetiens(texte, titre, mots = []) {
     modele: texte,
     min_cles: Math.max(1, Math.ceil(cles.length / 2)),
     niveau: 3,
+    rappel: true,
     correction: "Écrire ce qu'on a retenu, sans regarder, est la meilleure façon de s'en souvenir longtemps.",
   };
 }
@@ -387,6 +428,7 @@ function clozeFromRetiens(texte, mots = []) {
     reponse: "{{t_1}}",
     correction: "Le mot qui manquait : **{{t_1}}**.",
     niveau: 3,
+    rappel: true,
   };
 }
 // « Explique-moi autrement » : une image de la vie (texte) et/ou un schéma propre à la leçon.
@@ -437,14 +479,32 @@ export function normalizeWorld(w, file) {
     ids.add(l.id);
     const raw0 = (l.etapes ?? []).map((s, i) => step(s, `${lw} étape ${i + 1}`)).filter(Boolean);
     // Pour les plus jeunes (cycle « graines »), un texte trop long est coupé en deux écrans.
-    const raw = w.cycle === "graines" ? raw0.flatMap((s) => (s.kind === "texte" ? couperTexte(s) : [s])) : raw0;
+    const raw1 = w.cycle === "graines" ? raw0.flatMap((s) => (s.kind === "texte" ? couperTexte(s) : [s])) : raw0;
+    // « À quoi ça sert ? » juste après la scène d'ouverture : on sait pourquoi on apprend avant d'apprendre
+    const raw = (() => {
+      const k = raw1.findIndex((s) => s.kind === "a_quoi_ca_sert");
+      if (k <= 1 || raw1[0].kind !== "dialogue") return raw1;
+      const r = [...raw1];
+      const [sert] = r.splice(k, 1);
+      r.splice(1, 0, sert);
+      return r;
+    })();
     // Indice par défaut : l'astuce de la leçon (sinon « Je retiens »), proposé au premier échec.
-    const tip = raw.find((s) => s.kind === "astuce")?.texte ?? raw.find((s) => s.kind === "retiens")?.texte;
+    // Quand l'astuce cite ses propres nombres (« 43 = 4 paquets et 3 ») alors que la question porte sur
+    // d'autres nombres, on préfère « Je retiens » s'il n'en cite pas, sinon on annonce que c'est un exemple.
+    const astuce = raw.find((s) => s.kind === "astuce")?.texte;
+    const retiens = raw.find((s) => s.kind === "retiens")?.texte;
+    const chiffre = (t) => /\d\d/.test(String(t ?? "").replace(/\$[^$]*\$/g, ""));
     const exercices = (l.exercices ?? []).map((e, i) => {
       const ex = exercise(e, `${lw} exercice ${i + 1}`);
-      return ex && typeof ex === "object" && !ex.indice && tip && !/\{\{/.test(tip) ? { ...ex, indice: tip } : ex;
+      if (!ex || typeof ex !== "object" || ex.indice) return ex;
+      const variable = !!ex.vars && Object.keys(ex.vars).length > 0;
+      let tip = astuce ?? retiens;
+      if (variable && chiffre(tip)) tip = retiens && !chiffre(retiens) ? retiens : `Souviens-toi de l'exemple de la leçon (avec d'autres nombres) : ${tip}`;
+      return tip && !/\{\{/.test(tip) ? { ...ex, indice: tip } : ex;
     });
-    const etapes = l.auto_questions === false ? raw : withQuestions(raw, exercices);
+    // petits (cycle « graines ») : 3 questions au plus pendant la leçon, pour ne pas épuiser avant le défi
+    const etapes = l.auto_questions === false ? raw : withQuestions(raw, exercices, w.cycle === "graines" ? 3 : Infinity);
     // Rappel actif : « complète ce que tu as retenu » à partir des mots en gras du « Je retiens »
     // (réponse à produire, pas à reconnaître). Hors maths, où les réponses sont déjà produites.
     const trou = (w.matiere ?? "maths") !== "maths" ? clozeFromRetiens(raw.find((s) => s.kind === "retiens")?.texte, l.mots) : null;

@@ -22,9 +22,9 @@ for (let run = 0; run < 400; run++) {
   for (const d of aTester) {
     let e = departEscalier(d, AGE);
     for (let q = 0; q < NBQ; q++) {
-      const l = leconPour(d, e.cible);
+      const l = leconPour(d, e.cible, AGE);
       if (!l) break;
-      const specs = exercicesTest(l.lesson);
+      const specs = exercicesTest(l.lesson, AGE);
       const spec = specs[Math.floor(Math.random() * specs.length)];
       let inst;
       try { inst = instantiate(spec, newSeed()); } catch { break; }

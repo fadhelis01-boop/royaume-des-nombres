@@ -2,10 +2,12 @@
 // exercices de production (relier, rappel libre), plan des défis.
 // npm run test:unit (inclus dans npm test)
 import { fusionnerEnfant, fusionnerProfils } from "../src/lib/fusion";
-import { check, idees, instantiate } from "../src/lib/gen";
+import { check, idees, instantiate, pourquoiBlocs } from "../src/lib/gen";
 import { planDefi } from "../src/lib/plan";
+import { toSpeech } from "../src/lib/speech";
+import { nombreDit } from "../src/lib/nombresDits";
 import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
-import { classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+import { domainesATester, exercicesTest, jeuneLecteur, classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
 
 
 let ok = 0;
@@ -133,6 +135,49 @@ e2q = pas(e2q, D2[0], 4, false);
 eq("escalier à 2 questions : réussite puis échec = niveau réussi", estimation(e2q, D2[0]), 3);
 eq("mondes ouverts : acquis + parcours", mondesAOuvrir(D2, { calc: 3, geo: 2 }, []).sort(), ["a", "b", "g"]);
 
+// ---------- Audit « 7 ans » : test, défis, voix ----------
+const NOV = new Date(2026, 10, 8);
+const DOMS = [{ id: "nb", min: 0 }, { id: "calc", min: 1 }, { id: "frac", min: 2 }, { id: "geo", min: 2 }] as unknown as Parameters<typeof domainesATester>[0];
+eq("test 7 ans en novembre : îles déjà commencées seulement", domainesATester(DOMS, 7, NOV).map((d) => d.id), ["nb", "calc"]);
+eq("test 8 ans en novembre : îles du CE1", domainesATester(DOMS, 8, NOV).map((d) => d.id), ["nb", "calc", "frac", "geo"]);
+eq("test : toujours au moins une île", domainesATester([{ id: "x", min: 5 }] as never, 6, NOV).map((d) => d.id), ["x"]);
+const LT = { exercices: [{ type: "mot", enonce: "a", niveau: 1 }, { type: "nombre", enonce: "b", niveau: 1 }, { type: "nombre", enonce: "c", niveau: 3 }] } as unknown as Lesson;
+eq("test < 9 ans : ni mot à écrire, ni niveau 3", exercicesTest(LT, 7).map((e) => e.enonce), ["b"]);
+eq("test 10 ans : tout", exercicesTest(LT, 10).length, 3);
+eq("jeune lecteur : 8 ans", jeuneLecteur({ age: 8 }), true);
+eq("jeune lecteur : 10 ans débutant", jeuneLecteur({ age: 10, lecteur: "debutant" }), true);
+eq("jeune lecteur : 10 ans lecteur", jeuneLecteur({ age: 10, lecteur: "oui" }), false);
+const SPJ = [
+  { type: "qcm", enonce: "q", choix: ["a", "b", "c"], niveau: 1 },
+  { type: "relier", enonce: "r", niveau: 2 },
+  { type: "libre", enonce: "l", niveau: 3 },
+  { type: "mot", enonce: "m", niveau: 3, rappel: true },
+  { type: "nombre", enonce: "n", niveau: 2 },
+] as ExSpec[];
+for (let i = 0; i < 20; i++) {
+  const p = planDefi(SPJ, 5, { jeune: true });
+  if (p.some((e) => e.type === "libre" || e.rappel)) { ko.push("défi jeune : rédaction ou rappel présent"); break; }
+  if (!p.some((e) => e.type === "relier")) { ko.push("défi jeune : pas de production (relier)"); break; }
+}
+ok++;
+eq("défi 10 ans : la rédaction reste possible", planDefi(SPJ, 5).some((e) => e.type === "libre" || e.type === "mot"), true);
+eq("voix : fraises", toSpeech("Y a-t-il plus de 🍓 ou de 🍌 ?"), "Y a-t-il plus de fraises ou de bananes ?");
+eq("voix : ronds de couleur", toSpeech("🔴🔵🔴"), "rond rouge rond bleu rond rouge");
+eq("voix : trois ronds", toSpeech("🔴🔴🔴"), "3 ronds rouges");
+eq("voix : couleur déjà dite", toSpeech("red 🔴 rouge"), "red rouge");
+eq("voix : ordinaux", toSpeech("🍎 1ᵉʳ, 🍌 2ᵉ, le 15ᵉ rond, la 1ʳᵉ"), "pomme premier, banane deuxième, le quinzième rond, la première");
+eq("voix : nombre cherché", toSpeech("3 × ? = 12"), "3 fois combien égale 12");
+eq("voix : flèche", toSpeech("23 → 230"), "23 donne 230");
+eq("voix : signe cité", toSpeech("Le signe **<** est une bouche"), "Le signe « plus petit que » est une bouche");
+eq("voix : neuvième, cinquième", toSpeech("9ᵉ et 5ᵉ"), "neuvième et cinquième");
+
+// ---------- Réponse dite au micro ----------
+for (const [dit, n] of [["quarante-trois", 43], ["soixante-dix-sept", 77], ["quatre-vingts", 80], ["quatre-vingt-dix-neuf", 99], ["vingt et un", 21], ["cent quatre", 104], ["deux cent quatre-vingts", 280], ["mille deux cent", 1200], ["trois cent mille", 300000], ["43", 43], ["ça fait 12", 12], ["c'est euh quinze", 15], ["1 200", 1200], ["trois virgule cinq", 3.5], ["2,05", 2.05], ["zéro", 0], ["moins quatre", -4], ["bonjour", null], ["sept cents", 700]] as [string, number | null][]) eq(`nombre dit : ${dit}`, nombreDit(dit), n);
+
+eq("blocs : inversion", pourquoiBlocs(0, 5, 9, 95), "Tu as inversé : tu as mis 5 barres de 10 et 9 petits cubes. Pour 95, il faut 9 barres de 10 et 5 petits cubes.");
+eq("blocs : il manque", pourquoiBlocs(0, 1, 1, 95), "Tu as posé 1 barre de 10 et 1 petit cube : ça fait 11. Pour 95, ajoute 8 barres et ajoute 4 petits cubes.");
+
+eq("voix : majuscules d'insistance", toSpeech("Résume CETTE leçon : COMPRENDRE, puis VÉRIFIER. CE1 et ADN."), "Résume cette leçon : comprendre, puis vérifier. CE1 et ADN.");
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

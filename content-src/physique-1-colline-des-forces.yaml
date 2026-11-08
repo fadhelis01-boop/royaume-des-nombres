@@ -33,6 +33,7 @@ lecons:
       - astuce:
           texte: "Une force est une action qui peut faire trois choses : mettre en mouvement, arrêter ou déformer. Pense à un ballon : tu le lances, tu l'attrapes, tu l'écrases."
           qui: mia
+      - a_quoi_ca_sert: "Tu pousses ta balançoire, tu tires ta luge : ce sont des forces !"
       - retiens: "Une force pousse ou tire. Elle peut mettre en mouvement, arrêter, changer la direction ou déformer."
       - vraie_vie:
           titre: Défi à la maison
@@ -126,7 +127,7 @@ lecons:
           texte: "Les pôles, c'est comme des amis et des jumeaux grincheux : nord et sud s'attirent, nord et nord se repoussent."
           qui: neo
       - retiens: "Un aimant attire le fer, pas tous les métaux. Pôles différents s'attirent, pôles identiques se repoussent."
-      - a_quoi_ca_sert: "Fermer la porte du réfrigérateur, trier les déchets métalliques, la boussole, les haut-parleurs, les trains à sustentation magnétique."
+      - a_quoi_ca_sert: "Ton aimant tient le dessin sur le frigo. Il attire aussi les trombones !"
     exercices:
       - type: classer
         vars: { t: [["un trombone", "une gomme", "un clou", "une règle en plastique"], ["une boîte de conserve en acier", "une canette en aluminium", "une épingle", "un crayon en bois"], ["une clé en fer", "un verre", "une vis", "un bouchon"]] }
@@ -175,7 +176,7 @@ lecons:
           texte: "L'ombre est toujours du côté opposé à la lumière. Lumière basse (le soir) = ombre longue ; lumière haute (midi) = ombre courte."
           qui: mia
       - retiens: "La lumière va en ligne droite. Un objet opaque arrête la lumière : derrière lui, l'ombre, du côté opposé à la source."
-      - a_quoi_ca_sert: "Le parasol, l'ombre d'un arbre en été, les cadrans solaires qui donnent l'heure, le théâtre d'ombres."
+      - a_quoi_ca_sert: "Ton ombre te suit dans la cour. Avec tes mains, tu peux faire des ombres d'animaux !"
     exercices:
       - type: classer
         vars: { t: [["un livre", "une vitre", "un mur", "un verre d'eau"], ["une planche en bois", "un film plastique transparent", "ta main", "une bouteille d'eau transparente"]] }

@@ -1,4 +1,5 @@
-import { planDefi, rankSpecs } from "../lib/plan";
+import { planDefi, pourLecteurAgile, rankSpecs } from "../lib/plan";
+import { jeuneLecteur } from "../lib/parcours";
 export { planDefi, rankSpecs };
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
@@ -22,8 +23,8 @@ function draw(spec: ExSpec): Instance | null {
 }
 
 /** Ancienne API (révisions, défi du jour) : n questions tirées au hasard. */
-export function drawQuestions(specs: ExSpec[], n: number): Instance[] {
-  return planDefi(specs, n)
+export function drawQuestions(specs: ExSpec[], n: number, jeune = false): Instance[] {
+  return planDefi(specs, n, { jeune })
     .map(draw)
     .filter((x): x is Instance => !!x);
 }
@@ -32,14 +33,17 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
   const found = findLesson(worldId, lessonId);
   const child = useChild()!;
   const [round, setRound] = useState(0);
-  const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi) : []), [found?.lesson, round]);
+  const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi, { jeune: jeuneLecteur(child) }) : []), [found?.lesson, round]);
   // Question « souvenir » : une question d'une leçon précédente du monde, en bonus (entrelacement :
   // mélanger l'ancien et le nouveau aide à retenir). Elle ne compte pas dans les étoiles.
   const souvenir = useMemo(() => {
     if (!found || found.idx === 0) return null;
     const before = found.world.lecons.slice(0, found.idx).filter((l) => l.exercices.length);
     const l = before[Math.floor(Math.random() * before.length)];
-    return l ? { spec: l.exercices[Math.floor(Math.random() * l.exercices.length)], titre: l.titre } : null;
+    if (!l) return null;
+    const pool = jeuneLecteur(child) ? l.exercices.filter((e) => !pourLecteurAgile(e)) : l.exercices;
+    const ex = pool.length ? pool : l.exercices;
+    return { spec: ex[Math.floor(Math.random() * ex.length)], titre: l.titre };
   }, [found?.lesson, round]);
   const total = plan.length + (souvenir ? 1 : 0);
   const [idx, setIdx] = useState(0);
