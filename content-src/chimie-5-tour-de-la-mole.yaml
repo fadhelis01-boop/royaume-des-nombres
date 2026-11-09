@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: la-mole
     titre: "La mole : compter par paquets géants"
+    classe: "2nde"
     objectif: J'utilise la constante d'Avogadro.
     mots: [mole, quantité de matière, constante d'Avogadro]
     etapes:
@@ -56,6 +57,7 @@ lecons:
 
   - id: masse-molaire
     titre: "La masse molaire"
+    classe: "2nde"
     objectif: Je calcule une masse molaire et une quantité de matière.
     mots: [masse molaire, g/mol]
     etapes:
@@ -95,6 +97,7 @@ lecons:
 
   - id: concentrations
     titre: "Concentrations et dilution"
+    classe: "2nde"
     objectif: Je calcule une concentration et je prépare une dilution.
     mots: [soluté, solvant, concentration, dilution]
     etapes:
@@ -136,6 +139,7 @@ lecons:
 
   - id: stoechiometrie
     titre: "Bilan de matière"
+    classe: "2nde"
     objectif: J'utilise une équation pour prévoir les quantités.
     mots: [stœchiométrie, réactif limitant, avancement]
     etapes:
@@ -176,6 +180,7 @@ lecons:
 
   - id: energie-des-reactions
     titre: "Réactions qui chauffent, réactions qui refroidissent"
+    classe: "2nde"
     objectif: Je distingue réaction exothermique et endothermique.
     mots: [exothermique, endothermique, énergie]
     etapes:
@@ -210,6 +215,7 @@ lecons:
 
   - id: oxydoreduction-et-piles
     titre: "Oxydoréduction : rouille et piles"
+    classe: "2nde"
     objectif: Je comprends qu'une pile fonctionne grâce à un échange d'électrons.
     mots: [oxydation, réduction, oxydant, réducteur, pile]
     etapes:

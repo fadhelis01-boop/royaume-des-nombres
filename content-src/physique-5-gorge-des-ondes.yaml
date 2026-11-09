@@ -59,6 +59,7 @@ lecons:
 
   - id: frequence-et-decibels
     titre: "Hauteur et intensité : hertz et décibels"
+    classe: "4ᵉ"
     objectif: Je relie la fréquence à la hauteur et je protège mes oreilles.
     mots: [fréquence, hertz, ultrason, décibel]
     etapes:
@@ -98,6 +99,7 @@ lecons:
 
   - id: la-lumiere
     titre: "La lumière, la plus rapide"
+    classe: "4ᵉ"
     objectif: Je connais la vitesse de la lumière et l'année-lumière.
     mots: [vitesse de la lumière, année-lumière, propagation rectiligne]
     etapes:
@@ -134,6 +136,7 @@ lecons:
 
   - id: couleurs
     titre: "Les couleurs de la lumière"
+    classe: "2nde"
     objectif: J'explique la décomposition de la lumière blanche et la synthèse des couleurs.
     mots: [spectre, prisme, synthèse additive, synthèse soustractive]
     etapes:
@@ -173,6 +176,7 @@ lecons:
 
   - id: lentilles-et-oeil
     titre: "Lentilles, loupe et œil"
+    classe: "2nde"
     objectif: Je comprends le rôle d'une lentille convergente.
     mots: [réfraction, lentille convergente, foyer, image]
     etapes:

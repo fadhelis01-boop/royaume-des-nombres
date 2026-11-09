@@ -1,0 +1,244 @@
+id: en-baie-du-brevet
+matiere: anglais
+titre: La Baie du Brevet
+sous_titre: Les conditionnels, la voix passive, le discours rapporté, used to, argumenter, comprendre un document
+emoji: 🎓
+couleur: "#184782"
+cycle: explorateurs
+age: 14-15 ans
+niveau: 3ᵉ
+ordre: 707
+version: 1.0.0
+intro:
+  - narrateur: "Au fond de la Baie du Brevet, un phare guide les navires vers le lycée. Sa lumière s'allume pour qui sait imaginer, rapporter et argumenter en anglais."
+  - mia: "En 3ᵉ, on vise le niveau A2+ : comprendre un document, donner son avis, imaginer ce qui se passerait si…"
+  - zero: "If I were a lighthouse, I would shine all night ! … C'est juste, ça ?"
+
+lecons:
+  - id: conditionals
+    titre: If… - les phrases conditionnelles
+    objectif: J'utilise « if + présent, will » (réel) et « if + prétérit, would » (imaginaire).
+    mots: [if, would, will, condition]
+    etapes:
+      - dialogue:
+          - zero: "Si j'étais riche, j'achèterais un phare."
+          - mia: "« If I were rich, I would buy a lighthouse. » C'est imaginaire : prétérit après if, would ensuite."
+          - neo: "Et pour une condition réelle : « If it rains, I will stay home. »"
+      - a_quoi_ca_sert: "Faire des plans (« si on a le temps, on ira… »), imaginer, donner des conseils (« If I were you… »), et ce point tombe souvent au brevet."
+      - texte: |
+          **Condition réelle** (possible) : **if + présent**, **will + verbe** → **If it rains, I will stay home.**
+
+          **Condition imaginaire** : **if + prétérit**, **would + verbe** → **If I had a dog, I would walk it every day.**
+
+          Avec **be**, on dit souvent **were** pour tout le monde : **If I were you, I would apologise.** (À ta place, je m'excuserais.)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "If it rains, I will stay home.", sens: "S'il pleut, je resterai à la maison.", emoji: "🌧️" }, { texte: "If I had wings, I would fly.", sens: "Si j'avais des ailes, je volerais.", emoji: "🪽" }, { texte: "If I were you, I would sleep.", sens: "À ta place, je dormirais.", emoji: "😴" }] }
+        legende: "Écoute la différence : « will » (réel) et « would » (imaginaire)."
+      - attention: "Jamais **will** ni **would** juste après **if** : « If it will rain » est faux."
+      - astuce: { texte: "Réel : présent + will. Rêve : prétérit + would. Le temps recule d'un cran quand on rêve.", qui: neo }
+      - retiens: "**If + présent, will** (réel). **If + prétérit, would** (imaginaire). **If I were you, I would…** = à ta place, je…"
+    exercices:
+      - type: qcm
+        vars: { t: [["If you study, you ___ pass.", "will", "would", "are"], ["If I had a million euros, I ___ travel.", "would", "will", "am"], ["If it ___ tomorrow, we will cancel the trip.", "rains", "will rain", "would rain"], ["If I ___ you, I would say sorry.", "were", "am", "will be"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: classer
+        enonce: "Range chaque phrase : condition réelle ou imaginaire ?"
+        categories: ["Réelle", "Imaginaire"]
+        mots: [["If it snows, we will ski.", 0], ["If I were a bird, I would fly.", 1], ["If you call me, I will answer.", 0], ["If we had time, we would visit Rome.", 1]]
+        correction: "will → réel ; would → imaginaire."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « Si j'étais toi, je dormirais »."
+        items: ["If", "I were you,", "I", "would", "sleep."]
+        correction: "If I were you, I would sleep."
+      - type: mot
+        enonce: "Complète : « If I had a car, I … drive to the beach. »"
+        reponse: ["would"]
+        correction: "Imaginaire : **would**."
+
+  - id: passive
+    titre: The passive - la voix passive
+    objectif: Je transforme une phrase à la voix passive (be + participe passé) au présent et au passé.
+    mots: [passive, was built, by, passif]
+    etapes:
+      - dialogue:
+          - neo: "Ce phare a été construit en 1850."
+          - mia: "« The lighthouse was built in 1850. » Ce qui compte, c'est le phare, pas qui l'a construit : voix passive."
+      - a_quoi_ca_sert: "Lire des documents historiques ou scientifiques, des articles de presse, des notices : la voix passive y est partout."
+      - texte: |
+          **be** (au bon temps) + **participe passé** :
+
+          - présent : **English is spoken all over the world.** (L'anglais est parlé…)
+          - prétérit : **The Eiffel Tower was built in 1889.** · **The windows were broken.**
+
+          Pour dire qui fait l'action : **by** → **Harry Potter was written by J. K. Rowling.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "English is spoken in many countries.", sens: "L'anglais est parlé dans beaucoup de pays.", emoji: "🌍" }, { texte: "The tower was built in 1889.", sens: "La tour a été construite en 1889.", emoji: "🗼" }, { texte: "The book was written by a girl.", sens: "Le livre a été écrit par une fille.", emoji: "📕" }] }
+        legende: "Écoute « was built », « was written » : be + participe passé."
+      - astuce: { texte: "Cherche « by » : il annonce souvent celui qui fait l'action dans une phrase passive.", qui: zero }
+      - retiens: "Voix passive : **be + participe passé** (**is spoken**, **was built**). Celui qui agit : **by** (**written by…**)."
+    exercices:
+      - type: qcm
+        enonce: "Mets au passif : « Shakespeare wrote Hamlet. »"
+        choix: ["Hamlet was written by Shakespeare.", "Hamlet is wrote by Shakespeare.", "Hamlet was write by Shakespeare.", "Shakespeare was written by Hamlet."]
+        correction: "**was written by** : be au prétérit + participe passé."
+      - type: qcm
+        vars: { t: [["Cheese ___ from milk.", "is made", "made", "is make"], ["The car ___ yesterday.", "was stolen", "stole", "is stolen"], ["These photos ___ in 1950.", "were taken", "was taken", "took"]] }
+        enonce: "Complète au passif : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: relier
+        enonce: "🔗 Relie chaque verbe à son participe passé."
+        paires: [["build", "built"], ["write", "written"], ["speak", "spoken"], ["steal", "stolen"]]
+        correction: "build → built, write → written, speak → spoken, steal → stolen."
+      - type: mot
+        enonce: "Complète : « The Mona Lisa was painted … Leonardo da Vinci. »"
+        reponse: ["by"]
+        correction: "Celui qui agit : **by**."
+
+  - id: reported-speech
+    titre: Reported speech - rapporter des paroles
+    objectif: Je rapporte ce que quelqu'un a dit (he said that…, she asked if…).
+    mots: [said, told, asked, discours]
+    etapes:
+      - dialogue:
+          - zero: "Lya m'a dit : « I am tired. » Comment je le répète à Néo ?"
+          - mia: "« She said that she was tired. » Le temps recule d'un cran et les pronoms changent."
+      - a_quoi_ca_sert: "Raconter une conversation, résumer une interview ou un article, comprendre un document audio au brevet."
+      - texte: |
+          **Discours direct** : She said, "I **am** tired."
+          **Discours indirect** : She said (that) she **was** tired.
+
+          Le temps **recule** : présent → prétérit, **will** → **would**, **can** → **could**.
+          Les pronoms suivent : I → he / she, my → his / her.
+
+          **said** (dire) · **told** + personne (**He told me that…**) · **asked if** (demander si).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "She said that she was tired.", sens: "Elle a dit qu'elle était fatiguée.", emoji: "😴" }, { texte: "He told me that he would come.", sens: "Il m'a dit qu'il viendrait.", emoji: "🚶" }, { texte: "They asked if I could help.", sens: "Ils ont demandé si je pouvais aider.", emoji: "🙋" }] }
+        legende: "Écoute comment « am » devient « was », « will » devient « would »."
+      - astuce: { texte: "Recule chaque verbe d'une marche dans le temps : is → was, will → would, can → could.", qui: neo }
+      - retiens: "Discours indirect : le temps **recule** (am → was, will → would, can → could), les pronoms changent. **said**, **told + personne**, **asked if**."
+    exercices:
+      - type: qcm
+        enonce: "Rapporte : Tom said, \"I am hungry.\""
+        choix: ["Tom said that he was hungry.", "Tom said that I am hungry.", "Tom said that he is hungry yesterday.", "Tom told that he was hungry."]
+        correction: "am → **was**, I → **he** : Tom said that he was hungry."
+      - type: relier
+        enonce: "🔗 Relie chaque forme directe à sa forme rapportée."
+        paires: [["is", "was"], ["will", "would"], ["can", "could"], ["am going to", "was going to"]]
+        correction: "Le temps recule d'un cran : is → was, will → would, can → could."
+      - type: qcm
+        enonce: "Complète : « She … me that she would call. »"
+        choix: ["told", "said", "asked", "spoke"]
+        correction: "**told** + la personne (me)."
+      - type: mot
+        enonce: "Rapporte : He said, \"I will come.\" → He said that he … come."
+        reponse: ["would"]
+        correction: "will → **would**."
+
+  - id: used-to
+    titre: Used to - autrefois
+    objectif: J'utilise « used to » pour parler d'habitudes passées qui ont changé.
+    mots: [used to, autrefois, habitude]
+    etapes:
+      - dialogue:
+          - neo: "Quand j'étais petit, je jouais aux billes. Maintenant, je joue aux échecs."
+          - mia: "« I used to play marbles. » **used to** = j'avais l'habitude de… mais ce n'est plus vrai."
+      - a_quoi_ca_sert: "Comparer ton enfance et aujourd'hui, parler de la vie autrefois (sujet fréquent au brevet : « then and now »)."
+      - texte: |
+          **used to** + verbe = une **habitude passée**, terminée :
+
+          - **I used to live in Lyon.** (J'habitais à Lyon, plus maintenant.)
+          - **People used to write letters.**
+          - Négation : **I didn't use to like vegetables.** Question : **Did you use to play outside?**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I used to be afraid of the dark.", sens: "Avant, j'avais peur du noir.", emoji: "🌑" }, { texte: "People used to write letters.", sens: "Autrefois, les gens écrivaient des lettres.", emoji: "✉️" }, { texte: "Did you use to play outside?", sens: "Avant, tu jouais dehors ?", emoji: "🌳" }] }
+        legende: "Écoute, puis dis deux choses que tu faisais avant et que tu ne fais plus."
+      - astuce: { texte: "Used to = « avant, mais plus maintenant ». Après did / didn't, le d de used disparaît : did you use to…", qui: zero }
+      - retiens: "**used to + verbe** = habitude passée terminée. **didn't use to** · **Did you use to…?**"
+    exercices:
+      - type: qcm
+        enonce: "« I used to play the piano » veut dire :"
+        choix: ["Avant, je jouais du piano (plus maintenant).", "Je joue du piano tous les jours.", "Je vais jouer du piano.", "J'ai l'habitude de jouer du piano maintenant."]
+        correction: "**used to** = habitude passée, terminée."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["Did you use to have long hair?", "Did you used to have long hair?", "Do you used to have long hair?", "Use you to have long hair?"]
+        correction: "Après **did**, on écrit **use to** (sans d)."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « Autrefois, les gens écrivaient des lettres »."
+        items: ["People", "used to", "write", "letters."]
+        correction: "People used to write letters."
+      - type: mot
+        enonce: "Complète : « When I was a child, I … to live in a small village. »"
+        reponse: ["used"]
+        correction: "**used to** + verbe."
+
+  - id: opinion
+    titre: Giving your opinion - donner son avis
+    objectif: Je donne mon avis et je l'argumente avec des connecteurs (because, however, moreover).
+    mots: [opinion, because, however, avis]
+    etapes:
+      - dialogue:
+          - mia: "Faut-il interdire les téléphones au collège ? Donne ton avis en anglais, Zéro."
+          - zero: "« In my opinion, phones are useful because… » euh… on peut appeler ses parents ?"
+          - neo: "Parfait ! Une opinion, une raison, un exemple. Ajoute « however » pour l'autre côté."
+      - a_quoi_ca_sert: "Le brevet demande souvent un court texte d'opinion. Et en vrai : débattre, convaincre, défendre une idée."
+      - texte: |
+          Donner son avis : **I think that…** · **In my opinion,…** · **I agree / I disagree with…**
+
+          Argumenter :
+          - **because** (parce que) · **for example** · **moreover** (de plus)
+          - **however** (cependant) · **on the one hand… on the other hand…** (d'un côté… de l'autre…)
+          - **to conclude** (pour conclure)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "In my opinion, homework is useful.", sens: "À mon avis, les devoirs sont utiles.", emoji: "💭" }, { texte: "However, it takes a lot of time.", sens: "Cependant, ça prend beaucoup de temps.", emoji: "⏳" }, { texte: "To conclude, I agree with this idea.", sens: "Pour conclure, je suis d'accord avec cette idée.", emoji: "✅" }] }
+        legende: "Écoute, puis donne ton avis sur les écrans en trois phrases."
+      - astuce: { texte: "Un paragraphe d'opinion tient en 4 temps : mon avis, une raison, un exemple, mais l'autre côté (however).", qui: neo }
+      - retiens: "**I think / In my opinion** + **because** + **for example** ; **however** pour l'autre point de vue ; **to conclude** pour finir."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque connecteur à son sens."
+        paires: [["however", "cependant"], ["moreover", "de plus"], ["because", "parce que"], ["to conclude", "pour conclure"]]
+        correction: "however = cependant, moreover = de plus, because = parce que, to conclude = pour conclure."
+      - type: ordre
+        enonce: "Range les étapes d'un paragraphe d'opinion."
+        items: ["In my opinion, sport is important", "because it keeps you healthy.", "For example, I run every week.", "However, it can be tiring."]
+        correction: "Avis, raison, exemple, nuance."
+      - type: qcm
+        enonce: "Quel connecteur introduit une idée opposée ?"
+        choix: ["however", "moreover", "because", "for example"]
+        correction: "**however** = cependant."
+      - type: mot
+        enonce: "Complète : « In my … , school uniforms are a good idea. »"
+        reponse: ["opinion"]
+        correction: "**In my opinion** = à mon avis."
+
+  - id: understanding-document
+    titre: Understanding a document - comprendre un document
+    objectif: Je comprends l'essentiel d'un court texte authentique en repérant qui, quoi, où, quand, pourquoi.
+    mots: [document, who, where, when, comprendre]
+    etapes:
+      - dialogue:
+          - neo: "Au brevet, on te donne un document en anglais. On ne connaît pas tous les mots… et ce n'est pas grave !"
+          - mia: "Repère d'abord le type de document, les noms, les nombres, les mots transparents."
+      - a_quoi_ca_sert: "Comprendre une affiche, un article, un message en anglais sans traduire mot à mot : c'est la compétence la plus utile, au brevet et en voyage."
+      - texte: |
+          *SAVE THE OCEAN — Every year, about 8 million tonnes of plastic end up in the sea. In 2018, a group of teenagers in Bali started a campaign called "Bye Bye Plastic Bags". Today, plastic bags are banned on the island. You can help too: say no to plastic straws!*
+
+          Méthode : **type** de document (une affiche de campagne) → **qui** (des adolescents) → **où** (Bali) → **quand** (2018) → **quoi** (une campagne contre les sacs plastique) → **message** (tu peux aider).
+      - astuce: { texte: "Les mots transparents (campaign, plastic, ocean) et les nombres sont tes premiers indices.", qui: zero }
+      - retiens: "Comprendre un document : **type**, puis **qui**, **où**, **quand**, **quoi**, **pourquoi**. Les mots transparents et les nombres aident ; inutile de tout traduire."
+    exercices:
+      - type: qcm
+        enonce: "Lis : *In 2018, a group of teenagers in Bali started a campaign called \"Bye Bye Plastic Bags\".*\n\nQui a lancé la campagne ?"
+        choix: ["Des adolescents", "Le gouvernement", "Des pêcheurs", "Des touristes"]
+        correction: "« a group of teenagers » : des adolescents."
+      - type: qcm
+        enonce: "Lis : *Today, plastic bags are banned on the island.*\n\nQue s'est-il passé ?"
+        choix: ["Les sacs plastique sont interdits sur l'île.", "Les sacs plastique sont gratuits.", "L'île est fermée.", "Les sacs sont recyclés."]
+        correction: "« banned » = interdits."
+      - type: nombre
+        enonce: "Lis : *Every year, about 8 million tonnes of plastic end up in the sea.*\n\nCombien de millions de tonnes de plastique finissent dans la mer chaque année ?"
+        reponse: "8"
+        correction: "« about 8 million tonnes » : environ 8 millions de tonnes."
+      - type: relier
+        enonce: "🔗 Relie chaque mot du document à sa traduction."
+        paires: [["campaign", "campagne"], ["banned", "interdit"], ["straws", "pailles"], ["teenagers", "adolescents"]]
+        correction: "campaign = campagne, banned = interdit, straws = pailles, teenagers = adolescents."

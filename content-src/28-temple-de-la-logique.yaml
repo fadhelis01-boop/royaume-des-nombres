@@ -18,6 +18,7 @@ intro:
 lecons:
   - id: propositions
     titre: Propositions, et, ou, non
+    classe: "2nde"
     objectif: Je détermine si une proposition est vraie ou fausse et j'utilise les connecteurs et/ou/non.
     mots: [proposition, négation, connecteur]
     etapes:
@@ -67,6 +68,7 @@ lecons:
 
   - id: implication
     titre: Implication, réciproque et contraposée
+    classe: "2nde"
     objectif: Je distingue une implication, sa réciproque et sa contraposée.
     mots: [implication, réciproque, contraposée, équivalence]
     etapes:

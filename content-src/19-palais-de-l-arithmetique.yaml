@@ -67,6 +67,7 @@ lecons:
 
   - id: decomposition
     titre: La décomposition en facteurs premiers
+    classe: "3ᵉ"
     objectif: Je décompose un entier en produit de facteurs premiers.
     mots: [facteur premier, décomposition]
     etapes:

@@ -128,6 +128,7 @@ lecons:
 
   - id: classification
     titre: "Classer en groupes emboîtés"
+    classe: "6ᵉ"
     objectif: Je range des êtres vivants dans des groupes emboîtés.
     mots: [classification, groupe, vertébré, arthropode]
     etapes:
@@ -165,6 +166,7 @@ lecons:
 
   - id: ecosystemes
     titre: "Les écosystèmes"
+    classe: "6ᵉ"
     objectif: Je décris un écosystème et l'effet d'une perturbation.
     mots: [écosystème, réseau alimentaire, biodiversité]
     etapes:
@@ -201,6 +203,7 @@ lecons:
 
   - id: microbes-utiles
     titre: "Les micro-organismes utiles"
+    classe: "6ᵉ"
     objectif: Je connais le rôle des levures et des bactéries dans l'alimentation.
     mots: [levure, fermentation, bactérie lactique]
     etapes:

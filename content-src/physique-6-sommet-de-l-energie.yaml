@@ -18,6 +18,7 @@ intro:
 lecons:
   - id: formes-d-energie
     titre: "Les formes d'énergie et leurs conversions"
+    classe: "2nde"
     objectif: J'identifie les formes d'énergie et les conversions dans une chaîne énergétique.
     mots: [énergie, conversion, conservation, rendement]
     etapes:

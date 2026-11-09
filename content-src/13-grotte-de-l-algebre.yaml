@@ -18,6 +18,7 @@ intro:
 lecons:
   - id: lettre-nombre
     titre: Une lettre pour un nombre
+    classe: "5ᵉ"
     objectif: J'utilise une lettre pour représenter un nombre inconnu et je traduis une phrase en expression.
     mots: [inconnue, expression littérale]
     etapes:
@@ -81,6 +82,7 @@ lecons:
 
   - id: calculer-expression
     titre: Calculer une expression (remplacer la lettre)
+    classe: "5ᵉ"
     objectif: Je calcule la valeur d'une expression pour une valeur donnée de la lettre.
     mots: [substituer]
     etapes:
@@ -134,6 +136,7 @@ lecons:
 
   - id: reduire
     titre: Réduire une expression
+    classe: "4ᵉ"
     objectif: Je regroupe les termes semblables pour réduire une expression.
     mots: [réduire, terme]
     etapes:
@@ -190,6 +193,7 @@ lecons:
 
   - id: developper
     titre: Développer (la distributivité)
+    classe: "4ᵉ"
     objectif: Je développe k(a + b) puis (a + b)(c + d).
     mots: [développer, distributivité]
     etapes:
@@ -263,6 +267,7 @@ lecons:
 
   - id: factoriser
     titre: Factoriser
+    classe: "3ᵉ"
     objectif: Je factorise une expression en trouvant un facteur commun.
     mots: [factoriser, facteur commun]
     etapes:
@@ -314,6 +319,7 @@ lecons:
 
   - id: equations-balance
     titre: Les équations - la balance
+    classe: "4ᵉ"
     objectif: Je résous une équation simple en faisant la même opération des deux côtés.
     mots: [équation, solution]
     etapes:
@@ -368,6 +374,7 @@ lecons:
 
   - id: equations-etapes
     titre: Résoudre une équation en plusieurs étapes
+    classe: "4ᵉ"
     objectif: Je résous ax + b = c et ax + b = cx + d.
     mots: [équation]
     etapes:
@@ -428,6 +435,7 @@ lecons:
 
   - id: mettre-en-equation
     titre: Mettre un problème en équation
+    classe: "3ᵉ"
     objectif: Je traduis un problème par une équation, je la résous et je réponds à la question.
     mots: [mise en équation]
     etapes:
@@ -486,6 +494,7 @@ lecons:
 
   - id: inequations
     titre: Les inéquations
+    classe: "2nde"
     objectif: Je résous une inéquation simple et je représente ses solutions.
     mots: [inéquation]
     etapes:
@@ -540,6 +549,7 @@ lecons:
 
   - id: identites-remarquables
     titre: Les identités remarquables
+    classe: "2nde"
     objectif: Je connais et j'utilise les trois identités remarquables.
     mots: [identité remarquable]
     etapes:
@@ -607,6 +617,7 @@ lecons:
 
   - id: systemes
     titre: Les systèmes de deux équations
+    classe: "2nde"
     objectif: Je résous un système de deux équations à deux inconnues par substitution ou combinaison.
     mots: [système]
     etapes:

@@ -20,6 +20,13 @@ arcs:
     fin:
       - narrateur: "Le dernier banc de brouillard se dissout au-dessus de la Côte du Passé. Toutes les îles de l'Archipel se répondent, d'une falaise à l'autre."
       - neo: "Tu sais raconter ta journée, ton passé et tes projets en anglais. Ce n'est plus un écho : c'est ta voix."
+  - id: anglais-arc-3
+    titre: "Livre III — Raconter, convaincre, comprendre le monde"
+    sous_titre: "Récits, brevet, débats et actualité"
+    final: en-ile-du-monde
+    fin:
+      - narrateur: "Sur l'Île du Monde, les voix de toute la planète se répondent enfin. L'Archipel de l'Écho n'a plus besoin de cloche : il parle."
+      - mia: "Tu racontes, tu argumentes, tu comprends un article en anglais. Tu n'apprends plus une langue : tu t'en sers."
 chapitres:
   en-ile-des-premiers-mots:
     titre: "L'Île des Premiers Mots"
@@ -61,3 +68,27 @@ chapitres:
       - zero: "Yesterday, I went… euh… je suis allé jusqu'ici ! C'est un bon début ?"
     apres:
       - narrateur: "« Once upon a time, there was… » Les portes des châteaux s'ouvrent une à une, et les histoires d'autrefois s'envolent dans l'Archipel."
+  en-archipel-des-recits:
+    titre: "L'Archipel des Récits"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Sur l'Archipel des Récits, les conteurs ont perdu le fil : ils ne savent plus dire ce qu'ils ont vécu ni ce qu'ils étaient en train de faire."
+      - neo: "Present perfect, past continuous, conseils : rends-leur leurs histoires."
+    apres:
+      - narrateur: "« I have never seen such a sunset! » Les conteurs reprennent leurs récits au coin du feu, et l'Archipel s'illumine."
+  en-baie-du-brevet:
+    titre: "La Baie du Brevet"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Le phare de la Baie du Brevet est éteint. Il ne se rallume que pour qui sait imaginer, rapporter et argumenter."
+      - mia: "If you light it, the ships will find their way."
+    apres:
+      - narrateur: "Le phare s'allume. Sa lumière balaie la baie et montre aux navires la route du lycée."
+  en-ile-du-monde:
+    titre: "L'Île du Monde"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "L'Île du Monde capte toutes les voix de la planète, mais le brouillard les brouille en un bruit sans fin."
+      - zero: "Ça doit être… euh… « It must be » un podcast cassé ?"
+    apres:
+      - narrateur: "Le bruit devient musique : des milliers de voix anglophones, de Londres à Lagos, de Sydney à Mumbai, résonnent clairement."

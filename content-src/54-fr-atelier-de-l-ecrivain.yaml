@@ -94,6 +94,7 @@ lecons:
 
   - id: connecteurs
     titre: "Les connecteurs : enchaîner les idées"
+    classe: "6ᵉ"
     objectif: J'utilise des connecteurs de temps et de logique pour organiser un texte.
     mots: [connecteur, organisateur]
     etapes:
@@ -129,6 +130,7 @@ lecons:
 
   - id: schema-narratif
     titre: "Le schéma narratif : construire une histoire"
+    classe: "5ᵉ"
     objectif: Je reconnais et j'ordonne les cinq étapes d'un récit.
     mots: [schéma narratif, situation initiale, élément perturbateur, péripéties, dénouement]
     etapes:
@@ -170,6 +172,7 @@ lecons:
 
   - id: decrire-un-personnage
     titre: "Décrire un personnage : le portrait"
+    classe: "4ᵉ"
     objectif: Je distingue le portrait physique et le portrait moral, et j'organise une description.
     mots: [portrait, description]
     etapes:
@@ -206,6 +209,7 @@ lecons:
 
   - id: ecrire-une-lettre
     titre: "Écrire une lettre ou un message"
+    classe: "3ᵉ"
     objectif: Je connais les éléments d'une lettre et je choisis une formule adaptée au destinataire.
     mots: [lettre, destinataire, formule de politesse]
     etapes:

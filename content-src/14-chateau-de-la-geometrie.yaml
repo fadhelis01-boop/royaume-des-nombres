@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: angles
     titre: Mesurer les angles - la somme dans un triangle
+    classe: "5ᵉ"
     objectif: Je mesure un angle en degrés et je sais que la somme des angles d'un triangle vaut 180°.
     mots: [degré, rapporteur, angle]
     etapes:
@@ -78,6 +79,7 @@ lecons:
 
   - id: mediatrice-bissectrice
     titre: Milieu, médiatrice, bissectrice et cercle circonscrit
+    classe: "5ᵉ"
     objectif: Je connais et j'utilise le milieu d'un segment, la médiatrice (à égale distance de deux points) et la bissectrice (qui coupe un angle en deux).
     mots: [milieu, médiatrice, bissectrice, cercle circonscrit, distance]
     autrement:
@@ -136,6 +138,7 @@ lecons:
 
   - id: figures-particulieres
     titre: Triangles et quadrilatères particuliers
+    classe: "5ᵉ"
     objectif: Je connais les propriétés des triangles et quadrilatères particuliers.
     mots: [isocèle, équilatéral, parallélogramme, losange]
     etapes:
@@ -192,6 +195,7 @@ lecons:
 
   - id: aires-perimetres
     titre: Aires du triangle, du parallélogramme et du disque
+    classe: "5ᵉ"
     objectif: J'utilise les formules d'aire et la longueur du cercle (avec π).
     mots: [aire, π, circonférence]
     etapes:
@@ -278,6 +282,7 @@ lecons:
 
   - id: volumes
     titre: Les volumes
+    classe: "4ᵉ"
     objectif: Je calcule le volume d'un pavé, d'un prisme, d'un cylindre, d'un cône et d'une boule.
     mots: [volume, litre]
     etapes:
@@ -353,6 +358,7 @@ lecons:
 
   - id: pythagore
     titre: Le théorème de Pythagore
+    classe: "4ᵉ"
     objectif: J'utilise le théorème de Pythagore pour calculer une longueur dans un triangle rectangle.
     mots: [Pythagore, hypoténuse]
     etapes:
@@ -434,6 +440,7 @@ lecons:
 
   - id: reciproque-pythagore
     titre: Prouver qu'un triangle est rectangle
+    classe: "4ᵉ"
     objectif: J'utilise la réciproque du théorème de Pythagore.
     mots: [réciproque]
     etapes:
@@ -477,6 +484,7 @@ lecons:
 
   - id: thales
     titre: Le théorème de Thalès
+    classe: "3ᵉ"
     objectif: J'utilise le théorème de Thalès pour calculer une longueur avec des droites parallèles.
     mots: [Thalès, parallèles, agrandissement]
     etapes:
@@ -526,6 +534,7 @@ lecons:
 
   - id: trigonometrie
     titre: La trigonométrie (cosinus, sinus, tangente)
+    classe: "3ᵉ"
     objectif: J'utilise cos, sin et tan dans un triangle rectangle pour calculer une longueur ou un angle.
     mots: [cosinus, sinus, tangente]
     etapes:
@@ -587,6 +596,7 @@ lecons:
 
   - id: transformations
     titre: Les transformations (symétries, translation, rotation, homothétie)
+    classe: "3ᵉ"
     objectif: Je reconnais les transformations et leurs effets sur les figures.
     mots: [translation, rotation, homothétie]
     etapes:

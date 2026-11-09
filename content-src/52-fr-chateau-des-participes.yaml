@@ -57,6 +57,7 @@ lecons:
 
   - id: accord-avec-etre
     titre: "Avec être, l'aimant doré : accord avec le sujet"
+    classe: "6ᵉ"
     objectif: J'accorde le participe passé employé avec être avec le sujet, y compris à la voix passive.
     mots: [participe passé, auxiliaire être, voix passive]
     etapes:
@@ -94,6 +95,7 @@ lecons:
 
   - id: accord-avec-avoir
     titre: "Avec avoir, le Glouton : le COD placé avant"
+    classe: "5ᵉ"
     objectif: J'accorde le participe passé employé avec avoir seulement quand le COD est placé avant le verbe.
     mots: [participe passé, auxiliaire avoir, COD]
     etapes:
@@ -133,6 +135,7 @@ lecons:
 
   - id: participe-seul
     titre: "Le participe passé employé seul"
+    classe: "4ᵉ"
     objectif: J'accorde le participe passé employé sans auxiliaire comme un adjectif.
     mots: [participe passé, adjectif]
     etapes:
@@ -166,6 +169,7 @@ lecons:
 
   - id: e-ai-ais-ait-er
     titre: "-é, -er, -ez, -ai, -ais, -ait : le son « é / è » en fin de verbe"
+    classe: "3ᵉ"
     objectif: Je choisis la bonne terminaison selon le temps et la personne.
     mots: [terminaison]
     etapes:

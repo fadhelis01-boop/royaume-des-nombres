@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: referentiel
     titre: "Bouger… par rapport à quoi ?"
+    classe: "5ᵉ"
     objectif: Je décris un mouvement par rapport à un référentiel.
     mots: [référentiel, trajectoire, mouvement, repos]
     etapes:
@@ -52,6 +53,7 @@ lecons:
 
   - id: calculer-une-vitesse
     titre: "Calculer une vitesse"
+    classe: "4ᵉ"
     objectif: J'utilise v = d / t avec les bonnes unités.
     mots: [vitesse moyenne, distance, durée]
     etapes:
@@ -103,6 +105,7 @@ lecons:
 
   - id: les-forces
     titre: "Représenter une force"
+    classe: "4ᵉ"
     objectif: Je décris une force par ses 4 caractéristiques.
     mots: [force, newton, vecteur, dynamomètre]
     etapes:
@@ -142,6 +145,7 @@ lecons:
 
   - id: poids-et-masse
     titre: "Poids et masse : ce n'est pas pareil !"
+    classe: "3ᵉ"
     objectif: Je calcule un poids avec P = m × g.
     mots: [masse, poids, intensité de pesanteur]
     etapes:
@@ -181,6 +185,7 @@ lecons:
 
   - id: lois-de-newton
     titre: "Inertie et actions réciproques"
+    classe: "3ᵉ"
     objectif: J'énonce le principe d'inertie et le principe des actions réciproques.
     mots: [inertie, action, réaction, Newton]
     etapes:
@@ -218,6 +223,7 @@ lecons:
 
   - id: masse-volumique-pression
     titre: "Masse volumique et pression"
+    classe: "4ᵉ"
     objectif: J'utilise ρ = m / V et je comprends la pression.
     mots: [masse volumique, densité, pression, pascal]
     etapes:

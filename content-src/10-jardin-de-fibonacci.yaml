@@ -483,6 +483,7 @@ lecons:
 
   - id: nombres-figures
     titre: Les nombres carrés et triangulaires
+    classe: "6ᵉ"
     objectif: Je découvre les nombres carrés et triangulaires en dessinant des points.
     mots: [carré, nombre triangulaire]
     etapes:

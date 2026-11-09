@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: vecteurs
     titre: Les vecteurs et la relation de Chasles
+    classe: "2nde"
     objectif: Je comprends un vecteur comme un déplacement et j'additionne des vecteurs.
     mots: [vecteur, translation, Chasles]
     etapes:

@@ -138,6 +138,7 @@ lecons:
 
   - id: l-air-et-ses-gaz
     titre: "De quoi est fait l'air ?"
+    classe: "6ᵉ"
     objectif: Je connais la composition de l'air.
     mots: [azote, oxygène, dioxyde de carbone, atmosphère]
     etapes:
@@ -183,6 +184,7 @@ lecons:
 
   - id: combustion
     titre: "Le feu : le triangle de la combustion"
+    classe: "6ᵉ"
     objectif: Je sais ce qu'il faut pour qu'un feu brûle, et comment l'éteindre.
     mots: [combustion, combustible, comburant, triangle du feu]
     etapes:

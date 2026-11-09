@@ -135,6 +135,7 @@ lecons:
 
   - id: attribut-du-sujet
     titre: "L'attribut du sujet et les verbes d'état"
+    classe: "6ᵉ"
     objectif: Je reconnais l'attribut du sujet après un verbe d'état et je l'accorde avec le sujet.
     mots: [attribut du sujet, verbe d'état]
     etapes:
@@ -177,6 +178,7 @@ lecons:
 
   - id: groupe-nominal-etendu
     titre: "Enrichir le groupe nominal : épithète et complément du nom"
+    classe: "5ᵉ"
     objectif: J'enrichis un nom avec un adjectif épithète ou un complément du nom.
     mots: [épithète, complément du nom, expansion]
     etapes:
@@ -215,6 +217,7 @@ lecons:
 
   - id: pronoms-complements
     titre: "Les pronoms compléments : le, la, les, lui, leur, en, y"
+    classe: "5ᵉ"
     objectif: Je remplace un complément par le bon pronom pour éviter les répétitions.
     mots: [pronom complément]
     etapes:

@@ -1,0 +1,242 @@
+id: en-ile-du-monde
+matiere: anglais
+titre: L'Île du Monde
+sous_titre: Niveau B1 - present perfect continuous, modaux de déduction, gérondif ou infinitif, débattre, comprendre l'actualité
+emoji: 🌐
+couleur: "#153f75"
+cycle: maitres
+age: 15-16 ans
+niveau: 2nde
+ordre: 708
+version: 1.0.0
+intro:
+  - narrateur: "Au large de l'Archipel, l'Île du Monde capte les voix de toute la planète : des podcasts, des articles, des débats."
+  - neo: "Au lycée, on vise le niveau B1 : comprendre l'essentiel d'un document authentique et défendre son point de vue."
+  - zero: "I have been waiting for this island for ages !"
+
+lecons:
+  - id: present-perfect-continuous
+    titre: Present perfect continuous - depuis combien de temps
+    objectif: J'utilise « have been + -ing » pour une action commencée dans le passé qui dure encore.
+    mots: [have been, -ing, for, since, durée]
+    etapes:
+      - dialogue:
+          - mia: "Tu attends depuis longtemps ?"
+          - zero: "« I have been waiting for two hours! » Et je n'ai toujours pas fini d'attendre."
+      - a_quoi_ca_sert: "Dire depuis quand tu fais une activité, expliquer pourquoi tu es fatigué (« I've been running »), parler d'une situation qui dure."
+      - texte: |
+          **have / has been** + verbe en **-ing** : l'action a commencé dans le passé et **continue** (ou vient juste de s'arrêter, avec des traces visibles).
+
+          - **I have been learning English for six years.**
+          - **She's tired because she has been running.**
+          - **How long have you been waiting?**
+
+          Avec les verbes d'état (**know**, **like**, **be**), on garde le present perfect simple : **I have known her since 2019.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I have been learning English for six years.", sens: "J'apprends l'anglais depuis six ans.", emoji: "📚" }, { texte: "It has been raining all day.", sens: "Il pleut depuis ce matin.", emoji: "🌧️" }, { texte: "How long have you been waiting?", sens: "Depuis combien de temps attends-tu ?", emoji: "⏳" }] }
+        legende: "Écoute « have been + -ing » : une action qui dure."
+      - astuce: { texte: "Durée qui continue + verbe d'action → have been + -ing. Verbe d'état (know, like) → have + participe passé.", qui: neo }
+      - retiens: "**have / has been + -ing** = action qui dure jusqu'à maintenant. **for** (durée) / **since** (départ). Verbes d'état : present perfect simple."
+    exercices:
+      - type: qcm
+        vars: { t: [["I ___ for this bus for 20 minutes.", "have been waiting", "am waiting", "waited"], ["She is out of breath: she ___.", "has been running", "runs", "had run"], ["They ___ the house since 8 a.m.", "have been painting", "paint", "are painting"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : action commencée dans le passé qui dure."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["I have known him for ten years.", "I have been knowing him for ten years.", "I know him for ten years.", "I am knowing him since ten years."]
+        correction: "« know » est un verbe d'état : present perfect simple, **have known**."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « J'apprends l'anglais depuis six ans »."
+        items: ["I", "have been", "learning", "English", "for six years."]
+        correction: "I have been learning English for six years."
+      - type: mot
+        enonce: "Complète : « How long have you been … ? » (attendre, wait)"
+        reponse: ["waiting"]
+        correction: "have been + **waiting**."
+
+  - id: deduction
+    titre: Must, can't, might - faire des déductions
+    objectif: J'exprime une certitude ou un doute sur le présent (must be, can't be, might be).
+    mots: [must, can't, might, déduction]
+    etapes:
+      - dialogue:
+          - neo: "Le prof n'est pas là, son manteau non plus."
+          - mia: "« He must be at home. » Presque sûr. « He can't be ill, he was fine this morning. » Impossible."
+      - a_quoi_ca_sert: "Commenter une image ou une affiche (épreuve fréquente au lycée), mener une enquête, faire des hypothèses en débat."
+      - texte: |
+          Déduction sur le **présent** :
+
+          - **must** = presque sûr que oui : **She must be tired.** (Elle doit être fatiguée.)
+          - **can't** = presque sûr que non : **It can't be true!** (Ce n'est pas possible !)
+          - **might / may / could** = peut-être : **They might be lost.**
+
+          Pour décrire une image : **The man might be a tourist. It must be winter: there is snow.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "He must be at home.", sens: "Il doit être chez lui (j'en suis presque sûr).", emoji: "🏠" }, { texte: "It can't be true!", sens: "Ce n'est pas possible !", emoji: "😲" }, { texte: "They might be lost.", sens: "Ils sont peut-être perdus.", emoji: "🧭" }] }
+        legende: "Écoute, puis fais trois hypothèses sur une photo de ton choix."
+      - attention: "Le contraire de **must** (déduction) est **can't**, pas « mustn't » (qui veut dire interdit)."
+      - astuce: { texte: "Imagine une échelle de certitude : must (95 %), might (50 %), can't (5 %).", qui: zero }
+      - retiens: "**must** = presque sûr, **might / may / could** = peut-être, **can't** = impossible. Contraire de must (déduction) : **can't**."
+    exercices:
+      - type: qcm
+        vars: { t: [["Il a couru un marathon. He ___ be exhausted.", "must", "can't", "mustn't"], ["Elle vient de manger. She ___ be hungry.", "can't", "must", "should"], ["Je ne suis pas sûr. It ___ rain later.", "might", "must", "can't"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: ordre
+        enonce: "Range du plus sûr au moins sûr que c'est vrai."
+        items: ["It must be true.", "It might be true.", "It can't be true."]
+        correction: "must (presque sûr) > might (peut-être) > can't (impossible)."
+      - type: qcm
+        enonce: "Sur une photo, il y a de la neige et des sapins décorés. Quelle déduction ?"
+        choix: ["It must be winter.", "It can't be winter.", "It mustn't be winter.", "It might summer."]
+        correction: "Neige et sapins : **It must be winter.**"
+      - type: mot
+        enonce: "Le contraire de « must be » (déduction) : « … be »."
+        reponse: ["can't", "cant", "cannot"]
+        correction: "**can't be** = impossible."
+
+  - id: gerund-infinitive
+    titre: -ing or to? - gérondif ou infinitif
+    objectif: Je choisis entre verbe + -ing (enjoy doing) et verbe + to (want to do).
+    mots: [enjoy, want, -ing, to, infinitif]
+    etapes:
+      - dialogue:
+          - zero: "« I enjoy to swim. » C'est bon ?"
+          - mia: "Presque ! Après **enjoy**, on met -ing : « I enjoy swimming ». Mais « I want to swim »."
+      - a_quoi_ca_sert: "Parler de ce que tu aimes, de tes projets, écrire une lettre de motivation (« I look forward to hearing from you »)."
+      - texte: |
+          **Verbe + -ing** : **enjoy**, **like / love / hate**, **finish**, **avoid**, **stop**, **mind** → **I enjoy reading.**
+          Aussi après une préposition : **I'm good at drawing.** · **I look forward to meeting you.**
+
+          **Verbe + to** : **want**, **decide**, **hope**, **plan**, **learn**, **need**, **would like** → **I want to travel.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I enjoy reading.", sens: "J'aime lire.", emoji: "📖" }, { texte: "I want to travel.", sens: "Je veux voyager.", emoji: "✈️" }, { texte: "I look forward to meeting you.", sens: "J'ai hâte de te rencontrer.", emoji: "🤝" }] }
+        legende: "Écoute, puis dis ce que tu aimes faire et ce que tu veux faire plus tard."
+      - attention: "Dans **look forward to**, « to » est une préposition : il est suivi de **-ing** (**to meeting**)."
+      - astuce: { texte: "Ce qu'on vit déjà (enjoy, finish, stop) → -ing. Ce qui est tourné vers l'avenir (want, hope, plan) → to.", qui: neo }
+      - retiens: "**enjoy / finish / avoid / be good at / look forward to** + **-ing**. **want / hope / decide / plan / would like** + **to**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque verbe : suivi de « -ing » ou de « to » ?"
+        categories: ["+ -ing", "+ to"]
+        mots: [["enjoy", 0], ["want", 1], ["finish", 0], ["decide", 1], ["avoid", 0], ["hope", 1]]
+        correction: "enjoy, finish, avoid → -ing ; want, decide, hope → to."
+      - type: qcm
+        vars: { t: [["I enjoy ___ to music.", "listening", "to listen", "listen"], ["She wants ___ a doctor.", "to become", "becoming", "become"], ["He finished ___ his essay.", "writing", "to write", "write"], ["We look forward to ___ you.", "seeing", "see", "to see"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: mot
+        enonce: "Complète : « I'm good at … » (dessiner, draw)"
+        reponse: ["drawing"]
+        correction: "Après une préposition (at) : **drawing**."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « J'ai hâte de te rencontrer »."
+        items: ["I", "look forward", "to", "meeting you."]
+        correction: "I look forward to meeting you."
+
+  - id: debate
+    titre: Debate - débattre
+    objectif: Je défends un point de vue, je nuance et je réponds à un argument en anglais.
+    mots: [agree, disagree, point, argument, débat]
+    etapes:
+      - dialogue:
+          - neo: "Débat du jour : « Social media do more harm than good. »"
+          - mia: "Pour réagir : « I see your point, but… » Pour nuancer : « It depends on… »."
+      - a_quoi_ca_sert: "Les oraux du lycée, les clubs de débat, et la vie : savoir dire poliment qu'on n'est pas d'accord, en anglais comme en français."
+      - texte: |
+          - **I strongly believe that…** · **As far as I'm concerned,…** (en ce qui me concerne)
+          - **I agree with you up to a point.** · **I see your point, but…**
+          - **On the contrary,…** · **It depends on…** · **That's a fair point.**
+          - Exemples et preuves : **According to a study,…** · **For instance,…**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I see your point, but I disagree.", sens: "Je comprends ton point de vue, mais je ne suis pas d'accord.", emoji: "🤔" }, { texte: "It depends on how you use it.", sens: "Ça dépend de la façon dont on l'utilise.", emoji: "⚖️" }, { texte: "According to a study, teens sleep less.", sens: "Selon une étude, les ados dorment moins.", emoji: "📊" }] }
+        legende: "Écoute, puis réponds à l'idée : « School should start at 10 a.m. »"
+      - astuce: { texte: "Un bon argument en trois temps : je prends position, je justifie, je donne une preuve (according to…).", qui: zero }
+      - retiens: "Prendre position : **I strongly believe…** Nuancer : **up to a point**, **it depends on…** Répondre : **I see your point, but…** Prouver : **according to…**"
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque expression à son sens."
+        paires: [["I see your point, but…", "Je comprends, mais…"], ["It depends on…", "Ça dépend de…"], ["According to…", "Selon…"], ["On the contrary,…", "Au contraire,…"]]
+        correction: "Ce sont les briques d'un débat poli et argumenté."
+      - type: classer
+        enonce: "Range chaque phrase : accord ou désaccord ?"
+        categories: ["Accord", "Désaccord"]
+        mots: [["That's a fair point.", 0], ["I couldn't agree more.", 0], ["I'm afraid I disagree.", 1], ["On the contrary,…", 1]]
+        correction: "fair point, couldn't agree more → accord ; I disagree, on the contrary → désaccord."
+      - type: ordre
+        enonce: "Range les étapes d'un argument."
+        items: ["I strongly believe that school uniforms are useful", "because they reduce differences between students.", "According to a survey, most parents agree."]
+        correction: "Position, justification, preuve."
+      - type: mot
+        enonce: "Complète : « … to a recent study, teenagers sleep less. » (Selon)"
+        reponse: ["According", "according"]
+        correction: "**According to** = selon."
+
+  - id: news
+    titre: Understanding the news - comprendre l'actualité
+    objectif: Je comprends l'essentiel d'un court article ou d'un titre de presse en anglais.
+    mots: [headline, article, report, actualité]
+    etapes:
+      - dialogue:
+          - mia: "Les titres de presse anglais sont très courts : « Teen invents plastic-eating robot »."
+          - neo: "On enlève les petits mots et on met le présent, même pour le passé. À toi de reconstruire la phrase."
+      - a_quoi_ca_sert: "Lire l'actualité dans le monde entier, repérer une fausse information, préparer les épreuves de compréhension du lycée."
+      - texte: |
+          *TEEN INVENTS PLASTIC-EATING ROBOT — A 16-year-old student from Kenya has designed a small robot that collects plastic waste on beaches. The machine, which runs on solar power, can clean 200 square metres an hour. "I wanted to protect the turtles," she told reporters.*
+
+          Les titres : présent simple pour un fait passé, petits mots supprimés, **to + verbe** pour le futur (**PM to visit China**).
+      - astuce: { texte: "Lis d'abord le titre et la première phrase : en anglais, l'essentiel est au début (qui, quoi, où).", qui: neo }
+      - retiens: "Un article anglais donne l'essentiel au **début**. Titres : présent pour le passé, **to + verbe** pour le futur, petits mots supprimés."
+    exercices:
+      - type: qcm
+        enonce: "Lis : *A 16-year-old student from Kenya has designed a small robot that collects plastic waste on beaches.*\n\nQu'a fait l'élève ?"
+        choix: ["Elle a conçu un robot qui ramasse le plastique.", "Elle a nettoyé une plage seule.", "Elle a vendu des robots.", "Elle a gagné une course de robots."]
+        correction: "« has designed a small robot that collects plastic waste »."
+      - type: nombre
+        enonce: "Lis : *The machine, which runs on solar power, can clean 200 square metres an hour.*\n\nCombien de mètres carrés le robot nettoie-t-il par heure ?"
+        reponse: "200"
+        correction: "« 200 square metres an hour »."
+      - type: qcm
+        enonce: "Le titre « PM TO VISIT CHINA » veut dire :"
+        choix: ["Le Premier ministre va se rendre en Chine.", "Le Premier ministre est allé en Chine.", "Le Premier ministre visite la Chine en ce moment.", "La Chine va visiter le Premier ministre."]
+        correction: "Dans un titre, **to + verbe** = futur."
+      - type: relier
+        enonce: "🔗 Relie chaque mot de presse à sa traduction."
+        paires: [["headline", "gros titre"], ["reporter", "journaliste"], ["solar power", "énergie solaire"], ["waste", "déchets"]]
+        correction: "headline = gros titre, reporter = journaliste, solar power = énergie solaire, waste = déchets."
+
+  - id: english-world
+    titre: English around the world - l'anglais dans le monde
+    objectif: Je connais les principaux pays anglophones et quelques différences entre anglais britannique et américain.
+    mots: [British, American, accent, anglophone]
+    etapes:
+      - dialogue:
+          - zero: "À Londres, on dit « flat », à New York « apartment ». Ce sont deux langues ?"
+          - mia: "La même langue, avec des mots et des accents différents. Plus de 1,5 milliard de personnes parlent anglais !"
+      - a_quoi_ca_sert: "Comprendre les films et séries américains comme les podcasts britanniques, voyager, et savoir que l'anglais appartient au monde entier."
+      - texte: |
+          Pays où l'anglais est langue officielle : le **Royaume-Uni**, les **États-Unis**, le **Canada**, l'**Australie**, la **Nouvelle-Zélande**, l'**Irlande**, l'**Afrique du Sud**, l'**Inde**, le **Nigeria**…
+
+          Britannique → américain : **flat → apartment** · **holiday → vacation** · **autumn → fall** · **biscuit → cookie** · **colour → color**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "flat", sens: "appartement (britannique)", emoji: "🇬🇧" }, { texte: "holiday", sens: "vacances (britannique)", emoji: "🏖️" }, { texte: "autumn", sens: "automne (britannique)", emoji: "🍂" }] }
+        legende: "Écoute l'accent britannique ; l'accent américain dit « apartment », « vacation », « fall »."
+      - astuce: { texte: "Une série américaine écrit color, center ; un roman britannique écrit colour, centre. Les deux sont justes.", qui: zero }
+      - retiens: "L'anglais est officiel dans plus de 50 pays. Britannique / américain : **flat / apartment**, **holiday / vacation**, **autumn / fall**, **colour / color**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque mot britannique à son équivalent américain."
+        paires: [["flat", "apartment"], ["holiday", "vacation"], ["autumn", "fall"], ["biscuit", "cookie"]]
+        correction: "flat → apartment, holiday → vacation, autumn → fall, biscuit → cookie."
+      - type: classer
+        enonce: "Range chaque pays : l'anglais y est-il une langue officielle ?"
+        categories: ["Oui", "Non"]
+        mots: [["Australia", 0], ["Canada", 0], ["India", 0], ["Spain", 1], ["Brazil", 1], ["Ireland", 0]]
+        correction: "Australie, Canada, Inde, Irlande : oui. Espagne, Brésil : non."
+      - type: qcm
+        enonce: "Quelle orthographe est américaine ?"
+        choix: ["color", "colour", "colur", "coulor"]
+        correction: "Américain : **color** ; britannique : **colour**."
+      - type: mot
+        enonce: "Écris le mot américain pour « autumn »."
+        reponse: ["fall"]
+        correction: "autumn (GB) = **fall** (US)."

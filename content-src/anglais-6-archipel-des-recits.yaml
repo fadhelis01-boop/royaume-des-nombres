@@ -1,0 +1,250 @@
+id: en-archipel-des-recits
+matiere: anglais
+titre: L'Archipel des Récits
+sous_titre: Present perfect, past continuous, les modaux, les relatifs, raconter une expérience
+emoji: 📜
+couleur: "#1c4f8c"
+cycle: explorateurs
+age: 13-14 ans
+niveau: 4ᵉ
+ordre: 706
+version: 1.0.0
+intro:
+  - narrateur: "Sur l'Archipel des Récits, chaque île garde une histoire vécue. Pour les entendre, il faut savoir dire ce qu'on a déjà fait, ce qu'on était en train de faire… et ce qu'on devrait faire."
+  - neo: "En 4ᵉ, on raconte des expériences et on donne des conseils. Les temps deviennent plus fins."
+  - zero: "I have eaten… I was eating… I should stop eating ?"
+
+lecons:
+  - id: present-perfect
+    titre: The present perfect - ce que j'ai déjà fait
+    objectif: J'utilise « have + participe passé » pour parler d'expériences et d'actions qui ont un lien avec le présent.
+    mots: [present perfect, ever, never, already, expérience]
+    etapes:
+      - dialogue:
+          - mia: "Have you ever been to London, Zéro ?"
+          - zero: "No, I have never been to London. Mais j'ai déjà vu des photos !"
+          - neo: "« I have already seen photos. » Tu viens d'utiliser le present perfect."
+      - a_quoi_ca_sert: "Parler de tes expériences (« I've been to Spain »), répondre à « Have you ever…? » en entretien ou en voyage, raconter ce qui vient d'arriver."
+      - texte: |
+          **have / has** + **participe passé** : **I have visited**, **she has seen**, **we have eaten**.
+
+          On l'utilise pour une **expérience** (sans date précise) ou une action récente qui compte **maintenant** :
+          - **Have you ever been to Italy?** = Es-tu déjà allé en Italie ?
+          - **I have never eaten sushi.** · **She has already finished.** · **I haven't done it yet.**
+
+          Avec une date précise (**yesterday**, **in 2020**), on revient au prétérit : **I went to Italy in 2020.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Have you ever been to London?", sens: "Es-tu déjà allé à Londres ?", emoji: "🇬🇧" }, { texte: "I have never eaten sushi.", sens: "Je n'ai jamais mangé de sushis.", emoji: "🍣" }, { texte: "She has just arrived.", sens: "Elle vient d'arriver.", emoji: "🚪" }] }
+        legende: "Écoute, puis dis deux choses que tu as déjà faites et une que tu n'as jamais faite."
+      - attention: "Date précise → prétérit (**I saw him yesterday**). Pas de date, expérience → present perfect (**I have seen him**)."
+      - astuce: { texte: "Ever, never, already, just, yet : ces petits mots appellent presque toujours le present perfect.", qui: neo }
+      - retiens: "**have / has + participe passé** : expérience ou lien avec maintenant. **ever**, **never**, **already**, **just**, **yet**. Date précise → prétérit."
+    exercices:
+      - type: qcm
+        vars: { t: [["I ___ never ___ a horse. (ride)", "have / ridden", "did / ride", "has / rode"], ["She ___ already ___ her homework. (finish)", "has / finished", "have / finished", "did / finish"], ["___ you ever ___ snow? (see)", "Have / seen", "Did / saw", "Has / seen"], ["We ___ just ___ lunch. (have)", "have / had", "has / have", "did / had"]] }
+        enonce: "Complète au present perfect : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : have / has + participe passé."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["I went to Paris last year.", "I have gone to Paris last year.", "I have went to Paris last year.", "I go to Paris last year."]
+        correction: "« last year » est une date précise : prétérit, **I went**."
+      - type: classer
+        enonce: "Range chaque phrase : present perfect ou prétérit ?"
+        categories: ["Present perfect", "Prétérit"]
+        mots: [["I have never seen a whale.", 0], ["I saw a whale in 2022.", 1], ["She has just left.", 0], ["She left an hour ago.", 1]]
+        correction: "Expérience, just, never → present perfect ; date ou « ago » → prétérit."
+      - type: mot
+        enonce: "Écris le participe passé de « see »."
+        reponse: ["seen"]
+        correction: "see – saw – **seen**."
+
+  - id: past-continuous
+    titre: The past continuous - ce que j'étais en train de faire
+    objectif: J'utilise « was / were + -ing » pour planter le décor d'un récit et je le combine au prétérit.
+    mots: [was, were, -ing, when, while, récit]
+    etapes:
+      - dialogue:
+          - neo: "Raconte, Zéro : que faisais-tu quand le volcan s'est réveillé ?"
+          - zero: "« I was sleeping when the volcano erupted! » J'étais en train de dormir, et paf !"
+      - a_quoi_ca_sert: "Raconter une histoire ou un souvenir : le décor (ce qui se passait) et l'événement (ce qui est arrivé)."
+      - texte: |
+          **was / were** + verbe en **-ing** = une action **en cours** dans le passé : **I was reading**, **they were playing**.
+
+          On le combine avec le prétérit pour l'action qui l'**interrompt** :
+          **I was walking home when it started to rain.** = Je rentrais chez moi quand il a commencé à pleuvoir.
+
+          **while** = pendant que : **While she was cooking, the phone rang.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I was sleeping when the phone rang.", sens: "Je dormais quand le téléphone a sonné.", emoji: "📞" }, { texte: "They were playing football.", sens: "Ils étaient en train de jouer au foot.", emoji: "⚽" }, { texte: "While I was reading, the cat jumped.", sens: "Pendant que je lisais, le chat a sauté.", emoji: "🐈" }] }
+        legende: "Écoute : le décor en -ing, l'événement au prétérit."
+      - astuce: { texte: "Imagine un film : le past continuous, c'est le décor qui défile ; le prétérit, c'est le bruit qui coupe la scène.", qui: zero }
+      - retiens: "**was / were + -ing** = décor, action en cours dans le passé. Combiné au **prétérit** pour l'événement : **I was walking when it started to rain.**"
+    exercices:
+      - type: qcm
+        enonce: "Complète : « I … TV when you called. »"
+        choix: ["was watching", "watched", "were watching", "am watching"]
+        correction: "Action en cours, interrompue : **was watching**."
+      - type: qcm
+        vars: { t: [["They ___ football when it started to rain.", "were playing", "was playing", "played"], ["While she ___, the lights went out.", "was cooking", "cooked", "were cooking"], ["We ___ dinner when the doorbell rang.", "were having", "had", "was having"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : le décor, au past continuous."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « Je lisais quand le chat a sauté »."
+        items: ["I", "was reading", "when", "the cat", "jumped."]
+        correction: "I was reading when the cat jumped."
+      - type: mot
+        enonce: "Complète : « While I … sleeping, someone knocked. » (was / were)"
+        reponse: ["was"]
+        correction: "I → **was**."
+
+  - id: modals-advice
+    titre: Should, could, might - conseils et possibilités
+    objectif: Je donne un conseil (should), j'exprime une possibilité (might, could) et une capacité passée (could).
+    mots: [should, could, might, conseil]
+    etapes:
+      - dialogue:
+          - zero: "J'ai mal à la tête…"
+          - mia: "« You should drink some water. » Tu devrais boire de l'eau. Et « it might be the sun » : c'est peut-être le soleil."
+      - a_quoi_ca_sert: "Conseiller un ami, répondre sur un forum, dire ce qui est possible sans en être sûr."
+      - texte: |
+          - **should** = conseil : **You should sleep more.** · **You shouldn't eat so much sugar.**
+          - **might / could** = possibilité : **It might rain tomorrow.** (il se peut qu'il pleuve)
+          - **could** = capacité dans le passé ou demande polie : **I could swim when I was five.** · **Could you help me?**
+
+          Comme **can** et **must**, ces modaux ne prennent jamais de -s et sont suivis du verbe sans « to ».
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "You should see a doctor.", sens: "Tu devrais voir un médecin.", emoji: "🩺" }, { texte: "It might snow tonight.", sens: "Il se peut qu'il neige ce soir.", emoji: "❄️" }, { texte: "Could you open the window, please?", sens: "Pourrais-tu ouvrir la fenêtre, s'il te plaît ?", emoji: "🪟" }] }
+        legende: "Écoute, puis donne un conseil à un ami fatigué."
+      - attention: "Jamais « should to » ni « she shoulds » : **she should go**."
+      - astuce: { texte: "Should = « tu devrais » (conseil). Might = « peut-être » (pas sûr). Could = « pourrait » ou « savait » (passé).", qui: neo }
+      - retiens: "**should** conseil · **might / could** possibilité · **could** capacité passée ou demande polie. Verbe sans « to », pas de -s."
+    exercices:
+      - type: qcm
+        vars: { t: [["Ton ami est fatigué. Tu lui dis :", "You should go to bed.", "You might go to bed.", "You could went to bed."], ["Le ciel est gris, tu n'es pas sûr :", "It might rain.", "It should rain.", "It musts rain."], ["Tu demandes poliment :", "Could you help me, please?", "Should you help me?", "Might you to help me?"]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**"
+      - type: relier
+        enonce: "🔗 Relie chaque modal à son sens."
+        paires: [["should", "conseil"], ["might", "possibilité"], ["could (passé)", "capacité passée"], ["mustn't", "interdiction"]]
+        correction: "should = conseil, might = possibilité, could = capacité passée, mustn't = interdiction."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["She should study harder.", "She shoulds study harder.", "She should to study harder.", "She should studies harder."]
+        correction: "Modal + verbe sans « to » ni -s : **She should study**."
+      - type: mot
+        enonce: "Complète : « When I was six, I … ride a bike. » (je savais)"
+        reponse: ["could"]
+        correction: "Capacité passée : **could**."
+
+  - id: relatives
+    titre: Who, which, that - les pronoms relatifs
+    objectif: Je relie deux phrases avec who (personnes), which (choses) ou that.
+    mots: [who, which, that, relatif]
+    etapes:
+      - dialogue:
+          - neo: "« The girl. She lives next door. She is my friend. » C'est long !"
+          - mia: "« The girl who lives next door is my friend. » Une seule phrase, grâce à **who**."
+      - a_quoi_ca_sert: "Décrire quelqu'un ou quelque chose sans répéter, définir un mot en anglais, écrire des phrases plus riches."
+      - texte: |
+          - **who** pour une **personne** : **the boy who won the race**
+          - **which** pour une **chose** ou un animal : **the book which I read**
+          - **that** pour les deux (à l'oral surtout) : **the film that I saw**
+          - **whose** = dont (possession) : **the girl whose dog is lost**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "The boy who won is my brother.", sens: "Le garçon qui a gagné est mon frère.", emoji: "🏆" }, { texte: "This is the book which I love.", sens: "C'est le livre que j'adore.", emoji: "📖" }, { texte: "The girl whose cat is lost is sad.", sens: "La fille dont le chat est perdu est triste.", emoji: "😢" }] }
+        legende: "Écoute « who » (personne) et « which » (chose)."
+      - astuce: { texte: "Une personne ? who. Une chose ? which. Dans le doute, that marche pour les deux.", qui: zero }
+      - retiens: "**who** (personne), **which** (chose), **that** (les deux), **whose** (dont)."
+    exercices:
+      - type: qcm
+        vars: { t: [["The woman ___ teaches us is from Wales.", "who", "which", "whose"], ["The phone ___ I bought is broken.", "which", "who", "whose"], ["The boy ___ bike was stolen is angry.", "whose", "who", "which"], ["The dog ___ barks all night is my neighbour's.", "which", "who", "whose"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: classer
+        enonce: "Range chaque nom : on dit « who » ou « which » ?"
+        categories: ["who", "which"]
+        mots: [["the teacher", 0], ["the bus", 1], ["my cousin", 0], ["the song", 1], ["the doctor", 0], ["the computer", 1]]
+        correction: "Personnes → who ; choses → which."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « Le garçon qui a gagné est mon frère »."
+        items: ["The boy", "who", "won", "is", "my brother."]
+        correction: "The boy who won is my brother."
+      - type: mot
+        enonce: "Écris le pronom relatif qui veut dire « dont » (possession)."
+        reponse: ["whose"]
+        correction: "**whose** : the girl whose dog is lost."
+
+  - id: for-since
+    titre: For and since - depuis
+    objectif: J'utilise for (une durée) et since (un point de départ) avec le present perfect.
+    mots: [for, since, how long, depuis]
+    etapes:
+      - dialogue:
+          - zero: "J'apprends l'anglais depuis 3 ans… « I learn English since 3 years » ?"
+          - mia: "Piège ! On dit « I have learnt English for three years ». Le français dit « depuis », l'anglais dit **for** ou **since**."
+      - a_quoi_ca_sert: "Dire depuis combien de temps tu fais un sport, habites quelque part, connais quelqu'un : c'est demandé partout, en classe comme en voyage."
+      - texte: |
+          Avec « depuis », l'anglais utilise le **present perfect** :
+
+          - **for** + une **durée** : **for three years**, **for two hours**, **for a long time**
+          - **since** + un **point de départ** : **since 2020**, **since Monday**, **since I was six**
+
+          **How long have you lived here?** → **I have lived here for five years / since 2021.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I have played the piano for three years.", sens: "Je joue du piano depuis trois ans.", emoji: "🎹" }, { texte: "She has lived here since 2019.", sens: "Elle habite ici depuis 2019.", emoji: "🏠" }, { texte: "How long have you known him?", sens: "Depuis combien de temps le connais-tu ?", emoji: "🤝" }] }
+        legende: "Écoute, puis dis depuis combien de temps tu vas dans ton collège."
+      - attention: "On ne dit jamais « I am here since… » : « depuis » + present perfect, **I have been here since…**"
+      - astuce: { texte: "Peux-tu compter (3 ans, 2 heures) ? for. Est-ce une date, un jour, un moment ? since.", qui: neo }
+      - retiens: "« depuis » → **present perfect**. **for** + durée, **since** + point de départ. **How long have you…?**"
+    exercices:
+      - type: classer
+        enonce: "Range chaque expression : avec « for » ou avec « since » ?"
+        categories: ["for", "since"]
+        mots: [["three years", 0], ["2018", 1], ["two hours", 0], ["Monday", 1], ["a long time", 0], ["I was born", 1]]
+        correction: "Une durée → for ; un point de départ → since."
+      - type: qcm
+        enonce: "Traduis : « J'habite ici depuis 5 ans. »"
+        choix: ["I have lived here for five years.", "I live here since five years.", "I have lived here since five years.", "I am living here for five years."]
+        correction: "Present perfect + **for** (durée) : **I have lived here for five years.**"
+      - type: qcm
+        enonce: "Complète : « She has been ill … Tuesday. »"
+        choix: ["since", "for", "during", "ago"]
+        correction: "Tuesday = point de départ → **since**."
+      - type: mot
+        enonce: "Complète : « How … have you been waiting? » (depuis combien de temps)"
+        reponse: ["long"]
+        correction: "**How long** = depuis combien de temps."
+
+  - id: travel-story
+    titre: A travel story - raconter un voyage
+    objectif: Je comprends et je raconte un court récit de voyage en mélangeant les temps du passé.
+    mots: [trip, first, then, finally, récit]
+    etapes:
+      - dialogue:
+          - neo: "Écoute cette carte postale d'Emma, en voyage en Écosse."
+          - mia: "Repère les mots qui organisent le récit : first, then, after that, finally."
+      - a_quoi_ca_sert: "Raconter tes vacances, écrire un message à un correspondant, comprendre un récit au contrôle."
+      - texte: |
+          *Dear Tom, I have been in Scotland for a week. First, we visited Edinburgh Castle. Then, while we were walking in the mountains, it started to rain! Finally, we found a little café. I have never drunk so much hot chocolate! See you soon, Emma.*
+
+          Mots pour organiser : **first** (d'abord), **then** (ensuite), **after that** (après ça), **finally** (enfin).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "First, we visited Edinburgh Castle.", sens: "D'abord, nous avons visité le château d'Édimbourg.", emoji: "🏰" }, { texte: "While we were walking, it started to rain.", sens: "Pendant que nous marchions, il a commencé à pleuvoir.", emoji: "🌧️" }, { texte: "Finally, we found a little café.", sens: "Enfin, nous avons trouvé un petit café.", emoji: "☕" }] }
+        legende: "Écoute la carte postale, puis raconte une sortie avec first, then, finally."
+      - astuce: { texte: "Pour comprendre un récit, cherche d'abord qui, où, quand, puis ce qui s'est passé.", qui: zero }
+      - retiens: "Organiser un récit : **first**, **then**, **after that**, **finally**. Mélanger prétérit (événements), past continuous (décor) et present perfect (bilan)."
+    exercices:
+      - type: qcm
+        enonce: "Lis : *Dear Tom, I have been in Scotland for a week. First, we visited Edinburgh Castle. Then, while we were walking in the mountains, it started to rain! Finally, we found a little café.*\n\nOù est Emma ?"
+        choix: ["In Scotland", "In London", "In Ireland", "In Wales"]
+        correction: "« I have been in Scotland for a week. »"
+      - type: qcm
+        enonce: "Lis : *Then, while we were walking in the mountains, it started to rain!*\n\nQue faisaient-ils quand il a commencé à pleuvoir ?"
+        choix: ["Ils marchaient dans les montagnes.", "Ils visitaient le château.", "Ils buvaient un chocolat.", "Ils prenaient le train."]
+        correction: "« while we were walking in the mountains » : ils marchaient."
+      - type: ordre
+        enonce: "Range les mots qui organisent un récit."
+        items: ["first", "then", "after that", "finally"]
+        correction: "first, then, after that, finally."
+      - type: relier
+        enonce: "🔗 Relie chaque mot à sa traduction."
+        paires: [["first", "d'abord"], ["then", "ensuite"], ["finally", "enfin"], ["while", "pendant que"]]
+        correction: "first = d'abord, then = ensuite, finally = enfin, while = pendant que."

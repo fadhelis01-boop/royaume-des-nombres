@@ -18,6 +18,7 @@ intro:
 lecons:
   - id: serie-derivation
     titre: "Série ou dérivation ?"
+    classe: "6ᵉ"
     objectif: Je reconnais un circuit en série et un circuit avec des dérivations.
     mots: [série, dérivation, boucle, nœud]
     etapes:
@@ -52,6 +53,7 @@ lecons:
 
   - id: tension-intensite
     titre: "Tension et intensité"
+    classe: "4ᵉ"
     objectif: Je sais ce que mesurent un voltmètre et un ampèremètre, et comment les brancher.
     mots: [tension, volt, voltmètre, intensité, ampère, ampèremètre]
     etapes:
@@ -92,6 +94,7 @@ lecons:
 
   - id: loi-d-ohm
     titre: "La loi d'Ohm"
+    classe: "4ᵉ"
     objectif: J'utilise la relation U = R × I.
     mots: [résistance, ohm, loi d'Ohm]
     etapes:
@@ -144,6 +147,7 @@ lecons:
 
   - id: puissance-energie
     titre: "Puissance et énergie électriques"
+    classe: "3ᵉ"
     objectif: Je calcule une puissance, une énergie et le coût d'une consommation.
     mots: [puissance, watt, énergie, kilowattheure]
     etapes:
@@ -184,6 +188,7 @@ lecons:
 
   - id: securite-electrique
     titre: "La sécurité électrique"
+    classe: "4ᵉ"
     objectif: Je connais les dangers de l'électricité et les protections.
     mots: [court-circuit, fusible, disjoncteur, prise de terre, électrisation]
     etapes:

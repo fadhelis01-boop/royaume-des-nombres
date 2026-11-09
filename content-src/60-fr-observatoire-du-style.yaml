@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: comparaison-metaphore
     titre: "Comparaison, métaphore, personnification"
+    classe: "5ᵉ"
     objectif: Je distingue la comparaison (avec un outil), la métaphore (sans outil) et la personnification.
     mots: [comparaison, métaphore, personnification]
     etapes:
@@ -53,6 +54,7 @@ lecons:
 
   - id: figures-d-insistance
     titre: "Hyperbole, litote, euphémisme : exagérer ou atténuer"
+    classe: "4ᵉ"
     objectif: Je reconnais les figures qui exagèrent (hyperbole) ou atténuent (litote, euphémisme).
     mots: [hyperbole, litote, euphémisme]
     etapes:
@@ -87,6 +89,7 @@ lecons:
 
   - id: figures-d-opposition-et-de-construction
     titre: "Antithèse, oxymore, anaphore, gradation, chiasme"
+    classe: "3ᵉ"
     objectif: Je reconnais les figures d'opposition et de construction et leur effet.
     mots: [antithèse, oxymore, anaphore, gradation, chiasme]
     etapes:
@@ -124,6 +127,7 @@ lecons:
 
   - id: sonorites
     titre: "Allitération et assonance : la musique des mots"
+    classe: "2nde"
     objectif: Je repère les répétitions de sons (consonnes ou voyelles) et leur effet.
     mots: [allitération, assonance]
     etapes:

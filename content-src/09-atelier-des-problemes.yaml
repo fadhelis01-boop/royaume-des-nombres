@@ -469,6 +469,7 @@ lecons:
 
   - id: calcul-vers-probleme
     titre: Du calcul au problème - inventer l'histoire
+    classe: "6ᵉ"
     objectif: Je trouve (et j'invente) une histoire qui correspond à un calcul.
     mots: [problème]
     etapes:
@@ -529,6 +530,7 @@ lecons:
 
   - id: pieges-enonces
     titre: Les pièges des énoncés
+    classe: "6ᵉ"
     objectif: Je repère les informations inutiles, les mots trompeurs et les questions sans réponse.
     mots: [donnée]
     etapes:

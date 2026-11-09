@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: fonction-carre-paraboles
     titre: La fonction carré et les paraboles
+    classe: "2nde"
     objectif: Je connais l'allure de la courbe de x ↦ ax² + bx + c et le rôle du signe de a.
     mots: [parabole, sommet, polynôme du second degré]
     etapes:

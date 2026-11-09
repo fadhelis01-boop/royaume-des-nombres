@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: comment-brille-une-etoile
     titre: "Comment brille une étoile"
+    classe: "2nde"
     objectif: J'explique la fusion nucléaire et le lien couleur-température.
     mots: [fusion nucléaire, hydrogène, hélium, température de surface]
     etapes:

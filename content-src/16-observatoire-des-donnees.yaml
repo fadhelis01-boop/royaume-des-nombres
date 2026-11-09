@@ -130,6 +130,7 @@ lecons:
 
   - id: moyenne
     titre: La moyenne
+    classe: "5ᵉ"
     objectif: Je calcule une moyenne et je comprends ce qu'elle signifie.
     mots: [moyenne]
     etapes:
@@ -190,6 +191,7 @@ lecons:
 
   - id: mediane-etendue
     titre: Médiane et étendue
+    classe: "4ᵉ"
     objectif: Je calcule la médiane et l'étendue d'une série et je les compare à la moyenne.
     mots: [médiane, étendue]
     etapes:
@@ -298,6 +300,7 @@ lecons:
 
   - id: deux-epreuves
     titre: Deux épreuves - les arbres
+    classe: "3ᵉ"
     objectif: J'utilise un arbre pour une expérience à deux épreuves.
     mots: [arbre, épreuve]
     etapes:
@@ -356,6 +359,7 @@ lecons:
 
   - id: quartiles-frequences
     titre: Fréquences, quartiles et diagrammes en boîte
+    classe: "2nde"
     objectif: Je calcule des fréquences et des quartiles pour décrire une série.
     mots: [fréquence, quartile]
     etapes:

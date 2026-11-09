@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: notion-fonction
     titre: Une fonction, c'est une machine à nombres
+    classe: "3ᵉ"
     objectif: Je comprends ce qu'est une fonction et j'utilise la notation f(x).
     mots: [fonction, image, antécédent]
     etapes:
@@ -70,6 +71,7 @@ lecons:
 
   - id: graphiques-fonctions
     titre: Représenter une fonction - lire un graphique
+    classe: "3ᵉ"
     objectif: Je lis une image et un antécédent sur la courbe d'une fonction.
     mots: [courbe, représentation graphique]
     etapes:
@@ -121,6 +123,7 @@ lecons:
 
   - id: fonctions-lineaires
     titre: Les fonctions linéaires (la proportionnalité)
+    classe: "3ᵉ"
     objectif: Je reconnais une fonction linéaire f(x) = ax et sa droite qui passe par l'origine.
     mots: [fonction linéaire, coefficient directeur]
     etapes:
@@ -176,6 +179,7 @@ lecons:
 
   - id: fonctions-affines
     titre: Les fonctions affines
+    classe: "3ᵉ"
     objectif: Je reconnais une fonction affine f(x) = ax + b, je lis son coefficient directeur et son ordonnée à l'origine.
     mots: [fonction affine, coefficient directeur, ordonnée à l'origine]
     etapes:
@@ -247,6 +251,7 @@ lecons:
 
   - id: modeliser-graphique
     titre: Résoudre graphiquement et modéliser
+    classe: "2nde"
     objectif: Je résous une équation ou compare deux tarifs à l'aide de graphiques.
     mots: [intersection, modéliser]
     etapes:

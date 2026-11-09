@@ -346,6 +346,7 @@ lecons:
 
   - id: diviser-decimaux
     titre: Diviser avec des décimaux
+    classe: "6ᵉ"
     objectif: Je divise un décimal par 10, 100, 1 000 et par un entier, et je poursuis une division après la virgule.
     mots: [quotient décimal]
     etapes:
@@ -403,6 +404,7 @@ lecons:
 
   - id: arrondir-estimer
     titre: Arrondir et estimer
+    classe: "6ᵉ"
     objectif: J'arrondis un nombre et j'estime un résultat pour vérifier un calcul.
     mots: [arrondi, estimation, ordre de grandeur]
     etapes:

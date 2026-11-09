@@ -162,6 +162,7 @@ lecons:
 
   - id: types-de-textes
     titre: "Les types de textes"
+    classe: "5ᵉ"
     objectif: Je reconnais un texte narratif, descriptif, explicatif, argumentatif, poétique ou théâtral.
     mots: [type de texte, genre]
     etapes:
@@ -200,6 +201,7 @@ lecons:
 
   - id: le-conte
     titre: "Le conte et ses personnages"
+    classe: "4ᵉ"
     objectif: Je reconnais les caractéristiques du conte et les rôles des personnages.
     mots: [conte, héros, adjuvant, opposant]
     etapes:
@@ -239,6 +241,7 @@ lecons:
 
   - id: texte-documentaire
     titre: "Lire un texte documentaire"
+    classe: "3ᵉ"
     objectif: Je trouve une information précise dans un texte documentaire.
     mots: [documentaire, information]
     etapes:

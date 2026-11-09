@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: l-atome
     titre: "L'atome : noyau et électrons"
+    classe: "4ᵉ"
     objectif: Je décris la structure d'un atome.
     mots: [atome, noyau, proton, neutron, électron, numéro atomique]
     etapes:
@@ -61,6 +62,7 @@ lecons:
 
   - id: elements-et-symboles
     titre: "Les éléments et leurs symboles"
+    classe: "4ᵉ"
     objectif: Je connais les symboles des éléments courants.
     mots: [élément, symbole, Mendeleïev]
     etapes:
@@ -104,6 +106,7 @@ lecons:
 
   - id: molecules-et-formules
     titre: "Molécules et formules chimiques"
+    classe: "4ᵉ"
     objectif: Je lis une formule chimique et je compte les atomes.
     mots: [molécule, formule, indice]
     etapes:
@@ -141,6 +144,7 @@ lecons:
 
   - id: equations-chimiques
     titre: "Écrire et équilibrer une équation"
+    classe: "4ᵉ"
     objectif: J'équilibre une équation chimique simple.
     mots: [équation, coefficient, équilibrer]
     etapes:
@@ -184,6 +188,7 @@ lecons:
 
   - id: le-ph
     titre: "L'échelle de pH"
+    classe: "3ᵉ"
     objectif: Je situe une solution sur l'échelle de pH.
     mots: [pH, acide, basique, neutre]
     etapes:
@@ -221,6 +226,7 @@ lecons:
 
   - id: les-ions
     titre: "Les ions"
+    classe: "3ᵉ"
     objectif: Je sais qu'un ion est un atome qui a gagné ou perdu des électrons.
     mots: [ion, cation, anion]
     etapes:

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: nombres-negatifs
     titre: Les nombres négatifs
+    classe: "5ᵉ"
     objectif: Je comprends les nombres négatifs et je les place sur une droite graduée.
     mots: [nombre relatif, nombre négatif, opposé]
     etapes:
@@ -90,6 +91,7 @@ lecons:
 
   - id: comparer-relatifs
     titre: Comparer des nombres relatifs
+    classe: "5ᵉ"
     objectif: Je compare et je range des nombres relatifs.
     mots: [comparer]
     etapes:
@@ -139,6 +141,7 @@ lecons:
 
   - id: repere
     titre: Se repérer dans le plan
+    classe: "5ᵉ"
     objectif: Je lis et je place des points avec leurs coordonnées (abscisse ; ordonnée).
     mots: [repère, abscisse, ordonnée, coordonnées]
     etapes:
@@ -278,6 +281,7 @@ lecons:
 
   - id: multiplier-relatifs
     titre: Multiplier et diviser des relatifs (la règle des signes)
+    classe: "4ᵉ"
     objectif: J'applique la règle des signes et je comprends pourquoi « moins par moins donne plus ».
     mots: [règle des signes]
     etapes:

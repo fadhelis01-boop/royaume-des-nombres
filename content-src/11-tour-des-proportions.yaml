@@ -149,6 +149,7 @@ lecons:
 
   - id: pourcentages
     titre: Les pourcentages
+    classe: "6ᵉ"
     objectif: Je calcule un pourcentage d'une quantité et je l'exprime comme une fraction.
     mots: [pourcentage]
     etapes:
@@ -226,6 +227,7 @@ lecons:
 
   - id: echelles
     titre: Les échelles des cartes et des plans
+    classe: "6ᵉ"
     objectif: J'utilise une échelle pour passer d'une distance sur le plan à une distance réelle.
     mots: [échelle]
     etapes:
@@ -285,6 +287,7 @@ lecons:
 
   - id: vitesses
     titre: Vitesse, distance et durée
+    classe: "4ᵉ"
     objectif: J'utilise la relation d = v × t pour calculer une distance, une vitesse ou une durée.
     mots: [vitesse, km/h]
     etapes:
@@ -345,6 +348,7 @@ lecons:
 
   - id: ratios-partages
     titre: Ratios et partages proportionnels
+    classe: "3ᵉ"
     objectif: Je partage une quantité selon un ratio (2 pour 3…).
     mots: [ratio]
     etapes:
@@ -400,6 +404,7 @@ lecons:
 
   - id: evolutions
     titre: Augmentations, réductions et coefficients multiplicateurs
+    classe: "4ᵉ"
     objectif: J'utilise un coefficient multiplicateur pour appliquer une ou plusieurs évolutions.
     mots: [coefficient multiplicateur, évolution]
     etapes:

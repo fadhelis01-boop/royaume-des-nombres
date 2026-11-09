@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: tout
     titre: "« Tout » : déterminant, pronom ou adverbe ?"
+    classe: "5ᵉ"
     objectif: J'accorde « tout » quand il le faut, et seulement quand il le faut.
     mots: [tout, adverbe, h aspiré]
     etapes:
@@ -51,6 +52,7 @@ lecons:
 
   - id: meme-quelque
     titre: "« Même », « quelque » et « quel que »"
+    classe: "4ᵉ"
     objectif: Je distingue même adjectif / adverbe, quelque / quel que.
     mots: [même, quelque, quel que]
     etapes:
@@ -91,6 +93,7 @@ lecons:
 
   - id: demi-nu-couleurs
     titre: "Demi, nu et les adjectifs de couleur"
+    classe: "3ᵉ"
     objectif: J'accorde demi, nu et les couleurs, simples ou composées.
     mots: [demi, nu, couleur, adjectif composé]
     etapes:
@@ -132,6 +135,7 @@ lecons:
 
   - id: participes-pronominaux
     titre: "Participes des verbes pronominaux et « fait + infinitif »"
+    classe: "2nde"
     objectif: J'accorde le participe passé d'un verbe pronominal.
     mots: [verbe pronominal, COD, COI]
     etapes:

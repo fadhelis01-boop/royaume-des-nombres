@@ -360,6 +360,7 @@ lecons:
 
   - id: additionner-fractions
     titre: Additionner et soustraire des fractions
+    classe: "5ᵉ"
     objectif: J'additionne et je soustrais des fractions (même dénominateur, puis dénominateurs différents).
     mots: [dénominateur commun]
     etapes:
@@ -451,6 +452,7 @@ lecons:
 
   - id: fraction-d-une-quantite
     titre: Prendre une fraction d'une quantité
+    classe: "6ᵉ"
     objectif: Je calcule 3/4 de 20, 2/5 de 35…
     mots: [fraction]
     etapes:
@@ -519,6 +521,7 @@ lecons:
 
   - id: multiplier-fractions
     titre: Multiplier et diviser des fractions
+    classe: "4ᵉ"
     objectif: Je multiplie deux fractions et je divise par une fraction.
     mots: [inverse]
     etapes:

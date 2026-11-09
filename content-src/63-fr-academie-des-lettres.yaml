@@ -18,6 +18,7 @@ intro:
 lecons:
   - id: temps-rares
     titre: "Passé simple complet et subjonctif imparfait"
+    classe: "3ᵉ"
     objectif: Je conjugue le passé simple à toutes les personnes et je reconnais le subjonctif imparfait.
     mots: [passé simple, subjonctif imparfait, subjonctif plus-que-parfait]
     etapes:
@@ -60,6 +61,7 @@ lecons:
 
   - id: analyse-fine
     titre: "Analyse fine : attribut du COD, apposition, compléments"
+    classe: "2nde"
     objectif: Je donne la fonction précise de groupes plus rares.
     mots: [attribut du COD, apposition, complément d'agent, complément du nom, complément de l'adjectif]
     etapes:
@@ -96,6 +98,7 @@ lecons:
 
   - id: etymologie
     titre: "Étymologie : racines grecques et latines"
+    classe: "2nde"
     objectif: Je devine le sens d'un mot savant grâce à ses racines.
     mots: [étymologie, racine, préfixe, suffixe]
     etapes:
@@ -178,6 +181,7 @@ lecons:
 
   - id: argumenter
     titre: "Argumenter : thèse, arguments, exemples, connecteurs"
+    classe: "3ᵉ"
     objectif: Je construis et j'analyse une argumentation.
     mots: [thèse, argument, exemple, concession, connecteur logique]
     etapes:

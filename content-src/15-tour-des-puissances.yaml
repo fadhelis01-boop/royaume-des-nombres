@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: carres-cubes
     titre: Carrés, cubes et puissances
+    classe: "4ᵉ"
     objectif: Je calcule une puissance d'un nombre et je connais le vocabulaire (exposant).
     mots: [puissance, exposant, carré, cube]
     etapes:
@@ -78,6 +79,7 @@ lecons:
 
   - id: puissances-de-10
     titre: Puissances de 10 et notation scientifique
+    classe: "4ᵉ"
     objectif: J'utilise les puissances de 10 et j'écris un nombre en notation scientifique.
     mots: [notation scientifique]
     etapes:
@@ -132,6 +134,7 @@ lecons:
 
   - id: regles-puissances
     titre: Les règles de calcul sur les puissances
+    classe: "3ᵉ"
     objectif: J'applique les règles du produit, du quotient et de la puissance d'une puissance.
     mots: [exposant]
     etapes:
@@ -178,6 +181,7 @@ lecons:
 
   - id: racines-carrees
     titre: Les racines carrées
+    classe: "2nde"
     objectif: Je connais la racine carrée et je calcule les racines des carrés parfaits.
     mots: [racine carrée]
     etapes:

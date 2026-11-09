@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: adn-chromosomes
     titre: "ADN, chromosomes et gènes"
+    classe: "3ᵉ"
     objectif: Je situe l'ADN, les chromosomes et les gènes.
     mots: [ADN, chromosome, gène, caryotype]
     etapes:
@@ -55,6 +56,7 @@ lecons:
 
   - id: mendel
     titre: "L'hérédité : les lois de Mendel"
+    classe: "2nde"
     objectif: Je prévois des proportions avec un échiquier de croisement.
     mots: [allèle, dominant, récessif, génotype, phénotype]
     etapes:
@@ -98,6 +100,7 @@ lecons:
 
   - id: evolution
     titre: "L'évolution et la sélection naturelle"
+    classe: "3ᵉ"
     objectif: J'explique le mécanisme de la sélection naturelle.
     mots: [évolution, mutation, sélection naturelle, ancêtre commun, fossile]
     etapes:
@@ -135,6 +138,7 @@ lecons:
 
   - id: immunite-vaccins
     titre: "L'immunité et les vaccins"
+    classe: "3ᵉ"
     objectif: J'explique comment le corps se défend et comment agit un vaccin.
     mots: [immunité, anticorps, lymphocyte, vaccin, mémoire immunitaire]
     etapes:

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: la-cellule
     titre: "La cellule, brique du vivant"
+    classe: "5ᵉ"
     objectif: Je décris une cellule animale et une cellule végétale.
     mots: [cellule, membrane, cytoplasme, noyau, paroi, chloroplaste]
     etapes:
@@ -92,6 +93,7 @@ lecons:
 
   - id: cerveau-et-nerfs
     titre: "Le cerveau et les nerfs"
+    classe: "4ᵉ"
     objectif: Je comprends le trajet d'un message nerveux.
     mots: [cerveau, nerf, neurone, réflexe, organe des sens]
     etapes:
@@ -129,6 +131,7 @@ lecons:
 
   - id: bien-manger
     titre: "Bien manger, bouger, dormir"
+    classe: "4ᵉ"
     objectif: Je compose un repas équilibré.
     mots: [équilibre alimentaire, groupe d'aliments, énergie, sommeil]
     etapes:
@@ -169,6 +172,7 @@ lecons:
 
   - id: grandir
     titre: "Grandir : puberté et reproduction"
+    classe: "4ᵉ"
     objectif: Je connais les grandes étapes de la reproduction humaine et de la puberté.
     mots: [puberté, ovule, spermatozoïde, fécondation, embryon, fœtus]
     etapes:

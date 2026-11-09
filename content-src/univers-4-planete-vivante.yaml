@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: interieur-de-la-terre
     titre: "L'intérieur de la Terre"
+    classe: "5ᵉ"
     objectif: Je décris la structure interne de la Terre.
     mots: [croûte, manteau, noyau, lithosphère]
     etapes:
@@ -55,6 +56,7 @@ lecons:
 
   - id: tectonique
     titre: "La tectonique des plaques"
+    classe: "4ᵉ"
     objectif: J'explique les séismes, les volcans et les montagnes par le mouvement des plaques.
     mots: [plaque, dérive des continents, subduction, dorsale]
     etapes:
@@ -94,6 +96,7 @@ lecons:
 
   - id: atmosphere-meteo-climat
     titre: "Atmosphère, météo et climat"
+    classe: "5ᵉ"
     objectif: Je distingue la météo et le climat.
     mots: [atmosphère, troposphère, couche d'ozone, météo, climat]
     etapes:
@@ -131,6 +134,7 @@ lecons:
 
   - id: effet-de-serre
     titre: "L'effet de serre"
+    classe: "2nde"
     objectif: J'explique l'effet de serre naturel et son renforcement par les activités humaines.
     mots: [effet de serre, gaz à effet de serre, dioxyde de carbone, méthane, réchauffement climatique]
     etapes:
@@ -167,6 +171,7 @@ lecons:
 
   - id: energies
     titre: "Les énergies de la planète"
+    classe: "3ᵉ"
     objectif: Je distingue énergies renouvelables et non renouvelables.
     mots: [énergie fossile, énergie renouvelable, nucléaire, transition énergétique]
     etapes:

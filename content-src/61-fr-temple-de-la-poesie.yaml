@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: compter-les-syllabes
     titre: "Compter les syllabes d'un vers"
+    classe: "6ᵉ"
     objectif: Je compte les syllabes d'un vers en tenant compte du e muet et de l'élision.
     mots: [syllabe, vers, e muet, élision, diérèse]
     etapes:
@@ -55,6 +56,7 @@ lecons:
 
   - id: les-rimes
     titre: "Les rimes : disposition et richesse"
+    classe: "4ᵉ"
     objectif: Je reconnais les rimes plates, croisées et embrassées, et leur richesse.
     mots: [rime, rimes plates, rimes croisées, rimes embrassées]
     etapes:
@@ -95,6 +97,7 @@ lecons:
 
   - id: strophes-et-sonnet
     titre: "Strophes, alexandrin, césure et sonnet"
+    classe: "2nde"
     objectif: Je reconnais les strophes, la césure de l'alexandrin et la forme du sonnet.
     mots: [strophe, quatrain, tercet, sonnet, césure, hémistiche]
     etapes:

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: denombrement
     titre: Dénombrer - le principe multiplicatif et les factorielles
+    classe: "2nde"
     objectif: Je compte des possibilités avec le principe multiplicatif, les arrangements et les permutations.
     mots: [dénombrement, factorielle, permutation]
     etapes:

@@ -415,3 +415,12 @@ planetes:
         aie: ["« I went » ? C'était juste !", "Le passé est remis à sa place…", "Ta phrase brille trop !"]
         nargue: ["I eated… I goed…", "Hier ou demain ? Je ne sais plus…"]
         jeton: "🌫️"
+      maitres:
+        sprite: neutre
+        nom: Le Brouillard du Bruit
+        qui: narrateur
+        ouverture: "Le Brouillard du Bruit mélange toutes les voix du monde. Dix réponses justes, et chacune redevient claire."
+        cri: "Blablabla… everybody talks, nobody understands !"
+        aie: ["That's a fair point…", "Ta phrase coupe le bruit !", "It can't be… tu me comprends ?"]
+        nargue: ["Fake news, fake news…", "Personne n'écoute…"]
+        jeton: "🌫️"

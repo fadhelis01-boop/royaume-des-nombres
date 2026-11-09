@@ -93,6 +93,7 @@ lecons:
 
   - id: pourquoi-les-saisons
     titre: "Pourquoi y a-t-il des saisons ?"
+    classe: "6ᵉ"
     objectif: J'explique les saisons par l'inclinaison de l'axe de la Terre.
     mots: [inclinaison, axe, solstice, équinoxe]
     etapes:
@@ -129,6 +130,7 @@ lecons:
 
   - id: phases-et-eclipses
     titre: "Phases de la Lune et éclipses"
+    classe: "5ᵉ"
     objectif: J'explique les phases de la Lune et les éclipses.
     mots: [phase, éclipse de Soleil, éclipse de Lune, alignement]
     etapes:
@@ -165,6 +167,7 @@ lecons:
 
   - id: gravitation-et-marees
     titre: "La gravitation et les marées"
+    classe: "5ᵉ"
     objectif: Je relie la gravitation au mouvement des astres et aux marées.
     mots: [gravitation, orbite, marée]
     etapes:

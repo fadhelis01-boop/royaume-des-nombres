@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: phrase-simple-complexe
     titre: "Phrase simple, phrase complexe"
+    classe: "5ᵉ"
     objectif: Je compte les propositions d'une phrase (une par verbe conjugué).
     mots: [proposition, phrase complexe]
     etapes:
@@ -55,6 +56,7 @@ lecons:
 
   - id: coordination
     titre: "Juxtaposer et coordonner : mais, ou, et, donc, or, ni, car"
+    classe: "4ᵉ"
     objectif: Je relie des propositions par une ponctuation (juxtaposition) ou une conjonction de coordination.
     mots: [juxtaposition, coordination, conjonction]
     etapes:
@@ -92,6 +94,7 @@ lecons:
 
   - id: relatives
     titre: "Les propositions relatives : qui, que, dont, où"
+    classe: "4ᵉ"
     objectif: Je choisis le bon pronom relatif et je repère l'antécédent.
     mots: [proposition relative, pronom relatif, antécédent]
     etapes:
@@ -130,6 +133,7 @@ lecons:
 
   - id: conjonctives
     titre: "Les subordonnées conjonctives : que, quand, parce que, pour que, si"
+    classe: "3ᵉ"
     objectif: Je reconnais la subordonnée complétive (que) et les circonstancielles (temps, cause, but, condition).
     mots: [subordonnée conjonctive, complétive, circonstancielle]
     etapes:
@@ -173,6 +177,7 @@ lecons:
 
   - id: discours-rapporte
     titre: "Discours direct et discours indirect"
+    classe: "3ᵉ"
     objectif: Je transforme des paroles au discours indirect en changeant les pronoms et les temps.
     mots: [discours direct, discours indirect, concordance des temps]
     etapes:

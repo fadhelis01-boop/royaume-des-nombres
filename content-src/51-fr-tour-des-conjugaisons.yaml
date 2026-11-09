@@ -61,6 +61,7 @@ lecons:
 
   - id: temps-composes
     titre: "Plus-que-parfait et futur antérieur"
+    classe: "6ᵉ"
     objectif: Je forme les temps composés avec l'auxiliaire au bon temps et le participe passé.
     mots: [plus-que-parfait, futur antérieur, temps composé]
     etapes:
@@ -104,6 +105,7 @@ lecons:
 
   - id: conditionnel
     titre: "Le conditionnel et le piège -rai / -rais"
+    classe: "5ᵉ"
     objectif: Je conjugue au conditionnel et je distingue « je chanterai » (futur) de « je chanterais » (conditionnel).
     mots: [conditionnel]
     etapes:
@@ -143,6 +145,7 @@ lecons:
 
   - id: imperatif
     titre: "L'impératif : donner un ordre ou un conseil"
+    classe: "5ᵉ"
     objectif: Je conjugue à l'impératif présent (trois personnes, sans sujet).
     mots: [impératif]
     etapes:
@@ -181,6 +184,7 @@ lecons:
 
   - id: subjonctif
     titre: "Le subjonctif présent : il faut que…"
+    classe: "4ᵉ"
     objectif: Je conjugue au subjonctif présent après « il faut que », « je veux que », « bien que »…
     mots: [subjonctif]
     etapes:
@@ -219,6 +223,7 @@ lecons:
 
   - id: valeurs-des-temps
     titre: "Imparfait ou passé simple ? Le décor et l'action"
+    classe: "4ᵉ"
     objectif: J'emploie l'imparfait pour le décor et les habitudes, le passé simple pour les actions soudaines du récit.
     mots: [imparfait, passé simple, récit]
     etapes:
