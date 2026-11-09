@@ -12,7 +12,14 @@ arcs:
     final: en-ile-des-premiers-mots
     fin:
       - narrateur: "Le brouillard se déchire. Sur la plage, les habitants de l'Archipel crient : « Thank you! »"
-      - mia-joie: "Tu sais saluer, compter, dire les couleurs et parler de ta famille. Bravo ! D'autres îles t'attendent bientôt."
+      - mia-joie: "Tu sais saluer, compter, dire les couleurs et parler de ta famille. Bravo ! D'autres îles t'attendent : la Baie des Familles est déjà en vue !"
+  - id: anglais-arc-2
+    titre: "Livre II — Parler de soi et du monde"
+    sous_titre: "La famille, la journée, le présent, le passé et l'avenir"
+    final: en-cote-du-passe
+    fin:
+      - narrateur: "Le dernier banc de brouillard se dissout au-dessus de la Côte du Passé. Toutes les îles de l'Archipel se répondent, d'une falaise à l'autre."
+      - neo: "Tu sais raconter ta journée, ton passé et tes projets en anglais. Ce n'est plus un écho : c'est ta voix."
 chapitres:
   en-ile-des-premiers-mots:
     titre: "L'Île des Premiers Mots"
@@ -22,3 +29,35 @@ chapitres:
       - mia: "Écoute, répète, joue : c'est comme ça qu'on apprend une langue, même tout petit."
     apres:
       - narrateur: "Ding, dong ! La cloche de l'Écho sonne et tous les habitants se disent « Hello! » en riant."
+  en-baie-des-familles:
+    titre: "La Baie des Familles"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Dans la Baie des Familles, le brouillard a effacé les noms. Les habitants ne savent plus se présenter."
+      - mia: "Parle de toi : ta famille, ce que tu aimes, ce que tu sais faire. Chaque phrase rend un nom à quelqu'un."
+    apres:
+      - narrateur: "« This is my mother! », « I can swim! » : les voix reviennent de maison en maison, et la cloche de la Baie sonne."
+  en-ile-du-quotidien:
+    titre: "L'Île du Quotidien"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Sur l'Île du Quotidien, les horloges se sont figées. Personne ne sait plus raconter sa journée."
+      - neo: "Le matin, l'école, la ville, les loisirs : raconte une vraie journée et les aiguilles repartiront."
+    apres:
+      - narrateur: "Tic, tac ! Les horloges repartent. « It's half past seven! » crie le boulanger en ouvrant sa boutique."
+  en-detroit-du-present:
+    titre: "Le Détroit du Présent"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Les bateaux du Détroit du Présent restent à quai : leurs capitaines confondent ce qu'ils font d'habitude et ce qu'ils font maintenant."
+      - mia: "Le présent simple pour les habitudes, le -ing pour l'instant présent. Guide-les, et les voiles se gonfleront."
+    apres:
+      - narrateur: "« We are sailing! » Les bateaux quittent le port et traversent le détroit jusqu'au Royaume-Uni."
+  en-cote-du-passe:
+    titre: "La Côte du Passé"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Sur la Côte du Passé, les châteaux sont fermés. Leurs portes ne s'ouvrent qu'à ceux qui savent raconter."
+      - zero: "Yesterday, I went… euh… je suis allé jusqu'ici ! C'est un bon début ?"
+    apres:
+      - narrateur: "« Once upon a time, there was… » Les portes des châteaux s'ouvrent une à une, et les histoires d'autrefois s'envolent dans l'Archipel."

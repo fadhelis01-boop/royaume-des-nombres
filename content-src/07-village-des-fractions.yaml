@@ -585,3 +585,42 @@ lecons:
         enonce: "Pour multiplier deux fractions, on…"
         choix: ["multiplie les numérateurs entre eux et les dénominateurs entre eux", "ajoute les numérateurs", "met au même dénominateur puis on ajoute"]
         correction: "a/b × c/d = (a × c)/(b × d). Pas besoin de même dénominateur pour multiplier."
+
+  - id: fraction-quotient
+    titre: La fraction, c'est une division
+    classe: "6ᵉ"
+    objectif: Je comprends qu'une fraction a/b est le nombre qui, multiplié par b, donne a, et je partage a unités en b.
+    mots: [quotient, fraction, partage, division]
+    etapes:
+      - dialogue:
+          - zero: "On a 3 pizzas pour 4 enfants. Chacun aura… un bout de chaque ?"
+          - mia: "Chacun aura 3/4 de pizza ! Partager 3 en 4, c'est 3 ÷ 4, et ça s'écrit 3/4."
+      - a_quoi_ca_sert: "Partager équitablement des pizzas, un gâteau ou de l'argent, même quand le partage ne tombe pas juste."
+      - texte: |
+          La fraction **a/b** est le **quotient** de a par b : **a/b = a ÷ b**.
+
+          - 3/4 = 3 ÷ 4 = 0,75 · 7/2 = 7 ÷ 2 = 3,5
+          - Partager **3 pizzas entre 4** enfants, ou prendre **3 quarts d'une** pizza, c'est la même quantité : 3/4.
+
+          Et **b × a/b = a** : 4 × 3/4 = 3.
+      - astuce: { texte: "Le trait de fraction est un signe ÷ : le haut est partagé par le bas.", qui: neo }
+      - retiens: "**a/b = a ÷ b** : la fraction est un quotient. 3 pizzas pour 4 = 3/4 de pizza chacun. **b × a/b = a**."
+    exercices:
+      - type: qcm
+        vars: { t: [["5 gâteaux partagés entre 2 enfants", "5/2", "2/5", "5 × 2"], ["3 pizzas partagées entre 4 enfants", "3/4", "4/3", "3 × 4"], ["7 m de ruban en 10 morceaux égaux", "7/10", "10/7", "7 − 10"], ["2 tartes pour 3 personnes", "2/3", "3/2", "2 + 3"]] }
+        enonce: "Quelle part chacun reçoit-il ? {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "On partage le haut par le bas : **{{t_1}}** chacun."
+      - type: relier
+        enonce: "🔗 Relie chaque fraction à son écriture décimale."
+        paires: [["3/4", "0,75"], ["1/2", "0,5"], ["7/2", "3,5"], ["1/4", "0,25"]]
+        correction: "On divise le numérateur par le dénominateur : 3 ÷ 4 = 0,75 ; 7 ÷ 2 = 3,5."
+      - type: nombre
+        vars: { b: [2, 3, 4, 5, 8], a: "1..9" }
+        enonce: "Calcule {{b}} × {{a}}/{{b}}."
+        reponse: "a"
+        correction: "Multiplier a/b par b redonne a : {{b}} × {{a}}/{{b}} = {{a}}."
+      - type: nombre
+        enonce: "Écris 3/4 sous forme décimale."
+        reponse: "0.75"
+        correction: "3 ÷ 4 = 0,75."

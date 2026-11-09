@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: propagation-du-son
     titre: "Comment voyage le son"
+    classe: "5ᵉ"
     objectif: Je sais que le son a besoin d'un milieu et je calcule une distance avec sa vitesse.
     mots: [propagation, milieu matériel, vide, écho]
     etapes:

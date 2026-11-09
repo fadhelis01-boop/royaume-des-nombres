@@ -1,0 +1,262 @@
+id: en-ile-du-quotidien
+matiere: anglais
+titre: L'Île du Quotidien
+sous_titre: Ma journée, ma maison, l'école, mes loisirs, les nombres jusqu'à 100, se repérer en ville
+emoji: 🏙️
+couleur: "#2f86c9"
+cycle: graines
+age: 10-11 ans
+niveau: CM2
+ordre: 703
+version: 1.0.0
+intro:
+  - narrateur: "Sur l'Île du Quotidien, les horloges se sont arrêtées : plus personne ne sait raconter sa journée."
+  - neo: "On va décrire une vraie journée : se lever, aller à l'école, jouer, rentrer. Avec l'heure et les lieux."
+  - zero: "Ma journée ? Je me lève… et je retourne me coucher. Ça se dit comment ?"
+
+lecons:
+  - id: my-day
+    titre: My day - ma journée
+    objectif: Je raconte ma journée au présent et je dis l'heure.
+    mots: [get up, breakfast, o'clock, school, journée]
+    etapes:
+      - dialogue:
+          - mia: "Racontons ta journée, Zéro. À quelle heure tu te lèves ?"
+          - zero: "« I get up at… » euh… midi ?"
+          - neo: "« I get up at seven o'clock » pour la plupart des élèves !"
+      - a_quoi_ca_sert: "Écrire à un correspondant, comparer ta journée avec celle d'un élève anglais, comprendre l'heure d'un train ou d'un film."
+      - texte: |
+          - **I get up at seven o'clock.** = Je me lève à 7 heures.
+          - **I have breakfast.** = Je prends le petit-déjeuner.
+          - **I go to school.** = Je vais à l'école.
+          - **I go to bed at nine.** = Je me couche à 9 heures.
+
+          **What time is it?** → **It's seven o'clock** (7 h) · **half past seven** (7 h 30) · **quarter past seven** (7 h 15).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I get up at seven o'clock.", sens: "Je me lève à 7 heures.", emoji: "⏰" }, { texte: "I have breakfast.", sens: "Je prends le petit-déjeuner.", emoji: "🥣" }, { texte: "I go to school.", sens: "Je vais à l'école.", emoji: "🏫" }, { texte: "It's half past seven.", sens: "Il est 7 h 30.", emoji: "🕢" }] }
+        legende: "Écoute, puis raconte ta propre matinée en anglais."
+      - astuce: { texte: "« half past » = la moitié (30 minutes) après l'heure ; « quarter past » = un quart (15 minutes) après.", qui: mia }
+      - retiens: "**I get up**, **I have breakfast**, **I go to school**, **I go to bed**. **It's seven o'clock** = il est 7 heures, **half past** = et demie."
+    exercices:
+      - type: qcm
+        vars: { t: [["It's seven o'clock.", "7 h 00", "7 h 30", "11 h 00"], ["It's half past seven.", "7 h 30", "7 h 15", "6 h 30"], ["It's quarter past eight.", "8 h 15", "8 h 45", "8 h 30"], ["It's nine o'clock.", "9 h 00", "5 h 00", "9 h 30"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Quelle heure est-il ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: ordre
+        enonce: "Range la journée dans l'ordre."
+        items: ["I get up.", "I have breakfast.", "I go to school.", "I go to bed."]
+        correction: "Se lever, petit-déjeuner, école, coucher."
+      - type: relier
+        enonce: "🔗 Relie chaque phrase à sa traduction."
+        paires: [["I get up.", "Je me lève."], ["I go to school.", "Je vais à l'école."], ["I go to bed.", "Je me couche."], ["I have breakfast.", "Je prends le petit-déjeuner."]]
+        correction: "get up = se lever, go to school = aller à l'école, go to bed = se coucher, have breakfast = prendre le petit-déjeuner."
+      - type: mot
+        enonce: "Complète en anglais : « It's half … seven » (7 h 30)."
+        reponse: ["past"]
+        correction: "**half past seven** = 7 h 30."
+
+  - id: my-house
+    titre: My house - ma maison
+    objectif: Je décris ma maison avec « there is / there are » et je situe un objet (in, on, under).
+    mots: [bedroom, kitchen, there is, under, maison]
+    etapes:
+      - dialogue:
+          - zero: "J'ai perdu ma balle ! Elle est où ?"
+          - neo: "« The ball is under the bed! » Sous le lit."
+          - mia: "Apprenons les pièces de la maison et les petits mots pour dire où sont les choses."
+      - a_quoi_ca_sert: "Retrouver un objet dans un jeu vidéo en anglais, décrire ta chambre à un correspondant, comprendre une annonce de location en vacances."
+      - texte: |
+          Les pièces : **bedroom** (chambre), **kitchen** (cuisine), **bathroom** (salle de bains), **living room** (salon), **garden** (jardin).
+
+          - **There is a bed.** = Il y a un lit. · **There are two chairs.** = Il y a deux chaises.
+          - **in** = dans · **on** = sur · **under** = sous · **next to** = à côté de
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "There is a bed in my bedroom.", sens: "Il y a un lit dans ma chambre.", emoji: "🛏️" }, { texte: "The cat is on the sofa.", sens: "Le chat est sur le canapé.", emoji: "🐱" }, { texte: "The ball is under the table.", sens: "La balle est sous la table.", emoji: "⚽" }] }
+        legende: "Écoute, puis décris trois objets de ta chambre."
+      - attention: "**There is** + un seul objet · **There are** + plusieurs objets."
+      - astuce: { texte: "Mime avec ta main : posée sur la table pour « on », cachée dessous pour « under », dans une boîte pour « in ».", qui: zero }
+      - retiens: "**There is** (un) / **There are** (plusieurs) = il y a. **in** dans, **on** sur, **under** sous, **next to** à côté de."
+    exercices:
+      - type: qcm
+        vars: { t: [["bedroom", "la chambre", "la cuisine", "le jardin"], ["kitchen", "la cuisine", "la salle de bains", "le salon"], ["bathroom", "la salle de bains", "la chambre", "le jardin"], ["garden", "le jardin", "le salon", "la cuisine"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Quelle pièce ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: qcm
+        enonce: "Complète : « … two windows in my bedroom. »"
+        choix: ["There are", "There is", "It is", "They is"]
+        correction: "Deux fenêtres, c'est plusieurs : **There are**."
+      - type: relier
+        enonce: "🔗 Relie chaque petit mot à son sens."
+        paires: [["in", "dans"], ["on", "sur"], ["under", "sous"], ["next to", "à côté de"]]
+        correction: "in = dans, on = sur, under = sous, next to = à côté de."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Le chat est sous la table »."
+        items: ["The", "cat", "is", "under", "the", "table."]
+        correction: "The cat is under the table."
+
+  - id: school-subjects
+    titre: At school - à l'école
+    objectif: Je nomme les matières et les objets de la classe, et je donne mon avis.
+    mots: [maths, English, pencil, favourite, école]
+    etapes:
+      - dialogue:
+          - neo: "Quelle est ta matière préférée, Zéro ?"
+          - zero: "« My favourite subject is… » la récré !"
+          - mia: "La récré, c'est « break time ». Ce n'est pas une matière, mais c'est bien essayé !"
+      - a_quoi_ca_sert: "Parler de ton école avec un correspondant, comprendre ton futur emploi du temps de collège, suivre un tutoriel en anglais."
+      - texte: |
+          Matières : **maths**, **English**, **French**, **history** (histoire), **geography**, **science**, **art** (arts plastiques), **PE** (sport).
+
+          Objets : **pencil** (crayon), **pen** (stylo), **ruler** (règle), **rubber** (gomme), **schoolbag** (cartable).
+
+          **My favourite subject is science.** = Ma matière préférée est les sciences. **It's interesting!** · **It's boring.** (ennuyeux)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "My favourite subject is art.", sens: "Ma matière préférée, c'est les arts plastiques.", emoji: "🎨" }, { texte: "I've got a ruler and a pencil.", sens: "J'ai une règle et un crayon.", emoji: "📏" }, { texte: "It's interesting!", sens: "C'est intéressant !", emoji: "🤩" }] }
+        legende: "Écoute, puis dis ta matière préférée et pourquoi."
+      - astuce: { texte: "Les noms de matières ressemblent souvent au français : history, geography, science. Cherche les mots cousins !", qui: neo }
+      - retiens: "**My favourite subject is…** = ma matière préférée est… · **pencil**, **pen**, **ruler**, **rubber**. **It's interesting** / **It's boring**."
+    exercices:
+      - type: qcm
+        vars: { t: [["history", "l'histoire", "la géographie", "le sport"], ["PE", "le sport", "les arts plastiques", "les sciences"], ["art", "les arts plastiques", "l'histoire", "l'anglais"], ["science", "les sciences", "les maths", "la géographie"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Quelle matière ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: relier
+        enonce: "🔗 Relie chaque objet de la trousse à sa traduction."
+        paires: [["pencil", "crayon"], ["pen", "stylo"], ["ruler", "règle"], ["rubber", "gomme"]]
+        correction: "pencil = crayon, pen = stylo, ruler = règle, rubber = gomme."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Ma matière préférée est les maths »."
+        items: ["My", "favourite", "subject", "is", "maths."]
+        correction: "My favourite subject is maths."
+      - type: mot
+        vars: { t: [["règle", "ruler"], ["stylo", "pen"], ["crayon", "pencil"], ["gomme", "rubber"]] }
+        enonce: "Écris en anglais : **{{t_0}}**"
+        reponse: "{{t_1}}"
+        correction: "{{t_0}} = **{{t_1}}**."
+
+  - id: hobbies
+    titre: Hobbies - mes loisirs
+    objectif: Je parle de mes loisirs avec « I play », « I do » et je dis à quelle fréquence.
+    mots: [play, football, always, never, loisir]
+    etapes:
+      - dialogue:
+          - zero: "Le week-end, je joue au football… et je fais de la musique. En anglais ?"
+          - mia: "« I play football » et « I play the piano ». Pour le sport, on dit « play » ; pour d'autres activités, « do »."
+      - a_quoi_ca_sert: "Te faire des amis dans un club ou en ligne, remplir un profil dans un jeu, raconter ton week-end à ta classe."
+      - texte: |
+          - **I play football / tennis.** = Je joue au football / au tennis.
+          - **I play the guitar.** = Je joue de la guitare (avec **the** pour un instrument).
+          - **I do judo / gymnastics.** = Je fais du judo / de la gym.
+
+          À quelle fréquence ? **always** (toujours) · **often** (souvent) · **sometimes** (parfois) · **never** (jamais).
+          **I often play tennis.** = Je joue souvent au tennis.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I play football.", sens: "Je joue au football.", emoji: "⚽" }, { texte: "I play the guitar.", sens: "Je joue de la guitare.", emoji: "🎸" }, { texte: "I do judo.", sens: "Je fais du judo.", emoji: "🥋" }, { texte: "I never play golf.", sens: "Je ne joue jamais au golf.", emoji: "⛳" }] }
+        legende: "Écoute, puis dis deux loisirs et à quelle fréquence tu les pratiques."
+      - attention: "Le mot de fréquence se place **avant** le verbe : **I often play**, **I never watch TV**."
+      - astuce: { texte: "Classe-les comme un thermomètre : always (100 %), often, sometimes, never (0 %).", qui: neo }
+      - retiens: "**I play** + sport, **I play the** + instrument, **I do** + judo… **always**, **often**, **sometimes**, **never** se placent avant le verbe."
+    exercices:
+      - type: qcm
+        vars: { t: [["always", "toujours", "jamais", "parfois"], ["never", "jamais", "souvent", "toujours"], ["often", "souvent", "jamais", "parfois"], ["sometimes", "parfois", "toujours", "souvent"]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Que veut dire ce mot ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: ordre
+        enonce: "Range du plus fréquent au moins fréquent."
+        items: ["always", "often", "sometimes", "never"]
+        correction: "always (toujours) > often (souvent) > sometimes (parfois) > never (jamais)."
+      - type: qcm
+        enonce: "Comment dit-on « Je joue du piano » ?"
+        choix: ["I play the piano.", "I do the piano.", "I play piano the.", "I am piano."]
+        correction: "Instrument : **play the** + instrument."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Je joue souvent au tennis »."
+        items: ["I", "often", "play", "tennis."]
+        correction: "I often play tennis. Le mot de fréquence vient avant le verbe."
+
+  - id: numbers-prices
+    titre: Numbers to 100 and prices - nombres et prix
+    objectif: Je compte jusqu'à 100 en anglais et je demande un prix.
+    mots: [twenty, hundred, how much, pound, nombre]
+    etapes:
+      - dialogue:
+          - neo: "Au marché de l'île, tout est écrit en livres sterling (£)."
+          - zero: "« How much is it? » … « It's thirty pounds. » Trente quoi ?"
+          - mia: "Trente livres ! Apprenons les dizaines pour comprendre les prix."
+      - a_quoi_ca_sert: "Acheter un souvenir à Londres, comprendre un score de match, lire un prix dans une boutique en ligne."
+      - texte: |
+          Dizaines : **twenty** (20), **thirty** (30), **forty** (40), **fifty** (50), **sixty**, **seventy**, **eighty**, **ninety**, **a hundred** (100).
+
+          On les colle avec un tiret : **twenty-one** (21), **forty-five** (45).
+
+          **How much is it?** = Combien ça coûte ? → **It's five pounds.** = Ça coûte 5 livres (£5).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "twenty", sens: "20" }, { texte: "thirty", sens: "30" }, { texte: "forty-five", sens: "45" }, { texte: "a hundred", sens: "100" }, { texte: "How much is it?", sens: "Combien ça coûte ?", emoji: "💷" }] }
+        legende: "Attention : « thirteen » (13) et « thirty » (30) se ressemblent. Écoute bien la fin."
+      - attention: "**-teen** (13 à 19) se prononce long et fort : thir-**teen**. **-ty** (dizaines) est court : **thir**-ty."
+      - astuce: { texte: "Les dizaines finissent par -ty : six → sixty, seven → seventy. Seuls twenty, thirty, forty, fifty changent un peu.", qui: mia }
+      - retiens: "**twenty** 20, **thirty** 30, **forty** 40, **fifty** 50… **a hundred** 100. **How much is it?** → **It's… pounds.**"
+    exercices:
+      - type: nombre
+        vars: { t: [["twenty", 20], ["thirty", 30], ["forty", 40], ["fifty", 50], ["sixty", 60], ["seventy-five", 75], ["eighty-two", 82], ["ninety-nine", 99], ["thirteen", 13], ["forty-four", 44]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute le nombre, puis écris-le en chiffres."
+        reponse: "t_1"
+        correction: "« {{t_0}} » = {{t_1}}."
+      - type: relier
+        enonce: "🔗 Relie chaque nombre à son écriture anglaise."
+        paires: [["13", "thirteen"], ["30", "thirty"], ["40", "forty"], ["100", "a hundred"]]
+        correction: "13 thirteen (long à la fin), 30 thirty, 40 forty, 100 a hundred."
+      - type: qcm
+        enonce: "Au magasin, tu veux savoir le prix. Tu demandes :"
+        choix: ["How much is it?", "How old are you?", "What time is it?", "What's your name?"]
+        correction: "**How much is it?** = combien ça coûte ?"
+      - type: mot
+        enonce: "Écris en lettres anglaises : 20"
+        reponse: ["twenty"]
+        correction: "20 = **twenty**."
+
+  - id: in-town
+    titre: In town - se repérer en ville
+    objectif: Je demande et j'indique un chemin simple en ville.
+    mots: [left, right, straight on, where, ville]
+    etapes:
+      - dialogue:
+          - zero: "Je cherche la boulangerie… « Where is the bakery? »"
+          - neo: "Bravo ! Et la réponse : « Turn left, then go straight on. »"
+      - a_quoi_ca_sert: "Demander ton chemin en voyage, guider un ami dans un jeu, comprendre un GPS réglé en anglais."
+      - texte: |
+          **Where is the station?** = Où est la gare ?
+
+          - **Turn left.** ⬅️ Tourne à gauche. · **Turn right.** ➡️ Tourne à droite.
+          - **Go straight on.** ⬆️ Va tout droit.
+          - **It's next to the park.** = C'est à côté du parc. · **opposite** = en face de.
+
+          Lieux : **station** (gare), **bakery** (boulangerie), **library** (bibliothèque), **park**, **hospital**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Where is the library?", sens: "Où est la bibliothèque ?", emoji: "📚" }, { texte: "Turn left.", sens: "Tourne à gauche.", emoji: "⬅️" }, { texte: "Turn right.", sens: "Tourne à droite.", emoji: "➡️" }, { texte: "Go straight on.", sens: "Va tout droit.", emoji: "⬆️" }] }
+        legende: "Écoute, puis guide quelqu'un de ta chambre jusqu'à la cuisine, en anglais."
+      - attention: "**library** = bibliothèque (pas librairie, qui se dit « bookshop ») : c'est un faux ami !"
+      - astuce: { texte: "Lève la main gauche : avec le pouce et l'index, elle forme un L, comme « left ».", qui: zero }
+      - retiens: "**Where is…?** = où est… ? **Turn left** / **turn right** / **go straight on**. **library** = bibliothèque (faux ami)."
+    exercices:
+      - type: qcm
+        vars: { t: [["Turn left.", "Tourne à gauche.", "Tourne à droite.", "Va tout droit."], ["Turn right.", "Tourne à droite.", "Tourne à gauche.", "Arrête-toi."], ["Go straight on.", "Va tout droit.", "Tourne à gauche.", "Recule."]] }
+        visuel: { type: parole, langue: en-GB, mots: [{ texte: "{{t_0}}" }], cache: true }
+        enonce: "🎧 Écoute. Que dois-tu faire ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "« {{t_0}} » = {{t_1}}"
+      - type: relier
+        enonce: "🔗 Relie chaque lieu à sa traduction."
+        paires: [["station", "gare"], ["library", "bibliothèque"], ["bakery", "boulangerie"], ["bookshop", "librairie"]]
+        correction: "library = bibliothèque et bookshop = librairie : attention au faux ami !"
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Où est la gare ? »"
+        items: ["Where", "is", "the", "station?"]
+        correction: "Where is the station?"
+      - type: mot
+        enonce: "Écris en anglais : « gauche »"
+        reponse: ["left"]
+        correction: "gauche = **left**, droite = **right**."

@@ -278,7 +278,7 @@ lecons:
           texte: "Ramasse une feuille tombée et pose-la à côté de ton dessin. Qu'est-ce qui est différent ? (Indice : dans la nature, la symétrie n'est jamais parfaite.) Les nervures sont les « tuyaux » qui transportent l'eau et les sucres."
           materiel: une feuille d'arbre
       - astuce:
-          texte: "Commence par la nervure du milieu (l'axe), puis dessine un côté, puis l'autre en miroir. Les petites nervures partent de l'axe comme des arêtes de poisson."
+          texte: "Commence par la nervure du milieu, puis dessine un côté, puis l'autre en miroir, comme des arêtes de poisson."
           qui: mia
       - a_quoi_ca_sert: "Une feuille d'arbre a deux moitiés presque pareilles. Le pli au milieu t'aide à la dessiner juste."
       - retiens: "Feuille : nervure centrale (axe), contour, nervures secondaires. Les nervures transportent l'eau et la sève."

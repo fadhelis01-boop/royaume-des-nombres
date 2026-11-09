@@ -54,6 +54,7 @@ lecons:
 
   - id: coeur-et-sang
     titre: "Le cœur et la circulation du sang"
+    classe: "5ᵉ"
     objectif: Je décris la circulation sanguine.
     mots: [cœur, artère, veine, capillaire, globule rouge]
     etapes:

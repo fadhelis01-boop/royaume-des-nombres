@@ -250,13 +250,13 @@ lecons:
         vars: { a: "101..899", b: "11..99" }
         enonce: "${{nb(a/100)}} + {{nb(b/10)}} = ?$"
         reponse: "a/100 + b/10"
-        correction: "{{nb(a/100+b/10)}}."
+        correction: "On aligne les virgules et on complète par des zéros : {{dec(a/100,2)}} + {{dec(b/10,2)}} = {{nb(a/100+b/10)}}."
       - type: nombre
         vars: { a: "200..999", b: "11..199" }
         si: "b < a"
         enonce: "${{nb(a/100)}} - {{nb(b/100)}} = ?$"
         reponse: "(a-b)/100"
-        correction: "{{nb((a-b)/100)}}."
+        correction: "On aligne les virgules, centièmes sous centièmes : {{nb(a/100)}} − {{nb(b/100)}} = {{nb((a-b)/100)}}."
       - type: nombre
         vars: { p: "105..1995" }
         si: "p % 5 == 0 && p < 2000"
@@ -310,13 +310,13 @@ lecons:
         niveau: 2
         erreurs:
           - { valeur: "a/10", message: "Tu as « ajouté un zéro » après la virgule, comme Zéro : {{nb(a/10)}}0 vaut toujours {{nb(a/10)}} ! Les chiffres doivent GLISSER vers la gauche." }
-        correction: "{{nb(a/10*k)}}"
+        correction: "× {{nb(k)}} : chaque chiffre glisse de {{si(k==10,'1 rang',si(k==100,'2 rangs','3 rangs'))}} vers la gauche. {{nb(a/10)}} × {{nb(k)}} = {{nb(a/10*k)}}."
       - type: nombre
         vars: { a: "11..999", k: [10, 100, 1000] }
         si: "a % 10 != 0"
         enonce: "${{nb(a/100)}} \\times {{nb(k)}} = ?$"
         reponse: "a/100*k"
-        correction: "{{nb(a/100*k)}}."
+        correction: "× {{nb(k)}} : chaque chiffre glisse de {{si(k==10,'1 rang',si(k==100,'2 rangs','3 rangs'))}} vers la gauche. {{nb(a/100)}} × {{nb(k)}} = {{nb(a/100*k)}}."
       - type: nombre
         vars: { a: "11..99", n: "2..9" }
         enonce: "${{nb(a/10)}} \\times {{n}} = ?$"
@@ -378,7 +378,7 @@ lecons:
         si: "q % n != 0"
         enonce: "${{q}} \\div {{n}} = ?$"
         reponse: "q/n"
-        correction: "{{nb(q/n)}}."
+        correction: "On pose la division et on continue après la virgule en ajoutant des zéros : {{q}} ÷ {{n}} = {{nb(q/n)}}."
       - type: nombre
         vars: { p: [4, 5, 8], t: "21..99" }
         si: "t % p != 0"
@@ -440,7 +440,7 @@ lecons:
         si: "n % 10 != 5"
         enonce: "Arrondis {{nb(n)}} à la dizaine."
         reponse: "round(n/10)*10"
-        correction: "{{nb(round(n/10)*10)}}."
+        correction: "On regarde le chiffre des unités ({{n%10}}) : {{si(n%10<5,'moins de 5, on garde la dizaine','5 ou plus, on passe à la dizaine suivante')}}. {{nb(n)}} ≈ {{nb(round(n/10)*10)}}."
       - type: qcm
         vars: { a: "21..89", b: "21..89" }
         enonce: "Quel est l'ordre de grandeur de ${{a}} \\times {{b}}$ ?"

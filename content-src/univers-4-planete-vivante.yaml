@@ -199,3 +199,40 @@ lecons:
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
         correction: "{{t_2}}"
+
+  - id: erosion
+    titre: L'eau sculpte les paysages (l'érosion)
+    classe: "6ᵉ"
+    objectif: J'explique comment l'eau, le vent et le gel usent les roches et transportent les sédiments.
+    mots: [érosion, sédiment, transport, dépôt]
+    etapes:
+      - dialogue:
+          - neo: "Ce galet est tout rond. Il était comme ça au départ ?"
+          - mia: "Non ! La rivière l'a roulé pendant des années. L'eau use les roches, c'est l'érosion."
+      - a_quoi_ca_sert: "Comprendre pourquoi les falaises reculent, d'où vient le sable de la plage, et pourquoi on plante des arbres sur les pentes."
+      - texte: |
+          L'**érosion**, c'est l'usure des roches par l'**eau**, le **vent**, le **gel** et les êtres vivants.
+
+          Trois étapes : les roches sont **usées** (érosion), les morceaux sont **transportés** par l'eau ou le vent, puis **déposés** plus loin : ce sont les **sédiments** (galets, sable, argile).
+
+          Le sable de la plage vient de roches usées pendant des milliers d'années.
+      - astuce: { texte: "Retiens « user, transporter, déposer » : le voyage d'un grain de sable de la montagne à la mer.", qui: zero }
+      - retiens: "**Érosion** = usure des roches (eau, vent, gel). Les morceaux sont **transportés** puis **déposés** : ce sont les **sédiments**."
+    exercices:
+      - type: ordre
+        enonce: "Range le voyage d'un grain de sable."
+        items: ["La roche de la montagne est usée par l'eau et le gel.", "La rivière transporte les petits morceaux.", "Les morceaux se déposent au bord de la mer."]
+        correction: "User, transporter, déposer."
+      - type: relier
+        enonce: "🔗 Relie chaque agent d'érosion à son action."
+        paires: [["la rivière", "roule les galets"], ["le gel", "fait éclater les roches"], ["le vent", "déplace le sable des dunes"], ["les vagues", "creusent les falaises"]]
+        correction: "Eau qui coule, gel, vent et vagues usent tous les roches, chacun à sa façon."
+      - type: qcm
+        enonce: "Pourquoi plante-t-on des arbres sur les pentes ?"
+        choix: ["Leurs racines retiennent le sol et limitent l'érosion", "Pour attirer la pluie", "Pour faire fondre la neige", "Pour arrêter le vent sur la mer"]
+        correction: "Les racines tiennent la terre : la pluie l'emporte beaucoup moins."
+      - type: vf
+        vars: { t: [["Le sable de la plage vient de roches usées.", true], ["L'érosion est très rapide : quelques jours suffisent pour creuser une vallée.", false], ["Les sédiments sont des morceaux de roches déposés.", true], ["Le gel peut faire éclater une roche.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'érosion est très lente : des milliers d'années pour une vallée."

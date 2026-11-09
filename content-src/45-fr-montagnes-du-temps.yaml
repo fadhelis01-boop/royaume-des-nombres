@@ -190,7 +190,7 @@ lecons:
           - 3e groupe → varié : **pris, fait, vu, dit, mis, lu, écrit, eu, été, pu, voulu**
       - visuel: {"type":"phrase","legende":"Passé composé = auxiliaire au présent + participe passé.","groupes":[{"mots":"Nous","role":"sujet"},{"mots":"avons","role":"verbe","etiquette":"auxiliaire avoir"},{"mots":"gagné","role":"attribut","etiquette":"participe passé"},{"mots":"le match","role":"cod"}]}
       - astuce:
-          texte: "Pour savoir si un participe finit par -i, -is ou -it, mets-le au féminin : pris → pri**se** (donc s), fait → fai**te** (donc t), fini → fini**e** (rien)."
+          texte: "Pour trouver la fin d'un participe, mets-le au féminin : prise (donc pris), faite (donc fait), finie (donc fini)."
           qui: neo
       - retiens: "Passé composé = **avoir** (présent) + **participe passé** : j'ai chanté, j'ai fini, j'ai pris."
     exercices:

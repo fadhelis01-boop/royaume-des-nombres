@@ -167,7 +167,7 @@ lecons:
             - { avant: "Il en reste", reponse: "r", apres: "" }
           correction: "{{d}} × {{q}} = {{d*q}}, et {{d*q+r}} − {{d*q}} = {{r}}."
       - astuce:
-          texte: "Le reste est toujours plus petit que le diviseur, sinon on aurait pu faire un paquet de plus. Et lis bien la question : faut-il un bus de plus pour les élèves restants ?"
+          texte: "Le reste est toujours plus petit que le diviseur. Et relis la question : faut-il un bus de plus pour ceux qui restent ?"
           qui: mia
     exercices:
       - type: nombre

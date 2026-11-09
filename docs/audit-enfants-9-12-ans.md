@@ -1,6 +1,6 @@
 # Audit « enfants de 9, 10, 11 et 12 ans » : comprendre ce qu'on demande, les réponses, « À quoi ça sert ? »
 
-Date : 9 novembre 2026 · version auditée : 2.11.0 · aucune correction de cet audit appliquée à ce stade
+Date : 9 novembre 2026 · version auditée : 2.11.0 · corrections livrées : 2.12.0 et 2.13.0 (9 novembre 2026, voir en fin de document)
 
 Même méthode que les audits « 7 ans » et « 8 ans », adaptée aux plus grands : un enfant de CM1 (9 ans), CM2 (10 ans), 6ᵉ (11 ans) et 5ᵉ (12 ans), en novembre.
 
@@ -158,3 +158,37 @@ Pendant la carte des talents, le bouton « 💡 Indice » est disponible. Une r�
 | 12 | **Restes de rédaction** : 8 « À quoi ça sert ? » manquants, ceux de 9-10 ans loin de l'enfant, astuces de plus de 25 mots à 9-10 ans, corrections sans pourquoi. | Moyen |
 
 Mesures de référence (`npm run audit:7ans -- --age N --annee`, `npm run audit:consignes -- N`, `npm run audit:voix -- N`, `npm run audit:domines -- N`, `npm run audit:libre -- N`) : voir les tableaux ci-dessus.
+
+## Corrections livrées (2.12.0 et 2.13.0)
+
+Les 12 corrections sont faites. Mesures refaites avec les mêmes scripts (année en cours).
+
+| Mesure | Avant | Après |
+|---|---|---|
+| Leçons d'anglais du CM1 à la 5ᵉ | 0 | 24 (4 mondes de 6 leçons) |
+| Bonne réponse avec des fautes acceptée (rédaction libre) | 67 à 78 % | 93 à 100 % |
+| Liste de mots-clés acceptée | 100 % | 0 à 4 % |
+| Leçons de maths de l'année, 6ᵉ / 5ᵉ | 13 / 10 | 15 / 15 |
+| Leçons de sciences de l'année, 6ᵉ / 5ᵉ | 12 / 8 | 14 / 11 |
+| Écran de cours le plus long, 10 à 12 ans | 104 à 119 mots | 69 à 76 mots |
+| Défis dominés par un seul type, 11 / 12 ans | 21 % / 16 % | 0 % / 0 % |
+| « À quoi ça sert ? » manquants (année) | 8 | 0 |
+| Astuce la plus longue à 9-10 ans | 32 mots | 27 mots |
+
+1. **Anglais** : 4 mondes (Baie des Familles en CM1, Île du Quotidien en CM2, Détroit du Présent en 6ᵉ, Côte du Passé en 5ᵉ), chacun avec écoute, relier, phrases à remettre dans l'ordre, mot à écrire ; chapitres d'histoire, Livre II et Gardien du collège (« le Brouillard des Temps »).
+2. **Rédaction libre** (`gen.ts`) : une lettre oubliée, ajoutée ou échangée est tolérée dès 6 lettres (deux dès 13), avec la même première lettre ; une réponse doit être une phrase (au moins 4 mots dont 2 qui ne sont pas des mots-clés), sauf si le « Je retiens » est lui-même une liste.
+3. **Marche 8 → 9 ans** : `optionsEcrit(enfant)` décide, selon la classe, de l'écriture dans les défis (CM1 : un « mot qui manque » et une rédaction un défi sur trois ; tout dès le CM2).
+4. **Niveau des leçons** : champ `classe:` dans une leçon, prioritaire sur la position dans le monde (et ignoré dans la répartition des autres). Posé sur relatifs, priorités, nombres premiers, probabilités, cœur et sang, propagation du son, et les nouvelles leçons.
+5. **Voix** : formules chimiques, chiffres romains, ⊥ et ∥, m² et m³ accordés, km/h, « / » entre lettres, \% ; correctif des unités devant une lettre accentuée.
+6. **Âge → classe** : 33 règles passées à `ageScolaire`.
+7. **Indice** masqué pendant la carte des talents.
+8. **Collégiens** : la Galaxie affiche l'étape de l'enfant (plus « Les Graines » en 5ᵉ) ; ambiance épurée dès la 6ᵉ.
+9. **Écrans** coupés à 70 mots du CM1 à la 3ᵉ ; le build refuse un écran de plus de 90 mots dans ces mondes.
+10. **Variété** : 38 exercices ajoutés dans 19 leçons ; dans un défi, aucun type au-delà de la moitié.
+11. **Collège** : 6 leçons nouvelles (symétrie axiale, fraction-quotient, symétrie centrale, chaînes d'énergie, érosion, mélanges et corps purs) et 2 leçons reclassées en 5ᵉ.
+12. **Textes** : 22 « À quoi ça sert ? » écrits ou réécrits, 16 astuces raccourcies, 6 corrections de décimaux avec la méthode.
+
+Restent ouverts :
+- les « À quoi ça sert ? » de 11-12 ans signalés comme loin de l'enfant : à cet âge, citer des métiers et le monde réel est voulu ;
+- 2 leçons d'accords à 9 ans où le « mot à écrire » domine (2 % des défis) ;
+- le test avec de vrais enfants.

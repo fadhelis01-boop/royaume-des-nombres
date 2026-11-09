@@ -33,7 +33,7 @@ lecons:
           *Léa appelle le **chien*** : « chien » = nom (nature), **complément d'objet** (fonction).
       - visuel: {"type":"phrase","legende":"Le même nom « chat » change de fonction selon sa place.","groupes":[{"mots":"Le chat","role":"sujet","etiquette":"nom · fonction sujet"},{"mots":"regarde","role":"verbe"},{"mots":"le chien","role":"cod","etiquette":"nom · fonction COD"}]}
       - astuce:
-          texte: "La nature, c'est qui tu es (élève, enfant) ; la fonction, c'est le rôle que tu joues (gardien de but dans un match). Un même mot peut changer de rôle."
+          texte: "La nature, c'est qui tu es (un élève) ; la fonction, c'est ton rôle (gardien de but). Un mot peut changer de rôle."
           qui: mia
       - retiens: "**Nature** = le costume (fixe). **Fonction** = le métier dans la phrase (change selon la place)."
     exercices:
@@ -70,7 +70,7 @@ lecons:
           On ne peut **ni supprimer ni déplacer** le complément d'objet sans changer le sens.
       - visuel: {"type":"phrase","groupes":[{"mots":"Tom","role":"sujet"},{"mots":"donne","role":"verbe"},{"mots":"un livre","role":"cod","etiquette":"COD : quoi ?"},{"mots":"à sa sœur","role":"coi","etiquette":"COI : à qui ?"}]}
       - astuce:
-          texte: "Pose la question après le verbe : « Il mange quoi ? » → COD. « Il parle à qui ? de quoi ? » → COI, car il y a un petit mot (à, de) entre les deux."
+          texte: "Pose la question après le verbe. Il mange quoi ? COD. Il parle à qui, de quoi ? COI, avec à ou de."
           qui: neo
       - retiens: "**COD** : verbe + qui/quoi (sans préposition). **COI** : verbe + à/de + qui/quoi."
     exercices:

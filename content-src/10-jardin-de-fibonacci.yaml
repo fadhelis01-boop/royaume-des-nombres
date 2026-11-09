@@ -315,7 +315,7 @@ lecons:
       - visuel: { type: tableau, lignes: [["sans boucle", "avec boucle"], ["avancer 5 ; tourner ; avancer 5 ; tourner ; avancer 5 ; tourner ; avancer 5 ; tourner", "répéter 4 fois : avancer 5 ; tourner"]] }
         legende: "Les deux programmes font la même chose. Le second est bien plus court."
       - attention: "L'ordre compte : « avancer puis tourner » ne donne pas le même chemin que « tourner puis avancer »."
-      - astuce: { texte: "Pour exécuter un programme à la main, fais-le avec ton corps ou avec ton doigt sur un quadrillage, une instruction à la fois, en la disant à voix haute.", qui: neo }
+      - astuce: { texte: "Exécute le programme avec ton doigt sur un quadrillage, une instruction à la fois, en la disant à voix haute.", qui: neo }
       - retiens: "Un **algorithme** = des **instructions dans l'ordre**. Une **boucle** « répéter n fois » refait le même bloc **n** fois. Répéter 4 fois (avancer, tourner d'un quart de tour) dessine un **carré**."
     exercices:
       - type: nombre
@@ -377,7 +377,7 @@ lecons:
       - visuel: { type: barres, lignes: [{ parts: [{ v: 8, label: "n = ?", vide: true }, { v: 7, label: "7" }] }], total: "15" }
         legende: "La barre de 15 est faite de n et de 7 : n = 15 − 7."
       - attention: "Le signe **=** ne veut pas dire « le résultat arrive » : il veut dire « a la même valeur que ». 15 = n + 7 est aussi une égalité correcte."
-      - astuce: { texte: "Fais le chemin à l'envers : si on a ajouté, j'enlève ; si on a multiplié, je divise. Puis je vérifie en remettant mon nombre dans l'égalité.", qui: mia }
+      - astuce: { texte: "Fais le chemin à l'envers : on a ajouté, j'enlève ; on a multiplié, je divise. Puis je vérifie.", qui: mia }
       - retiens: "Pour trouver le nombre caché, on utilise l'**opération inverse** (+ ↔ −, × ↔ ÷), puis on **vérifie** en remplaçant."
     exercices:
       - type: nombre

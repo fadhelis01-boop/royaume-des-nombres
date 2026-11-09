@@ -1,0 +1,250 @@
+id: en-detroit-du-present
+matiere: anglais
+titre: Le Détroit du Présent
+sous_titre: Présent simple et présent en -ing, les possessifs, poser des questions, comparer, le Royaume-Uni
+emoji: ⛵
+couleur: "#2563a8"
+cycle: explorateurs
+age: 11-12 ans
+niveau: 6ᵉ
+ordre: 704
+version: 1.0.0
+intro:
+  - narrateur: "Entre deux îles coule le Détroit du Présent. Ses bateaux ne naviguent que si l'on parle juste : ce qu'on fait d'habitude, ce qu'on fait maintenant."
+  - neo: "Au collège, on passe des mots aux phrases : qui fait quoi, quand, et comment le demander."
+  - zero: "Je rame… je suis en train de ramer… « I am rowing » ? Ça marche !"
+
+lecons:
+  - id: present-simple
+    titre: The present simple - ce que je fais d'habitude
+    objectif: J'utilise le présent simple et je n'oublie pas le -s avec he, she, it.
+    mots: [present simple, every day, he, she, présent]
+    etapes:
+      - dialogue:
+          - zero: "« My sister play tennis every day. » C'est bon ?"
+          - mia: "Presque ! Avec « she », le verbe prend un -s : « She plays tennis »."
+      - a_quoi_ca_sert: "Parler de tes habitudes, présenter un membre de ta famille ou un youtubeur que tu suis : c'est le temps le plus utilisé à l'oral."
+      - texte: |
+          Le **présent simple** dit ce qu'on fait **d'habitude** : **I play**, **you play**, **we play**, **they play**…
+
+          … mais avec **he / she / it**, on ajoute **-s** : **he plays**, **she watches** (-es après ch, sh, s, x), **it goes**.
+
+          Négation : **I don't play** · **she doesn't play** (sans -s au verbe). Mots repères : **every day**, **usually**, **on Mondays**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I play the guitar every day.", sens: "Je joue de la guitare tous les jours.", emoji: "🎸" }, { texte: "She plays tennis on Mondays.", sens: "Elle joue au tennis le lundi.", emoji: "🎾" }, { texte: "He doesn't like fish.", sens: "Il n'aime pas le poisson.", emoji: "🐟" }] }
+        legende: "Écoute le -s de « plays » : il s'entend !"
+      - attention: "Avec **doesn't**, le verbe perd son -s : **she doesn't play** (pas « she doesn't plays »)."
+      - astuce: { texte: "He, she, it : il y a un S dans « she », pense au S du verbe !", qui: neo }
+      - retiens: "Présent simple = habitudes. **he / she / it** + verbe en **-s** (**she plays**). Négation : **don't** / **doesn't** + verbe sans -s."
+    exercices:
+      - type: qcm
+        enonce: "Complète : « My brother … football every Saturday. »"
+        choix: ["plays", "play", "playing", "is play"]
+        correction: "My brother = he : **plays** avec un -s."
+      - type: qcm
+        vars: { t: [["She ___ TV every evening. (watch)", "watches", "watch", "watchs"], ["He ___ to school by bus. (go)", "goes", "go", "gos"], ["It ___ a lot in London. (rain)", "rains", "rain", "rainies"], ["My dad ___ in a hospital. (work)", "works", "work", "workes"]] }
+        enonce: "Choisis la bonne forme : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "Avec he, she ou it : **{{t_1}}**."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["She doesn't like spiders.", "She don't like spiders.", "She doesn't likes spiders.", "She not likes spiders."]
+        correction: "**doesn't** + verbe sans -s : **She doesn't like spiders.**"
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Il va à l'école à pied »."
+        items: ["He", "walks", "to", "school."]
+        correction: "He walks to school."
+      - type: mot
+        enonce: "Écris la forme du verbe « to play » avec « she »."
+        reponse: ["plays"]
+        correction: "she **plays** : le -s de la 3ᵉ personne."
+
+  - id: present-continuous
+    titre: The present continuous - ce que je fais maintenant
+    objectif: J'utilise « be + verbe en -ing » pour dire ce qui se passe en ce moment.
+    mots: [now, -ing, right now, présent]
+    etapes:
+      - dialogue:
+          - neo: "Zéro, qu'est-ce que tu fais là ?"
+          - zero: "« I am eating a sandwich! » En ce moment, là, maintenant !"
+          - mia: "Parfait : pour ce qui se passe maintenant, on utilise **be** + verbe en **-ing**."
+      - a_quoi_ca_sert: "Commenter un match ou un jeu en direct, répondre à un message « What are you doing? », décrire une image."
+      - texte: |
+          **be** (am / is / are) + verbe en **-ing** = ce qui se passe **maintenant** :
+
+          - **I am reading.** = Je suis en train de lire.
+          - **She is playing.** · **They are swimming** (on double le m : swim → swimming).
+
+          Question : **What are you doing?** = Qu'est-ce que tu fais (en ce moment) ? Mots repères : **now**, **right now**, **Look!**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "What are you doing?", sens: "Qu'est-ce que tu fais ?", emoji: "❓" }, { texte: "I am reading a book.", sens: "Je suis en train de lire un livre.", emoji: "📖" }, { texte: "Look! The dog is running.", sens: "Regarde ! Le chien court.", emoji: "🐕" }] }
+        legende: "Décris en anglais ce que tu fais en ce moment."
+      - attention: "Habitude → présent simple (**I play every day**). En ce moment → be + -ing (**I am playing now**)."
+      - astuce: { texte: "Imagine une caméra qui filme en direct : si ça se passe sous la caméra, c'est -ing.", qui: zero }
+      - retiens: "**am / is / are** + verbe en **-ing** = en ce moment. **What are you doing?** Repères : **now**, **Look!**"
+    exercices:
+      - type: qcm
+        enonce: "Complète : « Look! The baby … »"
+        choix: ["is sleeping", "sleeps", "sleeping", "are sleeping"]
+        correction: "« Look! » : c'est en ce moment. The baby = it → **is sleeping**."
+      - type: qcm
+        vars: { t: [["I ___ my homework every evening.", "do", "am doing", "doing"], ["Be quiet! I ___ my homework now.", "am doing", "do", "does"], ["She ___ her teeth every morning.", "brushes", "is brushing", "brush"], ["Listen! Someone ___ the piano.", "is playing", "plays", "play"]] }
+        enonce: "Habitude ou en ce moment ? {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : regarde les mots repères (every…, now, listen…)."
+      - type: classer
+        enonce: "Range chaque phrase : habitude ou en ce moment ?"
+        categories: ["Habitude", "En ce moment"]
+        mots: [["I play tennis on Sundays.", 0], ["I am playing tennis now.", 1], ["She reads every night.", 0], ["Look! She is reading.", 1]]
+        correction: "every / on Sundays → présent simple ; now / Look! → be + -ing."
+      - type: mot
+        enonce: "Écris la forme en -ing du verbe « swim »."
+        reponse: ["swimming"]
+        correction: "swim → **swimming** (on double le m)."
+
+  - id: possessives
+    titre: My, your, his, her - à qui est-ce ?
+    objectif: J'utilise les possessifs et le cas possessif ('s).
+    mots: [his, her, their, possessif]
+    etapes:
+      - dialogue:
+          - zero: "Ce sac est à Lya. « It's Lya bag » ?"
+          - mia: "On dit « It's Lya's bag » : le **'s** veut dire « de »."
+      - a_quoi_ca_sert: "Retrouver tes affaires, parler de ta famille et de tes amis sans te tromper entre « his » et « her »."
+      - texte: |
+          - **my** (mon, ma, mes) · **your** (ton, ta, tes) · **his** (son… à un garçon) · **her** (son… à une fille) · **our** (notre) · **their** (leur)
+          - **Tom's bike** = le vélo de Tom · **my sister's room** = la chambre de ma sœur
+
+          En anglais, le possessif dépend du **propriétaire** : **his mother** = la mère de lui, **her father** = le père d'elle.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "This is his bike.", sens: "C'est son vélo (à lui).", emoji: "🚲" }, { texte: "This is her phone.", sens: "C'est son téléphone (à elle).", emoji: "📱" }, { texte: "It's Tom's dog.", sens: "C'est le chien de Tom.", emoji: "🐶" }] }
+        legende: "Écoute la différence entre « his » et « her »."
+      - attention: "**his** ou **her** dépend de la personne qui possède, pas de l'objet : Lya's father → **her** father."
+      - astuce: { texte: "Demande-toi : à qui ? À un garçon → his. À une fille → her.", qui: neo }
+      - retiens: "**my**, **your**, **his** (à lui), **her** (à elle), **our**, **their**. **Tom's bike** = le vélo de Tom."
+    exercices:
+      - type: qcm
+        enonce: "Lya a un frère. Comment dit-on « son frère » (le frère de Lya) ?"
+        choix: ["her brother", "his brother", "she brother", "Lya brother"]
+        correction: "Le frère d'elle → **her** brother."
+      - type: qcm
+        enonce: "Comment dit-on « le chat de Néo » ?"
+        choix: ["Néo's cat", "the cat Néo", "Néo cat's", "cat of Néo's"]
+        correction: "Propriétaire + **'s** + objet : **Néo's cat**."
+      - type: relier
+        enonce: "🔗 Relie chaque possessif à son sens."
+        paires: [["his", "à lui"], ["her", "à elle"], ["our", "à nous"], ["their", "à eux"]]
+        correction: "his = à lui, her = à elle, our = à nous, their = à eux."
+      - type: mot
+        enonce: "Complète : « Tom and Lisa love … dog. » (leur)"
+        reponse: ["their"]
+        correction: "leur = **their**."
+
+  - id: questions-wh
+    titre: Who, what, where? - poser des questions
+    objectif: Je pose des questions avec les mots interrogatifs et « do / does ».
+    mots: [who, what, where, when, why, question]
+    etapes:
+      - dialogue:
+          - neo: "Un passager du ferry ne parle qu'anglais. Comment lui demander d'où il vient ?"
+          - mia: "« Where are you from? » Les mots en **wh-** ouvrent les questions."
+      - a_quoi_ca_sert: "Interviewer quelqu'un, mener une enquête dans un jeu, faire connaissance avec un correspondant."
+      - texte: |
+          - **Who?** qui · **What?** quoi · **Where?** où · **When?** quand · **Why?** pourquoi · **How?** comment
+
+          Avec un verbe d'action, on ajoute **do / does** : **Where do you live?** · **What does she like?**
+          Avec **be**, on inverse : **Where are you from?** · **Who is he?**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Where do you live?", sens: "Où habites-tu ?", emoji: "🏠" }, { texte: "What does she like?", sens: "Qu'est-ce qu'elle aime ?", emoji: "❤️" }, { texte: "Why are you late?", sens: "Pourquoi es-tu en retard ?", emoji: "⏰" }] }
+        legende: "Écoute : dans une question, la voix monte ou descend à la fin ?"
+      - attention: "Avec **does**, le verbe perd son -s : **What does she like?** (pas « likes »)."
+      - astuce: { texte: "Presque tous les mots de question commencent par wh- : who, what, where, when, why. Seul « how » fait exception.", qui: zero }
+      - retiens: "**who** qui, **what** quoi, **where** où, **when** quand, **why** pourquoi, **how** comment. **Where do you…?** / **What does she…?**"
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque mot de question à son sens."
+        paires: [["Who?", "Qui ?"], ["Where?", "Où ?"], ["When?", "Quand ?"], ["Why?", "Pourquoi ?"]]
+        correction: "who = qui, where = où, when = quand, why = pourquoi."
+      - type: qcm
+        vars: { t: [["___ is your birthday? — In May.", "When", "Where", "Who"], ["___ do you live? — In Paris.", "Where", "When", "What"], ["___ is your best friend? — Sam.", "Who", "Why", "Where"], ["___ are you sad? — Because I lost my cat.", "Why", "How", "Who"]] }
+        enonce: "Trouve le mot de question : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : regarde la réponse pour savoir ce qu'on demande."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Où habite-t-elle ? »"
+        items: ["Where", "does", "she", "live?"]
+        correction: "Where does she live?"
+      - type: qcm
+        enonce: "Quelle question est juste ?"
+        choix: ["What does he want?", "What does he wants?", "What he wants?", "What do he want?"]
+        correction: "he → **does**, et le verbe sans -s : **What does he want?**"
+
+  - id: comparatives
+    titre: Bigger, better - comparer
+    objectif: Je compare deux choses avec « -er than » et « more … than ».
+    mots: [than, bigger, more, best, comparer]
+    etapes:
+      - dialogue:
+          - zero: "Mon bateau est plus grand que le tien !"
+          - neo: "« My boat is bigger than yours! » Et le plus grand de tous : « the biggest »."
+      - a_quoi_ca_sert: "Comparer deux jeux, deux équipes, deux téléphones, donner ton avis dans une discussion."
+      - texte: |
+          Mot court : on ajoute **-er** + **than** : **tall → taller than**, **big → bigger than** (on double la dernière lettre).
+
+          Mot long : **more** + adjectif + **than** : **more expensive than** (plus cher que), **more interesting than**.
+
+          Exceptions : **good → better** (meilleur), **bad → worse** (pire). Le plus : **the tallest**, **the most beautiful**, **the best**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "An elephant is bigger than a dog.", sens: "Un éléphant est plus gros qu'un chien.", emoji: "🐘" }, { texte: "Maths is more interesting than TV.", sens: "Les maths sont plus intéressantes que la télé.", emoji: "📐" }, { texte: "This is the best pizza!", sens: "C'est la meilleure pizza !", emoji: "🍕" }] }
+        legende: "Écoute « than » : le th se dit avec la langue entre les dents."
+      - attention: "On ne dit jamais « more bigger » : c'est **-er** OU **more**, jamais les deux."
+      - astuce: { texte: "Compte les syllabes : une syllabe (big, tall) → -er ; trois syllabes et plus (expensive) → more.", qui: mia }
+      - retiens: "Court : **-er than** (**bigger than**). Long : **more … than**. **good → better → the best**, **bad → worse**."
+    exercices:
+      - type: qcm
+        enonce: "Complète : « A cat is … than a mouse. »"
+        choix: ["bigger", "more big", "biger", "more bigger"]
+        correction: "big → **bigger** (on double le g)."
+      - type: qcm
+        enonce: "Complète : « This game is … than that one. »"
+        choix: ["more expensive", "expensiver", "more expensiver", "expensive"]
+        correction: "Mot long → **more expensive than**."
+      - type: relier
+        enonce: "🔗 Relie chaque adjectif à son comparatif."
+        paires: [["good", "better"], ["bad", "worse"], ["tall", "taller"], ["happy", "happier"]]
+        correction: "good → better, bad → worse, tall → taller, happy → happier (y → ier)."
+      - type: mot
+        enonce: "Écris le comparatif de « small »."
+        reponse: ["smaller"]
+        correction: "small → **smaller** (than)."
+
+  - id: the-uk
+    titre: The United Kingdom - le Royaume-Uni
+    objectif: Je connais les pays du Royaume-Uni, leurs capitales et quelques repères culturels.
+    mots: [England, Scotland, Wales, London, pays]
+    etapes:
+      - dialogue:
+          - neo: "Le ferry arrive en Grande-Bretagne ! Mais est-ce l'Angleterre ou le Royaume-Uni ?"
+          - mia: "Le Royaume-Uni, c'est quatre pays : l'Angleterre, l'Écosse, le pays de Galles et l'Irlande du Nord."
+      - a_quoi_ca_sert: "Préparer un voyage scolaire, comprendre un film ou un match des « Six Nations », ne pas vexer un Écossais en l'appelant Anglais."
+      - texte: |
+          Le **United Kingdom** (UK) : **England** (capitale **London**), **Scotland** (**Edinburgh**), **Wales** (**Cardiff**), **Northern Ireland** (**Belfast**).
+
+          Quelques repères : le **Big Ben** et la **Tower Bridge** à Londres, le **red double-decker bus**, la monnaie **pound** (£), le **tea time** vers 17 h.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "England", sens: "l'Angleterre" }, { texte: "Scotland", sens: "l'Écosse" }, { texte: "Wales", sens: "le pays de Galles" }, { texte: "Northern Ireland", sens: "l'Irlande du Nord" }, { texte: "London is the capital of England.", sens: "Londres est la capitale de l'Angleterre.", emoji: "🇬🇧" }] }
+        legende: "Écoute les quatre pays, puis répète-les."
+      - attention: "Le Royaume-Uni n'est pas l'Angleterre : l'Angleterre n'est qu'un des quatre pays."
+      - astuce: { texte: "Retiens « ESWN » : England, Scotland, Wales, Northern Ireland, du plus grand au plus petit en habitants.", qui: zero }
+      - retiens: "**UK** = **England** (London), **Scotland** (Edinburgh), **Wales** (Cardiff), **Northern Ireland** (Belfast). Monnaie : le **pound** (£)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque pays à sa capitale."
+        paires: [["England", "London"], ["Scotland", "Edinburgh"], ["Wales", "Cardiff"], ["Northern Ireland", "Belfast"]]
+        correction: "England → London, Scotland → Edinburgh, Wales → Cardiff, Northern Ireland → Belfast."
+      - type: qcm
+        enonce: "Combien de pays forment le Royaume-Uni ?"
+        choix: ["4", "1", "2", "6"]
+        correction: "**4** : England, Scotland, Wales, Northern Ireland."
+      - type: qcm
+        enonce: "Quelle est la monnaie du Royaume-Uni ?"
+        choix: ["the pound (£)", "the euro (€)", "the dollar ($)", "the franc"]
+        correction: "Le **pound** (livre sterling, £)."
+      - type: mot
+        enonce: "Écris en anglais le nom de la capitale du Royaume-Uni."
+        reponse: ["London"]
+        correction: "**London** (Londres)."

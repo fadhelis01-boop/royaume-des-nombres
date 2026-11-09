@@ -30,7 +30,7 @@ lecons:
           - **gaz** : particules **très éloignées**, qui bougent vite dans tous les sens → il occupe tout l'espace et se comprime.
           Quand on chauffe, les particules s'agitent plus : c'est pour ça que la matière change d'état.
       - astuce:
-          texte: "Imagine une cour d'école : solide = élèves rangés en rang serré ; liquide = élèves qui se faufilent les uns contre les autres ; gaz = récréation, tout le monde court partout."
+          texte: "Imagine la cour : solide = élèves en rang serré ; liquide = élèves qui se faufilent ; gaz = récréation, chacun court partout."
           qui: neo
       - retiens: "Solide : serrées et rangées. Liquide : serrées et désordonnées. Gaz : éloignées et très agitées. Chauffer = agiter les particules."
       - a_quoi_ca_sert: "Tu peux écraser l'air d'un ballon, mais pas l'eau d'une bouteille. Les particules t'expliquent pourquoi."
@@ -114,7 +114,7 @@ lecons:
           observation: "Ça mousse et le ballon se gonfle tout seul."
           explication: "Le vinaigre (acide) et le bicarbonate (base) réagissent : il se forme un **nouveau gaz**, le dioxyde de carbone (CO₂), qui gonfle le ballon. C'est une transformation **chimique**."
       - astuce:
-          texte: "Les indices d'une vraie réaction chimique : un gaz apparaît (bulles), la couleur change, de la chaleur ou de la lumière se dégage, un nouveau solide se forme."
+          texte: "Une vraie réaction chimique se voit : des bulles, une couleur qui change, de la chaleur ou un nouveau solide qui apparaît."
           qui: mia
       - retiens: "Physique : même substance, aspect différent. Chimique : de nouvelles substances apparaissent (gaz, couleur, chaleur…)."
       - a_quoi_ca_sert: "La levure qui fait gonfler le gâteau, la rouille sur un vélo, la cuisson d'un œuf, une bougie qui brûle : ce sont des réactions chimiques."

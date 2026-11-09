@@ -40,8 +40,11 @@ export function niveauLecon(w: World, idx: number): number | null {
   if (tc) return tc[0];
   const t = tranche(w.niveau);
   if (!t) return null;
-  const n = w.lecons.length;
-  return n <= 1 ? t[0] : t[0] + ((t[1] - t[0]) * idx) / (n - 1);
+  // les leçons qui ont leur propre classe ne comptent pas dans la répartition des autres
+  const libres = w.lecons.map((l, i) => (l.classe ? -1 : i)).filter((i) => i >= 0);
+  const pos = libres.indexOf(idx);
+  const n = libres.length;
+  return n <= 1 ? t[0] : t[0] + ((t[1] - t[0]) * Math.max(0, pos)) / (n - 1);
 }
 
 /** « Âge scolaire » : l'âge qui correspond à la classe déclarée (un enfant né en décembre, qui a sauté

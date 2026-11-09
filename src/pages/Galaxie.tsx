@@ -58,7 +58,10 @@ function PlaneteCard({ p, ws, on, onPick }: { p: Planete; ws: World[]; on: boole
   // l'étape de l'enfant : on ignore les mondes entièrement sous son niveau (un élève de 5ᵉ ne voit pas « Les Graines »)
   const moment = niveauDuMoment(ageScolaire(child));
   const aSonNiveau = parcours.filter((w) => (tranche(w.niveau)?.[1] ?? 99) >= moment);
-  const cycle = (aSonNiveau.find((w) => !fait(w)) ?? parcours.find((w) => !fait(w)) ?? parcours[parcours.length - 1])?.cycle;
+  // étape de sa classe : école → Graines, collège → Explorateurs, lycée → Maîtres (si la planète en a)
+  const a = ageScolaire(child);
+  const sonCycle = a < 11 ? "graines" : a < 15 ? "explorateurs" : "maitres";
+  const cycle = parcours.some((w) => w.cycle === sonCycle) ? sonCycle : (aSonNiveau.find((w) => !fait(w)) ?? parcours.find((w) => !fait(w)) ?? parcours[parcours.length - 1])?.cycle;
   const etape = parcours.filter((w) => w.cycle === cycle);
   const total = etape.length;
   const faites = etape.filter(fait).length;

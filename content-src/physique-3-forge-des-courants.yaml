@@ -220,3 +220,40 @@ lecons:
         categories: ["bon réflexe", "danger"]
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Mains sèches, prises en bon état, cache-prises ; jamais d'objet dans une prise ni d'électricité près de l'eau."
+
+  - id: chaines-d-energie
+    titre: Sources d'énergie et chaînes d'énergie
+    classe: "6ᵉ"
+    objectif: Je repère la source d'énergie d'un objet et je décris comment l'énergie se transforme.
+    mots: [énergie, source, conversion, renouvelable]
+    etapes:
+      - dialogue:
+          - zero: "Ma lampe de poche s'allume. Mais d'où vient la lumière ?"
+          - neo: "De la pile ! L'énergie chimique de la pile devient électrique, puis lumineuse. C'est une chaîne d'énergie."
+      - a_quoi_ca_sert: "Comprendre ce qui fait marcher ton vélo, ta console ou ta maison, et pourquoi on parle d'économiser l'énergie."
+      - texte: |
+          Une **source d'énergie** fournit l'énergie : le Soleil, le vent, l'eau qui coule, le pétrole, une pile, la nourriture…
+
+          L'énergie ne disparaît pas : elle se **transforme**. Une lampe de poche : énergie **chimique** (pile) → **électrique** → **lumineuse** (et un peu de chaleur).
+
+          Sources **renouvelables** (Soleil, vent, eau, bois) et **non renouvelables** (pétrole, charbon, gaz, uranium) qui s'épuisent.
+      - astuce: { texte: "Pour dessiner une chaîne d'énergie, pars toujours de la source et suis les flèches jusqu'à ce que l'objet produit.", qui: mia }
+      - retiens: "L'énergie se **transforme**, elle ne disparaît pas. Sources **renouvelables** : Soleil, vent, eau, bois. **Non renouvelables** : pétrole, charbon, gaz."
+    exercices:
+      - type: classer
+        enonce: "Range chaque source : renouvelable ou non renouvelable ?"
+        categories: ["Renouvelable", "Non renouvelable"]
+        mots: [["le Soleil", 0], ["le vent", 0], ["le pétrole", 1], ["le charbon", 1], ["l'eau d'un barrage", 0], ["le gaz naturel", 1]]
+        correction: "Soleil, vent, eau : renouvelables. Pétrole, charbon, gaz : ils s'épuisent."
+      - type: ordre
+        enonce: "Range la chaîne d'énergie d'une lampe de poche, de la source à la lumière."
+        items: ["énergie chimique de la pile", "énergie électrique dans les fils", "énergie lumineuse de l'ampoule"]
+        correction: "Pile (chimique) → fils (électrique) → ampoule (lumineuse)."
+      - type: relier
+        enonce: "🔗 Relie chaque objet à l'énergie qu'il produit surtout."
+        paires: [["un radiateur", "chaleur"], ["une ampoule", "lumière"], ["un ventilateur", "mouvement"], ["un haut-parleur", "son"]]
+        correction: "Radiateur → chaleur, ampoule → lumière, ventilateur → mouvement, haut-parleur → son."
+      - type: qcm
+        enonce: "Quand tu pédales, d'où vient l'énergie de ton vélo ?"
+        choix: ["de ta nourriture, transformée par tes muscles", "du vent", "de la route", "du Soleil directement"]
+        correction: "Tes muscles transforment l'énergie de ta nourriture en mouvement."

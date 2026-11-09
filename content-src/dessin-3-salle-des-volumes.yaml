@@ -29,7 +29,7 @@ lecons:
           **La méthode du crayon-mesure** : bras tendu, un œil fermé, tu mesures une partie de l'objet (par exemple la hauteur de la tête) avec ton crayon, puis tu comptes combien de fois elle entre dans le reste. Cette partie devient ton **unité**.
           Un adulte mesure environ **7 à 8 têtes** de haut ; un enfant de 6 ans environ **6 têtes**.
       - astuce:
-          texte: "Tends ton bras, crayon vertical, ferme un œil : mesure une partie avec ton pouce sur le crayon, puis compare avec les autres. C'est la méthode des peintres."
+          texte: "Bras tendu, crayon debout, un œil fermé : mesure une partie avec ton pouce, puis compare. C'est la méthode des peintres."
           qui: neo
       - retiens: "Proportions = tailles relatives. Choisir une unité (ex. la tête) et compter combien de fois elle entre dans le reste."
     exercices:
@@ -83,7 +83,7 @@ lecons:
           - L'**ombre propre** : la partie de l'objet qui ne reçoit pas la lumière.
           - L'**ombre portée** : l'ombre que l'objet projette sur le sol, **à l'opposé** de la lumière (comme en physique !).
       - astuce:
-          texte: "Trois faces, trois valeurs : la plus claire face à la lumière, une moyenne, la plus foncée à l'opposé. L'ombre portée part toujours à l'opposé de la lumière."
+          texte: "Trois faces, trois valeurs : claire face à la lumière, moyenne, puis foncée. L'ombre part à l'opposé de la lumière."
           qui: zero
       - retiens: "Face éclairée (claire), face intermédiaire, ombre propre (foncée), ombre portée sur le sol, à l'opposé de la source."
     exercices:

@@ -406,3 +406,12 @@ planetes:
         aie: ["Hello ?! Un mot m'échappe !", "Ce mot… brille trop !", "Thank you… non, je ne voulais pas dire ça !"]
         nargue: ["Brouillard, brouillard…", "Ce mot reste perdu…"]
         jeton: "🌫️"
+      explorateurs:
+        sprite: neutre
+        nom: Le Brouillard des Temps
+        qui: narrateur
+        ouverture: "Le Brouillard des Temps mélange hier, aujourd'hui et demain. Dix phrases justes, et il se dissipe."
+        cri: "Yesterday… today… tomorrow… tout se mélange !"
+        aie: ["« I went » ? C'était juste !", "Le passé est remis à sa place…", "Ta phrase brille trop !"]
+        nargue: ["I eated… I goed…", "Hier ou demain ? Je ne sais plus…"]
+        jeton: "🌫️"

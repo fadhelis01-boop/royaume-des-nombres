@@ -1,3 +1,9 @@
+- version: "2.13.0"
+  date: "2026-11-09"
+  notes:
+    - "Anglais du CM1 à la 5ᵉ : 4 nouvelles îles et 24 leçons (la famille, la journée, le présent, le passé, l'avenir, le Royaume-Uni), avec écoute, phrases à remettre dans l'ordre et un nouveau Gardien."
+    - "Collège : symétrie axiale et centrale, la fraction comme division, chaînes d'énergie, érosion, mélanges et corps purs ; 15 leçons de maths en 6ᵉ comme en 5ᵉ."
+    - "Astuces plus courtes pour les 9-10 ans et corrections de calcul décimal qui rappellent la méthode."
 - version: "2.12.0"
   date: "2026-11-09"
   notes:

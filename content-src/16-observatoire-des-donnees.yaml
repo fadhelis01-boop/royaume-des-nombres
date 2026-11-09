@@ -95,7 +95,7 @@ lecons:
       - visuel: { type: fraction, n: 1, d: 2, forme: disque }
         legende: "La moitié du disque : la moitié des élèves, 50 %."
       - attention: "Un diagramme circulaire montre des **proportions**, pas des nombres : pour connaître le nombre d'élèves, il faut connaître le **total**."
-      - astuce: { texte: "Repère d'abord les parts faciles : la moitié (un demi-disque), le quart (un coin carré au centre), les trois quarts. Elles servent de repères pour estimer les autres.", qui: mia }
+      - astuce: { texte: "Repère d'abord les parts faciles : la moitié, le quart, les trois quarts. Elles t'aident à estimer les autres.", qui: mia }
       - retiens: "Le disque entier représente le **total** (100 %). Une part de **la moitié** = 50 %, **un quart** = 25 %, **trois quarts** = 75 %. Nombre = **fraction × total**."
     exercices:
       - type: nombre

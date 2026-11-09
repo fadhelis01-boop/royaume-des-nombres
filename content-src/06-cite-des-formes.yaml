@@ -443,7 +443,7 @@ lecons:
           noms: false
         legende: "La croix : un patron du cube. Les pointillés sont les plis."
       - attention: "Sur un patron de cube, deux faces qui se retrouvent **face à face** une fois le cube plié ne se touchent jamais sur le patron."
-      - astuce: { texte: "Choisis une face pour le fond. Relève les autres une par une, comme les murs d'une maison. Deux murs au même endroit ? Ce n'est pas un patron.", qui: mia }
+      - astuce: { texte: "Choisis une face pour le fond. Relève les autres comme les murs d'une maison. Deux murs au même endroit ? Ce n'est pas un patron.", qui: mia }
       - vraie_vie: { titre: "Défi dans la vraie vie", texte: "Déplie une petite boîte en carton (boîte de dentifrice, de thé…) en coupant le moins d'arêtes possible. Compte ses faces et colorie les faces opposées de la même couleur.", materiel: "une petite boîte vide, des ciseaux, des crayons" }
       - retiens: "Un **patron** est le solide **déplié à plat**, d'un seul morceau. Le patron d'un **cube** a **6 carrés** ; celui d'un **pavé** a **6 rectangles**, identiques deux à deux."
     exercices:
@@ -555,7 +555,7 @@ lecons:
           noms: false
         legende: "Les deux droites horizontales sont parallèles ; la droite verticale est perpendiculaire aux deux."
       - attention: "Deux droites qui ne se coupent pas **sur le dessin** peuvent quand même se couper plus loin : prolonge-les ou mesure l'écart à deux endroits avant de dire qu'elles sont parallèles."
-      - astuce: { texte: "Pour l'angle droit, pose l'équerre bien à plat, un côté de l'angle droit sur une droite : si l'autre droite suit exactement l'autre côté, c'est perpendiculaire.", qui: neo }
+      - astuce: { texte: "Pose l'équerre à plat, un côté sur une droite : si l'autre droite suit l'autre côté, elles sont perpendiculaires.", qui: neo }
       - vraie_vie: { titre: "Chasse aux droites", texte: "Dans ta maison, trouve 3 exemples de droites parallèles (lignes du carrelage, étagères…) et 3 exemples de droites perpendiculaires (coin de porte, de fenêtre…). Vérifie les angles droits avec le coin d'une feuille.", materiel: "une feuille de papier (son coin sert d'équerre)" }
       - retiens: "**Perpendiculaires** : elles se coupent en faisant un **angle droit** (vérifié à l'équerre). **Parallèles** : elles ne se coupent **jamais**, l'écart est toujours le même. Deux droites perpendiculaires à une même troisième sont parallèles."
     exercices:

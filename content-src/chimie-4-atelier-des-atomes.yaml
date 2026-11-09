@@ -259,3 +259,41 @@ lecons:
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
         correction: "{{t_2}}"
+
+  - id: melanges-corps-purs
+    titre: Mélanges et corps purs
+    classe: "5ᵉ"
+    objectif: Je distingue un corps pur d'un mélange et je sépare un mélange (décantation, filtration, évaporation).
+    mots: [corps pur, mélange, homogène, filtration]
+    etapes:
+      - dialogue:
+          - zero: "L'eau du robinet, c'est de l'eau pure ?"
+          - mia: "Pas tout à fait ! Elle contient des sels minéraux dissous. C'est un mélange homogène."
+      - a_quoi_ca_sert: "Comprendre l'étiquette de ta bouteille d'eau, faire du thé ou du café (une filtration !), savoir d'où vient le sel."
+      - texte: |
+          Un **corps pur** ne contient qu'une seule espèce chimique : l'eau distillée, le sel, le sucre.
+
+          Un **mélange** en contient plusieurs. Il est **homogène** si on ne distingue qu'une seule partie (eau salée, sirop), **hétérogène** si on en voit plusieurs (eau + sable, eau + huile).
+
+          Pour séparer : la **décantation** (le solide tombe au fond), la **filtration** (le filtre retient le solide), l'**évaporation** (l'eau s'en va, le sel reste).
+      - astuce: { texte: "Une étiquette qui liste plusieurs ingrédients ou minéraux ? C'est un mélange.", qui: neo }
+      - retiens: "**Corps pur** = une seule espèce chimique. **Mélange homogène** (une seule partie visible) ou **hétérogène**. Séparer : **décanter**, **filtrer**, **évaporer**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque exemple : corps pur, mélange homogène ou mélange hétérogène ?"
+        categories: ["Corps pur", "Mélange homogène", "Mélange hétérogène"]
+        mots: [["l'eau distillée", 0], ["le sel", 0], ["l'eau salée", 1], ["le sirop", 1], ["l'eau et le sable", 2], ["l'eau et l'huile", 2]]
+        correction: "Une seule espèce : corps pur. Une seule partie visible : homogène. Plusieurs parties : hétérogène."
+      - type: relier
+        enonce: "🔗 Relie chaque mélange à la bonne méthode de séparation."
+        paires: [["récupérer le sel de l'eau de mer", "évaporation"], ["enlever le sable de l'eau", "filtration"], ["laisser la boue tomber au fond", "décantation"]]
+        correction: "Évaporer pour garder le sel, filtrer pour retenir le sable, décanter pour laisser tomber la boue."
+      - type: qcm
+        enonce: "Quand tu fais du café avec un filtre, tu réalises…"
+        choix: ["une filtration", "une évaporation", "une décantation", "une fusion"]
+        correction: "Le filtre retient la poudre de café et laisse passer le liquide : **filtration**."
+      - type: vf
+        vars: { t: [["L'eau du robinet est un corps pur.", false], ["Le sirop est un mélange homogène.", true], ["Le sable et l'eau forment un mélange hétérogène.", true], ["La filtration permet de récupérer le sel dissous.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'eau du robinet contient des sels dissous ; le sel dissous passe à travers le filtre, il faut évaporer."

@@ -1,0 +1,244 @@
+id: en-cote-du-passe
+matiere: anglais
+titre: La Côte du Passé
+sous_titre: Raconter au passé (verbes réguliers et irréguliers, was / were), parler de l'avenir, les règles, les quantités
+emoji: 🏰
+couleur: "#1f5596"
+cycle: explorateurs
+age: 12-13 ans
+niveau: 5ᵉ
+ordre: 705
+version: 1.0.0
+intro:
+  - narrateur: "Sur la Côte du Passé, de vieux châteaux gardent les histoires d'autrefois. Pour les ouvrir, il faut savoir raconter ce qui s'est passé… et ce qui va arriver."
+  - mia: "Cette année, on raconte : hier, le week-end dernier, et demain."
+  - zero: "Yesterday, I eated a cake ! … Pourquoi tout le monde rigole ?"
+
+lecons:
+  - id: past-regular
+    titre: The past simple - les verbes réguliers
+    objectif: Je raconte au passé avec les verbes réguliers en -ed.
+    mots: [yesterday, -ed, last, ago, passé]
+    etapes:
+      - dialogue:
+          - neo: "Hier, j'ai joué au football et j'ai regardé un film."
+          - mia: "« Yesterday, I played football and I watched a film. » Il suffit d'ajouter **-ed** !"
+      - a_quoi_ca_sert: "Raconter ton week-end, écrire une histoire, comprendre le résumé d'un film ou d'un jeu."
+      - texte: |
+          Le **prétérit** (past simple) raconte une action **terminée** : **play → played**, **watch → watched**, **visit → visited**.
+
+          Petits changements : **like → liked** (déjà un e), **stop → stopped** (on double), **study → studied** (y → ied).
+
+          Même forme pour tout le monde : **I played**, **she played**, **they played**. Repères : **yesterday**, **last week**, **two days ago**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Yesterday, I played football.", sens: "Hier, j'ai joué au football.", emoji: "⚽" }, { texte: "Last week, she visited London.", sens: "La semaine dernière, elle a visité Londres.", emoji: "🇬🇧" }, { texte: "They watched a film two days ago.", sens: "Ils ont regardé un film il y a deux jours.", emoji: "🎬" }] }
+        legende: "Écoute la fin des verbes : « played » (d), « watched » (t), « visited » (id)."
+      - attention: "Au prétérit, **pas de -s** avec he / she : **she played** (pas « she playeds »)."
+      - astuce: { texte: "« ago » se place après la durée : two days ago = il y a deux jours.", qui: neo }
+      - retiens: "Verbe régulier + **-ed** : **played**, **watched**, **liked**, **stopped**, **studied**. Même forme pour tous. Repères : **yesterday**, **last…**, **… ago**."
+    exercices:
+      - type: qcm
+        vars: { t: [["play", "played", "plaied", "plaid"], ["stop", "stopped", "stoped", "stopt"], ["study", "studied", "studyed", "studed"], ["like", "liked", "likeed", "likt"], ["watch", "watched", "watcht", "watchd"]] }
+        enonce: "Quel est le prétérit de « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} → **{{t_1}}**."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Hier, j'ai regardé la télé »."
+        items: ["Yesterday,", "I", "watched", "TV."]
+        correction: "Yesterday, I watched TV."
+      - type: relier
+        enonce: "🔗 Relie chaque repère de temps à sa traduction."
+        paires: [["yesterday", "hier"], ["last week", "la semaine dernière"], ["two days ago", "il y a deux jours"], ["last night", "hier soir"]]
+        correction: "yesterday = hier, last week = la semaine dernière, ago = il y a, last night = hier soir."
+      - type: mot
+        enonce: "Écris le prétérit de « visit »."
+        reponse: ["visited"]
+        correction: "visit → **visited**."
+
+  - id: past-irregular
+    titre: Irregular verbs - les verbes irréguliers
+    objectif: J'utilise les verbes irréguliers les plus fréquents au prétérit.
+    mots: [went, had, saw, ate, irrégulier]
+    etapes:
+      - dialogue:
+          - zero: "« I eated a cake. » Pourquoi c'est faux ?"
+          - mia: "Parce que « eat » est irrégulier : on dit « I ate a cake ». Ces verbes s'apprennent par cœur, comme une chanson."
+      - a_quoi_ca_sert: "Les verbes les plus utilisés sont irréguliers : sans eux, impossible de raconter ce que tu as fait, vu ou mangé."
+      - texte: |
+          Les 10 plus fréquents : **go → went** (aller) · **have → had** (avoir) · **see → saw** (voir) · **eat → ate** (manger) · **come → came** (venir) · **do → did** (faire) · **make → made** (fabriquer) · **take → took** (prendre) · **get → got** (obtenir) · **buy → bought** (acheter).
+
+          Négation et question, pour tous les verbes : **I didn't go** · **Did you see the film?** (le verbe reprend sa forme de base).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I went to the beach.", sens: "Je suis allé à la plage.", emoji: "🏖️" }, { texte: "We ate fish and chips.", sens: "Nous avons mangé du fish and chips.", emoji: "🐟" }, { texte: "Did you see the castle?", sens: "As-tu vu le château ?", emoji: "🏰" }, { texte: "No, I didn't.", sens: "Non.", emoji: "👎" }] }
+        legende: "Écoute, puis raconte ton dernier week-end avec trois verbes irréguliers."
+      - attention: "Avec **didn't** et **did**, le verbe revient à sa forme de base : **I didn't go** (pas « didn't went »)."
+      - astuce: { texte: "Apprends-les par trois en rythme : go-went, see-saw, eat-ate… comme une comptine.", qui: zero }
+      - retiens: "**go → went**, **have → had**, **see → saw**, **eat → ate**, **do → did**, **buy → bought**. **didn't** / **Did…?** + verbe de base."
+    exercices:
+      - type: qcm
+        vars: { t: [["go", "went", "goed", "gone"], ["see", "saw", "seed", "seen"], ["eat", "ate", "eated", "eaten"], ["buy", "bought", "buyed", "brought"], ["take", "took", "taked", "taken"], ["have", "had", "haved", "has"]] }
+        enonce: "Quel est le prétérit de « {{t_0}} » ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "{{t_0}} → **{{t_1}}** (verbe irrégulier)."
+      - type: relier
+        enonce: "🔗 Relie chaque verbe à son prétérit."
+        paires: [["go", "went"], ["see", "saw"], ["eat", "ate"], ["buy", "bought"]]
+        correction: "go → went, see → saw, eat → ate, buy → bought."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["I didn't go to school yesterday.", "I didn't went to school yesterday.", "I don't went to school yesterday.", "I not go to school yesterday."]
+        correction: "**didn't** + verbe de base : **I didn't go**."
+      - type: mot
+        enonce: "Écris le prétérit de « go »."
+        reponse: ["went"]
+        correction: "go → **went**."
+
+  - id: was-were
+    titre: Was or were? - le passé de « be »
+    objectif: J'utilise « was » et « were » pour décrire le passé.
+    mots: [was, were, there was, passé]
+    etapes:
+      - dialogue:
+          - neo: "Dans ce vieux château, il y avait un roi. Il était très riche."
+          - mia: "« There was a king. He was very rich. » Le passé de **be**, c'est **was** ou **were**."
+      - a_quoi_ca_sert: "Commencer une histoire (« Once upon a time, there was… »), dire où tu étais, comment c'était."
+      - texte: |
+          - **I was**, **he / she / it was**
+          - **you were**, **we were**, **they were**
+
+          **There was** (un) / **There were** (plusieurs) = il y avait. Négation : **wasn't**, **weren't**. Question : **Were you at home?**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Once upon a time, there was a king.", sens: "Il était une fois un roi.", emoji: "👑" }, { texte: "We were at the museum.", sens: "Nous étions au musée.", emoji: "🏛️" }, { texte: "It wasn't easy.", sens: "Ce n'était pas facile.", emoji: "😅" }] }
+        legende: "Écoute le début d'histoire et répète-le comme un conteur."
+      - astuce: { texte: "I et he / she / it → was (singulier). Tous les autres → were.", qui: mia }
+      - retiens: "**I / he / she / it was** · **you / we / they were**. **There was** (un) / **There were** (plusieurs) = il y avait."
+    exercices:
+      - type: qcm
+        vars: { t: [["They ___ at the beach.", "were", "was", "are"], ["I ___ tired yesterday.", "was", "were", "am"], ["There ___ three dragons.", "were", "was", "is"], ["My cat ___ in the garden.", "was", "were", "be"]] }
+        enonce: "Complète au passé : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: classer
+        enonce: "Range chaque sujet : avec « was » ou avec « were » ?"
+        categories: ["was", "were"]
+        mots: [["I", 0], ["she", 0], ["we", 1], ["they", 1], ["it", 0], ["you", 1]]
+        correction: "I, he, she, it → was ; you, we, they → were."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Il était une fois un roi »."
+        items: ["Once upon a time,", "there", "was", "a king."]
+        correction: "Once upon a time, there was a king."
+      - type: mot
+        enonce: "Complète : « We … at home last night. »"
+        reponse: ["were"]
+        correction: "we → **were**."
+
+  - id: future
+    titre: Will and going to - parler de l'avenir
+    objectif: Je parle de l'avenir avec « will » (prévision) et « be going to » (projet).
+    mots: [will, going to, tomorrow, next, futur]
+    etapes:
+      - dialogue:
+          - zero: "Demain, je vais visiter le château. Et je pense qu'il pleuvra."
+          - mia: "Le projet : « I'm going to visit the castle ». La prévision : « I think it will rain »."
+      - a_quoi_ca_sert: "Parler de tes projets de vacances, de ton futur métier, faire des prévisions sur un match."
+      - texte: |
+          - **be going to** + verbe = un **projet** décidé : **I'm going to visit London next summer.**
+          - **will** + verbe = une **prévision** ou une décision rapide : **It will be sunny tomorrow.** · **I think she will win.**
+
+          Négation : **I won't** (= will not) · **I'm not going to**. Repères : **tomorrow**, **next week**, **in 2030**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I'm going to visit London next summer.", sens: "Je vais visiter Londres l'été prochain.", emoji: "✈️" }, { texte: "It will rain tomorrow.", sens: "Il pleuvra demain.", emoji: "🌧️" }, { texte: "I won't be late.", sens: "Je ne serai pas en retard.", emoji: "⏱️" }] }
+        legende: "Écoute, puis dis un projet pour les vacances."
+      - attention: "Après **will**, le verbe ne change pas : **she will go** (pas « she will goes »)."
+      - astuce: { texte: "Projet déjà dans ton agenda → going to. Simple idée ou prédiction → will.", qui: neo }
+      - retiens: "**be going to** = projet décidé. **will** = prévision. **won't** = will not. Verbe toujours à la forme de base."
+    exercices:
+      - type: qcm
+        vars: { t: [["I have my ticket. I ___ visit Rome.", "am going to", "will to", "going"], ["Look at the clouds! It ___ rain.", "is going to", "goes to", "rains"], ["I think robots ___ do our homework one day.", "will", "are", "goes to"], ["Maybe she ___ be a doctor.", "will", "going", "is"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["She will win the race.", "She will wins the race.", "She wills win the race.", "She will to win the race."]
+        correction: "**will** + verbe de base : **will win**."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « Je vais jouer au football demain »."
+        items: ["I'm", "going", "to", "play", "football", "tomorrow."]
+        correction: "I'm going to play football tomorrow."
+      - type: mot
+        enonce: "Écris la forme courte de « will not »."
+        reponse: ["won't", "wont"]
+        correction: "will not = **won't**."
+
+  - id: must-rules
+    titre: Must and mustn't - les règles
+    objectif: J'exprime une obligation ou une interdiction avec « must », « mustn't », « have to ».
+    mots: [must, mustn't, have to, règle]
+    etapes:
+      - dialogue:
+          - neo: "Au musée du château, un panneau : « You mustn't touch the paintings. »"
+          - zero: "Ça veut dire que je dois les toucher ?"
+          - mia: "Non ! **mustn't** = c'est interdit. **must** = c'est obligatoire."
+      - a_quoi_ca_sert: "Comprendre les règles d'un jeu, d'un musée ou d'une piscine, écrire le règlement de ta classe."
+      - texte: |
+          - **You must wear a helmet.** = Tu dois porter un casque (obligation).
+          - **You mustn't run.** = Tu ne dois pas courir (interdiction).
+          - **I have to do my homework.** = Je dois faire mes devoirs (obligation venant des autres). **She has to…**
+          - **You don't have to come.** = Tu n'es pas obligé de venir (ce n'est pas interdit !).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "You must wear a helmet.", sens: "Tu dois porter un casque.", emoji: "⛑️" }, { texte: "You mustn't touch.", sens: "Interdit de toucher.", emoji: "🚫" }, { texte: "You don't have to come.", sens: "Tu n'es pas obligé de venir.", emoji: "🙂" }] }
+        legende: "Écoute bien la différence entre « mustn't » et « don't have to »."
+      - attention: "**mustn't** = interdit. **don't have to** = pas obligé. Ce n'est pas du tout pareil !"
+      - astuce: { texte: "Pense aux panneaux : rond rouge barré = mustn't ; panneau bleu = must.", qui: zero }
+      - retiens: "**must** = obligation · **mustn't** = interdiction · **have to** = obligation · **don't have to** = pas obligé."
+    exercices:
+      - type: classer
+        enonce: "Range chaque règle de la piscine : obligatoire ou interdit ?"
+        categories: ["Obligatoire", "Interdit"]
+        mots: [["You must take a shower.", 0], ["You mustn't run.", 1], ["You must wear a swimming cap.", 0], ["You mustn't eat in the water.", 1]]
+        correction: "must → obligatoire ; mustn't → interdit."
+      - type: qcm
+        enonce: "« You don't have to come » veut dire :"
+        choix: ["Tu n'es pas obligé de venir.", "Tu ne dois pas venir.", "Tu dois venir.", "Tu viens."]
+        correction: "**don't have to** = pas obligé. L'interdiction serait « mustn't »."
+      - type: qcm
+        enonce: "Dans une bibliothèque, quelle règle est logique ?"
+        choix: ["You mustn't shout.", "You must shout.", "You mustn't read.", "You must run."]
+        correction: "On ne crie pas dans une bibliothèque : **You mustn't shout.**"
+      - type: mot
+        enonce: "Écris le mot qui exprime l'interdiction (forme courte de « must not »)."
+        reponse: ["mustn't", "mustnt"]
+        correction: "**mustn't** = must not."
+
+  - id: quantities
+    titre: Some, any, much, many - les quantités
+    objectif: J'utilise some, any, much, many et « How much / How many ».
+    mots: [some, any, much, many, quantité]
+    etapes:
+      - dialogue:
+          - mia: "On prépare un pique-nique. « Have we got any bread? »"
+          - zero: "« We've got some bread, but we haven't got any cheese ! »"
+      - a_quoi_ca_sert: "Faire les courses, suivre une recette en anglais, demander combien ça coûte ou combien il en reste."
+      - texte: |
+          - **some** dans une phrase affirmative : **I've got some apples.**
+          - **any** dans une question ou une négation : **Have you got any milk?** · **I haven't got any milk.**
+          - **How many?** + ce qui se compte (apples, eggs) · **How much?** + ce qui ne se compte pas (water, money, bread).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I've got some apples.", sens: "J'ai des pommes.", emoji: "🍎" }, { texte: "Have you got any milk?", sens: "As-tu du lait ?", emoji: "🥛" }, { texte: "How many eggs?", sens: "Combien d'œufs ?", emoji: "🥚" }, { texte: "How much water?", sens: "Combien d'eau ?", emoji: "💧" }] }
+        legende: "Écoute, puis fais ta liste de courses pour un pique-nique."
+      - astuce: { texte: "Peux-tu compter « un, deux, trois » ? Oui (eggs) → many. Non (water) → much.", qui: neo }
+      - retiens: "**some** (affirmation), **any** (question, négation). **How many** + ce qui se compte, **How much** + ce qui ne se compte pas."
+    exercices:
+      - type: qcm
+        vars: { t: [["How ___ eggs do you need?", "many", "much", "any"], ["How ___ water do you drink?", "much", "many", "some"], ["I haven't got ___ money.", "any", "some", "many"], ["I'd like ___ bread, please.", "some", "any", "many"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: classer
+        enonce: "Range chaque mot : on demande « How many » ou « How much » ?"
+        categories: ["How many", "How much"]
+        mots: [["apples", 0], ["water", 1], ["eggs", 0], ["money", 1], ["friends", 0], ["milk", 1]]
+        correction: "Ce qui se compte (apples, eggs, friends) → many ; ce qui ne se compte pas (water, money, milk) → much."
+      - type: ordre
+        enonce: "Remets les mots dans l'ordre : « As-tu du lait ? »"
+        items: ["Have", "you", "got", "any", "milk?"]
+        correction: "Have you got any milk?"
+      - type: mot
+        enonce: "Complète : « I've got … sandwiches for the picnic. » (des)"
+        reponse: ["some"]
+        correction: "Phrase affirmative → **some**."

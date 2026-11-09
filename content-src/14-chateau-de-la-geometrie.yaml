@@ -634,3 +634,87 @@ lecons:
         enonce: "Quelle transformation ne conserve PAS les longueurs (en général) ?"
         choix: ["l'homothétie", "la rotation", "la translation", "la symétrie centrale"]
         correction: "L'homothétie agrandit ou réduit."
+
+  - id: construire-symetrique
+    titre: Construire le symétrique d'une figure (symétrie axiale)
+    classe: "6ᵉ"
+    objectif: Je construis le symétrique d'un point et d'une figure par rapport à une droite, avec l'équerre et la règle.
+    mots: [symétrique, axe, perpendiculaire, médiatrice]
+    etapes:
+      - dialogue:
+          - zero: "Je veux dessiner l'autre moitié du château, exactement pareille, de l'autre côté de la rivière."
+          - neo: "C'est une symétrie axiale : la rivière est l'axe. Chaque point a un jumeau de l'autre côté, à la même distance."
+      - a_quoi_ca_sert: "Dessiner un logo, un papillon ou un visage équilibré, plier et découper une guirlande, comprendre les reflets dans l'eau."
+      - texte: |
+          Pour construire le **symétrique** d'un point A par rapport à une droite (d) :
+
+          1. Trace la droite qui passe par A et qui est **perpendiculaire** à (d) (avec l'équerre).
+          2. Reporte la **même distance** de l'autre côté de (d) : tu obtiens A'.
+
+          (d) est alors la **médiatrice** du segment [AA'] : elle le coupe en son milieu, à angle droit.
+
+          Pour une figure, on construit le symétrique de chaque sommet, puis on relie dans le même ordre.
+      - attention: "La symétrie axiale **conserve** les longueurs, les angles et les aires : la figure est retournée, comme dans un miroir, mais pas déformée."
+      - astuce: { texte: "Vérifie avec un calque : plie le long de l'axe, les deux figures doivent se superposer exactement.", qui: mia }
+      - retiens: "A' est le symétrique de A par rapport à (d) si (d) est la **médiatrice** de [AA']. La symétrie axiale **conserve** longueurs, angles et aires."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes pour construire le symétrique d'un point A par rapport à la droite (d)."
+        items: ["Placer l'équerre sur (d) et passer par A", "Tracer la perpendiculaire à (d) passant par A", "Mesurer la distance de A à (d)", "Reporter cette distance de l'autre côté : c'est A'"]
+        correction: "Perpendiculaire d'abord, puis même distance de l'autre côté."
+      - type: nombre
+        vars: { a: "2..9" }
+        enonce: "Le point A est à {{a}} cm de l'axe (d). À quelle distance de A se trouve son symétrique A' ?"
+        reponse: "2*a"
+        unite: cm
+        correction: "A' est aussi à {{a}} cm de (d), de l'autre côté : AA' = {{a}} + {{a}} = {{2*a}} cm."
+      - type: qcm
+        enonce: "Un segment de 6 cm a pour symétrique un segment de…"
+        choix: ["6 cm", "3 cm", "12 cm", "ça dépend de l'axe"]
+        correction: "La symétrie axiale conserve les longueurs : **6 cm**."
+      - type: vf
+        vars: { t: [["L'axe de symétrie est la médiatrice du segment [AA'].", true], ["Le symétrique d'une figure a une aire deux fois plus grande.", false], ["Un point situé sur l'axe est son propre symétrique.", true], ["La symétrie axiale change la mesure des angles.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Longueurs, angles et aires sont conservés ; un point de l'axe ne bouge pas."
+
+  - id: symetrie-centrale
+    titre: La symétrie centrale (le demi-tour)
+    classe: "5ᵉ"
+    objectif: Je construis le symétrique d'un point et d'une figure par rapport à un point, et je reconnais une figure qui a un centre de symétrie.
+    mots: [symétrie centrale, centre, demi-tour, milieu]
+    etapes:
+      - dialogue:
+          - mia: "Fais tourner ta carte à jouer d'un demi-tour : le roi est toujours debout !"
+          - neo: "C'est une symétrie centrale. Le centre de la carte ne bouge pas, et tout le reste fait un demi-tour autour de lui."
+      - a_quoi_ca_sert: "Reconnaître les cartes à jouer, les logos et les rosaces qui restent pareils à l'envers, et préparer les transformations de 4ᵉ."
+      - texte: |
+          Le **symétrique** d'un point A par rapport à un point O, c'est le point A' tel que **O est le milieu de [AA']**.
+
+          Pour le construire : trace la demi-droite [AO), puis reporte la longueur OA de l'autre côté de O.
+
+          La symétrie centrale, c'est un **demi-tour** (rotation de 180°) autour de O. Elle **conserve** les longueurs, les angles et les aires, et transforme une droite en une droite **parallèle**.
+      - attention: "Ne confonds pas : symétrie **axiale** = pliage le long d'une droite ; symétrie **centrale** = demi-tour autour d'un point."
+      - astuce: { texte: "Pour vérifier, pique ton compas sur O et fais tourner un calque d'un demi-tour : la figure doit retomber sur son symétrique.", qui: zero }
+      - retiens: "A' est le symétrique de A par rapport à O si **O est le milieu de [AA']**. C'est un **demi-tour** : longueurs, angles et aires sont conservés."
+    exercices:
+      - type: nombre
+        vars: { a: "2..9" }
+        enonce: "OA = {{a}} cm. A' est le symétrique de A par rapport à O. Combien mesure AA' ?"
+        reponse: "2*a"
+        unite: cm
+        correction: "O est le milieu de [AA'] : AA' = 2 × {{a}} = {{2*a}} cm."
+      - type: qcm
+        enonce: "La symétrie centrale de centre O correspond à…"
+        choix: ["un demi-tour autour de O", "un pliage le long d'une droite", "un glissement", "un agrandissement"]
+        correction: "Symétrie centrale = **demi-tour** (180°) autour du centre."
+      - type: classer
+        enonce: "Range chaque figure : a-t-elle un centre de symétrie ?"
+        categories: ["Oui", "Non"]
+        mots: [["un rectangle", 0], ["un cercle", 0], ["un parallélogramme", 0], ["un triangle", 1], ["la lettre S", 0], ["la lettre A", 1]]
+        correction: "Rectangle, cercle, parallélogramme et S restent pareils après un demi-tour ; pas le triangle ni le A."
+      - type: vf
+        vars: { t: [["Le centre de symétrie est le milieu de [AA'].", true], ["La symétrie centrale agrandit la figure.", false], ["Une droite et sa symétrique sont parallèles.", true], ["Le symétrique de O est un autre point.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "O est le milieu de [AA'] ; tout est conservé ; une droite devient une droite parallèle ; O reste à sa place."
