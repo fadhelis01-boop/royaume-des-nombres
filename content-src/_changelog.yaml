@@ -1,3 +1,12 @@
+- version: "2.15.0"
+  date: "2026-11-09"
+  notes:
+    - "Nouvelle planète : l'Agora des Idées (philosophie de Terminale) : la dissertation, l'explication de texte, la conscience, la liberté, la vérité, la justice."
+    - "Bac de français : la Tribune du Bac, avec l'explication linéaire, la question de grammaire, le commentaire, la dissertation et l'entretien de l'oral."
+    - "Anglais de 1ʳᵉ et de Terminale (niveau B2) et histoire-géographie du lycée (de la Révolution à la mondialisation)."
+    - "Les leçons de lycée sont rangées dans la bonne année : suites et dérivées en 1ʳᵉ, intégrales et maths expertes en Terminale."
+    - "À 18 ans, on peut indiquer qu'on est encore en Terminale."
+    - "Défis de maths du lycée plus variés : 34 nouveaux exercices."
 - version: "2.14.0"
   date: "2026-11-09"
   notes:

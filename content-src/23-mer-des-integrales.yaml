@@ -176,6 +176,14 @@ lecons:
         enonce: "$\\displaystyle\\int_0^{\\pi} \\sin x \\, dx = ?$"
         reponse: "2"
         correction: "$[-\\cos x]_0^{\\pi} = -\\cos\\pi + \\cos 0 = 1 + 1 = 2$"
+      - type: qcm
+        enonce: "Si f est positive sur [a ; b], ∫ de a à b de f(x) dx représente…"
+        choix: ["l'aire sous la courbe entre a et b", "la pente de la courbe", "la valeur maximale de f", "la longueur de la courbe"]
+        correction: "Pour f positive, l'intégrale est l'aire sous la courbe (en unités d'aire)."
+      - type: ordre
+        enonce: "Range les étapes du calcul de ∫ de a à b de f(x) dx."
+        items: ["Trouver une primitive F de f", "Calculer F(b)", "Calculer F(a)", "Faire la différence F(b) − F(a)"]
+        correction: "Primitive, puis F(b) − F(a)."
 
   - id: calcul-integrales
     titre: Propriétés de l'intégrale et valeur moyenne
@@ -221,6 +229,14 @@ lecons:
         enonce: "$\\displaystyle\\int_{-1}^{1} x^3 \\, dx = ?$"
         reponse: "0"
         correction: "La fonction est impaire : les aires positive et négative se compensent. $[x^4/4]_{-1}^1 = 0$"
+      - type: relier
+        enonce: "🔗 Relie chaque propriété de l'intégrale à son nom."
+        paires: [["∫(f + g) = ∫f + ∫g", "linéarité"], ["∫ de a à c = ∫ de a à b + ∫ de b à c", "relation de Chasles"], ["f ≥ 0 donne ∫f ≥ 0", "positivité"]]
+        correction: "Linéarité, Chasles, positivité."
+      - type: qcm
+        enonce: "La valeur moyenne de f sur [a ; b] est…"
+        choix: ["(1 ÷ (b − a)) × ∫ de a à b de f", "∫ de a à b de f", "f(a) + f(b)", "(f(b) − f(a)) ÷ (b − a)"]
+        correction: "On divise l'intégrale par la longueur de l'intervalle."
 
   - id: equations-differentielles
     titre: Les équations différentielles y' = ay

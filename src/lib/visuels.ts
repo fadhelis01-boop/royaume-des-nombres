@@ -282,6 +282,7 @@ export const VISUELS: Record<string, string[]> = {
   "histoire",
   "maths",
   "musique",
+  "philosophie",
   "physique",
   "univers"
  ],

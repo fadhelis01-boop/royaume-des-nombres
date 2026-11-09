@@ -196,6 +196,7 @@ lecons:
       - astuce:
           texte: "Ton style vient de tout ce que tu as aimé et copié, mélangé à ta façon. Dessine beaucoup, et il apparaîtra tout seul."
           qui: neo
+      - a_quoi_ca_sert: "Un film d'animation, une BD ou une publicité commencent toujours par un storyboard : c'est le plan qui fait gagner des semaines de travail, et c'est là que ton style devient reconnaissable."
       - retiens: "Storyboard = une case par plan, avec cadrage et mouvements. Le style se construit par la pratique et la curiosité."
     exercices:
       - type: ordre

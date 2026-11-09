@@ -187,6 +187,7 @@ lecons:
       - astuce:
           texte: "Garde toujours une trace datée de tes compositions (fichiers, partitions, dépôt) : c'est ta preuve que tu en es l'auteur."
           qui: mia
+      - a_quoi_ca_sert: "Publier un morceau en ligne, utiliser une musique dans une vidéo ou vivre de ses créations : connaître le droit d'auteur protège ton travail et évite d'utiliser celui des autres sans autorisation."
       - retiens: "Motif → développement → forme → arrangement. Droit d'auteur jusqu'à 70 ans après la mort de l'auteur, puis domaine public. IA : transparence et respect des créateurs."
     exercices:
       - type: ordre

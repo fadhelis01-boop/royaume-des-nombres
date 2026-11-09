@@ -70,6 +70,14 @@ lecons:
         enonce: "$f(x) = {{m}}x + ({{nb(p)}})$. Que vaut $f'({{nb(a)}})$ ?"
         reponse: "m"
         correction: "Pour une fonction affine, la pente est la même partout : $f'({{nb(a)}}) = {{m}}$."
+      - type: relier
+        enonce: "🔗 Relie chaque notion à son interprétation."
+        paires: [["taux de variation entre a et a + h", "pente de la sécante"], ["nombre dérivé f'(a)", "pente de la tangente en a"], ["f'(a) > 0", "f croît au voisinage de a"]]
+        correction: "Quand h tend vers 0, la sécante devient la tangente."
+      - type: qcm
+        enonce: "Le nombre dérivé f'(a) est la limite, quand h tend vers 0, de…"
+        choix: ["(f(a + h) − f(a)) ÷ h", "f(a + h) − f(a)", "f(a) ÷ h", "(f(a) + f(h)) ÷ 2"]
+        correction: "C'est la limite du taux de variation."
 
   - id: derivees-usuelles
     titre: Les fonctions dérivées usuelles
@@ -313,3 +321,11 @@ lecons:
         reponse: "{{a}}/({{a}}x+{{b}})"
         variables: [x]
         correction: "$f'(x) = \\frac{ {{a}} }{ {{a}}x + {{b}} }$"
+      - type: relier
+        enonce: "🔗 Relie chaque fonction à sa dérivée."
+        paires: [["e^(3x)", "3e^(3x)"], ["(2x + 1)²", "4(2x + 1)"], ["√(x² + 1)", "x ÷ √(x² + 1)"], ["ln(5x)", "1 ÷ x"]]
+        correction: "(u∘v)' = v' × u'∘v : on dérive l'extérieur, puis on multiplie par la dérivée de l'intérieur."
+      - type: qcm
+        enonce: "La dérivée de e^(u(x)) est…"
+        choix: ["u'(x) e^(u(x))", "e^(u'(x))", "u(x) e^(u(x))", "e^(u(x))"]
+        correction: "(eᵘ)' = u' eᵘ."

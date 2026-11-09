@@ -198,3 +198,11 @@ lecons:
         enonce: "Triangle de 3 îles, chacune reliée aux deux autres (sans boucle). Combien de chemins de longueur 2 partent de l'île A et y reviennent ?"
         reponse: "2"
         correction: "A → B → A et A → C → A : 2 chemins (coefficient diagonal de $M^2$)."
+      - type: relier
+        enonce: "🔗 Relie chaque mot à sa définition."
+        paires: [["graphe probabiliste", "graphe dont les arêtes portent des probabilités"], ["matrice de transition", "tableau des probabilités de passage"], ["état stable", "répartition qui ne change plus"]]
+        correction: "Graphe, matrice de transition, état stable : le vocabulaire des chaînes de Markov."
+      - type: qcm
+        enonce: "Dans une matrice de transition, la somme des probabilités de chaque ligne vaut…"
+        choix: ["1", "0", "100", "le nombre d'états"]
+        correction: "On part forcément d'un état vers un autre : la somme de chaque ligne vaut 1."

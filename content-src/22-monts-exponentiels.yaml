@@ -188,6 +188,15 @@ lecons:
         reponse: "n0/2^n"
         unite: mg
         correction: "{{n}} demi-vies : {{n0}} ÷ {{2^n}} = {{nb(n0/2^n)}} mg."
+      - type: classer
+        enonce: "Range chaque modèle : croissance ou décroissance exponentielle ?"
+        categories: ["Croissance", "Décroissance"]
+        mots: [["une population de bactéries qui double chaque heure", 0], ["la radioactivité d'un échantillon", 1], ["un capital placé à intérêts composés", 0], ["la température d'un café qui refroidit vers la pièce", 1]]
+        correction: "Doubler, placer → croissance ; désintégration, refroidissement → décroissance."
+      - type: qcm
+        enonce: "Une grandeur perd la moitié de sa valeur tous les 5 ans. Ce temps s'appelle…"
+        choix: ["la demi-vie", "le doublement", "la dérivée", "la limite"]
+        correction: "La **demi-vie** : le temps pour que la grandeur soit divisée par 2."
 
   - id: echelles-logarithmiques
     titre: Les échelles logarithmiques
@@ -230,3 +239,11 @@ lecons:
         enonce: "$\\log(1\\,000\\,000) = ?$"
         reponse: "6"
         correction: "$10^6 = 1\\,000\\,000$, donc 6."
+      - type: relier
+        enonce: "🔗 Relie chaque échelle à ce qu'elle mesure."
+        paires: [["le décibel", "l'intensité sonore"], ["le pH", "l'acidité"], ["l'échelle de Richter", "la magnitude d'un séisme"]]
+        correction: "Trois échelles logarithmiques : son, acidité, séismes."
+      - type: qcm
+        enonce: "Sur une échelle logarithmique en base 10, gagner 1 unité signifie…"
+        choix: ["multiplier la grandeur par 10", "ajouter 10", "ajouter 1", "doubler la grandeur"]
+        correction: "log(10x) = log(x) + 1 : une unité de plus, c'est ×10."

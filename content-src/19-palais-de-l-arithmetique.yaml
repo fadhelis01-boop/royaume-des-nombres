@@ -173,6 +173,14 @@ lecons:
         reponse: "g"
         unite: cm
         correction: "PGCD({{g*a}} ; {{g*b}}) = {{g}} cm ({{a*b}} carrés)."
+      - type: ordre
+        enonce: "Range les étapes de l'algorithme d'Euclide pour PGCD(84 ; 30)."
+        items: ["84 = 2 × 30 + 24", "30 = 1 × 24 + 6", "24 = 4 × 6 + 0", "Le dernier reste non nul est 6 : PGCD = 6"]
+        correction: "On divise, puis on recommence avec le diviseur et le reste, jusqu'à un reste nul."
+      - type: relier
+        enonce: "🔗 Relie chaque couple à son PGCD."
+        paires: [["(12 ; 18)", "6"], ["(15 ; 25)", "5"], ["(14 ; 9)", "1"]]
+        correction: "Quand le PGCD vaut 1, les nombres sont premiers entre eux."
 
   - id: congruences
     titre: Les congruences (l'arithmétique de l'horloge)
@@ -217,6 +225,14 @@ lecons:
         reponse: "si(b==2, si(k%4==0,6,si(k%4==1,2,si(k%4==2,4,8))), si(b==3, si(k%4==0,1,si(k%4==1,3,si(k%4==2,9,7))), si(b==7, si(k%4==0,1,si(k%4==1,7,si(k%4==2,9,3))), si(k%2==0,1,9))))"
         indice: "Les chiffres des unités des puissances de {{b}} se répètent avec une période (4 ou 2)."
         correction: "Les unités des puissances de {{b}} forment un cycle ; avec {{k}} = {{si(b==9,2,4)}} × {{ent(k/si(b==9,2,4))}} + {{k % si(b==9,2,4)}}, on trouve le chiffre attendu."
+      - type: relier
+        enonce: "🔗 Relie chaque nombre à son reste modulo 7."
+        paires: [["15", "1"], ["23", "2"], ["40", "5"], ["49", "0"]]
+        correction: "15 = 2 × 7 + 1 ; 23 = 3 × 7 + 2 ; 40 = 5 × 7 + 5 ; 49 = 7 × 7."
+      - type: qcm
+        enonce: "Aujourd'hui, c'est lundi. Quel jour serons-nous dans 100 jours ?"
+        choix: ["mercredi", "lundi", "mardi", "jeudi"]
+        correction: "100 ≡ 2 (mod 7) : deux jours après lundi, mercredi."
 
   - id: binaire
     titre: Le binaire et les autres bases
@@ -318,3 +334,11 @@ lecons:
         enonce: "Combien de décalages différents (non nuls) existe-t-il pour le code de César ?"
         reponse: "25"
         correction: "Les décalages de 1 à 25 : on peut tous les essayer, c'est pourquoi ce code est peu sûr."
+      - type: relier
+        enonce: "🔗 Code de César avec un décalage de 3 : relie chaque lettre à sa lettre codée."
+        paires: [["A", "D"], ["M", "P"], ["X", "A"], ["Z", "C"]]
+        correction: "On avance de 3 lettres en revenant au début après Z (calcul modulo 26)."
+      - type: qcm
+        enonce: "Sur quoi repose la sécurité du chiffrement RSA ?"
+        choix: ["La difficulté de décomposer un très grand nombre en facteurs premiers", "Le secret de l'alphabet", "La vitesse d'Internet", "Le nombre de lettres du message"]
+        correction: "Multiplier deux grands nombres premiers est facile ; retrouver les facteurs est extrêmement long."

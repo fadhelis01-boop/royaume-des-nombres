@@ -186,6 +186,14 @@ lecons:
         reponse: "fl/(gl+fl)"
         forme: fraction
         correction: "Parmi les {{gl+fl}} élèves à lunettes, {{fl}} sont des filles : {{frac(fl,gl+fl)}}."
+      - type: relier
+        enonce: "🔗 Relie chaque notation à sa lecture."
+        paires: [["P(A ∩ B)", "probabilité de A et B"], ["P_A(B)", "probabilité de B sachant A"], ["P(Ā)", "probabilité de « non A »"]]
+        correction: "∩ : « et » ; P_A(B) : « B sachant A » ; Ā : l'événement contraire."
+      - type: qcm
+        enonce: "Quelle formule relie les probabilités conditionnelles ?"
+        choix: ["P(A ∩ B) = P(A) × P_A(B)", "P(A ∩ B) = P(A) + P(B)", "P_A(B) = P(A) × P(B)", "P(A ∩ B) = P_A(B) − P(A)"]
+        correction: "On multiplie le long d'une branche de l'arbre : P(A ∩ B) = P(A) × P_A(B)."
 
   - id: bayes-independance
     titre: Probabilités totales, Bayes et indépendance
@@ -322,6 +330,14 @@ lecons:
         reponse: "round((1-p)^n, 3)"
         tolerance: 0.0011
         correction: "$(1 - {{nb(p)}})^{ {{n}} } \\approx {{nb(round((1-p)^n,3))}}$"
+      - type: ordre
+        enonce: "Range les étapes pour reconnaître une loi binomiale."
+        items: ["Repérer une épreuve à deux issues (succès / échec)", "Vérifier qu'on la répète n fois de façon identique et indépendante", "Compter le nombre de succès X", "Conclure : X suit la loi B(n ; p)"]
+        correction: "Épreuve de Bernoulli, répétition indépendante, comptage des succès, loi B(n ; p)."
+      - type: relier
+        enonce: "🔗 X suit la loi B(n ; p). Relie chaque grandeur à sa formule."
+        paires: [["espérance E(X)", "n × p"], ["variance V(X)", "n × p × (1 − p)"], ["P(X = 0)", "(1 − p) puissance n"]]
+        correction: "E(X) = np, V(X) = np(1 − p), P(X = 0) = (1 − p)ⁿ."
 
   - id: grands-nombres
     titre: La loi des grands nombres et la courbe en cloche

@@ -56,6 +56,14 @@ lecons:
         enonce: "$u_n = n^2$. Calcule $u_{n+1} - u_n$ pour $n = {{n}}$."
         reponse: "2*n+1"
         correction: "$({{n+1}})^2 - {{n}}^2 = {{(n+1)^2}} - {{n*n}} = {{2*n+1}}$"
+      - type: relier
+        enonce: "🔗 Relie chaque définition à son type."
+        paires: [["uₙ = 2n + 1", "formule explicite"], ["uₙ₊₁ = uₙ + 3, u₀ = 1", "récurrence : on ajoute 3"], ["uₙ₊₁ = 2uₙ, u₀ = 5", "récurrence : on double"]]
+        correction: "Explicite : uₙ en fonction de n ; récurrence : uₙ₊₁ en fonction de uₙ."
+      - type: qcm
+        enonce: "Avec uₙ = n² − 1, combien vaut u₃ ?"
+        choix: ["8", "9", "5", "6"]
+        correction: "u₃ = 3² − 1 = 8."
 
   - id: suites-arithmetiques
     titre: Les suites arithmétiques
@@ -100,6 +108,15 @@ lecons:
         reponse: "s*10 + n*r"
         unite: €
         correction: "{{nb(s*10)}} + {{n}} × {{r}} = {{nb(s*10+n*r)}} €."
+      - type: classer
+        enonce: "Range chaque suite : arithmétique ou non ?"
+        categories: ["Arithmétique", "Non arithmétique"]
+        mots: [["3, 7, 11, 15", 0], ["2, 4, 8, 16", 1], ["10, 7, 4, 1", 0], ["1, 4, 9, 16", 1]]
+        correction: "Arithmétique : on ajoute toujours la même raison (+4, −3)."
+      - type: qcm
+        enonce: "Pour une suite arithmétique de premier terme u₀ et de raison r, uₙ = …"
+        choix: ["u₀ + n r", "u₀ × rⁿ", "u₀ + r", "n × u₀ + r"]
+        correction: "On ajoute n fois la raison : uₙ = u₀ + n r."
 
   - id: suites-geometriques
     titre: Les suites géométriques
@@ -159,6 +176,15 @@ lecons:
         enonce: "Grains de riz de la légende : combien de grains sur la 11ᵉ case (1 sur la 1ʳᵉ, 2 sur la 2ᵉ…) ?"
         reponse: "2^10"
         correction: "$2^{10} = 1\\,024$"
+      - type: classer
+        enonce: "Range chaque suite : géométrique ou non ?"
+        categories: ["Géométrique", "Non géométrique"]
+        mots: [["2, 6, 18, 54", 0], ["5, 10, 15, 20", 1], ["100, 50, 25, 12,5", 0], ["1, 2, 3, 5, 8", 1]]
+        correction: "Géométrique : on multiplie toujours par la même raison (×3, ×0,5)."
+      - type: qcm
+        enonce: "Un capital augmente de 3 % par an. La suite des capitaux est…"
+        choix: ["géométrique de raison 1,03", "arithmétique de raison 3", "géométrique de raison 3", "arithmétique de raison 1,03"]
+        correction: "+3 % revient à multiplier par 1,03 chaque année."
 
   - id: sommes
     titre: Les sommes - le génie de Gauss
@@ -211,6 +237,14 @@ lecons:
         enonce: "Somme des {{n}} premiers termes de la suite arithmétique de premier terme {{a}} et de raison {{r}} ?"
         reponse: "n*(2*a + (n-1)*r)/2"
         correction: "Dernier terme : {{a+(n-1)*r}} ; somme = ${{n}} \\times \\frac{ {{a}} + {{a+(n-1)*r}} }{2} = {{nb(n*(2*a+(n-1)*r)/2)}}$"
+      - type: relier
+        enonce: "🔗 Relie chaque somme à sa valeur."
+        paires: [["1 + 2 + … + 10", "55"], ["1 + 2 + … + 100", "5 050"], ["1 + 2 + 4 + 8 + 16", "31"]]
+        correction: "1 + … + n = n(n + 1)/2 ; 1 + 2 + … + 2ⁿ = 2ⁿ⁺¹ − 1."
+      - type: qcm
+        enonce: "Quelle est la formule de 1 + 2 + … + n ?"
+        choix: ["n(n + 1) ÷ 2", "n² ÷ 2", "2n + 1", "n(n − 1)"]
+        correction: "L'astuce de Gauss : n(n + 1) ÷ 2."
 
   - id: limites-suites
     titre: Les limites de suites

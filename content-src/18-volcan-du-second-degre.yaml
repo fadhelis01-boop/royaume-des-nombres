@@ -267,3 +267,11 @@ lecons:
         enonce: "Deux nombres ont pour somme {{s}}. Quel est leur produit maximal ?"
         reponse: "(s/2)^2"
         correction: "$x({{s}} - x)$ maximal pour $x = {{s/2}}$ : produit ${{(s/2)^2}}$."
+      - type: ordre
+        enonce: "Range les étapes d'un problème d'optimisation."
+        items: ["Choisir la variable x et son intervalle", "Exprimer la grandeur à optimiser en fonction de x", "Trouver le sommet (ou étudier les variations)", "Conclure dans le contexte du problème"]
+        correction: "Variable, fonction, sommet, conclusion."
+      - type: qcm
+        enonce: "f(x) = −2x² + 8x + 1 admet un maximum en x = …"
+        choix: ["2", "−2", "4", "8"]
+        correction: "Sommet en x = −b ÷ (2a) = −8 ÷ (−4) = 2 ; a < 0, donc c'est un maximum."
