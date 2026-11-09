@@ -19,6 +19,13 @@ arcs:
     fin:
       - narrateur: "Les tableaux de la Galerie reprennent leurs couleurs, de 1789 à aujourd'hui."
       - neo: "Tu relies maintenant les causes et les conséquences : c'est ça, comprendre l'histoire."
+  - id: histoire-arc-3
+    titre: "Livre III — Le Monde en débat"
+    sous_titre: "Spécialités HGGSP et SES : puissances, frontières, mémoires, marchés, inégalités"
+    final: hg-marche-des-societes
+    fin:
+      - narrateur: "Du Carrefour au Marché, le Forum entier résonne de débats argumentés. L'Oubli Gris n'a plus prise sur personne."
+      - neo: "Tu sais maintenant lire le monde avec plusieurs regards : c'est ça, être un citoyen éclairé."
 chapitres:
   hg-forum-du-brevet:
     titre: "Le Forum du Brevet"
@@ -37,3 +44,19 @@ chapitres:
     apres:
       - narrateur: "Salle après salle, les siècles se rallument. La Galerie raconte de nouveau l'histoire du monde."
 
+  hg-carrefour-des-puissances:
+    titre: "Le Carrefour des Puissances"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Au Carrefour, les panneaux indicateurs ont perdu leurs flèches : démocratie, puissance, frontières, mémoire, plus rien ne mène nulle part."
+      - neo: "Chaque rue est une grande question du monde. Pour la rouvrir, il faut définir, comparer et argumenter."
+    apres:
+      - narrateur: "Les sept rues s'illuminent. Au centre du Carrefour, une carte du monde se redessine, plus nette qu'avant."
+  hg-marche-des-societes:
+    titre: "Le Marché des Sociétés"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Sur la place du Marché, l'Oubli a brouillé les étiquettes : plus de prix, plus de chiffres, plus personne ne sait d'où il vient."
+      - mia: "Économie, sociologie, science politique : trois lunettes pour comprendre la société. Mettons-les toutes."
+    apres:
+      - narrateur: "Les étals se rallument, les graphiques reprennent leurs couleurs. Le Marché bruisse de nouveau de débats."

@@ -166,7 +166,7 @@ function main() {
         vus.add(m);
       }
     }
-    for (const w of loaded) if (w.matiere === pl && w.cycle !== "astuces" && !vus.has(w.id)) warns.push(`_domaines ${pl} : le monde ${w.id} n'est dans aucun domaine`);
+    for (const w of loaded) if (w.matiere === pl && w.cycle !== "astuces" && !w.specialite && !vus.has(w.id)) warns.push(`_domaines ${pl} : le monde ${w.id} n'est dans aucun domaine`);
   }
 
   for (const w of loaded) if (!plIds.has(w.matiere)) errors.push(`${w.id} : planète (matière) inconnue « ${w.matiere} » — à déclarer dans _planetes.yaml`);

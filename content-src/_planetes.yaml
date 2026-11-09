@@ -28,7 +28,7 @@ planetes:
     matiere: Maths
     emoji: "🔢"
     couleur: "#5b4bdb"
-    accroche: "Compter, calculer, raisonner, jusqu'aux mathématiques des grands."
+    accroche: "Compter, calculer, raisonner, programmer, jusqu'aux mathématiques des grands."
     histoire: _histoire.yaml
     prologue: { id: prologue, titre: "Prologue — Le Royaume s'éteint", appel: "Le Royaume des Nombres s'éteint… Écoute l'histoire." }
     objet: { emoji: "💎", un: "cristal rallumé", des: "cristaux rallumés" }
@@ -429,10 +429,10 @@ planetes:
   - id: histoire
     famille: cite
     titre: Le Forum des Mémoires
-    matiere: Histoire-géo
+    matiere: Histoire-géo et SES
     emoji: "🏛️"
     couleur: "#8b5a2b"
-    accroche: "Les grandes dates, les cartes du monde et les valeurs de la République."
+    accroche: "Les grandes dates, les cartes du monde, la société, l'économie et les valeurs de la République."
     histoire: _histoire_histoire.yaml
     prologue: { id: prologue-histoire, titre: "Prologue — L'oubli gris", appel: "Les dates s'effacent de la grande frise… Écoute l'histoire." }
     objet: { emoji: "📜", un: "page de la frise", des: "pages de la frise" }

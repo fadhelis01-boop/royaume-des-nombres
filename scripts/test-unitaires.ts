@@ -103,6 +103,7 @@ const W2 = [monde("a", "CP – CE2", 3, 1), monde("b", "CE2 – CM2", 3, 2), mon
 eq("niveau d'une leçon interpolé", [niveauLecon(W2[0], 0), niveauLecon(W2[0], 1), niveauLecon(W2[0], 2)], [1, 2, 3]);
 const D2 = domainesDe("maths", W2, [{ id: "calc", titre: "Calcul", mondes: ["a", "b"] }, { id: "geo", titre: "Géo", mondes: ["g"] }]);
 eq("domaines : leçons rangées par niveau", D2[0].lecons.map((l) => l.niveau), [1, 2, 3, 3, 4, 5]);
+eq("domaines : spécialité facultative hors test", domainesDe("maths", [...W2, { ...monde("s", "1ʳᵉ", 3, 9), specialite: "NSI" } as World]).flatMap((d) => d.lecons.map((l) => l.world.id)).includes("s"), false);
 const ETE = new Date(2027, 6, 1); // classe finie : niveau attendu = classe de l'âge
 eq("niveau du moment : 8 ans en octobre = CE1 acquis (≈ 2,1)", Math.round(niveauDuMoment(8, new Date(2026, 9, 15)) * 10) / 10, 2.1);
 eq("niveau du moment : 8 ans en été = CE2 fini", niveauDuMoment(8, ETE), 3);
@@ -241,6 +242,8 @@ eq("voix : signe entre parenthèses", toSpeech("aigu (< 90°)"), "aigu (moins de
 eq("voix : vecteur en double", toSpeech("Un vecteur $\\overrightarrow{AB}$"), "Un vecteur A B");
 eq("voix : chromosomes", toSpeech("XX ou XY"), "X X ou X Y");
 eq("voix : inégalité dans une formule", toSpeech("le maximum (si $a<0$)"), "le maximum (si a inférieur à 0 )");
+eq("voix : code Python", /x prend la valeur 3.*n égal à 0.*augmente de 1/.test(toSpeech("On écrit `x = 3`, on teste `n == 0` et `i += 1`.")), true);
+eq("voix : sigle épelé", toSpeech("Le protocole HTTPS et la spécialité HGGSP").includes("HTTPS et la spécialité HGGSP"), true);
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

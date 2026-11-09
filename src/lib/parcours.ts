@@ -86,7 +86,8 @@ type DefDom = { id: string; titre: string; jeune?: string; emoji?: string; monde
 
 /** Les domaines d'une planète, avec leurs leçons rangées par niveau. */
 export function domainesDe(planete: string, worlds: World[], defs?: DefDom[]): Domaine[] {
-  const mondes = worlds.filter((w) => w.matiere === planete && w.cycle !== "astuces");
+  // les spécialités facultatives du lycée (NSI, SES, HGGSP) restent hors test et hors parcours
+  const mondes = worlds.filter((w) => w.matiere === planete && w.cycle !== "astuces" && !w.specialite);
   const groupes: DefDom[] = defs?.length ? defs : [{ id: "tout", titre: "Toute la planète", emoji: "🪐", mondes: mondes.map((w) => w.id) }];
   return groupes
     .map((d) => {

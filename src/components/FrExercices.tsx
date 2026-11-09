@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { speak, stopSpeaking } from "../lib/tts";
 import { sfx } from "../lib/sound";
 import { normOrtho, variantes1990 } from "../lib/fr/morpho";
+import { Md } from "./Md";
 
 // Les activités propres au français : barre d'accents, dictée, mots à toucher, mots à classer.
 
@@ -138,7 +139,7 @@ export function Classer({ items, categories, values, onChange, reveal, disabled 
       </div>
       {items.map((it, i) => (
         <div key={i} className={`classer-row ${reveal ? (values[i] === reveal[i] ? "good" : "bad") : ""}`}>
-          <strong className="classer-mot">{it}</strong>
+          <strong className="classer-mot">{it.includes("`") ? <Md text={it} inline /> : it}</strong>
           <div className="classer-btns">
             {categories.map((c, k) => (
               <button

@@ -56,6 +56,27 @@ function emojisEnMots(s: string): string {
 /** Chiffres en exposant (« ⁸ » → « 8 »). */
 const exposant = (e: string) => e.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => String("⁰¹²³⁴⁵⁶⁷⁸⁹".indexOf(c)));
 /** Chiffres romains (« XVIII » → 18) ; null si ce n'en est pas un. */
+// Petit extrait de code Python entre accents graves (NSI) : on dit les symboles en mots.
+export function codeEnMots(c: string): string {
+  return c
+    .replace(/==/g, " égal à ")
+    .replace(/!=/g, " différent de ")
+    .replace(/<=/g, " inférieur ou égal à ")
+    .replace(/>=/g, " supérieur ou égal à ")
+    .replace(/\+=/g, " augmente de ")
+    .replace(/-=/g, " diminue de ")
+    .replace(/\/\//g, " division entière par ")
+    .replace(/\*\*/g, " puissance ")
+    .replace(/%/g, " modulo ")
+    .replace(/\s=\s/g, " prend la valeur ")
+    .replace(/</g, " inférieur à ")
+    .replace(/>/g, " supérieur à ")
+    .replace(/\*/g, " fois ")
+    .replace(/[()\[\]{}:,_."']/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function romain(r: string): number | null {
   const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
   let n = 0;
@@ -74,7 +95,9 @@ function formuleChimique(f: string): string {
 }
 
 // petits mots courants écrits en majuscules pour insister (les sigles comme BD, GN, ADN restent épelés)
-const PETITS_MOTS = new Set(["ET", "OU", "PAS", "QUE", "QUI", "CE", "QU", "ON", "UN", "UNE", "LE", "LA", "LES", "DE", "DES", "DU", "EN", "NE", "SI", "OUI", "NON", "TOUT", "DÉ", "IL", "ELLE"]);
+// sigles de 4 lettres ou plus qui se disent lettre par lettre (NSI, HGGSP)
+const SIGLES_EPELES = new Set(["HTML", "HTTP", "HTTPS", "HGGSP", "TPIR", "ADSL", "URSS"]);
+const PETITS_MOTS = new Set(["ET", "OU", "PAS", "QUE", "QUI", "CE", "QU", "ON", "UN", "UNE", "LE", "LA", "LES", "DE", "DES", "DU", "EN", "NE", "SI", "OUI", "NON", "TOUT", "DÉ", "IL", "ELLE", "BY"]);
 
 /** « 1ᵉʳ » → « premier », « 3ᵉ » → « troisième ». */
 function ordinal(n: number, fem: boolean): string {
@@ -164,6 +187,8 @@ export function toSpeech(md: string): string {
     .replace(/\$([^$]+?)\$/g, (_, t) => ` ${latexToSpeech(t)} `)
     // un signe cité seul (« le signe **<** ») : on dit son nom
     .replace(/(signe\s*)?\*\*([<>=])\*\*/g, (_m, sg, c) => `${sg ?? "le signe "}« ${c === "<" ? "plus petit que" : c === ">" ? "plus grand que" : "égal"} »`)
+    // code entre accents graves
+    .replace(/`([^`\n]+)`/g, (_, c) => ` ${codeEnMots(c)} `)
     // Markdown
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
@@ -254,7 +279,7 @@ export function toSpeech(md: string): string {
     .replace(/\s+([,.])/g, "$1")
     .trim()
     // mots écrits en MAJUSCULES pour insister (« CETTE leçon », « VÉRIFIER ») : certaines voix les épellent
-    .replace(/(?<![\p{L}\p{N}])\p{Lu}{2,}(?![\p{L}\p{N}])/gu, (m) => (m.length >= 4 || PETITS_MOTS.has(m) ? m.toLowerCase() : m));
+    .replace(/(?<![\p{L}\p{N}])\p{Lu}{2,}(?![\p{L}\p{N}])/gu, (m) => (SIGLES_EPELES.has(m) ? m : m.length >= 4 || PETITS_MOTS.has(m) ? m.toLowerCase() : m));
   // « 1 000 » (espace fine) → lu comme un seul nombre
   s = s.replace(/(\d)[  ](?=\d{3})/g, "$1");
   return s;

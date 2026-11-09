@@ -126,6 +126,8 @@ export interface World {
   niveau: string;
   ordre: number;
   prerequis: string[];
+  /** spécialité de lycée facultative (« NSI », « SES », « HGGSP ») : ouverte sur la carte, mais hors test de niveau et parcours */
+  specialite?: string;
   intro?: Line[];
   lecons: Lesson[];
   version: string;

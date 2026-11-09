@@ -1,0 +1,371 @@
+id: citadelle-du-code
+titre: La Citadelle du Code
+sous_titre: Spécialité NSI - binaire, Python, tableaux, algorithmes, réseaux, récursivité, structures de données, bases de données
+emoji: 💻
+couleur: "#00695c"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 29
+specialite: NSI
+version: 1.0.0
+intro:
+  - narrateur: "Au bord du Royaume se dresse une citadelle dont les murs clignotent de 0 et de 1. Chaque porte s'ouvre avec un programme juste."
+  - neo: "Ici, on apprend à parler aux machines : coder les données, écrire des algorithmes, et prouver qu'ils marchent."
+  - mia: "C'est la spécialité NSI, numérique et sciences informatiques. Si tu ne l'as pas choisie, rien ne t'empêche de visiter !"
+
+lecons:
+  - id: binaire-hexadecimal
+    titre: Le binaire et l'hexadécimal
+    classe: "1ʳᵉ"
+    objectif: Je convertis un entier entre le décimal, le binaire et l'hexadécimal, et je sais ce qu'est un octet.
+    mots: [binaire, bit, octet, hexadécimal]
+    etapes:
+      - dialogue:
+          - zero: "Un ordinateur ne connaît que 0 et 1 ? Alors comment il écrit 2 ?"
+          - neo: "Comme nous avec dix chiffres, mais avec deux : 2 s'écrit 10 en binaire. Chaque rang vaut le double du précédent."
+      - a_quoi_ca_sert: "Tout ce que stocke un ordinateur (textes, images, sons) est codé en binaire ; comprendre ce codage explique la taille des fichiers, les couleurs d'un site web ou les adresses réseau."
+      - texte: |
+          **Binaire (base 2)** : chaque chiffre est un **bit** (0 ou 1). Les rangs valent, de droite à gauche, 1, 2, 4, 8, 16, 32, 64, 128.
+
+          Exemple : **1011** en binaire = 8 + 0 + 2 + 1 = **11**.
+
+          **Décimal vers binaire** : on divise par 2 et on lit les restes de bas en haut, ou on retire les plus grandes puissances de 2 (13 = 8 + 4 + 1 s'écrit **1101** en binaire).
+
+          **Octet** : 8 bits, soit 256 valeurs (de 0 à 255).
+
+          **Hexadécimal (base 16)** : chiffres 0 à 9 puis A à F (A = 10, …, F = 15). Un chiffre hexadécimal = 4 bits. FF en hexadécimal = 255.
+      - attention: "Le bit de droite vaut 1, pas 2 : on commence toujours à compter les rangs à partir de $2^0 = 1$."
+      - astuce: { texte: "Écris 128 64 32 16 8 4 2 1 au-dessus des bits : il ne reste qu'à additionner les rangs où il y a un 1.", qui: neo }
+      - retiens: "Binaire : rangs **1, 2, 4, 8, 16…** ; un **octet** = 8 bits = 256 valeurs ; hexadécimal : 0 à 9 puis **A à F**, un chiffre = 4 bits, FF = 255."
+    exercices:
+      - type: nombre
+        vars: { t: [["1011", 11], ["1101", 13], ["10010", 18], ["11111", 31], ["101010", 42], ["1100100", 100]] }
+        enonce: "Quel nombre décimal s'écrit {{t_0}} en binaire ?"
+        reponse: "t_1"
+        correction: "On additionne les rangs où il y a un 1 : {{t_0}} en binaire = **{{t_1}}**."
+      - type: qcm
+        vars: { t: [["6", "110", "101", "011"], ["9", "1001", "1100", "0110"], ["12", "1100", "1010", "0011"], ["5", "101", "110", "100"]] }
+        enonce: "Comment s'écrit {{t_0}} en binaire ?"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**, car on décompose {{t_0}} en puissances de 2."
+      - type: nombre
+        enonce: "Combien de valeurs différentes peut-on coder avec un octet (8 bits) ?"
+        reponse: "256"
+        correction: "$2^8 = 256$ valeurs, de 0 à 255."
+      - type: relier
+        enonce: "🔗 Relie chaque nombre hexadécimal à sa valeur décimale."
+        paires: [["A", "10"], ["F", "15"], ["10 (en hexadécimal)", "16"], ["FF", "255"]]
+        correction: "A = 10, F = 15, 10 en hexadécimal = 16, FF = 255."
+      - type: vf
+        vars: { t: [["Un octet contient 8 bits.", true], ["Le bit de droite vaut 2.", false], ["Un chiffre hexadécimal correspond à 4 bits.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un octet = 8 bits ; le bit de droite vaut 1 ; un chiffre hexadécimal code 4 bits."
+
+  - id: python-bases
+    titre: "Python : variables, conditions, boucles, fonctions"
+    classe: "1ʳᵉ"
+    objectif: Je lis et j'écris un court programme Python avec des variables, des conditions, des boucles et des fonctions.
+    mots: [variable, condition, boucle, fonction]
+    etapes:
+      - dialogue:
+          - mia: "Un programme, c'est une recette : des instructions exécutées dans l'ordre."
+          - zero: "Et `x = 3`, ça veut dire que x est égal à 3, comme en maths ?"
+          - neo: "Presque : ça veut dire que x **prend la valeur** 3. Plus tard, on peut écrire `x = x + 1` : en maths ce serait faux, en Python c'est très utile !"
+      - a_quoi_ca_sert: "Python est le langage du bac NSI, mais aussi celui des scientifiques, des analystes de données et de l'intelligence artificielle."
+      - texte: |
+          **Affectation** : `x = 3` (x prend la valeur 3). **Test d'égalité** : `x == 3` (vrai ou faux).
+
+          **Condition** : `if x > 0:` … `else:` … Le bloc qui dépend du `if` est **indenté** (décalé de 4 espaces).
+
+          **Boucle bornée** : `for i in range(5):` répète 5 fois, avec i = 0, 1, 2, 3, 4.
+
+          **Boucle non bornée** : `while n > 0:` répète tant que la condition est vraie.
+
+          **Fonction** : `def carre(x):` puis `return x * x`. On l'appelle avec `carre(4)`, qui renvoie 16.
+      - attention: "`range(5)` va de 0 à 4, pas de 1 à 5 : la borne de fin n'est jamais atteinte."
+      - astuce: { texte: "Pour comprendre un programme, fais un tableau avec une colonne par variable et note leurs valeurs à chaque tour de boucle.", qui: neo }
+      - retiens: "`=` **affecte**, `==` **compare** ; `if` / `else` ; `for i in range(n)` donne i de **0 à n − 1** ; `while` répète **tant que** ; `def` crée une fonction, `return` renvoie le résultat. Les blocs sont **indentés**."
+    exercices:
+      - type: nombre
+        vars: { n: "3..7" }
+        enonce: "Que vaut s à la fin ? `s = 0` puis `for i in range({{n}}):` et dans la boucle `s = s + 2`."
+        reponse: "2*n"
+        correction: "La boucle tourne {{n}} fois et ajoute 2 à chaque tour : s = **{{2*n}}**."
+      - type: qcm
+        enonce: "Quelles valeurs prend i dans `for i in range(4):` ?"
+        choix: ["0, 1, 2, 3", "1, 2, 3, 4", "0, 1, 2, 3, 4", "4 seulement"]
+        correction: "`range(4)` va de 0 à 3 : la borne de fin est exclue."
+      - type: relier
+        enonce: "🔗 Relie chaque instruction à son rôle."
+        paires: [["`x = 5`", "affecter une valeur"], ["`x == 5`", "tester une égalité"], ["`def f(x):`", "définir une fonction"], ["`return y`", "renvoyer un résultat"]]
+        correction: "`=` affecte, `==` compare, `def` définit, `return` renvoie."
+      - type: nombre
+        vars: { a: "2..9" }
+        enonce: "On définit `def triple(x):` avec `return 3 * x`. Que renvoie `triple({{a}})` ?"
+        reponse: "3*a"
+        correction: "3 × {{a}} = **{{3*a}}**."
+      - type: qcm
+        enonce: "`n = 10` puis `while n > 3:` avec `n = n - 3` dans la boucle. Que vaut n à la fin ?"
+        choix: ["1", "3", "4", "0"]
+        correction: "n passe de 10 à 7, puis 4, puis 1 ; 1 > 3 est faux, la boucle s'arrête : n = **1**."
+
+  - id: tableaux-dictionnaires
+    titre: Tableaux (listes) et dictionnaires
+    classe: "1ʳᵉ"
+    objectif: Je crée et je parcours une liste et un dictionnaire, et j'accède à un élément par son indice ou sa clé.
+    mots: [liste, indice, dictionnaire, clé]
+    etapes:
+      - dialogue:
+          - zero: "Pour stocker les notes de toute la classe, je fais 30 variables ?"
+          - mia: "Non : une seule liste ! Et si tu veux retrouver une note par prénom, un dictionnaire."
+      - a_quoi_ca_sert: "Les listes et dictionnaires sont partout : une playlist, un panier d'achat, un carnet d'adresses, les données d'un jeu."
+      - texte: |
+          **Liste** : `notes = [12, 15, 9]`. Le premier élément est `notes[0]` (l'**indice** commence à 0). `len(notes)` donne la longueur (3). `notes.append(18)` ajoute à la fin.
+
+          **Parcours** : `for n in notes:` passe par chaque valeur ; `for i in range(len(notes)):` passe par chaque indice.
+
+          **Dictionnaire** : `ages = {"Léa": 16, "Tom": 17}`. On accède par la **clé** : `ages["Tom"]` vaut 17. On ajoute avec `ages["Inès"] = 18`.
+      - attention: "Le dernier élément d'une liste de longueur n a l'indice n − 1 : `notes[3]` provoque une erreur si la liste n'a que 3 éléments."
+      - astuce: { texte: "Liste = on cherche par position (indice). Dictionnaire = on cherche par nom (clé).", qui: zero }
+      - retiens: "Liste : indices de **0 à len − 1**, `append` ajoute ; dictionnaire : couples **clé : valeur**, accès par `d[clé]`."
+    exercices:
+      - type: qcm
+        vars: { t: [["0", "4"], ["1", "7"], ["2", "1"], ["3", "9"]] }
+        enonce: "`t = [4, 7, 1, 9]`. Que vaut `t[{{t_0}}]` ?"
+        choix: ["{{t_1}}", "8", "0"]
+        correction: "L'indice {{t_0}} désigne l'élément **{{t_1}}** (on compte à partir de 0)."
+      - type: nombre
+        enonce: "`t = [5, 3, 8, 2, 6]`. Que vaut `len(t)` ?"
+        reponse: "5"
+        correction: "La liste contient **5** éléments."
+      - type: classer
+        enonce: "Range chaque besoin : liste ou dictionnaire ?"
+        categories: ["Liste", "Dictionnaire"]
+        mots: [["Les températures de la semaine, dans l'ordre", 0], ["Le numéro de téléphone de chaque ami", 1], ["Les scores successifs d'une partie", 0], ["Le prix de chaque article par son nom", 1]]
+        correction: "Une suite ordonnée → liste ; une recherche par nom → dictionnaire."
+      - type: vf
+        vars: { t: [["Le premier élément d'une liste a l'indice 0.", true], ["Dans un dictionnaire, on accède à une valeur par sa clé.", true], ["`append` ajoute un élément au début de la liste.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Indice 0 pour le premier ; accès par clé ; `append` ajoute à la fin."
+
+  - id: tris-et-recherche
+    titre: Trier et chercher, coût d'un algorithme
+    classe: "1ʳᵉ"
+    objectif: Je connais le tri par sélection, le tri par insertion et la recherche dichotomique, et j'estime leur coût.
+    mots: [tri, dichotomie, complexité, algorithme]
+    etapes:
+      - dialogue:
+          - neo: "Je pense à un nombre entre 1 et 100. Tu as droit à « plus grand » ou « plus petit »."
+          - zero: "50 ? … 25 ? … Ah, je coupe toujours en deux !"
+          - mia: "Bravo : c'est la recherche dichotomique. Au plus 7 questions pour 100 nombres."
+      - a_quoi_ca_sert: "Trier et chercher vite, c'est ce que fait un moteur de recherche, un tableur ou une appli de contacts des millions de fois par jour."
+      - texte: |
+          **Tri par sélection** : on cherche le plus petit élément, on le place en premier, puis on recommence avec le reste.
+
+          **Tri par insertion** : on prend les éléments un par un et on insère chacun à sa place parmi ceux déjà triés (comme des cartes en main).
+
+          Ces deux tris ont un coût **quadratique** : pour n éléments, de l'ordre de $n^2$ comparaisons.
+
+          **Recherche dichotomique** (dans une liste **triée**) : on compare à l'élément du milieu, et on garde la moitié utile. Coût **logarithmique** : environ $\log_2(n)$ étapes (10 étapes pour 1 000 éléments, 20 pour un million).
+      - attention: "La dichotomie ne marche que si la liste est **triée** ; sinon il faut tout parcourir (recherche séquentielle, coût linéaire)."
+      - astuce: { texte: "Pour estimer le nombre d'étapes de la dichotomie, compte combien de fois tu peux diviser n par 2 avant d'arriver à 1.", qui: neo }
+      - retiens: "Tri par **sélection** et par **insertion** : coût en $n^2$. **Dichotomie** sur liste **triée** : on coupe en deux, coût en $\\log_2(n)$."
+    exercices:
+      - type: qcm
+        enonce: "Combien d'étapes au plus faut-il pour trouver un élément dans une liste triée de 1 000 éléments par dichotomie ?"
+        choix: ["Environ 10", "Environ 100", "Environ 500", "1 000"]
+        correction: "$2^{10} = 1024$ : environ **10** étapes suffisent."
+      - type: ordre
+        enonce: "Tri par sélection de [5, 2, 8, 1] : range les états de la liste."
+        items: ["[5, 2, 8, 1]", "[1, 2, 8, 5]", "[1, 2, 5, 8]"]
+        correction: "On échange le minimum 1 avec le 5 ; le 2 est déjà à sa place ; on échange le 5 avec le 8 : la liste est triée."
+      - type: relier
+        enonce: "🔗 Relie chaque algorithme à son coût."
+        paires: [["recherche dichotomique", "logarithmique"], ["recherche séquentielle", "linéaire"], ["tri par sélection", "quadratique"]]
+        correction: "Dichotomie : log n ; séquentielle : n ; sélection : n²."
+      - type: vf
+        vars: { t: [["La dichotomie fonctionne sur une liste non triée.", false], ["Le tri par insertion ressemble à la façon de ranger des cartes en main.", true], ["Doubler la taille d'une liste multiplie environ par 4 le coût d'un tri par sélection.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La dichotomie exige une liste triée ; coût quadratique : 2n éléments → 4n² comparaisons."
+      - type: nombre
+        vars: { k: "4..7" }
+        enonce: "Une liste triée contient $2^{ {{k}} }$ éléments. Combien d'étapes de dichotomie faut-il, au plus, pour la réduire à un seul élément ?"
+        reponse: "k"
+        correction: "On divise par 2 à chaque étape : **{{k}}** étapes."
+
+  - id: reseaux-et-web
+    titre: Réseaux, Internet et le Web
+    classe: "1ʳᵉ"
+    objectif: Je distingue Internet et le Web, et j'explique le rôle des adresses IP, des paquets, de DNS et de HTTP.
+    mots: [protocole, adresse IP, paquet, HTTP]
+    etapes:
+      - dialogue:
+          - zero: "Internet et le Web, c'est pareil, non ?"
+          - neo: "Non ! Internet, c'est le réseau de câbles et de machines. Le Web, c'est un des services qui l'utilisent, comme le courriel ou les jeux en ligne."
+      - a_quoi_ca_sert: "Comprendre comment voyage une page web aide à protéger ses données, à repérer un site non sécurisé et à comprendre les métiers du réseau et de la cybersécurité."
+      - texte: |
+          **Internet** : un réseau de réseaux. Chaque machine a une **adresse IP** (par exemple 192.168.1.12).
+
+          **Paquets** : un message est découpé en **paquets** qui voyagent parfois par des chemins différents. Le protocole **TCP** vérifie qu'ils arrivent tous et les remet dans l'ordre ; **IP** se charge de l'adressage et de l'acheminement.
+
+          **DNS** : l'annuaire qui traduit un nom de site (exemple.fr) en adresse IP.
+
+          **Le Web** : des pages reliées par des liens, écrites en **HTML** (contenu) et **CSS** (mise en forme). Le navigateur les demande au serveur avec **HTTP** ; **HTTPS** chiffre l'échange.
+      - attention: "Le cadenas HTTPS garantit que l'échange est chiffré, pas que le site est honnête : un site frauduleux peut aussi être en HTTPS."
+      - astuce: { texte: "Internet = les routes ; le Web = un des services de livraison qui les empruntent.", qui: mia }
+      - retiens: "**Internet** = réseau ; **Web** = service de pages (**HTML**, **CSS**, **HTTP** et **HTTPS**). Données en **paquets** (**TCP** et **IP**), machines repérées par une **adresse IP**, noms traduits par le **DNS**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque élément à son rôle."
+        paires: [["DNS", "traduire un nom de site en adresse IP"], ["TCP", "vérifier que tous les paquets arrivent"], ["HTML", "décrire le contenu d'une page"], ["HTTPS", "chiffrer l'échange avec le serveur"]]
+        correction: "Chaque protocole ou langage a son rôle précis."
+      - type: ordre
+        enonce: "Range les étapes quand tu tapes l'adresse d'un site."
+        items: ["Le DNS donne l'adresse IP du serveur", "Le navigateur envoie une requête HTTP", "Le serveur renvoie la page en paquets", "Le navigateur affiche le HTML mis en forme par le CSS"]
+        correction: "Nom → adresse IP → requête → réponse → affichage."
+      - type: vf
+        vars: { t: [["Internet et le Web sont la même chose.", false], ["Un message est découpé en paquets.", true], ["HTTPS prouve qu'un site est honnête.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le Web est un service d'Internet ; les messages voyagent en paquets ; HTTPS chiffre mais ne garantit pas l'honnêteté du site."
+      - type: classer
+        enonce: "Range chaque élément : Internet (réseau) ou Web (service) ?"
+        categories: ["Internet", "Web"]
+        mots: [["une adresse IP", 0], ["une page HTML", 1], ["un routeur", 0], ["un lien hypertexte", 1]]
+        correction: "Adresses et routeurs font le réseau ; pages et liens font le Web."
+
+  - id: recursivite
+    titre: La récursivité
+    classe: Terminale
+    objectif: J'écris une fonction récursive avec un cas de base et un appel sur un problème plus petit.
+    mots: [récursivité, cas de base, appel, pile d'appels]
+    etapes:
+      - dialogue:
+          - mia: "Pour monter un escalier de 10 marches, je monte une marche, puis un escalier de 9 marches."
+          - zero: "Et pour l'escalier de 9 ? … Une marche, puis un escalier de 8 !"
+          - neo: "Jusqu'à l'escalier de 0 marche : là, il n'y a rien à faire. C'est ça, la récursivité."
+      - a_quoi_ca_sert: "La récursivité permet d'écrire simplement des algorithmes puissants : parcourir des dossiers, explorer un arbre de jeu, trier très vite (tri fusion)."
+      - texte: |
+          Une fonction **récursive** s'appelle elle-même.
+
+          Elle a toujours :
+          - un **cas de base**, qui s'arrête sans appel (`if n == 0: return 1`) ;
+          - un **appel récursif** sur un problème **plus petit** (`return n * fact(n - 1)`).
+
+          Exemple : `fact(3)` = 3 × `fact(2)` = 3 × 2 × `fact(1)` = 3 × 2 × 1 × `fact(0)` = 6.
+
+          Les appels en attente s'empilent dans la **pile d'appels** ; sans cas de base, elle déborde (erreur de récursion).
+      - attention: "Oublier le cas de base, ou appeler la fonction sur un problème qui ne diminue pas, donne une récursion infinie."
+      - astuce: { texte: "Avant d'écrire, réponds à deux questions : quel est le cas le plus simple ? Comment ramener le cas n au cas n − 1 ?", qui: neo }
+      - retiens: "Fonction récursive : un **cas de base** qui arrête, un **appel** sur un problème **plus petit** ; les appels s'empilent dans la **pile d'appels**."
+    exercices:
+      - type: nombre
+        vars: { t: [[3, 6, "3 × 2 × 1"], [4, 24, "4 × 3 × 2 × 1"], [5, 120, "5 × 4 × 3 × 2 × 1"]] }
+        enonce: "`def fact(n):` avec `if n == 0: return 1` puis `return n * fact(n - 1)`. Que renvoie `fact({{t_0}})` ?"
+        reponse: "t_1"
+        correction: "fact({{t_0}}) = {{t_2}} × fact(0) = {{t_2}} × 1 = **{{t_1}}**."
+      - type: qcm
+        enonce: "Que se passe-t-il si une fonction récursive n'a pas de cas de base ?"
+        choix: ["Elle s'appelle sans fin jusqu'à une erreur", "Elle renvoie 0", "Elle s'arrête après un appel", "Elle devient une boucle for"]
+        correction: "Sans cas de base, les appels s'empilent jusqu'au débordement de la pile."
+      - type: classer
+        enonce: "Range chaque ligne de la fonction `somme(n)` : cas de base ou appel récursif ?"
+        categories: ["Cas de base", "Appel récursif"]
+        mots: [["`if n == 0: return 0`", 0], ["`return n + somme(n - 1)`", 1], ["`if n == 0: return 1` (dans fact)", 0], ["`return n * fact(n - 1)`", 1]]
+        correction: "Le cas de base arrête ; l'appel récursif réduit le problème."
+      - type: vf
+        vars: { t: [["Un appel récursif doit porter sur un problème plus petit.", true], ["Une fonction récursive ne peut pas utiliser de if.", false], ["Les appels en attente sont stockés dans une pile.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Problème plus petit, test du cas de base avec un if, appels stockés dans la pile d'appels."
+
+  - id: piles-files-arbres
+    titre: Piles, files, arbres et graphes
+    classe: Terminale
+    objectif: Je choisis la structure de données adaptée - pile, file, arbre ou graphe - et je décris ses opérations.
+    mots: [pile, file, arbre, graphe]
+    etapes:
+      - dialogue:
+          - zero: "Le bouton « annuler » d'un logiciel, il se souvient de tout dans l'ordre ?"
+          - neo: "Il utilise une **pile** : la dernière action faite est la première annulée."
+      - a_quoi_ca_sert: "Choisir la bonne structure rend un programme rapide : file d'attente d'impression, historique de navigation, arbre des dossiers, GPS qui cherche un chemin dans un graphe."
+      - texte: |
+          **Pile** (« dernier entré, premier sorti ») : on **empile** et on **dépile** au sommet, comme une pile d'assiettes. Exemple : annuler, pile d'appels.
+
+          **File** (« premier entré, premier sorti ») : on **enfile** à la fin, on **défile** au début, comme une file d'attente. Exemple : impressions en attente.
+
+          **Arbre** : une **racine**, des **nœuds**, des **feuilles** ; chaque nœud a des enfants. Un **arbre binaire** a au plus deux enfants par nœud. Exemple : dossiers d'un ordinateur.
+
+          **Graphe** : des **sommets** reliés par des **arêtes** (orientées ou non). Exemple : réseau routier, réseau social.
+      - attention: "Ne confonds pas pile et file : dans une pile, on sort le **dernier** arrivé ; dans une file, le **premier** arrivé."
+      - astuce: { texte: "Pile = assiettes, file = boulangerie, arbre = généalogie à l'envers, graphe = plan de métro.", qui: mia }
+      - retiens: "**Pile** : dernier entré, premier sorti. **File** : premier entré, premier sorti. **Arbre** : racine, nœuds, feuilles. **Graphe** : sommets et arêtes."
+    exercices:
+      - type: qcm
+        enonce: "On empile 1, puis 2, puis 3, et on dépile une fois. Quel élément sort ?"
+        choix: ["3", "1", "2", "Aucun"]
+        correction: "Dans une pile, le dernier entré sort en premier : **3**."
+      - type: qcm
+        enonce: "On enfile A, puis B, puis C, et on défile une fois. Quel élément sort ?"
+        choix: ["A", "C", "B", "Aucun"]
+        correction: "Dans une file, le premier entré sort en premier : **A**."
+      - type: classer
+        enonce: "Range chaque situation : pile ou file ?"
+        categories: ["Pile", "File"]
+        mots: [["Le bouton « annuler »", 0], ["Les documents en attente d'impression", 1], ["Le bouton « page précédente » du navigateur", 0], ["Les clients à la caisse", 1]]
+        correction: "On revient sur la dernière action → pile ; on sert dans l'ordre d'arrivée → file."
+      - type: relier
+        enonce: "🔗 Relie chaque structure à un exemple."
+        paires: [["arbre", "les dossiers d'un ordinateur"], ["graphe", "un réseau routier"], ["pile", "une pile d'assiettes"], ["file", "une file d'attente"]]
+        correction: "Chaque structure modélise une situation."
+      - type: vf
+        vars: { t: [["Dans un arbre binaire, un nœud a au plus deux enfants.", true], ["Une feuille d'un arbre a toujours des enfants.", false], ["Un graphe est formé de sommets et d'arêtes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Arbre binaire : 2 enfants au plus ; une feuille n'a pas d'enfant ; graphe : sommets et arêtes."
+
+  - id: bases-de-donnees-sql
+    titre: Les bases de données et SQL
+    classe: Terminale
+    objectif: Je lis une table, je comprends clé primaire et clé étrangère, et j'écris une requête SQL simple.
+    mots: [table, clé primaire, requête, SQL]
+    etapes:
+      - dialogue:
+          - mia: "Une médiathèque a 50 000 livres et 3 000 adhérents. Comment savoir qui a emprunté quoi ?"
+          - neo: "Avec une base de données : des tables reliées entre elles, et un langage pour les interroger, SQL."
+      - a_quoi_ca_sert: "Tous les sites (boutiques, réseaux sociaux, Parcoursup) reposent sur des bases de données ; SQL est l'un des langages les plus demandés dans les métiers du numérique."
+      - texte: |
+          **Table** : des lignes (enregistrements) et des colonnes (attributs). Exemple : Livre(id, titre, annee).
+
+          **Clé primaire** : un attribut qui identifie **chaque ligne de façon unique** (id).
+
+          **Clé étrangère** : un attribut qui fait référence à la clé primaire d'une **autre table** (Emprunt.id_livre → Livre.id).
+
+          **Requête SQL** :
+          `SELECT titre FROM Livre WHERE annee > 2000;`
+          choisit la colonne titre, dans la table Livre, pour les lignes où l'année dépasse 2000. On peut trier avec `ORDER BY` et relier deux tables avec `JOIN`.
+      - attention: "Deux lignes ne peuvent pas avoir la même clé primaire : c'est ce qui garantit qu'on ne confond pas deux livres de même titre."
+      - astuce: { texte: "Lis une requête comme une phrase : SELECT = je veux, FROM = dans, WHERE = seulement si.", qui: zero }
+      - retiens: "Table = lignes et colonnes ; **clé primaire** unique ; **clé étrangère** vers une autre table ; `SELECT … FROM … WHERE …` pour interroger."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque mot clé SQL à son rôle."
+        paires: [["SELECT", "choisir les colonnes"], ["FROM", "indiquer la table"], ["WHERE", "filtrer les lignes"], ["ORDER BY", "trier le résultat"]]
+        correction: "SELECT colonnes FROM table WHERE condition ORDER BY tri."
+      - type: qcm
+        enonce: "Quelle requête donne les titres des livres parus après 2010 ?"
+        choix: ["`SELECT titre FROM Livre WHERE annee > 2010`", "`SELECT Livre FROM titre WHERE annee > 2010`", "`SELECT annee FROM Livre`", "`WHERE titre FROM Livre`"]
+        correction: "On choisit la colonne titre, dans la table Livre, avec la condition annee > 2010."
+      - type: vf
+        vars: { t: [["Deux lignes d'une table peuvent avoir la même clé primaire.", false], ["Une clé étrangère fait référence à une autre table.", true], ["WHERE sert à filtrer les lignes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Clé primaire unique ; clé étrangère vers une autre table ; WHERE filtre."
+      - type: qcm
+        enonce: "Dans la table Eleve(num, nom, classe), quel attribut est le meilleur choix de clé primaire ?"
+        choix: ["num", "nom", "classe", "aucun"]
+        correction: "Deux élèves peuvent avoir le même nom ou la même classe ; le **numéro** est unique."

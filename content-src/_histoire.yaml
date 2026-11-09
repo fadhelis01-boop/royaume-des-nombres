@@ -471,3 +471,11 @@ chapitres:
       - neo: "On y apprend les méthodes des champions. Reviens quand tu veux pour t'entraîner."
     apres:
       - narrateur: "La Lampe des Astuces éclaire désormais tout le Royaume."
+  citadelle-du-code:
+    titre: "Chapitre 30 — La Citadelle du Code"
+    objet: "📜 Le Livre des Preuves"
+    avant:
+      - narrateur: "Après le Temple, une citadelle clignote de 0 et de 1. Le Grand Oubli s'y est glissé : les programmes plantent, les données se mélangent."
+      - neo: "Ici, une preuve ne suffit pas : il faut un programme qui s'exécute, et qui s'arrête !"
+    apres:
+      - narrateur: "Les murs de la Citadelle s'allument un à un. Sur l'écran central s'affiche : « Programme terminé, 0 erreur. »"

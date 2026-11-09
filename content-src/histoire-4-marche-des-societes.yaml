@@ -1,0 +1,335 @@
+id: hg-marche-des-societes
+matiere: histoire
+titre: Le Marché des Sociétés
+sous_titre: Spécialité SES - marchés, monnaie, socialisation, outils chiffrés, croissance, chômage, inégalités et mobilité
+emoji: 📊
+couleur: "#33691e"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 804
+specialite: SES
+version: 1.0.0
+intro:
+  - narrateur: "Sur la grande place du Forum, des étals, une banque, une école et un bureau de statistiques. C'est le Marché des Sociétés."
+  - neo: "La spécialité SES croise trois regards : l'économie, la sociologie et la science politique."
+  - mia: "Et un outil commun à tous : les chiffres. Un pourcentage bien lu vaut mieux qu'un long discours."
+
+lecons:
+  - id: marche-offre-demande
+    titre: Le marché, l'offre et la demande
+    classe: "1ʳᵉ"
+    objectif: J'explique comment se forme le prix d'équilibre sur un marché concurrentiel et pourquoi il change.
+    mots: [marché, offre, demande, prix d'équilibre]
+    etapes:
+      - dialogue:
+          - zero: "Pourquoi les fraises coûtent moins cher en juin qu'en janvier ?"
+          - neo: "En juin, il y en a beaucoup : l'offre augmente, et le prix baisse. C'est la rencontre de l'offre et de la demande."
+      - a_quoi_ca_sert: "Comprendre comment se fixent les prix aide à lire l'actualité (prix de l'énergie, des logements, des billets de concert) et à faire ses propres choix."
+      - texte: |
+          **Marché** : lieu, réel ou virtuel, où se rencontrent **offreurs** (vendeurs) et **demandeurs** (acheteurs).
+
+          **Demande** : quand le prix monte, la quantité demandée **baisse** (courbe décroissante).
+
+          **Offre** : quand le prix monte, la quantité offerte **augmente** (courbe croissante).
+
+          **Prix d'équilibre** : le prix pour lequel quantité offerte = quantité demandée (croisement des deux courbes).
+
+          **Chocs** : si la demande augmente (mode, revenu), le prix d'équilibre monte ; si l'offre augmente (bonne récolte, progrès technique), il baisse.
+      - attention: "Ce modèle suppose une concurrence parfaite ; dans la réalité, il existe des monopoles, des taxes, des prix réglementés : on parle de **défaillances** de marché."
+      - astuce: { texte: "Demande qui monte → prix qui monte. Offre qui monte → prix qui baisse. Dessine les deux courbes en X pour t'en souvenir.", qui: mia }
+      - retiens: "Demande **décroissante**, offre **croissante** ; **prix d'équilibre** quand offre = demande. Hausse de la demande → prix **monte** ; hausse de l'offre → prix **baisse**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque événement : le prix d'équilibre va-t-il monter ou baisser ?"
+        categories: ["Monte", "Baisse"]
+        mots: [["Un produit devient à la mode", 0], ["Une récolte exceptionnelle", 1], ["Les revenus des ménages augmentent", 0], ["Une nouvelle machine fait baisser les coûts", 1]]
+        correction: "Plus de demande → prix plus haut ; plus d'offre → prix plus bas."
+      - type: vf
+        vars: { t: [["Quand le prix augmente, la quantité demandée baisse.", true], ["La courbe d'offre est décroissante.", false], ["Au prix d'équilibre, l'offre égale la demande.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Demande décroissante, offre croissante, équilibre au croisement."
+      - type: qcm
+        enonce: "À 3 € le kilo, on demande 500 kg et on offre 800 kg. Que va-t-il se passer ?"
+        choix: ["Le prix va baisser", "Le prix va monter", "Rien ne change", "Le marché ferme"]
+        correction: "L'offre dépasse la demande (excédent) : les vendeurs baissent le prix."
+      - type: relier
+        enonce: "🔗 Relie chaque acteur à son rôle sur le marché."
+        paires: [["l'offreur", "vend un bien ou un service"], ["le demandeur", "achète un bien ou un service"], ["l'État", "peut fixer des règles ou des taxes"]]
+        correction: "Offreurs, demandeurs, et un État qui encadre."
+
+  - id: monnaie-financement
+    titre: La monnaie et le financement de l'économie
+    classe: "1ʳᵉ"
+    objectif: Je connais les fonctions de la monnaie et j'explique comment les banques créent de la monnaie en accordant des crédits.
+    mots: [monnaie, crédit, banque centrale, taux d'intérêt]
+    etapes:
+      - dialogue:
+          - zero: "La monnaie, c'est la Banque centrale qui l'imprime, non ?"
+          - neo: "Les billets, oui. Mais la plus grande partie de la monnaie est créée par les banques ordinaires, quand elles accordent un crédit."
+      - a_quoi_ca_sert: "Emprunter pour ses études, un logement ou une entreprise, comprendre les taux d'intérêt et l'inflation : c'est la vie économique de tous les jours."
+      - texte: |
+          **Trois fonctions de la monnaie** : **unité de compte** (mesurer la valeur), **intermédiaire des échanges** (payer), **réserve de valeur** (épargner).
+
+          **Formes** : pièces et billets (monnaie fiduciaire), et surtout **monnaie scripturale** (soldes des comptes bancaires), soit environ 90 % de la monnaie.
+
+          **Création monétaire** : quand une banque accorde un crédit, elle crédite le compte de l'emprunteur : de la monnaie apparaît. Quand le crédit est remboursé, elle est détruite. On dit : « les crédits font les dépôts ».
+
+          **La Banque centrale européenne (BCE)** fixe ses **taux directeurs** pour garder une inflation proche de 2 % : des taux plus hauts freinent le crédit.
+
+          **Financement** : interne (autofinancement) ou externe (crédit bancaire, émission d'actions ou d'obligations).
+      - attention: "La banque ne prête pas seulement l'argent des autres déposants : en accordant un crédit, elle crée de la monnaie nouvelle."
+      - astuce: { texte: "Pour les fonctions : Compter, Payer, Garder (unité de compte, intermédiaire des échanges, réserve de valeur).", qui: mia }
+      - retiens: "Monnaie : **unité de compte**, **intermédiaire des échanges**, **réserve de valeur** ; surtout **scripturale**. Les **banques créent** de la monnaie par le **crédit** ; la **BCE** agit par ses **taux directeurs**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque situation à la fonction de la monnaie."
+        paires: [["comparer le prix de deux téléphones", "unité de compte"], ["payer son pain", "intermédiaire des échanges"], ["mettre de l'argent de côté", "réserve de valeur"]]
+        correction: "Mesurer, payer, épargner."
+      - type: vf
+        vars: { t: [["Les banques commerciales créent de la monnaie en accordant des crédits.", true], ["Les billets représentent la plus grande partie de la monnaie.", false], ["Une hausse des taux directeurs freine le crédit.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le crédit crée la monnaie ; la monnaie est surtout scripturale ; des taux plus hauts freinent le crédit."
+      - type: classer
+        enonce: "Range chaque mode de financement d'une entreprise : interne ou externe ?"
+        categories: ["Interne", "Externe"]
+        mots: [["Utiliser ses propres bénéfices", 0], ["Emprunter à une banque", 1], ["Émettre des actions", 1], ["Réinvestir ses profits passés", 0]]
+        correction: "Ses propres ressources → interne ; banque, actions, obligations → externe."
+      - type: qcm
+        enonce: "Quel objectif d'inflation la BCE poursuit-elle ?"
+        choix: ["Environ 2 % par an", "0 % exactement", "10 % par an", "Aucun"]
+        correction: "La BCE vise une inflation proche de **2 %** à moyen terme."
+
+  - id: socialisation
+    titre: La socialisation
+    classe: "1ʳᵉ"
+    objectif: J'explique comment on apprend les normes et les valeurs de la société, par quelles instances, et pourquoi la socialisation diffère selon le milieu et le genre.
+    mots: [socialisation, normes, valeurs, instance]
+    etapes:
+      - dialogue:
+          - zero: "Je dis bonjour en arrivant, je fais la queue… C'est naturel, non ?"
+          - mia: "Non : tu l'as appris. Dans d'autres sociétés, les règles sont différentes. Cet apprentissage s'appelle la socialisation."
+      - a_quoi_ca_sert: "Comprendre d'où viennent nos goûts, nos manières et nos ambitions aide à porter un regard plus libre sur soi et sur les autres."
+      - texte: |
+          **Socialisation** : processus par lequel on apprend les **normes** (règles de conduite) et les **valeurs** (idéaux) d'une société.
+
+          **Socialisation primaire** (enfance) : famille, école, groupe de pairs, médias.
+
+          **Socialisation secondaire** (âge adulte) : travail, couple, associations, partis.
+
+          **Une socialisation différenciée** : selon le **milieu social** (pratiques culturelles, rapport à l'école) et selon le **genre** (jouets, encouragements, attentes différentes pour les filles et les garçons).
+
+          La socialisation n'est pas un simple « conditionnement » : l'individu peut aussi s'y opposer, réinterpréter ce qu'il reçoit.
+      - attention: "Les **normes** sont des règles de comportement (dire bonjour) ; les **valeurs** sont des idéaux (la politesse, le respect). Ne les confonds pas."
+      - astuce: { texte: "Primaire = enfance ; secondaire = tout ce qui vient après et complète, ou parfois contredit, la première.", qui: neo }
+      - retiens: "Socialisation = apprendre **normes** et **valeurs**. **Primaire** (famille, école, pairs, médias), **secondaire** (travail, couple…). Elle est **différenciée** selon le **milieu social** et le **genre**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque exemple : norme ou valeur ?"
+        categories: ["Norme", "Valeur"]
+        mots: [["Lever la main pour parler en classe", 0], ["Le respect d'autrui", 1], ["Attendre son tour dans une file", 0], ["La solidarité", 1]]
+        correction: "Une norme est une règle de conduite ; une valeur est un idéal."
+      - type: classer
+        enonce: "Range chaque instance : socialisation primaire ou secondaire ?"
+        categories: ["Primaire", "Secondaire"]
+        mots: [["La famille pendant l'enfance", 0], ["L'entreprise où l'on travaille", 1], ["L'école primaire", 0], ["Un syndicat", 1]]
+        correction: "Enfance → primaire ; âge adulte → secondaire."
+      - type: qcm
+        enonce: "Offrir des jouets différents aux filles et aux garçons est un exemple de…"
+        choix: ["Socialisation différenciée selon le genre", "Socialisation secondaire", "Mobilité sociale", "Création monétaire"]
+        correction: "Les attentes et les objets diffèrent selon le genre dès l'enfance."
+      - type: vf
+        vars: { t: [["La socialisation s'arrête à la fin de l'enfance.", false], ["Les médias sont une instance de socialisation.", true], ["Un individu peut réinterpréter ce qu'il a appris.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La socialisation dure toute la vie ; les médias socialisent ; l'individu n'est pas passif."
+
+  - id: outils-chiffres
+    titre: Lire les chiffres - taux de variation, coefficient, indice
+    classe: "1ʳᵉ"
+    objectif: Je calcule et j'interprète un taux de variation, un coefficient multiplicateur et un indice base 100.
+    mots: [taux de variation, coefficient multiplicateur, indice, proportion]
+    etapes:
+      - dialogue:
+          - zero: "Le prix passe de 50 € à 60 €. Il a augmenté de 10… pour cent ?"
+          - neo: "De 10 euros, oui, mais de 20 % ! On rapporte toujours la variation à la valeur de départ."
+      - a_quoi_ca_sert: "Les épreuves de SES demandent de lire et calculer ces données ; dans la vie, elles permettent de comprendre une hausse de salaire, l'inflation ou une promotion."
+      - texte: |
+          **Taux de variation** = (valeur d'arrivée − valeur de départ) ÷ valeur de départ × 100. De 50 à 60 : 10 ÷ 50 × 100 = 20 %.
+
+          **Coefficient multiplicateur** = valeur d'arrivée ÷ valeur de départ. De 50 à 60 : 1,2. Une hausse de t % donne un coefficient de 1 + t ÷ 100.
+
+          **Indice base 100** = valeur de l'année ÷ valeur de l'année de référence × 100. Un indice de 125 signifie une hausse de 25 % depuis l'année de référence.
+
+          **Proportion** (part) = partie ÷ total × 100.
+      - attention: "Une hausse de 50 % puis une baisse de 50 % ne ramène pas au départ : 100 → 150 → 75. Les pourcentages ne s'additionnent pas, les coefficients se multiplient."
+      - astuce: { texte: "Indice − 100 = variation en % depuis l'année de base. Indice 87 → baisse de 13 %.", qui: mia }
+      - retiens: "Taux de variation = (arrivée − départ) ÷ départ × 100 ; coefficient = arrivée ÷ départ ; indice − 100 = variation depuis la base. Les coefficients **se multiplient**."
+    exercices:
+      - type: nombre
+        vars: { t: [[50, 60, 20], [200, 250, 25], [80, 100, 25], [40, 50, 25], [25, 35, 40], [60, 90, 50]] }
+        enonce: "Une valeur passe de {{t_0}} à {{t_1}}. De combien de % a-t-elle augmenté ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "({{t_1}} − {{t_0}}) ÷ {{t_0}} × 100 = **{{t_2}} %**."
+      - type: nombre
+        vars: { t: [[80, 60, 25], [120, 90, 25], [200, 150, 25], [50, 40, 20], [250, 200, 20], [40, 30, 25]] }
+        enonce: "Une valeur passe de {{t_0}} à {{t_1}}. De combien de % a-t-elle baissé ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "({{t_0}} − {{t_1}}) ÷ {{t_0}} × 100 = {{t_2}} : le taux de variation est de **−{{t_2}} %**, soit une baisse de {{t_2}} %."
+      - type: nombre
+        vars: { i: "105..140" }
+        enonce: "Le salaire moyen a un indice de {{i}} (base 100 en 2015). De combien de % a-t-il augmenté depuis 2015 ?"
+        reponse: "i-100"
+        unite: "%"
+        correction: "{{i}} − 100 = **{{i-100}} %**."
+      - type: qcm
+        enonce: "Un prix augmente de 50 %, puis baisse de 50 %. Au total…"
+        choix: ["Il a baissé de 25 %", "Il est revenu au départ", "Il a augmenté de 25 %", "Il a baissé de 50 %"]
+        correction: "1,5 × 0,5 = 0,75 : baisse de **25 %**."
+      - type: relier
+        enonce: "🔗 Relie chaque variation à son coefficient multiplicateur."
+        paires: [["hausse de 20 %", "1,2"], ["baisse de 10 %", "0,9"], ["hausse de 100 %", "2"], ["baisse de 50 %", "0,5"]]
+        correction: "Coefficient = 1 + t/100."
+      - type: nombre
+        vars: { t: [[30, 120, 25], [45, 150, 30], [12, 60, 20], [18, 72, 25]] }
+        enonce: "Sur {{t_1}} salariés, {{t_0}} travaillent à temps partiel. Quelle part, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ {{t_1}} × 100 = **{{t_2}} %**."
+
+  - id: croissance
+    titre: Les sources et les limites de la croissance
+    classe: Terminale
+    objectif: Je définis la croissance par le PIB, j'en explique les sources et j'en discute les limites écologiques.
+    mots: [PIB, croissance, progrès technique, productivité]
+    etapes:
+      - dialogue:
+          - mia: "La France produit environ 2 800 milliards d'euros de richesses par an. On l'appelle le PIB."
+          - zero: "Et la croissance, c'est quand ce chiffre augmente ?"
+          - neo: "Exactement, en volume, c'est-à-dire sans l'effet de la hausse des prix."
+      - a_quoi_ca_sert: "La croissance conditionne l'emploi, les salaires et le financement des services publics ; ses limites écologiques posent une des grandes questions de ta génération."
+      - texte: |
+          **PIB** (produit intérieur brut) : somme des **valeurs ajoutées** produites sur le territoire en un an. **Croissance** : hausse du PIB **en volume** (corrigée de l'inflation).
+
+          **Sources de la croissance** :
+          - plus de **travail** (population active, heures) ;
+          - plus de **capital** (machines, bâtiments) ;
+          - le **progrès technique**, qui augmente la **productivité** : c'est la **productivité globale des facteurs**, souvent la source principale.
+
+          **Institutions** : droits de propriété, stabilité politique, éducation favorisent l'innovation.
+
+          **Limites** : la croissance épuise des ressources et émet des gaz à effet de serre. **Soutenabilité faible** : le capital technique peut remplacer la nature ; **soutenabilité forte** : certaines ressources naturelles sont irremplaçables.
+      - attention: "Le PIB ne mesure pas tout : ni le travail domestique, ni le bénévolat, ni les inégalités, ni les dégâts environnementaux."
+      - astuce: { texte: "Travail + capital + progrès technique : trois moteurs. Le troisième est celui qui explique la plus grande part de la croissance à long terme.", qui: neo }
+      - retiens: "**PIB** = somme des **valeurs ajoutées** ; croissance = hausse **en volume**. Sources : **travail**, **capital**, **progrès technique** (productivité globale des facteurs). Limites : **ressources** et **climat** ; soutenabilité **faible** ou **forte**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque exemple à la source de croissance."
+        paires: [["plus de personnes en emploi", "facteur travail"], ["une usine achète de nouvelles machines", "facteur capital"], ["un logiciel fait gagner du temps à chaque salarié", "progrès technique"]]
+        correction: "Travail, capital, progrès technique."
+      - type: vf
+        vars: { t: [["Le PIB mesure le bénévolat.", false], ["La croissance se mesure en volume, sans l'effet des prix.", true], ["Pour la soutenabilité forte, certaines ressources naturelles sont irremplaçables.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le PIB ignore le bénévolat ; la croissance est en volume ; soutenabilité forte = capital naturel irremplaçable."
+      - type: qcm
+        enonce: "Qu'est-ce que la valeur ajoutée d'une entreprise ?"
+        choix: ["Son chiffre d'affaires moins ses consommations intermédiaires", "Son chiffre d'affaires", "Son bénéfice distribué", "Le salaire de ses dirigeants"]
+        correction: "Valeur ajoutée = production − consommations intermédiaires ; le PIB est la somme des valeurs ajoutées."
+      - type: classer
+        enonce: "Range chaque position : soutenabilité faible ou forte ?"
+        categories: ["Faible", "Forte"]
+        mots: [["L'innovation trouvera des substituts aux ressources épuisées", 0], ["La biodiversité ne peut pas être remplacée par des machines", 1], ["On peut compenser la nature détruite par plus de capital", 0], ["Il faut préserver un stock minimal de ressources naturelles", 1]]
+        correction: "Faible : tout est substituable ; forte : la nature a des limites irremplaçables."
+
+  - id: chomage
+    titre: Le chômage, mesures et explications
+    classe: Terminale
+    objectif: Je définis le chômage, je calcule un taux de chômage et je distingue ses grandes explications.
+    mots: [chômage, population active, taux de chômage, appariement]
+    etapes:
+      - dialogue:
+          - zero: "Un étudiant qui ne travaille pas, il est au chômage ?"
+          - neo: "Non : il n'est pas sur le marché du travail. Est chômeur celui qui n'a pas d'emploi, en cherche un activement, et est disponible."
+      - a_quoi_ca_sert: "Le chômage est l'un des indicateurs les plus suivis ; comprendre ses causes aide à juger les politiques de l'emploi et à préparer son entrée dans la vie active."
+      - texte: |
+          **Chômeur au sens du BIT** : sans emploi, disponible sous quinze jours, et en recherche active.
+
+          **Population active** = actifs occupés + chômeurs. **Taux de chômage** = chômeurs ÷ population active × 100.
+
+          **Explications** :
+          - **chômage keynésien** : la demande de biens est trop faible, les entreprises produisent et embauchent moins ;
+          - **chômage classique** : le coût du travail est jugé trop élevé par rapport à la productivité ;
+          - **chômage structurel** : difficultés d'**appariement** entre les postes proposés et les compétences ou la localisation des chômeurs.
+
+          **Politiques** : relance de la demande, baisse du coût du travail, formation et accompagnement.
+      - attention: "Le taux de chômage se calcule sur la population **active**, pas sur la population totale : les retraités et les élèves n'y comptent pas."
+      - astuce: { texte: "Keynésien = pas assez de clients ; classique = travail trop cher ; structurel = les postes et les chômeurs ne se rencontrent pas.", qui: mia }
+      - retiens: "Chômeur (**BIT**) : sans emploi, **disponible**, **en recherche**. Taux = chômeurs ÷ **population active** × 100. Explications : **keynésienne** (demande), **classique** (coût du travail), **structurelle** (appariement)."
+    exercices:
+      - type: nombre
+        vars: { t: [[3, 40, 7.5], [2, 25, 8], [6, 60, 10], [3, 50, 6], [4, 32, 12.5]] }
+        enonce: "Un pays compte {{t_1}} millions d'actifs, dont {{t_0}} millions de chômeurs. Quel est le taux de chômage, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ {{t_1}} × 100 = **{{t_2}} %**."
+      - type: classer
+        enonce: "Range chaque situation : chômeur au sens du BIT ou non ?"
+        categories: ["Chômeur", "Pas chômeur"]
+        mots: [["Une personne sans emploi qui envoie des candidatures chaque semaine", 0], ["Un lycéen", 1], ["Un retraité", 1], ["Un ingénieur licencié qui passe des entretiens", 0]]
+        correction: "Il faut être sans emploi, disponible et en recherche active."
+      - type: relier
+        enonce: "🔗 Relie chaque explication à sa cause."
+        paires: [["chômage keynésien", "demande de biens trop faible"], ["chômage classique", "coût du travail trop élevé"], ["chômage structurel", "mauvais appariement des postes et des compétences"]]
+        correction: "Trois causes, trois types de politiques."
+      - type: qcm
+        enonce: "Des postes de soudeur restent vacants alors que des chômeurs cherchent un emploi dans la même région. De quel chômage s'agit-il ?"
+        choix: ["Structurel (appariement)", "Keynésien", "Classique", "Ce n'est pas du chômage"]
+        correction: "Les compétences ne correspondent pas aux postes : problème d'**appariement**."
+
+  - id: inegalites-mobilite
+    titre: Inégalités, justice sociale et mobilité
+    classe: Terminale
+    objectif: Je mesure les inégalités, je lis une table de mobilité et je distingue les conceptions de la justice sociale.
+    mots: [inégalités, mobilité sociale, justice sociale, redistribution]
+    etapes:
+      - dialogue:
+          - mia: "Un enfant de cadre a beaucoup plus de chances de devenir cadre qu'un enfant d'ouvrier. Est-ce juste ?"
+          - zero: "Ça dépend de ce qu'on appelle « juste »…"
+          - neo: "Exactement : il y a plusieurs conceptions de la justice sociale, et elles ne mènent pas aux mêmes politiques."
+      - a_quoi_ca_sert: "Les débats sur les impôts, les bourses, les quotas ou la réforme de l'école reposent sur ces notions ; les connaître aide à se faire une opinion argumentée."
+      - texte: |
+          **Mesurer les inégalités** : rapport interdécile **D9 ÷ D1** (revenu au-dessus duquel se trouvent les 10 % les plus riches, divisé par celui en dessous duquel se trouvent les 10 % les plus pauvres) ; **coefficient de Gini** (0 = égalité parfaite, 1 = inégalité maximale).
+
+          **Mobilité sociale** : changement de position sociale entre parents et enfants. Une **table de destinée** indique ce que deviennent les enfants d'un milieu ; une **table de recrutement**, d'où viennent ceux qui occupent une position. On distingue la **reproduction sociale** et la mobilité **ascendante** ou **descendante**.
+
+          **Justice sociale** : égalité des **droits** (les mêmes règles pour tous), des **chances** (même accès aux positions), des **situations** (réduire les écarts de revenus et de conditions).
+
+          **Action publique** : impôts progressifs, prestations sociales, services publics (école, santé) : c'est la **redistribution**.
+      - attention: "Égalité des chances et égalité des situations ne vont pas toujours ensemble : une course équitable peut quand même produire des gagnants et des perdants."
+      - astuce: { texte: "Destinée = « que deviennent-ils ? » (on part des parents) ; recrutement = « d'où viennent-ils ? » (on part des enfants).", qui: zero }
+      - retiens: "Inégalités : **D9 ÷ D1**, **Gini** (0 à 1). Mobilité : tables de **destinée** et de **recrutement**, **reproduction** ou mobilité **ascendante** ou **descendante**. Justice : égalité des **droits**, des **chances**, des **situations** ; **redistribution** par impôts, prestations, services publics."
+    exercices:
+      - type: qcm
+        enonce: "Un coefficient de Gini de 0,29 et un autre de 0,41 : lequel indique le pays le plus inégalitaire ?"
+        choix: ["0,41", "0,29", "Les deux sont égaux", "On ne peut pas comparer"]
+        correction: "Plus le Gini est proche de 1, plus la répartition est inégale : **0,41**."
+      - type: classer
+        enonce: "Range chaque mesure : égalité des chances ou égalité des situations ?"
+        categories: ["Égalité des chances", "Égalité des situations"]
+        mots: [["Des bourses pour les élèves de familles modestes", 0], ["Un revenu minimum pour les plus pauvres", 1], ["Le soutien scolaire gratuit dans les quartiers prioritaires", 0], ["Des allocations qui réduisent les écarts de niveau de vie", 1]]
+        correction: "Donner les mêmes chances au départ, ou réduire les écarts à l'arrivée."
+      - type: classer
+        enonce: "Range chaque question : table de destinée ou table de recrutement ?"
+        categories: ["Destinée", "Recrutement"]
+        mots: [["Que deviennent les enfants d'agriculteurs ?", 0], ["D'où viennent les cadres d'aujourd'hui ?", 1], ["Quelle part des enfants d'ouvriers devient cadre ?", 0], ["Quelle part des enseignants a un père enseignant ?", 1]]
+        correction: "Destinée : on part des parents ; recrutement : on part des enfants."
+      - type: vf
+        vars: { t: [["Un impôt progressif fait payer une part plus forte aux revenus élevés.", true], ["Le rapport D9 ÷ D1 compare les 10 % les plus riches et les 10 % les plus pauvres.", true], ["La reproduction sociale signifie que chacun change de milieu.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Impôt progressif et D9 ÷ D1 : vrai ; la reproduction sociale, c'est rester dans le milieu de ses parents."

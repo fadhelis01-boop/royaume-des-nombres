@@ -470,6 +470,7 @@ export function normalizeWorld(w, file) {
     })(),
     ordre: w.ordre,
     prerequis: w.prerequis ?? [],
+    ...(w.specialite ? { specialite: String(w.specialite) } : {}),
     intro: w.intro ? lines(w.intro, `${where} intro`) : undefined,
     version: String(w.version ?? "1.0.0"),
     matiere: w.matiere ?? "maths",

@@ -1,3 +1,11 @@
+- version: "2.17.0"
+  date: "2026-11-10"
+  notes:
+    - "Spécialité NSI : la Citadelle du Code (planète Maths), 8 leçons : binaire, Python, listes et dictionnaires, tris et dichotomie, réseaux et Web, récursivité, piles, files et arbres, bases de données et SQL."
+    - "Spécialité HGGSP : le Carrefour des Puissances, 7 leçons : démocratie, puissance, frontières, s'informer, guerre et paix, histoire et mémoires, environnement."
+    - "Spécialité SES : le Marché des Sociétés, 7 leçons : marché, monnaie, socialisation, taux de variation et indices, croissance, chômage, inégalités et mobilité."
+    - "Les spécialités sont ouvertes sur la carte, mais le test de niveau et le parcours ne les imposent pas à ceux qui ne les ont pas choisies."
+    - "Le code s'affiche en police à chasse fixe et la voix le lit en mots (« x prend la valeur 3 »)."
 - version: "2.16.0"
   date: "2026-11-09"
   notes:
