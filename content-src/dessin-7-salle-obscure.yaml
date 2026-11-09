@@ -1,0 +1,187 @@
+id: de-salle-obscure
+matiere: dessin
+titre: La Salle Obscure
+sous_titre: Spécialité cinéma-audiovisuel - plans, angles et mouvements, montage, son, histoire du cinéma, analyser une séquence
+emoji: 🎬
+couleur: "#212121"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 607
+specialite: Cinéma-audiovisuel
+version: 1.0.0
+intro:
+  - narrateur: "Au sous-sol de l'Atelier, une petite salle de cinéma. Le projecteur grésille, et les images sautent sans ordre sur l'écran."
+  - neo: "Le cinéma est un langage : chaque plan, chaque coupe, chaque son a un sens. Apprenons à le lire et à l'écrire."
+  - zero: "Moteur… ça tourne… action !"
+
+lecons:
+  - id: cine-plans-angles
+    titre: Échelle des plans, angles et mouvements de caméra
+    classe: "1ʳᵉ"
+    objectif: Je nomme l'échelle des plans, les angles de prise de vue et les mouvements de caméra, et j'en explique l'effet.
+    mots: [plan, plongée, contre-plongée, travelling]
+    etapes:
+      - dialogue:
+          - mia: "Dans une scène de dispute, la caméra passe d'un plan large à un gros plan sur les yeux. Que ressens-tu ?"
+          - zero: "La tension monte ! On est dans la tête du personnage."
+          - neo: "Voilà : la taille du plan, ce n'est pas de la technique, c'est du sens."
+      - a_quoi_ca_sert: "Ce vocabulaire sert à analyser un film à l'épreuve, mais aussi à réaliser ses propres vidéos, du court métrage au contenu pour les réseaux."
+      - texte: |
+          **L'échelle des plans** (du plus large au plus serré) : **plan d'ensemble** (le décor), **plan moyen** (personnage en pied), **plan américain** (à mi-cuisses), **plan rapproché** (taille ou poitrine), **gros plan** (visage), **très gros plan** (un détail).
+
+          **Les angles** : **plongée** (caméra au-dessus : le personnage paraît petit, écrasé) ; **contre-plongée** (caméra en dessous : il paraît grand, menaçant ou héroïque).
+
+          **Les mouvements** : **panoramique** (la caméra pivote sur place), **travelling** (la caméra se déplace), **zoom** (changement de focale, sans déplacement).
+      - attention: "Un zoom et un travelling avant ne donnent pas la même image : avec le travelling, la perspective change ; avec le zoom, elle reste la même."
+      - astuce: { texte: "Plus le plan est serré, plus on est près des émotions ; plus il est large, plus on voit la situation.", qui: mia }
+      - retiens: "Plans : **ensemble**, **moyen**, **américain**, **rapproché**, **gros plan**, **très gros plan**. **Plongée** = écraser, **contre-plongée** = grandir. Mouvements : **panoramique**, **travelling**, **zoom**."
+    exercices:
+      - type: ordre
+        enonce: "Range les plans du plus large au plus serré."
+        items: ["Plan d'ensemble", "Plan moyen", "Plan rapproché", "Gros plan", "Très gros plan"]
+        correction: "De l'ensemble du décor jusqu'au détail."
+      - type: relier
+        enonce: "🔗 Relie chaque choix à l'effet le plus courant."
+        paires: [["la plongée", "le personnage paraît petit, vulnérable"], ["la contre-plongée", "le personnage paraît puissant"], ["le gros plan", "on partage l'émotion du visage"], ["le plan d'ensemble", "on découvre le lieu"]]
+        correction: "Chaque choix de cadrage oriente le regard du spectateur."
+      - type: classer
+        enonce: "Range chaque mouvement : la caméra se déplace ou non ?"
+        categories: ["Elle se déplace", "Elle ne se déplace pas"]
+        mots: [["Un travelling", 0], ["Un panoramique", 1], ["Un zoom", 1], ["Un plan filmé depuis une voiture qui roule", 0]]
+        correction: "Le travelling déplace la caméra ; le panoramique pivote ; le zoom change la focale."
+      - type: qcm
+        enonce: "Comment filmer un méchant pour qu'il paraisse menaçant ?"
+        choix: ["En contre-plongée", "En plongée", "En plan d'ensemble très lointain", "Hors champ seulement"]
+        correction: "La **contre-plongée** le grandit et le rend imposant."
+
+  - id: cine-montage
+    titre: Le montage et le raccord
+    classe: "1ʳᵉ"
+    objectif: J'explique comment le montage crée du sens - champ-contrechamp, raccords, ellipse, montage alterné, effet Koulechov.
+    mots: [montage, raccord, ellipse, champ-contrechamp]
+    etapes:
+      - dialogue:
+          - neo: "Un visage neutre, puis une assiette de soupe : le spectateur voit la faim. Le même visage, puis un cercueil : il voit la tristesse."
+          - zero: "Mais c'est le même visage !"
+          - mia: "C'est l'effet Koulechov, dans les années 1920 : le sens naît de l'enchaînement des plans."
+      - a_quoi_ca_sert: "Le montage est l'écriture propre du cinéma ; le comprendre aide à repérer comment une vidéo, un clip ou un reportage oriente ce qu'on pense."
+      - texte: |
+          **Le montage** assemble les plans. Il crée le **rythme** (plans courts = tension) et le **sens**.
+
+          **Le champ-contrechamp** : on filme alternativement deux personnages qui se parlent.
+
+          **Les raccords** rendent la coupe invisible : **raccord regard** (un personnage regarde, on montre ce qu'il voit), **raccord mouvement** (le geste commencé dans un plan se finit dans le suivant).
+
+          **L'ellipse** : on saute un moment du récit (une porte se ferme, il fait nuit).
+
+          **Le montage alterné** : deux actions simultanées en des lieux différents (la course-poursuite et le héros qui arrive).
+
+          **L'effet Koulechov** : le même plan change de sens selon le plan qui le suit.
+      - attention: "« Faux raccord » : une erreur de continuité (un verre plein puis vide d'un plan à l'autre). Ce n'est pas un procédé, c'est un défaut… sauf s'il est voulu."
+      - astuce: { texte: "Compte les coupes pendant une minute de film d'action, puis de film contemplatif : tu sentiras ce qu'est le rythme du montage.", qui: zero }
+      - retiens: "Le montage crée **rythme** et **sens**. **Champ-contrechamp**, **raccords** (regard, mouvement), **ellipse**, **montage alterné**, **effet Koulechov**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque procédé à sa définition."
+        paires: [["le champ-contrechamp", "alterner deux personnages qui se parlent"], ["l'ellipse", "sauter un moment du récit"], ["le montage alterné", "deux actions simultanées en des lieux différents"], ["le raccord regard", "montrer ce que le personnage regarde"]]
+        correction: "Les outils de base du montage."
+      - type: qcm
+        enonce: "Que montre l'effet Koulechov ?"
+        choix: ["Le sens d'un plan dépend du plan qui le suit", "Un film doit durer plus de deux heures", "La couleur rend les films plus tristes", "Le son est inutile au cinéma"]
+        correction: "Le spectateur interprète un plan en fonction de ce qui l'entoure."
+      - type: classer
+        enonce: "Range chaque choix : montage rapide ou montage lent ?"
+        categories: ["Rapide", "Lent"]
+        mots: [["Une course-poursuite avec des plans d'une seconde", 0], ["Un long plan fixe sur un paysage", 1], ["Une bagarre découpée en nombreux plans", 0], ["Un dialogue filmé en un seul plan de trois minutes", 1]]
+        correction: "Plans courts → tension ; plans longs → contemplation."
+      - type: vf
+        vars: { t: [["Un faux raccord est une erreur de continuité.", true], ["L'ellipse montre chaque seconde de l'histoire.", false], ["Le montage peut créer un sens absent de chaque plan isolé.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Faux raccord = erreur ; l'ellipse saute du temps ; le montage crée du sens."
+
+  - id: cine-son
+    titre: Le son au cinéma
+    classe: "1ʳᵉ"
+    objectif: Je distingue le son diégétique et extradiégétique, le son in, off et hors champ, et j'analyse le rôle de la musique.
+    mots: [diégétique, hors champ, voix off, bande-son]
+    etapes:
+      - dialogue:
+          - zero: "La musique du film, les personnages l'entendent ?"
+          - mia: "Ça dépend ! Si un musicien joue dans la scène, oui. Si c'est l'orchestre du compositeur, non : seul le spectateur l'entend."
+      - a_quoi_ca_sert: "Le son fait la moitié de l'émotion d'une image ; le maîtriser compte autant que l'image pour réaliser une vidéo réussie."
+      - texte: |
+          **Diégétique** : le son appartient au monde de l'histoire (les personnages l'entendent : une radio allumée, des pas).
+
+          **Extradiégétique** : il vient d'en dehors de l'histoire (musique d'accompagnement, voix du narrateur).
+
+          **In** : la source est visible à l'image. **Hors champ** : la source est dans la scène mais pas dans le cadre (une porte claque derrière). **Voix off** : une voix qui n'appartient pas au moment montré (narrateur, pensée).
+
+          **La bande-son** : dialogues, bruitages, ambiances, musique. La musique peut **accompagner** l'émotion ou la **contredire** (une chanson joyeuse sur une scène violente crée un malaise).
+
+          **Le silence** est aussi un choix fort.
+      - astuce: { texte: "Ferme les yeux pendant une scène : tout ce que tu entends, demande-toi si les personnages l'entendent aussi.", qui: neo }
+      - retiens: "**Diégétique** (dans l'histoire) / **extradiégétique** (en dehors). Son **in**, **hors champ**, **voix off**. Bande-son : dialogues, bruitages, ambiances, musique ; la musique **accompagne** ou **contredit** l'image."
+    exercices:
+      - type: classer
+        enonce: "Range chaque son : diégétique ou extradiégétique ?"
+        categories: ["Diégétique", "Extradiégétique"]
+        mots: [["Un personnage allume la radio et une chanson passe", 0], ["Un orchestre accompagne la course du héros", 1], ["Le bruit de la pluie sur la fenêtre de la chambre", 0], ["La voix d'un narrateur qui raconte des années plus tard", 1]]
+        correction: "Les personnages l'entendent → diégétique ; seul le spectateur l'entend → extradiégétique."
+      - type: qcm
+        enonce: "On entend une porte claquer, mais on ne la voit pas à l'image. C'est un son…"
+        choix: ["hors champ", "in", "extradiégétique", "muet"]
+        correction: "La source est dans la scène mais hors du cadre : son **hors champ**."
+      - type: relier
+        enonce: "🔗 Relie chaque élément de la bande-son à un exemple."
+        paires: [["un bruitage", "des pas sur le gravier"], ["une ambiance", "le brouhaha d'une gare"], ["la musique", "un thème au violon"]]
+        correction: "Dialogues, bruitages, ambiances et musique composent la bande-son."
+      - type: vf
+        vars: { t: [["Une musique joyeuse sur une scène violente peut créer un malaise.", true], ["Le silence n'a jamais de sens au cinéma.", false], ["Une voix off peut être la pensée d'un personnage.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Le contraste crée du sens ; le silence est un choix ; la voix off peut être intérieure."
+
+  - id: cine-histoire
+    titre: Repères d'histoire du cinéma
+    classe: Terminale
+    objectif: Je situe les grandes étapes de l'histoire du cinéma, des frères Lumière au numérique.
+    mots: [cinématographe, parlant, Nouvelle Vague, numérique]
+    etapes:
+      - dialogue:
+          - neo: "Le 28 décembre 1895, à Paris, les frères Lumière projettent des films devant un public payant."
+          - mia: "Et quelques années plus tard, Georges Méliès invente les premiers trucages et envoie des explorateurs sur la Lune."
+      - a_quoi_ca_sert: "Situer un film dans son époque aide à le comprendre et à repérer ses influences ; c'est attendu dans les analyses de l'épreuve."
+      - texte: |
+          **1895** : le **cinématographe** des frères **Lumière**, projections publiques à Paris.
+
+          **1902** : *Le Voyage dans la Lune* de **Georges Méliès**, pionnier des trucages.
+
+          **Années 1910 et 1920** : le cinéma muet invente le langage du montage (Griffith, Eisenstein) ; Chaplin et Keaton font rire le monde entier.
+
+          **1927** : *Le Chanteur de jazz*, premier long métrage avec des dialogues synchronisés : le **parlant** arrive.
+
+          **Après 1945** : néoréalisme italien (tournage dans la rue) ; **fin des années 1950** : la **Nouvelle Vague** française (Truffaut, Godard), caméra légère et liberté de ton.
+
+          **Fin du XXᵉ siècle et XXIᵉ siècle** : effets spéciaux numériques, caméras numériques, plateformes de diffusion.
+      - astuce: { texte: "Retiens trois dates rondes : 1895 la naissance, 1927 le parlant, 1959 la Nouvelle Vague (Les Quatre Cents Coups).", qui: zero }
+      - retiens: "**1895** : Lumière ; **1902** : Méliès ; muet : invention du montage ; **1927** : le parlant ; néoréalisme après 1945 ; **Nouvelle Vague** (fin des années 1950 : Truffaut, Godard) ; puis le **numérique**."
+    exercices:
+      - type: ordre
+        enonce: "Range ces étapes dans l'ordre chronologique."
+        items: ["Le cinématographe des frères Lumière", "Le Voyage dans la Lune de Méliès", "Le premier long métrage parlant", "La Nouvelle Vague"]
+        correction: "1895, 1902, 1927, fin des années 1950."
+      - type: relier
+        enonce: "🔗 Relie chaque cinéaste à son apport."
+        paires: [["les frères Lumière", "les premières projections publiques"], ["Georges Méliès", "les premiers trucages"], ["François Truffaut", "la Nouvelle Vague"]]
+        correction: "Lumière, Méliès, Truffaut."
+      - type: nombre
+        enonce: "En quelle année les frères Lumière organisent-ils leur première projection publique payante ?"
+        reponse: "1895"
+        correction: "Le 28 décembre **1895**, à Paris."
+      - type: vf
+        vars: { t: [["Le cinéma parlant arrive à la fin des années 1920.", true], ["La Nouvelle Vague est un mouvement du cinéma américain.", false], ["Charlie Chaplin a débuté au temps du cinéma muet.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Parlant en 1927 ; la Nouvelle Vague est française ; Chaplin vient du muet."

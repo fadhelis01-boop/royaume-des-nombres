@@ -1,0 +1,188 @@
+id: de-atelier-des-arts-plastiques
+matiere: dessin
+titre: L'Atelier des Arts plastiques
+sous_titre: Spécialité arts plastiques - démarche de projet, analyse d'œuvre, art moderne et contemporain, présenter son travail
+emoji: 🖌️
+couleur: "#ad1457"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 606
+specialite: Arts plastiques
+version: 1.0.0
+intro:
+  - narrateur: "Derrière le Musée, un grand atelier sous verrière : des toiles inachevées, un tas de bois flotté, une caméra, un carnet ouvert."
+  - mia: "En spécialité arts plastiques, on ne fait pas que dessiner : on mène des projets, avec toutes sortes de matériaux, et on apprend à en parler."
+  - neo: "Pratiquer, regarder les œuvres, expliquer ses choix : trois gestes qui vont ensemble."
+
+lecons:
+  - id: ap-demarche-projet
+    titre: La démarche de projet et le carnet de travail
+    classe: "1ʳᵉ"
+    objectif: Je conduis un projet plastique, de l'intention à la réalisation, en gardant la trace de mes recherches dans un carnet.
+    mots: [intention, démarche, carnet de travail, référence]
+    etapes:
+      - dialogue:
+          - zero: "Le sujet, c'est « Le corps et l'espace ». Je dessine un bonhomme dans une pièce ?"
+          - mia: "Tu pourrais ! Mais demande-toi d'abord ce que tu veux faire ressentir. Puis essaie plusieurs pistes : photo, sculpture, installation…"
+      - a_quoi_ca_sert: "Mener un projet de l'idée à la réalisation, c'est ce que font les designers, les architectes, les graphistes ; c'est aussi ce qu'on évalue en spécialité."
+      - texte: |
+          **Les notions du programme** : la **forme**, l'**espace**, la **lumière**, la **couleur**, la **matière**, le **corps**, le **support**, l'**outil**, le **temps**.
+
+          **Les étapes d'un projet** :
+          1. comprendre la demande et formuler une **intention** (ce que je veux montrer ou faire ressentir) ;
+          2. chercher : croquis, essais de matériaux, photos, **références** d'artistes ;
+          3. faire des **choix** et réaliser ;
+          4. prendre du recul : l'œuvre produit-elle l'effet voulu ?
+
+          **Le carnet de travail** garde la trace de tout : essais ratés compris. Il montre la **démarche**, pas seulement le résultat.
+      - attention: "Copier l'œuvre d'un artiste n'est pas une référence : une référence nourrit ta réflexion, et tu expliques ce que tu en retiens."
+      - astuce: { texte: "Pour chaque projet, écris en une phrase : « Je veux que le spectateur… ». C'est ton intention.", qui: neo }
+      - retiens: "Notions : **forme, espace, lumière, couleur, matière, corps, support, outil, temps**. Projet : **intention** → recherches et **références** → **choix** → réalisation → recul. Le **carnet** montre la **démarche**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes d'un projet plastique."
+        items: ["Formuler une intention", "Chercher : croquis, essais, références", "Faire des choix et réaliser", "Prendre du recul sur l'effet produit"]
+        correction: "Intention, recherches, réalisation, recul."
+      - type: classer
+        enonce: "Range chaque élément : à garder dans le carnet de travail ou non ?"
+        categories: ["À garder", "Inutile"]
+        mots: [["Un essai raté avec une note sur ce qui n'a pas marché", 0], ["Une photo d'une œuvre qui m'a inspiré, avec un commentaire", 0], ["Le ticket de caisse du magasin de fournitures", 1], ["Un croquis préparatoire", 0]]
+        correction: "Le carnet garde tout ce qui montre la démarche, même les échecs."
+      - type: qcm
+        enonce: "Quelle phrase exprime une intention ?"
+        choix: ["Je veux que le spectateur se sente enfermé.", "J'ai utilisé de la peinture.", "Mon œuvre mesure un mètre.", "J'ai fini en retard."]
+        correction: "L'intention dit l'effet recherché sur le spectateur."
+      - type: relier
+        enonce: "🔗 Relie chaque notion à un exemple."
+        paires: [["la matière", "du plâtre brut laissé visible"], ["la lumière", "une ombre projetée sur le mur"], ["le temps", "une œuvre qui se dégrade volontairement"], ["le corps", "une performance de l'artiste"]]
+        correction: "Chaque notion du programme peut devenir le cœur d'un projet."
+
+  - id: ap-analyser-oeuvre
+    titre: Analyser une œuvre
+    classe: "1ʳᵉ"
+    objectif: J'analyse une œuvre en quatre temps - identifier, décrire, interpréter, situer - avec un vocabulaire précis.
+    mots: [composition, cadrage, interprétation, contexte]
+    etapes:
+      - dialogue:
+          - neo: "Devant un tableau, tu dis « c'est beau » ou « c'est moche »… et après ?"
+          - mia: "Après, on regarde vraiment : ce qu'on voit, comment c'est fait, ce que ça peut vouloir dire, et quand ça a été fait."
+      - a_quoi_ca_sert: "L'analyse d'œuvre fait partie de l'évaluation ; et savoir lire une image protège de la manipulation, de la publicité aux réseaux sociaux."
+      - texte: |
+          1. **Identifier** : artiste, titre, date, technique, dimensions, lieu de conservation.
+          2. **Décrire** : ce que l'on voit, et comment : **composition** (lignes, plans, centre d'intérêt), **couleurs**, **lumière**, **matière**, **cadrage**, rapport au spectateur.
+          3. **Interpréter** : quel sens, quelle émotion ? Toujours **justifier** par un élément décrit.
+          4. **Situer** : le contexte (époque, mouvement, événement) et d'autres œuvres en lien.
+
+          Exemple : *Guernica* (Picasso, 1937) : noir et blanc, formes brisées, cris : une dénonciation du bombardement d'une ville pendant la guerre d'Espagne.
+      - attention: "Une interprétation sans preuve n'est qu'un avis. Relie toujours ce que tu penses à ce que l'on voit."
+      - astuce: { texte: "Décris comme si tu parlais à quelqu'un au téléphone qui ne voit pas l'œuvre : tu deviendras précis.", qui: zero }
+      - retiens: "Analyser : **identifier**, **décrire** (composition, couleur, lumière, matière, cadrage), **interpréter** en **justifiant**, **situer** dans son contexte."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de l'analyse d'une œuvre."
+        items: ["Identifier l'œuvre", "Décrire ce que l'on voit", "Interpréter en justifiant", "Situer dans son contexte"]
+        correction: "Identifier, décrire, interpréter, situer."
+      - type: classer
+        enonce: "Range chaque phrase : description ou interprétation ?"
+        categories: ["Description", "Interprétation"]
+        mots: [["Le tableau est peint en noir, blanc et gris.", 0], ["L'absence de couleur exprime le deuil.", 1], ["Une femme tient un enfant au premier plan, à gauche.", 0], ["Ce cri représente la souffrance des civils.", 1]]
+        correction: "Décrire = ce qu'on voit ; interpréter = ce que cela signifie."
+      - type: qcm
+        enonce: "Quel événement *Guernica* (1937) dénonce-t-il ?"
+        choix: ["Le bombardement d'une ville pendant la guerre d'Espagne", "La Révolution française", "La conquête spatiale", "La chute du mur de Berlin"]
+        correction: "Le bombardement de Guernica, en 1937, pendant la guerre d'Espagne."
+      - type: relier
+        enonce: "🔗 Relie chaque mot à sa définition."
+        paires: [["la composition", "l'organisation des éléments dans l'œuvre"], ["le cadrage", "ce qui est montré ou coupé par les bords"], ["le contexte", "l'époque et les événements autour de l'œuvre"]]
+        correction: "Le vocabulaire précis de l'analyse."
+
+  - id: ap-art-contemporain
+    titre: De l'art moderne à l'art contemporain
+    classe: Terminale
+    objectif: Je reconnais les grandes ruptures de l'art depuis le début du XXᵉ siècle - ready-made, installation, performance, land art, in situ.
+    mots: [ready-made, installation, performance, in situ]
+    etapes:
+      - dialogue:
+          - zero: "Un urinoir dans un musée ? C'est une blague ?"
+          - neo: "En 1917, Marcel Duchamp a posé cette question : qu'est-ce qui fait qu'un objet devient une œuvre ? Le choix de l'artiste et le lieu, peut-être."
+      - a_quoi_ca_sert: "Comprendre l'art contemporain évite de le rejeter sans le connaître, et nourrit ses propres projets ; ces pratiques sont aussi celles du design et de la scénographie."
+      - texte: |
+          **Le ready-made** : un objet tout fait choisi par l'artiste (Marcel Duchamp, *Fontaine*, 1917). L'idée compte plus que le savoir-faire.
+
+          **L'abstraction** : l'œuvre ne représente plus le monde visible (Kandinsky, Mondrian, Soulages et son « outrenoir »).
+
+          **L'installation** : l'œuvre occupe un espace que le spectateur parcourt.
+
+          **La performance** : le corps de l'artiste et le temps de l'action sont l'œuvre (Marina Abramović).
+
+          **Le land art** : l'œuvre est faite dans et avec la nature (Robert Smithson, *Spiral Jetty*, 1970).
+
+          **In situ** : l'œuvre est conçue pour un lieu précis (Daniel Buren, *Les Deux Plateaux* au Palais-Royal, 1986).
+      - attention: "« Je pourrais faire pareil » n'est pas un argument : la question est de savoir pourquoi l'artiste l'a fait, à ce moment-là, et ce que cela change."
+      - astuce: { texte: "Devant une œuvre contemporaine, demande-toi : quel est le geste de l'artiste, et quelle question pose-t-il ?", qui: mia }
+      - retiens: "**Ready-made** (Duchamp, 1917), **abstraction** (Kandinsky, Soulages), **installation**, **performance** (le corps, le temps), **land art** (la nature), **in situ** (un lieu précis, Buren)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque artiste à sa pratique."
+        paires: [["Marcel Duchamp", "le ready-made"], ["Marina Abramović", "la performance"], ["Robert Smithson", "le land art"], ["Daniel Buren", "l'œuvre in situ"]]
+        correction: "Duchamp, Abramović, Smithson, Buren."
+      - type: classer
+        enonce: "Range chaque description : performance ou installation ?"
+        categories: ["Performance", "Installation"]
+        mots: [["L'artiste reste assise face au public pendant des heures", 0], ["Une salle remplie de fils tendus que l'on traverse", 1], ["Un artiste danse en peignant sur une toile au sol", 0], ["Des centaines d'objets disposés dans une pièce", 1]]
+        correction: "Le corps et l'action de l'artiste → performance ; un espace aménagé → installation."
+      - type: qcm
+        enonce: "En quelle année Duchamp expose-t-il (ou tente-t-il d'exposer) *Fontaine* ?"
+        choix: ["1917", "1789", "1968", "2001"]
+        correction: "**1917** : l'urinoir signé « R. Mutt »."
+      - type: vf
+        vars: { t: [["Une œuvre in situ est pensée pour un lieu précis.", true], ["Le land art utilise la nature comme matériau.", true], ["Un ready-made est fabriqué entièrement à la main par l'artiste.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "In situ : un lieu ; land art : la nature ; ready-made : un objet tout fait choisi."
+
+  - id: ap-presenter-son-travail
+    titre: Présenter son travail à l'oral
+    classe: Terminale
+    objectif: Je présente un projet plastique en expliquant mon intention, ma démarche, mes choix et mes références.
+    mots: [présentation, intention, choix, références]
+    etapes:
+      - dialogue:
+          - mia: "Le jour de l'oral, ton œuvre est devant le jury. Il faut l'expliquer en quelques minutes."
+          - zero: "Je dis juste : voilà, c'est mon œuvre ?"
+          - neo: "Tu racontes ton chemin : ce que tu voulais, ce que tu as essayé, pourquoi tu as choisi cette forme, et à quelles œuvres tu penses."
+      - a_quoi_ca_sert: "Savoir défendre son travail est attendu à l'épreuve, aux entretiens des écoles d'art et de design, et devant tout client ou commanditaire."
+      - texte: |
+          **Une présentation claire** :
+          1. l'**intention** de départ ;
+          2. la **démarche** : les recherches, les essais, les difficultés ;
+          3. les **choix plastiques** (matériaux, format, couleurs, dispositif de présentation) et leur **effet** ;
+          4. les **références** artistiques et ce qu'elles t'ont apporté ;
+          5. un **regard critique** : ce que tu referais autrement.
+
+          **Pendant l'échange** : écouter, accepter les remarques, justifier sans se braquer.
+
+          Les modalités exactes de l'épreuve (dossier, durée) peuvent changer : vérifie le texte officiel de ton année.
+      - attention: "Ne décris pas seulement ce qu'on voit déjà : explique **pourquoi** tu as fait ces choix."
+      - astuce: { texte: "Prépare trois mots clés par étape plutôt qu'un texte : tu parleras plus naturellement en regardant ton œuvre.", qui: zero }
+      - retiens: "Présenter : **intention**, **démarche**, **choix plastiques** et leur **effet**, **références**, **regard critique**. Pendant l'échange : écouter, justifier, accepter la critique."
+    exercices:
+      - type: ordre
+        enonce: "Range les moments de la présentation."
+        items: ["L'intention de départ", "La démarche et les essais", "Les choix plastiques et leur effet", "Les références et le regard critique"]
+        correction: "Intention, démarche, choix, références et recul."
+      - type: classer
+        enonce: "Range chaque phrase : utile à l'oral ou maladroite ?"
+        categories: ["Utile", "Maladroite"]
+        mots: [["J'ai choisi un grand format pour que le spectateur se sente écrasé.", 0], ["Je ne sais pas trop pourquoi j'ai fait ça.", 1], ["Le travail de Soulages sur le noir m'a donné l'idée de jouer avec les reflets.", 0], ["C'est joli, voilà.", 1]]
+        correction: "On justifie ses choix et on cite ses références."
+      - type: qcm
+        enonce: "Le jury critique un choix de couleur. Que fais-tu ?"
+        choix: ["J'écoute, j'explique mon intention et je dis ce que je pourrais changer", "Je conteste sans écouter", "Je me tais", "Je change de sujet"]
+        correction: "Le jury évalue aussi la capacité à dialoguer et à prendre du recul."
+      - type: vf
+        vars: { t: [["Le regard critique sur son propre travail est valorisé.", true], ["Il suffit de décrire l'œuvre sans expliquer ses choix.", false], ["Citer une référence artistique peut éclairer sa démarche.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On explique ses choix, on cite ses références et on prend du recul."

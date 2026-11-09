@@ -100,3 +100,11 @@ chapitres:
       - neo: "If you had told me earlier, I would have prepared the ship ! Bon, on s'y met maintenant."
     apres:
       - narrateur: "Les voiles se gonflent. Les grands navires quittent le port vers les universités et les villes du monde entier."
+  en-cercle-des-lettres:
+    titre: "Le Cercle des Lettres"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Dans la bibliothèque ronde, les livres anglais se sont refermés d'un coup : poèmes muets, pièces sans acteurs, romans sans narrateur."
+      - mia: "Pour les rouvrir, il faut les lire de près, en anglais, et savoir les faire parler en français."
+    apres:
+      - narrateur: "Les livres se rouvrent un à un. Hamlet hésite de nouveau, le monstre de Frankenstein reprend sa plainte, et la bibliothèque bruisse de mille voix."

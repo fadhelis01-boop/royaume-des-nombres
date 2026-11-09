@@ -1,3 +1,10 @@
+- version: "2.18.0"
+  date: "2026-11-10"
+  notes:
+    - "Spécialité LLCER anglais : le Cercle des Lettres, 6 leçons : le programme, la poésie, le théâtre de Shakespeare, le roman, la synthèse de documents, la traduction."
+    - "Spécialité sciences de l'ingénieur : l'Atelier de l'Ingénieur (planète Physique), 6 leçons : cahier des charges, chaînes de puissance et d'information, rendement, transmission, capteurs, statique."
+    - "Spécialités artistiques : arts plastiques (4 leçons), cinéma-audiovisuel (la Salle Obscure, 4 leçons) et musique (la Salle de Concert, 4 leçons)."
+    - "La voix lit correctement « XXᵉ siècle », les périodes comme « 1600-1750 » et les newton-mètres."
 - version: "2.17.0"
   date: "2026-11-10"
   notes:

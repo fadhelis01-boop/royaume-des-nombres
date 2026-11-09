@@ -80,3 +80,19 @@ chapitres:
       - narrateur: "Dans le Musée, les tableaux pâlissent un à un : le Grand Neutre veut que toutes les images se ressemblent."
     apres:
       - narrateur: "Chaque tableau retrouve ses couleurs, ses contrastes et son histoire."
+  de-atelier-des-arts-plastiques:
+    titre: "L'Atelier des Arts plastiques"
+    objet: "le cadre d'or du Musée"
+    avant:
+      - narrateur: "Sous la verrière, les projets sont restés en plan : le Grand Neutre souffle que tout a déjà été fait, qu'il est inutile de créer."
+      - mia: "Une intention, des essais, des choix : c'est comme ça qu'on fait naître une œuvre qui n'existait pas."
+    apres:
+      - narrateur: "L'Atelier s'anime : une installation de lumière, une sculpture de bois flotté, un carnet plein de pistes. Le Grand Neutre recule devant tant d'idées."
+  de-salle-obscure:
+    titre: "La Salle Obscure"
+    objet: "le cadre d'or du Musée"
+    avant:
+      - narrateur: "Dans la Salle Obscure, le film s'est emmêlé : les plans sautent, le son n'est plus synchrone, l'histoire n'a plus de sens."
+      - neo: "Remettons de l'ordre : cadrer, monter, mixer. Le cinéma est une écriture."
+    apres:
+      - narrateur: "Le projecteur ronronne, l'image et le son se retrouvent. Le public applaudit au générique de fin."

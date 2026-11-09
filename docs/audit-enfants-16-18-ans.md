@@ -88,7 +88,7 @@ Dans une formule, « si $a<0$ » était lu « a<0 » : les signes < et > à l'in
 
 Restent ouverts :
 - **le supérieur** : peu de contenus (14 leçons de niveau post-bac, toutes matières) ;
-- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; restent les spécialités de langues (LLCER), les sciences de l'ingénieur et les arts au niveau du bac ;
+- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; restent les autres langues de LLCER, le théâtre, la danse, l'histoire des arts et les spécialités des séries technologiques (STMG, STI2D, ST2S…) ;
 - **le test avec de vrais élèves**.
 
 ## Ajouts livrés (2.16.0)
@@ -106,3 +106,14 @@ Restent ouverts :
 5. **Code** : affiché en police à chasse fixe (cours et exercices, y compris les éléments à classer) et lu en mots par la voix (« x prend la valeur 3 », « n égal à 0 ») ; sigles longs épelés (HTML, HTTPS, HGGSP, URSS).
 6. **Correction trouvée en vérifiant** : le pavé numérique n'a pas de signe moins ; les baisses sont donc demandées sous la forme « de combien de % a-t-elle baissé ? ».
 7. Vérifié : 142 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, lecture vocale relue sur toutes les nouvelles leçons, leçons et défis ouverts dans le navigateur avec un profil de Terminale, console sans erreur.
+
+## Ajouts livrés (2.18.0)
+
+1. **LLCER anglais** : monde **Le Cercle des Lettres** (planète Anglais, 6 leçons) : thématiques et épreuve, poésie (sonnet, simile, metaphor), théâtre (soliloquy, aside, dramatic irony), roman (point de vue, unreliable narrator, gothique), synthèse de documents en anglais, traduction (faux amis, prétérit et passé simple). Écoute en anglais dans les leçons.
+2. **Sciences de l'ingénieur** : monde **L'Atelier de l'Ingénieur** (planète Physique, 6 leçons) : du besoin au cahier des charges (attendu, mesuré, simulé), chaînes d'information et de puissance, puissance et rendement, transmission du mouvement, capteurs et numérisation, statique.
+3. **Arts plastiques** : monde **L'Atelier des Arts plastiques** (planète Dessin, 4 leçons) : démarche de projet et carnet, analyse d'œuvre, de l'art moderne à l'art contemporain, présenter son travail.
+4. **Cinéma-audiovisuel** : monde **La Salle Obscure** (planète Dessin, 4 leçons) : plans, angles et mouvements, montage, son, repères d'histoire du cinéma.
+5. **Musique** : monde **La Salle de Concert** (planète Musique, 4 leçons) : commentaire d'écoute, périodes et styles, jazz, blues, rock, hip-hop et électro, jouer, arranger et créer.
+6. Comme les autres spécialités, ces mondes sont ouverts sur la carte mais restent hors du test de niveau et du parcours.
+7. **Voix, corrections trouvées en relisant** : « XXᵉ siècle » était lu « X dixième siècle » (la règle des chromosomes XX passait avant) ; les périodes « 1600-1750 » étaient lues « 1600 moins 1750 » ; « N·m » perdait son « mètre » ; « 1 m » était lu « 1 mètres ». Les quatre cas sont corrigés et couverts par un test.
+8. Vérifié : 143 tests unitaires, contrôle du contenu sans erreur ni avertissement, 0 défi dominé à 16, 17 et 18 ans, défis des cinq mondes et écoute anglaise ouverts dans le navigateur avec un profil de Terminale, console sans erreur.

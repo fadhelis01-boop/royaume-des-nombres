@@ -181,6 +181,7 @@ function latexToSpeech(tex: string): string {
 export function toSpeech(md: string): string {
   let s = emojisEnMots(md)
     // écriture inclusive éventuelle (contenus importés) : « fort·e » → « fort »
+    .replace(/\bN·m\b/g, " newton-mètres ")
     .replace(/([A-Za-zÀ-ÿ])·[a-zà-ÿ]+(·[a-z]+)?/g, "$1")
     // formules
     .replace(/\$\$([\s\S]+?)\$\$/g, (_, t) => ` ${latexToSpeech(t)} `)
@@ -210,7 +211,8 @@ export function toSpeech(md: string): string {
     .replace(/\(\s*<\s*/g, "(moins de ")
     .replace(/\(\s*>\s*/g, "(plus de ")
     .replace(/\bvecteurs?\s+(vecteur\b)/g, "$1")
-    .replace(/\bX([XY])\b/g, "X $1")
+    // chromosomes XX / XY épelés, mais pas un siècle « XXᵉ »
+    .replace(/\bX([XY])\b(?!ᵉ|ème|e\s+siècle)/g, "X $1")
     // notations des grands (audit « 9-12 ans »)
     .replace(/(?<![A-Za-z])((?:[A-Z][a-z]?[₀-₉]*)+)(?![A-Za-z])/g, (m) => (/[₀-₉]/.test(m) ? ` ${formuleChimique(m)} ` : m))
     .replace(/\bIer\b/g, "premier")
@@ -235,6 +237,8 @@ export function toSpeech(md: string): string {
     .replace(/(\d)\s*×\s*(\d)/g, "$1 fois $2")
     .replace(/×/g, " fois ")
     .replace(/÷/g, " divisé par ")
+    // intervalle d'années « 1600-1750 » : on dit « 1600 à 1750 »
+    .replace(/\b([12]\d{3})-([12]\d{3})\b/g, "$1 à $2")
     .replace(/(\d)\s*[−-]\s*(\d)/g, "$1 moins $2")
     .replace(/\s[−-]\s/g, " moins ")
     .replace(/−(\d)/g, "moins $1")
@@ -258,10 +262,10 @@ export function toSpeech(md: string): string {
     .replace(/(\d)\s?°/g, "$1 degrés")
     .replace(/\bcm²/g, "centimètres carrés")
     .replace(/\bm²/g, "mètres carrés")
-    .replace(/(\d)\s?km\b(?![A-Za-zÀ-ÿ])/g, "$1 kilomètres")
+    .replace(/(\d+(?:,\d+)?)\s?km\b(?![A-Za-zÀ-ÿ])/g, (_m, n) => `${n} kilomètre${parseFloat(n.replace(",", ".")) < 2 ? "" : "s"}`)
     .replace(/(\d)\s?cm\b(?![A-Za-zÀ-ÿ])/g, "$1 centimètres")
     .replace(/(\d)\s?mm\b(?![A-Za-zÀ-ÿ])/g, "$1 millimètres")
-    .replace(/(\d)\s?m\b(?![A-Za-zÀ-ÿ])/g, "$1 mètres")
+    .replace(/(\d+(?:,\d+)?)\s?m\b(?![A-Za-zÀ-ÿ])/g, (_m, n) => `${n} mètre${parseFloat(n.replace(",", ".")) < 2 ? "" : "s"}`)
     .replace(/(\d)\s?kg\b(?![A-Za-zÀ-ÿ])/g, "$1 kilos")
     .replace(/(\d)\s?g\b(?![A-Za-zÀ-ÿ])/g, "$1 grammes")
     .replace(/(\d)\s?L\b(?![A-Za-zÀ-ÿ])/g, "$1 litres")

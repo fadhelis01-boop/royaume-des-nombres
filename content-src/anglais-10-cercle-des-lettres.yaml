@@ -1,0 +1,277 @@
+id: en-cercle-des-lettres
+matiere: anglais
+titre: Le Cercle des Lettres
+sous_titre: Spécialité LLCER anglais - poésie, théâtre, roman, axes du programme, synthèse de documents, traduction
+emoji: 📜
+couleur: "#283593"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 710
+specialite: LLCER
+version: 1.0.0
+intro:
+  - narrateur: "Au-delà du Port du Large, une vieille bibliothèque ronde : Shakespeare, Mary Shelley, Toni Morrison s'y parlent d'une étagère à l'autre."
+  - mia: "La spécialité LLCER, langues, littératures et cultures étrangères et régionales, c'est l'anglais par la littérature et la culture."
+  - neo: "On lit de près, on compare, on synthétise, on traduit. Ready ?"
+
+lecons:
+  - id: llcer-programme
+    titre: Le programme et l'épreuve de LLCER anglais
+    classe: "1ʳᵉ"
+    objectif: Je connais les thématiques du programme de 1ʳᵉ et de Terminale et les exercices de l'épreuve écrite.
+    mots: [thématique, axe, synthèse, traduction]
+    etapes:
+      - dialogue:
+          - zero: "LLCER, c'est juste plus d'heures d'anglais ?"
+          - mia: "Non : on étudie des œuvres complètes, des films, des tableaux, des débats d'idées, en anglais, autour de grandes thématiques."
+      - a_quoi_ca_sert: "Savoir ce qu'on attend permet de travailler les bons exercices ; la spécialité prépare aux études de langues, de lettres, de droit international, de journalisme ou de traduction."
+      - texte: |
+          **En 1ʳᵉ** : deux thématiques, **« Imaginaires »** (le fantastique, le gothique, l'utopie et la dystopie) et **« Rencontres »** (l'amour, l'amitié, la confrontation à l'autre).
+
+          **En Terminale** : **« Arts et débats d'idées »**, **« Expression et construction de soi »**, **« Voyages, territoires, frontières »**.
+
+          **Chaque année** : au moins une œuvre intégrale par an, et des documents variés (extraits, poèmes, films, peintures, discours).
+
+          **L'épreuve écrite de Terminale** comprend une **synthèse en anglais** d'un dossier de documents, puis une **traduction** (de l'anglais vers le français) ou une **transposition** (un passage réécrit autrement en anglais).
+
+          Les modalités pouvant évoluer, vérifie le texte officiel de ton année.
+      - astuce: { texte: "Tiens un carnet de lectures en anglais : pour chaque œuvre, trois citations courtes et le thème auquel elle se rattache.", qui: neo }
+      - retiens: "1ʳᵉ : **Imaginaires**, **Rencontres**. Terminale : **Arts et débats d'idées**, **Expression et construction de soi**, **Voyages, territoires, frontières**. Écrit : **synthèse** en anglais + **traduction** ou **transposition**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque thématique : 1ʳᵉ ou Terminale ?"
+        categories: ["1ʳᵉ", "Terminale"]
+        mots: [["Imaginaires", 0], ["Arts et débats d'idées", 1], ["Rencontres", 0], ["Voyages, territoires, frontières", 1]]
+        correction: "1ʳᵉ : Imaginaires, Rencontres ; Terminale : Arts et débats d'idées, Expression et construction de soi, Voyages, territoires, frontières."
+      - type: relier
+        enonce: "🔗 Relie chaque œuvre à la thématique qu'elle illustre le mieux."
+        paires: [["Frankenstein (Mary Shelley)", "Imaginaires"], ["Romeo and Juliet (Shakespeare)", "Rencontres"], ["Robinson Crusoe (Defoe)", "Voyages, territoires, frontières"]]
+        correction: "Le monstre gothique, la rencontre amoureuse, le voyage et l'île."
+      - type: qcm
+        enonce: "Que comprend l'épreuve écrite de Terminale ?"
+        choix: ["Une synthèse en anglais, puis une traduction ou une transposition", "Une dissertation en français", "Un QCM de grammaire", "Une dictée en anglais"]
+        correction: "Synthèse d'un dossier en anglais, puis traduction ou transposition."
+      - type: vf
+        vars: { t: [["En LLCER, on étudie au moins une œuvre intégrale par an.", true], ["Le fantastique et la dystopie relèvent de la thématique « Imaginaires ».", true], ["La LLCER n'étudie que des textes, jamais de films.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Œuvre intégrale, Imaginaires, documents variés dont des films et des images."
+
+  - id: llcer-poetry
+    titre: Reading poetry - lire un poème en anglais
+    classe: "1ʳᵉ"
+    objectif: J'analyse un poème en anglais avec le vocabulaire adapté (stanza, rhyme, simile, metaphor, iambic pentameter).
+    mots: [stanza, rhyme, simile, metaphor]
+    etapes:
+      - dialogue:
+          - neo: "« Shall I compare thee to a summer's day ? » C'est le début d'un sonnet de Shakespeare, en 1609."
+          - zero: "Thee ? C'est de l'anglais bizarre !"
+          - mia: "C'est l'ancien « you ». Et ce vers a dix syllabes, en rythme faible-fort : c'est le pentamètre iambique."
+      - a_quoi_ca_sert: "Analyser un poème en anglais avec les bons mots est attendu dans les commentaires et à l'oral ; et la poésie se retrouve partout, des chansons au rap."
+      - texte: |
+          **Le vocabulaire de base** :
+          - **a line** (un vers), **a stanza** (une strophe), **a couplet** (deux vers qui riment) ;
+          - **rhyme** (la rime), **rhythm** (le rythme), **iambic pentameter** (vers de dix syllabes, faible-fort cinq fois) ;
+          - **a simile** (comparaison avec « like » ou « as ») ; **a metaphor** (métaphore) ; **alliteration** (répétition d'un son consonne) ;
+          - **the speaker** (la voix du poème, à ne pas confondre avec le poète).
+
+          **Le sonnet anglais** (shakespearien) : 14 vers, trois **quatrains** puis un **couplet** final qui conclut ou retourne l'idée.
+
+          **Pour commenter** : *The poet uses a simile to…*, *The alliteration emphasises…*, *The final couplet suggests that…*
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Shall I compare thee to a summer's day?", sens: "Te comparerai-je à un jour d'été ?", emoji: "☀️" }, { texte: "The poet uses a simile to describe love.", sens: "Le poète utilise une comparaison pour décrire l'amour.", emoji: "💌" }] }
+        legende: "Écoute le rythme faible-fort du premier vers."
+      - astuce: { texte: "Simile = « like » ou « as » visible ; metaphor = l'image sans outil de comparaison.", qui: mia }
+      - retiens: "**line**, **stanza**, **couplet**, **rhyme**, **iambic pentameter** ; **simile** (like / as) et **metaphor** (sans outil) ; **the speaker** n'est pas le poète. Sonnet anglais : 3 quatrains + 1 couplet."
+    exercices:
+      - type: classer
+        enonce: "Range chaque vers : simile ou metaphor ?"
+        categories: ["Simile", "Metaphor"]
+        mots: [["My love is like a red, red rose.", 0], ["Life is a broken-winged bird.", 1], ["She was as cold as ice.", 0], ["The world is a stage.", 1]]
+        correction: "« like » ou « as » → simile ; image directe → metaphor."
+      - type: relier
+        enonce: "🔗 Relie chaque mot anglais à son sens."
+        paires: [["a stanza", "une strophe"], ["a line", "un vers"], ["a couplet", "deux vers qui riment"], ["the speaker", "la voix du poème"]]
+        correction: "Le vocabulaire de base du commentaire de poème."
+      - type: nombre
+        enonce: "Combien de vers compte un sonnet ?"
+        reponse: "14"
+        correction: "Un sonnet compte **14** vers (en anglais : trois quatrains et un couplet)."
+      - type: qcm
+        enonce: "« Peter Piper picked a peck of pickled peppers. » Quel procédé est utilisé ?"
+        choix: ["Alliteration", "Simile", "Rhyme only", "Metaphor"]
+        correction: "La répétition du son /p/ est une **alliteration**."
+
+  - id: llcer-drama
+    titre: Drama - le théâtre de Shakespeare à aujourd'hui
+    classe: "1ʳᵉ"
+    objectif: J'analyse un extrait de théâtre en anglais (soliloquy, aside, stage directions, dramatic irony).
+    mots: [soliloquy, aside, stage directions, dramatic irony]
+    etapes:
+      - dialogue:
+          - mia: "« To be, or not to be, that is the question. » Hamlet est seul en scène et pense à voix haute."
+          - zero: "Il parle tout seul ? Au théâtre, c'est permis ?"
+          - neo: "C'est même un procédé célèbre : le soliloque. Le spectateur entre dans la tête du personnage."
+      - a_quoi_ca_sert: "Le théâtre anglophone, de Shakespeare à Arthur Miller, est au programme et sur toutes les scènes du monde ; savoir l'analyser enrichit aussi la lecture des séries et des films."
+      - texte: |
+          **Les outils du théâtre** :
+          - **a soliloquy** : un personnage seul exprime ses pensées (Hamlet) ;
+          - **an aside** : une réplique dite « à part », que les autres personnages n'entendent pas ;
+          - **stage directions** : les didascalies, souvent en italique ;
+          - **dramatic irony** : le public sait quelque chose que le personnage ignore (Juliet's fake death in *Romeo and Juliet*).
+
+          **Les genres** : **tragedy** (chute du héros), **comedy**, et au XXᵉ siècle des pièces sociales (Arthur Miller, *Death of a Salesman*) ou de l'absurde.
+
+          **Pour commenter** : *This soliloquy reveals Hamlet's hesitation…*, *Thanks to dramatic irony, the audience…*
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "To be, or not to be, that is the question.", sens: "Être ou ne pas être, telle est la question.", emoji: "💀" }, { texte: "This soliloquy reveals his doubts.", sens: "Ce soliloque révèle ses doutes.", emoji: "🎭" }] }
+        legende: "Écoute la célèbre réplique d'Hamlet."
+      - astuce: { texte: "Soliloquy = seul en scène ; aside = entouré, mais personne ne l'entend.", qui: zero }
+      - retiens: "**soliloquy** (seul, pense à voix haute), **aside** (à part), **stage directions** (didascalies), **dramatic irony** (le public en sait plus que le personnage). Genres : **tragedy**, **comedy**, théâtre social."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque procédé à sa définition."
+        paires: [["a soliloquy", "un personnage seul pense à voix haute"], ["an aside", "une réplique que les autres n'entendent pas"], ["stage directions", "les indications de mise en scène"], ["dramatic irony", "le public en sait plus que le personnage"]]
+        correction: "Quatre outils essentiels pour analyser une scène."
+      - type: qcm
+        enonce: "Roméo croit Juliette morte, alors que le public sait qu'elle dort. Quel procédé ?"
+        choix: ["Dramatic irony", "Aside", "Stage directions", "Simile"]
+        correction: "Le public sait ce que le personnage ignore : **dramatic irony**."
+      - type: vf
+        vars: { t: [["« To be, or not to be » est un soliloque d'Hamlet.", true], ["Les didascalies sont prononcées par les acteurs.", false], ["Death of a Salesman est une pièce d'Arthur Miller.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Hamlet est seul ; les didascalies ne se disent pas, elles guident la mise en scène ; Miller a écrit Death of a Salesman."
+      - type: classer
+        enonce: "Range chaque œuvre : tragedy ou comedy ?"
+        categories: ["Tragedy", "Comedy"]
+        mots: [["Macbeth", 0], ["A Midsummer Night's Dream", 1], ["Othello", 0], ["The Importance of Being Earnest", 1]]
+        correction: "Macbeth et Othello finissent dans la mort ; les deux autres sont des comédies."
+
+  - id: llcer-narrative
+    titre: Narrative voice - analyser un roman
+    classe: "1ʳᵉ"
+    objectif: J'identifie le point de vue narratif et les procédés du récit dans un extrait de roman en anglais.
+    mots: [narrator, point of view, unreliable narrator, stream of consciousness]
+    etapes:
+      - dialogue:
+          - neo: "« Call me Ishmael. » Première phrase de Moby-Dick : un narrateur à la première personne nous parle directement."
+          - mia: "Mais peut-on toujours croire le narrateur ? Pas forcément !"
+      - a_quoi_ca_sert: "Qui raconte, et peut-on lui faire confiance ? Cette question sert pour les romans au programme, mais aussi pour lire un témoignage, un article ou un récit sur les réseaux sociaux."
+      - texte: |
+          **Qui raconte ?**
+          - **a first-person narrator** (« I ») : souvent un personnage, avec un point de vue limité ;
+          - **a third-person narrator** (« he », « she ») : **omniscient** (il sait tout) ou **limited** (il suit un personnage).
+
+          **An unreliable narrator** : un narrateur dont on doute (il ment, se trompe, ou ne comprend pas tout).
+
+          **Stream of consciousness** : le flux des pensées, sans ordre logique (Virginia Woolf, James Joyce).
+
+          **Le roman gothique** (« Imaginaires ») : château, nuit, monstre, peur : *Frankenstein* (1818), *Dracula* (1897).
+
+          **Pour commenter** : *The first-person narration creates intimacy…*, *The reader may doubt the narrator because…*
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Call me Ishmael.", sens: "Appelez-moi Ismaël.", emoji: "🐋" }, { texte: "The reader may doubt the narrator.", sens: "Le lecteur peut douter du narrateur.", emoji: "🤔" }] }
+        legende: "Écoute une première phrase célèbre, puis une phrase de commentaire."
+      - astuce: { texte: "Cherche les pronoms : « I » partout → première personne ; « he / she » → troisième personne. Puis demande-toi ce que le narrateur ne sait pas.", qui: mia }
+      - retiens: "Narrateur **first-person** (I) ou **third-person** (**omniscient** / **limited**) ; **unreliable narrator** ; **stream of consciousness** (Woolf, Joyce) ; gothique : *Frankenstein*, *Dracula*."
+    exercices:
+      - type: classer
+        enonce: "Range chaque début de roman : first-person ou third-person narrator ?"
+        categories: ["First-person", "Third-person"]
+        mots: [["I was born in a small town by the sea.", 0], ["She opened the door and saw the letter.", 1], ["My father never told me the truth.", 0], ["He had been waiting for hours.", 1]]
+        correction: "« I », « my » → première personne ; « she », « he » → troisième personne."
+      - type: relier
+        enonce: "🔗 Relie chaque œuvre à son auteur."
+        paires: [["Frankenstein", "Mary Shelley"], ["Dracula", "Bram Stoker"], ["Mrs Dalloway", "Virginia Woolf"], ["Moby-Dick", "Herman Melville"]]
+        correction: "Shelley, Stoker, Woolf, Melville."
+      - type: qcm
+        enonce: "Qu'est-ce qu'un « unreliable narrator » ?"
+        choix: ["Un narrateur dont le lecteur a des raisons de douter", "Un narrateur qui sait tout", "Un narrateur absent", "Un narrateur qui parle français"]
+        correction: "Il ment, se trompe ou ne comprend pas tout : le lecteur doit lire entre les lignes."
+      - type: vf
+        vars: { t: [["Un narrateur omniscient connaît les pensées de tous les personnages.", true], ["Le stream of consciousness suit un ordre parfaitement logique.", false], ["Frankenstein est un roman gothique.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'omniscient sait tout ; le flux de conscience suit les pensées dans le désordre ; Frankenstein est gothique."
+
+  - id: llcer-synthesis
+    titre: The synthesis - synthétiser un dossier en anglais
+    classe: Terminale
+    objectif: Je rédige en anglais une synthèse organisée qui confronte plusieurs documents autour d'une problématique.
+    mots: [synthesis, issue, whereas, similarly]
+    etapes:
+      - dialogue:
+          - zero: "Une synthèse, je résume les documents un par un ?"
+          - mia: "Surtout pas ! Tu les fais dialoguer : ce qui les rapproche, ce qui les oppose, autour d'une question."
+      - a_quoi_ca_sert: "La synthèse est la première partie de l'épreuve écrite ; dans les études et le travail, croiser plusieurs sources pour en tirer l'essentiel est une compétence très recherchée."
+      - texte: |
+          **Avant d'écrire** : identifier chaque document (nature, auteur, date), repérer la **thématique** et formuler une **problématique** (*To what extent… ? How… ?*).
+
+          **Introduction** : présenter brièvement le dossier et la problématique, annoncer le plan.
+
+          **Développement** : 2 ou 3 parties **thématiques**, chacune croisant **plusieurs documents** (« Document A and Document C both show… whereas Document B… »).
+
+          **Conclusion** : répondre à la problématique.
+
+          **Connecteurs utiles** : *similarly, likewise* (de même) ; *whereas, while, on the other hand* (alors que) ; *moreover, furthermore* (de plus) ; *therefore, thus* (donc) ; *however, yet* (cependant).
+      - attention: "Une synthèse ne donne pas d'avis personnel et ne recopie pas de longues phrases : on **reformule** et on **compare**."
+      - astuce: { texte: "Fais un tableau au brouillon : une ligne par idée, une colonne par document. Les idées partagées deviennent tes parties.", qui: neo }
+      - retiens: "Synthèse : **problématique**, plan **thématique** (pas document par document), documents **croisés**, **reformulation**, pas d'avis. Connecteurs : **similarly**, **whereas**, **moreover**, **therefore**, **however**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque connecteur à son sens."
+        paires: [["similarly", "de même"], ["whereas", "alors que"], ["moreover", "de plus"], ["therefore", "donc"]]
+        correction: "Comparer, opposer, ajouter, conclure."
+      - type: classer
+        enonce: "Range chaque phrase : bonne synthèse ou erreur ?"
+        categories: ["Bonne synthèse", "Erreur"]
+        mots: [["Both documents A and C present travel as a way to discover oneself.", 0], ["Document A is about travel. Document B is about borders.", 1], ["Whereas the poem celebrates freedom, the article focuses on its limits.", 0], ["I personally think that travelling is great.", 1]]
+        correction: "On croise les documents sans avis personnel ; on ne les résume pas un par un."
+      - type: ordre
+        enonce: "Range les étapes de la synthèse."
+        items: ["Identifier les documents et la thématique", "Formuler une problématique", "Classer les idées par thème dans un tableau", "Rédiger introduction, parties croisées et conclusion"]
+        correction: "Comprendre, problématiser, organiser, rédiger."
+      - type: qcm
+        enonce: "Quelle est la meilleure problématique pour un dossier sur les frontières ?"
+        choix: ["To what extent are borders both barriers and meeting places?", "What is a border?", "Do I like borders?", "Document A, B and C."]
+        correction: "Une problématique ouverte, qui permet de confronter les documents."
+
+  - id: llcer-translation
+    titre: Translation - traduire vers le français
+    classe: Terminale
+    objectif: Je traduis un passage littéraire en évitant les faux amis et en choisissant les bons temps en français.
+    mots: [traduction, faux ami, prétérit, passé simple]
+    etapes:
+      - dialogue:
+          - neo: "« Actually, he eventually went to the library. » Traduis, Zéro !"
+          - zero: "Actuellement, il est éventuellement allé à la librairie ?"
+          - mia: "Trois faux amis en une phrase ! « En fait, il est finalement allé à la bibliothèque. »"
+      - a_quoi_ca_sert: "Traduire oblige à comprendre chaque nuance ; c'est une partie de l'épreuve et le cœur des métiers de la traduction et de l'édition."
+      - texte: |
+          **Les faux amis** : *actually* = en fait ; *eventually* = finalement ; *library* = bibliothèque ; *sensible* = raisonnable ; *to realise* = se rendre compte ; *a novel* = un roman.
+
+          **Les temps** : dans un récit littéraire, le **prétérit** anglais se traduit souvent par le **passé simple** (actions de premier plan) ou l'**imparfait** (description, habitude). *She opened the door* → « Elle ouvrit la porte » ; *The sky was grey* → « Le ciel était gris ».
+
+          **Ne pas calquer** : *He swam across the river* → « Il traversa la rivière à la nage » (le verbe anglais dit la manière, le français dit le déplacement).
+
+          **Relire** : la traduction doit sonner comme du français naturel, sans contresens ni oubli.
+      - attention: "Ne traduis pas mot à mot : on traduit le **sens** et le **ton**, en restant fidèle au texte, sans rien ajouter ni retrancher."
+      - astuce: { texte: "Lis toute la phrase, comprends-la, puis ferme les yeux et dis-la en français comme tu la raconterais.", qui: zero }
+      - retiens: "Éviter les **faux amis** (actually = en fait, eventually = finalement, library = bibliothèque). Prétérit → **passé simple** (actions) ou **imparfait** (description). Traduire le **sens**, pas les mots."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque faux ami à sa bonne traduction."
+        paires: [["actually", "en fait"], ["eventually", "finalement"], ["a library", "une bibliothèque"], ["sensible", "raisonnable"]]
+        correction: "Ces mots ressemblent au français mais n'ont pas le même sens."
+      - type: qcm
+        enonce: "Dans un roman, comment traduire « She opened the window and looked at the sea » ?"
+        choix: ["Elle ouvrit la fenêtre et regarda la mer.", "Elle ouvrait la fenêtre et elle regardait la mer.", "Elle a ouvert la fenêtre et elle regarde la mer.", "Elle ouvre éventuellement la fenêtre."]
+        correction: "Deux actions de premier plan dans un récit littéraire → **passé simple**."
+      - type: classer
+        enonce: "Range chaque verbe du récit : passé simple (action) ou imparfait (description) ?"
+        categories: ["Passé simple", "Imparfait"]
+        mots: [["He suddenly stood up.", 0], ["The house was silent.", 1], ["She took the key.", 0], ["It was raining heavily.", 1]]
+        correction: "Action ponctuelle → passé simple ; décor, état → imparfait."
+      - type: qcm
+        enonce: "Meilleure traduction de « He swam across the river » ?"
+        choix: ["Il traversa la rivière à la nage.", "Il nagea à travers la rivière.", "Il nageait la rivière.", "Il a croisé la rivière."]
+        correction: "En français, le verbe dit le déplacement (traverser) et le complément la manière (à la nage)."

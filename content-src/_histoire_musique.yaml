@@ -87,3 +87,11 @@ chapitres:
       - narrateur: "Dans le Studio, le Grand Neutre essaie de tout réduire à un seul bruit gris."
     apres:
       - narrateur: "Sur la console, toutes les pistes s'allument. Le Grand Neutre, assourdi par tant de musique, s'enfuit en se bouchant les oreilles."
+  mu-salle-de-concert:
+    titre: "La Salle de Concert"
+    objet: "la console du Studio"
+    avant:
+      - narrateur: "Dans la Salle de Concert, les musiciens jouent tous en même temps sans s'écouter : un vacarme gris remplit l'air."
+      - mia: "Écouter, nommer ce qu'on entend, puis jouer ensemble : c'est comme ça qu'on rend sa voix à la musique."
+    apres:
+      - narrateur: "Le chef lève la baguette. De Bach au hip-hop, la salle résonne d'un concert enfin harmonieux."

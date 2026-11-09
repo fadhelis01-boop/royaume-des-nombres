@@ -1,0 +1,300 @@
+id: ph-atelier-de-l-ingenieur
+matiere: physique
+titre: L'Atelier de l'Ingénieur
+sous_titre: Spécialité sciences de l'ingénieur - cahier des charges, chaînes de puissance et d'information, rendement, capteurs, transmission, statique
+emoji: ⚙️
+couleur: "#37474f"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 208
+specialite: SI
+version: 1.0.0
+intro:
+  - narrateur: "Au pied des Cimes, un atelier ronronne : un portail automatique, un vélo électrique, un drone posé sur l'établi. Aucun ne fonctionne tout à fait comme prévu."
+  - neo: "Les sciences de l'ingénieur, c'est comprendre un objet réel, le modéliser, le mesurer, et expliquer l'écart entre ce qu'on voulait et ce qu'on obtient."
+  - mia: "Physique, maths et informatique au service d'un produit. On attaque ?"
+
+lecons:
+  - id: si-besoin-et-exigences
+    titre: Du besoin au cahier des charges
+    classe: "1ʳᵉ"
+    objectif: J'exprime le besoin auquel répond un produit, je lis un cahier des charges et je compare performances attendues, mesurées et simulées.
+    mots: [besoin, exigence, cahier des charges, écart]
+    etapes:
+      - dialogue:
+          - zero: "Un vélo électrique, ça sert à rouler. C'est tout ?"
+          - neo: "Ça sert à te déplacer sans effort excessif, sur 50 km, en moins de 25 kg… Chaque phrase précise devient une exigence, avec un critère et une valeur."
+      - a_quoi_ca_sert: "Tout produit industriel (téléphone, voiture, prothèse) commence par un cahier des charges ; savoir l'écrire et le vérifier, c'est le cœur du métier d'ingénieur."
+      - texte: |
+          **Le besoin** : à qui rend-il service ? Sur quoi agit-il ? Dans quel but ?
+
+          **Le cahier des charges** liste les **exigences** : chacune a un **critère** (autonomie), un **niveau** (50 km) et parfois une **tolérance** (plus ou moins 5 km).
+
+          **Modéliser** : on décrit le système avec des diagrammes **SysML** (diagramme des exigences, des cas d'utilisation, de blocs).
+
+          **Les trois performances** :
+          - **attendues** (cahier des charges) ;
+          - **mesurées** (sur le produit réel) ;
+          - **simulées** (sur le modèle numérique).
+
+          On analyse les **écarts** entre elles pour améliorer le produit ou le modèle.
+      - attention: "Un écart entre mesure et simulation ne veut pas dire que le produit est raté : souvent, c'est le modèle qui est trop simple (frottements oubliés, rendement idéal)."
+      - astuce: { texte: "Retiens le triangle attendu - mesuré - simulé : chaque côté du triangle est un écart à expliquer.", qui: neo }
+      - retiens: "Besoin → **cahier des charges** (exigences : critère, niveau, tolérance) → modèle **SysML**. On compare performances **attendues**, **mesurées** et **simulées** et on explique les **écarts**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque performance à son origine."
+        paires: [["attendue", "le cahier des charges"], ["mesurée", "un essai sur le produit réel"], ["simulée", "le modèle numérique"]]
+        correction: "Attendu, mesuré, simulé : trois sources à comparer."
+      - type: classer
+        enonce: "Range chaque phrase : exigence précise ou souhait vague ?"
+        categories: ["Exigence précise", "Souhait vague"]
+        mots: [["Autonomie d'au moins 50 km", 0], ["Le vélo doit être agréable", 1], ["Masse inférieure à 25 kg", 0], ["Le vélo doit aller vite", 1]]
+        correction: "Une exigence a un critère mesurable et une valeur."
+      - type: qcm
+        enonce: "La simulation donne 60 km d'autonomie, l'essai réel 52 km. Quelle explication est la plus probable ?"
+        choix: ["Le modèle néglige des pertes (frottements, vent, rendement)", "La batterie n'existe pas", "Le cahier des charges est faux", "La mesure est forcément fausse"]
+        correction: "Un modèle simplifié surestime souvent les performances : il faut l'enrichir."
+      - type: vf
+        vars: { t: [["SysML est un langage de diagrammes pour décrire un système.", true], ["Une exigence peut avoir une tolérance.", true], ["Un écart entre mesure et simulation prouve que le produit est raté.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "SysML décrit le système ; les exigences ont des tolérances ; un écart sert à améliorer le modèle ou le produit."
+
+  - id: si-chaines
+    titre: Chaîne d'information et chaîne de puissance
+    classe: "1ʳᵉ"
+    objectif: Je décompose un système automatisé en chaîne d'information (acquérir, traiter, communiquer) et chaîne de puissance (alimenter, distribuer, convertir, transmettre).
+    mots: [chaîne d'information, chaîne de puissance, actionneur, capteur]
+    etapes:
+      - dialogue:
+          - mia: "Un portail automatique : tu appuies sur la télécommande, il s'ouvre, il s'arrête tout seul en butée."
+          - zero: "Il y a un cerveau et des muscles, en fait !"
+          - neo: "Exactement : la chaîne d'information, c'est le cerveau ; la chaîne de puissance, ce sont les muscles."
+      - a_quoi_ca_sert: "Cette décomposition sert à comprendre, réparer ou concevoir n'importe quel système automatisé : robot, ascenseur, imprimante 3D, voiture."
+      - texte: |
+          **Chaîne d'information** (petites énergies, signaux) :
+          - **acquérir** : capteurs, boutons (capteur de fin de course, récepteur radio) ;
+          - **traiter** : microcontrôleur, programme ;
+          - **communiquer** : voyants, écran, liaison sans fil.
+
+          **Chaîne de puissance** (énergie qui fait bouger) :
+          - **alimenter** : secteur, batterie ;
+          - **distribuer** : variateur, relais, pont en H ;
+          - **convertir** : moteur (énergie électrique → mécanique) ;
+          - **transmettre** : réducteur, engrenages, courroie, jusqu'à l'**effecteur** (le portail).
+
+          Les **ordres** vont de la chaîne d'information vers le **distributeur** de la chaîne de puissance.
+      - attention: "Le capteur appartient à la chaîne d'information (il mesure) ; le moteur appartient à la chaîne de puissance (il agit). Ne les confonds pas."
+      - astuce: { texte: "Info : « acquérir, traiter, communiquer ». Puissance : « alimenter, distribuer, convertir, transmettre ». Récite-les comme une comptine.", qui: zero }
+      - retiens: "Information : **acquérir – traiter – communiquer**. Puissance : **alimenter – distribuer – convertir – transmettre** jusqu'à l'effecteur. Le traitement envoie des **ordres** au distributeur."
+    exercices:
+      - type: classer
+        enonce: "Range chaque composant du portail : chaîne d'information ou chaîne de puissance ?"
+        categories: ["Information", "Puissance"]
+        mots: [["Le capteur de fin de course", 0], ["Le moteur électrique", 1], ["Le microcontrôleur", 0], ["Le réducteur à engrenages", 1], ["Le voyant clignotant", 0], ["La batterie", 1]]
+        correction: "Mesurer, décider, signaler → information ; fournir, doser, convertir, transmettre l'énergie → puissance."
+      - type: ordre
+        enonce: "Range les fonctions de la chaîne de puissance."
+        items: ["Alimenter", "Distribuer", "Convertir", "Transmettre"]
+        correction: "Alimenter, distribuer, convertir, transmettre."
+      - type: relier
+        enonce: "🔗 Relie chaque fonction à un composant."
+        paires: [["acquérir", "un capteur de température"], ["traiter", "un microcontrôleur"], ["convertir", "un moteur"], ["distribuer", "un variateur"]]
+        correction: "Chaque fonction a ses composants typiques."
+      - type: qcm
+        enonce: "Dans un moteur électrique, quelle conversion d'énergie a lieu ?"
+        choix: ["Électrique en mécanique", "Mécanique en électrique", "Thermique en électrique", "Lumineuse en mécanique"]
+        correction: "Le moteur convertit l'énergie **électrique** en énergie **mécanique** (avec des pertes en chaleur)."
+
+  - id: si-puissance-rendement
+    titre: Puissance, énergie et rendement
+    classe: "1ʳᵉ"
+    objectif: Je calcule une puissance électrique ou mécanique et le rendement d'une chaîne de puissance.
+    mots: [puissance, couple, vitesse angulaire, rendement]
+    etapes:
+      - dialogue:
+          - zero: "Mon moteur reçoit 100 W et en rend 80. Où sont passés les 20 W ?"
+          - neo: "Perdus en chaleur, en frottements, en bruit. C'est ce que mesure le rendement."
+      - a_quoi_ca_sert: "Choisir un moteur, dimensionner une batterie ou réduire la consommation d'un produit : tout passe par des calculs de puissance et de rendement."
+      - texte: |
+          **Puissance électrique** : $P = U \times I$ (W = V × A).
+
+          **Puissance mécanique** : en translation $P = F \times v$ (N × m/s) ; en rotation $P = C \times \omega$ (couple en N·m × vitesse angulaire en rad/s).
+
+          **Énergie** : $E = P \times t$ (J = W × s).
+
+          **Rendement** = puissance utile ÷ puissance absorbée, toujours **inférieur à 1** (ou à 100 %).
+
+          **En série**, les rendements **se multiplient** : moteur à 0,9 puis réducteur à 0,8 → rendement global 0,9 × 0,8 = 0,72.
+      - attention: "Les rendements ne s'additionnent pas et ne se moyennent pas : chaque étage prend sa part de pertes, on multiplie."
+      - astuce: { texte: "Pertes = puissance absorbée − puissance utile. Si on te donne deux des trois, tu trouves la troisième.", qui: mia }
+      - retiens: "$P = U \\times I$ ; $P = F \\times v$ ; $P = C \\times \\omega$ ; $E = P \\times t$. Rendement = utile ÷ absorbée, inférieur à 1 ; en série, les rendements **se multiplient**."
+    exercices:
+      - type: nombre
+        vars: { u: [12, 24, 48], i: [2, 5, 10] }
+        enonce: "Un moteur est alimenté sous {{u}} V et absorbe {{i}} A. Quelle puissance électrique reçoit-il ?"
+        reponse: "u*i"
+        unite: W
+        correction: "P = U × I = {{u}} × {{i}} = {{u*i}} W."
+      - type: nombre
+        vars: { a: [200, 400, 500, 1000], r: [60, 75, 80, 90] }
+        enonce: "Un système absorbe {{a}} W et fournit {{a*r/100}} W utiles. Quel est son rendement, en % ?"
+        reponse: "r"
+        unite: "%"
+        correction: "{{a*r/100}} ÷ {{a}} × 100 = {{r}} %."
+      - type: nombre
+        vars: { t: [[90, 80, 72], [90, 90, 81], [80, 50, 40], [95, 80, 76]] }
+        enonce: "Un moteur de rendement {{t_0}} % entraîne un réducteur de rendement {{t_1}} %. Quel est le rendement global, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "On multiplie : {{t_0}} % × {{t_1}} % = **{{t_2}} %**."
+      - type: nombre
+        vars: { c: [2, 5, 10], w: [10, 20, 50] }
+        enonce: "Un arbre tourne à {{w}} rad/s avec un couple de {{c}} N·m. Quelle puissance mécanique transmet-il ?"
+        reponse: "c*w"
+        unite: W
+        correction: "P = C × ω = {{c}} × {{w}} = {{c*w}} W."
+      - type: vf
+        vars: { t: [["Un rendement peut dépasser 100 %.", false], ["Les rendements en série se multiplient.", true], ["Les pertes se retrouvent souvent sous forme de chaleur.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Rendement inférieur à 100 % ; en série on multiplie ; les pertes chauffent."
+
+  - id: si-transmission
+    titre: Transmettre et transformer le mouvement
+    classe: "1ʳᵉ"
+    objectif: Je calcule un rapport de réduction d'engrenages ou de poulies et je reconnais les transformations de mouvement.
+    mots: [engrenage, rapport de réduction, poulie, vis-écrou]
+    etapes:
+      - dialogue:
+          - mia: "Un moteur tourne à 3 000 tours par minute, mais la roue d'un robot doit tourner à 100. Comment faire ?"
+          - neo: "Avec un réducteur : on perd de la vitesse, mais on gagne du couple."
+      - a_quoi_ca_sert: "Les vélos, les voitures, les imprimantes, les robots utilisent tous des engrenages, des courroies ou des vis pour adapter vitesse et effort."
+      - texte: |
+          **Engrenages** : deux roues dentées. Rapport de transmission r = vitesse de sortie ÷ vitesse d'entrée = dents de la roue menante ÷ dents de la roue menée.
+
+          Exemple : pignon moteur de 10 dents, roue de 40 dents → r = 10 ÷ 40 = 0,25 : la sortie tourne 4 fois moins vite.
+
+          **Poulies et courroie** : même principe avec les diamètres.
+
+          **Couple et vitesse** : (sans pertes) si la vitesse est divisée par 4, le couple est multiplié par 4 : la puissance se conserve.
+
+          **Transformer le mouvement** : **vis-écrou** (rotation → translation, vérin électrique), **pignon-crémaillère** (rotation → translation, direction de voiture), **bielle-manivelle** (translation ↔ rotation, moteur thermique).
+      - attention: "Le rapport se calcule « dents de la menante sur dents de la menée », pas l'inverse : une petite roue qui entraîne une grande réduit la vitesse."
+      - astuce: { texte: "Petite roue qui entraîne une grande = on ralentit et on gagne en force, comme le petit plateau d'un vélo en montée.", qui: zero }
+      - retiens: "Engrenages : r = dents de la menante ÷ dents de la menée ; vitesse divisée → couple multiplié (puissance conservée sans pertes). **Vis-écrou**, **pignon-crémaillère** : rotation → translation ; **bielle-manivelle** : translation ↔ rotation."
+    exercices:
+      - type: nombre
+        vars: { t: [[10, 40, 4], [12, 36, 3], [15, 75, 5], [20, 40, 2]] }
+        enonce: "Un pignon de {{t_0}} dents entraîne une roue de {{t_1}} dents. Combien de fois moins vite tourne la roue ?"
+        reponse: "t_2"
+        correction: "{{t_1}} ÷ {{t_0}} = **{{t_2}}** : la roue tourne {{t_2}} fois moins vite."
+      - type: nombre
+        vars: { t: [[3000, 4, 750], [1500, 3, 500], [2000, 5, 400], [1200, 2, 600]] }
+        enonce: "Un moteur tourne à {{t_0}} tr/min. Un réducteur divise la vitesse par {{t_1}}. À combien de tr/min tourne la sortie ?"
+        reponse: "t_2"
+        unite: tr/min
+        correction: "{{t_0}} ÷ {{t_1}} = **{{t_2}} tr/min**."
+      - type: relier
+        enonce: "🔗 Relie chaque mécanisme à la transformation qu'il réalise."
+        paires: [["vis-écrou", "rotation en translation (vérin)"], ["pignon-crémaillère", "rotation en translation (direction)"], ["bielle-manivelle", "translation en rotation (moteur thermique)"]]
+        correction: "Trois mécanismes classiques de transformation du mouvement."
+      - type: qcm
+        enonce: "Sans pertes, un réducteur divise la vitesse par 3. Que devient le couple ?"
+        choix: ["Il est multiplié par 3", "Il est divisé par 3", "Il ne change pas", "Il devient nul"]
+        correction: "La puissance C × ω se conserve : si ω est divisée par 3, C est multiplié par 3."
+
+  - id: si-capteurs-numerique
+    titre: Capteurs et numérisation
+    classe: "1ʳᵉ"
+    objectif: Je distingue les types de capteurs et je calcule la résolution d'un convertisseur analogique-numérique.
+    mots: [capteur, analogique, numérique, résolution]
+    etapes:
+      - dialogue:
+          - zero: "Le thermomètre de la serre envoie 2,37 V. Comment le microcontrôleur sait que c'est 23,7 °C ?"
+          - neo: "Un convertisseur transforme la tension en nombre binaire, puis le programme applique une formule. C'est la numérisation."
+      - a_quoi_ca_sert: "Tous les objets connectés mesurent le monde : température, distance, lumière ; comprendre la numérisation explique leur précision et leurs limites."
+      - texte: |
+          **Types de capteurs** :
+          - **tout ou rien** (TOR) : 0 ou 1 (bouton, fin de course) ;
+          - **analogique** : une tension qui varie continûment (thermistance, photorésistance) ;
+          - **numérique** : envoie directement un nombre (capteur I2C).
+
+          **Convertisseur analogique-numérique (CAN)** sur **n bits** : il découpe la plage de tension en $2^n$ valeurs.
+
+          **Résolution** (le plus petit écart mesurable) = plage ÷ $2^n$. Exemple : 0 à 5,12 V sur 10 bits → 5,12 ÷ 1024 = 0,005 V = **5 mV**.
+
+          Plus il y a de bits, plus la mesure est fine.
+      - attention: "Une résolution fine ne garantit pas une mesure juste : le capteur lui-même a une précision limitée et peut être mal étalonné."
+      - astuce: { texte: "Chaque bit en plus double le nombre de valeurs et divise la résolution par deux.", qui: mia }
+      - retiens: "Capteurs **TOR**, **analogiques**, **numériques**. Un **CAN** de n bits donne **$2^n$** valeurs ; résolution = plage ÷ $2^n$. Plus de bits = mesure plus fine."
+    exercices:
+      - type: nombre
+        vars: { n: [8, 10, 12] }
+        enonce: "Combien de valeurs différentes un convertisseur de {{n}} bits peut-il donner ?"
+        reponse: "2^n"
+        correction: "$2^{ {{n}} }$ = **{{2^n}}** valeurs."
+      - type: nombre
+        vars: { t: [[5.12, 10, 5], [2.56, 8, 10], [10.24, 10, 10], [5.12, 8, 20]] }
+        enonce: "Un CAN de {{t_1}} bits mesure de 0 à {{t_0}} V. Quelle est sa résolution, en mV ?"
+        reponse: "t_2"
+        unite: mV
+        correction: "{{t_0}} V ÷ $2^{ {{t_1}} }$ = **{{t_2}} mV**."
+      - type: classer
+        enonce: "Range chaque capteur : tout ou rien ou analogique ?"
+        categories: ["Tout ou rien", "Analogique"]
+        mots: [["Un bouton-poussoir", 0], ["Une thermistance", 1], ["Un capteur de fin de course", 0], ["Une photorésistance", 1]]
+        correction: "Deux états → tout ou rien ; une grandeur qui varie continûment → analogique."
+      - type: qcm
+        enonce: "On passe d'un CAN de 8 bits à un CAN de 9 bits, sur la même plage. Que devient la résolution ?"
+        choix: ["Elle est divisée par 2 (plus fine)", "Elle est multipliée par 2", "Elle ne change pas", "Elle est divisée par 9"]
+        correction: "Un bit de plus double le nombre de valeurs : la résolution est deux fois plus fine."
+
+  - id: si-statique
+    titre: Actions mécaniques et équilibre
+    classe: Terminale
+    objectif: Je calcule le moment d'une force et j'applique le principe fondamental de la statique à un solide en équilibre.
+    mots: [force, moment, équilibre, statique]
+    etapes:
+      - dialogue:
+          - mia: "Pour desserrer un écrou bloqué, pourquoi prend-on une clé plus longue ?"
+          - neo: "Parce que l'effet de rotation d'une force, son moment, augmente avec la distance au point de rotation."
+      - a_quoi_ca_sert: "Dimensionner une grue, une étagère, un bras de robot ou une prothèse demande de vérifier que tout reste en équilibre et ne casse pas."
+      - texte: |
+          **Action mécanique** : modélisée par une **force** (point d'application, direction, sens, intensité en newtons).
+
+          **Moment d'une force** par rapport à un point : $M = F \times d$ (N·m), où d est la distance entre le point et la droite d'action de la force (le « bras de levier »).
+
+          **Principe fondamental de la statique** : un solide est en équilibre si
+          - la **somme des forces** est nulle ;
+          - la **somme des moments** (en un même point) est nulle.
+
+          Exemple : balançoire à bascule. 300 N à 2 m d'un côté équilibrent 600 N à 1 m de l'autre (300 × 2 = 600 × 1).
+      - attention: "La distance du moment se mesure perpendiculairement à la droite d'action de la force, pas le long de la pièce si la force est inclinée."
+      - astuce: { texte: "Levier : force × distance d'un côté = force × distance de l'autre. Plus le bras est long, moins il faut forcer.", qui: zero }
+      - retiens: "Force (point, direction, sens, intensité). Moment $M = F \\times d$ (N·m). Équilibre : **somme des forces nulle** et **somme des moments nulle**."
+    exercices:
+      - type: nombre
+        vars: { f: [20, 50, 100, 200], d: [0.2, 0.5, 2] }
+        enonce: "Une force de {{f}} N agit à {{d}} m de l'axe de rotation (perpendiculairement). Quel est son moment ?"
+        reponse: "f*d"
+        tolerance: 0.01
+        unite: N·m
+        correction: "M = F × d = {{f}} × {{d}} = {{f*d}} N·m."
+      - type: nombre
+        vars: { t: [[300, 2, 1, 600], [200, 3, 2, 300], [400, 1, 2, 200], [150, 4, 3, 200]] }
+        enonce: "Bascule à l'équilibre : {{t_0}} N à {{t_1}} m de l'axe d'un côté. De l'autre côté, la force est à {{t_2}} m. Quelle est son intensité ?"
+        reponse: "t_3"
+        unite: N
+        correction: "{{t_0}} × {{t_1}} = F × {{t_2}}, donc F = **{{t_3}} N**."
+      - type: vf
+        vars: { t: [["Un solide en équilibre a une somme des forces nulle.", true], ["Le moment d'une force ne dépend pas de la distance.", false], ["Une clé plus longue permet de forcer moins.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Équilibre : forces et moments nuls ; le moment dépend du bras de levier."
+      - type: ordre
+        enonce: "Range les caractéristiques d'une force telles qu'on les décrit."
+        items: ["Le point d'application", "La direction", "Le sens", "L'intensité en newtons"]
+        correction: "Point, direction, sens, intensité."
