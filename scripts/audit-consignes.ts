@@ -2,7 +2,7 @@
 // et dans les leçons de niveau CP–CE2. Mesures de lisibilité.
 import { readFileSync, readdirSync } from "node:fs";
 import { instantiate, newSeed } from "../src/lib/gen";
-import { departEscalier, domainesATester, domainesDe, exercicesTest, leconPour, pas, questionsIle } from "../src/lib/parcours";
+import { nomClasse, departEscalier, domainesATester, domainesDe, exercicesTest, leconPour, pas, questionsIle } from "../src/lib/parcours";
 import type { World } from "../src/lib/types";
 
 const manifest = JSON.parse(readFileSync("public/content/manifest.json", "utf8"));
@@ -48,7 +48,7 @@ const JARGON = /\b(chiffre des|rang|décompos|complète|calcule|range|ordre croi
 for (const r of rows) { tot += r.n; totMots += r.n * r.nmots; if (r.nmots > 15) sup15 += r.n; if (r.longs) avecLong += r.n; if (JARGON.test(r.enonce)) mathsMots += r.n; }
 console.log(`Consignes différentes : ${rows.length} ; mots par consigne (pondéré) : ${(totMots / tot).toFixed(1)} ; >15 mots : ${(100 * sup15 / tot).toFixed(0)} % ; avec mot long : ${(100 * avecLong / tot).toFixed(0)} % ; vocabulaire scolaire : ${(100 * mathsMots / tot).toFixed(0)} %`);
 const byLvl: Record<string, number> = {};
-for (const r of rows) { const c = r.lvl < 1.5 ? "CP" : r.lvl < 2.5 ? "CE1" : r.lvl < 3.5 ? "CE2" : r.lvl < 4.5 ? "CM1" : "CM2+"; byLvl[c] = (byLvl[c] ?? 0) + r.n; }
+for (const r of rows) { const c = nomClasse(r.lvl); byLvl[c] = (byLvl[c] ?? 0) + r.n; }
 console.log("Niveaux rencontrés :", Object.entries(byLvl).map(([k, v]) => `${k} ${(100 * v / tot).toFixed(0)} %`).join(" · "));
 const byType: Record<string, number> = {};
 for (const r of rows) byType[r.type] = (byType[r.type] ?? 0) + r.n;
