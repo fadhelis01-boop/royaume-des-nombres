@@ -279,6 +279,7 @@ export const VISUELS: Record<string, string[]> = {
   "chimie",
   "dessin",
   "francais",
+  "histoire",
   "maths",
   "musique",
   "physique",

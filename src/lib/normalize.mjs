@@ -482,8 +482,8 @@ export function normalizeWorld(w, file) {
     ids.add(l.id);
     const raw0 = (l.etapes ?? []).map((s, i) => step(s, `${lw} étape ${i + 1}`)).filter(Boolean);
     // Écrans coupés : 40 mots pour les mondes « Graines », 45 pour ceux qui commencent au CE2 (audit « 8 ans »).
-    // CM1 → 3ᵉ : 70 mots (audit « 9-12 ans » : jusqu'à 119 mots sur un écran de téléphone)
-    const maxEcran = w.cycle === "graines" ? 40 : /^CE2\b/.test(out.niveau) ? 45 : /^(CM1|CM2|6|5|4|3)/.test(out.niveau) ? 70 : 0;
+    // Au-delà : 70 mots (audits « 9-12 ans » et « 13-15 ans » : jusqu'à 119 mots sur un écran de téléphone)
+    const maxEcran = w.cycle === "graines" ? 40 : /^CE2\b/.test(out.niveau) ? 45 : 70;
     const raw1 = maxEcran ? raw0.flatMap((s) => (s.kind === "texte" ? couperTexte(s, maxEcran) : [s])) : raw0;
     // « À quoi ça sert ? » juste après la scène d'ouverture : on sait pourquoi on apprend avant d'apprendre
     const raw = (() => {

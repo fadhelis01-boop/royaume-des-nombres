@@ -94,6 +94,14 @@ lecons:
         reponse: "k*t_1"
         unite: g
         correction: "$m = n \\times M$ = {{k*t_1}} g."
+      - type: relier
+        enonce: "🔗 Relie chaque grandeur à son unité."
+        paires: [["masse molaire M", "g/mol"], ["quantité de matière n", "mol"], ["masse m", "g"]]
+        correction: "M en g/mol, n en mol, m en g : n = m ÷ M."
+      - type: qcm
+        enonce: "Pour calculer une quantité de matière à partir d'une masse, on utilise :"
+        choix: ["n = m ÷ M", "n = m × M", "n = M ÷ m", "n = m + M"]
+        correction: "**n = m ÷ M** : la masse divisée par la masse molaire."
 
   - id: concentrations
     titre: "Concentrations et dilution"

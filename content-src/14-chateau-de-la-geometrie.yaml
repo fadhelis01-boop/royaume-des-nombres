@@ -437,6 +437,14 @@ lecons:
         tolerance: 0.051
         unite: pouces
         correction: "$\\sqrt{ {{l}}^2 + {{k}}^2 } \\approx {{nb(round(sqrt(l*l+k*k),1))}}$ pouces."
+      - type: relier
+        enonce: "🔗 Relie chaque triangle rectangle à la longueur de son hypoténuse."
+        paires: [["côtés de l'angle droit 3 et 4", "5"], ["côtés de l'angle droit 6 et 8", "10"], ["côtés de l'angle droit 5 et 12", "13"]]
+        correction: "3² + 4² = 25 = 5² ; 6² + 8² = 100 = 10² ; 5² + 12² = 169 = 13²."
+      - type: ordre
+        enonce: "Range les étapes pour calculer l'hypoténuse avec Pythagore."
+        items: ["Je repère l'angle droit et l'hypoténuse", "J'écris l'égalité : hypoténuse² = côté² + côté²", "Je remplace et je calcule", "Je prends la racine carrée"]
+        correction: "Repérer, écrire l'égalité, calculer, racine carrée."
 
   - id: reciproque-pythagore
     titre: Prouver qu'un triangle est rectangle
@@ -531,6 +539,14 @@ lecons:
         enonce: "(MN) // (BC), AN = {{an}}, AC = {{ac}}, AM = {{am}}. Calcule AB."
         reponse: "am*ac/an"
         correction: "$\\frac{AM}{AB} = \\frac{AN}{AC}$ donc $AB = \\frac{ {{am}} \\times {{ac}} }{ {{an}} } = {{nb(am*ac/an)}}$"
+      - type: qcm
+        enonce: "Pour appliquer le théorème de Thalès, il faut d'abord vérifier que :"
+        choix: ["les deux droites sont parallèles", "le triangle est rectangle", "les côtés sont égaux", "les angles sont droits"]
+        correction: "Thalès s'applique avec deux droites **parallèles** coupant deux sécantes."
+      - type: ordre
+        enonce: "Range les étapes d'un calcul avec Thalès."
+        items: ["Je vérifie que les droites sont parallèles", "J'écris l'égalité des trois rapports", "Je choisis les deux rapports utiles", "Je calcule avec le produit en croix"]
+        correction: "Parallèles, rapports, choix, produit en croix."
 
   - id: trigonometrie
     titre: La trigonométrie (cosinus, sinus, tangente)

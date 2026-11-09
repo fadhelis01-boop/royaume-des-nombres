@@ -1,6 +1,6 @@
 # Audit « 13, 14 et 15 ans » : comprendre ce qu'on demande, les réponses, « À quoi ça sert ? »
 
-Date : 9 novembre 2026 · version auditée : 2.13.0 · aucune correction de cet audit appliquée à ce stade
+Date : 9 novembre 2026 · version auditée : 2.13.0 · corrections livrées : 2.14.0 (9 novembre 2026, voir en fin de document)
 
 Même méthode que les audits précédents (7, 8, puis 9 à 12 ans), pour un élève de 4ᵉ (13 ans), de 3ᵉ (14 ans, année du brevet) et de 2nde (15 ans), en novembre.
 
@@ -130,3 +130,38 @@ Dans « Les fonctions affines », l'ordre est : scène, « À quoi ça sert ? »
 | 9 | **Corrections chiffrées** : ajouter le calcul ou la règle aux réponses seules (« X cm³ », « N m² »). | Moyen |
 
 Mesures de référence (`npm run audit:7ans -- --age N --annee`, `npm run audit:consignes -- N`, `npm run audit:voix -- N`, `npm run audit:domines -- N`, `npm run audit:libre -- N`) : voir les tableaux ci-dessus.
+
+## Corrections livrées (2.14.0)
+
+Les 9 corrections sont faites, y compris la planète Histoire-géographie et EMC.
+
+| Mesure | Avant | Après |
+|---|---|---|
+| « Les fonctions affines » et « linéaires » | classées 2nde | classées 3ᵉ |
+| Leçons avec une classe explicite | 12 | 168 |
+| Questions du test (13-15 ans) | 24 | 18 |
+| Questions de CM1-CM2 dans le test, 13 / 14 / 15 ans | 38 % / 26 % / 24 % | 7 % / 2 % / 1 % |
+| Leçons d'anglais de 4ᵉ, 3ᵉ, 2nde | 0 | 18 |
+| Dictées dans les mondes de 4ᵉ-3ᵉ | 6 | 20 (+ une leçon de méthode) |
+| Histoire-géographie et EMC | aucune planète | une planète, 6 leçons du brevet |
+| Défis dominés par un seul type, 13 / 14 / 15 ans | 19 % / 11 % / 19 % | 0 % / 0 % / 0 % |
+| Écran de cours le plus long à 15 ans | 112 mots | 68 mots |
+
+1. **Classe des leçons** : 146 leçons de maths, sciences et français de la 6ᵉ à la 2nde ont une classe explicite, corrigée d'après les repères annuels quand elle était fausse. Exemples : fonctions linéaires et affines, factoriser, Thalès → 3ᵉ ; équations, puissances de 10, Pythagore → 4ᵉ ; repérage et comparaison des relatifs → 5ᵉ ; évolution, vaccins, ions, pH → 3ᵉ ; « Argumenter » → 3ᵉ.
+2. **Anglais** : 3 mondes de 6 leçons (Archipel des Récits en 4ᵉ, Baie du Brevet en 3ᵉ, Île du Monde en 2nde), avec un Livre III et un Gardien du lycée. La planète compte maintenant 48 leçons, du CP à la 2nde.
+3. **Test** : les îles qui s'arrêtent plus d'un an avant le niveau de l'élève ne sont plus visitées et comptent comme acquises (`domainesDepasses`) ; une même question n'est jamais reposée dans une île.
+4. **Pas de question avant le cours** : la question automatique attend le premier texte (ou « Je retiens ») quand la leçon en a un.
+5. **Voix** : ions (« F e 2 plus »), exposants hors formule, ↦ (« qui à x associe »), norme d'un vecteur, ΔABC et figures nommées (lettres détachées), f(x) (« f de x »), « (< 90°) », « vecteur » en double, XX/XY. 14 tests ajoutés.
+6. **Brevet** :
+   - 14 dictées et une leçon « La dictée du brevet : relire comme un détective » ;
+   - 3 leçons de sciences (changement climatique, tests des ions, risques naturels) ;
+   - nouvelle planète **Le Forum des Mémoires** (Histoire-géo et EMC) : les deux guerres mondiales, la Ve République, les aires urbaines, la France et l'Union européenne, les valeurs de la République. Son image a été produite avec le pipeline ComfyUI du projet (`C:\IA\workflows\rdn\planete_histoire.py`), dans le style des autres planètes.
+7. **Variété** : 36 exercices ajoutés dans 18 leçons.
+8. **Ton adolescent** (à partir de 13 ans) : texte du test plus direct (« 18 questions sur 6 îles pour régler ton parcours… ce n'est pas noté ») ; « Explique à Zéro » devient « Résume la leçon en une phrase ».
+9. **Corrections** : 13 corrections chiffrées complétées par la règle ou le calcul (développer, factoriser, identités, règle des signes, priorités, pourcentages, vitesse, fréquence). Les écrans de tous les mondes au-delà du CE2 sont coupés à 70 mots ; le build refuse un écran de plus de 90 mots.
+
+Restent ouverts :
+- la technologie, autre discipline possible de l'épreuve de sciences du brevet ;
+- un monde d'histoire-géographie pour la 4ᵉ et la 2nde ;
+- les corrections sans pourquoi à 14 ans (22 %, surtout des « mot qui manque ») ;
+- le test avec de vrais élèves.

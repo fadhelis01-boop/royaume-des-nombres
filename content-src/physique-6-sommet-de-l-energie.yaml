@@ -94,6 +94,14 @@ lecons:
         enonce: "Si la vitesse d'une voiture est multipliée par {{k}}, par combien est multipliée son énergie cinétique ?"
         reponse: "k^2"
         correction: "Ec dépend du carré de la vitesse : {{k}}² = {{k^2}}."
+      - type: relier
+        enonce: "🔗 Relie chaque énergie à sa formule."
+        paires: [["énergie cinétique", "½ m v²"], ["énergie potentielle de pesanteur", "m g h"], ["énergie mécanique", "Ec + Ep"]]
+        correction: "Ec = ½ m v², Ep = m g h, Em = Ec + Ep."
+      - type: qcm
+        enonce: "Une balle tombe sans frottements. Pendant la chute, son énergie cinétique…"
+        choix: ["augmente et son énergie potentielle diminue", "diminue", "reste nulle", "et son énergie potentielle augmentent"]
+        correction: "L'énergie potentielle se transforme en énergie cinétique ; l'énergie mécanique se conserve."
 
   - id: deuxieme-loi
     titre: "La deuxième loi de Newton"

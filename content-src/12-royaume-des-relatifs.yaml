@@ -318,7 +318,7 @@ lecons:
         si: "a != 0 && b != 0 && (a < 0 || b < 0)"
         enonce: "$({{nb(a)}}) \\times ({{nb(b)}}) = ?$"
         reponse: "a*b"
-        correction: "{{nb(a*b)}}."
+        correction: "{{si(a*b>0,'Même signe : le produit est positif.',si(a*b<0,'Signes contraires : le produit est négatif.','Un facteur est nul : le produit est nul.'))}} {{nb(a)}} × {{nb(b)}} = {{nb(a*b)}}."
       - type: nombre
         vars: { a: "-9..9", q: "-9..9" }
         si: "a != 0 && q != 0 && (a < 0 || q < 0)"
@@ -376,7 +376,7 @@ lecons:
         niveau: 2
         erreurs:
           - { valeur: "(a+b)*c", message: "La multiplication passe AVANT l'addition : d'abord {{b}} × {{c}} = {{b*c}}, ensuite {{a}} + {{b*c}}." }
-        correction: "{{a+b*c}}"
+        correction: "La multiplication d'abord : {{b}} × {{c}} = {{b*c}}, puis {{a}} + {{b*c}} = {{a+b*c}}."
       - type: nombre
         vars: { a: "2..9", b: "2..9", c: "2..9" }
         enonce: "${{a}} \\times {{b}} - {{c}} = ?$"

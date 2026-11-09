@@ -234,7 +234,7 @@ lecons:
         reponse: "{{k*a}}x-{{k*b}}"
         variables: [x]
         forme: developpee
-        correction: "${{k*a}}x - {{k*b}}$"
+        correction: "On distribue {{k}} à chaque terme : ${{k}} \\times {{a}}x - {{k}} \\times {{b}} = {{k*a}}x - {{k*b}}$"
       - type: expression
         vars: { k: "2..9", a: "1..9" }
         enonce: "Développe : $-{{k}}(x - {{a}})$"
@@ -264,6 +264,15 @@ lecons:
         variables: [x]
         forme: reduite
         correction: "${{a*c}}x^2 - {{a*d}}x + {{b*c}}x - {{b*d}} = {{a*c}}x^2 + ({{nb(b*c-a*d)}})x - {{b*d}}$"
+      - type: relier
+        enonce: "🔗 Relie chaque expression à sa forme développée."
+        paires: [["3(x + 2)", "3x + 6"], ["x(x − 1)", "x² − x"], ["−2(x − 5)", "−2x + 10"], ["(x + 1)(x + 2)", "x² + 3x + 2"]]
+        correction: "On distribue le facteur à chaque terme de la parenthèse."
+      - type: vf
+        vars: { t: [["2(x + 3) = 2x + 6", true], ["−(x − 4) = −x − 4", false], ["x(x + 2) = x² + 2x", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Attention au signe : −(x − 4) = −x + 4."
 
   - id: factoriser
     titre: Factoriser
@@ -301,14 +310,14 @@ lecons:
         reponse: "{{k}}({{a}}x-{{b}})"
         variables: [x]
         forme: factorisee
-        correction: "${{k}}({{a}}x - {{b}})$"
+        correction: "Facteur commun {{k}} : ${{k*a}}x - {{k*b}} = {{k}} \\times {{a}}x - {{k}} \\times {{b}} = {{k}}({{a}}x - {{b}})$"
       - type: expression
         vars: { a: "2..12" }
         enonce: "Factorise : $x^2 + {{a}}x$"
         reponse: "x(x+{{a}})"
         variables: [x]
         forme: factorisee
-        correction: "$x(x + {{a}})$"
+        correction: "Facteur commun x : $x \\times x + x \\times {{a}} = x(x + {{a}})$"
       - type: expression
         vars: { a: "1..6", b: "2..5", c: "1..6", d: "1..6" }
         enonce: "Factorise : $(x + {{a}})({{b}}x + {{c}}) + (x + {{a}})(x - {{d}})$"
@@ -316,6 +325,14 @@ lecons:
         variables: [x]
         forme: factorisee
         correction: "$(x + {{a}})\\left[({{b}}x + {{c}}) + (x - {{d}})\\right] = (x + {{a}})({{b+1}}x + ({{nb(c-d)}}))$"
+      - type: relier
+        enonce: "🔗 Relie chaque expression à sa forme factorisée."
+        paires: [["6x + 9", "3(2x + 3)"], ["x² + 5x", "x(x + 5)"], ["4x − 8", "4(x − 2)"]]
+        correction: "On repère le facteur commun et on le met devant la parenthèse."
+      - type: qcm
+        enonce: "Factoriser, c'est…"
+        choix: ["transformer une somme en produit", "transformer un produit en somme", "calculer la valeur", "résoudre une équation"]
+        correction: "Factoriser = écrire sous forme de **produit** ; développer = l'inverse."
 
   - id: equations-balance
     titre: Les équations - la balance
@@ -371,6 +388,14 @@ lecons:
         reponse: "a/b"
         forme: fraction
         correction: "$x = \\frac{ {{a}} }{ {{b}} } = {{frac(a,b)}}$"
+      - type: relier
+        enonce: "🔗 Relie chaque équation à sa solution."
+        paires: [["x + 5 = 12", "7"], ["3x = 15", "5"], ["x − 4 = 2", "6"], ["2x = 18", "9"]]
+        correction: "On fait la même opération des deux côtés de la balance."
+      - type: qcm
+        enonce: "Pour résoudre 4x = 20, on…"
+        choix: ["divise les deux membres par 4", "enlève 4 aux deux membres", "multiplie par 4", "ajoute 20"]
+        correction: "4x = 20 → x = 20 ÷ 4 = 5."
 
   - id: equations-etapes
     titre: Résoudre une équation en plusieurs étapes
@@ -432,6 +457,14 @@ lecons:
         enonce: "Résous : ${{nb(a*x)}} = {{a}}x$ (l'inconnue peut être à droite !)"
         reponse: "x"
         correction: "$x = {{nb(a*x)}} \\div {{a}} = {{nb(x)}}$"
+      - type: ordre
+        enonce: "Range les étapes pour résoudre 3x + 5 = 20."
+        items: ["3x + 5 = 20", "3x = 15 (on enlève 5)", "x = 5 (on divise par 3)", "Vérification : 3 × 5 + 5 = 20"]
+        correction: "Isoler le terme en x, puis x, puis vérifier."
+      - type: relier
+        enonce: "🔗 Relie chaque équation à sa solution."
+        paires: [["2x + 1 = 9", "4"], ["5x − 3 = 12", "3"], ["3x + 4 = 10", "2"]]
+        correction: "On enlève ou ajoute d'abord, puis on divise."
 
   - id: mettre-en-equation
     titre: Mettre un problème en équation
@@ -589,7 +622,7 @@ lecons:
         reponse: "x^2-{{2*a}}x+{{a*a}}"
         variables: [x]
         forme: developpee
-        correction: "$x^2 - {{2*a}}x + {{a*a}}$"
+        correction: "Identité $(a - b)^2 = a^2 - 2ab + b^2$ : $x^2 - 2 \\times {{a}} \\times x + {{a}}^2 = x^2 - {{2*a}}x + {{a*a}}$"
       - type: expression
         vars: { a: "1..12" }
         enonce: "Factorise : $x^2 - {{a*a}}$"
@@ -603,7 +636,7 @@ lecons:
         reponse: "(x+{{a}})^2"
         variables: [x]
         forme: factorisee
-        correction: "$(x + {{a}})^2$"
+        correction: "On reconnaît $a^2 + 2ab + b^2$ avec $b = {{a}}$ : $x^2 + 2 \\times {{a}} \\times x + {{a}}^2 = (x + {{a}})^2$"
       - type: nombre
         vars: { n: [21, 31, 41, 51, 61, 71, 101] }
         enonce: "Calcule de tête : ${{n}}^2$ (indice : $({{n-1}} + 1)^2$)"
@@ -666,3 +699,11 @@ lecons:
           - { avant: "lapins :", reponse: "e" }
         indice: "Si tous étaient des poules, il y aurait {{2*(p+e)}} pattes. Chaque lapin ajoute 2 pattes."
         correction: "$p + l = {{p+e}}$ et $2p + 4l = {{2*p+4*e}}$ : $l = ({{2*p+4*e}} - {{2*(p+e)}}) \\div 2 = {{e}}$ lapins, et {{p}} poules."
+      - type: qcm
+        enonce: "Le couple (2 ; 3) est-il solution du système x + y = 5 et x − y = −1 ?"
+        choix: ["Oui", "Non, seulement de la première équation", "Non, seulement de la seconde", "Non, d'aucune"]
+        correction: "2 + 3 = 5 et 2 − 3 = −1 : **oui**."
+      - type: ordre
+        enonce: "Range les étapes de la méthode par substitution."
+        items: ["J'exprime une inconnue en fonction de l'autre", "Je remplace dans l'autre équation", "Je résous l'équation à une inconnue", "Je calcule la deuxième inconnue"]
+        correction: "Exprimer, remplacer, résoudre, compléter."

@@ -76,6 +76,15 @@ lecons:
         enonce: "Que vaut $-3^2$ ?"
         choix: ["−9", "9", "−6", "6"]
         correction: "Le carré s'applique seulement à 3 : $-(3^2) = -9$."
+      - type: relier
+        enonce: "🔗 Relie chaque puissance à sa valeur."
+        paires: [["2³", "8"], ["5²", "25"], ["10³", "1 000"], ["3³", "27"]]
+        correction: "2³ = 2 × 2 × 2 = 8 ; 3³ = 27 ; 5² = 25 ; 10³ = 1 000."
+      - type: vf
+        vars: { t: [["2³ = 2 × 3", false], ["4² = 16", true], ["(−3)² = 9", true], ["10⁰ = 0", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une puissance est une multiplication répétée ; tout nombre non nul puissance 0 vaut 1."
 
   - id: puissances-de-10
     titre: Puissances de 10 et notation scientifique
@@ -178,6 +187,14 @@ lecons:
         enonce: "${{a}}^{-{{n}} } = ?$ (en écriture décimale)"
         reponse: "a^(-n)"
         correction: "$\\frac{1}{ {{a}}^{ {{n}} } } = \\frac{1}{ {{a^n}} } = {{nb(a^(-n))}}$"
+      - type: relier
+        enonce: "🔗 Relie chaque calcul à sa forme simplifiée."
+        paires: [["a³ × a⁴", "a⁷"], ["a⁶ ÷ a²", "a⁴"], ["(a²)³", "a⁶"], ["a⁰", "1"]]
+        correction: "Produit : on ajoute les exposants ; quotient : on soustrait ; puissance de puissance : on multiplie."
+      - type: qcm
+        enonce: "10⁵ × 10⁻² = …"
+        choix: ["10³", "10⁻¹⁰", "10⁷", "10⁻³"]
+        correction: "On ajoute les exposants : 5 + (−2) = 3."
 
   - id: racines-carrees
     titre: Les racines carrées

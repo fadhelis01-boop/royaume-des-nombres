@@ -182,7 +182,7 @@ lecons:
         erreurs:
           - { valeur: "t*q", message: "N'oublie pas : « pour cent » veut dire « sur 100 ». Il faut diviser par 100 : {{t}} × {{q}} ÷ 100." }
           - { valeur: "q-t", message: "Retirer {{t}} n'est pas prendre {{t}} %. On calcule {{t}}/100 de {{q}}." }
-        correction: "{{nb(t*q/100)}}"
+        correction: "{{t}} % de {{q}} = {{q}} × {{t}} ÷ 100 = {{nb(t*q/100)}}."
       - type: nombre
         vars: { t: [5, 10, 15, 20, 25, 30, 40, 50, 75], q: [20, 40, 60, 80, 120, 200, 360, 500] }
         enonce: "{{t}} % de {{q}} = ?"
@@ -318,7 +318,7 @@ lecons:
         enonce: "{{t}} h à {{v}} km/h : quelle distance ?"
         reponse: "v*t"
         unite: km
-        correction: "{{v*t}} km."
+        correction: "Distance = vitesse × durée : {{v}} × {{t}} = {{v*t}} km."
       - type: nombre
         vars: { v: [40, 50, 60, 80, 90, 100], t: "2..6" }
         enonce: "Un train parcourt {{v*t}} km en {{t}} h. Vitesse moyenne ?"
@@ -453,3 +453,11 @@ lecons:
         reponse: "ht*1.2"
         unite: €
         correction: "{{ht}} × 1,2 = {{nb(ht*1.2)}} €."
+      - type: relier
+        enonce: "🔗 Relie chaque évolution à son coefficient multiplicateur."
+        paires: [["hausse de 20 %", "1,2"], ["baisse de 20 %", "0,8"], ["hausse de 5 %", "1,05"], ["baisse de 50 %", "0,5"]]
+        correction: "Hausse de t % : × (1 + t/100). Baisse de t % : × (1 − t/100)."
+      - type: qcm
+        enonce: "Un prix augmente de 10 % puis baisse de 10 %. Au total, il a…"
+        choix: ["baissé de 1 %", "pas changé", "augmenté de 1 %", "baissé de 10 %"]
+        correction: "1,1 × 0,9 = 0,99 : une baisse de **1 %**."

@@ -113,7 +113,8 @@ for (const w of worlds) {
         // une correction qui « explique » : un calcul, une raison ou une règle, pas seulement la réponse
         const explique = /[=+−×÷→]|\b(car|parce|donc|comme|on |c'est|il faut|regarde|compte|ajoute|enlève)\b/i.test(t) || motsDe(t).length >= 10;
         // une correction entièrement « gabarit » ({{t_2}}) dépend de la question tirée : on ne peut pas la juger ici
-        if (!explique && nettoie(t) !== "N") correctionsSansPourquoi.push(mesures[mesures.length - 1]);
+        // dictée et phrase à remettre dans l'ordre : la correction est la phrase juste elle-même
+        if (!explique && nettoie(t) !== "N" && ex.type !== "dictee" && ex.type !== "ordre") correctionsSansPourquoi.push(mesures[mesures.length - 1]);
       } else noter("Correction", ou, "", l);
     }
   });

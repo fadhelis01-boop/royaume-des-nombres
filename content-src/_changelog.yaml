@@ -1,3 +1,13 @@
+- version: "2.14.0"
+  date: "2026-11-09"
+  notes:
+    - "Nouvelle planète : le Forum des Mémoires (Histoire-géo et EMC), avec 6 leçons pour le brevet : les deux guerres mondiales, la Ve République, les villes, l'Union européenne, les valeurs de la République."
+    - "Anglais de la 4ᵉ à la 2nde : 3 nouvelles îles et 18 leçons (present perfect, conditionnels, voix passive, débattre, comprendre l'actualité)."
+    - "Les leçons du collège et de la 2nde sont rangées dans la bonne classe : les fonctions affines arrivent en 3ᵉ, les équations en 4ᵉ…"
+    - "Carte des talents des collégiens et lycéens : 18 questions au lieu de 24, plus de questions d'école primaire, jamais deux fois la même."
+    - "Brevet : 14 dictées, une leçon pour bien relire, et des leçons de sciences de 3ᵉ (climat, tests des ions, risques naturels)."
+    - "À partir de 13 ans, un ton plus direct, « Résume la leçon » au lieu de « Explique à Zéro », des écrans de cours plus courts et des corrections qui montrent le calcul."
+    - "La voix lit les ions, les puissances, f(x), les vecteurs et les triangles nommés."
 - version: "2.13.0"
   date: "2026-11-09"
   notes:

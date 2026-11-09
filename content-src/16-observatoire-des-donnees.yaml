@@ -356,6 +356,14 @@ lecons:
         reponse: "(r/(r+b))^2"
         forme: fraction
         correction: "$\\left(\\frac{ {{r}} }{ {{r+b}} }\\right)^2 = {{frac(r*r,(r+b)*(r+b))}}$"
+      - type: relier
+        enonce: "🔗 On lance deux fois une pièce. Relie chaque événement à sa probabilité."
+        paires: [["deux fois Pile", "1/4"], ["au moins une fois Face", "3/4"], ["une fois Pile et une fois Face", "1/2"]]
+        correction: "4 issues équiprobables : PP, PF, FP, FF."
+      - type: ordre
+        enonce: "Range les étapes pour calculer une probabilité avec un arbre."
+        items: ["Je dessine l'arbre de toutes les issues", "J'écris la probabilité sur chaque branche", "Je multiplie le long d'un chemin", "J'additionne les chemins qui réalisent l'événement"]
+        correction: "Arbre, branches, multiplier sur un chemin, additionner les chemins."
 
   - id: quartiles-frequences
     titre: Fréquences, quartiles et diagrammes en boîte
@@ -392,7 +400,7 @@ lecons:
         enonce: "Fréquence (en %) d'une valeur d'effectif {{e}} sur un total de {{t}} ?"
         reponse: "e/t*100"
         unite: "%"
-        correction: "{{nb(e/t*100)}} %."
+        correction: "Fréquence = effectif ÷ total : {{e}} ÷ {{t}} = {{nb(e/t)}}, soit {{nb(e/t*100)}} %."
       - type: nombre
         vars: { a: "1..40", b: "1..40", c: "1..40", d: "1..40", e: "1..40", f: "1..40", g: "1..40", h: "1..40" }
         enonce: "Série de 8 valeurs : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ; {{f}} ; {{g}} ; {{h}}. Premier quartile Q₁ ?"
@@ -404,3 +412,11 @@ lecons:
         enonce: "Série de 8 valeurs : {{a}} ; {{b}} ; {{c}} ; {{d}} ; {{e}} ; {{f}} ; {{g}} ; {{h}}. Troisième quartile Q₃ ?"
         reponse: "kieme(6,a,b,c,d,e,f,g,h)"
         correction: "Rang 3 × 8 / 4 = 6 : Q₃ = {{kieme(6,a,b,c,d,e,f,g,h)}}."
+      - type: relier
+        enonce: "🔗 Relie chaque indicateur à sa définition."
+        paires: [["médiane", "partage la série en deux moitiés"], ["premier quartile Q1", "au moins 25 % des valeurs sont en dessous"], ["étendue", "plus grande valeur moins la plus petite"], ["fréquence", "effectif ÷ effectif total"]]
+        correction: "Médiane, quartile, étendue, fréquence : les outils pour résumer une série."
+      - type: qcm
+        enonce: "Dans un diagramme en boîte, la boîte va de…"
+        choix: ["Q1 à Q3", "la plus petite à la plus grande valeur", "la moyenne à la médiane", "0 à 100"]
+        correction: "La boîte va de **Q1 à Q3** ; les moustaches vont jusqu'aux extrêmes."
