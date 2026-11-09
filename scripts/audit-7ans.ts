@@ -13,6 +13,8 @@ const EXEMPLES = process.argv.includes("--exemples");
 const iAge = process.argv.indexOf("--age");
 const AGE = iAge > 0 ? Number(process.argv[iAge + 1]) : 7;
 const NIV_MAX = AGE - 4.5;
+// --annee : seulement les leçons de l'année en cours (de NIV_MAX − 1 à NIV_MAX), pour les plus grands
+const NIV_MIN = process.argv.includes("--annee") ? NIV_MAX - 1 : -Infinity;
 const TOUT = process.argv.includes("--tout");
 const worlds: World[] = fs.readdirSync("public/content/worlds").map((f) => JSON.parse(fs.readFileSync("public/content/worlds/" + f, "utf8")));
 
@@ -74,7 +76,7 @@ const genere = { relier: 0, classer: 0, libre: 0 };
 for (const w of worlds) {
   w.lecons.forEach((l, i) => {
     const n = niveauLecon(w, i);
-    if (n === null || n > NIV_MAX || w.cycle === "astuces") return;
+    if (n === null || n > NIV_MAX || n <= NIV_MIN || w.cycle === "astuces") return;
     lecons++;
     const ou = `${w.matiere}:${w.id}/${l.id}`;
     let sert = "";
@@ -141,7 +143,7 @@ console.log(`\nTypes d'exercices (${totalEx}) : ${Object.entries(types).sort((a,
   for (const w of worlds)
     w.lecons.forEach((l, i) => {
       const niv = niveauLecon(w, i);
-      if (niv === null || niv > NIV_MAX || w.cycle === "astuces" || !l.exercices.length) return;
+      if (niv === null || niv > NIV_MAX || niv <= NIV_MIN || w.cycle === "astuces" || !l.exercices.length) return;
       for (let r = 0; r < 20; r++) {
         const p = planDefi(l.exercices, l.nb_defi ?? 5, { jeune: AGE < 9 });
         n++;

@@ -18,7 +18,8 @@
     "audit:7ans": "rolldown scripts/audit-7ans.ts --platform node --format esm -o .tmp/audit-7ans.mjs --log-level warn && node .tmp/audit-7ans.mjs",
     "audit:consignes": "rolldown scripts/audit-consignes.ts --platform node --format esm -o .tmp/audit-consignes.mjs --log-level warn && node .tmp/audit-consignes.mjs",
     "audit:voix": "rolldown scripts/audit-voix.ts --platform node --format esm -o .tmp/audit-voix.mjs --log-level warn && node .tmp/audit-voix.mjs",
-    "audit:domines": "rolldown scripts/audit-domines.ts --platform node --format esm -o .tmp/audit-domines.mjs --log-level warn && node .tmp/audit-domines.mjs"
+    "audit:domines": "rolldown scripts/audit-domines.ts --platform node --format esm -o .tmp/audit-domines.mjs --log-level warn && node .tmp/audit-domines.mjs",
+    "audit:libre": "rolldown scripts/audit-libre.ts --platform node --format esm -o .tmp/audit-libre.mjs --log-level warn && node .tmp/audit-libre.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.132.0",
