@@ -138,6 +138,14 @@ lecons:
         reponse: "l*(d+250)/100"
         unite: L
         correction: "{{l}} × {{d+250}} ÷ 100 = {{nb(l*(d+250)/100)}} L."
+      - type: relier
+        enonce: "🔗 3 kg de pommes coûtent 6 €. Relie chaque quantité à son prix."
+        paires: [["1 kg", "2 €"], ["5 kg", "10 €"], ["9 kg", "18 €"]]
+        correction: "1 kg coûte 6 ÷ 3 = 2 €. Ensuite on multiplie : 5 kg → 10 €, 9 kg → 18 €."
+      - type: qcm
+        enonce: "4 cahiers coûtent 8 €. Quel calcul donne le prix de 6 cahiers ?"
+        choix: ["8 ÷ 4 × 6", "8 + 6", "8 × 4 ÷ 6"]
+        correction: "Passage à l'unité : 1 cahier coûte 8 ÷ 4 = 2 €, donc 6 cahiers coûtent 2 × 6 = 12 €."
 
   - id: pourcentages
     titre: Les pourcentages
@@ -202,6 +210,19 @@ lecons:
         reponse: "100-b"
         unite: "%"
         correction: "100 − {{b}} = {{100-b}} %."
+      - type: relier
+        enonce: "🔗 Relie chaque pourcentage à ce qu'il représente."
+        paires: [["50 %", "la moitié"], ["25 %", "le quart"], ["10 %", "le dixième"], ["100 %", "le tout"]]
+        correction: "50 % = 50 sur 100 = la moitié ; 25 % = le quart ; 10 % = le dixième."
+      - type: comparer
+        vars: { p: [10, 20, 25, 50], n: [40, 80, 120, 200], c: "4..100" }
+        si: "p*n/100 != c"
+        enonce: "Compare."
+        gauche: "p*n/100"
+        droite: "c"
+        gauche_affiche: "{{p}} % de {{n}}"
+        droite_affiche: "{{c}}"
+        correction: "{{p}} % de {{n}} = {{n}} × {{p}} ÷ 100 = {{p*n/100}}. On compare {{p*n/100}} et {{c}}."
 
   - id: echelles
     titre: Les échelles des cartes et des plans
@@ -253,6 +274,14 @@ lecons:
         reponse: "10*l"
         unite: cm
         correction: "10 × {{l}} = {{10*l}} cm, soit {{nb(10*l/100)}} m."
+      - type: relier
+        enonce: "🔗 Relie chaque échelle à ce qu'elle veut dire."
+        paires: [["1/100", "1 cm sur le plan = 1 m en vrai"], ["1/1 000", "1 cm sur le plan = 10 m en vrai"], ["1/100 000", "1 cm sur la carte = 1 km en vrai"]]
+        correction: "1/100 : 1 cm représente 100 cm, soit 1 m. 1/100 000 : 1 cm représente 100 000 cm, soit 1 km."
+      - type: qcm
+        enonce: "Sur un plan à l'échelle 1/100, une pièce mesure 5 cm. En vrai, elle mesure…"
+        choix: ["5 m", "50 cm", "500 m"]
+        correction: "5 cm × 100 = 500 cm = 5 m."
 
   - id: vitesses
     titre: Vitesse, distance et durée
@@ -305,6 +334,14 @@ lecons:
         reponse: "v*1.5"
         unite: km
         correction: "1 h 30 = 1,5 h ; {{v}} × 1,5 = {{nb(v*1.5)}} km."
+      - type: relier
+        enonce: "🔗 Relie chaque trajet à sa vitesse moyenne."
+        paires: [["120 km en 2 h", "60 km/h"], ["100 km en 4 h", "25 km/h"], ["15 km en 1 h", "15 km/h"]]
+        correction: "Vitesse = distance ÷ durée : 120 ÷ 2 = 60 km/h."
+      - type: ordre
+        enonce: "Range du plus lent au plus rapide."
+        items: ["un escargot", "un piéton", "un cycliste", "une voiture sur l'autoroute"]
+        correction: "Escargot (quelques mètres par heure), piéton (5 km/h), vélo (15 à 20 km/h), voiture (130 km/h)."
 
   - id: ratios-partages
     titre: Ratios et partages proportionnels

@@ -133,6 +133,14 @@ lecons:
         tolerance: 0.01
         unite: "Ω"
         correction: "R = U / I = {{U}} / {{I}} = {{U/I}} Ω."
+      - type: relier
+        enonce: "🔗 Relie chaque lettre de la loi d'Ohm (U = R × I) à ce qu'elle mesure."
+        paires: [["U", "la tension, en volts (V)"], ["R", "la résistance, en ohms (Ω)"], ["I", "l'intensité, en ampères (A)"]]
+        correction: "U = R × I : la tension (V) égale la résistance (Ω) multipliée par l'intensité (A)."
+      - type: qcm
+        enonce: "Avec la même résistance, si l'intensité double, la tension…"
+        choix: ["double", "reste la même", "est divisée par 2"]
+        correction: "U = R × I : si I est multipliée par 2, U aussi."
 
   - id: puissance-energie
     titre: "Puissance et énergie électriques"

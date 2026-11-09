@@ -181,7 +181,7 @@ lecons:
       - dialogue:
           - zero: "« Les enfants de ma voisine joue. » Le verbe est à côté de « voisine », alors il est au singulier, non ?"
           - neo: "Piège ! Qui est-ce qui joue ? Les enfants ! Le verbe s'accorde avec le sujet, pas avec le mot d'à côté."
-      - a_quoi_ca_sert: "Un verbe mal accordé se repère tout de suite. Bien l'accorder, c'est montrer qu'on sait qui fait l'action."
+      - a_quoi_ca_sert: "« Les enfants joue » saute aux yeux de ton lecteur. Bien accorder, c'est montrer qui fait l'action."
       - texte: |
           Le verbe s'accorde **toujours avec son sujet**, même si :
           - le sujet est **loin** du verbe : *Les enfants de ma voisine jou**ent**.*

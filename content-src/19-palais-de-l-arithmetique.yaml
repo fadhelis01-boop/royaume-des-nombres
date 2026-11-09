@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: nombres-premiers
     titre: Les nombres premiers
+    classe: "5ᵉ"
     objectif: Je reconnais un nombre premier et j'utilise le crible d'Ératosthène.
     mots: [nombre premier, crible]
     etapes:

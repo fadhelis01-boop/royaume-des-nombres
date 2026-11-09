@@ -64,10 +64,13 @@ eq("relier : deux paires inversées refusées", vf.ok, false);
 eq("relier : chaque élément de droite apparaît une fois", [...ri.texts!].sort(), ["chat", "chien", "oiseau", "poisson"]);
 
 // ---------- Rappel libre ----------
-const lib: ExSpec = { type: "libre", enonce: "Écris", cles: [["évaporation"], ["condensation"], ["nuage", "nuages"]], modele: "…", min_cles: 2 };
+const lib: ExSpec = { type: "libre", enonce: "Écris", cles: [["évaporation"], ["condensation"], ["nuage", "nuages"]], modele: "L'eau s'évapore, puis la condensation forme les nuages.", min_cles: 2 };
 const li = instantiate(lib, 1);
 eq("libre : idées retrouvées malgré les accents et les pluriels", idees(li, "L'eau s'evapore (evaporation) puis forme des nuages"), [0, 2]);
-eq("libre : réussi avec 2 idées sur 3", check(li, { kind: "text", value: "evaporation et condensation" }).ok, true);
+eq("libre : réussi avec 2 idées sur 3", check(li, { kind: "text", value: "Il y a l'evaporation puis la condensation" }).ok, true);
+eq("libre : une liste de mots-clés ne suffit pas", check(li, { kind: "text", value: "evaporation condensation nuages" }).ok, false);
+eq("libre : fautes d'orthographe tolérées", check(li, { kind: "text", value: "Il y a l'evaporaton puis la condesation" }).ok, true);
+eq("libre : un mot voisin n'est pas une idée", idees(li, "la vaporisation de la conversation"), []);
 eq("libre : refusé avec une seule idée", check(li, { kind: "text", value: "il y a des nuages" }).ok, false);
 eq("libre : mot plus long qui contient la clé", idees(instantiate({ ...lib, cles: [["oxygène"]], min_cles: 1 }, 1), "du dioxygène"), [0]);
 eq("libre : un mot court ne déclenche pas une clé longue", idees(li, "eva conde nu"), []);
@@ -210,6 +213,19 @@ const et8 = construireParcours(D8, { geo: D8[0].min - 1 }, 8, () => false, 18, N
 eq("parcours : île pas commencée = « nouveau »", et8.every((e) => e.raison === "nouveau"), true);
 
 eq("plancher bâclé : île commencée depuis plus d'un an = au moins son début", plancherBacle([{ id: "calc", min: 1, max: 5 }] as never, { calc: 0 }, 8, NOV).calc, 1);
+eq("voix : CO₂", toSpeech("Les plantes absorbent le CO₂."), "Les plantes absorbent le C O 2.");
+eq("voix : H₂O", toSpeech("L'eau a pour formule H₂O."), "L'eau a pour formule H 2 O.");
+eq("voix : siècle en chiffres romains", toSpeech("Au XVIIIᵉ siècle"), "Au dix-huitième siècle");
+eq("voix : chapitre IX", toSpeech("Le chapitre IX"), "Le chapitre 9");
+eq("voix : roi", toSpeech("Louis XIV"), "Louis 14");
+eq("voix : perpendiculaire", toSpeech("(AB) ⊥ (CD)"), "(AB) est perpendiculaire à (CD)");
+eq("voix : mètre cube", toSpeech("1 m³ = 1 000 L"), "1 mètre cube égale 1 000 litres");
+eq("voix : centimètres carrés", toSpeech("12 cm²"), "12 centimètres carrés");
+eq("voix : km/h", toSpeech("5 km/h"), "5 kilomètres par heure");
+eq("voix : d / t", toSpeech("v = d / t"), "v égale d divisé par t");
+eq("voix : « Le » n'est pas un chiffre romain", toSpeech("Le CE1 et la classe"), "Le CE1 et la classe");
+eq("voix : « Ver » n'est pas un chiffre romain", toSpeech("Ver de terre"), "Ver de terre");
+eq("voix : François Ier", toSpeech("François Ier"), "François premier");
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

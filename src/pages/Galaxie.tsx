@@ -5,6 +5,7 @@ import { visuel } from "../lib/img";
 import { Bubble } from "../components/Mascot";
 import { Continuer } from "../components/Continuer";
 import type { Planete, World } from "../lib/types";
+import { ageScolaire, niveauDuMoment, tranche } from "../lib/parcours";
 
 // La Galaxie des Savoirs : toutes les matières, rangées en trois familles.
 // Chaque planète se décrit dans content-src/_planetes.yaml (rien à coder pour en ajouter une).
@@ -54,7 +55,10 @@ function PlaneteCard({ p, ws, on, onPick }: { p: Planete; ws: World[]; on: boole
   // Progression de l'étape en cours (Graines, Explorateurs, Maîtres) : « 0/199 leçons » décourage à 8 ans.
   const parcours = ws.filter((w) => w.cycle !== "astuces").sort((a, b) => a.ordre - b.ordre);
   const fait = (w: World) => w.lecons.every((l) => child.progress[lessonKey(w, l.id)]?.done);
-  const cycle = (parcours.find((w) => !fait(w)) ?? parcours[parcours.length - 1])?.cycle;
+  // l'étape de l'enfant : on ignore les mondes entièrement sous son niveau (un élève de 5ᵉ ne voit pas « Les Graines »)
+  const moment = niveauDuMoment(ageScolaire(child));
+  const aSonNiveau = parcours.filter((w) => (tranche(w.niveau)?.[1] ?? 99) >= moment);
+  const cycle = (aSonNiveau.find((w) => !fait(w)) ?? parcours.find((w) => !fait(w)) ?? parcours[parcours.length - 1])?.cycle;
   const etape = parcours.filter((w) => w.cycle === cycle);
   const total = etape.length;
   const faites = etape.filter(fait).length;

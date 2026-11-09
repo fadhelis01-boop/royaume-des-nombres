@@ -432,6 +432,21 @@ lecons:
         enonce: "Sans calculer exactement : quel résultat est le plus proche de $ {{a}} \\times {{b}}$ ?"
         choix: ["{{nb(a*b)}}", "{{nb(a*b*10)}}", "{{nb(a+b)}}", "{{nb(round(a*b/10))}}"]
         correction: "Environ {{round(a/10)*10}} × {{round(b/10)*10}} = {{nb(round(a/10)*10*round(b/10)*10)}} ; le bon résultat est {{nb(a*b)}}."
+      - type: relier
+        vars: { a: "11..29", b: "2..9", c: "11..29", d: "2..9" }
+        si: "a*b != c*d && a != c"
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["{{a}} × {{b}}", "{{a*b}}"], ["{{c}} × {{d}}", "{{c*d}}"], ["{{a}} × 10", "{{a*10}}"]]
+        correction: "{{a}} × {{b}} = {{a*b}} ; {{c}} × {{d}} = {{c*d}} ; × 10, on ajoute un zéro : {{a*10}}."
+      - type: comparer
+        vars: { a: "11..49", b: "2..9", c: "50..400" }
+        si: "a*b != c"
+        enonce: "Compare."
+        gauche: "a*b"
+        droite: "c"
+        gauche_affiche: "{{a}} × {{b}}"
+        droite_affiche: "{{c}}"
+        correction: "{{a}} × {{b}} = {{a*b}}. On compare {{a*b}} et {{c}}."
 
   - id: proprietes-multiplication
     titre: Les super-pouvoirs de la multiplication
@@ -456,7 +471,7 @@ lecons:
       - astuce:
           texte: "Les paires magiques : 2 × 5 = 10, 4 × 25 = 100, 8 × 125 = 1 000. Cherche-les en premier !"
           qui: mia
-      - a_quoi_ca_sert: "C'est comme ça que les vendeurs calculent 12 articles à 15 € (10 × 15 + 2 × 15 = 180) sans calculatrice. Et c'est la porte d'entrée de l'algèbre !"
+      - a_quoi_ca_sert: "12 cartes à 15 € ? Tu calcules 10 × 15 + 2 × 15 = 180 € de tête, sans calculatrice."
       - question:
           type: nombre
           vars: { a: "3..9", b: "11..19" }

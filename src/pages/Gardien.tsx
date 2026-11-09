@@ -13,7 +13,7 @@ import { ExercisePlayer, type ExResult } from "../components/ExercisePlayer";
 import { Bubble, Mascot } from "../components/Mascot";
 import { StoryScene } from "../components/Story";
 import { rankSpecs } from "./Defi";
-import { jeuneLecteur } from "../lib/parcours";
+import { optionsEcrit } from "../lib/parcours";
 import type { FoeSprite, Line, Who, World } from "../lib/types";
 
 // Le Défi du Gardien : le « boss » de chaque monde. 10 questions qui mélangent
@@ -58,7 +58,7 @@ export function Gardien({ worldId }: { worldId: string }) {
   const ch = w ? histoireDe(manifest, w.matiere)?.chapitres[w.id] : undefined;
   const [phase, setPhase] = useState<"intro" | "jeu" | "fin" | "arc">("intro");
   const [round, setRound] = useState(0);
-  const qs = useMemo(() => (w && child ? plan(w, N, jeuneLecteur(child)) : []), [w, round]);
+  const qs = useMemo(() => (w && child ? plan(w, N, optionsEcrit(child).jeune) : []), [w, round]);
   const [score, setScore] = useState(0);
   if (!w) return <div className="page center">Monde introuvable.</div>;
   const arc = histoireDe(manifest, w.matiere)?.arcs.find((a) => a.final === w.id);
@@ -286,7 +286,7 @@ function Combat({ w, qs: initial, chObjet, onEnd }: { w: World; qs: Instance[]; 
     setHintTxt(undefined);
     if (!r.ok && shield) {
       setShield(false);
-      const extra = plan(w, 1, (() => { const c = getState().children.find((x) => x.id === getState().activeId); return !!c && jeuneLecteur(c); })());
+      const extra = plan(w, 1, (() => { const c = getState().children.find((x) => x.id === getState().activeId); return !!c && optionsEcrit(c).jeune; })());
       if (extra.length) {
         setQs(qs.map((x, k) => (k === i ? extra[0] : x)));
         return;

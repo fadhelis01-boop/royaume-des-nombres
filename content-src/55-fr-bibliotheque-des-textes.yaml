@@ -74,7 +74,7 @@ lecons:
     objectif: Je comprends l'implicite (ce que le texte laisse deviner sans le dire).
     mots: [implicite, inférence]
     etapes:
-      - a_quoi_ca_sert: "Comprendre l'implicite, c'est lire entre les lignes : indispensable pour saisir l'humour, l'ironie et les sous-entendus."
+      - a_quoi_ca_sert: "Le texte ne dit pas tout : à toi de comprendre ce que pense vraiment la fourmi. C'est lire entre les lignes."
       - texte: |
           **La Cigale et la Fourmi** — Jean de La Fontaine (1668)
 
@@ -132,7 +132,7 @@ lecons:
     etapes:
       - dialogue:
           - neo: "« Léa ferma son parapluie et secoua ses bottes. » Il pleuvait ! Ce n'est pas écrit… mais les indices le disent."
-      - a_quoi_ca_sert: "Faire des inférences, c'est ce que font les détectives, les médecins et les scientifiques : déduire à partir d'indices."
+      - a_quoi_ca_sert: "Comme un détective, tu devines ce que le texte ne dit pas : qui a peur, qui ment, ce qui va arriver."
       - texte: |
           Pour **déduire** :
           1. Je repère les **indices** (mots, actions, lieux, émotions).

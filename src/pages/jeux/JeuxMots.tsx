@@ -7,6 +7,7 @@ import { normOrtho } from "../../lib/fr/morpho";
 import { AccentBar, DicteeCorrection } from "../../components/FrExercices";
 import { Bubble, Mascot } from "../../components/Mascot";
 import { chargerDico, type Entree } from "../Dico";
+import { ageScolaire } from "../../lib/parcours";
 
 // Les trois jeux de l'Archipel des Mots : conjugaison éclair (automatiser les formes
 // fréquentes), mot mystère (vocabulaire par la définition) et dictée flash
@@ -196,7 +197,7 @@ export function MotMystere() {
   }, []);
   const pool = useMemo(() => {
     if (!dico) return [];
-    const max = child.age < 9 ? 1 : child.age < 12 ? 2 : 3;
+    const max = ageScolaire(child) < 9 ? 1 : ageScolaire(child) < 12 ? 2 : 3;
     const ok = dico.filter((e) => e.niveau <= max && !/\s/.test(e.mot) && e.mot.length >= 3);
     return [...ok].sort(() => Math.random() - 0.5).slice(0, MANCHES);
   }, [dico]);
@@ -325,7 +326,7 @@ export function DicteeFlash() {
   }, []);
   const phrases = useMemo(() => {
     if (!dico) return [];
-    const max = child.age < 9 ? 1 : child.age < 12 ? 2 : 3;
+    const max = ageScolaire(child) < 9 ? 1 : ageScolaire(child) < 12 ? 2 : 3;
     // les exemples du dictionnaire : de vraies phrases courtes, sans guillemets ni citation
     const ok = dico.filter((e) => e.niveau <= max && e.exemple && e.exemple.length <= 60 && !/[«»"()]/.test(e.exemple)).map((e) => e.exemple!);
     return [...new Set(ok)].sort(() => Math.random() - 0.5).slice(0, PHRASES);

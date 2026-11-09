@@ -8,7 +8,7 @@ import { ExercisePlayer } from "../components/ExercisePlayer";
 import { Bubble } from "../components/Mascot";
 import { EnigmeCard } from "./jeux/Enigmes";
 import { pourLecteurAgile } from "../lib/plan";
-import { jeuneLecteur } from "../lib/parcours";
+import { optionsEcrit, ageScolaire } from "../lib/parcours";
 
 export function DefiDuJour() {
   const child = useChild()!;
@@ -30,7 +30,7 @@ export function DefiDuJour() {
       const lesson = worlds.find((x) => x.id === w)?.lecons.find((x) => x.id === l);
       if (!lesson) continue;
       try {
-        const tri = jeuneLecteur(child) ? lesson.exercices.filter((e) => !pourLecteurAgile(e)) : lesson.exercices;
+        const tri = optionsEcrit(child).jeune ? lesson.exercices.filter((e) => !pourLecteurAgile(e)) : lesson.exercices;
         const pool = tri.length ? tri : lesson.exercices;
         out.push({ key, inst: instantiate(pool[Math.floor(Math.random() * pool.length)], newSeed()) });
       } catch {
@@ -42,10 +42,10 @@ export function DefiDuJour() {
   }, []);
   const enigme = useMemo(() => {
     const all = getContent().manifest?.enigmes ?? [];
-    const lvl = child.age < 10 ? 1 : child.age < 14 ? 2 : 3;
+    const lvl = ageScolaire(child) < 10 ? 1 : ageScolaire(child) < 14 ? 2 : 3;
     const pool = all.filter((e) => e.niveau === lvl);
     return pool.length ? pool[dayNumber() % pool.length] : all[dayNumber() % Math.max(1, all.length)];
-  }, [child.age]);
+  }, [ageScolaire(child)]);
   const [i, setI] = useState(0);
   const [ok, setOk] = useState(0);
 

@@ -11,8 +11,9 @@ import { instantiate, check, toFraction, type Instance, type Answer } from "../s
 import { enLettres, fmtNum, parse, isExpanded, isFactored, equivalent, evalStr, clean } from "../src/lib/expr";
 import type { ExSpec, Manifest, World, Step } from "../src/lib/types";
 import { VISUEL_TYPES } from "../src/lib/visuel-types";
+import { tranche } from "../src/lib/parcours";
 // @ts-expect-error module JS sans types
-import { problemesConsigne, pourLesPlusJeunes, pourLes8ans, problemeTexte } from "./lisibilite.mjs";
+import { problemesConsigne, pourLesPlusJeunes, pourLes8ans, pourLesGrands, LIMITES_GRANDS, problemeTexte } from "./lisibilite.mjs";
 
 const errors: string[] = [];
 const warns: string[] = [];
@@ -228,6 +229,7 @@ for (const ref of manifest.worlds) {
     l.etapes.forEach((s, i) => checkStep(s, `${where} étape ${i + 1}`));
     l.exercices.forEach((e, i) => checkExercise(e, `${where} exercice ${i + 1}`));
     if (l.exercices.length < 3) warns.push(`${where} : seulement ${l.exercices.length} exercice(s)`);
+    if (l.classe && !tranche(l.classe)) errors.push(`${where} : classe inconnue « ${l.classe} » (GS, CP… 6ᵉ, 5ᵉ…)`);
     // Lisibilité pour les 6-9 ans (audit « enfant de 8 ans ») : consigne courte, sans mot difficile non expliqué.
     // Un mot difficile enseigné dans la leçon se déclare dans « mots: » de la leçon.
     if (pourLesPlusJeunes(w)) {
@@ -243,6 +245,12 @@ for (const ref of manifest.worlds) {
       for (const [k, x] of items) {
         const p: string | null = problemeTexte(k, x);
         if (p) errors.push(`${where} : ${k} trop long pour un enfant de 6 à 8 ans (${p}) → « ${String(x).slice(0, 80)} » (couper ou raccourcir ; voir node scripts/lisibilite.mjs --textes)`);
+      }
+    }
+    if (pourLesGrands(w)) {
+      for (const st of l.etapes) {
+        const p: string | null = problemeTexte(st.kind, (st as { texte?: unknown }).texte, LIMITES_GRANDS);
+        if (p) errors.push(`${where} : écran de cours trop long pour un téléphone (${p}) → « ${String((st as { texte?: unknown }).texte).slice(0, 80)} » (ajouter une ligne vide pour permettre la coupe)`);
       }
     }
   }

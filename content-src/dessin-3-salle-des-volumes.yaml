@@ -172,6 +172,7 @@ lecons:
       - astuce:
           texte: "Plisse les yeux en regardant ton modèle : les détails disparaissent et tu vois mieux les zones claires et foncées."
           qui: neo
+      - a_quoi_ca_sert: "Du plus clair au plus foncé : les ombres donnent du relief à ton dessin, comme une photo."
       - retiens: "Valeur = clair/foncé. Foncer : appuyer, mine tendre, hachures, hachures croisées. Le contraste attire le regard."
     exercices:
       - type: ordre
@@ -247,6 +248,7 @@ lecons:
       - astuce:
           texte: "Bois = lignes ondulées ; pierre = taches et petits points ; fourrure = traits courts dans le sens des poils ; métal = forts contrastes et reflets."
           qui: mia
+      - a_quoi_ca_sert: "Le bois, la fourrure, le métal : avec quelques traits, ton dessin donne envie de toucher."
       - retiens: "Texture = aspect de la surface. Traits courts (fourrure), lignes ondulées (bois), points (pierre), reflets (métal). Frottage : Max Ernst."
     exercices:
       - type: qcm

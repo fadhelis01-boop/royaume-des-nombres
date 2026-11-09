@@ -4,6 +4,7 @@ import { aiConfigured } from "../lib/ai-config";
 import { addXp, bump, updateChild, useChild } from "../lib/store";
 import { Bubble } from "../components/Mascot";
 import { Md } from "../components/Md";
+import { ageScolaire } from "../lib/parcours";
 
 // Du calcul vers le problème : l'enfant invente une histoire qui correspond à
 // un calcul. C'est l'inverse de « mettre un problème en équation » — et c'est
@@ -25,7 +26,7 @@ const CALCULS: { niveau: number; calcul: string; aide: string }[] = [
 
 export function Inventer() {
   const child = useChild()!;
-  const lvl = child.age < 10 ? 1 : child.age < 13 ? 2 : 3;
+  const lvl = ageScolaire(child) < 10 ? 1 : ageScolaire(child) < 13 ? 2 : 3;
   const pool = CALCULS.filter((c) => c.niveau <= lvl);
   const [i, setI] = useState(() => Math.floor(Math.random() * pool.length));
   const [text, setText] = useState("");
@@ -48,7 +49,7 @@ export function Inventer() {
     abort.current = new AbortController();
     try {
       const { reviewInvention } = await import("../lib/ai");
-      const r = await reviewInvention(child.age, c.calcul, text, abort.current.signal, setReview);
+      const r = await reviewInvention(ageScolaire(child), c.calcul, text, abort.current.signal, setReview);
       setReview(r.text);
     } catch (e) {
       setReview("⚠️ " + (e as Error).message);

@@ -596,6 +596,8 @@ function checkRaw(inst: Instance, ans: Answer): Verdict {
     case "libre": {
       if (ans.kind !== "text") return { ok: false };
       const trouves = idees(inst, ans.value);
+      if (trouves.length >= inst.minCles! && !estPhrase(inst, ans.value))
+        return { ok: false, almost: "Tu as les bonnes idées ! Maintenant, fais une phrase avec : par exemple « Les … sont … »." };
       if (trouves.length >= inst.minCles!) return { ok: true };
       return { ok: false, almost: trouves.length ? `Tu as retrouvé ${trouves.length} idée${trouves.length > 1 ? "s" : ""} sur ${inst.minCles} attendue${inst.minCles! > 1 ? "s" : ""}. Compare avec le modèle !` : undefined };
     }
@@ -697,21 +699,65 @@ export const newSeed = () => (Math.random() * 2 ** 31) >>> 0;
 const sansAccent = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’']/g, " ");
 /** Racine tolérante : les 5 premières lettres d'un mot long (pluriels, conjugaisons, petites fautes de fin). */
 const racine = (m: string) => (m.length > 6 ? m.slice(0, 5) : m);
+/** Distance d'édition (insertion, suppression, remplacement, lettres échangées), bornée pour aller vite. */
+function distance(a: string, b: string, max: number): number {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  const d: number[][] = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const c = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + c);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
+}
+/**
+ * Un mot de l'enfant correspond-il à un mot-clé ? Mot entier, même racine (pluriels, conjugaisons),
+ * mot plus long qui le contient, ou petite faute d'orthographe (audit « 9-12 ans » : une lettre
+ * oubliée, ajoutée ou échangée dès 6 lettres, deux dès 13 lettres ; même première lettre).
+ */
+function proche(m: string, c: string): boolean {
+  if (m === c) return true;
+  if (c.length > 3 && m.length >= Math.min(c.length, 6) && m.startsWith(racine(c))) return true;
+  if (c.length >= 5 && m.includes(c)) return true;
+  if (c.length >= 6 && m.length >= 5) {
+    if (m[0] !== c[0]) return false;
+    const tol = c.length >= 13 ? 2 : 1;
+    // on compare aussi au début du mot (« articulation » écrit « artculations »)
+    if (distance(m, c, tol) <= tol || distance(m.slice(0, c.length), c, tol) <= tol || distance(m, c.slice(0, m.length), tol) <= tol && m.length >= c.length - 1) return true;
+  }
+  return false;
+}
+const motsDe = (texte: string) => sansAccent(texte).split(/[^a-z0-9]+/).filter(Boolean);
 /** Les idées attendues retrouvées dans la réponse (indices des groupes). */
 export function idees(inst: Instance, texte: string): number[] {
-  const mots = sansAccent(texte).split(/[^a-z0-9]+/).filter(Boolean);
+  const mots = motsDe(texte);
   const t = " " + mots.join(" ") + " ";
   return (inst.cles ?? [])
-    .map((g, i) => ({ i, ok: g.some((v) => {
-      const cle = sansAccent(v).split(/[^a-z0-9]+/).filter(Boolean);
-      if (!cle.length) return false;
-      // un mot tronqué (« conde ») ne compte pas : il faut au moins 6 lettres, ou le mot entier
-      const proche = (m: string, c: string) => m === c || (c.length > 3 && m.length >= Math.min(c.length, 6) && m.startsWith(racine(c))) || (c.length >= 5 && m.includes(c));
-      if (cle.length > 1) return t.includes(" " + cle.join(" ") + " ") || cle.every((c) => mots.some((m) => proche(m, c)));
-      return mots.some((m) => proche(m, cle[0]));
-
-
-    }) }))
+    .map((g, i) => ({
+      i,
+      ok: g.some((v) => {
+        const cle = motsDe(v);
+        if (!cle.length) return false;
+        if (cle.length > 1) return t.includes(" " + cle.join(" ") + " ") || cle.every((c) => mots.some((m) => proche(m, c)));
+        return mots.some((m) => proche(m, cle[0]));
+      }),
+    }))
     .filter((x) => x.ok)
     .map((x) => x.i);
+}
+/**
+ * Une vraie phrase, pas une liste de mots-clés : au moins 4 mots, dont au moins 2 qui ne sont pas des mots-clés
+ * (« les os sont reliés par… »). Une liste « os articulations muscles » ne suffit pas.
+ */
+export function estPhrase(inst: Instance, texte: string): boolean {
+  const cles = (inst.cles ?? []).flat().flatMap(motsDe);
+  const phrase = (t: string) => {
+    const mots = motsDe(t);
+    return mots.length >= 4 && mots.filter((m) => !cles.some((c) => proche(m, c))).length >= 2;
+  };
+  // quand le « Je retiens » est lui-même une liste (étapes, schéma), on n'exige pas de phrase
+  return phrase(texte) || !phrase(inst.modele ?? "");
 }

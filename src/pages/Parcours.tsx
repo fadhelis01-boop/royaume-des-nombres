@@ -41,7 +41,7 @@ export function ParcoursPage() {
 
   const prochaine = prochaineEtape(p, fait);
   const faites = p.etapes.filter((e) => fait(e.key)).length;
-  const objectif = child.age <= 10 ? 3 : 4;
+  const objectif = ageScolaire(child) <= 10 ? 3 : 4;
   const cetteSemaine = p.etapes.filter((e) => fait(e.key) && (child.progress[e.key]?.lastAt ?? 0) >= lundi()).length;
   const conseille = pointConseille(p, fait, Date.now(), (child.counters[`diag:${matiereDe(child)}`] ?? 0) <= 1);
   const titre = (key: string) => {

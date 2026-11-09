@@ -2,6 +2,7 @@
 // se voit à l'écran : le brouillard gris du Grand Neutre recule et les couleurs reviennent
 // à mesure que l'enfant apprend (variable CSS --couleurs, de 0 à 1).
 import type { Child, Settings, World } from "./types";
+import { ageScolaire } from "./parcours";
 
 /** enchantée (petits) · épurée (plus grands : moins de décor, lignes nettes) · calme (aucune animation) */
 export type StyleAmbiance = "enchantee" | "epuree" | "calme";
@@ -12,7 +13,7 @@ export function styleEffectif(s: Settings, c: Child | null): StyleAmbiance {
   const r = s.ambiance ?? "auto";
   if (reduit || r === "calme") return "calme";
   if (r !== "auto") return r;
-  return (c?.age ?? 8) >= 12 ? "epuree" : "enchantee";
+  return (c ? ageScolaire(c) : 8) >= 11 ? "epuree" : "enchantee";
 }
 
 /** La planète à habiller selon la page : celle du monde visité, sinon celle de l'enfant. */

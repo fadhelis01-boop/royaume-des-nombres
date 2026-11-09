@@ -175,7 +175,7 @@ lecons:
           texte: "Le jus de chou rouge est un détective de couleur : rose = acide, violet = neutre, vert ou jaune = basique."
           qui: zero
       - retiens: "Un indicateur change de couleur selon l'acidité. Citron, vinaigre : acides. Bicarbonate, savon : basiques. Eau pure : neutre."
-      - a_quoi_ca_sert: "Les jardiniers mesurent l'acidité du sol (les hortensias changent de couleur !), les piscinistes surveillent l'eau des piscines."
+      - a_quoi_ca_sert: "Le citron pique, le savon glisse : l'un est acide, l'autre basique. Même les hortensias changent de couleur selon le sol !"
     exercices:
       - type: classer
         vars: { t: [["jus de citron", "bicarbonate", "vinaigre", "savon"], ["jus d'orange", "lessive", "vinaigre", "bicarbonate"]] }

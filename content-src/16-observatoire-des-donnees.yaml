@@ -179,6 +179,14 @@ lecons:
         reponse: "t*j"
         unite: °C
         correction: "Somme = moyenne × nombre : {{t}} × {{j}} = {{t*j}}."
+      - type: relier
+        enonce: "🔗 Relie chaque série de notes à sa moyenne."
+        paires: [["10, 12, 14", "12"], ["5, 5, 8", "6"], ["2, 4, 6, 8", "5"]]
+        correction: "Moyenne = somme des valeurs ÷ nombre de valeurs. Par exemple (10 + 12 + 14) ÷ 3 = 12."
+      - type: qcm
+        enonce: "Pour calculer une moyenne, on…"
+        choix: ["additionne toutes les valeurs, puis divise par leur nombre", "prend la valeur du milieu", "prend la plus grande valeur"]
+        correction: "La moyenne partage le total équitablement : somme ÷ nombre de valeurs. La valeur du milieu, c'est la médiane."
 
   - id: mediane-etendue
     titre: Médiane et étendue
@@ -229,6 +237,7 @@ lecons:
 
   - id: hasard-probabilite
     titre: Le hasard et les probabilités
+    classe: "5ᵉ"
     objectif: Je calcule une probabilité simple dans une situation d'équiprobabilité.
     mots: [probabilité, issue, événement]
     etapes:

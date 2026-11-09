@@ -280,6 +280,7 @@ lecons:
       - astuce:
           texte: "Commence par la nervure du milieu (l'axe), puis dessine un côté, puis l'autre en miroir. Les petites nervures partent de l'axe comme des arêtes de poisson."
           qui: mia
+      - a_quoi_ca_sert: "Une feuille d'arbre a deux moitiés presque pareilles. Le pli au milieu t'aide à la dessiner juste."
       - retiens: "Feuille : nervure centrale (axe), contour, nervures secondaires. Les nervures transportent l'eau et la sève."
     exercices:
       - type: qcm

@@ -33,7 +33,7 @@ lecons:
           texte: "Imagine une cour d'école : solide = élèves rangés en rang serré ; liquide = élèves qui se faufilent les uns contre les autres ; gaz = récréation, tout le monde court partout."
           qui: neo
       - retiens: "Solide : serrées et rangées. Liquide : serrées et désordonnées. Gaz : éloignées et très agitées. Chauffer = agiter les particules."
-      - a_quoi_ca_sert: "On peut comprimer l'air dans un pneu (les particules d'un gaz sont éloignées) mais pas l'eau : c'est le principe des freins hydrauliques."
+      - a_quoi_ca_sert: "Tu peux écraser l'air d'un ballon, mais pas l'eau d'une bouteille. Les particules t'expliquent pourquoi."
     exercices:
       - type: qcm
         vars: { t: [["serrées, rangées, vibrant sur place", "solide", "liquide", "gaz"], ["serrées mais désordonnées, glissant les unes sur les autres", "liquide", "solide", "gaz"], ["très éloignées, bougeant vite en tous sens", "gaz", "liquide", "solide"]] }

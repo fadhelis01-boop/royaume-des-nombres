@@ -5,6 +5,7 @@ import { addGems, addXp, bump, useChild } from "../../lib/store";
 import { burst, centerOf } from "../../lib/juice";
 import { Bubble } from "../../components/Mascot";
 import { Avatar } from "../../components/Avatar";
+import { ageScolaire } from "../../lib/parcours";
 
 // Duel en famille, sur le même écran : chacun son niveau (le grand frère ou le parent
 // reçoit des calculs plus durs), le premier à 10 points gagne. Sur une tablette posée
@@ -35,7 +36,7 @@ export function Duel() {
   const [setup, setSetup] = useState(true);
   const [face, setFace] = useState(false);
   const [names, setNames] = useState([child.name, "Adversaire"]);
-  const [levels, setLevels] = useState([child.age < 7 ? 1 : child.age < 8 ? 2 : 3, 4]);
+  const [levels, setLevels] = useState([ageScolaire(child) < 7 ? 1 : ageScolaire(child) < 8 ? 2 : 3, 4]);
   const [ps, setPs] = useState<P[]>([]);
   const [winner, setWinner] = useState<number | null>(null);
 

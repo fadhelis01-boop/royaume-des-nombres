@@ -141,6 +141,7 @@ lecons:
       - astuce:
           texte: "Les muscles ne savent que tirer, jamais pousser : c'est pour ça qu'ils travaillent en équipe. Le biceps plie le bras, le triceps le déplie."
           qui: zero
+      - a_quoi_ca_sert: "Quand tu cours, sautes ou écris, tes muscles tirent sur tes os. Tu vas comprendre comment ton corps bouge."
       - retiens: "206 os, articulations pour plier, muscles qui se contractent et tirent sur les os par les tendons."
     exercices:
       - type: qcm

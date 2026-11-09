@@ -32,8 +32,12 @@ export function tranche(niveau: string): [number, number] | null {
   return [Math.min(lo, hi), Math.max(lo, hi)];
 }
 
-/** Niveau d'une leçon : interpolé dans la tranche de son monde selon sa place. */
+/** Niveau d'une leçon : sa classe si elle est indiquée, sinon interpolé dans la tranche de son monde selon sa place. */
 export function niveauLecon(w: World, idx: number): number | null {
+  // classe indiquée dans la leçon (audit « 9-12 ans » : relatifs et priorités de 5ᵉ classés en 4ᵉ)
+  const c = w.lecons[idx]?.classe;
+  const tc = c ? tranche(c) : null;
+  if (tc) return tc[0];
   const t = tranche(w.niveau);
   if (!t) return null;
   const n = w.lecons.length;
@@ -106,6 +110,21 @@ export const AGE_JEUNE = 9;
 export const nomIle = (d: { titre: string; titreJeune?: string } | undefined, age: number) => (d ? (age < AGE_JEUNE && d.titreJeune ? d.titreJeune : d.titre) : "");
 /** Enfant à ménager dans les défis : moins de 9 ans (classe) ou lecteur pas encore à l'aise. */
 export const jeuneLecteur = (c: { age: number; classe?: number; lecteur?: string }) => ageScolaire(c) < AGE_JEUNE || (c.lecteur !== undefined && c.lecteur !== "oui");
+/**
+ * Écriture dans les défis, par classe (audits « 8 ans » et « 9-12 ans » : pas de marche brutale) :
+ * - avant le CE2, ou lecteur pas à l'aise : ni rédaction ni « mot qui manque » ;
+ * - CE2 (8 ans) lecteur à l'aise : un « mot qui manque » par défi ;
+ * - CM1 (9 ans) : un « mot qui manque », et la rédaction libre un défi sur trois ;
+ * - à partir du CM2 : tout.
+ */
+export function optionsEcrit(c: { age: number; classe?: number; lecteur?: string }, hasard = Math.random()): { jeune: boolean; unRappel: boolean; uneRedaction: boolean } {
+  const a = ageScolaire(c);
+  const aLAise = c.lecteur === undefined || c.lecteur === "oui";
+  if (!aLAise || a < 8) return { jeune: true, unRappel: false, uneRedaction: false };
+  if (a === 8) return { jeune: true, unRappel: true, uneRedaction: false };
+  if (a === 9) return { jeune: true, unRappel: true, uneRedaction: hasard < 1 / 3 };
+  return { jeune: false, unRappel: false, uneRedaction: false };
+}
 /** À 8 ans, une lectrice à l'aise (« lit tout seul ») garde un « mot qui manque » par défi (audit « 8 ans »). */
 export const lectriceAgile8 = (c: { age: number; classe?: number; lecteur?: string }) => ageScolaire(c) === 8 && c.lecteur === "oui";
 /**

@@ -328,6 +328,16 @@ lecons:
         reponse: "n*(p+k)"
         unite: €
         correction: "Un paquet de bonbons : {{p}} + {{k}} = {{p+k}} € ; {{n}} × {{p+k}} = {{n*(p+k)}} €."
+      - type: relier
+        vars: { a: "2..6", p: "2..5", b: "2..6", q: "6..9" }
+        si: "a*p != b*q && a*p+b*q != a*p && a*p+b*q != b*q"
+        enonce: "🔗 Relie chaque étape du problème à son résultat."
+        paires: [["{{a}} cahiers à {{p}} €", "{{a*p}} €"], ["{{b}} classeurs à {{q}} €", "{{b*q}} €"], ["les cahiers et les classeurs ensemble", "{{a*p+b*q}} €"]]
+        correction: "On calcule chaque achat ({{a*p}} € et {{b*q}} €), puis on ajoute : {{a*p+b*q}} €."
+      - type: ordre
+        enonce: "Range les étapes pour résoudre un problème."
+        items: ["Je lis l'énoncé jusqu'au bout", "Je repère ce qu'on me demande", "Je calcule étape par étape", "Je vérifie et je réponds par une phrase"]
+        correction: "Lire, chercher la question, calculer, vérifier : on ne calcule jamais avant d'avoir compris."
 
   - id: combien-de-facons
     titre: Combien de façons ? Combiner et dénombrer
@@ -415,7 +425,7 @@ lecons:
       - attention:
           texte: "$4 \\times 6 + 3 = 27$ mais $4 \\times (6 + 3) = 36$ ! Les parenthèses changent tout."
           qui: neo
-      - a_quoi_ca_sert: "C'est comme ça qu'on écrit les formules dans un tableur (Excel), qu'on programme un ordinateur ou une calculatrice : tout doit tenir en une ligne bien écrite."
+      - a_quoi_ca_sert: "Écrire tout un problème en un seul calcul, c'est ce que tu feras sur une calculatrice ou en programmant un jeu."
       - question:
           type: expression
           vars: { n: "3..8", p: "4..9", r: "1..5" }
@@ -505,6 +515,17 @@ lecons:
         enonce: "Quelle histoire va avec le calcul ${{a}} \\times {{b}} + {{c}}$ ?"
         choix: ["{{a}} boîtes de {{b}} œufs, et {{c}} œufs à part. Combien d'œufs ?", "{{a}} boîtes de {{b}} œufs, on en casse {{c}}. Combien d'œufs ?", "{{a}} + {{b}} + {{c}} œufs dans un panier.", "{{c}} boîtes de {{a}} + {{b}} œufs."]
         correction: "{{a}} groupes de {{b}} (multiplication), puis on ajoute {{c}}."
+      - type: relier
+        vars: { a: "3..9", b: "3..9" }
+        si: "a != b"
+        enonce: "🔗 Relie chaque calcul à l'histoire qui va avec."
+        paires: [["{{a}} + {{b}}", "On réunit {{a}} billes et {{b}} billes."], ["{{a}} × {{b}}", "On a {{a}} sacs de {{b}} billes."], ["{{a*b}} ÷ {{b}}", "On partage {{a*b}} billes en {{b}} tas égaux."]]
+        correction: "Réunir, c'est +. Des groupes pareils, c'est ×. Partager en parts égales, c'est ÷."
+      - type: nombre
+        vars: { a: "3..9", b: "4..9" }
+        enonce: "Léa a {{a}} sacs de {{b}} billes. Combien de billes a-t-elle ?"
+        reponse: "a*b"
+        correction: "{{a}} sacs de {{b}} billes : {{a}} × {{b}} = {{a*b}} billes."
 
   - id: pieges-enonces
     titre: Les pièges des énoncés

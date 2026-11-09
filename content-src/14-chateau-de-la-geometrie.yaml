@@ -262,6 +262,19 @@ lecons:
         tolerance: 1
         unite: cm
         correction: "π × {{d}} ≈ {{round(pi*d)}} cm."
+      - type: relier
+        enonce: "🔗 Relie chaque figure à la formule de son aire."
+        paires: [["un carré de côté c", "c × c"], ["un rectangle de longueur L et de largeur l", "L × l"], ["un triangle de base b et de hauteur h", "b × h ÷ 2"], ["un disque de rayon r", "π × r × r"]]
+        correction: "Carré : c × c ; rectangle : L × l ; triangle : la moitié du rectangle, b × h ÷ 2 ; disque : π × r × r."
+      - type: comparer
+        vars: { c: "3..9", l: "2..8", L: "4..12" }
+        si: "c*c != L*l"
+        enonce: "Quelle figure a la plus grande aire ? Compare."
+        gauche: "c*c"
+        droite: "L*l"
+        gauche_affiche: "carré de {{c}} cm de côté"
+        droite_affiche: "rectangle de {{L}} cm sur {{l}} cm"
+        correction: "Carré : {{c}} × {{c}} = {{c*c}} cm². Rectangle : {{L}} × {{l}} = {{L*l}} cm²."
 
   - id: volumes
     titre: Les volumes
@@ -329,6 +342,14 @@ lecons:
         tolerance: 1
         unite: cm³
         correction: "$\\frac{4}{3}\\pi \\times {{r}}^3 \\approx {{round(4/3*pi*r^3)}}$ cm³."
+      - type: relier
+        enonce: "🔗 Relie chaque solide à son volume."
+        paires: [["un cube de 2 cm d'arête", "8 cm³"], ["un cube de 3 cm d'arête", "27 cm³"], ["un pavé de 2 cm × 3 cm × 4 cm", "24 cm³"]]
+        correction: "Volume d'un pavé : longueur × largeur × hauteur. Pour un cube, arête × arête × arête."
+      - type: ordre
+        enonce: "Range ces volumes du plus petit au plus grand."
+        items: ["1 cm³ (un morceau de sucre)", "1 dm³ (une brique de lait d'un litre)", "1 m³ (une grande caisse)"]
+        correction: "1 m³ = 1 000 dm³ et 1 dm³ = 1 000 cm³."
 
   - id: pythagore
     titre: Le théorème de Pythagore

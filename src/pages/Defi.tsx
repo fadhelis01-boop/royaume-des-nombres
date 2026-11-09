@@ -1,5 +1,5 @@
 import { planDefi, pourLecteurAgile, rankSpecs } from "../lib/plan";
-import { jeuneLecteur, lectriceAgile8 } from "../lib/parcours";
+import { optionsEcrit, ageScolaire } from "../lib/parcours";
 export { planDefi, rankSpecs };
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
@@ -33,7 +33,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
   const found = findLesson(worldId, lessonId);
   const child = useChild()!;
   const [round, setRound] = useState(0);
-  const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi, { jeune: jeuneLecteur(child), unRappel: lectriceAgile8(child) }) : []), [found?.lesson, round]);
+  const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi, optionsEcrit(child)) : []), [found?.lesson, round]);
   // Question « souvenir » : une question d'une leçon précédente du monde, en bonus (entrelacement :
   // mélanger l'ancien et le nouveau aide à retenir). Elle ne compte pas dans les étoiles.
   const souvenir = useMemo(() => {
@@ -41,7 +41,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
     const before = found.world.lecons.slice(0, found.idx).filter((l) => l.exercices.length);
     const l = before[Math.floor(Math.random() * before.length)];
     if (!l) return null;
-    const pool = jeuneLecteur(child) ? l.exercices.filter((e) => !pourLecteurAgile(e)) : l.exercices;
+    const pool = optionsEcrit(child).jeune ? l.exercices.filter((e) => !pourLecteurAgile(e)) : l.exercices;
     const ex = pool.length ? pool : l.exercices;
     return { spec: ex[Math.floor(Math.random() * ex.length)], titre: l.titre };
   }, [found?.lesson, round]);
@@ -124,7 +124,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
         <h1>
           {end.bonnes} bonne{end.bonnes > 1 ? "s" : ""} réponse{end.bonnes > 1 ? "s" : ""} sur {end.total}
         </h1>
-        {child.age >= 10 && <p className="muted">{pct} % de réussite</p>}
+        {ageScolaire(child) >= 10 && <p className="muted">{pct} % de réussite</p>}
         <Bubble who={end.stars >= 2 ? "mia" : end.stars === 1 ? "neo" : "zero"} text={msg} />
         <div className="stack">
           {end.stars >= 1 && next && nextOpen && (
@@ -189,7 +189,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
       <h1 className="lecon-title small">⭐ Défi : {lesson.titre}</h1>
       {idx >= plan.length && souvenir && <Bubble who="zero" text={`🧠 Question souvenir (bonus, elle ne compte pas) : tu te rappelles « ${souvenir.titre} » ?`} size={50} />}
       {eased && <Bubble who="neo" text="Tiens, une question un peu plus simple pour reprendre des forces. On remonte ensuite, d'accord ?" size={50} />}
-      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < total ? "Question suivante" : "Voir mes étoiles"} metacog={child.age >= 10} />
+      <ExercisePlayer key={q.seed} inst={q} statKey={key} onResult={onResult} lead={leadFor(world.id, world.cycle, q.seed)} continueLabel={idx + 1 < total ? "Question suivante" : "Voir mes étoiles"} metacog={ageScolaire(child) >= 10} />
     </div>
   );
 }

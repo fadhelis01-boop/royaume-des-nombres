@@ -6,6 +6,7 @@ import { sfx } from "../lib/sound";
 import { estConjugable, infos, tableau, TEMPS_NOMS, type Temps } from "../lib/fr/conjugaison";
 import { determinant, feminin, pluriel, plurielAdj } from "../lib/fr/morpho";
 import { Bubble } from "../components/Mascot";
+import { ageScolaire } from "../lib/parcours";
 
 // Le dictionnaire de l'Archipel : définitions écrites pour les enfants, exemples,
 // synonymes et contraires cliquables, familles de mots, étymologie, pluriel et féminin
@@ -58,9 +59,9 @@ export function Dico({ mot: initial }: { mot?: string }) {
   const motDuJour = useMemo(() => {
     if (!dico?.length) return null;
     const jour = Math.floor(Date.now() / 86400000);
-    const pool = dico.filter((e) => e.niveau <= (child.age < 9 ? 1 : child.age < 12 ? 2 : 3));
+    const pool = dico.filter((e) => e.niveau <= (ageScolaire(child) < 9 ? 1 : ageScolaire(child) < 12 ? 2 : 3));
     return pool[(jour * 2654435761) % pool.length] ?? dico[0];
-  }, [dico, child.age]);
+  }, [dico, ageScolaire(child)]);
 
   const resultats = useMemo(() => {
     if (!dico) return [];

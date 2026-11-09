@@ -5,6 +5,7 @@ import { getState, markStory, useChild } from "../lib/store";
 import { StoryScene } from "../components/Story";
 import { Mascot } from "../components/Mascot";
 import type { Line } from "../lib/types";
+import { ageScolaire } from "../lib/parcours";
 
 /** Le Livre de l'aventure : prologue, chapitres débloqués (à réécouter) et fins des livres. */
 export function Aventure({ part }: { part?: string }) {
@@ -31,7 +32,7 @@ export function Aventure({ part }: { part?: string }) {
           onDone={() => {
             const fresh = !child.story?.[pid] && !Object.keys(child.progress).some((k) => worlds.find((w) => w.id === k.split("/")[0])?.matiere === mat);
             markStory(pid);
-            if (fresh && child.age >= 8 && !child.counters[`diag:${mat}`] && !(mat === "maths" && child.diag)) go("/diagnostic?quete=1");
+            if (fresh && ageScolaire(child) >= 8 && !child.counters[`diag:${mat}`] && !(mat === "maths" && child.diag)) go("/diagnostic?quete=1");
             else if (fresh) {
               const n = nextLesson(child, getState().settings);
               go(n ? `/lecon/${n.world.id}/${n.lesson.id}` : "/");

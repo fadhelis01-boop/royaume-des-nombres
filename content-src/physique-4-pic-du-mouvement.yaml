@@ -87,6 +87,19 @@ lecons:
         tolerance: 0.01
         unite: h
         correction: "t = d / v = {{d}} / {{v}} = {{d/v}} h."
+      - type: relier
+        enonce: "🔗 Relie chaque formule à ce qu'elle permet de calculer."
+        paires: [["v = d ÷ t", "la vitesse"], ["d = v × t", "la distance"], ["t = d ÷ v", "la durée"]]
+        correction: "Tout part de v = d ÷ t : on en déduit d = v × t et t = d ÷ v."
+      - type: comparer
+        vars: { h: "2..4", v: "20..60", w: "20..60" }
+        si: "v != w"
+        enonce: "Qui va le plus vite ? Compare les vitesses."
+        gauche: "v"
+        droite: "w"
+        gauche_affiche: "{{v*h}} km en {{h}} h"
+        droite_affiche: "{{w}} km/h"
+        correction: "{{v*h}} km en {{h}} h : {{v*h}} ÷ {{h}} = {{v}} km/h. On compare {{v}} km/h et {{w}} km/h."
 
   - id: les-forces
     titre: "Représenter une force"

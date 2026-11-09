@@ -17,6 +17,7 @@ import { RappelLibre, Relier } from "./Production";
 import { dicteeSupported, startDictee } from "../lib/dictee";
 import { nombreDit } from "../lib/nombresDits";
 import type { Lead } from "../lib/habillage";
+import { ageScolaire } from "../lib/parcours";
 
 const MANIP = ["blocs", "partage", "sauts", "colorier", "horloge", "payer"];
 // chargé à la demande : le panneau « Explique-moi autrement » n'alourdit pas le premier écran
@@ -162,7 +163,7 @@ export function ExercisePlayer({
   const isTouch = useMemo(() => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches, []);
   // jeunes enfants (ou mode « je ne lis pas encore ») : le geste attendu est affiché et lu
   const enfant = activeChild();
-  const jeune = (enfant?.age ?? 99) <= 9 || (enfant?.lecteur ?? "oui") !== "oui";
+  const jeune = (enfant ? ageScolaire(enfant) : 99) <= 9 || (enfant?.lecteur ?? "oui") !== "oui";
   const commentRepondre = jeune ? geste(inst) : null;
 
   const readable = useMemo(() => {
@@ -566,7 +567,8 @@ export function ExercisePlayer({
             🤷 Je ne sais pas encore
           </button>
         )}
-        {phase === "answer" && inst.indice && !hint && (
+        {/* pas d'indice pendant le test de niveau : il fausserait la mesure */}
+        {phase === "answer" && inst.indice && !hint && !test && (
           <button type="button" className="btn btn-soft" onClick={showHint}>
             💡 Indice
           </button>

@@ -7,6 +7,7 @@ import { burst, centerOf, rewardCorrect, rewardWrong, shake } from "../../lib/ju
 import { applyKey, Keypad } from "../../components/Keypad";
 import { Bubble, Mascot } from "../../components/Mascot";
 import type { Child } from "../../lib/types";
+import { ageScolaire } from "../../lib/parcours";
 
 // La Défense des Tables : de petits Grignoteurs avancent vers le château en portant
 // un calcul. Une bonne réponse, et la tour les dissipe. Les maths SONT la mécanique :
@@ -43,7 +44,7 @@ function pickFact(c: Child, op: Op, wave: number): [number, number] {
 
 export function DefenseTables() {
   const child = useChild()!;
-  const young = child.age < 8 || additionsMastered(child) < 60;
+  const young = ageScolaire(child) < 8 || additionsMastered(child) < 60;
   const [op, setOp] = useState<Op | null>(null);
   const [wave, setWave] = useState(1);
   const [foes, setFoes] = useState<Foe[]>([]);

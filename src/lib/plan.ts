@@ -22,9 +22,10 @@ const estMotQuiManque = (e: ExSpec) => e.type === "mot" && !!e.rappel;
  * (QCM, vrai/faux) quand d'autres formats existent : reconnaître ne suffit pas, il faut produire.
  * Aucun type ne dépasse la moitié du défi quand la leçon en propose d'autres (audit « 8 ans »).
  * `jeune` : enfant de moins de 9 ans ou lecteur débutant (ni rédaction ni rappel écrit).
- * `unRappel` : avec `jeune`, garde un seul « mot qui manque » (lectrice à l'aise de 8 ans).
+ * `unRappel` : avec `jeune`, garde un seul « mot qui manque » (lectrice à l'aise de 8 ans, CM1).
+ * `uneRedaction` : avec `jeune`, ajoute une rédaction libre (CM1, un défi sur trois).
  */
-export function planDefi(specs: ExSpec[], n: number, opts: { jeune?: boolean; unRappel?: boolean } = {}): ExSpec[] {
+export function planDefi(specs: ExSpec[], n: number, opts: { jeune?: boolean; unRappel?: boolean; uneRedaction?: boolean } = {}): ExSpec[] {
   const tri = opts.jeune ? specs.filter((e) => !pourLecteurAgile(e)) : specs;
   const ranked = rankSpecs(tri.length ? tri : specs);
   const rang = new Map(rankSpecs(specs).map((e, r) => [e, r]));
@@ -37,7 +38,9 @@ export function planDefi(specs: ExSpec[], n: number, opts: { jeune?: boolean; un
   const prod = ranked.find((e) => (opts.jeune ? PRODUCTION_JEUNE : PRODUCTION).includes(e.type)) ?? (opts.jeune ? undefined : ranked.find((e) => PRODUCTION.includes(e.type)));
   if (prod) plan.push(prod);
   const rappel = opts.jeune && opts.unRappel ? specs.find(estMotQuiManque) : undefined;
-  const place = rappel ? n - 1 : n;
+  // CM1 : une rédaction libre de temps en temps (un défi sur trois)
+  const redaction = opts.jeune && opts.uneRedaction ? specs.find((e) => e.type === "libre") : undefined;
+  const place = n - (rappel ? 1 : 0) - (redaction ? 1 : 0);
   for (const e of ranked) {
     if (plan.length >= place) break;
     if (plan.includes(e) || tropDe(e)) continue;
@@ -50,5 +53,6 @@ export function planDefi(specs: ExSpec[], n: number, opts: { jeune?: boolean; un
     plan.push(e);
   }
   if (rappel) plan.push(rappel);
+  if (redaction) plan.push(redaction);
   return plan.sort((x, y) => rang.get(x)! - rang.get(y)!);
 }

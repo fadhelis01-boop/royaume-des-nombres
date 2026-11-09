@@ -5,6 +5,7 @@ import { addXp, bump, updateChild, useChild } from "../lib/store";
 import { speak, stopSpeaking } from "../lib/tts";
 import { Bubble } from "../components/Mascot";
 import type { EssaiFluence, TexteFluence } from "../lib/types";
+import { ageScolaire } from "../lib/parcours";
 
 // Lecture chronométrée (fluence). Méthode des enseignants : l'enfant lit à voix haute pendant
 // une minute, l'adulte touche les mots mal lus, puis le dernier mot atteint.
@@ -32,7 +33,7 @@ export function Fluence() {
   const child = useChild()!;
   const { manifest } = useContent();
   const textes = manifest?.fluence ?? [];
-  const [niveau, setNiveau] = useState<TexteFluence["niveau"]>(() => niveauPourAge(child.age));
+  const [niveau, setNiveau] = useState<TexteFluence["niveau"]>(() => niveauPourAge(ageScolaire(child)));
   const [texte, setTexte] = useState<TexteFluence | null>(null);
   const [prepare, setPrepare] = useState(false);
   const [enregistrer, setEnregistrer] = useState(false);

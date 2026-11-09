@@ -200,6 +200,7 @@ lecons:
 
   - id: additionner-relatifs
     titre: Additionner et soustraire des relatifs
+    classe: "5ᵉ"
     objectif: J'additionne et je soustrais des nombres relatifs.
     mots: [somme, différence]
     etapes:
@@ -266,6 +267,14 @@ lecons:
         enonce: "$({{nb(a)}}) + ({{nb(b)}}) - ({{nb(c)}}) = ?$"
         reponse: "a+b-c"
         correction: "{{nb(a+b-c)}}."
+      - type: relier
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["(−3) + 5", "2"], ["(−4) + (−2)", "−6"], ["7 + (−9)", "−2"], ["(−5) + 5", "0"]]
+        correction: "Même signe : on ajoute et on garde le signe. Signes différents : on soustrait et on prend le signe du plus « fort »."
+      - type: ordre
+        enonce: "Range ces températures de la plus froide à la plus chaude."
+        items: ["−8 °C", "−3 °C", "0 °C", "4 °C"]
+        correction: "Plus un nombre négatif est loin de 0, plus il est petit : −8 < −3 < 0 < 4."
 
   - id: multiplier-relatifs
     titre: Multiplier et diviser des relatifs (la règle des signes)
@@ -326,6 +335,7 @@ lecons:
 
   - id: priorites
     titre: Les priorités opératoires
+    classe: "5ᵉ"
     objectif: J'effectue un calcul en respectant l'ordre des priorités.
     mots: [priorité, parenthèses]
     etapes:
@@ -390,3 +400,11 @@ lecons:
         enonce: "${{nb(a)}} - {{b}} \\times ({{nb(c)}}) = ?$"
         reponse: "a - b*c"
         correction: "{{b}} × ({{nb(c)}}) = {{nb(b*c)}} ; {{nb(a)}} − ({{nb(b*c)}}) = {{nb(a-b*c)}}."
+      - type: relier
+        enonce: "🔗 Relie chaque calcul à son résultat (attention aux priorités)."
+        paires: [["2 + 3 × 4", "14"], ["(2 + 3) × 4", "20"], ["10 − 6 ÷ 2", "7"], ["(10 − 6) ÷ 2", "2"]]
+        correction: "D'abord les parenthèses, puis × et ÷, enfin + et −. 2 + 3 × 4 = 2 + 12 = 14."
+      - type: qcm
+        enonce: "Dans 5 + 2 × 3, on commence par…"
+        choix: ["2 × 3", "5 + 2", "peu importe"]
+        correction: "La multiplication passe avant l'addition : 5 + 2 × 3 = 5 + 6 = 11."

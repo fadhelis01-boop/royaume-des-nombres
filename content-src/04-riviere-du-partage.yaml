@@ -365,7 +365,7 @@ lecons:
       - astuce:
           texte: "Pour 4 : regarde le nombre formé par les deux derniers chiffres. 1 316 → 16 est dans la table de 4, donc 1 316 est divisible par 4 !"
           qui: mia
-      - a_quoi_ca_sert: "Savoir si on peut partager sans reste, simplifier des fractions (bientôt !), organiser des équipes égales, vérifier un code-barres…"
+      - a_quoi_ca_sert: "Peut-on faire des équipes égales avec les 24 élèves de ta classe ? Les diviseurs te le disent tout de suite."
       - question:
           type: vf
           vars: { n: "100..999", d: [2, 3, 5, 9] }

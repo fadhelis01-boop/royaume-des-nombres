@@ -107,6 +107,8 @@ export interface Lesson {
   exercices: ExSpec[];
   nb_defi: number;
   mots?: string[];
+  /** Classe du programme (« 5ᵉ »), quand la place dans le monde ne suffit pas à la deviner. */
+  classe?: string;
   /** « Explique-moi autrement » : une image de la vie et un schéma propres à la leçon (facultatif). */
   autrement?: { texte?: string; visuel?: VisSpec; legende?: string; qui?: Who };
 }

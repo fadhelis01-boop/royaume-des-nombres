@@ -1,3 +1,12 @@
+- version: "2.12.0"
+  date: "2026-11-09"
+  notes:
+    - "Rédaction libre : une bonne réponse avec des fautes d'orthographe est acceptée, mais une simple liste de mots-clés ne suffit plus, il faut une phrase."
+    - "CM1 : un « mot qui manque » par défi et une rédaction libre un défi sur trois ; tout à partir du CM2. Ces règles suivent la classe choisie, plus seulement l'âge."
+    - "Les leçons de 5ᵉ (relatifs, priorités opératoires, nombres premiers, probabilités) sont proposées au bon moment du parcours."
+    - "La voix lit CO₂, H₂O, les siècles en chiffres romains, ⊥, m³, km/h et « d / t »."
+    - "Plus d'indice pendant la carte des talents ; décor épuré dès la 6ᵉ ; les collégiens ne voient plus « Les Graines »."
+    - "Écrans de cours coupés à 70 mots du CM1 à la 3ᵉ ; 38 nouveaux exercices dans 19 leçons de calcul ; 22 « À quoi ça sert ? » écrits ou réécrits."
 - version: "2.11.0"
   date: "2026-11-09"
   notes:

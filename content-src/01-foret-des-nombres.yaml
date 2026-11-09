@@ -639,7 +639,7 @@ lecons:
       - astuce:
           texte: "Pour lire un grand nombre, je lis chaque classe comme un petit nombre, puis je dis son nom : « 2 millions, 507 mille, 340 »."
           qui: mia
-      - a_quoi_ca_sert: "Le nombre d'habitants d'un pays, la distance de la Terre au Soleil (150 millions de km), le budget d'une ville… Les journaux et les scientifiques utilisent les grands nombres tous les jours."
+      - a_quoi_ca_sert: "Combien d'habitants dans ta ville ? Combien de kilomètres jusqu'au Soleil ? Les grands nombres te permettent de le lire."
       - question:
           type: nombre
           vars: { a: "1..9", b: "100..999" }

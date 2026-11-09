@@ -10,6 +10,7 @@ import { avecPronom, formes, TEMPS_NOMS, type Temps } from "../lib/fr/conjugaiso
 import { normOrtho } from "../lib/fr/morpho";
 import type { Child } from "../lib/types";
 import { QuizEclair } from "./jeux/JeuxSavoirs";
+import { ageScolaire } from "../lib/parcours";
 
 // Échauffement du jour : 10 faits numériques en 2 minutes, choisis là où
 // l'enfant en a le plus besoin (automatiser les faits libère la mémoire
@@ -25,7 +26,7 @@ function weight(c: Child, f: Fact) {
 }
 
 function pickFacts(c: Child): Fact[] {
-  const young = c.age < 9 || additionsMastered(c) < 80;
+  const young = ageScolaire(c) < 9 || additionsMastered(c) < 80;
   // les additions d'abord ; les tables ensuite, puis un mélange quand tout est su
   const op: "+" | "x" = young ? "+" : tablesMastered(c) >= 60 && Math.random() < 0.5 ? "+" : "x";
   const lo = op === "+" ? 1 : 2;
@@ -129,8 +130,8 @@ const VERBES_JEUNES = ["être", "avoir", "aller", "faire", "dire", "venir", "cha
 const VERBES_GRANDS = [...VERBES_JEUNES, "vouloir", "savoir", "mettre", "partir", "courir", "devoir", "écrire", "lire", "choisir", "manger", "appeler", "tenir"];
 
 function pickConj(c: Child): Conj[] {
-  const young = c.age < 9;
-  const temps: Temps[] = young ? ["present", "present", "futur", "imparfait"] : c.age < 11 ? ["present", "futur", "imparfait", "passe_compose"] : ["present", "futur", "imparfait", "passe_compose", "passe_simple", "conditionnel", "subjonctif"];
+  const young = ageScolaire(c) < 9;
+  const temps: Temps[] = young ? ["present", "present", "futur", "imparfait"] : ageScolaire(c) < 11 ? ["present", "futur", "imparfait", "passe_compose"] : ["present", "futur", "imparfait", "passe_compose", "passe_simple", "conditionnel", "subjonctif"];
   const verbes = young ? VERBES_JEUNES : VERBES_GRANDS;
   const out: Conj[] = [];
   const vus = new Set<string>();

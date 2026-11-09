@@ -24,7 +24,7 @@ lecons:
       - dialogue:
           - mia: "Un mot a une carte d'identité fixe : « chien » est un nom. C'est sa nature, son costume."
           - neo: "Mais dans la phrase, il peut changer de métier : sujet dans « Le chien court », complément dans « Je caresse le chien »."
-      - a_quoi_ca_sert: "Nature et fonction, c'est la base de toute la grammaire du collège : savoir ce qu'est un mot et le rôle qu'il joue permet de bien l'accorder."
+      - a_quoi_ca_sert: "Savoir ce qu'est un mot et à quoi il sert dans ta phrase, c'est le secret pour bien l'écrire et bien l'accorder."
       - texte: |
           - La **nature** (ou classe grammaticale) ne change jamais : *nom, verbe, adjectif, déterminant, pronom, adverbe, préposition, conjonction*.
           - La **fonction** dépend de la place et du rôle dans la phrase : *sujet, complément d'objet, complément circonstanciel, attribut, épithète…*
@@ -62,7 +62,7 @@ lecons:
       - dialogue:
           - neo: "Le complément d'objet complète le verbe. Sans lui, la phrase est souvent incomplète : « Je mange… quoi ? »"
           - mia: "S'il est collé au verbe, c'est un COD. S'il y a un petit mot (à, de) entre les deux, c'est un COI."
-      - a_quoi_ca_sert: "Trouver le COD est indispensable pour accorder le participe passé avec avoir : c'est une règle clé du collège."
+      - a_quoi_ca_sert: "Trouver le COD t'aide à bien accorder tes verbes : « les gâteaux que j'ai mangés »."
       - texte: |
           - **COD** (complément d'objet **direct**) : sujet + verbe + **qui ? / quoi ?** — *Léa mange **une pomme**.* (Léa mange quoi ?)
           - **COI** (complément d'objet **indirect**) : sujet + verbe + **à qui ? à quoi ? de qui ? de quoi ?** — *Il parle **à son ami**.* (il parle à qui ?)

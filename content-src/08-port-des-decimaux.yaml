@@ -335,6 +335,14 @@ lecons:
         reponse: "k*p/100"
         unite: €
         correction: "{{k}} × {{dec(p/100,2)}} = {{dec(k*p/100,2)}} €."
+      - type: relier
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["2,5 × 2", "5"], ["0,5 × 8", "4"], ["1,2 × 3", "3,6"], ["0,1 × 7", "0,7"]]
+        correction: "On multiplie sans la virgule, puis on remet autant de chiffres après la virgule qu'il y en avait au départ."
+      - type: qcm
+        enonce: "Multiplier un nombre par 0,5, c'est…"
+        choix: ["prendre sa moitié", "le doubler", "lui ajouter 0,5"]
+        correction: "0,5 = un demi : × 0,5, c'est prendre la moitié. Par exemple 8 × 0,5 = 4."
 
   - id: diviser-decimaux
     titre: Diviser avec des décimaux
@@ -384,6 +392,14 @@ lecons:
         reponse: "round(a/b, 2)"
         tolerance: 0.011
         correction: "{{a}} ÷ {{b}} = {{nb(a/b, 4)}}… ≈ {{nb(round(a/b,2))}}."
+      - type: relier
+        enonce: "🔗 Relie chaque division à son résultat."
+        paires: [["7,5 ÷ 3", "2,5"], ["4,8 ÷ 2", "2,4"], ["9 ÷ 4", "2,25"], ["6,3 ÷ 10", "0,63"]]
+        correction: "On divise comme d'habitude et on place la virgule au quotient dès qu'on abaisse le chiffre des dixièmes."
+      - type: qcm
+        enonce: "Diviser un nombre par 10, c'est…"
+        choix: ["déplacer la virgule d'un rang vers la gauche", "ajouter un zéro à la fin", "enlever 10"]
+        correction: "÷ 10 : chaque chiffre recule d'un rang. 6,3 ÷ 10 = 0,63."
 
   - id: arrondir-estimer
     titre: Arrondir et estimer

@@ -225,6 +225,7 @@ lecons:
       - astuce:
           texte: "Joue seulement sur les touches noires du piano : c'est une gamme pentatonique ! Tout ce que tu joues sonnera bien ensemble."
           qui: zero
+      - a_quoi_ca_sert: "Avec seulement 5 notes, tu peux jouer des airs du monde entier, sans fausse note."
       - retiens: "Pentatonique = 5 notes : do, ré, mi, sol, la. Idéale pour improviser."
     exercices:
       - type: nombre

@@ -53,6 +53,24 @@ function emojisEnMots(s: string): string {
   });
 }
 
+/** Chiffres romains (« XVIII » → 18) ; null si ce n'en est pas un. */
+function romain(r: string): number | null {
+  const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
+  let n = 0;
+  for (let i = 0; i < r.length; i++) {
+    const a = v[r[i]], b = v[r[i + 1]] ?? 0;
+    n += a < b ? -a : a;
+  }
+  return n > 0 && n < 400 ? n : null;
+}
+/** « CO₂ » → « C O 2 », « H₂O » → « H 2 O ». */
+function formuleChimique(f: string): string {
+  return f
+    .replace(/[₀-₉]/g, (d) => String("₀₁₂₃₄₅₆₇₈₉".indexOf(d)))
+    .split(/(?=[A-Z])|(?<=\D)(?=\d)/)
+    .join(" ");
+}
+
 // petits mots courants écrits en majuscules pour insister (les sigles comme BD, GN, ADN restent épelés)
 const PETITS_MOTS = new Set(["ET", "OU", "PAS", "QUE", "QUI", "CE", "QU", "ON", "UN", "UNE", "LE", "LA", "LES", "DE", "DES", "DU", "EN", "NE", "SI", "OUI", "NON", "TOUT", "DÉ", "IL", "ELLE"]);
 
@@ -96,6 +114,9 @@ function latexToSpeech(tex: string): string {
     .replace(/\\geq?|\\geqslant/g, " supérieur ou égal à ")
     .replace(/\\neq?/g, " différent de ")
     .replace(/\\approx/g, " environ égal à ")
+    .replace(/\\%/g, " pour cent ")
+    .replace(/\\perp/g, " est perpendiculaire à ")
+    .replace(/\\parallel/g, " est parallèle à ")
     .replace(/\\pi/g, " pi ")
     .replace(/\\infty/g, " l'infini ")
     .replace(/\\in\b/g, " appartient à ")
@@ -143,6 +164,26 @@ export function toSpeech(md: string): string {
     .replace(/([=+×÷−-]\s*)\?|\?(\s*[=+×÷−-])/g, (_m, a, b) => (a ? `${a} combien ` : ` combien ${b}`))
     // ordinaux
     .replace(/(\d+)\s?(ʳᵉ|ᵉʳ|ᵉ|ème|e)(?![a-zà-ÿ])/g, (m, n, suf) => (suf === "e" && Number(n) !== 1 && !/ᵉ/.test(m) ? m : ` ${ordinal(Number(n), suf === "ʳᵉ")} `))
+    // notations des grands (audit « 9-12 ans »)
+    .replace(/(?<![A-Za-z])((?:[A-Z][a-z]?[₀-₉]*)+)(?![A-Za-z])/g, (m) => (/[₀-₉]/.test(m) ? ` ${formuleChimique(m)} ` : m))
+    .replace(/\bIer\b/g, "premier")
+    .replace(/\b([IVXLC]+)(ᵉʳ|ᵉ|ème)(?![a-zà-ÿ])/g, (m, r) => {
+      const n = romain(r);
+      return n ? ` ${ordinal(n, false)} ` : m;
+    })
+    .replace(/\b(chapitre|siècle|tome|acte|partie|Louis|Henri|Charles|François|Napoléon|Philippe|Jean|Pie|Léon)\s+([IVXLC]+)\b/g, (m, mot, r) => {
+      const n = romain(r);
+      return n ? `${mot} ${n}` : m;
+    })
+    .replace(/⊥/g, " est perpendiculaire à ")
+    .replace(/∥|\/\/(?=\s*\()/g, " est parallèle à ")
+    .replace(/(\d+(?:,\d+)?)\s?(k|h|da|d|c|m)?m([²³])/g, (_m, n, p, e) => {
+      const un = parseFloat(n.replace(",", ".")) < 2;
+      const pre = { k: "kilo", h: "hecto", da: "déca", d: "déci", c: "centi", m: "milli" }[p as string] ?? "";
+      return `${n} ${pre}mètre${un ? "" : "s"} ${e === "²" ? "carré" : "cube"}${un ? "" : "s"}`;
+    })
+    .replace(/\b(k?m)\s?\/\s?(h|s)\b/g, (_m, u, t) => `${u === "km" ? "kilomètres" : "mètres"} par ${t === "h" ? "heure" : "seconde"}`)
+    .replace(/(?<![A-Za-z])([a-zA-Z])\s*\/\s*([a-zA-Z])(?![A-Za-z])/g, "$1 divisé par $2")
     // symboles
     .replace(/(\d)\s*×\s*(\d)/g, "$1 fois $2")
     .replace(/×/g, " fois ")
@@ -170,18 +211,18 @@ export function toSpeech(md: string): string {
     .replace(/(\d)\s?°/g, "$1 degrés")
     .replace(/\bcm²/g, "centimètres carrés")
     .replace(/\bm²/g, "mètres carrés")
-    .replace(/(\d)\s?km\b/g, "$1 kilomètres")
-    .replace(/(\d)\s?cm\b/g, "$1 centimètres")
-    .replace(/(\d)\s?mm\b/g, "$1 millimètres")
-    .replace(/(\d)\s?m\b/g, "$1 mètres")
-    .replace(/(\d)\s?kg\b/g, "$1 kilos")
-    .replace(/(\d)\s?g\b/g, "$1 grammes")
-    .replace(/(\d)\s?L\b/g, "$1 litres")
-    .replace(/(\d)\s?cL\b/g, "$1 centilitres")
-    .replace(/(\d)\s?mL\b/g, "$1 millilitres")
-    .replace(/(\d)\s?min\b/g, "$1 minutes")
+    .replace(/(\d)\s?km\b(?![A-Za-zÀ-ÿ])/g, "$1 kilomètres")
+    .replace(/(\d)\s?cm\b(?![A-Za-zÀ-ÿ])/g, "$1 centimètres")
+    .replace(/(\d)\s?mm\b(?![A-Za-zÀ-ÿ])/g, "$1 millimètres")
+    .replace(/(\d)\s?m\b(?![A-Za-zÀ-ÿ])/g, "$1 mètres")
+    .replace(/(\d)\s?kg\b(?![A-Za-zÀ-ÿ])/g, "$1 kilos")
+    .replace(/(\d)\s?g\b(?![A-Za-zÀ-ÿ])/g, "$1 grammes")
+    .replace(/(\d)\s?L\b(?![A-Za-zÀ-ÿ])/g, "$1 litres")
+    .replace(/(\d)\s?cL\b(?![A-Za-zÀ-ÿ])/g, "$1 centilitres")
+    .replace(/(\d)\s?mL\b(?![A-Za-zÀ-ÿ])/g, "$1 millilitres")
+    .replace(/(\d)\s?min\b(?![A-Za-zÀ-ÿ])/g, "$1 minutes")
     .replace(/(\d)\s?h\s?(\d\d)/g, "$1 heures $2")
-    .replace(/(\d)\s?h\b/g, "$1 heures")
+    .replace(/(\d)\s?h\b(?![A-Za-zÀ-ÿ])/g, "$1 heures")
     .replace(/\s*→\s*/g, " donne ")
     .replace(/…/g, "...")
     .replace(/\?\s*$/g, " ?")

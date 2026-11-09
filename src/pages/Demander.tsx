@@ -7,6 +7,7 @@ import { dicteeSupported, startDictee } from "../lib/dictee";
 import { Bubble, Mascot, SpeakBtn } from "../components/Mascot";
 import { Md } from "../components/Md";
 import type { BetaMessageParam } from "@anthropic-ai/sdk/resources/beta/messages/messages";
+import { ageScolaire } from "../lib/parcours";
 
 interface Turn {
   q: string;
@@ -87,7 +88,7 @@ export function Demander() {
       const { askClaude, teacherSystem } = await import("../lib/ai");
       bump(cle);
       const r = await askClaude({
-        system: teacherSystem(child.age),
+        system: teacherSystem(ageScolaire(child)),
         messages: history,
         signal: ctrl.signal,
         onText: (t) => upd({ answer: t }),

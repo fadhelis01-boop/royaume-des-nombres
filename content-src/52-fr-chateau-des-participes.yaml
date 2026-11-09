@@ -24,7 +24,7 @@ lecons:
       - dialogue:
           - zero: "« Je vais mangé » ou « je vais manger » ? Je les entends pareil ! 😳"
           - neo: "Remplace par un verbe du 3e groupe : « je vais vendre » ✔, « je vais vendu » ✘. Donc c'est l'infinitif : manger !"
-      - a_quoi_ca_sert: "La confusion -é / -er est la faute la plus fréquente des adultes. L'astuce de remplacement règle le problème à coup sûr."
+      - a_quoi_ca_sert: "« Il a mangé » ou « il va manger » ? Une astuce simple et tu ne te trompes plus dans tes rédactions."
       - texte: |
           Les verbes en -er se terminent par le même son au participe (**-é**) et à l'infinitif (**-er**).
           **Test** : je remplace par **vendre / vendu** (ou mordre / mordu, prendre / pris).

@@ -4,7 +4,7 @@
 //   choix des QCM, corrections, consignes générées (relier, ranger, rappel libre), types qui font écrire.
 // npm run audit:7ans [-- --exemples]
 import fs from "fs";
-import { niveauLecon } from "../src/lib/parcours";
+import { niveauLecon, optionsEcrit } from "../src/lib/parcours";
 import { planDefi } from "../src/lib/plan";
 import type { Lesson, World } from "../src/lib/types";
 
@@ -145,7 +145,7 @@ console.log(`\nTypes d'exercices (${totalEx}) : ${Object.entries(types).sort((a,
       const niv = niveauLecon(w, i);
       if (niv === null || niv > NIV_MAX || niv <= NIV_MIN || w.cycle === "astuces" || !l.exercices.length) return;
       for (let r = 0; r < 20; r++) {
-        const p = planDefi(l.exercices, l.nb_defi ?? 5, { jeune: AGE < 9 });
+        const p = planDefi(l.exercices, l.nb_defi ?? 5, optionsEcrit({ age: AGE, lecteur: AGE <= 8 ? "debutant" : "oui" }, (r + 0.5) / 20));
         n++;
         total += p.length;
         if (p.some((e) => e.type === "libre" || e.rappel)) avecLibre++;
