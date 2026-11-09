@@ -315,3 +315,11 @@ chapitres:
       - mia: "Ici, on ne récite pas : on montre comment un texte fonctionne, et pourquoi il nous parle."
     apres:
       - narrateur: "La Tribune s'illumine. Sur le pupitre, la Plume d'or écrit d'elle-même : « Lire, c'est déjà penser. »"
+  fr-scene-du-grand-oral:
+    titre: "Chapitre 20 — La Scène du Grand Oral"
+    objet: "✒️ La Plume d'or"
+    avant:
+      - narrateur: "Derrière la Tribune, une scène nue attend : pas de livre à expliquer cette fois, seulement ta question, ta voix et deux visages attentifs."
+      - neo: "Le dernier pas avant le grand large : penser à voix haute, devant les autres, sans notes."
+    apres:
+      - narrateur: "La salle applaudit. La Plume d'or se lève seule et trace sur le rideau : « Une question bien posée est déjà à moitié résolue. »"

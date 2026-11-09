@@ -1,3 +1,8 @@
+- version: "2.16.0"
+  date: "2026-11-09"
+  notes:
+    - "Nouveau monde de Terminale : la Scène du Grand Oral, avec 5 leçons : le déroulement de l'épreuve, choisir sa question, construire ses cinq minutes, parler sans notes et gérer le trac, l'échange avec le jury et le projet d'orientation."
+    - "Bac technologique : la contraction de texte et l'essai rejoignent la Tribune du Bac."
 - version: "2.15.0"
   date: "2026-11-09"
   notes:

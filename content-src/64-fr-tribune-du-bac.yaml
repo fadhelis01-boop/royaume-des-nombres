@@ -1,7 +1,7 @@
 id: fr-tribune-du-bac
 matiere: francais
 titre: La Tribune du Bac
-sous_titre: L'épreuve anticipée de français - explication linéaire, grammaire, commentaire, dissertation, objets d'étude, entretien
+sous_titre: "L'épreuve anticipée de français - explication linéaire, grammaire, commentaire, dissertation, contraction et essai (voie technologique), entretien"
 emoji: 🎙️
 couleur: "#3e2723"
 cycle: maitres
@@ -245,3 +245,96 @@ lecons:
         enonce: "🔗 Relie chaque formule à sa fonction dans un argument."
         paires: [["Je pense que…", "donner son avis"], ["parce que…", "justifier"], ["par exemple…", "illustrer"], ["toutefois…", "nuancer"]]
         correction: "Avis, raison, exemple, nuance : la structure d'une réponse argumentée."
+
+  - id: contraction-de-texte
+    titre: "Bac technologique : la contraction de texte"
+    classe: "1ʳᵉ"
+    objectif: Je réduis un texte d'idées au quart de sa longueur, en gardant son ordre, ses idées essentielles et la voix de l'auteur.
+    mots: [contraction, idée essentielle, reformuler, énonciation]
+    etapes:
+      - dialogue:
+          - zero: "Je suis en 1ʳᵉ technologique. Mon sujet d'écrit, ce n'est pas la dissertation ?"
+          - mia: "Non : en voie technologique, tu choisis entre le commentaire et un second sujet en deux temps, la contraction de texte puis l'essai. Chacun compte sur 10 points."
+          - neo: "Contracter, c'est réécrire le texte en quatre fois moins de mots, sans le trahir."
+      - a_quoi_ca_sert: "C'est la moitié de l'écrit du bac de français en voie technologique ; et résumer fidèlement un document est une compétence demandée dans tous les métiers (compte rendu, note de synthèse, rapport)."
+      - texte: |
+          **La règle** : réduire le texte (un texte de littérature d'idées) au **quart** de sa longueur, avec une marge de 10 % en plus ou en moins. On indique le **nombre de mots** à la fin de la copie.
+
+          **On garde** : l'**ordre** des idées, le **système d'énonciation** (si l'auteur dit « je » ou « nous », la contraction aussi), les **liens logiques** (car, donc, pourtant…).
+
+          **On supprime** : les exemples secondaires, les répétitions, les digressions.
+
+          **On n'ajoute rien** : pas de citation recopiée, pas de « l'auteur dit que… », pas d'avis personnel.
+      - attention: "Recopier des phrases du texte, ce n'est pas contracter : il faut **reformuler** avec ses propres mots, plus courts."
+      - astuce: { texte: "Au brouillon, résume chaque paragraphe en une phrase et souligne les connecteurs : tu obtiens le squelette du texte, il ne reste qu'à le rédiger.", qui: neo }
+      - retiens: "Contraction : **au quart** (± 10 %), **même ordre**, **même énonciation** (« je » reste « je »), **liens logiques** conservés, **reformuler** sans citer ni donner son avis, nombre de mots indiqué."
+    exercices:
+      - type: nombre
+        vars: { k: "180..260" }
+        enonce: "Un texte compte {{4*k}} mots. Combien de mots doit compter sa contraction au quart ?"
+        reponse: "k"
+        correction: "{{4*k}} ÷ 4 = {{k}} mots (avec 10 % de marge en plus ou en moins)."
+      - type: classer
+        enonce: "Range chaque élément : à garder ou à supprimer dans une contraction ?"
+        categories: ["À garder", "À supprimer"]
+        mots: [["L'idée principale de chaque paragraphe", 0], ["Un exemple qui répète une idée déjà illustrée", 1], ["Le connecteur « pourtant » qui marque une opposition", 0], ["Une anecdote secondaire", 1]]
+        correction: "On garde les idées et leurs liens logiques ; on supprime les exemples secondaires et les répétitions."
+      - type: vf
+        vars: { t: [["L'auteur écrit « je pense » : la contraction peut garder « je ».", true], ["Dans une contraction, on écrit « l'auteur affirme que… ».", false], ["On peut ajouter son avis à la fin de la contraction.", false], ["On respecte l'ordre des idées du texte.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La contraction garde l'énonciation et l'ordre du texte, sans commentaire ni avis personnel."
+      - type: ordre
+        enonce: "Range les étapes de la contraction."
+        items: ["Lire le texte et repérer sa thèse", "Résumer chaque paragraphe en une phrase au brouillon", "Rédiger en reformulant et en gardant les connecteurs", "Compter les mots et l'indiquer à la fin"]
+        correction: "Comprendre, condenser, rédiger, compter."
+      - type: qcm
+        enonce: "« Les écrans nous isolent, car ils remplacent les conversations. Pourtant, ils peuvent aussi nous rapprocher de nos proches éloignés. » Quelle est la meilleure contraction ?"
+        choix: ["Les écrans isolent, mais peuvent aussi rapprocher.", "L'auteur pense que les écrans isolent.", "Les écrans remplacent les conversations avec les proches.", "Je trouve que les écrans sont utiles."]
+        correction: "On garde les deux idées et leur opposition (« mais »), sans « l'auteur pense » ni avis personnel."
+
+  - id: essai-techno
+    titre: "Bac technologique : l'essai"
+    classe: "1ʳᵉ"
+    objectif: Je réponds à une question en construisant un essai argumenté, appuyé sur l'œuvre étudiée et sur mes lectures.
+    mots: [essai, argument, exemple, question]
+    etapes:
+      - dialogue:
+          - neo: "Après la contraction, une question t'attend, en lien avec le thème du texte et avec l'œuvre de littérature d'idées que tu as étudiée."
+          - zero: "Par exemple : « Faut-il se méfier du progrès ? » Et là, je donne mon avis ?"
+          - mia: "Oui, mais un avis construit : des arguments, des exemples précis, un plan. C'est une petite dissertation."
+      - a_quoi_ca_sert: "L'essai est l'autre moitié du sujet technologique (10 points) ; savoir défendre une position par écrit sert pour une lettre de motivation, un rapport de stage ou une note au travail."
+      - texte: |
+          **Analyser la question** : définir les mots clés, repérer ce qu'elle oppose ou présuppose.
+
+          **Répondre clairement** : une **position** annoncée dès l'introduction, qui peut être nuancée.
+
+          **Plan** en deux ou trois parties. Chaque paragraphe suit la règle **argument – exemple – analyse** ; les exemples viennent de l'**œuvre étudiée**, du **parcours** associé, d'autres lectures ou de la culture personnelle (film, actualité).
+
+          **Introduction** : amener la question, la reformuler, annoncer le plan. **Conclusion** : répondre nettement, puis ouvrir.
+      - attention: "On ne réutilise pas le texte de la contraction comme seul exemple : l'essai doit s'appuyer sur l'**œuvre au programme** et sur tes propres références."
+      - astuce: { texte: "Entraîne-toi à retenir trois passages précis de ton œuvre de littérature d'idées : ils serviront dans presque tous les essais.", qui: zero }
+      - retiens: "Essai : **analyser la question**, annoncer une **position**, **plan** en 2 ou 3 parties, paragraphes **argument – exemple – analyse**, exemples tirés de l'**œuvre étudiée** et de sa culture."
+    exercices:
+      - type: ordre
+        enonce: "Range les éléments d'un paragraphe d'essai."
+        items: ["L'argument", "L'exemple précis tiré d'une œuvre", "L'analyse qui relie l'exemple à l'argument", "Une phrase de transition"]
+        correction: "Argument, exemple, analyse, transition."
+      - type: qcm
+        enonce: "Question : « Le progrès rend-il toujours l'homme plus heureux ? » Quel mot clé faut-il surtout discuter ?"
+        choix: ["« toujours »", "« le »", "« rend »", "« homme » seulement"]
+        correction: "« toujours » est une généralisation : l'essai peut montrer les cas où le progrès rend heureux, puis ses limites."
+      - type: classer
+        enonce: "Range chaque phrase : argument ou exemple ?"
+        categories: ["Argument", "Exemple"]
+        mots: [["Le progrès technique libère l'homme des tâches pénibles.", 0], ["Dans Candide, Voltaire se moque de ceux qui croient que tout va pour le mieux.", 1], ["Une société peut devenir dépendante de ses machines.", 0], ["Les réseaux sociaux ont permis de rassembler des millions de personnes en quelques heures.", 1]]
+        correction: "L'argument est une idée générale ; l'exemple est un fait ou une œuvre précise qui la prouve."
+      - type: relier
+        enonce: "🔗 Relie chaque connecteur à sa fonction."
+        paires: [["en effet", "justifier"], ["ainsi", "conclure"], ["cependant", "nuancer"], ["de plus", "ajouter un argument"]]
+        correction: "Les connecteurs montrent le chemin du raisonnement."
+      - type: vf
+        vars: { t: [["Dans l'essai, on peut donner son avis.", true], ["L'essai n'a pas besoin de plan.", false], ["Un film peut servir d'exemple dans l'essai.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'essai défend une position personnelle, organisée en plan, avec des exemples variés."

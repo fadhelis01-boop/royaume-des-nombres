@@ -1,0 +1,244 @@
+id: fr-scene-du-grand-oral
+matiere: francais
+titre: La Scène du Grand Oral
+sous_titre: L'épreuve de Terminale - choisir ses questions, construire cinq minutes, parler sans notes, échanger avec le jury, présenter son projet
+emoji: 🎤
+couleur: "#4a148c"
+cycle: maitres
+age: 17-18 ans
+niveau: Terminale
+ordre: 65
+version: 1.0.0
+intro:
+  - narrateur: "Derrière la Tribune s'ouvre une scène nue : un pupitre, deux chaises pour le jury, et un tableau blanc. C'est ici que se passe le Grand oral."
+  - mia: "Vingt minutes devant deux professeurs, en voie générale comme en voie technologique. Ce n'est pas un exposé récité : c'est une conversation préparée."
+  - neo: "Ce qui compte : une vraie question, une réponse claire, et la capacité de penser à voix haute."
+
+lecons:
+  - id: grand-oral-epreuve
+    titre: Le Grand oral, comment se passe l'épreuve
+    classe: Terminale
+    objectif: Je connais le déroulement du Grand oral - préparation, présentation, échange, projet d'orientation - et ce que le jury évalue.
+    mots: [Grand oral, jury, préparation, coefficient]
+    etapes:
+      - dialogue:
+          - zero: "Le Grand oral, c'est un oral de quelle matière ?"
+          - mia: "De tes enseignements de spécialité. Tu prépares deux questions pendant l'année ; le jury en choisit une le jour de l'épreuve."
+          - neo: "Et il compte beaucoup : coefficient 10 en voie générale, 14 en voie technologique."
+      - a_quoi_ca_sert: "C'est l'une des épreuves les plus lourdes du bac ; et parler clairement devant un jury prépare aux entretiens d'admission, aux soutenances et aux entretiens d'embauche."
+      - texte: |
+          **Avant** : tu prépares **deux questions** liées à tes spécialités (voie générale) ou à la spécialité dans laquelle tu as mené un projet (voie technologique). Le jury en choisit **une**.
+
+          **20 minutes de préparation** : tu revois tes idées et tu peux préparer un **support** (schéma, mots clés) que tu remets au jury ; il n'est pas noté.
+
+          **L'épreuve dure 20 minutes** :
+          1. **5 minutes** de présentation de ta question, **debout** et **sans notes** ;
+          2. **10 minutes** d'échange avec le jury sur ta question et ta spécialité ;
+          3. **5 minutes** sur ton **projet d'orientation**.
+
+          Le jury (deux professeurs, dont souvent un qui n'enseigne pas ta spécialité) évalue la **qualité orale**, la **prise de parole en continu**, la **solidité des connaissances**, l'**interaction** et l'**argumentation**.
+      - attention: "Les modalités peuvent évoluer d'une session à l'autre : vérifie le texte officiel de ton année auprès de tes professeurs."
+      - astuce: { texte: "Retiens « 20 – 5 – 10 – 5 » : vingt minutes de préparation, puis cinq de présentation, dix d'échange, cinq d'orientation.", qui: zero }
+      - retiens: "Grand oral : **deux questions** préparées, le jury en choisit **une** ; **20 min** de préparation ; **5 min** de présentation **sans notes**, **10 min** d'échange, **5 min** sur le **projet d'orientation**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes du Grand oral."
+        items: ["Le jury choisit une des deux questions", "20 minutes de préparation", "5 minutes de présentation sans notes", "10 minutes d'échange avec le jury", "5 minutes sur le projet d'orientation"]
+        correction: "Choix de la question, préparation, présentation, échange, projet d'orientation."
+      - type: relier
+        enonce: "🔗 Relie chaque partie de l'épreuve à sa durée."
+        paires: [["la préparation", "20 minutes"], ["la présentation", "5 minutes, sans notes"], ["l'échange sur la question", "10 minutes"]]
+        correction: "20 minutes de préparation, puis 5 + 10 + 5 minutes devant le jury."
+      - type: vf
+        vars: { t: [["Pendant la présentation, on peut lire ses notes.", false], ["Le support préparé pendant les 20 minutes est noté.", false], ["Le candidat prépare deux questions pendant l'année.", true], ["La dernière partie porte sur le projet d'orientation.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Présentation sans notes ; support remis au jury mais non noté ; deux questions préparées ; fin sur le projet d'orientation."
+      - type: nombre
+        enonce: "Combien de minutes dure le Grand oral devant le jury, sans compter la préparation ?"
+        reponse: "20"
+        correction: "5 + 10 + 5 = **20 minutes**."
+      - type: classer
+        enonce: "Range chaque critère : évalué par le jury ou non ?"
+        categories: ["Évalué", "Pas évalué"]
+        mots: [["La clarté de l'expression", 0], ["La beauté du support remis au jury", 1], ["La capacité à argumenter pendant l'échange", 0], ["La tenue vestimentaire de marque", 1]]
+        correction: "Le jury évalue la parole, les connaissances, l'argumentation et l'échange, pas le support ni l'apparence."
+
+  - id: grand-oral-question
+    titre: Choisir et formuler sa question
+    classe: Terminale
+    objectif: Je transforme un thème de spécialité en une vraie question problématisée, à laquelle je peux répondre en cinq minutes.
+    mots: [question, problématique, thème, spécialité]
+    etapes:
+      - dialogue:
+          - zero: "Ma question, c'est « Le réchauffement climatique ». C'est bien ?"
+          - neo: "C'est un thème, pas une question. Le jury attend une interrogation qui appelle une réponse argumentée."
+          - mia: "Par exemple : « Peut-on prévoir le climat de 2100 alors qu'on ne prévoit pas la météo à quinze jours ? » Là, il y a un problème à résoudre."
+      - a_quoi_ca_sert: "Une bonne question fait la moitié de la note : elle donne un fil à ta présentation et montre au jury que tu sais réfléchir, pas seulement réciter."
+      - texte: |
+          **Partir d'un intérêt réel** : une notion du programme de spécialité qui t'a intrigué, un lien avec ton projet d'orientation, l'actualité.
+
+          **Formuler une question ouverte** qui contient un **problème** (une tension, un paradoxe, un enjeu) : « Pourquoi… alors que… ? », « Dans quelle mesure… ? », « Peut-on… ? ».
+
+          **Vérifier** :
+          - qu'on peut y répondre en **5 minutes** (ni trop large, ni trop étroite) ;
+          - qu'elle mobilise des **connaissances de spécialité** ;
+          - qu'elle n'appelle pas un simple oui / non ou une définition.
+
+          Les deux questions peuvent porter sur chacune des deux spécialités, ou les **croiser** (par exemple SVT et physique-chimie).
+      - attention: "« Qu'est-ce que l'ADN ? » appelle une définition, pas une réflexion. Une question de Grand oral demande de **démontrer** ou de **discuter**."
+      - astuce: { texte: "Teste ta question sur quelqu'un qui n'est pas de ta spécialité : s'il a envie d'entendre la réponse, elle est bonne.", qui: mia }
+      - retiens: "Une question de Grand oral : **ouverte**, porteuse d'un **problème** (« pourquoi… alors que… », « dans quelle mesure… »), traitable en **5 minutes**, appuyée sur la **spécialité**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque formulation : question de Grand oral ou simple thème / définition ?"
+        categories: ["Bonne question", "Thème ou définition"]
+        mots: [["Pourquoi les antibiotiques deviennent-ils moins efficaces alors qu'on en fabrique de plus en plus ?", 0], ["Les antibiotiques", 1], ["Dans quelle mesure les mathématiques peuvent-elles prévoir une épidémie ?", 0], ["Qu'est-ce qu'une fonction exponentielle ?", 1]]
+        correction: "Une bonne question contient un problème à résoudre ; un thème ou une définition n'en contient pas."
+      - type: qcm
+        enonce: "Quelle question est la mieux adaptée à une présentation de 5 minutes ?"
+        choix: ["Pourquoi les voitures électriques ne sont-elles pas forcément plus écologiques ?", "Quelle est l'histoire complète de l'énergie depuis la préhistoire ?", "La voiture électrique est-elle bleue ?", "Qu'est-ce qu'une batterie ?"]
+        correction: "Elle contient un problème précis et se traite en quelques minutes ; les autres sont trop larges, absurdes ou appellent une définition."
+      - type: relier
+        enonce: "🔗 Relie chaque formule à ce qu'elle annonce."
+        paires: [["Dans quelle mesure… ?", "une réponse nuancée, par degrés"], ["Pourquoi… alors que… ?", "un paradoxe à expliquer"], ["Peut-on… ?", "une possibilité à discuter"]]
+        correction: "La forme de la question annonce le type de réponse attendu."
+      - type: vf
+        vars: { t: [["Une question peut croiser les deux spécialités.", true], ["Une question doit pouvoir se traiter en 5 minutes.", true], ["Une question qui appelle « oui » ou « non » suffit.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La question peut croiser les spécialités, tient en 5 minutes et appelle une réponse argumentée."
+
+  - id: grand-oral-presentation
+    titre: Construire ses cinq minutes
+    classe: Terminale
+    objectif: Je construis une présentation de cinq minutes - accroche, question, plan, développement, réponse - que je peux dire sans notes.
+    mots: [accroche, plan, transition, conclusion]
+    etapes:
+      - dialogue:
+          - mia: "Cinq minutes, c'est environ 600 à 700 mots à l'oral. Il faut choisir."
+          - zero: "Je pourrais apprendre un texte par cœur ?"
+          - neo: "Le jury le sent tout de suite. Retiens plutôt un plan et quelques phrases clés : tu parles, tu ne récites pas."
+      - a_quoi_ca_sert: "Savoir dire l'essentiel en cinq minutes sert partout : une soutenance, une réunion, un projet à défendre devant un client."
+      - texte: |
+          1. **Accroche** (20 secondes) : un fait, un chiffre, une image, une anecdote qui donne envie d'écouter.
+          2. **La question**, puis **pourquoi tu l'as choisie** (lien avec ta spécialité ou ton projet).
+          3. **Le plan** annoncé en une phrase : deux ou trois étapes.
+          4. **Le développement** : chaque étape apporte une **idée** et une **preuve** (expérience, calcul, document, exemple), reliées par des **transitions** (« on a vu que… ; mais alors… »).
+          5. **La réponse** à la question, nette, et une **ouverture** qui peut lancer l'échange.
+
+          **Pendant les 20 minutes de préparation** : écris le plan et les mots clés, prépare un schéma pour le support.
+      - attention: "Ne finis pas sans répondre : une présentation qui s'arrête sur « voilà » laisse le jury sur sa faim. Dis clairement : « Pour répondre à ma question… »."
+      - astuce: { texte: "Entraîne-toi avec un chronomètre et enregistre-toi : à 4 minutes 30, tu dois être en train de conclure.", qui: neo }
+      - retiens: "Cinq minutes : **accroche**, **question** et **pourquoi**, **plan** annoncé, étapes **idée + preuve** reliées par des **transitions**, **réponse** nette et **ouverture**. Un plan retenu, pas un texte récité."
+    exercices:
+      - type: ordre
+        enonce: "Range les moments de la présentation."
+        items: ["L'accroche", "La question et pourquoi je l'ai choisie", "L'annonce du plan", "Le développement en deux ou trois étapes", "La réponse et l'ouverture"]
+        correction: "Accroche, question, plan, développement, réponse."
+      - type: qcm
+        enonce: "Quelle est la meilleure accroche pour la question « Pourquoi les abeilles disparaissent-elles ? »"
+        choix: ["« Un tiers de ce que nous mangeons dépend de la pollinisation. »", "« Bonjour, je vais parler des abeilles. »", "« Je n'ai pas trop eu le temps de préparer. »", "« Les abeilles sont jaunes et noires. »"]
+        correction: "Une accroche donne un fait frappant qui montre l'enjeu de la question."
+      - type: classer
+        enonce: "Range chaque phrase : transition ou conclusion ?"
+        categories: ["Transition", "Conclusion"]
+        mots: [["Nous avons vu les causes ; voyons maintenant les solutions.", 0], ["Pour répondre à ma question, la disparition des abeilles a plusieurs causes qui s'additionnent.", 1], ["Mais ce premier élément ne suffit pas à tout expliquer.", 0], ["Ainsi, l'essentiel n'est pas le pesticide seul, mais le cumul des menaces.", 1]]
+        correction: "La transition relie deux étapes ; la conclusion répond à la question."
+      - type: nombre
+        enonce: "On parle à environ 130 mots par minute. Combien de mots environ pour une présentation de 5 minutes ?"
+        reponse: "650"
+        correction: "130 × 5 = **650 mots** environ : il faut donc choisir l'essentiel."
+      - type: vf
+        vars: { t: [["Il vaut mieux apprendre sa présentation mot à mot.", false], ["La présentation doit se terminer par une réponse à la question.", true], ["Le plan s'annonce au début de la présentation.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On retient un plan et des phrases clés ; on annonce le plan au début et on répond à la question à la fin."
+
+  - id: grand-oral-voix
+    titre: Parler debout, sans notes
+    classe: Terminale
+    objectif: Je travaille ma voix, mon regard, mon débit et ma posture, et je sais gérer le trac.
+    mots: [débit, regard, posture, trac]
+    etapes:
+      - dialogue:
+          - zero: "Mon problème, c'est le trac. Mes mains tremblent et je parle trop vite."
+          - mia: "Presque tout le monde a le trac. Il ne disparaît pas, mais il se dompte : respiration, pauses, et beaucoup d'entraînement."
+      - a_quoi_ca_sert: "Le jury note la qualité orale, pas seulement le contenu ; et une parole posée inspire confiance dans tous les contextes, des études au travail."
+      - texte: |
+          **La voix** : parler **assez fort** pour le fond de la salle, **articuler**, varier l'intonation pour souligner les idées importantes.
+
+          **Le débit** : ralentir, faire des **pauses** après chaque idée forte. Un silence de deux secondes paraît long pour celui qui parle, naturel pour celui qui écoute.
+
+          **Le regard** : regarder les **deux** membres du jury, tour à tour.
+
+          **La posture** : debout, bien ancré sur les deux pieds, les mains libres pour accompagner le propos (pas dans les poches).
+
+          **Le trac** : respirer lentement avant de commencer (inspirer 4 secondes, expirer 6), connaître sa première phrase par cœur, et se souvenir que le jury veut que tu réussisses.
+      - attention: "Les tics de langage (« euh », « du coup », « en fait ») fatiguent l'oreille. Mieux vaut une pause silencieuse qu'un « euh »."
+      - astuce: { texte: "Répète devant un miroir, puis devant tes proches, puis en te filmant : chaque répétition rend l'oral du jour plus familier.", qui: neo }
+      - retiens: "Parler **fort** et **articuler**, **ralentir** et faire des **pauses**, **regarder** les deux membres du jury, posture **debout et stable**, **respirer** pour dompter le trac ; une pause vaut mieux qu'un « euh »."
+    exercices:
+      - type: classer
+        enonce: "Range chaque attitude : à adopter ou à éviter ?"
+        categories: ["À adopter", "À éviter"]
+        mots: [["Regarder tour à tour les deux membres du jury", 0], ["Garder les mains dans les poches", 1], ["Faire une pause après une idée importante", 0], ["Remplir chaque silence par « euh »", 1], ["Parler très vite pour tout dire", 1]]
+        correction: "Regard, pauses et calme aident le jury à suivre ; les tics et la précipitation le perdent."
+      - type: relier
+        enonce: "🔗 Relie chaque difficulté à une solution."
+        paires: [["je parle trop vite", "faire des pauses après chaque idée"], ["j'ai le trac au début", "connaître sa première phrase par cœur"], ["je dis souvent « euh »", "remplacer par un court silence"], ["je ne sais pas où regarder", "regarder les deux membres du jury tour à tour"]]
+        correction: "Chaque difficulté a une parade qui s'entraîne."
+      - type: qcm
+        enonce: "Que faire si l'on perd le fil pendant la présentation ?"
+        choix: ["Marquer une pause, rappeler le plan et reprendre à l'étape suivante", "S'excuser et s'arrêter", "Recommencer depuis le début", "Parler plus vite pour rattraper"]
+        correction: "Le plan sert de boussole : une pause, puis on repart de l'étape suivante."
+      - type: vf
+        vars: { t: [["Un silence de deux secondes paraît plus long à celui qui parle qu'à celui qui écoute.", true], ["Le trac disparaît complètement avec l'âge.", false], ["Respirer lentement avant de commencer aide à se calmer.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les pauses semblent naturelles au jury ; le trac se dompte par la respiration et l'entraînement."
+
+  - id: grand-oral-echange-orientation
+    titre: L'échange avec le jury et le projet d'orientation
+    classe: Terminale
+    objectif: Je réponds aux questions du jury en argumentant, j'admets ce que je ne sais pas, et je présente mon projet d'orientation en lien avec ma question.
+    mots: [échange, relance, projet d'orientation, Parcoursup]
+    etapes:
+      - dialogue:
+          - neo: "Après tes cinq minutes, le jury te questionne pendant dix minutes, puis cinq minutes sur ton projet."
+          - zero: "Et s'il me pose une question dont je ne connais pas la réponse ?"
+          - mia: "Tu le dis honnêtement, puis tu raisonnes à voix haute à partir de ce que tu sais. Le jury évalue ta façon de penser, pas une encyclopédie."
+      - a_quoi_ca_sert: "L'échange représente les trois quarts du temps devant le jury ; et savoir parler de son projet sert pour Parcoursup, les entretiens d'école et les jobs d'été."
+      - texte: |
+          **L'échange (10 minutes)** : le jury demande de préciser, d'approfondir, ou élargit à d'autres notions de la spécialité.
+          - **Écouter** la question jusqu'au bout, la **reformuler** si besoin (« Si je comprends bien, vous me demandez… »).
+          - Répondre en **argumentant** : idée, justification, exemple.
+          - Si l'on ne sait pas : **le dire**, puis **raisonner** (« Je ne connais pas ce point précis, mais d'après… je dirais que… »).
+
+          **Le projet d'orientation (5 minutes)** : expliquer **comment ta question est liée à ton projet** (études, métier, centres d'intérêt), ce que tu as fait pour le construire (stages, salons, lectures, Parcoursup), et ce qui te motive. Un projet encore hésitant peut être présenté honnêtement : ce qui compte, c'est la **réflexion**.
+      - attention: "Ne pas se braquer : une question difficile n'est pas un piège, c'est souvent une invitation à montrer jusqu'où va ta réflexion."
+      - astuce: { texte: "Prépare cinq questions que le jury pourrait te poser, et réponds-y à voix haute : tu en retrouveras souvent une le jour J.", qui: zero }
+      - retiens: "Échange : **écouter**, **reformuler**, **argumenter** ; si on ne sait pas, **le dire et raisonner**. Projet d'orientation : **lien** avec la question, **démarches** faites, **motivation** ; un projet hésitant se présente honnêtement."
+    exercices:
+      - type: qcm
+        enonce: "Le jury pose une question dont tu ne connais pas la réponse. Que fais-tu ?"
+        choix: ["Je le dis, puis je raisonne à partir de ce que je sais", "J'invente une réponse sûre de moi", "Je reste silencieux", "Je change de sujet"]
+        correction: "L'honnêteté suivie d'un raisonnement montre ta capacité à réfléchir : c'est ce que le jury évalue."
+      - type: ordre
+        enonce: "Range les étapes d'une bonne réponse au jury."
+        items: ["Écouter la question jusqu'au bout", "La reformuler si besoin", "Donner une idée et la justifier", "Illustrer par un exemple"]
+        correction: "Écouter, reformuler, argumenter, illustrer."
+      - type: classer
+        enonce: "Range chaque phrase : utile ou maladroite pour présenter son projet d'orientation ?"
+        categories: ["Utile", "Maladroite"]
+        mots: [["Ma question sur les épidémies m'a confirmé mon envie de faire des études de santé.", 0], ["Je ne sais pas, on verra bien.", 1], ["J'ai fait un stage d'observation dans un laboratoire d'analyses.", 0], ["Je veux faire ça parce que mes parents me l'ont dit.", 1]]
+        correction: "On montre un lien avec sa question, des démarches et une motivation personnelle."
+      - type: relier
+        enonce: "🔗 Relie chaque formule à son usage pendant l'échange."
+        paires: [["Si je comprends bien, vous me demandez…", "reformuler"], ["Je ne connais pas ce point précis, mais…", "admettre et raisonner"], ["Par exemple, en cours, nous avons…", "illustrer"], ["Cela rejoint mon projet, car…", "relier à l'orientation"]]
+        correction: "Ces formules aident à rester clair et honnête pendant l'échange."
+      - type: vf
+        vars: { t: [["Un projet d'orientation encore hésitant peut être présenté.", true], ["L'échange dure plus longtemps que la présentation.", true], ["Le jury ne pose des questions que sur la présentation.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "On peut présenter un projet en construction ; l'échange (10 minutes) peut s'élargir à toute la spécialité."

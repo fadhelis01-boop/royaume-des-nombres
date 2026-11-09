@@ -1,6 +1,6 @@
 # Audit « 16, 17 et 18 ans » : comprendre ce qu'on demande, les réponses, « À quoi ça sert ? »
 
-Date : 9 novembre 2026 · version auditée : 2.14.0 · corrections livrées : 2.15.0 (même jour, voir en fin de document)
+Date : 9 novembre 2026 · version auditée : 2.14.0 · corrections livrées : 2.15.0, puis Grand oral et bac technologique en 2.16.0 (même jour, voir en fin de document)
 
 Même méthode que les audits précédents, pour un élève de 1ʳᵉ (16 ans), de Terminale (17 ans) et un jeune de 18 ans (souvent encore en Terminale, ou dans le supérieur), en novembre.
 
@@ -88,6 +88,11 @@ Dans une formule, « si $a<0$ » était lu « a<0 » : les signes < et > à l'in
 
 Restent ouverts :
 - **le supérieur** : peu de contenus (14 leçons de niveau post-bac, toutes matières) ;
-- **les autres disciplines et parcours du bac** : spécialités HGGSP, SES, NSI, et le bac technologique (contraction de texte et essai) ne sont pas couverts ;
-- **le Grand oral** : pas encore de leçon dédiée ;
+- **les autres spécialités** : HGGSP, SES et NSI ne sont pas couvertes ;
 - **le test avec de vrais élèves**.
+
+## Ajouts livrés (2.16.0)
+
+1. **Grand oral** : nouveau monde de Terminale **La Scène du Grand Oral** (5 leçons, 23 exercices) : déroulement de l'épreuve (20 minutes de préparation, 5 minutes sans notes, 10 minutes d'échange, 5 minutes sur le projet d'orientation), choisir et formuler sa question, construire ses cinq minutes, voix et gestion du trac, échange avec le jury et projet d'orientation. Les modalités pouvant évoluer, la leçon renvoie au texte officiel de l'année.
+2. **Bac technologique** : deux leçons ajoutées à la Tribune du Bac, **la contraction de texte** (au quart, à 10 % près, même ordre, même énonciation) et **l'essai** (position, plan, argument – exemple – analyse).
+3. Vérifié : tests et contrôle du contenu sans erreur, 0 défi dominé à 17 et 18 ans, monde et leçons ouverts dans le navigateur avec un profil de Terminale, console sans erreur.
