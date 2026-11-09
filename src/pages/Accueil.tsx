@@ -60,7 +60,8 @@ export function NouvelEnfant() {
   const ok = name.trim().length >= 1;
   const create = () => {
     const c = newChild(name.trim(), avatar, age);
-    if (age < 18 && classeAff !== null) c.classe = classeAff;
+    // à 18 ans, beaucoup d'élèves sont encore en Terminale (audit « 16-18 ans ») : la classe est demandée aussi
+    if (classeAff !== null) c.classe = classeAff;
     addChild(c);
     // L'enfant choisit d'abord sa planète dans la Galaxie ; la carte de la planète
     // propose ensuite son prologue (l'histoire avant tout test).
@@ -78,11 +79,11 @@ export function NouvelEnfant() {
           </button>
         ))}
       </div>
-      {age < 18 && (
+      {(
         <>
-          <Bubble who="mia" text="Et tu es dans quelle classe ? (Demande à un adulte si tu ne sais pas.)" />
+          <Bubble who="mia" text={age >= 13 ? "Et tu es dans quelle classe ?" : "Et tu es dans quelle classe ? (Demande à un adulte si tu ne sais pas.)"} />
           <div className="age-picker" role="group" aria-label="Ta classe">
-            {CLASSES.slice(0, 13)
+            {CLASSES.slice(0, 14)
               .map((n, i) => ({ n, i }))
               .filter(({ i }) => Math.abs(i - classeDeLAge(age)) <= 2)
               .map(({ n, i }) => (

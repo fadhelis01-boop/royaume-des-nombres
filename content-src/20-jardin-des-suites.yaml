@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: suites-numeriques
     titre: Suites numériques - formule explicite et récurrence
+    classe: "1ʳᵉ"
     objectif: Je calcule des termes d'une suite définie explicitement ou par récurrence.
     mots: [suite, terme, récurrence]
     etapes:
@@ -58,6 +59,7 @@ lecons:
 
   - id: suites-arithmetiques
     titre: Les suites arithmétiques
+    classe: "1ʳᵉ"
     objectif: Je reconnais une suite arithmétique et j'utilise uₙ = u₀ + nr.
     mots: [suite arithmétique, raison]
     etapes:
@@ -101,6 +103,7 @@ lecons:
 
   - id: suites-geometriques
     titre: Les suites géométriques
+    classe: "1ʳᵉ"
     objectif: Je reconnais une suite géométrique et j'utilise uₙ = u₀ × qⁿ.
     mots: [suite géométrique, raison, intérêts composés]
     etapes:
@@ -159,6 +162,7 @@ lecons:
 
   - id: sommes
     titre: Les sommes - le génie de Gauss
+    classe: "1ʳᵉ"
     objectif: Je calcule 1 + 2 + … + n et la somme des termes d'une suite géométrique.
     mots: [somme]
     etapes:
@@ -210,6 +214,7 @@ lecons:
 
   - id: limites-suites
     titre: Les limites de suites
+    classe: "Terminale"
     objectif: Je détermine le comportement d'une suite quand n devient très grand.
     mots: [limite, convergence, infini]
     etapes:
@@ -255,6 +260,7 @@ lecons:
 
   - id: recurrence
     titre: Le raisonnement par récurrence
+    classe: "Terminale"
     objectif: Je comprends le principe de la démonstration par récurrence (les dominos).
     mots: [récurrence, hérédité, initialisation]
     etapes:

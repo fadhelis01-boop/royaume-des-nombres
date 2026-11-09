@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: champs
     titre: "Champs électrique et magnétique"
+    classe: "1ʳᵉ"
     objectif: Je connais les lois de base de l'électromagnétisme et l'induction.
     mots: [champ, loi de Coulomb, électroaimant, induction]
     etapes:
@@ -52,6 +53,7 @@ lecons:
 
   - id: ondes-et-interferences
     titre: "Ondes, longueur d'onde, interférences"
+    classe: "Terminale"
     objectif: J'utilise λ = v / f et je comprends les interférences.
     mots: [onde, longueur d'onde, période, interférences, diffraction]
     etapes:
@@ -92,6 +94,7 @@ lecons:
 
   - id: thermodynamique
     titre: "Chaleur, température et thermodynamique"
+    classe: "Terminale"
     objectif: Je distingue chaleur et température et je connais les deux principes.
     mots: [kelvin, énergie interne, premier principe, second principe]
     etapes:
@@ -129,6 +132,7 @@ lecons:
 
   - id: relativite
     titre: "La relativité restreinte"
+    classe: "Supérieur"
     objectif: Je comprends les idées clés de la relativité d'Einstein.
     mots: [relativité, vitesse de la lumière, dilatation du temps, E = mc²]
     etapes:
@@ -166,6 +170,7 @@ lecons:
 
   - id: quantique
     titre: "Le monde quantique"
+    classe: "Supérieur"
     objectif: J'utilise E = h·f et je connais les idées de base de la physique quantique.
     mots: [photon, quantum, constante de Planck, niveaux d'énergie, dualité]
     etapes:

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: matrices-tableaux
     titre: Les matrices, des tableaux de nombres
+    classe: "Terminale"
     objectif: Je lis une matrice, sa taille et ses coefficients, et j'additionne deux matrices.
     mots: [matrice, coefficient]
     etapes:
@@ -60,6 +61,7 @@ lecons:
 
   - id: produit-matrices
     titre: Le produit de matrices
+    classe: "Terminale"
     objectif: Je calcule le produit de deux matrices 2 × 2 et d'une matrice par un vecteur.
     mots: [produit matriciel]
     etapes:
@@ -108,6 +110,7 @@ lecons:
 
   - id: inverse-systemes
     titre: Déterminant, inverse et systèmes
+    classe: "Terminale"
     objectif: Je calcule un déterminant 2 × 2, l'inverse d'une matrice et je résous un système avec AX = B.
     mots: [déterminant, matrice inverse]
     etapes:
@@ -151,6 +154,7 @@ lecons:
 
   - id: graphes-markov
     titre: Graphes et chaînes de Markov
+    classe: "Terminale"
     objectif: J'utilise une matrice pour compter des chemins dans un graphe ou faire évoluer des probabilités.
     mots: [graphe, matrice d'adjacence, chaîne de Markov]
     etapes:

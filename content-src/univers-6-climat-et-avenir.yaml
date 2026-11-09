@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: bilan-radiatif
     titre: "Le bilan d'énergie de la Terre"
+    classe: "1ʳᵉ"
     objectif: J'explique l'équilibre entre l'énergie reçue et l'énergie renvoyée.
     mots: [bilan radiatif, albédo, rayonnement infrarouge]
     etapes:
@@ -52,6 +53,7 @@ lecons:
 
   - id: cycle-du-carbone
     titre: "Le cycle du carbone"
+    classe: "Terminale"
     objectif: Je décris les réservoirs et les échanges de carbone.
     mots: [cycle du carbone, puits de carbone, réservoir, combustion]
     etapes:
@@ -89,6 +91,7 @@ lecons:
 
   - id: consequences
     titre: "Les conséquences du réchauffement"
+    classe: "Terminale"
     objectif: Je connais les principales conséquences observées et projetées.
     mots: [GIEC, niveau des mers, événements extrêmes, scénario]
     etapes:
@@ -124,6 +127,7 @@ lecons:
 
   - id: empreinte-carbone
     titre: "L'empreinte carbone"
+    classe: "Terminale"
     objectif: J'estime des ordres de grandeur d'émissions et je compare des choix.
     mots: [empreinte carbone, CO₂ équivalent, tonne, sobriété]
     etapes:
@@ -162,6 +166,7 @@ lecons:
 
   - id: agir
     titre: "Atténuer et s'adapter"
+    classe: "Terminale"
     objectif: Je distingue atténuation et adaptation et je connais des leviers d'action.
     mots: [atténuation, adaptation, sobriété, efficacité, développement durable]
     etapes:

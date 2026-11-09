@@ -1,0 +1,247 @@
+id: fr-tribune-du-bac
+matiere: francais
+titre: La Tribune du Bac
+sous_titre: L'épreuve anticipée de français - explication linéaire, grammaire, commentaire, dissertation, objets d'étude, entretien
+emoji: 🎙️
+couleur: "#3e2723"
+cycle: maitres
+age: 16-17 ans
+niveau: 1ʳᵉ
+ordre: 64
+version: 1.0.0
+intro:
+  - narrateur: "Au-dessus de l'Académie s'élève la Tribune du Bac. On y lit à voix haute, on y explique, on y défend une lecture devant un jury."
+  - mia: "En 1ʳᵉ, le français passe un examen : quatre heures à l'écrit, vingt minutes à l'oral. Ici, on s'entraîne aux méthodes."
+  - neo: "Pas de recette magique : une méthode claire, des citations précises, et une idée par paragraphe."
+
+lecons:
+  - id: explication-lineaire
+    titre: L'explication linéaire à l'oral
+    classe: "1ʳᵉ"
+    objectif: Je construis une explication linéaire - introduction, lecture, analyse mouvement par mouvement, conclusion.
+    mots: [explication linéaire, mouvement, projet de lecture, procédé]
+    etapes:
+      - dialogue:
+          - zero: "« Explication linéaire », ça veut dire que je lis le texte ligne par ligne et je le répète ?"
+          - mia: "Non ! On suit le texte dans l'ordre, mais on montre comment il produit du sens : chaque procédé est relié à une interprétation."
+      - a_quoi_ca_sert: "C'est la première partie de l'oral du bac de français (12 minutes sur 20), et la meilleure façon d'apprendre à lire de près n'importe quel texte."
+      - texte: |
+          **Introduction** : situer le texte (auteur, œuvre, contexte), annoncer un **projet de lecture** (une question qui guide l'explication), découper le texte en **mouvements**.
+
+          **Lecture expressive** du texte, à voix haute.
+
+          **Explication** mouvement par mouvement : pour chaque passage, **citer** (« … »), **nommer le procédé** (métaphore, anaphore, rythme, champ lexical…) et **interpréter** (quel effet ? quel sens ?).
+
+          **Conclusion** : répondre au projet de lecture, puis ouvrir vers une autre œuvre ou une question.
+      - attention: "Paraphraser (redire le texte avec d'autres mots) n'est pas expliquer. Chaque remarque doit répondre à « comment le texte dit-il cela, et pourquoi ? »."
+      - astuce: { texte: "Triangle magique pour chaque remarque : citation, procédé, interprétation. S'il manque un sommet, la remarque est incomplète.", qui: neo }
+      - retiens: "Explication linéaire : **introduction** (situation, **projet de lecture**, **mouvements**), **lecture**, analyse dans l'ordre (**citation, procédé, interprétation**), **conclusion** qui répond au projet."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de l'explication linéaire."
+        items: ["Situer le texte et annoncer le projet de lecture", "Lire le texte à voix haute", "Expliquer mouvement par mouvement", "Conclure en répondant au projet de lecture"]
+        correction: "Introduction, lecture, explication, conclusion."
+      - type: classer
+        enonce: "Range chaque phrase : analyse ou paraphrase ?"
+        categories: ["Analyse", "Paraphrase"]
+        mots: [["L'anaphore de « Je veux » traduit l'obstination du poète.", 0], ["Le poète dit qu'il veut partir.", 1], ["Le champ lexical de la nuit installe une atmosphère inquiétante.", 0], ["Ensuite, il raconte qu'il marche dans la forêt.", 1]]
+        correction: "Une analyse nomme un procédé et l'interprète ; une paraphrase redit le texte."
+      - type: relier
+        enonce: "🔗 Relie chaque élément du triangle à son rôle."
+        paires: [["la citation", "montre précisément le passage"], ["le procédé", "nomme le moyen employé"], ["l'interprétation", "dit l'effet et le sens"]]
+        correction: "Citer, nommer, interpréter : les trois sommets de chaque remarque."
+      - type: qcm
+        enonce: "Qu'est-ce qu'un projet de lecture ?"
+        choix: ["Une question qui guide toute l'explication", "Le résumé du texte", "La biographie de l'auteur", "La liste des figures de style"]
+        correction: "Le **projet de lecture** est une question d'interprétation à laquelle l'explication répond."
+
+  - id: grammaire-oral
+    titre: La question de grammaire à l'oral
+    classe: "1ʳᵉ"
+    objectif: J'analyse une phrase du texte - interrogation, négation, propositions subordonnées - en nommant précisément.
+    mots: [interrogation, négation, subordonnée, proposition]
+    etapes:
+      - dialogue:
+          - neo: "Après l'explication, l'examinateur te pose une question de grammaire sur une phrase du texte."
+          - mia: "Elle porte sur des points précis du programme : l'interrogation, la négation, les subordonnées… Elle compte pour 2 points sur 20."
+      - a_quoi_ca_sert: "Gagner des points faciles à l'oral, et mieux comprendre comment une phrase est construite pour mieux écrire."
+      - texte: |
+          **L'interrogation** : **totale** (réponse oui / non : « Viendras-tu ? ») ou **partielle** (porte sur un élément : « Où vas-tu ? »). Elle est directe (« ? ») ou indirecte (« Je me demande où tu vas. »).
+
+          **La négation** : **totale** (« ne… pas ») ou **partielle** (« ne… jamais », « ne… plus », « ne… personne »). La **restriction** « ne… que » n'est pas une négation (« Il ne mange que des fruits » = il mange seulement des fruits).
+
+          **Les subordonnées** : **relative** (complète un nom : « le livre **que je lis** »), **conjonctive complétive** (complète un verbe : « Je pense **qu'il viendra** »), **circonstancielle** (temps, cause, but… : « **Quand il pleut**, je lis »).
+      - astuce: { texte: "Pour une subordonnée, demande-toi ce qu'elle complète : un nom (relative), un verbe (complétive), ou toute la phrase (circonstancielle).", qui: zero }
+      - retiens: "Interrogation **totale** (oui / non) ou **partielle**. Négation **totale** ou **partielle** ; « ne… que » = **restriction**. Subordonnées **relative**, **complétive**, **circonstancielle**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque question : interrogation totale ou partielle ?"
+        categories: ["Totale (oui / non)", "Partielle"]
+        mots: [["Viendras-tu demain ?", 0], ["Où as-tu caché la clé ?", 1], ["Est-ce que tu as fini ?", 0], ["Pourquoi pleures-tu ?", 1]]
+        correction: "On peut répondre oui ou non → totale ; la question porte sur un élément (où, pourquoi) → partielle."
+      - type: qcm
+        vars: { t: [["Je pense qu'il a raison.", "complétive", "relative", "circonstancielle"], ["La lettre que j'ai reçue est arrivée hier.", "relative", "complétive", "circonstancielle"], ["Lorsque la nuit tombe, les chats sortent.", "circonstancielle", "relative", "complétive"]] }
+        enonce: "Quelle est la nature de la subordonnée ? « {{t_0}} »"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**."
+      - type: vf
+        vars: { t: [["« Il ne boit que de l'eau » est une négation totale.", false], ["« Je ne sors jamais » est une négation partielle.", true], ["« Je me demande qui viendra » est une interrogation indirecte.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "« ne… que » est une restriction ; « ne… jamais » une négation partielle ; sans point d'interrogation, l'interrogation est indirecte."
+      - type: relier
+        enonce: "🔗 Relie chaque négation à son type."
+        paires: [["ne… pas", "négation totale"], ["ne… plus", "négation partielle"], ["ne… que", "restriction"]]
+        correction: "ne… pas : totale ; ne… plus, jamais, personne : partielle ; ne… que : restriction."
+
+  - id: commentaire
+    titre: Le commentaire, de la lecture au plan
+    classe: "1ʳᵉ"
+    objectif: Je dégage une problématique et je construis un plan de commentaire en deux ou trois axes.
+    mots: [commentaire, problématique, axe, plan]
+    etapes:
+      - dialogue:
+          - zero: "Quatre heures pour un seul texte ? Par où je commence ?"
+          - neo: "Par des lectures attentives, au brouillon. Tu repères les procédés, tu cherches ce qui rend le texte singulier, puis tu formules une problématique."
+      - a_quoi_ca_sert: "Le commentaire est l'un des deux sujets de l'écrit du bac de français (voie générale). Savoir organiser une analyse sert dans toutes les matières."
+      - texte: |
+          **Au brouillon** : relire plusieurs fois, souligner les procédés, noter les premières impressions (ton, thème, singularité).
+
+          **Problématique** : une question sur la **manière** dont le texte produit son effet (« Comment le poète fait-il de la mer un miroir de l'âme ? »).
+
+          **Plan** : 2 ou 3 **axes** qui répondent à la problématique, chacun avec 2 ou 3 sous-parties. Chaque sous-partie : une idée, des **citations**, des **procédés**, une **interprétation**.
+
+          **Introduction** : amorce, présentation du texte, problématique, annonce du plan. **Conclusion** : bilan et ouverture.
+      - attention: "Un plan qui suit le texte ligne à ligne (premier paragraphe, deuxième paragraphe…) n'est pas un commentaire : les axes sont **thématiques**."
+      - astuce: { texte: "Une bonne problématique commence souvent par « Comment… ? » ou « En quoi… ? » : elle interroge la manière, pas le contenu.", qui: mia }
+      - retiens: "Commentaire : **problématique** (« comment / en quoi ») + **2 ou 3 axes thématiques**, chaque idée appuyée sur **citations**, **procédés**, **interprétation**."
+    exercices:
+      - type: qcm
+        enonce: "Quelle est la meilleure problématique pour un commentaire ?"
+        choix: ["En quoi ce portrait est-il aussi une critique de la société ?", "De quoi parle ce texte ?", "Qui est l'auteur de ce texte ?", "Ce texte est-il bien écrit ?"]
+        correction: "Une problématique interroge la **manière** et l'**effet** : « En quoi… ? »."
+      - type: ordre
+        enonce: "Range les éléments de l'introduction du commentaire."
+        items: ["Amorce", "Présentation du texte", "Problématique", "Annonce du plan"]
+        correction: "Amorce, présentation, problématique, annonce du plan."
+      - type: classer
+        enonce: "Range chaque plan : thématique (bon) ou linéaire (à éviter) ?"
+        categories: ["Thématique", "Linéaire"]
+        mots: [["I. Un paysage idéalisé - II. Une nature qui reflète l'âme", 0], ["I. Le premier paragraphe - II. Le deuxième paragraphe", 1], ["I. Un personnage ridicule - II. Une critique sociale", 0], ["I. Le début du texte - II. La fin du texte", 1]]
+        correction: "Les axes d'un commentaire sont des idées, pas des morceaux du texte."
+      - type: relier
+        enonce: "🔗 Relie chaque partie à son rôle."
+        paires: [["l'introduction", "pose la problématique"], ["le développement", "répond par des axes argumentés"], ["la conclusion", "fait le bilan et ouvre"]]
+        correction: "Introduction, développement, conclusion : chacun a sa fonction."
+
+  - id: dissertation
+    titre: La dissertation sur une œuvre
+    classe: "1ʳᵉ"
+    objectif: J'analyse un sujet de dissertation, je formule une problématique et je construis un plan argumenté appuyé sur l'œuvre.
+    mots: [dissertation, sujet, thèse, exemple]
+    etapes:
+      - dialogue:
+          - mia: "Sujet : « Le théâtre n'est-il qu'un divertissement ? » Que réponds-tu, Zéro ?"
+          - zero: "Oui ! … Non ? … Ça dépend ?"
+          - neo: "Justement : la dissertation discute. On analyse les mots du sujet, puis on construit une réflexion en plusieurs étapes, appuyée sur l'œuvre étudiée."
+      - a_quoi_ca_sert: "La dissertation est l'autre sujet de l'écrit du bac de français ; c'est aussi l'entraînement à l'argumentation qu'on retrouve en philosophie et dans le supérieur."
+      - texte: |
+          1. **Analyser le sujet** : définir chaque mot clé, repérer la question et ce qu'elle présuppose (« ne… que » suggère une limite).
+          2. **Problématique** : reformuler l'enjeu sous forme de question.
+          3. **Plan** (souvent dialectique) : I. on examine la thèse proposée ; II. on la discute ou la dépasse ; III. (si possible) on propose une synthèse.
+          4. **Exemples** : tirés de l'**œuvre au programme** et du parcours associé, précis (scène, personnage, citation), et **analysés**, pas seulement cités.
+      - attention: "Un exemple non analysé ne prouve rien. Après chaque exemple, explique en une phrase en quoi il soutient ton argument."
+      - astuce: { texte: "Pour chaque paragraphe : un argument (idée), un exemple (œuvre), une analyse (lien avec l'argument). C'est la règle AEA.", qui: neo }
+      - retiens: "Dissertation : **analyser le sujet**, **problématique**, **plan** (souvent dialectique), paragraphes **argument – exemple – analyse** tirés de l'**œuvre au programme**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de préparation d'une dissertation."
+        items: ["Analyser les mots du sujet", "Formuler la problématique", "Construire le plan", "Choisir et analyser les exemples"]
+        correction: "Analyse du sujet, problématique, plan, exemples."
+      - type: ordre
+        enonce: "Range les trois éléments d'un paragraphe argumentatif."
+        items: ["L'argument (l'idée)", "L'exemple tiré de l'œuvre", "L'analyse qui relie l'exemple à l'argument"]
+        correction: "Argument, exemple, analyse (règle AEA)."
+      - type: qcm
+        enonce: "Dans le sujet « Le théâtre n'est-il qu'un divertissement ? », que suggère « ne… que » ?"
+        choix: ["Qu'il faut discuter une vision limitée du théâtre", "Que le théâtre est ennuyeux", "Qu'il faut parler de cinéma", "Qu'il faut résumer une pièce"]
+        correction: "« ne… que » limite : le sujet invite à examiner puis à dépasser cette vision."
+      - type: qcm
+        enonce: "Qu'est-ce qu'un plan dialectique ?"
+        choix: ["Thèse, discussion, puis synthèse ou dépassement", "Trois exemples à la suite", "Le résumé de l'œuvre", "Une partie par personnage"]
+        correction: "Le plan dialectique fait avancer une réflexion : examiner, discuter, dépasser."
+
+  - id: objets-d-etude
+    titre: Les quatre objets d'étude
+    classe: "1ʳᵉ"
+    objectif: Je connais les quatre objets d'étude du programme de 1ʳᵉ et leurs genres.
+    mots: [objet d'étude, poésie, théâtre, roman, littérature d'idées]
+    etapes:
+      - dialogue:
+          - zero: "Il y a combien de livres à connaître pour le bac ?"
+          - mia: "Le programme est organisé en quatre objets d'étude. Pour chacun, une œuvre intégrale et un parcours de textes."
+      - a_quoi_ca_sert: "Savoir à quel genre appartient un texte aide à choisir les bons outils d'analyse, à l'écrit comme à l'oral."
+      - texte: |
+          1. **La poésie du XIXᵉ au XXIᵉ siècle** : vers et prose poétique, images, rythme (Baudelaire, Rimbaud, Apollinaire…).
+          2. **La littérature d'idées du XVIᵉ au XVIIIᵉ siècle** : essai, conte philosophique, apologue (Montaigne, La Fontaine, Voltaire…).
+          3. **Le roman et le récit du Moyen Âge au XXIᵉ siècle** : narration, point de vue, personnages.
+          4. **Le théâtre du XVIIᵉ au XXIᵉ siècle** : dialogue, didascalies, comique et tragique (Molière, Racine, Beckett…).
+
+          Les œuvres au programme changent régulièrement : vérifie la liste officielle de ton année.
+      - astuce: { texte: "Retiens « PIRT » : Poésie, Idées, Roman, Théâtre. Quatre objets, quatre familles d'outils.", qui: zero }
+      - retiens: "Quatre objets d'étude : **poésie** (XIXᵉ-XXIᵉ), **littérature d'idées** (XVIᵉ-XVIIIᵉ), **roman et récit** (Moyen Âge-XXIᵉ), **théâtre** (XVIIᵉ-XXIᵉ)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque objet d'étude à un outil d'analyse typique."
+        paires: [["la poésie", "le rythme et les images"], ["le théâtre", "les didascalies et le dialogue"], ["le roman", "le point de vue du narrateur"], ["la littérature d'idées", "la thèse et les arguments"]]
+        correction: "Chaque genre a ses outils privilégiés."
+      - type: classer
+        enonce: "Range chaque genre dans son objet d'étude."
+        categories: ["Littérature d'idées", "Théâtre"]
+        mots: [["le conte philosophique", 0], ["la comédie", 1], ["l'essai", 0], ["la tragédie", 1]]
+        correction: "Conte philosophique et essai → littérature d'idées ; comédie et tragédie → théâtre."
+      - type: qcm
+        enonce: "Quel siècle couvre l'objet d'étude « littérature d'idées » ?"
+        choix: ["Du XVIᵉ au XVIIIᵉ siècle", "Du XIXᵉ au XXIᵉ siècle", "Le Moyen Âge seulement", "Le XXᵉ siècle seulement"]
+        correction: "Du **XVIᵉ au XVIIIᵉ** siècle (Montaigne, Voltaire…)."
+      - type: mot
+        enonce: "Comment appelle-t-on les indications de mise en scène dans une pièce de théâtre ?"
+        reponse: ["didascalies", "les didascalies", "didascalie"]
+        correction: "Les **didascalies**."
+
+  - id: entretien-oral
+    titre: L'entretien de l'oral, présenter une œuvre
+    classe: "1ʳᵉ"
+    objectif: Je présente une œuvre choisie en quelques minutes et je défends un point de vue personnel argumenté.
+    mots: [entretien, œuvre choisie, point de vue, jury]
+    etapes:
+      - dialogue:
+          - neo: "Deuxième partie de l'oral : tu présentes une œuvre que tu as choisie, puis tu dialogues avec l'examinateur."
+          - mia: "Il n'attend pas un exposé récité : il veut entendre ta lecture, tes arguments, ce que l'œuvre t'a fait comprendre."
+      - a_quoi_ca_sert: "C'est la seconde partie de l'oral (8 minutes, sur 12 points) ; et savoir parler d'un livre, d'un film ou d'un projet avec conviction sert toute la vie, jusqu'au Grand oral et aux entretiens."
+      - texte: |
+          **Présentation** (2 à 3 minutes) : l'œuvre (titre, auteur, genre, date), ce qu'elle raconte ou défend, **pourquoi tu l'as choisie**, un passage qui t'a marqué.
+
+          **Entretien** : l'examinateur te pose des questions. Réponds en **argumentant** (« je pense que… parce que… par exemple… »), accepte de nuancer, relie l'œuvre à l'objet d'étude.
+
+          Posture : regarder l'examinateur, parler distinctement, s'appuyer sur quelques mots clés plutôt que sur un texte écrit.
+      - astuce: { texte: "Prépare trois scènes ou passages que tu connais très bien : ils serviront d'exemples à presque toutes les questions.", qui: zero }
+      - retiens: "Entretien : présenter l'œuvre et **pourquoi** on l'a choisie, puis **argumenter** (avis, raison, exemple), **nuancer**, relier à l'**objet d'étude**. Parler, ne pas réciter."
+    exercices:
+      - type: ordre
+        enonce: "Range les éléments de la présentation d'une œuvre."
+        items: ["Titre, auteur, genre et date", "Ce que l'œuvre raconte ou défend", "Pourquoi je l'ai choisie", "Un passage qui m'a marqué"]
+        correction: "Identifier, résumer, justifier son choix, donner un exemple précis."
+      - type: classer
+        enonce: "Range chaque attitude : à adopter ou à éviter pendant l'entretien ?"
+        categories: ["À adopter", "À éviter"]
+        mots: [["Justifier son avis par un exemple", 0], ["Réciter un texte appris par cœur", 1], ["Accepter de nuancer", 0], ["Répondre seulement par oui ou non", 1]]
+        correction: "On argumente, on nuance, on dialogue ; on ne récite pas."
+      - type: qcm
+        enonce: "Que cherche surtout l'examinateur pendant l'entretien ?"
+        choix: ["Une lecture personnelle et argumentée de l'œuvre", "Un résumé complet de l'œuvre", "La biographie détaillée de l'auteur", "Une réponse unique et définitive"]
+        correction: "Il évalue ta capacité à défendre une lecture personnelle avec des arguments."
+      - type: relier
+        enonce: "🔗 Relie chaque formule à sa fonction dans un argument."
+        paires: [["Je pense que…", "donner son avis"], ["parce que…", "justifier"], ["par exemple…", "illustrer"], ["toutefois…", "nuancer"]]
+        correction: "Avis, raison, exemple, nuance : la structure d'une réponse argumentée."

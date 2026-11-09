@@ -107,6 +107,7 @@ lecons:
 
   - id: quantificateurs
     titre: Les quantificateurs « pour tout » et « il existe »
+    classe: "1ʳᵉ"
     objectif: Je lis et j'écris des énoncés avec ∀ et ∃, et je les nie.
     mots: [quantificateur]
     etapes:
@@ -146,6 +147,7 @@ lecons:
 
   - id: absurde
     titre: Le raisonnement par l'absurde - √2 est irrationnel
+    classe: "1ʳᵉ"
     objectif: Je comprends une démonstration par l'absurde.
     mots: [raisonnement par l'absurde, irrationnel]
     etapes:
@@ -189,6 +191,7 @@ lecons:
 
   - id: ensembles
     titre: Les ensembles - ∈, ⊂, ∩, ∪
+    classe: "2nde"
     objectif: J'utilise le vocabulaire des ensembles et je connais les ensembles de nombres.
     mots: [ensemble, intersection, réunion, inclusion]
     etapes:
@@ -227,6 +230,7 @@ lecons:
 
   - id: contre-exemple
     titre: Conjecturer, vérifier, contredire
+    classe: "2nde"
     objectif: Je formule une conjecture, je la teste et je cherche un contre-exemple.
     mots: [conjecture, contre-exemple]
     etapes:

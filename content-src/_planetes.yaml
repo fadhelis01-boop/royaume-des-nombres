@@ -451,4 +451,39 @@ planetes:
         aie: ["Une date revient !", "La carte se colore…", "Liberté… Égalité… non !"]
         nargue: ["Encore un trou de mémoire…", "1914 ? 1918 ? Qui s'en souvient…"]
         jeton: "🌫️"
+      maitres:
+        sprite: neutre
+        nom: L'Oubli des Siècles
+        qui: narrateur
+        ouverture: "L'Oubli des Siècles brouille les causes et les conséquences. Dix explications justes, et la Galerie reprend ses couleurs."
+        cri: "Tout se mélange… 1789, 1989, quelle différence ?"
+        aie: ["Une cause, une conséquence… aïe !", "La frise se remet en ordre…", "Tu expliques, tu ne récites pas !"]
+        nargue: ["Encore une date oubliée…", "Pourquoi ? Personne ne sait…"]
+        jeton: "🌫️"
+
+  - id: philosophie
+    famille: cite
+    titre: L'Agora des Idées
+    matiere: Philosophie
+    emoji: "🦉"
+    couleur: "#4a3b6b"
+    accroche: "Douter, définir, argumenter : penser par soi-même."
+    histoire: _histoire_philosophie.yaml
+    prologue: { id: prologue-philosophie, titre: "Prologue — Le brouillard d'évidences", appel: "Plus personne ne se pose de questions sur l'Agora… Écoute l'histoire." }
+    objet: { emoji: "🪔", un: "lampe de l'Agora", des: "lampes de l'Agora" }
+    echauffement: "2 minutes de notions"
+    astuces: "Penser avec méthode"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [ami]
+    gardiens:
+      maitres:
+        sprite: neutre
+        nom: L'Évidence Grise
+        qui: narrateur
+        ouverture: "L'Évidence Grise répète « c'est comme ça » à tous ceux qui passent. Dix réponses argumentées, et elle se tait."
+        cri: "C'est comme ça… c'est évident… ne réfléchis pas…"
+        aie: ["Un argument ! Je vacille…", "Tu as défini tes termes…", "Le doute… me dissout."]
+        nargue: ["Chacun sa vérité…", "À quoi bon penser ?"]
+        jeton: "🌫️"
 

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: nombre-i
     titre: Le nombre i et la forme algébrique
+    classe: "Terminale"
     objectif: Je connais i² = −1 et j'écris un nombre complexe sous la forme a + ib.
     mots: [nombre complexe, partie réelle, partie imaginaire]
     etapes:
@@ -64,6 +65,7 @@ lecons:
 
   - id: conjugue-module
     titre: Conjugué, module et division
+    classe: "Terminale"
     objectif: Je calcule le conjugué, le module, et je divise deux complexes.
     mots: [conjugué, module]
     etapes:
@@ -110,6 +112,7 @@ lecons:
 
   - id: plan-complexe
     titre: Le plan complexe et la forme exponentielle
+    classe: "Terminale"
     objectif: Je représente un complexe dans le plan et j'utilise la forme r e^{iθ}.
     mots: [argument, forme exponentielle, plan complexe]
     etapes:
@@ -167,6 +170,7 @@ lecons:
 
   - id: equations-complexes
     titre: Résoudre ax² + bx + c = 0 dans ℂ
+    classe: "Terminale"
     objectif: Je résous une équation du second degré à discriminant négatif.
     mots: [discriminant négatif]
     etapes:

@@ -222,6 +222,7 @@ lecons:
 
   - id: methodes
     titre: "Méthodes : commentaire et dissertation"
+    classe: "1ʳᵉ"
     objectif: Je connais les étapes du commentaire de texte et de la dissertation.
     mots: [commentaire, dissertation, problématique, plan]
     etapes:

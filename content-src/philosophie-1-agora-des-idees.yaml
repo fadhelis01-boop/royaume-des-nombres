@@ -1,0 +1,240 @@
+id: philo-agora-des-idees
+matiere: philosophie
+titre: L'Agora des Idées
+sous_titre: Terminale - la dissertation, l'explication de texte, la conscience, la liberté, la vérité, la justice
+emoji: 🦉
+couleur: "#4a3b6b"
+cycle: maitres
+age: 17-18 ans
+niveau: Terminale
+ordre: 901
+version: 1.0.0
+intro:
+  - narrateur: "Sur l'Agora, les gens se rassemblent pour débattre. Ici, on ne récite pas des réponses : on apprend à poser les bonnes questions."
+  - neo: "La philosophie, c'est penser par soi-même, avec rigueur, en s'appuyant sur ceux qui ont pensé avant nous."
+  - zero: "Je pense, donc… je suis ? Ah, quelqu'un l'a déjà dit ?"
+
+lecons:
+  - id: dissertation-philo
+    titre: La dissertation de philosophie
+    classe: "Terminale"
+    objectif: J'analyse un sujet, je dégage un problème et je construis un plan qui fait progresser la réflexion.
+    mots: [problématique, concept, plan, argument]
+    etapes:
+      - dialogue:
+          - zero: "Sujet : « Peut-on être libre sans les autres ? » Je réponds oui ou non, et c'est fini ?"
+          - mia: "Non : la dissertation montre pourquoi la question est difficile, puis avance pas à pas vers une réponse argumentée."
+      - a_quoi_ca_sert: "L'épreuve de philosophie du bac dure 4 heures ; savoir problématiser et argumenter sert dans toutes les études et dans la vie citoyenne."
+      - texte: |
+          1. **Analyser le sujet** : définir chaque terme (« libre », « les autres »), repérer ce que la question suppose.
+          2. **Problématiser** : montrer la tension entre deux réponses possibles (les autres limitent ma liberté… mais sans eux, pas de langage, pas de lois qui protègent).
+          3. **Plan progressif** : chaque partie dépasse la précédente, au lieu de juxtaposer « oui » puis « non ».
+          4. **Arguments** : des raisons, des **exemples** et des **références** (auteurs) expliquées, jamais seulement citées.
+      - astuce: { texte: "Un problème naît quand deux idées raisonnables s'opposent. Cherche ce qui rend la question vraiment difficile.", qui: neo }
+      - retiens: "Dissertation : **définir** les termes, **problématiser** (tension entre deux réponses), **plan progressif**, arguments appuyés sur **exemples** et **auteurs** expliqués."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de la dissertation."
+        items: ["Définir les termes du sujet", "Dégager le problème", "Construire un plan progressif", "Rédiger en argumentant"]
+        correction: "Définir, problématiser, planifier, argumenter."
+      - type: qcm
+        enonce: "Qu'est-ce qui fait un bon problème philosophique ?"
+        choix: ["Une tension entre deux réponses raisonnables", "Une question dont la réponse est évidente", "Une définition du dictionnaire", "La biographie d'un philosophe"]
+        correction: "Il y a problème quand deux réponses défendables s'opposent."
+      - type: classer
+        enonce: "Range chaque élément : utile ou à éviter dans une dissertation ?"
+        categories: ["Utile", "À éviter"]
+        mots: [["Définir les termes du sujet", 0], ["Réciter un cours sans lien avec le sujet", 1], ["Expliquer la citation d'un auteur", 0], ["Répondre « oui » dès l'introduction sans discussion", 1]]
+        correction: "On définit, on explique, on discute ; on ne récite pas."
+      - type: qcm
+        enonce: "Un plan « oui / non / peut-être » est souvent faible parce que…"
+        choix: ["il juxtapose des avis sans faire progresser la réflexion", "il est trop court", "il cite trop d'auteurs", "il définit les termes"]
+        correction: "La dissertation doit **progresser** : chaque partie dépasse les limites de la précédente."
+
+  - id: explication-texte-philo
+    titre: L'explication de texte
+    classe: "Terminale"
+    objectif: Je dégage la thèse et la structure d'un texte philosophique et j'en explique les arguments.
+    mots: [thèse, enjeu, structure, argument]
+    etapes:
+      - dialogue:
+          - neo: "L'autre sujet du bac : un texte d'une vingtaine de lignes à expliquer."
+          - mia: "Expliquer, c'est comprendre ce que l'auteur affirme, comment il le démontre, et pourquoi c'est important."
+      - a_quoi_ca_sert: "C'est l'autre sujet au choix du bac de philosophie, et la méthode pour lire de près n'importe quel texte argumentatif."
+      - texte: |
+          **Introduction** : le **thème**, la **thèse** de l'auteur (ce qu'il affirme), le **problème** auquel il répond, l'**enjeu**, la **structure** du texte.
+
+          **Développement** : suivre le texte partie par partie ; pour chaque idée, l'expliquer, définir les termes, illustrer par un exemple, montrer l'enchaînement logique.
+
+          **Conclusion** : rappeler la thèse et son intérêt ; on peut ajouter une brève discussion.
+      - astuce: { texte: "Repère les connecteurs (mais, donc, car, ainsi) : ils dessinent le squelette de l'argumentation.", qui: zero }
+      - retiens: "Explication : **thème**, **thèse**, **problème**, **enjeu**, **structure** ; puis expliquer chaque moment (définir, illustrer, enchaîner) ; conclure sur l'intérêt de la thèse."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["la thèse", "ce que l'auteur affirme"], ["le thème", "ce dont parle le texte"], ["l'enjeu", "ce qui dépend de la réponse"], ["la structure", "les étapes de l'argumentation"]]
+        correction: "Thème, thèse, enjeu, structure : les clés de l'introduction."
+      - type: qcm
+        enonce: "Quels mots aident le plus à repérer la structure d'un texte ?"
+        choix: ["Les connecteurs logiques (mais, donc, car)", "Les noms propres", "Les adjectifs de couleur", "La ponctuation finale seulement"]
+        correction: "Les **connecteurs** marquent les étapes du raisonnement."
+      - type: ordre
+        enonce: "Range les éléments de l'introduction d'une explication."
+        items: ["Le thème du texte", "La thèse de l'auteur", "Le problème et l'enjeu", "La structure du texte"]
+        correction: "Thème, thèse, problème et enjeu, structure."
+      - type: classer
+        enonce: "Range chaque phrase : explication ou paraphrase ?"
+        categories: ["Explication", "Paraphrase"]
+        mots: [["L'auteur oppose la liberté à l'absence de contraintes pour montrer qu'obéir à la loi peut libérer.", 0], ["L'auteur dit que la liberté, c'est obéir à la loi.", 1], ["En définissant la loi comme l'expression de la volonté générale, il justifie l'obéissance.", 0], ["Ensuite il parle des lois.", 1]]
+        correction: "Expliquer, c'est montrer comment et pourquoi l'auteur argumente."
+
+  - id: conscience-inconscient
+    titre: La conscience et l'inconscient
+    classe: "Terminale"
+    objectif: Je connais la thèse de Descartes sur la conscience de soi et celle de Freud sur l'inconscient.
+    mots: [conscience, inconscient, cogito, Freud]
+    etapes:
+      - dialogue:
+          - zero: "Je sais toujours ce que je pense, non ?"
+          - mia: "Descartes dirait que la pensée est la chose la plus certaine. Freud répondrait qu'une partie de nous nous échappe."
+      - a_quoi_ca_sert: "Comprendre pourquoi on se connaît mal soi-même, réfléchir à la responsabilité et à nos actes manqués."
+      - texte: |
+          **Descartes** : en doutant de tout, je découvre une certitude, « **je pense, donc je suis** » (le cogito). La conscience serait transparente à elle-même.
+
+          **Freud** : une part de notre vie psychique est **inconsciente** (désirs refoulés). Elle se manifeste dans les **rêves**, les **lapsus**, les **actes manqués**. « Le moi n'est pas maître dans sa propre maison. »
+
+          **Problème** : si je ne sais pas tout de moi, suis-je encore responsable de mes actes ?
+      - astuce: { texte: "Descartes : je suis certain de penser. Freud : je ne sais pas tout de ce que je pense.", qui: neo }
+      - retiens: "**Descartes** : « je pense, donc je suis », certitude de la conscience. **Freud** : l'**inconscient** (rêves, lapsus, actes manqués) ; « le moi n'est pas maître dans sa propre maison »."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque auteur à sa thèse."
+        paires: [["Descartes", "je pense, donc je suis"], ["Freud", "le moi n'est pas maître dans sa propre maison"], ["le lapsus", "un mot qui trahit un désir caché"]]
+        correction: "Descartes : la certitude de la conscience ; Freud : l'inconscient."
+      - type: classer
+        enonce: "Range chaque phénomène : manifestation de l'inconscient selon Freud ?"
+        categories: ["Oui", "Non"]
+        mots: [["le lapsus", 0], ["le rêve", 0], ["l'acte manqué", 0], ["un calcul réfléchi", 1]]
+        correction: "Rêves, lapsus et actes manqués révèlent l'inconscient selon Freud."
+      - type: qcm
+        enonce: "Quel problème l'hypothèse de l'inconscient pose-t-elle ?"
+        choix: ["Celui de notre responsabilité si nous ne savons pas tout de nous", "Celui de l'existence du monde extérieur", "Celui de la valeur de la monnaie", "Celui de la vitesse de la lumière"]
+        correction: "Si une part de nous échappe à la conscience, sommes-nous pleinement responsables ?"
+      - type: mot
+        enonce: "Comment appelle-t-on, chez Descartes, la certitude « je pense, donc je suis » ? (un mot latin)"
+        reponse: ["cogito", "le cogito"]
+        correction: "Le **cogito** (« cogito ergo sum »)."
+
+  - id: liberte
+    titre: La liberté
+    classe: "Terminale"
+    objectif: Je distingue liberté comme absence de contraintes, libre arbitre et autonomie, en m'appuyant sur Sartre, Spinoza et Rousseau.
+    mots: [liberté, libre arbitre, déterminisme, autonomie]
+    etapes:
+      - dialogue:
+          - zero: "Être libre, c'est faire tout ce que je veux !"
+          - neo: "Même si tes envies te sont dictées par la publicité ? Les philosophes ont des réponses très différentes."
+      - a_quoi_ca_sert: "Réfléchir à nos choix, aux lois, à l'influence des réseaux sociaux : la liberté est au cœur de la vie politique et personnelle."
+      - texte: |
+          **Sartre** : « l'homme est **condamné à être libre** » ; il n'a pas de nature fixée d'avance, il se définit par ses choix et en est responsable.
+
+          **Spinoza** : les hommes se croient libres parce qu'ils sont **conscients de leurs désirs mais ignorent les causes** qui les déterminent. La vraie liberté passe par la connaissance de ces causes.
+
+          **Rousseau** : « l'obéissance à la loi qu'on s'est prescrite est liberté » : c'est l'**autonomie**, la liberté du citoyen.
+      - astuce: { texte: "Trois idées de la liberté : choisir (Sartre), comprendre ce qui nous détermine (Spinoza), se donner sa propre loi (Rousseau).", qui: mia }
+      - retiens: "**Sartre** : condamné à être libre, responsable de ses choix. **Spinoza** : l'illusion du libre arbitre (on ignore les causes de nos désirs). **Rousseau** : l'**autonomie**, obéir à la loi qu'on s'est donnée."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque auteur à sa thèse sur la liberté."
+        paires: [["Sartre", "l'homme est condamné à être libre"], ["Spinoza", "on se croit libre car on ignore les causes de nos désirs"], ["Rousseau", "obéir à la loi qu'on s'est prescrite est liberté"]]
+        correction: "Choix, illusion du libre arbitre, autonomie."
+      - type: qcm
+        enonce: "Pourquoi « faire ce que je veux » ne suffit-il pas à définir la liberté selon Spinoza ?"
+        choix: ["Parce que nos désirs ont des causes que nous ignorons", "Parce que la liberté n'existe pas du tout", "Parce qu'il faut toujours obéir", "Parce que les désirs sont interdits"]
+        correction: "Nous sommes conscients de nos désirs mais pas de leurs causes : la liberté naïve est une illusion."
+      - type: mot
+        enonce: "Comment appelle-t-on le fait de se donner à soi-même sa propre loi ?"
+        reponse: ["autonomie", "l'autonomie"]
+        correction: "L'**autonomie** (du grec auto, soi-même, et nomos, la loi)."
+      - type: vf
+        vars: { t: [["Pour Sartre, l'homme a une nature fixée d'avance.", false], ["Pour Rousseau, obéir à la loi peut être une forme de liberté.", true], ["Pour Spinoza, le libre arbitre est une illusion.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Pour Sartre, l'existence précède l'essence : pas de nature fixée."
+
+  - id: verite
+    titre: La vérité
+    classe: "Terminale"
+    objectif: Je distingue vérité, opinion et croyance et j'explique comment on accède au vrai selon Platon et la démarche scientifique.
+    mots: [vérité, opinion, preuve, allégorie]
+    etapes:
+      - dialogue:
+          - zero: "Chacun sa vérité, non ?"
+          - mia: "Chacun son opinion, oui. Mais une vérité, si elle est vraie, l'est pour tout le monde : c'est toute la différence."
+      - a_quoi_ca_sert: "Distinguer une information vérifiée d'une rumeur ou d'une infox, comprendre ce qu'est une preuve en science."
+      - texte: |
+          **Opinion** : ce que je crois sans pouvoir le justifier. **Vérité** : accord entre ce que je dis et ce qui est, justifié par des **preuves** ou une **démonstration**.
+
+          **Platon**, l'**allégorie de la caverne** : des prisonniers prennent des ombres pour la réalité ; sortir de la caverne, c'est passer de l'opinion à la connaissance, ce qui demande un effort.
+
+          En **science**, une théorie est retenue tant qu'elle résiste aux tests ; elle peut être réfutée par l'expérience.
+      - astuce: { texte: "Face à une affirmation, demande : sur quoi repose-t-elle ? Une preuve, ou seulement une conviction ?", qui: neo }
+      - retiens: "**Opinion** : croire sans justifier. **Vérité** : ce qui est conforme au réel, justifié par preuve ou démonstration. **Platon** : la caverne, sortir des ombres de l'opinion."
+    exercices:
+      - type: classer
+        enonce: "Range chaque affirmation : opinion ou vérité démontrée ?"
+        categories: ["Opinion", "Vérité démontrée"]
+        mots: [["Ce film est le meilleur de l'année.", 0], ["La somme des angles d'un triangle vaut 180°.", 1], ["Le chocolat est délicieux.", 0], ["L'eau pure bout à 100 °C sous pression normale.", 1]]
+        correction: "Un goût est une opinion ; un théorème ou un fait mesuré est une vérité établie."
+      - type: qcm
+        enonce: "Dans l'allégorie de la caverne, que représentent les ombres ?"
+        choix: ["Les opinions, les apparences", "La vérité", "Les philosophes", "Le Soleil"]
+        correction: "Les ombres sont les **apparences** que l'on prend pour la réalité."
+      - type: qcm
+        enonce: "Qu'est-ce qui distingue une vérité d'une opinion ?"
+        choix: ["Elle est justifiée par des preuves ou une démonstration", "Elle est partagée par beaucoup de gens", "Elle est dite avec assurance", "Elle est ancienne"]
+        correction: "Le nombre de partisans ne fait pas la vérité : la **justification**, si."
+      - type: mot
+        enonce: "Quel philosophe grec a écrit l'allégorie de la caverne ?"
+        reponse: ["Platon"]
+        correction: "**Platon**, dans La République."
+
+  - id: justice-etat
+    titre: La justice et l'État
+    classe: "Terminale"
+    objectif: Je distingue le juste et le légal et j'explique pourquoi les hommes instituent un État selon Hobbes et Rousseau.
+    mots: [justice, loi, État, contrat social]
+    etapes:
+      - dialogue:
+          - neo: "Ce qui est légal est-il toujours juste ?"
+          - mia: "Pas forcément : des lois ont été injustes dans l'histoire. Il faut distinguer le **légal** (conforme à la loi) et le **légitime** (conforme à la justice)."
+      - a_quoi_ca_sert: "Réfléchir aux lois, à la désobéissance civile, au rôle de l'État : ce sont des débats citoyens permanents."
+      - texte: |
+          **Légal** : conforme aux lois en vigueur. **Légitime** : conforme à ce qui est juste. Les deux peuvent diverger (lois de ségrégation, par exemple).
+
+          **Hobbes** : sans État, c'est « la guerre de tous contre tous » ; les hommes confient le pouvoir à un souverain pour garantir leur **sécurité**.
+
+          **Rousseau** : le **contrat social** fonde un pouvoir légitime sur la **volonté générale** ; le peuple est souverain.
+
+          **Aristote** distingue la justice qui **égalise** (à chacun la même chose) et celle qui **proportionne** (à chacun selon son mérite ou son besoin).
+      - astuce: { texte: "Légal = ce que dit la loi ; légitime = ce que la loi devrait dire. La philosophie interroge l'écart entre les deux.", qui: zero }
+      - retiens: "**Légal** ≠ **légitime**. **Hobbes** : l'État pour sortir de la guerre de tous contre tous. **Rousseau** : **contrat social**, **volonté générale**. **Aristote** : justice égalitaire et proportionnelle."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque auteur à son idée."
+        paires: [["Hobbes", "la guerre de tous contre tous sans État"], ["Rousseau", "le contrat social et la volonté générale"], ["Aristote", "justice égalitaire et proportionnelle"]]
+        correction: "Hobbes : sécurité ; Rousseau : souveraineté du peuple ; Aristote : deux formes de justice."
+      - type: qcm
+        enonce: "Qu'est-ce que la légitimité ?"
+        choix: ["La conformité à ce qui est juste", "La conformité au texte de la loi", "La force de l'État", "L'avis de la majorité"]
+        correction: "**Légitime** = juste ; **légal** = conforme à la loi."
+      - type: classer
+        enonce: "Range chaque exemple : justice qui égalise ou qui proportionne ?"
+        categories: ["Égalise", "Proportionne"]
+        mots: [["Un vote par citoyen", 0], ["Une bourse selon les revenus de la famille", 1], ["La même loi pour tous", 0], ["Une note selon la qualité du travail", 1]]
+        correction: "À chacun la même chose → égaliser ; à chacun selon son besoin ou son mérite → proportionner."
+      - type: vf
+        vars: { t: [["Une loi peut être légale sans être juste.", true], ["Pour Hobbes, l'état de nature est une période de paix.", false], ["Pour Rousseau, le peuple est souverain.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Pour Hobbes, l'état de nature est la guerre de tous contre tous."

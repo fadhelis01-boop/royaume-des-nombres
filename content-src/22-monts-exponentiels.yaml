@@ -18,6 +18,7 @@ intro:
 lecons:
   - id: fonction-exponentielle
     titre: La fonction exponentielle
+    classe: "1ʳᵉ"
     objectif: Je connais la définition, les propriétés algébriques et la courbe de exp.
     mots: [exponentielle, nombre e]
     etapes:
@@ -82,6 +83,7 @@ lecons:
 
   - id: logarithme
     titre: Le logarithme népérien
+    classe: "Terminale"
     objectif: Je connais ln, fonction réciproque de exp, et ses propriétés.
     mots: [logarithme, ln]
     etapes:
@@ -142,6 +144,7 @@ lecons:
 
   - id: croissance-decroissance
     titre: Croissance et décroissance exponentielles
+    classe: "Terminale"
     objectif: Je modélise une évolution exponentielle et je calcule un temps de doublement ou une demi-vie.
     mots: [demi-vie, temps de doublement]
     etapes:
@@ -188,6 +191,7 @@ lecons:
 
   - id: echelles-logarithmiques
     titre: Les échelles logarithmiques
+    classe: "Terminale"
     objectif: Je comprends les échelles logarithmiques (décibels, Richter, pH).
     mots: [logarithme décimal, échelle logarithmique]
     etapes:

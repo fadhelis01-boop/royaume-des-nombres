@@ -123,6 +123,7 @@ lecons:
 
   - id: pgcd-euclide
     titre: PGCD, PPCM et l'algorithme d'Euclide
+    classe: "Terminale"
     objectif: Je calcule un PGCD avec l'algorithme d'Euclide et un PPCM.
     mots: [PGCD, PPCM, algorithme d'Euclide]
     etapes:
@@ -175,6 +176,7 @@ lecons:
 
   - id: congruences
     titre: Les congruences (l'arithmétique de l'horloge)
+    classe: "Terminale"
     objectif: J'utilise les congruences modulo n pour calculer des restes.
     mots: [congruence, modulo]
     etapes:
@@ -218,6 +220,7 @@ lecons:
 
   - id: binaire
     titre: Le binaire et les autres bases
+    classe: "Terminale"
     objectif: Je convertis un nombre entre la base 10 et la base 2.
     mots: [binaire, base]
     etapes:
@@ -273,6 +276,7 @@ lecons:
 
   - id: cryptographie
     titre: Codes secrets - de César à RSA
+    classe: "Terminale"
     objectif: Je chiffre et déchiffre un message avec le code de César et je comprends l'idée de RSA.
     mots: [chiffrement, clé]
     etapes:

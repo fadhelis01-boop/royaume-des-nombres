@@ -74,6 +74,7 @@ lecons:
 
   - id: coordonnees-vecteurs
     titre: Coordonnées de vecteurs et colinéarité
+    classe: "2nde"
     objectif: Je calcule les coordonnées d'un vecteur, sa norme, et je teste la colinéarité.
     mots: [coordonnées, norme, colinéaire]
     etapes:
@@ -125,6 +126,7 @@ lecons:
 
   - id: produit-scalaire
     titre: Le produit scalaire
+    classe: "1ʳᵉ"
     objectif: Je calcule un produit scalaire et je l'utilise pour démontrer une orthogonalité.
     mots: [produit scalaire, orthogonal]
     etapes:
@@ -173,6 +175,7 @@ lecons:
 
   - id: equations-droites
     titre: Équations de droites
+    classe: "1ʳᵉ"
     objectif: J'écris l'équation réduite d'une droite passant par deux points.
     mots: [équation de droite, pente]
     etapes:
@@ -217,6 +220,7 @@ lecons:
 
   - id: cercles
     titre: Équations de cercles
+    classe: "1ʳᵉ"
     objectif: Je reconnais l'équation d'un cercle et j'en lis le centre et le rayon.
     mots: [cercle, équation]
     etapes:
@@ -273,6 +277,7 @@ lecons:
 
   - id: espace
     titre: Géométrie dans l'espace
+    classe: "Terminale"
     objectif: Je repère des points dans l'espace et je calcule des distances en 3D.
     mots: [espace, repère 3D]
     etapes:

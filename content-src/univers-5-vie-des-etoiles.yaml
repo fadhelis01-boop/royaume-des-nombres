@@ -51,6 +51,7 @@ lecons:
 
   - id: vie-et-mort-des-etoiles
     titre: "La vie et la mort des étoiles"
+    classe: "1ʳᵉ"
     objectif: Je décris le destin d'une étoile selon sa masse.
     mots: [nébuleuse, géante rouge, naine blanche, supernova, étoile à neutrons, trou noir]
     etapes:
@@ -89,6 +90,7 @@ lecons:
 
   - id: galaxies-et-big-bang
     titre: "Galaxies et Big Bang"
+    classe: "1ʳᵉ"
     objectif: Je situe notre galaxie et je connais l'histoire de l'Univers.
     mots: [galaxie, Voie lactée, expansion, Big Bang]
     etapes:
@@ -125,6 +127,7 @@ lecons:
 
   - id: exoplanetes-et-kepler
     titre: "Exoplanètes et lois de Kepler"
+    classe: "Terminale"
     objectif: Je connais les exoplanètes et j'utilise la 3ᵉ loi de Kepler.
     mots: [exoplanète, transit, loi de Kepler, période, demi-grand axe]
     etapes:

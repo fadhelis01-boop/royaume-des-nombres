@@ -92,3 +92,11 @@ chapitres:
       - zero: "Ça doit être… euh… « It must be » un podcast cassé ?"
     apres:
       - narrateur: "Le bruit devient musique : des milliers de voix anglophones, de Londres à Lagos, de Sydney à Mumbai, résonnent clairement."
+  en-port-du-large:
+    titre: "Le Port du Large"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Au Port du Large, les navires ne partent que si l'on sait regretter, supposer et argumenter en anglais."
+      - neo: "If you had told me earlier, I would have prepared the ship ! Bon, on s'y met maintenant."
+    apres:
+      - narrateur: "Les voiles se gonflent. Les grands navires quittent le port vers les universités et les villes du monde entier."

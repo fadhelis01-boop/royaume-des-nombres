@@ -307,3 +307,11 @@ chapitres:
             - narrateur: "Tes mots résonnent dans l'Académie. La Muse ouvre un œil : c'est la plus belle chose qu'elle ait entendue depuis longtemps."
     apres:
       - narrateur: "La Plume d'or se pose dans ta main."
+  fr-tribune-du-bac:
+    titre: "Chapitre 19 — La Tribune du Bac"
+    objet: "✒️ La Plume d'or"
+    avant:
+      - narrateur: "Au sommet de l'Académie, la Tribune attend ceux qui veulent passer l'épreuve : lire, expliquer, défendre une lecture devant un jury."
+      - mia: "Ici, on ne récite pas : on montre comment un texte fonctionne, et pourquoi il nous parle."
+    apres:
+      - narrateur: "La Tribune s'illumine. Sur le pupitre, la Plume d'or écrit d'elle-même : « Lire, c'est déjà penser. »"

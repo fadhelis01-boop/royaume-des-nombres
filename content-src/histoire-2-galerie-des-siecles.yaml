@@ -1,0 +1,243 @@
+id: hg-galerie-des-siecles
+matiere: histoire
+titre: La Galerie des Siècles
+sous_titre: Lycée - la Révolution, l'industrialisation, la IIIe République, la guerre froide, la décolonisation, la mondialisation
+emoji: 🖼️
+couleur: "#6d4321"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 802
+version: 1.0.0
+intro:
+  - narrateur: "Derrière le Forum s'ouvre une longue galerie. Chaque salle raconte un siècle, de la Révolution à la mondialisation."
+  - neo: "Au lycée, on ne retient plus seulement des dates : on explique des processus, des causes et des conséquences."
+  - mia: "Pour chaque salle : des repères, des notions, et une question pour réfléchir."
+
+lecons:
+  - id: revolution-francaise
+    titre: La Révolution française et l'Empire (1789-1815)
+    classe: "1ʳᵉ"
+    objectif: Je connais les grandes étapes de la Révolution et de l'Empire et ce qu'elles transforment durablement.
+    mots: [Révolution, souveraineté, Déclaration, Empire]
+    etapes:
+      - dialogue:
+          - zero: "La Révolution, c'est juste la prise de la Bastille ?"
+          - neo: "C'est le début ! En quelques années, la France passe de la monarchie absolue à la République, puis à l'Empire."
+      - a_quoi_ca_sert: "Comprendre d'où viennent la devise, les droits de l'homme, le Code civil ou les départements : notre vie politique en hérite directement."
+      - texte: |
+          **1789** : les États généraux deviennent **Assemblée nationale** ; **14 juillet**, prise de la Bastille ; **26 août**, **Déclaration des droits de l'homme et du citoyen** (égalité en droits, souveraineté de la nation).
+
+          **1792** : chute de la monarchie, **Première République**. **1793-1794** : la Terreur, en pleine guerre.
+
+          **1799** : coup d'État de **Bonaparte**, sacré empereur en **1804**. Il consolide des acquis (**Code civil**, 1804) mais rétablit un pouvoir autoritaire. **1815** : défaite de Waterloo.
+      - astuce: { texte: "Retiens la courbe : 1789 (droits), 1792 (République), 1804 (Empire), 1815 (fin de l'Empire).", qui: neo }
+      - retiens: "**1789** : Déclaration des droits de l'homme, souveraineté nationale. **1792** : République. **1804** : Empire et **Code civil**. **1815** : chute de Napoléon."
+    exercices:
+      - type: ordre
+        enonce: "Range ces événements dans l'ordre chronologique."
+        items: ["Prise de la Bastille (1789)", "Proclamation de la République (1792)", "Sacre de Napoléon (1804)", "Bataille de Waterloo (1815)"]
+        correction: "1789, 1792, 1804, 1815."
+      - type: qcm
+        enonce: "Quel principe la Déclaration de 1789 affirme-t-elle ?"
+        choix: ["Les hommes naissent libres et égaux en droits", "Le roi tient son pouvoir de Dieu", "L'Empire est héréditaire", "Seuls les nobles votent"]
+        correction: "« Les hommes naissent et demeurent libres et égaux en droits » (article 1)."
+      - type: relier
+        enonce: "🔗 Relie chaque date à son événement."
+        paires: [["14 juillet 1789", "prise de la Bastille"], ["26 août 1789", "Déclaration des droits de l'homme et du citoyen"], ["1804", "Code civil et sacre de Napoléon"]]
+        correction: "Bastille, Déclaration, Code civil."
+      - type: nombre
+        enonce: "En quelle année Napoléon Bonaparte est-il sacré empereur ?"
+        reponse: "1804"
+        correction: "**1804**, la même année que le Code civil."
+
+  - id: industrialisation
+    titre: L'industrialisation et ses transformations (XIXᵉ siècle)
+    classe: "1ʳᵉ"
+    objectif: J'explique comment l'industrialisation transforme l'économie, la société et les villes au XIXᵉ siècle.
+    mots: [industrialisation, ouvrier, exode rural, machine à vapeur]
+    etapes:
+      - dialogue:
+          - mia: "En un siècle, on passe des ateliers et des champs aux usines et aux chemins de fer."
+          - zero: "Et les gens, ils deviennent quoi ?"
+          - neo: "Beaucoup quittent les campagnes pour les villes : c'est l'exode rural. Une classe ouvrière naît."
+      - a_quoi_ca_sert: "Comprendre les transformations du travail, des villes et de l'environnement, qui annoncent celles d'aujourd'hui."
+      - texte: |
+          L'**industrialisation** commence au Royaume-Uni à la fin du XVIIIᵉ siècle, puis gagne la France, l'Allemagne, les États-Unis.
+
+          Moteurs : la **machine à vapeur**, le **charbon**, le **chemin de fer**, puis l'électricité et le pétrole à la fin du siècle.
+
+          Conséquences : **exode rural** et croissance des villes, naissance d'une **classe ouvrière** aux conditions de travail difficiles, essor de la **bourgeoisie**, revendications sociales et **syndicats** (légalisés en France en 1884).
+      - astuce: { texte: "Une chaîne à retenir : énergie (charbon) → machines → usines → ouvriers → villes.", qui: zero }
+      - retiens: "Industrialisation : **machine à vapeur**, **charbon**, **chemin de fer**. Conséquences : **exode rural**, croissance urbaine, **classe ouvrière**, **syndicats** (1884 en France)."
+    exercices:
+      - type: ordre
+        enonce: "Range la chaîne de l'industrialisation."
+        items: ["Le charbon fournit l'énergie", "Les machines à vapeur équipent les usines", "Les ouvriers quittent les campagnes", "Les villes grandissent"]
+        correction: "Énergie, machines, exode rural, croissance urbaine."
+      - type: qcm
+        enonce: "Qu'est-ce que l'exode rural ?"
+        choix: ["Le départ des habitants des campagnes vers les villes", "L'arrivée d'urbains à la campagne", "L'exportation de produits agricoles", "La fin de l'agriculture"]
+        correction: "Les paysans partent travailler dans les usines des villes."
+      - type: classer
+        enonce: "Range chaque élément : cause ou conséquence de l'industrialisation ?"
+        categories: ["Cause / moteur", "Conséquence"]
+        mots: [["la machine à vapeur", 0], ["la naissance d'une classe ouvrière", 1], ["le charbon", 0], ["la croissance des villes", 1]]
+        correction: "Machines et charbon la provoquent ; classe ouvrière et villes en résultent."
+      - type: nombre
+        enonce: "En quelle année les syndicats sont-ils légalisés en France ?"
+        reponse: "1884"
+        correction: "**1884**, loi Waldeck-Rousseau."
+
+  - id: troisieme-republique
+    titre: La IIIe République s'enracine (1870-1914)
+    classe: "1ʳᵉ"
+    objectif: J'explique comment la République s'impose durablement en France à travers ses lois et ses symboles.
+    mots: [République, école, laïcité, libertés]
+    etapes:
+      - dialogue:
+          - neo: "La République a déjà existé deux fois, mais elle n'a pas duré. En 1870, elle revient… et cette fois elle s'installe."
+          - mia: "Grâce à l'école, aux libertés et à des symboles que tu connais encore aujourd'hui."
+      - a_quoi_ca_sert: "Comprendre pourquoi l'école est gratuite et laïque, d'où viennent le 14 Juillet fête nationale et la Marseillaise hymne national."
+      - texte: |
+          **1870** : proclamation de la **IIIe République** après la défaite face à la Prusse.
+
+          Lois fondatrices : **lois Ferry (1881-1882)**, l'école **gratuite, obligatoire et laïque** ; liberté de la presse (1881) ; liberté syndicale (1884).
+
+          Symboles : la **Marseillaise** hymne national (1879), le **14 Juillet** fête nationale (1880), Marianne dans les mairies.
+
+          **1905** : loi de **séparation des Églises et de l'État** (laïcité).
+      - astuce: { texte: "Quatre lois en quatre dates : 1881 (presse), 1882 (école), 1884 (syndicats), 1905 (laïcité).", qui: neo }
+      - retiens: "**1870** : IIIe République. **Lois Ferry** (1881-1882) : école gratuite, obligatoire, laïque. Symboles : Marseillaise, 14 Juillet. **1905** : séparation des Églises et de l'État."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque loi à sa date."
+        paires: [["liberté de la presse", "1881"], ["école obligatoire et laïque", "1882"], ["liberté syndicale", "1884"], ["séparation des Églises et de l'État", "1905"]]
+        correction: "1881, 1882, 1884, 1905."
+      - type: qcm
+        enonce: "Que garantissent les lois Ferry ?"
+        choix: ["Une école gratuite, obligatoire et laïque", "Le droit de vote des femmes", "La fin de l'esclavage", "La création de l'euro"]
+        correction: "Les lois Ferry fondent l'école républicaine."
+      - type: nombre
+        enonce: "En quelle année est votée la loi de séparation des Églises et de l'État ?"
+        reponse: "1905"
+        correction: "**1905** : fondement de la laïcité."
+      - type: vf
+        vars: { t: [["Le 14 Juillet devient fête nationale sous la IIIe République.", true], ["La IIIe République est proclamée en 1789.", false], ["Les femmes votent dès 1870.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "IIIe République : 1870. Les femmes votent en France pour la première fois en 1945."
+
+  - id: guerre-froide
+    titre: La guerre froide (1947-1991)
+    classe: "Terminale"
+    objectif: J'explique l'affrontement des États-Unis et de l'URSS, ses crises et sa fin.
+    mots: [guerre froide, bloc, dissuasion, mur de Berlin]
+    etapes:
+      - dialogue:
+          - zero: "Une guerre froide ? On se bat avec des glaçons ?"
+          - mia: "Presque : les deux superpuissances s'affrontent sans jamais se battre directement, parce que l'arme nucléaire rend une guerre totale trop dangereuse."
+      - a_quoi_ca_sert: "Comprendre l'Europe divisée puis réunifiée, l'OTAN, la course à l'espace et des tensions qui pèsent encore aujourd'hui."
+      - texte: |
+          Après 1945, deux **blocs** s'opposent : à l'Ouest les **États-Unis** (démocratie libérale, capitalisme), à l'Est l'**URSS** (régime communiste).
+
+          Ils évitent l'affrontement direct grâce à la **dissuasion nucléaire**, mais s'opposent dans des crises : **Berlin** (le mur, construit en **1961**), **Cuba** (missiles, **1962**), guerres du Viêt Nam ou d'Afghanistan.
+
+          Fin : chute du **mur de Berlin** (**9 novembre 1989**), puis disparition de l'URSS (**1991**).
+      - astuce: { texte: "La guerre froide tient entre deux murs : construit en 1961, tombé en 1989.", qui: zero }
+      - retiens: "**Guerre froide** : États-Unis contre URSS, sans affrontement direct (**dissuasion nucléaire**). Crises : Berlin, **Cuba (1962)**. Fin : **mur de Berlin (1989)**, fin de l'URSS (**1991**)."
+    exercices:
+      - type: ordre
+        enonce: "Range ces événements dans l'ordre chronologique."
+        items: ["Construction du mur de Berlin (1961)", "Crise des missiles de Cuba (1962)", "Chute du mur de Berlin (1989)", "Disparition de l'URSS (1991)"]
+        correction: "1961, 1962, 1989, 1991."
+      - type: qcm
+        enonce: "Pourquoi les deux superpuissances ne se sont-elles jamais affrontées directement ?"
+        choix: ["La dissuasion nucléaire rendait une guerre directe trop destructrice", "Elles étaient alliées", "Elles n'avaient pas d'armée", "Elles étaient trop éloignées"]
+        correction: "La peur d'une guerre nucléaire (la dissuasion) empêchait l'affrontement direct."
+      - type: classer
+        enonce: "Range chaque élément dans son bloc."
+        categories: ["Bloc de l'Ouest", "Bloc de l'Est"]
+        mots: [["les États-Unis", 0], ["l'URSS", 1], ["l'OTAN", 0], ["le pacte de Varsovie", 1]]
+        correction: "OTAN autour des États-Unis ; pacte de Varsovie autour de l'URSS."
+      - type: nombre
+        enonce: "En quelle année le mur de Berlin est-il tombé ?"
+        reponse: "1989"
+        correction: "Le **9 novembre 1989**."
+
+  - id: decolonisation
+    titre: La décolonisation (1945-années 1960)
+    classe: "Terminale"
+    objectif: J'explique comment les colonies obtiennent leur indépendance, par la négociation ou par la guerre.
+    mots: [décolonisation, indépendance, empire colonial, tiers-monde]
+    etapes:
+      - dialogue:
+          - neo: "En 1945, la France et le Royaume-Uni possèdent encore d'immenses empires coloniaux. Vingt ans plus tard, la plupart ont disparu."
+          - mia: "C'est la décolonisation : des peuples réclament et obtiennent leur indépendance."
+      - a_quoi_ca_sert: "Comprendre les liens entre la France et de nombreux pays d'Afrique et d'Asie, et des débats de mémoire actuels."
+      - texte: |
+          Causes : affaiblissement des puissances européennes après 1945, essor des **mouvements nationalistes**, soutien de l'ONU, des États-Unis et de l'URSS au principe d'autodétermination.
+
+          Deux voies : **négociée** (Inde, 1947 ; la plupart des colonies françaises d'Afrique subsaharienne, 1960) ou **guerre** (Indochine, 1946-1954 ; **Algérie**, **1954-1962**).
+
+          Les nouveaux États, souvent pauvres, forment le **tiers-monde** et refusent de choisir un bloc (**non-alignement**, conférence de Bandung en 1955).
+      - astuce: { texte: "Deux chemins vers l'indépendance : la table des négociations ou la guerre. Classe chaque exemple dans l'un des deux.", qui: neo }
+      - retiens: "**Décolonisation** après 1945 : voie **négociée** (Inde 1947, Afrique subsaharienne 1960) ou **guerre** (Indochine, **Algérie 1954-1962**). Naissance du **tiers-monde**, **non-alignement**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque indépendance : négociée ou obtenue par la guerre ?"
+        categories: ["Négociée", "Par la guerre"]
+        mots: [["l'Inde (1947)", 0], ["l'Algérie (1962)", 1], ["le Sénégal (1960)", 0], ["l'Indochine (1954)", 1]]
+        correction: "Inde et Sénégal : négociation ; Algérie et Indochine : guerre."
+      - type: qcm
+        enonce: "Qu'est-ce que le non-alignement ?"
+        choix: ["Le refus de choisir entre le bloc de l'Ouest et celui de l'Est", "L'alliance avec les États-Unis", "L'adhésion à l'URSS", "La fin de l'ONU"]
+        correction: "Les pays du tiers-monde refusent de s'aligner sur l'un des deux blocs (Bandung, 1955)."
+      - type: ordre
+        enonce: "Range dans l'ordre chronologique."
+        items: ["Indépendance de l'Inde (1947)", "Début de la guerre d'Algérie (1954)", "Indépendances africaines (1960)", "Indépendance de l'Algérie (1962)"]
+        correction: "1947, 1954, 1960, 1962."
+      - type: nombre
+        enonce: "En quelle année l'Algérie devient-elle indépendante ?"
+        reponse: "1962"
+        correction: "**1962**, après une guerre commencée en 1954."
+
+  - id: mondialisation
+    titre: La mondialisation, acteurs et flux
+    classe: "Terminale"
+    objectif: Je décris les flux de la mondialisation, ses acteurs et ses inégalités.
+    mots: [mondialisation, flux, firme transnationale, conteneur]
+    etapes:
+      - dialogue:
+          - zero: "Mon téléphone a été conçu aux États-Unis, assemblé en Asie, vendu en France…"
+          - mia: "Voilà la mondialisation : une mise en relation de tous les territoires par des flux."
+      - a_quoi_ca_sert: "Comprendre d'où viennent tes objets, pourquoi certaines régions s'enrichissent et d'autres non, et les débats sur la relocalisation."
+      - texte: |
+          La **mondialisation** est la mise en relation des territoires par des **flux** : marchandises, capitaux, informations, personnes.
+
+          Acteurs : les **États**, les **firmes transnationales** (qui produisent dans plusieurs pays), les organisations internationales (OMC), les individus.
+
+          Outils : le **conteneur** et les grands ports, Internet, les câbles sous-marins.
+
+          Elle est **inégale** : les grandes métropoles et les façades maritimes sont au cœur ; certains territoires restent à l'écart.
+      - astuce: { texte: "Quatre flux, quatre lettres : M (marchandises), C (capitaux), I (informations), P (personnes).", qui: zero }
+      - retiens: "**Mondialisation** : flux de **marchandises**, **capitaux**, **informations**, **personnes**. Acteurs : États, **firmes transnationales**, organisations internationales. Elle est **inégale**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque exemple dans son type de flux."
+        categories: ["Marchandises", "Informations"]
+        mots: [["un porte-conteneurs de jouets", 0], ["une vidéo regardée dans le monde entier", 1], ["une cargaison de pétrole", 0], ["un message échangé par Internet", 1]]
+        correction: "Objets transportés → marchandises ; données → informations."
+      - type: qcm
+        enonce: "Qu'est-ce qu'une firme transnationale ?"
+        choix: ["Une entreprise qui produit et vend dans plusieurs pays", "Une petite boutique de quartier", "Une organisation de l'ONU", "Un pays très riche"]
+        correction: "Elle organise sa production à l'échelle mondiale."
+      - type: relier
+        enonce: "🔗 Relie chaque outil à son rôle dans la mondialisation."
+        paires: [["le conteneur", "transporter des marchandises à bas coût"], ["les câbles sous-marins", "faire circuler les données"], ["les grands ports", "relier les continents"]]
+        correction: "Les conteneurs, les câbles et les ports sont les infrastructures des flux."
+      - type: vf
+        vars: { t: [["La mondialisation profite de la même façon à tous les territoires.", false], ["Les métropoles sont au cœur de la mondialisation.", true], ["Les capitaux font partie des flux de la mondialisation.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La mondialisation est inégale : certains territoires restent en marge."

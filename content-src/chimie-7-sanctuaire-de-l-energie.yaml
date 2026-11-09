@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: enthalpie-entropie
     titre: "Enthalpie, entropie et enthalpie libre"
+    classe: "Supérieur"
     objectif: Je prévois si une réaction est spontanée avec ΔG = ΔH − TΔS.
     mots: [enthalpie, entropie, enthalpie libre, spontané]
     etapes:
@@ -58,6 +59,7 @@ lecons:
 
   - id: orbitales
     titre: "Orbitales et configuration électronique"
+    classe: "Supérieur"
     objectif: J'écris la configuration électronique des premiers éléments.
     mots: [orbitale, sous-couche, configuration électronique, quantique]
     etapes:
@@ -93,6 +95,7 @@ lecons:
 
   - id: spectroscopie
     titre: "La lumière qui analyse la matière"
+    classe: "1ʳᵉ"
     objectif: Je sais à quoi servent les spectroscopies.
     mots: [spectroscopie, absorbance, infrarouge, RMN]
     etapes:
@@ -129,6 +132,7 @@ lecons:
 
   - id: mecanismes
     titre: "Les mécanismes réactionnels"
+    classe: "Terminale"
     objectif: Je lis une flèche courbe et je distingue nucléophile et électrophile.
     mots: [mécanisme, nucléophile, électrophile, flèche courbe]
     etapes:
@@ -165,6 +169,7 @@ lecons:
 
   - id: chimie-verte
     titre: "La chimie verte"
+    classe: "Supérieur"
     objectif: J'évalue une synthèse avec l'économie d'atomes.
     mots: [chimie verte, économie d'atomes, solvant, développement durable]
     etapes:

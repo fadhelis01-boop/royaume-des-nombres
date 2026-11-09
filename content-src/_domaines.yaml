@@ -16,4 +16,4 @@ francais:
   - { id: grammaire, titre: "La grammaire", jeune: "Les mots et les phrases", emoji: "🧱", mondes: [fr-foret-des-noms, fr-cite-de-la-ponctuation, fr-port-des-phrases, fr-archipel-des-propositions] }
   - { id: conjugaison, titre: "La conjugaison", jeune: "Les verbes", emoji: "⏳", mondes: [fr-vallee-des-verbes, fr-montagnes-du-temps, fr-tour-des-conjugaisons] }
   - { id: orthographe, titre: "L'orthographe", jeune: "Bien écrire les mots", emoji: "✍️", mondes: [fr-prairie-des-accords, fr-marais-des-homophones, fr-chateau-des-participes, fr-palais-de-l-orthographe] }
-  - { id: vocabulaire, titre: "Vocabulaire et écriture", jeune: "Les mots et les histoires", emoji: "🌳", mondes: [fr-jardin-des-mots, fr-atelier-de-l-ecrivain, fr-academie-des-lettres] }
+  - { id: vocabulaire, titre: "Vocabulaire et écriture", jeune: "Les mots et les histoires", emoji: "🌳", mondes: [fr-jardin-des-mots, fr-atelier-de-l-ecrivain, fr-academie-des-lettres, fr-tribune-du-bac] }

@@ -56,6 +56,7 @@ lecons:
 
   - id: cinetique-potentielle
     titre: "Énergie cinétique et énergie potentielle"
+    classe: "1ʳᵉ"
     objectif: Je calcule Ec = ½mv² et Ep = mgh.
     mots: [énergie cinétique, énergie potentielle, énergie mécanique]
     etapes:
@@ -105,6 +106,7 @@ lecons:
 
   - id: deuxieme-loi
     titre: "La deuxième loi de Newton"
+    classe: "Terminale"
     objectif: J'utilise F = m × a.
     mots: [accélération, force résultante, Newton]
     etapes:
@@ -145,6 +147,7 @@ lecons:
 
   - id: chute-libre
     titre: "La chute libre"
+    classe: "Terminale"
     objectif: Je calcule la vitesse et la hauteur de chute sans frottement.
     mots: [chute libre, accélération de la pesanteur]
     etapes:
@@ -183,6 +186,7 @@ lecons:
 
   - id: gravitation
     titre: "La gravitation universelle"
+    classe: "Terminale"
     objectif: J'utilise la loi de la gravitation de Newton.
     mots: [gravitation, attraction, orbite, constante de gravitation]
     etapes:

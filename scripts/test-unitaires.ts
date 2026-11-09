@@ -240,6 +240,7 @@ eq("voix : f(x)", toSpeech("f(x) = 2x"), "f de x égale 2x");
 eq("voix : signe entre parenthèses", toSpeech("aigu (< 90°)"), "aigu (moins de 90 degrés)");
 eq("voix : vecteur en double", toSpeech("Un vecteur $\\overrightarrow{AB}$"), "Un vecteur A B");
 eq("voix : chromosomes", toSpeech("XX ou XY"), "X X ou X Y");
+eq("voix : inégalité dans une formule", toSpeech("le maximum (si $a<0$)"), "le maximum (si a inférieur à 0 )");
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

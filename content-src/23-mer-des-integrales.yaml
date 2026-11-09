@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: limites-fonctions
     titre: Limites de fonctions et asymptotes
+    classe: "Terminale"
     objectif: Je détermine des limites simples et j'en déduis les asymptotes.
     mots: [limite, asymptote]
     etapes:
@@ -64,6 +65,7 @@ lecons:
 
   - id: primitives
     titre: Les primitives
+    classe: "Terminale"
     objectif: Je trouve une primitive des fonctions usuelles.
     mots: [primitive]
     etapes:
@@ -119,6 +121,7 @@ lecons:
 
   - id: integrale-aire
     titre: L'intégrale, une aire sous la courbe
+    classe: "Terminale"
     objectif: J'interprète une intégrale comme une aire et je la calcule pour des fonctions simples.
     mots: [intégrale, aire]
     etapes:
@@ -176,6 +179,7 @@ lecons:
 
   - id: calcul-integrales
     titre: Propriétés de l'intégrale et valeur moyenne
+    classe: "Terminale"
     objectif: J'utilise la linéarité, la relation de Chasles et la valeur moyenne d'une fonction.
     mots: [valeur moyenne, Chasles]
     etapes:
@@ -220,6 +224,7 @@ lecons:
 
   - id: equations-differentielles
     titre: Les équations différentielles y' = ay
+    classe: "Terminale"
     objectif: Je résous y' = ay et y' = ay + b et j'interprète les solutions.
     mots: [équation différentielle]
     etapes:

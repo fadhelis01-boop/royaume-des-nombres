@@ -12,6 +12,13 @@ arcs:
     fin:
       - narrateur: "Les dates reviennent sur la frise, les cartes se colorent, la devise brille à nouveau au fronton du Forum."
       - mia: "Tu connais les repères du brevet. Garde-les : ce sont aussi ceux d'un citoyen."
+  - id: histoire-arc-2
+    titre: "Livre II — La Galerie des Siècles"
+    sous_titre: "Révolution, industrie, République, guerre froide, décolonisation, mondialisation"
+    final: hg-galerie-des-siecles
+    fin:
+      - narrateur: "Les tableaux de la Galerie reprennent leurs couleurs, de 1789 à aujourd'hui."
+      - neo: "Tu relies maintenant les causes et les conséquences : c'est ça, comprendre l'histoire."
 chapitres:
   hg-forum-du-brevet:
     titre: "Le Forum du Brevet"
@@ -21,3 +28,12 @@ chapitres:
       - neo: "Remettons chaque date, chaque lieu, chaque valeur à sa place."
     apres:
       - narrateur: "La frise est complète. Sur le fronton, trois mots brillent de nouveau : Liberté, Égalité, Fraternité."
+  hg-galerie-des-siecles:
+    titre: "La Galerie des Siècles"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Dans la Galerie, les tableaux ont pâli : on ne distingue plus la Révolution de la guerre froide."
+      - mia: "Chaque salle demande d'expliquer, pas seulement de dater."
+    apres:
+      - narrateur: "Salle après salle, les siècles se rallument. La Galerie raconte de nouveau l'histoire du monde."
+

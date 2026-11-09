@@ -1,0 +1,23 @@
+# L'histoire de la planète Philosophie : l'Agora des Idées (audit « 16-18 ans »).
+prologue:
+  - narrateur: "Sur la plus haute planète de la Galaxie, une grande place de marbre : l'Agora. Depuis toujours, on y vient pour se poser des questions."
+  - narrateur: "Le Grand Neutre y a fait tomber un brouillard d'évidences : « c'est comme ça », « chacun sa vérité », « on n'y peut rien ». Plus personne ne s'interroge."
+  - zero-surprise: "Mais si on ne se pose plus de questions… on ne change plus jamais d'avis ?"
+  - neo: "Exactement. Penser, c'est oser douter de ce qui paraît évident."
+arcs:
+  - id: philo-arc-1
+    titre: "Livre I — L'Agora rallumée"
+    sous_titre: "Méthodes, conscience, liberté, vérité, justice"
+    final: philo-agora-des-idees
+    fin:
+      - narrateur: "Le brouillard d'évidences se dissipe. Sur l'Agora, les voix reprennent : on argumente, on doute, on cherche."
+      - mia: "Tu sais maintenant construire un problème et défendre une idée. C'est un outil pour toute la vie."
+chapitres:
+  philo-agora-des-idees:
+    titre: "L'Agora des Idées"
+    objet: "la lampe de l'Agora"
+    avant:
+      - narrateur: "Les lampes de l'Agora sont éteintes. Chacune se rallume quand quelqu'un ose poser une vraie question… et y répondre avec rigueur."
+      - neo: "Commençons par la méthode, puis les grandes notions."
+    apres:
+      - narrateur: "Toutes les lampes brillent. L'Agora est de nouveau pleine de débats."

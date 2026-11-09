@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: cinetique
     titre: "La vitesse des réactions"
+    classe: "Terminale"
     objectif: Je connais les facteurs qui accélèrent une réaction.
     mots: [cinétique, facteur cinétique, catalyseur]
     etapes:
@@ -54,6 +55,7 @@ lecons:
 
   - id: equilibres
     titre: "Les équilibres chimiques"
+    classe: "Terminale"
     objectif: Je sais qu'une réaction peut être limitée et atteindre un équilibre.
     mots: [équilibre, réaction totale, Le Chatelier]
     etapes:
@@ -87,6 +89,7 @@ lecons:
 
   - id: ph-et-pka
     titre: "pH, couples acide/base et pKa"
+    classe: "Terminale"
     objectif: Je calcule un pH et j'utilise la notion de pKa.
     mots: [ion oxonium, logarithme, couple acide-base, pKa]
     etapes:
@@ -123,6 +126,7 @@ lecons:
 
   - id: dosages
     titre: "Doser une solution : le titrage"
+    classe: "1ʳᵉ"
     objectif: J'exploite l'équivalence d'un titrage.
     mots: [titrage, équivalence, burette, indicateur coloré]
     etapes:
@@ -162,6 +166,7 @@ lecons:
 
   - id: chimie-organique
     titre: "La chimie du carbone"
+    classe: "1ʳᵉ"
     objectif: Je reconnais les principaux groupes caractéristiques et je nomme les alcanes simples.
     mots: [chimie organique, alcane, groupe caractéristique, nomenclature]
     etapes:

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: nombre-derive
     titre: Du taux de variation au nombre dérivé
+    classe: "1ʳᵉ"
     objectif: Je calcule un taux de variation et je comprends le nombre dérivé comme une vitesse instantanée.
     mots: [taux de variation, nombre dérivé]
     etapes:
@@ -72,6 +73,7 @@ lecons:
 
   - id: derivees-usuelles
     titre: Les fonctions dérivées usuelles
+    classe: "1ʳᵉ"
     objectif: Je connais les dérivées des fonctions de référence.
     mots: [fonction dérivée]
     etapes:
@@ -122,6 +124,7 @@ lecons:
 
   - id: regles-derivation
     titre: Les règles de dérivation
+    classe: "1ʳᵉ"
     objectif: Je dérive une somme, un produit par une constante, un produit et un quotient.
     mots: [dérivation]
     etapes:
@@ -167,6 +170,7 @@ lecons:
 
   - id: variations-extremums
     titre: Variations et extremums
+    classe: "1ʳᵉ"
     objectif: J'utilise le signe de la dérivée pour trouver les variations et les extremums d'une fonction.
     mots: [variations, extremum, tableau de variations]
     etapes:
@@ -224,6 +228,7 @@ lecons:
 
   - id: tangente
     titre: L'équation de la tangente
+    classe: "1ʳᵉ"
     objectif: J'écris l'équation de la tangente à une courbe en un point.
     mots: [tangente]
     etapes:
@@ -267,6 +272,7 @@ lecons:
 
   - id: derivee-composee
     titre: Dériver une fonction composée
+    classe: "Terminale"
     objectif: Je dérive des fonctions comme (ax + b)ⁿ, √u, e^u, ln u.
     mots: [fonction composée]
     etapes:

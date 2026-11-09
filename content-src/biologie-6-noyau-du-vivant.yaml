@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: replication
     titre: "La réplication de l'ADN"
+    classe: "1ʳᵉ"
     objectif: J'explique comment l'ADN est copié avant la division cellulaire.
     mots: [réplication, semi-conservative, ADN polymérase, mutation]
     etapes:
@@ -51,6 +52,7 @@ lecons:
 
   - id: transcription
     titre: "La transcription : de l'ADN à l'ARN messager"
+    classe: "1ʳᵉ"
     objectif: Je transcris une séquence d'ADN en ARN messager.
     mots: [transcription, ARN messager, uracile]
     etapes:
@@ -86,6 +88,7 @@ lecons:
 
   - id: traduction
     titre: "La traduction : le code génétique"
+    classe: "1ʳᵉ"
     objectif: Je lis des codons et je comprends la fabrication d'une protéine.
     mots: [traduction, codon, acide aminé, ribosome, protéine]
     etapes:
@@ -121,6 +124,7 @@ lecons:
 
   - id: enzymes
     titre: "Les enzymes"
+    classe: "1ʳᵉ"
     objectif: Je décris le fonctionnement d'une enzyme.
     mots: [enzyme, substrat, site actif, spécificité]
     etapes:
@@ -155,6 +159,7 @@ lecons:
 
   - id: neurones-et-glycemie
     titre: "Neurones, hormones et glycémie"
+    classe: "Terminale"
     objectif: Je compare communication nerveuse et hormonale, avec l'exemple de la glycémie.
     mots: [neurone, synapse, neurotransmetteur, hormone, insuline, glycémie, homéostasie]
     etapes:

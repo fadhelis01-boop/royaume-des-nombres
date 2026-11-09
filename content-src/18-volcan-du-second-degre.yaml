@@ -66,6 +66,7 @@ lecons:
 
   - id: forme-canonique
     titre: La forme canonique
+    classe: "1ʳᵉ"
     objectif: J'écris un trinôme sous la forme a(x − α)² + β et je lis le sommet.
     mots: [forme canonique]
     etapes:
@@ -116,6 +117,7 @@ lecons:
 
   - id: discriminant
     titre: Le discriminant et les racines
+    classe: "1ʳᵉ"
     objectif: Je résous ax² + bx + c = 0 avec le discriminant Δ.
     mots: [discriminant, racine]
     etapes:
@@ -177,6 +179,7 @@ lecons:
 
   - id: signe-trinome
     titre: Le signe du trinôme et les inéquations
+    classe: "1ʳᵉ"
     objectif: Je détermine le signe de ax² + bx + c et je résous une inéquation du second degré.
     mots: [signe, inéquation]
     etapes:
@@ -224,6 +227,7 @@ lecons:
 
   - id: optimisation
     titre: Optimiser avec le second degré
+    classe: "1ʳᵉ"
     objectif: Je trouve le maximum ou le minimum d'une grandeur modélisée par un trinôme.
     mots: [optimisation, maximum]
     etapes:

@@ -17,6 +17,7 @@ intro:
 lecons:
   - id: regulation-des-genes
     titre: "Tous les gènes ne s'expriment pas partout"
+    classe: "Supérieur"
     objectif: J'explique pourquoi des cellules ayant le même ADN sont différentes.
     mots: [expression des gènes, régulation, différenciation, épigénétique]
     etapes:
@@ -51,6 +52,7 @@ lecons:
 
   - id: genomique-et-crispr
     titre: "Génomique, CRISPR et éthique"
+    classe: "Supérieur"
     objectif: Je connais les outils modernes de la génétique et leurs enjeux éthiques.
     mots: [génome, séquençage, CRISPR-Cas9, thérapie génique, bioéthique]
     etapes:
@@ -86,6 +88,7 @@ lecons:
 
   - id: microbiote
     titre: "Le microbiote, un organe invisible"
+    classe: "1ʳᵉ"
     objectif: J'explique le rôle du microbiote dans la santé.
     mots: [microbiote, symbiose, antibiotique, dysbiose]
     etapes:
@@ -121,6 +124,7 @@ lecons:
 
   - id: ecologie-des-populations
     titre: "La dynamique des populations"
+    classe: "Supérieur"
     objectif: Je modélise simplement la croissance d'une population.
     mots: [population, croissance exponentielle, capacité de charge, proies-prédateurs]
     etapes:

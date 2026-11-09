@@ -1,0 +1,246 @@
+id: en-port-du-large
+matiere: anglais
+titre: Le Port du Large
+sous_titre: Niveau B2 - temps du récit, modaux au passé, troisième conditionnel, wish, essay, synthèse de documents
+emoji: 🚢
+couleur: "#11365f"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 709
+version: 1.0.0
+intro:
+  - narrateur: "Du Port du Large partent les grands navires vers les autres continents. Pour embarquer, il faut un anglais assuré : nuancer, regretter, argumenter."
+  - mia: "Au lycée, on vise le niveau B2 : comprendre des documents complexes et défendre un point de vue avec précision."
+  - zero: "If I had studied harder, I would have boarded earlier ! … J'ai bien dit ?"
+
+lecons:
+  - id: narrative-tenses
+    titre: Narrative tenses - les temps du récit
+    classe: "1ʳᵉ"
+    objectif: J'enchaîne prétérit, past continuous et past perfect pour raconter avec précision.
+    mots: [past perfect, had, récit, antériorité]
+    etapes:
+      - dialogue:
+          - neo: "« When I arrived, the ship had left. » Le bateau était déjà parti avant mon arrivée."
+          - mia: "Le past perfect sert à remonter encore plus loin dans le passé."
+      - a_quoi_ca_sert: "Raconter une histoire claire à l'écrit comme à l'oral, comprendre les romans et les articles, réussir les épreuves de compréhension."
+      - texte: |
+          - **Prétérit** : les événements dans l'ordre → **I arrived, I saw the ship.**
+          - **Past continuous** : le décor en cours → **It was raining.**
+          - **Past perfect** (**had + participe passé**) : ce qui s'était passé **avant** un autre moment du passé → **When I arrived, the ship had already left.**
+
+          Mots repères : **already**, **before**, **by the time**, **after**.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "When I arrived, the ship had already left.", sens: "Quand je suis arrivé, le bateau était déjà parti.", emoji: "🚢" }, { texte: "She had never seen the sea before.", sens: "Elle n'avait jamais vu la mer auparavant.", emoji: "🌊" }] }
+        legende: "Écoute « had left », « had seen » : une action antérieure."
+      - astuce: { texte: "Dessine une frise : le past perfect est toujours à gauche du prétérit auquel il se rapporte.", qui: neo }
+      - retiens: "**had + participe passé** = action antérieure à un autre moment du passé. Prétérit pour la suite des faits, past continuous pour le décor."
+    exercices:
+      - type: qcm
+        vars: { t: [["When we got to the cinema, the film ___.", "had started", "has started", "starts"], ["By the time she called, I ___ dinner.", "had finished", "finish", "have finished"], ["He was tired because he ___ all night.", "had worked", "works", "has worked"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : action antérieure à un autre moment du passé."
+      - type: ordre
+        enonce: "Range les actions dans l'ordre où elles se sont produites : « When I arrived, the ship had already left. »"
+        items: ["The ship left.", "I arrived."]
+        correction: "Le past perfect (had left) est antérieur au prétérit (arrived)."
+      - type: relier
+        enonce: "🔗 Relie chaque temps à son rôle dans un récit."
+        paires: [["prétérit", "les événements successifs"], ["past continuous", "le décor, l'action en cours"], ["past perfect", "ce qui s'était passé avant"]]
+        correction: "Trois temps, trois rôles dans le récit."
+      - type: mot
+        enonce: "Complète : « She … never seen snow before that winter. »"
+        reponse: ["had"]
+        correction: "Past perfect : **had** seen."
+
+  - id: past-modals
+    titre: Should have, must have - les modaux au passé
+    classe: "1ʳᵉ"
+    objectif: J'exprime un regret, un reproche ou une déduction sur le passé avec modal + have + participe passé.
+    mots: [should have, must have, could have, regret]
+    etapes:
+      - dialogue:
+          - zero: "J'ai raté le bateau. J'aurais dû partir plus tôt !"
+          - mia: "« I should have left earlier. » Et Néo n'est pas là : « He must have missed the bus. »"
+      - a_quoi_ca_sert: "Exprimer un regret ou une critique avec nuance, faire des hypothèses sur un document (« the photo must have been taken in the 1950s »)."
+      - texte: |
+          **modal + have + participe passé** parle du **passé** :
+
+          - **should have** (aurait dû) : regret, reproche → **You should have told me.**
+          - **must have** (a dû, sûrement) : déduction quasi certaine → **She must have forgotten.**
+          - **can't have** (n'a pas pu) : impossibilité → **He can't have seen us.**
+          - **could / might have** (aurait pu) : possibilité non réalisée → **It could have been worse.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I should have left earlier.", sens: "J'aurais dû partir plus tôt.", emoji: "⏰" }, { texte: "He must have missed the bus.", sens: "Il a dû rater le bus.", emoji: "🚌" }, { texte: "It could have been worse.", sens: "Ça aurait pu être pire.", emoji: "😅" }] }
+        legende: "Écoute la forme réduite « should've », « must've »."
+      - attention: "On dit **should have done**, jamais « should had done » : après un modal, toujours **have**."
+      - astuce: { texte: "Même échelle qu'au présent, transportée dans le passé : must have (sûr), might have (peut-être), can't have (impossible).", qui: neo }
+      - retiens: "**should have** + participe = regret / reproche ; **must have** = déduction sûre ; **can't have** = impossible ; **could / might have** = possibilité."
+    exercices:
+      - type: qcm
+        vars: { t: [["Tu as oublié tes clés : tu regrettes.", "I should have taken my keys.", "I must have taken my keys.", "I should had taken my keys."], ["La rue est mouillée : il a sûrement plu.", "It must have rained.", "It should have rained.", "It can't have rained."], ["Il était à Paris hier : impossible qu'il soit à Londres.", "He can't have been in London.", "He must have been in London.", "He should have been in London."]] }
+        enonce: "{{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}**"
+      - type: relier
+        enonce: "🔗 Relie chaque forme à son sens."
+        paires: [["should have done", "aurait dû faire"], ["must have done", "a sûrement fait"], ["can't have done", "n'a pas pu faire"], ["could have done", "aurait pu faire"]]
+        correction: "Regret, déduction, impossibilité, possibilité."
+      - type: qcm
+        enonce: "Quelle phrase est juste ?"
+        choix: ["You should have told me.", "You should had told me.", "You should have tell me.", "You should told me."]
+        correction: "Modal + **have** + participe passé : **should have told**."
+      - type: mot
+        enonce: "Complète : « She … have forgotten our meeting. » (elle a sûrement oublié)"
+        reponse: ["must"]
+        correction: "Déduction quasi certaine : **must have**."
+
+  - id: third-conditional
+    titre: If I had known - le troisième conditionnel et « wish »
+    classe: "1ʳᵉ"
+    objectif: J'imagine un passé différent (if + past perfect, would have) et j'exprime un regret avec « I wish ».
+    mots: [would have, wish, if only, regret]
+    etapes:
+      - dialogue:
+          - neo: "Si j'avais su, je serais venu."
+          - mia: "« If I had known, I would have come. » Un passé impossible à changer : troisième conditionnel."
+      - a_quoi_ca_sert: "Parler de regrets, analyser une histoire (« if he had listened, the tragedy would have been avoided »), écrire avec nuance."
+      - texte: |
+          **Troisième conditionnel** (passé irréel) : **if + past perfect**, **would have + participe passé**
+          → **If I had studied, I would have passed.**
+
+          **I wish / If only** pour un regret :
+          - sur le présent : **I wish I had more time.** (prétérit)
+          - sur le passé : **I wish I had listened.** (past perfect)
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "If I had known, I would have come.", sens: "Si j'avais su, je serais venu.", emoji: "💭" }, { texte: "I wish I had listened.", sens: "Si seulement j'avais écouté.", emoji: "😔" }] }
+        legende: "Écoute la forme réduite : « If I'd known, I would've come »."
+      - astuce: { texte: "Trois conditionnels, trois marches : présent + will (réel), prétérit + would (imaginaire), past perfect + would have (passé impossible).", qui: zero }
+      - retiens: "**If + past perfect, would have + participe** = passé irréel. **I wish + prétérit** (regret présent), **I wish + past perfect** (regret passé)."
+    exercices:
+      - type: qcm
+        enonce: "Complète : « If she had taken the train, she … on time. »"
+        choix: ["would have arrived", "would arrive", "will arrive", "had arrived"]
+        correction: "Troisième conditionnel : **would have arrived**."
+      - type: classer
+        enonce: "Range chaque phrase selon le type de conditionnel."
+        categories: ["Imaginaire (présent)", "Passé irréel"]
+        mots: [["If I had wings, I would fly.", 0], ["If I had known, I would have helped.", 1], ["If I were rich, I would travel.", 0], ["If we had left earlier, we wouldn't have missed it.", 1]]
+        correction: "would + verbe → présent imaginaire ; would have + participe → passé irréel."
+      - type: qcm
+        enonce: "Traduis : « Si seulement j'avais écouté ! »"
+        choix: ["I wish I had listened!", "I wish I listen!", "I wish I will listen!", "I wish I have listened!"]
+        correction: "Regret sur le passé : **I wish + past perfect**."
+      - type: ordre
+        enonce: "Remets dans l'ordre : « Si j'avais su, je serais venu »."
+        items: ["If", "I had known,", "I", "would have", "come."]
+        correction: "If I had known, I would have come."
+
+  - id: essay-writing
+    titre: Writing an essay - rédiger un essai argumenté
+    classe: "Terminale"
+    objectif: Je structure un essai en anglais (introduction, paragraphes argumentés, conclusion) avec des connecteurs de niveau B2.
+    mots: [essay, thesis, linking words, conclusion]
+    etapes:
+      - dialogue:
+          - mia: "Sujet : « Should social media be banned for under-15s? » Il faut 250 mots argumentés."
+          - neo: "Une introduction qui pose la question, deux ou trois paragraphes, une conclusion nette. Et des connecteurs variés."
+      - a_quoi_ca_sert: "L'expression écrite des évaluations du lycée, les certifications d'anglais, les candidatures à l'étranger."
+      - texte: |
+          **Introduction** : amener le sujet, poser la question, annoncer sa position ou le plan.
+          **Body paragraphs** : une idée par paragraphe → **topic sentence**, explication, exemple.
+          **Conclusion** : répondre clairement, éventuellement ouvrir.
+
+          Connecteurs B2 : **firstly**, **furthermore** (de plus), **nevertheless** (néanmoins), **whereas** (tandis que), **as a result** (par conséquent), **all things considered** (tout bien considéré).
+      - astuce: { texte: "Chaque paragraphe commence par une topic sentence : si on ne lit qu'elle, on comprend déjà l'idée.", qui: neo }
+      - retiens: "Essay : **introduction** (question, position), **paragraphes** (topic sentence, explication, exemple), **conclusion**. Connecteurs : **furthermore**, **nevertheless**, **as a result**, **all things considered**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque connecteur à son sens."
+        paires: [["furthermore", "de plus"], ["nevertheless", "néanmoins"], ["as a result", "par conséquent"], ["whereas", "tandis que"]]
+        correction: "Ajouter, opposer, conclure, comparer."
+      - type: ordre
+        enonce: "Range les éléments d'un paragraphe argumentatif."
+        items: ["Topic sentence (the main idea)", "Explanation", "Example", "Link back to the question"]
+        correction: "Idée, explication, exemple, retour à la question."
+      - type: classer
+        enonce: "Range chaque connecteur : ajout ou opposition ?"
+        categories: ["Ajout", "Opposition"]
+        mots: [["moreover", 0], ["however", 1], ["furthermore", 0], ["nevertheless", 1], ["in addition", 0], ["on the other hand", 1]]
+        correction: "moreover, furthermore, in addition → ajout ; however, nevertheless, on the other hand → opposition."
+      - type: qcm
+        enonce: "Quelle phrase est une bonne topic sentence ?"
+        choix: ["Firstly, social media can harm teenagers' sleep.", "I have a phone.", "There are many things.", "In conclusion, yes."]
+        correction: "Elle annonce clairement l'idée du paragraphe."
+
+  - id: synthesis
+    titre: Documents synthesis - synthèse de documents
+    classe: "Terminale"
+    objectif: Je compare plusieurs documents anglophones et j'en dégage les points communs, les différences et le message.
+    mots: [synthesis, compare, both, whereas]
+    etapes:
+      - dialogue:
+          - zero: "Trois documents sur le même thème… je les résume les uns après les autres ?"
+          - mia: "Non : une synthèse croise les documents. Qu'ont-ils en commun ? En quoi diffèrent-ils ?"
+      - a_quoi_ca_sert: "C'est la compétence évaluée en fin de lycée en langues, et une méthode de travail utile dans toutes les études supérieures."
+      - texte: |
+          1. **Identifier** chaque document : nature (article, affiche, extrait de roman), source, date, thème.
+          2. **Repérer** les idées principales de chacun.
+          3. **Croiser** : points communs (**both documents show…**, **similarly**), différences (**whereas**, **unlike**), complémentarités.
+          4. **Conclure** : quel message ou quelle question se dégage de l'ensemble ?
+      - astuce: { texte: "Fais un tableau au brouillon : une colonne par document, une ligne par idée. La synthèse se lit en lignes, pas en colonnes.", qui: neo }
+      - retiens: "Synthèse : **identifier**, **repérer** les idées, **croiser** (both, similarly, whereas, unlike), **conclure** sur le message d'ensemble. Ne pas résumer document par document."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes d'une synthèse de documents."
+        items: ["Identify each document", "Find the main ideas", "Compare and contrast", "Conclude on the overall message"]
+        correction: "Identifier, repérer, croiser, conclure."
+      - type: classer
+        enonce: "Range chaque expression : ressemblance ou différence ?"
+        categories: ["Ressemblance", "Différence"]
+        mots: [["both documents", 0], ["whereas", 1], ["similarly", 0], ["unlike", 1], ["likewise", 0], ["on the contrary", 1]]
+        correction: "both, similarly, likewise → ressemblance ; whereas, unlike, on the contrary → différence."
+      - type: qcm
+        enonce: "Quelle est l'erreur la plus fréquente dans une synthèse ?"
+        choix: ["Résumer les documents les uns après les autres", "Comparer les documents", "Citer la source", "Conclure sur un message"]
+        correction: "Une synthèse **croise** les documents au lieu de les juxtaposer."
+      - type: mot
+        enonce: "Complète : « … documents deal with climate change. » (les deux)"
+        reponse: ["Both", "both"]
+        correction: "**Both** documents…"
+
+  - id: oral-presentation
+    titre: Speaking - présenter et débattre à l'oral
+    classe: "Terminale"
+    objectif: Je présente un sujet à l'oral en anglais de façon structurée et je réagis aux questions.
+    mots: [presentation, signpost, question, fluency]
+    etapes:
+      - dialogue:
+          - neo: "Tu dois présenter un sujet de société pendant cinq minutes, puis répondre aux questions."
+          - mia: "Le secret : annoncer le plan, guider l'auditeur avec des signposts, et gagner du temps avec des formules naturelles."
+      - a_quoi_ca_sert: "Les oraux de langue au lycée, les échanges internationaux, les entretiens d'admission et le travail en équipe en anglais."
+      - texte: |
+          **Annoncer** : **Today I'd like to talk about… First, I'll… then…**
+          **Guider** (signposts) : **Moving on to…**, **This brings me to…**, **To sum up…**
+          **Réagir** : **That's a good question.** · **Let me think for a second.** · **Could you repeat the question, please?**
+          **Nuancer** : **To some extent…** · **It's not that simple.**
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Today I'd like to talk about fast fashion.", sens: "Aujourd'hui, j'aimerais parler de la mode jetable.", emoji: "👕" }, { texte: "This brings me to my second point.", sens: "Cela m'amène à mon deuxième point.", emoji: "➡️" }, { texte: "That's a good question. Let me think.", sens: "Bonne question. Laissez-moi réfléchir.", emoji: "🤔" }] }
+        legende: "Écoute, puis présente un sujet de ton choix en une minute."
+      - astuce: { texte: "Une pause avec « Let me think » vaut mieux qu'un silence ou un « euh » : tu gardes la parole.", qui: zero }
+      - retiens: "Oral : **annoncer le plan**, **guider** (moving on to, this brings me to, to sum up), **réagir** (let me think, could you repeat), **nuancer** (to some extent)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque formule à sa fonction."
+        paires: [["Today I'd like to talk about…", "annoncer le sujet"], ["Moving on to…", "passer au point suivant"], ["To sum up…", "conclure"], ["Could you repeat, please?", "demander de répéter"]]
+        correction: "Annoncer, enchaîner, conclure, réagir."
+      - type: ordre
+        enonce: "Range les formules dans l'ordre d'une présentation."
+        items: ["Today I'd like to talk about…", "First, …", "This brings me to my second point.", "To sum up, …"]
+        correction: "Annonce, premier point, transition, conclusion."
+      - type: qcm
+        enonce: "Tu n'as pas compris la question du jury. Tu dis :"
+        choix: ["Could you repeat the question, please?", "I don't know.", "Next question.", "Yes."]
+        correction: "On demande poliment de répéter : **Could you repeat the question, please?**"
+      - type: mot
+        enonce: "Complète : « Let me … for a second. » (réfléchir)"
+        reponse: ["think"]
+        correction: "**Let me think** : une pause naturelle."

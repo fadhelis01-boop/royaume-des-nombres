@@ -162,6 +162,7 @@ lecons:
 
   - id: registres
     titre: "Les registres (ou tonalités)"
+    classe: "1ʳᵉ"
     objectif: Je reconnais l'effet qu'un texte cherche à produire : faire rire, émouvoir, effrayer, émerveiller…
     mots: [registre, tonalité, comique, tragique, lyrique, épique, fantastique]
     etapes:
@@ -203,6 +204,7 @@ lecons:
 
   - id: niveaux-de-langue
     titre: "Les niveaux de langue : familier, courant, soutenu"
+    classe: "2nde"
     objectif: J'adapte mon niveau de langue à la situation et au destinataire.
     mots: [niveau de langue, familier, courant, soutenu]
     etapes:

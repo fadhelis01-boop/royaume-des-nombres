@@ -71,6 +71,7 @@ lecons:
 
   - id: combinaisons
     titre: Les combinaisons et le triangle de Pascal
+    classe: "Terminale"
     objectif: Je calcule le nombre de façons de choisir k objets parmi n.
     mots: [combinaison, coefficient binomial, triangle de Pascal]
     etapes:
@@ -136,6 +137,7 @@ lecons:
 
   - id: probabilites-conditionnelles
     titre: Les probabilités conditionnelles
+    classe: "1ʳᵉ"
     objectif: Je calcule une probabilité conditionnelle avec un arbre pondéré ou un tableau.
     mots: [probabilité conditionnelle, arbre pondéré]
     etapes:
@@ -187,6 +189,7 @@ lecons:
 
   - id: bayes-independance
     titre: Probabilités totales, Bayes et indépendance
+    classe: "1ʳᵉ"
     objectif: J'utilise la formule des probabilités totales, j'inverse un conditionnement et je teste l'indépendance.
     mots: [probabilités totales, Bayes, indépendance]
     etapes:
@@ -232,6 +235,7 @@ lecons:
 
   - id: variables-aleatoires
     titre: Variables aléatoires et espérance
+    classe: "1ʳᵉ"
     objectif: Je calcule l'espérance d'une variable aléatoire et je juge si un jeu est équitable.
     mots: [variable aléatoire, espérance]
     etapes:
@@ -278,6 +282,7 @@ lecons:
 
   - id: loi-binomiale
     titre: La loi binomiale
+    classe: "Terminale"
     objectif: J'utilise la loi binomiale pour compter des succès dans des épreuves répétées.
     mots: [loi binomiale, épreuve de Bernoulli]
     etapes:
@@ -320,6 +325,7 @@ lecons:
 
   - id: grands-nombres
     titre: La loi des grands nombres et la courbe en cloche
+    classe: "Terminale"
     objectif: Je comprends pourquoi les fréquences se stabilisent et ce qu'est la loi normale.
     mots: [loi des grands nombres, loi normale]
     etapes:
