@@ -21,6 +21,7 @@
 
 /* ---------- Ciels de chaque planète (clair) ---------- */
 :root[data-planete="maths"] { --fond-haut: #fff6e0; --fond-bas: #f3e8ff; --amb: #8a5cf6; }
+:root[data-planete="histoire"] { --fond-haut: #fbf3e6; --fond-bas: #efe6d6; --amb: #8b5a2b; }
 :root[data-planete="francais"] { --fond-haut: #fdf0f5; --fond-bas: #e7eeff; --amb: #2b4aa8; }
 :root[data-planete="chimie"] { --fond-haut: #e9fbf4; --fond-bas: #f6eaff; --amb: #13a08f; }
 :root[data-planete="physique"] { --fond-haut: #fff4e3; --fond-bas: #e8f1ff; --amb: #e07a12; }

@@ -124,7 +124,7 @@ export function AccueilSpectacle() {
       </div>
 
       <ul className="spec-promesses" aria-label="Pour les parents">
-        <li>🪐 {planetes.length} planètes : maths, français, anglais, sciences, musique, dessin, du CP au lycée</li>
+        <li>🪐 {planetes.length} planètes : maths, français, anglais, sciences, histoire-géo, musique, dessin, du CP au lycée</li>
         <li>📴 Fonctionne sans connexion · sans publicité · sans compte</li>
         <li>🏫 Aligné sur les programmes officiels · bilans pour les parents</li>
       </ul>

@@ -18,6 +18,7 @@ familles:
   sciences: { titre: "Les sciences", emoji: "🔬", accroche: "Comprendre la matière, la vie, les forces et le ciel." }
   arts: { titre: "Les arts", emoji: "🎨", accroche: "Écouter, jouer, dessiner, créer." }
   langues: { titre: "Les langues", emoji: "🗣️", accroche: "Parler avec le monde entier." }
+  cite: { titre: "Le monde et la cité", emoji: "🏛️", accroche: "Comprendre le passé, le monde et sa place de citoyen." }
 
 
 planetes:
@@ -424,3 +425,30 @@ planetes:
         aie: ["That's a fair point…", "Ta phrase coupe le bruit !", "It can't be… tu me comprends ?"]
         nargue: ["Fake news, fake news…", "Personne n'écoute…"]
         jeton: "🌫️"
+
+  - id: histoire
+    famille: cite
+    titre: Le Forum des Mémoires
+    matiere: Histoire-géo
+    emoji: "🏛️"
+    couleur: "#8b5a2b"
+    accroche: "Les grandes dates, les cartes du monde et les valeurs de la République."
+    histoire: _histoire_histoire.yaml
+    prologue: { id: prologue-histoire, titre: "Prologue — L'oubli gris", appel: "Les dates s'effacent de la grande frise… Écoute l'histoire." }
+    objet: { emoji: "📜", un: "page de la frise", des: "pages de la frise" }
+    echauffement: "2 minutes de repères"
+    astuces: "Retenir les repères"
+    liens:
+      - { texte: "📖 Le Grand Livre", vers: "/livre" }
+    jeux: [ami]
+    gardiens:
+      explorateurs:
+        sprite: neutre
+        nom: L'Oubli Gris
+        qui: narrateur
+        ouverture: "L'Oubli Gris recouvre la frise du Forum. Dix repères justes, et l'histoire reprend ses couleurs."
+        cri: "Oubliez… tout s'efface…"
+        aie: ["Une date revient !", "La carte se colore…", "Liberté… Égalité… non !"]
+        nargue: ["Encore un trou de mémoire…", "1914 ? 1918 ? Qui s'en souvient…"]
+        jeton: "🌫️"
+

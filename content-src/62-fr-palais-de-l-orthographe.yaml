@@ -90,6 +90,11 @@ lecons:
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         niveau: 2
         correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Quelles que soient tes raisons, je t'écouterai.", "Ils sont venus eux-mêmes chercher quelques livres.", "Les mêmes erreurs reviennent quelquefois."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
   - id: demi-nu-couleurs
     titre: "Demi, nu et les adjectifs de couleur"
@@ -132,6 +137,11 @@ lecons:
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         niveau: 2
         correction: "Adjectifs simples et rose/mauve/fauve/écarlate s'accordent ; noms de choses et couleurs composées restent invariables."
+      - type: dictee
+        vars: { m: ["Elle est partie il y a une demi-heure, nu-tête sous la pluie.", "Il portait des chaussettes orange et des gants marron.", "Nous avons attendu deux heures et demie."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
   - id: participes-pronominaux
     titre: "Participes des verbes pronominaux et « fait + infinitif »"
@@ -242,3 +252,42 @@ lecons:
         phrase: "{{t}}"
         niveau: 3
         correction: "Corrigé : cueillies, fanées, parlé, marron, tout, quelque, fait."
+
+  - id: dictee-du-brevet
+    titre: "La dictée du brevet : relire comme un détective"
+    classe: "3ᵉ"
+    objectif: Je relis une dictée avec une méthode en trois passages pour corriger accords, homophones et terminaisons.
+    mots: [dictée, relecture, accord, homophone]
+    etapes:
+      - dialogue:
+          - zero: "J'écris vite, et après… je ne relis jamais. C'est grave ?"
+          - mia: "Au brevet, la dictée compte. Et presque toutes les fautes se trouvent en relisant avec une méthode."
+      - a_quoi_ca_sert: "La dictée est une épreuve du brevet ; et un message, une lettre de motivation ou un dossier sans fautes font toujours meilleure impression."
+      - texte: |
+          Relis **trois fois**, avec une seule question à chaque passage :
+
+          1. **Les accords** : pour chaque verbe, qui est le sujet ? Pour chaque nom, ses adjectifs et son déterminant suivent-ils ?
+          2. **Les homophones** : a / à, et / est, son / sont, ce / se, ou / où, leur / leurs : remplace pour vérifier (avait, était, étaient…).
+          3. **Les terminaisons** : -é / -er (remplace par « vendu / vendre »), participes passés avec être et avoir.
+      - astuce: { texte: "Relis en remontant de la fin vers le début : tu ne lis plus le sens, tu vois enfin les mots.", qui: neo }
+      - retiens: "Relire **trois fois** : **accords**, puis **homophones**, puis **terminaisons** (-é / -er, participes). Une seule question par passage."
+    exercices:
+      - type: dictee
+        vars: { m: ["Les élèves que nous avons rencontrés étaient ravis de leur visite.", "Elle s'est rendu compte qu'il était déjà trop tard.", "Ces arbres centenaires, plantés par nos ancêtres, ont résisté aux tempêtes.", "Quand ils sont arrivés, la maison était vide et silencieuse."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis en trois passages."
+        dictee: "{{m}}"
+        correction: "{{m}}"
+      - type: ordre
+        enonce: "Range les trois passages de relecture."
+        items: ["Les accords (sujet-verbe, nom-adjectif)", "Les homophones (a/à, et/est, son/sont…)", "Les terminaisons (-é/-er, participes passés)"]
+        correction: "Accords, homophones, terminaisons : une seule question par passage."
+      - type: qcm
+        vars: { t: [["Ils ___ partis tôt.", "sont", "son", "sons"], ["Il ___ mangé une pomme.", "a", "à", "as"], ["Elle ___ heureuse.", "est", "et", "ait"], ["Je ne sais pas ___ il habite.", "où", "ou", "houx"]] }
+        enonce: "Choisis le bon homophone : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : remplace pour vérifier (étaient, avait, était, à quel endroit)."
+      - type: qcm
+        enonce: "« Les fleurs que j'ai … sont fanées. » (cueillir)"
+        choix: ["cueillies", "cueilli", "cueillir", "cueillis"]
+        correction: "COD « que » (les fleurs, féminin pluriel) placé avant avoir : **cueillies**."
+

@@ -303,3 +303,40 @@ lecons:
         enonce: "Vrai ou faux : {{t_0}}"
         reponse: "t_1"
         correction: "L'eau du robinet contient des sels dissous ; le sel dissous passe à travers le filtre, il faut évaporer."
+
+  - id: tests-des-ions
+    titre: Reconnaître les ions, les tests chimiques
+    classe: "3ᵉ"
+    objectif: J'identifie un ion en solution grâce à un test (précipité coloré) et j'interprète le résultat.
+    mots: [ion, test, précipité, soude]
+    etapes:
+      - dialogue:
+          - zero: "Cette eau est claire. Comment savoir ce qu'elle contient ?"
+          - mia: "On fait des tests : quelques gouttes d'un réactif, et une couleur apparaît si l'ion est là."
+      - a_quoi_ca_sert: "Contrôler la qualité de l'eau, comprendre l'étiquette d'une eau minérale, et ces tests tombent souvent au brevet."
+      - texte: |
+          On ajoute un **réactif** ; si l'ion est présent, un **précipité** (un solide) coloré apparaît :
+
+          - avec la **soude** (hydroxyde de sodium) : **Cu²⁺** → précipité **bleu** ; **Fe²⁺** → **vert** ; **Fe³⁺** → **rouille** (orangé) ;
+          - avec le **nitrate d'argent** : **Cl⁻** (ion chlorure) → précipité **blanc** qui noircit à la lumière.
+
+          Pour conclure : « Il se forme un précipité bleu avec la soude, donc la solution contient des ions cuivre Cu²⁺. »
+      - astuce: { texte: "Cuivre bleu, fer II vert, fer III rouille, chlorure blanc : quatre couleurs, quatre ions.", qui: neo }
+      - retiens: "Test à la **soude** : **Cu²⁺ bleu**, **Fe²⁺ vert**, **Fe³⁺ rouille**. Test au **nitrate d'argent** : **Cl⁻ blanc**. Observation → conclusion."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque ion à la couleur de son précipité."
+        paires: [["Cu²⁺ (soude)", "bleu"], ["Fe²⁺ (soude)", "vert"], ["Fe³⁺ (soude)", "rouille"], ["Cl⁻ (nitrate d'argent)", "blanc"]]
+        correction: "Cuivre bleu, fer II vert, fer III rouille, chlorure blanc."
+      - type: qcm
+        enonce: "On ajoute de la soude : un précipité bleu apparaît. La solution contient :"
+        choix: ["des ions cuivre Cu²⁺", "des ions fer Fe³⁺", "des ions chlorure Cl⁻", "de l'eau pure"]
+        correction: "Précipité bleu avec la soude → **Cu²⁺**."
+      - type: ordre
+        enonce: "Range les étapes d'un test chimique."
+        items: ["Je verse quelques gouttes de réactif", "J'observe la couleur du précipité", "Je conclus sur l'ion présent"]
+        correction: "Réactif, observation, conclusion."
+      - type: qcm
+        enonce: "Quel réactif permet de détecter les ions chlorure Cl⁻ ?"
+        choix: ["le nitrate d'argent", "la soude", "l'eau", "le sel"]
+        correction: "Le **nitrate d'argent** donne un précipité blanc avec Cl⁻."

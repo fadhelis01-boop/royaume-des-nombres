@@ -1,0 +1,246 @@
+id: hg-forum-du-brevet
+matiere: histoire
+titre: Le Forum du Brevet
+sous_titre: Les deux guerres mondiales, la Ve République, les villes de France, l'Union européenne, les valeurs de la République
+emoji: 🏛️
+couleur: "#8b5a2b"
+cycle: explorateurs
+age: 14-15 ans
+niveau: 3ᵉ
+ordre: 801
+version: 1.0.0
+intro:
+  - narrateur: "Au centre du Forum, une grande frise s'étire sur les murs. Le brouillard du Grand Neutre en a effacé les dates, les lieux et les noms."
+  - neo: "L'histoire, la géographie et l'éducation civique servent à comprendre le monde où l'on vit, et à y prendre sa place de citoyen."
+  - mia: "Pour chaque leçon : des repères (dates, lieux), une notion clé, et une question pour réfléchir."
+
+lecons:
+  - id: premiere-guerre-mondiale
+    titre: La Première Guerre mondiale (1914-1918), une guerre totale
+    classe: "3ᵉ"
+    objectif: Je connais les repères de la Première Guerre mondiale et j'explique pourquoi on parle de guerre totale.
+    mots: [guerre totale, tranchées, Verdun, armistice]
+    etapes:
+      - dialogue:
+          - zero: "Pourquoi on dit « guerre mondiale » ? Tout le monde se battait ?"
+          - neo: "Presque : les grandes puissances d'Europe et leurs empires, puis les États-Unis. Et toute la société a été mobilisée, pas seulement les soldats."
+      - a_quoi_ca_sert: "Comprendre les monuments aux morts de ta commune, la cérémonie du 11 novembre, et c'est un repère du brevet."
+      - texte: |
+          **1914** : la guerre éclate entre la **Triple Entente** (France, Royaume-Uni, Russie) et les **Empires centraux** (Allemagne, Autriche-Hongrie).
+
+          Après quelques mois, le front se fige : c'est la **guerre des tranchées**. **1916** : la bataille de **Verdun** dure dix mois et fait plus de 300 000 morts.
+
+          On parle de **guerre totale** : toute l'économie produit pour la guerre, les femmes remplacent les hommes dans les usines et les champs, la propagande encadre l'opinion, les civils sont touchés (génocide des Arméniens en 1915).
+
+          **11 novembre 1918** : l'**armistice** met fin aux combats. Bilan : environ 10 millions de soldats morts.
+      - astuce: { texte: "Retiens trois dates en escalier : 1914 (début), 1916 (Verdun), 1918 (armistice du 11 novembre).", qui: neo }
+      - retiens: "**1914-1918**. **Guerre totale** : toute la société et l'économie mobilisées, civils touchés. **Verdun** (1916). **Armistice** le **11 novembre 1918**."
+    exercices:
+      - type: ordre
+        enonce: "Range ces événements dans l'ordre chronologique."
+        items: ["Début de la guerre (1914)", "Bataille de Verdun (1916)", "Armistice (11 novembre 1918)"]
+        correction: "1914, 1916, 1918."
+      - type: qcm
+        enonce: "Pourquoi parle-t-on de « guerre totale » ?"
+        choix: ["Toute la société et l'économie sont mobilisées", "Tous les pays du monde se battent", "Elle dure très longtemps", "Il n'y a que des soldats"]
+        correction: "Usines, femmes, propagande, civils : toute la société est engagée dans la guerre."
+      - type: nombre
+        enonce: "En quelle année a eu lieu la bataille de Verdun ?"
+        reponse: "1916"
+        correction: "**1916** : dix mois de combats, plus de 300 000 morts."
+      - type: vf
+        vars: { t: [["L'armistice a été signé le 11 novembre 1918.", true], ["Pendant la guerre, les femmes ont remplacé les hommes dans les usines.", true], ["La guerre des tranchées est une guerre de mouvement très rapide.", false], ["Les civils n'ont pas été touchés par la guerre.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Les tranchées figent le front ; les civils sont touchés (bombardements, génocide des Arméniens)."
+
+  - id: seconde-guerre-mondiale
+    titre: La Seconde Guerre mondiale (1939-1945), une guerre d'anéantissement
+    classe: "3ᵉ"
+    objectif: Je connais les repères de la Seconde Guerre mondiale, la Shoah, l'Occupation et la Résistance en France.
+    mots: [Shoah, Occupation, Résistance, Libération]
+    etapes:
+      - dialogue:
+          - mia: "Vingt ans seulement après 1918, une nouvelle guerre éclate, encore plus meurtrière."
+          - neo: "Elle vise à anéantir l'ennemi, y compris les civils. C'est pour cela qu'on en parle avec beaucoup de sérieux."
+      - a_quoi_ca_sert: "Comprendre les plaques commémoratives, le 8 mai, le devoir de mémoire, et pourquoi l'Europe s'est construite ensuite pour la paix."
+      - texte: |
+          **1939** : l'Allemagne nazie d'**Hitler** envahit la Pologne. **1940** : la France est vaincue et **occupée** ; le régime de **Vichy** du maréchal Pétain **collabore** avec l'occupant.
+
+          Le **18 juin 1940**, le général **de Gaulle** appelle à poursuivre le combat depuis Londres : c'est le début de la **France libre**. En France, la **Résistance** s'organise.
+
+          Les nazis organisent l'extermination des Juifs d'Europe : la **Shoah** (environ 6 millions de morts), et le génocide des Tsiganes.
+
+          **6 juin 1944** : débarquement en Normandie. **8 mai 1945** : capitulation de l'Allemagne en Europe. Environ 60 millions de morts, dont une majorité de civils.
+      - astuce: { texte: "Associe chaque date à une image : 18 juin 1940 (un appel à la radio), 6 juin 1944 (des plages de Normandie), 8 mai 1945 (la fin en Europe).", qui: mia }
+      - retiens: "**1939-1945**. Guerre d'**anéantissement** : la **Shoah**. France : **Occupation**, régime de **Vichy** qui collabore, **appel du 18 juin 1940**, **Résistance**. Fin en Europe : **8 mai 1945**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque date à son événement."
+        paires: [["18 juin 1940", "Appel du général de Gaulle"], ["6 juin 1944", "Débarquement en Normandie"], ["8 mai 1945", "Capitulation de l'Allemagne"], ["1939", "Invasion de la Pologne"]]
+        correction: "1939 Pologne, 18 juin 1940 appel, 6 juin 1944 débarquement, 8 mai 1945 capitulation."
+      - type: qcm
+        enonce: "Comment appelle-t-on l'extermination des Juifs d'Europe par les nazis ?"
+        choix: ["La Shoah", "La Résistance", "L'armistice", "La collaboration"]
+        correction: "La **Shoah** : environ 6 millions de Juifs assassinés."
+      - type: qcm
+        enonce: "Qu'est-ce que la collaboration ?"
+        choix: ["La politique du régime de Vichy qui coopère avec l'occupant nazi", "L'action des résistants", "L'alliance entre la France et le Royaume-Uni", "Le débarquement des Alliés"]
+        correction: "Le régime de Vichy **collabore** avec l'Allemagne nazie."
+      - type: ordre
+        enonce: "Range dans l'ordre chronologique."
+        items: ["Invasion de la Pologne", "Défaite de la France et appel du 18 juin", "Débarquement en Normandie", "Capitulation de l'Allemagne"]
+        correction: "1939, 1940, 1944, 1945."
+
+  - id: cinquieme-republique
+    titre: La Ve République, comment la France est gouvernée
+    classe: "3ᵉ"
+    objectif: Je connais la date de la Ve République, le rôle du président, du gouvernement et du Parlement.
+    mots: [Constitution, président, Parlement, élection]
+    etapes:
+      - dialogue:
+          - zero: "Qui décide des lois en France ? Le président tout seul ?"
+          - neo: "Non ! Le pouvoir est partagé : c'est la séparation des pouvoirs, écrite dans la Constitution de 1958."
+      - a_quoi_ca_sert: "Comprendre les élections, les débats à la télévision, et savoir pour qui et pourquoi tu voteras à 18 ans."
+      - texte: |
+          La **Ve République** est fondée en **1958** par le général **de Gaulle**. Sa règle suprême est la **Constitution**.
+
+          - Le **président de la République**, élu au **suffrage universel direct** pour **5 ans**, nomme le Premier ministre.
+          - Le **gouvernement** (Premier ministre et ministres) applique les lois : c'est le pouvoir **exécutif**.
+          - Le **Parlement** (Assemblée nationale et Sénat) vote les lois : c'est le pouvoir **législatif**.
+          - La **justice** est indépendante : c'est le pouvoir **judiciaire**.
+      - astuce: { texte: "Trois pouvoirs, trois verbes : le Parlement vote, le gouvernement applique, la justice juge.", qui: zero }
+      - retiens: "**Ve République** : **1958**, **Constitution**. Président élu pour **5 ans**. **Séparation des pouvoirs** : législatif (Parlement), exécutif (gouvernement), judiciaire (justice)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque pouvoir à qui l'exerce."
+        paires: [["Législatif (voter les lois)", "le Parlement"], ["Exécutif (appliquer les lois)", "le gouvernement"], ["Judiciaire (juger)", "la justice"]]
+        correction: "Le Parlement vote, le gouvernement applique, la justice juge."
+      - type: nombre
+        enonce: "En quelle année la Ve République a-t-elle été fondée ?"
+        reponse: "1958"
+        correction: "**1958**, par le général de Gaulle."
+      - type: qcm
+        enonce: "Pour combien d'années le président de la République est-il élu ?"
+        choix: ["5 ans", "7 ans", "4 ans", "10 ans"]
+        correction: "**5 ans** (le quinquennat, depuis 2002)."
+      - type: classer
+        enonce: "Range chaque institution : fait-elle partie du Parlement ?"
+        categories: ["Parlement", "Pas le Parlement"]
+        mots: [["l'Assemblée nationale", 0], ["le Sénat", 0], ["le Premier ministre", 1], ["le président de la République", 1]]
+        correction: "Le Parlement = Assemblée nationale + Sénat."
+
+  - id: aires-urbaines
+    titre: Les aires urbaines, une France de villes
+    classe: "3ᵉ"
+    objectif: Je décris une aire urbaine (ville-centre, banlieue, couronne périurbaine) et l'étalement urbain.
+    mots: [aire urbaine, banlieue, périurbain, étalement]
+    etapes:
+      - dialogue:
+          - mia: "Plus de 8 Français sur 10 vivent dans une aire urbaine."
+          - zero: "Même ceux qui habitent un lotissement à la campagne ?"
+          - neo: "Oui, s'ils vont travailler en ville chaque jour : ils sont dans la couronne périurbaine."
+      - a_quoi_ca_sert: "Comprendre où et comment tu vis, les embouteillages du matin, les transports en commun, et c'est un sujet de géographie du brevet."
+      - texte: |
+          Une **aire urbaine** comprend :
+
+          - la **ville-centre**, avec les services, les commerces, les emplois ;
+          - la **banlieue**, qui l'entoure, construite en continu ;
+          - la **couronne périurbaine** : des communes où beaucoup d'habitants vont travailler dans la ville chaque jour.
+
+          L'**étalement urbain** : la ville grignote les campagnes (lotissements, zones commerciales). Conséquences : plus de déplacements en voiture, des terres agricoles en moins.
+      - astuce: { texte: "Imagine des cercles autour d'une cible : au centre la ville, puis la banlieue, puis le périurbain.", qui: mia }
+      - retiens: "**Aire urbaine** = **ville-centre** + **banlieue** + **couronne périurbaine**. **Étalement urbain** : la ville s'étend sur les campagnes."
+    exercices:
+      - type: ordre
+        enonce: "Range de l'intérieur vers l'extérieur d'une aire urbaine."
+        items: ["la ville-centre", "la banlieue", "la couronne périurbaine"]
+        correction: "Centre, banlieue, périurbain."
+      - type: qcm
+        enonce: "Qu'est-ce que l'étalement urbain ?"
+        choix: ["L'extension des villes sur les campagnes", "La disparition des villes", "La construction de gratte-ciel", "Le déménagement vers l'étranger"]
+        correction: "La ville s'étend : lotissements et zones commerciales sur des terres agricoles."
+      - type: qcm
+        enonce: "Une conséquence de l'étalement urbain :"
+        choix: ["Plus de trajets en voiture", "Moins de trajets en voiture", "Plus de terres agricoles", "Des villes plus petites"]
+        correction: "Habiter loin du travail oblige souvent à prendre la voiture."
+      - type: vf
+        vars: { t: [["Plus de 8 Français sur 10 vivent dans une aire urbaine.", true], ["La couronne périurbaine est le centre de la ville.", false], ["L'étalement urbain consomme des terres agricoles.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La couronne périurbaine est à l'extérieur, autour de la banlieue."
+
+  - id: france-union-europeenne
+    titre: La France et l'Union européenne
+    classe: "3ᵉ"
+    objectif: Je connais les origines de l'Union européenne, ses symboles et ce qu'elle change dans la vie quotidienne.
+    mots: [Union européenne, euro, Schengen, citoyen]
+    etapes:
+      - dialogue:
+          - neo: "Après deux guerres mondiales, des pays européens ont décidé de coopérer pour ne plus jamais se faire la guerre."
+          - mia: "C'est le point de départ de l'Union européenne."
+      - a_quoi_ca_sert: "Voyager sans passeport dans une grande partie de l'Europe, payer en euros, étudier à l'étranger avec Erasmus+."
+      - texte: |
+          **1957** : le **traité de Rome** crée la Communauté économique européenne avec 6 pays, dont la France. Aujourd'hui, l'**Union européenne** compte **27 pays**.
+
+          - L'**euro** est la monnaie de 20 pays (depuis 2002 en pièces et billets).
+          - L'**espace Schengen** permet de circuler sans contrôle aux frontières intérieures.
+          - Symboles : le **drapeau** bleu aux 12 étoiles, l'hymne (l'Ode à la joie), la devise « Unie dans la diversité ».
+
+          Les Français sont aussi **citoyens européens** : ils élisent les députés du **Parlement européen**.
+      - astuce: { texte: "Le drapeau a 12 étoiles quel que soit le nombre de pays : 12 est un symbole de perfection, pas un compte.", qui: zero }
+      - retiens: "**1957** traité de Rome. **27 pays** dans l'UE. **Euro**, **espace Schengen**, **Parlement européen** élu par les citoyens. Drapeau bleu à **12 étoiles**."
+    exercices:
+      - type: nombre
+        enonce: "Combien de pays compte aujourd'hui l'Union européenne ?"
+        reponse: "27"
+        correction: "**27** pays (depuis la sortie du Royaume-Uni en 2020)."
+      - type: relier
+        enonce: "🔗 Relie chaque élément à ce qu'il permet."
+        paires: [["l'euro", "payer avec la même monnaie"], ["l'espace Schengen", "circuler sans contrôle aux frontières"], ["Erasmus+", "étudier dans un autre pays"], ["le Parlement européen", "représenter les citoyens"]]
+        correction: "L'Union européenne change la vie quotidienne : monnaie, voyages, études, élections."
+      - type: qcm
+        enonce: "Pourquoi la construction européenne a-t-elle commencé après 1945 ?"
+        choix: ["Pour garantir la paix entre pays européens", "Pour conquérir des colonies", "Pour créer une seule langue", "Pour supprimer les pays"]
+        correction: "Après deux guerres mondiales, coopérer était un moyen d'assurer la paix."
+      - type: nombre
+        enonce: "Combien d'étoiles y a-t-il sur le drapeau européen ?"
+        reponse: "12"
+        correction: "**12** étoiles, symbole d'union et de perfection."
+
+  - id: valeurs-republique
+    titre: Les valeurs et les symboles de la République (EMC)
+    classe: "3ᵉ"
+    objectif: Je connais la devise, les symboles et les principes de la République, dont la laïcité, et les droits et devoirs du citoyen.
+    mots: [devise, laïcité, citoyen, droits, devoirs]
+    etapes:
+      - dialogue:
+          - zero: "Liberté, Égalité, Fraternité : c'est écrit sur toutes les mairies. Ça veut dire quoi, concrètement ?"
+          - mia: "Ce sont les valeurs qui permettent de vivre ensemble. Elles donnent des droits… et des devoirs."
+      - a_quoi_ca_sert: "Comprendre le règlement de ton collège, les débats de société, et ton futur rôle de citoyen qui vote."
+      - texte: |
+          **Devise** : **Liberté, Égalité, Fraternité**. **Symboles** : le drapeau bleu, blanc, rouge, la Marseillaise, Marianne, le 14 Juillet.
+
+          La France est une République **indivisible, laïque, démocratique et sociale**. La **laïcité** (loi de **1905**) : l'État est neutre et ne reconnaît aucune religion ; chacun est libre de croire ou de ne pas croire.
+
+          Le **citoyen** a des **droits** (voter dès 18 ans, s'exprimer, être protégé) et des **devoirs** (respecter la loi, payer l'impôt, participer à la défense).
+      - astuce: { texte: "Droit = ce que je peux faire ; devoir = ce que je dois faire. Les deux vont toujours ensemble.", qui: neo }
+      - retiens: "Devise : **Liberté, Égalité, Fraternité**. République **laïque** (loi de **1905**) : l'État est neutre, chacun croit ou ne croit pas. Le citoyen a des **droits** et des **devoirs**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque élément : droit ou devoir du citoyen ?"
+        categories: ["Droit", "Devoir"]
+        mots: [["voter dès 18 ans", 0], ["respecter la loi", 1], ["s'exprimer librement", 0], ["payer l'impôt", 1]]
+        correction: "Voter et s'exprimer sont des droits ; respecter la loi et payer l'impôt, des devoirs."
+      - type: qcm
+        enonce: "Que signifie la laïcité ?"
+        choix: ["L'État est neutre : chacun est libre de croire ou de ne pas croire", "Toutes les religions sont interdites", "L'État choisit une religion officielle", "On ne peut pas parler de religion"]
+        correction: "La laïcité garantit la liberté de conscience et la neutralité de l'État (loi de 1905)."
+      - type: ordre
+        enonce: "Remets la devise de la République dans l'ordre."
+        items: ["Liberté", "Égalité", "Fraternité"]
+        correction: "Liberté, Égalité, Fraternité."
+      - type: relier
+        enonce: "🔗 Relie chaque symbole à ce qu'il est."
+        paires: [["la Marseillaise", "l'hymne national"], ["Marianne", "la figure de la République"], ["le 14 Juillet", "la fête nationale"], ["bleu, blanc, rouge", "le drapeau"]]
+        correction: "Hymne, figure, fête nationale, drapeau : les symboles de la République."

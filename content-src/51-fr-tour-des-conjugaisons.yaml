@@ -58,6 +58,11 @@ lecons:
         dictee: "{{m}}"
         niveau: 2
         correction: "{{m}}"
+      - type: dictee
+        vars: { m: ["Ils partirent à l'aube et marchèrent longtemps.", "Elle prit sa valise et sortit sans un mot.", "Nous vîmes enfin la mer."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
   - id: temps-composes
     titre: "Plus-que-parfait et futur antérieur"
@@ -219,6 +224,11 @@ lecons:
         categories: [indicatif, subjonctif]
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Le subjonctif suit souvent « que » : il faut que, je veux que…"
+      - type: dictee
+        vars: { m: ["Il faut que tu viennes avant que la nuit tombe.", "Je voudrais qu'elle soit fière de nous.", "Bien qu'il fasse froid, ils sortent jouer."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
 
   - id: valeurs-des-temps
@@ -257,3 +267,8 @@ lecons:
         enonce: "Quelle est la valeur du temps dans « {{t_0}} » ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Le vent soufflait quand la porte claqua.", "Les enfants dormaient lorsque l'orage éclata.", "Il marchait depuis une heure quand il aperçut le village."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"

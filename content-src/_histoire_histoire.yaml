@@ -1,0 +1,23 @@
+# L'histoire de la planète Histoire-géographie et EMC : le Forum des Mémoires (audit « 13-15 ans »).
+prologue:
+  - narrateur: "Au cœur de la Galaxie se dresse le Forum des Mémoires. Ses murs racontaient l'histoire des peuples, ses cartes montraient le monde, ses tribunes accueillaient les citoyens."
+  - narrateur: "Le Grand Neutre y a soufflé un oubli gris : les dates s'effacent, les cartes se vident, les mots « liberté » et « égalité » pâlissent sur les frontons."
+  - zero-surprise: "Si on oublie tout, on risque de refaire les mêmes erreurs, non ?"
+  - neo: "Exactement. Comprendre le passé et le monde, c'est se donner les moyens de choisir son avenir."
+arcs:
+  - id: histoire-arc-1
+    titre: "Livre I — La frise retrouvée"
+    sous_titre: "Les guerres mondiales, la République, la France et l'Europe"
+    final: hg-forum-du-brevet
+    fin:
+      - narrateur: "Les dates reviennent sur la frise, les cartes se colorent, la devise brille à nouveau au fronton du Forum."
+      - mia: "Tu connais les repères du brevet. Garde-les : ce sont aussi ceux d'un citoyen."
+chapitres:
+  hg-forum-du-brevet:
+    titre: "Le Forum du Brevet"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Sur la grande frise du Forum, il ne reste que des cases vides : le brouillard a tout effacé, de 1914 à aujourd'hui."
+      - neo: "Remettons chaque date, chaque lieu, chaque valeur à sa place."
+    apres:
+      - narrateur: "La frise est complète. Sur le fronton, trois mots brillent de nouveau : Liberté, Égalité, Fraternité."

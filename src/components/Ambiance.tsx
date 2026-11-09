@@ -77,6 +77,7 @@ export const MOTIFS: Record<string, Motif> = {
   musique: { mouvement: "flotte", forme: glyphe(["♪", "♫", "♩", "♬"]) },
   dessin: { mouvement: "flotte", forme: (i) => <Tache c={PEINTURE[i % PEINTURE.length]} /> },
   anglais: { mouvement: "monte", forme: (i) => <Parole mot={MOTS[i % MOTS.length]} /> },
+  histoire: { mouvement: "flotte", forme: (i) => (i % 3 === 0 ? <Page /> : glyphe(["1789", "1914", "1945", "1958", "⚖", "★"])(i)) },
   galaxie: { mouvement: "scintille", forme: (i) => (i % 5 === 4 ? <PetitePlanete c={PEINTURE[i % PEINTURE.length]} /> : <Etoile c={ETOILES[i % ETOILES.length]} />) },
 };
 

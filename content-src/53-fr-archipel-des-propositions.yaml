@@ -130,6 +130,11 @@ lecons:
         reponse: "{{t_1}}"
         niveau: 2
         correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["La maison dont je rêvais a été vendue.", "Les livres que tu m'as prêtés sont passionnants.", "C'est la ville où nous nous sommes rencontrés."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
   - id: conjonctives
     titre: "Les subordonnées conjonctives : que, quand, parce que, pour que, si"
@@ -174,6 +179,11 @@ lecons:
         niveau: 2
         explications: ["", "Pour que, afin que, bien que → subjonctif ; je pense que → indicatif."]
         correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Je pense qu'ils arriveront avant que la pluie commence.", "Parce qu'elle était fatiguée, elle s'est couchée tôt.", "Quand les feuilles tombent, les jours raccourcissent."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
   - id: discours-rapporte
     titre: "Discours direct et discours indirect"
@@ -216,3 +226,8 @@ lecons:
         categories: [direct, indirect]
         mots: [["{{t_0}}", 0], ["{{t_1}}", 1], ["{{t_2}}", 0], ["{{t_3}}", 1]]
         correction: "Direct : guillemets ; indirect : une subordonnée."
+      - type: dictee
+        vars: { m: ["Il m'a demandé si je viendrais le lendemain.", "Elle a répondu qu'elle avait déjà fini.", "Ils ont annoncé qu'ils partiraient bientôt."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"

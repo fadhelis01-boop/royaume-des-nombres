@@ -205,6 +205,11 @@ lecons:
         enonce: "Touche les mots du portrait moral (le caractère)."
         phrase: "{{t}}"
         correction: "Le portrait moral décrit le caractère ; le portrait physique, l'apparence."
+      - type: dictee
+        vars: { m: ["Ses yeux noirs brillaient d'une lueur inquiète.", "Le vieil homme portait un manteau usé jusqu'à la corde.", "Ses cheveux blonds tombaient sur ses épaules."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
 
 
   - id: ecrire-une-lettre
@@ -245,3 +250,8 @@ lecons:
         enonce: "Quelle formule de fin pour une lettre {{t_0}} ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
+      - type: dictee
+        vars: { m: ["Je vous remercie de votre réponse rapide.", "Nous espérons vous revoir très prochainement.", "Veuillez agréer mes salutations distinguées."] }
+        enonce: "Dictée (comme au brevet) : écoute, écris, puis relis chaque accord."
+        dictee: "{{m}}"
+        correction: "{{m}}"
