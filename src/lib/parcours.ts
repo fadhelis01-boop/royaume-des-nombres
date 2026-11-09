@@ -143,8 +143,9 @@ export function exercicesTest(l: Lesson, age?: number): ExSpec[] {
 }
 
 /** La leçon du domaine la plus proche d'un niveau visé (de préférence juste en dessous), qui a des exercices de test. */
-export function leconPour(d: Domaine, cible: number, age?: number): LeconNiv | null {
-  const ok = d.lecons.filter((l) => exercicesTest(l.lesson, age).length);
+export function leconPour(d: Domaine, cible: number, age?: number, deja?: Set<ExSpec>): LeconNiv | null {
+  // une leçon dont toutes les questions ont déjà été posées dans l'île est écartée (pas de répétition)
+  const ok = d.lecons.filter((l) => exercicesTest(l.lesson, age).some((e) => !deja?.has(e)));
   if (!ok.length) return null;
   return ok.reduce((best, l) => {
     const e = Math.abs(l.niveau - cible) + (l.niveau > cible ? 0.25 : 0);
@@ -158,9 +159,15 @@ export function leconPour(d: Domaine, cible: number, age?: number): LeconNiv | n
  * de CE1, seules les îles « nombres » et « calcul » sont entamées). Les autres viendront plus tard.
  * Toujours au moins un domaine (celui qui commence le plus tôt).
  */
+/**
+ * Îles déjà dépassées : elles s'arrêtent plus d'un an avant le niveau de l'élève (le calcul et les mesures
+ * s'arrêtent au CM2 ; inutile de les tester en 4ᵉ). On les considère acquises jusqu'à leur dernière leçon.
+ */
+export const domainesDepasses = (doms: Domaine[], age: number, quand?: Date) => doms.filter((d) => d.max < niveauDuMoment(age, quand) - 1);
 export function domainesATester(doms: Domaine[], age: number, quand?: Date): Domaine[] {
   const seuil = niveauDuMoment(age, quand) + 0.5;
-  const ok = doms.filter((d) => d.min <= seuil);
+  const depasses = new Set(domainesDepasses(doms, age, quand));
+  const ok = doms.filter((d) => d.min <= seuil && !depasses.has(d));
   if (ok.length || !doms.length) return ok;
   return [doms.reduce((a, b) => (b.min < a.min ? b : a))];
 }

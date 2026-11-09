@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { go, useRoute } from "../lib/router";
 import { matiereDe, planeteDe, useContent } from "../lib/content";
 import { instantiate, newSeed, type Instance } from "../lib/gen";
+import type { ExSpec } from "../lib/types";
 import { addGems, bump, getState, updateChild, useChild } from "../lib/store";
 import { sfx } from "../lib/sound";
 import { speak, stopSpeaking } from "../lib/tts";
@@ -10,7 +11,7 @@ import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
 import { VerifSon } from "../components/VerifSon";
 import {
-  ageScolaire, nomIle, questionsIle, testBacle, plancherBacle, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
+  ageScolaire, nomIle, domainesDepasses, questionsIle, testBacle, plancherBacle, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
   questionsParIle, type Domaine, type Escalier,
 } from "../lib/parcours";
 
@@ -24,13 +25,20 @@ import {
 const GEMMES_PAR_ILE = 2; // l'effort est récompensé, pas la réussite
 const REPRISE_MAX_JOURS = 30;
 
+// questions déjà posées dans l'île en cours : jamais deux fois la même (audit « 13-15 ans »)
+const dejaPosees = new Set<ExSpec>();
 function tirer(d: Domaine, cible: number, age: number): { inst: Instance; niveau: number } | null {
-  const l = leconPour(d, cible, age);
+  const l = leconPour(d, cible, age, dejaPosees);
   if (!l) return null;
-  const specs = exercicesTest(l.lesson, age);
+  const toutes = exercicesTest(l.lesson, age);
+  const neuves = toutes.filter((e) => !dejaPosees.has(e));
+  const specs = neuves.length ? neuves : toutes;
   for (let t = 0; t < 8; t++) {
     try {
-      return { inst: instantiate(specs[Math.floor(Math.random() * specs.length)], newSeed()), niveau: l.niveau };
+      const spec = specs[Math.floor(Math.random() * specs.length)];
+      const inst = instantiate(spec, newSeed());
+      dejaPosees.add(spec);
+      return { inst, niveau: l.niveau };
     } catch {
       /* tirage impossible : on réessaie */
     }
@@ -77,10 +85,17 @@ export function Diagnostic() {
   /** pause proposée entre deux îles */
   const [entracte, setEntracte] = useState<{ ile: Domaine; suivante: number; acquis: Record<string, number> } | null>(null);
 
+  // à partir de 13 ans, un ton plus direct (audit « 13-15 ans »)
+  const ado = age >= 13;
   const intro = point
     ? ["Tu as bien avancé ! Quelques questions pour voir tes progrès, puis je mets ton parcours à jour."]
     : enCours
       ? [`On reprend ta carte des talents ! Il reste ${iles(aTester.length)} à visiter.`, "Si tu ne sais pas, touche « Je ne sais pas encore ». Après chaque île, tu peux faire une pause."]
+      : ado
+        ? [
+            `${totalQ} questions sur ${iles(aTester.length)} pour régler ton parcours. Elles montent quand tu réussis, descendent sinon : on cherche ton niveau, ce n'est pas noté.`,
+            "« Je ne sais pas encore » est une réponse utile : elle évite de deviner. Pause possible entre deux îles.",
+          ]
       : jeune
         ? [
             `On va visiter ${iles(aTester.length)}. Sur chaque île, ${varie ? `1 ou ${nbQ}` : nbQ} petites questions. Ce n'est pas une interro : ça sert à savoir par où commencer.`,
@@ -103,6 +118,7 @@ export function Diagnostic() {
     const d = aTester[i];
     if (!d) return terminer(acquis);
     const e = departEscalier(d, age, point ? ancien?.niveaux[d.id] : undefined);
+    dejaPosees.clear();
     const t = tirer(d, e.cible, age);
     if (!t) return commencerDomaine(i + 1, acquis); // domaine sans question possible
     setEntracte(null);
@@ -152,7 +168,9 @@ export function Diagnostic() {
     // presque que des « Je ne sais pas encore » : on ne redescend pas sous la classe précédente
     const nsp = (getState().children.find((c) => c.id === child.id)?.counters?.["test-je-ne-sais-pas"] ?? 0) - nspAuDepart.current;
     const estBacle = !point && testBacle(nsp, repondues.current);
-    const niveauxBruts = { ...(point ? ancien?.niveaux : {}), ...acquis };
+    // îles dépassées (non testées) : acquises jusqu'à leur dernière leçon
+    const depasses = point ? {} : Object.fromEntries(domainesDepasses(doms, age).map((x) => [x.id, x.max]));
+    const niveauxBruts = { ...depasses, ...(point ? ancien?.niveaux : {}), ...acquis };
     const niveauxFinaux = estBacle ? plancherBacle(doms, niveauxBruts, age) : niveauxBruts;
     const etapes = construireParcours(doms, niveauxFinaux, age, fait);
     const ouvrir = mondesAOuvrir(doms, niveauxFinaux, etapes);
@@ -188,7 +206,7 @@ export function Diagnostic() {
         </div>
         {jeune && <VerifSon />}
         <p className="small muted center">
-          {totalQ} petites questions{jeune && !point && aTester.length > 1 ? `, ${varie ? `1 ou ${nbQ}` : nbQ} par île, avec une pause possible entre deux îles` : ""} · {planete?.titre}
+          {totalQ} {ado ? "" : "petites "}questions{jeune && !point && aTester.length > 1 ? `, ${varie ? `1 ou ${nbQ}` : nbQ} par île, avec une pause possible entre deux îles` : ""} · {planete?.titre}
         </p>
         <div className="center">
           <button

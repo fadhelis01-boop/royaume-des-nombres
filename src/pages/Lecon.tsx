@@ -11,6 +11,7 @@ import { Md } from "../components/Md";
 import { Visuel } from "../components/Visuel";
 import { ExercisePlayer } from "../components/ExercisePlayer";
 import type { Step, Who, World } from "../lib/types";
+import { ageScolaire } from "../lib/parcours";
 
 const Autrement = lazy(() => import("../components/Autrement").then((m) => ({ default: m.Autrement })));
 /** écrans de cours où l'enfant peut dire « je n'ai pas compris » */
@@ -39,7 +40,7 @@ export function stepSegments(s: Step): Seg[] {
     case "question":
       return [];
     case "explique":
-      return [{ who: s.qui, text: s.texte + " " + s.choix.map((c) => c.texte).join(" ? Ou : ") + " ?" }];
+      return [{ who: s.qui, text: questionExplique(s.texte) + " " + s.choix.map((c) => c.texte).join(" ? Ou : ") + " ?" }];
     case "vraie_vie":
       return [{ who: "zero", text: `${s.titre}. ${s.texte}` }];
     case "experience":
@@ -267,13 +268,19 @@ function StepView({ step, k, onAnswered, statKey, cycle }: { step: Step; k: stri
 }
 
 /** « Explique à Néo » : l'enfant choisit la méthode qu'il a utilisée (métacognition). */
+/** À partir de 13 ans, « Explique à Zéro » devient « Résume la leçon » (audit « 13-15 ans »). */
+function questionExplique(texte: string): string {
+  const c = getState().children.find((x) => x.id === getState().activeId);
+  return c && ageScolaire(c) >= 13 ? "Résume cette leçon en une phrase : laquelle choisis-tu ?" : texte;
+}
+
 function Explique({ step, onAnswered }: { step: Extract<Step, { kind: "explique" }>; onAnswered: () => void }) {
   const [pick, setPick] = useState<number | null>(null);
   const c = pick !== null ? step.choix[pick] : null;
   return (
     <div className="st-explique">
-      <div className="st-label">🗣️ Explique-moi comment tu fais !</div>
-      <Bubble who={step.qui} text={step.texte} humeur="reflexion" />
+      <div className="st-label">{questionExplique("") ? "🗣️ Résume la leçon" : "🗣️ Explique-moi comment tu fais !"}</div>
+      <Bubble who={step.qui} text={questionExplique(step.texte)} humeur="reflexion" />
       <div className="choices grid">
         {step.choix.map((ch, j) => (
           <button

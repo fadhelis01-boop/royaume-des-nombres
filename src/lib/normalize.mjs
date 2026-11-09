@@ -207,12 +207,15 @@ function withQuestions(etapes, exercices, max = Infinity) {
     .sort((a, b) => a.r - b.r)
     .map((x) => x.e);
   const out = [];
+  const aTexte = etapes.some((s) => s.kind === "texte" || s.kind === "retiens");
   let passive = 0,
     taught = false,
     q = 0;
   etapes.forEach((st, i) => {
     out.push(st);
-    if (TEACHING.has(st.kind)) taught = true;
+    // il faut avoir lu le cours : un texte (ou « Je retiens ») si la leçon en a un, pas seulement un schéma
+    // (audit « 13-15 ans » : coefficient directeur demandé avant le texte qui l'explique)
+    if (aTexte ? st.kind === "texte" || st.kind === "retiens" : TEACHING.has(st.kind)) taught = true;
     if (PASSIVE.has(st.kind)) passive++;
     else passive = 0;
     const next = etapes[i + 1];

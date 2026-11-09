@@ -53,6 +53,8 @@ function emojisEnMots(s: string): string {
   });
 }
 
+/** Chiffres en exposant (« ⁸ » → « 8 »). */
+const exposant = (e: string) => e.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => String("⁰¹²³⁴⁵⁶⁷⁸⁹".indexOf(c)));
 /** Chiffres romains (« XVIII » → 18) ; null si ce n'en est pas un. */
 function romain(r: string): number | null {
   const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
@@ -88,7 +90,13 @@ function latexToSpeech(tex: string): string {
   let s = tex
     .replace(/\\begin\{[a-z*]+\}(\{[^}]*\})?|\\end\{[a-z*]+\}/g, " ")
     .replace(/\\(?:long)?(?:left|right|leftright)arrow/gi, " ")
-    .replace(/\\\\/g, ", ");
+    .replace(/\\\\/g, ", ")
+    // audit « 13-15 ans » : fonctions, norme, f(x)
+    .replace(/(\w)\s*:\s*(\w)\s*\\mapsto/g, " $1 qui à $2 associe ")
+    .replace(/\\mapsto/g, " associe ")
+    .replace(/\\\|\s*\\(?:vec|overrightarrow)\{([^{}]*)\}\s*\\\|/g, " norme du vecteur $1 ")
+    .replace(/\\\|/g, " ")
+    .replace(/\\[,;:! ]/g, " ");
   for (let i = 0; i < 4; i++) {
     s = s
       .replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, (_, a, b) => (/^\s*-?\d+\s*$/.test(a) && /^\s*\d+\s*$/.test(b) ? fracWords(a.trim(), b.trim()) : ` ${a} sur ${b} `))
@@ -164,6 +172,17 @@ export function toSpeech(md: string): string {
     .replace(/([=+×÷−-]\s*)\?|\?(\s*[=+×÷−-])/g, (_m, a, b) => (a ? `${a} combien ` : ` combien ${b}`))
     // ordinaux
     .replace(/(\d+)\s?(ʳᵉ|ᵉʳ|ᵉ|ème|e)(?![a-zà-ÿ])/g, (m, n, suf) => (suf === "e" && Number(n) !== 1 && !/ᵉ/.test(m) ? m : ` ${ordinal(Number(n), suf === "ʳᵉ")} `))
+    // notations du lycée (audit « 13-15 ans ») : ions, exposants, triangles et points, f(x), signes entre parenthèses
+    .replace(/((?:[A-Z][a-z]?)+)([⁰¹²³⁴⁵⁶⁷⁸⁹]*)([⁺⁻])/g, (_m, el, ch, sg) => ` ${el.split(/(?=[A-Z])/).map((x: string) => x.split("").join(" ")).join(" ")} ${ch ? exposant(ch) + " " : ""}${sg === "⁺" ? "plus" : "moins"} `)
+    .replace(/(\d)(⁻?[⁰¹²³⁴⁵⁶⁷⁸⁹]{2,}|⁻[⁰¹²³⁴⁵⁶⁷⁸⁹]+|[⁰¹⁴⁵⁶⁷⁸⁹])/g, (_m, d, e) => `${d} puissance ${e.startsWith("⁻") ? "moins " : ""}${exposant(e.replace("⁻", ""))}`)
+    .replace(/↦/g, " associe ")
+    .replace(/Δ\s?([A-Z]{3})\b/g, (_m, t) => ` le triangle ${t.split("").join(" ")} `)
+    .replace(/\b(triangles?|quadrilatères?|carrés?|rectangles?|parallélogrammes?|losanges?|trapèzes?|segments?|droites?|demi-droites?|points?|vecteurs?|polygones?|angles?|côtés?|repères?)(\s+(?:\[|\()?)([A-Z]{2,5})\b/g, (_m, mot, sep, p) => `${mot}${sep}${p.split("").join(" ")}`)
+    .replace(/\b([fgh])\(([a-z0-9]+)\)/g, "$1 de $2")
+    .replace(/\(\s*<\s*/g, "(moins de ")
+    .replace(/\(\s*>\s*/g, "(plus de ")
+    .replace(/\bvecteurs?\s+(vecteur\b)/g, "$1")
+    .replace(/\bX([XY])\b/g, "X $1")
     // notations des grands (audit « 9-12 ans »)
     .replace(/(?<![A-Za-z])((?:[A-Z][a-z]?[₀-₉]*)+)(?![A-Za-z])/g, (m) => (/[₀-₉]/.test(m) ? ` ${formuleChimique(m)} ` : m))
     .replace(/\bIer\b/g, "premier")

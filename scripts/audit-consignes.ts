@@ -21,18 +21,22 @@ const seen = new Map<string, { n: number; lvl: number; dom: string; type: string
 for (let run = 0; run < 400; run++) {
   for (const d of aTester) {
     let e = departEscalier(d, AGE);
+    const deja = new Set<unknown>();
     for (let q = 0; q < nbq(d); q++) {
-      const l = leconPour(d, e.cible, AGE);
+      const l = leconPour(d, e.cible, AGE, deja as never);
       if (!l) break;
-      const specs = exercicesTest(l.lesson, AGE);
+      const toutes = exercicesTest(l.lesson, AGE);
+      const neuves = toutes.filter((x) => !deja.has(x));
+      const specs = neuves.length ? neuves : toutes;
       const spec = specs[Math.floor(Math.random() * specs.length)];
+      deja.add(spec);
       let inst;
       try { inst = instantiate(spec, newSeed()); } catch { break; }
       const key = spec.enonce;
       const s = seen.get(key) ?? { n: 0, lvl: l.niveau, dom: d.titre, type: spec.type, lesson: `${l.world.id}/${l.lesson.id}` };
       s.n++;
       seen.set(key, s);
-      const ok = Math.random() < (l.niveau <= 3 ? 0.6 : 0.35);
+      const ok = Math.random() < (l.niveau <= AGE - 5 ? 0.6 : 0.35);
       e = pas(e, d, l.niveau, ok);
     }
   }
