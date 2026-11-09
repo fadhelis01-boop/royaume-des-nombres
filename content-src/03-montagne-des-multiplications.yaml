@@ -162,7 +162,7 @@ lecons:
       - astuce:
           texte: "Les nombres de la table de 3 ont un secret : si on additionne leurs chiffres, on retombe sur 3, 6 ou 9. Exemple : 27 → 2 + 7 = 9 ✔."
           qui: mia
-      - a_quoi_ca_sert: "Les tricycles, les trèfles, les côtés des triangles (×3) ; les pattes des chats, les roues des voitures, les saisons (×4)…"
+      - a_quoi_ca_sert: "Combien de roues sur 4 voitures ? De pattes sur 3 chats ? Tes tables de 3 et de 4 répondent vite."
       - question:
           type: nombre
           vars: { t: [3, 4], n: "2..10" }
@@ -221,7 +221,7 @@ lecons:
       - astuce:
           texte: "Avec les doigts pour ×9 : pose tes 10 doigts, baisse le 7ᵉ. À gauche : 6 doigts (6 dizaines), à droite : 3 doigts (3 unités). 7 × 9 = 63 !"
           qui: neo
-      - a_quoi_ca_sert: "7 jours par semaine (3 semaines = 21 jours), 6 œufs par boîte, 8 bras de pieuvre… et surtout : les tables servent à TOUT le reste des maths (divisions, fractions, aires…)."
+      - a_quoi_ca_sert: "3 semaines, combien de jours ? 5 boîtes de 6 œufs ? Avec tes tables, tu trouves sans compter un par un."
       - question:
           type: nombre
           vars: { a: "6..9", b: "6..9" }
@@ -272,6 +272,20 @@ lecons:
         choix: ["{{a*b}}", "{{a*b+a}}", "{{a*b-b}}", "{{a+b}}"]
         si: "a*b-b != a+b && a*b+a != a+b"
         correction: "{{a}} × {{b}} = {{a*b}}."
+      - type: relier
+        vars: { a: "2..9" }
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["{{a}} × 6", "{{6*a}}"], ["{{a}} × 7", "{{7*a}}"], ["{{a}} × 8", "{{8*a}}"], ["{{a}} × 9", "{{9*a}}"]]
+        correction: "{{a}} × 6 = {{6*a}}, {{a}} × 7 = {{7*a}}, {{a}} × 8 = {{8*a}}, {{a}} × 9 = {{9*a}}."
+      - type: comparer
+        vars: { a: "6..9", b: "2..9", c: "6..9", d: "2..9" }
+        si: "a*b != c*d"
+        enonce: "Compare ces deux calculs."
+        gauche: "a*b"
+        droite: "c*d"
+        gauche_affiche: "{{a}} × {{b}}"
+        droite_affiche: "{{c}} × {{d}}"
+        correction: "{{a}} × {{b}} = {{a*b}} et {{c}} × {{d}} = {{c*d}}."
 
   - id: fois-10-100
     titre: Multiplier par 10, 100, 1 000
@@ -298,7 +312,7 @@ lecons:
       - attention:
           texte: "« Ajouter un zéro » ne marche QUE pour les nombres entiers. Avec 2,5 × 10, on n'écrit pas 2,50 (c'est pareil que 2,5 !) : c'est 25. Retiens plutôt : les chiffres glissent."
           qui: neo
-      - a_quoi_ca_sert: "10 paquets de 24 gâteaux, le prix de 100 stylos, convertir des mètres en centimètres (×100)…"
+      - a_quoi_ca_sert: "10 paquets de 24 gâteaux pour ta fête ? Avec × 10, tu trouves tout de suite : 240."
       - question:
           type: nombre
           vars: { n: "2..99", k: [10, 100, 1000] }
@@ -306,7 +320,7 @@ lecons:
           reponse: "n*k"
           correction: "{{n}} × {{nb(k)}} = {{nb(n*k)}}."
       - astuce:
-          texte: "Multiplier par 10, c'est faire glisser chaque chiffre d'un rang vers la gauche : 23 → 230. Pour un entier, ça revient à écrire un zéro à la fin."
+          texte: "× 10 : chaque chiffre glisse d'un rang vers la gauche, 23 devient 230. Pour un nombre entier, on écrit un 0 à la fin."
           qui: neo
     exercices:
       - type: nombre
@@ -330,6 +344,21 @@ lecons:
         enonce: "Un paquet contient {{n}} biscuits. Combien de biscuits dans 100 paquets ?"
         reponse: "100*n"
         correction: "{{n}} × 100 = {{nb(100*n)}}."
+      - type: relier
+        vars: { a: "2..9", b: "11..99" }
+        si: "10*b != 100*a && b != 10*a"
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["{{a}} × 10", "{{10*a}}"], ["{{a}} × 100", "{{100*a}}"], ["{{b}} × 10", "{{10*b}}"]]
+        correction: "× 10 : on ajoute un 0 ; × 100 : on ajoute deux 0."
+      - type: comparer
+        vars: { a: "2..9", b: "11..99" }
+        si: "a*10 != b"
+        enonce: "Compare."
+        gauche: "a*10"
+        droite: "b"
+        gauche_affiche: "{{a}} × 10"
+        droite_affiche: "{{b}}"
+        correction: "{{a}} × 10 = {{a*10}}. On compare {{a*10}} et {{b}}."
 
   - id: multiplication-posee
     titre: La multiplication posée

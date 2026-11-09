@@ -275,7 +275,7 @@ export default function App() {
         page = <Boutique tab={p[1]} />;
         break;
       case "diagnostic":
-        page = <Diagnostic key={route.query.get("mode") ?? "test"} />;
+        page = <Diagnostic key={route.query.toString() || "test"} />;
         break;
       case "parcours":
         page = <ParcoursPage />;

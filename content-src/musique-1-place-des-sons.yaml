@@ -67,7 +67,7 @@ lecons:
           En musique, on dit **forte** (f) pour fort et **piano** (p) pour doux : ce sont des **nuances**.
           ⚠️ Fort ne veut pas dire aigu ! Une grosse note grave peut être très forte, une petite note aiguë très douce.
       - astuce:
-          texte: "En musique, fort se dit « forte » (f) et doux se dit « piano » (p). Le piano s'appelle comme ça parce qu'il sait jouer doux ET fort !"
+          texte: "Fort se dit forte (f), doux se dit piano (p). Le piano porte ce nom parce qu'il sait jouer doux !"
           qui: zero
       - retiens: "Fort (forte, f) ou doux (piano, p) : c'est l'intensité. Ne pas confondre avec aigu/grave."
     exercices:
@@ -97,7 +97,7 @@ lecons:
       - dialogue:
           - zero: "Ma voix fait « hiii » et celle de l'ours fait « hooo »."
           - mia: "La tienne est aiguë, celle de l'ours est grave ! Écoutons la différence."
-      - a_quoi_ca_sert: "Le petit oiseau chante aigu, le gros ours grogne grave. Ça t'aide à chanter juste !"
+      - a_quoi_ca_sert: "Le petit oiseau chante aigu, le gros ours grogne grave. Tu chantes plus juste quand tu entends la différence."
       - texte: |
           Un son **aigu** est « haut » et fin (un sifflet, un petit oiseau, une souris). Un son **grave** est « bas » et profond (un gros tambour, un lion qui rugit, une contrebasse).
           C'est la **hauteur** du son. Sur un piano, les notes graves sont à **gauche**, les notes aiguës à **droite**.
@@ -108,7 +108,7 @@ lecons:
           notes: "Do3 Do5"
         legende: "Touche les touches du clavier : à gauche les graves, à droite les aigus."
       - astuce:
-          texte: "Aigu, c'est petit et léger comme un oiseau qui chante ; grave, c'est gros et lourd comme un ours qui grogne. Sur le piano : à droite l'aigu, à gauche le grave."
+          texte: "Aigu, c'est léger comme un oiseau qui chante ; grave, c'est lourd comme un ours qui grogne. Au piano, l'aigu est à droite."
           qui: mia
       - retiens: "Aigu : haut et fin. Grave : bas et profond. Piano : graves à gauche, aigus à droite."
     exercices:
@@ -219,7 +219,7 @@ lecons:
           - **Claviers** : piano, orgue, synthétiseur.
           - Et le plus ancien de tous les instruments : la **voix** !
       - astuce:
-          texte: "Demande-toi comment le son est produit : on souffle (vents), on frotte ou pince une corde (cordes), on frappe (percussions)."
+          texte: "Demande-toi comment on fait le son : on souffle (vents), on frotte ou pince une corde (cordes), on frappe (percussions)."
           qui: mia
       - retiens: "Cordes (frotter, pincer), vents (souffler), percussions (frapper, secouer), claviers, et la voix."
     exercices:

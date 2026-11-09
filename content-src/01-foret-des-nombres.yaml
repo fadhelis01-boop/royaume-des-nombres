@@ -224,7 +224,7 @@ lecons:
 
           Depuis l'orthographe rectifiée de **1990**, on met des **traits d'union entre tous les mots** : vingt-et-un, deux-cent-trois. L'ancienne règle (traits d'union seulement sous cent, sauf autour de « et ») reste acceptée.
       - attention: "**Vingt** et **cent** prennent un **s** quand ils sont multipliés et terminent le nombre : quatre-vingts, trois-cents. Mais quatre-vingt-deux, trois-cent-cinq (pas de s, ils ne terminent pas). **Mille** ne prend jamais de s : deux-mille."
-      - astuce: { texte: "Dis le nombre à voix haute en tapant dans tes mains à chaque mot : chaque tape est un mot, et entre deux tapes on met un trait d'union.", qui: mia }
+      - astuce: { texte: "Dis le nombre en tapant des mains à chaque mot. Entre deux tapes, tu mets un trait d'union.", qui: mia }
       - retiens: "On assemble les mots de base avec des **traits d'union**. **Vingt** et **cent** prennent un **s** quand ils sont multipliés et en fin de nombre ; **mille** est invariable."
     exercices:
       - type: mot
@@ -493,7 +493,7 @@ lecons:
           - Un **diagramme en barres** dessine chaque nombre par une barre : plus la barre est **haute**, plus le nombre est **grand**.
       - visuel: { type: diagramme, titre: "Fruits préférés de la classe", barres: [{ label: "pomme", v: 7 }, { label: "banane", v: 4 }, { label: "fraise", v: 9 }, { label: "kiwi", v: 2 }] }
         legende: "La barre la plus haute : la fraise, choisie par 9 élèves."
-      - astuce: { texte: "Pour lire une case, pose un doigt sur le nom de la ligne et un doigt sur le nom de la colonne, puis fais-les glisser jusqu'à ce qu'ils se rencontrent.", qui: mia }
+      - astuce: { texte: "Pose un doigt sur la ligne, un doigt sur la colonne, et fais-les glisser jusqu'à ce qu'ils se rencontrent.", qui: mia }
       - retiens: "Dans un tableau, une case = **une ligne** + **une colonne**. Dans un diagramme en barres, la barre la **plus haute** montre le **plus grand** nombre."
     exercices:
       - type: nombre
@@ -531,6 +531,16 @@ lecons:
         reponse: "a-b"
         niveau: 2
         correction: "{{a}} − {{b}} = {{a-b}} livres de plus."
+      - type: ordre
+        enonce: "Range les fruits du moins aimé au plus aimé."
+        visuel: { type: diagramme, titre: "Fruits préférés de la classe", barres: [{ label: "pomme", v: 7 }, { label: "banane", v: 4 }, { label: "fraise", v: 9 }, { label: "kiwi", v: 2 }] }
+        items: ["kiwi", "banane", "pomme", "fraise"]
+        correction: "La barre la plus basse est celle du kiwi (2), puis banane (4), pomme (7) et fraise (9)."
+      - type: relier
+        enonce: "🔗 Relie chaque fruit à son nombre de voix."
+        visuel: { type: diagramme, titre: "Fruits préférés de la classe", barres: [{ label: "pomme", v: 7 }, { label: "banane", v: 4 }, { label: "fraise", v: 9 }, { label: "kiwi", v: 2 }] }
+        paires: [["pomme", "7"], ["banane", "4"], ["fraise", "9"], ["kiwi", "2"]]
+        correction: "Pour chaque fruit, on suit le haut de la barre jusqu'au nombre."
 
   - id: pair-impair
     titre: Pair, impair et compter de 2 en 2, de 5 en 5

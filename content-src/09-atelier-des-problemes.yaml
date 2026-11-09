@@ -99,9 +99,9 @@ lecons:
           total: "80 €"
         legende: "Une partie manque : 80 − 45 = 35 €."
       - astuce:
-          texte: "Dessine D'ABORD la barre du tout, puis découpe-la. Mets un « ? » là où se cache l'inconnue. Le dessin te dit l'opération !"
+          texte: "Dessine D'ABORD la barre du tout, puis découpe-la. Mets un « ? » là où se cache l'inconnue. Le dessin te dit s'il faut ajouter ou enlever !"
           qui: mia
-      - a_quoi_ca_sert: "Le budget d'une sortie (ce qu'on a dépensé + ce qu'il reste = le total), une course en plusieurs étapes, un album à remplir…"
+      - a_quoi_ca_sert: "Tu as 20 € pour ta sortie et tu en dépenses 12 ? Le dessin des barres te montre ce qu'il te reste."
       - question:
           type: nombre
           vars: { t: "50..120", p: "15..45" }

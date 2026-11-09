@@ -40,7 +40,7 @@ lecons:
           Pour demander **comment ça va** : **How are you?** → **I'm fine, thank you!** (Je vais bien, merci !)
       - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Hello!", sens: "Bonjour", emoji: "👋" }, { texte: "Goodbye!", sens: "Au revoir", emoji: "🖐️" }, { texte: "What's your name?", sens: "Comment t'appelles-tu ?", emoji: "❓" }, { texte: "My name is Néo.", sens: "Je m'appelle Néo.", emoji: "🙋" }, { texte: "How are you?", sens: "Comment vas-tu ?", emoji: "🙂" }, { texte: "I'm fine, thank you!", sens: "Je vais bien, merci !", emoji: "👍" }] }
         legende: "Touche chaque bouton pour écouter, puis répète à voix haute. (Deux touches rapides : plus lentement.)"
-      - astuce: { texte: "Répète chaque mot à voix haute, trois fois, en faisant le geste : coucou pour Hello, main qui s'éloigne pour Goodbye. La bouche et les mains aident la mémoire.", qui: mia }
+      - astuce: { texte: "Répète chaque mot trois fois en faisant le geste : coucou pour Hello, au revoir de la main pour Goodbye.", qui: mia }
       - retiens: "**Hello** = bonjour, **Goodbye** = au revoir, **My name is…** = je m'appelle…, **How are you?** = comment vas-tu ?, **thank you** = merci."
     exercices:
       - type: qcm
@@ -258,7 +258,7 @@ lecons:
       - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Stand up!", sens: "Lève-toi !", emoji: "🧍" }, { texte: "Sit down!", sens: "Assieds-toi !", emoji: "💺" }, { texte: "Listen!", sens: "Écoute !", emoji: "👂" }, { texte: "Look!", sens: "Regarde !", emoji: "👀" }, { texte: "Repeat!", sens: "Répète !", emoji: "🔁" }, { texte: "Open your book!", sens: "Ouvre ton livre !", emoji: "📖" }, { texte: "Raise your hand!", sens: "Lève la main !", emoji: "✋" }] }
         legende: "Écoute chaque consigne et fais le geste en même temps."
       - vraie_vie: { titre: "Jeu : Simon says", texte: "Avec quelqu'un de ta famille, jouez à « Simon says » (Jacques a dit) avec les consignes en anglais. Celui qui fait le geste sans « Simon says » a un gage !", materiel: "un partenaire de jeu" }
-      - astuce: { texte: "Pour chaque consigne, fais le geste en même temps que tu l'entends : c'est la méthode des gestes, utilisée dans les écoles du monde entier.", qui: mia }
+      - astuce: { texte: "Fais le geste en même temps que tu entends la consigne : ton corps aide ta mémoire.", qui: mia }
       - retiens: "**Stand up** = lève-toi, **Sit down** = assieds-toi, **Listen** = écoute, **Look** = regarde, **Open your book** = ouvre ton livre."
     exercices:
       - type: qcm

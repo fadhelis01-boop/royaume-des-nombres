@@ -23,7 +23,7 @@ lecons:
       - dialogue:
           - zero: "La Terre est faite de quoi, surtout ? De terre ?"
           - neo: "Surtout d'eau ! Les océans couvrent plus des deux tiers de la planète."
-      - a_quoi_ca_sert: "Connaître les continents et les océans aide à comprendre l'actualité, les voyages et d'où viennent les objets et les aliments."
+      - a_quoi_ca_sert: "D'où vient ta banane ? Et ton chocolat ? Avec la carte du monde, tu sais où ils ont poussé."
       - texte: |
           Vue de l'espace, la Terre est **bleue** : les océans couvrent environ **71 %** de sa surface.
           - **6 continents** (selon le découpage usuel en France) : l'**Afrique**, l'**Amérique**, l'**Antarctique**, l'**Asie**, l'**Europe**, l'**Océanie**.
@@ -59,7 +59,7 @@ lecons:
       - dialogue:
           - zero: "La terre de mon jardin, elle vient d'où ?"
           - mia: "Des roches et des feuilles mortes transformées pendant des centaines d'années !"
-      - a_quoi_ca_sert: "Les roches servent à construire nos maisons, et le sol nourrit les plantes qui nous nourrissent. Il faut des siècles pour faire quelques centimètres de sol !"
+      - a_quoi_ca_sert: "Ta maison est peut-être faite de pierres, et ton jardin pousse dans la terre. Tu vas voir d'où elles viennent."
       - texte: |
           Le sol de notre jardin repose sur des **roches**. Quelques roches courantes :
           - le **granite** (dur, avec des grains visibles, dans les montagnes et en Bretagne) ;
@@ -109,7 +109,7 @@ lecons:
       - dialogue:
           - zero: "La Terre peut trembler ? J'ai peur !"
           - neo: "Comprendre les séismes et les volcans, c'est apprendre à se protéger. Je t'explique."
-      - a_quoi_ca_sert: "Connaître les bons gestes en cas de séisme ou d'éruption peut sauver des vies. Des millions de personnes vivent près de volcans actifs."
+      - a_quoi_ca_sert: "Si la terre tremble, tu sauras quoi faire : te cacher sous ta table. Ça peut sauver des vies."
       - texte: |
           Sous la croûte terrestre, des roches très chaudes peuvent fondre : c'est le **magma**. Quand il remonte et sort à la surface par un **volcan**, on l'appelle **lave**. Certains volcans émettent des coulées de lave (Piton de la Fournaise, à La Réunion), d'autres explosent en projetant cendres et gaz.
           Un **séisme** (tremblement de terre) est une secousse brutale du sol, due à des roches qui cassent et glissent en profondeur.

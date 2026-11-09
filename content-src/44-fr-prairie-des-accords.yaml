@@ -114,7 +114,7 @@ lecons:
 
           Au **féminin pluriel**, on ajoute **e + s** : des robes vert**es**, des filles heureu**ses**.
       - astuce:
-          texte: "Le nom est le chef de la bande : s'il prend un s, tous ceux qui l'accompagnent prennent un s aussi. Des petits chats noirs."
+          texte: "Le nom est le chef de la bande : s'il prend un s, ceux qui l'accompagnent aussi. « Des petits chats noirs »."
           qui: zero
       - retiens: "Accord en **nombre** : + **s** (ou -x, -aux). Féminin pluriel : **-es**."
     exercices:
@@ -143,7 +143,7 @@ lecons:
       - dialogue:
           - mia: "Regarde les fils de lumière : le déterminant, le nom et l'adjectif sont attachés. Si l'un change, tous changent."
           - neo: "C'est le nom qui commande : il donne son genre et son nombre à tout le groupe."
-      - a_quoi_ca_sert: "La chaîne d'accord est l'une des règles qu'on vérifie le plus en dictée et dans les examens : la maîtriser, c'est gagner beaucoup de points."
+      - a_quoi_ca_sert: "« Les petits chats noirs » : tous les mots prennent la marque du pluriel. Tu l'utilises dans chaque dictée."
       - texte: |
           Le **groupe nominal** (GN) réunit un **déterminant**, un **nom** et parfois un ou plusieurs **adjectifs**.
           Le **nom est le chef** : il transmet son **genre** et son **nombre** à tout le groupe.

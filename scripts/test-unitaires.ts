@@ -7,7 +7,7 @@ import { planDefi } from "../src/lib/plan";
 import { toSpeech } from "../src/lib/speech";
 import { nombreDit } from "../src/lib/nombresDits";
 import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
-import { domainesATester, exercicesTest, jeuneLecteur, classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+import { domainesATester, exercicesTest, jeuneLecteur, lectriceAgile8, plancherBacle, questionsIle, testBacle, classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
 
 
 let ok = 0;
@@ -178,6 +178,38 @@ eq("blocs : inversion", pourquoiBlocs(0, 5, 9, 95), "Tu as inversé : tu as mis 
 eq("blocs : il manque", pourquoiBlocs(0, 1, 1, 95), "Tu as posé 1 barre de 10 et 1 petit cube : ça fait 11. Pour 95, ajoute 8 barres et ajoute 4 petits cubes.");
 
 eq("voix : majuscules d'insistance", toSpeech("Résume CETTE leçon : COMPRENDRE, puis VÉRIFIER. CE1 et ADN."), "Résume cette leçon : comprendre, puis vérifier. CE1 et ADN.");
+// ---------- Audit « 8 ans » ----------
+eq("test bâclé : 5 « je ne sais pas » sur 6", testBacle(5, 6), true);
+eq("test bâclé : 3 sur 6 = non", testBacle(3, 6), false);
+eq("test bâclé : trop peu de réponses", testBacle(3, 3), false);
+const DB = [{ id: "nb", min: 0, max: 12 }, { id: "mes", min: 2, max: 5 }] as unknown as Parameters<typeof plancherBacle>[0];
+const pb = plancherBacle(DB, { nb: -1, mes: 1 }, 8, NOV);
+eq("plancher bâclé : pas sous la classe précédente (8 ans, novembre)", Math.round(pb.nb * 10) / 10, 0.7);
+eq("plancher bâclé : île pas commencée inchangée", pb.mes, 1);
+eq("île sans marche basse : 1 question à 8 ans en novembre", questionsIle({ min: 2 } as never, 8, 6, false, NOV), 1);
+eq("île commencée : 2 questions", questionsIle({ min: 0 } as never, 8, 6, false, NOV), 2);
+eq("île sans marche basse : 3 questions à 9 ans", questionsIle({ min: 2 } as never, 9, 6, false, NOV), 3);
+eq("lectrice à l'aise de 8 ans", lectriceAgile8({ age: 8, lecteur: "oui" }), true);
+eq("lectrice débutante de 8 ans", lectriceAgile8({ age: 8, lecteur: "debutant" }), false);
+const SP8 = [...SPJ, { type: "nombre", enonce: "n2", niveau: 1 }, { type: "nombre", enonce: "n3", niveau: 2 }] as ExSpec[];
+for (let i = 0; i < 20; i++) {
+  const p = planDefi(SP8, 5, { jeune: true, unRappel: true });
+  if (p.filter((e) => e.rappel).length !== 1 || p.some((e) => e.type === "libre")) { ko.push("défi lectrice 8 ans : il faut exactement un « mot qui manque » et aucune rédaction"); break; }
+}
+ok++;
+for (let i = 0; i < 20; i++) {
+  const p = planDefi(SP8, 5, { jeune: true });
+  const c: Record<string, number> = {};
+  for (const e of p) c[e.type] = (c[e.type] ?? 0) + 1;
+  if (Math.max(...Object.values(c)) > 2) { ko.push("défi : un type dépasse la moitié alors que d'autres existent"); break; }
+}
+ok++;
+const W8: World[] = [{ id: "z", titre: "Z", matiere: "maths", cycle: "explorateurs", niveau: "CE2", lecons: [{ id: "l1", titre: "L1", exercices: [{ type: "nombre", enonce: "x" }] }, { id: "l2", titre: "L2", exercices: [{ type: "nombre", enonce: "x" }] }] } as unknown as World];
+const D8 = domainesDe("maths", W8, [{ id: "geo", titre: "Géo", mondes: ["z"] }]);
+const et8 = construireParcours(D8, { geo: D8[0].min - 1 }, 8, () => false, 18, NOV);
+eq("parcours : île pas commencée = « nouveau »", et8.every((e) => e.raison === "nouveau"), true);
+
+eq("plancher bâclé : île commencée depuis plus d'un an = au moins son début", plancherBacle([{ id: "calc", min: 1, max: 5 }] as never, { calc: 0 }, 8, NOV).calc, 1);
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

@@ -62,7 +62,7 @@ lecons:
       - a_quoi_ca_sert: "Comprendre les habitats aide à protéger les animaux : quand on détruit leur milieu, ils disparaissent."
       - texte: |
           Chaque être vivant vit dans un **milieu** adapté : la **mare**, la **forêt**, le **désert**, la **banquise**, l'**océan**…
-          Il possède des **adaptations** : le chameau stocke des graisses dans ses bosses et supporte longtemps le manque d'eau ; l'ours polaire a une épaisse couche de graisse et de fourrure ; le poisson a des branchies ; le cactus a des épines au lieu de feuilles pour perdre moins d'eau.
+          Il possède des **adaptations** : le chameau tient longtemps sans boire ; l'ours polaire a une épaisse fourrure ; le poisson respire avec des branchies ; le cactus a des épines au lieu de feuilles pour garder son eau.
       - astuce:
           texte: "Chaque adaptation répond à un problème du milieu : fourrure épaisse contre le froid, grandes oreilles contre la chaleur, palmes pour nager."
           qui: mia
@@ -92,7 +92,7 @@ lecons:
       - dialogue:
           - zero: "Qui mange qui dans la forêt ? J'espère que personne ne mange les hamsters…"
           - neo: "Hmm… le renard, peut-être. Construisons la chaîne de qui mange qui."
-      - a_quoi_ca_sert: "Les chaînes alimentaires montrent que tout est lié : si une espèce disparaît, toutes celles qui en dépendent sont menacées."
+      - a_quoi_ca_sert: "Le lapin mange l'herbe, le renard mange le lapin. Si l'herbe disparaît, ton lapin n'a plus rien à manger !"
       - texte: |
           Une **chaîne alimentaire** montre qui mange qui. La flèche veut dire « **est mangé par** » :
           **herbe → lapin → renard**.
@@ -101,7 +101,7 @@ lecons:
           Les **décomposeurs** (vers de terre, champignons, bactéries) recyclent les êtres morts en sels minéraux pour les plantes.
       - visuel: {"type":"frise","titre":"Une chaîne alimentaire","fleche":"« est mangé par »","points":[{"emoji":"🌿","label":"herbe","sous":"producteur"},{"emoji":"🐇","label":"lapin","sous":"herbivore"},{"emoji":"🦊","label":"renard","sous":"carnivore"}]}
       - astuce:
-          texte: "La flèche veut dire « est mangé par » : elle va du mangé vers le mangeur, comme l'énergie qui passe de l'un à l'autre. Herbe → lapin → renard."
+          texte: "La flèche veut dire « est mangé par » : elle va du mangé vers le mangeur. Herbe → lapin → renard."
           qui: neo
       - retiens: "La flèche = « est mangé par ». Une chaîne commence par une plante. Herbivore, carnivore, omnivore. Les décomposeurs recyclent."
     exercices:

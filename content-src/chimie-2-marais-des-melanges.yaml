@@ -41,7 +41,7 @@ lecons:
           texte: "Le tamis garde les gros morceaux, le filtre garde même les tout petits. Plus les trous sont petits, plus on sépare finement."
           qui: zero
       - retiens: "Tamis : sépare les gros des petits morceaux. Filtre : retient les grains solides, laisse passer le liquide. Une eau filtrée n'est pas forcément potable."
-      - a_quoi_ca_sert: "Les stations de traitement filtrent l'eau sur du sable ; la cafetière filtre le café ; l'aspirateur filtre la poussière."
+      - a_quoi_ca_sert: "Quand tu égouttes tes pâtes, tu filtres ! La passoire garde les pâtes et laisse partir l'eau."
     exercices:
       - type: qcm
         vars: { t: [["séparer des cailloux et du sable", "un tamis", "un aimant", "un congélateur"], ["séparer de la terre et de l'eau", "un filtre", "une balance", "un thermomètre"], ["séparer le marc de café et le café", "un filtre", "un tamis à gros trous", "un chronomètre"]] }
@@ -84,10 +84,10 @@ lecons:
           observation: "L'eau disparaît peu à peu, et de petits cristaux blancs apparaissent : c'est le sel."
           explication: "L'eau s'est évaporée (elle est partie dans l'air sous forme de vapeur), mais le sel ne s'évapore pas : il reste. C'est exactement ce qui se passe dans les marais salants !"
       - astuce:
-          texte: "Décanter = attendre que le lourd tombe au fond. Évaporer = chauffer pour que l'eau parte et que le sel reste. Ce sont les deux méthodes des marais salants."
+          texte: "Décanter : attendre que le lourd tombe au fond. Évaporer : chauffer pour que l'eau parte et que le sel reste."
           qui: mia
       - retiens: "Décanter : laisser reposer, le solide tombe au fond. Évaporer : l'eau s'en va, ce qui était dissous reste."
-      - a_quoi_ca_sert: "Les marais salants de Guérande récoltent le sel de mer par évaporation au soleil et au vent."
+      - a_quoi_ca_sert: "Laisse un verre d'eau salée au soleil : l'eau s'en va et le sel reste. C'est comme ça qu'on récolte le sel de ta cuisine."
     exercices:
       - type: qcm
         vars: { t: [["récupérer le sel de l'eau de mer", "l'évaporation", "la filtration", "le tamisage"], ["éclaircir une eau boueuse sans rien utiliser", "la décantation", "l'évaporation", "le tamisage"], ["enlever des grains de sable d'une eau", "la filtration", "l'évaporation", "le congélateur"]] }

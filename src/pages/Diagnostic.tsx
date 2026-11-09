@@ -10,7 +10,7 @@ import { Bubble } from "../components/Mascot";
 import { CarteTalents } from "../components/CarteTalents";
 import { VerifSon } from "../components/VerifSon";
 import {
-  ageScolaire, nomIle, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
+  ageScolaire, nomIle, questionsIle, testBacle, plancherBacle, construireParcours, departEscalier, domainesATester, domainesDe, estimation, exercicesTest, leconPour, mondesAOuvrir, pas,
   questionsParIle, type Domaine, type Escalier,
 } from "../lib/parcours";
 
@@ -59,6 +59,13 @@ export function Diagnostic() {
   });
   const aTester = useMemo(() => (enCours ? tous.filter((d) => enCours[d.id] === undefined) : tous), [tous, enCours]);
   const nbQ = questionsParIle(age, doms.length, point);
+  const nbQIle = (x: Domaine) => questionsIle(x, age, doms.length, point);
+  const totalQ = aTester.reduce((t, x) => t + nbQIle(x), 0);
+  const varie = aTester.some((x) => nbQIle(x) !== nbQ);
+  // test fait trop vite : on compte les « Je ne sais pas encore » de CE test-ci
+  const nspAuDepart = useRef(child.counters?.["test-je-ne-sais-pas"] ?? 0);
+  const repondues = useRef(0);
+  const [bacle, setBacle] = useState(false);
   const dejaVisitees = tous.length - aTester.length;
 
   const [started, setStarted] = useState(false);
@@ -76,7 +83,7 @@ export function Diagnostic() {
       ? [`On reprend ta carte des talents ! Il reste ${iles(aTester.length)} à visiter.`, "Si tu ne sais pas, touche « Je ne sais pas encore ». Après chaque île, tu peux faire une pause."]
       : jeune
         ? [
-            `On va visiter ${iles(aTester.length)}. Sur chaque île, ${nbQ} petites questions. Ce n'est pas une interro : ça sert à savoir par où commencer.`,
+            `On va visiter ${iles(aTester.length)}. Sur chaque île, ${varie ? `1 ou ${nbQ}` : nbQ} petites questions. Ce n'est pas une interro : ça sert à savoir par où commencer.`,
             "Si tu ne sais pas, touche « Je ne sais pas encore » : c'est très bien aussi ! Après chaque île, tu peux faire une pause.",
           ]
         : [
@@ -142,7 +149,11 @@ export function Diagnostic() {
       return;
     }
     const fait = (k: string) => !!child.progress[k]?.done;
-    const niveauxFinaux = { ...(point ? ancien?.niveaux : {}), ...acquis };
+    // presque que des « Je ne sais pas encore » : on ne redescend pas sous la classe précédente
+    const nsp = (getState().children.find((c) => c.id === child.id)?.counters?.["test-je-ne-sais-pas"] ?? 0) - nspAuDepart.current;
+    const estBacle = !point && testBacle(nsp, repondues.current);
+    const niveauxBruts = { ...(point ? ancien?.niveaux : {}), ...acquis };
+    const niveauxFinaux = estBacle ? plancherBacle(doms, niveauxBruts, age) : niveauxBruts;
     const etapes = construireParcours(doms, niveauxFinaux, age, fait);
     const ouvrir = mondesAOuvrir(doms, niveauxFinaux, etapes);
     const nonTestes = doms.filter((d) => niveauxFinaux[d.id] === undefined).map((d) => d.id);
@@ -151,12 +162,14 @@ export function Diagnostic() {
       c.validatedWorlds = [...new Set([...c.validatedWorlds, ...ouvrir])];
       c.diag = { at: Date.now(), validated: ouvrir };
       c.counters[`diag:${mat}`] = (c.counters[`diag:${mat}`] ?? 0) + 1;
+      if (estBacle) c.counters[`diag-bacle:${mat}`] = (c.counters[`diag-bacle:${mat}`] ?? 0) + 1;
       delete c.diagEnCours;
     });
     sortieGeree.current = true;
     sfx.fanfare();
     setEntracte(null);
     setNiveaux(niveauxFinaux);
+    setBacle(estBacle);
     setFini(true);
   };
 
@@ -175,7 +188,7 @@ export function Diagnostic() {
         </div>
         {jeune && <VerifSon />}
         <p className="small muted center">
-          {aTester.length * nbQ} petites questions{jeune && !point && aTester.length > 1 ? `, ${nbQ} par île, avec une pause possible entre deux îles` : ""} · {planete?.titre}
+          {totalQ} petites questions{jeune && !point && aTester.length > 1 ? `, ${varie ? `1 ou ${nbQ}` : nbQ} par île, avec une pause possible entre deux îles` : ""} · {planete?.titre}
         </p>
         <div className="center">
           <button
@@ -201,8 +214,21 @@ export function Diagnostic() {
       <div className="page narrow">
         <h1 className="center">🗺️ Ta carte des talents</h1>
         <CarteTalents doms={doms} niveaux={niveaux} age={age} />
-        <Bubble who="mia" humeur="joie" text="Bravo, tu as visité toutes les îles ! Avec ce que tu sais déjà, j'ai préparé ton parcours : on commence par des choses que tu vas réussir, puis on avance petit à petit." />
+        {bacle ? (
+          <Bubble
+            who="mia"
+            humeur="reflexion"
+            text="Tu as souvent touché « Je ne sais pas encore ». Tu avais besoin d'une pause, ou c'était vraiment difficile ? Si tu veux, refais la carte avec un adulte à côté de toi. En attendant, ton parcours commence à ton niveau de l'an dernier."
+          />
+        ) : (
+          <Bubble who="mia" humeur="joie" text="Bravo, tu as visité toutes les îles ! Avec ce que tu sais déjà, j'ai préparé ton parcours : on commence par des choses que tu vas réussir, puis on avance petit à petit." />
+        )}
         <div className="center stack">
+          {bacle && (
+            <button className="btn btn-soft" onClick={() => go(`/diagnostic?mode=refaire&n=${Date.now()}`)}>
+              🧑‍🤝‍🧑 Refaire la carte avec un adulte
+            </button>
+          )}
           <button className="btn btn-primary btn-xl" onClick={() => go("/parcours")}>
             🗺️ Voir mon parcours
           </button>
@@ -282,7 +308,7 @@ export function Diagnostic() {
         <strong>
           {d.emoji} {nomIle(d, age)}
         </strong>{" "}
-        · île {numIle} sur {tous.length} · question {esc.reponses.length + 1} sur {nbQ}
+        · île {numIle} sur {tous.length} · question {esc.reponses.length + 1} sur {nbQIle(d)}
       </p>
       <ExercisePlayer
         key={q.inst.seed}
@@ -292,8 +318,9 @@ export function Diagnostic() {
         maxTries={1}
         test
         onResult={(r) => {
+          repondues.current++;
           const e2 = pas(esc, d, q.niveau, r.ok);
-          if (e2.reponses.length < nbQ) {
+          if (e2.reponses.length < nbQIle(d)) {
             const t = tirer(d, e2.cible, age);
             if (t) {
               setEsc(e2);

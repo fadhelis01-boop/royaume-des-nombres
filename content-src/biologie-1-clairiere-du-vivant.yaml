@@ -75,7 +75,7 @@ lecons:
           texte: "On ne goûte jamais une baie, un champignon ou un liquide inconnu : certains sont très toxiques."
           qui: mia
       - astuce:
-          texte: "Montre-les sur ton visage de haut en bas : les yeux (vue), le nez (odorat), la bouche (goût), les oreilles sur les côtés (ouïe), et la peau partout (toucher)."
+          texte: "Montre-les sur ton visage : les yeux (vue), le nez (odorat), la bouche (goût), les oreilles (ouïe), et la peau partout (toucher)."
           qui: mia
       - retiens: "Vue (yeux), ouïe (oreilles), odorat (nez), goût (langue), toucher (peau). Le cerveau interprète les messages."
     exercices:
@@ -125,7 +125,7 @@ lecons:
             - consigne: "Dessine la fleur en haut : un cœur et des pétales."
               trace: "M50 30 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 M50 25 C44 14 56 14 50 25 M55 30 C66 24 66 36 55 30 M45 30 C34 24 34 36 45 30"
       - astuce:
-          texte: "Une plante, c'est comme une maison : les racines sont la cave qui puise l'eau, la tige est l'escalier, les feuilles sont la cuisine qui fabrique la nourriture."
+          texte: "Une plante, c'est une maison : les racines sont la cave qui boit l'eau, les feuilles la cuisine qui fait la nourriture."
           qui: neo
       - retiens: "Racines (eau), tige (transport), feuilles (nourriture grâce à la lumière), fleur → fruit → graines."
       - a_quoi_ca_sert: "Dans ton assiette, il y a des plantes ! La carotte est une racine, la salade des feuilles."
@@ -256,7 +256,7 @@ lecons:
           observation: "Après quelques jours, une petite racine sort de la graine, puis une tige qui monte et deux premières feuilles."
           explication: "Grâce à l'eau et à la chaleur, la graine se réveille : elle utilise ses réserves pour faire sa racine et sa tige. Ensuite, ses feuilles prennent le relais avec la lumière."
       - astuce:
-          texte: "Une graine a besoin d'eau, d'air et de chaleur pour germer, mais pas forcément de lumière : elle a déjà sa réserve de nourriture à l'intérieur."
+          texte: "Une graine a besoin d'eau, d'air et de chaleur pour germer. Pas de lumière : elle a déjà sa nourriture à l'intérieur."
           qui: neo
       - retiens: "Pour germer, une graine a besoin d'eau, d'air et de chaleur. D'abord la racine, puis la tige et les feuilles."
     exercices:

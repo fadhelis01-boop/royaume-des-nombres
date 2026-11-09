@@ -24,7 +24,7 @@ lecons:
       - dialogue:
           - mia: "Écoute : « Je mangeais », « je mange », « je mangerai ». Le même verbe, trois moments."
           - neo: "Les mots du temps aident aussi : hier, autrefois → passé ; maintenant → présent ; demain, bientôt → futur."
-      - a_quoi_ca_sert: "Les temps permettent de raconter dans l'ordre : ce qui s'est passé, ce qui se passe, ce qui va arriver. Sans eux, toutes les histoires seraient mélangées."
+      - a_quoi_ca_sert: "Hier, aujourd'hui, demain : les temps te servent à raconter ta journée dans l'ordre."
       - texte: |
           - **Passé** : ce qui est déjà arrivé. *Hier, j'**ai joué**. Autrefois, on **écrivait** à la plume.*
           - **Présent** : ce qui se passe maintenant. *Aujourd'hui, je **joue**.*
@@ -60,7 +60,7 @@ lecons:
       - dialogue:
           - neo: "Finir : je finis, tu finis, il finit, nous finISSons… Le 2e groupe a son ISS au pluriel."
           - zero: "Et prendre ? Je prends, tu prends, il prend… avec un D ! Pas de T. Il est têtu, ce verbe."
-      - a_quoi_ca_sert: "Le présent est le temps que l'on utilise le plus : pour parler de soi, des vérités générales et de ce qui se passe maintenant."
+      - a_quoi_ca_sert: "Tu parles au présent tout le temps : « je joue », « tu viens », « on part »."
       - texte: |
           **2e groupe** (finir) : je fin**is**, tu fin**is**, il fin**it**, nous fin**issons**, vous fin**issez**, ils fin**issent**.
 
@@ -112,7 +112,7 @@ lecons:
           texte: "À l'imparfait, les terminaisons sont les mêmes pour TOUS les verbes : -ais, -ais, -ait, -ions, -iez, -aient. Une seule chanson à retenir !"
           qui: mia
       - retiens: "Imparfait = radical de **nous** + **ais, ais, ait, ions, iez, aient**. Pour tous les verbes !"
-      - a_quoi_ca_sert: "Raconter ce qui durait ou se répétait dans le passé : « Quand j'étais petit, je jouais tous les jours au parc. »"
+      - a_quoi_ca_sert: "« Quand j'étais petit, je jouais au parc. » L'imparfait te sert à raconter tes souvenirs."
     exercices:
       - type: mot
         vars: { v: [chanter, jouer, finir, prendre, faire, aller, être, avoir, voir, dire, manger, commencer, venir, lire, pouvoir, écrire], p: "1..6", g: [m, f] }

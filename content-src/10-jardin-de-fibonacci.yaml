@@ -48,7 +48,7 @@ lecons:
     exercices:
       - type: qcm
         vars: { m: [["🔺", "🟦", "🟦"], ["🍓", "🍓", "🍋"], ["🌞", "🌧️", "❄️"]] }
-        enonce: "Quel élément vient ensuite ?"
+        enonce: "Qu'est-ce qui vient ensuite ?"
         visuel: { type: motif, elements: ["{{m_0}}", "{{m_1}}", "{{m_2}}", "{{m_0}}", "{{m_1}}", "{{m_2}}", "{{m_0}}", "?"] }
         choix: ["{{m_1}}", "{{si(m_1==m_0, m_2, m_0)}}", "🐹"]
         correction: "Le motif de base est « {{m_0}} {{m_1}} {{m_2}} » : après {{m_0}}, vient {{m_1}}."
@@ -111,17 +111,17 @@ lecons:
         vars: { a: "1..30", r: "2..12" }
         enonce: "{{a}} ; {{a+r}} ; {{a+2*r}} ; {{a+3*r}} ; ?"
         reponse: "a+4*r"
-        correction: "Règle : + {{r}}. Suivant : {{a+4*r}}."
+        correction: "Règle : + {{r}}. Le nombre d'après : {{a+4*r}}."
       - type: nombre
         vars: { a: "60..120", r: "3..11" }
         enonce: "{{a}} ; {{a-r}} ; {{a-2*r}} ; {{a-3*r}} ; ?"
         reponse: "a-4*r"
-        correction: "Règle : − {{r}}. Suivant : {{a-4*r}}."
+        correction: "Règle : − {{r}}. Le nombre d'après : {{a-4*r}}."
       - type: nombre
         vars: { a: [1, 2, 3, 5], q: [2, 3] }
         enonce: "{{a}} ; {{a*q}} ; {{a*q*q}} ; {{a*q^3}} ; ?"
         reponse: "a*q^4"
-        correction: "Règle : × {{q}}. Suivant : {{a*q^4}}."
+        correction: "Règle : × {{q}}. Le nombre d'après : {{a*q^4}}."
       - type: nombre
         vars: { a: "2..9", r: "2..6" }
         enonce: "Une suite commence par {{a}} et on ajoute {{r}} à chaque fois. Quel est le 10ᵉ terme ?"
@@ -155,7 +155,7 @@ lecons:
       - histoire:
           titre: Un peu d'histoire
           texte: "Leonardo de Pise, dit **Fibonacci**, est un mathématicien italien. En 1202, dans son *Liber abaci* (le « livre du calcul »), il pose un problème de lapins qui se reproduisent : le nombre de couples suit cette suite ! Ce livre a aussi fait connaître en Europe les chiffres indo-arabes (0, 1, 2… 9) que nous utilisons aujourd'hui."
-      - a_quoi_ca_sert: "On retrouve souvent les nombres de Fibonacci dans la nature : le nombre de pétales de beaucoup de fleurs (3, 5, 8, 13…), les spirales des pommes de pin et des tournesols. Les informaticiens l'utilisent aussi dans certains algorithmes."
+      - a_quoi_ca_sert: "Compte les pétales d'une fleur du jardin : 3, 5, 8… Ce sont souvent des nombres de cette suite !"
       - question:
           type: nombre
           vars: { n: "6..12" }
@@ -205,14 +205,14 @@ lecons:
             - ["Zéro", "✗", "✗", "✓"]
       - texte: |
           **Si… alors…** : « S'il pleut, alors Lya prend son parapluie. » Si Lya n'a pas de parapluie, on peut en déduire… qu'il ne pleut pas !
-      - a_quoi_ca_sert: "Les détectives, les médecins (diagnostic), les programmeurs (conditions « si… alors »), les jeux comme le Sudoku… Le raisonnement logique est le cœur des mathématiques."
+      - a_quoi_ca_sert: "Tu joues au détective : avec des indices, tu élimines les mauvaises réponses. C'est aussi le secret des jeux d'énigmes."
       - question:
           type: qcm
           enonce: "Trois boîtes : une rouge, une bleue, une verte. Le trésor n'est pas dans la rouge. Il n'est pas dans la bleue. Où est-il ?"
           choix: ["dans la verte", "dans la rouge", "dans la bleue", "on ne peut pas savoir"]
           correction: "On élimine la rouge et la bleue : il ne reste que la verte."
       - astuce:
-          texte: "Fais un tableau avec des croix et des ronds : chaque indice te permet de cocher ou d'éliminer une case. Quand il ne reste qu'une possibilité, c'est la bonne."
+          texte: "Fais un tableau de croix : chaque indice élimine des cases. Quand il n'en reste qu'une, c'est la bonne réponse."
           qui: mia
     exercices:
       - type: qcm

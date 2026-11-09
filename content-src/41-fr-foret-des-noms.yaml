@@ -172,7 +172,7 @@ lecons:
           texte: "Les mots qui finissent déjà par **s, x ou z** ne changent pas : une souris → des souris ; un nez → des nez ; une noix → des noix."
           qui: neo
       - astuce:
-          texte: "Un seul, rien ; plusieurs, un s. Le s du pluriel est muet mais il est là, comme un petit serpent qui se cache au bout du mot."
+          texte: "Un seul : rien. Plusieurs : un s. Ce s ne s'entend pas, il se cache au bout du mot comme un petit serpent."
           qui: zero
       - a_quoi_ca_sert: "Un chat, des chats : le s te dit qu'il y en a plusieurs. Il aide celui qui lit ta phrase."
       - retiens: "**Plusieurs** → j'ajoute un **s** muet. Le déterminant m'aide : **les, des, mes**… annoncent le pluriel."
@@ -212,7 +212,7 @@ lecons:
           - Les noms en **-al** deviennent **-aux** : un cheval → des chev**aux**, un journal → des journ**aux**.
           - **Sept noms** en -ou prennent un x : bijou, caillou, chou, genou, hibou, joujou, pou.
       - astuce:
-          texte: "Pour les 7 noms en -ou, retiens la phrase : « Viens mon **chou**, mon **bijou**, mon **joujou**, sur mes **genoux**, jette des **cailloux** à ce **hibou** plein de **poux** ! »"
+          texte: "Retiens : « Viens mon chou, mon bijou, mon joujou, sur mes genoux, jette des cailloux à ce hibou plein de poux ! »"
           qui: mia
       - attention:
           texte: "Quelques exceptions prennent un s : des pneus, des bleus, des bals, des festivals, des carnavals."
@@ -250,7 +250,7 @@ lecons:
           - Le **verbe** : on peut le conjuguer, dire **hier… / demain…** (*il court, il courra*).
           - L'**adjectif** : il dit **comment est** le nom ; on peut mettre **très** devant (*très grand, très rouge*).
       - astuce:
-          texte: "Les tests rapides : je peux mettre « le » ou « un » devant ? C'est un nom. Je peux dire « hier, je… » ? C'est un verbe. Je peux ajouter « très » ? Souvent un adjectif."
+          texte: "Teste : « le » ou « un » devant ? C'est un nom. « Hier, je… » ? Un verbe. « Très » devant ? Souvent un adjectif."
           qui: neo
       - retiens: "Tests magiques : **un/une** → nom ; **hier/demain** → verbe ; **très** → adjectif."
     exercices:

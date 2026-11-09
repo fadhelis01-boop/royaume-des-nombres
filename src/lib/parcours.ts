@@ -106,6 +106,8 @@ export const AGE_JEUNE = 9;
 export const nomIle = (d: { titre: string; titreJeune?: string } | undefined, age: number) => (d ? (age < AGE_JEUNE && d.titreJeune ? d.titreJeune : d.titre) : "");
 /** Enfant à ménager dans les défis : moins de 9 ans (classe) ou lecteur pas encore à l'aise. */
 export const jeuneLecteur = (c: { age: number; classe?: number; lecteur?: string }) => ageScolaire(c) < AGE_JEUNE || (c.lecteur !== undefined && c.lecteur !== "oui");
+/** À 8 ans, une lectrice à l'aise (« lit tout seul ») garde un « mot qui manque » par défi (audit « 8 ans »). */
+export const lectriceAgile8 = (c: { age: number; classe?: number; lecteur?: string }) => ageScolaire(c) === 8 && c.lecteur === "oui";
 /**
  * Exercices du test pour une leçon. Avant 9 ans (audit « 7 ans ») : pas de mot à écrire (l'orthographe
  * mesurerait l'écriture, pas la notion) et seulement les exercices de niveau 1 ou 2 de la leçon
@@ -160,6 +162,40 @@ export function questionsParIle(age: number, nbDomaines: number, point = false):
   if (nbDomaines === 1) return 5;
   return age <= AGE_TEST_COURT ? QUESTIONS_PAR_DOMAINE_JEUNE : QUESTIONS_PAR_DOMAINE;
 }
+/**
+ * Questions pour une île donnée. À 8 ans, une île qui commence à peine en classe (son début est
+ * au-dessus du niveau du moment − 0,5) n'a qu'une question : elle n'a pas de « marche basse » où
+ * redescendre après une erreur (audit « 8 ans » : l'île « Mesurer » en novembre de CE2).
+ */
+export function questionsIle(d: Domaine, age: number, nbDomaines: number, point = false, quand?: Date): number {
+  const n = questionsParIle(age, nbDomaines, point);
+  if (point || nbDomaines === 1 || age !== 8) return n;
+  return d.min > niveauDuMoment(age, quand) - 0.5 ? 1 : n;
+}
+
+/** Part de « Je ne sais pas encore » au-delà de laquelle le test est jugé fait trop vite. */
+export const SEUIL_BACLE = 2 / 3;
+/** Le test a-t-il été fait trop vite (presque que des « Je ne sais pas encore ») ? Il faut au moins 4 réponses. */
+export const testBacle = (nsp: number, reponses: number) => reponses >= 4 && nsp / reponses > SEUIL_BACLE;
+/**
+ * Après un test fait trop vite, on ne fait pas redescendre l'enfant sous la classe précédente
+ * (niveau du moment − 1,5) : un parcours « de bébé » vexe autant qu'un parcours trop dur décourage.
+ * Les îles pas encore commencées gardent leur niveau.
+ */
+export function plancherBacle(doms: Domaine[], niveaux: Record<string, number>, age: number, quand?: Date): Record<string, number> {
+  const moment = niveauDuMoment(age, quand);
+  const plancher = moment - 1.5;
+  const out: Record<string, number> = { ...niveaux };
+  for (const d of doms) {
+    const n = out[d.id];
+    if (n === undefined) continue;
+    // une île commencée en classe depuis plus d'un an n'est pas « à découvrir »
+    const p = d.min <= moment - 1 ? Math.max(plancher, d.min) : plancher;
+    out[d.id] = Math.max(n, Math.min(p, d.max));
+  }
+  return out;
+}
+
 export function departEscalier(d: Domaine, age: number, depuis?: number, quand?: Date): Escalier {
   const c = depuis ?? niveauDuMoment(age, quand);
   return { cible: Math.max(d.min, Math.min(d.max, c)), reponses: [] };
@@ -192,12 +228,14 @@ export function construireParcours(doms: Domaine[], niveaux: Record<string, numb
     .map((d) => {
       const n = niveaux[d.id];
       const retard = attendu - n;
+      // île pas encore commencée (comme « à découvrir » sur la carte) : ses leçons sont nouvelles, pas « à revoir »
+      const pasCommence = n < d.min - 0.25;
       const items: EtapeParcours[] = [];
       if (retard > 0) {
         const cons = [...d.lecons].reverse().find((l) => l.niveau <= n && l.niveau > n - 1 && !fait(l.key));
         if (cons) items.push({ key: cons.key, dom: d.id, raison: "consolider" });
       }
-      for (const l of d.lecons) if (l.niveau > n && l.niveau <= n + 1.5 && !fait(l.key) && !items.some((x) => x.key === l.key)) items.push({ key: l.key, dom: d.id, raison: retard > 0 ? "renforcer" : "nouveau" });
+      for (const l of d.lecons) if (l.niveau > n && l.niveau <= n + 1.5 && !fait(l.key) && !items.some((x) => x.key === l.key)) items.push({ key: l.key, dom: d.id, raison: retard > 0 && !pasCommence ? "renforcer" : "nouveau" });
       // une planète d'un ou deux domaines a besoin de plus d'étapes par domaine
       return { retard, items: items.slice(0, doms.length <= 2 ? 10 : 5) };
     })

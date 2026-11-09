@@ -76,7 +76,8 @@ export function ParcoursPage() {
               <span>
                 <strong>Prochaine étape</strong>
                 <small>
-                  {w.emoji} {l.titre}
+                  {/* le poussin du « Nid des nombres » vexe après 7 ans : on montre l'emoji de l'île */}
+                  {ageScolaire(child) >= 8 ? (doms.find((x) => x.id === prochaine.dom)?.emoji ?? w.emoji) : w.emoji} {l.titre}
                 </small>
               </span>
             </button>

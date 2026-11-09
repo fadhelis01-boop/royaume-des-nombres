@@ -1,3 +1,14 @@
+- version: "2.11.0"
+  date: "2026-11-09"
+  notes:
+    - "Carte des talents à 8 ans : 8 questions au lieu de 12. Les îles qui commencent à peine en classe n'ont qu'une question, et les conversions en millimètres ou en kilomètres ne tombent plus avant le CE2."
+    - "Si l'enfant touche presque toujours « Je ne sais pas encore », Lya lui propose de refaire la carte avec un adulte, et le parcours ne redescend pas en grande section."
+    - "À 8 ans, si l'enfant lit tout seul (réglage parent), un « mot qui manque » revient dans chaque défi."
+    - "Défis plus variés : jamais plus de la moitié des questions du même type, et 26 nouveaux exercices (relier, comparer, ranger, grenouille, ligne des nombres, payer) dans les leçons qui n'avaient presque que des calculs."
+    - "36 « À quoi ça sert ? » du CE2 réécrits avec des exemples de la vie de l'enfant ; 32 astuces raccourcies ; des mots plus simples dans les corrections."
+    - "Les fables et les longs textes du CE2 sont présentés en plusieurs écrans."
+    - "Parcours : « 🌟 nouveau » pour ce qui n'a jamais été vu en classe, et l'emoji de l'île plutôt que le poussin du premier monde."
+    - "Corrections de maths plus parlantes : conversions, doubles, angles droits, axes de symétrie, fractions."
 - version: "2.10.0"
   date: "2026-11-09"
   notes:

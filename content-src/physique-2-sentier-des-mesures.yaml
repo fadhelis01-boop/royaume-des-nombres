@@ -34,6 +34,7 @@ lecons:
       - astuce:
           texte: "Avec une règle, commence toujours au zéro, pas au bord de la règle ! Et pour un chronomètre, déclenche et arrête au bon moment."
           qui: mia
+      - a_quoi_ca_sert: "Combien mesure ton bureau ? Combien de temps dure ta récré ? Tu vas savoir le mesurer."
       - retiens: "On mesure à partir du zéro. 1 m = 100 cm, 1 cm = 10 mm, 1 min = 60 s. On répète une mesure pour être plus précis."
     exercices:
       - type: nombre
@@ -62,7 +63,7 @@ lecons:
       - dialogue:
           - zero: "Je suis plus rapide qu'un escargot, mais moins qu'un guépard !"
           - mia: "Pour comparer des vitesses, il faut une distance et une durée."
-      - a_quoi_ca_sert: "Comparer des vitesses sert pour savoir si on arrivera à l'heure, choisir un moyen de transport ou comprendre les limitations de vitesse."
+      - a_quoi_ca_sert: "Qui va le plus vite, toi à vélo ou ton copain à pied ? Comparer les vitesses, c'est savoir qui arrive en premier."
       - texte: |
           Pour savoir qui est le plus **rapide** :
           - sur une **même distance**, c'est celui qui met **le moins de temps** ;
@@ -114,7 +115,7 @@ lecons:
           texte: "Sur une bascule, le plus lourd doit se rapprocher du milieu pour faire équilibre. C'est le secret des leviers et des pinces !"
           qui: neo
       - retiens: "Équilibre : masse × distance au pivot doit être pareil des deux côtés. Plus lourd → plus près du pivot."
-      - a_quoi_ca_sert: "Les ciseaux, la brouette, le décapsuleur, la pince et le pied-de-biche sont des leviers : ils démultiplient la force."
+      - a_quoi_ca_sert: "Sur la balançoire à bascule, si un adulte s'assoit près du milieu, tu peux le soulever en t'asseyant tout au bout ! Tes ciseaux marchent pareil : ce sont des leviers."
     exercices:
       - type: nombre
         vars: { m: [20, 25, 30], d: [1, 2], k: [2] }

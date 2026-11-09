@@ -33,7 +33,7 @@ lecons:
           *Le chat mange une souris.* ✔ — *mange chat le souris une* ✘
       - visuel: {"type":"phrase","legende":"Une phrase : une majuscule au début, un point à la fin, et elle a du sens.","groupes":[{"mots":"Le","role":"determinant","etiquette":"majuscule"},{"mots":"chien","role":"nom"},{"mots":"court","role":"verbe"},{"mots":"dans le jardin","role":"ccl"},{"mots":".","role":"ponctuation","etiquette":"point"}]}
       - astuce:
-          texte: "Une phrase, c'est comme un train : une majuscule pour la locomotive, un point pour le dernier wagon, et des mots rangés dans l'ordre pour que ça roule."
+          texte: "Une phrase, c'est un train : la majuscule est la locomotive, le point le dernier wagon, et les mots sont rangés dans l'ordre."
           qui: zero
       - retiens: "Une phrase = **majuscule** au début + **sens** + **point** à la fin."
       - a_quoi_ca_sert: "Avec une majuscule et un point, ton lecteur sait où ta phrase commence et où elle finit."
@@ -197,7 +197,7 @@ lecons:
       - dialogue:
           - zero: "J'ai acheté des graines des noix des noisettes des pommes et des carottes. *souffle* Je n'ai plus d'air."
           - mia: "Il te manque des virgules ! Elles te laissent respirer entre chaque mot de ta liste."
-      - a_quoi_ca_sert: "La virgule permet de respirer et d'éviter les malentendus : « On mange, les enfants ! » n'a pas du tout le même sens que « On mange les enfants ! »"
+      - a_quoi_ca_sert: "« On mange, les enfants ! » ou « On mange les enfants ! » : une virgule, et ta phrase change complètement !"
       - texte: |
           La **virgule** marque une **petite pause**. On l'utilise surtout pour séparer les éléments d'une **liste** (une énumération) :
           *J'ai acheté des graines**,** des noix**,** des noisettes **et** des carottes.*
@@ -205,9 +205,9 @@ lecons:
           texte: "Pas de virgule devant le dernier « et » d'une liste : *du pain, du lait **et** du beurre*."
           qui: neo
       - astuce:
-          texte: "Dans une liste, une virgule entre chaque élément… sauf avant le dernier, où c'est « et » qui la remplace."
+          texte: "Dans une liste, une virgule entre chaque mot de la liste… sauf avant le dernier, où c'est « et » qui la remplace."
           qui: neo
-      - retiens: "Dans une liste, une **virgule** entre chaque élément, sauf devant le dernier **et**."
+      - retiens: "Dans une liste, une **virgule** entre chaque mot de la liste, sauf devant le dernier **et**."
     exercices:
       - type: qcm
         vars: { t: [["J'aime les pommes, les poires et les fraises.", "J'aime les pommes les poires et les fraises.", "J'aime les pommes, les poires, et, les fraises."], ["Il prend son sac, sa trousse et son cahier.", "Il prend son sac sa trousse et son cahier.", "Il prend, son sac, sa trousse, et son cahier."], ["Nous avons vu un lion, un zèbre et une girafe.", "Nous avons vu un lion un zèbre et une girafe.", "Nous avons vu un lion, un zèbre, et, une girafe."]] }

@@ -79,7 +79,7 @@ lecons:
           durees: "noire noire noire noire noire noire noire noire"
         legende: "La gamme de do, du do grave (sur sa petite ligne) au do aigu."
       - astuce:
-          texte: "Les notes sur les lignes en clé de sol, de bas en haut : mi, sol, si, ré, fa. Retiens « Mi Sol Si Ré Fa » comme une formule magique."
+          texte: "Sur les lignes en clé de sol, de bas en haut : mi, sol, si, ré, fa. Retiens la formule « Mi Sol Si Ré Fa »."
           qui: zero
       - retiens: "Portée = 5 lignes. Plus haut = plus aigu. Clé de sol : le sol est sur la 2ᵉ ligne ; mi 1ʳᵉ ligne, si 3ᵉ, ré 4ᵉ, fa 5ᵉ."
     exercices:
@@ -100,6 +100,14 @@ lecons:
         visuel: { type: portee, notes: "{{t_0}}", noms: non, durees: "noire noire noire" }
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"
+      - type: ordre
+        enonce: "Range les notes des lignes de la portée, de la ligne du bas à celle du haut."
+        items: ["mi", "sol", "si", "ré", "fa"]
+        correction: "De bas en haut : mi, sol, si, ré, fa (« Mi Sol Si Ré Fa »)."
+      - type: relier
+        enonce: "🔗 Relie chaque ligne de la portée à sa note (clé de sol)."
+        paires: [["1ʳᵉ ligne", "mi"], ["2ᵉ ligne", "sol"], ["3ᵉ ligne", "si"], ["4ᵉ ligne", "ré"]]
+        correction: "En clé de sol : mi sur la 1ʳᵉ ligne, sol sur la 2ᵉ, si sur la 3ᵉ, ré sur la 4ᵉ."
 
   - id: les-durees
     titre: "Ronde, blanche, noire, croche"
@@ -109,7 +117,7 @@ lecons:
       - dialogue:
           - zero: "Comment savoir combien de temps tenir une note ?"
           - mia: "Sa forme te le dit : ronde, blanche, noire, croche…"
-      - a_quoi_ca_sert: "Les durées disent combien de temps tenir chaque note : sans elles, une mélodie serait méconnaissable."
+      - a_quoi_ca_sert: "Les durées te disent combien de temps tenir chaque note. Sans elles, ta chanson préférée serait méconnaissable."
       - texte: |
           La **forme** de la note indique sa **durée** (avec la **noire** = 1 temps) :
           | Figure | Aspect | Durée |

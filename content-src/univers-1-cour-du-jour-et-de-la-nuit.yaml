@@ -40,7 +40,7 @@ lecons:
           observation: "L'autocollant passe tour à tour dans la partie éclairée (le jour) et dans la partie sombre (la nuit)."
           explication: "La lampe ne bouge pas : c'est la rotation du ballon qui crée l'alternance jour/nuit, comme la Terre en 24 heures."
       - astuce:
-          texte: "Prends une lampe (le Soleil) et une orange (la Terre) : fais tourner l'orange sur elle-même. Le côté éclairé est le jour, l'autre côté la nuit."
+          texte: "Une lampe (le Soleil), une orange (la Terre) : fais tourner l'orange. Le côté éclairé, c'est le jour ; l'autre, la nuit."
           qui: neo
       - retiens: "La Terre tourne sur elle-même en 24 h : la moitié face au Soleil vit le jour, l'autre la nuit."
     exercices:
@@ -114,7 +114,7 @@ lecons:
           Astuce (hémisphère Nord) : si la Lune a la forme d'un **p** (bosse à droite), elle grandit (« **p**remier ») ; si elle a la forme d'un **d** (bosse à gauche), elle décroît (« **d**ernier »).
       - visuel: {"type":"astres","mode":"phases"}
       - astuce:
-          texte: "Chez nous, quand la Lune a la forme d'un D, elle croît ; quand elle a la forme d'un C, elle décroît. Elle dit le contraire de ses lettres : la Lune est menteuse !"
+          texte: "Lune en forme de D : elle grossit. En forme de C : elle diminue. Elle dit le contraire de ses lettres : c'est une menteuse !"
           qui: zero
       - retiens: "La Lune est éclairée par le Soleil. Phases : nouvelle lune, croissant, premier quartier, pleine lune, dernier quartier… en 29,5 jours."
     exercices:
@@ -158,7 +158,7 @@ lecons:
       - retiens: "Thermomètre (température), pluviomètre (pluie), girouette (direction du vent), anémomètre (vitesse du vent), baromètre (pression)."
     exercices:
       - type: qcm
-        vars: { t: [["la quantité de pluie tombée", "un pluviomètre", "un thermomètre", "une girouette"], ["la direction du vent", "une girouette", "un pluviomètre", "un baromètre"], ["la vitesse du vent", "un anémomètre", "un thermomètre", "un pluviomètre"], ["la température de l'air", "un thermomètre", "une girouette", "un anémomètre"]] }
+        vars: { t: [["combien il a plu", "un pluviomètre", "un thermomètre", "une girouette"], ["la direction du vent", "une girouette", "un pluviomètre", "un baromètre"], ["la vitesse du vent", "un anémomètre", "un thermomètre", "un pluviomètre"], ["la température de l'air", "un thermomètre", "une girouette", "un anémomètre"]] }
         enonce: "Quel instrument mesure {{t_0}} ?"
         choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
         correction: "{{t_1}}"

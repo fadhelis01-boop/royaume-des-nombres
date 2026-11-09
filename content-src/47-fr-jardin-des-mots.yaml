@@ -31,7 +31,7 @@ lecons:
           En haut de chaque page, deux **mots-repères** donnent le premier et le dernier mot de la page.
           Pour chaque mot, on trouve : sa **nature** (n. m., v., adj.), sa **définition**, souvent un **exemple**.
       - astuce:
-          texte: "Chante l'alphabet dans ta tête et coupe le dictionnaire en trois : A à G au début, H à P au milieu, Q à Z à la fin."
+          texte: "Coupe le dictionnaire en trois : de A à G au début, de H à P au milieu, de Q à Z à la fin."
           qui: zero
       - a_quoi_ca_sert: "Un mot inconnu dans ton livre ? Le dictionnaire te dit ce qu'il veut dire."
       - retiens: "Je compare les lettres **une par une**. Les **mots-repères** me disent si mon mot est sur la page."
@@ -76,7 +76,7 @@ lecons:
           texte: "Il faut que le **sens** soit commun : « lait » et « laid » se ressemblent mais ne sont pas de la même famille !"
           qui: neo
       - astuce:
-          texte: "La famille aide à écrire ! Le **d** muet de « grand » s'entend dans « gran**d**ir » ; le **t** de « chat » s'entend dans « cha**t**on »."
+          texte: "La famille aide à écrire ! Le d muet de « grand » s'entend dans « grandir », le t de « chat » dans « chaton »."
           qui: mia
       - retiens: "Une famille = un **radical** + un **sens** commun. Elle aide à deviner les **lettres muettes**."
     exercices:

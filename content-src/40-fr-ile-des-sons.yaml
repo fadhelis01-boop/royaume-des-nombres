@@ -193,7 +193,7 @@ lecons:
       - dialogue:
           - mia: "Le E porte des chapeaux ! Et chaque chapeau change sa voix."
           - zero: "Moi je n'ai pas de chapeau. Mais j'ai des oreilles orange. C'est presque pareil."
-      - a_quoi_ca_sert: "Un accent change le mot : « ou » et « où », ce n'est pas pareil. Il t'aide aussi à bien lire."
+      - a_quoi_ca_sert: "Un accent change le mot : « ou » et « où », ce n'est pas pareil. Tu lis aussi plus facilement à voix haute."
       - texte: |
           - **é** (accent **aigu**, il monte vers la droite) se prononce **é** : été, école, bébé.
           - **è** (accent **grave**, il descend) se prononce **è** : père, mère, élève.
@@ -316,4 +316,8 @@ lecons:
         enonce: "Remets l'histoire de Pipo dans l'ordre."
         items: ["Pipo a faim.", "Il court jusqu'au jardin.", "Il tire la carotte.", "Il tombe sur les fesses.", "Le chien aboie et Pipo s'enfuit."]
         correction: "Faim → jardin → carotte → chute → fuite."
+      - type: relier
+        enonce: "Lis : *Ce matin, Pipo le lapin a faim. Il sort de son terrier et court jusqu'au jardin de la fermière. Là, il voit une grosse carotte orange. Il la tire, la tire… et tombe sur les fesses ! Le chien de la ferme aboie. Pipo s'enfuit avec sa carotte.*\n\n🔗 Relie chaque question à sa réponse."
+        paires: [["Qui a faim ?", "Pipo le lapin"], ["Où va-t-il ?", "au jardin"], ["Que trouve-t-il ?", "une carotte"], ["Qui aboie ?", "le chien"]]
+        correction: "Toutes les réponses sont dans le texte : relis la phrase qui parle de chaque question."
 

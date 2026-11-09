@@ -60,7 +60,7 @@ lecons:
           texte: "Avec une règle ou un mètre ruban, mesure ta main, ton cahier et ton lit. Commence bien au 0 ! Range-les du plus court au plus long."
           materiel: "une règle ou un mètre ruban"
       - astuce:
-          texte: "Des repères dans ta main : 1 mm, l'épaisseur d'une carte bancaire ; 1 cm, la largeur de l'ongle du petit doigt ; 1 m, un grand pas d'adulte ; 1 km, environ 15 minutes de marche."
+          texte: "Dans ta main : 1 mm, l'épaisseur d'une carte ; 1 cm, la largeur de ton petit ongle. Et 1 m, un grand pas d'adulte."
           qui: zero
     exercices:
       - type: nombre
@@ -72,12 +72,14 @@ lecons:
       - type: nombre
         vars: { c: "2..15" }
         enonce: "Combien de millimètres dans {{c}} cm ?"
+        niveau: 3
         reponse: "10*c"
         unite: mm
         correction: "1 cm = 10 mm, donc {{c}} cm = {{10*c}} mm."
       - type: nombre
         vars: { k: "2..9" }
         enonce: "Combien de mètres dans {{k}} km ?"
+        niveau: 3
         reponse: "1000*k"
         unite: m
         correction: "1 km = 1 000 m, donc {{k}} km = {{nb(1000*k)}} m."
@@ -103,6 +105,19 @@ lecons:
         unite: cm
         indice: "Attention, il ne commence pas au 0 !"
         correction: "{{a+2}} − 2 = {{a}} cm."
+      - type: droite
+        vars: { l: "3..14" }
+        enonce: "Un ruban mesure {{l}} cm. Montre où il s'arrête sur la règle."
+        min: 0
+        max: 15
+        pas: 1
+        cible: "l"
+        tolerance: 0.5
+        correction: "Le ruban part du 0 et s'arrête à la graduation {{l}}."
+      - type: relier
+        enonce: "🔗 Relie chaque objet à une longueur qui lui va."
+        paires: [["une gomme", "4 cm"], ["une table", "1 m"], ["un trajet en voiture", "20 km"], ["une fourmi", "5 mm"]]
+        correction: "Une gomme tient dans la main (quelques cm), une table fait environ 1 m, une fourmi quelques millimètres, un trajet en voiture des kilomètres."
 
   - id: masses
     titre: Peser des masses
@@ -147,7 +162,7 @@ lecons:
         enonce: "{{k}} kg = ? g"
         reponse: "1000*k"
         unite: g
-        correction: "{{nb(1000*k)}} g."
+        correction: "1 kg = 1 000 g, donc {{k}} kg = {{nb(1000*k)}} g."
       - type: nombre
         vars: { a: [100, 200, 250, 500] }
         enonce: "Combien de paquets de {{a}} g faut-il pour faire 1 kg ?"
@@ -165,7 +180,7 @@ lecons:
         vars: { o: [["une pomme", "150 g"], ["un chat", "4 kg"], ["une voiture", "1 t"], ["une plume", "1 g"]] }
         enonce: "Combien pèse environ {{o_0}} ?"
         choix: ["{{o_1}}", "{{si(o_1=='4 kg','4 g','4 kg')}}", "{{si(o_1=='1 t','1 kg','1 t')}}", "{{si(o_1=='150 g','150 kg','150 g')}}"]
-        correction: "{{o_0}} pèse environ {{o_1}}."
+        correction: "{{majuscule(o_0)}} pèse environ {{o_1}}. Pense à ce que tu peux porter : une plume ne pèse presque rien, une voiture, pas du tout !"
       - type: nombre
         vars: { a: "120..480", b: "120..480" }
         enonce: "Dans le panier : des pommes ({{a}} g) et des poires ({{b}} g). Masse totale ?"
@@ -190,7 +205,7 @@ lecons:
       - astuce:
           texte: "« centi » veut dire centième (comme dans centimètre) et « milli » veut dire millième (comme dans millimètre). Les mêmes mots servent pour toutes les mesures !"
           qui: mia
-      - a_quoi_ca_sert: "Doser un sirop, remplir un aquarium, savoir combien de verres on peut servir avec une bouteille…"
+      - a_quoi_ca_sert: "Combien de verres de jus dans ta bouteille ? Les litres te le disent."
       - question:
           type: nombre
           vars: { l: "2..9" }
@@ -204,7 +219,7 @@ lecons:
         enonce: "{{l}} L = ? mL"
         reponse: "1000*l"
         unite: mL
-        correction: "{{nb(1000*l)}} mL."
+        correction: "1 L = 1 000 mL, donc {{l}} L = {{nb(1000*l)}} mL."
       - type: nombre
         vars: { v: [20, 25, 50] }
         enonce: "Combien de verres de {{v}} cL peut-on remplir avec une bouteille de 1 L ?"
@@ -290,6 +305,18 @@ lecons:
         reponse: "2*(1+c/100)"
         unite: €
         correction: "1,{{c}} + 1,{{c}} = {{dec(2*(1+c/100),2)}} €."
+      - type: relier
+        vars: { a: "1..5", b: "1..5", c: "1..9" }
+        si: "10*a != 5*b && 10*a != 2*c && 5*b != 2*c"
+        enonce: "🔗 Relie chaque groupe à la somme qu'il fait."
+        paires: [["{{a}} {{pluriel(a,'billet','billets')}} de 10 €", "{{10*a}} €"], ["{{b}} {{pluriel(b,'billet','billets')}} de 5 €", "{{5*b}} €"], ["{{c}} {{pluriel(c,'pièce','pièces')}} de 2 €", "{{2*c}} €"]]
+        correction: "On compte de 10 en 10, de 5 en 5 ou de 2 en 2."
+      - type: payer
+        vars: { e: "2..12" }
+        enonce: "Paie exactement {{e}} € avec tes pièces et billets."
+        cible: "e"
+        pieces: [1, 2, 5, 10]
+        correction: "Il fallait exactement {{e}} € : prends d'abord le plus gros billet possible, puis complète."
 
   - id: lire-l-heure
     titre: Lire l'heure

@@ -57,6 +57,8 @@ export function problemeTexte(kind, texte, limites = LIMITES_TEXTES) {
 }
 /** Mondes du CP et du CE1 : ceux d'un enfant de 6-7 ans. */
 export const pourLesTresJeunes = (w) => w.cycle === "graines" && /^(GS|CP|CE1)\b/.test(String(w.niveau ?? ""));
+/** Mondes lus par un enfant de 8 ans : ceux du CP–CE1, plus ceux qui commencent au CE2 (audit « 8 ans »). */
+export const pourLes8ans = (w) => pourLesTresJeunes(w) || /^CE2\b/.test(String(w.niveau ?? ""));
 
 /** Une leçon fait-elle partie des mondes des plus jeunes ? (niveau du monde commençant au CP, CE1 ou CE2) */
 export const pourLesPlusJeunes = (w) => w.cycle === "graines" && /^(GS|CP|CE1|CE2)\b/.test(String(w.niveau ?? ""));

@@ -78,7 +78,7 @@ lecons:
           observation: "Le glaçon salé fond le plus vite ; celui dans le chiffon fond le plus lentement."
           explication: "Le sel fait fondre la glace à une température plus basse que 0 °C : c'est pour ça qu'on sale les routes en hiver. Le chiffon, lui, isole le glaçon de l'air de la pièce, plus chaud : la chaleur arrive plus lentement."
       - astuce:
-          texte: "Chaleur = les choses fondent (la glace devient eau). Froid = les choses gèlent (l'eau devient glace). C'est la même eau, elle change juste de costume."
+          texte: "Chaud : la glace fond en eau. Froid : l'eau gèle en glace. C'est la même eau qui change de costume."
           qui: zero
       - retiens: "Chauffer la glace → elle fond (liquide). Refroidir l'eau → elle gèle (solide). L'eau pure gèle et fond à 0 °C."
     exercices:
@@ -125,7 +125,7 @@ lecons:
           observation: "Le sirop se mélange complètement : un seul liquide coloré. L'huile, elle, forme des gouttes qui remontent et finissent en couche au-dessus de l'eau."
           explication: "L'huile ne se mélange pas à l'eau, et elle est moins dense (plus « légère » à volume égal) : elle flotte. C'est pour ça que la vinaigrette se sépare et qu'on la secoue avant de servir !"
       - astuce:
-          texte: "Regarde à travers : si tu vois une seule chose partout (eau + sirop), c'est homogène. Si tu vois des parties différentes (eau + huile), c'est hétérogène."
+          texte: "Tu vois une seule chose partout (eau + sirop) ? C'est homogène. Tu vois des parties différentes (eau + huile) ? C'est hétérogène."
           qui: neo
       - retiens: "Homogène : on ne voit qu'une seule partie. Hétérogène : on voit plusieurs parties. L'huile ne se mélange pas à l'eau et flotte dessus."
     exercices:

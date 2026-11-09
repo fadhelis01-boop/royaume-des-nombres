@@ -103,7 +103,7 @@ lecons:
       - astuce:
           texte: "Pour trouver combien de fois 6 dans 48, récite la table de 6 jusqu'à 48 : 6, 12, 18, 24, 30, 36, 42, 48… en comptant tes doigts : 8 fois !"
           qui: neo
-      - a_quoi_ca_sert: "Combien de voitures pour emmener 30 enfants à 4 par voiture, combien de semaines dans 35 jours, combien de paquets de 6 pour 30 yaourts…"
+      - a_quoi_ca_sert: "Combien de voitures pour emmener 30 enfants de ta classe, 4 par voiture ? Tu cherches combien de fois 4 dans 30."
       - question:
           type: nombre
           vars: { b: "3..8", n: "3..9" }
@@ -234,7 +234,7 @@ lecons:
       - histoire:
           titre: Un peu d'histoire
           texte: "Euclide d'Alexandrie a rassemblé vers 300 av. J.-C. les connaissances mathématiques de son époque dans les **Éléments**, un ouvrage en 13 livres. Les livres VII à IX parlent des nombres entiers et contiennent l'algorithme d'Euclide, encore enseigné et utilisé aujourd'hui."
-      - a_quoi_ca_sert: "Convertir des minutes en heures (135 min = 2 × 60 + 15 → 2 h 15 min), trouver le jour de la semaine d'une date, ranger des objets en rangées, et en informatique : les codes secrets et les calendriers utilisent le reste partout !"
+      - a_quoi_ca_sert: "Tu as 135 minutes de film : ça fait combien d'heures ? 2 heures, et il reste 15 minutes. Le reste sert aussi à ranger tes cartes en rangées."
       - question:
           type: champs
           vars: { b: "3..9", q: "3..12", r: "0..8" }

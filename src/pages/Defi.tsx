@@ -1,5 +1,5 @@
 import { planDefi, pourLecteurAgile, rankSpecs } from "../lib/plan";
-import { jeuneLecteur } from "../lib/parcours";
+import { jeuneLecteur, lectriceAgile8 } from "../lib/parcours";
 export { planDefi, rankSpecs };
 import { useEffect, useMemo, useState } from "react";
 import { go } from "../lib/router";
@@ -33,7 +33,7 @@ export function DefiPage({ worldId, lessonId }: { worldId: string; lessonId: str
   const found = findLesson(worldId, lessonId);
   const child = useChild()!;
   const [round, setRound] = useState(0);
-  const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi, { jeune: jeuneLecteur(child) }) : []), [found?.lesson, round]);
+  const plan = useMemo(() => (found ? planDefi(found.lesson.exercices, found.lesson.nb_defi, { jeune: jeuneLecteur(child), unRappel: lectriceAgile8(child) }) : []), [found?.lesson, round]);
   // Question « souvenir » : une question d'une leçon précédente du monde, en bonus (entrelacement :
   // mélanger l'ancien et le nouveau aide à retenir). Elle ne compte pas dans les étoiles.
   const souvenir = useMemo(() => {

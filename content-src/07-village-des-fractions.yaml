@@ -130,7 +130,7 @@ lecons:
         enonce: "Colorie $\\frac{ {{n}} }{ {{d}} }$ du gâteau."
         n: "n"
         d: "d"
-        correction: "{{n}} parts sur {{d}}."
+        correction: "Le gâteau est coupé en {{d}} parts : on en colorie {{n}}. C'est {{n}} parts sur {{d}}."
       - type: nombre
         vars: { d: [3, 4, 5, 6, 8, 10], n: "1..9" }
         si: "n < d"
@@ -138,7 +138,7 @@ lecons:
         visuel: { type: fraction, n: "=n", d: "=d", forme: disque }
         reponse: "n/d"
         forme: fraction
-        correction: "{{n}}/{{d}}."
+        correction: "{{n}} parts prises (en haut) sur {{d}} parts en tout (en bas) : {{n}}/{{d}}."
       - type: qcm
         vars: { d: [4, 5, 6, 8, 10], n: "1..9" }
         si: "n < d && n*2 != d"
@@ -178,7 +178,7 @@ lecons:
           Pour placer $\frac{a}{b}$ : je partage **chaque unité** en $b$ parts égales, puis je compte $a$ parts **depuis 0**.
 
           Une fraction peut être **plus grande que 1** : $\frac{5}{4}$ = 4 quarts (1 unité) + 1 quart. On peut écrire $\frac{5}{4} = 1 + \frac{1}{4}$.
-      - a_quoi_ca_sert: "Un trajet de 3/4 d'heure, une jauge de réservoir à 3/4, une règle graduée en demi-centimètres…"
+      - a_quoi_ca_sert: "Ta règle a des demi-centimètres, ta montre des quarts d'heure : les fractions ont leur place sur une ligne."
       - question:
           type: droite
           vars: { d: [2, 4], n: "1..7" }

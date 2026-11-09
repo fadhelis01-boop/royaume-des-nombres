@@ -224,7 +224,22 @@ lecons:
         vars: { a: "2..9" }
         enonce: "Deux jumeaux ont chacun {{a}} billes. Combien de billes en tout ?"
         reponse: "2*a"
-        correction: "Le double de {{a}} : {{2*a}} billes."
+        correction: "Deux fois {{a}} billes : {{a}} + {{a}} = {{2*a}} billes. C'est le double de {{a}}."
+      - type: relier
+        vars: { a: "2..9", b: "2..9", c: "2..9" }
+        si: "a != b && b != c && a != c"
+        enonce: "🔗 Relie chaque nombre à son double."
+        paires: [["{{a}}", "{{2*a}}"], ["{{b}}", "{{2*b}}"], ["{{c}}", "{{2*c}}"]]
+        correction: "Le double, c'est le nombre ajouté à lui-même : {{a}} + {{a}} = {{2*a}}."
+      - type: sauts
+        vars: { a: "3..9" }
+        enonce: "Calcule le double de {{a}} en faisant sauter la grenouille : {{a}} + {{a}}."
+        depart: "a"
+        cible: "2*a"
+        min: 0
+        max: 20
+        sauts_permis: [1, 2, 3, 4, 5]
+        correction: "On part de {{a}} et on avance encore de {{a}} : {{2*a}}."
 
   - id: passer-la-dizaine
     titre: Passer la dizaine en sautant sur la ligne des nombres
@@ -349,7 +364,7 @@ lecons:
           ecart: "écart = 5"
         legende: "L'écart entre 9 et 4 : 9 − 4 = 5."
       - astuce:
-          texte: "Pour 13 − 8, tu peux AVANCER au lieu de reculer : de 8 à 10, il y a 2 ; de 10 à 13, il y a 3. Total : 5. C'est la méthode du marchand qui rend la monnaie !"
+          texte: "Pour 13 − 8, avance au lieu de reculer : de 8 à 10, il y a 2 ; de 10 à 13, il y a 3. En tout : 5."
           qui: mia
       - a_quoi_ca_sert: "Savoir combien il te reste d'argent après un achat, combien de jours avant ton anniversaire, de combien ton équipe a gagné…"
       - question:
@@ -468,6 +483,21 @@ lecons:
         enonce: "Au marché, on vend {{a}} œufs le matin, {{b}} l'après-midi et {{c}} le soir. Combien d'œufs en tout ?"
         reponse: "a+b+c"
         correction: "{{a}} + {{b}} + {{c}} = {{a+b+c}}."
+      - type: relier
+        vars: { a: "11..49", b: "11..49", c: "11..49" }
+        si: "a != b && b != c && a != c && a+20 != b+30"
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["{{a}} + 10", "{{a+10}}"], ["{{b}} + 20", "{{b+20}}"], ["{{c}} + 30", "{{c+30}}"]]
+        correction: "On ajoute les dizaines : le chiffre des unités ne change pas."
+      - type: comparer
+        vars: { a: "11..49", b: "11..49", c: "30..99" }
+        si: "a+b != c"
+        enonce: "Compare."
+        gauche: "a+b"
+        droite: "c"
+        gauche_affiche: "{{a}} + {{b}}"
+        droite_affiche: "{{c}}"
+        correction: "{{a}} + {{b}} = {{a+b}}. On compare {{a+b}} et {{c}}."
 
   - id: soustraction-posee
     titre: La soustraction posée
@@ -495,7 +525,7 @@ lecons:
       - astuce:
           texte: "Vérifie TOUJOURS une soustraction par une addition : 25 + 27 = 52 ✔. C'est le réflexe du champion !"
           qui: neo
-      - a_quoi_ca_sert: "Calculer la monnaie rendue, le nombre de kilomètres qui restent, l'âge de quelqu'un (2026 − 2018 = 8 ans)…"
+      - a_quoi_ca_sert: "Tu as 50 € dans ta tirelire et tu achètes un jeu à 32 € ? La soustraction te dit ce qu'il te reste."
       - question:
           type: nombre
           vars: { a: "31..98", b: "12..29" }
@@ -538,7 +568,22 @@ lecons:
         vars: { a: "40..90", b: "12..39" }
         enonce: "Pour vérifier $ {{a}} - {{b}} = {{a-b}}$, je peux calculer $ {{a-b}} + {{b}}$. Vrai ou faux ?"
         reponse: true
-        correction: "Oui ! La soustraction et l'addition sont des opérations « inverses » : {{a-b}} + {{b}} = {{a}}."
+        correction: "Oui ! L'addition défait la soustraction : {{a-b}} + {{b}} = {{a}}."
+      - type: relier
+        vars: { a: "40..99", b: "40..99", c: "40..99" }
+        si: "a != b && b != c && a != c && a-10 != b-20 && b-20 != c-30 && a-10 != c-30"
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["{{a}} − 10", "{{a-10}}"], ["{{b}} − 20", "{{b-20}}"], ["{{c}} − 30", "{{c-30}}"]]
+        correction: "On enlève des dizaines : le chiffre des unités ne change pas."
+      - type: comparer
+        vars: { a: "50..99", b: "11..49", c: "10..80" }
+        si: "a-b != c"
+        enonce: "Compare."
+        gauche: "a-b"
+        droite: "c"
+        gauche_affiche: "{{a}} − {{b}}"
+        droite_affiche: "{{c}}"
+        correction: "{{a}} − {{b}} = {{a-b}}. On compare {{a-b}} et {{c}}."
 
   - id: calcul-mental-astuces
     titre: Calculer de tête comme un magicien
@@ -616,3 +661,18 @@ lecons:
         enonce: "Calcule de tête : $ {{a}} + {{k}}$"
         reponse: "a+k"
         correction: "{{a}} + {{k+1}} − 1 = {{a+k}}."
+      - type: relier
+        vars: { a: "12..39", b: "12..39" }
+        si: "a != b && a+9 != b+11 && a+11 != b+9"
+        enonce: "🔗 Relie chaque calcul à son résultat."
+        paires: [["{{a}} + 9", "{{a+9}}"], ["{{b}} + 11", "{{b+11}}"], ["{{a}} + 11", "{{a+11}}"], ["{{b}} + 9", "{{b+9}}"]]
+        correction: "+ 9, c'est + 10 puis − 1 ; + 11, c'est + 10 puis + 1."
+      - type: sauts
+        vars: { a: "2..9" }
+        enonce: "Calcule {{a}} + 9 avec la grenouille : un saut de 10, puis recule de 1."
+        depart: "a"
+        cible: "a+9"
+        min: 0
+        max: 20
+        sauts_permis: [1, 10, -1]
+        correction: "{{a}} + 10 = {{a+10}}, puis − 1 : {{a+9}}."

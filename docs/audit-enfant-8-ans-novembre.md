@@ -1,6 +1,6 @@
 # Audit « enfant de 8 ans », deuxième passage : comprendre ce qu'on demande, les réponses, « À quoi ça sert ? »
 
-Date : 9 novembre 2026 · version auditée : 2.10.0 (après les corrections de l'audit « 7 ans ») · aucune correction de cet audit appliquée à ce stade
+Date : 9 novembre 2026 · version auditée : 2.10.0 (après les corrections de l'audit « 7 ans ») · corrections livrées : 2.11.0 (9 novembre 2026, voir en fin de document)
 
 Le premier audit « 8 ans » (octobre, `audit-enfant-8-ans.md`) portait sur les consignes et le premier test. Celui-ci reprend la méthode complète de l'audit « 7 ans » : tout ce qu'un enfant de 8 ans lit ou entend, les réponses, les corrections, « À quoi ça sert ? », la voix, la fatigue.
 
@@ -103,3 +103,28 @@ Mesures de référence (`npm run audit:7ans -- --age 8`, `npm run audit:consigne
 - **Textes** : 28 mots par écran de cours ; astuces de 22 mots en moyenne, 32 au-delà de 25.
 - **Explications** : 24 % de corrections sans pourquoi ; « À quoi ça sert ? » : 2 manquants, 3 adultes, 33 hors du monde de l'enfant.
 - **Voix** : plus aucun mot d'insistance en majuscules ni balise de formule lue.
+
+## Corrections livrées (2.11.0)
+
+Les 8 corrections sont faites. Mesures refaites avec les mêmes scripts.
+
+| Mesure (8 ans, novembre) | Avant (2.10.0) | Après (2.11.0) |
+|---|---|---|
+| Questions du test | 12 | 8 |
+| Questions de niveau CE2 dans le test | 30 % | 16 % |
+| Parcours après un test tout en « Je ne sais pas encore » | commence en GS (🐣) | commence au CP, rien en dessous |
+| Défis dominés par un seul type | 29 % | 0 % |
+| « À quoi ça sert ? » manquants / adultes / abstraits | 2 / 3 / 33 | 0 / 0 / 1 |
+| Astuces de plus de 25 mots | 32 | 1 |
+| Corrections sans pourquoi | 24 % | 22 % |
+
+1. **Test bâclé** : plus des deux tiers de « Je ne sais pas encore » (sur au moins 4 réponses) → message « Tu avais besoin d'une pause… » et bouton « Refaire la carte avec un adulte ». Le parcours ne descend pas sous la classe précédente (niveau du moment − 1,5), ni sous le début d'une île commencée en classe depuis plus d'un an (`testBacle`, `plancherBacle`). L'Espace parents le signale.
+2. **Îles sans marche basse** : à 8 ans, une île qui commence à peine en classe n'a qu'une question (`questionsIle`). Les conversions en mm et en km sont marquées niveau 3 : elles ne sortent plus dans le test des moins de 9 ans.
+3. **Lectrices à l'aise** : à 8 ans avec « lit tout seul », un « mot qui manque » par défi, jamais de rédaction (`lectriceAgile8`, option `unRappel` de `planDefi`).
+4. **« À quoi ça sert ? » du CE2** : 2 écrits, 34 réécrits. Les longs écrans des mondes qui commencent au CE2 sont coupés à 45 mots (les fables passent sur plusieurs écrans). Le contrôle du build couvre ces mondes (`pourLes8ans`).
+5. **Mots** : « Qu'est-ce qui vient ensuite ? » ; « identique », « verticalement », « opération », « encadre », « suivant », « produit », « élément », « quantité » remplacés dans les astuces et corrections ; 32 astuces raccourcies à 25 mots au plus.
+6. **Parcours** : « 🌟 nouveau » pour les leçons d'une île pas encore commencée ; l'emoji de l'île remplace celui du monde (plus de 🐣) dès 8 ans.
+7. **Variété** : dans un défi, aucun type ne dépasse la moitié quand la leçon en propose d'autres ; 26 exercices ajoutés dans les 13 leçons qui n'avaient presque que des réponses en nombre (relier, comparer, ranger, grenouille, ligne des nombres, payer). Liste : `npm run audit:domines -- 8`.
+8. **Corrections de maths** : une étape ajoutée aux corrections qui ne donnaient que le résultat (conversions, doubles, angles droits, axes de symétrie, fractions).
+
+Restent ouverts : les corrections de comptage et d'ordinaux, qui s'expliquent par le dessin ; le test avec de vrais enfants.

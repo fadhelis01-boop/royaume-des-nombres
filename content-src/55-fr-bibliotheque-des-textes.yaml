@@ -23,7 +23,7 @@ lecons:
     etapes:
       - dialogue:
           - mia: "Jean de La Fontaine a écrit ses fables il y a plus de 350 ans. Des animaux qui parlent… pour faire réfléchir les humains !"
-      - a_quoi_ca_sert: "Les fables apprennent à se méfier des flatteurs et à réfléchir. Leurs morales sont toujours utiles aujourd'hui !"
+      - a_quoi_ca_sert: "Quelqu'un te fait plein de compliments pour avoir ton goûter ? La fable t'apprend à ne pas te faire avoir."
       - texte: |
           **Le Corbeau et le Renard** — Jean de La Fontaine (1668)
 

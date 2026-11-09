@@ -96,7 +96,7 @@ lecons:
           - **Angle aigu** : plus petit qu'un angle droit (« pointu »).
           - **Angle obtus** : plus grand qu'un angle droit (« ouvert »).
       - astuce:
-          texte: "Fabrique ton équerre : plie une feuille en deux, puis encore en deux en faisant coïncider les bords du pli. Le coin obtenu est un angle droit parfait !"
+          texte: "Plie une feuille en deux, puis encore en deux en alignant le pli. Le coin obtenu est un angle droit parfait !"
           qui: mia
       - a_quoi_ca_sert: "Le coin de ton cahier est un angle droit. Ta table et ta porte aussi : sinon tout pencherait !"
       - question:
@@ -125,11 +125,11 @@ lecons:
       - type: qcm
         enonce: "Quel outil sert à vérifier un angle droit ?"
         choix: ["l'équerre", "le compas", "la balance", "le thermomètre"]
-        correction: "L'équerre."
+        correction: "L'équerre : son coin est un angle droit. On le pose dans l'angle à vérifier."
       - type: nombre
         enonce: "Combien d'angles droits dans un carré ?"
         reponse: "4"
-        correction: "4 angles droits."
+        correction: "Un carré a 4 coins, et chacun est un angle droit : 4 angles droits."
 
   - id: symetrie
     titre: La symétrie axiale
@@ -153,9 +153,9 @@ lecons:
           noms: false
         legende: "Le carré et un de ses axes de symétrie (en pointillés)."
       - astuce:
-          texte: "Les lettres aussi ! A, M, T, V, W ont un axe vertical ; B, C, D, E en ont un horizontal ; H, I, O, X en ont deux."
+          texte: "Les lettres aussi ! A, M, T, V ont un axe debout ; B, C, D, E un axe couché ; H, I, O, X en ont deux."
           qui: mia
-      - a_quoi_ca_sert: "Les artistes, les architectes (façades de châteaux), la nature (feuilles, visages, flocons de neige)… La symétrie rend les choses belles et équilibrées."
+      - a_quoi_ca_sert: "Plie ton dessin de papillon en deux : les deux ailes se superposent. Tu en verras partout, sur ton visage comme sur les feuilles."
       - question:
           type: nombre
           vars: { f: [["un carré", 4], ["un rectangle (non carré)", 2], ["un triangle équilatéral", 3], ["la lettre A", 1], ["la lettre H", 2]] }
@@ -167,11 +167,11 @@ lecons:
         vars: { f: [["un carré", 4], ["un rectangle (non carré)", 2], ["un triangle équilatéral", 3], ["un hexagone régulier", 6], ["la lettre M", 1], ["la lettre X", 2], ["la lettre F", 0]] }
         enonce: "Combien d'axes de symétrie a {{f_0}} ?"
         reponse: "f_1"
-        correction: "{{f_0}} : {{f_1}} axe(s)."
+        correction: "{{majuscule(f_0)}} : {{f_1}} {{pluriel(f_1,'axe','axes')}}. Un axe, c'est un pli qui pose une moitié exactement sur l'autre."
       - type: qcm
         enonce: "Quelle lettre a un axe de symétrie vertical ?"
         choix: ["A", "F", "R", "S"]
-        correction: "Le A se plie en deux verticalement."
+        correction: "Le A se plie en deux, de haut en bas."
       - type: vf
         enonce: "Vrai ou faux : un cercle a une infinité d'axes de symétrie."
         reponse: true
@@ -179,7 +179,7 @@ lecons:
       - type: qcm
         enonce: "On pose un miroir debout à côté du mot. Quel mot reste pareil dans le miroir ?"
         choix: ["TOT", "ZÉRO", "NÉO", "LYA"]
-        correction: "T, O et T sont symétriques par un axe vertical, et le mot TOT se lit pareil à l'envers : il est identique dans le miroir."
+        correction: "T, O et T sont symétriques par un axe vertical, et le mot TOT se lit pareil à l'envers : il est pareil dans le miroir."
 
   - id: perimetre
     titre: Le périmètre
@@ -259,6 +259,17 @@ lecons:
         unite: cm
         indice: "La moitié du périmètre, c'est longueur + largeur."
         correction: "{{2*(L+l)}} ÷ 2 = {{L+l}} ; {{L+l}} − {{L}} = {{l}} cm."
+      - type: relier
+        vars: { a: "2..9", b: "2..9", c: "2..9" }
+        si: "a != b && b != c && a != c"
+        enonce: "🔗 Relie chaque carré à son périmètre (le tour complet)."
+        paires: [["carré de {{a}} cm de côté", "{{4*a}} cm"], ["carré de {{b}} cm de côté", "{{4*b}} cm"], ["carré de {{c}} cm de côté", "{{4*c}} cm"]]
+        correction: "Le tour d'un carré, c'est 4 côtés pareils : on ajoute 4 fois la longueur du côté."
+      - type: qcm
+        vars: { a: "2..9" }
+        enonce: "Un carré a des côtés de {{a}} cm. Quel calcul donne son périmètre ?"
+        choix: ["{{a}} + {{a}} + {{a}} + {{a}}", "{{a}} + {{a}}", "{{a}} + 4"]
+        correction: "Le périmètre, c'est le tour : on ajoute les 4 côtés, {{a}} + {{a}} + {{a}} + {{a}} = {{4*a}} cm."
 
   - id: aire
     titre: L'aire (la surface)
@@ -284,7 +295,7 @@ lecons:
       - attention:
           texte: "Périmètre et aire, ce n'est PAS la même chose ! Un rectangle de 6 × 1 et un carré de 3 × 3 ont… des aires de 6 et 9, mais des périmètres de 14 et 12 !"
           qui: neo
-      - a_quoi_ca_sert: "Acheter de la peinture ou du carrelage, comparer la taille de deux appartements (en m²), semer un potager…"
+      - a_quoi_ca_sert: "Combien de carreaux pour couvrir le sol de ta chambre ? L'aire te le dit, avant même de commencer."
       - question:
           type: nombre
           vars: { l: "2..6", c: "2..8" }
@@ -335,6 +346,20 @@ lecons:
         reponse: "l"
         unite: cm
         correction: "{{L*l}} ÷ {{L}} = {{l}} cm."
+      - type: relier
+        vars: { a: "2..9" }
+        enonce: "🔗 Relie chaque rectangle à son nombre de carreaux."
+        paires: [["2 rangées de {{a}} carreaux", "{{2*a}} carreaux"], ["3 rangées de {{a}} carreaux", "{{3*a}} carreaux"], ["4 rangées de {{a}} carreaux", "{{4*a}} carreaux"]]
+        correction: "On compte les carreaux d'une rangée, puis on ajoute autant de fois qu'il y a de rangées."
+      - type: comparer
+        vars: { a: "2..6", b: "2..6", c: "2..6", d: "2..6" }
+        si: "a*b != c*d"
+        enonce: "Quel rectangle a le plus de carreaux ? Compare."
+        gauche: "a*b"
+        droite: "c*d"
+        gauche_affiche: "{{a}} rangées de {{b}}"
+        droite_affiche: "{{c}} rangées de {{d}}"
+        correction: "{{a}} rangées de {{b}} = {{a*b}} carreaux ; {{c}} rangées de {{d}} = {{c*d}} carreaux."
 
   - id: solides
     titre: Les solides

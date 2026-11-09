@@ -478,8 +478,9 @@ export function normalizeWorld(w, file) {
     if (ids.has(l.id)) errors.push(`${lw} : identifiant de leçon en double`);
     ids.add(l.id);
     const raw0 = (l.etapes ?? []).map((s, i) => step(s, `${lw} étape ${i + 1}`)).filter(Boolean);
-    // Pour les plus jeunes (cycle « graines »), un texte trop long est coupé en deux écrans.
-    const raw1 = w.cycle === "graines" ? raw0.flatMap((s) => (s.kind === "texte" ? couperTexte(s) : [s])) : raw0;
+    // Écrans coupés : 40 mots pour les mondes « Graines », 45 pour ceux qui commencent au CE2 (audit « 8 ans »).
+    const maxEcran = w.cycle === "graines" ? 40 : /^CE2\b/.test(out.niveau) ? 45 : 0;
+    const raw1 = maxEcran ? raw0.flatMap((s) => (s.kind === "texte" ? couperTexte(s, maxEcran) : [s])) : raw0;
     // « À quoi ça sert ? » juste après la scène d'ouverture : on sait pourquoi on apprend avant d'apprendre
     const raw = (() => {
       const k = raw1.findIndex((s) => s.kind === "a_quoi_ca_sert");

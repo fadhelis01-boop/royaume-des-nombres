@@ -71,7 +71,7 @@ lecons:
       - dialogue:
           - zero: "Les deux ailes de mon papillon ne sont pas pareilles !"
           - mia: "Utilisons un axe de symétrie, comme un miroir au milieu."
-      - a_quoi_ca_sert: "La symétrie est partout dans la nature (papillons, feuilles, visages) et dans l'architecture : elle donne une impression d'équilibre."
+      - a_quoi_ca_sert: "Plie ta feuille, peins d'un seul côté, déplie : ton papillon a deux ailes pareilles !"
       - texte: |
           Un papillon est **symétrique** : si on le plie en deux le long de son corps, les deux moitiés se superposent. Le pli s'appelle l'**axe de symétrie**.
           Dans cet exercice, le **mode miroir** est activé : dessine la moitié **gauche**, la droite apparaît toute seule !
@@ -101,7 +101,7 @@ lecons:
           observation: "Un motif parfaitement symétrique apparaît, comme des ailes de papillon."
           explication: "La peinture s'est imprimée de l'autre côté du pli : chaque tache a son reflet à la même distance de l'axe."
       - astuce:
-          texte: "Plie ta feuille en deux : ce qui est d'un côté du pli doit être exactement le reflet de l'autre côté, comme dans un miroir."
+          texte: "Plie ta feuille en deux : chaque côté du pli est le reflet de l'autre, comme dans un miroir."
           qui: zero
       - retiens: "Symétrie : les deux moitiés se superposent quand on plie le long de l'axe."
     exercices:
@@ -130,7 +130,7 @@ lecons:
       - dialogue:
           - zero: "J'ai mélangé du jaune et du bleu… et c'est devenu vert ! Magique !"
           - neo: "Tu as fabriqué une couleur secondaire ! Découvrons les autres."
-      - a_quoi_ca_sert: "Savoir mélanger les couleurs évite d'acheter tous les tubes de peinture et permet d'obtenir exactement la nuance voulue."
+      - a_quoi_ca_sert: "Avec ton jaune et ton bleu, tu fabriques du vert. Plus besoin de tous les pots de peinture !"
       - texte: |
           En mélangeant deux primaires à parts égales, on obtient une **couleur secondaire** :
           - rouge + jaune = **orange** ; jaune + bleu = **vert** ; bleu + rouge = **violet**.

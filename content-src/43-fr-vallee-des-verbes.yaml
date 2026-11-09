@@ -103,7 +103,7 @@ lecons:
       - dialogue:
           - neo: "Pour trouver le sujet, je pose la question magique : « Qui est-ce qui » + verbe ?"
           - zero: "« Qui est-ce qui mange ? » … MOI ! Zéro ! Je suis le sujet !"
-      - a_quoi_ca_sert: "Le sujet, c'est celui qui fait l'action. « Les enfants jouent » : qui joue ? Les enfants !"
+      - a_quoi_ca_sert: "Le sujet, c'est celui qui fait l'action. Dans « Tes amis jouent », qui joue ? Tes amis !"
       - texte: |
           Le **sujet** dit **qui** fait l'action. Je le trouve avec la question **« Qui est-ce qui … ? »** (ou « Qu'est-ce qui … ? »).
 
@@ -112,7 +112,7 @@ lecons:
           Le sujet peut être un **nom** (*le chat*), un **groupe** (*le petit chat noir*), un **pronom** (*il*), un **nom propre** (*Léa*).
       - visuel: {"type":"phrase","legende":"« C'est le chat de Léa qui… dort » : le sujet est encadré.","groupes":[{"mots":"Le chat de Léa","role":"sujet"},{"mots":"dort","role":"verbe"},{"mots":"au soleil","role":"ccl"}]}
       - astuce:
-          texte: "Pose la question « Qui est-ce qui… ? » devant le verbe, ou encadre avec « C'est… qui » : « C'est le chat qui dort. » Le sujet est piégé !"
+          texte: "Pose la question « Qui est-ce qui… ? » devant le verbe, ou entoure-le avec « C'est… qui » : « C'est le chat qui dort. » Le sujet est piégé !"
           qui: neo
       - retiens: "**Qui est-ce qui** + verbe ? La réponse est le **sujet**. Il commande l'accord du verbe."
     exercices:
@@ -204,6 +204,7 @@ lecons:
       - astuce:
           texte: "Avec **tu**, il y a presque toujours un **s** à la fin du verbe. Retiens : « tu… s » !"
           qui: mia
+      - a_quoi_ca_sert: "« Je joue, tu chantes, on danse » : tu utilises ces verbes en -er toute la journée."
       - retiens: "1er groupe au présent : **e, es, e, ons, ez, ent**. Le **-ent** de ils/elles est **muet**."
       - vraie_vie:
           titre: Défi dans la vraie vie
@@ -233,7 +234,7 @@ lecons:
       - dialogue:
           - mia: "Ces quatre verbes sont partout ! Et ils n'en font qu'à leur tête : il faut les apprendre par cœur."
           - zero: "Je suis, tu es, il est… On dirait une chanson. Une chanson très bizarre."
-      - a_quoi_ca_sert: "Être, avoir et aller sont les verbes les plus utilisés du français : ils servent dans presque toutes les phrases et pour fabriquer d'autres temps."
+      - a_quoi_ca_sert: "« Je suis », « tu as », « on va » : tu dis ces verbes dans presque toutes tes phrases."
       - texte: |
           | | être | avoir | aller | faire |
           |---|---|---|---|---|
@@ -247,7 +248,7 @@ lecons:
           texte: "On dit « vous **faites** » et jamais « vous faisez » !"
           qui: neo
       - astuce:
-          texte: "Pour « avoir », retiens la chanson : j'ai, tu as, il a, nous avons, vous avez, ils ont. Et « ils ont » ne s'écrit jamais « ils on »."
+          texte: "Chante « avoir » : j'ai, tu as, il a, nous avons, vous avez, ils ont. Et « ils ont » finit toujours par un t."
           qui: zero
       - retiens: "Je **suis**, j'**ai**, je **vais**, je **fais**… À réciter comme une chanson."
     exercices:
