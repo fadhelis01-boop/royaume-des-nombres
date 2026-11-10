@@ -1,0 +1,333 @@
+id: en-port-des-langues-du-monde
+matiere: anglais
+titre: Le Port des Langues du monde
+sous_titre: Spécialité LLCER portugais, russe, chinois, arabe, hébreu, japonais et anglais monde contemporain - écritures, grands auteurs, repères culturels
+emoji: 🌏
+couleur: "#00838f"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 714
+specialite: LLCER autres langues
+version: 1.0.0
+intro:
+  - narrateur: "Au grand port de l'Archipel accostent des navires venus de Lisbonne, de Moscou, de Pékin, du Caire, de Jérusalem et de Tokyo."
+  - mia: "La LLCER existe aussi pour des langues moins souvent proposées : portugais, russe, chinois, arabe, hébreu, japonais. Et l'anglais a une spécialité de plus : anglais, monde contemporain."
+  - neo: "Chaque langue a son écriture, sa littérature et son histoire. Faisons escale dans chacune."
+
+lecons:
+  - id: llcer-portugais
+    titre: Le portugais, une langue sur quatre continents
+    classe: "1ʳᵉ"
+    objectif: Je situe le monde lusophone et ses grands auteurs, et je connais quelques repères de langue et d'histoire.
+    mots: [lusophonie, saudade, Camões, Pessoa]
+    etapes:
+      - dialogue:
+          - zero: "Le portugais, on le parle seulement au Portugal ?"
+          - neo: "Beaucoup plus au Brésil ! Et aussi en Angola, au Mozambique, au Cap-Vert… Plus de 250 millions de personnes sur quatre continents."
+      - a_quoi_ca_sert: "Le portugais est l'une des langues les plus parlées au monde et une langue de la francophonie voisine ; il ouvre sur le Brésil, l'Afrique lusophone et une grande littérature."
+      - texte: |
+          **La lusophonie** : le portugais est langue officielle au **Portugal**, au **Brésil** (de loin le plus peuplé), en **Angola**, au **Mozambique**, au **Cap-Vert**, en **Guinée-Bissau**, à **São Tomé-et-Príncipe**, au **Timor oriental** et en Guinée équatoriale.
+
+          **Les grands auteurs** :
+          - **Luís de Camões**, *Os Lusíadas* (1572), l'épopée des navigateurs portugais ;
+          - **Fernando Pessoa**, poète aux nombreux **hétéronymes** (des poètes imaginaires, chacun avec son style) ;
+          - **Machado de Assis**, grand romancier brésilien du XIXᵉ siècle ;
+          - **José Saramago**, prix Nobel 1998 ; **Mia Couto** (Mozambique).
+
+          **Un mot célèbre** : la ***saudade***, la nostalgie douce d'un être ou d'un lieu absent, chantée dans le **fado**.
+
+          **Repère** : le **25 avril 1974**, la révolution des Œillets met fin à la dictature au Portugal.
+      - visuel: { type: parole, langue: pt-PT, mots: [{ texte: "Bom dia! Como está?", sens: "Bonjour ! Comment allez-vous ?", emoji: "☀️" }, { texte: "Tenho saudades de ti.", sens: "Tu me manques.", emoji: "💙" }] }
+        legende: "Écoute le portugais du Portugal."
+      - astuce: { texte: "Pessoa a écrit sous plusieurs noms inventés : quand tu le cites, précise lequel de ses hétéronymes parle.", qui: mia }
+      - retiens: "**Lusophonie** : Portugal, **Brésil**, Angola, Mozambique, Cap-Vert… **Camões** (*Os Lusíadas*, 1572), **Pessoa** (hétéronymes), **Machado de Assis**, **Saramago** (Nobel 1998), **Mia Couto**. **Saudade** et **fado**. Révolution des Œillets : **1974**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque auteur à son pays."
+        paires: [["Luís de Camões", "le Portugal"], ["Machado de Assis", "le Brésil"], ["Mia Couto", "le Mozambique"]]
+        correction: "Une littérature sur plusieurs continents."
+      - type: qcm
+        enonce: "Quel pays compte le plus de locuteurs du portugais ?"
+        choix: ["Le Brésil", "Le Portugal", "L'Angola", "Le Cap-Vert"]
+        correction: "Le **Brésil**, de très loin."
+      - type: qcm
+        enonce: "Que désigne la « saudade » ?"
+        choix: ["Une nostalgie douce d'un être ou d'un lieu absent", "Une danse rapide", "Un plat traditionnel", "Une fête nationale"]
+        correction: "Un sentiment au cœur du fado et de la poésie portugaise."
+      - type: vf
+        vars: { t: [["La révolution des Œillets a eu lieu en 1974.", true], ["Pessoa a écrit sous plusieurs noms imaginaires.", true], ["Le portugais n'est parlé qu'en Europe.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "1974 ; les hétéronymes de Pessoa ; quatre continents."
+
+  - id: llcer-russe
+    titre: Le russe, l'alphabet cyrillique et les grands romanciers
+    classe: "1ʳᵉ"
+    objectif: Je connais l'alphabet cyrillique, quelques traits de la langue russe et les grands auteurs de la littérature russe.
+    mots: [cyrillique, cas, Pouchkine, Tolstoï]
+    etapes:
+      - dialogue:
+          - mia: "Le russe s'écrit avec l'alphabet cyrillique. Certaines lettres ressemblent aux nôtres, mais attention : le « P » cyrillique se lit « r » !"
+          - zero: "Et le « H » se lit « n », c'est ça le piège ?"
+          - neo: "Exactement. Une fois ces faux jumeaux connus, on lit vite."
+      - a_quoi_ca_sert: "Le russe ouvre sur l'une des plus grandes littératures du monde, et sur des métiers de la traduction, de la diplomatie et de la recherche."
+      - texte: |
+          **L'alphabet cyrillique** : **33 lettres**. Certaines ressemblent à des lettres latines mais se lisent autrement : le « P » cyrillique se lit **r**, le « H » se lit **n**, le « C » se lit **s**, le « B » se lit **v**.
+
+          **La langue** : le russe a **six cas** (comme le latin, les terminaisons indiquent la fonction des mots), pas d'article, et l'**accent tonique** est mobile.
+
+          **Les grands auteurs** :
+          - **Alexandre Pouchkine** (*Eugène Onéguine*), père de la littérature russe moderne ;
+          - **Léon Tolstoï** (*Guerre et Paix*, *Anna Karénine*) ;
+          - **Fiodor Dostoïevski** (*Crime et Châtiment*) ;
+          - **Anton Tchekhov**, nouvelles et théâtre (*La Cerisaie*) ;
+          - au XXᵉ siècle, **Boris Pasternak**, **Alexandre Soljenitsyne** (*L'Archipel du Goulag*).
+
+          **Repères** : révolution de **1917**, Union soviétique (URSS) de **1922 à 1991**.
+      - visuel: { type: parole, langue: ru-RU, mots: [{ texte: "Здравствуйте!", sens: "Bonjour ! (zdravstvouïtié)", emoji: "👋" }, { texte: "Спасибо.", sens: "Merci. (spassiba)", emoji: "🙏" }] }
+        legende: "Écoute deux mots courants en russe, écrits en cyrillique."
+      - astuce: { texte: "Retiens les faux jumeaux du cyrillique : P se lit r, H se lit n, C se lit s, B se lit v.", qui: zero }
+      - retiens: "Cyrillique : **33 lettres** ; faux jumeaux : **P se lit r**, **H se lit n**, **C se lit s**, **B se lit v**. **Six cas**, pas d'article. **Pouchkine**, **Tolstoï**, **Dostoïevski**, **Tchekhov**, **Soljenitsyne**. **1917** ; URSS jusqu'en **1991**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque lettre cyrillique (qui ressemble à une lettre latine) à son vrai son."
+        paires: [["P cyrillique", "r"], ["H cyrillique", "n"], ["C cyrillique", "s"], ["B cyrillique", "v"]]
+        correction: "Des lettres trompeuses pour les lecteurs de l'alphabet latin."
+      - type: relier
+        enonce: "🔗 Relie chaque œuvre à son auteur."
+        paires: [["Guerre et Paix", "Tolstoï"], ["Crime et Châtiment", "Dostoïevski"], ["Eugène Onéguine", "Pouchkine"], ["La Cerisaie", "Tchekhov"]]
+        correction: "Quatre chefs-d'œuvre de la littérature russe."
+      - type: nombre
+        enonce: "Combien de cas grammaticaux compte le russe ?"
+        reponse: "6"
+        correction: "**Six** cas, comme le latin."
+      - type: vf
+        vars: { t: [["L'alphabet cyrillique compte 33 lettres en russe.", true], ["Le russe utilise des articles comme le français.", false], ["L'URSS a disparu en 1991.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "33 lettres ; pas d'article en russe ; fin de l'URSS en 1991."
+
+  - id: llcer-chinois
+    titre: Le chinois, caractères et tons
+    classe: "1ʳᵉ"
+    objectif: Je connais les caractères chinois, le pinyin, les tons du mandarin et quelques repères culturels.
+    mots: [sinogramme, pinyin, ton, mandarin]
+    etapes:
+      - dialogue:
+          - zero: "En chinois, « ma » veut dire maman ?"
+          - neo: "Ça dépend du ton ! Avec le premier ton, c'est « maman » ; avec le troisième, c'est « cheval » ; avec le quatrième, « gronder »."
+      - a_quoi_ca_sert: "Le mandarin est la langue la plus parlée au monde par des locuteurs natifs ; il ouvre sur une culture millénaire et sur des échanges économiques majeurs."
+      - texte: |
+          **Les caractères** (sinogrammes) : chaque caractère note une syllabe et un sens. Il en existe des dizaines de milliers ; environ **3 000** suffisent pour lire un journal. Ils se composent de **traits** tracés dans un ordre précis, et souvent d'une **clé** qui indique le domaine du sens (l'eau, la main, le cœur).
+
+          **Le pinyin** : la transcription officielle en lettres latines (*nǐ hǎo* = bonjour).
+
+          **Les tons** : le mandarin a **quatre tons** (plus un ton neutre). *mā* (haut et plat : maman), *má* (montant : chanvre), *mǎ* (descendant puis montant : cheval), *mà* (descendant : gronder).
+
+          **La grammaire** : pas de conjugaison ni d'accord ; l'ordre des mots et de petits mots outils donnent le sens.
+
+          **Repères** : **Confucius** (Vᵉ siècle av. J.-C.), la poésie des Tang (Li Bai), **Lu Xun** (XXᵉ siècle), **Mo Yan** (prix Nobel 2012) ; la République populaire de Chine est proclamée en **1949**.
+      - visuel: { type: parole, langue: zh-CN, mots: [{ texte: "妈", sens: "mā : maman (1ᵉʳ ton)", emoji: "👩" }, { texte: "马", sens: "mǎ : cheval (3ᵉ ton)", emoji: "🐴" }, { texte: "你好", sens: "nǐ hǎo : bonjour", emoji: "👋" }] }
+        legende: "Écoute la différence de ton entre « maman » et « cheval »."
+      - astuce: { texte: "Apprends chaque mot avec son ton dès le début, comme une mélodie : changer de ton, c'est changer de mot.", qui: mia }
+      - retiens: "**Sinogrammes** (un caractère = une syllabe + un sens, traits et clés). **Pinyin** = transcription latine. **Quatre tons** (et un ton neutre) qui changent le sens. Pas de conjugaison. **Confucius**, **Li Bai**, **Lu Xun**, **Mo Yan** (Nobel 2012) ; RPC en **1949**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque syllabe à son sens (attention au ton)."
+        paires: [["mā (1ᵉʳ ton)", "maman"], ["mǎ (3ᵉ ton)", "cheval"], ["mà (4ᵉ ton)", "gronder"]]
+        correction: "Même syllabe, tons différents, sens différents."
+      - type: qcm
+        enonce: "Qu'est-ce que le pinyin ?"
+        choix: ["La transcription du chinois en lettres latines", "Un caractère très ancien", "Une fête chinoise", "Le nom d'un ton"]
+        correction: "Le **pinyin** écrit la prononciation en alphabet latin."
+      - type: nombre
+        enonce: "Combien de tons principaux compte le mandarin (sans le ton neutre) ?"
+        reponse: "4"
+        correction: "**Quatre** tons, plus un ton neutre."
+      - type: vf
+        vars: { t: [["Les verbes chinois se conjuguent selon la personne.", false], ["Environ 3 000 caractères suffisent pour lire un journal.", true], ["Confucius est un penseur chinois de l'Antiquité.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Pas de conjugaison ; environ 3 000 caractères ; Confucius, Vᵉ siècle av. J.-C."
+
+  - id: llcer-arabe
+    titre: L'arabe, une écriture de droite à gauche
+    classe: "1ʳᵉ"
+    objectif: Je connais l'écriture arabe, la diversité du monde arabophone, ses grands auteurs et les mots arabes du français.
+    mots: [alphabet arabe, arabe littéral, dialecte, emprunt]
+    etapes:
+      - dialogue:
+          - neo: "Algèbre, chiffre, zéro, sucre, café, jupe… Tous ces mots français viennent de l'arabe !"
+          - zero: "Je parle arabe sans le savoir ?"
+          - mia: "Un peu ! Le français a emprunté des centaines de mots à l'arabe, surtout au Moyen Âge, par les sciences et le commerce."
+      - a_quoi_ca_sert: "L'arabe est langue officielle d'une vingtaine de pays et l'une des six langues de l'ONU ; il ouvre sur une grande civilisation scientifique et littéraire."
+      - texte: |
+          **L'écriture** : **28 lettres**, écrites de **droite à gauche**. Les lettres changent de forme selon leur place dans le mot (début, milieu, fin) ; les voyelles courtes sont souvent sous-entendues.
+
+          **Plusieurs arabes** : l'**arabe littéral** (écrit, médias, littérature, commun à tous les pays) et les **dialectes** parlés (maghrébin, égyptien, levantin, du Golfe).
+
+          **La littérature** :
+          - les ***Mille et Une Nuits***, contes encadrés par Shéhérazade ;
+          - la poésie classique (al-Mutanabbî) ;
+          - **Naguib Mahfouz** (Égypte), prix Nobel **1988** ;
+          - **Mahmoud Darwich**, poète palestinien.
+
+          **Les sciences** : à Bagdad et en al-Andalus, les savants (al-Khwârizmî, inventeur de l'**algèbre** et dont le nom a donné « algorithme ») transmettent et développent les savoirs antiques.
+
+          **Mots arabes du français** : *algèbre*, *chiffre* et *zéro* (de *sifr*, le vide), *sucre*, *café*, *coton*, *magasin*, *amiral*.
+      - visuel: { type: parole, langue: ar-SA, mots: [{ texte: "مرحبا", sens: "marhaban : bonjour", emoji: "👋" }, { texte: "شكرا", sens: "choukran : merci", emoji: "🙏" }] }
+        legende: "Écoute deux mots courants ; l'écriture se lit de droite à gauche."
+      - astuce: { texte: "Al-Khwârizmî a donné deux mots aux maths : « algèbre » (de son livre) et « algorithme » (de son nom).", qui: zero }
+      - retiens: "Écriture : **28 lettres**, de **droite à gauche**, formes selon la position. **Arabe littéral** et **dialectes**. *Mille et Une Nuits*, **Mahfouz** (Nobel 1988), **Darwich**. Al-Khwârizmî : **algèbre**, **algorithme**. Emprunts : chiffre, zéro, sucre, café."
+    exercices:
+      - type: classer
+        enonce: "Range chaque mot français : emprunté à l'arabe ou non ?"
+        categories: ["Emprunté à l'arabe", "Autre origine"]
+        mots: [["algèbre", 0], ["fenêtre", 1], ["zéro", 0], ["sucre", 0], ["château", 1]]
+        correction: "Algèbre, zéro, sucre viennent de l'arabe ; fenêtre et château du latin."
+      - type: qcm
+        enonce: "Dans quel sens s'écrit l'arabe ?"
+        choix: ["De droite à gauche", "De gauche à droite", "De haut en bas uniquement", "En spirale"]
+        correction: "De **droite à gauche**, comme l'hébreu."
+      - type: relier
+        enonce: "🔗 Relie chaque nom à son apport."
+        paires: [["Naguib Mahfouz", "romancier égyptien, prix Nobel 1988"], ["al-Khwârizmî", "savant à l'origine de l'algèbre"], ["Shéhérazade", "conteuse des Mille et Une Nuits"]]
+        correction: "Littérature et sciences du monde arabe."
+      - type: vf
+        vars: { t: [["L'arabe est l'une des six langues officielles de l'ONU.", true], ["L'arabe littéral et les dialectes sont exactement la même chose.", false], ["Le mot « algorithme » vient du nom d'un savant.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Langue de l'ONU ; littéral et dialectes diffèrent ; al-Khwârizmî a donné « algorithme »."
+
+  - id: llcer-hebreu
+    titre: L'hébreu, une langue ancienne redevenue vivante
+    classe: Terminale
+    objectif: Je connais l'alphabet hébreu, l'histoire de la renaissance de l'hébreu moderne et quelques grands auteurs.
+    mots: [alphabet hébreu, hébreu moderne, renaissance d'une langue, littérature]
+    etapes:
+      - dialogue:
+          - mia: "Pendant des siècles, l'hébreu servait surtout à la prière et à l'étude. À la fin du XIXᵉ siècle, il est redevenu une langue de tous les jours."
+          - zero: "On peut faire revivre une langue ?"
+          - neo: "C'est un cas presque unique au monde : aujourd'hui, des millions de personnes la parlent, l'écrivent et la chantent."
+      - a_quoi_ca_sert: "L'histoire de l'hébreu montre comment une langue vit, meurt ou renaît ; elle ouvre sur des textes fondateurs et une littérature contemporaine très traduite."
+      - texte: |
+          **L'alphabet hébreu** : **22 lettres**, toutes des consonnes, écrites de **droite à gauche**. Des petits signes (points) peuvent noter les voyelles, surtout pour les débutants et les textes poétiques.
+
+          **Une langue ancienne** : la langue de la Bible hébraïque, puis surtout une langue d'étude et de prière pendant près de deux mille ans.
+
+          **La renaissance** : à la fin du XIXᵉ siècle, **Eliezer Ben-Yehuda** et d'autres font de l'hébreu une langue parlée au quotidien ; il invente des mots modernes et publie un grand dictionnaire. L'hébreu devient langue officielle de l'État d'Israël (1948).
+
+          **La littérature** : **Shmuel Yosef Agnon**, prix Nobel **1966** ; **Amos Oz** (*Une histoire d'amour et de ténèbres*) ; **David Grossman** ; la poétesse **Rachel** et le poète **Yehuda Amichaï**.
+      - visuel: { type: parole, langue: he-IL, mots: [{ texte: "שלום", sens: "shalom : bonjour, paix", emoji: "🕊️" }, { texte: "תודה", sens: "toda : merci", emoji: "🙏" }] }
+        legende: "Écoute deux mots courants ; l'écriture se lit de droite à gauche."
+      - astuce: { texte: "Shalom veut dire à la fois « bonjour » et « paix » : un bon moyen de retenir le premier mot de la langue.", qui: mia }
+      - retiens: "Alphabet hébreu : **22 lettres** (consonnes), de **droite à gauche**, voyelles notées par des points. Langue ancienne **redevenue parlée** à la fin du XIXᵉ siècle (**Ben-Yehuda**). Auteurs : **Agnon** (Nobel 1966), **Amos Oz**, **Grossman**, **Amichaï**."
+    exercices:
+      - type: nombre
+        enonce: "Combien de lettres compte l'alphabet hébreu ?"
+        reponse: "22"
+        correction: "**22** lettres, toutes des consonnes."
+      - type: qcm
+        enonce: "Qui a joué un rôle majeur dans la renaissance de l'hébreu parlé ?"
+        choix: ["Eliezer Ben-Yehuda", "Amos Oz", "Victor Hugo", "Confucius"]
+        correction: "**Eliezer Ben-Yehuda**, à la fin du XIXᵉ siècle."
+      - type: relier
+        enonce: "🔗 Relie chaque auteur à son apport."
+        paires: [["Shmuel Yosef Agnon", "prix Nobel de littérature 1966"], ["Amos Oz", "Une histoire d'amour et de ténèbres"], ["Yehuda Amichaï", "poète de la vie quotidienne"]]
+        correction: "Trois figures de la littérature en hébreu."
+      - type: vf
+        vars: { t: [["L'hébreu s'écrit de droite à gauche.", true], ["L'hébreu n'a jamais cessé d'être la langue parlée au quotidien par tous.", false], ["Les voyelles peuvent être notées par des points.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Droite à gauche ; langue surtout d'étude pendant des siècles avant sa renaissance ; points-voyelles."
+
+  - id: llcer-japonais
+    titre: Le japonais, trois écritures pour une langue
+    classe: Terminale
+    objectif: Je distingue les trois écritures du japonais et je connais les grands repères de la littérature et de la culture japonaises.
+    mots: [hiragana, katakana, kanji, haïku]
+    etapes:
+      - dialogue:
+          - zero: "Le japonais, c'est comme le chinois ?"
+          - neo: "Il emprunte des caractères chinois, les kanji, mais il y ajoute deux alphabets syllabiques bien à lui. Trois écritures dans la même phrase !"
+      - a_quoi_ca_sert: "Le japonais ouvre sur une littérature ancienne et sur une culture contemporaine très présente en France (mangas, animation, jeux vidéo)."
+      - texte: |
+          **Trois écritures** :
+          - les **kanji** : des caractères venus de Chine, porteurs de sens (environ 2 000 d'usage courant) ;
+          - les **hiragana** : un syllabaire de 46 signes pour la grammaire et les mots japonais ;
+          - les **katakana** : un autre syllabaire de 46 signes pour les **mots étrangers** (*terebi*, la télévision) et les onomatopées.
+
+          **La grammaire** : le verbe est à la **fin** de la phrase (sujet, objet, verbe) ; des petites particules indiquent la fonction des mots ; des formes de **politesse** très riches.
+
+          **La littérature** :
+          - ***Le Dit du Genji*** de **Murasaki Shikibu** (début du XIᵉ siècle), souvent appelé le premier roman du monde ;
+          - le **haïku**, court poème de 17 syllabes (5, 7, 5), avec **Bashō** (XVIIᵉ siècle) ;
+          - **Yasunari Kawabata** (Nobel 1968), **Kenzaburō Ōe** (Nobel 1994), **Haruki Murakami**.
+      - visuel: { type: parole, langue: ja-JP, mots: [{ texte: "こんにちは", sens: "konnichiwa : bonjour (en hiragana)", emoji: "👋" }, { texte: "ありがとう", sens: "arigatō : merci", emoji: "🙏" }] }
+        legende: "Écoute deux mots courants écrits en hiragana."
+      - astuce: { texte: "Kanji pour le sens, hiragana pour la grammaire, katakana pour les mots venus d'ailleurs.", qui: mia }
+      - retiens: "Trois écritures : **kanji** (sens, d'origine chinoise), **hiragana** (grammaire), **katakana** (mots étrangers). Verbe **à la fin**, particules, politesse. ***Le Dit du Genji*** (Murasaki Shikibu), **haïku** (5, 7, 5 ; Bashō), **Kawabata**, **Ōe**, **Murakami**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque écriture à son usage."
+        paires: [["les kanji", "porter le sens des mots"], ["les hiragana", "noter la grammaire et les mots japonais"], ["les katakana", "écrire les mots étrangers"]]
+        correction: "Trois écritures complémentaires."
+      - type: nombre
+        enonce: "Combien de syllabes compte un haïku traditionnel ?"
+        reponse: "17"
+        correction: "5 + 7 + 5 = **17** syllabes."
+      - type: qcm
+        enonce: "Où se place le verbe dans une phrase japonaise ?"
+        choix: ["À la fin", "Au début", "Toujours en deuxième position", "N'importe où"]
+        correction: "Ordre sujet, objet, verbe : le verbe est **à la fin**."
+      - type: vf
+        vars: { t: [["Le Dit du Genji a été écrit par une femme.", true], ["Les katakana servent surtout aux mots étrangers.", true], ["Le japonais n'utilise aucun caractère d'origine chinoise.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Murasaki Shikibu ; katakana pour les mots étrangers ; les kanji viennent de Chine."
+
+  - id: llcer-amc
+    titre: "Anglais, monde contemporain : comprendre et débattre"
+    classe: Terminale
+    objectif: J'analyse des documents d'actualité en anglais (presse, discours, données) et je prends part à un débat argumenté.
+    mots: [AMC, presse, discours, débat]
+    etapes:
+      - dialogue:
+          - mia: "La spécialité « anglais, monde contemporain » ne passe pas par la littérature : elle étudie l'actualité, la société, la politique et les médias du monde anglophone."
+          - zero: "Donc on lit des journaux en anglais ?"
+          - neo: "Des articles, des discours, des graphiques, des podcasts… et on en débat."
+      - a_quoi_ca_sert: "Comprendre l'actualité internationale en anglais est indispensable en journalisme, en commerce, en sciences politiques et dans les organisations internationales."
+      - texte: |
+          **Les documents** : articles de presse (*The Guardian*, *The New York Times*), éditoriaux, discours politiques, rapports, infographies, podcasts.
+
+          **Analyser** : qui parle, à qui, quand, dans quel but ; distinguer **fait** et **opinion** ; repérer les procédés de persuasion (chiffres, émotion, autorité).
+
+          **Un discours célèbre** : « *I have a dream* », Martin Luther King, Washington, **1963**.
+
+          **Lire des données** : *to increase* ou *to rise* (augmenter), *to decrease* ou *to fall* (baisser), *a third* (un tiers), *twice as many* (deux fois plus).
+
+          **Débattre** : *I'd argue that…*, *On the one hand… on the other hand…*, *I see your point, but…*, *The evidence suggests that…*.
+      - visuel: { type: parole, langue: en-US, mots: [{ texte: "I have a dream.", sens: "Je fais un rêve.", emoji: "✊" }, { texte: "I see your point, but the evidence suggests otherwise.", sens: "Je comprends ton point de vue, mais les données suggèrent le contraire.", emoji: "📊" }] }
+        legende: "Une phrase historique, puis une phrase utile pour débattre."
+      - astuce: { texte: "Pour chaque document d'actualité, réponds en anglais à trois questions : Who? What for? How convincing?", qui: neo }
+      - retiens: "**AMC** : actualité, société, politique, médias du monde anglophone. Analyser la **source**, distinguer **fait** et **opinion**, repérer la **persuasion**. Données : *to rise*, *to fall*, *twice as many*. Débattre : *I'd argue that*, *on the other hand*, *I see your point, but*."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque expression à son sens."
+        paires: [["to rise", "augmenter"], ["to fall", "baisser"], ["twice as many", "deux fois plus"], ["a third", "un tiers"]]
+        correction: "Le vocabulaire pour commenter des données."
+      - type: classer
+        enonce: "Range chaque phrase : fact or opinion ?"
+        categories: ["Fact", "Opinion"]
+        mots: [["The law was passed in 2020.", 0], ["This law is a terrible mistake.", 1], ["Unemployment fell by 2 % last year.", 0], ["The government should do more.", 1]]
+        correction: "Un fait se vérifie ; une opinion exprime un jugement."
+      - type: qcm
+        enonce: "Qui a prononcé « I have a dream » en 1963 ?"
+        choix: ["Martin Luther King", "Abraham Lincoln", "Barack Obama", "Winston Churchill"]
+        correction: "**Martin Luther King**, lors de la marche sur Washington."
+      - type: vf
+        vars: { t: [["La spécialité AMC étudie surtout l'actualité et la société.", true], ["« On the other hand » introduit un autre point de vue.", true], ["En débat, il vaut mieux ne jamais s'appuyer sur des données.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Actualité et société ; on the other hand = d'un autre côté ; les données renforcent l'argument."

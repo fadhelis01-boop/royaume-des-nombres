@@ -132,3 +132,11 @@ chapitres:
       - mia: "Chaque langue est un trésor. Rendons-leur leurs mots."
     apres:
       - narrateur: "Les panneaux se rallument un à un, et la place résonne de mille accents : Buongiorno, Demat, Bonjorn, Bonjou !"
+  en-port-des-langues-du-monde:
+    titre: "Le Port des Langues du monde"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Au grand port, les navires restent à quai : leurs pavillons sont devenus gris, et personne ne comprend plus les marins venus de loin."
+      - neo: "Cyrillique, caractères, alphabets de droite à gauche : chaque écriture est une porte. Ouvrons-les."
+    apres:
+      - narrateur: "Les pavillons reprennent leurs couleurs. Sur les quais, on entend « obrigado », « spassiba », « xièxie », « choukran », « toda », « arigatō »."

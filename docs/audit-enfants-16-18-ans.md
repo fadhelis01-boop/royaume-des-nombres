@@ -88,7 +88,7 @@ Dans une formule, « si $a<0$ » était lu « a<0 » : les signes < et > à l'in
 
 Restent ouverts :
 - **le supérieur** : peu de contenus (14 leçons de niveau post-bac, toutes matières) ;
-- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; théâtre, danse, histoire des arts et série S2TMD en 2.20.0 ; LLCER espagnol, allemand, italien et langues régionales, LLCA et biologie-écologie en 2.21.0 : toutes les spécialités et séries du lycée ont maintenant au moins un monde ; les langues rares de LLCER (portugais, russe, chinois…) n'ont qu'une leçon de méthode commune ;
+- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; théâtre, danse, histoire des arts et série S2TMD en 2.20.0 ; LLCER espagnol, allemand, italien et langues régionales, LLCA et biologie-écologie en 2.21.0 : toutes les spécialités et séries du lycée ont maintenant au moins un monde ; les langues plus rares de LLCER (portugais, russe, chinois, arabe, hébreu, japonais) et l'anglais monde contemporain ont une leçon chacune depuis 2.22.0 ;
 - **le test avec de vrais élèves**.
 
 ## Ajouts livrés (2.16.0)
@@ -151,3 +151,10 @@ Restent ouverts :
 7. **Bug de voix trouvé en relisant, présent dans toute l'application** : la règle qui retire le « s » de « quatre-vingts » retirait aussi celui de « trois » ; « 3ᵉ », « 23ᵉ », « XIIIᵉ siècle » étaient lus « troiième ». Corrigé et couvert par un test (40 fichiers de contenu concernés).
 8. Un exercice d'ordre ambigu en allemand (« Ich lese heute ein Buch » serait aussi juste) a été remplacé par un QCM.
 9. Vérifié : 145 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, défis des cinq mondes et galaxie ouverts dans le navigateur avec un profil de Terminale, console sans erreur.
+
+## Ajouts livrés (2.22.0) : langues plus rares de LLCER
+
+1. **Le Port des Langues du monde** (planète Langues, 7 leçons, une par langue) : **portugais** (lusophonie, Camões, Pessoa, saudade), **russe** (cyrillique et ses faux jumeaux, six cas, Pouchkine, Tolstoï, Dostoïevski), **chinois** (sinogrammes, pinyin, quatre tons), **arabe** (écriture de droite à gauche, arabe littéral et dialectes, mots arabes du français), **hébreu** (22 lettres, renaissance de la langue), **japonais** (kanji, hiragana, katakana, haïku), **anglais monde contemporain** (presse, discours, données, débat).
+2. Chaque leçon fait écouter quelques mots dans la langue (voix portugaise, russe, chinoise, arabe, hébraïque, japonaise, américaine) avec l'écriture d'origine ; le texte du cours n'utilise que la transcription latine, pour que la voix française ne tente pas de lire des écritures qu'elle ne connaît pas.
+3. Corrigé en relisant : « P = r » (lu « P égale r ») réécrit « P se lit r » ; « (+ neutre) » et les barres obliques réécrits en toutes lettres.
+4. Vérifié : 145 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans ; caractères chinois et arabes bien affichés, défi ouvert dans le navigateur, console sans erreur.
