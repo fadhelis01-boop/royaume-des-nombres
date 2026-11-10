@@ -1,3 +1,10 @@
+- version: "2.24.0"
+  date: "2026-11-10"
+  notes:
+    - "Deuxième et troisième année du supérieur : on peut choisir « Bac+2 » ou « Bac+3 » comme classe, et le test de niveau comme le parcours vont jusque-là."
+    - "La Tour de l'Analyse (séries, diagonalisation, intégrales généralisées, plusieurs variables, descente de gradient) et l'Observatoire des Statistiques (lois continues, théorème central limite, régression, intervalles de confiance, tests)."
+    - "Le Carrefour des Carrières (stage, rapport de stage, mémoire, entretien d'embauche, master) et le Laboratoire des Ondes et de la Chaleur (thermodynamique, électromagnétisme, Fourier)."
+    - "Espace parents : la liste des classes propose aussi « Supérieur », « Bac+2 » et « Bac+3 »."
 - version: "2.23.0"
   date: "2026-11-10"
   notes:

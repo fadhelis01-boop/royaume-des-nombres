@@ -339,3 +339,11 @@ chapitres:
       - mia: "Personne ne te tiendra la main ici. Mais avec de bonnes méthodes, tu n'en auras pas besoin."
     apres:
       - narrateur: "Les carnets se remplissent de notes claires, les plannings tiennent, les bibliographies s'alignent. L'Amphithéâtre applaudit."
+  fr-carrefour-des-carrieres:
+    titre: "Chapitre 23 — Le Carrefour des Carrières"
+    objet: "✒️ La Plume d'or"
+    avant:
+      - narrateur: "Au Carrefour, les panneaux tournent dans tous les sens : stages, masters, emplois, plus personne ne sait quel chemin prendre."
+      - mia: "Un CV ciblé, un rapport clair, un mémoire précis, un entretien préparé : chaque écrit ouvre une route."
+    apres:
+      - narrateur: "Les panneaux se stabilisent. Chaque chemin porte maintenant un nom, et tu sais lequel prendre."

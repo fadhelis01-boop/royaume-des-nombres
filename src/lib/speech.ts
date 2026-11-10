@@ -118,6 +118,7 @@ function latexToSpeech(tex: string): string {
   // tableaux de légendes (« \begin{array}{l} \leftarrow \text{numérateur} \\ … \end{array} ») : on garde les mots
   let s = tex
     .replace(/\\begin\{[a-z*]+\}(\{[^}]*\})?|\\end\{[a-z*]+\}/g, " ")
+    .replace(/\\leftarrow|\\gets/g, " prend la valeur ")
     .replace(/\\(?:long)?(?:left|right|leftright)arrow/gi, " ")
     .replace(/\\\\/g, ", ")
     // audit « 13-15 ans » : fonctions, norme, f(x)
@@ -130,6 +131,8 @@ function latexToSpeech(tex: string): string {
     .replace(/\\[,;:! ]/g, " ");
   for (let i = 0; i < 4; i++) {
     s = s
+      .replace(/\\[dt]?frac\{\\partial\s*([^{}]*)\}\{\\partial\s*([^{}]*)\}/g, " dérivée partielle de $1 par rapport à $2 ")
+      .replace(/\\text\{tr\}/g, " trace de ")
       .replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, (_, a, b) => (/^\s*-?\d+\s*$/.test(a) && /^\s*\d+\s*$/.test(b) ? fracWords(a.trim(), b.trim()) : ` ${a} sur ${b} `))
       .replace(/\\sqrt\[(\d)\]\{([^{}]*)\}/g, " racine $1-ième de $2 ")
       .replace(/\\sqrt\{([^{}]*)\}/g, " racine carrée de $1 ")
@@ -143,6 +146,14 @@ function latexToSpeech(tex: string): string {
     // notations du supérieur (audit « supérieur ») : limites avec bornes, quantificateurs, dérivées, petit o
     .replace(/\\lim(?:\\limits)?\s*_\{([^{}]*?)\\to([^{}]*)\}/g, " limite quand $1 tend vers $2 de ")
     .replace(/\\limits/g, "")
+    .replace(/\\sum_\{([^{}]*)\}\^\{([^{}]*)\}/g, " somme pour $1 jusqu'à $2 de ")
+    .replace(/\\sum_\{([^{}]*)\}/g, " somme pour $1 de ")
+    .replace(/\\int_\{?([^{}\s^]*)\}?\^\{([^{}]*)\}/g, " intégrale de $1 à $2 de ")
+    .replace(/\\int_(\w)\^(\w)/g, " intégrale de $1 à $2 de ")
+    .replace(/\\nabla/g, " gradient de ")
+    .replace(/\\det\b/g, " déterminant de ")
+    .replace(/\^\{-([^{}]*)\}/g, " puissance moins $1 ")
+    .replace(/\^(\\[a-zA-Z]+)/g, " puissance $1 ")
     .replace(/(\d|\b[a-z])!/g, " factorielle $1 ")
     .replace(/\\mathbb\{([NZRCQ])\}\^\{?(\w)\}?/g, " $1 $2 ")
     .replace(/\\forall/g, " pour tout ")
@@ -193,7 +204,7 @@ function latexToSpeech(tex: string): string {
     .replace(/\\lim/g, " limite ")
     .replace(/\\sum/g, " somme ")
     .replace(/\\int/g, " intégrale ")
-    .replace(/\\(alpha|beta|gamma|delta|theta|lambda|mu|sigma|omega|Delta)/g, " $1 ")
+    .replace(/\\(alpha|beta|gamma|delta|theta|lambda|mu|sigma|omega|Delta|eta|nu|rho|tau|phi|varphi|psi|xi|chi|kappa|Omega|Sigma|Phi)\b/g, (_m, g) => ` ${g === "varphi" ? "phi" : g} `)
     .replace(/\\(sin|cos|tan|ln|log|exp)\b/g, " $1 ")
     .replace(/\\[,;:! ]|\\quad|\\qquad/g, " ")
     .replace(/\{,\}/g, ",")

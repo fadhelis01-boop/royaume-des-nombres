@@ -83,7 +83,7 @@ export function NouvelEnfant() {
         <>
           <Bubble who="mia" text={age >= 13 ? "Et tu es dans quelle classe ?" : "Et tu es dans quelle classe ? (Demande à un adulte si tu ne sais pas.)"} />
           <div className="age-picker" role="group" aria-label="Ta classe">
-            {CLASSES.slice(0, 14)
+            {CLASSES
               .map((n, i) => ({ n, i }))
               .filter(({ i }) => Math.abs(i - classeDeLAge(age)) <= 2)
               .map(({ n, i }) => (

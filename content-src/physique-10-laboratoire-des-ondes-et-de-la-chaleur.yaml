@@ -1,0 +1,149 @@
+id: ph-laboratoire-des-ondes-et-de-la-chaleur
+matiere: physique
+titre: Le Laboratoire des Ondes et de la Chaleur
+sous_titre: Bac+2 et Bac+3 - thermodynamique, électromagnétisme, analyse de Fourier
+emoji: 🌡️
+couleur: "#bf360c"
+cycle: maitres
+age: 19-21 ans
+niveau: Bac+2 – Bac+3
+ordre: 210
+version: 1.0.0
+intro:
+  - narrateur: "Au sommet des Cimes, un laboratoire où ronronnent un moteur, une bobine et un oscilloscope."
+  - neo: "En deuxième et troisième année, la physique devient plus générale : quelques lois expliquent les moteurs, la lumière et tous les signaux."
+  - mia: "Énergie, champs, ondes : les trois piliers des sciences de l'ingénieur et de la physique moderne."
+
+lecons:
+  - id: thermodynamique
+    titre: Les deux principes de la thermodynamique
+    classe: Bac+2
+    objectif: J'applique le premier principe (conservation de l'énergie) et le second principe (entropie, rendement de Carnot).
+    mots: [énergie interne, entropie, machine thermique, rendement de Carnot]
+    etapes:
+      - dialogue:
+          - zero: "Un moteur qui transforme toute sa chaleur en mouvement, c'est possible ?"
+          - neo: "Non, et c'est une loi de la nature : le second principe. Même le moteur parfait de Carnot perd une partie de l'énergie."
+      - a_quoi_ca_sert: "Moteurs, centrales électriques, réfrigérateurs, pompes à chaleur : la thermodynamique fixe les limites de toutes les machines et guide la transition énergétique."
+      - texte: |
+          **Premier principe** (conservation de l'énergie) : $\Delta U = W + Q$. La variation d'énergie interne d'un système est égale au travail reçu plus la chaleur reçue.
+
+          **Second principe** : l'**entropie** d'un système isolé ne peut qu'augmenter ; la chaleur passe spontanément du chaud vers le froid.
+
+          **Machine thermique** : elle prend de la chaleur à une source chaude, en rend une partie à une source froide et fournit du travail.
+
+          **Rendement de Carnot** (le maximum théorique) : $\eta_{max} = 1 - \dfrac{T_f}{T_c}$, avec les températures en **kelvins** ($T = \theta + 273$).
+
+          **Exemple** : entre 600 K et 300 K, $\eta_{max} = 1 - \dfrac{300}{600} = 0{,}5$, soit 50 %.
+      - attention: "Les températures de la formule de Carnot sont en **kelvins**, jamais en degrés Celsius."
+      - astuce: { texte: "Pour augmenter le rendement maximal, il faut une source chaude plus chaude ou une source froide plus froide.", qui: mia }
+      - retiens: "**1er principe** : $\\Delta U = W + Q$ (conservation). **2nd principe** : l'entropie d'un système isolé augmente ; chaleur du chaud vers le froid. **Carnot** : $\\eta_{max} = 1 - \\dfrac{T_f}{T_c}$, températures en **kelvins**."
+    exercices:
+      - type: nombre
+        vars: { t: [[600, 300, 50], [500, 400, 20], [800, 200, 75], [400, 300, 25]] }
+        enonce: "Une machine fonctionne entre $T_c = {{t_0}}$ K et $T_f = {{t_1}}$ K. Quel est son rendement maximal de Carnot, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "$1 - \\dfrac{ {{t_1}} }{ {{t_0}} } = {{t_2}}$ %."
+      - type: nombre
+        vars: { c: [27, 100, 227, 0] }
+        enonce: "Convertis {{c}} °C en kelvins (avec T = θ + 273)."
+        reponse: "c+273"
+        unite: K
+        correction: "{{c}} + 273 = **{{c+273}} K**."
+      - type: qcm
+        enonce: "Que dit le second principe pour un système isolé ?"
+        choix: ["Son entropie ne peut qu'augmenter", "Son énergie disparaît", "Sa température reste toujours constante", "La chaleur va du froid vers le chaud"]
+        correction: "L'entropie d'un système isolé ne diminue jamais."
+      - type: vf
+        vars: { t: [["Un moteur réel peut avoir un rendement de 100 %.", false], ["La formule de Carnot utilise des températures en kelvins.", true], ["La chaleur passe spontanément du chaud vers le froid.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Rendement toujours inférieur à 100 % ; kelvins ; du chaud vers le froid."
+
+  - id: electromagnetisme
+    titre: Électromagnétisme et équations de Maxwell
+    classe: Bac+2
+    objectif: Je relie champs électrique et magnétique, l'induction, et je comprends pourquoi la lumière est une onde électromagnétique.
+    mots: [champ électrique, champ magnétique, induction, onde électromagnétique]
+    etapes:
+      - dialogue:
+          - mia: "Un aimant qui bouge dans une bobine produit du courant. Un courant produit un champ magnétique. Tout est lié !"
+          - neo: "Maxwell a réuni ces lois en quatre équations, en 1865. Et il en a déduit que la lumière est une onde électromagnétique."
+      - a_quoi_ca_sert: "Alternateurs, transformateurs, moteurs électriques, radio, Wi-Fi, IRM : toute l'électrotechnique et les télécommunications reposent sur l'électromagnétisme."
+      - texte: |
+          **Champ électrique** $\vec{E}$ : créé par les charges ; il exerce une force $\vec{F} = q\vec{E}$.
+
+          **Champ magnétique** $\vec{B}$ : créé par les courants et les aimants ; mesuré en **teslas**.
+
+          **L'induction** (Faraday) : un champ magnétique **variable** crée un courant dans un circuit : c'est le principe des **alternateurs** et des **transformateurs**.
+
+          **Les équations de Maxwell** (1865) relient $\vec{E}$, $\vec{B}$, les charges et les courants. Leur conséquence : des champs électrique et magnétique peuvent se propager ensemble, sans support, à la vitesse $c \approx 3 \times 10^8$ m/s : ce sont les **ondes électromagnétiques**.
+
+          **Le spectre** : ondes radio, micro-ondes, infrarouge, **lumière visible**, ultraviolet, rayons X, rayons gamma ; même nature, longueurs d'onde différentes ($c = \lambda f$).
+      - astuce: { texte: "Faraday : pas de variation, pas de courant induit. Un aimant immobile dans une bobine ne produit rien.", qui: zero }
+      - retiens: "$\\vec{F} = q\\vec{E}$ ; $\\vec{B}$ en teslas. **Induction** (Faraday) : un champ magnétique **variable** crée un courant (alternateurs, transformateurs). **Maxwell** (1865) : la lumière est une **onde électromagnétique**, vitesse $c \\approx 3 \\times 10^8$ m/s, $c = \\lambda f$."
+    exercices:
+      - type: nombre
+        vars: { t: [[100, 3], [300, 1], [600, 0.5], [1500, 0.2]] }
+        enonce: "Une onde radio a une fréquence de {{t_0}} MHz. Quelle est sa longueur d'onde, en mètres ($c = 3 \\times 10^8$ m/s) ?"
+        reponse: "t_1"
+        unite: m
+        correction: "$\\lambda = \\dfrac{c}{f} = \\dfrac{3 \\times 10^8}{ {{t_0}} \\times 10^6} = {{t_1}}$ m."
+      - type: ordre
+        enonce: "Range ces ondes de la plus grande à la plus petite longueur d'onde."
+        items: ["Ondes radio", "Infrarouge", "Lumière visible", "Ultraviolet", "Rayons X"]
+        correction: "Radio, infrarouge, visible, ultraviolet, X."
+      - type: qcm
+        enonce: "Quand un courant est-il induit dans une bobine ?"
+        choix: ["Quand le champ magnétique qui la traverse varie", "Quand un aimant reste immobile à côté", "Seulement dans le vide", "Jamais"]
+        correction: "Loi de Faraday : il faut une **variation** du champ magnétique."
+      - type: vf
+        vars: { t: [["La lumière visible est une onde électromagnétique.", true], ["Les ondes électromagnétiques ont besoin d'air pour se propager.", false], ["Un transformateur fonctionne grâce à l'induction.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Lumière = onde électromagnétique ; propagation dans le vide ; induction dans les transformateurs."
+
+  - id: analyse-de-fourier
+    titre: L'analyse de Fourier, décomposer un signal
+    classe: Bac+3
+    objectif: J'explique qu'un signal périodique est une somme de sinusoïdes et j'interprète un spectre en fréquences.
+    mots: [série de Fourier, harmonique, spectre, fréquence fondamentale]
+    etapes:
+      - dialogue:
+          - zero: "Un la joué au piano et au violon, c'est la même note. Pourquoi ça sonne différemment ?"
+          - neo: "Même fondamentale, 440 Hz, mais pas les mêmes harmoniques. Fourier a montré que tout son se décompose en sinusoïdes simples."
+      - a_quoi_ca_sert: "Compression MP3 et JPEG, égaliseurs, imagerie médicale, analyse des vibrations, télécommunications : l'analyse de Fourier est partout dans le traitement du signal."
+      - texte: |
+          **Idée de Fourier** (début du XIXᵉ siècle) : tout signal **périodique** de fréquence $f$ est une somme de sinusoïdes de fréquences $f$, $2f$, $3f$… : la **fondamentale** et ses **harmoniques**.
+
+          **Le spectre** : le graphique qui donne l'**amplitude** de chaque fréquence. Un son pur n'a qu'un pic ; un instrument a une fondamentale et des harmoniques qui font son **timbre**.
+
+          **Exemple** : un signal carré de fréquence 100 Hz contient les harmoniques **impaires** 100, 300, 500 Hz… d'amplitudes décroissantes.
+
+          **La transformée de Fourier** généralise l'idée aux signaux non périodiques ; l'algorithme **FFT** la calcule très vite sur ordinateur.
+
+          **Filtrer** : supprimer ou atténuer certaines fréquences (enlever un bruit aigu, isoler une voix).
+      - astuce: { texte: "Harmonique de rang n = n fois la fondamentale. Pour un la à 440 Hz : 880, 1 320, 1 760 Hz…", qui: mia }
+      - retiens: "Signal **périodique** = somme de sinusoïdes : **fondamentale** $f$ et **harmoniques** $nf$. **Spectre** : amplitude de chaque fréquence ; le **timbre** vient des harmoniques. **Transformée de Fourier**, **FFT**, **filtrage**."
+    exercices:
+      - type: nombre
+        vars: { t: [[440, 3, 1320], [100, 5, 500], [220, 2, 440], [50, 4, 200]] }
+        enonce: "La fondamentale d'un son vaut {{t_0}} Hz. Quelle est la fréquence de l'harmonique de rang {{t_1}}, en Hz ?"
+        reponse: "t_2"
+        unite: Hz
+        correction: "{{t_1}} × {{t_0}} = **{{t_2}} Hz**."
+      - type: qcm
+        enonce: "Pourquoi un piano et un violon jouant le même la ne sonnent-ils pas pareil ?"
+        choix: ["Leurs harmoniques n'ont pas les mêmes amplitudes", "Leurs fondamentales sont différentes", "Le violon n'a pas de fréquence", "Le piano ne produit pas d'onde"]
+        correction: "Même fondamentale, harmoniques différentes : c'est le **timbre**."
+      - type: classer
+        enonce: "Un signal carré a une fondamentale de 100 Hz. Range chaque fréquence : présente dans son spectre ou absente ?"
+        categories: ["Présente", "Absente"]
+        mots: [["100 Hz", 0], ["200 Hz", 1], ["300 Hz", 0], ["400 Hz", 1]]
+        correction: "Un signal carré ne contient que les harmoniques impaires."
+      - type: vf
+        vars: { t: [["Un son pur n'a qu'une seule fréquence dans son spectre.", true], ["La compression MP3 utilise des idées de l'analyse de Fourier.", true], ["Un signal périodique ne peut pas se décomposer en sinusoïdes.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Son pur = un pic ; MP3 s'appuie sur Fourier ; tout signal périodique se décompose."

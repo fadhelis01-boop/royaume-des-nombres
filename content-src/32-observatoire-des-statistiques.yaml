@@ -1,0 +1,235 @@
+id: observatoire-des-statistiques
+titre: L'Observatoire des Statistiques
+sous_titre: Bac+2 et Bac+3 - lois continues, loi des grands nombres et théorème central limite, régression, intervalles de confiance, tests d'hypothèse
+emoji: 📈
+couleur: "#004d40"
+cycle: maitres
+age: 19-21 ans
+niveau: Bac+2 – Bac+3
+ordre: 32
+version: 1.0.0
+intro:
+  - narrateur: "Sur une colline, un observatoire braque ses lunettes non pas sur les étoiles, mais sur des nuages de données."
+  - mia: "Économie, psychologie, médecine, biologie, marketing : en deuxième et troisième année, presque toutes les filières font des statistiques."
+  - neo: "Ici, on apprend à tirer des conclusions fiables à partir d'un échantillon, et à mesurer le risque de se tromper."
+
+lecons:
+  - id: lois-continues
+    titre: Les lois de probabilité continues
+    classe: Bac+2
+    objectif: Je calcule des probabilités avec une densité et je connais les lois uniforme, exponentielle et normale.
+    mots: [densité, loi uniforme, loi exponentielle, loi normale]
+    etapes:
+      - dialogue:
+          - zero: "Quelle est la probabilité qu'un bus arrive exactement à 8 h 00 min 00,000 s ?"
+          - neo: "Zéro ! Pour une variable continue, on calcule la probabilité d'un intervalle, comme une aire sous une courbe : la densité."
+      - a_quoi_ca_sert: "Durées de vie de composants, temps d'attente, tailles, erreurs de mesure : les lois continues modélisent toutes les grandeurs qui varient de façon continue."
+      - texte: |
+          **Densité** : une fonction $f \geq 0$ dont l'aire totale vaut 1. $P(a \leq X \leq b) = \int_a^b f(t)\,dt$.
+
+          **Loi uniforme** sur $[a ; b]$ : densité constante $\dfrac{1}{b - a}$ ; espérance $\dfrac{a + b}{2}$.
+
+          **Loi exponentielle** de paramètre $\lambda$ : densité $\lambda e^{-\lambda t}$ pour $t \geq 0$ ; espérance $\dfrac{1}{\lambda}$. Elle est **sans mémoire** (la durée de vie d'un composant qui ne s'use pas).
+
+          **Loi normale** $\mathcal{N}(\mu, \sigma^2)$ : la courbe en cloche, d'espérance $\mu$ et d'écart type $\sigma$. On se ramène à la loi **normale centrée réduite** avec $Z = \dfrac{X - \mu}{\sigma}$.
+      - attention: "Pour une variable continue, $P(X = a) = 0$ : seules les probabilités d'intervalles ont un sens."
+      - astuce: { texte: "Une probabilité continue, c'est une aire : dessine la densité et colorie la zone demandée avant de calculer.", qui: mia }
+      - retiens: "Densité : aire totale 1, $P(a \\leq X \\leq b) = \\int_a^b f$. **Uniforme** $[a ; b]$ : espérance $\\dfrac{a+b}{2}$. **Exponentielle** : espérance $\\dfrac{1}{\\lambda}$, sans mémoire. **Normale** : $Z = \\dfrac{X - \\mu}{\\sigma}$ suit $\\mathcal{N}(0, 1)$."
+    exercices:
+      - type: nombre
+        vars: { t: [[0, 10, 5], [2, 8, 5], [10, 20, 15], [0, 60, 30]] }
+        enonce: "X suit la loi uniforme sur $[{{t_0}} ; {{t_1}}]$. Quelle est son espérance ?"
+        reponse: "t_2"
+        correction: "$\\dfrac{ {{t_0}} + {{t_1}} }{2} = {{t_2}}$."
+      - type: nombre
+        vars: { t: [[0.5, 2], [0.25, 4], [0.1, 10], [0.2, 5]] }
+        enonce: "Une durée de vie suit une loi exponentielle de paramètre $\\lambda = {{t_0}}$ (par an). Quelle est la durée de vie moyenne, en années ?"
+        reponse: "t_1"
+        correction: "Espérance $\\dfrac{1}{\\lambda} = {{t_1}}$ ans."
+      - type: nombre
+        vars: { t: [[110, 100, 5, 2], [145, 100, 15, 3], [130, 100, 10, 3], [120, 100, 20, 1]] }
+        enonce: "X suit une loi normale d'espérance {{t_1}} et d'écart type {{t_2}}. Quelle est la valeur centrée réduite $Z$ de $X = {{t_0}}$ ?"
+        reponse: "t_3"
+        correction: "$Z = \\dfrac{ {{t_0}} - {{t_1}} }{ {{t_2}} } = {{t_3}}$."
+      - type: vf
+        vars: { t: [["Pour une variable continue, P(X = a) vaut 0.", true], ["L'aire totale sous une densité vaut 1.", true], ["La loi exponentielle garde la mémoire de l'âge du composant.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "P(X = a) = 0 ; aire 1 ; la loi exponentielle est sans mémoire."
+
+  - id: lgn-tcl
+    titre: Loi des grands nombres et théorème central limite
+    classe: Bac+2
+    objectif: J'explique pourquoi la moyenne d'un grand échantillon se rapproche de l'espérance, et pourquoi elle suit approximativement une loi normale.
+    mots: [moyenne empirique, loi des grands nombres, théorème central limite, échantillon]
+    etapes:
+      - dialogue:
+          - mia: "Lance une pièce 10 fois : tu peux avoir 7 piles. Lance-la 10 000 fois : tu seras très près de 50 %."
+          - neo: "C'est la loi des grands nombres. Et le théorème central limite dit même comment se répartissent les écarts : en cloche !"
+      - a_quoi_ca_sert: "Ces deux théorèmes expliquent pourquoi les sondages, les assurances, les essais cliniques et le contrôle qualité fonctionnent avec des échantillons."
+      - texte: |
+          **Moyenne empirique** d'un échantillon $X_1, …, X_n$ (indépendantes, de même loi, d'espérance $\mu$ et d'écart type $\sigma$) : $\overline{X}_n = \dfrac{X_1 + … + X_n}{n}$.
+
+          **Loi des grands nombres** : $\overline{X}_n$ se rapproche de $\mu$ quand $n$ devient grand.
+
+          **Théorème central limite (TCL)** : pour $n$ grand, $\overline{X}_n$ suit **approximativement** une loi normale d'espérance $\mu$ et d'écart type $\dfrac{\sigma}{\sqrt{n}}$, **quelle que soit** la loi de départ.
+
+          **Conséquence** : pour diviser l'incertitude par 2, il faut un échantillon **4 fois** plus grand (à cause de la racine carrée).
+      - attention: "La loi des grands nombres ne dit pas que les résultats « se compensent » : après 5 piles, la pièce n'a pas plus de chances de tomber sur face."
+      - astuce: { texte: "Écart type de la moyenne = σ divisé par racine de n : c'est la formule à retenir pour toutes les marges d'erreur.", qui: zero }
+      - retiens: "**LGN** : $\\overline{X}_n \\to \\mu$. **TCL** : $\\overline{X}_n$ suit approximativement une loi normale d'espérance $\\mu$ et d'écart type $\\dfrac{\\sigma}{\\sqrt{n}}$, quelle que soit la loi de départ. Échantillon **× 4** ⇒ incertitude **÷ 2**."
+    exercices:
+      - type: nombre
+        vars: { t: [[10, 25, 2], [20, 100, 2], [12, 36, 2], [30, 100, 3]] }
+        enonce: "Écart type de la population : {{t_0}}. Taille de l'échantillon : {{t_1}}. Quel est l'écart type de la moyenne empirique ?"
+        reponse: "t_2"
+        correction: "$\\dfrac{\\sigma}{\\sqrt{n}} = \\dfrac{ {{t_0}} }{\\sqrt{ {{t_1}} }} = {{t_2}}$."
+      - type: nombre
+        enonce: "Par combien faut-il multiplier la taille d'un échantillon pour diviser l'incertitude par 2 ?"
+        reponse: "4"
+        correction: "L'incertitude varie comme $\\dfrac{1}{\\sqrt{n}}$ : il faut un échantillon **4** fois plus grand."
+      - type: qcm
+        enonce: "Que dit le théorème central limite ?"
+        choix: ["La moyenne d'un grand échantillon suit approximativement une loi normale", "Toutes les données suivent une loi normale", "La moyenne est toujours égale à l'espérance", "Les résultats se compensent toujours"]
+        correction: "C'est la **moyenne** qui devient approximativement normale, quelle que soit la loi de départ."
+      - type: vf
+        vars: { t: [["Après cinq piles, face devient plus probable au lancer suivant.", false], ["Plus l'échantillon est grand, plus la moyenne est proche de l'espérance.", true], ["Le TCL s'applique même si la loi de départ n'est pas normale.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Pas de compensation ; LGN ; TCL valable quelle que soit la loi."
+
+  - id: regression-correlation
+    titre: Corrélation et régression linéaire
+    classe: Bac+2
+    objectif: J'interprète un coefficient de corrélation et une droite de régression, sans confondre corrélation et causalité.
+    mots: [corrélation, régression linéaire, moindres carrés, causalité]
+    etapes:
+      - dialogue:
+          - zero: "Les ventes de glaces et les noyades augmentent ensemble. Les glaces font noyer les gens ?"
+          - neo: "Non : il fait chaud ! Les deux sont corrélées à cause d'une troisième variable. La corrélation ne prouve pas la causalité."
+      - a_quoi_ca_sert: "La régression est l'outil de base de l'économétrie, de la recherche médicale, du marketing et de l'apprentissage automatique (prédire une valeur à partir d'autres)."
+      - texte: |
+          **Le coefficient de corrélation linéaire** $r$ est compris entre $-1$ et $1$ :
+          - proche de $1$ : liaison linéaire croissante forte ;
+          - proche de $-1$ : liaison linéaire décroissante forte ;
+          - proche de $0$ : pas de liaison **linéaire** (il peut exister une liaison d'une autre forme).
+
+          **La droite de régression** (méthode des **moindres carrés**) : $y = ax + b$, la droite qui minimise la somme des carrés des écarts verticaux. Elle sert à **prédire** $y$ à partir de $x$.
+
+          **Le coefficient de détermination** $R^2 = r^2$ : la part de la variation de $y$ expliquée par $x$.
+
+          **Prudence** : une corrélation peut venir d'une **variable cachée** (la chaleur), d'une coïncidence, ou d'une causalité inverse.
+      - attention: "Prédire loin des données observées (extrapoler) est risqué : la relation peut changer en dehors de l'intervalle étudié."
+      - astuce: { texte: "Avant de calculer r, trace toujours le nuage de points : il montre tout de suite si une droite a du sens.", qui: mia }
+      - retiens: "$r \\in [-1 ; 1]$ : force et sens de la liaison **linéaire**. Droite des **moindres carrés** $y = ax + b$ pour prédire. $R^2 = r^2$ : part expliquée. **Corrélation ≠ causalité** (variable cachée). Prudence en extrapolant."
+    exercices:
+      - type: nombre
+        vars: { t: [[2, 5, 3, 11], [3, 1, 4, 13], [0.5, 10, 6, 13], [4, -2, 5, 18]] }
+        enonce: "La droite de régression est $y = {{t_0}}x + ({{t_1}})$. Quelle valeur de y prédit-elle pour $x = {{t_2}}$ ?"
+        reponse: "t_3"
+        correction: "${{t_0}} \\times {{t_2}} + ({{t_1}}) = {{t_3}}$."
+      - type: nombre
+        vars: { t: [[0.9, 81], [0.8, 64], [0.7, 49], [0.5, 25]] }
+        enonce: "Le coefficient de corrélation vaut {{t_0}}. Quel pourcentage de la variation de y est expliqué par x ($R^2$, en %) ?"
+        reponse: "t_1"
+        unite: "%"
+        correction: "$R^2 = {{t_0}}^2 = {{t_1}}$ %."
+      - type: classer
+        enonce: "Range chaque coefficient : liaison forte ou faible ?"
+        categories: ["Forte", "Faible"]
+        mots: [["r = 0,95", 0], ["r = 0,05", 1], ["r = −0,9", 0], ["r = −0,1", 1]]
+        correction: "La force dépend de la distance à 0, le signe donne le sens."
+      - type: qcm
+        enonce: "Ventes de glaces et noyades sont fortement corrélées. Quelle explication est la plus probable ?"
+        choix: ["Une variable cachée, la chaleur, influence les deux", "Les glaces provoquent les noyades", "Les noyades font vendre des glaces", "C'est forcément un hasard"]
+        correction: "La chaleur augmente les deux : **corrélation n'est pas causalité**."
+
+  - id: intervalle-confiance
+    titre: Estimer avec un intervalle de confiance
+    classe: Bac+3
+    objectif: Je construis et j'interprète un intervalle de confiance pour une proportion, et je relie sa largeur à la taille de l'échantillon.
+    mots: [estimation, intervalle de confiance, marge d'erreur, niveau de confiance]
+    etapes:
+      - dialogue:
+          - mia: "Un sondage sur 1 000 personnes donne 52 % pour un candidat. Il va gagner ?"
+          - neo: "Pas si vite : avec une marge d'erreur d'environ 3 points, le vrai score peut être entre 49 % et 55 %. Personne ne peut conclure."
+      - a_quoi_ca_sert: "Les sondages, les études médicales, le contrôle qualité et toutes les études de terrain donnent des intervalles, pas des certitudes ; savoir les lire évite de nombreuses erreurs d'interprétation."
+      - texte: |
+          **Estimer** : à partir d'une **fréquence observée** $f$ sur un échantillon de taille $n$, on cherche la **proportion réelle** $p$ dans la population.
+
+          **Intervalle de confiance à 95 %** (pour $n$ grand) : $\left[f - 1{,}96\sqrt{\dfrac{f(1-f)}{n}} \;;\; f + 1{,}96\sqrt{\dfrac{f(1-f)}{n}}\right]$.
+
+          **Approximation simple** : la marge d'erreur est au plus d'environ $\dfrac{1}{\sqrt{n}}$. Pour $n = 1\,000$ : environ 3 points. Pour $n = 10\,000$ : environ 1 point.
+
+          **Interprétation** : la méthode produit un intervalle qui contient la vraie valeur **dans 95 % des échantillons**. Ce n'est pas une certitude.
+
+          **Plus de confiance** (99 %) ⇒ intervalle **plus large** ; **plus de données** ⇒ intervalle **plus étroit**.
+      - attention: "Si deux intervalles de confiance se chevauchent largement, on ne peut pas dire qui est devant : c'est le cas de nombreux sondages « au coude à coude »."
+      - astuce: { texte: "Marge d'erreur maximale ≈ 1 divisé par racine de n : avec 400 personnes, environ 5 points ; avec 2 500, environ 2 points.", qui: zero }
+      - retiens: "IC à 95 % : $f \\pm 1{,}96\\sqrt{\\dfrac{f(1-f)}{n}}$ ; marge maximale ≈ $\\dfrac{1}{\\sqrt{n}}$. Contient la vraie valeur dans **95 % des échantillons**. Plus de confiance ⇒ plus large ; plus de données ⇒ plus étroit."
+    exercices:
+      - type: nombre
+        vars: { t: [[400, 5], [2500, 2], [10000, 1], [100, 10]] }
+        enonce: "Avec un échantillon de {{t_0}} personnes, quelle est environ la marge d'erreur maximale, en points de pourcentage ($\\dfrac{1}{\\sqrt{n}}$) ?"
+        reponse: "t_1"
+        unite: "%"
+        correction: "$\\dfrac{1}{\\sqrt{ {{t_0}} }} = {{t_1}}$ %."
+      - type: qcm
+        enonce: "Sondage : 52 % avec une marge de 3 points. Que peut-on dire ?"
+        choix: ["On ne peut pas conclure que le candidat a la majorité", "Le candidat gagnera forcément", "Le candidat a exactement 52 %", "Le sondage est faux"]
+        correction: "L'intervalle va d'environ 49 % à 55 % : il contient des valeurs sous 50 %."
+      - type: classer
+        enonce: "Range chaque changement : l'intervalle devient plus large ou plus étroit ?"
+        categories: ["Plus large", "Plus étroit"]
+        mots: [["Passer d'une confiance de 95 % à 99 %", 0], ["Interroger 4 fois plus de personnes", 1], ["Réduire l'échantillon de moitié", 0], ["Passer de 100 à 10 000 personnes", 1]]
+        correction: "Plus de confiance élargit ; plus de données resserre."
+      - type: vf
+        vars: { t: [["Un intervalle de confiance à 95 % garantit de contenir la vraie valeur.", false], ["Quadrupler l'échantillon divise environ la marge par deux.", true], ["Deux intervalles qui se chevauchent largement ne permettent pas de départager.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "95 % des échantillons, pas une garantie ; marge en 1/√n ; chevauchement = pas de conclusion."
+
+  - id: tests-hypothese
+    titre: Tests d'hypothèse et p-valeur
+    classe: Bac+3
+    objectif: Je formule une hypothèse nulle, j'interprète une p-valeur et je connais les deux types d'erreur d'un test.
+    mots: [hypothèse nulle, p-valeur, seuil, erreur de première espèce]
+    etapes:
+      - dialogue:
+          - zero: "Un nouveau médicament fait baisser la tension un peu plus qu'un placebo. Il marche ?"
+          - neo: "Peut-être… ou c'est le hasard de l'échantillon. Le test d'hypothèse mesure à quel point un tel écart serait surprenant si le médicament ne faisait rien."
+      - a_quoi_ca_sert: "Les tests statistiques décident de l'autorisation des médicaments, de l'efficacité d'une campagne, d'une différence entre deux groupes ; on les rencontre dans presque tous les mémoires de troisième année."
+      - texte: |
+          **L'hypothèse nulle** $H_0$ : « il n'y a pas d'effet » (le médicament fait comme le placebo). L'**hypothèse alternative** $H_1$ : il y a un effet.
+
+          **La p-valeur** : la probabilité d'observer un résultat **au moins aussi extrême** que celui obtenu, **si $H_0$ était vraie**.
+
+          **Décision** au seuil $\alpha$ (souvent **5 %**) : si $p < \alpha$, on **rejette** $H_0$ (résultat « statistiquement significatif ») ; sinon, on **ne rejette pas** $H_0$.
+
+          **Deux erreurs possibles** :
+          - **première espèce** : rejeter $H_0$ alors qu'elle est vraie (un faux positif), de probabilité $\alpha$ ;
+          - **seconde espèce** : ne pas rejeter $H_0$ alors qu'elle est fausse (un faux négatif).
+
+          **« Significatif » ne veut pas dire « important »** : un effet minuscule peut être significatif sur un très grand échantillon.
+      - attention: "Une p-valeur n'est pas la probabilité que l'hypothèse nulle soit vraie, et « ne pas rejeter H₀ » ne prouve pas qu'il n'y a aucun effet."
+      - astuce: { texte: "Petite p-valeur = résultat surprenant si rien ne se passait. Plus elle est petite, plus on doute de H₀.", qui: mia }
+      - retiens: "$H_0$ : pas d'effet. **p-valeur** : probabilité d'un résultat au moins aussi extrême **si $H_0$ est vraie**. $p < \\alpha$ (souvent 5 %) ⇒ **rejet** de $H_0$. Erreur de **1ʳᵉ espèce** (faux positif, probabilité $\\alpha$) et de **2ᵉ espèce** (faux négatif). Significatif ≠ important."
+    exercices:
+      - type: classer
+        enonce: "Au seuil de 5 %, range chaque p-valeur : on rejette H₀ ou non ?"
+        categories: ["Rejet de H₀", "Pas de rejet"]
+        mots: [["p = 0,001", 0], ["p = 0,20", 1], ["p = 0,03", 0], ["p = 0,08", 1]]
+        correction: "On rejette H₀ quand p < 0,05."
+      - type: relier
+        enonce: "🔗 Relie chaque erreur à sa description."
+        paires: [["erreur de première espèce", "rejeter H₀ alors qu'elle est vraie"], ["erreur de seconde espèce", "garder H₀ alors qu'elle est fausse"], ["seuil α", "probabilité maximale acceptée de faux positif"]]
+        correction: "Les deux risques d'un test."
+      - type: qcm
+        enonce: "Que signifie une p-valeur de 0,02 ?"
+        choix: ["Si H₀ était vraie, un résultat au moins aussi extrême aurait 2 % de chances d'arriver", "H₀ a 2 % de chances d'être vraie", "L'effet est de 2 %", "Le test est faux à 2 %"]
+        correction: "La p-valeur se calcule **en supposant H₀ vraie**."
+      - type: vf
+        vars: { t: [["Un résultat significatif est forcément important en pratique.", false], ["Ne pas rejeter H₀ ne prouve pas l'absence d'effet.", true], ["Le seuil de 5 % est très souvent utilisé.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Significatif ≠ important ; absence de preuve ≠ preuve d'absence ; 5 % est le seuil courant."

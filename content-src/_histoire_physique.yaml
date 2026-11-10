@@ -116,3 +116,11 @@ chapitres:
       - mia: "Un besoin, un cahier des charges, un prototype, et tout recommence à bouger."
     apres:
       - narrateur: "Les panneaux solaires s'orientent, la maison connectée s'allume, une imprimante 3D se remet à ronronner."
+  ph-laboratoire-des-ondes-et-de-la-chaleur:
+    titre: "Le Laboratoire des Ondes et de la Chaleur"
+    objet: "la coupole des aurores"
+    avant:
+      - narrateur: "Dans le Laboratoire, le moteur cale, la bobine reste muette et l'oscilloscope n'affiche qu'un trait plat."
+      - neo: "Énergie, champs, fréquences : trois lois pour tout remettre en marche."
+    apres:
+      - narrateur: "Le moteur tourne, la bobine chante, et sur l'écran de l'oscilloscope dansent une fondamentale et ses harmoniques."

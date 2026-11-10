@@ -66,6 +66,33 @@ Aucune leçon sur ce qui change le plus après le bac : prendre des notes en cou
 6. Vérifié : 147 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 18 et 19 ans, leçons et défis des quatre mondes ouverts dans le navigateur avec un profil « Supérieur » (16 formules affichées, aucune erreur de rendu), console sans erreur.
 
 Restent ouverts :
-- **au-delà de la première année** : l'échelle des niveaux s'arrête à « Supérieur » ; la deuxième et la troisième année, et les disciplines universitaires propres (droit, médecine, économie approfondie…) ne sont pas couvertes ;
+- **au-delà de la première année** : deuxième et troisième année ajoutées en 2.24.0 (voir ci-dessous) ; les disciplines universitaires propres (droit, médecine, économie approfondie…) ne sont pas couvertes ;
 - **l'histoire-géographie et les sciences expérimentales du supérieur** restent minces (quelques leçons en physique, chimie, biologie) ;
 - **le test avec de vrais étudiants**.
+
+## Deuxième et troisième année (2.24.0)
+
+### Constats avant correction
+
+- L'**échelle des niveaux s'arrêtait à « Supérieur »** (niveau 13) : la classe d'un étudiant de L2 ou L3 ne pouvait pas être indiquée, le test et le parcours plafonnaient à la première année.
+- **Aucune leçon** au-delà de la première année.
+- **Espace parents** : la liste des classes s'arrêtait à « Terminale » (même « Supérieur » n'y figurait pas).
+- **Voix** : les sommes et intégrales avec bornes étaient lues « puissance » (« somme indice n égale 0 puissance plus l'infini »), la dérivée partielle « f sur x », et le gradient, la flèche d'affectation, η, le déterminant, la trace et « n puissance α » n'étaient pas lus.
+
+### Corrections
+
+| Mesure | Avant (2.23.0) | Après (2.24.0) |
+|---|---|---|
+| Classes proposées après la Terminale | Supérieur | Supérieur, Bac+2, Bac+3 |
+| Leçons de niveau Bac+2 / Bac+3 | 0 / 0 | 11 / 7 |
+| Test de niveau à 20 ans : questions Bac+2 ou Bac+3 | 0 % | 76 % |
+| Parcours d'un étudiant de Bac+2 : leçons de maths nouvelles | 0 | 7 |
+
+1. **Échelle** : « Bac+2 » (14) et « Bac+3 » (15) ajoutés ; proposés à la création du profil (à 18 ans et plus) et dans l'espace parents ; reconnus dans les niveaux des mondes et des leçons.
+2. **Maths** : **La Tour de l'Analyse** (séries numériques, diagonalisation, intégrales généralisées, fonctions de plusieurs variables, descente de gradient) et **L'Observatoire des Statistiques** (lois continues, loi des grands nombres et théorème central limite, régression, intervalles de confiance, tests d'hypothèse), intégrés aux domaines du test et du parcours.
+3. **Méthodes** : **Le Carrefour des Carrières** (trouver un stage ou une alternance, rapport de stage, mémoire de recherche, entretien d'embauche, préparer le master).
+4. **Physique** : **Le Laboratoire des Ondes et de la Chaleur** (thermodynamique, électromagnétisme, analyse de Fourier).
+5. **Voix** : sommes et intégrales avec bornes, dérivée partielle, gradient, affectation, déterminant, trace, exposants grecs et négatifs, lettres grecques manquantes (η, ν, ρ, τ, φ…). Test ajouté.
+6. Vérifié : 149 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 20 et 21 ans ; dans le navigateur, classe « Bac+3 » choisie à la création, enregistrée et visible dans l'espace parents, défis des quatre mondes ouverts, console sans erreur.
+
+Restent ouverts : les disciplines universitaires propres (droit, médecine, économie, lettres, langues…), la biologie et la chimie de Bac+2 et Bac+3, le master, et le test avec de vrais étudiants.

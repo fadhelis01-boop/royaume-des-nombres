@@ -1,7 +1,7 @@
 // Test de niveau par domaine et parcours personnalisé (module pur, testé par `npm test`).
 //
 // 1. Chaque leçon reçoit un niveau sur l'échelle des classes (GS = 0, CP = 1 … Terminale = 12,
-//    supérieur = 13), estimé à partir de la tranche de classes de son monde et de sa place dans le monde.
+//    supérieur 1ʳᵉ année = 13, Bac+2 = 14, Bac+3 = 15), estimé à partir de la tranche de classes de son monde et de sa place dans le monde.
 // 2. Le test avance domaine par domaine en « escalier » : il part du niveau attendu pour l'âge,
 //    monte d'un cran après une réussite, descend après une erreur (3 questions par domaine, 2 jusqu'à 8 ans).
 // 3. Le parcours propose, domaine par domaine, les leçons juste au-dessus du niveau estimé,
@@ -9,10 +9,13 @@
 //    sur un seul thème : l'entrelacement aide à retenir).
 import type { EtapeParcours, ExSpec, Lesson, Parcours, World } from "./types";
 
-export const CLASSES = ["GS", "CP", "CE1", "CE2", "CM1", "CM2", "6ᵉ", "5ᵉ", "4ᵉ", "3ᵉ", "2nde", "1ʳᵉ", "Terminale", "Supérieur"];
+export const CLASSES = ["GS", "CP", "CE1", "CE2", "CM1", "CM2", "6ᵉ", "5ᵉ", "4ᵉ", "3ᵉ", "2nde", "1ʳᵉ", "Terminale", "Supérieur", "Bac+2", "Bac+3"];
+/** Dernier niveau de l'échelle (Bac+3). */
+export const NIV_MAX = CLASSES.length - 1;
 export const nomClasse = (g: number) => CLASSES[Math.max(0, Math.min(CLASSES.length - 1, Math.round(g)))];
 
 const JETONS: [RegExp, number][] = [
+  [/bac\s*\+\s*2/i, 14], [/bac\s*\+\s*3/i, 15],
   [/\bGS\b/, 0], [/\bCP\b/, 1], [/\bCE1\b/, 2], [/\bCE2\b/, 3], [/\bCM1\b/, 4], [/\bCM2\b/, 5],
   [/6\s*[ᵉe]/, 6], [/5\s*[ᵉe]/, 7], [/4\s*[ᵉe]/, 8], [/3\s*[ᵉe]/, 9], [/2nde|seconde/i, 10], [/1\s*[ʳr]\s*[ᵉe]|première/i, 11],
   [/terminale|maths expertes/i, 12], [/supérieur/i, 13], [/lycée/i, 11],
@@ -52,7 +55,7 @@ export function niveauLecon(w: World, idx: number): number | null {
 export const ageScolaire = (c: { age: number; classe?: number }) => (typeof c.classe === "number" ? c.classe + 5 : c.age);
 
 /** Classe attendue pour un âge (8 ans → CE2 = 3). */
-export const classeDeLAge = (age: number) => Math.max(0, Math.min(13, age - 5));
+export const classeDeLAge = (age: number) => Math.max(0, Math.min(NIV_MAX, age - 5));
 
 /**
  * Niveau habituellement ACQUIS à cet âge, à ce moment de l'année scolaire.
@@ -63,7 +66,7 @@ export const classeDeLAge = (age: number) => Math.max(0, Math.min(13, age - 5));
 export function niveauDuMoment(age: number, quand: Date = new Date()): number {
   const m = quand.getMonth(); // 0 = janvier
   const avance = m >= 8 ? (m - 8) / 10 : m <= 5 ? (m + 4) / 10 : 1;
-  return Math.max(0, Math.min(13, classeDeLAge(age) - 1 + avance));
+  return Math.max(0, Math.min(NIV_MAX, classeDeLAge(age) - 1 + avance));
 }
 
 export interface LeconNiv {

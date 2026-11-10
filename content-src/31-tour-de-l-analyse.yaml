@@ -1,0 +1,234 @@
+id: tour-de-l-analyse
+titre: La Tour de l'Analyse
+sous_titre: Bac+2 et Bac+3 - séries numériques, diagonalisation, intégrales généralisées, fonctions de plusieurs variables, optimisation
+emoji: 🗼
+couleur: "#1a237e"
+cycle: maitres
+age: 19-21 ans
+niveau: Bac+2 – Bac+3
+ordre: 31
+version: 1.0.0
+intro:
+  - narrateur: "Derrière l'Université des Nombres s'élève une tour fine et très haute. À chaque étage, un tableau couvert de sommes infinies et de matrices."
+  - neo: "En deuxième et troisième année, on additionne une infinité de termes, on réduit des matrices, on étudie des fonctions de plusieurs variables."
+  - mia: "Ce sont les outils des ingénieurs, des économistes, des physiciens… et de l'intelligence artificielle."
+
+lecons:
+  - id: series-numeriques
+    titre: Les séries numériques
+    classe: Bac+2
+    objectif: Je décide si une série converge, avec les séries de référence (géométriques, de Riemann) et les critères de comparaison.
+    mots: [série, convergence, série géométrique, série de Riemann]
+    etapes:
+      - dialogue:
+          - zero: "Si j'additionne une infinité de nombres, ça fait forcément l'infini ?"
+          - neo: "Pas forcément ! 1 + 1/2 + 1/4 + 1/8 + … ne dépasse jamais 2. Mais 1 + 1/2 + 1/3 + 1/4 + … finit par dépasser n'importe quel nombre."
+      - a_quoi_ca_sert: "Les séries servent à calculer des fonctions (une calculatrice calcule e ou sinus par des sommes), en probabilités, en finance (rentes, actualisation) et en traitement du signal."
+      - texte: |
+          **Une série** $\sum u_n$ : on étudie les sommes partielles $S_N = u_0 + u_1 + … + u_N$. La série **converge** si $S_N$ a une limite finie.
+
+          **Condition nécessaire** : si la série converge, alors $u_n \to 0$. (La réciproque est fausse !)
+
+          **Séries de référence** :
+          - **géométrique** $\sum q^n$ : converge si et seulement si $|q| < 1$, et alors $\sum_{n=0}^{+\infty} q^n = \dfrac{1}{1 - q}$ ;
+          - **de Riemann** $\sum \dfrac{1}{n^\alpha}$ : converge si et seulement si $\alpha > 1$.
+
+          **La série harmonique** $\sum \dfrac{1}{n}$ ($\alpha = 1$) **diverge**, alors que ses termes tendent vers 0.
+
+          **Comparaison** (termes positifs) : si $0 \leq u_n \leq v_n$ et si $\sum v_n$ converge, alors $\sum u_n$ converge.
+      - attention: "« Les termes tendent vers 0 » ne suffit pas pour converger : la série harmonique en est le contre-exemple célèbre."
+      - astuce: { texte: "Pour une série inconnue, cherche à quelle série de référence elle ressemble quand n est grand.", qui: mia }
+      - retiens: "Converge si les sommes partielles ont une limite. Nécessaire : $u_n \\to 0$ (pas suffisant). **Géométrique** : converge si $|q| < 1$, somme $\\dfrac{1}{1-q}$. **Riemann** $\\sum \\dfrac{1}{n^\\alpha}$ : converge si $\\alpha > 1$. Harmonique : **diverge**."
+    exercices:
+      - type: nombre
+        vars: { t: [["\\dfrac{1}{2}", 2], ["\\dfrac{1}{3}", 1.5], ["\\dfrac{1}{5}", 1.25], ["\\dfrac{3}{4}", 4]] }
+        enonce: "Que vaut $\\sum_{n=0}^{+\\infty} \\left({{t_0}}\\right)^n$ ? (décimal)"
+        reponse: "t_1"
+        correction: "Série géométrique de raison ${{t_0}}$ : $\\dfrac{1}{1 - q} = {{t_1}}$."
+      - type: classer
+        enonce: "Range chaque série : convergente ou divergente ?"
+        categories: ["Converge", "Diverge"]
+        mots: [["$\\sum \\dfrac{1}{n^2}$", 0], ["$\\sum \\dfrac{1}{n}$", 1], ["$\\sum \\left(\\dfrac{1}{2}\\right)^n$", 0], ["$\\sum 2^n$", 1]]
+        correction: "Riemann avec α = 2 et géométrique de raison 1/2 convergent ; l'harmonique et 2ⁿ divergent."
+      - type: vf
+        vars: { t: [["Si les termes tendent vers 0, la série converge forcément.", false], ["Si une série converge, ses termes tendent vers 0.", true], ["La série de Riemann converge pour α strictement supérieur à 1.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La condition est nécessaire, pas suffisante (série harmonique) ; Riemann : α > 1."
+      - type: qcm
+        enonce: "Pour quelles valeurs de q la série géométrique $\\sum q^n$ converge-t-elle ?"
+        choix: ["$|q| < 1$", "$q > 1$", "$q = 1$ seulement", "Pour toutes les valeurs de q"]
+        correction: "Elle converge si et seulement si $|q| < 1$."
+
+  - id: diagonalisation
+    titre: Valeurs propres et diagonalisation
+    classe: Bac+2
+    objectif: Je calcule les valeurs propres d'une matrice 2 × 2 et je comprends à quoi sert la diagonalisation.
+    mots: [valeur propre, vecteur propre, polynôme caractéristique, diagonalisation]
+    etapes:
+      - dialogue:
+          - mia: "Calculer la puissance 100 d'une matrice, ça prend des heures à la main."
+          - neo: "Sauf si elle est diagonale : il suffit d'élever chaque nombre de la diagonale à la puissance 100. D'où l'intérêt de diagonaliser !"
+      - a_quoi_ca_sert: "Les valeurs propres décrivent les modes de vibration d'un pont, l'évolution d'une population, le classement des pages web, ou la compression d'images et de données."
+      - texte: |
+          **Vecteur propre** : un vecteur non nul $u$ tel que $Au = \lambda u$ ; la matrice ne fait que l'**étirer**. Le nombre $\lambda$ est la **valeur propre**.
+
+          **Les trouver** : les valeurs propres sont les racines du **polynôme caractéristique** $\det(A - \lambda I) = 0$.
+
+          Pour une matrice $2 \times 2$ : $\lambda^2 - \text{tr}(A)\,\lambda + \det(A) = 0$, avec la **trace** (somme de la diagonale) et le **déterminant** ($ad - bc$).
+
+          **Diagonaliser** : si l'on trouve une base de vecteurs propres, $A = PDP^{-1}$ avec $D$ diagonale (les valeurs propres). Alors $A^n = PD^nP^{-1}$.
+
+          **Une condition suffisante** : une matrice $n \times n$ qui a $n$ valeurs propres **distinctes** est diagonalisable.
+      - astuce: { texte: "Vérification rapide : la somme des valeurs propres vaut la trace, leur produit vaut le déterminant.", qui: zero }
+      - retiens: "$Au = \\lambda u$ : $\\lambda$ **valeur propre**, $u$ **vecteur propre**. Racines de $\\det(A - \\lambda I) = 0$ ; en $2 \\times 2$ : $\\lambda^2 - \\text{tr}(A)\\lambda + \\det(A) = 0$. **Diagonaliser** : $A = PDP^{-1}$, donc $A^n = PD^nP^{-1}$. Somme = trace, produit = déterminant."
+    exercices:
+      - type: nombre
+        vars: { t: [[2, 3, 3], [1, 4, 4], [5, 2, 5], [3, 7, 7]] }
+        enonce: "Matrice diagonale (ou triangulaire) de diagonale {{t_0}} et {{t_1}}. Quelle est sa plus grande valeur propre ?"
+        reponse: "t_2"
+        correction: "Les valeurs propres d'une matrice triangulaire sont ses coefficients diagonaux : la plus grande vaut **{{t_2}}**."
+      - type: nombre
+        vars: { t: [[5, 6, 3], [7, 12, 4], [6, 8, 4], [4, 3, 3]] }
+        enonce: "Une matrice $2 \\times 2$ a pour trace {{t_0}} et pour déterminant {{t_1}}. Quelle est sa plus grande valeur propre ?"
+        reponse: "t_2"
+        correction: "$\\lambda^2 - {{t_0}}\\lambda + {{t_1}} = 0$ : la plus grande racine vaut **{{t_2}}**."
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["la trace", "la somme des coefficients diagonaux"], ["le déterminant d'une 2 × 2", "ad − bc"], ["une valeur propre", "un nombre λ tel que Au = λu"]]
+        correction: "Les outils de la réduction des matrices."
+      - type: vf
+        vars: { t: [["Une matrice 3 × 3 avec trois valeurs propres distinctes est diagonalisable.", true], ["Un vecteur propre peut être le vecteur nul.", false], ["Le produit des valeurs propres est égal au déterminant.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Valeurs propres distinctes ⇒ diagonalisable ; un vecteur propre est non nul ; produit = déterminant."
+
+  - id: integrales-generalisees
+    titre: Les intégrales généralisées
+    classe: Bac+2
+    objectif: Je décide si une intégrale sur un intervalle infini converge, avec les intégrales de référence.
+    mots: [intégrale généralisée, convergence, Riemann, impropre]
+    etapes:
+      - dialogue:
+          - zero: "Une aire sous une courbe qui va jusqu'à l'infini, elle est forcément infinie ?"
+          - neo: "Non ! L'aire sous 1/x² entre 1 et l'infini vaut exactement 1. Mais sous 1/x, elle est infinie."
+      - a_quoi_ca_sert: "Les intégrales généralisées sont partout en probabilités (lois continues), en physique (énergie totale, potentiel) et en traitement du signal (transformées de Laplace et de Fourier)."
+      - texte: |
+          **Définition** : $\int_1^{+\infty} f(t)\,dt = \lim\limits_{x \to +\infty} \int_1^x f(t)\,dt$, si cette limite existe et est finie : l'intégrale **converge**.
+
+          **Intégrales de Riemann** : $\int_1^{+\infty} \dfrac{dt}{t^\alpha}$ converge si et seulement si $\alpha > 1$. Exemple : $\int_1^{+\infty} \dfrac{dt}{t^2} = 1$.
+
+          **Exponentielle** : $\int_0^{+\infty} e^{-t}\,dt = 1$.
+
+          **Comparaison** (fonctions positives) : si $0 \leq f \leq g$ et si $\int g$ converge, alors $\int f$ converge.
+
+          **Lien avec les séries** : pour $f$ positive et décroissante, $\int_1^{+\infty} f$ et $\sum f(n)$ sont de même nature.
+      - attention: "Au voisinage de 0, c'est l'inverse : $\\int_0^1 \\dfrac{dt}{t^\\alpha}$ converge si et seulement si $\\alpha < 1$."
+      - astuce: { texte: "Calcule d'abord l'intégrale jusqu'à x, puis fais tendre x vers l'infini : c'est la définition même.", qui: neo }
+      - retiens: "$\\int_1^{+\\infty} f = \\lim\\limits_{x \\to +\\infty} \\int_1^x f$. Riemann en l'infini : converge si $\\alpha > 1$ ; en 0 : si $\\alpha < 1$. $\\int_0^{+\\infty} e^{-t}\\,dt = 1$. Comparaison et lien avec les séries."
+    exercices:
+      - type: nombre
+        enonce: "Que vaut $\\int_1^{+\\infty} \\dfrac{dt}{t^2}$ ?"
+        reponse: "1"
+        correction: "$\\int_1^x \\dfrac{dt}{t^2} = 1 - \\dfrac{1}{x} \\to 1$."
+      - type: classer
+        enonce: "Range chaque intégrale : convergente ou divergente ?"
+        categories: ["Converge", "Diverge"]
+        mots: [["$\\int_1^{+\\infty} \\dfrac{dt}{t^3}$", 0], ["$\\int_1^{+\\infty} \\dfrac{dt}{t}$", 1], ["$\\int_0^{+\\infty} e^{-t}\\,dt$", 0], ["$\\int_1^{+\\infty} \\dfrac{dt}{\\sqrt{t}}$", 1]]
+        correction: "En l'infini, Riemann converge si α > 1 : 3 oui, 1 et 1/2 non ; l'exponentielle décroissante converge."
+      - type: nombre
+        vars: { a: [2, 3, 4, 5] }
+        enonce: "Que vaut $\\int_0^{+\\infty} e^{- {{a}} t}\\,dt$ ? (fraction ou décimal)"
+        reponse: "1/a"
+        correction: "Une primitive est $-\\dfrac{1}{ {{a}} }e^{- {{a}} t}$ : l'intégrale vaut $\\dfrac{1}{ {{a}} }$."
+      - type: vf
+        vars: { t: [["L'intégrale de 1/t entre 1 et l'infini diverge.", true], ["L'intégrale de 1/t² entre 1 et l'infini vaut 1.", true], ["Toute intégrale sur un intervalle infini diverge.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "1/t diverge, 1/t² vaut 1, beaucoup d'intégrales infinies convergent."
+
+  - id: plusieurs-variables
+    titre: Fonctions de plusieurs variables et gradient
+    classe: Bac+2
+    objectif: Je calcule des dérivées partielles et le gradient d'une fonction de deux variables, et je trouve ses points critiques.
+    mots: [dérivée partielle, gradient, point critique, extremum]
+    etapes:
+      - dialogue:
+          - mia: "L'altitude d'un randonneur dépend de deux coordonnées : sa position est-ouest et nord-sud."
+          - neo: "Une fonction de deux variables ! Et le gradient, c'est la direction de la plus forte pente."
+      - a_quoi_ca_sert: "Températures, prix, profits, pertes d'un réseau de neurones : presque tout dépend de plusieurs variables ; le gradient est l'outil central de l'optimisation et de l'apprentissage automatique."
+      - texte: |
+          **Dérivée partielle** : on dérive par rapport à une variable en traitant les autres comme des constantes. Pour $f(x, y) = x^2 y + 3y$ : $\dfrac{\partial f}{\partial x} = 2xy$ et $\dfrac{\partial f}{\partial y} = x^2 + 3$.
+
+          **Gradient** : le vecteur des dérivées partielles, $\nabla f = \left(\dfrac{\partial f}{\partial x}, \dfrac{\partial f}{\partial y}\right)$. Il indique la direction de **plus forte croissance**.
+
+          **Point critique** : un point où le gradient est **nul**. Un extremum (minimum ou maximum) intérieur est forcément un point critique, mais un point critique peut aussi être un **point col** (une « selle »).
+
+          **Exemple** : $f(x, y) = x^2 + y^2$ a un seul point critique, $(0 ; 0)$, qui est un minimum.
+      - astuce: { texte: "Pour une dérivée partielle par rapport à x, imagine que y est un nombre fixé, comme 3 : tu sais déjà dériver.", qui: zero }
+      - retiens: "**Dérivée partielle** : dériver par rapport à une variable, les autres fixées. **Gradient** $\\nabla f$ : vecteur des dérivées partielles, direction de plus forte croissance. **Point critique** : gradient nul (minimum, maximum ou point col)."
+    exercices:
+      - type: nombre
+        vars: { a: [1, 2, 3], b: [2, 3, 4] }
+        enonce: "$f(x, y) = x^2 y$. Que vaut $\\dfrac{\\partial f}{\\partial x}$ au point $({{a}} ; {{b}})$ ?"
+        reponse: "2*a*b"
+        correction: "$\\dfrac{\\partial f}{\\partial x} = 2xy$, donc $2 \\times {{a}} \\times {{b}} = {{2*a*b}}$."
+      - type: nombre
+        vars: { a: [1, 2, 3, 4] }
+        enonce: "$f(x, y) = x^2 y + 3y$. Que vaut $\\dfrac{\\partial f}{\\partial y}$ au point $({{a}} ; 5)$ ?"
+        reponse: "a^2+3"
+        correction: "$\\dfrac{\\partial f}{\\partial y} = x^2 + 3 = {{a^2+3}}$."
+      - type: qcm
+        enonce: "Que représente le gradient d'une fonction en un point ?"
+        choix: ["La direction de plus forte croissance de la fonction", "La valeur minimale de la fonction", "L'aire sous la courbe", "Le nombre de variables"]
+        correction: "Le gradient pointe vers la plus forte pente montante."
+      - type: vf
+        vars: { t: [["En un minimum intérieur, le gradient est nul.", true], ["Tout point critique est un minimum.", false], ["x² + y² a un minimum en (0 ; 0).", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Gradient nul en un extremum ; un point critique peut être un col ; x² + y² minimale en l'origine."
+
+  - id: optimisation-gradient
+    titre: Optimisation et descente de gradient
+    classe: Bac+3
+    objectif: Je comprends l'algorithme de descente de gradient, le rôle du pas d'apprentissage, et son usage en apprentissage automatique.
+    mots: [optimisation, descente de gradient, pas d'apprentissage, fonction de coût]
+    etapes:
+      - dialogue:
+          - zero: "Comment un réseau de neurones « apprend » ?"
+          - neo: "Il mesure son erreur avec une fonction de coût, puis il ajuste ses paramètres en descendant la pente de cette erreur, pas à pas. C'est la descente de gradient."
+      - a_quoi_ca_sert: "C'est l'algorithme au cœur de l'intelligence artificielle moderne, mais aussi de la logistique, de la finance et de l'ingénierie (minimiser un coût, une énergie, une erreur)."
+      - texte: |
+          **Le problème** : trouver le minimum d'une **fonction de coût** $J(\theta)$ (l'erreur d'un modèle selon ses paramètres $\theta$).
+
+          **L'algorithme** : partir d'un point, puis répéter $\theta \leftarrow \theta - \eta \nabla J(\theta)$ : on fait un petit pas **dans la direction opposée au gradient** (on descend la pente).
+
+          **Le pas d'apprentissage** $\eta$ :
+          - trop **petit** : la descente est très lente ;
+          - trop **grand** : on dépasse le minimum, l'algorithme peut osciller ou diverger.
+
+          **Exemple** à une variable : $J(\theta) = \theta^2$, $J'(\theta) = 2\theta$. Avec $\theta = 4$ et $\eta = 0{,}25$ : $\theta \leftarrow 4 - 0{,}25 \times 8 = 2$, puis 1, puis 0,5… on se rapproche du minimum 0.
+
+          **Limites** : on peut tomber dans un **minimum local** ; d'où des variantes (gradient stochastique, Adam).
+      - astuce: { texte: "Imagine-toi dans le brouillard sur une montagne : tu sens seulement la pente sous tes pieds et tu fais un pas vers le bas. Puis tu recommences.", qui: mia }
+      - retiens: "Descente de gradient : $\\theta \\leftarrow \\theta - \\eta \\nabla J(\\theta)$, pas opposé au gradient. **Pas** $\\eta$ : trop petit = lent, trop grand = oscille ou diverge. Risque de **minimum local**. Base de l'apprentissage automatique."
+    exercices:
+      - type: nombre
+        vars: { t: [[4, 2], [8, 4], [6, 3], [10, 5]] }
+        enonce: "$J(\\theta) = \\theta^2$, donc $J'(\\theta) = 2\\theta$. Avec $\\theta = {{t_0}}$ et un pas $\\eta = 0{,}25$, que vaut $\\theta$ après une étape de descente de gradient ?"
+        reponse: "t_1"
+        correction: "${{t_0}} - 0{,}25 \\times {{2*t_0}} = {{t_1}}$."
+      - type: classer
+        enonce: "Range chaque effet : pas d'apprentissage trop petit ou trop grand ?"
+        categories: ["Trop petit", "Trop grand"]
+        mots: [["La descente est extrêmement lente", 0], ["L'algorithme saute par-dessus le minimum", 1], ["Il faut des milliers d'étapes pour avancer un peu", 0], ["Les valeurs oscillent puis divergent", 1]]
+        correction: "Un pas trop petit ralentit tout ; un pas trop grand fait dépasser le minimum."
+      - type: qcm
+        enonce: "Dans quelle direction fait-on un pas pour minimiser J ?"
+        choix: ["Dans la direction opposée au gradient", "Dans la direction du gradient", "Au hasard", "Perpendiculairement au gradient"]
+        correction: "Le gradient monte ; pour descendre, on va dans la direction opposée."
+      - type: vf
+        vars: { t: [["La descente de gradient peut s'arrêter dans un minimum local.", true], ["Un pas d'apprentissage plus grand est toujours meilleur.", false], ["Les réseaux de neurones s'entraînent par des variantes de la descente de gradient.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Minimum local possible ; trop grand pas = divergence ; c'est la base de l'apprentissage."

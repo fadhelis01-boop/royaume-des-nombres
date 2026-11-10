@@ -436,7 +436,7 @@ function ProfileEdit({ c }: { c: Child }) {
           onChange={(e) => updateChild((x) => void (e.target.value === "" ? delete x.classe : (x.classe = Number(e.target.value))), c.id)}
         >
           <option value="">déduite de l'âge ({nomClasse(classeDeLAge(c.age))})</option>
-          {CLASSES.slice(0, 13).map((n, i) => (
+          {CLASSES.map((n, i) => (
             <option key={n} value={i}>
               {n}
             </option>

@@ -9,11 +9,11 @@ maths:
   - { id: problemes, titre: "Problèmes et logique", jeune: "Réfléchir et chercher", emoji: "🧩", mondes: [atelier-des-problemes, jardin-de-fibonacci, temple-de-la-logique] }
   - { id: geometrie, titre: "La géométrie", jeune: "Les formes", emoji: "📐", mondes: [cite-des-formes, chateau-de-la-geometrie, archipel-des-vecteurs] }
   - { id: mesures, titre: "Les mesures", jeune: "Mesurer", emoji: "📏", mondes: [marche-des-mesures] }
-  - { id: donnees, titre: "Données et hasard", jeune: "Tableaux et hasard", emoji: "📊", mondes: [observatoire-des-donnees, fete-foraine-des-probabilites] }
-  - { id: algebre, titre: "Algèbre et fonctions", jeune: "Les lettres en maths", emoji: "🔤", mondes: [grotte-de-l-algebre, labyrinthe-des-fonctions, volcan-du-second-degre, jardin-des-suites, vallee-des-derivees, monts-exponentiels, mer-des-integrales, ile-des-complexes, pont-des-matrices, universite-des-nombres] }
+  - { id: donnees, titre: "Données et hasard", jeune: "Tableaux et hasard", emoji: "📊", mondes: [observatoire-des-donnees, fete-foraine-des-probabilites, observatoire-des-statistiques] }
+  - { id: algebre, titre: "Algèbre et fonctions", jeune: "Les lettres en maths", emoji: "🔤", mondes: [grotte-de-l-algebre, labyrinthe-des-fonctions, volcan-du-second-degre, jardin-des-suites, vallee-des-derivees, monts-exponentiels, mer-des-integrales, ile-des-complexes, pont-des-matrices, universite-des-nombres, tour-de-l-analyse] }
 francais:
   - { id: lecture, titre: "Lire et comprendre", jeune: "Lire", emoji: "📖", mondes: [fr-ile-des-sons, fr-bibliotheque-des-textes, fr-temple-de-la-poesie, fr-observatoire-du-style] }
   - { id: grammaire, titre: "La grammaire", jeune: "Les mots et les phrases", emoji: "🧱", mondes: [fr-foret-des-noms, fr-cite-de-la-ponctuation, fr-port-des-phrases, fr-archipel-des-propositions] }
   - { id: conjugaison, titre: "La conjugaison", jeune: "Les verbes", emoji: "⏳", mondes: [fr-vallee-des-verbes, fr-montagnes-du-temps, fr-tour-des-conjugaisons] }
   - { id: orthographe, titre: "L'orthographe", jeune: "Bien écrire les mots", emoji: "✍️", mondes: [fr-prairie-des-accords, fr-marais-des-homophones, fr-chateau-des-participes, fr-palais-de-l-orthographe] }
-  - { id: vocabulaire, titre: "Vocabulaire et écriture", jeune: "Les mots et les histoires", emoji: "🌳", mondes: [fr-jardin-des-mots, fr-atelier-de-l-ecrivain, fr-academie-des-lettres, fr-tribune-du-bac, fr-scene-du-grand-oral, fr-amphitheatre-des-methodes] }
+  - { id: vocabulaire, titre: "Vocabulaire et écriture", jeune: "Les mots et les histoires", emoji: "🌳", mondes: [fr-jardin-des-mots, fr-atelier-de-l-ecrivain, fr-academie-des-lettres, fr-tribune-du-bac, fr-scene-du-grand-oral, fr-amphitheatre-des-methodes, fr-carrefour-des-carrieres] }

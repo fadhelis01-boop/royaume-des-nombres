@@ -7,7 +7,7 @@ import { planDefi } from "../src/lib/plan";
 import { toSpeech } from "../src/lib/speech";
 import { nombreDit } from "../src/lib/nombresDits";
 import type { Child, ExSpec, Lesson, World } from "../src/lib/types";
-import { domainesATester, exercicesTest, jeuneLecteur, lectriceAgile8, plancherBacle, questionsIle, testBacle, classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
+import { nomClasse, domainesATester, exercicesTest, jeuneLecteur, lectriceAgile8, plancherBacle, questionsIle, testBacle, classeDeLAge, construireParcours, departEscalier, niveauDuMoment, pointConseille, questionsParIle, domainesDe, estimation, mondesAOuvrir, niveauLecon, pas, tranche } from "../src/lib/parcours";
 
 
 let ok = 0;
@@ -97,6 +97,7 @@ eq("tranche Terminale (maths expertes) – supérieur", tranche("Terminale (math
 eq("tranche 5ᵉ – lycée", tranche("5ᵉ – lycée"), [7, 11]);
 eq("tranche Tous niveaux", tranche("Tous niveaux"), null);
 eq("classe de l'âge 8 ans = CE2", classeDeLAge(8), 3);
+eq("échelle jusqu'à Bac+3", [tranche("Bac+2"), tranche("Supérieur – Bac+3"), classeDeLAge(20), classeDeLAge(18), nomClasse(15)], [[14, 14], [13, 15], 15, 13, "Bac+3"]);
 const lec = (id: string): Lesson => ({ id, titre: id, objectif: "", duree: 5, etapes: [], nb_defi: 6, exercices: [{ type: "nombre", enonce: "q", reponse: "1" }] });
 const monde = (id: string, niveau: string, n: number, ordre: number) => ({ id, titre: id, emoji: "", couleur: "", cycle: "graines", age: "", niveau, ordre, prerequis: [], version: "1", matiere: "maths", lecons: Array.from({ length: n }, (_, i) => lec(`${id}-${i}`)) }) as unknown as World;
 const W2 = [monde("a", "CP – CE2", 3, 1), monde("b", "CE2 – CM2", 3, 2), monde("g", "CE1 – CM1", 4, 3)];
@@ -254,6 +255,14 @@ eq("voix : tiret de titre, factorielle, implication", [
   toSpeech(String.raw`$\dfrac{1}{2!}$`).includes("factorielle 2"),
   toSpeech("continue ⇒ solution").includes("donc"),
   toSpeech(String.raw`$y'' + a\,y' = 0$`).includes("a y prime"),
+], [true, true, true, true, true, true]);
+eq("voix : notations Bac+2 et Bac+3", [
+  toSpeech(String.raw`$\sum_{n=0}^{+\infty} q^n$`).includes("somme pour n égale 0 jusqu'à"),
+  toSpeech(String.raw`$\int_1^{+\infty} f(t)\,dt$`).includes("intégrale de 1 à"),
+  toSpeech(String.raw`$\dfrac{\partial f}{\partial x}$`).includes("dérivée partielle de f par rapport à x"),
+  toSpeech(String.raw`$\theta \leftarrow \theta - \eta \nabla J$`).includes("prend la valeur theta moins eta gradient de J"),
+  toSpeech(String.raw`$\det(A)$`).includes("déterminant de"),
+  toSpeech(String.raw`$\dfrac{1}{n^\alpha}$`).includes("puissance alpha"),
 ], [true, true, true, true, true, true]);
 eq("voix : notations du supérieur", [
   toSpeech(String.raw`$\lim\limits_{n \to +\infty} u_n = \ell$`).includes("limite quand n tend vers"),
