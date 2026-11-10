@@ -129,4 +129,24 @@ Sept licences ajoutées, en accès libre sur la carte (`specialite`, hors test e
 
 Vérifié : 152 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 19 et 20 ans, défis des six mondes ouverts dans le navigateur avec un profil « Bac+3 », console sans erreur.
 
-Restent ouverts : le master (Bac+4 et Bac+5) et le test avec de vrais étudiants.
+Restaient ouverts : le master (traité en 2.27.0, ci-dessous) et le test avec de vrais étudiants.
+
+## Master (2.27.0)
+
+### Constats avant correction
+
+- L'échelle s'arrêtait à « Bac+3 » : un étudiant de master ne pouvait pas indiquer sa classe.
+- À « 18 ans et plus », l'écran de création du profil ne proposait que les classes proches de 18 ans (de la 1ʳᵉ au Bac+3) : même avec une échelle étendue, Bac+4 et Bac+5 n'auraient pas été visibles.
+- Aucun contenu de niveau master.
+
+### Corrections
+
+1. **Échelle** : « Bac+4 » (16) et « Bac+5 » (17), reconnus aussi sous les formes « M1 » et « M2 » dans les niveaux des leçons. À 18 ans et plus, toutes les classes de la 1ʳᵉ au Bac+5 sont proposées.
+2. **Socle commun des masters** (les masters étant spécialisés, on couvre ce que tous partagent) :
+   - **Le Laboratoire des Données** (planète Maths, domaine « Données et hasard », donc dans le test et le parcours) : régression multiple, apprentissage automatique et surapprentissage, évaluation d'un classifieur (précision, rappel), réseaux de neurones et limites de l'IA générative ;
+   - **Le Cap du Master** (planète Français, domaine « Vocabulaire et écriture ») : mémoire et soutenance, stage de fin d'études et premier contrat, gestion de projet (Gantt, chemin critique, agile), doctorat, science ouverte et intégrité scientifique.
+3. **Mesures** : à 22 ans, 81 % des questions du test portent sur Bac+4 et Bac+5 ; un étudiant de master reçoit des leçons nouvelles en maths et en français.
+4. Corrigé en relisant : une valeur fausse dans un exercice (somme pondérée d'un neurone : 6 et non 5) ; des barres obliques réécrites en toutes lettres.
+5. Vérifié : 153 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 21 et 22 ans ; dans le navigateur, classes de la 1ʳᵉ au Bac+5 proposées à 18 ans et plus, « Bac+5 » choisi, défis ouverts, console sans erreur.
+
+Reste ouvert : le test avec de vrais étudiants. Les contenus propres à chaque master (droit des affaires, biologie moléculaire avancée, finance…) restent hors du périmètre d'une application généraliste.

@@ -1,3 +1,8 @@
+- version: "2.27.0"
+  date: "2026-11-10"
+  notes:
+    - "Master : on peut choisir « Bac+4 » ou « Bac+5 », et le test comme le parcours vont jusque-là."
+    - "Le Laboratoire des Données (régression multiple, apprentissage automatique, évaluation des modèles, réseaux de neurones) et le Cap du Master (mémoire et soutenance, stage de fin d'études, gestion de projet, doctorat et science ouverte)."
 - version: "2.26.0"
   date: "2026-11-10"
   notes:

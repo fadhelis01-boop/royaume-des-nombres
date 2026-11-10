@@ -98,6 +98,7 @@ eq("tranche 5ᵉ – lycée", tranche("5ᵉ – lycée"), [7, 11]);
 eq("tranche Tous niveaux", tranche("Tous niveaux"), null);
 eq("classe de l'âge 8 ans = CE2", classeDeLAge(8), 3);
 eq("échelle jusqu'à Bac+3", [tranche("Bac+2"), tranche("Supérieur – Bac+3"), classeDeLAge(20), classeDeLAge(18), nomClasse(15)], [[14, 14], [13, 15], 15, 13, "Bac+3"]);
+eq("échelle jusqu'à Bac+5", [tranche("Bac+4 – Bac+5"), tranche("Bac+5"), classeDeLAge(22), nomClasse(17)], [[16, 17], [17, 17], 17, "Bac+5"]);
 const lec = (id: string): Lesson => ({ id, titre: id, objectif: "", duree: 5, etapes: [], nb_defi: 6, exercices: [{ type: "nombre", enonce: "q", reponse: "1" }] });
 const monde = (id: string, niveau: string, n: number, ordre: number) => ({ id, titre: id, emoji: "", couleur: "", cycle: "graines", age: "", niveau, ordre, prerequis: [], version: "1", matiere: "maths", lecons: Array.from({ length: n }, (_, i) => lec(`${id}-${i}`)) }) as unknown as World;
 const W2 = [monde("a", "CP – CE2", 3, 1), monde("b", "CE2 – CM2", 3, 2), monde("g", "CE1 – CM1", 4, 3)];

@@ -1,0 +1,193 @@
+id: fr-cap-du-master
+matiere: francais
+titre: Le Cap du Master
+sous_titre: Master (Bac+4 et Bac+5) - mémoire et soutenance, stage de fin d'études, gestion de projet, doctorat, science ouverte et intégrité
+emoji: 🏔️
+couleur: "#0d47a1"
+cycle: maitres
+age: 21-24 ans
+niveau: Bac+4 – Bac+5
+ordre: 70
+version: 1.0.0
+intro:
+  - narrateur: "Au bout du Carrefour des Carrières, un cap face à l'océan : d'un côté, le monde professionnel ; de l'autre, la recherche."
+  - mia: "En master, on termine sa formation : un mémoire plus exigeant, un long stage, des projets en équipe, et parfois l'envie d'une thèse."
+  - neo: "Ce sont des compétences communes à tous les masters, des sciences aux lettres."
+
+lecons:
+  - id: memoire-soutenance
+    titre: Le mémoire de master et sa soutenance
+    classe: Bac+4
+    objectif: Je conduis un mémoire de master - état de l'art, problématique, méthode, résultats - et je le défends devant un jury.
+    mots: [état de l'art, contribution, soutenance, jury]
+    etapes:
+      - dialogue:
+          - zero: "Le mémoire de master, c'est comme celui de licence, en plus long ?"
+          - neo: "Plus long, oui, mais surtout plus original : on attend une petite contribution personnelle, appuyée sur une méthode solide."
+      - a_quoi_ca_sert: "Le mémoire est souvent la pièce maîtresse du master ; il prouve l'autonomie, la rigueur et la capacité à produire des connaissances, recherchées par les employeurs comme par les écoles doctorales."
+      - texte: |
+          **L'état de l'art** : une synthèse critique des travaux existants, qui fait apparaître un **manque** ou une question ouverte.
+
+          **La problématique et les hypothèses** : ce que le mémoire va chercher à établir.
+
+          **La méthode** : terrain, corpus, expériences, données ; justifiée et décrite pour être reproductible.
+
+          **Les résultats et la discussion** : ce que l'on a trouvé, comment cela s'articule avec la littérature, les **limites** et les pistes futures.
+
+          **La contribution** : ce que le travail apporte de nouveau, même modestement.
+
+          **La soutenance** (souvent 20 minutes de présentation puis des questions) : présenter la question, la méthode, les résultats principaux et les limites ; répondre aux critiques du jury avec arguments, sans se braquer.
+
+          **Le calendrier** : se fixer des étapes avec le directeur de mémoire (plan détaillé, chapitres, version complète) et prévoir du temps pour la relecture.
+      - astuce: { texte: "Rédige l'introduction en dernier : c'est quand tu connais tes résultats que tu sais vraiment ce que tu as montré.", qui: mia }
+      - retiens: "Mémoire de master : **état de l'art** critique, **problématique**, **méthode** reproductible, **résultats** et **discussion** (limites), **contribution** originale. **Soutenance** : question, méthode, résultats, limites ; répondre aux critiques avec arguments. Calendrier avec le directeur."
+    exercices:
+      - type: ordre
+        enonce: "Range les parties d'un mémoire de master."
+        items: ["État de l'art", "Problématique et hypothèses", "Méthode", "Résultats", "Discussion et limites"]
+        correction: "Du savoir existant à la contribution nouvelle."
+      - type: classer
+        enonce: "Range chaque réaction face à une critique du jury : constructive ou maladroite ?"
+        categories: ["Constructive", "Maladroite"]
+        mots: [["Reconnaître la limite et expliquer comment on pourrait la corriger", 0], ["Répondre que le jury n'a pas compris", 1], ["Argumenter en s'appuyant sur ses résultats", 0], ["Changer de sujet", 1]]
+        correction: "On écoute, on argumente, on reconnaît les limites."
+      - type: qcm
+        enonce: "Qu'attend-on surtout d'un état de l'art ?"
+        choix: ["Une synthèse critique qui fait apparaître une question ouverte", "La liste de tous les livres de la bibliothèque", "Le résumé de ses propres résultats", "L'avis personnel de l'étudiant sans références"]
+        correction: "Il situe le travail dans la recherche existante et justifie la question posée."
+      - type: vf
+        vars: { t: [["Un mémoire de master doit présenter ses limites.", true], ["La méthode n'a pas besoin d'être décrite.", false], ["On attend une contribution, même modeste.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Limites assumées ; méthode décrite et reproductible ; contribution attendue."
+
+  - id: stage-fin-etudes
+    titre: Le stage de fin d'études et l'insertion professionnelle
+    classe: Bac+5
+    objectif: Je prépare un stage de fin d'études, je négocie ma première embauche et je connais les bases du contrat de travail.
+    mots: [stage de fin d'études, gratification, contrat de travail, période d'essai]
+    etapes:
+      - dialogue:
+          - mia: "Six mois de stage en fin de master : c'est souvent la porte d'entrée vers le premier emploi."
+          - neo: "À condition de le choisir en lien avec ton projet, de bien t'y investir… et de connaître tes droits."
+      - a_quoi_ca_sert: "Le stage de fin d'études débouche souvent sur une embauche ; savoir négocier et lire un contrat évite de mauvaises surprises en début de carrière."
+      - texte: |
+          **Le stage de fin d'études** : souvent quatre à six mois, encadré par une **convention**. En France, au-delà de deux mois, il donne droit à une **gratification** minimale fixée par la loi.
+
+          **Le réussir** : des objectifs clairs dès le départ, des points réguliers avec le tuteur, un carnet de bord, un rapport ou un mémoire professionnel à la fin.
+
+          **Après le stage** : la proposition d'embauche ; sinon, mobiliser son réseau (anciens, collègues, plateformes professionnelles).
+
+          **Le contrat de travail** : **CDI** (durée indéterminée, la norme) ou **CDD** (durée déterminée, motifs encadrés) ; une **période d'essai** possible ; le salaire **brut** (sur le contrat) et le salaire **net** (versé, après cotisations sociales).
+
+          **Négocier** : connaître les fourchettes de salaire du métier et de la région, mettre en avant ses compétences, négocier aussi le télétravail, la formation, les congés.
+      - attention: "Le salaire affiché dans une offre est presque toujours brut annuel : le net mensuel est nettement plus bas une fois les cotisations retirées."
+      - astuce: { texte: "Avant un entretien d'embauche, cherche trois sources sur les salaires de ton métier (enquêtes d'insertion, syndicats, annonces) : tu négocieras avec des chiffres.", qui: zero }
+      - retiens: "Stage de fin d'études : **convention**, **gratification** au-delà de deux mois, objectifs et suivi. Contrat : **CDI** ou **CDD**, **période d'essai**, salaire **brut** et **net**. Négocier avec des données : salaire, télétravail, formation."
+    exercices:
+      - type: classer
+        enonce: "Range chaque caractéristique : CDI ou CDD ?"
+        categories: ["CDI", "CDD"]
+        mots: [["Contrat sans date de fin", 0], ["Contrat pour remplacer un salarié absent", 1], ["La forme normale de la relation de travail", 0], ["Contrat avec une date de fin prévue", 1]]
+        correction: "Le CDI est la norme ; le CDD a une durée et un motif."
+      - type: nombre
+        vars: { t: [[36000, 3000], [42000, 3500], [30000, 2500], [48000, 4000]] }
+        enonce: "Une offre annonce {{t_0}} € bruts par an, sur 12 mois. Quel est le salaire brut mensuel ?"
+        reponse: "t_1"
+        unite: "€"
+        correction: "{{t_0}} ÷ 12 = **{{t_1}} €** bruts par mois (le net sera plus bas)."
+      - type: qcm
+        enonce: "Que faut-il préparer avant de négocier son premier salaire ?"
+        choix: ["Les fourchettes de salaire du métier et de la région", "Rien, il faut accepter la première offre", "Le salaire de ses amis uniquement", "Un ultimatum"]
+        correction: "Des données fiables rendent la négociation crédible."
+      - type: vf
+        vars: { t: [["Le salaire brut est plus élevé que le salaire net.", true], ["Un stage de six mois peut se faire sans convention.", false], ["On peut négocier d'autres éléments que le salaire, comme le télétravail.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Brut > net ; convention obligatoire ; la négociation est globale."
+
+  - id: gestion-de-projet
+    titre: Gestion de projet et travail en équipe
+    classe: Bac+4
+    objectif: Je planifie un projet (objectifs, livrables, jalons, chemin critique) et je choisis entre méthode classique et méthode agile.
+    mots: [livrable, jalon, méthode agile, chemin critique]
+    etapes:
+      - dialogue:
+          - zero: "Notre projet de groupe a pris trois semaines de retard. Personne ne savait qui faisait quoi."
+          - neo: "Un projet sans objectifs clairs, sans répartition et sans planning dérive toujours. La gestion de projet sert exactement à ça."
+      - a_quoi_ca_sert: "Presque tous les métiers de cadre passent par des projets : savoir les planifier, les suivre et animer une équipe est attendu à la sortie du master."
+      - texte: |
+          **Cadrer** : un objectif **SMART** (spécifique, mesurable, atteignable, réaliste, temporellement défini), un périmètre, des **livrables** (ce qu'on remet), un budget, les rôles.
+
+          **Planifier** : découper en tâches, estimer les durées, fixer des **jalons** (dates clés) ; le **diagramme de Gantt** les place dans le temps. Le **chemin critique** est la suite de tâches dont le moindre retard retarde tout le projet.
+
+          **Deux grandes approches** :
+          - **classique** (en cascade) : tout est planifié au départ, adaptée quand les besoins sont stables ;
+          - **agile** (par exemple **Scrum**) : des cycles courts (**sprints** de deux à quatre semaines), une livraison régulière, des ajustements fréquents avec le client.
+
+          **Le travail en équipe** : des rôles clairs, des réunions courtes et utiles, des comptes rendus, la gestion des désaccords ; une **matrice RACI** précise qui réalise, qui décide, qui est consulté, qui est informé.
+      - astuce: { texte: "À la fin de chaque réunion, note trois choses : ce qui est décidé, qui le fait, pour quand.", qui: mia }
+      - retiens: "Cadrer : objectif **SMART**, **livrables**, rôles. Planifier : tâches, **jalons**, **Gantt**, **chemin critique**. **Cascade** (besoins stables) ou **agile** (**Scrum**, **sprints**). Équipe : rôles clairs, comptes rendus, **RACI**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["le livrable", "ce que le projet doit remettre"], ["le jalon", "une date clé du projet"], ["le chemin critique", "les tâches dont un retard retarde tout le projet"], ["le sprint", "un cycle court de travail en méthode agile"]]
+        correction: "Le vocabulaire de base de la gestion de projet."
+      - type: classer
+        enonce: "Range chaque projet : plutôt méthode classique ou plutôt agile ?"
+        categories: ["Classique (cascade)", "Agile"]
+        mots: [["Construire un pont dont les plans sont fixés", 0], ["Développer une application dont les besoins évoluent avec les utilisateurs", 1], ["Organiser un salon à date fixe avec un cahier des charges stable", 0], ["Tester rapidement plusieurs versions d'un site web", 1]]
+        correction: "Besoins stables → cascade ; besoins évolutifs → agile."
+      - type: qcm
+        enonce: "Quel objectif est SMART ?"
+        choix: ["Augmenter de 10 % le nombre d'inscrits à la newsletter d'ici le 30 juin", "Faire mieux en communication", "Être plus connus", "Améliorer les choses un jour"]
+        correction: "Spécifique, mesurable, atteignable, réaliste et daté."
+      - type: vf
+        vars: { t: [["Un retard sur une tâche du chemin critique retarde tout le projet.", true], ["La méthode agile planifie tout une fois pour toutes au départ.", false], ["Un compte rendu de réunion précise qui fait quoi et pour quand.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chemin critique ; l'agile s'ajuste par cycles ; compte rendu."
+
+  - id: doctorat-science-ouverte
+    titre: Le doctorat, la science ouverte et l'intégrité scientifique
+    classe: Bac+5
+    objectif: Je connais le déroulement d'un doctorat, ses financements, les principes de la science ouverte et de l'intégrité scientifique.
+    mots: [doctorat, thèse, science ouverte, intégrité scientifique]
+    etapes:
+      - dialogue:
+          - zero: "Après le master, on peut encore étudier ?"
+          - neo: "Avec un doctorat, on devient chercheur : trois ans environ pour produire des connaissances nouvelles, sous la direction d'un directeur de thèse, en étant le plus souvent salarié."
+      - a_quoi_ca_sert: "Le doctorat ouvre aux métiers de la recherche publique et privée, de l'enseignement supérieur et de l'innovation ; la science ouverte et l'intégrité concernent aussi tous ceux qui utilisent des résultats scientifiques."
+      - texte: |
+          **Le doctorat** : environ **trois ans** après un master, au sein d'une **école doctorale** et d'un laboratoire. On rédige une **thèse**, soutenue devant un jury, et on publie des articles.
+
+          **Les financements** : le **contrat doctoral** (financement public sur trois ans), la **convention CIFRE** (thèse en partenariat avec une entreprise), des financements de régions, d'associations ou de projets de recherche.
+
+          **La science ouverte** : rendre les publications **librement accessibles** (archives ouvertes comme HAL en France), partager les données quand c'est possible, selon le principe « aussi ouvert que possible, aussi fermé que nécessaire ».
+
+          **L'intégrité scientifique** : ne jamais **fabriquer** ni **falsifier** des données, ne pas **plagier**, déclarer ses **conflits d'intérêts**, conserver ses données et ses protocoles, citer honnêtement.
+
+          **Les débouchés** : recherche académique, recherche et développement en entreprise, conseil, data science, fonction publique, création d'entreprise innovante.
+      - attention: "Fabriquer, falsifier ou plagier sont les trois manquements graves à l'intégrité scientifique : ils peuvent briser une carrière et fausser la connaissance de tous."
+      - astuce: { texte: "Avant de choisir une thèse, rencontre l'équipe et des doctorants actuels : l'encadrement compte autant que le sujet.", qui: mia }
+      - retiens: "**Doctorat** : environ **3 ans**, école doctorale, **thèse** soutenue, publications. Financements : **contrat doctoral**, **CIFRE** (avec une entreprise). **Science ouverte** : publications accessibles (HAL), données partagées si possible. **Intégrité** : pas de fabrication, falsification ni plagiat ; conflits d'intérêts déclarés."
+    exercices:
+      - type: nombre
+        enonce: "Quelle est la durée habituelle d'un doctorat financé en France, en années ?"
+        reponse: "3"
+        unite: ans
+        correction: "Environ **3** ans."
+      - type: relier
+        enonce: "🔗 Relie chaque dispositif à sa définition."
+        paires: [["la convention CIFRE", "une thèse en partenariat avec une entreprise"], ["le contrat doctoral", "un financement public de trois ans"], ["HAL", "une archive ouverte de publications scientifiques"]]
+        correction: "Financements et outils de la recherche."
+      - type: classer
+        enonce: "Range chaque pratique : conforme à l'intégrité scientifique ou manquement ?"
+        categories: ["Conforme", "Manquement"]
+        mots: [["Conserver ses données brutes et ses protocoles", 0], ["Retirer des résultats qui contredisent son hypothèse", 1], ["Déclarer un financement par une entreprise concernée", 0], ["Inventer des mesures manquantes", 1]]
+        correction: "Transparence et honnêteté ; falsifier ou fabriquer est un manquement grave."
+      - type: vf
+        vars: { t: [["La science ouverte cherche à rendre les publications librement accessibles.", true], ["Un doctorant n'est jamais rémunéré.", false], ["Le plagiat est un manquement à l'intégrité scientifique.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Accès libre ; la plupart des doctorants sont salariés ; plagiat = manquement."

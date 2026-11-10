@@ -1,0 +1,199 @@
+id: laboratoire-des-donnees
+titre: Le Laboratoire des Données
+sous_titre: Master (Bac+4 et Bac+5) - régression multiple, apprentissage automatique, évaluation des modèles, réseaux de neurones
+emoji: 🤖
+couleur: "#1a237e"
+cycle: maitres
+age: 21-24 ans
+niveau: Bac+4 – Bac+5
+ordre: 34
+version: 1.0.0
+intro:
+  - narrateur: "Au sommet de l'Observatoire des Statistiques, un laboratoire rempli de serveurs : des millions de données y sont analysées chaque seconde."
+  - neo: "En master, presque toutes les disciplines utilisent les données : économie, biologie, marketing, sciences sociales, ingénierie."
+  - mia: "Ici, on apprend à construire des modèles qui prédisent… et à vérifier honnêtement qu'ils marchent."
+
+lecons:
+  - id: regression-multiple
+    titre: La régression linéaire multiple
+    classe: Bac+4
+    objectif: J'interprète les coefficients d'une régression multiple « toutes choses égales par ailleurs » et je connais ses principales limites.
+    mots: [régression multiple, coefficient, toutes choses égales par ailleurs, variable de contrôle]
+    etapes:
+      - dialogue:
+          - zero: "Les diplômés gagnent plus. C'est grâce au diplôme ou parce qu'ils viennent de milieux plus aisés ?"
+          - neo: "La régression multiple aide à séparer les effets : on mesure l'effet du diplôme à milieu social égal, toutes choses égales par ailleurs."
+      - a_quoi_ca_sert: "C'est l'outil de base de l'économétrie, de l'épidémiologie, des sciences sociales quantitatives et du marketing : presque tous les mémoires de master qui utilisent des données s'en servent."
+      - texte: |
+          **Le modèle** : $y = b_0 + b_1 x_1 + b_2 x_2 + … + \varepsilon$. On explique une variable $y$ par plusieurs variables $x_1, x_2…$ ; $\varepsilon$ est l'erreur.
+
+          **Interpréter un coefficient** : $b_1$ est la variation moyenne de $y$ quand $x_1$ augmente de 1, **les autres variables restant constantes** (toutes choses égales par ailleurs).
+
+          **Exemple** : salaire = 1 200 + 150 × années d'études + 30 × années d'expérience. Une année d'études de plus est associée à 150 € de plus par mois, **à expérience égale**.
+
+          **Les variables de contrôle** : on les ajoute pour éviter qu'une variable cachée fausse l'effet étudié.
+
+          **Les limites** :
+          - une association, même contrôlée, n'est pas forcément une **causalité** (il peut rester des variables oubliées) ;
+          - la **multicolinéarité** (variables explicatives très liées entre elles) rend les coefficients instables ;
+          - la significativité (p-valeur) ne dit pas si l'effet est **important**.
+      - astuce: { texte: "Lis toujours un coefficient avec sa formule magique : « à autres variables constantes, une unité de plus de x est associée à b unités de y ».", qui: mia }
+      - retiens: "$y = b_0 + b_1 x_1 + b_2 x_2 + \\varepsilon$. $b_1$ : effet moyen de $x_1$ **toutes choses égales par ailleurs**. Ajouter des **variables de contrôle**. Limites : association ≠ **causalité**, **multicolinéarité**, significatif ≠ important."
+    exercices:
+      - type: nombre
+        vars: { t: [[2, 0, 1500], [3, 2, 1710], [5, 1, 1980], [1, 4, 1470]] }
+        enonce: "Modèle : salaire = 1 200 + 150 × années d'études + 30 × années d'expérience. Quel salaire prédit-il pour {{t_0}} années d'études et {{t_1}} années d'expérience ?"
+        reponse: "t_2"
+        unite: "€"
+        correction: "1 200 + 150 × {{t_0}} + 30 × {{t_1}} = **{{t_2}} €**."
+      - type: qcm
+        enonce: "Dans ce modèle, que signifie le coefficient 150 ?"
+        choix: ["Une année d'études de plus est associée à 150 € de plus, à expérience égale", "Le salaire minimum est de 150 €", "Les études causent forcément 150 € de plus pour tout le monde", "L'expérience vaut 150 €"]
+        correction: "Effet moyen **toutes choses égales par ailleurs**, et une association, pas une preuve de causalité."
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["la variable de contrôle", "une variable ajoutée pour isoler l'effet étudié"], ["la multicolinéarité", "des variables explicatives très liées entre elles"], ["le terme d'erreur", "la part de y que le modèle n'explique pas"]]
+        correction: "Les notions clés de la régression multiple."
+      - type: vf
+        vars: { t: [["Un coefficient significatif prouve toujours une causalité.", false], ["Ajouter des variables de contrôle peut changer un coefficient.", true], ["« Toutes choses égales par ailleurs » signifie que les autres variables restent constantes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Association ≠ causalité ; les contrôles modifient les estimations ; définition correcte."
+
+  - id: apprentissage-automatique
+    titre: L'apprentissage automatique et le surapprentissage
+    classe: Bac+4
+    objectif: Je distingue apprentissage supervisé et non supervisé, et j'explique le surapprentissage, la séparation entraînement-test et la validation croisée.
+    mots: [apprentissage supervisé, surapprentissage, jeu de test, validation croisée]
+    etapes:
+      - dialogue:
+          - zero: "Mon modèle a 100 % de réussite sur mes données ! Il est parfait ?"
+          - neo: "Méfiance : il a peut-être appris tes données par cœur, y compris leur bruit. Sur de nouvelles données, il risque d'échouer. C'est le surapprentissage."
+      - a_quoi_ca_sert: "L'apprentissage automatique est utilisé en santé, finance, industrie, recherche ; savoir évaluer honnêtement un modèle évite des erreurs graves et des promesses trompeuses."
+      - texte: |
+          **Apprentissage supervisé** : on apprend à partir d'exemples **étiquetés** (des images avec leur catégorie, des maisons avec leur prix) pour prédire l'étiquette de nouveaux cas. **Classification** (une catégorie) ou **régression** (une valeur).
+
+          **Apprentissage non supervisé** : on cherche des structures dans des données **sans étiquette** (regrouper des clients similaires : le **clustering**).
+
+          **Le surapprentissage** : le modèle colle trop aux données d'entraînement et **généralise mal**. Le **sous-apprentissage** : le modèle est trop simple pour capter la structure.
+
+          **Évaluer honnêtement** :
+          - séparer les données en un jeu d'**entraînement** et un jeu de **test** jamais vu pendant l'apprentissage (par exemple 80 % pour l'entraînement et 20 % pour le test) ;
+          - la **validation croisée** : découper les données en k parts, entraîner sur k − 1 et tester sur la dernière, k fois, puis faire la moyenne.
+
+          **Les biais** : un modèle reproduit les biais de ses données d'entraînement.
+      - attention: "Mesurer la performance sur les données qui ont servi à l'entraînement donne un résultat trop optimiste : il faut toujours un jeu de test séparé."
+      - astuce: { texte: "Un élève qui apprend les corrigés par cœur réussit les exercices déjà vus et rate l'examen : c'est exactement le surapprentissage.", qui: mia }
+      - retiens: "**Supervisé** (données étiquetées : classification, régression) ou **non supervisé** (clustering). **Surapprentissage** : colle aux données, généralise mal. Évaluer sur un **jeu de test** séparé ; **validation croisée** en k parts. Les modèles reproduisent les **biais** des données."
+    exercices:
+      - type: classer
+        enonce: "Range chaque tâche : apprentissage supervisé ou non supervisé ?"
+        categories: ["Supervisé", "Non supervisé"]
+        mots: [["Prédire le prix d'une maison à partir d'exemples de ventes", 0], ["Regrouper des clients aux comportements similaires sans catégories prévues", 1], ["Reconnaître des chiffres manuscrits à partir d'images étiquetées", 0], ["Découvrir des thèmes dans des milliers de textes sans étiquette", 1]]
+        correction: "Exemples étiquetés → supervisé ; recherche de structure sans étiquette → non supervisé."
+      - type: nombre
+        vars: { t: [[10000, 80, 2000], [5000, 80, 1000], [2000, 75, 500], [1000, 70, 300]] }
+        enonce: "On dispose de {{t_0}} exemples. On en garde {{t_1}} % pour l'entraînement. Combien d'exemples reste-t-il pour le test ?"
+        reponse: "t_2"
+        correction: "{{t_0}} × (100 − {{t_1}}) ÷ 100 = **{{t_2}}** exemples."
+      - type: qcm
+        enonce: "Un modèle réussit à 99 % sur ses données d'entraînement et à 60 % sur le jeu de test. Quel est le problème ?"
+        choix: ["Le surapprentissage", "Le sous-apprentissage", "Le modèle est parfait", "Le jeu de test est trop grand"]
+        correction: "Très bon à l'entraînement, mauvais sur de nouvelles données : **surapprentissage**."
+      - type: vf
+        vars: { t: [["La validation croisée entraîne et teste plusieurs fois sur des parts différentes des données.", true], ["On peut évaluer un modèle sur ses propres données d'entraînement sans risque.", false], ["Un modèle peut reproduire les biais de ses données.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Validation croisée ; évaluation trop optimiste sinon ; biais reproduits."
+
+  - id: evaluer-classifieur
+    titre: Évaluer un classifieur - précision, rappel, matrice de confusion
+    classe: Bac+5
+    objectif: Je lis une matrice de confusion et je calcule l'exactitude, la précision et le rappel d'un modèle de classification.
+    mots: [matrice de confusion, précision, rappel, exactitude]
+    etapes:
+      - dialogue:
+          - mia: "Un modèle détecte les fraudes bancaires avec 99 % d'exactitude. Excellent ?"
+          - neo: "Si seulement 1 % des transactions sont frauduleuses, un modèle qui répond toujours « pas de fraude » a aussi 99 %… et ne détecte rien ! Il faut d'autres mesures."
+      - a_quoi_ca_sert: "Détection de maladies, de fraudes, de spams : selon le coût d'une erreur, on privilégie la précision ou le rappel ; c'est un choix central en science des données."
+      - texte: |
+          **La matrice de confusion** : vrais positifs (**VP**), faux positifs (**FP**), faux négatifs (**FN**), vrais négatifs (**VN**).
+
+          **L'exactitude** (accuracy) = $\dfrac{VP + VN}{\text{total}}$ : trompeuse quand les classes sont déséquilibrées.
+
+          **La précision** = $\dfrac{VP}{VP + FP}$ : parmi les cas signalés positifs, combien le sont vraiment ?
+
+          **Le rappel** (sensibilité) = $\dfrac{VP}{VP + FN}$ : parmi les vrais positifs, combien le modèle en trouve-t-il ?
+
+          **Le compromis** : un dépistage médical privilégie le **rappel** (ne manquer aucun malade, quitte à vérifier ensuite) ; un filtre anti-spam privilégie la **précision** (ne pas jeter un vrai courriel).
+
+          **Le score F1** combine précision et rappel (moyenne harmonique).
+      - astuce: { texte: "Précision : « quand je dis oui, ai-je raison ? » Rappel : « ai-je trouvé tous les oui ? »", qui: zero }
+      - retiens: "**Matrice de confusion** : VP, FP, FN, VN. **Exactitude** trompeuse si classes déséquilibrées. **Précision** = VP ÷ (VP + FP) ; **rappel** = VP ÷ (VP + FN). Dépistage → rappel ; anti-spam → précision. **F1** combine les deux."
+    exercices:
+      - type: nombre
+        vars: { t: [[80, 20, 80], [90, 10, 90], [60, 40, 60], [45, 5, 90]] }
+        enonce: "Le modèle signale {{t_0}} vrais positifs et {{t_1}} faux positifs. Quelle est sa précision, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ ({{t_0}} + {{t_1}}) × 100 = **{{t_2}} %**."
+      - type: nombre
+        vars: { t: [[40, 10, 80], [90, 10, 90], [30, 70, 30], [75, 25, 75]] }
+        enonce: "Le modèle trouve {{t_0}} vrais positifs et manque {{t_1}} cas positifs (faux négatifs). Quel est son rappel, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ ({{t_0}} + {{t_1}}) × 100 = **{{t_2}} %**."
+      - type: classer
+        enonce: "Range chaque application : faut-il privilégier le rappel ou la précision ?"
+        categories: ["Rappel", "Précision"]
+        mots: [["Dépister une maladie grave", 0], ["Filtrer les spams d'une boîte mail professionnelle", 1], ["Détecter des fraudes à vérifier ensuite par un humain", 0], ["Recommander un seul produit très ciblé", 1]]
+        correction: "Ne rien manquer → rappel ; ne pas se tromper quand on signale → précision."
+      - type: vf
+        vars: { t: [["Avec des classes très déséquilibrées, l'exactitude peut être trompeuse.", true], ["Le rappel mesure la part des signalements qui sont corrects.", false], ["Le score F1 combine précision et rappel.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Exactitude trompeuse ; c'est la précision qui mesure cela ; F1."
+
+  - id: reseaux-de-neurones
+    titre: Les réseaux de neurones et l'IA générative
+    classe: Bac+5
+    objectif: Je décris le fonctionnement d'un réseau de neurones (couches, poids, fonction d'activation, rétropropagation) et les limites des modèles génératifs.
+    mots: [neurone artificiel, poids, rétropropagation, modèle de langage]
+    etapes:
+      - dialogue:
+          - zero: "Une intelligence artificielle qui écrit des textes, elle comprend ce qu'elle dit ?"
+          - neo: "Elle a appris des régularités statistiques sur d'immenses quantités de textes. C'est puissant, mais elle peut se tromper avec assurance : il faut vérifier."
+      - a_quoi_ca_sert: "Les réseaux de neurones sont au cœur de la vision par ordinateur, de la traduction, des assistants conversationnels ; tout diplômé de master les croisera dans son métier."
+      - texte: |
+          **Un neurone artificiel** : il calcule une **somme pondérée** de ses entrées ($w_1 x_1 + w_2 x_2 + … + b$), puis applique une **fonction d'activation** (par exemple ReLU, qui garde les valeurs positives et met les négatives à 0).
+
+          **Un réseau** : des **couches** de neurones (entrée, couches cachées, sortie). « Apprentissage profond » = beaucoup de couches.
+
+          **L'apprentissage** : on mesure l'erreur avec une **fonction de coût**, puis la **rétropropagation** calcule le gradient de l'erreur pour chaque poids, et la **descente de gradient** ajuste les poids.
+
+          **Les modèles de langage** génératifs prédisent le mot (le « jeton ») suivant à partir du contexte, après un entraînement sur de très grands corpus.
+
+          **Les limites** : erreurs affirmées avec assurance (inventions de faits ou de sources), biais des données, coût énergétique, questions de droit d'auteur et de données personnelles. D'où la vérification humaine et un usage encadré.
+      - attention: "Un texte fluide n'est pas forcément exact : un modèle génératif peut inventer une référence ou un chiffre avec un ton parfaitement assuré."
+      - astuce: { texte: "Un neurone : multiplier, additionner, activer. Un réseau : recommencer couche après couche.", qui: mia }
+      - retiens: "Neurone : **somme pondérée** + **fonction d'activation** (ReLU). Réseau en **couches** ; apprentissage profond = beaucoup de couches. **Rétropropagation** + **descente de gradient** ajustent les **poids**. Modèles de langage : prédire le jeton suivant. Limites : erreurs assurées, biais, énergie, droits ; **vérification humaine**."
+    exercices:
+      - type: nombre
+        vars: { t: [[2, 3, 1, 4, -5, 9], [1, 2, 3, 1, 0, 5], [3, 1, 2, 2, -2, 6], [2, 2, 2, 3, 1, 11]] }
+        enonce: "Un neurone reçoit $x_1 = {{t_0}}$ et $x_2 = {{t_1}}$, avec les poids $w_1 = {{t_2}}$, $w_2 = {{t_3}}$ et le biais $b = {{t_4}}$. Que vaut la somme pondérée $w_1 x_1 + w_2 x_2 + b$ ?"
+        reponse: "t_5"
+        correction: "{{t_2}} × {{t_0}} + {{t_3}} × {{t_1}} + ({{t_4}}) = **{{t_5}}**."
+      - type: qcm
+        vars: { t: [["-3", "0"], ["5", "5"], ["0", "0"], ["-0,5", "0"]] }
+        enonce: "La fonction ReLU renvoie la valeur si elle est positive, et 0 sinon. Que vaut ReLU({{t_0}}) ?"
+        choix: ["{{t_1}}", "1", "-1"]
+        correction: "ReLU({{t_0}}) = **{{t_1}}**."
+      - type: ordre
+        enonce: "Range les étapes d'un cycle d'apprentissage d'un réseau de neurones."
+        items: ["Calculer la sortie à partir des entrées", "Mesurer l'erreur avec la fonction de coût", "Calculer les gradients par rétropropagation", "Ajuster les poids par descente de gradient"]
+        correction: "Propager, mesurer, rétropropager, ajuster."
+      - type: vf
+        vars: { t: [["Un modèle de langage peut inventer une source avec assurance.", true], ["Un réseau de neurones n'a aucun paramètre à ajuster.", false], ["L'apprentissage profond utilise de nombreuses couches.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Inventions possibles ; les poids s'ajustent ; profond = beaucoup de couches."

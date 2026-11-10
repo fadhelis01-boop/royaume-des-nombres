@@ -511,3 +511,11 @@ chapitres:
       - neo: "Mesurer l'efficacité, organiser le code, sécuriser les données : forgeons des logiciels solides."
     apres:
       - narrateur: "Les serveurs ronronnent doucement, le code est rangé en classes bien ordonnées, et le coffre-fort se referme d'un déclic chiffré."
+  laboratoire-des-donnees:
+    titre: "Chapitre 35 — Le Laboratoire des Données"
+    objet: "📜 Le Livre des Preuves"
+    avant:
+      - narrateur: "Au Laboratoire, les modèles promettent tout : 100 % de réussite, des prédictions parfaites… sur les données qu'ils ont déjà vues."
+      - neo: "Un bon modèle se juge sur des données nouvelles, avec des mesures honnêtes. Remettons de la rigueur dans les machines."
+    apres:
+      - narrateur: "Les serveurs affichent enfin des scores honnêtes, testés sur des données jamais vues. Le Livre des Preuves s'ouvre sur un chapitre neuf."

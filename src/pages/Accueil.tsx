@@ -85,7 +85,8 @@ export function NouvelEnfant() {
           <div className="age-picker" role="group" aria-label="Ta classe">
             {CLASSES
               .map((n, i) => ({ n, i }))
-              .filter(({ i }) => Math.abs(i - classeDeLAge(age)) <= 2)
+              // à « 18 ans et plus », toutes les classes de la 1ʳᵉ au Bac+5
+              .filter(({ i }) => (age >= 18 ? i >= 11 : Math.abs(i - classeDeLAge(age)) <= 2))
               .map(({ n, i }) => (
                 <button key={n} className={`chip ${classeAff === i ? "sel" : ""}`} onClick={() => setClasse(i)}>
                   {n}
