@@ -77,6 +77,11 @@ export function codeEnMots(c: string): string {
     .trim();
 }
 
+/** « 1 », « 1,5 » : l'unité reste au singulier ; « 10 000 » (espaces de milliers) au pluriel. */
+function unSeul(n: string): boolean {
+  return parseFloat(n.replace(/[  ]/g, "").replace(",", ".")) < 2;
+}
+
 function romain(r: string): number | null {
   const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
   let n = 0;
@@ -96,7 +101,7 @@ function formuleChimique(f: string): string {
 
 // petits mots courants écrits en majuscules pour insister (les sigles comme BD, GN, ADN restent épelés)
 // sigles de 4 lettres ou plus qui se disent lettre par lettre (NSI, HGGSP)
-const SIGLES_EPELES = new Set(["HTML", "HTTP", "HTTPS", "HGGSP", "TPIR", "ADSL", "URSS"]);
+const SIGLES_EPELES = new Set(["HTML", "HTTP", "HTTPS", "HGGSP", "TPIR", "ADSL", "URSS", "RGPD", "HACCP", "STMG", "STHR", "STAV", "STD2A", "LLCER", "SNCF"]);
 const PETITS_MOTS = new Set(["ET", "OU", "PAS", "QUE", "QUI", "CE", "QU", "ON", "UN", "UNE", "LE", "LA", "LES", "DE", "DES", "DU", "EN", "NE", "SI", "OUI", "NON", "TOUT", "DÉ", "IL", "ELLE", "BY"]);
 
 /** « 1ᵉʳ » → « premier », « 3ᵉ » → « troisième ». */
@@ -226,8 +231,14 @@ export function toSpeech(md: string): string {
     })
     .replace(/⊥/g, " est perpendiculaire à ")
     .replace(/∥|\/\/(?=\s*\()/g, " est parallèle à ")
-    .replace(/(\d+(?:,\d+)?)\s?(k|h|da|d|c|m)?m([²³])/g, (_m, n, p, e) => {
-      const un = parseFloat(n.replace(",", ".")) < 2;
+    // unités composées avec « / » (avant que « / » ne devienne « divisé par »)
+    .replace(/(\d+(?:,\d+)?\s?)?kg\s?\/\s?m³/g, (_m, n) => `${n ?? ""} kilogrammes par mètre cube `)
+    .replace(/(\d+(?:,\d+)?)?\s?\bg\s?\/\s?L\b/g, (_m, n) => (n ? `${n} gramme${unSeul(n) ? "" : "s"} par litre ` : " grammes par litre "))
+    .replace(/\bq\s?\/\s?ha\b/g, " quintaux par hectare ")
+    .replace(/\btr\s?\/\s?min\b/g, " tours par minute ")
+    .replace(/(\d{1,3}(?:[  ]\d{3})+|\d+)(,\d+)?\s?(k|h|da|d|c|m)?m([²³])/g, (_m, i, dec, p, e) => {
+      const n = i + (dec ?? "");
+      const un = unSeul(n);
       const pre = { k: "kilo", h: "hecto", da: "déca", d: "déci", c: "centi", m: "milli" }[p as string] ?? "";
       return `${n} ${pre}mètre${un ? "" : "s"} ${e === "²" ? "carré" : "cube"}${un ? "" : "s"}`;
     })
@@ -262,10 +273,10 @@ export function toSpeech(md: string): string {
     .replace(/(\d)\s?°/g, "$1 degrés")
     .replace(/\bcm²/g, "centimètres carrés")
     .replace(/\bm²/g, "mètres carrés")
-    .replace(/(\d+(?:,\d+)?)\s?km\b(?![A-Za-zÀ-ÿ])/g, (_m, n) => `${n} kilomètre${parseFloat(n.replace(",", ".")) < 2 ? "" : "s"}`)
+    .replace(/(\d{1,3}(?:[  ]\d{3})+|\d+(?:,\d+)?)\s?km\b(?![A-Za-zÀ-ÿ])/g, (_m, n) => `${n} kilomètre${unSeul(n) ? "" : "s"}`)
     .replace(/(\d)\s?cm\b(?![A-Za-zÀ-ÿ])/g, "$1 centimètres")
     .replace(/(\d)\s?mm\b(?![A-Za-zÀ-ÿ])/g, "$1 millimètres")
-    .replace(/(\d+(?:,\d+)?)\s?m\b(?![A-Za-zÀ-ÿ])/g, (_m, n) => `${n} mètre${parseFloat(n.replace(",", ".")) < 2 ? "" : "s"}`)
+    .replace(/(\d{1,3}(?:[  ]\d{3})+|\d+(?:,\d+)?)\s?m\b(?![A-Za-zÀ-ÿ])/g, (_m, n) => `${n} mètre${unSeul(n) ? "" : "s"}`)
     .replace(/(\d)\s?kg\b(?![A-Za-zÀ-ÿ])/g, "$1 kilos")
     .replace(/(\d)\s?g\b(?![A-Za-zÀ-ÿ])/g, "$1 grammes")
     .replace(/(\d)\s?L\b(?![A-Za-zÀ-ÿ])/g, "$1 litres")

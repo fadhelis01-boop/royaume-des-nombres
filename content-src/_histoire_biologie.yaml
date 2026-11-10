@@ -97,3 +97,19 @@ chapitres:
       - narrateur: "Au cœur du tronc, le Grand Neutre veut rendre toutes les espèces identiques."
     apres:
       - narrateur: "La diversité revient, foisonnante. Le Grand Neutre recule, incapable de supporter autant de différences."
+  bio-maison-de-la-sante:
+    titre: "La Maison de la Santé"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "À la Maison de la Santé, les dossiers s'empilent et les chiffres se brouillent : personne ne sait plus qui a besoin d'aide."
+      - neo: "Soigner, prévenir, accompagner : la santé est aussi une affaire collective."
+    apres:
+      - narrateur: "Les volets s'ouvrent, la salle d'attente se vide dans la bonne humeur, et le tableau de santé du village repasse au vert."
+  bio-auberge-et-ferme:
+    titre: "L'Auberge et la Ferme"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "Entre la ferme et l'auberge, la route est coupée : les légumes pourrissent au champ, la cuisine reste vide."
+      - mia: "Du sol à l'assiette, chaque maillon compte. On répare la chaîne ?"
+    apres:
+      - narrateur: "Les paniers traversent de nouveau la route. À l'auberge, on sert le premier repas de saison, sous les haies en fleurs."

@@ -1,3 +1,9 @@
+- version: "2.19.0"
+  date: "2026-11-10"
+  notes:
+    - "Séries technologiques : STMG (le Comptoir des Entreprises, 5 leçons), STI2D (le Laboratoire de l'Innovation, 5 leçons), ST2S (la Maison de la Santé, 4 leçons), STL (le Laboratoire des Biotechnologies, 4 leçons), STD2A (le Studio du Design, 4 leçons), STHR et STAV (l'Auberge et la Ferme, 4 leçons)."
+    - "Comme les spécialités, ces mondes sont ouverts sur la carte sans être imposés par le test ou le parcours."
+    - "La voix lit les unités composées (g/L, kg/m³, q/ha), les grands nombres avec unité (10 000 m²) et épelle les sigles HACCP, RGPD, STMG, STAV."
 - version: "2.18.0"
   date: "2026-11-10"
   notes:

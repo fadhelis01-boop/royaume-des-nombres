@@ -1,0 +1,185 @@
+id: ch-laboratoire-des-biotechnologies
+matiere: chimie
+titre: Le Laboratoire des Biotechnologies
+sous_titre: Série STL - sécurité au laboratoire, microbiologie, solutions et dosages, biotechnologies
+emoji: 🧫
+couleur: "#1b5e20"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 108
+specialite: STL
+version: 1.0.0
+intro:
+  - narrateur: "Au bord du Marais d'Acidia, un laboratoire blanc : des boîtes de Petri, des pipettes, une hotte, une machine qui copie l'ADN."
+  - mia: "La série STL, sciences et technologies de laboratoire, forme aux métiers de l'analyse : biologie médicale, contrôle qualité, recherche, environnement."
+  - neo: "On peut y choisir les biotechnologies ou les sciences physiques et chimiques en laboratoire. Première règle : la sécurité."
+
+lecons:
+  - id: stl-securite
+    titre: Travailler en sécurité au laboratoire
+    classe: "1ʳᵉ"
+    objectif: Je lis les pictogrammes de danger et j'applique les règles de sécurité et de prévention des risques biologiques.
+    mots: [pictogramme, danger, équipement de protection, risque biologique]
+    etapes:
+      - dialogue:
+          - zero: "Je verse de l'eau dans l'acide, c'est pareil que l'acide dans l'eau ?"
+          - neo: "Non ! Toujours l'acide dans l'eau, doucement : sinon le mélange peut bouillir et projeter de l'acide."
+      - a_quoi_ca_sert: "Au laboratoire comme dans l'industrie, une erreur de sécurité peut blesser ; ces règles sont la base de tous les métiers de laboratoire."
+      - texte: |
+          **Les pictogrammes de danger** (losange à bord rouge) : **flamme** (inflammable), **tête de mort** (toxicité aiguë), **corrosion** (attaque la peau et les métaux), **point d'exclamation** (irritant, nocif), **silhouette abîmée** (danger grave pour la santé), **environnement** (toxique pour les milieux aquatiques).
+
+          **Les équipements de protection individuelle (EPI)** : blouse en coton fermée, lunettes, gants adaptés, cheveux attachés.
+
+          **Les bons gestes** : ne jamais pipeter à la bouche, verser l'**acide dans l'eau**, travailler sous **hotte** pour les vapeurs, jeter les déchets dans les bons bidons.
+
+          **Le risque biologique** (micro-organismes) : travail près d'une flamme ou sous un **poste de sécurité microbiologique**, désinfection de la paillasse, élimination des déchets contaminés par autoclave.
+      - astuce: { texte: "Avant toute manipulation, lis l'étiquette du flacon : pictogramme, mention de danger, conseils de prudence.", qui: mia }
+      - retiens: "Lire les **pictogrammes** (flamme, tête de mort, corrosion, exclamation, santé, environnement). **EPI** : blouse, lunettes, gants. **Acide dans l'eau**, jamais de pipetage à la bouche, **hotte**. Risque biologique : flamme ou poste de sécurité, désinfection, autoclave."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque pictogramme à son danger."
+        paires: [["une flamme", "produit inflammable"], ["une main et une surface rongées", "produit corrosif"], ["une tête de mort", "toxicité aiguë"], ["un arbre et un poisson morts", "danger pour l'environnement"]]
+        correction: "Chaque pictogramme signale un type de danger."
+      - type: classer
+        enonce: "Range chaque geste : sûr ou dangereux ?"
+        categories: ["Sûr", "Dangereux"]
+        mots: [["Verser l'acide dans l'eau", 0], ["Pipeter à la bouche", 1], ["Porter des lunettes de protection", 0], ["Garder ses cheveux longs détachés près d'une flamme", 1]]
+        correction: "On se protège et on suit les bons gestes."
+      - type: qcm
+        enonce: "Où manipuler un produit qui dégage des vapeurs toxiques ?"
+        choix: ["Sous une hotte aspirante", "Près d'une fenêtre ouverte", "Dans le couloir", "N'importe où avec des gants"]
+        correction: "La **hotte** aspire les vapeurs."
+      - type: vf
+        vars: { t: [["Les déchets contaminés par des microbes peuvent être stérilisés à l'autoclave.", true], ["On peut verser l'eau dans l'acide concentré sans risque.", false], ["La blouse doit être fermée.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Autoclave pour les déchets biologiques ; toujours l'acide dans l'eau ; blouse fermée."
+
+  - id: stl-microbiologie
+    titre: Microbiologie, cultiver et observer les micro-organismes
+    classe: "1ʳᵉ"
+    objectif: Je décris les conditions de culture des bactéries, je compte des colonies et j'applique les principes de l'asepsie.
+    mots: [bactérie, colonie, asepsie, milieu de culture]
+    etapes:
+      - dialogue:
+          - mia: "Sur cette boîte de Petri, chaque petit point est une colonie : des millions de bactéries issues d'une seule."
+          - zero: "Une seule bactérie qui fait des millions ? En combien de temps ?"
+          - neo: "Certaines se divisent toutes les 20 minutes : en une nuit, c'est une colonie visible à l'œil nu."
+      - a_quoi_ca_sert: "Analyser l'eau, un aliment ou un prélèvement de patient : la microbiologie protège la santé de tous, dans les laboratoires d'analyses et l'industrie."
+      - texte: |
+          **Les bactéries** : des êtres vivants **unicellulaires**, sans noyau, de l'ordre du micromètre.
+
+          **Cultiver** : sur un **milieu de culture** (gélose nutritive en boîte de Petri ou bouillon), à une **température** adaptée (souvent 37 °C pour les bactéries humaines), pendant 24 à 48 heures.
+
+          **Une colonie** = l'amas visible formé à partir d'une seule bactérie. Compter les colonies permet d'estimer le nombre de bactéries dans l'échantillon.
+
+          **La croissance** : chaque bactérie se divise en deux. Après n divisions, une bactérie donne $2^n$ bactéries.
+
+          **L'asepsie** : travailler sans contaminer l'échantillon ni se contaminer (flamme, matériel stérile, gestes rapides). La **coloration de Gram** sépare les bactéries en deux grands groupes selon leur paroi.
+      - attention: "Une boîte de culture ne s'ouvre pas en dehors de la zone protégée : même une bactérie inoffensive peut se transformer en contaminant."
+      - astuce: { texte: "Une colonie = une bactérie de départ. C'est pour ça qu'on dit « unité formant colonie » (UFC).", qui: neo }
+      - retiens: "Bactéries **unicellulaires** sans noyau. Culture : **milieu**, **température** (37 °C), 24 à 48 heures. **Colonie** = une bactérie de départ (UFC). n divisions → **$2^n$** bactéries. **Asepsie** ; **coloration de Gram**."
+    exercices:
+      - type: nombre
+        vars: { n: [3, 4, 5, 6, 10] }
+        enonce: "Une bactérie se divise {{n}} fois de suite. Combien de bactéries obtient-on ?"
+        reponse: "2^n"
+        correction: "$2^{ {{n}} }$ = **{{2^n}}** bactéries."
+      - type: nombre
+        vars: { t: [[20, 3, 9], [20, 2, 6], [30, 2, 4], [20, 4, 12]] }
+        enonce: "Une bactérie se divise toutes les {{t_0}} minutes. Combien de divisions en {{t_1}} heures ?"
+        reponse: "t_2"
+        correction: "{{t_1}} h = {{t_1*60}} min ; {{t_1*60}} ÷ {{t_0}} = **{{t_2}}** divisions."
+      - type: ordre
+        enonce: "Range les étapes d'un ensemencement en boîte de Petri."
+        items: ["Se laver les mains et désinfecter la paillasse", "Allumer la flamme ou travailler sous le poste de sécurité", "Déposer l'échantillon sur la gélose avec un matériel stérile", "Refermer la boîte et la placer à l'étuve à 37 °C"]
+        correction: "Préparer, protéger, ensemencer, incuber."
+      - type: vf
+        vars: { t: [["Une colonie provient en principe d'une seule bactérie.", true], ["Les bactéries ont un noyau.", false], ["L'asepsie évite de contaminer l'échantillon.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une colonie = une bactérie de départ ; pas de noyau chez les bactéries ; asepsie = sans contamination."
+
+  - id: stl-solutions-dosages
+    titre: Solutions, dilutions et dosages
+    classe: "1ʳᵉ"
+    objectif: Je calcule une concentration en masse, je prépare une dilution et je comprends le principe d'un dosage par étalonnage.
+    mots: [concentration, dilution, facteur de dilution, étalonnage]
+    etapes:
+      - dialogue:
+          - zero: "Le sirop est trop sucré. J'ajoute de l'eau, la quantité de sucre change ?"
+          - neo: "Non ! La quantité de sucre reste la même, mais elle est répartie dans plus de liquide : la concentration baisse. C'est une dilution."
+      - a_quoi_ca_sert: "Préparer des solutions exactes et mesurer une concentration (glucose dans le sang, nitrates dans l'eau) est le quotidien des techniciens de laboratoire."
+      - texte: |
+          **Concentration en masse** : $C_m = \dfrac{m}{V}$ (en g/L). Exemple : 10 g de sel dans 0,5 L → 20 g/L.
+
+          **Dilution** : on ajoute du solvant. La masse de soluté se conserve : $C_{mère} \times V_{mère} = C_{fille} \times V_{fille}$.
+
+          **Facteur de dilution** F = concentration mère ÷ concentration fille = volume final ÷ volume prélevé. Pour diluer 10 fois : prélever 10 mL et compléter à 100 mL dans une **fiole jaugée**.
+
+          **Dosage par étalonnage** : on mesure une grandeur (absorbance, avec un **spectrophotomètre**) pour des solutions de concentrations connues, on trace la **droite d'étalonnage**, puis on y lit la concentration de l'échantillon inconnu.
+      - attention: "Pour une solution précise, on utilise une **fiole jaugée** et une **pipette jaugée**, pas un bécher ni une éprouvette."
+      - astuce: { texte: "Diluer F fois = prélever un volume et compléter à F fois ce volume.", qui: mia }
+      - retiens: "$C_m = m \\div V$ (g/L). Dilution : masse conservée, $C_{mère} \\times V_{mère} = C_{fille} \\times V_{fille}$ ; **facteur** F = V finale ÷ V prélevé. Matériel jaugé. **Dosage par étalonnage** : droite d'étalonnage, puis lecture de l'inconnu."
+    exercices:
+      - type: nombre
+        vars: { t: [[10, 0.5, 20], [5, 0.25, 20], [12, 0.2, 60], [3, 0.1, 30]] }
+        enonce: "On dissout {{t_0}} g de soluté dans {{t_1}} L de solution. Quelle est la concentration en masse, en g/L ?"
+        reponse: "t_2"
+        unite: g/L
+        correction: "Cm = {{t_0}} ÷ {{t_1}} = **{{t_2}} g/L**."
+      - type: nombre
+        vars: { t: [[10, 100, 10], [5, 50, 10], [20, 100, 5], [25, 250, 10]] }
+        enonce: "On prélève {{t_0}} mL de solution mère et on complète à {{t_1}} mL. Quel est le facteur de dilution ?"
+        reponse: "t_2"
+        correction: "F = {{t_1}} ÷ {{t_0}} = **{{t_2}}**."
+      - type: nombre
+        vars: { t: [[50, 10, 5], [80, 4, 20], [100, 5, 20], [60, 10, 6]] }
+        enonce: "Une solution mère à {{t_0}} g/L est diluée {{t_1}} fois. Quelle est la concentration de la solution fille, en g/L ?"
+        reponse: "t_2"
+        unite: g/L
+        correction: "{{t_0}} ÷ {{t_1}} = **{{t_2}} g/L**."
+      - type: qcm
+        enonce: "Quel matériel faut-il pour préparer exactement 100 mL de solution ?"
+        choix: ["Une fiole jaugée de 100 mL", "Un bécher de 100 mL", "Un verre gradué de cuisine", "Une éprouvette de 250 mL"]
+        correction: "La **fiole jaugée** donne un volume précis."
+
+  - id: stl-biotechnologies
+    titre: Enzymes, ADN et biotechnologies
+    classe: Terminale
+    objectif: J'explique l'action d'une enzyme et le principe de la PCR, et je cite des applications des biotechnologies.
+    mots: [enzyme, ADN, PCR, biotechnologie]
+    etapes:
+      - dialogue:
+          - mia: "Pour savoir si quelqu'un a un virus, on copie un petit morceau de son matériel génétique des millions de fois, puis on le détecte."
+          - neo: "C'est la PCR. À chaque cycle, le nombre de copies double."
+      - a_quoi_ca_sert: "Tests de diagnostic, production d'insuline, analyse génétique, police scientifique : les biotechnologies ont transformé la médecine et l'industrie."
+      - texte: |
+          **Les enzymes** : des protéines qui **accélèrent** une réaction chimique précise (**spécificité**). Elles ont un **site actif** où se fixe le substrat. Leur activité dépend de la **température** et du **pH** (au-delà d'une certaine chaleur, elles sont détruites).
+
+          **La PCR** (amplification en chaîne par polymérase) copie un fragment d'ADN. Chaque **cycle** a trois étapes : **dénaturation** (environ 95 °C, les deux brins se séparent), **hybridation** des amorces (environ 55 à 60 °C), **élongation** (environ 72 °C, une enzyme copie le brin). Après n cycles : $2^n$ fois plus de copies.
+
+          **Applications** : diagnostic (tests PCR), production de médicaments par des bactéries modifiées (insuline), empreintes génétiques, contrôle des aliments, dépollution.
+      - attention: "Une enzyme n'est pas consommée par la réaction : elle peut servir de nombreuses fois."
+      - astuce: { texte: "PCR : chauffer pour séparer, refroidir pour accrocher, réchauffer un peu pour copier.", qui: zero }
+      - retiens: "**Enzyme** : protéine qui accélère une réaction **spécifique**, sensible à la **température** et au **pH**, non consommée. **PCR** : **dénaturation**, **hybridation**, **élongation** ; n cycles → **$2^n$** copies. Applications : diagnostic, médicaments, empreintes génétiques."
+    exercices:
+      - type: ordre
+        enonce: "Range les trois étapes d'un cycle de PCR."
+        items: ["Dénaturation (séparation des brins)", "Hybridation des amorces", "Élongation (copie du brin)"]
+        correction: "Séparer, accrocher, copier."
+      - type: nombre
+        vars: { n: [5, 10, 20] }
+        enonce: "Une PCR commence avec 1 fragment d'ADN. Combien de copies après {{n}} cycles (en théorie) ?"
+        reponse: "2^n"
+        correction: "$2^{ {{n}} }$ = **{{2^n}}** copies."
+      - type: vf
+        vars: { t: [["Une enzyme est consommée par la réaction qu'elle accélère.", false], ["Une forte chaleur peut détruire une enzyme.", true], ["Des bactéries modifiées peuvent produire de l'insuline.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'enzyme n'est pas consommée ; la chaleur la dénature ; l'insuline est produite par biotechnologie."
+      - type: relier
+        enonce: "🔗 Relie chaque étape de la PCR à sa température approximative."
+        paires: [["dénaturation", "95 °C"], ["hybridation", "55 à 60 °C"], ["élongation", "72 °C"]]
+        correction: "Trois températures, trois étapes."

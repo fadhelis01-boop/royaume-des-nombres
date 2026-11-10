@@ -1,0 +1,244 @@
+id: hg-comptoir-des-entreprises
+matiere: histoire
+titre: Le Comptoir des Entreprises
+sous_titre: Série STMG - droit, économie, management, gestion et finance, mercatique
+emoji: 🏢
+couleur: "#1a237e"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 805
+specialite: STMG
+version: 1.0.0
+intro:
+  - narrateur: "Au coin du Marché, un comptoir animé : des contrats sur le bureau, un tableau de bord, une affiche de campagne publicitaire."
+  - neo: "La série STMG, sciences et technologies du management et de la gestion, explique comment vivent les organisations : entreprises, associations, services publics."
+  - mia: "Droit, économie, management, gestion : quatre regards sur la même organisation."
+
+lecons:
+  - id: stmg-droit
+    titre: Le droit, ses sources et le contrat
+    classe: "1ʳᵉ"
+    objectif: Je hiérarchise les sources du droit et je connais les conditions de validité d'un contrat.
+    mots: [règle de droit, Constitution, contrat, consentement]
+    etapes:
+      - dialogue:
+          - zero: "J'ai acheté un téléphone en ligne. J'ai signé un contrat, moi ?"
+          - neo: "Oui ! Dès que deux personnes se mettent d'accord pour créer des obligations, il y a contrat, même sans papier signé."
+      - a_quoi_ca_sert: "Un contrat de travail, un bail, un achat en ligne : le droit est partout dans la vie quotidienne et dans celle des entreprises."
+      - texte: |
+          **La règle de droit** est générale, obligatoire et sanctionnée par l'État.
+
+          **La hiérarchie des normes** (de la plus haute à la plus basse) : **Constitution**, **traités internationaux** et droit européen, **lois**, **règlements** (décrets, arrêtés). Une norme inférieure doit respecter les normes supérieures.
+
+          **Le contrat** : un accord de volontés qui crée des obligations. Pour être valable, il faut :
+          - le **consentement** libre et éclairé des parties (pas d'erreur, de tromperie ni de violence) ;
+          - leur **capacité** (un mineur ne peut pas tout signer seul) ;
+          - un **contenu licite et certain**.
+
+          Si une partie n'exécute pas ses obligations, l'autre peut demander l'exécution forcée, une baisse du prix, la résolution du contrat ou des dommages et intérêts.
+      - attention: "Un contrat n'a pas besoin d'être écrit pour exister ; l'écrit sert surtout de **preuve**."
+      - astuce: { texte: "Pour la hiérarchie des normes, pense à une pyramide : la Constitution au sommet, les arrêtés à la base.", qui: mia }
+      - retiens: "Hiérarchie : **Constitution** > **traités** > **lois** > **règlements**. Contrat valable : **consentement**, **capacité**, **contenu licite et certain**. L'écrit sert de **preuve**."
+    exercices:
+      - type: ordre
+        enonce: "Range les normes de la plus haute à la plus basse."
+        items: ["La Constitution", "Les traités internationaux", "Les lois", "Les règlements (décrets, arrêtés)"]
+        correction: "Constitution, traités, lois, règlements."
+      - type: classer
+        enonce: "Range chaque situation : contrat valable ou contrat contestable ?"
+        categories: ["Valable", "Contestable"]
+        mots: [["Deux adultes achètent et vendent un vélo à un prix fixé", 0], ["Un vendeur ment sur l'état d'une voiture pour la vendre", 1], ["Un enfant de 10 ans achète seul une voiture", 1], ["Un salarié signe librement son contrat de travail", 0]]
+        correction: "Tromperie (dol) ou incapacité rendent le contrat contestable."
+      - type: vf
+        vars: { t: [["Un contrat peut exister sans écrit.", true], ["Une loi peut contredire la Constitution.", false], ["Le consentement doit être libre et éclairé.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'écrit sert de preuve ; la loi respecte la Constitution ; le consentement doit être libre et éclairé."
+      - type: relier
+        enonce: "🔗 Relie chaque condition du contrat à son sens."
+        paires: [["le consentement", "un accord libre et éclairé"], ["la capacité", "avoir le droit de s'engager"], ["le contenu licite", "un objet autorisé par la loi"]]
+        correction: "Les trois conditions de validité du contrat."
+
+  - id: stmg-management
+    titre: Les organisations et le management
+    classe: "1ʳᵉ"
+    objectif: Je distingue les types d'organisations et les niveaux de décision (stratégique, tactique, opérationnelle).
+    mots: [organisation, finalité, décision stratégique, management]
+    etapes:
+      - dialogue:
+          - mia: "Une boulangerie, une association sportive, un hôpital : trois organisations. Qu'ont-elles en commun ?"
+          - zero: "Des gens qui travaillent ensemble pour un but ?"
+          - neo: "Exactement. Et le management, c'est l'art de les diriger vers ce but."
+      - a_quoi_ca_sert: "Comprendre comment une organisation prend ses décisions aide à y trouver sa place, à y évoluer, ou à créer la sienne."
+      - texte: |
+          **Trois types d'organisations** selon leur **finalité** :
+          - l'**entreprise** : produire des biens ou des services et réaliser un **profit** ;
+          - l'**association** : un but **non lucratif** (sport, culture, solidarité) ;
+          - l'**organisation publique** : servir l'**intérêt général** (école, hôpital, mairie).
+
+          **Les niveaux de décision** :
+          - **stratégique** : à long terme, engage toute l'organisation (s'installer à l'étranger) ;
+          - **tactique** (ou de gestion) : à moyen terme, met en œuvre la stratégie (recruter une équipe commerciale) ;
+          - **opérationnelle** : au quotidien (organiser le planning de la semaine).
+
+          **Le management** : fixer des objectifs, organiser, animer les équipes, contrôler les résultats.
+      - astuce: { texte: "Plus une décision engage l'avenir et coûte cher, plus elle est stratégique.", qui: neo }
+      - retiens: "Organisations : **entreprise** (profit), **association** (non lucratif), **organisation publique** (intérêt général). Décisions **stratégiques** (long terme), **tactiques**, **opérationnelles** (quotidien)."
+    exercices:
+      - type: classer
+        enonce: "Range chaque décision : stratégique ou opérationnelle ?"
+        categories: ["Stratégique", "Opérationnelle"]
+        mots: [["Lancer une nouvelle gamme de produits", 0], ["Remplacer un salarié absent demain", 1], ["Racheter un concurrent", 0], ["Commander du papier pour l'imprimante", 1]]
+        correction: "Long terme et engageante → stratégique ; quotidienne → opérationnelle."
+      - type: relier
+        enonce: "🔗 Relie chaque organisation à sa finalité."
+        paires: [["une entreprise", "réaliser un profit"], ["une association", "un but non lucratif"], ["un hôpital public", "l'intérêt général"]]
+        correction: "La finalité distingue les types d'organisations."
+      - type: ordre
+        enonce: "Range les décisions de la plus longue à la plus courte durée."
+        items: ["Décision stratégique", "Décision tactique", "Décision opérationnelle"]
+        correction: "Stratégique, tactique, opérationnelle."
+      - type: qcm
+        enonce: "Un club de football amateur géré par des bénévoles est…"
+        choix: ["une association", "une entreprise", "une organisation publique", "une banque"]
+        correction: "But non lucratif : c'est une **association**."
+
+  - id: stmg-gestion
+    titre: "Gestion : chiffre d'affaires, charges et résultat"
+    classe: "1ʳᵉ"
+    objectif: Je calcule un chiffre d'affaires, une marge et un résultat, et je sais lire les grandes lignes d'un compte de résultat.
+    mots: [chiffre d'affaires, charges, marge, résultat]
+    etapes:
+      - dialogue:
+          - zero: "Mon stand de crêpes a vendu pour 500 € ! J'ai gagné 500 € ?"
+          - neo: "Non : il faut retirer ce que tu as dépensé (farine, œufs, location du stand). Ce qui reste, c'est ton résultat."
+      - a_quoi_ca_sert: "Savoir si une activité gagne de l'argent est indispensable pour créer une entreprise, gérer une association ou simplement son budget."
+      - texte: |
+          **Chiffre d'affaires** = prix de vente × quantité vendue.
+
+          **Marge** = prix de vente − coût d'achat (pour un produit). Le **taux de marge** = marge ÷ coût d'achat × 100.
+
+          **Compte de résultat** : il compare, sur une année, les **produits** (ventes…) et les **charges** (achats, salaires, loyers…).
+
+          **Résultat** = produits − charges : un **bénéfice** s'il est positif, une **perte** s'il est négatif.
+
+          **Le bilan** est une photographie du patrimoine à une date : ce que l'entreprise possède (**actif**) et comment c'est financé (**passif** : capitaux propres et dettes).
+      - attention: "Chiffre d'affaires et bénéfice sont deux choses différentes : une entreprise peut beaucoup vendre et perdre de l'argent."
+      - astuce: { texte: "Compte de résultat = un film de l'année ; bilan = une photo à la date de clôture.", qui: mia }
+      - retiens: "**CA** = prix × quantité ; **marge** = prix de vente − coût d'achat ; **résultat** = produits − charges (bénéfice ou perte). Compte de résultat = **l'année** ; bilan = **le patrimoine** à une date."
+    exercices:
+      - type: nombre
+        vars: { p: [3, 4, 5], q: [100, 150, 200] }
+        enonce: "Une crêpe se vend {{p}} €. On en vend {{q}}. Quel est le chiffre d'affaires ?"
+        reponse: "p*q"
+        unite: "€"
+        correction: "{{p}} × {{q}} = **{{p*q}} €**."
+      - type: nombre
+        vars: { t: [[500, 320, 180], [1200, 900, 300], [800, 650, 150], [2000, 1400, 600]] }
+        enonce: "Produits de l'année : {{t_0}} €. Charges : {{t_1}} €. Quel est le résultat ?"
+        reponse: "t_2"
+        unite: "€"
+        correction: "{{t_0}} − {{t_1}} = **{{t_2}} €** : c'est un bénéfice."
+      - type: nombre
+        vars: { t: [[20, 25, 25], [40, 50, 25], [10, 15, 50], [50, 60, 20]] }
+        enonce: "Un article acheté {{t_0}} € est revendu {{t_1}} €. Quel est le taux de marge, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "Marge = {{t_1}} − {{t_0}} ; taux = marge ÷ {{t_0}} × 100 = **{{t_2}} %**."
+      - type: classer
+        enonce: "Range chaque élément : produit ou charge ?"
+        categories: ["Produit", "Charge"]
+        mots: [["Les ventes de marchandises", 0], ["Les salaires", 1], ["Le loyer du local", 1], ["Les prestations facturées aux clients", 0]]
+        correction: "Ce qui rapporte → produit ; ce qui coûte → charge."
+
+  - id: stmg-mercatique
+    titre: La mercatique (le marketing)
+    classe: Terminale
+    objectif: Je construis une démarche mercatique - étude de marché, cible, positionnement, plan de marchéage (4P).
+    mots: [mercatique, cible, positionnement, 4P]
+    etapes:
+      - dialogue:
+          - mia: "Une marque de baskets lance un modèle. À qui le vendre, à quel prix, où, et comment le faire connaître ?"
+          - neo: "Ce sont les quatre questions du plan de marchéage, les 4P : produit, prix, place, promotion."
+      - a_quoi_ca_sert: "Toute organisation doit se faire connaître et comprendre ses clients ; comprendre la mercatique aide aussi à résister aux techniques de vente."
+      - texte: |
+          **La mercatique** (marketing) cherche à comprendre et satisfaire les besoins des clients, de façon rentable.
+
+          **Étude de marché** : la demande, la concurrence, l'environnement.
+
+          **Segmentation et cible** : on découpe le marché en groupes homogènes et on choisit une **cible**.
+
+          **Positionnement** : la place qu'on veut occuper dans l'esprit du client (« la basket écologique et abordable »).
+
+          **Le plan de marchéage (4P)** :
+          - **Produit** : caractéristiques, gamme, emballage ;
+          - **Prix** : coût, concurrence, prix psychologique ;
+          - **Place** (distribution) : magasins, site en ligne ;
+          - **Promotion** (communication) : publicité, réseaux sociaux, influenceurs.
+
+          Aujourd'hui, on parle aussi de **mercatique relationnelle** (fidéliser) et de mercatique **durable**.
+      - astuce: { texte: "Les 4P doivent être cohérents : un produit de luxe ne se vend pas au rabais dans un hard discount.", qui: zero }
+      - retiens: "Mercatique : **étude de marché** → **segmentation** et **cible** → **positionnement** → **4P** : **produit, prix, place, promotion**, cohérents entre eux."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque décision à son « P »."
+        paires: [["choisir l'emballage", "produit"], ["fixer le prix à 49,99 €", "prix"], ["vendre en ligne et en boutique", "place"], ["lancer une campagne sur les réseaux sociaux", "promotion"]]
+        correction: "Produit, prix, place, promotion."
+      - type: ordre
+        enonce: "Range les étapes de la démarche mercatique."
+        items: ["Étudier le marché", "Segmenter et choisir une cible", "Définir un positionnement", "Construire le plan de marchéage (4P)"]
+        correction: "Étude, cible, positionnement, 4P."
+      - type: qcm
+        enonce: "Pourquoi fixer un prix à 9,99 € plutôt qu'à 10 € ?"
+        choix: ["C'est un prix psychologique qui paraît plus bas", "C'est obligatoire par la loi", "Pour payer moins d'impôts", "Pour rendre la monnaie plus facilement"]
+        correction: "Le prix psychologique joue sur la perception du client."
+      - type: vf
+        vars: { t: [["La cible est le groupe de clients que l'on veut atteindre.", true], ["Les 4P peuvent être choisis sans cohérence entre eux.", false], ["La mercatique relationnelle cherche à fidéliser les clients.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Cible = clients visés ; 4P cohérents ; fidéliser = mercatique relationnelle."
+
+  - id: stmg-entreprise-environnement
+    titre: L'entreprise dans son environnement économique
+    classe: Terminale
+    objectif: J'explique comment une entreprise crée de la valeur, se finance et s'adapte à la concurrence et aux enjeux numériques et écologiques.
+    mots: [valeur ajoutée, concurrence, financement, responsabilité sociale]
+    etapes:
+      - dialogue:
+          - zero: "Une entreprise, ça ne pense qu'à faire du profit ?"
+          - neo: "Elle doit être rentable pour survivre, mais elle a aussi des responsabilités envers ses salariés, ses clients et la planète. On parle de RSE."
+      - a_quoi_ca_sert: "Que l'on soit salarié, client ou créateur d'entreprise, comprendre ces enjeux aide à faire des choix éclairés."
+      - texte: |
+          **Créer de la valeur** : la **valeur ajoutée** = production − consommations intermédiaires. Elle est partagée entre salariés (salaires), État (impôts), prêteurs (intérêts), propriétaires (dividendes) et l'entreprise elle-même (investissement).
+
+          **Se financer** : par ses propres ressources (**autofinancement**), par **emprunt** bancaire, par **apport** des associés, par **financement participatif**.
+
+          **La concurrence** : prix, qualité, innovation, image de marque. Certaines pratiques sont interdites (entente sur les prix, abus de position dominante), sanctionnées par l'Autorité de la concurrence.
+
+          **La RSE** (responsabilité sociétale des entreprises) : prendre en compte l'impact social et environnemental de son activité.
+
+          **Le numérique** transforme les métiers : vente en ligne, données clients (encadrées par le **RGPD**), télétravail.
+      - astuce: { texte: "Pour la valeur ajoutée, retiens : ce que l'entreprise vend moins ce qu'elle a acheté pour produire.", qui: mia }
+      - retiens: "**Valeur ajoutée** = production − consommations intermédiaires, partagée entre salariés, État, prêteurs, propriétaires, entreprise. Financement : **autofinancement**, **emprunt**, **apport**, **participatif**. Concurrence encadrée ; **RSE** ; données protégées par le **RGPD**."
+    exercices:
+      - type: nombre
+        vars: { t: [[1000, 600, 400], [5000, 3200, 1800], [800, 350, 450], [2500, 1500, 1000]] }
+        enonce: "Une entreprise produit pour {{t_0}} € et a acheté pour {{t_1}} € de consommations intermédiaires. Quelle est sa valeur ajoutée ?"
+        reponse: "t_2"
+        unite: "€"
+        correction: "{{t_0}} − {{t_1}} = **{{t_2}} €**."
+      - type: relier
+        enonce: "🔗 Relie chaque bénéficiaire à sa part de la valeur ajoutée."
+        paires: [["les salariés", "les salaires"], ["l'État", "les impôts"], ["les prêteurs", "les intérêts"], ["les propriétaires", "les dividendes"]]
+        correction: "La valeur ajoutée est partagée entre tous ceux qui ont contribué."
+      - type: classer
+        enonce: "Range chaque mode de financement : interne ou externe ?"
+        categories: ["Interne", "Externe"]
+        mots: [["L'autofinancement", 0], ["Un emprunt bancaire", 1], ["Une campagne de financement participatif", 1], ["Les bénéfices mis en réserve", 0]]
+        correction: "Ses propres ressources → interne ; banque, investisseurs, public → externe."
+      - type: vf
+        vars: { t: [["Une entente entre concurrents pour fixer les prix est interdite.", true], ["La RSE ne concerne que les profits.", false], ["Le RGPD protège les données personnelles des clients.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Entente interdite ; RSE = impact social et environnemental ; RGPD = données personnelles."

@@ -108,3 +108,11 @@ chapitres:
       - neo: "Analyser, mesurer, calculer, comparer au cahier des charges : un ingénieur ne devine pas, il vérifie."
     apres:
       - narrateur: "Le portail s'ouvre en douceur, le vélo grimpe la côte, le drone s'élève. Sur l'établi, un cahier des charges entièrement coché."
+  ph-laboratoire-de-l-innovation:
+    titre: "Le Laboratoire de l'Innovation"
+    objet: "la coupole des aurores"
+    avant:
+      - narrateur: "Dans le Laboratoire, les prototypes dorment sous la poussière : le Grand Neutre murmure que plus rien n'est à inventer."
+      - mia: "Un besoin, un cahier des charges, un prototype, et tout recommence à bouger."
+    apres:
+      - narrateur: "Les panneaux solaires s'orientent, la maison connectée s'allume, une imprimante 3D se remet à ronronner."

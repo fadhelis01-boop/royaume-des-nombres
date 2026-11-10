@@ -96,3 +96,11 @@ chapitres:
       - neo: "Remettons de l'ordre : cadrer, monter, mixer. Le cinéma est une écriture."
     apres:
       - narrateur: "Le projecteur ronronne, l'image et le son se retrouvent. Le public applaudit au générique de fin."
+  de-studio-du-design:
+    titre: "Le Studio du Design"
+    objet: "le cadre d'or du Musée"
+    avant:
+      - narrateur: "Au Studio, les objets sont devenus inutilisables : des chaises bancales, des affiches illisibles, des portes sans poignée."
+      - mia: "Pensons aux usagers, et chaque objet retrouvera sa forme juste."
+    apres:
+      - narrateur: "Les chaises tiennent, les affiches parlent, et une lampe dessinée au Studio éclaire enfin toute la pièce."

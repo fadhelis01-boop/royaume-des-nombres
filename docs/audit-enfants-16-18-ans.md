@@ -88,7 +88,7 @@ Dans une formule, « si $a<0$ » était lu « a<0 » : les signes < et > à l'in
 
 Restent ouverts :
 - **le supérieur** : peu de contenus (14 leçons de niveau post-bac, toutes matières) ;
-- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; restent les autres langues de LLCER, le théâtre, la danse, l'histoire des arts et les spécialités des séries technologiques (STMG, STI2D, ST2S…) ;
+- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; restent les autres langues de LLCER, le théâtre, la danse, l'histoire des arts et la série S2TMD (théâtre, musique, danse) ;
 - **le test avec de vrais élèves**.
 
 ## Ajouts livrés (2.16.0)
@@ -117,3 +117,15 @@ Restent ouverts :
 6. Comme les autres spécialités, ces mondes sont ouverts sur la carte mais restent hors du test de niveau et du parcours.
 7. **Voix, corrections trouvées en relisant** : « XXᵉ siècle » était lu « X dixième siècle » (la règle des chromosomes XX passait avant) ; les périodes « 1600-1750 » étaient lues « 1600 moins 1750 » ; « N·m » perdait son « mètre » ; « 1 m » était lu « 1 mètres ». Les quatre cas sont corrigés et couverts par un test.
 8. Vérifié : 143 tests unitaires, contrôle du contenu sans erreur ni avertissement, 0 défi dominé à 16, 17 et 18 ans, défis des cinq mondes et écoute anglaise ouverts dans le navigateur avec un profil de Terminale, console sans erreur.
+
+## Ajouts livrés (2.19.0) : séries technologiques
+
+1. **STMG** : **Le Comptoir des Entreprises** (planète Histoire-géo et SES, 5 leçons) : droit et contrat, organisations et management, gestion (chiffre d'affaires, marge, résultat, bilan), mercatique (4P), l'entreprise dans son environnement.
+2. **STI2D** : **Le Laboratoire de l'Innovation** (planète Physique, 5 leçons) : démarche d'innovation, éco-conception et cycle de vie, énergie (kWh, stockage), choix des matériaux, objets connectés.
+3. **ST2S** : **La Maison de la Santé** (planète Biologie, 4 leçons) : santé et déterminants, indicateurs (taux, prévalence, incidence), protection sociale, physiopathologie du diabète.
+4. **STL** : **Le Laboratoire des Biotechnologies** (planète Chimie, 4 leçons) : sécurité, microbiologie, solutions et dosages, enzymes et PCR.
+5. **STD2A** : **Le Studio du Design** (planète Dessin, 4 leçons) : démarche de design, design graphique, objet et espace, histoire du design et métiers d'art.
+6. **STHR et STAV** : **L'Auberge et la Ferme** (planète Biologie, 4 leçons) : hygiène et HACCP, coût matière et accueil, sol et agronomie, agroécologie et circuits courts.
+7. Ces mondes sont marqués `specialite` : ouverts sur la carte, hors test de niveau et hors parcours.
+8. **Voix, corrections trouvées en relisant** : unités composées (« g/L » était lu « g divisé par L »), « 10 000 m² » lu au singulier (le nombre était coupé à l'espace des milliers), sigles HACCP, RGPD, STMG, STHR, STAV lus comme des mots. Corrigé et couvert par un test.
+9. Vérifié : 144 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, défis des six mondes ouverts dans le navigateur avec un profil de Terminale (calcul de correction affiché correctement), console sans erreur.

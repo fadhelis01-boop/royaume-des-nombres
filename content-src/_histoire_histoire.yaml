@@ -60,3 +60,11 @@ chapitres:
       - mia: "Économie, sociologie, science politique : trois lunettes pour comprendre la société. Mettons-les toutes."
     apres:
       - narrateur: "Les étals se rallument, les graphiques reprennent leurs couleurs. Le Marché bruisse de nouveau de débats."
+  hg-comptoir-des-entreprises:
+    titre: "Le Comptoir des Entreprises"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Au Comptoir, les contrats sont illisibles, les comptes ne tombent plus juste, les affiches ne disent plus rien."
+      - neo: "Droit, gestion, management, mercatique : remettons de l'ordre dans les organisations."
+    apres:
+      - narrateur: "Les comptes s'équilibrent, les contrats se relisent, une nouvelle enseigne s'allume au-dessus du Comptoir."

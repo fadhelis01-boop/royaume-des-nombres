@@ -245,6 +245,7 @@ eq("voix : inégalité dans une formule", toSpeech("le maximum (si $a<0$)"), "le
 eq("voix : code Python", /x prend la valeur 3.*n égal à 0.*augmente de 1/.test(toSpeech("On écrit `x = 3`, on teste `n == 0` et `i += 1`.")), true);
 eq("voix : sigle épelé", toSpeech("Le protocole HTTPS et la spécialité HGGSP").includes("HTTPS et la spécialité HGGSP"), true);
 eq("voix : XXᵉ siècle, années, N·m, 1 m", [toSpeech("au XXᵉ siècle").includes("vingtième"), toSpeech("vers 1600-1750").includes("1600 à 1750"), toSpeech("un couple en N·m").includes("newton-mètres"), toSpeech("à 1 m de l'axe").includes("1 mètre de"), toSpeech("les chromosomes XY").includes("X Y")], [true, true, true, true, true]);
+eq("voix : unités composées, sigles, milliers", [toSpeech("environ 1 g/L à jeun").includes("1 gramme par litre"), toSpeech("2 700 kg/m³").includes("kilogrammes par mètre cube"), toSpeech("1 ha = 10 000 m²").includes("10 000 mètres carrés"), toSpeech("la méthode HACCP").includes("HACCP"), toSpeech("70 q/ha").includes("quintaux par hectare")], [true, true, true, true, true]);
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

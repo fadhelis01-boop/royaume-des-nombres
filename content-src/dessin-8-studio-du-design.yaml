@@ -1,0 +1,187 @@
+id: de-studio-du-design
+matiere: dessin
+titre: Le Studio du Design
+sous_titre: Série STD2A - démarche de design, design graphique, design d'objet et d'espace, métiers d'art et histoire du design
+emoji: 📐
+couleur: "#e65100"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 608
+specialite: STD2A
+version: 1.0.0
+intro:
+  - narrateur: "En haut de l'Atelier de Lya, un studio lumineux : des maquettes en carton, des affiches au mur, une chaise prototype, un métier à tisser."
+  - mia: "La série STD2A, sciences et technologies du design et des arts appliqués, apprend à concevoir des objets, des images et des espaces utiles et beaux."
+  - neo: "Un designer ne dessine pas pour lui : il dessine pour des usagers, avec des contraintes."
+
+lecons:
+  - id: std2a-demarche-design
+    titre: La démarche de design
+    classe: "1ʳᵉ"
+    objectif: Je mène une démarche de design - analyser la demande et les usagers, chercher, proposer, prototyper, présenter.
+    mots: [usager, cahier des charges, recherche, prototype]
+    etapes:
+      - dialogue:
+          - zero: "Le design, c'est rendre les choses jolies ?"
+          - neo: "C'est rendre les choses utiles, faciles à utiliser, et belles. Une poignée de porte bien dessinée, tu sais l'utiliser sans réfléchir."
+      - a_quoi_ca_sert: "Cette démarche est celle de tous les métiers de la création appliquée (graphisme, objet, espace, mode) et se poursuit en DN MADE ou en école de design."
+      - texte: |
+          **Les étapes** :
+          1. **analyser** la demande : qui sont les **usagers**, quels besoins, quelles **contraintes** (budget, matériaux, normes) ;
+          2. **rechercher** : observations, références, croquis rapides, planches de tendance ;
+          3. **proposer** plusieurs pistes et en choisir une, en justifiant ;
+          4. **prototyper** : maquette, modèle 3D, test avec des usagers ;
+          5. **présenter** : planches, rendu, argumentaire.
+
+          **Les trois qualités** souvent visées : **fonction** (ça sert), **usage** (c'est facile et agréable), **esthétique** (c'est beau, cohérent).
+
+          **Le design responsable** : sobriété, matériaux durables, accessibilité à tous.
+      - astuce: { texte: "Avant de dessiner, observe les gens utiliser l'objet ou le lieu : leurs difficultés sont tes meilleures idées.", qui: mia }
+      - retiens: "Démarche : **analyser** (usagers, besoins, contraintes) → **rechercher** → **proposer** → **prototyper** → **présenter**. Viser **fonction**, **usage**, **esthétique**, et un design **responsable**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de la démarche de design."
+        items: ["Analyser la demande et les usagers", "Rechercher et faire des croquis", "Proposer et choisir une piste", "Prototyper et tester", "Présenter le projet"]
+        correction: "Analyser, rechercher, proposer, prototyper, présenter."
+      - type: classer
+        enonce: "Range chaque élément : contrainte du projet ou piste de recherche ?"
+        categories: ["Contrainte", "Piste de recherche"]
+        mots: [["Le budget ne doit pas dépasser 30 € par objet", 0], ["Un croquis de chaise pliante en bois", 1], ["L'objet doit être utilisable par une personne en fauteuil", 0], ["Une planche de tendance aux couleurs pastel", 1]]
+        correction: "Les contraintes s'imposent ; les pistes sont des propositions."
+      - type: relier
+        enonce: "🔗 Relie chaque qualité à sa question."
+        paires: [["la fonction", "à quoi ça sert ?"], ["l'usage", "est-ce facile et agréable à utiliser ?"], ["l'esthétique", "est-ce beau et cohérent ?"]]
+        correction: "Les trois qualités d'un bon design."
+      - type: vf
+        vars: { t: [["Un designer conçoit pour des usagers, pas seulement pour lui.", true], ["Le prototype sert à tester une proposition.", true], ["Le design ne s'occupe que de l'apparence.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Usagers, test par prototype, et fonction autant qu'apparence."
+
+  - id: std2a-design-graphique
+    titre: Le design graphique
+    classe: "1ʳᵉ"
+    objectif: J'analyse et je conçois une communication visuelle - typographie, hiérarchie de l'information, couleur, logo.
+    mots: [typographie, hiérarchie, grille, identité visuelle]
+    etapes:
+      - dialogue:
+          - mia: "Une affiche se regarde en trois secondes dans la rue. Que doit-on comprendre d'abord ?"
+          - neo: "L'essentiel : quoi, où, quand. Le designer graphique organise le regard."
+      - a_quoi_ca_sert: "Affiches, sites, applications, emballages : le design graphique est partout, et c'est un des grands débouchés de la série."
+      - texte: |
+          **La typographie** : le choix des caractères. Avec **empattements** (serif, plus classique) ou **sans empattements** (sans serif, plus moderne, très lisible à l'écran). On limite souvent à deux familles.
+
+          **La hiérarchie de l'information** : taille, graisse, couleur et position indiquent ce qui se lit en premier (titre), puis en second (date, lieu), puis le détail.
+
+          **La grille** : des colonnes et des marges invisibles qui alignent les éléments.
+
+          **La couleur** : contrastes (lisibilité), harmonies, symbolique ; penser aux personnes daltoniennes.
+
+          **L'identité visuelle** : logo, couleurs, typographies d'une marque, appliqués partout de façon cohérente (charte graphique).
+      - astuce: { texte: "Plisse les yeux devant ton affiche : ce que tu vois encore en flou, c'est ce qui sera lu en premier.", qui: zero }
+      - retiens: "**Typographie** (avec ou sans empattements), **hiérarchie** (taille, graisse, couleur, position), **grille**, **couleur** (contraste, lisibilité), **identité visuelle** et **charte graphique**."
+    exercices:
+      - type: ordre
+        enonce: "Range les informations d'une affiche de concert dans l'ordre où elles doivent être lues."
+        items: ["Le nom de l'artiste", "La date et le lieu", "Le prix des places", "Les mentions légales"]
+        correction: "Du plus important au détail."
+      - type: relier
+        enonce: "🔗 Relie chaque outil à son rôle."
+        paires: [["la grille", "aligner les éléments"], ["la graisse", "rendre un texte plus ou moins appuyé"], ["la charte graphique", "garder une identité cohérente"]]
+        correction: "Les outils de base du graphiste."
+      - type: qcm
+        enonce: "Pour un texte long à lire sur écran, quel choix est souvent le plus lisible ?"
+        choix: ["Une police sans empattements, bien contrastée", "Une police manuscrite décorative", "Du texte gris clair sur fond blanc", "Tout en majuscules"]
+        correction: "Une police simple et un bon contraste facilitent la lecture."
+      - type: vf
+        vars: { t: [["Un bon contraste améliore la lisibilité.", true], ["Utiliser dix polices différentes rend une affiche plus claire.", false], ["La hiérarchie guide l'ordre de lecture.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Contraste, peu de polices, hiérarchie claire."
+
+  - id: std2a-objet-espace
+    titre: Design d'objet et design d'espace
+    classe: Terminale
+    objectif: J'analyse un objet ou un espace selon l'ergonomie, les matériaux, les procédés de fabrication et le parcours des usagers.
+    mots: [ergonomie, matériau, aménagement, circulation]
+    etapes:
+      - dialogue:
+          - zero: "Pourquoi ce tabouret de bar a-t-il un repose-pied ?"
+          - neo: "Parce que, sans lui, les jambes pendent et on se fatigue : c'est de l'ergonomie, adapter l'objet au corps."
+      - a_quoi_ca_sert: "Mobilier, électroménager, magasins, musées, logements : designers d'objet et d'espace conçoivent les choses et les lieux de notre quotidien."
+      - texte: |
+          **Le design d'objet** :
+          - **ergonomie** : adapter l'objet au corps et aux gestes (prise en main, hauteur, poids) ;
+          - **matériaux** : bois, métal, plastique, céramique, textile, choisis pour leurs qualités et leur impact ;
+          - **procédés** : moulage, découpe laser, impression 3D, assemblage ; de la pièce unique à la **série**.
+
+          **Le design d'espace** :
+          - **circulation** : comment on entre, se déplace, s'oriente (signalétique) ;
+          - **lumière** naturelle et artificielle, **ambiance** (couleurs, matières, sons) ;
+          - **accessibilité** : largeur des passages, rampes, contrastes pour les malvoyants ;
+          - représenter : **plan**, **coupe**, **perspective**, **maquette**.
+      - astuce: { texte: "Pour un espace, dessine le trajet d'un visiteur sur le plan : là où il hésite, il manque quelque chose.", qui: mia }
+      - retiens: "Objet : **ergonomie**, **matériaux**, **procédés** (pièce unique ou série). Espace : **circulation** et signalétique, **lumière** et ambiance, **accessibilité** ; outils : **plan, coupe, perspective, maquette**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque question : design d'objet ou design d'espace ?"
+        categories: ["Objet", "Espace"]
+        mots: [["La poignée tient-elle bien en main ?", 0], ["Le visiteur trouve-t-il facilement la sortie ?", 1], ["Le bol peut-il passer au lave-vaisselle ?", 0], ["La lumière du jour éclaire-t-elle le hall d'accueil ?", 1]]
+        correction: "Ce qu'on tient → objet ; ce qu'on parcourt → espace."
+      - type: relier
+        enonce: "🔗 Relie chaque représentation à ce qu'elle montre."
+        paires: [["le plan", "l'espace vu de dessus"], ["la coupe", "l'intérieur, comme tranché verticalement"], ["la maquette", "le projet en volume, en réduction"]]
+        correction: "Plusieurs représentations pour comprendre un espace."
+      - type: qcm
+        enonce: "Qu'étudie l'ergonomie ?"
+        choix: ["L'adaptation de l'objet au corps et aux gestes", "Le prix de vente", "La couleur à la mode", "L'histoire de l'objet"]
+        correction: "L'ergonomie adapte l'objet à l'utilisateur."
+      - type: vf
+        vars: { t: [["Une rampe d'accès améliore l'accessibilité d'un lieu.", true], ["L'impression 3D est un procédé de fabrication.", true], ["La signalétique n'a aucun rôle dans un musée.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Accessibilité, procédés, et signalétique pour s'orienter."
+
+  - id: std2a-histoire-design
+    titre: Métiers d'art et histoire du design
+    classe: Terminale
+    objectif: Je situe les grands mouvements du design et des arts décoratifs, de l'Art nouveau au design contemporain, et je connais des métiers d'art.
+    mots: [Art nouveau, Bauhaus, Art déco, métiers d'art]
+    etapes:
+      - dialogue:
+          - mia: "Les entrées du métro parisien en forme de tiges de plantes, vers 1900 : c'est l'Art nouveau."
+          - neo: "Et une chaise en tubes d'acier toute simple, vers 1925 : c'est l'esprit du Bauhaus. Deux visions opposées !"
+      - a_quoi_ca_sert: "Connaître l'histoire du design nourrit ses propres projets et aide à analyser les objets et les images, à l'écrit comme à l'oral."
+      - texte: |
+          **Arts and Crafts** (Angleterre, fin du XIXᵉ siècle) : retour à l'artisanat face à l'industrie (William Morris).
+
+          **Art nouveau** (vers 1890-1910) : courbes inspirées des plantes et des insectes (Hector Guimard, métro de Paris ; Gaudí à Barcelone).
+
+          **Bauhaus** (Allemagne, 1919-1933) : école qui unit art et industrie ; formes simples, fonctionnelles (« la forme suit la fonction »).
+
+          **Art déco** (années 1920-1930) : formes géométriques, matériaux luxueux.
+
+          **Design d'après-guerre et contemporain** : plastique, production de masse (Charles et Ray Eames), puis design écologique et numérique.
+
+          **Les métiers d'art** : ébéniste, céramiste, verrier, tapissier, relieur, bijoutier, brodeur… Ils allient savoir-faire traditionnel et création.
+      - astuce: { texte: "Courbes végétales → Art nouveau ; géométrie luxueuse → Art déco ; simplicité fonctionnelle → Bauhaus.", qui: zero }
+      - retiens: "**Arts and Crafts** (artisanat), **Art nouveau** (1890-1910, courbes, Guimard), **Bauhaus** (1919-1933, fonction), **Art déco** (années 1920-1930, géométrie), après-guerre (plastique, Eames), design durable. **Métiers d'art** : ébéniste, céramiste, verrier…"
+    exercices:
+      - type: ordre
+        enonce: "Range ces mouvements dans l'ordre chronologique."
+        items: ["Arts and Crafts", "Art nouveau", "Bauhaus", "Design d'après-guerre en plastique"]
+        correction: "Fin XIXᵉ, vers 1900, 1919, après 1945."
+      - type: relier
+        enonce: "🔗 Relie chaque mouvement à sa caractéristique."
+        paires: [["l'Art nouveau", "des courbes inspirées des plantes"], ["le Bauhaus", "des formes simples et fonctionnelles"], ["l'Art déco", "des formes géométriques et luxueuses"]]
+        correction: "Trois styles, trois signatures."
+      - type: nombre
+        enonce: "En quelle année l'école du Bauhaus est-elle fondée ?"
+        reponse: "1919"
+        correction: "En **1919**, à Weimar, en Allemagne."
+      - type: classer
+        enonce: "Range chaque métier : métier d'art ou non ?"
+        categories: ["Métier d'art", "Autre métier"]
+        mots: [["Ébéniste", 0], ["Comptable", 1], ["Céramiste", 0], ["Verrier", 0], ["Agent immobilier", 1]]
+        correction: "Ébéniste, céramiste et verrier allient savoir-faire et création."

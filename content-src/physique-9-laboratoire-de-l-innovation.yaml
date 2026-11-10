@@ -1,0 +1,241 @@
+id: ph-laboratoire-de-l-innovation
+matiere: physique
+titre: Le Laboratoire de l'Innovation
+sous_titre: Série STI2D - démarche d'innovation, éco-conception, énergie, matériaux, objets connectés
+emoji: 💡
+couleur: "#00838f"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 209
+specialite: STI2D
+version: 1.0.0
+intro:
+  - narrateur: "À côté de l'Atelier de l'Ingénieur, un laboratoire de projets : des prototypes imprimés en 3D, des panneaux solaires, une maquette de maison connectée."
+  - mia: "La série STI2D, sciences et technologies de l'industrie et du développement durable, apprend à concevoir des produits innovants et responsables."
+  - neo: "En Terminale, on choisit un enseignement spécifique : architecture et construction, énergies et environnement, innovation technologique et éco-conception, ou systèmes d'information et numérique."
+
+lecons:
+  - id: sti2d-innovation
+    titre: La démarche d'innovation et de projet
+    classe: "1ʳᵉ"
+    objectif: Je distingue invention et innovation et je décris les étapes d'un projet technologique.
+    mots: [innovation, invention, prototype, projet]
+    etapes:
+      - dialogue:
+          - zero: "Inventer et innover, c'est pareil ?"
+          - neo: "Non : une invention est une idée nouvelle. Une innovation, c'est une invention qui trouve ses utilisateurs et se diffuse."
+      - a_quoi_ca_sert: "Le projet de Terminale STI2D suit cette démarche ; c'est aussi celle des bureaux d'études, des start-up et des fablabs."
+      - texte: |
+          **Invention** : une idée ou un objet nouveau. **Innovation** : une invention mise sur le marché et adoptée.
+
+          **Innovation incrémentale** (améliorer un produit existant : une batterie plus durable) ou **de rupture** (changer les usages : le smartphone).
+
+          **Les étapes d'un projet** :
+          1. analyser le **besoin** et rédiger le **cahier des charges** ;
+          2. rechercher des **solutions** (croquis, idées, comparaison) ;
+          3. modéliser et simuler (CAO, logiciel de simulation) ;
+          4. réaliser un **prototype** et le tester ;
+          5. valider, présenter, améliorer.
+
+          **Travail en équipe** : répartir les tâches, planifier (diagramme de Gantt), faire des revues de projet.
+      - astuce: { texte: "Une innovation répond à trois questions : est-ce nouveau ? est-ce utile ? est-ce adopté ?", qui: mia }
+      - retiens: "**Invention** = idée nouvelle ; **innovation** = invention adoptée (**incrémentale** ou **de rupture**). Projet : **besoin**, **solutions**, **modélisation**, **prototype**, **validation** ; planning en **Gantt**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes d'un projet technologique."
+        items: ["Analyser le besoin et le cahier des charges", "Rechercher des solutions", "Modéliser et simuler", "Réaliser et tester un prototype", "Valider et présenter"]
+        correction: "Besoin, solutions, modèle, prototype, validation."
+      - type: classer
+        enonce: "Range chaque exemple : innovation incrémentale ou de rupture ?"
+        categories: ["Incrémentale", "De rupture"]
+        mots: [["Un téléphone avec un appareil photo un peu meilleur", 0], ["Le premier smartphone tactile grand public", 1], ["Une voiture qui consomme 5 % de moins", 0], ["L'apparition d'Internet dans les foyers", 1]]
+        correction: "Amélioration → incrémentale ; nouveaux usages → de rupture."
+      - type: qcm
+        enonce: "Quel outil sert à planifier les tâches d'un projet dans le temps ?"
+        choix: ["Le diagramme de Gantt", "Le compte de résultat", "Le diagramme des exigences", "La loi d'Ohm"]
+        correction: "Le **diagramme de Gantt** place les tâches sur une ligne du temps."
+      - type: vf
+        vars: { t: [["Toute invention devient une innovation.", false], ["Un prototype sert à tester une solution.", true], ["La CAO permet de modéliser un objet en 3D.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Une invention ne devient innovation que si elle est adoptée ; prototype = test ; CAO = conception assistée par ordinateur."
+
+  - id: sti2d-eco-conception
+    titre: Éco-conception et cycle de vie
+    classe: "1ʳᵉ"
+    objectif: J'analyse le cycle de vie d'un produit et je propose des pistes d'éco-conception.
+    mots: [cycle de vie, éco-conception, impact, recyclage]
+    etapes:
+      - dialogue:
+          - mia: "Un smartphone pollue surtout pendant qu'on l'utilise ?"
+          - neo: "Non : l'essentiel de son impact vient de sa fabrication (extraction des métaux, usines). D'où l'intérêt de le garder longtemps."
+      - a_quoi_ca_sert: "Les entreprises doivent réduire l'impact de leurs produits ; savoir le mesurer est une compétence clé de l'industrie d'aujourd'hui."
+      - texte: |
+          **Le cycle de vie** d'un produit : **extraction** des matières premières → **fabrication** → **transport** → **utilisation** → **fin de vie** (réemploi, recyclage, incinération, décharge).
+
+          **L'analyse du cycle de vie (ACV)** mesure les impacts à chaque étape (énergie, émissions de CO₂, eau, déchets).
+
+          **Éco-concevoir**, c'est réduire ces impacts dès la conception :
+          - moins de matière, des matériaux **recyclés** ou **recyclables** ;
+          - un produit **réparable** et **démontable** ;
+          - une faible **consommation** à l'usage ;
+          - une **durée de vie** plus longue.
+
+          L'**indice de réparabilité** informe les acheteurs en France.
+      - astuce: { texte: "Pose la question à chaque étape : d'où ça vient, combien ça consomme, où ça finit ?", qui: zero }
+      - retiens: "Cycle de vie : **extraction**, **fabrication**, **transport**, **utilisation**, **fin de vie**. **ACV** = mesurer les impacts. **Éco-conception** : moins de matière, recyclable, **réparable**, sobre, durable."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes du cycle de vie d'un produit."
+        items: ["Extraction des matières premières", "Fabrication", "Transport", "Utilisation", "Fin de vie"]
+        correction: "De la mine à la fin de vie."
+      - type: classer
+        enonce: "Range chaque choix : éco-conception ou non ?"
+        categories: ["Éco-conception", "Non"]
+        mots: [["Des vis standard pour pouvoir démonter l'appareil", 0], ["Une batterie collée impossible à remplacer", 1], ["Un boîtier en plastique recyclé", 0], ["Un emballage suremballé en plusieurs couches", 1]]
+        correction: "Réparable, recyclé, sobre → éco-conception."
+      - type: qcm
+        enonce: "Pour un smartphone, quelle étape pèse le plus dans l'impact environnemental ?"
+        choix: ["La fabrication", "La recharge quotidienne", "Le transport jusqu'au magasin", "L'emballage"]
+        correction: "La **fabrication** (extraction des métaux, production) concentre l'essentiel de l'impact."
+      - type: vf
+        vars: { t: [["L'ACV mesure les impacts à toutes les étapes de la vie d'un produit.", true], ["Un produit réparable a généralement une durée de vie plus longue.", true], ["Le recyclage ne concerne que l'étape de fabrication.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "ACV = toutes les étapes ; réparable = plus durable ; le recyclage concerne la fin de vie."
+
+  - id: sti2d-energie
+    titre: Sources, conversion et stockage de l'énergie
+    classe: "1ʳᵉ"
+    objectif: Je distingue énergies renouvelables et non renouvelables, je calcule une énergie consommée et je compare des solutions de stockage.
+    mots: [énergie renouvelable, kilowattheure, conversion, stockage]
+    etapes:
+      - dialogue:
+          - zero: "Un radiateur de 2 000 W qui chauffe 3 heures, ça consomme combien ?"
+          - neo: "2 kW × 3 h = 6 kWh. C'est l'unité de ta facture d'électricité."
+      - a_quoi_ca_sert: "Choisir un chauffage, dimensionner des panneaux solaires ou comprendre sa facture : tout passe par ces calculs."
+      - texte: |
+          **Sources d'énergie** :
+          - **renouvelables** : solaire, éolien, hydraulique, biomasse, géothermie ;
+          - **non renouvelables** : pétrole, gaz, charbon (fossiles), uranium.
+
+          **Énergie consommée** : $E = P \times t$. En kilowattheures : puissance en **kW** × durée en **heures**. 1 kWh = 3,6 millions de joules.
+
+          **Convertir** : un panneau photovoltaïque convertit la lumière en électricité ; une éolienne, le vent (énergie mécanique) en électricité ; une pompe à chaleur prélève la chaleur de l'air extérieur.
+
+          **Stocker** : batteries (électrochimique), barrages de pompage (hydraulique), hydrogène, ballon d'eau chaude (thermique). Le stockage compense l'**intermittence** du solaire et de l'éolien.
+      - attention: "Ne confonds pas **puissance** (en W, ce que l'appareil demande à un instant) et **énergie** (en Wh ou kWh, ce qu'il consomme sur une durée)."
+      - astuce: { texte: "kW × h = kWh : convertis d'abord les watts en kilowatts (÷ 1 000) et les minutes en heures (÷ 60).", qui: mia }
+      - retiens: "Renouvelables : **solaire, éolien, hydraulique, biomasse, géothermie**. **E = P × t** ; kW × h = **kWh**. Stockage (batteries, pompage, hydrogène, thermique) contre l'**intermittence**."
+    exercices:
+      - type: nombre
+        vars: { p: [1, 2, 3], h: [2, 4, 5] }
+        enonce: "Un appareil de {{p}} kW fonctionne {{h}} heures. Quelle énergie consomme-t-il, en kWh ?"
+        reponse: "p*h"
+        unite: kWh
+        correction: "E = {{p}} × {{h}} = **{{p*h}} kWh**."
+      - type: nombre
+        vars: { t: [[2000, 3, 6], [1500, 2, 3], [500, 4, 2], [3000, 2, 6]] }
+        enonce: "Un radiateur de {{t_0}} W chauffe {{t_1}} heures. Quelle énergie consomme-t-il, en kWh ?"
+        reponse: "t_2"
+        unite: kWh
+        correction: "{{t_0}} W = {{t_0/1000}} kW ; {{t_0/1000}} × {{t_1}} = **{{t_2}} kWh**."
+      - type: classer
+        enonce: "Range chaque source : renouvelable ou non renouvelable ?"
+        categories: ["Renouvelable", "Non renouvelable"]
+        mots: [["Le vent", 0], ["Le gaz naturel", 1], ["Le soleil", 0], ["L'uranium", 1], ["La biomasse", 0], ["Le charbon", 1]]
+        correction: "Les sources qui se renouvellent à l'échelle humaine sont renouvelables."
+      - type: relier
+        enonce: "🔗 Relie chaque convertisseur à sa conversion."
+        paires: [["un panneau photovoltaïque", "lumière en électricité"], ["une éolienne", "vent en électricité"], ["une batterie qui se décharge", "chimique en électrique"]]
+        correction: "Chaque convertisseur transforme une forme d'énergie en une autre."
+
+  - id: sti2d-materiaux
+    titre: Choisir un matériau
+    classe: "1ʳᵉ"
+    objectif: Je compare les familles de matériaux selon leurs propriétés et je justifie un choix pour un usage donné.
+    mots: [matériau, masse volumique, propriété, composite]
+    etapes:
+      - dialogue:
+          - mia: "Un cadre de vélo en acier, en aluminium ou en carbone : lequel choisir ?"
+          - neo: "Ça dépend du cahier des charges : poids, prix, solidité, recyclage. Chaque matériau a ses qualités."
+      - a_quoi_ca_sert: "Le choix d'un matériau décide du prix, de la durée de vie et de l'impact d'un produit ; c'est un choix quotidien en bureau d'études."
+      - texte: |
+          **Les familles de matériaux** :
+          - **métaux** (acier, aluminium, cuivre) : solides, conducteurs, recyclables ;
+          - **plastiques** (polymères) : légers, faciles à mouler, souvent issus du pétrole ;
+          - **céramiques et verres** : durs, résistent à la chaleur, fragiles ;
+          - **matériaux organiques** (bois, carton) : renouvelables ;
+          - **composites** (fibre de carbone, béton armé) : on associe deux matériaux pour cumuler leurs qualités.
+
+          **Les propriétés** : **masse volumique** (ρ = m ÷ V, en kg/m³), résistance mécanique, conductivité électrique et thermique, résistance à la corrosion, coût, recyclabilité.
+
+          Exemple : l'aluminium (environ 2 700 kg/m³) est presque trois fois plus léger que l'acier (environ 7 800 kg/m³).
+      - astuce: { texte: "Pour choisir, fais un tableau : une ligne par matériau, une colonne par critère du cahier des charges, et note chaque case.", qui: zero }
+      - retiens: "Familles : **métaux**, **plastiques**, **céramiques et verres**, **organiques**, **composites**. Propriétés : **masse volumique** (m ÷ V), résistance, conductivité, corrosion, coût, recyclage."
+    exercices:
+      - type: nombre
+        vars: { t: [[27, 0.01, 2700], [78, 0.01, 7800], [9, 0.01, 900], [80, 0.1, 800]] }
+        enonce: "Un bloc a une masse de {{t_0}} kg et un volume de {{t_1}} m³. Quelle est sa masse volumique, en kg/m³ ?"
+        reponse: "t_2"
+        unite: kg/m³
+        correction: "ρ = m ÷ V = {{t_0}} ÷ {{t_1}} = **{{t_2}} kg/m³**."
+      - type: relier
+        enonce: "🔗 Relie chaque matériau à sa famille."
+        paires: [["l'aluminium", "métaux"], ["la fibre de carbone dans une résine", "composites"], ["le polyéthylène", "plastiques"], ["le bois", "organiques"]]
+        correction: "Métal, composite, plastique, organique."
+      - type: qcm
+        enonce: "Pour des câbles électriques, quelle propriété du cuivre est décisive ?"
+        choix: ["Sa très bonne conductivité électrique", "Sa transparence", "Sa légèreté extrême", "Sa fragilité"]
+        correction: "Le cuivre conduit très bien le courant électrique."
+      - type: vf
+        vars: { t: [["Un composite associe plusieurs matériaux.", true], ["L'aluminium est plus lourd que l'acier à volume égal.", false], ["Les verres résistent bien à la chaleur mais sont fragiles.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Composite = association ; l'aluminium est environ trois fois plus léger ; verres durs mais fragiles."
+
+  - id: sti2d-objets-connectes
+    titre: Objets connectés et information numérique
+    classe: Terminale
+    objectif: Je décris la chaîne d'un objet connecté - capteur, microcontrôleur, communication, serveur - et je compare des protocoles sans fil.
+    mots: [objet connecté, microcontrôleur, protocole, donnée]
+    etapes:
+      - dialogue:
+          - zero: "Mon thermostat connecté sait qu'il fait 19 °C chez moi et me l'envoie sur mon téléphone. Comment ?"
+          - neo: "Un capteur mesure, un microcontrôleur traite, une liaison sans fil envoie vers un serveur, et ton application lit la donnée."
+      - a_quoi_ca_sert: "Maison connectée, ville intelligente, agriculture de précision : l'internet des objets est l'un des grands secteurs d'emploi de l'industrie."
+      - texte: |
+          **La chaîne d'un objet connecté** :
+          1. **acquérir** : un capteur mesure (température, présence, humidité) ;
+          2. **traiter** : un **microcontrôleur** (carte de type Arduino, ESP32) exécute un programme ;
+          3. **communiquer** : liaison sans fil vers une passerelle ou un serveur ;
+          4. **stocker et afficher** : base de données, application mobile.
+
+          **Protocoles sans fil** :
+          - **Bluetooth** : courte portée (quelques mètres), faible consommation ;
+          - **Wi-Fi** : débit élevé, portée d'une maison, consomme plus ;
+          - **LoRa** ou **Sigfox** : très longue portée (plusieurs kilomètres), très faible débit, idéal pour des capteurs sur batterie.
+
+          **Sécurité** : chiffrer les échanges, changer les mots de passe par défaut, mettre à jour le logiciel.
+      - attention: "Un objet connecté collecte des données parfois personnelles : leur stockage et leur usage sont encadrés par le RGPD."
+      - astuce: { texte: "Choisis le protocole selon trois critères : la portée, le débit, la consommation.", qui: mia }
+      - retiens: "Objet connecté : **capteur** → **microcontrôleur** → **communication** → **serveur et application**. **Bluetooth** (proche), **Wi-Fi** (débit), **LoRa / Sigfox** (très loin, très peu de données). Sécuriser et respecter le **RGPD**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes du trajet d'une mesure dans un objet connecté."
+        items: ["Le capteur mesure la température", "Le microcontrôleur traite la mesure", "La donnée est envoyée sans fil", "L'application affiche la valeur"]
+        correction: "Acquérir, traiter, communiquer, afficher."
+      - type: relier
+        enonce: "🔗 Relie chaque protocole à son usage typique."
+        paires: [["Bluetooth", "une montre connectée au téléphone"], ["Wi-Fi", "une caméra qui envoie de la vidéo"], ["LoRa", "un capteur d'humidité dans un champ isolé"]]
+        correction: "Portée, débit et consommation guident le choix."
+      - type: classer
+        enonce: "Range chaque mesure : renforce la sécurité ou l'affaiblit ?"
+        categories: ["Renforce", "Affaiblit"]
+        mots: [["Changer le mot de passe par défaut", 0], ["Ne jamais mettre à jour le logiciel", 1], ["Chiffrer les échanges", 0], ["Laisser l'objet accessible sans authentification", 1]]
+        correction: "Mots de passe, mises à jour et chiffrement protègent l'objet."
+      - type: qcm
+        enonce: "Un capteur sur batterie doit envoyer une petite mesure par heure à 5 km. Quel protocole ?"
+        choix: ["LoRa", "Wi-Fi", "Bluetooth", "Un câble USB"]
+        correction: "Longue portée, très peu de données, faible consommation : **LoRa**."

@@ -1,0 +1,189 @@
+id: bio-auberge-et-ferme
+matiere: biologie
+titre: L'Auberge et la Ferme
+sous_titre: Séries STHR et STAV - hygiène et sécurité des aliments, coûts en restauration, accueil client, agronomie, agroécologie, circuits courts
+emoji: 🌾
+couleur: "#6d4c41"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 309
+specialite: STHR et STAV
+version: 1.0.0
+intro:
+  - narrateur: "À l'orée de la forêt, une ferme et une auberge se font face : les légumes passent d'un côté à l'autre de la route, du champ à l'assiette."
+  - mia: "Deux séries technologiques s'y retrouvent : STHR, l'hôtellerie et la restauration, et STAV, l'agronomie et le vivant, au lycée agricole."
+  - neo: "Produire, transformer, servir : toute une chaîne au service de l'alimentation."
+
+lecons:
+  - id: sthr-hygiene
+    titre: "STHR : hygiène et sécurité des aliments"
+    classe: "1ʳᵉ"
+    objectif: J'applique les règles d'hygiène en cuisine - marche en avant, chaîne du froid, méthode HACCP.
+    mots: [hygiène, marche en avant, chaîne du froid, HACCP]
+    etapes:
+      - dialogue:
+          - zero: "En cuisine, je pose les poubelles à côté des desserts, ça va plus vite !"
+          - neo: "Surtout pas ! Le propre et le sale ne doivent jamais se croiser : c'est le principe de la marche en avant."
+      - a_quoi_ca_sert: "Une erreur d'hygiène peut rendre malades des dizaines de clients ; ces règles sont obligatoires dans tous les restaurants et contrôlées par les services vétérinaires."
+      - texte: |
+          **La marche en avant** : les produits avancent du **sale** vers le **propre** sans jamais revenir en arrière (réception → stockage → préparation → cuisson → service), et les circuits des déchets ne croisent pas ceux des plats.
+
+          **La chaîne du froid** : les produits réfrigérés restent entre **0 et 4 °C**, les surgelés à **−18 °C** ou moins. Un produit décongelé ne se recongèle pas.
+
+          **La méthode HACCP** : analyser les dangers (biologiques, chimiques, physiques), repérer les **points critiques** (cuisson, refroidissement) et les **surveiller** (relevés de température, traçabilité).
+
+          **L'hygiène du personnel** : lavage des mains, tenue propre, cheveux couverts.
+      - attention: "Les bactéries se multiplient surtout entre 10 et 60 °C : un plat cuisiné ne doit pas rester longtemps à température ambiante."
+      - astuce: { texte: "Imagine une flèche au sol de la porte de livraison jusqu'au passe : on ne la remonte jamais.", qui: mia }
+      - retiens: "**Marche en avant** : du sale vers le propre, sans croisement. **Chaîne du froid** : 0 à 4 °C au frais, −18 °C au congélateur. **HACCP** : analyser les dangers, surveiller les **points critiques**. Hygiène des mains et de la tenue."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de la marche en avant."
+        items: ["Réception des marchandises", "Stockage", "Préparation", "Cuisson", "Service"]
+        correction: "Du quai de livraison jusqu'à la salle."
+      - type: classer
+        enonce: "Range chaque pratique : conforme ou dangereuse ?"
+        categories: ["Conforme", "Dangereuse"]
+        mots: [["Recongeler un poisson décongelé", 1], ["Noter la température des réfrigérateurs chaque jour", 0], ["Laisser une sauce tiède en cuisine tout l'après-midi", 1], ["Se laver les mains après avoir sorti les poubelles", 0]]
+        correction: "On suit la chaîne du froid, la traçabilité et l'hygiène des mains."
+      - type: qcm
+        enonce: "À quelle température doit rester un produit réfrigéré ?"
+        choix: ["Entre 0 et 4 °C", "Entre 10 et 15 °C", "À 20 °C", "À −30 °C"]
+        correction: "Entre **0 et 4 °C**."
+      - type: vf
+        vars: { t: [["HACCP repère les points critiques à surveiller.", true], ["Les bactéries se multiplient surtout entre 10 et 60 °C.", true], ["Les déchets peuvent traverser la zone de préparation des desserts.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Points critiques, zone de danger de 10 à 60 °C, circuits séparés."
+
+  - id: sthr-couts-accueil
+    titre: "STHR : coût matière, prix de vente et accueil du client"
+    classe: Terminale
+    objectif: Je calcule un coût matière et un ratio, et je connais les étapes d'un accueil client de qualité.
+    mots: [coût matière, ratio, prix de vente, accueil]
+    etapes:
+      - dialogue:
+          - mia: "Une assiette de risotto coûte 4 € d'ingrédients. À quel prix la vendre ?"
+          - neo: "Beaucoup de restaurants visent un coût matière autour de 25 à 30 % du prix de vente hors taxes : environ 14 à 16 €."
+      - a_quoi_ca_sert: "Un restaurant qui calcule mal ses coûts ferme vite ; et l'accueil fait la réputation d'un établissement, jusque dans les avis en ligne."
+      - texte: |
+          **Coût matière** d'un plat : la somme du prix des ingrédients d'une portion (calculée sur une **fiche technique**).
+
+          **Ratio matière** = coût matière ÷ prix de vente hors taxes × 100. Exemple : 4 € ÷ 16 € × 100 = **25 %**.
+
+          **Prix de vente** : il doit couvrir le coût matière, mais aussi les salaires, le loyer, l'énergie, et dégager un bénéfice. On ajoute la **TVA** pour obtenir le prix affiché.
+
+          **L'accueil du client** : saluer, installer, présenter la carte et conseiller, prendre la commande, servir, prendre congé ; écouter et gérer une réclamation avec calme.
+
+          **L'hébergement** : réservation, accueil à la réception, remise des clés, suivi du séjour, départ et facturation.
+      - astuce: { texte: "Ratio matière = un pourcentage : plus il est bas, plus la marge laissée pour les autres charges est grande.", qui: zero }
+      - retiens: "**Coût matière** (fiche technique) ; **ratio** = coût matière ÷ prix de vente HT × 100 (souvent 25 à 30 %). Le prix couvre aussi salaires, loyer, énergie, bénéfice ; on ajoute la **TVA**. Accueil : saluer, installer, conseiller, servir, prendre congé."
+    exercices:
+      - type: nombre
+        vars: { t: [[4, 16, 25], [3, 10, 30], [5, 20, 25], [6, 20, 30]] }
+        enonce: "Un plat a un coût matière de {{t_0}} € et se vend {{t_1}} € HT. Quel est le ratio matière, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ {{t_1}} × 100 = **{{t_2}} %**."
+      - type: nombre
+        vars: { t: [[1.2, 0.8, 2, 4], [2.5, 1, 0.5, 4], [1.5, 1.5, 1, 4], [3, 1.2, 0.8, 5]] }
+        enonce: "Fiche technique d'une portion : {{t_0}} € de viande, {{t_1}} € de légumes, {{t_2}} € de sauce. Quel est le coût matière ?"
+        reponse: "t_3"
+        unite: "€"
+        correction: "{{t_0}} + {{t_1}} + {{t_2}} = **{{t_3}} €**."
+      - type: ordre
+        enonce: "Range les étapes du service en salle."
+        items: ["Saluer et installer le client", "Présenter la carte et conseiller", "Prendre la commande", "Servir les plats", "Prendre congé"]
+        correction: "Accueil, conseil, commande, service, départ."
+      - type: qcm
+        enonce: "Un client se plaint que son plat est froid. Que fais-tu ?"
+        choix: ["Je m'excuse, je propose de le réchauffer ou de le remplacer rapidement", "Je lui dis qu'il exagère", "Je l'ignore", "Je lui demande de payer d'abord"]
+        correction: "Écouter, s'excuser, proposer une solution : une réclamation bien gérée fidélise le client."
+
+  - id: stav-agronomie
+    titre: "STAV : le sol, la plante et l'agronomie"
+    classe: "1ʳᵉ"
+    objectif: J'explique le rôle du sol et des éléments nutritifs pour les cultures, et je calcule un rendement agricole.
+    mots: [sol, agronomie, rendement, fertilisation]
+    etapes:
+      - dialogue:
+          - zero: "Le sol, c'est juste de la terre pour tenir les plantes debout ?"
+          - neo: "C'est un milieu vivant ! Des milliards de micro-organismes et de vers de terre y recyclent la matière et nourrissent les plantes."
+      - a_quoi_ca_sert: "Produire assez de nourriture en préservant les sols est un défi majeur ; c'est le métier des agriculteurs, agronomes et conseillers agricoles."
+      - texte: |
+          **Le sol** : un mélange de **matière minérale** (sable, limon, argile), de **matière organique** (humus), d'eau, d'air et d'**êtres vivants** (vers de terre, champignons, bactéries).
+
+          **La plante** a besoin de lumière, d'eau, de CO₂ et d'**éléments minéraux**, surtout **azote (N)**, **phosphore (P)** et **potassium (K)**.
+
+          **Fertiliser** : apporter ces éléments par des engrais minéraux ou organiques (fumier, compost), sans excès (pollution des nappes par les nitrates).
+
+          **Le rendement** = production ÷ surface, en **quintaux par hectare** (1 quintal = 100 kg ; 1 hectare = 10 000 m²). Un bon rendement de blé en France : environ 70 q/ha.
+
+          **Les rotations** : alterner les cultures (céréale, légumineuse…) entretient la fertilité et limite les maladies.
+      - astuce: { texte: "NPK : les trois lettres qu'on lit sur tous les sacs d'engrais.", qui: mia }
+      - retiens: "Sol : **minéral**, **organique**, eau, air, **vivant**. Plante : lumière, eau, CO₂, **N, P, K**. Fertiliser sans excès. **Rendement** = production ÷ surface (**q/ha**). **Rotations** des cultures."
+    exercices:
+      - type: nombre
+        vars: { t: [[700, 10, 70], [360, 5, 72], [240, 4, 60], [1600, 20, 80]] }
+        enonce: "Un champ de {{t_1}} hectares produit {{t_0}} quintaux de blé. Quel est le rendement, en q/ha ?"
+        reponse: "t_2"
+        unite: q/ha
+        correction: "{{t_0}} ÷ {{t_1}} = **{{t_2}} q/ha**."
+      - type: relier
+        enonce: "🔗 Relie chaque lettre de l'engrais à son élément."
+        paires: [["N", "azote"], ["P", "phosphore"], ["K", "potassium"]]
+        correction: "N, P, K : les trois éléments majeurs."
+      - type: classer
+        enonce: "Range chaque composant du sol : minéral, ou vivant et organique ?"
+        categories: ["Minéral", "Vivant ou organique"]
+        mots: [["Le sable", 0], ["Les vers de terre", 1], ["L'argile", 0], ["L'humus", 1]]
+        correction: "Sable et argile sont minéraux ; vers de terre et humus sont vivants ou organiques."
+      - type: vf
+        vars: { t: [["Un excès d'engrais azoté peut polluer les nappes d'eau.", true], ["Un hectare mesure 100 m².", false], ["Alterner les cultures aide à garder un sol fertile.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Nitrates polluants ; 1 ha = 10 000 m² ; les rotations entretiennent la fertilité."
+
+  - id: stav-agroecologie
+    titre: "STAV : agroécologie et alimentation"
+    classe: Terminale
+    objectif: Je décris les principes de l'agroécologie, les circuits courts et les signes de qualité des produits alimentaires.
+    mots: [agroécologie, biodiversité, circuit court, label]
+    etapes:
+      - dialogue:
+          - mia: "Des haies autour des champs, ça ne fait pas perdre de la place ?"
+          - neo: "Elles abritent les oiseaux et les insectes qui mangent les ravageurs, protègent du vent et retiennent l'eau. C'est le principe de l'agroécologie : s'appuyer sur la nature."
+      - a_quoi_ca_sert: "L'agriculture doit nourrir tout le monde tout en réduisant pesticides et émissions ; ces pratiques sont au cœur des métiers agricoles de demain."
+      - texte: |
+          **L'agroécologie** : produire en utilisant les processus naturels :
+          - **biodiversité** (haies, bandes fleuries, auxiliaires de culture comme les coccinelles) ;
+          - **couverts végétaux** pour ne jamais laisser le sol nu ;
+          - **rotations** et association cultures-élevage ;
+          - réduction des **pesticides** et des engrais de synthèse.
+
+          **Les circuits courts** : au plus **un intermédiaire** entre le producteur et le consommateur (vente à la ferme, marché, AMAP, magasin de producteurs).
+
+          **Les signes officiels de qualité** : **Label rouge** (qualité supérieure), **AOP / AOC** (lien avec un terroir), **IGP**, **Agriculture biologique** (AB).
+      - attention: "Circuit court ne veut pas forcément dire local : c'est le nombre d'intermédiaires qui compte, pas la distance."
+      - astuce: { texte: "Agroécologie : faire travailler la nature pour soi plutôt que contre elle.", qui: zero }
+      - retiens: "**Agroécologie** : biodiversité, couverts végétaux, rotations, moins de pesticides. **Circuit court** : au plus **un intermédiaire**. Signes de qualité : **Label rouge**, **AOP/AOC**, **IGP**, **AB**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque vente : circuit court ou circuit long ?"
+        categories: ["Circuit court", "Circuit long"]
+        mots: [["Vente directe à la ferme", 0], ["Producteur, grossiste, centrale d'achat puis supermarché", 1], ["Panier hebdomadaire d'une AMAP", 0], ["Export via plusieurs négociants", 1]]
+        correction: "Zéro ou un intermédiaire → circuit court."
+      - type: relier
+        enonce: "🔗 Relie chaque signe de qualité à ce qu'il garantit."
+        paires: [["Label rouge", "une qualité supérieure"], ["AOP", "un lien fort avec un terroir"], ["AB", "un mode de production biologique"]]
+        correction: "Chaque signe officiel garantit quelque chose de précis."
+      - type: qcm
+        enonce: "Pourquoi planter des haies autour des champs ?"
+        choix: ["Pour abriter les auxiliaires qui mangent les ravageurs et protéger du vent", "Pour cacher les champs", "Pour augmenter l'usage de pesticides", "Pour réduire la biodiversité"]
+        correction: "Les haies accueillent la biodiversité utile et protègent sol et cultures."
+      - type: vf
+        vars: { t: [["Un circuit court a au plus un intermédiaire.", true], ["L'agroécologie cherche à laisser le sol nu le plus longtemps possible.", false], ["Les coccinelles sont des auxiliaires de culture.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Un intermédiaire au plus ; on couvre le sol ; les coccinelles mangent les pucerons."

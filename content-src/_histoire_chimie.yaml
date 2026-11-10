@@ -108,3 +108,11 @@ chapitres:
       - mia: "Cette fois, on va comprendre l'énergie elle-même."
     apres:
       - narrateur: "Le cœur du Marais se met à battre en couleurs. Corrosion n'est plus qu'une petite tache de rouille, qui s'excuse."
+  ch-laboratoire-des-biotechnologies:
+    titre: "Le Laboratoire des Biotechnologies"
+    objet: "le cœur du Marais"
+    avant:
+      - narrateur: "Au Laboratoire, les boîtes de Petri sont contaminées et les pipettes mal réglées : Corrosion est passée par là."
+      - neo: "Sécurité, rigueur, mesure : au laboratoire, chaque geste compte."
+    apres:
+      - narrateur: "Les cultures poussent proprement, les dosages tombent juste, et la machine à copier l'ADN ronronne doucement."
