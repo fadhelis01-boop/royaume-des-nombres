@@ -1,0 +1,203 @@
+id: bio-hopital-ecole
+matiere: biologie
+titre: L'Hôpital-École
+sous_titre: Études de santé - l'accès aux études de santé, physiologie cardiaque, pharmacologie, épidémiologie et tests diagnostiques, éthique médicale
+emoji: 🏥
+couleur: "#c62828"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 312
+specialite: Études de santé
+version: 1.0.0
+intro:
+  - narrateur: "Au pied de l'Arbre-Monde, un hôpital universitaire : des amphithéâtres, un laboratoire de simulation, des services de soins."
+  - mia: "Médecine, pharmacie, odontologie, maïeutique, kinésithérapie : les études de santé commencent par une première année exigeante."
+  - neo: "Physiologie, pharmacologie, statistiques, éthique : les bases communes à tous les futurs soignants."
+
+lecons:
+  - id: acces-etudes-sante
+    titre: Accéder aux études de santé
+    classe: Supérieur
+    objectif: Je connais les voies d'accès aux études de médecine, maïeutique, odontologie, pharmacie et kinésithérapie, et les méthodes de travail adaptées.
+    mots: [PASS, LAS, MMOPK, numerus apertus]
+    etapes:
+      - dialogue:
+          - zero: "Pour devenir médecin, il faut toujours passer la PACES ?"
+          - neo: "Plus depuis 2020 ! On entre maintenant par un parcours d'accès spécifique santé, le PASS, ou par une licence avec une option santé, la LAS."
+      - a_quoi_ca_sert: "Bien choisir sa voie d'accès et s'organiser dès la rentrée change beaucoup les chances de réussite en santé."
+      - texte: |
+          **Les filières MMOPK** : **M**édecine, **M**aïeutique (sage-femme), **O**dontologie (dentaire), **P**harmacie, et **K**inésithérapie selon les universités.
+
+          **Deux voies d'accès depuis 2020** :
+          - le **PASS** (parcours d'accès spécifique santé) : une année centrée sur la santé, avec une **option** d'une autre discipline ;
+          - la **LAS** (licence avec option « accès santé ») : une licence d'une autre discipline (droit, biologie, psychologie…) avec des enseignements de santé.
+
+          **La sélection** : sur les notes et des épreuves (souvent orales) ; chaque université fixe ses capacités d'accueil (le **numerus apertus**). On a **deux chances** au maximum.
+
+          **Travailler efficacement** : le volume est énorme : planifier, se tester souvent (fiches question-réponse, annales), réviser de façon espacée, préserver son sommeil, ne pas s'isoler (tutorat).
+
+          **Les autres métiers de santé** (infirmier, ergothérapeute, manipulateur radio…) passent par d'autres formations, souvent via Parcoursup.
+      - attention: "En cas d'échec, la LAS ou le PASS permettent de poursuivre une licence : préparer son plan B fait partie d'une bonne stratégie."
+      - astuce: { texte: "Annales et autoévaluations chaque semaine : en santé, se tester est la méthode la plus rentable.", qui: mia }
+      - retiens: "**MMOPK** : médecine, maïeutique, odontologie, pharmacie, kinésithérapie. Accès depuis 2020 : **PASS** ou **LAS**, deux chances au maximum, capacités fixées par l'université. Méthode : planifier, **se tester**, espacer, dormir, tutorat."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque lettre de MMOPK à sa filière."
+        paires: [["M (1)", "médecine"], ["M (2)", "maïeutique"], ["O", "odontologie"], ["P", "pharmacie"]]
+        correction: "Et K pour kinésithérapie."
+      - type: classer
+        enonce: "Range chaque description : PASS ou LAS ?"
+        categories: ["PASS", "LAS"]
+        mots: [["Une année centrée sur la santé avec une option d'une autre discipline", 0], ["Une licence de droit avec des enseignements de santé", 1], ["Une licence de psychologie avec l'option accès santé", 1], ["Le parcours d'accès spécifique santé", 0]]
+        correction: "PASS : majeure santé ; LAS : licence d'une autre discipline avec option santé."
+      - type: nombre
+        enonce: "Combien de chances au maximum a-t-on pour accéder aux études MMOPK ?"
+        reponse: "2"
+        correction: "**Deux** chances."
+      - type: vf
+        vars: { t: [["La PACES a été remplacée par le PASS et la LAS.", true], ["Les infirmiers passent obligatoirement par le PASS.", false], ["Se tester avec des annales est une méthode efficace.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Réforme de 2020 ; les instituts de soins infirmiers ont leur propre accès ; les annales sont précieuses."
+
+  - id: physiologie-cardiaque
+    titre: Physiologie cardiovasculaire
+    classe: Supérieur
+    objectif: Je décris la circulation sanguine et je calcule le débit cardiaque et la pression artérielle moyenne.
+    mots: [débit cardiaque, volume d'éjection systolique, circulation, pression artérielle]
+    etapes:
+      - dialogue:
+          - mia: "Au repos, le cœur pompe environ 5 litres de sang par minute. Pendant un sprint, jusqu'à 20 !"
+          - neo: "Il accélère et il éjecte plus de sang à chaque battement : le débit cardiaque est le produit des deux."
+      - a_quoi_ca_sert: "La physiologie cardiovasculaire est la base de la médecine, des soins infirmiers, du sport et de la pharmacologie (médicaments de l'hypertension)."
+      - texte: |
+          **Deux circulations** :
+          - **pulmonaire** (petite circulation) : ventricule **droit** → poumons → oreillette gauche ; le sang s'y **oxygène** ;
+          - **systémique** (grande circulation) : ventricule **gauche** → aorte → organes → veines caves → oreillette droite.
+
+          **Le débit cardiaque** : $Q = FC \times VES$ (fréquence cardiaque × volume d'éjection systolique). Exemple : $70 \text{ battements/min} \times 70 \text{ mL} \approx 4{,}9$ L/min.
+
+          **La pression artérielle** : notée en mmHg, par exemple 120/80 (systolique/diastolique). **Pression artérielle moyenne** ≈ diastolique + $\dfrac{1}{3}$(systolique − diastolique).
+
+          **La régulation** : le système nerveux autonome (le sympathique accélère, le parasympathique ralentit) et des hormones (adrénaline).
+      - astuce: { texte: "Le ventricule gauche a une paroi plus épaisse : c'est lui qui envoie le sang dans tout le corps.", qui: zero }
+      - retiens: "Circulation **pulmonaire** (ventricule droit → poumons) et **systémique** (ventricule gauche → organes). **Débit cardiaque** $Q = FC \\times VES$ (≈ 5 L/min au repos). Pression en mmHg (120/80) ; PAM ≈ PAD + (PAS − PAD)/3. Sympathique accélère, parasympathique ralentit."
+    exercices:
+      - type: nombre
+        vars: { t: [[70, 70, 4.9], [60, 80, 4.8], [100, 100, 10], [150, 120, 18]] }
+        enonce: "Fréquence cardiaque : {{t_0}} battements/min ; volume d'éjection systolique : {{t_1}} mL. Quel est le débit cardiaque, en L/min ?"
+        reponse: "t_2"
+        tolerance: 0.01
+        unite: L/min
+        correction: "{{t_0}} × {{t_1}} mL = **{{t_2}} L/min**."
+      - type: nombre
+        vars: { t: [[120, 90, 100], [150, 90, 110], [120, 60, 80], [130, 100, 110]] }
+        enonce: "Pression artérielle {{t_0}}/{{t_1}} mmHg. Quelle est la pression artérielle moyenne approchée, en mmHg ?"
+        reponse: "t_2"
+        unite: mmHg
+        correction: "{{t_1}} + ({{t_0}} − {{t_1}}) ÷ 3 = **{{t_2}} mmHg**."
+      - type: ordre
+        enonce: "Range le trajet du sang dans la grande circulation."
+        items: ["Ventricule gauche", "Aorte", "Organes", "Veines caves", "Oreillette droite"]
+        correction: "Du ventricule gauche au cœur droit en passant par tout le corps."
+      - type: vf
+        vars: { t: [["Le sang s'oxygène dans la circulation pulmonaire.", true], ["Le système parasympathique accélère le cœur.", false], ["Le débit cardiaque est le produit de la fréquence par le volume d'éjection.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Oxygénation pulmonaire ; le parasympathique ralentit ; Q = FC × VES."
+
+  - id: pharmacologie
+    titre: Pharmacologie, de la dose à l'effet
+    classe: Bac+2
+    objectif: J'explique le devenir d'un médicament dans l'organisme (absorption, distribution, métabolisme, élimination) et j'utilise la demi-vie d'élimination.
+    mots: [pharmacocinétique, demi-vie, index thérapeutique, ADME]
+    etapes:
+      - dialogue:
+          - zero: "Pourquoi certains médicaments se prennent une fois par jour et d'autres toutes les six heures ?"
+          - neo: "À cause de leur demi-vie : le temps que met l'organisme à éliminer la moitié du médicament."
+      - a_quoi_ca_sert: "La pharmacologie détermine les doses, les horaires de prise, les interactions et les risques : c'est le cœur du métier de pharmacien et indispensable à tous les prescripteurs."
+      - texte: |
+          **La pharmacocinétique** (ce que l'organisme fait au médicament), résumée par **ADME** :
+          - **A**bsorption (passage dans le sang ; la voie intraveineuse est directe) ;
+          - **D**istribution (vers les organes) ;
+          - **M**étabolisme (transformation, surtout par le **foie**) ;
+          - **E**limination (surtout par les **reins**).
+
+          **La demi-vie d'élimination** $t_{1/2}$ : le temps pour que la concentration sanguine soit divisée par 2. Après environ **5 demi-vies**, le médicament est presque entièrement éliminé (≈ 97 %).
+
+          **La pharmacodynamie** (ce que le médicament fait à l'organisme) : il se fixe sur une **cible** (récepteur, enzyme) ; **agoniste** (il active) ou **antagoniste** (il bloque).
+
+          **L'index thérapeutique** : l'écart entre la dose efficace et la dose toxique. Étroit = surveillance étroite (anticoagulants, certains antiépileptiques).
+      - attention: "Un insuffisant rénal ou hépatique élimine plus lentement certains médicaments : la dose doit être adaptée."
+      - astuce: { texte: "ADME, comme un voyage : on entre, on se déplace, on se transforme, on sort.", qui: mia }
+      - retiens: "**ADME** : absorption, distribution, métabolisme (**foie**), élimination (**reins**). **Demi-vie** : concentration divisée par 2 ; ≈ 5 demi-vies pour l'éliminer. **Agoniste** active, **antagoniste** bloque. **Index thérapeutique** étroit = surveillance."
+    exercices:
+      - type: nombre
+        vars: { t: [[400, 3, 50], [200, 2, 50], [800, 4, 50], [160, 1, 80]] }
+        enonce: "La concentration d'un médicament vaut {{t_0}} µg/L. Combien vaut-elle après {{t_1}} demi-vies ?"
+        reponse: "t_2"
+        unite: µg/L
+        correction: "{{t_0}} ÷ $2^{ {{t_1}} }$ = **{{t_2}} µg/L**."
+      - type: nombre
+        vars: { t: [[6, 30], [4, 20], [12, 60], [8, 40]] }
+        enonce: "Un médicament a une demi-vie de {{t_0}} heures. Environ combien d'heures faut-il pour l'éliminer presque entièrement (5 demi-vies) ?"
+        reponse: "t_1"
+        unite: h
+        correction: "5 × {{t_0}} = **{{t_1}} heures**."
+      - type: relier
+        enonce: "🔗 Relie chaque lettre d'ADME à son étape."
+        paires: [["A", "absorption"], ["D", "distribution"], ["M", "métabolisme, surtout hépatique"], ["E", "élimination, surtout rénale"]]
+        correction: "Le parcours du médicament dans l'organisme."
+      - type: vf
+        vars: { t: [["Un antagoniste bloque un récepteur.", true], ["Un index thérapeutique étroit rend le médicament plus sûr.", false], ["Le foie joue un rôle majeur dans le métabolisme des médicaments.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Antagoniste = bloque ; index étroit = risque accru ; foie = métabolisme."
+
+  - id: tests-diagnostiques
+    titre: Épidémiologie et tests diagnostiques
+    classe: Bac+2
+    objectif: Je calcule la sensibilité, la spécificité et la valeur prédictive positive d'un test, et j'explique le rôle de la prévalence.
+    mots: [sensibilité, spécificité, valeur prédictive, prévalence]
+    etapes:
+      - dialogue:
+          - mia: "Un test fiable à 99 % est positif. La personne est-elle malade à 99 % ?"
+          - neo: "Pas forcément ! Si la maladie est très rare, la plupart des tests positifs peuvent être des faux positifs. C'est la question de la valeur prédictive."
+      - a_quoi_ca_sert: "Interpréter un test (dépistage, test viral, examen biologique) est quotidien pour les soignants, et indispensable pour expliquer un résultat à un patient."
+      - texte: |
+          **Le tableau** : vrais positifs (**VP**), faux positifs (**FP**), faux négatifs (**FN**), vrais négatifs (**VN**).
+
+          **Sensibilité** = $\dfrac{VP}{VP + FN}$ : la proportion de **malades** que le test détecte.
+
+          **Spécificité** = $\dfrac{VN}{VN + FP}$ : la proportion de **non-malades** que le test classe négatifs.
+
+          **Valeur prédictive positive** (VPP) = $\dfrac{VP}{VP + FP}$ : la probabilité d'être malade **quand le test est positif**.
+
+          **Le rôle de la prévalence** : pour une maladie **rare**, même un test très spécifique donne beaucoup de faux positifs par rapport aux vrais : la VPP est faible. D'où la confirmation par un second test.
+
+          **Exemple** : 1 000 personnes, 10 malades ; sensibilité 90 % (9 VP), spécificité 95 % (environ 50 FP). VPP = $\dfrac{9}{9 + 50} \approx 15$ %.
+      - astuce: { texte: "Sensibilité : on regarde les malades. Spécificité : on regarde les non-malades. VPP : on regarde les tests positifs.", qui: zero }
+      - retiens: "**Sensibilité** = VP / (VP + FN) ; **spécificité** = VN / (VN + FP) ; **VPP** = VP / (VP + FP). Maladie **rare** : VPP faible malgré un bon test → confirmer par un second test."
+    exercices:
+      - type: nombre
+        vars: { t: [[90, 10, 90], [45, 5, 90], [80, 20, 80], [95, 5, 95]] }
+        enonce: "Parmi les malades, le test donne {{t_0}} vrais positifs et {{t_1}} faux négatifs. Quelle est sa sensibilité, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ ({{t_0}} + {{t_1}}) = **{{t_2}} %**."
+      - type: nombre
+        vars: { t: [[9, 51, 15], [20, 80, 20], [30, 30, 50], [40, 10, 80]] }
+        enonce: "Un test donne {{t_0}} vrais positifs et {{t_1}} faux positifs. Quelle est sa valeur prédictive positive, en % ?"
+        reponse: "t_2"
+        unite: "%"
+        correction: "{{t_0}} ÷ ({{t_0}} + {{t_1}}) = **{{t_2}} %**."
+      - type: relier
+        enonce: "🔗 Relie chaque indicateur à la question à laquelle il répond."
+        paires: [["la sensibilité", "le test détecte-t-il les malades ?"], ["la spécificité", "le test reste-t-il négatif chez les non-malades ?"], ["la valeur prédictive positive", "un test positif signifie-t-il qu'on est malade ?"]]
+        correction: "Trois questions différentes, trois indicateurs."
+      - type: vf
+        vars: { t: [["Pour une maladie rare, la valeur prédictive positive peut être faible même avec un bon test.", true], ["La sensibilité se calcule sur les non-malades.", false], ["Un faux positif est un non-malade dont le test est positif.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Effet de la prévalence ; sensibilité = malades ; faux positif défini."

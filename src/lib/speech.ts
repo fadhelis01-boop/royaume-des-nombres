@@ -128,22 +128,8 @@ function latexToSpeech(tex: string): string {
     .replace(/\\\|/g, " ")
     // valeur absolue |x|
     .replace(/\|([^|]+)\|/g, " valeur absolue de $1 ")
-    .replace(/\\[,;:! ]/g, " ");
-  for (let i = 0; i < 4; i++) {
-    s = s
-      .replace(/\\[dt]?frac\{\\partial\s*([^{}]*)\}\{\\partial\s*([^{}]*)\}/g, " dérivée partielle de $1 par rapport à $2 ")
-      .replace(/\\text\{tr\}/g, " trace de ")
-      .replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, (_, a, b) => (/^\s*-?\d+\s*$/.test(a) && /^\s*\d+\s*$/.test(b) ? fracWords(a.trim(), b.trim()) : ` ${a} sur ${b} `))
-      .replace(/\\sqrt\[(\d)\]\{([^{}]*)\}/g, " racine $1-ième de $2 ")
-      .replace(/\\sqrt\{([^{}]*)\}/g, " racine carrée de $1 ")
-      .replace(/\\(?:text|mathrm|textbf|mathbf|operatorname)\{([^{}]*)\}/g, " $1 ")
-      .replace(/\\overrightarrow\{([^{}]*)\}/g, " vecteur $1 ")
-      .replace(/\\vec\{([^{}]*)\}/g, " vecteur $1 ")
-      .replace(/\\overline\{([^{}]*)\}/g, " $1 barre ")
-      .replace(/\\left|\\right/g, "");
-  }
-  return s
-    // notations du supérieur (audit « supérieur ») : limites avec bornes, quantificateurs, dérivées, petit o
+    .replace(/\\[,;:! ]/g, " ")
+    // notations du supérieur (audit « supérieur ») : bornes des limites, sommes et intégrales, AVANT les fractions
     .replace(/\\lim(?:\\limits)?\s*_\{([^{}]*?)\\to([^{}]*)\}/g, " limite quand $1 tend vers $2 de ")
     .replace(/\\limits/g, "")
     .replace(/\\sum_\{([^{}]*)\}\^\{([^{}]*)\}/g, " somme pour $1 jusqu'à $2 de ")
@@ -156,6 +142,24 @@ function latexToSpeech(tex: string): string {
     .replace(/\^(\\[a-zA-Z]+)/g, " puissance $1 ")
     .replace(/(\d|\b[a-z])!/g, " factorielle $1 ")
     .replace(/\\mathbb\{([NZRCQ])\}\^\{?(\w)\}?/g, " $1 $2 ")
+    ;
+  for (let i = 0; i < 4; i++) {
+    s = s
+      .replace(/\\[dt]?frac\{\\partial\s*([^{}]*)\}\{\\partial\s*([^{}]*)\}/g, " dérivée partielle de $1 par rapport à $2 ")
+      .replace(/\\text\{tr\}/g, " trace de ")
+      .replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, (_, a, b) => (/^\s*-?\d+\s*$/.test(a) && /^\s*\d+\s*$/.test(b) ? fracWords(a.trim(), b.trim()) : ` ${a} sur ${b} `))
+      .replace(/\\sqrt\[(\d)\]\{([^{}]*)\}/g, " racine $1-ième de $2 ")
+      .replace(/\\sqrt\{([^{}]*)\}/g, " racine carrée de $1 ")
+      .replace(/\\(?:text|mathrm|textbf|mathbf|operatorname)\{([^{}]*)\}/g, " $1 ")
+      .replace(/\\overrightarrow\{([^{}]*)\}/g, " vecteur $1 ")
+      .replace(/\\vec\{([^{}]*)\}/g, " vecteur $1 ")
+      .replace(/\\overline\{([^{}]*)\}/g, " $1 barre ")
+      .replace(/\\left|\\right/g, "")
+      .replace(/_\{([^{}]*)\}/g, " indice $1 ")
+      .replace(/\^\{([^{}]*)\}/g, (_m, e) => (e.trim() === "2" ? " au carré " : e.trim() === "3" ? " au cube " : ` puissance ${e} `));
+  }
+  return s
+    // notations du supérieur (suite)
     .replace(/\\forall/g, " pour tout ")
     .replace(/\\exists/g, " il existe ")
     .replace(/\\(?:var)?epsilon/g, " epsilon ")
@@ -174,6 +178,7 @@ function latexToSpeech(tex: string): string {
     .replace(/_\{([^{}]*)\}/g, " indice $1 ")
     .replace(/_(\w)/g, " $1 ")
     .replace(/\\times/g, " fois ")
+    .replace(/\s\/\s/g, " sur ")
     .replace(/\\cdot/g, " fois ")
     .replace(/\\div/g, " divisé par ")
     .replace(/\\leq?|\\leqslant/g, " inférieur ou égal à ")

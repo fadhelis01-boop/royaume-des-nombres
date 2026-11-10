@@ -68,3 +68,19 @@ chapitres:
       - neo: "Droit, gestion, management, mercatique : remettons de l'ordre dans les organisations."
     apres:
       - narrateur: "Les comptes s'équilibrent, les contrats se relisent, une nouvelle enseigne s'allume au-dessus du Comptoir."
+  hg-cour-du-droit:
+    titre: "La Cour du Droit"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Dans la salle d'audience, les codes sont fermés et les juges se taisent : plus personne ne sait quelle règle s'applique."
+      - neo: "Qualifier les faits, trouver la règle, conclure : le raisonnement juridique va rouvrir les débats."
+    apres:
+      - narrateur: "Le juge rend sa décision, motivée article par article. La Cour retrouve sa sérénité."
+  hg-bourse-des-economistes:
+    titre: "La Bourse des Économistes"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "À la Bourse, les tableaux s'affolent : les modèles ne prédisent plus rien et chacun crie son intuition."
+      - mia: "Des hypothèses claires, des modèles simples, des limites assumées : c'est ainsi qu'on raisonne en économie."
+    apres:
+      - narrateur: "Les courbes se stabilisent. Sur le grand tableau, une phrase s'affiche : « Tout modèle est faux, certains sont utiles. »"

@@ -1,3 +1,9 @@
+- version: "2.25.0"
+  date: "2026-11-10"
+  notes:
+    - "Biologie et chimie de Bac+2 et Bac+3 : le Laboratoire du Vivant (enzymes, immunologie, génétique des populations, phylogénie) et le Laboratoire des Réactions (cinétique, mécanismes, spectroscopies, électrochimie)."
+    - "Disciplines universitaires, en accès libre sur la carte : droit (la Cour du Droit), économie (la Bourse des Économistes), études de santé (l'Hôpital-École) et lettres (la Bibliothèque des Lettres savantes)."
+    - "La voix lit correctement les fractions qui contiennent un indice ou un exposant."
 - version: "2.24.0"
   date: "2026-11-10"
   notes:

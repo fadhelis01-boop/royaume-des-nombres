@@ -116,3 +116,11 @@ chapitres:
       - neo: "Sécurité, rigueur, mesure : au laboratoire, chaque geste compte."
     apres:
       - narrateur: "Les cultures poussent proprement, les dosages tombent juste, et la machine à copier l'ADN ronronne doucement."
+  ch-laboratoire-des-reactions:
+    titre: "Le Laboratoire des Réactions"
+    objet: "le cœur du Marais"
+    avant:
+      - narrateur: "Au Laboratoire, Corrosion a déréglé les spectromètres et vidé les piles : plus aucune réaction ne se laisse comprendre."
+      - neo: "Vitesse, mécanisme, spectre, potentiel : quatre clés pour reprendre la main."
+    apres:
+      - narrateur: "Les spectres s'affichent nets, les piles se rechargent, et chaque réaction suit son mécanisme. Corrosion s'éloigne en grinçant."

@@ -95,4 +95,19 @@ Restent ouverts :
 5. **Voix** : sommes et intégrales avec bornes, dérivée partielle, gradient, affectation, déterminant, trace, exposants grecs et négatifs, lettres grecques manquantes (η, ν, ρ, τ, φ…). Test ajouté.
 6. Vérifié : 149 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 20 et 21 ans ; dans le navigateur, classe « Bac+3 » choisie à la création, enregistrée et visible dans l'espace parents, défis des quatre mondes ouverts, console sans erreur.
 
-Restent ouverts : les disciplines universitaires propres (droit, médecine, économie, lettres, langues…), la biologie et la chimie de Bac+2 et Bac+3, le master, et le test avec de vrais étudiants.
+Restaient ouverts : les disciplines universitaires propres, la biologie et la chimie de Bac+2 et Bac+3 (traités en 2.25.0, ci-dessous), le master, et le test avec de vrais étudiants.
+
+## Sciences et disciplines universitaires (2.25.0)
+
+1. **Biologie Bac+2/Bac+3** : **Le Laboratoire du Vivant** (cinétique enzymatique et métabolisme, immunologie, génétique des populations et Hardy-Weinberg, évolution moléculaire et phylogénie), dans le parcours de la planète Biologie.
+2. **Chimie Bac+2/Bac+3** : **Le Laboratoire des Réactions** (cinétique et Arrhenius, mécanismes SN1 et SN2, spectroscopies IR et RMN, électrochimie), dans le parcours de la planète Chimie.
+3. **Disciplines universitaires**, marquées `specialite` (ouvertes sur la carte, hors test et parcours, comme les spécialités du lycée, puisqu'elles dépendent de l'orientation) :
+   - **droit** : **La Cour du Droit** (organisation de la justice, Constitution de 1958, syllogisme et commentaire d'arrêt, responsabilité civile, droit européen) ;
+   - **économie** : **La Bourse des Économistes** (élasticité-prix, coût marginal, multiplicateur keynésien, avantage comparatif, théorie des jeux) ;
+   - **santé** : **L'Hôpital-École** (accès aux études de santé, physiologie cardiovasculaire, pharmacologie, tests diagnostiques) ;
+   - **lettres** : **La Bibliothèque des Lettres savantes** (mouvements littéraires, narratologie, linguistique, réception et littérature comparée).
+4. **Voix, bug trouvé en relisant** : une fraction dont le numérateur ou le dénominateur contenait un indice ou un exposant entre accolades (« V_max [S] / (K_m + [S]) ») était lue sans « sur ». Les règles des bornes (limites, sommes, intégrales) passent désormais avant les fractions, et les indices et exposants sont lus à l'intérieur des fractions. « E_a / RT » est lu « E a sur RT ». Test ajouté.
+5. Un exercice « relier » à deux paires (minimum : trois) a été bloqué par le contrôle du contenu et complété.
+6. Vérifié : 150 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 19, 20 et 21 ans, défis des six mondes ouverts dans le navigateur avec un profil « Bac+2 », formules affichées sans erreur, console sans erreur.
+
+Restent ouverts : le master et au-delà, les autres licences (psychologie, sociologie, histoire, géographie, langues étrangères appliquées, informatique, STAPS…), et le test avec de vrais étudiants.

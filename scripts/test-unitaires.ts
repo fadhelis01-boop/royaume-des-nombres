@@ -256,6 +256,11 @@ eq("voix : tiret de titre, factorielle, implication", [
   toSpeech("continue ⇒ solution").includes("donc"),
   toSpeech(String.raw`$y'' + a\,y' = 0$`).includes("a y prime"),
 ], [true, true, true, true, true, true]);
+eq("voix : fraction contenant un indice ou un exposant", [
+  toSpeech(String.raw`$\dfrac{V_{max} [S]}{K_m + [S]}$`).includes("max [S] sur K"),
+  toSpeech(String.raw`$\dfrac{e^{x}}{x^{3}}$`).includes("e puissance x sur x au cube"),
+  toSpeech(String.raw`$e^{-E_a / RT}$`).includes("E a sur RT"),
+], [true, true, true]);
 eq("voix : notations Bac+2 et Bac+3", [
   toSpeech(String.raw`$\sum_{n=0}^{+\infty} q^n$`).includes("somme pour n égale 0 jusqu'à"),
   toSpeech(String.raw`$\int_1^{+\infty} f(t)\,dt$`).includes("intégrale de 1 à"),

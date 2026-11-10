@@ -1,0 +1,229 @@
+id: hg-cour-du-droit
+matiere: histoire
+titre: La Cour du Droit
+sous_titre: Licence de droit - organisation de la justice, droit constitutionnel, cas pratique et commentaire d'arrêt, responsabilité civile, droit européen
+emoji: ⚖️
+couleur: "#3e2723"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 806
+specialite: Licence de droit
+version: 1.0.0
+intro:
+  - narrateur: "Au bout du Forum, une salle d'audience aux boiseries sombres. Sur le bureau, le Code civil, la Constitution et un recueil d'arrêts."
+  - neo: "En licence de droit, on apprend à raisonner comme un juriste : qualifier les faits, trouver la règle, l'appliquer."
+  - mia: "Un raisonnement rigoureux qui sert aux avocats, aux magistrats, aux juristes d'entreprise… et à tout citoyen."
+
+lecons:
+  - id: organisation-juridictionnelle
+    titre: L'organisation de la justice en France
+    classe: Supérieur
+    objectif: Je distingue l'ordre judiciaire et l'ordre administratif, et je connais les degrés de juridiction.
+    mots: [juridiction, ordre judiciaire, ordre administratif, appel]
+    etapes:
+      - dialogue:
+          - zero: "Si je conteste une amende de stationnement et un licenciement, je vais au même tribunal ?"
+          - neo: "Non ! En France, il y a deux ordres de juridiction : l'un juge les litiges entre particuliers, l'autre ceux qui opposent les citoyens à l'administration."
+      - a_quoi_ca_sert: "Savoir quel juge saisir est la première question de tout litige ; c'est le b.a.-ba des études de droit et utile à chacun."
+      - texte: |
+          **L'ordre judiciaire** : les litiges entre personnes privées et les infractions pénales.
+          - **premier degré** : tribunal judiciaire, conseil de prud'hommes (travail), tribunal de commerce, tribunal correctionnel (délits), cour d'assises (crimes) ;
+          - **second degré** : la **cour d'appel** rejuge l'affaire en fait et en droit ;
+          - **sommet** : la **Cour de cassation**, qui ne rejuge pas les faits mais vérifie la bonne **application du droit**.
+
+          **L'ordre administratif** : les litiges avec l'administration (un permis de construire, une sanction d'un fonctionnaire). Tribunal administratif, cour administrative d'appel, **Conseil d'État**.
+
+          **Le Conseil constitutionnel** contrôle la conformité des lois à la Constitution (notamment par la **QPC**, la question prioritaire de constitutionnalité, depuis 2010).
+
+          **Infractions pénales** : contravention (tribunal de police), délit (tribunal correctionnel), crime (cour d'assises ou cour criminelle départementale).
+      - astuce: { texte: "Cassation = « casser » une décision mal motivée en droit, pas rejuger l'histoire : c'est le juge du droit, pas des faits.", qui: mia }
+      - retiens: "**Ordre judiciaire** (particuliers, pénal) : 1ᵉʳ degré, **cour d'appel**, **Cour de cassation** (juge du droit). **Ordre administratif** : tribunal administratif, cour administrative d'appel, **Conseil d'État**. **Conseil constitutionnel** : conformité des lois, **QPC** (2010)."
+    exercices:
+      - type: classer
+        enonce: "Range chaque litige : ordre judiciaire ou ordre administratif ?"
+        categories: ["Judiciaire", "Administratif"]
+        mots: [["Un salarié conteste son licenciement par une entreprise privée", 0], ["Un refus de permis de construire par une mairie", 1], ["Un vol dans un magasin", 0], ["Une sanction contre un fonctionnaire", 1]]
+        correction: "Entre particuliers ou pénal → judiciaire ; contre l'administration → administratif."
+      - type: relier
+        enonce: "🔗 Relie chaque juridiction à son rôle."
+        paires: [["la Cour de cassation", "vérifie l'application du droit"], ["le Conseil d'État", "sommet de l'ordre administratif"], ["la cour d'assises", "juge les crimes"], ["le conseil de prud'hommes", "juge les litiges du travail"]]
+        correction: "Chaque juridiction a sa compétence."
+      - type: qcm
+        enonce: "La Cour de cassation rejuge-t-elle les faits d'une affaire ?"
+        choix: ["Non, elle vérifie seulement l'application du droit", "Oui, entièrement", "Seulement les crimes", "Seulement en appel"]
+        correction: "Elle est **juge du droit** : si le droit a été mal appliqué, elle casse et renvoie."
+      - type: vf
+        vars: { t: [["La QPC permet de contester la constitutionnalité d'une loi au cours d'un procès.", true], ["Le tribunal administratif juge les vols.", false], ["La cour d'appel rejuge l'affaire en fait et en droit.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "QPC ; les vols relèvent du pénal judiciaire ; l'appel rejuge tout."
+
+  - id: droit-constitutionnel
+    titre: La Constitution de la Vᵉ République
+    classe: Supérieur
+    objectif: Je décris l'organisation des pouvoirs sous la Vᵉ République et les mécanismes d'équilibre entre exécutif et législatif.
+    mots: [Constitution, séparation des pouvoirs, motion de censure, dissolution]
+    etapes:
+      - dialogue:
+          - mia: "Le Président peut dissoudre l'Assemblée, et l'Assemblée peut renverser le gouvernement. Qui gagne ?"
+          - neo: "Personne ne doit gagner : c'est un équilibre. La Constitution de 1958 organise ces contre-pouvoirs."
+      - a_quoi_ca_sert: "Le droit constitutionnel est une matière fondamentale de première année, et il aide à comprendre l'actualité politique."
+      - texte: |
+          **La Constitution du 4 octobre 1958** fonde la Vᵉ République ; le Président est élu au **suffrage universel direct** depuis 1962, pour **cinq ans** depuis 2000.
+
+          **L'exécutif** : le **Président de la République** (nomme le Premier ministre, peut **dissoudre** l'Assemblée nationale, recourir au référendum, article 16 en cas de crise grave) et le **Gouvernement** (dirigé par le Premier ministre, il « détermine et conduit la politique de la Nation »).
+
+          **Le législatif** : le **Parlement**, formé de l'**Assemblée nationale** (élue au suffrage direct) et du **Sénat** (élu au suffrage indirect). Il vote la loi et contrôle le gouvernement.
+
+          **Les mécanismes d'équilibre** : l'Assemblée peut renverser le gouvernement par une **motion de censure** ; le gouvernement peut engager sa responsabilité sur un texte (**article 49 alinéa 3**) ; le Président peut dissoudre l'Assemblée.
+
+          **La cohabitation** : un Président et une majorité parlementaire de bords opposés (1986, 1993, 1997).
+      - astuce: { texte: "Motion de censure : l'Assemblée renverse le gouvernement. Dissolution : le Président renvoie l'Assemblée devant les électeurs. Chacun a son arme.", qui: zero }
+      - retiens: "Constitution du **4 octobre 1958**. Président élu au suffrage direct (1962), quinquennat (2000) ; il peut **dissoudre**. Gouvernement responsable devant l'Assemblée (**motion de censure**, **49.3**). Parlement : **Assemblée nationale** et **Sénat**. **Cohabitation** possible."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque mécanisme à son auteur."
+        paires: [["la dissolution de l'Assemblée", "le Président de la République"], ["la motion de censure", "l'Assemblée nationale"], ["l'article 49 alinéa 3", "le Gouvernement"]]
+        correction: "Chaque pouvoir dispose d'une arme face à l'autre."
+      - type: nombre
+        enonce: "En quelle année la Constitution de la Vᵉ République est-elle adoptée ?"
+        reponse: "1958"
+        correction: "Le **4 octobre 1958**."
+      - type: classer
+        enonce: "Range chaque élément : pouvoir exécutif ou pouvoir législatif ?"
+        categories: ["Exécutif", "Législatif"]
+        mots: [["Le Premier ministre", 0], ["Le Sénat", 1], ["Le Président de la République", 0], ["L'Assemblée nationale", 1]]
+        correction: "Président et gouvernement → exécutif ; Parlement → législatif."
+      - type: vf
+        vars: { t: [["Le Sénat est élu au suffrage universel indirect.", true], ["Le mandat présidentiel dure sept ans depuis 2000.", false], ["Une motion de censure adoptée renverse le gouvernement.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Sénat au suffrage indirect ; quinquennat depuis 2000 ; censure = gouvernement renversé."
+
+  - id: syllogisme-cas-pratique
+    titre: Le cas pratique et le commentaire d'arrêt
+    classe: Bac+2
+    objectif: Je résous un cas pratique avec le syllogisme juridique et je structure un commentaire d'arrêt.
+    mots: [syllogisme juridique, qualification, majeure, mineure]
+    etapes:
+      - dialogue:
+          - zero: "Un cas pratique, je donne mon avis sur qui a raison ?"
+          - neo: "Non : tu raisonnes en trois temps. La règle de droit, les faits qualifiés juridiquement, et la conclusion qui en découle. C'est le syllogisme juridique."
+      - a_quoi_ca_sert: "Le cas pratique et le commentaire d'arrêt sont les deux exercices majeurs des examens de droit ; c'est aussi le raisonnement quotidien de l'avocat et du juge."
+      - texte: |
+          **Le syllogisme juridique** :
+          1. **la majeure** : la règle de droit applicable (un article de loi, une jurisprudence) ;
+          2. **la mineure** : les faits, **qualifiés** juridiquement (« ce véhicule est une chose », « cette personne est un consommateur ») ;
+          3. **la conclusion** : l'application de la règle aux faits.
+
+          **Le cas pratique** : résumer les faits utiles, poser le **problème de droit**, puis appliquer le syllogisme pour chaque question.
+
+          **Le commentaire d'arrêt** :
+          - fiche d'arrêt : faits, procédure, prétentions des parties, **problème de droit**, **solution** de la juridiction ;
+          - plan en deux parties et deux sous-parties (le plan « à la française ») : expliquer le **sens** de la décision, puis sa **valeur** (est-elle justifiée ?) et sa **portée** (quelle influence ?).
+      - attention: "Le problème de droit se formule de façon abstraite (« Un mineur peut-il… ? »), pas avec les noms des parties."
+      - astuce: { texte: "Pour chaque question d'un cas pratique, écris trois lignes : en droit…, en l'espèce…, en conséquence…", qui: mia }
+      - retiens: "**Syllogisme** : **majeure** (règle), **mineure** (faits qualifiés), **conclusion**. Cas pratique : faits, **problème de droit**, syllogisme. Commentaire d'arrêt : **fiche d'arrêt** (faits, procédure, problème, solution), plan en deux parties : **sens**, puis **valeur** et **portée**."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes du syllogisme juridique."
+        items: ["La majeure : la règle de droit", "La mineure : les faits qualifiés", "La conclusion : application de la règle"]
+        correction: "En droit, en l'espèce, en conséquence."
+      - type: ordre
+        enonce: "Range les éléments d'une fiche d'arrêt."
+        items: ["Les faits", "La procédure", "Les prétentions des parties", "Le problème de droit", "La solution de la juridiction"]
+        correction: "Faits, procédure, prétentions, problème, solution."
+      - type: qcm
+        enonce: "Quelle est la meilleure formulation d'un problème de droit ?"
+        choix: ["Un vendeur professionnel peut-il exclure sa garantie face à un consommateur ?", "Monsieur Dupont a-t-il raison contre la société Martin ?", "Que s'est-il passé le 3 mars ?", "Le juge était-il sympathique ?"]
+        correction: "Le problème de droit est **abstrait** et juridique."
+      - type: vf
+        vars: { t: [["La mineure du syllogisme contient les faits qualifiés juridiquement.", true], ["Un commentaire d'arrêt se contente de résumer l'affaire.", false], ["La portée d'un arrêt désigne son influence sur le droit.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Mineure = faits qualifiés ; commenter = expliquer et apprécier ; portée = influence."
+
+  - id: responsabilite-civile
+    titre: La responsabilité civile
+    classe: Bac+2
+    objectif: J'identifie les trois conditions de la responsabilité civile - un fait générateur, un dommage, un lien de causalité.
+    mots: [responsabilité civile, faute, dommage, lien de causalité]
+    etapes:
+      - dialogue:
+          - mia: "En jouant au ballon, Léo casse la vitrine du voisin. Qui paie ?"
+          - neo: "Le droit répond avec la responsabilité civile : celui qui cause un dommage à autrui doit le réparer, sous certaines conditions."
+      - a_quoi_ca_sert: "Accidents, dommages, erreurs professionnelles : la responsabilité civile est partout dans la vie quotidienne et dans le métier des juristes et des assureurs."
+      - texte: |
+          **Le principe** (article **1240** du Code civil) : « Tout fait quelconque de l'homme, qui cause à autrui un dommage, oblige celui par la faute duquel il est arrivé à le réparer. »
+
+          **Trois conditions cumulatives** :
+          1. un **fait générateur** : une **faute** (article 1240), mais aussi le fait d'une **chose** qu'on a sous sa garde, ou le fait d'**autrui** (les parents pour leurs enfants mineurs) ;
+          2. un **dommage** : matériel, corporel ou moral, **certain**, **personnel** ;
+          3. un **lien de causalité** entre le fait et le dommage.
+
+          **La réparation** : remettre la victime dans la situation où elle aurait été sans le dommage (**dommages et intérêts**).
+
+          **Responsabilité civile et pénale** : la civile répare un dommage (on indemnise) ; la pénale punit une infraction (amende, prison). Un même fait peut engager les deux.
+      - astuce: { texte: "Trois mots à retrouver dans chaque cas : fait générateur, dommage, causalité. S'il en manque un, pas de responsabilité.", qui: zero }
+      - retiens: "Art. **1240** C. civ. : réparer le dommage causé par sa faute. **Trois conditions** : **fait générateur** (faute, chose, autrui), **dommage** (certain, personnel), **lien de causalité**. Réparation : dommages et intérêts. Civile = réparer ; pénale = punir."
+    exercices:
+      - type: ordre
+        enonce: "Range les trois conditions de la responsabilité civile telles qu'on les examine."
+        items: ["Un fait générateur", "Un dommage", "Un lien de causalité entre les deux"]
+        correction: "Fait, dommage, causalité."
+      - type: classer
+        enonce: "Range chaque conséquence : responsabilité civile ou pénale ?"
+        categories: ["Civile", "Pénale"]
+        mots: [["Verser des dommages et intérêts à la victime", 0], ["Une peine de prison", 1], ["Rembourser la vitrine cassée", 0], ["Une amende pénale versée à l'État", 1]]
+        correction: "Réparer la victime → civile ; punir l'auteur → pénale."
+      - type: qcm
+        enonce: "Quel article du Code civil pose le principe de la responsabilité pour faute ?"
+        choix: ["L'article 1240", "L'article 49", "L'article 16", "L'article 1er de la Constitution"]
+        correction: "L'**article 1240** (ancien article 1382)."
+      - type: vf
+        vars: { t: [["Les parents peuvent être responsables des dommages causés par leur enfant mineur.", true], ["Sans dommage, la responsabilité civile peut quand même être engagée.", false], ["Un même fait peut engager la responsabilité civile et pénale.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Fait d'autrui ; le dommage est indispensable ; civil et pénal peuvent se cumuler."
+
+  - id: droit-europeen
+    titre: Le droit européen et les droits fondamentaux
+    classe: Bac+3
+    objectif: Je distingue l'Union européenne et le Conseil de l'Europe, et j'explique la place du droit européen dans la hiérarchie des normes.
+    mots: [Union européenne, Conseil de l'Europe, CEDH, primauté]
+    etapes:
+      - dialogue:
+          - zero: "La Cour européenne des droits de l'homme, c'est l'Union européenne ?"
+          - neo: "Non, c'est la confusion la plus fréquente ! Elle dépend du Conseil de l'Europe, une autre organisation, avec 46 États membres."
+      - a_quoi_ca_sert: "Le droit européen influence une grande partie du droit français (consommation, concurrence, données personnelles, droits fondamentaux) ; tout juriste doit le maîtriser."
+      - texte: |
+          **L'Union européenne** (27 États) : elle adopte des **règlements** (applicables directement dans tous les États) et des **directives** (à transposer dans le droit national). La **Cour de justice de l'Union européenne** (CJUE, à Luxembourg) en assure l'interprétation. Le droit de l'Union a la **primauté** sur les lois nationales.
+
+          **Le Conseil de l'Europe** (46 États) : il a adopté la **Convention européenne des droits de l'homme** (1950). La **Cour européenne des droits de l'homme** (CEDH, à Strasbourg) peut condamner un État qui viole la Convention, après épuisement des recours nationaux.
+
+          **Exemples** : le **RGPD** (protection des données, un règlement de l'UE, 2016, applicable en 2018) ; le droit à un procès équitable (article 6 de la Convention).
+
+          **Dans la hiérarchie des normes**, les traités et le droit de l'UE se placent au-dessus des lois françaises (article 55 de la Constitution).
+      - attention: "Règlement : s'applique directement, tel quel. Directive : fixe un objectif que chaque État doit atteindre en adaptant sa loi."
+      - astuce: { texte: "Luxembourg = Union européenne (CJUE). Strasbourg = droits de l'homme (CEDH).", qui: mia }
+      - retiens: "**UE** (27) : **règlements** (directs) et **directives** (à transposer), **CJUE** (Luxembourg), **primauté**. **Conseil de l'Europe** (46) : **Convention** de 1950, **CEDH** (Strasbourg). Traités au-dessus des lois (art. 55). RGPD = règlement."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque cour à son organisation et sa ville."
+        paires: [["la CJUE", "Union européenne, Luxembourg"], ["la CEDH", "Conseil de l'Europe, Strasbourg"], ["le Conseil constitutionnel", "France, Paris"]]
+        correction: "Trois juges différents, à ne pas confondre."
+      - type: classer
+        enonce: "Range chaque acte : règlement ou directive ?"
+        categories: ["Règlement (application directe)", "Directive (à transposer)"]
+        mots: [["Un texte qui s'applique tel quel dans tous les États", 0], ["Un texte qui fixe un objectif à atteindre par chaque État", 1], ["Le RGPD", 0], ["Un texte qui nécessite une loi nationale d'adaptation", 1]]
+        correction: "Le règlement s'applique directement ; la directive se transpose."
+      - type: nombre
+        enonce: "En quelle année la Convention européenne des droits de l'homme est-elle signée ?"
+        reponse: "1950"
+        correction: "En **1950**, à Rome."
+      - type: vf
+        vars: { t: [["La CEDH est une institution de l'Union européenne.", false], ["Le droit de l'Union a la primauté sur les lois nationales.", true], ["Le Conseil de l'Europe compte plus de membres que l'Union européenne.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La CEDH relève du Conseil de l'Europe ; primauté du droit de l'UE ; 46 États contre 27."

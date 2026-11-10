@@ -1,0 +1,191 @@
+id: bio-laboratoire-du-vivant
+matiere: biologie
+titre: Le Laboratoire du Vivant
+sous_titre: Bac+2 et Bac+3 - métabolisme et enzymes, immunologie, génétique des populations, évolution moléculaire
+emoji: 🧬
+couleur: "#2e7d32"
+cycle: maitres
+age: 19-21 ans
+niveau: Bac+2 – Bac+3
+ordre: 311
+version: 1.0.0
+intro:
+  - narrateur: "Au cœur de l'Arbre-Monde, un laboratoire moderne : des cultures cellulaires, un séquenceur d'ADN, des courbes d'activité enzymatique."
+  - neo: "En deuxième et troisième année, on comprend le vivant à l'échelle des molécules, des cellules et des populations."
+  - mia: "Biochimie, immunologie, génétique, évolution : les piliers de la licence de sciences de la vie."
+
+lecons:
+  - id: enzymes-michaelis
+    titre: Cinétique enzymatique et métabolisme
+    classe: Bac+2
+    objectif: J'interprète la courbe de Michaelis-Menten (vitesse maximale, constante de Michaelis) et je situe la respiration cellulaire dans le métabolisme.
+    mots: [enzyme, Vmax, Km, métabolisme]
+    etapes:
+      - dialogue:
+          - zero: "Plus je donne de substrat à une enzyme, plus elle va vite, à l'infini ?"
+          - neo: "Non : à un moment, toutes les enzymes sont occupées. La vitesse plafonne : c'est la vitesse maximale."
+      - a_quoi_ca_sert: "La cinétique enzymatique explique l'action des médicaments (inhibiteurs), les dosages biologiques et la production industrielle par biotechnologie."
+      - texte: |
+          **La courbe de Michaelis-Menten** : la vitesse $v = \dfrac{V_{max} [S]}{K_m + [S]}$, où $[S]$ est la concentration en substrat.
+
+          - $V_{max}$ : la vitesse maximale, quand l'enzyme est saturée.
+          - $K_m$ (constante de Michaelis) : la concentration de substrat pour laquelle $v = \dfrac{V_{max}}{2}$. Plus $K_m$ est **petit**, plus l'**affinité** de l'enzyme pour son substrat est **grande**.
+
+          **Les inhibiteurs** : un inhibiteur **compétitif** prend la place du substrat (le $K_m$ apparent augmente) ; beaucoup de médicaments agissent ainsi.
+
+          **Le métabolisme** : l'ensemble des réactions de la cellule. Le **catabolisme** dégrade (respiration : glucose → CO₂ + eau, produisant de l'**ATP**), l'**anabolisme** construit (synthèse des protéines). La respiration aérobie produit environ **30 ATP** par glucose, la fermentation seulement **2**.
+      - astuce: { texte: "Km : la concentration qui donne la moitié de la vitesse maximale. Petit Km = enzyme « gourmande », qui travaille vite même avec peu de substrat.", qui: mia }
+      - retiens: "$v = \\dfrac{V_{max}[S]}{K_m + [S]}$. $V_{max}$ : saturation ; $K_m$ : concentration donnant $\\dfrac{V_{max}}{2}$, petit $K_m$ = grande **affinité**. Inhibiteur **compétitif** : $K_m$ apparent augmente. Catabolisme / anabolisme ; respiration ≈ 30 ATP, fermentation 2."
+    exercices:
+      - type: nombre
+        vars: { t: [[100, 50], [80, 40], [60, 30], [120, 60]] }
+        enonce: "Une enzyme a une vitesse maximale de {{t_0}} µmol/min. Quelle est sa vitesse quand $[S] = K_m$ ?"
+        reponse: "t_1"
+        unite: µmol/min
+        correction: "Quand $[S] = K_m$, $v = \\dfrac{V_{max}}{2} = {{t_1}}$ µmol/min."
+      - type: qcm
+        enonce: "Deux enzymes agissent sur le même substrat : $K_m = 0{,}1$ mM et $K_m = 5$ mM. Laquelle a la plus grande affinité ?"
+        choix: ["Celle dont le Km vaut 0,1 mM", "Celle dont le Km vaut 5 mM", "Elles ont la même affinité", "On ne peut pas savoir"]
+        correction: "Le plus petit $K_m$ correspond à la plus grande affinité."
+      - type: classer
+        enonce: "Range chaque processus : catabolisme ou anabolisme ?"
+        categories: ["Catabolisme", "Anabolisme"]
+        mots: [["La respiration cellulaire", 0], ["La synthèse des protéines", 1], ["La dégradation du glycogène", 0], ["La photosynthèse", 1]]
+        correction: "Dégrader en libérant de l'énergie → catabolisme ; construire → anabolisme."
+      - type: vf
+        vars: { t: [["La vitesse d'une enzyme augmente sans limite avec le substrat.", false], ["La respiration aérobie produit plus d'ATP que la fermentation.", true], ["Un inhibiteur compétitif entre en compétition avec le substrat.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La vitesse plafonne à Vmax ; respiration ≈ 30 ATP contre 2 ; l'inhibiteur compétitif occupe le site actif."
+
+  - id: immunologie
+    titre: L'immunologie, défendre l'organisme
+    classe: Bac+2
+    objectif: Je distingue immunité innée et adaptative, et j'explique le rôle des lymphocytes B et T et de la mémoire immunitaire.
+    mots: [immunité innée, immunité adaptative, anticorps, mémoire immunitaire]
+    etapes:
+      - dialogue:
+          - mia: "Pourquoi n'attrape-t-on la varicelle qu'une seule fois ?"
+          - neo: "Parce que le système immunitaire garde des cellules mémoire : à la deuxième rencontre, il réagit si vite qu'on ne tombe pas malade."
+      - a_quoi_ca_sert: "L'immunologie explique les vaccins, les allergies, les greffes, les maladies auto-immunes et les nouvelles immunothérapies contre le cancer."
+      - texte: |
+          **L'immunité innée** : immédiate, peu spécifique. Barrières (peau, muqueuses), **inflammation**, **phagocytose** par les macrophages et les granulocytes.
+
+          **L'immunité adaptative** : plus lente à la première rencontre (quelques jours), **spécifique** d'un antigène, avec **mémoire**.
+          - les **lymphocytes B** produisent des **anticorps** qui neutralisent les agents pathogènes ;
+          - les **lymphocytes T CD8** (cytotoxiques) détruisent les cellules infectées ;
+          - les **lymphocytes T CD4** (auxiliaires) coordonnent la réponse.
+
+          **La mémoire immunitaire** : après une première infection, des lymphocytes mémoire persistent ; la réponse secondaire est **plus rapide et plus forte**. C'est le principe de la **vaccination**.
+
+          **Quand le système se dérègle** : allergies, maladies auto-immunes (diabète de type 1), immunodéficiences (VIH, qui détruit les T CD4).
+      - astuce: { texte: "B comme « bombardier d'anticorps » ; T8 tue les cellules infectées ; T4 dirige l'orchestre.", qui: zero }
+      - retiens: "**Innée** : rapide, peu spécifique (barrières, inflammation, phagocytose). **Adaptative** : spécifique, avec **mémoire** ; **LB** → anticorps, **LT CD8** → cellules infectées, **LT CD4** → coordination. Réponse secondaire plus rapide : **vaccination**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque cellule à son rôle."
+        paires: [["le lymphocyte B", "produit des anticorps"], ["le lymphocyte T CD8", "détruit les cellules infectées"], ["le lymphocyte T CD4", "coordonne la réponse immunitaire"], ["le macrophage", "phagocyte les agents pathogènes"]]
+        correction: "Une armée aux rôles bien répartis."
+      - type: classer
+        enonce: "Range chaque élément : immunité innée ou adaptative ?"
+        categories: ["Innée", "Adaptative"]
+        mots: [["L'inflammation", 0], ["La production d'anticorps spécifiques", 1], ["La phagocytose par un macrophage", 0], ["Les lymphocytes mémoire", 1]]
+        correction: "Rapide et générale → innée ; spécifique avec mémoire → adaptative."
+      - type: qcm
+        enonce: "Pourquoi la réponse à un deuxième contact avec le même virus est-elle plus efficace ?"
+        choix: ["Grâce aux lymphocytes mémoire", "Parce que le virus est plus faible", "Grâce à l'inflammation seule", "Parce que la peau s'épaissit"]
+        correction: "Les cellules mémoire permettent une réponse secondaire rapide et forte."
+      - type: vf
+        vars: { t: [["Le VIH détruit les lymphocytes T CD4.", true], ["L'immunité innée est très spécifique d'un antigène.", false], ["Un vaccin s'appuie sur la mémoire immunitaire.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "VIH et T CD4 ; l'innée est peu spécifique ; le vaccin crée une mémoire."
+
+  - id: genetique-populations
+    titre: Génétique des populations et équilibre de Hardy-Weinberg
+    classe: Bac+3
+    objectif: Je calcule des fréquences génotypiques avec la loi de Hardy-Weinberg et j'identifie les forces qui font évoluer une population.
+    mots: [fréquence allélique, Hardy-Weinberg, dérive génétique, sélection]
+    etapes:
+      - dialogue:
+          - zero: "Si un allèle est récessif, il finit par disparaître ?"
+          - neo: "Pas forcément ! Sans sélection ni autre force, les fréquences restent stables de génération en génération : c'est l'équilibre de Hardy-Weinberg."
+      - a_quoi_ca_sert: "La génétique des populations sert en conservation des espèces, en épidémiologie (maladies génétiques), en sélection agricole et pour reconstruire l'histoire des populations humaines."
+      - texte: |
+          **Fréquences alléliques** : pour un gène à deux allèles A et a, $p$ = fréquence de A, $q$ = fréquence de a, avec $p + q = 1$.
+
+          **Équilibre de Hardy-Weinberg** : dans une grande population, sans sélection, mutation, migration ni choix du partenaire, les fréquences génotypiques sont
+          $AA : p^2$, $Aa : 2pq$, $aa : q^2$, et elles restent **stables**.
+
+          **Exemple** : si $q = 0{,}1$, alors $q^2 = 0{,}01$ (1 % de malades pour une maladie récessive) et $2pq = 0{,}18$ (18 % de porteurs sains).
+
+          **Les forces évolutives** : **sélection naturelle**, **mutation**, **migration** (flux de gènes), **dérive génétique** (le hasard, fort dans les petites populations).
+      - attention: "Une maladie récessive rare a beaucoup plus de porteurs sains que de malades : c'est pourquoi elle se maintient dans la population."
+      - astuce: { texte: "p² + 2pq + q² = 1 : c'est le développement de (p + q)², tout simplement.", qui: mia }
+      - retiens: "$p + q = 1$. **Hardy-Weinberg** : $AA = p^2$, $Aa = 2pq$, $aa = q^2$, stables sans forces évolutives. Forces : **sélection**, **mutation**, **migration**, **dérive** (petites populations)."
+    exercices:
+      - type: nombre
+        vars: { t: [[0.1, 1], [0.2, 4], [0.3, 9], [0.05, 0.25]] }
+        enonce: "La fréquence de l'allèle récessif a est $q = {{t_0}}$. Quel pourcentage de la population est aa à l'équilibre de Hardy-Weinberg ?"
+        reponse: "t_1"
+        unite: "%"
+        correction: "$q^2 = {{t_0}}^2$, soit **{{t_1}} %**."
+      - type: nombre
+        vars: { t: [[0.1, 18], [0.2, 32], [0.5, 50], [0.3, 42]] }
+        enonce: "Avec $q = {{t_0}}$, quel pourcentage de la population est hétérozygote Aa ?"
+        reponse: "t_1"
+        unite: "%"
+        correction: "$2pq = 2 \\times (1 - {{t_0}}) \\times {{t_0}}$, soit **{{t_1}} %**."
+      - type: relier
+        enonce: "🔗 Relie chaque force évolutive à sa description."
+        paires: [["la dérive génétique", "variation des fréquences due au hasard"], ["la sélection naturelle", "les porteurs de certains allèles se reproduisent davantage"], ["la migration", "arrivée ou départ d'individus avec leurs gènes"]]
+        correction: "Ces forces font sortir une population de l'équilibre."
+      - type: vf
+        vars: { t: [["La dérive génétique est plus forte dans les petites populations.", true], ["À l'équilibre de Hardy-Weinberg, les fréquences changent à chaque génération.", false], ["p + q vaut 1.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Dérive forte en petite population ; fréquences stables à l'équilibre ; p + q = 1."
+
+  - id: evolution-moleculaire
+    titre: Évolution moléculaire et phylogénie
+    classe: Bac+3
+    objectif: Je lis un arbre phylogénétique, je comprends l'horloge moléculaire et les groupes monophylétiques.
+    mots: [phylogénie, ancêtre commun, groupe monophylétique, horloge moléculaire]
+    etapes:
+      - dialogue:
+          - mia: "Le crocodile est plus proche parent des oiseaux que des lézards."
+          - zero: "Quoi ? Un crocodile ressemble pourtant plus à un lézard !"
+          - neo: "La ressemblance ne suffit pas : la phylogénie classe les êtres vivants selon leurs ancêtres communs, grâce à l'ADN et aux caractères partagés."
+      - a_quoi_ca_sert: "La phylogénie sert à retracer l'origine des virus et des épidémies, à classer la biodiversité et à comprendre l'évolution des gènes, jusqu'en médecine."
+      - texte: |
+          **Un arbre phylogénétique** : les branches représentent des lignées ; les **nœuds**, des **ancêtres communs**. Deux espèces sont d'autant plus apparentées que leur ancêtre commun est **récent**.
+
+          **Un groupe monophylétique** (un **clade**) : un ancêtre et **tous** ses descendants. Les « reptiles » au sens ancien ne forment pas un clade, puisqu'ils excluent les oiseaux.
+
+          **Les caractères** : on regroupe les espèces selon des **caractères dérivés partagés** (une nouveauté héritée d'un ancêtre commun), pas selon les simples ressemblances.
+
+          **L'horloge moléculaire** : les mutations neutres s'accumulent à un rythme à peu près régulier ; le nombre de différences entre deux séquences permet d'**estimer** depuis quand deux lignées se sont séparées.
+      - attention: "Les espèces actuelles ne « descendent » pas les unes des autres : l'humain ne descend pas du chimpanzé, ils ont un ancêtre commun."
+      - astuce: { texte: "Pour savoir qui est le plus proche parent, remonte les branches jusqu'au premier nœud commun : le plus bas est le plus récent.", qui: zero }
+      - retiens: "Arbre : nœuds = **ancêtres communs** ; plus l'ancêtre commun est récent, plus la parenté est proche. **Clade** = un ancêtre et **tous** ses descendants. Caractères **dérivés partagés**. **Horloge moléculaire** : estimer les dates de divergence."
+    exercices:
+      - type: nombre
+        vars: { t: [[10, 2, 5], [30, 5, 6], [24, 3, 8], [12, 4, 3]] }
+        enonce: "Deux séquences diffèrent de {{t_0}} mutations. L'horloge moléculaire indique environ {{t_1}} mutations par million d'années (sur les deux lignées). Depuis combien de millions d'années se sont-elles séparées ?"
+        reponse: "t_2"
+        unite: millions d'années
+        correction: "{{t_0}} ÷ {{t_1}} = **{{t_2}} millions d'années**."
+      - type: qcm
+        enonce: "Qu'est-ce qu'un groupe monophylétique ?"
+        choix: ["Un ancêtre commun et tous ses descendants", "Des espèces qui se ressemblent", "Des espèces vivant au même endroit", "Une seule espèce isolée"]
+        correction: "Un **clade** réunit un ancêtre et tous ses descendants."
+      - type: vf
+        vars: { t: [["L'humain descend du chimpanzé actuel.", false], ["Les crocodiles sont plus proches des oiseaux que des lézards.", true], ["L'horloge moléculaire permet d'estimer des dates de divergence.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Ancêtre commun, pas descendance ; crocodiles et oiseaux sont des archosaures ; horloge moléculaire."
+      - type: classer
+        enonce: "Range chaque critère : utilisé pour construire une phylogénie ou trompeur ?"
+        categories: ["Utilisé", "Trompeur"]
+        mots: [["Un caractère dérivé partagé, hérité d'un ancêtre commun", 0], ["Une simple ressemblance de forme due au même mode de vie", 1], ["La comparaison de séquences d'ADN", 0], ["Le fait de vivre dans le même milieu", 1]]
+        correction: "On s'appuie sur l'héritage commun, pas sur les convergences."

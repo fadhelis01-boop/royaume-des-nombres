@@ -1,0 +1,190 @@
+id: ch-laboratoire-des-reactions
+matiere: chimie
+titre: Le Laboratoire des Réactions
+sous_titre: Bac+2 et Bac+3 - cinétique chimique, mécanismes en chimie organique, spectroscopies, électrochimie
+emoji: ⚗️
+couleur: "#4a148c"
+cycle: maitres
+age: 19-21 ans
+niveau: Bac+2 – Bac+3
+ordre: 109
+version: 1.0.0
+intro:
+  - narrateur: "Au fond du Marais d'Acidia, un laboratoire de recherche : des spectromètres, des piles, des ballons qui chauffent sous des colonnes."
+  - mia: "En deuxième et troisième année, on comprend comment et à quelle vitesse les réactions se font, et on identifie les molécules par leurs spectres."
+  - neo: "Cinétique, mécanismes, spectroscopie, électrochimie : la boîte à outils du chimiste."
+
+lecons:
+  - id: cinetique-chimique
+    titre: Cinétique chimique, ordre et énergie d'activation
+    classe: Bac+2
+    objectif: J'utilise la loi de vitesse d'ordre 1, le temps de demi-vie et la loi d'Arrhenius.
+    mots: [vitesse de réaction, ordre, demi-vie, énergie d'activation]
+    etapes:
+      - dialogue:
+          - zero: "Pourquoi les aliments se conservent plus longtemps au réfrigérateur ?"
+          - neo: "Parce que les réactions de dégradation vont moins vite à basse température. C'est la loi d'Arrhenius."
+      - a_quoi_ca_sert: "La cinétique sert à dater (carbone 14), à doser un médicament dans le temps, à optimiser une production industrielle et à conserver les aliments."
+      - texte: |
+          **Loi de vitesse d'ordre 1** : $v = k[A]$, et la concentration décroît exponentiellement : $[A] = [A]_0 e^{-kt}$.
+
+          **Le temps de demi-vie** $t_{1/2}$ : le temps pour que la concentration soit **divisée par 2**. Pour l'ordre 1, il est **constant** : $t_{1/2} = \dfrac{\ln 2}{k}$. Après $n$ demi-vies, il reste $\dfrac{1}{2^n}$ de la quantité initiale.
+
+          **Loi d'Arrhenius** : $k = A\,e^{-E_a / RT}$. Plus la température est **élevée**, plus $k$ est grand ; plus l'**énergie d'activation** $E_a$ est grande, plus la réaction est lente.
+
+          **Un catalyseur** abaisse l'énergie d'activation sans être consommé : il accélère la réaction sans changer l'état final.
+      - astuce: { texte: "Ordre 1 : la demi-vie ne dépend pas de la concentration de départ. Une demi-vie, puis une autre : 1/2, 1/4, 1/8…", qui: mia }
+      - retiens: "Ordre 1 : $[A] = [A]_0 e^{-kt}$, $t_{1/2} = \\dfrac{\\ln 2}{k}$ constant ; après $n$ demi-vies il reste $\\dfrac{1}{2^n}$. **Arrhenius** : $k = A e^{-E_a/RT}$, la température accélère. **Catalyseur** : abaisse $E_a$."
+    exercices:
+      - type: nombre
+        vars: { t: [[80, 2, 20], [100, 3, 12.5], [64, 4, 4], [40, 1, 20]] }
+        enonce: "Une réaction d'ordre 1 part de {{t_0}} mmol/L. Quelle concentration reste-t-il après {{t_1}} temps de demi-vie ?"
+        reponse: "t_2"
+        unite: mmol/L
+        correction: "On divise par 2 à chaque demi-vie : {{t_0}} ÷ $2^{ {{t_1}} }$ = **{{t_2}} mmol/L**."
+      - type: nombre
+        vars: { t: [[5730, 2, 11460], [5730, 3, 17190], [8, 3, 24], [30, 2, 60]] }
+        enonce: "Un noyau radioactif a une demi-vie de {{t_0}} ans. Combien d'années faut-il pour que {{t_1}} demi-vies s'écoulent ?"
+        reponse: "t_2"
+        unite: ans
+        correction: "{{t_1}} × {{t_0}} = **{{t_2}} ans**."
+      - type: qcm
+        enonce: "Quel est l'effet d'un catalyseur ?"
+        choix: ["Il abaisse l'énergie d'activation et accélère la réaction", "Il est consommé par la réaction", "Il change les produits obtenus", "Il ralentit la réaction"]
+        correction: "Le catalyseur offre un chemin plus facile, sans être consommé."
+      - type: vf
+        vars: { t: [["Pour une réaction d'ordre 1, la demi-vie est constante.", true], ["Une température plus élevée ralentit généralement une réaction.", false], ["Une grande énergie d'activation rend la réaction plus lente.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Demi-vie constante à l'ordre 1 ; la chaleur accélère ; grande Ea = réaction lente."
+
+  - id: mecanismes-organiques
+    titre: Mécanismes en chimie organique
+    classe: Bac+2
+    objectif: Je distingue nucléophile et électrophile et je compare les substitutions SN1 et SN2.
+    mots: [nucléophile, électrophile, SN1, SN2]
+    etapes:
+      - dialogue:
+          - mia: "En chimie organique, une réaction, ce sont des électrons qui se déplacent."
+          - neo: "On les représente par des flèches courbes : d'un site riche en électrons, le nucléophile, vers un site pauvre, l'électrophile."
+      - a_quoi_ca_sert: "Comprendre les mécanismes permet de prévoir les produits, de concevoir des médicaments et de choisir les conditions d'une synthèse industrielle."
+      - texte: |
+          **Nucléophile** : une espèce **riche en électrons** (doublet libre ou charge négative : OH⁻, NH₃, H₂O). **Électrophile** : une espèce **pauvre en électrons** (un carbone lié à un atome électronégatif, un carbocation).
+
+          **Les flèches courbes** partent toujours d'un **doublet d'électrons** et vont vers l'atome qui le reçoit.
+
+          **Substitution nucléophile** : un nucléophile remplace un groupe partant (souvent un halogène).
+
+          - **SN2** : en **une seule étape**, le nucléophile attaque pendant que le groupe partant s'en va ; vitesse $v = k[\text{substrat}][\text{nucléophile}]$ ; favorisée sur un carbone **peu encombré** (primaire) ; **inversion** de configuration.
+          - **SN1** : en **deux étapes**, avec un **carbocation** intermédiaire ; $v = k[\text{substrat}]$ ; favorisée sur un carbone **tertiaire** ; mélange des configurations (racémisation).
+      - astuce: { texte: "SN2 : le 2 compte deux réactifs dans la vitesse. SN1 : un seul, car l'étape lente est la formation du carbocation.", qui: zero }
+      - retiens: "**Nucléophile** : riche en électrons ; **électrophile** : pauvre. Flèche courbe : d'un doublet vers l'atome receveur. **SN2** : une étape, $v = k[S][Nu]$, carbone primaire, inversion. **SN1** : deux étapes, carbocation, $v = k[S]$, carbone tertiaire, racémisation."
+    exercices:
+      - type: classer
+        enonce: "Range chaque espèce : nucléophile ou électrophile ?"
+        categories: ["Nucléophile", "Électrophile"]
+        mots: [["L'ion hydroxyde OH⁻", 0], ["Un carbocation", 1], ["L'ammoniac NH₃", 0], ["Le carbone lié au brome d'un bromoalcane", 1]]
+        correction: "Riche en électrons → nucléophile ; pauvre en électrons → électrophile."
+      - type: relier
+        enonce: "🔗 Relie chaque mécanisme à sa caractéristique."
+        paires: [["SN2", "une seule étape, inversion de configuration"], ["SN1", "passage par un carbocation"], ["la flèche courbe", "le déplacement d'un doublet d'électrons"]]
+        correction: "Les bases des mécanismes."
+      - type: qcm
+        enonce: "Sur quel type de carbone la SN1 est-elle favorisée ?"
+        choix: ["Un carbone tertiaire", "Un carbone primaire", "Un carbone sans substituant", "Un carbone d'un cycle aromatique uniquement"]
+        correction: "Le carbocation tertiaire est le plus stable : SN1 favorisée."
+      - type: vf
+        vars: { t: [["Une flèche courbe part d'un doublet d'électrons.", true], ["La SN2 passe par un carbocation.", false], ["La vitesse de la SN1 ne dépend que du substrat.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Flèche depuis un doublet ; la SN2 est concertée ; SN1 : v = k[substrat]."
+
+  - id: spectroscopies
+    titre: Identifier une molécule par spectroscopie
+    classe: Bac+3
+    objectif: J'exploite un spectre infrarouge et un spectre de RMN du proton pour identifier des groupes et des environnements d'atomes.
+    mots: [infrarouge, RMN, déplacement chimique, multiplicité]
+    etapes:
+      - dialogue:
+          - zero: "On ne voit pas les molécules. Comment savoir laquelle est dans le flacon ?"
+          - neo: "On les interroge avec de la lumière ou un champ magnétique : chaque spectre est comme une empreinte digitale."
+      - a_quoi_ca_sert: "La spectroscopie identifie les molécules en recherche, en contrôle qualité, en police scientifique et en médecine (l'IRM repose sur la RMN)."
+      - texte: |
+          **Infrarouge (IR)** : chaque liaison absorbe à un nombre d'onde caractéristique.
+          - **O–H** d'un alcool : bande large vers **3 200 à 3 600 cm⁻¹** ;
+          - **C=O** (cétone, aldéhyde, acide, ester) : bande fine et intense vers **1 700 cm⁻¹** ;
+          - **C–H** : vers 2 900 cm⁻¹.
+
+          **RMN du proton** :
+          - le **nombre de signaux** = le nombre de groupes de protons **équivalents** ;
+          - le **déplacement chimique** δ (en ppm) dépend de l'environnement (un H près d'un atome électronégatif sort plus haut) ;
+          - l'**intégration** donne le nombre de protons de chaque groupe ;
+          - la **multiplicité** (règle des $n + 1$) : un groupe ayant $n$ protons voisins donne un signal à $n + 1$ pics.
+
+          **Exemple** : l'éthanol CH₃–CH₂–OH : un triplet (CH₃, 2 voisins), un quadruplet (CH₂, 3 voisins), un singulet (OH).
+      - astuce: { texte: "Règle des n + 1 : compte les H portés par les carbones voisins, ajoute 1, et tu as le nombre de pics.", qui: mia }
+      - retiens: "IR : **O–H** large vers 3 200 à 3 600 cm⁻¹, **C=O** fine vers 1 700 cm⁻¹. RMN : nombre de **signaux** = groupes équivalents ; **δ** = environnement ; **intégration** = nombre de H ; **multiplicité** $n + 1$."
+    exercices:
+      - type: nombre
+        vars: { t: [[2, 3, "triplet"], [3, 4, "quadruplet"], [1, 2, "doublet"], [6, 7, "septuplet"]] }
+        enonce: "Un groupe de protons a {{t_0}} protons voisins. Combien de pics compte son signal en RMN ?"
+        reponse: "t_1"
+        correction: "Règle des n + 1 : {{t_0}} + 1 = **{{t_1}}** pics (un {{t_2}})."
+      - type: relier
+        enonce: "🔗 Relie chaque bande infrarouge à la liaison."
+        paires: [["bande large vers 3 300 cm⁻¹", "O–H d'un alcool"], ["bande fine et intense vers 1 700 cm⁻¹", "C=O"], ["bande vers 2 900 cm⁻¹", "C–H"]]
+        correction: "Les bandes caractéristiques les plus utiles."
+      - type: qcm
+        enonce: "Combien de signaux donne l'éthanol CH₃–CH₂–OH en RMN du proton ?"
+        choix: ["3", "1", "2", "6"]
+        correction: "Trois groupes de protons équivalents : CH₃, CH₂ et OH."
+      - type: vf
+        vars: { t: [["L'intégration d'un signal donne le nombre de protons correspondants.", true], ["L'IRM médicale repose sur la résonance magnétique nucléaire.", true], ["Une bande C=O apparaît vers 3 500 cm⁻¹.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Intégration = nombre de H ; IRM = RMN ; C=O vers 1 700 cm⁻¹."
+
+  - id: electrochimie
+    titre: Électrochimie, piles et électrolyse
+    classe: Bac+3
+    objectif: Je calcule la tension d'une pile à partir des potentiels standards et je distingue pile et électrolyse.
+    mots: [oxydoréduction, potentiel standard, pile, électrolyse]
+    etapes:
+      - dialogue:
+          - mia: "Une batterie de téléphone qu'on décharge, c'est une pile. Quand on la recharge, c'est une électrolyse !"
+          - neo: "La même chimie, dans les deux sens : spontanée dans un cas, forcée par un générateur dans l'autre."
+      - a_quoi_ca_sert: "Batteries des voitures électriques, production d'hydrogène, protection contre la corrosion, galvanoplastie : l'électrochimie est au cœur de la transition énergétique."
+      - texte: |
+          **Oxydoréduction** : l'**oxydant** capte des électrons (il est **réduit**) ; le **réducteur** cède des électrons (il est **oxydé**).
+
+          **Potentiel standard** $E^\circ$ : plus il est **élevé**, plus l'oxydant du couple est **fort**. Exemples : Cu²⁺/Cu : +0,34 V ; Zn²⁺/Zn : −0,76 V.
+
+          **Une pile** (réaction spontanée) : la **cathode** (pôle +) est le siège de la **réduction**, l'**anode** (pôle −) de l'**oxydation**. Sa force électromotrice standard : $E = E^\circ_{cathode} - E^\circ_{anode}$. Pile Daniell (cuivre-zinc) : $0{,}34 - (-0{,}76) = 1{,}10$ V.
+
+          **L'électrolyse** : un générateur **force** une réaction non spontanée (recharger une batterie, produire de l'hydrogène à partir de l'eau).
+
+          **Loi de Nernst** : le potentiel dépend aussi des concentrations.
+      - astuce: { texte: "« Anode, oxydation » commencent par une voyelle ; « cathode, réduction » par une consonne.", qui: zero }
+      - retiens: "Oxydant **réduit** (gagne des e⁻), réducteur **oxydé**. Grand $E^\\circ$ = oxydant fort. Pile : **cathode** = réduction, **anode** = oxydation, $E = E^\\circ_{cathode} - E^\\circ_{anode}$ (Daniell : 1,10 V). **Électrolyse** : réaction forcée. **Nernst** : effet des concentrations."
+    exercices:
+      - type: nombre
+        vars: { t: [[0.34, -0.76, 1.1], [0.8, 0.34, 0.46], [0.8, -0.76, 1.56], [0.34, -0.44, 0.78]] }
+        enonce: "Pile formée d'un couple de potentiel {{t_0}} V (cathode) et d'un couple de potentiel {{t_1}} V (anode). Quelle est sa force électromotrice standard, en V ?"
+        reponse: "t_2"
+        tolerance: 0.01
+        unite: V
+        correction: "$E = {{t_0}} - ({{t_1}}) = {{t_2}}$ V."
+      - type: relier
+        enonce: "🔗 Relie chaque élément à son rôle dans une pile."
+        paires: [["l'anode", "siège de l'oxydation"], ["la cathode", "siège de la réduction"], ["le pont salin", "assure la circulation des ions entre les deux compartiments"]]
+        correction: "Anode-oxydation, cathode-réduction (vrai aussi pour l'électrolyse) ; le pont salin ferme le circuit."
+      - type: classer
+        enonce: "Range chaque situation : pile ou électrolyse ?"
+        categories: ["Pile", "Électrolyse"]
+        mots: [["Une batterie qui alimente un téléphone", 0], ["La recharge de cette batterie", 1], ["Produire de l'hydrogène en décomposant l'eau avec un courant", 1], ["Une pile bouton dans une montre", 0]]
+        correction: "Spontanée → pile ; forcée par un générateur → électrolyse."
+      - type: vf
+        vars: { t: [["Un oxydant capte des électrons.", true], ["Plus le potentiel standard est élevé, plus l'oxydant est faible.", false], ["L'électrolyse nécessite un générateur.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Oxydant = capte des électrons ; grand E° = oxydant fort ; électrolyse forcée."

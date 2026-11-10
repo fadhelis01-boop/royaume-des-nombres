@@ -121,3 +121,19 @@ chapitres:
       - mia: "Observer, compter, comprendre : c'est ainsi qu'on soigne un milieu."
     apres:
       - narrateur: "La mare se remplit, les grenouilles chantent, et depuis l'observatoire on compte des dizaines d'oiseaux revenus."
+  bio-laboratoire-du-vivant:
+    titre: "Le Laboratoire du Vivant"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "Dans le Laboratoire, les enzymes ralentissent, les cellules immunitaires s'endorment, les arbres de parenté se mélangent."
+      - neo: "Molécules, cellules, populations : remettons le vivant en mouvement à toutes les échelles."
+    apres:
+      - narrateur: "Les courbes repartent, les défenses s'éveillent, et l'arbre phylogénétique déploie à nouveau toutes ses branches."
+  bio-hopital-ecole:
+    titre: "L'Hôpital-École"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "À l'Hôpital-École, les moniteurs clignotent et les ordonnances sont illisibles : les futurs soignants ont besoin de bases solides."
+      - mia: "Comprendre le cœur, les médicaments et les tests : c'est le premier pas pour soigner."
+    apres:
+      - narrateur: "Les moniteurs affichent des rythmes réguliers. Dans l'amphithéâtre, une nouvelle promotion prête serment."

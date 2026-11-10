@@ -1,0 +1,196 @@
+id: fr-bibliotheque-des-lettres-savantes
+matiere: francais
+titre: La Bibliothèque des Lettres savantes
+sous_titre: Licence de lettres - grands mouvements littéraires, narratologie, linguistique, réception et littérature comparée
+emoji: 📚
+couleur: "#4e342e"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 69
+specialite: Licence de lettres
+version: 1.0.0
+intro:
+  - narrateur: "Au-dessus de l'Académie des Lettres, une bibliothèque à coupole : des éditions anciennes, des revues de critique, des dictionnaires de linguistique."
+  - mia: "En licence de lettres, on lit beaucoup, mais on apprend aussi des outils précis pour analyser les textes et la langue."
+  - neo: "Histoire littéraire, théorie du récit, linguistique, comparaison : quatre façons d'éclairer une œuvre."
+
+lecons:
+  - id: mouvements-litteraires
+    titre: Les grands mouvements littéraires français
+    classe: Supérieur
+    objectif: Je situe les grands mouvements de la littérature française du XVIᵉ au XXᵉ siècle et leurs traits principaux.
+    mots: [humanisme, classicisme, romantisme, réalisme]
+    etapes:
+      - dialogue:
+          - zero: "Victor Hugo et Racine, ils écrivaient de la même façon ?"
+          - neo: "Pas du tout ! Racine respecte les règles du classicisme ; Hugo, romantique, les fait voler en éclats dans la préface de Cromwell."
+      - a_quoi_ca_sert: "Situer une œuvre dans son mouvement est attendu dans toutes les dissertations et explications de licence, et aux concours de l'enseignement."
+      - texte: |
+          **L'humanisme** (XVIᵉ siècle) : redécouverte de l'Antiquité, confiance dans l'éducation (Rabelais, Montaigne, la Pléiade avec Ronsard et Du Bellay).
+
+          **Le baroque** (fin XVIᵉ-début XVIIᵉ) : mouvement, illusion, instabilité.
+
+          **Le classicisme** (XVIIᵉ siècle) : ordre, raison, règles (bienséance, vraisemblance, trois unités) ; Racine, Molière, La Fontaine, Boileau.
+
+          **Les Lumières** (XVIIIᵉ siècle) : esprit critique, combat contre l'intolérance (Voltaire, Diderot et l'Encyclopédie, Rousseau, Montesquieu).
+
+          **Le romantisme** (début XIXᵉ) : expression du moi, nature, histoire, liberté (Hugo, Lamartine, Musset).
+
+          **Le réalisme et le naturalisme** (seconde moitié du XIXᵉ) : peindre la société telle qu'elle est (Balzac, Flaubert ; Zola et l'hérédité sociale).
+
+          **Le symbolisme** (fin XIXᵉ) : suggérer plutôt que décrire (Baudelaire comme précurseur, Verlaine, Mallarmé).
+
+          **Le XXᵉ siècle** : le surréalisme (Breton, 1924), l'existentialisme et l'absurde (Sartre, Camus), le Nouveau Roman (Robbe-Grillet, Sarraute).
+      - astuce: { texte: "Associe chaque mouvement à un mot clé : humanisme = éducation, classicisme = règles, Lumières = raison critique, romantisme = moi, réalisme = société.", qui: mia }
+      - retiens: "**Humanisme** (XVIᵉ), **baroque**, **classicisme** (XVIIᵉ : règles), **Lumières** (XVIIIᵉ : critique), **romantisme** (moi, liberté), **réalisme-naturalisme** (société), **symbolisme** (suggestion), XXᵉ : **surréalisme**, **absurde**, **Nouveau Roman**."
+    exercices:
+      - type: ordre
+        enonce: "Range ces mouvements dans l'ordre chronologique."
+        items: ["L'humanisme", "Le classicisme", "Les Lumières", "Le romantisme", "Le surréalisme"]
+        correction: "XVIᵉ, XVIIᵉ, XVIIIᵉ, XIXᵉ, XXᵉ siècle."
+      - type: relier
+        enonce: "🔗 Relie chaque auteur à son mouvement."
+        paires: [["Montaigne", "l'humanisme"], ["Racine", "le classicisme"], ["Diderot", "les Lumières"], ["Zola", "le naturalisme"]]
+        correction: "Quatre auteurs, quatre mouvements."
+      - type: nombre
+        enonce: "En quelle année André Breton publie-t-il le premier Manifeste du surréalisme ?"
+        reponse: "1924"
+        correction: "En **1924**."
+      - type: vf
+        vars: { t: [["Le classicisme valorise l'ordre et les règles.", true], ["Le romantisme rejette l'expression des sentiments personnels.", false], ["Flaubert est associé au réalisme.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Classicisme = règles ; romantisme = expression du moi ; Flaubert réaliste."
+
+  - id: narratologie
+    titre: La narratologie, analyser un récit
+    classe: Bac+2
+    objectif: J'utilise les outils de Genette pour analyser un récit - focalisation, ordre, vitesse, voix narrative.
+    mots: [focalisation, analepse, prolepse, narrateur]
+    etapes:
+      - dialogue:
+          - mia: "Le roman commence par la mort du héros, puis raconte sa jeunesse. Comment appelle-t-on ce retour en arrière ?"
+          - neo: "Une analepse, selon le vocabulaire de Gérard Genette. La narratologie donne des mots précis pour décrire la construction d'un récit."
+      - a_quoi_ca_sert: "Ces outils sont indispensables pour l'analyse des romans en licence et aux concours, et servent aussi pour étudier le cinéma, les séries et le jeu vidéo."
+      - texte: |
+          **Qui voit ? La focalisation** :
+          - **zéro** : le narrateur sait tout (omniscient) ;
+          - **interne** : on perçoit à travers un personnage ;
+          - **externe** : on voit de l'extérieur, sans accès aux pensées.
+
+          **Qui parle ? La voix** : un narrateur **hétérodiégétique** (absent de l'histoire) ou **homodiégétique** (personnage de l'histoire ; **autodiégétique** s'il en est le héros).
+
+          **L'ordre** : **analepse** (retour en arrière), **prolepse** (anticipation), **in medias res** (début au milieu de l'action).
+
+          **La vitesse** : **scène** (temps du récit ≈ temps de l'histoire, dialogues), **sommaire** (résumé rapide), **ellipse** (période passée sous silence), **pause** (description).
+
+          **La fréquence** : raconter une fois ce qui s'est passé une fois (singulatif) ou une fois ce qui s'est passé souvent (itératif : « chaque dimanche… »).
+      - astuce: { texte: "Focalisation = qui voit ; voix = qui raconte. Un narrateur adulte peut raconter ce que voyait l'enfant qu'il était.", qui: zero }
+      - retiens: "**Focalisation** zéro, interne, externe (qui voit). **Voix** : hétérodiégétique, homodiégétique, autodiégétique (qui parle). Ordre : **analepse**, **prolepse**, in medias res. Vitesse : **scène**, **sommaire**, **ellipse**, **pause**. Fréquence : singulatif, **itératif**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque procédé à sa définition."
+        paires: [["l'analepse", "un retour en arrière"], ["la prolepse", "une anticipation"], ["l'ellipse", "une période passée sous silence"], ["la scène", "un passage où le récit suit le rythme de l'action"]]
+        correction: "Les outils de l'ordre et de la vitesse du récit."
+      - type: classer
+        enonce: "Range chaque phrase : focalisation interne ou externe ?"
+        categories: ["Interne", "Externe"]
+        mots: [["Elle sentait son cœur battre et se demandait s'il l'avait reconnue.", 0], ["Un homme entra, posa son chapeau et s'assit sans un mot.", 1], ["Il trouvait la pièce étouffante et rêvait de partir.", 0], ["La voiture s'arrêta ; deux silhouettes en descendirent.", 1]]
+        correction: "Accès aux pensées d'un personnage → interne ; regard extérieur → externe."
+      - type: qcm
+        enonce: "Un narrateur raconte sa propre histoire dont il est le héros. Il est…"
+        choix: ["autodiégétique", "hétérodiégétique", "omniscient obligatoirement", "absent"]
+        correction: "Narrateur-héros : **autodiégétique**."
+      - type: vf
+        vars: { t: [["« Chaque été, nous allions à la mer » est un récit itératif.", true], ["La focalisation désigne celui qui écrit le livre.", false], ["Un récit in medias res commence au milieu de l'action.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Itératif ; la focalisation = qui voit ; in medias res."
+
+  - id: linguistique
+    titre: Introduction à la linguistique
+    classe: Bac+2
+    objectif: Je connais les notions fondatrices de Saussure (signe, signifiant, signifié, arbitraire) et les grands domaines de la linguistique.
+    mots: [signe linguistique, signifiant, signifié, phonème]
+    etapes:
+      - dialogue:
+          - zero: "Pourquoi un arbre s'appelle « arbre » ? C'est logique ?"
+          - neo: "Non, c'est arbitraire : en anglais c'est « tree », en allemand « Baum ». Ferdinand de Saussure en a fait un principe de la linguistique."
+      - a_quoi_ca_sert: "La linguistique sert à l'enseignement des langues, à l'orthophonie, à la traduction, au traitement automatique des langues et à l'intelligence artificielle."
+      - texte: |
+          **Ferdinand de Saussure** (*Cours de linguistique générale*, publié en 1916) :
+          - le **signe linguistique** unit un **signifiant** (la forme sonore ou écrite) et un **signifié** (le concept) ;
+          - le lien entre les deux est **arbitraire** ;
+          - **langue** (le système partagé) et **parole** (l'usage individuel) ;
+          - étude **synchronique** (la langue à un moment) et **diachronique** (son évolution).
+
+          **Les domaines** :
+          - **phonétique et phonologie** : les sons ; un **phonème** est une unité qui distingue des mots (/p/ et /b/ dans « pain » et « bain ») ;
+          - **morphologie** : la formation des mots (préfixes, suffixes, flexions) ;
+          - **syntaxe** : l'organisation de la phrase ;
+          - **sémantique** : le sens ;
+          - **pragmatique** : l'usage en contexte (« Tu as l'heure ? » est une demande, pas une question sur une montre).
+
+          **La sociolinguistique** étudie les variations (régions, milieux, situations).
+      - astuce: { texte: "Pour trouver un phonème, cherche une paire minimale : deux mots qui ne diffèrent que par un son (pain / bain).", qui: mia }
+      - retiens: "**Saussure** (1916) : signe = **signifiant** + **signifié**, lien **arbitraire** ; **langue** et **parole** ; **synchronie** et **diachronie**. Domaines : **phonologie** (phonème, paires minimales), morphologie, syntaxe, sémantique, **pragmatique**, sociolinguistique."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque domaine à ce qu'il étudie."
+        paires: [["la phonologie", "les sons qui distinguent les mots"], ["la morphologie", "la formation des mots"], ["la syntaxe", "l'organisation de la phrase"], ["la pragmatique", "le sens en contexte"]]
+        correction: "Les grands domaines de la linguistique."
+      - type: classer
+        enonce: "Range chaque élément du signe « arbre » : signifiant ou signifié ?"
+        categories: ["Signifiant", "Signifié"]
+        mots: [["La suite de sons /aʁbʁ/", 0], ["L'idée d'un végétal à tronc et branches", 1], ["Le mot écrit « arbre »", 0], ["Le concept d'arbre", 1]]
+        correction: "La forme → signifiant ; le concept → signifié."
+      - type: qcm
+        enonce: "Quelle paire de mots montre que /p/ et /b/ sont deux phonèmes du français ?"
+        choix: ["pain / bain", "pain / pains", "beau / bel", "bon / bonne"]
+        correction: "Une **paire minimale** : un seul son change, et le sens aussi."
+      - type: vf
+        vars: { t: [["Selon Saussure, le lien entre signifiant et signifié est arbitraire.", true], ["L'étude diachronique décrit la langue à un seul moment.", false], ["« Tu as l'heure ? » relève de la pragmatique.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Arbitraire du signe ; diachronique = évolution ; demande indirecte = pragmatique."
+
+  - id: reception-comparee
+    titre: Réception et littérature comparée
+    classe: Bac+3
+    objectif: J'analyse la réception d'une œuvre et je compare des œuvres de langues et de cultures différentes autour d'un thème ou d'un mythe.
+    mots: [réception, horizon d'attente, intertextualité, réécriture]
+    etapes:
+      - dialogue:
+          - zero: "Madame Bovary a fait l'objet d'un procès en 1857. Aujourd'hui, c'est un classique. Le livre a changé ?"
+          - neo: "Non, ce sont les lecteurs qui ont changé ! L'étude de la réception s'intéresse à la façon dont chaque époque lit une œuvre."
+      - a_quoi_ca_sert: "Ces approches nourrissent les mémoires de recherche, les métiers de l'édition, de la médiation culturelle et de la critique, et aident à comprendre les débats sur les œuvres anciennes."
+      - texte: |
+          **L'esthétique de la réception** (Hans Robert Jauss) : le sens d'une œuvre se construit dans la rencontre avec ses lecteurs ; chaque public a un **horizon d'attente**. Une œuvre novatrice peut choquer puis devenir un classique (*Madame Bovary*, *Les Fleurs du mal*, toutes deux poursuivies en 1857).
+
+          **L'intertextualité** : les relations entre les textes (citation, allusion, parodie, réécriture). Genette parle de **transtextualité** et d'**hypertextualité** (un texte qui en transforme un autre).
+
+          **La littérature comparée** : étudier des œuvres de langues et de cultures différentes autour d'un **thème**, d'un **genre** ou d'un **mythe**. Exemples : le mythe de Faust (Marlowe, Goethe, Thomas Mann), Antigone (Sophocle, Anouilh, Brecht), Don Juan (Tirso de Molina, Molière, Mozart et Da Ponte).
+
+          **La traduction** est aussi une forme de réception : chaque traduction propose une lecture.
+      - astuce: { texte: "Pour comparer des réécritures d'un mythe, cherche ce qui reste identique (le noyau) et ce que chaque époque change (les enjeux).", qui: mia }
+      - retiens: "**Réception** (Jauss) : **horizon d'attente**, une œuvre change de sens selon les publics. **Intertextualité** : citation, allusion, parodie, **réécriture** (hypertextualité, Genette). **Littérature comparée** : thèmes, genres, **mythes** (Faust, Antigone, Don Juan) entre langues et cultures."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque mythe à une de ses réécritures."
+        paires: [["Antigone", "Anouilh, 1944"], ["Faust", "Goethe"], ["Don Juan", "Molière, Dom Juan"]]
+        correction: "Des mythes réécrits à travers les siècles et les langues."
+      - type: classer
+        enonce: "Range chaque relation entre textes : intertextualité ou simple coïncidence ?"
+        categories: ["Intertextualité", "Coïncidence"]
+        mots: [["Une parodie d'une fable de La Fontaine", 0], ["Une citation de Baudelaire en épigraphe", 0], ["Deux romans qui ont le même nombre de pages", 1], ["Une réécriture moderne d'Antigone", 0]]
+        correction: "L'intertextualité suppose un lien voulu entre les textes."
+      - type: qcm
+        enonce: "Qu'est-ce que l'horizon d'attente selon Jauss ?"
+        choix: ["Ce que les lecteurs d'une époque attendent d'une œuvre, selon leur culture", "La dernière page d'un roman", "Le titre d'un livre", "Le décor d'une pièce"]
+        correction: "Les attentes d'un public, qu'une œuvre peut combler ou bousculer."
+      - type: vf
+        vars: { t: [["Madame Bovary a fait l'objet d'un procès en 1857.", true], ["Une traduction n'implique aucune interprétation.", false], ["La littérature comparée rapproche des œuvres de langues différentes.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Procès de 1857 ; toute traduction interprète ; comparaison entre langues et cultures."
