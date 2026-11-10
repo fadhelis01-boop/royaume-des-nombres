@@ -323,3 +323,11 @@ chapitres:
       - neo: "Le dernier pas avant le grand large : penser à voix haute, devant les autres, sans notes."
     apres:
       - narrateur: "La salle applaudit. La Plume d'or se lève seule et trace sur le rideau : « Une question bien posée est déjà à moitié résolue. »"
+  fr-forum-des-anciens:
+    titre: "Chapitre 21 — Le Forum des Anciens"
+    objet: "✒️ La Plume d'or"
+    avant:
+      - narrateur: "Sous l'Archipel, les inscriptions du vieux forum s'effacent : les racines des mots se dessèchent."
+      - neo: "Sans le latin et le grec, la moitié de nos mots perdrait sa mémoire. Allons la chercher."
+    apres:
+      - narrateur: "Les inscriptions se gravent de nouveau dans la pierre. Sur une colonne, on lit : « Verba volant, scripta manent » : les paroles s'envolent, les écrits restent."

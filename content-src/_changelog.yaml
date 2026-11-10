@@ -1,3 +1,10 @@
+- version: "2.21.0"
+  date: "2026-11-10"
+  notes:
+    - "LLCER espagnol (le Patio des Lettres hispaniques), LLCER allemand (la Tour des Lettres germaniques), LLCER italien et langues régionales (le Carrefour des Langues), avec écoute dans chaque langue. La planète Anglais devient la planète Langues."
+    - "Spécialité LLCA, latin et grec : le Forum des Anciens, 4 leçons (cas, traduction, alphabet grec et étymologie, héritage antique)."
+    - "Spécialité biologie-écologie des lycées agricoles : la Réserve de l'Écologue, 4 leçons."
+    - "La voix disait « troiième » au lieu de « troisième » (3ᵉ, 23ᵉ, XIIIᵉ siècle) : corrigé partout."
 - version: "2.20.0"
   date: "2026-11-10"
   notes:

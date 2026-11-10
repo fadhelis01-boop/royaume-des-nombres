@@ -107,7 +107,8 @@ const PETITS_MOTS = new Set(["ET", "OU", "PAS", "QUE", "QUI", "CE", "QU", "ON", 
 /** « 1ᵉʳ » → « premier », « 3ᵉ » → « troisième ». */
 function ordinal(n: number, fem: boolean): string {
   if (n === 1) return fem ? "première" : "premier";
-  const w = enLettres(n).replace(/s$/, "");
+  // « quatre-vingts », « deux cents » perdent leur s (« quatre-vingtième ») ; « trois » le garde (« troisième »)
+  const w = enLettres(n).replace(/(vingt|cent)s$/, "$1");
   if (/cinq$/.test(w)) return w + "uième";
   if (/neuf$/.test(w)) return w.slice(0, -1) + "vième";
   return w.replace(/e$/, "") + "ième";

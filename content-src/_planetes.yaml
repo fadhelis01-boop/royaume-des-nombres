@@ -385,10 +385,10 @@ planetes:
   - id: anglais
     famille: langues
     titre: L'Archipel de l'Écho
-    matiere: Anglais
+    matiere: Langues
     emoji: "🌍"
     couleur: "#1e6fb8"
-    accroche: "Hello! Écouter, répéter, jouer avec une nouvelle langue."
+    accroche: "Hello! Écouter, répéter, jouer avec une nouvelle langue… jusqu'à l'espagnol, l'allemand et l'italien au lycée."
     histoire: _histoire_anglais.yaml
     prologue: { id: prologue-anglais, titre: "Prologue — Le brouillard des mots", appel: "Les mots anglais se sont perdus dans le brouillard… Écoute l'histoire." }
     objet: { emoji: "🔔", un: "cloche de l'Écho", des: "cloches de l'Écho" }

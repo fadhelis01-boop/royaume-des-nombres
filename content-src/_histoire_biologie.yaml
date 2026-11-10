@@ -113,3 +113,11 @@ chapitres:
       - mia: "Du sol à l'assiette, chaque maillon compte. On répare la chaîne ?"
     apres:
       - narrateur: "Les paniers traversent de nouveau la route. À l'auberge, on sert le premier repas de saison, sous les haies en fleurs."
+  bio-reserve-de-l-ecologue:
+    titre: "La Réserve de l'Écologue"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "Dans la Réserve, la mare s'assèche, les oiseaux se taisent, la haie a été arrachée."
+      - mia: "Observer, compter, comprendre : c'est ainsi qu'on soigne un milieu."
+    apres:
+      - narrateur: "La mare se remplit, les grenouilles chantent, et depuis l'observatoire on compte des dizaines d'oiseaux revenus."

@@ -1,0 +1,199 @@
+id: en-tour-des-lettres-germaniques
+matiere: anglais
+titre: La Tour des Lettres germaniques
+sous_titre: Spécialité LLCER allemand - grands auteurs, outils de la langue, commenter en allemand, histoire des pays germanophones
+emoji: 🏰
+couleur: "#37474f"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 712
+specialite: LLCER allemand
+version: 1.0.0
+intro:
+  - narrateur: "Sur un rocher au bord du Rhin, une tour de pierre : Goethe, Kafka et Brecht y ont laissé leurs manuscrits."
+  - mia: "La LLCER allemand, c'est l'allemand par la littérature et les cultures d'Allemagne, d'Autriche et de Suisse."
+  - neo: "Los geht's ! On lit, on commente, on comprend une histoire qui a marqué toute l'Europe."
+
+lecons:
+  - id: llcer-de-auteurs
+    titre: Grands auteurs de langue allemande
+    classe: "1ʳᵉ"
+    objectif: Je situe les grands auteurs germanophones et leurs œuvres, du romantisme au XXᵉ siècle.
+    mots: [romantisme, Sturm und Drang, conte, Kafka]
+    etapes:
+      - dialogue:
+          - zero: "Les contes de Blanche-Neige et Hänsel et Gretel, ils sont allemands ?"
+          - neo: "Oui ! Les frères Grimm les ont recueillis au début du XIXᵉ siècle, en pleine époque romantique."
+      - a_quoi_ca_sert: "Connaître ces auteurs permet de situer les textes étudiés et de les relier entre eux ; c'est la base d'études de langues, de lettres ou de relations franco-allemandes."
+      - texte: |
+          **Le Sturm und Drang et le classicisme de Weimar** (fin du XVIIIᵉ siècle) : **Goethe** (*Faust*, *Les Souffrances du jeune Werther*, 1774) et **Schiller**.
+
+          **Le romantisme** (début du XIXᵉ siècle) : la nature, le rêve, le passé populaire ; les contes des **frères Grimm** (1812) ; le poète **Heinrich Heine**.
+
+          **Le XXᵉ siècle** :
+          - **Franz Kafka** (Prague), *Die Verwandlung* (*La Métamorphose*, 1915) : un homme se réveille transformé en insecte ;
+          - **Thomas Mann**, prix Nobel 1929 ;
+          - **Bertolt Brecht**, théâtre engagé (*Mutter Courage*) ;
+          - après la guerre, **Heinrich Böll** et **Günter Grass** (*Le Tambour*, 1959), qui interrogent le passé nazi.
+
+          **La Suisse et l'Autriche** : Stefan Zweig (Autriche), Friedrich Dürrenmatt (Suisse).
+      - visuel: { type: parole, langue: de-DE, mots: [{ texte: "Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte…", sens: "Lorsque Gregor Samsa s'éveilla un matin au sortir de rêves agités…", emoji: "🪲" }, { texte: "Es war einmal…", sens: "Il était une fois…", emoji: "📖" }] }
+        legende: "Écoute la première phrase de La Métamorphose."
+      - astuce: { texte: "Une œuvre, une image : Werther et son chagrin, Faust et son pacte, Gregor Samsa et son insecte.", qui: mia }
+      - retiens: "**Goethe** (*Faust*, *Werther*) et **Schiller** ; romantisme et contes des **Grimm** (1812) ; **Kafka** (*Die Verwandlung*, 1915) ; **Thomas Mann** ; **Brecht** ; après-guerre : **Böll**, **Grass** ; **Zweig**, **Dürrenmatt**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque œuvre à son auteur."
+        paires: [["Faust", "Goethe"], ["Die Verwandlung", "Kafka"], ["Mutter Courage", "Brecht"], ["Le Tambour", "Günter Grass"]]
+        correction: "Quatre œuvres majeures en langue allemande."
+      - type: ordre
+        enonce: "Range ces œuvres dans l'ordre chronologique."
+        items: ["Les Souffrances du jeune Werther", "Les contes des frères Grimm", "La Métamorphose", "Le Tambour"]
+        correction: "1774, 1812, 1915, 1959."
+      - type: qcm
+        enonce: "Que raconte La Métamorphose de Kafka ?"
+        choix: ["Un homme qui se réveille transformé en insecte", "Un pacte avec le diable", "Un chagrin d'amour qui finit tragiquement", "Une guerre de trente ans"]
+        correction: "Gregor Samsa se réveille un matin transformé en un énorme insecte."
+      - type: vf
+        vars: { t: [["Les frères Grimm ont recueilli des contes populaires.", true], ["Kafka a écrit en espagnol.", false], ["Stefan Zweig était autrichien.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Contes populaires recueillis ; Kafka écrivait en allemand ; Zweig était autrichien."
+
+  - id: llcer-de-langue
+    titre: Les outils de la langue - place du verbe et cas
+    classe: "1ʳᵉ"
+    objectif: Je place correctement le verbe dans la phrase allemande et j'identifie les quatre cas.
+    mots: [verbe, subordonnée, cas, déclinaison]
+    etapes:
+      - dialogue:
+          - mia: "En allemand, le verbe conjugué a une place fixe : deuxième dans la principale, dernier dans la subordonnée."
+          - zero: "Il faut attendre la fin de la phrase pour savoir ce qui se passe ?"
+          - neo: "Parfois oui ! C'est ce qui donne son suspense à la phrase allemande."
+      - a_quoi_ca_sert: "La place du verbe et les cas sont la clé de toute phrase correcte ; ils reviennent dans tous les écrits de l'épreuve."
+      - texte: |
+          **Place du verbe** :
+          - **principale** : le verbe conjugué en **2ᵉ position** (*Heute **gehe** ich ins Kino.*) ;
+          - **subordonnée** (après *dass*, *weil*, *wenn*, *ob*) : le verbe conjugué en **dernière position** (*…, weil ich müde **bin**.*) ;
+          - **temps composés** : l'auxiliaire en 2ᵉ position, le participe à la fin (*Ich **habe** das Buch **gelesen**.*).
+
+          **Les quatre cas** :
+          - **nominatif** : le sujet (*der Mann*) ;
+          - **accusatif** : le complément d'objet direct (*den Mann*) ;
+          - **datif** : le complément d'objet indirect, après *mit, bei, von, zu* (*dem Mann*) ;
+          - **génitif** : le complément du nom (*des Mannes*).
+      - visuel: { type: parole, langue: de-DE, mots: [{ texte: "Heute gehe ich ins Kino.", sens: "Aujourd'hui, je vais au cinéma.", emoji: "🎬" }, { texte: "Ich bleibe zu Hause, weil ich müde bin.", sens: "Je reste à la maison parce que je suis fatigué.", emoji: "😴" }] }
+        legende: "Écoute où tombe le verbe dans chaque phrase."
+      - astuce: { texte: "Weil, dass, wenn, ob : quatre mots qui envoient le verbe tout au bout de la phrase.", qui: zero }
+      - retiens: "Verbe conjugué en **2ᵉ position** dans la principale, en **dernière position** dans la subordonnée (*weil, dass, wenn, ob*). Cas : **nominatif** (sujet), **accusatif** (COD), **datif** (COI, après *mit, bei, von, zu*), **génitif** (complément du nom)."
+    exercices:
+      - type: qcm
+        enonce: "Quelle phrase est correcte ?"
+        choix: ["Ich weiß, dass er heute kommt.", "Ich weiß, dass er kommt heute.", "Ich weiß, dass kommt er heute.", "Ich, dass er heute kommt, weiß."]
+        correction: "Après *dass*, le verbe conjugué va à la **fin** : *…, dass er heute kommt.*"
+      - type: relier
+        enonce: "🔗 Relie chaque cas à sa fonction."
+        paires: [["le nominatif", "le sujet"], ["l'accusatif", "le complément d'objet direct"], ["le datif", "le complément d'objet indirect"], ["le génitif", "le complément du nom"]]
+        correction: "Les quatre cas de l'allemand."
+      - type: qcm
+        vars: { t: [["Ich fahre mit ___ Bus.", "dem", "den", "der"], ["Ich sehe ___ Mann.", "den", "dem", "der"], ["___ Hund schläft.", "Der", "Den", "Dem"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}", "{{t_3}}"]
+        correction: "**{{t_1}}** : *mit* est suivi du datif, le COD est à l'accusatif, le sujet au nominatif."
+      - type: qcm
+        enonce: "« Aujourd'hui, je lis un livre » : quelle phrase commence par « Heute » et respecte la place du verbe ?"
+        choix: ["Heute lese ich ein Buch.", "Heute ich lese ein Buch.", "Heute ich ein Buch lese.", "Heute ein Buch ich lese."]
+        correction: "*Heute lese ich ein Buch.* Le verbe conjugué reste en 2ᵉ position, le sujet passe après."
+
+  - id: llcer-de-commentaire
+    titre: Commenter et traduire en allemand
+    classe: Terminale
+    objectif: J'emploie le vocabulaire du commentaire en allemand et j'évite les faux amis en traduction.
+    mots: [Textanalyse, falscher Freund, Erzähler, Übersetzung]
+    etapes:
+      - dialogue:
+          - neo: "« Das Gift ist im Glas. » Zéro, tu acceptes ce cadeau ?"
+          - zero: "Gift… c'est un cadeau en anglais !"
+          - mia: "En allemand, *das Gift*, c'est le poison ! Attention aux faux amis."
+      - a_quoi_ca_sert: "Commenter et traduire sans contresens sont évalués à l'épreuve ; ces compétences servent dans les métiers franco-allemands, nombreux en Europe."
+      - texte: |
+          **Le vocabulaire du commentaire** :
+          - *Der Text handelt von…* (le texte parle de…) ;
+          - *der Erzähler* (le narrateur), *die Hauptfigur* (le personnage principal) ;
+          - *Der Autor benutzt eine Metapher, um… zu zeigen* ;
+          - *Das zeigt, dass…* ; *aber*, *jedoch* (cependant) ; *deshalb* (c'est pourquoi) ; *außerdem* (de plus) ;
+          - *Zusammenfassend kann man sagen, dass…* (en conclusion).
+
+          **Les faux amis** : *das Gift* = le poison ; *bekommen* = recevoir (pas « devenir ») ; *die Bank* = le banc ou la banque ; *also* = donc ; *das Gymnasium* = le lycée.
+
+          **Traduire** : rétablir l'ordre des mots français, rendre les mots composés (*der Handschuh*, mot à mot « chaussure de main » = le gant), garder le ton.
+      - visuel: { type: parole, langue: de-DE, mots: [{ texte: "Der Text handelt von der Freiheit.", sens: "Le texte parle de la liberté.", emoji: "🕊️" }, { texte: "Das zeigt, dass der Erzähler Angst hat.", sens: "Cela montre que le narrateur a peur.", emoji: "😨" }] }
+        legende: "Deux phrases utiles pour commenter."
+      - astuce: { texte: "Pour un mot composé allemand, lis-le de droite à gauche : le dernier mot dit ce que c'est.", qui: neo }
+      - retiens: "Commenter : *Der Text handelt von*, *der Erzähler*, *Das zeigt, dass*, *jedoch*, *deshalb*. Faux amis : *Gift* (poison), *bekommen* (recevoir), *also* (donc), *Gymnasium* (lycée). Mots composés : le dernier élément donne le sens principal."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque faux ami à sa vraie traduction."
+        paires: [["das Gift", "le poison"], ["bekommen", "recevoir"], ["also", "donc"], ["das Gymnasium", "le lycée"]]
+        correction: "Ces mots trompent les francophones et les anglophones."
+      - type: relier
+        enonce: "🔗 Relie chaque connecteur à son sens."
+        paires: [["jedoch", "cependant"], ["deshalb", "c'est pourquoi"], ["außerdem", "de plus"]]
+        correction: "Des connecteurs pour argumenter en allemand."
+      - type: qcm
+        enonce: "Que signifie « der Handschuh » (mot à mot : main + chaussure) ?"
+        choix: ["le gant", "la chaussette", "la sandale", "la main"]
+        correction: "Une « chaussure pour la main » : **le gant**."
+      - type: vf
+        vars: { t: [["« Der Text handelt von… » signifie « le texte parle de… ».", true], ["« Bekommen » veut dire « devenir ».", false], ["Dans un mot composé, le dernier élément donne le sens principal.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "*Handeln von* = parler de ; *bekommen* = recevoir ; le dernier élément du mot composé est le noyau."
+
+  - id: llcer-de-histoire
+    titre: Histoire des pays germanophones
+    classe: Terminale
+    objectif: Je situe les grands repères de l'histoire allemande du XXᵉ siècle utiles pour comprendre les œuvres.
+    mots: [Weimar, Mauer, Wende, Vergangenheitsbewältigung]
+    etapes:
+      - dialogue:
+          - mia: "Le 9 novembre 1989, des Berlinois de l'Est franchissent le Mur sous les yeux du monde entier."
+          - neo: "Ce jour-là s'ouvre la voie de la réunification. Beaucoup de romans et de films allemands en parlent encore."
+      - a_quoi_ca_sert: "La littérature et le cinéma allemands dialoguent sans cesse avec l'histoire ; ces repères permettent de comprendre les documents étudiés."
+      - texte: |
+          **1871** : unification de l'Allemagne autour de la Prusse.
+
+          **1919-1933** : la **République de Weimar**, démocratie fragile, foisonnement culturel (Bauhaus, cinéma expressionniste).
+
+          **1933-1945** : le **nazisme**, la Seconde Guerre mondiale, la **Shoah**.
+
+          **1949** : l'Allemagne est divisée en deux États : la **RFA** à l'Ouest, la **RDA** à l'Est.
+
+          **1961** : construction du **mur de Berlin** (*die Mauer*) ; **9 novembre 1989** : chute du Mur.
+
+          **3 octobre 1990** : **réunification** (*die Wiedervereinigung*).
+
+          **Le travail de mémoire** (*Vergangenheitsbewältigung*) : affronter le passé nazi, au cœur de nombreuses œuvres.
+
+          **L'amitié franco-allemande** : traité de l'Élysée (1963).
+      - astuce: { texte: "Retiens trois dates de Berlin : 1961 (le Mur se construit), 1989 (il tombe), 1990 (l'Allemagne se réunifie).", qui: zero }
+      - retiens: "**1871** : unification. **1919-1933** : Weimar. **1933-1945** : nazisme et Shoah. **1949** : RFA et RDA. **1961** : le Mur ; **1989** : sa chute ; **1990** : réunification. **Travail de mémoire** ; traité de l'Élysée (**1963**)."
+    exercices:
+      - type: ordre
+        enonce: "Range ces événements dans l'ordre chronologique."
+        items: ["La République de Weimar", "La division en RFA et RDA", "La construction du mur de Berlin", "La réunification"]
+        correction: "1919, 1949, 1961, 1990."
+      - type: nombre
+        enonce: "En quelle année tombe le mur de Berlin ?"
+        reponse: "1989"
+        correction: "Le **9 novembre 1989**."
+      - type: relier
+        enonce: "🔗 Relie chaque mot allemand à son sens."
+        paires: [["die Mauer", "le Mur"], ["die Wiedervereinigung", "la réunification"], ["die Wende", "le tournant de 1989"]]
+        correction: "Le vocabulaire de l'histoire récente."
+      - type: vf
+        vars: { t: [["La RDA était l'Allemagne de l'Est.", true], ["Le traité de l'Élysée scelle l'amitié franco-allemande.", true], ["L'Allemagne est réunifiée en 1961.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "RDA à l'Est ; traité de l'Élysée en 1963 ; réunification le 3 octobre 1990."

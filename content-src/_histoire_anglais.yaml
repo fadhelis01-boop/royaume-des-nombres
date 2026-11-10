@@ -108,3 +108,27 @@ chapitres:
       - mia: "Pour les rouvrir, il faut les lire de près, en anglais, et savoir les faire parler en français."
     apres:
       - narrateur: "Les livres se rouvrent un à un. Hamlet hésite de nouveau, le monstre de Frankenstein reprend sa plainte, et la bibliothèque bruisse de mille voix."
+  en-patio-des-lettres-hispaniques:
+    titre: "Le Patio des Lettres hispaniques"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Dans le Patio, la fontaine s'est tue et les livres se sont refermés : Don Quichotte ne galope plus, Macondo s'est effacé."
+      - mia: "¡Ánimo! Lisons, commentons, traduisons : les voix hispaniques vont revenir."
+    apres:
+      - narrateur: "La fontaine chante de nouveau. Sur le banc, Don Quichotte salue de son chapeau, et une guitare joue au loin."
+  en-tour-des-lettres-germaniques:
+    titre: "La Tour des Lettres germaniques"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Dans la Tour, les manuscrits sont brouillés : les verbes ont quitté leur place, les cas se sont mélangés."
+      - neo: "Remettons chaque verbe à sa place et chaque mot dans son cas. Los geht's!"
+    apres:
+      - narrateur: "Les phrases se remettent en ordre, Faust referme son livre, et le Rhin brille au pied de la Tour."
+  en-carrefour-des-langues:
+    titre: "Le Carrefour des Langues"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Au Carrefour, les panneaux en italien, en breton, en occitan et en créole se sont tous effacés."
+      - mia: "Chaque langue est un trésor. Rendons-leur leurs mots."
+    apres:
+      - narrateur: "Les panneaux se rallument un à un, et la place résonne de mille accents : Buongiorno, Demat, Bonjorn, Bonjou !"

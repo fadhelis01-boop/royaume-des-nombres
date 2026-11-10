@@ -88,7 +88,7 @@ Dans une formule, « si $a<0$ » était lu « a<0 » : les signes < et > à l'in
 
 Restent ouverts :
 - **le supérieur** : peu de contenus (14 leçons de niveau post-bac, toutes matières) ;
-- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; théâtre, danse, histoire des arts et série S2TMD en 2.20.0 ; restent les autres langues de LLCER (espagnol, allemand, langues régionales…) et quelques enseignements rares (langues et cultures de l'Antiquité, biologie-écologie des lycées agricoles) ;
+- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; théâtre, danse, histoire des arts et série S2TMD en 2.20.0 ; LLCER espagnol, allemand, italien et langues régionales, LLCA et biologie-écologie en 2.21.0 : toutes les spécialités et séries du lycée ont maintenant au moins un monde ; les langues rares de LLCER (portugais, russe, chinois…) n'ont qu'une leçon de méthode commune ;
 - **le test avec de vrais élèves**.
 
 ## Ajouts livrés (2.16.0)
@@ -139,3 +139,15 @@ Restent ouverts :
 5. Mondes marqués `specialite` : ouverts sur la carte, hors test de niveau et hors parcours.
 6. Corrigé en relisant : des siècles écrits « XIIe », « Ve » (lus de travers) remplacés par « XIIᵉ », « Vᵉ » ; « fort/léger » réécrit pour ne pas être lu « slash ».
 7. Vérifié : 144 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, défis des quatre mondes et chapitre d'histoire ouverts dans le navigateur avec un profil de Terminale, console sans erreur.
+
+## Ajouts livrés (2.21.0) : autres LLCER, LLCA, biologie-écologie
+
+1. **LLCER espagnol** : **Le Patio des Lettres hispaniques** (4 leçons) : grands auteurs (Cervantes, Lorca, García Márquez, Borges), ser, estar et subjonctif, commenter et traduire (faux amis), histoire du monde hispanique.
+2. **LLCER allemand** : **La Tour des Lettres germaniques** (4 leçons) : grands auteurs (Goethe, Grimm, Kafka, Brecht, Grass), place du verbe et cas, commenter et traduire, histoire des pays germanophones.
+3. **LLCER italien et langues régionales** : **Le Carrefour des Langues** (3 leçons) : méthode commune à toutes les LLCER, auteurs et outils de l'italien, langues régionales de France.
+4. La planète Anglais s'appelle désormais **Langues**, et chaque leçon fait écouter sa langue (voix espagnole, allemande, italienne).
+5. **LLCA** (latin et grec) : **Le Forum des Anciens** (planète Français, 4 leçons) : cas et déclinaisons, traduire une phrase latine, alphabet grec et étymologie, héritage antique.
+6. **Biologie-écologie** : **La Réserve de l'Écologue** (planète Biologie, 4 leçons) : écosystèmes, biodiversité et services, dynamique des populations (capture-recapture), agroécosystèmes et « Une seule santé ».
+7. **Bug de voix trouvé en relisant, présent dans toute l'application** : la règle qui retire le « s » de « quatre-vingts » retirait aussi celui de « trois » ; « 3ᵉ », « 23ᵉ », « XIIIᵉ siècle » étaient lus « troiième ». Corrigé et couvert par un test (40 fichiers de contenu concernés).
+8. Un exercice d'ordre ambigu en allemand (« Ich lese heute ein Buch » serait aussi juste) a été remplacé par un QCM.
+9. Vérifié : 145 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, défis des cinq mondes et galaxie ouverts dans le navigateur avec un profil de Terminale, console sans erreur.

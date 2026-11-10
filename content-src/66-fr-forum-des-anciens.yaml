@@ -1,0 +1,188 @@
+id: fr-forum-des-anciens
+matiere: francais
+titre: Le Forum des Anciens
+sous_titre: Spécialité LLCA (latin et grec) - cas et déclinaisons, traduire une phrase latine, l'alphabet grec et l'étymologie, l'héritage antique
+emoji: 🏺
+couleur: "#795548"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 66
+specialite: LLCA
+version: 1.0.0
+intro:
+  - narrateur: "Sous l'Archipel dort un vieux forum romain : des colonnes, des inscriptions gravées, une bibliothèque de rouleaux grecs."
+  - mia: "La spécialité LLCA, langues, littératures et cultures de l'Antiquité, fait lire le latin et le grec ancien, et comprendre ce que nous devons aux Anciens."
+  - neo: "Plus de la moitié des mots français viennent du latin. Apprendre le latin, c'est découvrir les racines de sa propre langue."
+
+lecons:
+  - id: lca-cas-declinaisons
+    titre: "Latin : les cas et les déclinaisons"
+    classe: "1ʳᵉ"
+    objectif: Je reconnais la fonction d'un nom latin grâce à sa terminaison (son cas) dans les premières déclinaisons.
+    mots: [cas, déclinaison, nominatif, accusatif]
+    etapes:
+      - dialogue:
+          - zero: "« Puella rosam amat » et « Rosam puella amat », c'est pareil ?"
+          - neo: "Oui ! En latin, l'ordre des mots est libre : c'est la terminaison qui dit qui fait l'action. Puella (sujet) aime rosam (complément)."
+      - a_quoi_ca_sert: "Les cas sont la clé de toute phrase latine ; et les comprendre aide à saisir l'allemand, le russe ou le grec, qui ont aussi des cas."
+      - texte: |
+          **Les cas** : la terminaison du nom change selon sa **fonction**.
+          - **nominatif** : sujet (*puella*, la jeune fille) ;
+          - **vocatif** : on appelle quelqu'un ;
+          - **accusatif** : complément d'objet direct (*puellam*) ;
+          - **génitif** : complément du nom (*puellae*, de la jeune fille) ;
+          - **datif** : complément d'attribution (*puellae*, à la jeune fille) ;
+          - **ablatif** : compléments circonstanciels (*puellā*, avec, par la jeune fille).
+
+          **Les déclinaisons** : des familles de noms. **1ʳᵉ déclinaison** (souvent féminins en **-a** : *rosa, puella*), **2ᵉ déclinaison** (masculins en **-us** : *dominus*, le maître ; neutres en **-um** : *templum*).
+
+          Au singulier : *rosa* (nominatif), *rosam* (accusatif) ; *dominus*, *dominum*.
+      - attention: "Ne traduis jamais dans l'ordre des mots latins sans réfléchir : cherche d'abord le **verbe**, puis le **sujet au nominatif**, puis le **complément à l'accusatif**."
+      - astuce: { texte: "Le -m final est souvent le signe de l'accusatif singulier : rosam, dominum, templum.", qui: mia }
+      - retiens: "Six cas : **nominatif** (sujet), **vocatif**, **accusatif** (COD), **génitif** (complément du nom), **datif** (attribution), **ablatif** (circonstances). 1ʳᵉ déclinaison en **-a**, 2ᵉ en **-us** / **-um**. Accusatif singulier souvent en **-m**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque cas à sa fonction principale."
+        paires: [["le nominatif", "le sujet"], ["l'accusatif", "le complément d'objet direct"], ["le génitif", "le complément du nom"], ["le datif", "le complément d'attribution"]]
+        correction: "Chaque cas a sa fonction."
+      - type: qcm
+        enonce: "Dans « Dominus servum vocat », qui appelle qui ?"
+        choix: ["Le maître appelle l'esclave", "L'esclave appelle le maître", "Le maître et l'esclave s'appellent", "On ne peut pas savoir"]
+        correction: "*Dominus* est au nominatif (sujet), *servum* à l'accusatif (COD) : le maître appelle l'esclave."
+      - type: classer
+        enonce: "Range chaque forme : nominatif ou accusatif singulier ?"
+        categories: ["Nominatif", "Accusatif"]
+        mots: [["rosa", 0], ["rosam", 1], ["dominus", 0], ["dominum", 1]]
+        correction: "Le -m final marque l'accusatif singulier."
+      - type: vf
+        vars: { t: [["En latin, l'ordre des mots est assez libre.", true], ["La terminaison d'un nom indique sa fonction.", true], ["Le latin n'a qu'un seul cas.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Ordre libre, terminaisons qui indiquent la fonction, six cas."
+
+  - id: lca-traduire
+    titre: "Latin : traduire une phrase"
+    classe: "1ʳᵉ"
+    objectif: J'applique une méthode pour traduire une phrase latine simple - repérer le verbe, le sujet, les compléments.
+    mots: [verbe, sujet, complément, traduction]
+    etapes:
+      - dialogue:
+          - mia: "« Veni, vidi, vici. » Trois verbes, trois mots, et César raconte toute une victoire."
+          - zero: "Je suis venu, j'ai vu, j'ai vaincu ! Le latin, c'est efficace."
+      - a_quoi_ca_sert: "Traduire oblige à réfléchir à chaque mot : c'est un excellent entraînement à la rigueur et à l'expression française."
+      - texte: |
+          **La méthode** :
+          1. repérer le ou les **verbes conjugués** (souvent à la fin de la phrase) ;
+          2. trouver le **sujet** au nominatif (ou le deviner d'après la terminaison du verbe : *amo* = j'aime, *amat* = il aime) ;
+          3. trouver le **COD** à l'accusatif, puis les autres compléments ;
+          4. traduire d'abord **mot à mot**, puis écrire une phrase en **bon français**.
+
+          **Les terminaisons du présent** (*amare*, aimer) : *amo, amas, amat, amamus, amatis, amant* (j'aime… ils aiment).
+
+          **Quelques phrases célèbres** : *Alea jacta est* (le sort en est jeté, César) ; *Carpe diem* (cueille le jour, Horace) ; *Mens sana in corpore sano* (un esprit sain dans un corps sain, Juvénal).
+      - astuce: { texte: "Le verbe latin est souvent à la fin : commence ta lecture par la fin de la phrase.", qui: neo }
+      - retiens: "Traduire : **verbe** → **sujet** (nominatif) → **COD** (accusatif) → autres compléments ; mot à mot, puis **bon français**. Présent : *amo, amas, amat, amamus, amatis, amant*."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes de la traduction d'une phrase latine."
+        items: ["Repérer le verbe conjugué", "Trouver le sujet au nominatif", "Trouver le COD à l'accusatif", "Écrire une phrase en bon français"]
+        correction: "Verbe, sujet, complément, mise en français."
+      - type: relier
+        enonce: "🔗 Relie chaque forme du verbe à sa traduction."
+        paires: [["amo", "j'aime"], ["amat", "il aime"], ["amamus", "nous aimons"], ["amant", "ils aiment"]]
+        correction: "La terminaison indique la personne."
+      - type: relier
+        enonce: "🔗 Relie chaque expression latine à sa traduction."
+        paires: [["Carpe diem", "cueille le jour"], ["Alea jacta est", "le sort en est jeté"], ["Veni, vidi, vici", "je suis venu, j'ai vu, j'ai vaincu"]]
+        correction: "Des formules latines encore employées aujourd'hui."
+      - type: qcm
+        enonce: "Traduis : « Puella rosam amat. »"
+        choix: ["La jeune fille aime la rose.", "La rose aime la jeune fille.", "Les jeunes filles aiment les roses.", "Aime la rose, jeune fille."]
+        correction: "*Puella* est sujet (nominatif), *rosam* COD (accusatif), *amat* = elle aime."
+
+  - id: lca-grec-etymologie
+    titre: "Grec ancien : l'alphabet et l'étymologie"
+    classe: Terminale
+    objectif: Je lis l'alphabet grec et je reconnais les racines grecques et latines dans les mots français.
+    mots: [alphabet, racine, étymologie, préfixe]
+    etapes:
+      - dialogue:
+          - zero: "Alpha, bêta… c'est de là que vient le mot « alphabet » ?"
+          - neo: "Exactement ! Les deux premières lettres grecques. Et des milliers de mots scientifiques viennent du grec."
+      - a_quoi_ca_sert: "Connaître les racines grecques et latines permet de comprendre des mots savants (en médecine, en sciences, en droit) sans les avoir jamais vus."
+      - texte: |
+          **L'alphabet grec** : 24 lettres. α (alpha), β (bêta), γ (gamma), δ (delta), ε (epsilon), θ (thêta), λ (lambda), μ (mu), π (pi), ρ (rhô), σ (sigma), φ (phi), ψ (psi), ω (oméga).
+
+          **Racines grecques** :
+          - *bios* (vie) → biologie ; *logos* (parole, science) → -logie ;
+          - *chronos* (temps) → chronologie ; *geo* (terre) → géographie ;
+          - *phil-* (qui aime) → philosophie (amour de la sagesse) ;
+          - *tele* (loin) → téléphone ; *auto* (soi-même) → automobile.
+
+          **Racines latines** : *aqua* (eau) → aquarium ; *manus* (main) → manuel ; *video* (je vois) → vidéo ; *scribere* (écrire) → inscrire.
+
+          **Les doublets** : un même mot latin peut donner un mot « populaire » et un mot « savant » (*fragilis* → frêle et fragile).
+      - astuce: { texte: "Devant un mot savant, découpe-le en morceaux : chaque morceau grec ou latin te donne un indice.", qui: mia }
+      - retiens: "Alphabet grec : **24 lettres** (alpha, bêta… oméga). Racines grecques : *bios*, *logos*, *chronos*, *geo*, *phil-*, *tele*. Racines latines : *aqua*, *manus*, *video*. **Doublets** : frêle et fragile."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque racine grecque à son sens."
+        paires: [["bios", "la vie"], ["chronos", "le temps"], ["geo", "la terre"], ["tele", "loin"]]
+        correction: "Des racines présentes dans des milliers de mots."
+      - type: qcm
+        enonce: "Que signifie étymologiquement « philosophie » ?"
+        choix: ["L'amour de la sagesse", "La peur des livres", "La science de la vie", "L'écriture du temps"]
+        correction: "*phil-* (qui aime) + *sophia* (sagesse)."
+      - type: nombre
+        enonce: "Combien de lettres compte l'alphabet grec ?"
+        reponse: "24"
+        correction: "**24** lettres, d'alpha à oméga."
+      - type: classer
+        enonce: "Range chaque mot selon l'origine de sa racine principale : grecque ou latine ?"
+        categories: ["Grecque", "Latine"]
+        mots: [["chronomètre", 0], ["aquarium", 1], ["géographie", 0], ["manuel", 1]]
+        correction: "chronos, geo : grec ; aqua, manus : latin."
+
+  - id: lca-heritage
+    titre: L'héritage antique
+    classe: Terminale
+    objectif: J'explique ce que la culture européenne doit à l'Antiquité - mythes, citoyenneté, droit, rhétorique, architecture.
+    mots: [mythe, citoyenneté, rhétorique, héritage]
+    etapes:
+      - dialogue:
+          - mia: "Le talon d'Achille, la boîte de Pandore, un travail de Titan… tu les utilises sans le savoir."
+          - neo: "Des mythes grecs vieux de plus de 2 500 ans, toujours vivants dans nos expressions, nos films et nos jeux vidéo."
+      - a_quoi_ca_sert: "Reconnaître l'héritage antique enrichit la lecture des œuvres de toutes les époques et la compréhension de nos institutions."
+      - texte: |
+          **Les mythes** : récits des dieux et des héros (Zeus, Athéna, Ulysse, Achille, Prométhée), racontés par **Homère** (*L'Iliade*, *L'Odyssée*) et **Ovide** (*Les Métamorphoses*). Ils inspirent sans cesse peintres, écrivains et cinéastes.
+
+          **La citoyenneté et la démocratie** : nées à **Athènes** (Vᵉ siècle av. J.-C.) ; Rome invente la **République** (*res publica*, la chose publique).
+
+          **Le droit** : le droit romain inspire encore nos codes juridiques.
+
+          **La rhétorique** : l'art de convaincre, enseigné par **Aristote** et pratiqué par **Cicéron** ; ses figures (anaphore, métaphore…) portent des noms grecs.
+
+          **L'architecture** : colonnes, frontons, arcs, coupoles, reprises à la Renaissance et dans nos monuments publics.
+
+          **Expressions** : le talon d'Achille (le point faible), la boîte de Pandore (source de malheurs), un travail de Titan, un cheval de Troie, une odyssée.
+      - astuce: { texte: "À chaque expression mythologique, cherche l'histoire qui la cache : elle se retient beaucoup mieux.", qui: zero }
+      - retiens: "Héritage antique : **mythes** (Homère, Ovide), **démocratie** (Athènes) et **République** (Rome), **droit romain**, **rhétorique** (Aristote, Cicéron), **architecture**, et de nombreuses **expressions** (talon d'Achille, boîte de Pandore, cheval de Troie)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque expression à son sens."
+        paires: [["le talon d'Achille", "le point faible"], ["la boîte de Pandore", "une source de malheurs"], ["une odyssée", "un long voyage plein d'aventures"], ["un cheval de Troie", "une ruse pour pénétrer chez l'ennemi"]]
+        correction: "Des expressions nées des mythes grecs."
+      - type: relier
+        enonce: "🔗 Relie chaque auteur antique à son œuvre ou son domaine."
+        paires: [["Homère", "L'Odyssée"], ["Ovide", "Les Métamorphoses"], ["Cicéron", "l'éloquence et la rhétorique"]]
+        correction: "Trois grands noms de l'Antiquité."
+      - type: qcm
+        enonce: "Que signifie le latin « res publica », qui a donné « république » ?"
+        choix: ["La chose publique", "Le roi du peuple", "La loi des dieux", "La guerre sainte"]
+        correction: "*Res publica* : la chose publique, l'affaire de tous."
+      - type: vf
+        vars: { t: [["La démocratie est née à Athènes.", true], ["Les figures de style portent souvent des noms grecs.", true], ["Les mythes antiques n'inspirent plus aucun artiste.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Athènes ; anaphore, métaphore viennent du grec ; les mythes inspirent toujours."

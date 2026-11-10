@@ -1,0 +1,148 @@
+id: en-carrefour-des-langues
+matiere: anglais
+titre: Le Carrefour des Langues
+sous_titre: Spécialité LLCER italien et langues régionales - grands auteurs italiens, outils de la langue italienne, les langues régionales de France, méthode commune de la LLCER
+emoji: 🗺️
+couleur: "#2e7d32"
+cycle: maitres
+age: 16-18 ans
+niveau: 1ʳᵉ – Terminale
+ordre: 713
+specialite: LLCER italien et langues régionales
+version: 1.0.0
+intro:
+  - narrateur: "Au centre de l'Archipel, une place où se croisent des panneaux en italien, en breton, en occitan, en basque, en corse et en créole."
+  - mia: "La LLCER existe pour de nombreuses langues : l'italien, mais aussi les langues régionales de France."
+  - neo: "Chaque langue a sa littérature, mais la méthode reste la même : lire de près, comparer, synthétiser, traduire."
+
+lecons:
+  - id: llcer-methode-commune
+    titre: La méthode commune de la LLCER
+    classe: "1ʳᵉ"
+    objectif: Je connais les compétences communes à toutes les LLCER - lire une œuvre intégrale, analyser un document, synthétiser, traduire - quelle que soit la langue.
+    mots: [œuvre intégrale, dossier, synthèse, traduction]
+    etapes:
+      - dialogue:
+          - zero: "Je fais LLCER italien. Ça n'a rien à voir avec la LLCER anglais ?"
+          - neo: "Les œuvres changent, mais les exercices se ressemblent beaucoup : la méthode que tu apprends sert dans toutes les langues."
+      - a_quoi_ca_sert: "Maîtriser cette méthode permet de progresser dans n'importe quelle langue, et de passer facilement d'une langue à l'autre dans les études supérieures."
+      - texte: |
+          **Lire une œuvre intégrale** chaque année : repérer les personnages, la structure, les thèmes, retenir quelques citations.
+
+          **Analyser un document** (texte, image, film, chanson) : nature, auteur, date, contexte, puis procédés et interprétation, dans la langue étudiée.
+
+          **Synthétiser un dossier** : faire dialoguer plusieurs documents autour d'une problématique, avec un plan thématique.
+
+          **Traduire** : du sens et du ton, sans calque ni faux amis.
+
+          **S'exprimer à l'oral** : présenter, argumenter, réagir, avec une langue précise et nuancée.
+
+          Les programmes sont organisés par **thématiques** propres à chaque langue : vérifie celles de ton année.
+      - astuce: { texte: "Un carnet par langue : œuvres lues, citations, vocabulaire du commentaire, faux amis. Il devient ta boîte à outils pour l'épreuve.", qui: mia }
+      - retiens: "Toutes les LLCER : **œuvre intégrale**, **analyse de documents**, **synthèse** d'un dossier, **traduction**, **expression orale**. Les **thématiques** varient selon la langue."
+    exercices:
+      - type: classer
+        enonce: "Range chaque activité : commune à toutes les LLCER ou propre à une seule langue ?"
+        categories: ["Commune", "Propre à une langue"]
+        mots: [["Synthétiser un dossier de documents", 0], ["Étudier la Divine Comédie de Dante", 1], ["Traduire un extrait sans faux amis", 0], ["Lire des poèmes en occitan des troubadours", 1]]
+        correction: "La méthode est commune ; les œuvres sont propres à chaque langue."
+      - type: ordre
+        enonce: "Range les étapes de l'analyse d'un document."
+        items: ["Identifier la nature, l'auteur et la date", "Situer le contexte", "Repérer les procédés", "Interpréter"]
+        correction: "Identifier, situer, repérer, interpréter."
+      - type: qcm
+        enonce: "Dans une synthèse de dossier, comment organiser le plan ?"
+        choix: ["Par thèmes, en croisant les documents", "Un paragraphe par document", "Par ordre alphabétique des auteurs", "Sans plan"]
+        correction: "Un plan **thématique** qui fait dialoguer les documents."
+      - type: vf
+        vars: { t: [["On étudie au moins une œuvre intégrale par an en LLCER.", true], ["La méthode de la synthèse ne sert qu'en anglais.", false], ["Les thématiques varient selon la langue étudiée.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Œuvre intégrale, méthode commune, thématiques propres à chaque langue."
+
+  - id: llcer-it-auteurs
+    titre: Grands auteurs et outils de l'italien
+    classe: "1ʳᵉ"
+    objectif: Je situe les grands auteurs italiens et j'emploie quelques outils clés de la langue italienne.
+    mots: [Dante, Renaissance, néoréalisme, passato prossimo]
+    etapes:
+      - dialogue:
+          - mia: "« Nel mezzo del cammin di nostra vita… » C'est le premier vers de la Divine Comédie de Dante, vers 1310."
+          - neo: "Dante a tellement marqué la langue qu'on l'appelle le père de l'italien."
+      - a_quoi_ca_sert: "L'italien ouvre la porte d'un immense patrimoine (littérature, art, opéra, cinéma) et de nombreux échanges économiques avec la France."
+      - texte: |
+          **Les « trois couronnes »** (XIVᵉ siècle) : **Dante** (*La Divina Commedia*), **Pétrarque** (le sonnet amoureux), **Boccace** (*Le Décaméron*).
+
+          **La Renaissance** : **Machiavel** (*Le Prince*, 1532, sur l'art de gouverner), l'Arioste.
+
+          **XIXᵉ et XXᵉ siècles** : **Manzoni** (*I promessi sposi*), **Pirandello** (théâtre, prix Nobel 1934), **Primo Levi** (*Se questo è un uomo*, témoignage sur Auschwitz), **Italo Calvino**, **Elsa Morante**.
+
+          **Le cinéma** : le **néoréalisme** (Rossellini, De Sica), puis Fellini.
+
+          **Outils de la langue** :
+          - le **passato prossimo** avec *essere* pour les verbes de mouvement (*sono andato*) et *avere* sinon (*ho mangiato*) ;
+          - la forme de politesse **Lei** (3ᵉ personne : *Lei è italiano ?*) ;
+          - les faux amis : *la camera* = la chambre, *burro* = beurre, *salire* = monter.
+      - visuel: { type: parole, langue: it-IT, mots: [{ texte: "Nel mezzo del cammin di nostra vita", sens: "Au milieu du chemin de notre vie", emoji: "🌲" }, { texte: "Sono andato a Roma e ho visitato il Colosseo.", sens: "Je suis allé à Rome et j'ai visité le Colisée.", emoji: "🏛️" }] }
+        legende: "Écoute le premier vers de Dante, puis essere et avere au passé."
+      - astuce: { texte: "Mouvement ou changement d'état → essere ; action sur quelque chose → avere.", qui: zero }
+      - retiens: "**Dante**, **Pétrarque**, **Boccace** (XIVᵉ) ; **Machiavel** (*Le Prince*) ; **Pirandello**, **Primo Levi**, **Calvino** ; cinéma **néoréaliste**. Passé : **essere** (mouvement) ou **avere** ; politesse : **Lei** ; faux amis : *camera* (chambre), *burro* (beurre)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque œuvre à son auteur."
+        paires: [["La Divina Commedia", "Dante"], ["Il Principe", "Machiavel"], ["Se questo è un uomo", "Primo Levi"], ["Il Decamerone", "Boccace"]]
+        correction: "Quatre œuvres majeures de la littérature italienne."
+      - type: qcm
+        vars: { t: [["Ieri ___ andato al mare.", "sono", "ho"], ["Ieri ___ mangiato una pizza.", "ho", "sono"], ["Maria ___ arrivata tardi.", "è", "ha"]] }
+        enonce: "Complète : {{t_0}}"
+        choix: ["{{t_1}}", "{{t_2}}"]
+        correction: "**{{t_1}}** : *essere* pour le mouvement, *avere* pour une action sur quelque chose."
+      - type: relier
+        enonce: "🔗 Relie chaque faux ami italien à sa traduction."
+        paires: [["la camera", "la chambre"], ["il burro", "le beurre"], ["salire", "monter"]]
+        correction: "Ils ressemblent au français mais trompent."
+      - type: vf
+        vars: { t: [["Dante est souvent appelé le père de la langue italienne.", true], ["Le néoréalisme est un courant du cinéma italien.", true], ["En italien, la politesse utilise la 2ᵉ personne du pluriel comme en français.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Dante, néoréalisme, et politesse avec *Lei* (3ᵉ personne du singulier)."
+
+  - id: llcer-langues-regionales
+    titre: Les langues régionales de France
+    classe: Terminale
+    objectif: Je connais les principales langues régionales de France, leur histoire et leur place aujourd'hui, et leurs grandes œuvres.
+    mots: [langue régionale, occitan, breton, patrimoine]
+    etapes:
+      - dialogue:
+          - zero: "En France, on parle seulement français ?"
+          - neo: "Le français est la langue de la République, mais on parle aussi breton, basque, occitan, corse, alsacien, catalan, créoles… La Constitution dit depuis 2008 qu'elles « appartiennent au patrimoine de la France »."
+      - a_quoi_ca_sert: "Les langues régionales font partie du patrimoine et de l'identité de nombreux territoires ; certaines se choisissent en LLCER et ouvrent sur l'enseignement, la culture et les médias régionaux."
+      - texte: |
+          **Quelques langues régionales** : **breton** (Bretagne, langue celtique), **basque** (Pays basque, langue sans parenté connue), **occitan** (sud de la France, plusieurs variétés comme le provençal ou le gascon), **corse**, **catalan**, **alsacien**, et les **créoles** des Antilles, de la Guyane et de La Réunion.
+
+          **Une histoire** : longtemps majoritaires dans leur région, elles reculent à partir du XIXᵉ siècle avec l'école obligatoire en français. Depuis la fin du XXᵉ siècle, des écoles immersives (Diwan en Bretagne, Calandretas en occitan, ikastola au Pays basque) les transmettent.
+
+          **Des littératures** : la poésie des **troubadours** en occitan (XIIᵉ siècle), **Frédéric Mistral**, prix Nobel 1904 pour *Mirèio* en provençal, le *Barzaz Breiz* (chants bretons, 1839), la littérature créole d'**Aimé Césaire** et de **Patrick Chamoiseau** (qui écrivent aussi en français).
+
+          **Aujourd'hui** : la Constitution les reconnaît comme patrimoine (article 75-1, 2008) ; elles s'enseignent de l'école au lycée.
+      - astuce: { texte: "Associe chaque langue à sa région sur une carte : c'est le meilleur moyen de toutes les retenir.", qui: mia }
+      - retiens: "Langues régionales : **breton**, **basque**, **occitan**, **corse**, **catalan**, **alsacien**, **créoles**… Recul au XIXᵉ siècle, transmission par des écoles **immersives**. **Troubadours**, **Frédéric Mistral** (Nobel 1904), **Césaire**, **Chamoiseau**. Reconnues comme **patrimoine** par la Constitution (2008)."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque langue à sa région."
+        paires: [["le breton", "la Bretagne"], ["le basque", "le Pays basque"], ["l'occitan", "le sud de la France"], ["le corse", "la Corse"]]
+        correction: "Chaque langue est liée à un territoire."
+      - type: qcm
+        enonce: "Quel poète a reçu le prix Nobel en 1904 pour une œuvre en provençal ?"
+        choix: ["Frédéric Mistral", "Victor Hugo", "Aimé Césaire", "Dante"]
+        correction: "**Frédéric Mistral**, pour *Mirèio*."
+      - type: classer
+        enonce: "Range chaque élément : langue régionale de France ou langue d'un autre pays ?"
+        categories: ["Langue régionale de France", "Autre"]
+        mots: [["Le breton", 0], ["Le portugais", 1], ["L'alsacien", 0], ["Le créole réunionnais", 0], ["Le polonais", 1]]
+        correction: "Breton, alsacien et créoles sont des langues régionales de France."
+      - type: vf
+        vars: { t: [["La Constitution reconnaît les langues régionales comme patrimoine de la France.", true], ["Les troubadours écrivaient en occitan.", true], ["Le basque est une langue latine très proche de l'espagnol.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Article 75-1 ; troubadours en occitan ; le basque n'a pas de parenté connue."
