@@ -88,7 +88,7 @@ Dans une formule, « si $a<0$ » était lu « a<0 » : les signes < et > à l'in
 
 Restent ouverts :
 - **le supérieur** : peu de contenus (14 leçons de niveau post-bac, toutes matières) ;
-- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; restent les autres langues de LLCER, le théâtre, la danse, l'histoire des arts et la série S2TMD (théâtre, musique, danse) ;
+- **les autres spécialités** : HGGSP, SES et NSI sont ajoutées en 2.17.0 ; LLCER anglais, sciences de l'ingénieur, arts plastiques, cinéma-audiovisuel et musique en 2.18.0 ; séries technologiques (STMG, STI2D, ST2S, STL, STD2A, STHR, STAV) en 2.19.0 ; théâtre, danse, histoire des arts et série S2TMD en 2.20.0 ; restent les autres langues de LLCER (espagnol, allemand, langues régionales…) et quelques enseignements rares (langues et cultures de l'Antiquité, biologie-écologie des lycées agricoles) ;
 - **le test avec de vrais élèves**.
 
 ## Ajouts livrés (2.16.0)
@@ -129,3 +129,13 @@ Restent ouverts :
 7. Ces mondes sont marqués `specialite` : ouverts sur la carte, hors test de niveau et hors parcours.
 8. **Voix, corrections trouvées en relisant** : unités composées (« g/L » était lu « g divisé par L »), « 10 000 m² » lu au singulier (le nombre était coupé à l'espace des milliers), sigles HACCP, RGPD, STMG, STHR, STAV lus comme des mots. Corrigé et couvert par un test.
 9. Vérifié : 144 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, défis des six mondes ouverts dans le navigateur avec un profil de Terminale (calcul de correction affiché correctement), console sans erreur.
+
+## Ajouts livrés (2.20.0) : théâtre, danse, histoire des arts, S2TMD
+
+1. **Théâtre** : **Le Plateau du Théâtre** (planète Dessin, 4 leçons) : le jeu de l'acteur (Stanislavski, Brecht, improvisation), mise en scène et scénographie (cour, jardin, lumière), repères d'histoire du théâtre, analyser un spectacle.
+2. **Histoire des arts** : **La Galerie de l'Histoire des Arts** (planète Dessin, 4 leçons) : analyser une architecture (Vitruve), grands repères, patrimoine et musées, arts et pouvoir.
+3. **Danse** : **Le Studio de Danse** (planète Musique, 4 leçons) : espace, temps, énergie (Laban), composer une chorégraphie, histoire de la danse, analyser une pièce.
+4. **S2TMD** : **La Scène du Spectacle vivant** (planète Musique, 4 leçons) : la série et le spectacle vivant, métiers et économie (intermittence, production, diffusion), techniques de la scène (lumière, son, régie), création collective.
+5. Mondes marqués `specialite` : ouverts sur la carte, hors test de niveau et hors parcours.
+6. Corrigé en relisant : des siècles écrits « XIIe », « Ve » (lus de travers) remplacés par « XIIᵉ », « Vᵉ » ; « fort/léger » réécrit pour ne pas être lu « slash ».
+7. Vérifié : 144 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 16, 17 et 18 ans, défis des quatre mondes et chapitre d'histoire ouverts dans le navigateur avec un profil de Terminale, console sans erreur.

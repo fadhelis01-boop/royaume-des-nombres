@@ -104,3 +104,19 @@ chapitres:
       - mia: "Pensons aux usagers, et chaque objet retrouvera sa forme juste."
     apres:
       - narrateur: "Les chaises tiennent, les affiches parlent, et une lampe dessinée au Studio éclaire enfin toute la pièce."
+  de-plateau-du-theatre:
+    titre: "Le Plateau du Théâtre"
+    objet: "le cadre d'or du Musée"
+    avant:
+      - narrateur: "Sur le Plateau, le rideau est tombé et ne se relève plus : les acteurs ont oublié leur texte, la lumière refuse de s'allumer."
+      - mia: "Une voix, un corps, un espace : le théâtre peut renaître avec presque rien."
+    apres:
+      - narrateur: "Le rideau se lève. Sous un seul projecteur, un acteur dit la première réplique, et la salle retient son souffle."
+  de-galerie-de-l-histoire-des-arts:
+    titre: "La Galerie de l'Histoire des Arts"
+    objet: "le cadre d'or du Musée"
+    avant:
+      - narrateur: "Dans la Galerie, les époques se sont mélangées : une colonne grecque soutient une tour de verre, un vitrail pend dans une usine."
+      - neo: "Remettons chaque œuvre dans son temps, et faisons dialoguer les arts entre eux."
+    apres:
+      - narrateur: "Salle après salle, les siècles reprennent leur place. Au bout de la Galerie, la porte s'ouvre sur une ville où tout a une histoire."

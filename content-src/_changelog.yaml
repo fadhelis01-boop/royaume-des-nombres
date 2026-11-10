@@ -1,3 +1,8 @@
+- version: "2.20.0"
+  date: "2026-11-10"
+  notes:
+    - "Spécialités théâtre (le Plateau du Théâtre), danse (le Studio de Danse) et histoire des arts (la Galerie de l'Histoire des Arts), 4 leçons chacune."
+    - "Série S2TMD : la Scène du Spectacle vivant, 4 leçons sur le spectacle vivant, ses métiers et son économie, les techniques de la scène et la création collective."
 - version: "2.19.0"
   date: "2026-11-10"
   notes:

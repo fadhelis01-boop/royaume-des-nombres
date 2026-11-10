@@ -95,3 +95,19 @@ chapitres:
       - mia: "Écouter, nommer ce qu'on entend, puis jouer ensemble : c'est comme ça qu'on rend sa voix à la musique."
     apres:
       - narrateur: "Le chef lève la baguette. De Bach au hip-hop, la salle résonne d'un concert enfin harmonieux."
+  mu-studio-de-danse:
+    titre: "Le Studio de Danse"
+    objet: "la console du Studio"
+    avant:
+      - narrateur: "Dans le Studio, les miroirs sont voilés de gris : les danseurs restent figés, incapables de bouger."
+      - mia: "Espace, temps, énergie : retrouvons le mouvement, un geste après l'autre."
+    apres:
+      - narrateur: "Les miroirs s'éclaircissent. Un premier danseur s'élance, puis tout le groupe, à l'unisson, puis en canon."
+  mu-scene-du-spectacle-vivant:
+    titre: "La Scène du Spectacle vivant"
+    objet: "la console du Studio"
+    avant:
+      - narrateur: "Sur la grande scène, musiciens, danseurs et comédiens répètent chacun dans leur coin, sans se voir."
+      - neo: "Un spectacle vivant se crée ensemble : artistes, techniciens, public. Réunissons-les."
+    apres:
+      - narrateur: "Les lumières s'allument, la musique entre, les corps et les voix se répondent. Le public, debout, applaudit longtemps."
