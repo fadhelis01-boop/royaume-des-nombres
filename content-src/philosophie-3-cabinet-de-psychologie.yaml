@@ -1,0 +1,149 @@
+id: philo-cabinet-de-psychologie
+matiere: philosophie
+titre: Le Cabinet de Psychologie
+sous_titre: Licence de psychologie - méthode expérimentale, psychologie cognitive, développement, psychologie sociale
+emoji: 🧠
+couleur: "#5e35b1"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 903
+specialite: Licence de psychologie
+version: 1.0.0
+intro:
+  - narrateur: "Derrière l'Agora, un cabinet calme : un divan, des écrans d'expérience, des questionnaires, un miroir sans tain."
+  - mia: "La psychologie n'est pas seulement l'écoute des patients : c'est une science qui teste ses hypothèses par l'expérience."
+  - neo: "Mémoire, raisonnement, développement de l'enfant, influence des groupes : on mesure, on compare, on vérifie."
+
+lecons:
+  - id: methode-experimentale-psy
+    titre: La méthode expérimentale en psychologie
+    classe: Supérieur
+    objectif: Je distingue variable indépendante et dépendante, groupe contrôle et groupe expérimental, et je connais les règles éthiques de la recherche.
+    mots: [variable indépendante, variable dépendante, groupe contrôle, consentement]
+    etapes:
+      - dialogue:
+          - zero: "La musique aide-t-elle à réviser ? Je demande à mes amis ce qu'ils en pensent."
+          - neo: "Les avis ne prouvent rien. Il faut une expérience : deux groupes comparables, l'un avec musique, l'autre sans, et un même test de mémoire."
+      - a_quoi_ca_sert: "La méthode expérimentale est le cœur de la licence de psychologie ; elle sert aussi à évaluer une thérapie, un programme scolaire ou une campagne de prévention."
+      - texte: |
+          **Une hypothèse** : une prédiction testable (« écouter de la musique avec paroles diminue la mémorisation »).
+
+          **La variable indépendante** (VI) : ce que l'expérimentateur **fait varier** (musique ou silence).
+
+          **La variable dépendante** (VD) : ce que l'on **mesure** (le nombre de mots retenus).
+
+          **Les groupes** : un **groupe expérimental** (qui reçoit la condition testée) et un **groupe contrôle** ; on répartit les participants **au hasard** pour que les groupes soient comparables.
+
+          **Les biais à éviter** : l'effet placebo, les attentes de l'expérimentateur (d'où le **double aveugle**), un échantillon non représentatif.
+
+          **L'éthique** : **consentement libre et éclairé**, droit de se retirer à tout moment, anonymat, **débriefing** à la fin, avis d'un comité d'éthique.
+      - astuce: { texte: "VI = la cause qu'on manipule ; VD = l'effet qu'on mesure. « Indépendante » parce qu'on la choisit, « dépendante » parce qu'elle en dépend.", qui: mia }
+      - retiens: "**Hypothèse** testable. **VI** : ce qu'on fait varier ; **VD** : ce qu'on mesure. **Groupe expérimental** et **groupe contrôle**, répartition **au hasard**, **double aveugle**. Éthique : **consentement éclairé**, retrait possible, anonymat, débriefing."
+    exercices:
+      - type: classer
+        enonce: "Étude : « Le manque de sommeil réduit-il l'attention ? » Range chaque élément : VI ou VD ?"
+        categories: ["Variable indépendante", "Variable dépendante"]
+        mots: [["Le nombre d'heures de sommeil imposé", 0], ["Le score à un test d'attention", 1], ["Dormir 4 h ou 8 h selon le groupe", 0], ["Le nombre d'erreurs commises", 1]]
+        correction: "Ce qu'on manipule → VI ; ce qu'on mesure → VD."
+      - type: qcm
+        enonce: "Pourquoi répartir les participants au hasard entre les groupes ?"
+        choix: ["Pour que les groupes soient comparables au départ", "Pour gagner du temps", "Pour que les résultats soient meilleurs", "Ce n'est pas utile"]
+        correction: "La répartition aléatoire évite que les groupes diffèrent avant l'expérience."
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["le double aveugle", "ni le participant ni l'expérimentateur ne connaissent la condition"], ["le groupe contrôle", "le groupe qui ne reçoit pas la condition testée"], ["le débriefing", "expliquer l'expérience aux participants à la fin"]]
+        correction: "Des outils pour des résultats fiables et éthiques."
+      - type: vf
+        vars: { t: [["Un participant peut se retirer d'une étude à tout moment.", true], ["La variable dépendante est celle que l'expérimentateur choisit librement.", false], ["Les attentes de l'expérimentateur peuvent biaiser les résultats.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Droit de retrait ; la VD est mesurée ; d'où le double aveugle."
+
+  - id: psychologie-cognitive
+    titre: Psychologie cognitive, mémoire et biais
+    classe: Bac+2
+    objectif: Je décris les systèmes de mémoire et les deux modes de pensée, et je reconnais les principaux biais cognitifs.
+    mots: [mémoire de travail, mémoire à long terme, biais cognitif, heuristique]
+    etapes:
+      - dialogue:
+          - mia: "Retiens ce numéro : 0 6 4 7 2 9 1 8 3 5. Puis répète-le sans regarder."
+          - zero: "Euh… 06 47… je n'y arrive pas !"
+          - neo: "Normal : la mémoire de travail est limitée. Mais si tu le découpes en groupes de deux chiffres, ça devient plus facile."
+      - a_quoi_ca_sert: "La psychologie cognitive éclaire l'apprentissage, l'ergonomie des interfaces, la prise de décision et le marketing ; ses découvertes ont valu à Daniel Kahneman le prix Nobel d'économie en 2002."
+      - texte: |
+          **Les systèmes de mémoire** :
+          - **mémoire sensorielle** (très brève) ;
+          - **mémoire de travail** (à court terme) : capacité limitée, environ **7 éléments plus ou moins 2** (Miller, 1956), quelques secondes sans répétition ; le **regroupement** (chunking) l'augmente ;
+          - **mémoire à long terme** : **déclarative** (faits, souvenirs) et **procédurale** (savoir-faire, comme faire du vélo).
+
+          **Deux modes de pensée** (Kahneman) : le **système 1**, rapide, intuitif, automatique ; le **système 2**, lent, réfléchi, coûteux en effort.
+
+          **Les biais cognitifs** (erreurs systématiques du système 1) :
+          - **biais de confirmation** : chercher ce qui confirme ce qu'on pense déjà ;
+          - **effet d'ancrage** : être influencé par le premier chiffre entendu ;
+          - **biais de disponibilité** : juger un risque d'après les exemples qui viennent facilement à l'esprit.
+      - astuce: { texte: "Pour retenir une longue suite, fais des paquets : c'est exactement ce que fait le cerveau avec les numéros de téléphone.", qui: zero }
+      - retiens: "Mémoire **sensorielle**, **de travail** (≈ 7 ± 2 éléments, Miller 1956, regroupement) et **à long terme** (déclarative, procédurale). **Système 1** (rapide, intuitif) et **système 2** (lent, réfléchi). Biais : **confirmation**, **ancrage**, **disponibilité**."
+    exercices:
+      - type: nombre
+        enonce: "Selon Miller (1956), combien d'éléments la mémoire de travail retient-elle en moyenne ?"
+        reponse: "7"
+        correction: "Environ **7**, plus ou moins 2."
+      - type: relier
+        enonce: "🔗 Relie chaque biais à un exemple."
+        paires: [["le biais de confirmation", "ne lire que les articles qui confortent son opinion"], ["l'effet d'ancrage", "estimer un prix plus haut après avoir vu un prix « barré » élevé"], ["le biais de disponibilité", "surestimer le risque d'avion après un accident très médiatisé"]]
+        correction: "Trois erreurs systématiques de jugement."
+      - type: classer
+        enonce: "Range chaque souvenir : mémoire déclarative ou procédurale ?"
+        categories: ["Déclarative", "Procédurale"]
+        mots: [["Savoir que Paris est la capitale de la France", 0], ["Savoir faire du vélo", 1], ["Se souvenir de son dernier anniversaire", 0], ["Taper au clavier sans regarder", 1]]
+        correction: "Faits et souvenirs → déclarative ; savoir-faire → procédurale."
+      - type: vf
+        vars: { t: [["Le système 1 est rapide et intuitif.", true], ["La mémoire de travail a une capacité illimitée.", false], ["Regrouper des informations aide à les retenir.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Système 1 rapide ; capacité limitée ; le regroupement aide."
+
+  - id: psychologie-sociale-developpement
+    titre: Développement et influence sociale
+    classe: Bac+3
+    objectif: Je situe les stades du développement selon Piaget et j'explique les expériences classiques de conformisme et d'obéissance.
+    mots: [stade, conformisme, obéissance, influence sociale]
+    etapes:
+      - dialogue:
+          - zero: "Si on me demandait de faire du mal à quelqu'un, je refuserais, évidemment !"
+          - neo: "Dans les années 1960, Stanley Milgram a montré qu'une majorité de participants obéissaient pourtant à une autorité jusqu'à des chocs présentés comme dangereux."
+      - a_quoi_ca_sert: "Ces travaux éclairent l'éducation, le travail en équipe, la publicité, les phénomènes de groupe et la responsabilité individuelle."
+      - texte: |
+          **Piaget : les stades du développement de l'intelligence** :
+          1. **sensori-moteur** (0 à 2 ans) : action et perception ; acquisition de la **permanence de l'objet** ;
+          2. **préopératoire** (2 à 7 ans) : langage, pensée **égocentrique** ;
+          3. **opératoire concret** (7 à 11 ans) : **conservation** (la quantité d'eau ne change pas en changeant de verre) ;
+          4. **opératoire formel** (dès 11-12 ans) : raisonnement abstrait et hypothétique.
+
+          **Asch (1951) : le conformisme** : face à un groupe qui donne unanimement une réponse fausse sur la longueur de lignes, environ un tiers des réponses des participants s'alignent sur le groupe.
+
+          **Milgram (1963) : l'obéissance** : environ **65 %** des participants ont administré, sur ordre, ce qu'ils croyaient être les chocs les plus forts (les chocs étaient fictifs).
+
+          **Débats** : ces expériences ont aussi soulevé des questions **éthiques** majeures, à l'origine de règles plus strictes.
+      - astuce: { texte: "Piaget en quatre mots : agir, parler, conserver, abstraire.", qui: mia }
+      - retiens: "**Piaget** : sensori-moteur (0 à 2 ans), préopératoire (2 à 7 ans), opératoire concret (7 à 11 ans, conservation), opératoire formel (dès 11 ou 12 ans). **Asch** (1951) : conformisme. **Milgram** (1963) : obéissance à l'autorité (≈ 65 %). Questions éthiques."
+    exercices:
+      - type: ordre
+        enonce: "Range les stades de Piaget dans l'ordre."
+        items: ["Sensori-moteur", "Préopératoire", "Opératoire concret", "Opératoire formel"]
+        correction: "De la naissance à l'adolescence."
+      - type: relier
+        enonce: "🔗 Relie chaque chercheur à son expérience."
+        paires: [["Solomon Asch", "le conformisme face à un groupe"], ["Stanley Milgram", "l'obéissance à l'autorité"], ["Jean Piaget", "les stades du développement de l'enfant"]]
+        correction: "Trois classiques de la psychologie."
+      - type: qcm
+        enonce: "Un enfant pense qu'il y a plus d'eau dans un verre haut et étroit que dans un verre large, alors qu'on a versé la même quantité. À quel stade est-il ?"
+        choix: ["Préopératoire", "Opératoire concret", "Opératoire formel", "Sensori-moteur"]
+        correction: "La **conservation** n'est pas encore acquise : stade préopératoire."
+      - type: vf
+        vars: { t: [["Les chocs de l'expérience de Milgram étaient fictifs.", true], ["Dans l'expérience d'Asch, personne ne se conformait au groupe.", false], ["La permanence de l'objet s'acquiert au stade sensori-moteur.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Chocs simulés ; environ un tiers de réponses conformes ; permanence de l'objet avant 2 ans."

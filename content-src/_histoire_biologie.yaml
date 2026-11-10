@@ -137,3 +137,11 @@ chapitres:
       - mia: "Comprendre le cœur, les médicaments et les tests : c'est le premier pas pour soigner."
     apres:
       - narrateur: "Les moniteurs affichent des rythmes réguliers. Dans l'amphithéâtre, une nouvelle promotion prête serment."
+  bio-stade-des-staps:
+    titre: "Le Stade des STAPS"
+    objet: "le cœur de l'Arbre-Monde"
+    avant:
+      - narrateur: "Au Stade, les athlètes s'épuisent sans progresser, et les tribunes restent vides."
+      - mia: "Comprendre l'effort, doser l'entraînement, ouvrir le sport à tous : c'est le programme des STAPS."
+    apres:
+      - narrateur: "Les coureurs filent sur la piste, frais et rapides, et les tribunes se remplissent de tous les âges."

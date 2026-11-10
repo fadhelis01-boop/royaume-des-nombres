@@ -1,3 +1,8 @@
+- version: "2.26.0"
+  date: "2026-11-10"
+  notes:
+    - "Sept licences de plus, en accès libre sur la carte : psychologie, sociologie et histoire, géographie, langues étrangères appliquées, informatique et STAPS."
+    - "La voix lit « 1 centimètre » au singulier et les échelles de carte « 1 sur 25 000 »."
 - version: "2.25.0"
   date: "2026-11-10"
   notes:

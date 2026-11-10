@@ -1,0 +1,147 @@
+id: hg-belvedere-du-geographe
+matiere: histoire
+titre: Le Belvédère du Géographe
+sous_titre: Licence de géographie - concepts de l'espace, cartographie et SIG, métropolisation et aménagement
+emoji: 🗺️
+couleur: "#00695c"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 809
+specialite: Licence de géographie
+version: 1.0.0
+intro:
+  - narrateur: "Sur une colline au-dessus du Forum, un belvédère : d'un côté la ville, de l'autre la campagne, au loin la mer. Sur une table, des cartes et un ordinateur de cartographie."
+  - neo: "La géographie étudie comment les sociétés organisent l'espace : villes, réseaux, territoires, risques."
+  - mia: "Avec des outils précis : l'échelle, la carte, les données géolocalisées."
+
+lecons:
+  - id: concepts-geographie
+    titre: Les concepts de la géographie
+    classe: Supérieur
+    objectif: J'utilise les concepts d'espace, de territoire, d'échelle, de réseau et de centre-périphérie.
+    mots: [territoire, échelle, réseau, centre-périphérie]
+    etapes:
+      - dialogue:
+          - zero: "Un territoire et un espace, c'est la même chose ?"
+          - neo: "Pas tout à fait : un territoire est un espace approprié, délimité et géré par un groupe ou une autorité. Une commune, un parc naturel, un État."
+      - a_quoi_ca_sert: "Ces concepts permettent d'analyser l'aménagement, les inégalités entre régions, les mobilités et la mondialisation ; ils sont la base de toute la licence."
+      - texte: |
+          **L'espace** : l'étendue organisée par les sociétés (on y construit, circule, produit).
+
+          **Le territoire** : un espace **approprié**, délimité, gouverné, auquel un groupe s'identifie.
+
+          **L'échelle** : le niveau d'analyse (locale, régionale, nationale, mondiale). Un phénomène change souvent de sens selon l'échelle : une région riche peut contenir des quartiers pauvres.
+
+          **Le réseau** : des **nœuds** (villes, ports, aéroports) reliés par des **flux** (personnes, marchandises, informations).
+
+          **Le modèle centre-périphérie** : des **centres** qui concentrent pouvoir et richesses, et des **périphéries** qui en dépendent, à toutes les échelles (centre-ville et banlieue, métropoles et espaces ruraux, pays du Nord et du Sud).
+
+          **La métropolisation** : la concentration des populations, des activités et des pouvoirs dans les plus grandes villes.
+      - astuce: { texte: "Change toujours d'échelle avant de conclure : ce qui est vrai au niveau national peut être faux au niveau local.", qui: mia }
+      - retiens: "**Espace** organisé ; **territoire** approprié et gouverné ; **échelle** d'analyse (locale à mondiale) ; **réseau** (nœuds et flux) ; **centre-périphérie** à toutes les échelles ; **métropolisation**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque concept à un exemple."
+        paires: [["un territoire", "une commune avec son maire et ses limites"], ["un réseau", "les lignes à grande vitesse reliant les métropoles"], ["la métropolisation", "la concentration des emplois dans les grandes villes"]]
+        correction: "Trois concepts, trois exemples."
+      - type: classer
+        enonce: "Range chaque espace : plutôt centre ou plutôt périphérie ?"
+        categories: ["Centre", "Périphérie"]
+        mots: [["Le quartier d'affaires d'une métropole", 0], ["Un village isolé de montagne", 1], ["Une capitale mondiale", 0], ["Une zone rurale qui perd ses habitants", 1]]
+        correction: "Concentration de pouvoir et de richesse → centre."
+      - type: qcm
+        enonce: "Pourquoi faut-il changer d'échelle dans une analyse géographique ?"
+        choix: ["Un phénomène peut avoir un sens différent selon l'échelle", "Pour agrandir la carte", "Parce que les cartes sont fausses", "Ce n'est jamais utile"]
+        correction: "Une région riche peut contenir des quartiers pauvres : l'échelle change la lecture."
+      - type: vf
+        vars: { t: [["Le modèle centre-périphérie s'applique à plusieurs échelles.", true], ["Un territoire n'a jamais de limites.", false], ["Un réseau est formé de nœuds et de flux.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Toutes les échelles ; un territoire est délimité ; nœuds et flux."
+
+  - id: cartographie-sig
+    titre: Cartographie, échelles et SIG
+    classe: Bac+2
+    objectif: Je calcule une distance réelle à partir d'une échelle et je connais le principe des systèmes d'information géographique.
+    mots: [échelle numérique, légende, SIG, couche]
+    etapes:
+      - dialogue:
+          - mia: "Sur une carte au 1/25 000, 4 cm séparent deux villages. Quelle distance réelle ?"
+          - zero: "4 fois 25 000… 100 000 centimètres, donc 1 kilomètre !"
+      - a_quoi_ca_sert: "Les SIG sont utilisés en urbanisme, en environnement, en logistique, par les secours et les collectivités ; c'est un des grands débouchés de la géographie."
+      - texte: |
+          **L'échelle numérique** : 1/25 000 signifie que 1 cm sur la carte représente 25 000 cm (250 m) sur le terrain. Une **grande échelle** (1/10 000) montre un petit espace en détail ; une **petite échelle** (1/1 000 000) un grand espace avec peu de détails.
+
+          **Une carte rigoureuse** : un titre, une **légende**, une **échelle**, une **orientation**, une **source** et une date.
+
+          **La sémiologie graphique** (Jacques Bertin) : choisir la bonne variable visuelle (taille pour des quantités, couleur dégradée pour des taux, couleurs différentes pour des catégories).
+
+          **Les SIG** (systèmes d'information géographique) : des logiciels qui superposent des **couches** de données géolocalisées (routes, population, zones inondables) pour les croiser et produire des cartes et des analyses.
+      - attention: "Grande échelle = petit espace très détaillé. C'est le contraire de l'intuition : 1/10 000 est une plus grande échelle que 1/1 000 000."
+      - astuce: { texte: "Pour une échelle « 1 sur N », 1 cm sur la carte = N cm sur le terrain : enlève deux zéros pour avoir des mètres, cinq pour des kilomètres.", qui: neo }
+      - retiens: "Échelle **1 sur N** : 1 cm = N cm réels. **Grande échelle** = petit espace détaillé. Carte : titre, **légende**, échelle, orientation, source. **Sémiologie graphique** (Bertin). **SIG** : superposer des **couches** de données géolocalisées."
+    exercices:
+      - type: nombre
+        vars: { t: [[4, 25000, 1000], [2, 50000, 1000], [3, 100000, 3000], [5, 20000, 1000]] }
+        enonce: "Sur une carte au 1/{{t_1}}, deux points sont à {{t_0}} cm. Quelle est la distance réelle, en mètres ?"
+        reponse: "t_2"
+        unite: m
+        correction: "{{t_0}} × {{t_1}} cm = **{{t_2}} m**."
+      - type: qcm
+        enonce: "Quelle échelle est la plus grande ?"
+        choix: ["1/10 000", "1/100 000", "1/1 000 000", "1/25 000 000"]
+        correction: "Le plus petit dénominateur donne la **plus grande** échelle (le plus de détails)."
+      - type: classer
+        enonce: "Range chaque élément : obligatoire sur une carte ou décoratif ?"
+        categories: ["Obligatoire", "Décoratif"]
+        mots: [["La légende", 0], ["Une bordure fantaisie", 1], ["L'échelle", 0], ["La source des données", 0], ["Une illustration sans rapport", 1]]
+        correction: "Titre, légende, échelle, orientation, source rendent la carte lisible et fiable."
+      - type: vf
+        vars: { t: [["Un SIG superpose des couches de données géolocalisées.", true], ["Une carte au 1/1 000 000 est à grande échelle.", false], ["Pour représenter des quantités, on utilise souvent la taille des symboles.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Couches ; 1/1 000 000 = petite échelle ; taille pour les quantités."
+
+  - id: amenagement-risques
+    titre: Aménagement du territoire et risques
+    classe: Bac+3
+    objectif: J'analyse un projet d'aménagement et la gestion d'un risque (aléa, enjeux, vulnérabilité).
+    mots: [aménagement, risque, aléa, vulnérabilité]
+    etapes:
+      - dialogue:
+          - zero: "Un séisme en plein désert, c'est un risque ?"
+          - neo: "Un aléa, oui. Mais sans habitants ni bâtiments, il y a peu d'enjeux : le risque, c'est la rencontre entre l'aléa et une société vulnérable."
+      - a_quoi_ca_sert: "Urbanistes, chargés de mission en collectivité, bureaux d'études en environnement : ces notions guident les décisions d'aménagement et la protection des populations."
+      - texte: |
+          **L'aménagement du territoire** : les actions publiques pour organiser l'espace et réduire les inégalités (transports, équipements, logement, développement des régions en difficulté).
+
+          **Les acteurs** : État, régions, intercommunalités, communes, entreprises, associations, habitants ; les projets suscitent souvent des **conflits d'usage**.
+
+          **Le risque** = **aléa** (un phénomène possible : crue, séisme, accident industriel) × **enjeux** (personnes et biens exposés) × **vulnérabilité** (la fragilité de la société face à l'aléa).
+
+          **Gérer le risque** : connaître (cartes des aléas), **prévenir** (plans de prévention des risques qui limitent la construction en zone inondable), **protéger** (digues), **alerter**, **réparer**, et développer la **résilience** (la capacité à se relever).
+
+          **Les enjeux actuels** : changement climatique, sobriété foncière (limiter l'artificialisation des sols), revitalisation des centres-villes.
+      - attention: "Une digue protège, mais peut aussi donner une fausse sécurité et encourager à construire derrière elle : la prévention passe d'abord par l'urbanisme."
+      - astuce: { texte: "Risque = aléa × enjeux × vulnérabilité : si l'un des trois est nul, le risque l'est aussi.", qui: mia }
+      - retiens: "**Aménagement** : organiser l'espace, réduire les inégalités, nombreux acteurs et **conflits d'usage**. **Risque = aléa × enjeux × vulnérabilité**. Gérer : connaître, **prévenir** (plans de prévention), protéger, alerter, **résilience**. Enjeux : climat, sobriété foncière."
+    exercices:
+      - type: classer
+        enonce: "Range chaque élément : aléa, enjeu ou vulnérabilité ?"
+        categories: ["Aléa", "Enjeu ou vulnérabilité"]
+        mots: [["Une crue centennale", 0], ["Une école construite en zone inondable", 1], ["Un séisme de magnitude 6", 0], ["L'absence de plan d'alerte", 1]]
+        correction: "Le phénomène naturel ou technologique est l'aléa ; ce qui est exposé et fragile relève des enjeux et de la vulnérabilité."
+      - type: ordre
+        enonce: "Range les étapes de la gestion d'un risque."
+        items: ["Connaître l'aléa et cartographier", "Prévenir par l'urbanisme", "Protéger et alerter", "Réparer et se relever"]
+        correction: "Connaître, prévenir, protéger, se relever."
+      - type: qcm
+        enonce: "Pourquoi un séisme dans une zone inhabitée présente-t-il peu de risque ?"
+        choix: ["Parce que les enjeux exposés sont très faibles", "Parce que l'aléa n'existe pas", "Parce que le sol absorbe tout", "Parce qu'il n'y a pas de carte"]
+        correction: "Le risque suppose des enjeux exposés : sans population ni biens, il reste faible."
+      - type: vf
+        vars: { t: [["La résilience est la capacité à se relever après une catastrophe.", true], ["Une digue supprime tout risque d'inondation.", false], ["La sobriété foncière vise à limiter l'artificialisation des sols.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Résilience ; une digue peut céder ; sobriété foncière."

@@ -503,3 +503,11 @@ chapitres:
       - neo: "Estimer, tester, mesurer le risque de se tromper : c'est ainsi qu'on lit honnêtement des données."
     apres:
       - narrateur: "Les lunettes de l'Observatoire s'éclaircissent. Chaque conclusion arrive avec sa marge d'erreur, et c'est ce qui la rend fiable."
+  forge-informatique:
+    titre: "Chapitre 34 — La Forge informatique"
+    objet: "📜 Le Livre des Preuves"
+    avant:
+      - narrateur: "Dans la Forge, les serveurs surchauffent : des algorithmes trop lents, du code désorganisé, un coffre-fort numérique grand ouvert."
+      - neo: "Mesurer l'efficacité, organiser le code, sécuriser les données : forgeons des logiciels solides."
+    apres:
+      - narrateur: "Les serveurs ronronnent doucement, le code est rangé en classes bien ordonnées, et le coffre-fort se referme d'un déclic chiffré."

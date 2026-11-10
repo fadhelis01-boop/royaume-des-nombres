@@ -148,3 +148,11 @@ chapitres:
       - neo: "Let's get to work: essays, research, presentations. The campus is waiting for you."
     apres:
       - narrateur: "Les amphithéâtres se remplissent de voix du monde entier. Un étudiant applaudit ta présentation : « Great talk! »"
+  en-comptoir-des-langues-appliquees:
+    titre: "Le Comptoir des Langues appliquées"
+    objet: "la cloche de l'Écho"
+    avant:
+      - narrateur: "Au Comptoir, les contrats sont mal traduits et les négociations échouent sur des malentendus."
+      - mia: "Deux langues, des termes précis et un peu de diplomatie culturelle : c'est tout le métier."
+    apres:
+      - narrateur: "Les contrats se signent en trois langues, et les partenaires se serrent la main par-delà les frontières."

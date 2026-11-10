@@ -1,0 +1,144 @@
+id: hg-atelier-des-sciences-sociales
+matiere: histoire
+titre: L'Atelier des Sciences sociales
+sous_titre: Licences de sociologie et d'histoire - fondateurs de la sociologie, méthodes d'enquête, déviance, métier d'historien, périodisation et historiographie
+emoji: 🔍
+couleur: "#4e342e"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 808
+specialite: Licences de sociologie et d'histoire
+version: 1.0.0
+intro:
+  - narrateur: "Au fond du Forum, un atelier encombré d'archives, de questionnaires, d'enregistreurs et de cartes postales anciennes."
+  - mia: "Sociologues et historiens enquêtent : les uns sur la société d'aujourd'hui, les autres sur celles d'hier."
+  - neo: "Mêmes exigences : des sources, une méthode, un regard critique."
+
+lecons:
+  - id: fondateurs-sociologie
+    titre: Les fondateurs de la sociologie
+    classe: Supérieur
+    objectif: Je connais les grandes approches de Durkheim, Weber et Bourdieu et leurs concepts clés.
+    mots: [fait social, action sociale, habitus, capital]
+    etapes:
+      - dialogue:
+          - zero: "Le suicide, c'est un geste purement individuel, non ?"
+          - neo: "Durkheim a montré en 1897 que les taux de suicide varient selon les groupes sociaux : un fait aussi intime a donc aussi des causes sociales."
+      - a_quoi_ca_sert: "Les concepts des fondateurs servent encore à analyser l'école, le travail, les inégalités et les modes de vie ; ils sont au programme de toute licence de sociologie."
+      - texte: |
+          **Émile Durkheim** (1858-1917) : il faut « traiter les **faits sociaux** comme des choses », extérieurs aux individus et contraignants. *Le Suicide* (1897) : le taux de suicide dépend de l'**intégration** et de la **régulation** sociales.
+
+          **Max Weber** (1864-1920) : la sociologie **compréhensive** cherche le **sens** que les individus donnent à leurs actions. Les **types d'action** (rationnelle, traditionnelle, affective) ; l'**idéal-type** (un modèle simplifié pour analyser le réel) ; *L'Éthique protestante et l'esprit du capitalisme* (1905).
+
+          **Pierre Bourdieu** (1930-2002) : les individus possèdent des **capitaux** (économique, culturel, social, symbolique) ; l'**habitus** est l'ensemble des dispositions acquises par la socialisation ; la **reproduction sociale** passe notamment par l'école (*Les Héritiers*, 1964, avec Passeron).
+      - astuce: { texte: "Durkheim explique par la société ; Weber comprend le sens des actions ; Bourdieu montre comment les capitaux se transmettent.", qui: mia }
+      - retiens: "**Durkheim** : **fait social**, *Le Suicide* (1897), intégration et régulation. **Weber** : sociologie **compréhensive**, types d'action, **idéal-type**. **Bourdieu** : **capitaux** (économique, culturel, social, symbolique), **habitus**, **reproduction**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque sociologue à son concept."
+        paires: [["Émile Durkheim", "le fait social"], ["Max Weber", "l'idéal-type"], ["Pierre Bourdieu", "l'habitus"]]
+        correction: "Trois fondateurs, trois concepts clés."
+      - type: classer
+        enonce: "Range chaque ressource : quel capital selon Bourdieu ?"
+        categories: ["Capital culturel", "Capital social"]
+        mots: [["Un diplôme", 0], ["Un réseau de relations utiles", 1], ["Des livres et des connaissances artistiques", 0], ["Des amis bien placés dans une entreprise", 1]]
+        correction: "Savoirs et diplômes → culturel ; relations → social."
+      - type: nombre
+        enonce: "En quelle année Durkheim publie-t-il *Le Suicide* ?"
+        reponse: "1897"
+        correction: "En **1897**."
+      - type: vf
+        vars: { t: [["Pour Weber, il faut comprendre le sens que les individus donnent à leurs actions.", true], ["Pour Durkheim, le suicide n'a aucune dimension sociale.", false], ["Les Héritiers analysent le rôle de l'école dans la reproduction sociale.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Sociologie compréhensive ; causes sociales du suicide ; Les Héritiers (1964)."
+
+  - id: methodes-enquete
+    titre: Les méthodes d'enquête en sciences sociales
+    classe: Bac+2
+    objectif: Je choisis entre méthodes quantitatives et qualitatives et je connais les conditions d'un échantillon représentatif.
+    mots: [questionnaire, entretien, observation participante, échantillon]
+    etapes:
+      - dialogue:
+          - mia: "Pour savoir combien d'étudiants travaillent pendant leurs études, et pourquoi ils le font, quelle méthode choisir ?"
+          - neo: "Combien : un questionnaire sur un grand échantillon. Pourquoi : des entretiens approfondis. Souvent, on combine les deux."
+      - a_quoi_ca_sert: "Ces méthodes servent dans les instituts de sondage, les études de marché, l'évaluation des politiques publiques et tous les mémoires de sciences humaines."
+      - texte: |
+          **Les méthodes quantitatives** : le **questionnaire** sur un grand échantillon, les statistiques ; elles mesurent des fréquences et des corrélations.
+
+          **Les méthodes qualitatives** :
+          - l'**entretien** (directif, **semi-directif** avec une grille de thèmes, ou libre) ;
+          - l'**observation**, parfois **participante** (le chercheur partage la vie du groupe étudié) ;
+          - l'analyse de documents (archives, presse, réseaux sociaux).
+
+          **L'échantillon représentatif** : il reproduit la structure de la population. Deux méthodes : le **tirage aléatoire** et la méthode des **quotas** (respecter les proportions d'âge, de sexe, de catégorie sociale).
+
+          **Les biais** : questions orientées, échantillon trop petit ou non représentatif, effet de l'enquêteur, désirabilité sociale (répondre ce qui est bien vu).
+      - attention: "Une question comme « Ne pensez-vous pas que… ? » oriente la réponse : une bonne question est neutre et précise."
+      - astuce: { texte: "Quanti : combien ? Quali : comment et pourquoi ?", qui: zero }
+      - retiens: "**Quantitatif** : questionnaire, statistiques (combien). **Qualitatif** : entretien **semi-directif**, **observation participante**, documents (comment, pourquoi). Échantillon **représentatif** : **aléatoire** ou **quotas**. Biais : questions orientées, **désirabilité sociale**."
+    exercices:
+      - type: classer
+        enonce: "Range chaque méthode : quantitative ou qualitative ?"
+        categories: ["Quantitative", "Qualitative"]
+        mots: [["Un questionnaire envoyé à 2 000 étudiants", 0], ["Un entretien d'une heure avec un apprenti", 1], ["Vivre six mois dans un club de supporters pour l'étudier", 1], ["L'analyse statistique de données de l'Insee", 0]]
+        correction: "Mesurer sur de grands nombres → quantitatif ; comprendre en profondeur → qualitatif."
+      - type: qcm
+        enonce: "Quelle question est la mieux formulée pour une enquête ?"
+        choix: ["Combien d'heures par semaine travaillez-vous en dehors de vos études ?", "Ne pensez-vous pas que travailler nuit aux études ?", "Êtes-vous d'accord avec les étudiants paresseux qui ne travaillent pas ?", "Travail, oui ou non, pourquoi, combien ?"]
+        correction: "Une question neutre, précise et qui porte sur un seul point."
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["la méthode des quotas", "respecter les proportions de la population"], ["la désirabilité sociale", "répondre ce qui est bien vu"], ["l'observation participante", "partager la vie du groupe étudié"]]
+        correction: "Des notions clés de l'enquête."
+      - type: vf
+        vars: { t: [["Un entretien semi-directif suit une grille de thèmes.", true], ["Un petit échantillon non représentatif permet de généraliser à toute la population.", false], ["On peut combiner méthodes quantitatives et qualitatives.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Grille de thèmes ; pas de généralisation sans représentativité ; méthodes mixtes."
+
+  - id: metier-historien
+    titre: Le métier d'historien
+    classe: Supérieur
+    objectif: Je connais la périodisation, la critique des sources et quelques grands courants de l'historiographie.
+    mots: [source, critique externe, critique interne, historiographie]
+    etapes:
+      - dialogue:
+          - zero: "L'histoire, c'est apprendre des dates par cœur ?"
+          - neo: "Pour un historien, c'est d'abord interroger des sources : qui les a produites, pourquoi, et que nous apprennent-elles vraiment ?"
+      - a_quoi_ca_sert: "La méthode historique est au cœur de la licence d'histoire et forme à l'esprit critique recherché dans le journalisme, les archives, l'enseignement et la fonction publique."
+      - texte: |
+          **La périodisation** (par convention, en Occident) :
+          - **Antiquité** : de l'invention de l'écriture (vers 3300 av. J.-C.) à la chute de l'Empire romain d'Occident (476) ;
+          - **Moyen Âge** : de 476 à la fin du XVᵉ siècle (1453 ou 1492) ;
+          - **époque moderne** : de la fin du XVᵉ siècle à la Révolution française (1789) ;
+          - **époque contemporaine** : depuis 1789.
+
+          **La critique des sources** :
+          - **externe** : authenticité, date, auteur, support (le document est-il ce qu'il prétend être ?) ;
+          - **interne** : contenu, intentions de l'auteur, cohérence, croisement avec d'autres sources.
+
+          **L'historiographie** (l'histoire de l'histoire) : l'**École des Annales** (revue fondée en **1929** par Marc Bloch et Lucien Febvre) élargit l'histoire aux sociétés, aux économies et aux mentalités, sur le temps long (Fernand Braudel) ; la **micro-histoire** étudie un individu ou un village pour éclairer une société.
+      - attention: "Une source n'est jamais neutre : même un registre officiel reflète les choix et les intérêts de ceux qui l'ont tenu."
+      - astuce: { texte: "Critique externe : le document est-il vrai ? Critique interne : ce qu'il dit est-il vrai ?", qui: mia }
+      - retiens: "Périodes : **Antiquité** (jusqu'en 476), **Moyen Âge** (476 à 1453 ou 1492), **moderne** (jusqu'en 1789), **contemporaine**. Critique **externe** (authenticité) et **interne** (contenu, intentions). **Annales** (1929, Bloch, Febvre, Braudel), **micro-histoire**."
+    exercices:
+      - type: ordre
+        enonce: "Range les grandes périodes de l'histoire dans l'ordre."
+        items: ["L'Antiquité", "Le Moyen Âge", "L'époque moderne", "L'époque contemporaine"]
+        correction: "Antiquité, Moyen Âge, moderne, contemporaine."
+      - type: classer
+        enonce: "Range chaque question : critique externe ou critique interne ?"
+        categories: ["Externe", "Interne"]
+        mots: [["Le parchemin date-t-il vraiment du XIIᵉ siècle ?", 0], ["L'auteur avait-il intérêt à exagérer la victoire ?", 1], ["L'écriture correspond-elle à celle de l'époque ?", 0], ["Ce récit concorde-t-il avec d'autres témoignages ?", 1]]
+        correction: "Authenticité du document → externe ; fiabilité du contenu → interne."
+      - type: nombre
+        enonce: "En quelle année Marc Bloch et Lucien Febvre fondent-ils la revue des Annales ?"
+        reponse: "1929"
+        correction: "En **1929**."
+      - type: vf
+        vars: { t: [["L'époque contemporaine commence conventionnellement en 1789.", true], ["Une source officielle est toujours neutre.", false], ["La micro-histoire étudie parfois un seul individu ou village.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "1789 ; aucune source n'est neutre ; micro-histoire."

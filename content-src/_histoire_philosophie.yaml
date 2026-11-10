@@ -29,3 +29,11 @@ chapitres:
       - mia: "Raisonner juste, juger la science, peser le bien et le mal : trois lampes à rallumer."
     apres:
       - narrateur: "Les colonnes s'illuminent. On marche de nouveau sous le Portique en discutant, plus lucide qu'avant."
+  philo-cabinet-de-psychologie:
+    titre: "Le Cabinet de Psychologie"
+    objet: "la lampe de l'Agora"
+    avant:
+      - narrateur: "Dans le Cabinet, les expériences sont en désordre : des opinions remplacent les mesures, et les biais passent inaperçus."
+      - neo: "Hypothèse, mesure, contrôle : c'est ainsi qu'on comprend l'esprit humain sans se raconter d'histoires."
+    apres:
+      - narrateur: "Les écrans d'expérience se rallument, les résultats s'alignent. Une nouvelle lampe brille au-dessus du divan."

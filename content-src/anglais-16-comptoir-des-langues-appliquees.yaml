@@ -1,0 +1,147 @@
+id: en-comptoir-des-langues-appliquees
+matiere: anglais
+titre: Le Comptoir des Langues appliquées
+sous_titre: Licence LEA - deux langues au service de l'entreprise, traduction spécialisée, communication interculturelle
+emoji: 🤝
+couleur: "#00897b"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 716
+specialite: Licence LEA
+version: 1.0.0
+intro:
+  - narrateur: "Sur le port, un comptoir de commerce international : des contrats en trois langues, des appels avec Madrid et Berlin, des catalogues à traduire."
+  - mia: "La licence LEA, langues étrangères appliquées, associe deux langues à des matières d'entreprise : droit, économie, gestion, commerce."
+  - neo: "Ici, la langue est un outil de travail : négocier, traduire, communiquer avec d'autres cultures."
+
+lecons:
+  - id: lea-presentation
+    titre: La licence LEA et le commerce international
+    classe: Supérieur
+    objectif: Je connais l'organisation de la licence LEA et les bases du vocabulaire du commerce international.
+    mots: [LEA, commerce international, incoterm, export]
+    etapes:
+      - dialogue:
+          - zero: "LEA ou LLCER, c'est pareil, on fait de l'anglais ?"
+          - neo: "Non : en LLCER, on étudie la littérature et la culture. En LEA, on apprend deux langues pour l'entreprise : commerce, droit, traduction professionnelle."
+      - a_quoi_ca_sert: "La licence LEA prépare aux métiers de l'export, de la logistique internationale, du tourisme, de la traduction et de l'assistanat de direction bilingue."
+      - texte: |
+          **Deux langues au même niveau** (par exemple anglais et espagnol, ou anglais et allemand), étudiées en version et en thème, à l'oral et à l'écrit.
+
+          **Des matières d'application** : économie, droit des affaires, gestion, marketing, communication, informatique.
+
+          **Le commerce international** : exportation et importation, prospection de clients à l'étranger, logistique, douane, paiements internationaux.
+
+          **Les Incoterms** : des règles internationales qui précisent qui paie le transport et l'assurance, et quand le risque passe du vendeur à l'acheteur. Par exemple **EXW** (à l'usine : l'acheteur se charge de tout), **FOB** (le vendeur charge la marchandise sur le navire), **DDP** (rendu droits acquittés : le vendeur se charge de tout jusqu'à destination).
+
+          **Les stages à l'étranger** sont souvent obligatoires ou fortement conseillés.
+      - astuce: { texte: "EXW : le vendeur ne fait presque rien ; DDP : il fait presque tout. Les autres Incoterms sont entre les deux.", qui: mia }
+      - retiens: "LEA : **deux langues** + matières d'entreprise (économie, droit, gestion, marketing). Commerce international : export, logistique, douane. **Incoterms** : qui paie et qui supporte le risque (**EXW** minimum pour le vendeur, **DDP** maximum). Stages à l'étranger."
+    exercices:
+      - type: classer
+        enonce: "Range chaque enseignement : plutôt LEA ou plutôt LLCER ?"
+        categories: ["LEA", "LLCER"]
+        mots: [["Droit des affaires internationales", 0], ["Commentaire d'un roman anglais", 1], ["Traduction d'un contrat commercial", 0], ["Histoire de la poésie américaine", 1]]
+        correction: "Langues appliquées à l'entreprise → LEA ; littérature et culture → LLCER."
+      - type: relier
+        enonce: "🔗 Relie chaque Incoterm à sa signification."
+        paires: [["EXW", "l'acheteur prend la marchandise à l'usine et se charge de tout"], ["FOB", "le vendeur charge la marchandise à bord du navire"], ["DDP", "le vendeur livre à destination, droits de douane payés"]]
+        correction: "Les Incoterms répartissent frais et risques."
+      - type: qcm
+        enonce: "À quoi servent les Incoterms ?"
+        choix: ["À préciser qui paie le transport et quand le risque passe à l'acheteur", "À fixer le taux de change", "À traduire les contrats", "À calculer la TVA"]
+        correction: "Ils répartissent les frais, les formalités et les risques entre vendeur et acheteur."
+      - type: vf
+        vars: { t: [["En LEA, on étudie deux langues étrangères.", true], ["La LEA ne comporte aucune matière juridique ou économique.", false], ["Un stage à l'étranger est souvent recommandé en LEA.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Deux langues ; droit et économie inclus ; stage à l'étranger."
+
+  - id: lea-traduction-specialisee
+    titre: Traduction spécialisée et terminologie
+    classe: Bac+2
+    objectif: Je traduis un document professionnel en respectant la terminologie, le registre et les conventions du pays cible.
+    mots: [terminologie, glossaire, localisation, registre]
+    etapes:
+      - dialogue:
+          - mia: "« Invoice » se traduit comment dans un contrat ?"
+          - zero: "« Invoice »… invitation ?"
+          - neo: "« Facture » ! En traduction spécialisée, chaque terme technique a un équivalent précis : on le vérifie dans un glossaire."
+      - a_quoi_ca_sert: "Contrats, notices, sites web, rapports financiers : la traduction professionnelle est un métier, et une erreur de terme peut coûter très cher."
+      - texte: |
+          **La terminologie** : les termes propres à un domaine (droit, finance, technique). On constitue un **glossaire** bilingue et on utilise des bases terminologiques officielles.
+
+          **Quelques termes du commerce** : *invoice* = facture ; *purchase order* = bon de commande ; *quote* = devis ; *delivery* = livraison ; *payment terms* = conditions de paiement ; *shareholder* = actionnaire.
+
+          **Le registre** : un contrat est formel, une publicité joue sur l'émotion ; la traduction respecte le registre de l'original.
+
+          **La localisation** : adapter un contenu au pays cible (formats de date et de nombre, monnaie, unités, références culturelles). Le 03/04 est le 3 avril en France, mais le 4 mars aux États-Unis.
+
+          **Les outils** : mémoires de traduction, logiciels de traduction assistée ; la traduction automatique s'utilise avec une **relecture humaine** (post-édition).
+      - attention: "Les dates, les nombres et les montants sont les erreurs les plus coûteuses : en anglais, 1,500 signifie mille cinq cents, et 1.5 signifie un et demi."
+      - astuce: { texte: "Avant de traduire un document professionnel, repère et vérifie tous ses termes techniques : c'est là que se cachent les erreurs graves.", qui: zero }
+      - retiens: "**Terminologie** et **glossaire** : un terme technique, un équivalent précis (*invoice* = facture, *quote* = devis). Respecter le **registre**. **Localisation** : dates, nombres, monnaies, culture. Traduction automatique + **relecture humaine**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque terme anglais à sa traduction."
+        paires: [["invoice", "facture"], ["quote", "devis"], ["purchase order", "bon de commande"], ["shareholder", "actionnaire"]]
+        correction: "Le vocabulaire de base des documents commerciaux."
+      - type: qcm
+        enonce: "Une facture américaine indique la date 03/04. De quelle date s'agit-il ?"
+        choix: ["Le 4 mars", "Le 3 avril", "Le 30 avril", "Impossible à savoir"]
+        correction: "Aux États-Unis, le mois vient en premier : **4 mars**."
+      - type: nombre
+        enonce: "Un document anglais indique « 2,500 units ». Combien d'unités cela fait-il ?"
+        reponse: "2500"
+        correction: "En anglais, la virgule sépare les milliers : **2 500** unités."
+      - type: vf
+        vars: { t: [["La localisation adapte les formats de date et de monnaie.", true], ["La traduction automatique n'a jamais besoin de relecture.", false], ["Un glossaire aide à garder une terminologie cohérente.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Localisation ; post-édition humaine ; glossaire."
+
+  - id: lea-interculturel
+    titre: Communication et négociation interculturelles
+    classe: Bac+3
+    objectif: J'utilise les dimensions culturelles de Hall et de Hofstede pour adapter ma communication dans une négociation internationale.
+    mots: [interculturel, contexte fort, distance hiérarchique, négociation]
+    etapes:
+      - dialogue:
+          - zero: "Mon contact japonais n'a pas dit non, donc c'est oui !"
+          - neo: "Pas forcément : dans une culture à contexte fort, un refus s'exprime souvent indirectement. Il faut savoir lire entre les lignes."
+      - a_quoi_ca_sert: "Dans les entreprises internationales, les malentendus culturels font échouer des négociations ; savoir les anticiper est une compétence très recherchée."
+      - texte: |
+          **Edward T. Hall : contexte fort et contexte faible** :
+          - culture à **contexte faible** (Allemagne, États-Unis, pays scandinaves) : on dit les choses explicitement, le contrat écrit fait foi ;
+          - culture à **contexte fort** (Japon, pays arabes, Amérique latine) : le sens passe beaucoup par le contexte, la relation, le non-dit.
+
+          **Geert Hofstede : des dimensions culturelles**, dont :
+          - la **distance hiérarchique** (acceptation des inégalités de pouvoir) ;
+          - l'**individualisme** ou le **collectivisme** ;
+          - le **contrôle de l'incertitude** (besoin de règles et de prévisibilité).
+
+          **Le rapport au temps** : monochrone (une chose à la fois, ponctualité stricte) ou polychrone (plusieurs choses en parallèle, horaires plus souples).
+
+          **En négociation** : se renseigner sur les usages, prendre le temps de la relation si nécessaire, reformuler pour vérifier l'accord, confirmer par écrit.
+      - attention: "Ces modèles décrivent des tendances moyennes, pas chaque personne : il faut éviter de transformer une dimension culturelle en stéréotype."
+      - astuce: { texte: "Après une réunion internationale, envoie toujours un compte rendu écrit de ce qui a été décidé : c'est la meilleure protection contre les malentendus.", qui: mia }
+      - retiens: "**Hall** : contexte **faible** (explicite, écrit) ou **fort** (implicite, relation). **Hofstede** : **distance hiérarchique**, **individualisme/collectivisme**, **contrôle de l'incertitude**. Temps **monochrone** ou **polychrone**. Négocier : s'informer, reformuler, confirmer par écrit, éviter les stéréotypes."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque notion à sa définition."
+        paires: [["le contexte fort", "le sens passe beaucoup par le non-dit et la relation"], ["la distance hiérarchique", "l'acceptation des inégalités de pouvoir"], ["le temps monochrone", "une chose à la fois, ponctualité stricte"]]
+        correction: "Des outils pour comprendre les différences culturelles."
+      - type: relier
+        enonce: "🔗 Relie chaque chercheur à son apport."
+        paires: [["Edward T. Hall", "contexte fort et contexte faible"], ["Geert Hofstede", "les dimensions culturelles nationales"], ["un compte rendu écrit", "confirmer les décisions après une réunion"]]
+        correction: "Hall, Hofstede, et une bonne pratique."
+      - type: qcm
+        enonce: "Pourquoi envoyer un compte rendu écrit après une négociation internationale ?"
+        choix: ["Pour vérifier que chacun a compris la même chose", "Pour montrer qu'on a raison", "Parce que c'est obligatoire partout", "Pour remplacer la négociation"]
+        correction: "L'écrit limite les malentendus liés à la langue et à la culture."
+      - type: vf
+        vars: { t: [["Les dimensions de Hofstede décrivent des tendances, pas chaque individu.", true], ["Dans une culture à contexte fort, tout est dit explicitement.", false], ["Le rapport au temps peut varier selon les cultures.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Tendances moyennes ; contexte fort = implicite ; monochrone et polychrone."

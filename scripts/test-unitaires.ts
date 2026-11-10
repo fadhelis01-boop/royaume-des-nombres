@@ -256,6 +256,8 @@ eq("voix : tiret de titre, factorielle, implication", [
   toSpeech("continue ⇒ solution").includes("donc"),
   toSpeech(String.raw`$y'' + a\,y' = 0$`).includes("a y prime"),
 ], [true, true, true, true, true, true]);
+eq("voix : 1 cm au singulier", [toSpeech("1 cm sur la carte").includes("1 centimètre sur"), toSpeech("25 000 cm").includes("centimètres")], [true, true]);
+eq("voix : échelle de carte", [toSpeech("une carte au 1/25 000").includes("1 sur 25 000"), toSpeech("au 1/50000").includes("1 sur 50000"), toSpeech("1/4 du gâteau").includes("quart")], [true, true, true]);
 eq("voix : fraction contenant un indice ou un exposant", [
   toSpeech(String.raw`$\dfrac{V_{max} [S]}{K_m + [S]}$`).includes("max [S] sur K"),
   toSpeech(String.raw`$\dfrac{e^{x}}{x^{3}}$`).includes("e puissance x sur x au cube"),

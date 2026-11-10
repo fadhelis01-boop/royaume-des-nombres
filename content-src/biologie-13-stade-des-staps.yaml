@@ -1,0 +1,151 @@
+id: bio-stade-des-staps
+matiere: biologie
+titre: Le Stade des STAPS
+sous_titre: Licence STAPS - physiologie de l'effort, principes de l'entraînement, sport et société
+emoji: 🏃
+couleur: "#ef6c00"
+cycle: maitres
+age: 18-21 ans
+niveau: Supérieur – Bac+3
+ordre: 313
+specialite: Licence STAPS
+version: 1.0.0
+intro:
+  - narrateur: "À l'orée de la forêt, un stade : une piste, un laboratoire d'analyse de l'effort, une salle de musculation, des tribunes."
+  - neo: "STAPS, ce sont les sciences et techniques des activités physiques et sportives : biologie, psychologie, sociologie et pédagogie du sport."
+  - mia: "Comprendre le corps qui bouge, entraîner, enseigner, prévenir : les bases des métiers du sport et de la santé par l'activité physique."
+
+lecons:
+  - id: physiologie-effort
+    titre: Physiologie de l'effort et filières énergétiques
+    classe: Supérieur
+    objectif: Je distingue les trois filières énergétiques et j'utilise la fréquence cardiaque maximale et la VO2max.
+    mots: [filière énergétique, ATP, VO2max, fréquence cardiaque maximale]
+    etapes:
+      - dialogue:
+          - zero: "Un sprint de 100 m et un marathon, le muscle fonctionne pareil ?"
+          - neo: "Non ! Pour un sprint, il utilise des réserves immédiates sans oxygène ; pour un marathon, il brûle glucides et graisses avec de l'oxygène."
+      - a_quoi_ca_sert: "Connaître les filières permet de construire un entraînement adapté, de l'athlète de haut niveau au patient en réadaptation."
+      - texte: |
+          **L'ATP** est la seule source d'énergie directement utilisable par le muscle. Trois filières la renouvellent :
+          1. **anaérobie alactique** (phosphocréatine) : très puissante, très brève (quelques secondes : sprint, saut, lancer) ;
+          2. **anaérobie lactique** (glycolyse sans oxygène) : efforts intenses de quelques dizaines de secondes à deux minutes (400 m), production de lactate ;
+          3. **aérobie** (oxydation des glucides et des lipides) : moins puissante mais quasi illimitée en durée (course de fond, vélo).
+
+          **La VO2max** : le volume maximal d'oxygène que l'organisme peut consommer par minute ; c'est un indicateur clé de l'endurance.
+
+          **La fréquence cardiaque maximale** : estimée grossièrement par **220 − âge** (formule simple, imprécise d'une personne à l'autre).
+
+          **Les zones d'intensité** se calculent souvent en pourcentage de la fréquence cardiaque maximale.
+      - attention: "Les filières ne fonctionnent pas l'une après l'autre : elles se chevauchent toujours, seule leur part relative change avec la durée et l'intensité."
+      - astuce: { texte: "Durée de l'effort : secondes → alactique ; une minute → lactique ; au-delà de quelques minutes → aérobie.", qui: mia }
+      - retiens: "**ATP** renouvelé par trois filières : **anaérobie alactique** (quelques secondes), **anaérobie lactique** (jusqu'à environ deux minutes), **aérobie** (longue durée). **VO2max** = endurance. FC max ≈ **220 − âge** (estimation). Les filières se chevauchent."
+    exercices:
+      - type: nombre
+        vars: { a: [18, 20, 25, 30, 40] }
+        enonce: "Avec la formule simple 220 − âge, quelle est la fréquence cardiaque maximale estimée d'une personne de {{a}} ans ?"
+        reponse: "220-a"
+        unite: battements/min
+        correction: "220 − {{a}} = **{{220-a}}** battements par minute (estimation)."
+      - type: nombre
+        vars: { t: [[200, 70, 140], [190, 80, 152], [200, 60, 120], [180, 75, 135]] }
+        enonce: "Fréquence cardiaque maximale : {{t_0}}. Quelle fréquence correspond à {{t_1}} % de ce maximum ?"
+        reponse: "t_2"
+        unite: battements/min
+        correction: "{{t_0}} × {{t_1}} ÷ 100 = **{{t_2}}**."
+      - type: classer
+        enonce: "Range chaque effort selon sa filière dominante."
+        categories: ["Anaérobie", "Aérobie"]
+        mots: [["Un 100 m", 0], ["Un marathon", 1], ["Un lancer de poids", 0], ["Une sortie vélo de deux heures", 1]]
+        correction: "Effort bref et intense → anaérobie ; effort long → aérobie."
+      - type: vf
+        vars: { t: [["L'ATP est la source d'énergie directement utilisée par le muscle.", true], ["Les filières énergétiques fonctionnent strictement l'une après l'autre.", false], ["La VO2max est un indicateur de l'endurance.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "ATP ; les filières se chevauchent ; VO2max et endurance."
+
+  - id: principes-entrainement
+    titre: Les principes de l'entraînement
+    classe: Bac+2
+    objectif: J'applique les principes de surcharge, de progressivité, de spécificité et de récupération pour planifier un entraînement.
+    mots: [surcharge, progressivité, spécificité, surcompensation]
+    etapes:
+      - dialogue:
+          - mia: "Pour progresser, il faut s'entraîner tous les jours le plus fort possible ?"
+          - neo: "Non : c'est pendant la récupération que le corps devient plus fort. Sans repos, on risque la blessure et le surentraînement."
+      - a_quoi_ca_sert: "Ces principes servent aux entraîneurs, aux préparateurs physiques, aux professeurs d'EPS et aux enseignants en activité physique adaptée."
+      - texte: |
+          **La surcharge** : l'organisme ne progresse que si l'effort dépasse ce qu'il fait habituellement.
+
+          **La progressivité** : augmenter la charge peu à peu (volume, intensité, fréquence).
+
+          **La spécificité** : on progresse dans ce qu'on entraîne (un sprinteur travaille la vitesse, un marathonien l'endurance).
+
+          **La récupération et la surcompensation** : après l'effort, la fatigue fait baisser temporairement les capacités ; avec un repos suffisant, l'organisme se reconstruit **au-dessus** du niveau de départ.
+
+          **La planification** : en cycles (microcycle d'une semaine, mésocycle de quelques semaines, macrocycle d'une saison), avec des périodes de charge et d'allègement.
+
+          **Le surentraînement** : fatigue persistante, baisse des performances, blessures ; on le prévient par le repos, le sommeil et l'alimentation.
+      - astuce: { texte: "S'entraîner, c'est fatiguer le corps ; progresser, c'est le laisser récupérer.", qui: zero }
+      - retiens: "**Surcharge**, **progressivité**, **spécificité**, **récupération**. **Surcompensation** : après le repos, le niveau dépasse celui de départ. Planification en **micro-**, **méso-**, **macrocycles**. Éviter le **surentraînement**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque principe à un exemple."
+        paires: [["la spécificité", "un sprinteur s'entraîne surtout en vitesse"], ["la progressivité", "augmenter la distance de 10 % par semaine"], ["la surcompensation", "être plus performant après une période de repos"], ["la surcharge", "dépasser l'effort habituel pour provoquer une adaptation"]]
+        correction: "Les grands principes de l'entraînement."
+      - type: ordre
+        enonce: "Range les cycles d'entraînement du plus court au plus long."
+        items: ["Microcycle", "Mésocycle", "Macrocycle"]
+        correction: "Une semaine, quelques semaines, une saison."
+      - type: qcm
+        enonce: "Un athlète est fatigué depuis des semaines et ses performances baissent. Que faut-il suspecter ?"
+        choix: ["Un surentraînement", "Une surcompensation réussie", "Un manque de surcharge", "Une progression normale"]
+        correction: "Fatigue persistante et baisse de performance : signes de **surentraînement**."
+      - type: vf
+        vars: { t: [["La progression se construit pendant la récupération.", true], ["S'entraîner au maximum tous les jours est la meilleure méthode.", false], ["On progresse surtout dans ce qu'on entraîne.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Récupération ; risque de surentraînement ; spécificité."
+
+  - id: sport-societe
+    titre: Sport, société et santé
+    classe: Bac+3
+    objectif: J'analyse les dimensions sociales du sport - inégalités d'accès, éthique et dopage, sport-santé - et les métiers de la filière.
+    mots: [sport-santé, dopage, éthique, activité physique adaptée]
+    etapes:
+      - dialogue:
+          - zero: "Le sport, c'est juste gagner des médailles ?"
+          - neo: "C'est aussi un enjeu de santé publique, d'éducation, d'égalité et d'économie. Les STAPS étudient tout cela."
+      - a_quoi_ca_sert: "Professeur d'EPS, enseignant en activité physique adaptée, entraîneur, manager du sport, ergonome : les débouchés des STAPS dépassent largement la performance."
+      - texte: |
+          **Sport et santé** : l'activité physique régulière réduit le risque de maladies cardiovasculaires, de diabète de type 2 et de certains cancers, et améliore la santé mentale. Recommandation courante pour les adultes : au moins **150 minutes** d'activité modérée par semaine. En France, le **sport sur ordonnance** existe pour certaines maladies chroniques.
+
+          **L'activité physique adaptée** (APA) : des programmes pour les personnes malades, âgées ou en situation de handicap.
+
+          **Les inégalités d'accès** : selon le revenu, le genre, le territoire, le handicap ; les politiques publiques et les clubs cherchent à les réduire.
+
+          **L'éthique et le dopage** : le dopage met la santé en danger et fausse l'équité ; l'**Agence mondiale antidopage** (AMA, créée en 1999) établit la liste des substances interdites.
+
+          **Les métiers** : enseignement (EPS), entraînement, APA-santé, management du sport, ergonomie.
+      - astuce: { texte: "150 minutes par semaine, c'est par exemple 30 minutes de marche rapide cinq jours sur sept.", qui: mia }
+      - retiens: "Sport-santé : moins de maladies cardiovasculaires et de diabète, meilleure santé mentale ; **150 min** d'activité modérée par semaine ; **sport sur ordonnance**. **APA** pour les publics fragiles. **Inégalités d'accès**. **Dopage** : santé et équité, **AMA** (1999). Nombreux métiers."
+    exercices:
+      - type: nombre
+        enonce: "Combien de minutes d'activité modérée par semaine recommande-t-on couramment aux adultes ?"
+        reponse: "150"
+        unite: min
+        correction: "Au moins **150 minutes**."
+      - type: classer
+        enonce: "Range chaque métier : plutôt enseignement-entraînement ou plutôt santé-APA ?"
+        categories: ["Enseignement ou entraînement", "Santé ou APA"]
+        mots: [["Professeur d'EPS", 0], ["Enseignant en activité physique adaptée à l'hôpital", 1], ["Entraîneur d'un club d'athlétisme", 0], ["Animateur de sport sur ordonnance pour des patients diabétiques", 1]]
+        correction: "Les STAPS ouvrent à l'enseignement, à l'entraînement et à la santé."
+      - type: qcm
+        enonce: "Quel organisme établit la liste mondiale des substances dopantes interdites ?"
+        choix: ["L'Agence mondiale antidopage (AMA)", "L'UNESCO seule", "Chaque club sportif", "Personne"]
+        correction: "L'**AMA**, créée en 1999."
+      - type: vf
+        vars: { t: [["L'activité physique régulière améliore aussi la santé mentale.", true], ["Le sport sur ordonnance n'existe pas en France.", false], ["Le dopage pose un problème d'équité entre sportifs.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Santé mentale ; le sport sur ordonnance existe ; dopage = santé et équité."

@@ -84,3 +84,19 @@ chapitres:
       - mia: "Des hypothèses claires, des modèles simples, des limites assumées : c'est ainsi qu'on raisonne en économie."
     apres:
       - narrateur: "Les courbes se stabilisent. Sur le grand tableau, une phrase s'affiche : « Tout modèle est faux, certains sont utiles. »"
+  hg-atelier-des-sciences-sociales:
+    titre: "L'Atelier des Sciences sociales"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Dans l'Atelier, les archives sont mélangées, les questionnaires à moitié remplis, et personne ne sait plus d'où viennent les documents."
+      - mia: "Des sources critiquées, des enquêtes rigoureuses : c'est le métier des sociologues et des historiens."
+    apres:
+      - narrateur: "Chaque document retrouve son origine, chaque enquête son échantillon. L'Atelier peut de nouveau éclairer la société."
+  hg-belvedere-du-geographe:
+    titre: "Le Belvédère du Géographe"
+    objet: "la page de la frise"
+    avant:
+      - narrateur: "Du Belvédère, le paysage est devenu flou : plus d'échelle, plus de légende, les cartes ne disent plus rien."
+      - neo: "Changer d'échelle, cartographier, comprendre les risques : la géographie remet le monde en ordre."
+    apres:
+      - narrateur: "La vue se dégage jusqu'à la mer. Sur la table, une carte nette, légendée, à la bonne échelle."

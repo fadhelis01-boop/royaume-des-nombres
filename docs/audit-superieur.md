@@ -110,4 +110,23 @@ Restaient ouverts : les disciplines universitaires propres, la biologie et la ch
 5. Un exercice « relier » à deux paires (minimum : trois) a été bloqué par le contrôle du contenu et complété.
 6. Vérifié : 150 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 19, 20 et 21 ans, défis des six mondes ouverts dans le navigateur avec un profil « Bac+2 », formules affichées sans erreur, console sans erreur.
 
-Restent ouverts : le master et au-delà, les autres licences (psychologie, sociologie, histoire, géographie, langues étrangères appliquées, informatique, STAPS…), et le test avec de vrais étudiants.
+Restaient ouverts : le master, les autres licences (traitées en 2.26.0, ci-dessous), et le test avec de vrais étudiants.
+
+## Autres licences (2.26.0)
+
+Sept licences ajoutées, en accès libre sur la carte (`specialite`, hors test et parcours) :
+
+| Licence | Monde | Planète | Leçons |
+|---|---|---|---|
+| Psychologie | Le Cabinet de Psychologie | Philosophie | méthode expérimentale, psychologie cognitive et biais, développement (Piaget) et influence sociale (Asch, Milgram) |
+| Sociologie et histoire | L'Atelier des Sciences sociales | Histoire-géo et SES | fondateurs (Durkheim, Weber, Bourdieu), méthodes d'enquête, métier d'historien (périodisation, critique des sources, Annales) |
+| Géographie | Le Belvédère du Géographe | Histoire-géo et SES | concepts (territoire, échelle, réseau, centre-périphérie), cartographie et SIG, aménagement et risques |
+| LEA | Le Comptoir des Langues appliquées | Langues | commerce international et Incoterms, traduction spécialisée et localisation, négociation interculturelle (Hall, Hofstede) |
+| Informatique | La Forge informatique | Maths | complexité (notation O), programmation orientée objet, cryptographie et sécurité |
+| STAPS | Le Stade des STAPS | Biologie | filières énergétiques et VO2max, principes de l'entraînement, sport, société et santé |
+
+**Voix, corrections trouvées en relisant** : « 1 cm » était lu « 1 centimètres » (la règle du singulier ne couvrait que les mètres et kilomètres ; elle couvre maintenant aussi centimètres et millimètres, ce qui profite aussi aux leçons des plus jeunes) ; une échelle « 1/25 000 » aurait été lue comme une fraction (« un vingt-cinquième 000 ») : elle est lue « 1 sur 25 000 ». Deux tests ajoutés. Dans le contenu, « 0-2 ans » réécrit « 0 à 2 ans » et « 1/N » réécrit « 1 sur N ».
+
+Vérifié : 152 tests unitaires, contrôle du contenu sans erreur, 0 défi dominé à 19 et 20 ans, défis des six mondes ouverts dans le navigateur avec un profil « Bac+3 », console sans erreur.
+
+Restent ouverts : le master (Bac+4 et Bac+5) et le test avec de vrais étudiants.
