@@ -125,6 +125,8 @@ function latexToSpeech(tex: string): string {
     .replace(/\\mapsto/g, " associe ")
     .replace(/\\\|\s*\\(?:vec|overrightarrow)\{([^{}]*)\}\s*\\\|/g, " norme du vecteur $1 ")
     .replace(/\\\|/g, " ")
+    // valeur absolue |x|
+    .replace(/\|([^|]+)\|/g, " valeur absolue de $1 ")
     .replace(/\\[,;:! ]/g, " ");
   for (let i = 0; i < 4; i++) {
     s = s
@@ -138,6 +140,22 @@ function latexToSpeech(tex: string): string {
       .replace(/\\left|\\right/g, "");
   }
   return s
+    // notations du supérieur (audit « supérieur ») : limites avec bornes, quantificateurs, dérivées, petit o
+    .replace(/\\lim(?:\\limits)?\s*_\{([^{}]*?)\\to([^{}]*)\}/g, " limite quand $1 tend vers $2 de ")
+    .replace(/\\limits/g, "")
+    .replace(/(\d|\b[a-z])!/g, " factorielle $1 ")
+    .replace(/\\mathbb\{([NZRCQ])\}\^\{?(\w)\}?/g, " $1 $2 ")
+    .replace(/\\forall/g, " pour tout ")
+    .replace(/\\exists/g, " il existe ")
+    .replace(/\\(?:var)?epsilon/g, " epsilon ")
+    .replace(/\\ell\b/g, " l ")
+    .replace(/\\ker\b/g, " noyau de ")
+    .replace(/\\dim\b/g, " dimension de ")
+    .replace(/\\(?:operatorname\{)?Im\b\}?/g, " image de ")
+    .replace(/\b([a-zA-Z])''/g, " $1 seconde ")
+    .replace(/\b([fghuy])'\(([^()]*)\)/g, " $1 prime de $2 ")
+    .replace(/\b([a-zA-Z])'/g, " $1 prime ")
+    .replace(/(^|[^a-zA-Z\\])o\(([^()]*)\)/g, "$1 petit o de $2 ")
     .replace(/\^\{?2\}?/g, " au carré ")
     .replace(/\^\{?3\}?/g, " au cube ")
     .replace(/\^\{([^{}]*)\}/g, " puissance $1 ")
@@ -252,12 +270,15 @@ export function toSpeech(md: string): string {
     // intervalle d'années « 1600-1750 » : on dit « 1600 à 1750 »
     .replace(/\b([12]\d{3})-([12]\d{3})\b/g, "$1 à $2")
     .replace(/(\d)\s*[−-]\s*(\d)/g, "$1 moins $2")
+    .replace(/([A-Za-zÀ-ÿ]{2,}[.)»]?)\s[-–]\s(?=[«(]?\s?[A-Za-zÀ-ÿ]{2,})/g, "$1, ")
     .replace(/\s[−-]\s/g, " moins ")
     .replace(/−(\d)/g, "moins $1")
     .replace(/(\d)\s*\+\s*(\d)/g, "$1 plus $2")
     .replace(/\s\+\s/g, " plus ")
     .replace(/\s?=\s?/g, " égale ")
     .replace(/≈/g, " environ ")
+    .replace(/⇒/g, " donc ")
+    .replace(/⇔/g, " équivaut à ")
     .replace(/≠/g, " différent de ")
     .replace(/\s<=?\s|≤/g, (m) => (m.includes("=") || m === "≤" ? " inférieur ou égal à " : " est plus petit que "))
     .replace(/\s>=?\s|≥/g, (m) => (m.includes("=") || m === "≥" ? " supérieur ou égal à " : " est plus grand que "))

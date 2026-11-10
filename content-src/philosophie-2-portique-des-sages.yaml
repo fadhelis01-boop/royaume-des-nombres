@@ -1,0 +1,148 @@
+id: philo-portique-des-sages
+matiere: philosophie
+titre: Le Portique des Sages
+sous_titre: Supérieur - logique et argumentation, philosophie des sciences, éthique appliquée
+emoji: 🏛️
+couleur: "#37306b"
+cycle: maitres
+age: 18 ans et +
+niveau: Supérieur
+ordre: 902
+version: 1.0.0
+intro:
+  - narrateur: "Derrière l'Agora, un long portique couvert de colonnes. On y marche en discutant, comme le faisaient les philosophes stoïciens."
+  - neo: "Après le bac, la philosophie sert partout : raisonner juste, juger la science, trancher des questions morales nouvelles."
+  - mia: "Trois outils pour penser clairement dans tous les métiers."
+
+lecons:
+  - id: logique-sophismes
+    titre: Argumenter juste et repérer les sophismes
+    classe: Supérieur
+    objectif: Je distingue un argument valide d'un argument fallacieux et je reconnais les sophismes les plus courants.
+    mots: [argument, validité, sophisme, prémisse]
+    etapes:
+      - dialogue:
+          - zero: "« Tout le monde le dit, donc c'est vrai. » C'est un bon argument, non ?"
+          - neo: "C'est un sophisme célèbre : l'appel à la popularité. Le nombre de gens qui pensent une chose ne la rend pas vraie."
+      - a_quoi_ca_sert: "Repérer les raisonnements trompeurs protège dans les débats, face à la publicité, à la politique et aux réseaux sociaux ; c'est la base de l'esprit critique en droit, en sciences et en journalisme."
+      - texte: |
+          **Un argument** : des **prémisses** (ce qu'on pose) et une **conclusion** (ce qu'on en tire).
+
+          **Valide ou vrai** : un argument est **valide** si la conclusion découle nécessairement des prémisses ; il est **solide** si, en plus, les prémisses sont vraies. « Tous les chats volent ; Félix est un chat ; donc Félix vole » est valide… mais pas solide.
+
+          **Les sophismes courants** :
+          - **l'homme de paille** : déformer la position de l'adversaire pour la réfuter plus facilement ;
+          - **l'attaque personnelle** (*ad hominem*) : critiquer la personne au lieu de l'argument ;
+          - **l'appel à la popularité** : « tout le monde le pense » ;
+          - **la fausse alternative** : « soit tu es avec nous, soit contre nous » ;
+          - **la pente glissante** : « si on accepte ça, alors tout s'effondrera » sans le démontrer ;
+          - **la confusion entre corrélation et causalité**.
+      - astuce: { texte: "Face à un argument, demande-toi : les prémisses sont-elles vraies ? La conclusion en découle-t-elle vraiment ?", qui: mia }
+      - retiens: "Argument = **prémisses** + **conclusion**. **Valide** : la conclusion découle des prémisses ; **solide** : valide et prémisses vraies. Sophismes : **homme de paille**, **ad hominem**, **appel à la popularité**, **fausse alternative**, **pente glissante**, **corrélation prise pour causalité**."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque exemple au sophisme qu'il illustre."
+        paires: [["« Tu dis ça, mais tu n'as même pas ton bac ! »", "l'attaque personnelle"], ["« Des millions de gens l'achètent, donc c'est le meilleur. »", "l'appel à la popularité"], ["« Soit on interdit tout, soit c'est l'anarchie. »", "la fausse alternative"], ["« Si on autorise une exception, bientôt plus personne ne respectera aucune règle. »", "la pente glissante"]]
+        correction: "Quatre sophismes fréquents dans les débats."
+      - type: qcm
+        enonce: "« Tous les poissons nagent ; le dauphin nage ; donc le dauphin est un poisson. » Cet argument est…"
+        choix: ["Non valide : la conclusion ne découle pas des prémisses", "Valide et solide", "Valide mais pas solide", "Un appel à la popularité"]
+        correction: "Nager n'est pas réservé aux poissons : la conclusion ne découle pas des prémisses (et elle est fausse)."
+      - type: classer
+        enonce: "Range chaque réplique : argument recevable ou sophisme ?"
+        categories: ["Recevable", "Sophisme"]
+        mots: [["Cette étude porte sur 10 000 personnes et a été confirmée par trois autres équipes.", 0], ["Il est forcément dans l'erreur, regarde comment il s'habille.", 1], ["Ton raisonnement repose sur une prémisse fausse : voici pourquoi.", 0], ["Tout le monde est d'accord, donc inutile de discuter.", 1]]
+        correction: "On critique les arguments et les preuves, pas les personnes ni la popularité."
+      - type: vf
+        vars: { t: [["Un argument peut être valide avec des prémisses fausses.", true], ["L'homme de paille consiste à déformer la position de l'adversaire.", true], ["Si beaucoup de gens croient une chose, elle est vraie.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Validité et vérité sont distinctes ; homme de paille = déformation ; la popularité ne prouve rien."
+
+  - id: philosophie-des-sciences
+    titre: Qu'est-ce qu'une théorie scientifique ?
+    classe: Supérieur
+    objectif: J'explique ce qui distingue une théorie scientifique, avec les notions de réfutabilité (Popper) et de révolution scientifique (Kuhn).
+    mots: [réfutabilité, hypothèse, paradigme, révolution scientifique]
+    etapes:
+      - dialogue:
+          - mia: "Un horoscope dit : « Cette semaine, des changements arrivent. » Peut-on prouver qu'il se trompe ?"
+          - zero: "Euh… non, il se passe toujours quelque chose !"
+          - neo: "C'est justement le problème, selon Karl Popper : une affirmation qu'aucune observation ne pourrait contredire n'est pas scientifique."
+      - a_quoi_ca_sert: "Distinguer science et pseudo-science aide à juger les informations de santé, de climat ou de technologie, et à comprendre comment avancent les sciences qu'on étudie."
+      - texte: |
+          **L'induction et sa limite** : on généralise à partir d'observations (« tous les cygnes observés sont blancs »), mais une seule observation contraire peut tout renverser (un cygne noir).
+
+          **Karl Popper : la réfutabilité** (*falsifiabilité*). Une théorie est scientifique si elle fait des prédictions qui **pourraient être démenties** par l'expérience. Une théorie n'est jamais prouvée définitivement ; elle tient tant qu'elle **résiste** aux tests.
+
+          **Thomas Kuhn : les révolutions scientifiques** (1962). La science « normale » travaille dans un **paradigme** (un cadre partagé). Quand les anomalies s'accumulent, une **révolution** remplace le paradigme : de Ptolémée à Copernic, de Newton à Einstein.
+
+          **La méthode** : hypothèse, prédiction, expérience contrôlée, publication, critique par les pairs, reproduction des résultats.
+      - attention: "« Ce n'est qu'une théorie » est un contresens : en science, une théorie est un ensemble d'explications très solides, testées de nombreuses fois."
+      - astuce: { texte: "Pose la question de Popper : quelle observation prouverait que c'est faux ? S'il n'y en a aucune, méfie-toi.", qui: zero }
+      - retiens: "Limite de l'**induction** (le cygne noir). **Popper** : une théorie scientifique est **réfutable** ; elle n'est jamais prouvée, elle **résiste** aux tests. **Kuhn** : **paradigmes** et **révolutions scientifiques** (Copernic, Einstein). Méthode : hypothèse, test, critique, reproduction."
+    exercices:
+      - type: classer
+        enonce: "Range chaque affirmation : réfutable (scientifique) ou irréfutable ?"
+        categories: ["Réfutable", "Irréfutable"]
+        mots: [["L'eau pure bout à 100 °C sous la pression atmosphérique normale.", 0], ["Des forces invisibles et indétectables guident nos choix.", 1], ["Ce médicament réduit la fièvre en moins de deux heures.", 0], ["Cette semaine, quelque chose va changer dans ta vie.", 1]]
+        correction: "Une affirmation scientifique peut être testée et contredite par une observation."
+      - type: relier
+        enonce: "🔗 Relie chaque philosophe à son idée."
+        paires: [["Karl Popper", "la réfutabilité des théories"], ["Thomas Kuhn", "les révolutions scientifiques et les paradigmes"], ["Francis Bacon", "la méthode expérimentale et l'induction"]]
+        correction: "Trois grandes réflexions sur la science."
+      - type: qcm
+        enonce: "Selon Popper, que montre l'observation d'un seul cygne noir ?"
+        choix: ["Qu'on ne peut pas prouver « tous les cygnes sont blancs », mais qu'on peut le réfuter", "Que tous les cygnes sont noirs", "Que la science est inutile", "Que l'observation est toujours fausse"]
+        correction: "Mille observations ne prouvent pas une loi générale ; une seule peut la réfuter."
+      - type: vf
+        vars: { t: [["En science, une théorie est une explication solide et testée.", true], ["Selon Popper, une bonne théorie est prouvée définitivement.", false], ["Le passage de Ptolémée à Copernic est un exemple de révolution scientifique.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Théorie = explication solide ; jamais prouvée définitivement ; Copernic, révolution scientifique."
+
+  - id: ethique-appliquee
+    titre: Éthique appliquée - décider face aux nouveaux dilemmes
+    classe: Supérieur
+    objectif: J'analyse un dilemme moral contemporain avec les grandes théories éthiques - conséquentialisme, déontologie, éthique des vertus.
+    mots: [éthique, utilitarisme, déontologie, vertu]
+    etapes:
+      - dialogue:
+          - neo: "Une voiture autonome va percuter un groupe de piétons. Elle peut dévier, mais blessera alors son passager. Que doit-elle faire ?"
+          - zero: "Sauver le plus de monde, non ?"
+          - mia: "C'est une réponse utilitariste. D'autres diront qu'on n'a pas le droit de sacrifier volontairement quelqu'un. L'éthique sert à peser ces raisons."
+      - a_quoi_ca_sert: "Intelligence artificielle, bioéthique, environnement, données personnelles : ingénieurs, soignants, juristes et chercheurs affrontent chaque jour ces questions, et les comités d'éthique en débattent."
+      - texte: |
+          **Trois grandes théories** :
+          - **le conséquentialisme** (dont l'**utilitarisme** de Bentham et Mill) : une action est bonne si ses **conséquences** produisent le plus grand bien-être pour le plus grand nombre ;
+          - **la déontologie** (Kant) : certaines actions sont **obligatoires** ou **interdites** en elles-mêmes, quelles que soient les conséquences ; ne jamais traiter une personne **seulement comme un moyen** ;
+          - **l'éthique des vertus** (Aristote) : se demander ce que ferait une personne **juste, courageuse, prudente**.
+
+          **Des terrains contemporains** :
+          - **la bioéthique** : consentement éclairé, fin de vie, génétique ;
+          - **l'intelligence artificielle** : biais des algorithmes, responsabilité, vie privée ;
+          - **l'éthique environnementale** : devoirs envers les générations futures et les autres espèces.
+
+          **Méthode** : décrire le dilemme, identifier les personnes concernées, examiner les arguments de chaque théorie, proposer une position argumentée.
+      - attention: "Aucune théorie ne donne une réponse automatique : l'éthique consiste à peser des raisons, pas à appliquer une formule."
+      - astuce: { texte: "Pose trois questions : quelles conséquences ? quel devoir ou quel droit est en jeu ? que ferait une personne juste ?", qui: neo }
+      - retiens: "**Conséquentialisme** / utilitarisme (Bentham, Mill) : les conséquences. **Déontologie** (Kant) : les devoirs, ne pas traiter autrui seulement comme un moyen. **Éthique des vertus** (Aristote). Terrains : **bioéthique**, **IA**, **environnement**. Peser les raisons, argumenter."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque théorie à son critère principal."
+        paires: [["l'utilitarisme", "les conséquences pour le bien-être du plus grand nombre"], ["la déontologie", "le respect de devoirs et de droits, quelles que soient les conséquences"], ["l'éthique des vertus", "ce que ferait une personne juste et prudente"]]
+        correction: "Trois façons de juger une action."
+      - type: relier
+        enonce: "🔗 Relie chaque philosophe à sa théorie."
+        paires: [["John Stuart Mill", "l'utilitarisme"], ["Emmanuel Kant", "la déontologie"], ["Aristote", "l'éthique des vertus"]]
+        correction: "Trois grands noms de l'éthique."
+      - type: classer
+        enonce: "Range chaque argument : conséquentialiste ou déontologique ?"
+        categories: ["Conséquentialiste", "Déontologique"]
+        mots: [["Cette décision sauvera le plus de vies.", 0], ["On n'a pas le droit de mentir, même pour éviter un ennui.", 1], ["Les bénéfices pour la société dépassent les risques.", 0], ["Une personne ne doit jamais être utilisée seulement comme un moyen.", 1]]
+        correction: "Peser les effets → conséquentialisme ; respecter un devoir → déontologie."
+      - type: vf
+        vars: { t: [["Le consentement éclairé est une question de bioéthique.", true], ["Une théorie éthique donne toujours une réponse automatique.", false], ["Les biais des algorithmes posent des questions éthiques.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Consentement éclairé ; l'éthique pèse des raisons ; les biais algorithmiques posent des questions de justice."

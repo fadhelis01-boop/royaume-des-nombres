@@ -1,0 +1,288 @@
+id: fr-amphitheatre-des-methodes
+matiere: francais
+titre: L'Amphithéâtre des Méthodes
+sous_titre: Réussir dans le supérieur - prendre des notes en cours magistral, organiser son travail et réviser, chercher et citer ses sources, écrire à un enseignant, exposer à l'oral, lire un article scientifique
+emoji: 🏫
+couleur: "#283593"
+cycle: maitres
+age: 18 ans et +
+niveau: Supérieur
+ordre: 67
+version: 1.0.0
+intro:
+  - narrateur: "Un amphithéâtre de trois cents places. L'enseignant parle vite, projette des diapositives, et personne ne vérifie si tu as fait le travail."
+  - mia: "Au lycée, on te guidait pas à pas. Dans le supérieur, c'est toi qui organises ton travail : c'est la plus grande différence."
+  - neo: "Bonne nouvelle : ça s'apprend. Voici les méthodes qui font la différence en première année."
+
+lecons:
+  - id: prise-de-notes-amphi
+    titre: Prendre des notes en cours magistral
+    classe: Supérieur
+    objectif: Je prends des notes efficaces pendant un cours magistral - sélectionner, abréger, structurer - puis je les reprends.
+    mots: [cours magistral, prise de notes, abréviation, reprise]
+    etapes:
+      - dialogue:
+          - zero: "En amphi, j'essaie de tout écrire, mais l'enseignant va trop vite !"
+          - neo: "Personne ne peut tout écrire. Le secret, c'est de choisir : les idées principales, les définitions, les exemples clés."
+      - a_quoi_ca_sert: "Les cours magistraux sont la base de la licence ; des notes claires font gagner des heures au moment des révisions, et la méthode sert ensuite en réunion professionnelle."
+      - texte: |
+          **Avant** : lire le plan du cours ou le support s'il est en ligne, relire la séance précédente.
+
+          **Pendant** :
+          - **sélectionner** : les définitions, les idées annoncées (« premièrement… », « il faut retenir que… »), les exemples ;
+          - **abréger** : symboles (→ conséquence, ≠ différent, ↑ augmente), mots raccourcis (gvt, pb, cad) ;
+          - **structurer** : titres, retraits, numéros ; une idée par ligne ; laisser de la place.
+
+          **Après** (le jour même, idéalement) : **reprendre** ses notes, compléter les trous avec le support ou un camarade, souligner l'essentiel, noter ses **questions** pour le TD.
+
+          **La méthode Cornell** : une colonne de mots clés à gauche, les notes à droite, un résumé en bas de page.
+      - attention: "Recopier les diapositives mot à mot n'est pas prendre des notes : écoute surtout ce que l'enseignant dit **en plus** des diapositives."
+      - astuce: { texte: "Fixe-toi un code d'abréviations à toi et garde-le toute l'année : tu reliras tes notes sans effort.", qui: mia }
+      - retiens: "Avant : préparer. Pendant : **sélectionner**, **abréger**, **structurer**. Après : **reprendre** le jour même, compléter, noter ses questions. Méthode **Cornell** : mots clés, notes, résumé."
+    exercices:
+      - type: ordre
+        enonce: "Range les étapes d'une bonne prise de notes."
+        items: ["Relire la séance précédente", "Sélectionner et abréger pendant le cours", "Reprendre ses notes le jour même", "Noter ses questions pour le TD"]
+        correction: "Préparer, noter, reprendre, questionner."
+      - type: relier
+        enonce: "🔗 Relie chaque abréviation à son sens."
+        paires: [["→", "entraîne, a pour conséquence"], ["≠", "différent de"], ["pb", "problème"], ["cad", "c'est-à-dire"]]
+        correction: "Un code d'abréviations fait gagner beaucoup de temps."
+      - type: classer
+        enonce: "Range chaque phrase de l'enseignant : à noter absolument ou secondaire ?"
+        categories: ["À noter", "Secondaire"]
+        mots: [["« La définition est la suivante… »", 0], ["« Je vous raconte une anecdote de mes vacances… »", 1], ["« Il faut retenir trois conséquences… »", 0], ["« Pardon, je cherche ma diapositive… »", 1]]
+        correction: "Définitions et idées annoncées sont essentielles."
+      - type: vf
+        vars: { t: [["Reprendre ses notes le jour même aide à les retenir.", true], ["Il faut recopier toutes les diapositives mot à mot.", false], ["La méthode Cornell prévoit un résumé en bas de page.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Reprise rapide ; écouter plutôt que recopier ; résumé en bas de page."
+
+  - id: organiser-reviser
+    titre: Organiser son travail et réviser efficacement
+    classe: Supérieur
+    objectif: Je planifie mon travail personnel et j'utilise les méthodes de révision les plus efficaces - se tester et espacer les révisions.
+    mots: [planning, récupération active, répétition espacée, procrastination]
+    etapes:
+      - dialogue:
+          - zero: "Je relis mes cours trois fois la veille de l'examen, et j'oublie tout une semaine après."
+          - neo: "Relire donne l'impression de savoir. Ce qui marche vraiment, c'est de se tester, plusieurs fois, en espaçant les séances."
+      - a_quoi_ca_sert: "Dans le supérieur, le travail personnel compte autant que les cours ; ces méthodes, validées par la recherche en sciences cognitives, servent toute la vie."
+      - texte: |
+          **Planifier** : un planning de la semaine avec les cours, les TD, et des **créneaux de travail personnel** fixes ; une liste de tâches précises (« faire les exercices 3 à 6 du TD 4 » plutôt que « travailler les maths »).
+
+          **Se tester** (la **récupération active**) : fermer le cours et essayer de retrouver les définitions, refaire les exercices sans la correction, utiliser des fiches question-réponse.
+
+          **Espacer** (la **répétition espacée**) : revoir une notion le lendemain, puis quelques jours après, puis une semaine après, plutôt que tout réviser la veille.
+
+          **Alterner** les matières et les types d'exercices.
+
+          **Lutter contre la procrastination** : commencer par une tâche de 25 minutes (méthode Pomodoro), téléphone dans une autre pièce.
+
+          **Le sommeil** consolide la mémoire : une nuit blanche avant l'examen fait perdre plus qu'elle ne rapporte.
+      - attention: "Surligner et relire donnent une impression de maîtrise trompeuse. Le bon test : peux-tu l'expliquer ou le refaire sans regarder ?"
+      - astuce: { texte: "Fais tes fiches sous forme de questions : au recto la question, au verso la réponse. Tu te testes à chaque relecture.", qui: mia }
+      - retiens: "**Planifier** des créneaux et des tâches précises. **Se tester** (récupération active) plutôt que relire. **Espacer** les révisions. **Alterner**. Contre la procrastination : **25 minutes** pour commencer. Le **sommeil** consolide la mémoire."
+    exercices:
+      - type: classer
+        enonce: "Range chaque méthode : très efficace ou peu efficace ?"
+        categories: ["Très efficace", "Peu efficace"]
+        mots: [["Refaire les exercices sans regarder la correction", 0], ["Relire le cours trois fois la veille", 1], ["Revoir une notion à J+1, J+3 puis J+7", 0], ["Surligner tout le manuel", 1]]
+        correction: "Se tester et espacer sont les deux méthodes les plus efficaces."
+      - type: qcm
+        enonce: "Quelle tâche est la mieux formulée pour un planning ?"
+        choix: ["Faire les exercices 3 à 6 du TD 4 d'analyse", "Travailler les maths", "Réviser", "Être sérieux cette semaine"]
+        correction: "Une tâche précise et mesurable est plus facile à commencer et à terminer."
+      - type: relier
+        enonce: "🔗 Relie chaque méthode à sa définition."
+        paires: [["la récupération active", "se tester sans regarder le cours"], ["la répétition espacée", "revoir une notion à intervalles croissants"], ["la méthode Pomodoro", "travailler 25 minutes puis faire une courte pause"]]
+        correction: "Trois méthodes simples et efficaces."
+      - type: vf
+        vars: { t: [["Le sommeil aide à consolider ce qu'on a appris.", true], ["Relire donne parfois une fausse impression de savoir.", true], ["Tout réviser la veille est la meilleure stratégie à long terme.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Sommeil utile ; illusion de maîtrise ; on espace plutôt que de tout concentrer la veille."
+
+  - id: sources-et-citations
+    titre: Chercher, évaluer et citer ses sources
+    classe: Supérieur
+    objectif: Je trouve des sources fiables, je les cite correctement et j'évite le plagiat, y compris avec les outils d'intelligence artificielle.
+    mots: [source, citation, plagiat, bibliographie]
+    etapes:
+      - dialogue:
+          - zero: "Pour mon dossier, j'ai copié trois paragraphes d'un site. Ça va, je les ai un peu modifiés."
+          - mia: "Attention, c'est du plagiat ! Dans le supérieur, il est sanctionné, parfois très lourdement. Il faut citer, ou reformuler et indiquer la source."
+      - a_quoi_ca_sert: "Tout travail universitaire (dossier, mémoire, rapport de stage) s'appuie sur des sources ; savoir les choisir et les citer est exigé partout, et c'est une question d'honnêteté intellectuelle."
+      - texte: |
+          **Chercher** : le catalogue de la **bibliothèque universitaire**, les bases d'articles scientifiques, les manuels de référence ; un moteur de recherche en dernier recours.
+
+          **Évaluer une source** : qui est l'auteur (spécialiste ?), quand (à jour ?), où (revue scientifique, éditeur reconnu ?), pourquoi (informer, vendre, convaincre ?).
+
+          **Citer** : une citation exacte se met **entre guillemets** avec sa référence ; une idée reformulée doit aussi indiquer sa source.
+
+          **La bibliographie** : une liste normée en fin de document (auteur, titre, éditeur ou revue, année, pages), selon la norme demandée par l'enseignant.
+
+          **Le plagiat** : présenter le travail d'un autre comme le sien, même en changeant quelques mots. Il est détecté par des logiciels et sanctionné.
+
+          **L'intelligence artificielle** : respecter les règles de son établissement, vérifier chaque information (une IA peut inventer des références), et indiquer son usage quand il est autorisé.
+      - attention: "Une IA générative peut produire des références qui n'existent pas : toute source doit être retrouvée et vérifiée avant d'être citée."
+      - astuce: { texte: "Note la référence complète au moment où tu lis une source : la retrouver à la fin coûte toujours beaucoup plus de temps.", qui: neo }
+      - retiens: "Chercher (BU, bases scientifiques), **évaluer** (qui, quand, où, pourquoi). **Citer** entre guillemets avec la référence ; idée reformulée = source indiquée. **Bibliographie** normée. **Plagiat** sanctionné. **IA** : règles de l'établissement, vérification, transparence."
+    exercices:
+      - type: classer
+        enonce: "Range chaque pratique : honnête ou plagiat ?"
+        categories: ["Honnête", "Plagiat"]
+        mots: [["Une citation entre guillemets avec sa référence", 0], ["Recopier un paragraphe en changeant trois mots, sans source", 1], ["Reformuler une idée en indiquant l'auteur", 0], ["Rendre un texte écrit par une IA comme s'il était de soi, alors que c'est interdit", 1]]
+        correction: "On cite, on reformule avec la source, on respecte les règles d'usage de l'IA."
+      - type: ordre
+        enonce: "Range les éléments d'une référence de livre dans l'ordre habituel."
+        items: ["Nom et prénom de l'auteur", "Titre de l'ouvrage", "Éditeur", "Année de publication"]
+        correction: "Auteur, titre, éditeur, année (l'ordre exact dépend de la norme demandée)."
+      - type: qcm
+        enonce: "Une IA te donne une référence d'article très précise. Que fais-tu ?"
+        choix: ["Je la retrouve et la vérifie avant de la citer", "Je la cite directement", "Je l'invente aussi", "Je la cite sans auteur"]
+        correction: "Une IA peut inventer des références : toujours vérifier."
+      - type: vf
+        vars: { t: [["Une idée reformulée doit aussi indiquer sa source.", true], ["Changer quelques mots suffit à éviter le plagiat.", false], ["La bibliothèque universitaire donne accès à des sources fiables.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Source même pour une reformulation ; changer quelques mots reste du plagiat ; la BU est une ressource clé."
+
+  - id: ecrire-a-un-enseignant
+    titre: Écrire un courriel à un enseignant ou à une administration
+    classe: Supérieur
+    objectif: Je rédige un courriel formel clair et poli - objet, formule d'appel, demande précise, formule de politesse.
+    mots: [courriel, objet, formule de politesse, registre]
+    etapes:
+      - dialogue:
+          - zero: "« slt c'est quand l'exam ? » Ça marche pour écrire au professeur ?"
+          - neo: "Pas vraiment ! Un enseignant reçoit des dizaines de messages : un courriel clair et poli a beaucoup plus de chances d'obtenir une réponse rapide."
+      - a_quoi_ca_sert: "Demander un rendez-vous, signaler une absence, contester une note, postuler à un stage : le courriel formel est l'outil quotidien des études et du monde professionnel."
+      - texte: |
+          **L'objet** : court et précis (« L1 Droit, TD 3 – Demande de rendez-vous »).
+
+          **La formule d'appel** : « Madame, », « Monsieur, », ou « Madame la Professeure, », jamais « Salut » ni « Coucou ».
+
+          **Se présenter** : nom, formation, groupe de TD.
+
+          **La demande** : une seule demande, claire, avec le contexte utile (« Absent(e) au TD du 12 mars pour raison médicale, je souhaiterais savoir comment rattraper l'exercice noté. »).
+
+          **La formule de politesse** : « Je vous remercie par avance pour votre réponse. Bien cordialement, » puis prénom et nom.
+
+          **Avant d'envoyer** : relire l'orthographe, vérifier la pièce jointe, utiliser son adresse universitaire. Se renseigner d'abord (règlement, site de la formation) : la réponse y est souvent.
+      - attention: "Ne pas écrire en abrégé ni en majuscules, et ne pas relancer au bout de quelques heures : laisser quelques jours ouvrés avant une relance polie."
+      - astuce: { texte: "Relis ton courriel en te mettant à la place de l'enseignant : comprend-il en dix secondes qui tu es et ce que tu demandes ?", qui: mia }
+      - retiens: "**Objet** précis, **formule d'appel** (Madame, Monsieur), **présentation** (nom, formation, groupe), **une demande claire**, **formule de politesse**, signature. Relire, adresse universitaire, se renseigner avant d'écrire."
+    exercices:
+      - type: ordre
+        enonce: "Range les parties d'un courriel formel."
+        items: ["L'objet", "La formule d'appel", "La présentation", "La demande", "La formule de politesse et la signature"]
+        correction: "Objet, appel, présentation, demande, politesse."
+      - type: classer
+        enonce: "Range chaque formule : adaptée ou inadaptée à un courriel à un enseignant ?"
+        categories: ["Adaptée", "Inadaptée"]
+        mots: [["« Madame, »", 0], ["« Coucou ! »", 1], ["« Bien cordialement, »", 0], ["« Réponds vite stp »", 1]]
+        correction: "Registre soutenu : Madame, Monsieur, Bien cordialement."
+      - type: qcm
+        enonce: "Quel objet de courriel est le meilleur ?"
+        choix: ["L1 Histoire, groupe B – Absence au TD du 12 mars", "Question", "URGENT !!!", "(pas d'objet)"]
+        correction: "Un objet précis permet à l'enseignant de comprendre tout de suite."
+      - type: vf
+        vars: { t: [["Il vaut mieux utiliser son adresse universitaire.", true], ["On peut relancer un enseignant au bout d'une heure.", false], ["Se présenter (nom, formation, groupe) aide l'enseignant.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Adresse universitaire ; attendre quelques jours ouvrés ; se présenter."
+
+  - id: expose-soutenance
+    titre: L'exposé et la soutenance
+    classe: Supérieur
+    objectif: Je prépare un exposé universitaire avec un support visuel efficace et je réponds aux questions d'un jury.
+    mots: [exposé, diaporama, problématique, soutenance]
+    etapes:
+      - dialogue:
+          - mia: "Quinze minutes d'exposé en TD, puis cinq minutes de questions. Par où commencer ?"
+          - neo: "Par une problématique et un plan, comme au Grand oral. Puis un diaporama qui aide l'auditoire, pas un texte à lire."
+      - a_quoi_ca_sert: "Exposés, soutenances de projet, de stage puis de mémoire : l'oral est évalué tout au long des études, et en entretien d'embauche."
+      - texte: |
+          **Construire** : une **problématique**, un **plan** annoncé (deux ou trois parties), une introduction et une conclusion qui répond.
+
+          **Le diaporama** :
+          - une idée par diapositive, un titre qui dit l'idée ;
+          - **peu de texte** (des mots clés), des schémas, des graphiques lisibles ;
+          - des sources indiquées ;
+          - environ **une diapositive par minute**.
+
+          **Parler** : regarder l'auditoire, ne pas lire ses notes ni l'écran, respecter le temps (s'entraîner avec un chronomètre).
+
+          **À plusieurs** : répartir les parties, soigner les transitions entre les orateurs.
+
+          **Les questions** : écouter, reformuler, répondre brièvement ; dire honnêtement si l'on ne sait pas, et proposer une piste.
+      - attention: "Un diaporama surchargé de texte fait lire l'auditoire au lieu de l'écouter : si tu lis tes diapositives, elles sont trop chargées."
+      - astuce: { texte: "Répète au moins deux fois à voix haute, chronomètre en main : c'est le meilleur remède contre le trac et le dépassement de temps.", qui: zero }
+      - retiens: "**Problématique**, **plan** annoncé, conclusion qui répond. Diaporama : **une idée par diapositive**, peu de texte, schémas, sources, environ une diapositive par minute. Parler sans lire, **respecter le temps**. Questions : écouter, reformuler, répondre honnêtement."
+    exercices:
+      - type: classer
+        enonce: "Range chaque choix de diaporama : efficace ou à éviter ?"
+        categories: ["Efficace", "À éviter"]
+        mots: [["Un graphique lisible avec un titre clair", 0], ["Vingt lignes de texte en petite police", 1], ["Une idée par diapositive", 0], ["Lire chaque diapositive mot à mot", 1]]
+        correction: "Peu de texte, une idée par diapositive, on parle à l'auditoire."
+      - type: nombre
+        enonce: "Pour un exposé de 15 minutes, combien de diapositives environ prévoir (en comptant une par minute) ?"
+        reponse: "15"
+        correction: "Environ **15** diapositives, une par minute."
+      - type: ordre
+        enonce: "Range les moments de la préparation d'un exposé."
+        items: ["Formuler une problématique", "Construire le plan", "Réaliser le diaporama", "Répéter avec un chronomètre"]
+        correction: "Problématique, plan, support, répétition."
+      - type: vf
+        vars: { t: [["Il est préférable d'indiquer ses sources sur le diaporama.", true], ["Dépasser largement le temps imparti montre qu'on a beaucoup travaillé.", false], ["Reformuler une question avant d'y répondre aide à bien la comprendre.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Sources indiquées ; respecter le temps ; reformuler la question."
+
+  - id: lire-article-scientifique
+    titre: Lire un article scientifique
+    classe: Supérieur
+    objectif: Je repère la structure d'un article scientifique et je le lis de façon stratégique, sans tout lire dans l'ordre.
+    mots: [article scientifique, résumé, méthode, revue à comité de lecture]
+    etapes:
+      - dialogue:
+          - zero: "Trente pages d'article en anglais, avec des tableaux partout… Je commence par la première ligne ?"
+          - neo: "Non ! Un chercheur lit d'abord le résumé, la conclusion et les figures. Il décide ensuite s'il lit le reste."
+      - a_quoi_ca_sert: "Les articles scientifiques sont la source de référence dans le supérieur ; savoir les lire permet de faire un dossier sérieux, puis un mémoire, et d'évaluer les informations scientifiques dans les médias."
+      - texte: |
+          **Une revue à comité de lecture** : avant publication, l'article est relu et critiqué par d'autres chercheurs (les **pairs**).
+
+          **La structure classique (IMRaD)** :
+          - **résumé** (*abstract*) : tout l'article en quelques lignes ;
+          - **introduction** : la question de recherche et l'état des connaissances ;
+          - **méthodes** : comment l'étude a été faite (échantillon, expériences) ;
+          - **résultats** : les données, souvent en figures et tableaux ;
+          - **discussion** : l'interprétation, les **limites** de l'étude ;
+          - **références**.
+
+          **Lire stratégiquement** : titre et résumé → conclusion → figures → introduction → méthodes si besoin.
+
+          **Garder un esprit critique** : taille de l'échantillon, corrélation ou causalité, conflits d'intérêts, confirmation par d'autres études.
+      - attention: "Une seule étude ne prouve pas tout : la science avance par l'accumulation et la confirmation des résultats."
+      - astuce: { texte: "Pour chaque article lu, écris trois lignes : la question, la méthode, le résultat principal. Ta bibliographie deviendra une mine d'or.", qui: mia }
+      - retiens: "Revue **à comité de lecture** (relue par les pairs). Structure **IMRaD** : résumé, introduction, méthodes, résultats, discussion (limites), références. Lire : **résumé → conclusion → figures** d'abord. Esprit critique : échantillon, **corrélation ≠ causalité**, confirmation."
+    exercices:
+      - type: ordre
+        enonce: "Range les parties d'un article scientifique dans l'ordre habituel."
+        items: ["Résumé", "Introduction", "Méthodes", "Résultats", "Discussion"]
+        correction: "La structure IMRaD, précédée du résumé."
+      - type: relier
+        enonce: "🔗 Relie chaque partie à son contenu."
+        paires: [["les méthodes", "comment l'étude a été réalisée"], ["les résultats", "les données obtenues"], ["la discussion", "l'interprétation et les limites"], ["le résumé", "l'article entier en quelques lignes"]]
+        correction: "Chaque partie a son rôle."
+      - type: qcm
+        enonce: "Deux phénomènes augmentent en même temps. Que peut-on conclure ?"
+        choix: ["Qu'ils sont corrélés, pas forcément que l'un cause l'autre", "Que l'un cause forcément l'autre", "Qu'ils sont identiques", "Rien du tout"]
+        correction: "**Corrélation n'est pas causalité** : il peut y avoir une cause commune ou une coïncidence."
+      - type: vf
+        vars: { t: [["Un article à comité de lecture a été relu par d'autres chercheurs.", true], ["Une seule étude suffit toujours à établir une vérité scientifique.", false], ["On peut lire le résumé et les figures avant le reste.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Relecture par les pairs ; la science avance par confirmation ; lecture stratégique."

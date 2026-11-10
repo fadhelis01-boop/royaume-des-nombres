@@ -247,6 +247,23 @@ eq("voix : sigle épelé", toSpeech("Le protocole HTTPS et la spécialité HGGSP
 eq("voix : XXᵉ siècle, années, N·m, 1 m", [toSpeech("au XXᵉ siècle").includes("vingtième"), toSpeech("vers 1600-1750").includes("1600 à 1750"), toSpeech("un couple en N·m").includes("newton-mètres"), toSpeech("à 1 m de l'axe").includes("1 mètre de"), toSpeech("les chromosomes XY").includes("X Y")], [true, true, true, true, true]);
 eq("voix : unités composées, sigles, milliers", [toSpeech("environ 1 g/L à jeun").includes("1 gramme par litre"), toSpeech("2 700 kg/m³").includes("kilogrammes par mètre cube"), toSpeech("1 ha = 10 000 m²").includes("10 000 mètres carrés"), toSpeech("la méthode HACCP").includes("HACCP"), toSpeech("70 q/ha").includes("quintaux par hectare")], [true, true, true, true, true]);
 eq("voix : ordinaux en -s", [toSpeech("la 3ᵉ personne").includes("troisième"), toSpeech("le 23ᵉ jour").includes("vingt-troisième"), toSpeech("le 80ᵉ jour").includes("quatre-vingtième")], [true, true, true]);
+eq("voix : tiret de titre, factorielle, implication", [
+  toSpeech("Narrative tenses - les temps du récit").includes("tenses, les temps"),
+  toSpeech("on calcule x - y").includes("moins"),
+  toSpeech("12 - 5 = 7").includes("12 moins 5"),
+  toSpeech(String.raw`$\dfrac{1}{2!}$`).includes("factorielle 2"),
+  toSpeech("continue ⇒ solution").includes("donc"),
+  toSpeech(String.raw`$y'' + a\,y' = 0$`).includes("a y prime"),
+], [true, true, true, true, true, true]);
+eq("voix : notations du supérieur", [
+  toSpeech(String.raw`$\lim\limits_{n \to +\infty} u_n = \ell$`).includes("limite quand n tend vers"),
+  toSpeech(String.raw`$\forall \varepsilon > 0, \exists N$`).includes("pour tout epsilon"),
+  toSpeech(String.raw`$|u_n - \ell|$`).includes("valeur absolue de"),
+  toSpeech(String.raw`$f'(a)$ et $y''$`).includes("f prime de a"),
+  toSpeech(String.raw`$\ker f$`).includes("noyau de f"),
+  toSpeech(String.raw`$\mathbb{R}^2$`).includes("R 2"),
+  !toSpeech(String.raw`$\lim\limits_{x \to 0} f(x)$`).includes("its"),
+], [true, true, true, true, true, true, true]);
 console.log(`Tests unitaires : ${ok} réussis, ${ko.length} échec(s).`);
 if (ko.length) {
   console.error(ko.map((x) => "- " + x).join("\n"));

@@ -1,0 +1,280 @@
+id: universite-des-nombres
+titre: L'Université des Nombres
+sous_titre: Première année du supérieur - limites en epsilon, continuité, développements limités, algèbre linéaire, équations différentielles, variables aléatoires
+emoji: 🎓
+couleur: "#311b92"
+cycle: maitres
+age: 18 ans et +
+niveau: Supérieur
+ordre: 30
+version: 1.0.0
+intro:
+  - narrateur: "Au-delà du Temple de la Logique, un grand amphithéâtre de pierre blanche. Au tableau, une seule phrase : « Pour tout epsilon strictement positif… »"
+  - neo: "Bienvenue dans les maths du supérieur : on ne se contente plus de calculer, on démontre avec des définitions précises."
+  - mia: "Licence, classe prépa, BUT, école d'ingénieurs : ces notions de première année sont le socle commun."
+
+lecons:
+  - id: limite-epsilon
+    titre: La définition d'une limite, en epsilon
+    classe: Supérieur
+    objectif: Je comprends et j'utilise la définition formelle de la limite d'une suite, avec les quantificateurs.
+    mots: [limite, quantificateur, epsilon, rang]
+    etapes:
+      - dialogue:
+          - zero: "Au lycée, une suite tend vers 0 quand elle « se rapproche de 0 ». Ça ne suffit pas ?"
+          - neo: "Se rapprocher, c'est flou : 1 + 1/n se rapproche aussi de 0… sans jamais l'atteindre ni s'en approcher vraiment ! Il faut une définition qu'on peut démontrer."
+      - a_quoi_ca_sert: "Toute l'analyse du supérieur repose sur cette définition : continuité, dérivées, intégrales, séries ; c'est aussi l'entraînement à la rigueur demandé dans toutes les filières scientifiques."
+      - texte: |
+          **Définition** : la suite $(u_n)$ tend vers $\ell$ si
+
+          $\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \geq N, |u_n - \ell| < \varepsilon$.
+
+          En mots : **aussi petit que soit l'écart** $\varepsilon$ choisi, **à partir d'un certain rang** $N$, **tous** les termes sont à moins de $\varepsilon$ de $\ell$.
+
+          **Exemple** : $u_n = \dfrac{1}{n}$ tend vers 0. Pour $\varepsilon = 0{,}01$, il suffit de prendre $N = 101$ : dès que $n \geq 101$, $\dfrac{1}{n} < 0{,}01$.
+
+          **L'ordre des quantificateurs compte** : $N$ dépend de $\varepsilon$ (plus $\varepsilon$ est petit, plus $N$ est grand).
+      - attention: "« Il existe N pour tout epsilon » ne veut pas dire la même chose que « pour tout epsilon, il existe N » : inverser les quantificateurs change complètement le sens."
+      - astuce: { texte: "Lis la définition comme un défi : ton adversaire choisit epsilon, aussi petit qu'il veut ; tu dois toujours trouver un rang N qui marche.", qui: neo }
+      - retiens: "$u_n \to \ell$ : **pour tout** $\varepsilon > 0$, **il existe** un rang $N$ tel que **pour tout** $n \geq N$, $|u_n - \ell| < \varepsilon$. Le rang $N$ **dépend de** $\varepsilon$."
+    exercices:
+      - type: nombre
+        vars: { k: [10, 100, 1000] }
+        enonce: "Pour $u_n = \\dfrac{1}{n}$ et $\\varepsilon = \\dfrac{1}{ {{k}} }$, quel est le plus petit rang $N$ tel que $u_n < \\varepsilon$ pour tout $n \\geq N$ ?"
+        reponse: "k+1"
+        correction: "$\\dfrac{1}{n} < \\dfrac{1}{ {{k}} }$ dès que $n > {{k}}$, donc $N = {{k+1}}$."
+      - type: qcm
+        enonce: "Que signifie $\\exists N, \\forall n \\geq N, |u_n - \\ell| < \\varepsilon$ ?"
+        choix: ["À partir d'un certain rang, tous les termes sont à moins de epsilon de l", "Un seul terme est proche de l", "Tous les termes depuis le début sont égaux à l", "La suite est croissante"]
+        correction: "Il existe un rang à partir duquel **tous** les termes sont dans la bande autour de $\\ell$."
+      - type: vf
+        vars: { t: [["Dans la définition, le rang N dépend de epsilon.", true], ["Une suite qui se rapproche de 0 tend forcément vers 0.", false], ["Pour tout epsilon puis il existe N n'a pas le même sens que il existe N puis pour tout epsilon.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "N dépend de epsilon ; 1 + 1/n se rapproche de 0 sans y tendre ; l'ordre des quantificateurs compte."
+      - type: relier
+        enonce: "🔗 Relie chaque symbole à sa lecture."
+        paires: [["$\\forall$", "pour tout"], ["$\\exists$", "il existe"], ["$\\varepsilon$", "epsilon, un petit écart"], ["$|x|$", "valeur absolue de x"]]
+        correction: "Les symboles de base des démonstrations."
+
+  - id: continuite-tvi
+    titre: Continuité et théorème des valeurs intermédiaires
+    classe: Supérieur
+    objectif: J'utilise la continuité et le théorème des valeurs intermédiaires pour prouver l'existence d'une solution, et je la localise par dichotomie.
+    mots: [continuité, valeurs intermédiaires, dichotomie, existence]
+    etapes:
+      - dialogue:
+          - mia: "À 8 h, il fait 5 °C ; à 14 h, il fait 15 °C. Y a-t-il eu un moment où il faisait exactement 10 °C ?"
+          - zero: "Forcément, la température ne saute pas !"
+          - neo: "C'est exactement le théorème des valeurs intermédiaires : une fonction continue ne peut pas sauter une valeur."
+      - a_quoi_ca_sert: "Prouver qu'une équation a une solution sans savoir la calculer, puis l'approcher par un algorithme : c'est ce que font les logiciels de calcul et de simulation."
+      - texte: |
+          **Continuité** : $f$ est continue en $a$ si $\lim\limits_{x \to a} f(x) = f(a)$. Intuitivement, on trace la courbe sans lever le crayon.
+
+          **Théorème des valeurs intermédiaires (TVI)** : si $f$ est **continue** sur $[a ; b]$ et si $k$ est entre $f(a)$ et $f(b)$, alors il existe $c \in [a ; b]$ tel que $f(c) = k$.
+
+          **Cas utile** : si $f(a)$ et $f(b)$ sont de **signes contraires**, l'équation $f(x) = 0$ a **au moins une solution** dans $[a ; b]$. Si de plus $f$ est **strictement monotone**, la solution est **unique**.
+
+          **La dichotomie** : on coupe l'intervalle en deux, on garde la moitié où le signe change. Après $n$ étapes, l'intervalle est divisé par $2^n$.
+      - attention: "Sans continuité, le théorème est faux : la fonction partie entière passe de 0 à 1 sans jamais valoir 0,5."
+      - astuce: { texte: "TVI = existence ; stricte monotonie = unicité. Les deux ensemble donnent « une unique solution ».", qui: mia }
+      - retiens: "**TVI** : $f$ **continue** sur $[a ; b]$, $k$ entre $f(a)$ et $f(b)$ ⇒ il existe $c$ avec $f(c) = k$. Signes contraires ⇒ au moins une solution de $f(x) = 0$ ; **strictement monotone** ⇒ unique. **Dichotomie** : intervalle divisé par $2^n$ après $n$ étapes."
+    exercices:
+      - type: nombre
+        vars: { n: [3, 4, 5, 6, 10] }
+        enonce: "On cherche une solution par dichotomie. Par combien la longueur de l'intervalle de départ est-elle divisée après {{n}} étapes ?"
+        reponse: "2^n"
+        correction: "Divisée par 2 à chaque étape : $2^{ {{n}} } = {{2^n}}$."
+      - type: qcm
+        enonce: "$f$ est continue sur $[0 ; 1]$, $f(0) = -2$ et $f(1) = 3$. Que peut-on affirmer ?"
+        choix: ["L'équation f(x) = 0 a au moins une solution dans [0 ; 1]", "L'équation f(x) = 0 n'a aucune solution", "f est croissante", "f(0,5) = 0,5"]
+        correction: "Signes contraires et continuité : le TVI garantit au moins une solution."
+      - type: classer
+        enonce: "Range chaque hypothèse : elle donne l'existence ou l'unicité de la solution ?"
+        categories: ["Existence", "Unicité"]
+        mots: [["f continue et f(a), f(b) de signes contraires", 0], ["f strictement croissante sur l'intervalle", 1], ["Le théorème des valeurs intermédiaires", 0], ["f strictement décroissante sur l'intervalle", 1]]
+        correction: "Le TVI donne l'existence ; la stricte monotonie donne l'unicité."
+      - type: vf
+        vars: { t: [["Le TVI s'applique aussi aux fonctions non continues.", false], ["Une fonction continue sur un intervalle ne saute aucune valeur.", true], ["La dichotomie divise l'intervalle par deux à chaque étape.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "La continuité est indispensable ; pas de saut ; division par deux."
+
+  - id: developpements-limites
+    titre: Les développements limités
+    classe: Supérieur
+    objectif: J'utilise les développements limités usuels en 0 pour calculer des limites.
+    mots: [développement limité, petit o, approximation, Taylor]
+    etapes:
+      - dialogue:
+          - zero: "Combien vaut la limite de sin x divisé par x quand x tend vers 0 ? Ça fait 0 sur 0 !"
+          - neo: "Près de 0, sin x ressemble énormément à x. On l'écrit avec un développement limité, et la limite vaut 1."
+      - a_quoi_ca_sert: "Les développements limités remplacent une fonction compliquée par un polynôme simple : ils servent en physique (petites oscillations), en ingénierie et dans les calculatrices elles-mêmes."
+      - texte: |
+          **Idée** : près de 0, on approche une fonction par un polynôme, plus un reste négligeable noté $o(x^n)$ (« petit o de x puissance n »).
+
+          **Les développements usuels en 0** :
+          - $e^x = 1 + x + \dfrac{x^2}{2} + o(x^2)$
+          - $\ln(1 + x) = x - \dfrac{x^2}{2} + o(x^2)$
+          - $\sin x = x - \dfrac{x^3}{6} + o(x^3)$
+          - $\cos x = 1 - \dfrac{x^2}{2} + o(x^2)$
+          - $(1 + x)^{\alpha} = 1 + \alpha x + o(x)$
+
+          **Calculer une limite** : $\dfrac{\sin x}{x} = \dfrac{x + o(x)}{x} = 1 + o(1)$, donc la limite en 0 vaut **1**.
+
+          **Formule de Taylor** : le coefficient de $x^k$ est $\dfrac{f^{(k)}(0)}{k!}$.
+      - attention: "Un développement limité n'est valable que **près du point** où on le fait (ici 0) : loin de 0, l'approximation peut être très mauvaise."
+      - astuce: { texte: "Pour une limite en 0 de type 0 sur 0, développe numérateur et dénominateur jusqu'au premier terme non nul.", qui: mia }
+      - retiens: "En 0 : $e^x = 1 + x + \\dfrac{x^2}{2} + o(x^2)$, $\\ln(1+x) = x - \\dfrac{x^2}{2} + o(x^2)$, $\\sin x = x + o(x)$, $\\cos x = 1 - \\dfrac{x^2}{2} + o(x^2)$. Coefficient de $x^k$ : $\\dfrac{f^{(k)}(0)}{k!}$."
+    exercices:
+      - type: qcm
+        vars: { t: [["\\dfrac{\\sin x}{x}", "1"], ["\\dfrac{e^x - 1}{x}", "1"], ["\\dfrac{\\ln(1+x)}{x}", "1"], ["\\dfrac{1 - \\cos x}{x^2}", "\\dfrac{1}{2}"]] }
+        enonce: "Limite en 0 de ${{t_0}}$ ?"
+        choix: ["${{t_1}}$", "$0$", "$+\\infty$", "$2$"]
+        correction: "On développe et on garde le premier terme non nul : la limite vaut ${{t_1}}$."
+      - type: nombre
+        enonce: "Dans le développement limité de $e^x$ en 0, quel est le coefficient de $x^2$ ? (décimal)"
+        reponse: "0.5"
+        correction: "$\\dfrac{1}{2!} = \\dfrac{1}{2} = 0{,}5$ (2! se lit « factorielle 2 » et vaut 2)."
+      - type: relier
+        enonce: "🔗 Relie chaque fonction à son développement limité en 0."
+        paires: [["$e^x$", "$1 + x + \\dfrac{x^2}{2} + o(x^2)$"], ["$\\cos x$", "$1 - \\dfrac{x^2}{2} + o(x^2)$"], ["$\\ln(1+x)$", "$x - \\dfrac{x^2}{2} + o(x^2)$"]]
+        correction: "Trois développements à connaître par cœur."
+      - type: vf
+        vars: { t: [["Un développement limité en 0 est valable près de 0.", true], ["Près de 0, sin x est proche de x.", true], ["Le reste o(x²) est plus grand que x² près de 0.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Valable près du point ; sin x ≈ x ; le reste est négligeable devant x²."
+
+  - id: algebre-lineaire
+    titre: Espaces vectoriels et applications linéaires
+    classe: Supérieur
+    objectif: Je connais les notions de base, dimension, application linéaire, noyau et rang, et j'utilise le théorème du rang.
+    mots: [espace vectoriel, base, dimension, noyau]
+    etapes:
+      - dialogue:
+          - mia: "Les vecteurs du plan, les polynômes, les matrices, les solutions de certaines équations différentielles… ont un point commun."
+          - neo: "On peut les additionner et les multiplier par un nombre : ce sont des espaces vectoriels. Une seule théorie pour tous !"
+      - a_quoi_ca_sert: "L'algèbre linéaire est partout : graphisme 3D, intelligence artificielle, mécanique, économie, traitement du signal ; c'est l'un des piliers de la première année."
+      - texte: |
+          **Espace vectoriel** : un ensemble où l'on peut **additionner** des éléments et les **multiplier par un réel**, avec les règles habituelles. Exemples : $\mathbb{R}^n$, les polynômes, les matrices.
+
+          **Base** : une famille **libre** (aucun vecteur n'est combinaison des autres) et **génératrice** (tout vecteur s'écrit avec elle). Le nombre de vecteurs d'une base est la **dimension**. $\dim \mathbb{R}^n = n$ ; les polynômes de degré au plus $n$ forment un espace de dimension $n + 1$.
+
+          **Application linéaire** : $f(\lambda u + v) = \lambda f(u) + f(v)$.
+
+          **Noyau** : $\ker f$, les vecteurs envoyés sur 0. **Image** : les valeurs prises par $f$. **Rang** : la dimension de l'image.
+
+          **Théorème du rang** : $\dim E = \dim \ker f + \text{rang}(f)$.
+      - attention: "Une application linéaire envoie toujours 0 sur 0 : $x \mapsto 2x + 1$ n'est pas linéaire (au sens de l'algèbre linéaire)."
+      - astuce: { texte: "Théorème du rang : ce que f « écrase » (le noyau) plus ce que f « garde » (le rang) redonne toute la dimension de départ.", qui: zero }
+      - retiens: "**Base** = famille libre et génératrice ; **dimension** = nombre de vecteurs d'une base. Linéaire : $f(\\lambda u + v) = \\lambda f(u) + f(v)$. **Noyau**, **image**, **rang**. **Théorème du rang** : $\\dim E = \\dim \\ker f + \\text{rang}(f)$."
+    exercices:
+      - type: nombre
+        vars: { t: [[5, 3, 2], [4, 1, 3], [6, 4, 2], [3, 3, 0]] }
+        enonce: "$f$ est une application linéaire définie sur un espace de dimension {{t_0}}, de rang {{t_1}}. Quelle est la dimension de son noyau ?"
+        reponse: "t_2"
+        correction: "Théorème du rang : {{t_0}} = dim ker f + {{t_1}}, donc dim ker f = **{{t_2}}**."
+      - type: nombre
+        vars: { n: [2, 3, 4, 5] }
+        enonce: "Quelle est la dimension de l'espace des polynômes de degré au plus {{n}} ?"
+        reponse: "n+1"
+        correction: "Une base est $1, X, …, X^{ {{n}} }$ : dimension **{{n+1}}**."
+      - type: qcm
+        enonce: "Laquelle de ces applications de $\\mathbb{R}$ dans $\\mathbb{R}$ est linéaire ?"
+        choix: ["$x \\mapsto 3x$", "$x \\mapsto 3x + 1$", "$x \\mapsto x^2$", "$x \\mapsto e^x$"]
+        correction: "Seule $x \\mapsto 3x$ vérifie $f(\\lambda u + v) = \\lambda f(u) + f(v)$ (et envoie 0 sur 0)."
+      - type: vf
+        vars: { t: [["Une base est une famille libre et génératrice.", true], ["La dimension de R au cube est 3.", true], ["Une application linéaire peut envoyer 0 sur 1.", false]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Libre et génératrice ; dim ℝ³ = 3 ; une application linéaire envoie 0 sur 0."
+
+  - id: equations-differentielles-2
+    titre: Équations différentielles linéaires du second ordre
+    classe: Supérieur
+    objectif: Je résous une équation différentielle homogène à coefficients constants grâce à son équation caractéristique.
+    mots: [équation différentielle, équation caractéristique, oscillation, amortissement]
+    etapes:
+      - dialogue:
+          - neo: "Un ressort qui oscille, un circuit électrique, un amortisseur de voiture : tous obéissent à $y'' + a\,y' + b\,y = 0$."
+          - zero: "Et on la résout comment, cette équation avec des primes partout ?"
+          - mia: "Avec une équation du second degré ! C'est le miracle de l'équation caractéristique."
+      - a_quoi_ca_sert: "C'est le modèle de toutes les oscillations en physique et en ingénierie : ressorts, circuits, ponts, suspensions."
+      - texte: |
+          **L'équation** : $y'' + a\,y' + b\,y = 0$ (a et b réels).
+
+          **L'équation caractéristique** : $r^2 + ar + b = 0$, de discriminant $\Delta = a^2 - 4b$.
+
+          - $\Delta > 0$ : deux racines réelles $r_1$, $r_2$ ; $y = C_1 e^{r_1 x} + C_2 e^{r_2 x}$ (amortissement sans oscillation).
+          - $\Delta = 0$ : une racine double $r$ ; $y = (C_1 + C_2 x) e^{rx}$.
+          - $\Delta < 0$ : racines complexes $\alpha \pm i\beta$ ; $y = e^{\alpha x}(C_1 \cos \beta x + C_2 \sin \beta x)$ (oscillations).
+
+          **Exemple** : $y'' + y = 0$ a pour solutions $y = C_1 \cos x + C_2 \sin x$ : un oscillateur parfait.
+
+          Les deux constantes se trouvent grâce à **deux conditions initiales** (position et vitesse au départ).
+      - astuce: { texte: "Remplace y'' par r², y' par r et y par 1 : tu obtiens l'équation caractéristique.", qui: neo }
+      - retiens: "$y'' + a\\,y' + b\\,y = 0$ →$r^2 + ar + b = 0$. $\\Delta > 0$ : deux exponentielles ; $\\Delta = 0$ : $(C_1 + C_2 x)e^{rx}$ ; $\\Delta < 0$ : oscillations $e^{\\alpha x}(C_1 \\cos \\beta x + C_2 \\sin \\beta x)$. Deux conditions initiales fixent les constantes."
+    exercices:
+      - type: nombre
+        vars: { t: [[5, 6, 3], [3, 2, 2], [7, 12, 4], [6, 8, 4]] }
+        enonce: "Équation caractéristique : $r^2 - {{t_0}}r + {{t_1}} = 0$. Quelle est sa plus grande racine ?"
+        reponse: "t_2"
+        correction: "Les racines ont pour somme {{t_0}} et pour produit {{t_1}} : la plus grande vaut **{{t_2}}**."
+      - type: qcm
+        enonce: "L'équation caractéristique a un discriminant négatif. À quoi ressemblent les solutions ?"
+        choix: ["Des oscillations (cosinus et sinus)", "Deux exponentielles réelles", "Une droite", "Aucune solution"]
+        correction: "Racines complexes : solutions en $e^{\\alpha x}(C_1 \\cos \\beta x + C_2 \\sin \\beta x)$."
+      - type: relier
+        enonce: "🔗 Relie chaque cas à la forme des solutions."
+        paires: [["$\\Delta > 0$", "$C_1 e^{r_1 x} + C_2 e^{r_2 x}$"], ["$\\Delta = 0$", "$(C_1 + C_2 x) e^{rx}$"], ["$\\Delta < 0$", "$e^{\\alpha x}(C_1 \\cos \\beta x + C_2 \\sin \\beta x)$"]]
+        correction: "Le signe du discriminant décide de tout."
+      - type: nombre
+        enonce: "Combien de conditions initiales faut-il pour déterminer une unique solution d'une équation du second ordre ?"
+        reponse: "2"
+        correction: "**Deux** : en général la position et la vitesse au départ."
+
+  - id: variables-aleatoires
+    titre: Variables aléatoires, espérance et variance
+    classe: Supérieur
+    objectif: Je calcule l'espérance et la variance d'une variable aléatoire discrète et j'interprète la loi normale.
+    mots: [espérance, variance, écart type, loi normale]
+    etapes:
+      - dialogue:
+          - mia: "Un jeu rapporte 10 € une fois sur dix et rien sinon. En moyenne, combien gagnes-tu par partie ?"
+          - zero: "1 € ! Si je joue beaucoup."
+          - neo: "C'est l'espérance. Et la variance dit à quel point les gains s'écartent de cette moyenne."
+      - a_quoi_ca_sert: "Assurance, finance, contrôle qualité, sondages, intelligence artificielle : toutes ces disciplines reposent sur l'espérance et la variance."
+      - texte: |
+          **Espérance** (la moyenne théorique) : $E(X) = \sum x_i \, p_i$.
+
+          **Variance** (la dispersion) : $V(X) = E(X^2) - E(X)^2$. **Écart type** : $\sigma = \sqrt{V(X)}$.
+
+          **Propriétés** : $E(aX + b) = aE(X) + b$ ; $V(aX + b) = a^2 V(X)$.
+
+          **Exemple** : un dé équilibré : $E(X) = \dfrac{1 + 2 + 3 + 4 + 5 + 6}{6} = 3{,}5$.
+
+          **La loi normale** (la « courbe en cloche ») : beaucoup de mesures s'en approchent. Pour une loi normale d'espérance $\mu$ et d'écart type $\sigma$, environ **68 %** des valeurs sont entre $\mu - \sigma$ et $\mu + \sigma$, **95 %** entre $\mu - 2\sigma$ et $\mu + 2\sigma$.
+      - attention: "La variance ne se comporte pas comme l'espérance : multiplier X par a multiplie la variance par a², et ajouter une constante ne la change pas."
+      - astuce: { texte: "Retiens « 68 et 95 » pour la loi normale : un écart type, deux écarts types.", qui: zero }
+      - retiens: "$E(X) = \\sum x_i p_i$ ; $V(X) = E(X^2) - E(X)^2$ ; $\\sigma = \\sqrt{V(X)}$. $E(aX + b) = aE(X) + b$, $V(aX + b) = a^2 V(X)$. Loi normale : **68 %** à un écart type, **95 %** à deux."
+    exercices:
+      - type: nombre
+        vars: { t: [[10, 10, 1], [20, 4, 5], [50, 10, 5], [30, 3, 10]] }
+        enonce: "Un jeu rapporte {{t_0}} € avec une probabilité de 1 sur {{t_1}}, et rien sinon. Quelle est l'espérance du gain ?"
+        reponse: "t_2"
+        unite: "€"
+        correction: "$E = {{t_0}} \\times \\dfrac{1}{ {{t_1}} } = {{t_2}}$ €."
+      - type: nombre
+        vars: { a: [2, 3, 4, 5] }
+        enonce: "$V(X) = 1$. Que vaut $V({{a}}X + 7)$ ?"
+        reponse: "a^2"
+        correction: "$V(aX + b) = a^2 V(X) = {{a^2}}$ : la constante 7 ne change rien."
+      - type: nombre
+        enonce: "Quelle est l'espérance du résultat d'un dé équilibré à 6 faces ? (décimal)"
+        reponse: "3.5"
+        correction: "$\\dfrac{21}{6} = 3{,}5$."
+      - type: qcm
+        enonce: "Pour une loi normale, quelle proportion des valeurs se trouve à moins de deux écarts types de la moyenne ?"
+        choix: ["Environ 95 %", "Environ 50 %", "Environ 68 %", "Exactement 100 %"]
+        correction: "Environ **95 %** (et 68 % à un écart type)."

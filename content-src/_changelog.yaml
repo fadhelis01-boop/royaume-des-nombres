@@ -1,3 +1,10 @@
+- version: "2.23.0"
+  date: "2026-11-10"
+  notes:
+    - "Première année du supérieur : l'Université des Nombres (6 leçons de maths : limites en epsilon, continuité, développements limités, algèbre linéaire, équations différentielles, variables aléatoires), désormais incluse dans le test de niveau et le parcours."
+    - "L'Amphithéâtre des Méthodes : prendre des notes en amphi, organiser ses révisions, citer ses sources, écrire à un enseignant, réussir un exposé, lire un article scientifique."
+    - "Anglais universitaire (le Campus international) et philosophie du supérieur (le Portique des Sages : sophismes, philosophie des sciences, éthique)."
+    - "La voix lit les formules du supérieur (pour tout, il existe, epsilon, limites, valeur absolue, noyau) et ne lit plus « moins » pour un tiret dans un titre."
 - version: "2.22.0"
   date: "2026-11-10"
   notes:

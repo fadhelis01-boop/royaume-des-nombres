@@ -1,0 +1,198 @@
+id: en-campus-international
+matiere: anglais
+titre: Le Campus international
+sous_titre: Anglais du supérieur (niveau C1) - academic essay, lire la recherche, présenter en anglais, courriels et candidatures
+emoji: 🎓
+couleur: "#0d47a1"
+cycle: maitres
+age: 18 ans et +
+niveau: Supérieur
+ordre: 715
+version: 1.0.0
+intro:
+  - narrateur: "Au-delà du Port du Large, un campus où l'on parle toutes les langues… et surtout l'anglais : cours, articles, conférences, stages à l'étranger."
+  - mia: "Dans le supérieur, l'anglais devient un outil de travail : lire des articles, écrire des essais, présenter un projet."
+  - neo: "On vise le niveau C1 : s'exprimer avec précision, nuance et aisance."
+
+lecons:
+  - id: academic-essay
+    titre: The academic essay - écrire un essai universitaire
+    classe: Supérieur
+    objectif: J'écris un essai universitaire en anglais avec une thèse claire, des paragraphes structurés et un langage nuancé.
+    mots: [thesis statement, topic sentence, hedging, cohesion]
+    etapes:
+      - dialogue:
+          - zero: "En anglais, j'écris comme en français et je traduis ?"
+          - neo: "L'essai anglais a ses propres règles : la thèse dès l'introduction, une idée par paragraphe annoncée dès la première phrase, et beaucoup de nuance."
+      - a_quoi_ca_sert: "Les essais en anglais sont demandés dans les universités étrangères, les échanges Erasmus, les masters internationaux et de nombreux métiers."
+      - texte: |
+          **Introduction** : contexte, puis la **thesis statement** (la thèse défendue, en une phrase), puis l'annonce du plan.
+
+          **Body paragraphs** : chacun commence par une **topic sentence** (l'idée du paragraphe), puis des preuves (*evidence*), une analyse, une phrase de lien.
+
+          **Conclusion** : reformuler la thèse, résumer, ouvrir.
+
+          **Hedging** (nuancer) : le style universitaire évite les affirmations absolues. *It could be argued that…*, *This suggests that…*, *To some extent…*, *It seems likely that…*
+
+          **Cohesion** : *Furthermore*, *However*, *Consequently*, *In contrast*, *Nevertheless*.
+
+          **Registre** : pas de contractions (*do not* plutôt que *don't*), vocabulaire précis, phrases variées.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "This essay argues that…", sens: "Cet essai soutient que…", emoji: "✍️" }, { texte: "It could be argued that…", sens: "On pourrait soutenir que…", emoji: "🤔" }] }
+        legende: "Deux formules d'essai universitaire."
+      - astuce: { texte: "Lis seulement les premières phrases de chaque paragraphe : si elles résument ton argument, ton essai est bien construit.", qui: mia }
+      - retiens: "**Thesis statement** dans l'introduction ; **topic sentence** en tête de chaque paragraphe ; **evidence** et analyse. **Hedging** : *it could be argued*, *this suggests*. Connecteurs : *furthermore*, *however*, *consequently*. Pas de contractions."
+    exercices:
+      - type: classer
+        enonce: "Range chaque phrase : style académique ou trop familier ?"
+        categories: ["Académique", "Trop familier"]
+        mots: [["This suggests that social media may influence voting behaviour.", 0], ["Social media totally changes how people vote, it's crazy.", 1], ["It could be argued that the policy was ineffective.", 0], ["The policy didn't work, obviously.", 1]]
+        correction: "On nuance, on évite les contractions et les jugements absolus."
+      - type: relier
+        enonce: "🔗 Relie chaque connecteur à sa fonction."
+        paires: [["Furthermore", "ajouter un argument"], ["However", "introduire une opposition"], ["Consequently", "exprimer une conséquence"], ["In contrast", "comparer par différence"]]
+        correction: "Les connecteurs donnent sa cohésion à l'essai."
+      - type: qcm
+        enonce: "Où se place la « thesis statement » ?"
+        choix: ["Dans l'introduction", "Dans la conclusion seulement", "Au milieu du deuxième paragraphe", "Dans la bibliographie"]
+        correction: "La thèse est annoncée dès l'introduction."
+      - type: vf
+        vars: { t: [["Une topic sentence annonce l'idée du paragraphe.", true], ["Les contractions comme « don't » conviennent au style académique.", false], ["Le hedging permet de nuancer une affirmation.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Topic sentence en tête ; pas de contractions ; le hedging nuance."
+
+  - id: reading-research
+    titre: Reading research - lire la recherche en anglais
+    classe: Supérieur
+    objectif: Je lis un résumé d'article scientifique en anglais et j'en dégage la question, la méthode et le résultat.
+    mots: [abstract, findings, sample, limitation]
+    etapes:
+      - dialogue:
+          - mia: "Plus de neuf articles scientifiques sur dix sont publiés en anglais."
+          - zero: "Même en médecine, en droit, en histoire ?"
+          - neo: "Dans presque toutes les disciplines. Savoir lire un abstract en anglais est indispensable dès la licence."
+      - a_quoi_ca_sert: "Lire la recherche internationale est nécessaire pour les dossiers, les mémoires et toute carrière scientifique ou technique."
+      - texte: |
+          **Le vocabulaire de l'abstract** :
+          - *This study investigates / examines…* : la question ;
+          - *We conducted / surveyed / analysed…* : la méthode ;
+          - *a sample of 500 participants* : l'échantillon ;
+          - *The findings / results show that…* : les résultats ;
+          - *These results suggest…* : l'interprétation ;
+          - *One limitation of this study is…* : les limites.
+
+          **Lire vite** : repérer les verbes de recherche et les chiffres ; chercher les mots *however*, *although*, *limitation*, qui signalent les nuances.
+
+          **Faux amis** : *actual* = réel ; *eventually* = finalement ; *evidence* = des preuves (indénombrable) ; *data* = des données.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "The findings suggest a strong correlation.", sens: "Les résultats suggèrent une forte corrélation.", emoji: "📈" }, { texte: "One limitation of this study is the small sample size.", sens: "Une limite de cette étude est la petite taille de l'échantillon.", emoji: "🔬" }] }
+        legende: "Deux phrases typiques d'article scientifique."
+      - astuce: { texte: "Pour chaque abstract, remplis trois cases : question, méthode, résultat. Si tu y arrives, tu l'as compris.", qui: zero }
+      - retiens: "Abstract : *this study investigates* (question), *we conducted* (méthode), *a sample of* (échantillon), *the findings show* (résultats), *one limitation* (limites). Faux amis : *actual* = réel, *evidence* = preuves."
+    exercices:
+      - type: relier
+        enonce: "🔗 Relie chaque expression à la partie de l'article qu'elle annonce."
+        paires: [["This study investigates…", "la question de recherche"], ["We surveyed 500 students…", "la méthode"], ["The findings show that…", "les résultats"], ["One limitation is…", "les limites"]]
+        correction: "Les expressions repères d'un abstract."
+      - type: relier
+        enonce: "🔗 Relie chaque faux ami à sa traduction."
+        paires: [["actual", "réel"], ["eventually", "finalement"], ["evidence", "des preuves"]]
+        correction: "Des faux amis fréquents dans les articles."
+      - type: qcm
+        enonce: "« A sample of 1,200 adults » désigne…"
+        choix: ["l'échantillon de l'étude", "le résultat principal", "la conclusion", "le titre"]
+        correction: "*Sample* = l'échantillon étudié."
+      - type: vf
+        vars: { t: [["La grande majorité des articles scientifiques est publiée en anglais.", true], ["« Evidence » s'emploie normalement au pluriel « evidences ».", false], ["« However » signale souvent une nuance.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Anglais majoritaire ; evidence est indénombrable ; however nuance."
+
+  - id: presenting-in-english
+    titre: Presenting in English - présenter et répondre aux questions
+    classe: Supérieur
+    objectif: Je présente un projet en anglais avec des formules de structuration et je gère les questions du public.
+    mots: [signposting, presentation, Q and A, clarify]
+    etapes:
+      - dialogue:
+          - zero: "Présenter en anglais devant une salle, j'ai peur de bloquer."
+          - neo: "Apprends quelques formules par cœur pour ouvrir, passer d'une partie à l'autre et conclure : elles te serviront de rampes."
+      - a_quoi_ca_sert: "Présenter en anglais est courant dans les masters internationaux, les échanges, les entreprises et les conférences."
+      - texte: |
+          **Ouvrir** : *Good morning, everyone. Today I'm going to talk about… My presentation is divided into three parts.*
+
+          **Guider l'auditoire** (*signposting*) : *First of all…*, *Let's move on to…*, *As you can see on this slide…*, *To sum up…*
+
+          **Conclure** : *In conclusion… Thank you for your attention. I'm happy to take any questions.*
+
+          **Répondre aux questions** :
+          - faire répéter : *Sorry, could you repeat the question?* ;
+          - reformuler : *If I understand correctly, you're asking…* ;
+          - gagner du temps : *That's a good question.* ;
+          - admettre : *I'm not sure, but I'll look into it.*
+
+          **La voix** : parler lentement, articuler, faire des pauses ; accepter son accent, l'important est d'être compris.
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "Let's move on to the second part.", sens: "Passons à la deuxième partie.", emoji: "➡️" }, { texte: "If I understand correctly, you're asking about costs.", sens: "Si je comprends bien, vous posez une question sur les coûts.", emoji: "💬" }] }
+        legende: "Une transition et une reformulation."
+      - astuce: { texte: "Écris tes trois formules de transition sur une petite fiche : même en cas de trou, tu sauras comment passer à la suite.", qui: mia }
+      - retiens: "Ouvrir (*Today I'm going to talk about*), guider (*Let's move on to*, *As you can see*), conclure (*To sum up*, *Thank you for your attention*). Questions : faire répéter, **reformuler**, admettre (*I'll look into it*). Parler lentement, accepter son accent."
+    exercices:
+      - type: ordre
+        enonce: "Range ces formules dans l'ordre d'une présentation."
+        items: ["Today I'm going to talk about…", "First of all…", "Let's move on to…", "To sum up…", "I'm happy to take any questions."]
+        correction: "Ouverture, première partie, transition, conclusion, questions."
+      - type: relier
+        enonce: "🔗 Relie chaque formule à son usage."
+        paires: [["Could you repeat the question?", "faire répéter"], ["If I understand correctly…", "reformuler"], ["I'm not sure, but I'll look into it.", "admettre ne pas savoir"]]
+        correction: "Trois réflexes pour les questions."
+      - type: qcm
+        enonce: "Quelle formule sert à commenter une diapositive ?"
+        choix: ["As you can see on this slide…", "Thank you for your attention.", "Good morning, everyone.", "Any questions?"]
+        correction: "*As you can see on this slide* attire l'attention sur le support."
+      - type: vf
+        vars: { t: [["Avoir un accent français empêche de bien présenter en anglais.", false], ["Le signposting aide l'auditoire à suivre le plan.", true], ["Reformuler une question permet de vérifier qu'on l'a comprise.", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "L'accent n'empêche rien ; le signposting guide ; reformuler vérifie la compréhension."
+
+  - id: emails-and-applications
+    titre: Emails and applications - courriels, CV et lettre en anglais
+    classe: Supérieur
+    objectif: J'écris un courriel formel, un CV et une lettre de motivation en anglais selon les codes anglophones.
+    mots: [cover letter, CV, résumé, formal email]
+    etapes:
+      - dialogue:
+          - mia: "Pour un stage à Dublin, il te faut un CV et une cover letter en anglais."
+          - zero: "Je traduis mon CV français mot à mot ?"
+          - neo: "Les codes changent : souvent pas de photo, pas d'âge, des verbes d'action, et une lettre qui montre ce que tu apportes."
+      - a_quoi_ca_sert: "Candidater à un stage, un échange ou un emploi à l'étranger, ou dans une entreprise internationale en France."
+      - texte: |
+          **Le courriel formel** : *Dear Dr Smith,* (ou *Dear Sir or Madam,*) ; *I am writing to enquire about…* ; *I would be grateful if you could…* ; *I look forward to hearing from you.* ; *Kind regards,* (ou *Yours sincerely,*).
+
+          **Le CV** (au Royaume-Uni) ou **résumé** (aux États-Unis) : coordonnées, *Profile* (deux ou trois lignes), *Education*, *Work experience*, *Skills*, *Languages*. Souvent **sans photo ni âge**. Des **verbes d'action** : *managed*, *organised*, *developed*, *led*.
+
+          **La cover letter** : pourquoi ce poste, ce que j'apporte (avec des exemples précis), une conclusion qui propose un entretien.
+
+          **Les niveaux de langue** : indiquer son niveau avec le cadre européen (B2, C1).
+      - visuel: { type: parole, langue: en-GB, mots: [{ texte: "I am writing to apply for the internship.", sens: "Je vous écris pour postuler au stage.", emoji: "📄" }, { texte: "I look forward to hearing from you.", sens: "Dans l'attente de votre réponse.", emoji: "📬" }] }
+        legende: "Deux phrases clés d'une candidature."
+      - astuce: { texte: "Commence chaque ligne d'expérience par un verbe d'action au passé : managed, created, improved. Le lecteur voit tout de suite ce que tu as fait.", qui: zero }
+      - retiens: "Courriel : *Dear…*, *I am writing to…*, *I look forward to hearing from you*, *Kind regards*. **CV** (UK) / **résumé** (US) : souvent sans photo ni âge, **verbes d'action**. **Cover letter** : pourquoi, ce que j'apporte, proposition d'entretien. Niveau de langue : B2, C1."
+    exercices:
+      - type: ordre
+        enonce: "Range les parties d'un courriel formel en anglais."
+        items: ["Dear Dr Smith,", "I am writing to enquire about the master's programme.", "I would be grateful if you could send me more information.", "I look forward to hearing from you.", "Kind regards,"]
+        correction: "Salutation, objet, demande, attente de réponse, formule finale."
+      - type: classer
+        enonce: "Range chaque élément : courant sur un CV britannique ou à éviter ?"
+        categories: ["Courant", "À éviter"]
+        mots: [["Des verbes d'action (managed, organised)", 0], ["Une photo d'identité", 1], ["Une rubrique Skills", 0], ["La date de naissance et la situation familiale", 1]]
+        correction: "Au Royaume-Uni et aux États-Unis, on évite photo, âge et situation familiale."
+      - type: qcm
+        enonce: "Comment s'appelle le CV aux États-Unis ?"
+        choix: ["A résumé", "A cover letter", "A transcript", "A diploma"]
+        correction: "Aux États-Unis, on dit souvent *résumé*."
+      - type: vf
+        vars: { t: [["« Kind regards » est une formule finale courante.", true], ["Une cover letter répète simplement le CV ligne par ligne.", false], ["On peut indiquer son niveau de langue avec le cadre européen (B2, C1).", true]] }
+        enonce: "Vrai ou faux : {{t_0}}"
+        reponse: "t_1"
+        correction: "Kind regards ; la lettre montre ce qu'on apporte ; niveaux B2, C1."

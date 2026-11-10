@@ -21,3 +21,11 @@ chapitres:
       - neo: "Commençons par la méthode, puis les grandes notions."
     apres:
       - narrateur: "Toutes les lampes brillent. L'Agora est de nouveau pleine de débats."
+  philo-portique-des-sages:
+    titre: "Le Portique des Sages"
+    objet: "la lampe de l'Agora"
+    avant:
+      - narrateur: "Sous le Portique, les discussions tournent en rond : sophismes, fausses évidences, dilemmes sans issue."
+      - mia: "Raisonner juste, juger la science, peser le bien et le mal : trois lampes à rallumer."
+    apres:
+      - narrateur: "Les colonnes s'illuminent. On marche de nouveau sous le Portique en discutant, plus lucide qu'avant."

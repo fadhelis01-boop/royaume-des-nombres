@@ -479,3 +479,11 @@ chapitres:
       - neo: "Ici, une preuve ne suffit pas : il faut un programme qui s'exécute, et qui s'arrête !"
     apres:
       - narrateur: "Les murs de la Citadelle s'allument un à un. Sur l'écran central s'affiche : « Programme terminé, 0 erreur. »"
+  universite-des-nombres:
+    titre: "Chapitre 31 — L'Université des Nombres"
+    objet: "📜 Le Livre des Preuves"
+    avant:
+      - narrateur: "Au-delà du Temple, l'amphithéâtre est plongé dans le brouillard : les définitions sont floues, les démonstrations s'arrêtent au milieu."
+      - neo: "Ici, « se rapprocher » ne suffit plus : il faut des définitions exactes. Pour tout epsilon, il existe… À toi de jouer !"
+    apres:
+      - narrateur: "Le tableau s'éclaire d'un coup. Chaque définition tient, chaque démonstration va au bout. Le Grand Oubli n'a plus rien à effacer."
